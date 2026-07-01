@@ -86,8 +86,20 @@ struct FeedItemView: View {
             } label: {
                 Label("Copy Link", systemImage: "doc.on.doc")
             }
+            Button {
+                if let image = renderCardAsImage(item: item) {
+                    let av = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let root = windowScene.windows.first?.rootViewController {
+                        root.present(av, animated: true)
+                    }
+                }
+            } label: {
+                Label("Share as Image", systemImage: "photo.artframe")
+            }
+
             ShareLink(item: URL(string: item.url) ?? URL(string: "https://feedmine.app")!) {
-                Label("Share", systemImage: "square.and.arrow.up")
+                Label("Share Link", systemImage: "link")
             }
         }
         .accessibilityElement(children: .combine)
