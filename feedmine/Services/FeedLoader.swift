@@ -52,6 +52,10 @@ final class FeedLoader {
         readItemIDs.insert(itemID)
     }
 
+    func markAllAsRead() {
+        readItemIDs.formUnion(items.map(\.id))
+    }
+
     func isRead(_ itemID: String) -> Bool {
         readItemIDs.contains(itemID)
     }

@@ -68,6 +68,18 @@ struct GreetingHeaderView: View {
 
                 Spacer()
 
+                if unreadCount > 0 {
+                    Button {
+                        loader.markAllAsRead()
+                    } label: {
+                        Text("Mark all read")
+                            .font(.caption)
+                            .fontWeight(.medium)
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                }
+
                 // Quick action: refresh
                 Button {
                     Task { await loader.refresh() }
