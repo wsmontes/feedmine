@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GreetingHeaderView: View {
     @Environment(FeedLoader.self) private var loader
+    var onSurpriseMe: (() -> Void)?
     @AppStorage("accentColorName") private var accentColorName = "blue"
 
     private var greeting: String {
@@ -26,11 +27,6 @@ struct GreetingHeaderView: View {
 
     private var unreadCount: Int {
         loader.items.count - loader.readItemIDs.count
-    }
-
-    private var newSinceLastOpen: Int {
-        // Approximate: items loaded minus those read
-        max(0, loader.totalFetched - loader.readItemIDs.count)
     }
 
     var body: some View {
@@ -67,6 +63,21 @@ struct GreetingHeaderView: View {
                 }
 
                 Spacer()
+
+                // Surprise Me button
+                if !loader.items.isEmpty {
+                    Button {
+                        onSurpriseMe?()
+                    } label: {
+                        Image(systemName: "dice.fill")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .frame(width: 36, height: 36)
+                            .background(Color(.systemGray6))
+                            .clipShape(Circle())
+                    }
+                    .buttonStyle(.plain)
+                }
 
                 if unreadCount > 0 {
                     Button {

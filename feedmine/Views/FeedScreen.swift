@@ -35,7 +35,14 @@ struct FeedScreen: View {
                 DebugStatusBar()
             }
             ErrorBannerView()
-            GreetingHeaderView()
+            GreetingHeaderView {
+                let unread = loader.items.filter { !loader.isRead($0.id) }
+                if let random = (unread.isEmpty ? loader.items : unread).randomElement(),
+                   let url = URL(string: random.url) {
+                    loader.markAsRead(random.id)
+                    selectedArticle = ArticleRoute(url: url)
+                }
+            }
             ReadingStatsView()
             SearchBarView()
             CategoryFilterBar()
