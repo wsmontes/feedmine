@@ -16,6 +16,7 @@ struct FeedScreen: View {
     @State private var showSettings = false
     @State private var showSources = false
     @State private var showFilters = false
+    @State private var showBookmarks = false
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
@@ -78,6 +79,7 @@ struct FeedScreen: View {
         .sheet(isPresented: $showSettings) { SettingsSheetView() }
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
+        .sheet(isPresented: $showBookmarks) { BookmarksSheetView() }
         .tint(accentColor)
         .overlay { if nightMode { nightOverlay } }
     }
@@ -104,6 +106,14 @@ struct FeedScreen: View {
 
                 // Filter + action buttons
                 HStack(spacing: 4) {
+                    if loader.bookmarkedIDs.count > 0 {
+                        Button { showBookmarks = true } label: {
+                            Image(systemName: "bookmark.fill")
+                                .frame(width: 36, height: 36)
+                                .background(Color(.systemGray6))
+                                .clipShape(Circle())
+                        }
+                    }
                     filterButton
                     sourcesButton
                     settingsButton

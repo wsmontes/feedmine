@@ -231,13 +231,23 @@ actor RSSFetcher {
 
     /// Extract first <img src> from an HTML string.
     private func extractFirstImageFromHTML(_ html: String) -> String? {
+        // Decode common HTML entities that Atom feeds encode (e.g., &lt;img → <img)
+        let decoded = html
+            .replacingOccurrences(of: "&lt;", with: "<")
+            .replacingOccurrences(of: "&gt;", with: ">")
+            .replacingOccurrences(of: "&amp;", with: "&")
+            .replacingOccurrences(of: "&quot;", with: "\"")
         let pattern = #"<img[^>]+src=["']([^"']+)["']"#
-        guard let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive),
-              let match = regex.firstMatch(in: html, range: NSRange(html.startIndex..., in: html)),
-              let range = Range(match.range(at: 1), in: html) else {
-            return nil
+        // Try decoded HTML first, fall back to original
+        for candidate in [decoded, html] {
+            guard let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive),
+                  let match = regex.firstMatch(in: candidate, range: NSRange(candidate.startIndex..., in: candidate)),
+                  let range = Range(match.range(at: 1), in: candidate) else {
+                continue
+            }
+            return String(candidate[range])
         }
-        return String(html[range])
+        return nil
     }
 
     /// Extract excerpt from available fields in priority order.
