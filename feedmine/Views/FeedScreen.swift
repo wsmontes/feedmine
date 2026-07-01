@@ -21,7 +21,7 @@ struct FeedScreen: View {
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
     @State private var headerCompact = false
-    @AppStorage("showDebugBar") private var showDebugBar = true
+    @AppStorage("showDebugBar") private var showDebugBar = false  // default OFF per user research
     @AppStorage("nightMode") private var nightMode = false
     @AppStorage("accentColorName") private var accentColorName = "blue"
 
@@ -348,7 +348,7 @@ private struct SafariView: UIViewControllerRepresentable {
 // MARK: - Skeleton Loading (inline version)
 struct SkeletonLoadingView: View {
     @State private var messageIndex = 0
-    private let messages = ["Brewing coffee...", "Scanning the internet...", "Reading RSS feeds...", "Finding the best stories...", "Loading your feed...", "Checking sources...", "Almost there...", "Curating articles...", "Tuning antennas...", "Gathering news..."]
+    private let messages = ["Brewing coffee...", "Scanning the internet...", "Finding articles...", "Finding the best stories...", "Loading your feed...", "Checking sources...", "Almost there...", "Curating articles...", "Tuning antennas...", "Gathering news..."]
     var body: some View {
         VStack(spacing: 0) {
             Text(messages[messageIndex]).font(.subheadline).foregroundStyle(.secondary).padding(.vertical, 16).transition(.opacity.combined(with: .move(edge: .top))).id(messageIndex)
