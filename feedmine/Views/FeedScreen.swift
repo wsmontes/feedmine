@@ -188,6 +188,7 @@ struct FeedScreen: View {
                                         onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } }
                                     )
                                     .padding(.horizontal, 8)
+                                    .contentShape(Rectangle())
                                     .onAppear {
                                         appearedItemIDs.insert(item.id)
                                         showScrollButton = index > 20
@@ -242,7 +243,7 @@ struct FeedScreen: View {
             .accessibilityLabel("Scroll to top")
         }
         .padding(.trailing, 16)
-        .padding(.bottom, 16)
+        .padding(.bottom, 32)
         .transition(.scale.combined(with: .opacity))
     }
 
