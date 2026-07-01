@@ -255,10 +255,11 @@ final class FeedLoader {
     func emergencyTrim() {
         let safeCount = Self.safetyZoneRadius * 2
         if items.count > safeCount {
+            let removed = items.count - safeCount
             items = Array(items.suffix(safeCount))
-            totalDiscarded += items.count
+            totalDiscarded += removed
             itemVersion += 1
-            print("[FeedLoader] Memory warning: trimmed to \(items.count) items")
+            print("[FeedLoader] Memory warning: trimmed \(removed) items, kept \(items.count)")
         }
         reservoir.removeAll()
         reservoirCount = 0
@@ -279,7 +280,7 @@ final class FeedLoader {
         loadingState = .initial
 
         // Step 1: Parse OPML
-        let parseResult = OPMLParser.parseAll()
+        let parseResult = await OPMLParser.parseAll()
         sources = parseResult.sources
         opmlFileCount = parseResult.fileCount
         opmlErrorCount = parseResult.failedFileCount

@@ -3,7 +3,7 @@ import Foundation
 struct OPMLParser {
     /// Scan the app bundle for all .opml files and parse them into FeedSource entries.
     /// Uses Bundle.urls(forResourcesWithExtension:subdirectory:) with fallback to root.
-    static func parseAll() -> OPMLParseResult {
+    static func parseAll() async -> OPMLParseResult {
         // Try subdirectory "Feeds" first, then root as fallback
         var opmlFiles = Bundle.main.urls(forResourcesWithExtension: "opml", subdirectory: "Feeds") ?? []
         if opmlFiles.isEmpty {
