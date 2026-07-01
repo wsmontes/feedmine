@@ -263,17 +263,6 @@ struct FeedItemCardView: View {
         }
     }
 
-    private var placeholderIcon: String {
-        switch item.category.lowercased() {
-        case "tech": return "laptopcomputer"
-        case "news": return "newspaper.fill"
-        case "science": return "flask.fill"
-        case "design": return "paintpalette.fill"
-        case "culture": return "theatermasks.fill"
-        default: return "photo"
-        }
-    }
-
     private func categoryColor(_ category: String) -> Color {
         switch category.lowercased() {
         case "tech": return .blue
