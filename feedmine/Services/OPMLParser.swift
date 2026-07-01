@@ -60,7 +60,7 @@ struct OPMLParser {
         return (delegate.sources, delegate.invalidSourceCount)
     }
 
-    private static func deduplicateSources(_ sources: [FeedSource]) -> [FeedSource] {
+    static func deduplicateSources(_ sources: [FeedSource]) -> [FeedSource] {
         var seen: Set<String> = []
         var result: [FeedSource] = []
 
@@ -75,6 +75,18 @@ struct OPMLParser {
     }
 
     /// Lowercase scheme and host only. Trim whitespace. Remove trailing slash. Preserve path/query case.
+    /// Parse a single OPML file from any URL (for import)
+    static func parseImportedFile(url: URL) throws -> [FeedSource] {
+        let data = try Data(contentsOf: url)
+        let parser = XMLParser(data: data)
+        let fileName = url.deletingPathExtension().lastPathComponent
+        let delegate = OPMLDelegate(fallbackCategory: fileName.capitalized)
+        parser.delegate = delegate
+        parser.parse()
+        if let error = parser.parserError { throw error }
+        return delegate.sources
+    }
+
     /// Export current sources as an OPML string
     static func exportOPML(sources: [FeedSource]) -> String {
         let grouped = Dictionary(grouping: sources, by: \.category)

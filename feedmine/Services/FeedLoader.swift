@@ -193,6 +193,11 @@ final class FeedLoader {
         !disabledSourceIDs.contains(sourceURL)
     }
 
+    func addSources(_ newSources: [FeedSource]) {
+        sources = OPMLParser.deduplicateSources(sources + newSources)
+        sourceCount = sources.count
+    }
+
     func toggleBookmark(_ itemID: String) {
         if bookmarkedIDs.contains(itemID) {
             bookmarkedIDs.remove(itemID)

@@ -4,6 +4,8 @@ struct SourceManagementView: View {
     @Environment(FeedLoader.self) private var loader
     @State private var isTesting = false
     @State private var testResults: [String: SourceStatus] = [:]
+    @State private var showFileImporter = false
+    @State private var importError: String?
 
     enum SourceStatus {
         case ok, failed, testing
@@ -121,17 +123,44 @@ struct SourceManagementView: View {
                 }
 
                 Section {
+                    Button {
+                        showFileImporter = true
+                    } label: {
+                        Label("Import OPML File", systemImage: "doc.badge.plus")
+                    }
+                    if let error = importError {
+                        Text(error)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+
                     ShareLink(item: opmlString) {
                         Label("Export as OPML", systemImage: "square.and.arrow.up")
                     }
+                } header: {
+                    Text("Import & Export")
                 } footer: {
-                    Text("Export your current sources as an OPML file to share or back up.")
+                    Text("Import an OPML file to add new sources, or export your current sources to share or back up.")
                 }
             }
             .navigationTitle("Sources")
             .navigationBarTitleDisplayMode(.inline)
         }
         .presentationDetents([.medium, .large])
+        .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.xml, .init(filenameExtension: "opml")!]) { result in
+            switch result {
+            case .success(let url):
+                do {
+                    let newSources = try OPMLParser.parseImportedFile(url: url)
+                    loader.addSources(newSources)
+                    importError = nil
+                } catch {
+                    importError = "Failed to parse: \(error.localizedDescription)"
+                }
+            case .failure(let error):
+                importError = error.localizedDescription
+            }
+        }
     }
 
     private var opmlString: String {
