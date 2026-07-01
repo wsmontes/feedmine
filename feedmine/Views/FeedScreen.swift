@@ -13,6 +13,7 @@ struct FeedScreen: View {
     @State private var appearedItemIDs: Set<String> = []
     @State private var showScrollButton = false
     @State private var showSettings = false
+    @State private var showSources = false
     @AppStorage("showDebugBar") private var showDebugBar = true
 
     var body: some View {
@@ -24,7 +25,30 @@ struct FeedScreen: View {
             ReadingStatsView()
             SearchBarView()
             CategoryFilterBar()
-            LayoutToggleView(showSettings: $showSettings)
+            HStack {
+                Button {
+                    showSources = true
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "antenna.radiowaves.left.and.right")
+                            .font(.caption)
+                        Text("Sources")
+                            .font(.caption)
+                    }
+                    .foregroundStyle(.blue)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(Color.blue.opacity(0.1))
+                    .clipShape(Capsule())
+                }
+                .buttonStyle(.plain)
+
+                Spacer()
+
+                LayoutToggleView(showSettings: $showSettings)
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 4)
 
             if loader.loadingState == .initial && loader.items.isEmpty {
                 SkeletonLoadingView()
@@ -174,6 +198,9 @@ struct FeedScreen: View {
         }
         .sheet(isPresented: $showSettings) {
             SettingsSheetView()
+        }
+        .sheet(isPresented: $showSources) {
+            SourceManagementView()
         }
     }
 }

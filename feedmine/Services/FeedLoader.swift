@@ -59,6 +59,26 @@ final class FeedLoader {
     /// Bookmarked item IDs
     var bookmarkedIDs: Set<String> = []
 
+    /// Disabled source URLs — persisted concept (in-memory for prototype)
+    var disabledSourceIDs: Set<String> = []
+
+    /// Only enabled sources
+    var enabledSources: [FeedSource] {
+        sources.filter { !disabledSourceIDs.contains($0.url) }
+    }
+
+    func toggleSource(_ sourceURL: String) {
+        if disabledSourceIDs.contains(sourceURL) {
+            disabledSourceIDs.remove(sourceURL)
+        } else {
+            disabledSourceIDs.insert(sourceURL)
+        }
+    }
+
+    func isSourceEnabled(_ sourceURL: String) -> Bool {
+        !disabledSourceIDs.contains(sourceURL)
+    }
+
     func toggleBookmark(_ itemID: String) {
         if bookmarkedIDs.contains(itemID) {
             bookmarkedIDs.remove(itemID)
@@ -91,7 +111,7 @@ final class FeedLoader {
 
     // MARK: - Internal state
     private let fetcher = RSSFetcher()
-    private var sources: [FeedSource] = []
+    private(set) var sources: [FeedSource] = []
     private var reservoir: [FeedItem] = []
     private var loadedIDs: Set<String> = []
     private var currentVisibleIndex: Int = 0
@@ -132,7 +152,7 @@ final class FeedLoader {
         }
 
         // Step 2: Fetch from all sources
-        let batch = await fetcher.fetchAll(sources)
+        let batch = await fetcher.fetchAll(enabledSources)
         totalFetched = batch.items.count
         fetchErrorCount = batch.failedSourceCount
         emptyFeedCount = batch.emptySourceCount
@@ -167,7 +187,7 @@ final class FeedLoader {
             return
         }
 
-        let batch = await fetcher.fetchAll(sources)
+        let batch = await fetcher.fetchAll(enabledSources)
         totalFetched = batch.items.count
         fetchErrorCount = batch.failedSourceCount
         emptyFeedCount = batch.emptySourceCount
@@ -267,7 +287,7 @@ final class FeedLoader {
     private func refillReservoir() async {
         guard !sources.isEmpty else { return }
 
-        let batch = await fetcher.fetchAll(sources)
+        let batch = await fetcher.fetchAll(enabledSources)
         totalFetched += batch.items.count
         fetchErrorCount += batch.failedSourceCount
         emptyFeedCount += batch.emptySourceCount
