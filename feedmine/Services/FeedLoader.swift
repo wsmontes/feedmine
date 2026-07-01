@@ -23,7 +23,19 @@ final class FeedLoader {
         let items: [FeedItem]
     }
 
+    private var cachedDateSections: [DateSection] = []
+    private var cachedDateSectionVersion = -1
+    private var itemVersion = 0  // bumped whenever items change
+
     var dateSections: [DateSection] {
+        if itemVersion != cachedDateSectionVersion {
+            cachedDateSections = computeDateSections()
+            cachedDateSectionVersion = itemVersion
+        }
+        return cachedDateSections
+    }
+
+    private func computeDateSections() -> [DateSection] {
         let calendar = Calendar.current
         let grouped = Dictionary(grouping: filteredItems) { item -> String in
             if calendar.isDateInToday(item.publishedAt) { return "Today" }
@@ -268,6 +280,7 @@ final class FeedLoader {
         items = Array(reservoir.prefix(windowSize))
         reservoir.removeFirst(windowSize)
         reservoirCount = reservoir.count
+        itemVersion += 1
 
         lastRefreshDate = .now
         loadingState = .idle
@@ -312,6 +325,7 @@ final class FeedLoader {
         items = Array(reservoir.prefix(windowSize))
         reservoir.removeFirst(windowSize)
         reservoirCount = reservoir.count
+        itemVersion += 1
 
         lastRefreshDate = .now
         loadingState = .idle
@@ -367,8 +381,9 @@ final class FeedLoader {
 
         if aboveToDiscard > 0 {
             items.removeFirst(aboveToDiscard)
-            currentVisibleIndex -= aboveToDiscard  // adjust index after removal
+            currentVisibleIndex -= aboveToDiscard
             totalDiscarded += aboveToDiscard
+            itemVersion += 1
         }
 
         // Priority 2: if still over, discard from far below
@@ -380,6 +395,7 @@ final class FeedLoader {
                 if belowToDiscard > 0 {
                     items.removeLast(belowToDiscard)
                     totalDiscarded += belowToDiscard
+                    itemVersion += 1
                 }
             }
         }
@@ -394,6 +410,7 @@ final class FeedLoader {
         items.append(contentsOf: batch)
         reservoir.removeFirst(toMove)
         reservoirCount = reservoir.count
+        itemVersion += 1
     }
 
     private func refillReservoir() async {
