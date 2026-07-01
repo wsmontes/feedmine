@@ -140,11 +140,20 @@ struct FeedItemCardView: View {
         }
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 12))
+        .overlay(alignment: .leading) {
+            if !isRead {
+                RoundedRectangle(cornerRadius: 2)
+                    .fill(categoryColor(item.category))
+                    .frame(width: 3)
+                    .padding(.vertical, 16)
+                    .padding(.leading, 1)
+            }
+        }
         .overlay(
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color(.separator).opacity(0.5), lineWidth: 0.5)
         )
-        .opacity(appeared ? (isRead ? 0.7 : 1) : 0)
+        .opacity(appeared ? (isRead ? 0.85 : 1) : 0)
         .offset(y: appeared ? 0 : 16)
         .contextMenu {
             Button {
