@@ -5,6 +5,7 @@ struct FeedItemCardView: View {
     let item: FeedItem
     let isRead: Bool
     let isBookmarked: Bool
+    let appearDelay: Double
     var onBookmark: (() -> Void)?
     @State private var appeared = false
     @AppStorage("fontSize") private var fontSize = "medium"
@@ -186,7 +187,7 @@ struct FeedItemCardView: View {
             }
         }
         .onAppear {
-            withAnimation(.easeOut(duration: 0.35)) {
+            withAnimation(.easeOut(duration: 0.4).delay(appearDelay)) {
                 appeared = true
             }
         }

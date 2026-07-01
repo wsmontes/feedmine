@@ -16,6 +16,7 @@ struct FeedItemView: View {
                     item: item,
                     isRead: loader.isRead(item.id),
                     isBookmarked: loader.isBookmarked(item.id),
+                    appearDelay: Double(index % 8) * 0.04,
                     onBookmark: { loader.toggleBookmark(item.id) }
                 )
                 .padding(.horizontal, 12)
