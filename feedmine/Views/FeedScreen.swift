@@ -47,6 +47,28 @@ struct FeedScreen: View {
                 }
             }
             ReadingStatsView()
+            if loader.selectedCategory != nil || loader.selectedMood != .all || !loader.searchQuery.isEmpty {
+                HStack {
+                    Spacer()
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.25)) {
+                            loader.clearAllFilters()
+                        }
+                    } label: {
+                        HStack(spacing: 4) {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.caption)
+                            Text("Clear Filters")
+                                .font(.caption)
+                        }
+                        .foregroundStyle(.secondary)
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.horizontal, 12)
+                }
+                .transition(.opacity)
+            }
+
             SearchBarView()
             CategoryFilterBar()
             MoodFilterBar()

@@ -219,6 +219,12 @@ final class FeedLoader {
         selectedCategory = (selectedCategory == category) ? nil : category
     }
 
+    func clearAllFilters() {
+        selectedCategory = nil
+        selectedMood = .all
+        searchQuery = ""
+    }
+
     func start() async {
         guard !hasStarted else { return }
         hasStarted = true
