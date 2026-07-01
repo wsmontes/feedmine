@@ -204,11 +204,13 @@ final class FeedLoader {
     func markAsRead(_ itemID: String) {
         readItemIDs.insert(itemID)
         capReadIDsIfNeeded()
+        PersistenceManager.shared.save(buildState())
     }
 
     func markAllAsRead() {
         readItemIDs.formUnion(items.map(\.id))
         capReadIDsIfNeeded()
+        PersistenceManager.shared.save(buildState())
     }
 
     private func capReadIDsIfNeeded() {
@@ -245,6 +247,7 @@ final class FeedLoader {
         } else {
             disabledSourceIDs.insert(sourceURL)
         }
+        PersistenceManager.shared.save(buildState())
     }
 
     func isSourceEnabled(_ sourceURL: String) -> Bool {

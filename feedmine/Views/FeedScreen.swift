@@ -62,7 +62,7 @@ struct FeedScreen: View {
         .task { await loader.start(); updateBadge() }
         .onChange(of: scenePhase) { _, phase in
             if phase == .background {
-                loader.saveNow()
+                PersistenceManager.shared.saveNow(loader.buildState())
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
