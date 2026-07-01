@@ -204,6 +204,8 @@ final class FeedLoader {
     private var loadedIDs: Set<String> = []
     private var currentVisibleIndex: Int = 0
     private var hasStarted = false
+    private var retryCount = 0
+    private var retryTask: Task<Void, Never>?
 
     // MARK: - Constants
     static let maxBuffer = 300
@@ -269,6 +271,11 @@ final class FeedLoader {
 
         lastRefreshDate = .now
         loadingState = .idle
+
+        // Auto-retry with backoff if nothing loaded
+        if items.isEmpty && fetchErrorCount > 0 {
+            scheduleRetryIfAllFailed()
+        }
     }
 
     func refresh() async {
@@ -410,5 +417,23 @@ final class FeedLoader {
             reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
         }
         reservoirCount = reservoir.count
+    }
+
+    /// Schedule an automatic retry with exponential backoff when all sources fail
+    func scheduleRetryIfAllFailed() {
+        guard totalFetched == 0, fetchErrorCount > 0 else {
+            retryCount = 0
+            return
+        }
+
+        let delay = min(Double(1 << min(retryCount, 4)), 60.0)  // 1, 2, 4, 8, 16, 32, 60, 60... seconds
+        retryCount += 1
+        retryTask?.cancel()
+        retryTask = Task {
+            try? await Task.sleep(nanoseconds: UInt64(delay * 1_000_000_000))
+            guard !Task.isCancelled else { return }
+            print("[FeedLoader] Auto-retry #\(retryCount) after \(Int(delay))s")
+            await refresh()
+        }
     }
 }
