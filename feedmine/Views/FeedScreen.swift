@@ -87,15 +87,14 @@ struct FeedScreen: View {
                 Spacer()
 
                 // Filter + action buttons
-                HStack(spacing: 2) {
+                HStack(spacing: 4) {
                     filterMenu
                     sourcesButton
                     settingsButton
                 }
-                .font(.caption)
             }
             .padding(.horizontal, 12)
-            .padding(.vertical, 6)
+            .padding(.vertical, 8)
             .background(.ultraThinMaterial)
         }
     }
@@ -140,7 +139,7 @@ struct FeedScreen: View {
             }
         } label: {
             Image(systemName: "line.3.horizontal.decrease")
-                .padding(8)
+                .frame(width: 36, height: 36)
                 .background(Color(.systemGray6))
                 .clipShape(Circle())
         }
@@ -149,7 +148,7 @@ struct FeedScreen: View {
     private var sourcesButton: some View {
         Button { showSources = true } label: {
             Image(systemName: "antenna.radiowaves.left.and.right")
-                .padding(8)
+                .frame(width: 36, height: 36)
                 .background(Color(.systemGray6))
                 .clipShape(Circle())
         }
@@ -158,7 +157,7 @@ struct FeedScreen: View {
     private var settingsButton: some View {
         Button { showSettings = true } label: {
             Image(systemName: "gearshape")
-                .padding(8)
+                .frame(width: 36, height: 36)
                 .background(Color(.systemGray6))
                 .clipShape(Circle())
         }
@@ -170,7 +169,7 @@ struct FeedScreen: View {
         ZStack(alignment: .bottomTrailing) {
             ScrollViewReader { proxy in
                 ScrollView {
-                    LazyVStack(spacing: 0) {
+                    LazyVStack(spacing: 10) {
                         // Daily Briefing + Carousel (only when unfiltered)
                         if loader.selectedCategory == nil && loader.selectedMood == .all && loader.searchQuery.isEmpty {
                             DailyBriefingCard()
