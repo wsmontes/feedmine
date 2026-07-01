@@ -82,6 +82,32 @@ struct FeedScreen: View {
                                             Label("Share", systemImage: "square.and.arrow.up")
                                         }
                                     }
+                                    .swipeActions(edge: .leading) {
+                                        Button {
+                                            let impact = UIImpactFeedbackGenerator(style: .medium)
+                                            impact.impactOccurred()
+                                            loader.markAsRead(item.id)
+                                        } label: {
+                                            Label(
+                                                loader.isRead(item.id) ? "Unread" : "Read",
+                                                systemImage: loader.isRead(item.id) ? "eye.slash" : "eye"
+                                            )
+                                        }
+                                        .tint(loader.isRead(item.id) ? .gray : .green)
+                                    }
+                                    .swipeActions(edge: .trailing) {
+                                        Button {
+                                            let impact = UIImpactFeedbackGenerator(style: .medium)
+                                            impact.impactOccurred()
+                                            loader.toggleBookmark(item.id)
+                                        } label: {
+                                            Label(
+                                                loader.isBookmarked(item.id) ? "Remove" : "Save",
+                                                systemImage: loader.isBookmarked(item.id) ? "bookmark.slash.fill" : "bookmark.fill"
+                                            )
+                                        }
+                                        .tint(.yellow)
+                                    }
                                     .accessibilityElement(children: .combine)
                                     .accessibilityLabel("\(item.title) from \(item.sourceTitle)")
                                     .accessibilityAddTraits(loader.isRead(item.id) ? [] : .isHeader)
