@@ -93,9 +93,15 @@ struct FeedItemCardView: View {
                 .padding(.horizontal, 16)
                 .padding(.top, 6)
 
-            // Relative date
+            // Relative date + reading time
             HStack {
                 Text(formattedDate(item.publishedAt))
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                Text("·")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                Text(readingTime)
                     .font(.caption)
                     .foregroundStyle(.tertiary)
                 Spacer()
@@ -144,6 +150,12 @@ struct FeedItemCardView: View {
                 appeared = true
             }
         }
+    }
+
+    private var readingTime: String {
+        let wordCount = item.excerpt.split(separator: " ").count
+        let minutes = max(1, Int(ceil(Double(wordCount) / 200.0)))
+        return "\(minutes) min read"
     }
 
     // MARK: - Date Formatting
