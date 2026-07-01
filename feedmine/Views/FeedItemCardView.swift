@@ -178,14 +178,44 @@ struct FeedItemCardView: View {
     // MARK: - Helpers
 
     private var gradientPlaceholder: some View {
-        Rectangle()
-            .fill(
-                LinearGradient(
-                    colors: [Color(.systemGray5), Color(.systemGray4)],
-                    startPoint: .top,
-                    endPoint: .bottom
+        let colors = placeholderColors
+        return ZStack {
+            Rectangle()
+                .fill(
+                    LinearGradient(
+                        colors: colors,
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
                 )
-            )
+
+            // Category icon watermark
+            Image(systemName: placeholderIcon)
+                .font(.system(size: 48))
+                .foregroundStyle(.white.opacity(0.3))
+        }
+    }
+
+    private var placeholderColors: [Color] {
+        switch item.category.lowercased() {
+        case "tech": return [.blue.opacity(0.3), .indigo.opacity(0.2)]
+        case "news": return [.red.opacity(0.3), .orange.opacity(0.2)]
+        case "science": return [.green.opacity(0.3), .teal.opacity(0.2)]
+        case "design": return [.purple.opacity(0.3), .pink.opacity(0.2)]
+        case "culture": return [.orange.opacity(0.3), .yellow.opacity(0.2)]
+        default: return [Color(.systemGray5), Color(.systemGray4)]
+        }
+    }
+
+    private var placeholderIcon: String {
+        switch item.category.lowercased() {
+        case "tech": return "laptopcomputer"
+        case "news": return "newspaper.fill"
+        case "science": return "flask.fill"
+        case "design": return "paintpalette.fill"
+        case "culture": return "theatermasks.fill"
+        default: return "photo"
+        }
     }
 
     private func categoryColor(_ category: String) -> Color {

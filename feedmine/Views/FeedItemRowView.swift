@@ -73,8 +73,18 @@ struct FeedItemRowView: View {
     }
 
     private var thumbnailPlaceholder: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .fill(Color(.systemGray5))
+        let colors: [Color] = {
+            switch item.category.lowercased() {
+            case "tech": return [.blue.opacity(0.3), .indigo.opacity(0.2)]
+            case "news": return [.red.opacity(0.3), .orange.opacity(0.2)]
+            case "science": return [.green.opacity(0.3), .teal.opacity(0.2)]
+            case "design": return [.purple.opacity(0.3), .pink.opacity(0.2)]
+            case "culture": return [.orange.opacity(0.3), .yellow.opacity(0.2)]
+            default: return [Color(.systemGray5), Color(.systemGray4)]
+            }
+        }()
+        return RoundedRectangle(cornerRadius: 8)
+            .fill(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing))
             .frame(width: 64, height: 64)
     }
 
