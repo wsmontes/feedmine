@@ -1,0 +1,18 @@
+# Xcode
+.DS_Store
+*.xcuserdata
+xcuserdata/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift PM
+.build/
+.swiftpm/
+
+# IDE
+*.swp
+*.swo
+*~
