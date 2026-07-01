@@ -16,6 +16,8 @@ struct FeedScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             DebugStatusBar()
+            ErrorBannerView()
+            ReadingStatsView()
             SearchBarView()
             CategoryFilterBar()
             LayoutToggleView()
