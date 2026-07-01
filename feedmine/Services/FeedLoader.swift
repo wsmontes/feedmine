@@ -32,7 +32,6 @@ final class FeedLoader {
     private var sources: [FeedSource] = []
     private var reservoir: [FeedItem] = []
     private var loadedIDs: Set<String> = []
-    private var currentVisibleItemID: String?
     private var currentVisibleIndex: Int = 0
     private var hasStarted = false
 
@@ -95,6 +94,7 @@ final class FeedLoader {
         loadedIDs.removeAll()
         reservoir.removeAll()
         items.removeAll()
+        totalDiscarded = 0
 
         guard !sources.isEmpty else {
             loadingState = .idle
@@ -121,7 +121,6 @@ final class FeedLoader {
 
     func loadMoreIfNeeded(currentItem: FeedItem) async {
         // Track visible position
-        currentVisibleItemID = currentItem.id
         if let index = items.firstIndex(where: { $0.id == currentItem.id }) {
             currentVisibleIndex = index
         }
@@ -135,10 +134,12 @@ final class FeedLoader {
         }
 
         // Step 1: If reservoir is empty, fetch first
+        var didFetch = false
         if reservoir.isEmpty {
             loadingState = .loadingMore
             await refillReservoir()
             loadingState = .idle
+            didFetch = true
         }
 
         // Step 2: Move from reservoir to visible (show content we already have)
@@ -147,8 +148,8 @@ final class FeedLoader {
         // Step 3: Always trim after adding items (regardless of network fetch)
         trimBufferIfNeeded()
 
-        // Step 4: Refill reservoir in background if low
-        if reservoir.count < Self.reservoirLowWatermark {
+        // Step 4: Refill reservoir in background if low (skip if Step 1 already fetched)
+        if !didFetch && reservoir.count < Self.reservoirLowWatermark {
             loadingState = .loadingMore
             await refillReservoir()
             loadingState = .idle
