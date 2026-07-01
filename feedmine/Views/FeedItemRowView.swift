@@ -7,7 +7,7 @@ struct FeedItemRowView: View {
     @State private var appeared = false
 
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .top, spacing: 10) {
             // Thumbnail
             if let imageURL = item.imageURL, let url = URL(string: imageURL) {
                 AsyncImage(url: url) { phase in
@@ -16,7 +16,7 @@ struct FeedItemRowView: View {
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 64, height: 64)
+                            .frame(width: 56, height: 56)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .overlay(isRead ? Color.black.opacity(0.15) : nil)
                     case .failure, .empty:
@@ -25,7 +25,7 @@ struct FeedItemRowView: View {
                         thumbnailPlaceholder
                     }
                 }
-                .frame(width: 64, height: 64)
+                .frame(width: 56, height: 56)
             }
 
             // Content
@@ -60,8 +60,8 @@ struct FeedItemRowView: View {
                     .foregroundStyle(.tertiary)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 10)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 8)
         .background(Color(.systemBackground))
         .opacity(appeared ? (isRead ? 0.7 : 1) : 0)
         .offset(x: appeared ? 0 : -16)
@@ -85,7 +85,7 @@ struct FeedItemRowView: View {
         }()
         return RoundedRectangle(cornerRadius: 8)
             .fill(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing))
-            .frame(width: 64, height: 64)
+            .frame(width: 56, height: 56)
     }
 
     private func formattedDate(_ date: Date) -> String {

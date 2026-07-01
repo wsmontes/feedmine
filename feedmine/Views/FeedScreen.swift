@@ -199,8 +199,8 @@ struct FeedScreen: View {
                             }
                         }
                     }
-                    .padding(.top, 48)  // snug fit under floating header
-                    .padding(.bottom, 8)
+                    .padding(.top, 48)
+                    .safeAreaInset(edge: .bottom) { Color.clear.frame(height: 20) }
                 }
                 .overlay(alignment: .top) { Color.clear.frame(height: 0).id("top") }
 
