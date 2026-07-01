@@ -355,11 +355,13 @@ final class FeedLoader {
 
         guard loadingState == .idle else { return }
 
-        // Only trigger when near the bottom
-        guard let itemIndex = items.firstIndex(where: { $0.id == currentItem.id }),
-              itemIndex >= items.count - Self.loadMoreThreshold else {
+        // Guard: item may have been trimmed between onAppear and this execution
+        guard let itemIndex = items.firstIndex(where: { $0.id == currentItem.id }) else {
             return
         }
+
+        // Only trigger when near the bottom
+        guard itemIndex >= items.count - Self.loadMoreThreshold else { return }
 
         // Step 1: If reservoir is empty, fetch first
         var didFetch = false
