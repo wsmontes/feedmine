@@ -7,6 +7,15 @@ struct FilterSheetView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section {
+                    HStack {
+                        Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                        TextField("Search articles...", text: Binding(
+                            get: { loader.searchQuery },
+                            set: { loader.searchQuery = $0 }
+                        ))
+                    }
+                }
                 Section("Category") {
                     Button { loader.selectCategory(nil); dismiss() } label: {
                         HStack {
