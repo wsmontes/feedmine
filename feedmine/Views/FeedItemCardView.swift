@@ -7,6 +7,23 @@ struct FeedItemCardView: View {
     let isBookmarked: Bool
     var onBookmark: (() -> Void)?
     @State private var appeared = false
+    @AppStorage("fontSize") private var fontSize = "medium"
+
+    private var titleFont: Font {
+        switch fontSize {
+        case "small": return .subheadline
+        case "large": return .title3
+        default: return .headline
+        }
+    }
+
+    private var bodyFont: Font {
+        switch fontSize {
+        case "small": return .caption
+        case "large": return .body
+        default: return .subheadline
+        }
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -89,7 +106,7 @@ struct FeedItemCardView: View {
 
             // Title
             Text(item.title)
-                .font(.headline)
+                .font(titleFont)
                 .fontWeight(.semibold)
                 .lineLimit(2)
                 .foregroundStyle(isRead ? .secondary : .primary)
@@ -98,7 +115,7 @@ struct FeedItemCardView: View {
 
             // Excerpt
             Text(item.excerpt)
-                .font(.subheadline)
+                .font(bodyFont)
                 .foregroundStyle(.secondary)
                 .lineLimit(3)
                 .padding(.horizontal, 16)
