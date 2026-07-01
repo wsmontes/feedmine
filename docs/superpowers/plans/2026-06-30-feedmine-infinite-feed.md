@@ -278,17 +278,17 @@ struct FeedFetchBatch: Sendable {
 }
 ```
 
-- [ ] **Step 5: Build to verify models compile**
+- [ ] **Step 6: Build to verify models compile**
 
 Run: `xcodebuild -project feedmine.xcodeproj -scheme feedmine -destination 'platform=iOS Simulator,name=iPhone 16' build 2>&1 | grep -E 'error:|BUILD SUCCEEDED'`
 
 Expected: builds fail with `Cannot find 'FeedLoader' in scope` (from ContentView) — models compile fine, the remaining error is from Task 1's ContentView referencing FeedLoader.
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 7: Commit**
 
 ```bash
 git add feedmine/Models/
-git commit -m "feat: add FeedSource, FeedItem, OPMLParseResult, and FeedFetchBatch models
+git commit -m "feat: add feed models and fetch result types
 
 Co-Authored-By: Claude <noreply@anthropic.com>"
 ```
@@ -431,8 +431,9 @@ struct OPMLParser {
         for fileURL in opmlFiles {
             let fileName = fileURL.deletingPathExtension().lastPathComponent
             do {
-                let sources = try parseFile(url: fileURL, fallbackCategory: fileName.capitalized)
+                let (sources, invalids) = try parseFile(url: fileURL, fallbackCategory: fileName.capitalized)
                 allSources.append(contentsOf: sources)
+                invalidSourceCount += invalids
             } catch {
                 print("[OPMLParser] Failed to parse \(fileURL.lastPathComponent): \(error)")
                 failedFileCount += 1
@@ -453,7 +454,7 @@ struct OPMLParser {
 
     // MARK: - Private
 
-    private static func parseFile(url: URL, fallbackCategory: String) throws -> [FeedSource] {
+    private static func parseFile(url: URL, fallbackCategory: String) throws -> (sources: [FeedSource], invalidCount: Int) {
         let data = try Data(contentsOf: url)
         let parser = XMLParser(data: data)
         let delegate = OPMLDelegate(fallbackCategory: fallbackCategory)
@@ -464,7 +465,7 @@ struct OPMLParser {
             throw error
         }
 
-        return delegate.sources
+        return (delegate.sources, delegate.invalidSourceCount)
     }
 
     private static func deduplicateSources(_ sources: [FeedSource]) -> [FeedSource] {
@@ -502,8 +503,10 @@ struct OPMLParser {
 private final class OPMLDelegate: NSObject, XMLParserDelegate {
     let fallbackCategory: String
     var sources: [FeedSource] = []
+    var invalidSourceCount = 0
+
     private var categoryStack: [String] = []
-    private var categoryDepth = 0   // number of category containers currently open
+    private var outlinePushStack: [Bool] = []  // tracks which opens pushed a category
 
     init(fallbackCategory: String) {
         self.fallbackCategory = fallbackCategory
@@ -512,37 +515,49 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
         guard elementName == "outline" else { return }
 
-        let xmlUrl = attributeDict["xmlUrl"] ?? ""
+        let xmlUrl = attributeDict["xmlUrl"]?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let title = attributeDict["title"] ?? attributeDict["text"] ?? ""
 
         if xmlUrl.isEmpty {
-            // Category container — push onto stack
+            // Category container — push onto stack, record that we pushed
             let category = attributeDict["title"] ?? attributeDict["text"]
             if let cat = category, !cat.isEmpty {
                 categoryStack.append(cat)
-                categoryDepth += 1
+                outlinePushStack.append(true)
+            } else {
+                outlinePushStack.append(false)
             }
-        } else {
-            // Feed source — use deepest category on stack, or fallback
-            let category = categoryStack.last ?? fallbackCategory
-            let source = FeedSource(
+            return
+        }
+
+        // Feed source — did NOT push a category
+        outlinePushStack.append(false)
+
+        // Validate URL has scheme and host
+        guard let components = URLComponents(string: xmlUrl),
+              let scheme = components.scheme?.lowercased(),
+              scheme == "http" || scheme == "https",
+              components.host != nil else {
+            invalidSourceCount += 1
+            return
+        }
+
+        let category = categoryStack.last ?? fallbackCategory
+        sources.append(
+            FeedSource(
                 title: title.isEmpty ? category : title,
                 url: xmlUrl,
                 category: category
             )
-            sources.append(source)
-        }
+        )
     }
 
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         guard elementName == "outline" else { return }
-        // Pop one category level when leaving a container we pushed into.
-        // We don't have attributes here, so we use depth to know if there's
-        // a category to pop. This is approximate but correct for OPML with
-        // category containers that are always one level deep.
-        if categoryDepth > 0 {
+
+        let didPushCategory = outlinePushStack.popLast() ?? false
+        if didPushCategory, !categoryStack.isEmpty {
             categoryStack.removeLast()
-            categoryDepth -= 1
         }
     }
 }
@@ -699,7 +714,8 @@ actor RSSFetcher {
             switch feed {
             case .atom(let atomFeed):
                 return (atomFeed.entries ?? []).compactMap { entry in
-                    makeItem(
+                    let rawContent = entry.content?.value ?? entry.summary?.value ?? ""
+                    return makeItem(
                         guid: entry.id,
                         link: entry.links?.first?.attributes?.href ?? entry.id,
                         title: entry.title,
@@ -707,7 +723,7 @@ actor RSSFetcher {
                         source: source,
                         rawDescription: entry.summary?.value ?? entry.content?.value,
                         rawContent: entry.content?.value,
-                        imageURL: nil  // Atom images handled separately
+                        imageURL: extractFirstImageFromHTML(rawContent)
                     )
                 }
             case .rss(let rssFeed):
@@ -894,7 +910,8 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 Create `feedmine/Services/FeedLoader.swift`:
 
 ```swift
-import SwiftUI
+import Foundation
+import Observation
 
 enum FeedLoadingState {
     case idle
@@ -915,6 +932,7 @@ final class FeedLoader {
     private(set) var sourceCount = 0
     private(set) var invalidSourceCount = 0
     private(set) var opmlErrorCount = 0
+    private(set) var duplicateSourceCount = 0
     private(set) var reservoirCount = 0
     private(set) var totalFetched = 0
     private(set) var totalDiscarded = 0
@@ -952,6 +970,7 @@ final class FeedLoader {
         opmlFileCount = parseResult.fileCount
         opmlErrorCount = parseResult.failedFileCount
         invalidSourceCount = parseResult.invalidSourceCount
+        duplicateSourceCount = parseResult.duplicateSourceCount
         sourceCount = sources.count
 
         guard !sources.isEmpty else {
@@ -1164,6 +1183,10 @@ struct DebugStatusBar: View {
                 Text("\(loader.sourceCount) sources")
                 Text(" · ")
                 Text("\(loader.opmlFileCount) files")
+                if loader.duplicateSourceCount > 0 {
+                    Text(" · ")
+                    Text("\(loader.duplicateSourceCount) duplicates")
+                }
                 Text(" · ")
                 Text("\(loader.totalFetched) fetched")
             }
