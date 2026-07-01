@@ -39,6 +39,7 @@ struct FeedScreen: View {
             ReadingStatsView()
             SearchBarView()
             CategoryFilterBar()
+            MoodFilterBar()
             HStack {
                 Button {
                     showSources = true

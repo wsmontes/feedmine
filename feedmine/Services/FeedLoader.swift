@@ -20,12 +20,66 @@ final class FeedLoader {
     enum FeedLayout { case card, list }
     var layout: FeedLayout = .card
 
+    /// Mood filter
+    enum MoodFilter: String, CaseIterable, Identifiable {
+        case all = "All"
+        case serious = "Serious"
+        case fun = "Fun"
+        case technical = "Technical"
+        case inspiring = "Inspiring"
+
+        var id: String { rawValue }
+
+        var icon: String {
+            switch self {
+            case .all: return "circle.grid.3x3.fill"
+            case .serious: return "newspaper.fill"
+            case .fun: return "sparkles"
+            case .technical: return "gearshape.2.fill"
+            case .inspiring: return "sun.max.fill"
+            }
+        }
+
+        func matches(_ title: String) -> Bool {
+            let lower = title.lowercased()
+            switch self {
+            case .all: return true
+            case .serious:
+                return lower.contains("crisis") || lower.contains("war") || lower.contains("death") ||
+                       lower.contains("killed") || lower.contains("attack") || lower.contains("emergency") ||
+                       lower.contains("ban") || lower.contains("ruling") || lower.contains("court")
+            case .fun:
+                return lower.contains("fun") || lower.contains("amazing") || lower.contains("incredible") ||
+                       lower.contains("wow") || lower.contains("hilarious") || lower.contains("funny") ||
+                       lower.contains("adorable") || lower.contains("genius") || lower.contains("brilliant")
+            case .technical:
+                return lower.contains("ai") || lower.contains("code") || lower.contains("data") ||
+                       lower.contains("algorithm") || lower.contains("startup") || lower.contains("tech") ||
+                       lower.contains("software") || lower.contains("hardware") || lower.contains("api") ||
+                       lower.contains("quantum") || lower.contains("robot") || lower.contains("chip")
+            case .inspiring:
+                return lower.contains("discovered") || lower.contains("breakthrough") || lower.contains("solved") ||
+                       lower.contains("cure") || lower.contains("hope") || lower.contains("inspiring") ||
+                       lower.contains("hero") || lower.contains("changed") || lower.contains("revolutionary")
+            }
+        }
+    }
+
+    var selectedMood: MoodFilter = .all
+
+    func selectMood(_ mood: MoodFilter) {
+        selectedMood = (selectedMood == mood) ? .all : mood
+    }
+
     /// Search query for filtering by title and excerpt
     var searchQuery = ""
 
-    /// Items filtered by selected category AND search query
+    /// Items filtered by selected mood, category, AND search query
     var filteredItems: [FeedItem] {
         var result = items
+        if selectedMood != .all {
+            result = result.filter { selectedMood.matches($0.title) }
+        }
         if let category = selectedCategory {
             result = result.filter { $0.category.lowercased() == category.lowercased() }
         }

@@ -18,6 +18,7 @@
 		43B6A1B9CC83C244BD8BCDDB /* news.opml in Resources */ = {isa = PBXBuildFile; fileRef = EE27C8C93B1630F6121E3AB9 /* news.opml */; };
 		4551C42E546633FC57E0E1A4 /* FeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699695CC102526CA59DD5315 /* FeedScreen.swift */; };
 		4A12A481029D04C487FC6E43 /* FeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABBCA0F4F9C3C20E2480EBA /* FeedItemView.swift */; };
+		4CEB2E678E27BE6121B1B11C /* MoodFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB92C73A85838EB4BC12DCB /* MoodFilterBar.swift */; };
 		50CD8A545B5E40E113B133E9 /* culture.opml in Resources */ = {isa = PBXBuildFile; fileRef = 233EDA0AE4F5AA62EB6F7A0F /* culture.opml */; };
 		510351311C294B4E1F7824D6 /* tech.opml in Resources */ = {isa = PBXBuildFile; fileRef = B0C68ECC3CC970CA77B8583D /* tech.opml */; };
 		64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */; };
@@ -54,6 +55,7 @@
 		5B17523EA785A32CBF906D42 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		66AAEEDBB109C8C6CAC336D6 /* RSSFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFetcher.swift; sourceTree = "<group>"; };
 		699695CC102526CA59DD5315 /* FeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreen.swift; sourceTree = "<group>"; };
+		6CB92C73A85838EB4BC12DCB /* MoodFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodFilterBar.swift; sourceTree = "<group>"; };
 		87F611B28256E9442168C776 /* FeedItemCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemCardView.swift; sourceTree = "<group>"; };
 		8A4AA074E3B4BD7207D77EF8 /* GreetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingHeaderView.swift; sourceTree = "<group>"; };
 		8AFB811A6CBD76505CA4A4EB /* ErrorBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBannerView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				4ABBCA0F4F9C3C20E2480EBA /* FeedItemView.swift */,
 				699695CC102526CA59DD5315 /* FeedScreen.swift */,
 				8A4AA074E3B4BD7207D77EF8 /* GreetingHeaderView.swift */,
+				6CB92C73A85838EB4BC12DCB /* MoodFilterBar.swift */,
 				EFEA40E7DC7B24A5374AD399 /* OnboardingTipsView.swift */,
 				EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */,
 				93A1E8E7D34C1FBFB2EA6CC6 /* SearchBarView.swift */,
@@ -275,6 +278,7 @@
 				4551C42E546633FC57E0E1A4 /* FeedScreen.swift in Sources */,
 				7E39E605E7B9F579235AE061 /* FeedSource.swift in Sources */,
 				D876A028082E2FA9FCCB4FB8 /* GreetingHeaderView.swift in Sources */,
+				4CEB2E678E27BE6121B1B11C /* MoodFilterBar.swift in Sources */,
 				F7849543D7C7A7076E8F8DEA /* NetworkMonitor.swift in Sources */,
 				383519A7AFEFE67C6FB585A9 /* OPMLParseResult.swift in Sources */,
 				3AEC9DE43D74BC03972B2C0B /* OPMLParser.swift in Sources */,
