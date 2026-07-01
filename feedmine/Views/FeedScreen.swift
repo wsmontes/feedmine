@@ -58,6 +58,12 @@ struct FeedScreen: View {
             OnboardingTipsView()
         }
         .task { await loader.start(); updateBadge() }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            if let lastRefresh = loader.lastRefreshDate,
+               Date().timeIntervalSince(lastRefresh) > 900 {  // 15 min stale threshold
+                Task { await loader.refresh() }
+            }
+        }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
             loader.emergencyTrim()
         }
