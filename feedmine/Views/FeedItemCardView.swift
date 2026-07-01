@@ -1,7 +1,10 @@
 import SwiftUI
+import UIKit
 
 struct FeedItemCardView: View {
     let item: FeedItem
+    let isRead: Bool
+    var onOpen: (() -> Void)?
     @State private var appeared = false
 
     var body: some View {
@@ -16,6 +19,10 @@ struct FeedItemCardView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(height: 180)
                             .clipped()
+                            .overlay(
+                                isRead ?
+                                Color.black.opacity(0.15) : nil
+                            )
                     case .failure, .empty:
                         gradientPlaceholder
                             .frame(height: 180)
@@ -43,6 +50,15 @@ struct FeedItemCardView: View {
                 Text(item.sourceTitle)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+
+                Spacer()
+
+                if isRead {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.caption)
+                        .foregroundStyle(.green)
+                        .transition(.scale.combined(with: .opacity))
+                }
             }
             .padding(.horizontal, 16)
             .padding(.top, 12)
@@ -52,6 +68,7 @@ struct FeedItemCardView: View {
                 .font(.headline)
                 .fontWeight(.semibold)
                 .lineLimit(2)
+                .foregroundStyle(isRead ? .secondary : .primary)
                 .padding(.horizontal, 16)
                 .padding(.top, 10)
 
@@ -65,10 +82,7 @@ struct FeedItemCardView: View {
 
             // Relative date
             HStack {
-                Text(item.publishedAt, style: .relative)
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
-                Text("ago")
+                Text(formattedDate(item.publishedAt))
                     .font(.caption)
                     .foregroundStyle(.tertiary)
                 Spacer()
@@ -80,14 +94,56 @@ struct FeedItemCardView: View {
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .shadow(color: .black.opacity(0.06), radius: 10, y: 3)
-        .opacity(appeared ? 1 : 0)
+        .opacity(appeared ? (isRead ? 0.7 : 1) : 0)
         .offset(y: appeared ? 0 : 16)
+        .contextMenu {
+            Button {
+                let url = URL(string: item.url)
+                UIPasteboard.general.url = url
+                let impact = UIImpactFeedbackGenerator(style: .light)
+                impact.impactOccurred()
+            } label: {
+                Label("Copy Link", systemImage: "doc.on.doc")
+            }
+
+            Button {
+                if let url = URL(string: item.url) {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                Label("Open in Safari", systemImage: "safari")
+            }
+
+            ShareLink(item: URL(string: item.url) ?? URL(string: "https://feedmine.app")!) {
+                Label("Share", systemImage: "square.and.arrow.up")
+            }
+        }
         .onAppear {
             withAnimation(.easeOut(duration: 0.35)) {
                 appeared = true
             }
         }
     }
+
+    // MARK: - Date Formatting
+
+    private func formattedDate(_ date: Date) -> String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        let relative = formatter.localizedString(for: date, relativeTo: Date())
+
+        // If within last 7 days, use relative. Otherwise use short date.
+        if Date().timeIntervalSince(date) < 7 * 24 * 3600 {
+            return relative
+        }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        return dateFormatter.string(from: date)
+    }
+
+    // MARK: - Helpers
 
     private var gradientPlaceholder: some View {
         Rectangle()

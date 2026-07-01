@@ -25,7 +25,10 @@ struct FeedScreen: View {
                 ScrollView {
                     LazyVStack(spacing: 12) {
                         ForEach(Array(loader.filteredItems.enumerated()), id: \.element.id) { index, item in
-                            FeedItemCardView(item: item)
+                            FeedItemCardView(
+                                item: item,
+                                isRead: loader.isRead(item.id)
+                            )
                                 .padding(.horizontal, 12)
                                 .scrollTransition(.animated(.spring(duration: 0.4))) { content, phase in
                                     content
@@ -35,6 +38,7 @@ struct FeedScreen: View {
                                 .onTapGesture {
                                     let impact = UIImpactFeedbackGenerator(style: .light)
                                     impact.impactOccurred()
+                                    loader.markAsRead(item.id)
                                     if let url = URL(string: item.url) {
                                         selectedArticle = ArticleRoute(url: url)
                                     }

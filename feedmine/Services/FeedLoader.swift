@@ -28,6 +28,17 @@ final class FeedLoader {
         return cats
     }
 
+    /// Track which items have been opened
+    private(set) var readItemIDs: Set<String> = []
+
+    func markAsRead(_ itemID: String) {
+        readItemIDs.insert(itemID)
+    }
+
+    func isRead(_ itemID: String) -> Bool {
+        readItemIDs.contains(itemID)
+    }
+
     // Debug counters
     private(set) var opmlFileCount = 0
     private(set) var sourceCount = 0
