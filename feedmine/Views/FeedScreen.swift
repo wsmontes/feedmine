@@ -160,18 +160,49 @@ struct FeedScreen: View {
 // MARK: - Skeleton Loading View
 
 struct SkeletonLoadingView: View {
+    @State private var messageIndex = 0
+
+    private let messages = [
+        "Brewing coffee...",
+        "Scanning the internet...",
+        "Reading RSS feeds...",
+        "Finding the best stories...",
+        "Loading your feed...",
+        "Checking sources...",
+        "Almost there...",
+        "Curating articles...",
+        "Tuning antennas...",
+        "Gathering news..."
+    ]
+
     var body: some View {
-        ScrollView {
-            VStack(spacing: 12) {
-                ForEach(0..<6, id: \.self) { _ in
-                    SkeletonCardView()
-                        .padding(.horizontal, 12)
+        VStack(spacing: 0) {
+            Text(messages[messageIndex])
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .padding(.vertical, 16)
+                .transition(.opacity.combined(with: .move(edge: .top)))
+                .id(messageIndex)
+
+            ScrollView {
+                VStack(spacing: 12) {
+                    ForEach(0..<6, id: \.self) { _ in
+                        SkeletonCardView()
+                            .padding(.horizontal, 12)
+                    }
                 }
+                .padding(.vertical, 8)
             }
-            .padding(.vertical, 8)
         }
         .disabled(true)
         .accessibilityLabel("Loading articles")
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { timer in
+                withAnimation(.easeInOut(duration: 0.4)) {
+                    messageIndex = (messageIndex + 1) % messages.count
+                }
+            }
+        }
     }
 }
 
