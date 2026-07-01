@@ -147,6 +147,9 @@ struct FeedScreen: View {
             SourceManagementView()
         }
         .tint(accentColor)
+        .overlay {
+            OnboardingTipsView()
+        }
     }
 
     private func updateBadge() {

@@ -11,6 +11,7 @@
 		0858C92C6A4B7A9016F5C303 /* FeedItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F611B28256E9442168C776 /* FeedItemCardView.swift */; };
 		0D172F74FC571B2B1C682C66 /* DebugStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30391A30EB01CF526317DA2 /* DebugStatusBar.swift */; };
 		0D7D2F35B303B7FA834EE8B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1685743420892F86C34AC8 /* ContentView.swift */; };
+		240602E100F6F50B835E9420 /* OnboardingTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA40E7DC7B24A5374AD399 /* OnboardingTipsView.swift */; };
 		31C095E7266DBFAABA880F0C /* FeedFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */; };
 		383519A7AFEFE67C6FB585A9 /* OPMLParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4075C82BAA3F80E12152684C /* OPMLParseResult.swift */; };
 		3AEC9DE43D74BC03972B2C0B /* OPMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43637F484CFF16738302685 /* OPMLParser.swift */; };
@@ -68,6 +69,7 @@
 		E9887174DAFF5C97D2E39933 /* feedmine.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = feedmine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingStatsView.swift; sourceTree = "<group>"; };
 		EE27C8C93B1630F6121E3AB9 /* news.opml */ = {isa = PBXFileReference; path = news.opml; sourceTree = "<group>"; };
+		EFEA40E7DC7B24A5374AD399 /* OnboardingTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTipsView.swift; sourceTree = "<group>"; };
 		F30391A30EB01CF526317DA2 /* DebugStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugStatusBar.swift; sourceTree = "<group>"; };
 		F9A7D55AFC80E67D103AC583 /* CategoryFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterBar.swift; sourceTree = "<group>"; };
 		FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetchResult.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				4ABBCA0F4F9C3C20E2480EBA /* FeedItemView.swift */,
 				699695CC102526CA59DD5315 /* FeedScreen.swift */,
 				8A4AA074E3B4BD7207D77EF8 /* GreetingHeaderView.swift */,
+				EFEA40E7DC7B24A5374AD399 /* OnboardingTipsView.swift */,
 				EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */,
 				93A1E8E7D34C1FBFB2EA6CC6 /* SearchBarView.swift */,
 				C534C45AB248D0B885533C04 /* SettingsSheetView.swift */,
@@ -275,6 +278,7 @@
 				F7849543D7C7A7076E8F8DEA /* NetworkMonitor.swift in Sources */,
 				383519A7AFEFE67C6FB585A9 /* OPMLParseResult.swift in Sources */,
 				3AEC9DE43D74BC03972B2C0B /* OPMLParser.swift in Sources */,
+				240602E100F6F50B835E9420 /* OnboardingTipsView.swift in Sources */,
 				7D50E979F88694C1588392D8 /* RSSFetcher.swift in Sources */,
 				64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */,
 				6986DBDE303222A19B7A5798 /* SearchBarView.swift in Sources */,
