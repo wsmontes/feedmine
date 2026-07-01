@@ -9,6 +9,7 @@ struct SettingsSheetView: View {
 
     @State private var showClearReadConfirmation = false
     @State private var showClearBookmarksConfirmation = false
+    @State private var showResetConfirmation = false
 
     private var topCategory: String? {
         let readItems = loader.items.filter { loader.isRead($0.id) }
@@ -121,6 +122,52 @@ struct SettingsSheetView: View {
                             withAnimation {
                                 loader.bookmarkedIDs.removeAll()
                             }
+                        }
+                    }
+                }
+
+                // MARK: - Data Management
+                Section("Data") {
+                    Button {
+                        let state = loader.buildState()
+                        let json = (try? JSONEncoder().encode(state)) ?? Data()
+                        let url = FileManager.default.temporaryDirectory.appendingPathComponent("feedmine_data.json")
+                        try? json.write(to: url)
+                        let av = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let root = windowScene.windows.first?.rootViewController {
+                            root.present(av, animated: true)
+                        }
+                    } label: {
+                        Label("Export My Data", systemImage: "arrow.up.doc.fill")
+                    }
+
+                    Button(role: .destructive) {
+                        showResetConfirmation = true
+                    } label: {
+                        Label("Reset All Data", systemImage: "trash")
+                    }
+                    .confirmationDialog(
+                        "This will delete all bookmarks, read history, and source configuration. This cannot be undone.",
+                        isPresented: $showResetConfirmation
+                    ) {
+                        Button("Reset Everything", role: .destructive) {
+                            withAnimation {
+                                loader.readItemIDs.removeAll()
+                                loader.bookmarkedIDs.removeAll()
+                                loader.disabledSourceIDs.removeAll()
+                                PersistenceManager.shared.save(loader.buildState())
+                            }
+                        }
+                    }
+
+                    if let date = loader.lastRefreshDate {
+                        HStack {
+                            Text("Last saved")
+                            Spacer()
+                            Text(date, style: .relative)
+                                .foregroundStyle(.secondary)
+                                .font(.caption)
                         }
                     }
                 }
