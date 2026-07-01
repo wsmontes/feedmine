@@ -23,6 +23,7 @@
 		7E39E605E7B9F579235AE061 /* FeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E7A90D2773F4370B149BA /* FeedSource.swift */; };
 		9BC46E0AC8B093D6E767D179 /* design.opml in Resources */ = {isa = PBXBuildFile; fileRef = 2B8DF9ED1A7665F2E2EC6FB4 /* design.opml */; };
 		ABB4009C5F2F165124C714B7 /* science.opml in Resources */ = {isa = PBXBuildFile; fileRef = 3C315794D4CF714EFD5E693E /* science.opml */; };
+		C04601FB04B8DEB407C4AF69 /* FeedItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA62DAEEEDC39D6FA1CFF4F /* FeedItemRowView.swift */; };
 		C45F9D00A3268B1250B39812 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89B6467E341514F26C040B /* FeedLoader.swift */; };
 		CECBF1D00FA07F3ADAB895AB /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B17523EA785A32CBF906D42 /* FeedItem.swift */; };
 		CF36595BD78C6471862CCDFA /* Feeds in Resources */ = {isa = PBXBuildFile; fileRef = C9D10487C40978550CFC89E0 /* Feeds */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		1595D303FD10CB2456A989DC /* FeedFetchBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetchBatch.swift; sourceTree = "<group>"; };
+		1AA62DAEEEDC39D6FA1CFF4F /* FeedItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemRowView.swift; sourceTree = "<group>"; };
 		1B89B6467E341514F26C040B /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		233EDA0AE4F5AA62EB6F7A0F /* culture.opml */ = {isa = PBXFileReference; path = culture.opml; sourceTree = "<group>"; };
 		2B8DF9ED1A7665F2E2EC6FB4 /* design.opml */ = {isa = PBXFileReference; path = design.opml; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				F9A7D55AFC80E67D103AC583 /* CategoryFilterBar.swift */,
 				F30391A30EB01CF526317DA2 /* DebugStatusBar.swift */,
 				87F611B28256E9442168C776 /* FeedItemCardView.swift */,
+				1AA62DAEEEDC39D6FA1CFF4F /* FeedItemRowView.swift */,
 				699695CC102526CA59DD5315 /* FeedScreen.swift */,
 				93A1E8E7D34C1FBFB2EA6CC6 /* SearchBarView.swift */,
 			);
@@ -241,6 +244,7 @@
 				31C095E7266DBFAABA880F0C /* FeedFetchResult.swift in Sources */,
 				CECBF1D00FA07F3ADAB895AB /* FeedItem.swift in Sources */,
 				0858C92C6A4B7A9016F5C303 /* FeedItemCardView.swift in Sources */,
+				C04601FB04B8DEB407C4AF69 /* FeedItemRowView.swift in Sources */,
 				C45F9D00A3268B1250B39812 /* FeedLoader.swift in Sources */,
 				4551C42E546633FC57E0E1A4 /* FeedScreen.swift in Sources */,
 				7E39E605E7B9F579235AE061 /* FeedSource.swift in Sources */,

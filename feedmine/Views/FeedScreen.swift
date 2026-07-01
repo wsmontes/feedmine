@@ -17,6 +17,7 @@ struct FeedScreen: View {
             DebugStatusBar()
             SearchBarView()
             CategoryFilterBar()
+            LayoutToggleView()
 
             if loader.loadingState == .initial && loader.items.isEmpty {
                 SkeletonLoadingView()
@@ -24,34 +25,63 @@ struct FeedScreen: View {
                 EmptyFilterView(category: loader.selectedCategory ?? "selected")
             } else {
                 ScrollView {
-                    LazyVStack(spacing: 12) {
+                    LazyVStack(spacing: loader.layout == .card ? 12 : 1) {
                         ForEach(Array(loader.filteredItems.enumerated()), id: \.element.id) { index, item in
-                            FeedItemCardView(
-                                item: item,
-                                isRead: loader.isRead(item.id),
-                                isBookmarked: loader.isBookmarked(item.id),
-                                onBookmark: { loader.toggleBookmark(item.id) }
-                            )
-                                .padding(.horizontal, 12)
-                                .scrollTransition(.animated(.spring(duration: 0.4))) { content, phase in
-                                    content
-                                        .opacity(phase == .identity ? 1 : 0.5)
-                                        .scaleEffect(phase == .identity ? 1 : 0.95)
+                            Group {
+                                if loader.layout == .card {
+                                    FeedItemCardView(
+                                        item: item,
+                                        isRead: loader.isRead(item.id),
+                                        isBookmarked: loader.isBookmarked(item.id),
+                                        onBookmark: { loader.toggleBookmark(item.id) }
+                                    )
+                                    .padding(.horizontal, 12)
+                                } else {
+                                    FeedItemRowView(
+                                        item: item,
+                                        isRead: loader.isRead(item.id),
+                                        isBookmarked: loader.isBookmarked(item.id)
+                                    )
+                                    Divider()
                                 }
-                                .onTapGesture {
-                                    let impact = UIImpactFeedbackGenerator(style: .light)
-                                    impact.impactOccurred()
-                                    loader.markAsRead(item.id)
-                                    if let url = URL(string: item.url) {
-                                        selectedArticle = ArticleRoute(url: url)
-                                    }
+                            }
+                            .scrollTransition(.animated(.spring(duration: 0.4))) { content, phase in
+                                content
+                                    .opacity(phase == .identity ? 1 : 0.5)
+                                    .scaleEffect(phase == .identity ? 1 : 0.95)
+                            }
+                            .onTapGesture {
+                                let impact = UIImpactFeedbackGenerator(style: .light)
+                                impact.impactOccurred()
+                                loader.markAsRead(item.id)
+                                if let url = URL(string: item.url) {
+                                    selectedArticle = ArticleRoute(url: url)
                                 }
-                                .onAppear {
-                                    appearedItemIDs.insert(item.id)
-                                    Task {
-                                        await loader.loadMoreIfNeeded(currentItem: item)
-                                    }
+                            }
+                            .contextMenu {
+                                Button {
+                                    loader.toggleBookmark(item.id)
+                                } label: {
+                                    Label(
+                                        loader.isBookmarked(item.id) ? "Remove Bookmark" : "Bookmark",
+                                        systemImage: loader.isBookmarked(item.id) ? "bookmark.slash" : "bookmark"
+                                    )
                                 }
+                                Button {
+                                    UIPasteboard.general.url = URL(string: item.url)
+                                } label: {
+                                    Label("Copy Link", systemImage: "doc.on.doc")
+                                }
+                                ShareLink(item: URL(string: item.url) ?? URL(string: "https://feedmine.app")!) {
+                                    Label("Share", systemImage: "square.and.arrow.up")
+                                }
+                            }
+                            .onAppear {
+                                appearedItemIDs.insert(item.id)
+                                Task {
+                                    await loader.loadMoreIfNeeded(currentItem: item)
+                                }
+                            }
                         }
                     }
                     .padding(.vertical, 8)
@@ -149,6 +179,59 @@ struct SkeletonCardView: View {
             startPoint: isAnimating ? .topTrailing : .topLeading,
             endPoint: isAnimating ? .bottomLeading : .bottomTrailing
         )
+    }
+}
+
+// MARK: - Layout Toggle
+
+struct LayoutToggleView: View {
+    @Environment(FeedLoader.self) private var loader
+
+    var body: some View {
+        HStack {
+            Spacer()
+            HStack(spacing: 0) {
+                Button {
+                    withAnimation(.easeInOut(duration: 0.25)) {
+                        loader.layout = .card
+                    }
+                } label: {
+                    Image(systemName: "rectangle.grid.1x2.fill")
+                        .font(.caption)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(loader.layout == .card ? .white : .secondary)
+                .background(
+                    loader.layout == .card ?
+                    Color.blue : Color.clear
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+
+                Button {
+                    withAnimation(.easeInOut(duration: 0.25)) {
+                        loader.layout = .list
+                    }
+                } label: {
+                    Image(systemName: "list.bullet")
+                        .font(.caption)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(loader.layout == .list ? .white : .secondary)
+                .background(
+                    loader.layout == .list ?
+                    Color.blue : Color.clear
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+            }
+            .background(Color(.systemGray6))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 4)
     }
 }
 

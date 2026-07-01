@@ -16,6 +16,10 @@ final class FeedLoader {
     private(set) var loadingState: FeedLoadingState = .idle
     private(set) var selectedCategory: String? = nil
 
+    /// Layout mode: card or compact list
+    enum FeedLayout { case card, list }
+    var layout: FeedLayout = .card
+
     /// Search query for filtering by title and excerpt
     var searchQuery = ""
 
