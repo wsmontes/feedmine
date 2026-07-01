@@ -259,11 +259,19 @@ struct FeedScreen: View {
 
 struct CompactDebugInfo: View {
     @Environment(FeedLoader.self) private var loader
+    private var unread: Int { loader.items.count - loader.readItemIDs.count }
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: 6) {
             Circle().fill(loader.loadingState == .idle ? Color.green : Color.blue).frame(width: 6, height: 6)
             Text("\(loader.filteredItems.count)")
                 .font(.caption).fontWeight(.semibold).contentTransition(.numericText())
+            if unread > 0 {
+                Text("\(unread) new")
+                    .font(.caption2).fontWeight(.bold)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 6).padding(.vertical, 2)
+                    .background(Capsule().fill(.blue))
+            }
             if loader.fetchErrorCount > 0 {
                 Text("·\(loader.fetchErrorCount) err").font(.caption2).foregroundStyle(.orange)
             }
