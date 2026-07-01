@@ -2,6 +2,7 @@ import SwiftUI
 
 struct FeedItemCardView: View {
     let item: FeedItem
+    @State private var appeared = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -16,10 +17,10 @@ struct FeedItemCardView: View {
                             .frame(height: 180)
                             .clipped()
                     case .failure, .empty:
-                        Color.gray.opacity(0.2)
+                        gradientPlaceholder
                             .frame(height: 180)
                     @unknown default:
-                        Color.gray.opacity(0.2)
+                        gradientPlaceholder
                             .frame(height: 180)
                     }
                 }
@@ -29,10 +30,11 @@ struct FeedItemCardView: View {
             HStack(spacing: 4) {
                 Text(item.category)
                     .font(.caption)
-                    .fontWeight(.medium)
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(categoryColor(item.category).opacity(0.15))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(categoryColor(item.category))
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(categoryColor(item.category).opacity(0.12))
                     .clipShape(Capsule())
 
                 Text("·")
@@ -48,9 +50,10 @@ struct FeedItemCardView: View {
             // Title
             Text(item.title)
                 .font(.headline)
+                .fontWeight(.semibold)
                 .lineLimit(2)
                 .padding(.horizontal, 16)
-                .padding(.top, 8)
+                .padding(.top, 10)
 
             // Excerpt
             Text(item.excerpt)
@@ -58,17 +61,46 @@ struct FeedItemCardView: View {
                 .foregroundStyle(.secondary)
                 .lineLimit(3)
                 .padding(.horizontal, 16)
-                .padding(.top, 4)
+                .padding(.top, 6)
 
             // Relative date
-            Text(item.publishedAt, style: .relative)
-                .font(.caption)
-                .foregroundStyle(.tertiary)
-                .padding(.horizontal, 16)
-                .padding(.top, 4)
-                .padding(.bottom, 16)
+            HStack {
+                Text(item.publishedAt, style: .relative)
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                Text("ago")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                Spacer()
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .padding(.bottom, 16)
         }
         .background(Color(.systemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .shadow(color: .black.opacity(0.06), radius: 10, y: 3)
+        .opacity(appeared ? 1 : 0)
+        .offset(y: appeared ? 0 : 16)
+        .onAppear {
+            withAnimation(.easeOut(duration: 0.35)) {
+                appeared = true
+            }
+        }
+    }
+
+    private var gradientPlaceholder: some View {
+        Rectangle()
+            .fill(
+                LinearGradient(
+                    colors: [
+                        Color(.systemGray5),
+                        Color(.systemGray4)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
     }
 
     private func categoryColor(_ category: String) -> Color {
