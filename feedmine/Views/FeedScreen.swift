@@ -11,6 +11,7 @@ struct FeedScreen: View {
     @Environment(FeedLoader.self) private var loader
     @State private var selectedArticle: ArticleRoute?
     @State private var appearedItemIDs: Set<String> = []
+    @State private var showScrollButton = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -24,67 +25,107 @@ struct FeedScreen: View {
             } else if loader.filteredItems.isEmpty && !loader.items.isEmpty {
                 EmptyFilterView(category: loader.selectedCategory ?? "selected")
             } else {
-                ScrollView {
-                    LazyVStack(spacing: loader.layout == .card ? 12 : 1) {
-                        ForEach(Array(loader.filteredItems.enumerated()), id: \.element.id) { index, item in
-                            Group {
-                                if loader.layout == .card {
-                                    FeedItemCardView(
-                                        item: item,
-                                        isRead: loader.isRead(item.id),
-                                        isBookmarked: loader.isBookmarked(item.id),
-                                        onBookmark: { loader.toggleBookmark(item.id) }
-                                    )
-                                    .padding(.horizontal, 12)
-                                } else {
-                                    FeedItemRowView(
-                                        item: item,
-                                        isRead: loader.isRead(item.id),
-                                        isBookmarked: loader.isBookmarked(item.id)
-                                    )
-                                    Divider()
+                ZStack(alignment: .bottomTrailing) {
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            LazyVStack(spacing: loader.layout == .card ? 12 : 1) {
+                                ForEach(Array(loader.filteredItems.enumerated()), id: \.element.id) { index, item in
+                                    Group {
+                                        if loader.layout == .card {
+                                            FeedItemCardView(
+                                                item: item,
+                                                isRead: loader.isRead(item.id),
+                                                isBookmarked: loader.isBookmarked(item.id),
+                                                onBookmark: { loader.toggleBookmark(item.id) }
+                                            )
+                                            .padding(.horizontal, 12)
+                                        } else {
+                                            FeedItemRowView(
+                                                item: item,
+                                                isRead: loader.isRead(item.id),
+                                                isBookmarked: loader.isBookmarked(item.id)
+                                            )
+                                            Divider()
+                                        }
+                                    }
+                                    .id(item.id)
+                                    .scrollTransition(.animated(.spring(duration: 0.4))) { content, phase in
+                                        content
+                                            .opacity(phase == .identity ? 1 : 0.5)
+                                            .scaleEffect(phase == .identity ? 1 : 0.95)
+                                    }
+                                    .onTapGesture {
+                                        let impact = UIImpactFeedbackGenerator(style: .light)
+                                        impact.impactOccurred()
+                                        loader.markAsRead(item.id)
+                                        if let url = URL(string: item.url) {
+                                            selectedArticle = ArticleRoute(url: url)
+                                        }
+                                    }
+                                    .contextMenu {
+                                        Button {
+                                            loader.toggleBookmark(item.id)
+                                        } label: {
+                                            Label(
+                                                loader.isBookmarked(item.id) ? "Remove Bookmark" : "Bookmark",
+                                                systemImage: loader.isBookmarked(item.id) ? "bookmark.slash" : "bookmark"
+                                            )
+                                        }
+                                        Button {
+                                            UIPasteboard.general.url = URL(string: item.url)
+                                        } label: {
+                                            Label("Copy Link", systemImage: "doc.on.doc")
+                                        }
+                                        ShareLink(item: URL(string: item.url) ?? URL(string: "https://feedmine.app")!) {
+                                            Label("Share", systemImage: "square.and.arrow.up")
+                                        }
+                                    }
+                                    .accessibilityElement(children: .combine)
+                                    .accessibilityLabel("\(item.title) from \(item.sourceTitle)")
+                                    .accessibilityAddTraits(loader.isRead(item.id) ? [] : .isHeader)
+                                    .onAppear {
+                                        appearedItemIDs.insert(item.id)
+                                        showScrollButton = index > 20
+                                        Task {
+                                            await loader.loadMoreIfNeeded(currentItem: item)
+                                        }
+                                    }
                                 }
                             }
-                            .scrollTransition(.animated(.spring(duration: 0.4))) { content, phase in
-                                content
-                                    .opacity(phase == .identity ? 1 : 0.5)
-                                    .scaleEffect(phase == .identity ? 1 : 0.95)
-                            }
-                            .onTapGesture {
-                                let impact = UIImpactFeedbackGenerator(style: .light)
+                            .padding(.vertical, 8)
+                        }
+                        .overlay(alignment: .top) {
+                            // Anchor for scroll-to-top
+                            Color.clear.frame(height: 0).id("top")
+                        }
+
+                        // Floating scroll-to-top button
+                        if showScrollButton {
+                            Button {
+                                let impact = UIImpactFeedbackGenerator(style: .soft)
                                 impact.impactOccurred()
-                                loader.markAsRead(item.id)
-                                if let url = URL(string: item.url) {
-                                    selectedArticle = ArticleRoute(url: url)
+                                withAnimation(.easeInOut(duration: 0.5)) {
+                                    proxy.scrollTo("top", anchor: .top)
                                 }
-                            }
-                            .contextMenu {
-                                Button {
-                                    loader.toggleBookmark(item.id)
-                                } label: {
-                                    Label(
-                                        loader.isBookmarked(item.id) ? "Remove Bookmark" : "Bookmark",
-                                        systemImage: loader.isBookmarked(item.id) ? "bookmark.slash" : "bookmark"
+                                showScrollButton = false
+                            } label: {
+                                Image(systemName: "arrow.up")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.white)
+                                    .frame(width: 44, height: 44)
+                                    .background(
+                                        Circle()
+                                            .fill(.blue.opacity(0.9))
+                                            .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
                                     )
-                                }
-                                Button {
-                                    UIPasteboard.general.url = URL(string: item.url)
-                                } label: {
-                                    Label("Copy Link", systemImage: "doc.on.doc")
-                                }
-                                ShareLink(item: URL(string: item.url) ?? URL(string: "https://feedmine.app")!) {
-                                    Label("Share", systemImage: "square.and.arrow.up")
-                                }
                             }
-                            .onAppear {
-                                appearedItemIDs.insert(item.id)
-                                Task {
-                                    await loader.loadMoreIfNeeded(currentItem: item)
-                                }
-                            }
+                            .accessibilityLabel("Scroll to top")
+                            .padding(.trailing, 16)
+                            .padding(.bottom, 16)
+                            .transition(.scale.combined(with: .opacity))
                         }
                     }
-                    .padding(.vertical, 8)
                 }
             }
         }
@@ -116,6 +157,7 @@ struct SkeletonLoadingView: View {
             .padding(.vertical, 8)
         }
         .disabled(true)
+        .accessibilityLabel("Loading articles")
     }
 }
 
@@ -167,6 +209,7 @@ struct SkeletonCardView: View {
                 isAnimating = true
             }
         }
+        .accessibilityHidden(true)
     }
 
     private var shimmerGradient: LinearGradient {
@@ -203,11 +246,9 @@ struct LayoutToggleView: View {
                 }
                 .buttonStyle(.plain)
                 .foregroundStyle(loader.layout == .card ? .white : .secondary)
-                .background(
-                    loader.layout == .card ?
-                    Color.blue : Color.clear
-                )
+                .background(loader.layout == .card ? Color.blue : Color.clear)
                 .clipShape(RoundedRectangle(cornerRadius: 6))
+                .accessibilityLabel("Card layout")
 
                 Button {
                     withAnimation(.easeInOut(duration: 0.25)) {
@@ -221,14 +262,13 @@ struct LayoutToggleView: View {
                 }
                 .buttonStyle(.plain)
                 .foregroundStyle(loader.layout == .list ? .white : .secondary)
-                .background(
-                    loader.layout == .list ?
-                    Color.blue : Color.clear
-                )
+                .background(loader.layout == .list ? Color.blue : Color.clear)
                 .clipShape(RoundedRectangle(cornerRadius: 6))
+                .accessibilityLabel("List layout")
             }
             .background(Color(.systemGray6))
             .clipShape(RoundedRectangle(cornerRadius: 8))
+            .accessibilityLabel("Layout switcher")
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 4)
@@ -250,13 +290,15 @@ struct EmptyFilterView: View {
     }
 }
 
-// MARK: - SFSafariViewController wrapper
+// MARK: - SFSafariViewController wrapper with Reader mode
 
 private struct SafariView: UIViewControllerRepresentable {
     let url: URL
 
     func makeUIViewController(context: Context) -> SFSafariViewController {
-        SFSafariViewController(url: url)
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = true
+        return SFSafariViewController(url: url, configuration: config)
     }
 
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
