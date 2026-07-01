@@ -15,6 +15,7 @@ struct FeedScreen: View {
     @State private var showScrollButton = false
     @State private var showSettings = false
     @State private var showSources = false
+    @State private var showFilters = false
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
@@ -62,6 +63,7 @@ struct FeedScreen: View {
         .sheet(item: $previewItem) { item in ArticlePreviewSheet(item: item) }
         .sheet(isPresented: $showSettings) { SettingsSheetView() }
         .sheet(isPresented: $showSources) { SourceManagementView() }
+        .sheet(isPresented: $showFilters) { FilterSheetView() }
         .tint(accentColor)
         .overlay { if nightMode { nightOverlay } }
     }
@@ -88,7 +90,7 @@ struct FeedScreen: View {
 
                 // Filter + action buttons
                 HStack(spacing: 4) {
-                    filterMenu
+                    filterButton
                     sourcesButton
                     settingsButton
                 }
@@ -99,49 +101,20 @@ struct FeedScreen: View {
         }
     }
 
-    private var filterMenu: some View {
-        Menu {
-            // Search
-            Button { loader.searchQuery = "" } label: {
-                Label("Search...", systemImage: "magnifyingglass")
-            }
-
-            Divider()
-
-            // Category
-            Menu("Category") {
-                Button { loader.selectCategory(nil) } label: {
-                    Label("All", systemImage: loader.selectedCategory == nil ? "checkmark" : "")
-                }
-                ForEach(loader.availableCategories, id: \.self) { cat in
-                    Button { loader.selectCategory(cat) } label: {
-                        Label(cat, systemImage: loader.selectedCategory == cat ? "checkmark" : "")
-                    }
-                }
-            }
-
-            // Mood
-            Menu("Mood") {
-                ForEach(FeedLoader.MoodFilter.allCases) { mood in
-                    Button { loader.selectMood(mood) } label: {
-                        Label(mood.rawValue, systemImage: loader.selectedMood == mood ? "checkmark" : "")
-                    }
-                }
-            }
-
-            Divider()
-
-            // Clear
-            if loader.selectedCategory != nil || loader.selectedMood != .all || !loader.searchQuery.isEmpty {
-                Button(role: .destructive) { loader.clearAllFilters() } label: {
-                    Label("Clear Filters", systemImage: "xmark.circle")
-                }
-            }
+    private var filterButton: some View {
+        Button {
+            showFilters = true
         } label: {
-            Image(systemName: "line.3.horizontal.decrease")
-                .frame(width: 36, height: 36)
-                .background(Color(.systemGray6))
-                .clipShape(Circle())
+            ZStack(alignment: .topTrailing) {
+                Image(systemName: "line.3.horizontal.decrease")
+                    .frame(width: 36, height: 36)
+                    .background(Color(.systemGray6))
+                    .clipShape(Circle())
+                if loader.selectedCategory != nil || loader.selectedMood != .all {
+                    Circle().fill(.blue).frame(width: 8, height: 8)
+                        .offset(x: 2, y: -2)
+                }
+            }
         }
     }
 
