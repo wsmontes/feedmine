@@ -164,14 +164,17 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 - Create: `feedmine/Models/FeedItem.swift`
 - Create: `feedmine/Models/OPMLParseResult.swift`
 - Create: `feedmine/Models/FeedFetchBatch.swift`
+- Create: `feedmine/Models/FeedFetchResult.swift`
 
 **Interfaces:**
 - Consumes: nothing (standalone structs)
 - Produces:
   - `FeedSource: Codable, Identifiable, Sendable` — `id: String { url }`, `title: String`, `url: String`, `category: String`
   - `FeedItem: Identifiable, Sendable` — `id: String`, `sourceTitle: String`, `sourceURL: String`, `category: String`, `title: String`, `excerpt: String`, `url: String`, `imageURL: String?`, `publishedAt: Date`
-  - `OPMLParseResult: Sendable` — `sources: [FeedSource]`, `fileCount: Int`, `failedFileCount: Int`, `invalidSourceCount: Int`
+  - `OPMLParseResult: Sendable` — `sources: [FeedSource]`, `fileCount: Int`, `failedFileCount: Int`, `invalidSourceCount: Int`, `duplicateSourceCount: Int`
   - `FeedFetchBatch: Sendable` — `items: [FeedItem]`, `fetchedSourceCount: Int`, `failedSourceCount: Int`, `emptySourceCount: Int`
+  - `FeedFetchResult: Sendable` — `source: FeedSource`, `items: [FeedItem]`, `status: FeedFetchStatus`
+  - `FeedFetchStatus: Sendable, Equatable, CaseIterable` — `case success`, `case empty`, `case failed`
 
 - [ ] **Step 1: Write FeedSource.swift**
 
@@ -236,10 +239,31 @@ struct OPMLParseResult: Sendable {
     let fileCount: Int
     let failedFileCount: Int
     let invalidSourceCount: Int
+    let duplicateSourceCount: Int
 }
 ```
 
-- [ ] **Step 4: Write FeedFetchBatch.swift**
+- [ ] **Step 4: Write FeedFetchResult.swift**
+
+Create `feedmine/Models/FeedFetchResult.swift`:
+
+```swift
+import Foundation
+
+enum FeedFetchStatus: Sendable, Equatable, CaseIterable {
+    case success
+    case empty
+    case failed
+}
+
+struct FeedFetchResult: Sendable {
+    let source: FeedSource
+    let items: [FeedItem]
+    let status: FeedFetchStatus
+}
+```
+
+- [ ] **Step 5: Write FeedFetchBatch.swift**
 
 Create `feedmine/Models/FeedFetchBatch.swift`:
 
@@ -385,21 +409,19 @@ Create `feedmine/Services/OPMLParser.swift`:
 import Foundation
 
 struct OPMLParser {
-    /// Scan Resources/Feeds/ for all .opml files and parse them into FeedSource entries.
+    /// Scan the app bundle for all .opml files and parse them into FeedSource entries.
+    /// Uses Bundle.urls(forResourcesWithExtension:subdirectory:) with fallback to root.
     static func parseAll() -> OPMLParseResult {
-        guard let feedsDir = Bundle.main.resourceURL?.appendingPathComponent("Feeds") else {
-            return OPMLParseResult(sources: [], fileCount: 0, failedFileCount: 0, invalidSourceCount: 0)
+        // Try subdirectory "Feeds" first, then root as fallback
+        var opmlFiles = Bundle.main.urls(forResourcesWithExtension: "opml", subdirectory: "Feeds") ?? []
+        if opmlFiles.isEmpty {
+            // Fallback: OPML files at bundle root
+            opmlFiles = Bundle.main.urls(forResourcesWithExtension: "opml", subdirectory: nil) ?? []
         }
+        opmlFiles.sort { $0.lastPathComponent < $1.lastPathComponent }
 
-        let fileManager = FileManager.default
-        let opmlFiles: [URL]
-
-        do {
-            let allFiles = try fileManager.contentsOfDirectory(at: feedsDir, includingPropertiesForKeys: nil)
-            opmlFiles = allFiles.filter { $0.pathExtension.lowercased() == "opml" }.sorted()
-        } catch {
-            print("[OPMLParser] Failed to list Feeds directory: \(error)")
-            return OPMLParseResult(sources: [], fileCount: 0, failedFileCount: 0, invalidSourceCount: 0)
+        guard !opmlFiles.isEmpty else {
+            return OPMLParseResult(sources: [], fileCount: 0, failedFileCount: 0, invalidSourceCount: 0, duplicateSourceCount: 0)
         }
 
         var allSources: [FeedSource] = []
@@ -418,13 +440,14 @@ struct OPMLParser {
         }
 
         let deduped = deduplicateSources(allSources)
-        invalidSourceCount = allSources.count - deduped.count
+        let duplicateSourceCount = allSources.count - deduped.count
 
         return OPMLParseResult(
             sources: deduped,
             fileCount: opmlFiles.count,
             failedFileCount: failedFileCount,
-            invalidSourceCount: invalidSourceCount
+            invalidSourceCount: invalidSourceCount,
+            duplicateSourceCount: duplicateSourceCount
         )
     }
 
@@ -479,52 +502,67 @@ struct OPMLParser {
 private final class OPMLDelegate: NSObject, XMLParserDelegate {
     let fallbackCategory: String
     var sources: [FeedSource] = []
-    private var currentCategory: String?
-    private var currentText = ""
+    private var categoryStack: [String] = []
+    private var categoryDepth = 0   // number of category containers currently open
 
     init(fallbackCategory: String) {
         self.fallbackCategory = fallbackCategory
     }
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
-        if elementName == "outline" {
-            let xmlUrl = attributeDict["xmlUrl"] ?? ""
-            let title = attributeDict["title"] ?? attributeDict["text"] ?? ""
+        guard elementName == "outline" else { return }
 
-            if xmlUrl.isEmpty {
-                // This is a category container (parent outline)
-                currentCategory = attributeDict["title"] ?? attributeDict["text"]
-            } else {
-                // This is a feed source
-                let category = currentCategory ?? fallbackCategory
-                let source = FeedSource(
-                    title: title.isEmpty ? category : title,
-                    url: xmlUrl,
-                    category: category
-                )
-                sources.append(source)
+        let xmlUrl = attributeDict["xmlUrl"] ?? ""
+        let title = attributeDict["title"] ?? attributeDict["text"] ?? ""
+
+        if xmlUrl.isEmpty {
+            // Category container — push onto stack
+            let category = attributeDict["title"] ?? attributeDict["text"]
+            if let cat = category, !cat.isEmpty {
+                categoryStack.append(cat)
+                categoryDepth += 1
             }
+        } else {
+            // Feed source — use deepest category on stack, or fallback
+            let category = categoryStack.last ?? fallbackCategory
+            let source = FeedSource(
+                title: title.isEmpty ? category : title,
+                url: xmlUrl,
+                category: category
+            )
+            sources.append(source)
         }
-        currentText = ""
     }
 
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        currentText += string
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        guard elementName == "outline" else { return }
+        // Pop one category level when leaving a container we pushed into.
+        // We don't have attributes here, so we use depth to know if there's
+        // a category to pop. This is approximate but correct for OPML with
+        // category containers that are always one level deep.
+        if categoryDepth > 0 {
+            categoryStack.removeLast()
+            categoryDepth -= 1
+        }
     }
 }
 ```
 
 - [ ] **Step 7: Verify OPML files are bundled**
 
-Add the `Resources/Feeds/` folder to the Xcode target:
+The `OPMLParser` expects OPML files at `Feedmine.app/Feeds/*.opml` (uses `subdirectory: "Feeds"` with fallback to root).
 
-In Xcode project navigator, select the `Resources/Feeds/` group. Then in the File Inspector (right panel), make sure "Target Membership" for `feedmine` is checked for all five `.opml` files.
+In Xcode, drag the `Resources/Feeds/` folder from Finder into the project navigator under the `feedmine/` group. Choose:
+- **"Create folder references"** (blue folder icon, NOT yellow group)
+- **"Add to targets: feedmine"** — checked
 
-Alternatively, drag the `Resources/` folder from Finder into the Xcode project navigator, select "Create folder references" (not "Create groups"), and ensure "Add to targets: feedmine" is checked.
+This copies the folder as `Feedmine.app/Feeds/` preserving the directory structure.
 
-Verify with: `find ~/Library/Developer/Xcode/DerivedData/feedmine-*/Build/Products/Debug-iphonesimulator/feedmine.app/Resources/ -name "*.opml" 2>/dev/null` after a build.
-
-The files should appear inside the app bundle under `Resources/Feeds/`.
+Verify after build:
+```bash
+find ~/Library/Developer/Xcode/DerivedData/feedmine-*/Build/Products/Debug-iphonesimulator/feedmine.app -name "*.opml" 2>/dev/null
+```
+Expected: all five `.opml` files listed under `feedmine.app/Feeds/`.
 
 - [ ] **Step 8: Commit**
 
@@ -543,11 +581,10 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 - Create: `feedmine/Services/RSSFetcher.swift`
 
 **Interfaces:**
-- Consumes: `FeedSource`, `FeedItem`, `FeedFetchBatch` (from Task 2)
+- Consumes: `FeedSource`, `FeedItem`, `FeedFetchBatch`, `FeedFetchResult`, `FeedFetchStatus` (from Task 2)
 - Produces:
-  - `actor RSSFetcher` — `func fetch(_ source: FeedSource) async -> [FeedItem]`
+  - `actor RSSFetcher` — `func fetch(_ source: FeedSource) async -> FeedFetchResult`
   - `actor RSSFetcher` — `func fetchAll(_ sources: [FeedSource], maxConcurrent: Int = 5) async -> FeedFetchBatch`
-  - Private: `extractImageURL(from:)` , `extractExcerpt(from:)`, `strippingHTMLTags(_:)`
 
 - [ ] **Step 1: Write RSSFetcher.swift**
 
@@ -570,11 +607,11 @@ actor RSSFetcher {
         self.session = URLSession(configuration: config)
     }
 
-    /// Fetch and parse a single feed. Never throws — returns empty on error.
-    func fetch(_ source: FeedSource) async -> [FeedItem] {
+    /// Fetch and parse a single feed. Never throws — returns FeedFetchResult with status.
+    func fetch(_ source: FeedSource) async -> FeedFetchResult {
         guard let url = URL(string: source.url) else {
             print("[RSSFetcher] Invalid URL for \(source.title): \(source.url)")
-            return []
+            return FeedFetchResult(source: source, items: [], status: .failed)
         }
 
         do {
@@ -583,7 +620,7 @@ actor RSSFetcher {
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 print("[RSSFetcher] Bad status for \(source.title)")
-                return []
+                return FeedFetchResult(source: source, items: [], status: .failed)
             }
 
             let parser = FeedParser(data: data)
@@ -594,15 +631,16 @@ actor RSSFetcher {
                 let items = extractItems(from: feed, source: source)
                 if items.isEmpty {
                     print("[RSSFetcher] Empty feed: \(source.title)")
+                    return FeedFetchResult(source: source, items: [], status: .empty)
                 }
-                return items
+                return FeedFetchResult(source: source, items: items, status: .success)
             case .failure(let error):
                 print("[RSSFetcher] Parse failure for \(source.title): \(error)")
-                return []
+                return FeedFetchResult(source: source, items: [], status: .failed)
             }
         } catch {
             print("[RSSFetcher] Network error for \(source.title): \(error)")
-            return []
+            return FeedFetchResult(source: source, items: [], status: .failed)
         }
     }
 
@@ -619,41 +657,38 @@ actor RSSFetcher {
             let chunk = Array(remaining.prefix(maxConcurrent))
             remaining.removeFirst(chunk.count)
 
-            let results: [[FeedItem]] = await withTaskGroup(of: [FeedItem].self) { group in
+            let results: [FeedFetchResult] = await withTaskGroup(of: FeedFetchResult.self) { group in
                 for source in chunk {
                     group.addTask {
                         await self.fetch(source)
                     }
                 }
-                var chunkResults: [[FeedItem]] = []
-                for await items in group {
-                    chunkResults.append(items)
+                var chunkResults: [FeedFetchResult] = []
+                for await result in group {
+                    chunkResults.append(result)
                 }
                 return chunkResults
             }
 
-            for (index, items) in results.enumerated() {
-                let source = chunk[index]
-                if items.isEmpty {
-                    // Network or parse error → increment failed
-                    failedSourceCount += 1
-                } else {
+            // Count by status — independent of completion order
+            for result in results {
+                switch result.status {
+                case .success:
                     fetchedSourceCount += 1
-                    allItems.append(contentsOf: items)
+                    allItems.append(contentsOf: result.items)
+                case .empty:
+                    emptySourceCount += 1
+                case .failed:
+                    failedSourceCount += 1
                 }
             }
-
-            // If chunk returned fewer items than sources, the difference is the empty feeds.
-            // But we already count network/parse failures by checking items.isEmpty per source.
-            // The distinction between "failed" and "empty" is: failed = error, empty = valid feed with 0 posts.
-            // Since we can't distinguish without a separate status, treat empty results as failed for now.
         }
 
         return FeedFetchBatch(
             items: allItems,
             fetchedSourceCount: fetchedSourceCount,
             failedSourceCount: failedSourceCount,
-            emptySourceCount: 0  // FeedKit doesn't surface "valid but empty" — will refine if needed
+            emptySourceCount: emptySourceCount
         )
     }
 
@@ -813,7 +848,24 @@ actor RSSFetcher {
 }
 ```
 
-- [ ] **Step 2: Commit**
+- [ ] **Step 2: Verify FeedKit API compatibility**
+
+Open the file in Xcode and check that FeedKit's type and property names match what the code uses. Key properties to verify:
+
+- `RSSFeedItem.guid?.value` — GUID value
+- `RSSFeedItem.media?.mediaContents` — Media RSS content array
+- `RSSFeedItem.media?.mediaThumbnails` — Media RSS thumbnail array
+- `RSSFeedItem.enclosure?.attributes?.url` / `attributes?.type` — enclosure
+- `RSSFeedItem.content?.contentEncoded` — content:encoded body
+- `AtomFeedEntry.id`, `.links`, `.summary`, `.content` — Atom fields
+- `JSONFeedItem.id`, `.url`, `.summary`, `.contentText`, `.contentHtml`, `.image`, `.bannerImage` — JSON Feed fields
+- `FeedParser(data:)` — parser initializer
+- `FeedParser.parse()` — parse method returning `Result<Feed, ParserError>`
+- `Feed` enum cases: `.atom(AtomFeed)`, `.rss(RSSFeed)`, `.json(JSONFeed)`
+
+If any property name differs, inspect the FeedKit type in Xcode autocomplete and adapt the property name **without changing the public interface** of `fetch(_:)` and `fetchAll(_:)`.
+
+- [ ] **Step 3: Commit**
 
 ```bash
 git add feedmine/Services/RSSFetcher.swift
@@ -975,14 +1027,23 @@ final class FeedLoader {
             return
         }
 
-        // Step 1: Move from reservoir first (no network, no blocking)
+        // Step 1: If reservoir is empty, fetch first
+        if reservoir.isEmpty {
+            loadingState = .loadingMore
+            await refillReservoir()
+            loadingState = .idle
+        }
+
+        // Step 2: Move from reservoir to visible (show content we already have)
         moveFromReservoirToVisible(count: Self.loadMoreThreshold)
 
-        // Step 2: Refill reservoir in background if low
+        // Step 3: Always trim after adding items (regardless of network fetch)
+        trimBufferIfNeeded()
+
+        // Step 4: Refill reservoir in background if low
         if reservoir.count < Self.reservoirLowWatermark {
             loadingState = .loadingMore
             await refillReservoir()
-            trimBufferIfNeeded()
             loadingState = .idle
         }
     }
@@ -991,12 +1052,12 @@ final class FeedLoader {
         guard items.count > Self.maxBuffer else { return }
 
         let excess = items.count - Self.maxBuffer
-        let batches = min(Self.discardBatchSize, excess)
+        let toDiscard = min(Self.discardBatchSize, excess)
 
         // Priority 1: discard items above current position (already scrolled past)
         let safeStart = max(0, currentVisibleIndex - Self.safetyZoneRadius)
         let aboveCandidates = items[0..<safeStart]
-        let aboveToDiscard = min(batches, aboveCandidates.count)
+        let aboveToDiscard = min(toDiscard, aboveCandidates.count)
 
         if aboveToDiscard > 0 {
             items.removeFirst(aboveToDiscard)
@@ -1004,11 +1065,12 @@ final class FeedLoader {
             totalDiscarded += aboveToDiscard
         }
 
-        // Priority 2: if still over and safe, discard from far below
-        if items.count > Self.maxBuffer {
+        // Priority 2: if still over, discard from far below
+        let remaining = toDiscard - aboveToDiscard
+        if remaining > 0 && items.count > Self.maxBuffer {
             let safeEnd = min(items.count, currentVisibleIndex + Self.safetyZoneRadius)
             if safeEnd < items.count {
-                let belowToDiscard = min(items.count - Self.maxBuffer, items.count - safeEnd)
+                let belowToDiscard = min(remaining, items.count - safeEnd)
                 if belowToDiscard > 0 {
                     items.removeLast(belowToDiscard)
                     totalDiscarded += belowToDiscard
@@ -1051,7 +1113,13 @@ final class FeedLoader {
 
 Run: `xcodebuild -project feedmine.xcodeproj -scheme feedmine -destination 'platform=iOS Simulator,name=iPhone 16' build 2>&1 | grep -E 'error:|BUILD SUCCEEDED'`
 
-Expected: `BUILD SUCCEEDED`. All types should resolve — FeedLoader, RSSFetcher, OPMLParser, models, and FeedKit are all in place.
+Expected: build fails with `Cannot find 'FeedScreen' in scope` (from `ContentView.swift`). All other types — FeedLoader, RSSFetcher, OPMLParser, models, FeedKit — compile successfully. The only remaining error is the missing `FeedScreen` view, which is created in Task 6.
+
+Verify there are no other errors beyond `FeedScreen`:
+```bash
+xcodebuild ... 2>&1 | grep "error:" | grep -v "FeedScreen"
+```
+Expected: no output (no errors unrelated to FeedScreen).
 
 - [ ] **Step 3: Commit**
 
@@ -1235,9 +1303,14 @@ Create `feedmine/Views/FeedScreen.swift`:
 import SwiftUI
 import SafariServices
 
+struct ArticleRoute: Identifiable {
+    let id = UUID()
+    let url: URL
+}
+
 struct FeedScreen: View {
     @Environment(FeedLoader.self) private var loader
-    @State private var selectedURL: URL?
+    @State private var selectedArticle: ArticleRoute?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -1249,7 +1322,7 @@ struct FeedScreen: View {
                         FeedItemCardView(item: item)
                             .onTapGesture {
                                 if let url = URL(string: item.url) {
-                                    selectedURL = url
+                                    selectedArticle = ArticleRoute(url: url)
                                 }
                             }
                             .onAppear {
@@ -1267,8 +1340,8 @@ struct FeedScreen: View {
         .refreshable {
             await loader.refresh()
         }
-        .sheet(item: $selectedURL) { url in
-            SafariView(url: url)
+        .sheet(item: $selectedArticle) { route in
+            SafariView(url: route.url)
         }
     }
 }
@@ -1283,10 +1356,6 @@ private struct SafariView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
-}
-
-extension URL: @retroactive Identifiable {
-    public var id: String { absoluteString }
 }
 ```
 
@@ -1360,7 +1429,30 @@ Verify each acceptance criterion:
 9. No duplicate posts appear
 10. Debug bar updates counters in real time
 
-- [ ] **Step 4: Test OPML hot folder**
+- [ ] **Step 4: Test buffer discard**
+
+With only 15 feeds, you may not reach 300 items in a normal session. To validate the discard logic, temporarily change the buffer constants in `FeedLoader.swift`:
+
+```swift
+static let maxBuffer = 100       // was 300
+static let discardBatchSize = 20 // was 50
+```
+
+Then scroll extensively — after the feed accumulates more than 100 visible items plus reservoir, the discard should trim items above the current position. Verify:
+
+1. `totalDiscarded` counter in the debug bar increments
+2. Scroll position remains stable (no jumps)
+3. Items near the visible area are preserved
+
+After validating, restore the original values:
+```swift
+static let maxBuffer = 300
+static let discardBatchSize = 50
+```
+
+Commit the restored values before proceeding.
+
+- [ ] **Step 5: Test OPML hot folder**
 
 Add a new test file `test.opml` to `Resources/Feeds/`:
 ```xml
@@ -1378,7 +1470,7 @@ Rebuild (Cmd+R). Debug bar should show `sources: 16` (15 original + 1 new). The 
 
 Remove `test.opml`, rebuild. Sources should return to 15.
 
-- [ ] **Step 5: Test error resilience**
+- [ ] **Step 6: Test error resilience**
 
 Temporarily break one OPML file by adding invalid XML to `culture.opml`:
 ```xml
@@ -1389,7 +1481,7 @@ Rebuild. Debug bar should show `1 OPML error`. culture feeds disappear but tech,
 
 Restore `culture.opml` to its original content. Rebuild.
 
-- [ ] **Step 6: Final commit (if any fixes were made)**
+- [ ] **Step 7: Final commit (if any fixes were made)**
 
 ```bash
 git add -A && git diff --cached --stat
