@@ -101,7 +101,7 @@ struct FeedItemCardView: View {
                         .foregroundStyle(.green)
                 }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 12)
             .padding(.top, 12)
 
             // Title
@@ -110,7 +110,7 @@ struct FeedItemCardView: View {
                 .fontWeight(.semibold)
                 .lineLimit(2)
                 .foregroundStyle(isRead ? .secondary : .primary)
-                .padding(.horizontal, 16)
+                .padding(.horizontal, 12)
                 .padding(.top, 10)
 
             // Excerpt
@@ -118,7 +118,7 @@ struct FeedItemCardView: View {
                 .font(bodyFont)
                 .foregroundStyle(.secondary)
                 .lineLimit(3)
-                .padding(.horizontal, 16)
+                .padding(.horizontal, 12)
                 .padding(.top, 6)
 
             // Relative date + reading time
@@ -134,13 +134,13 @@ struct FeedItemCardView: View {
                     .foregroundStyle(.tertiary)
                 Spacer()
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 12)
             .padding(.top, 8)
             .padding(.bottom, 16)
         }
         .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: .black.opacity(0.06), radius: 10, y: 3)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .shadow(color: .black.opacity(0.04), radius: 6, y: 2)
         .opacity(appeared ? (isRead ? 0.7 : 1) : 0)
         .offset(y: appeared ? 0 : 16)
         .contextMenu {
