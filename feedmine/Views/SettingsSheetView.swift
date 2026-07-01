@@ -163,6 +163,25 @@ struct SettingsSheetView: View {
                         Text("\(loader.sourceCount) feeds · \(loader.opmlFileCount) files")
                             .foregroundStyle(.secondary)
                     }
+                    HStack {
+                        Text("Built with")
+                        Spacer()
+                        Text("SwiftUI · FeedKit · Claude Code")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                Section {
+                    Link(destination: URL(string: "mailto:wmontes@gmail.com?subject=Feedmine%20Feedback")!) {
+                        Label("Send Feedback", systemImage: "envelope.fill")
+                    }
+                    Link(destination: URL(string: "https://github.com/nmdias/FeedKit")!) {
+                        Label("FeedKit on GitHub", systemImage: "link")
+                    }
+                } header: {
+                    Text("Feedback")
+                } footer: {
+                    Text("Feedmine is an independent RSS reader built for curious minds.")
                 }
             }
             .navigationTitle("Settings")
