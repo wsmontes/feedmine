@@ -26,6 +26,7 @@
 		64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */; };
 		6986DBDE303222A19B7A5798 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A1E8E7D34C1FBFB2EA6CC6 /* SearchBarView.swift */; };
 		72D004892A528079D059F577 /* FeedFetchBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595D303FD10CB2456A989DC /* FeedFetchBatch.swift */; };
+		7D059B62DEC97393B3981822 /* DailyBriefingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB4233F029C53681617CA22 /* DailyBriefingCard.swift */; };
 		7D50E979F88694C1588392D8 /* RSSFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAEEDBB109C8C6CAC336D6 /* RSSFetcher.swift */; };
 		7E39E605E7B9F579235AE061 /* FeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E7A90D2773F4370B149BA /* FeedSource.swift */; };
 		86DAF1611712C2105F19AB68 /* TopStoriesCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CF24FCD0B6C944B1C956F0 /* TopStoriesCarousel.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CB4233F029C53681617CA22 /* DailyBriefingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBriefingCard.swift; sourceTree = "<group>"; };
 		0E2A96EFA10A9D618AEA036A /* SourceManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceManagementView.swift; sourceTree = "<group>"; };
 		1595D303FD10CB2456A989DC /* FeedFetchBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetchBatch.swift; sourceTree = "<group>"; };
 		1AA62DAEEEDC39D6FA1CFF4F /* FeedItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemRowView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				E3AA858508671F9FA6D677B1 /* ArticlePreviewSheet.swift */,
 				F9A7D55AFC80E67D103AC583 /* CategoryFilterBar.swift */,
+				0CB4233F029C53681617CA22 /* DailyBriefingCard.swift */,
 				F30391A30EB01CF526317DA2 /* DebugStatusBar.swift */,
 				8AFB811A6CBD76505CA4A4EB /* ErrorBannerView.swift */,
 				C702EDB528B43345BBE982A7 /* FeedEmptyStateView.swift */,
@@ -279,6 +282,7 @@
 				948897D3454E93491D21D2B0 /* ArticlePreviewSheet.swift in Sources */,
 				D5D54228348DEFECE4D00217 /* CategoryFilterBar.swift in Sources */,
 				0D7D2F35B303B7FA834EE8B5 /* ContentView.swift in Sources */,
+				7D059B62DEC97393B3981822 /* DailyBriefingCard.swift in Sources */,
 				0D172F74FC571B2B1C682C66 /* DebugStatusBar.swift in Sources */,
 				9091D14B5D8B413C453FE0AC /* ErrorBannerView.swift in Sources */,
 				2FFDEE84C9425743CD6CBA2D /* FeedEmptyStateView.swift in Sources */,
