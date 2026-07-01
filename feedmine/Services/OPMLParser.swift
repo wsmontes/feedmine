@@ -75,6 +75,30 @@ struct OPMLParser {
     }
 
     /// Lowercase scheme and host only. Trim whitespace. Remove trailing slash. Preserve path/query case.
+    /// Export current sources as an OPML string
+    static func exportOPML(sources: [FeedSource]) -> String {
+        let grouped = Dictionary(grouping: sources, by: \.category)
+        var xml = """
+        <?xml version="1.0" encoding="UTF-8"?>
+        <opml version="1.0">
+          <head><title>Feedmine Export</title></head>
+          <body>
+
+        """
+        for (category, feeds) in grouped.sorted(by: { $0.key < $1.key }) {
+            xml += "    <outline text=\"\(category)\">\n"
+            for feed in feeds {
+                xml += "      <outline title=\"\(feed.title)\" xmlUrl=\"\(feed.url)\" type=\"rss\"/>\n"
+            }
+            xml += "    </outline>\n"
+        }
+        xml += """
+          </body>
+        </opml>
+        """
+        return xml
+    }
+
     static func normalizeURL(_ raw: String) -> String {
         let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
         guard var components = URLComponents(string: trimmed) else { return trimmed }

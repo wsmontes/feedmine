@@ -66,11 +66,23 @@ struct SourceManagementView: View {
                 } footer: {
                     Text("Disabled sources are skipped during feed fetching. Changes take effect on next refresh.")
                 }
+
+                Section {
+                    ShareLink(item: opmlString) {
+                        Label("Export as OPML", systemImage: "square.and.arrow.up")
+                    }
+                } footer: {
+                    Text("Export your current sources as an OPML file to share or back up.")
+                }
             }
             .navigationTitle("Sources")
             .navigationBarTitleDisplayMode(.inline)
         }
         .presentationDetents([.medium, .large])
+    }
+
+    private var opmlString: String {
+        OPMLParser.exportOPML(sources: loader.sources)
     }
 
     private func categoryIcon(_ category: String) -> String {
