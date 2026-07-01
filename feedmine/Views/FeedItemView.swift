@@ -74,6 +74,13 @@ struct FeedItemView: View {
                     systemImage: loader.isBookmarked(item.id) ? "bookmark.slash" : "bookmark"
                 )
             }
+
+            Button {
+                loader.searchQuery = item.sourceTitle
+            } label: {
+                Label("Show more from \(item.sourceTitle)", systemImage: "arrow.triangle.branch")
+            }
+
             Button {
                 UIPasteboard.general.url = URL(string: item.url)
             } label: {
