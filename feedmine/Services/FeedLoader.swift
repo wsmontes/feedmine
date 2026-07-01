@@ -154,11 +154,15 @@ final class FeedLoader {
     }
 
     private func capReadIDsIfNeeded() {
+        // Note: Set has no order. For a prototype, just trim to a cap.
+        // Items exceeding the cap are oldest (by insertion order approximation via Array conversion).
         if readItemIDs.count > Self.maxLoadedIDs {
-            readItemIDs = Set(readItemIDs.suffix(Self.maxLoadedIDs))
+            let keep = Array(readItemIDs).suffix(Self.maxLoadedIDs)
+            readItemIDs = Set(keep)
         }
         if bookmarkedIDs.count > Self.maxLoadedIDs {
-            bookmarkedIDs = Set(bookmarkedIDs.suffix(Self.maxLoadedIDs))
+            let keep = Array(bookmarkedIDs).suffix(Self.maxLoadedIDs)
+            bookmarkedIDs = Set(keep)
         }
     }
 
@@ -325,7 +329,7 @@ final class FeedLoader {
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
         loadedIDs.formUnion(actualNew.map(\.id))
         if loadedIDs.count > Self.maxLoadedIDs {
-            loadedIDs = Set(loadedIDs.suffix(Self.maxLoadedIDs))  // cap to prevent unbounded growth
+            loadedIDs = Set(Array(loadedIDs).suffix(Self.maxLoadedIDs))  // cap to prevent unbounded growth
         }
 
         reservoir = actualNew.sorted { $0.publishedAt > $1.publishedAt }
@@ -436,7 +440,7 @@ final class FeedLoader {
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
         loadedIDs.formUnion(actualNew.map(\.id))
         if loadedIDs.count > Self.maxLoadedIDs {
-            loadedIDs = Set(loadedIDs.suffix(Self.maxLoadedIDs))
+            loadedIDs = Set(Array(loadedIDs).suffix(Self.maxLoadedIDs))
         }
 
         let sorted = actualNew.sorted { $0.publishedAt > $1.publishedAt }
