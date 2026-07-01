@@ -36,13 +36,13 @@ struct FeedItemCardView: View {
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(height: 180)
+                                .frame(height: 220)
                                 .clipped()
                                 .overlay(isRead ? Color.black.opacity(0.15) : nil)
                         case .failure, .empty:
-                            gradientPlaceholder.frame(height: 180)
+                            gradientPlaceholder.frame(height: 220)
                         @unknown default:
-                            gradientPlaceholder.frame(height: 180)
+                            gradientPlaceholder.frame(height: 220)
                         }
                     }
                 }

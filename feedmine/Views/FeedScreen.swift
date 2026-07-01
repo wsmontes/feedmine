@@ -102,7 +102,8 @@ struct FeedScreen: View {
     }
 
     private var filterButton: some View {
-        Button {
+        let activeCount = (loader.selectedCategory != nil ? 1 : 0) + (loader.selectedMood != .all ? 1 : 0) + (!loader.searchQuery.isEmpty ? 1 : 0)
+        return Button {
             showFilters = true
         } label: {
             ZStack(alignment: .topTrailing) {
@@ -110,8 +111,12 @@ struct FeedScreen: View {
                     .frame(width: 36, height: 36)
                     .background(Color(.systemGray6))
                     .clipShape(Circle())
-                if loader.selectedCategory != nil || loader.selectedMood != .all {
-                    Circle().fill(.blue).frame(width: 8, height: 8)
+                if activeCount > 0 {
+                    Text("\(activeCount)")
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundStyle(.white)
+                        .frame(width: 14, height: 14)
+                        .background(Circle().fill(.blue))
                         .offset(x: 2, y: -2)
                 }
             }
