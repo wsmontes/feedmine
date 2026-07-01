@@ -15,6 +15,7 @@ struct FeedScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             DebugStatusBar()
+            SearchBarView()
             CategoryFilterBar()
 
             if loader.loadingState == .initial && loader.items.isEmpty {

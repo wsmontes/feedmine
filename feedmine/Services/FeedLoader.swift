@@ -16,10 +16,23 @@ final class FeedLoader {
     private(set) var loadingState: FeedLoadingState = .idle
     private(set) var selectedCategory: String? = nil
 
-    /// Items filtered by selected category (nil = all)
+    /// Search query for filtering by title and excerpt
+    var searchQuery = ""
+
+    /// Items filtered by selected category AND search query
     var filteredItems: [FeedItem] {
-        guard let category = selectedCategory else { return items }
-        return items.filter { $0.category.lowercased() == category.lowercased() }
+        var result = items
+        if let category = selectedCategory {
+            result = result.filter { $0.category.lowercased() == category.lowercased() }
+        }
+        let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !query.isEmpty {
+            result = result.filter {
+                $0.title.localizedCaseInsensitiveContains(query) ||
+                $0.excerpt.localizedCaseInsensitiveContains(query)
+            }
+        }
+        return result
     }
 
     /// Available categories from loaded sources
