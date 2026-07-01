@@ -9,6 +9,12 @@ struct SettingsSheetView: View {
     @State private var showClearReadConfirmation = false
     @State private var showClearBookmarksConfirmation = false
 
+    private var topCategory: String? {
+        let readItems = loader.items.filter { loader.isRead($0.id) }
+        let grouped = Dictionary(grouping: readItems, by: \.category)
+        return grouped.max(by: { $0.value.count < $1.value.count })?.key
+    }
+
     enum FontSize: String, CaseIterable {
         case small, medium, large
     }
@@ -110,6 +116,30 @@ struct SettingsSheetView: View {
                             }
                         }
                     }
+                }
+
+                // MARK: - Share Stats
+                Section {
+                    Button {
+                        let topCat = topCategory ?? "None"
+                        if let image = renderStatsCard(
+                            readCount: loader.readItemIDs.count,
+                            bookmarkCount: loader.bookmarkedIDs.count,
+                            streakCount: 1,
+                            topCategory: topCat,
+                            sourceCount: loader.sourceCount
+                        ) {
+                            let av = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                               let root = windowScene.windows.first?.rootViewController {
+                                root.present(av, animated: true)
+                            }
+                        }
+                    } label: {
+                        Label("Share My Stats", systemImage: "chart.bar.fill")
+                    }
+                } header: {
+                    Text("Share")
                 }
 
                 // MARK: - About
