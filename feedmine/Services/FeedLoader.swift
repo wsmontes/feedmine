@@ -134,6 +134,36 @@ final class FeedLoader {
     /// When the feed was last refreshed (nil = never)
     private(set) var lastRefreshDate: Date?
 
+    // MARK: - Persistence
+
+    func buildState() -> FeedState {
+        FeedState(
+            readItemIDs: Array(readItemIDs),
+            bookmarkedIDs: Array(bookmarkedIDs),
+            disabledSourceIDs: Array(disabledSourceIDs),
+            sources: sources,
+            lastRefreshDate: lastRefreshDate,
+            streakCount: UserDefaults.standard.integer(forKey: "streakCount"),
+            lastOpenDate: UserDefaults.standard.double(forKey: "lastOpenDate")
+        )
+    }
+
+    func restoreState(from state: FeedState) {
+        readItemIDs = Set(state.readItemIDs)
+        bookmarkedIDs = Set(state.bookmarkedIDs)
+        disabledSourceIDs = Set(state.disabledSourceIDs)
+        if !state.sources.isEmpty {
+            sources = state.sources
+            sourceCount = sources.count
+        }
+        lastRefreshDate = state.lastRefreshDate
+        // Streak is handled by GreetingHeaderView AppStorage
+    }
+
+    func saveNow() {
+        PersistenceManager.shared.save(buildState())
+    }
+
     /// Per-source health tracking
     struct SourceHealth {
         var lastFetchDate: Date?
@@ -233,6 +263,7 @@ final class FeedLoader {
             bookmarkedIDs.insert(itemID)
             capReadIDsIfNeeded()
         }
+        PersistenceManager.shared.save(buildState())
     }
 
     func isBookmarked(_ itemID: String) -> Bool {
@@ -309,6 +340,11 @@ final class FeedLoader {
         guard !hasStarted else { return }
         hasStarted = true
 
+        // Restore persisted state (bookmarks, read items, sources, disabled sources)
+        if let saved = PersistenceManager.shared.load() {
+            restoreState(from: saved)
+        }
+
         networkMonitor.start()
         loadingState = .initial
 
@@ -350,6 +386,8 @@ final class FeedLoader {
 
         lastRefreshDate = .now
         loadingState = .idle
+
+        PersistenceManager.shared.save(buildState())
 
         // Auto-retry with backoff if nothing loaded
         if items.isEmpty && fetchErrorCount > 0 {

@@ -8,6 +8,7 @@ struct ArticleRoute: Identifiable {
 }
 
 struct FeedScreen: View {
+    @Environment(\.scenePhase) private var scenePhase
     @Environment(FeedLoader.self) private var loader
     @State private var selectedArticle: ArticleRoute?
     @State private var previewItem: FeedItem?
@@ -59,6 +60,11 @@ struct FeedScreen: View {
             OnboardingTipsView()
         }
         .task { await loader.start(); updateBadge() }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .background {
+                loader.saveNow()
+            }
+        }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
             if let lastRefresh = loader.lastRefreshDate,
                Date().timeIntervalSince(lastRefresh) > 900 {  // 15 min stale threshold
