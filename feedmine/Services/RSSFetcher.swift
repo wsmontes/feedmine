@@ -7,9 +7,14 @@ actor RSSFetcher {
     init() {
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 15
-        config.timeoutIntervalForResource = 15
+        config.timeoutIntervalForResource = 30
+        config.waitsForConnectivity = true       // wait for network instead of failing immediately
+        config.allowsCellularAccess = true
+        config.httpMaximumConnectionsPerHost = 2 // be a good citizen
+        config.urlCache = URLCache(memoryCapacity: 4_194_304, diskCapacity: 20_971_520) // 4MB mem, 20MB disk
         config.httpAdditionalHeaders = [
-            "User-Agent": "FeedminePrototype/1.0"
+            "User-Agent": "FeedminePrototype/1.0",
+            "Accept": "application/rss+xml, application/atom+xml, application/json, text/xml"
         ]
         self.session = URLSession(configuration: config)
     }
