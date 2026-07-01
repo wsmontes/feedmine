@@ -447,7 +447,7 @@ final class FeedLoader {
     }
 
     private func refillReservoir() async {
-        guard !sources.isEmpty else { return }
+        guard !enabledSources.isEmpty else { return }
 
         let batch = await fetcher.fetchAll(enabledSources)
         totalFetched += batch.items.count
