@@ -10,6 +10,7 @@ struct ArticleRoute: Identifiable {
 struct FeedScreen: View {
     @Environment(FeedLoader.self) private var loader
     @State private var selectedArticle: ArticleRoute?
+    @State private var previewItem: FeedItem?
     @State private var appearedItemIDs: Set<String> = []
     @State private var showScrollButton = false
     @State private var showSettings = false
@@ -37,10 +38,9 @@ struct FeedScreen: View {
             ErrorBannerView()
             GreetingHeaderView {
                 let unread = loader.items.filter { !loader.isRead($0.id) }
-                if let random = (unread.isEmpty ? loader.items : unread).randomElement(),
-                   let url = URL(string: random.url) {
+                if let random = (unread.isEmpty ? loader.items : unread).randomElement() {
                     loader.markAsRead(random.id)
-                    selectedArticle = ArticleRoute(url: url)
+                    previewItem = random
                 }
             }
             ReadingStatsView()
@@ -83,9 +83,7 @@ struct FeedScreen: View {
                             LazyVStack(spacing: loader.layout == .card ? 12 : 1) {
                                 ForEach(Array(loader.filteredItems.enumerated()), id: \.element.id) { index, item in
                                     FeedItemView(item: item, index: index) {
-                                        if let url = URL(string: item.url) {
-                                            selectedArticle = ArticleRoute(url: url)
-                                        }
+                                        previewItem = item
                                     }
                                     .onAppear {
                                         appearedItemIDs.insert(item.id)
@@ -153,6 +151,9 @@ struct FeedScreen: View {
         }
         .sheet(isPresented: $showSources) {
             SourceManagementView()
+        }
+        .sheet(item: $previewItem) { item in
+            ArticlePreviewSheet(item: item)
         }
         .tint(accentColor)
         .overlay {
