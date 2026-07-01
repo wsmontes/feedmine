@@ -251,6 +251,20 @@ final class FeedLoader {
         selectedCategory = (selectedCategory == category) ? nil : category
     }
 
+    /// Aggressive trim on memory warning — keep only visible + safety zone
+    func emergencyTrim() {
+        let safeCount = Self.safetyZoneRadius * 2
+        if items.count > safeCount {
+            items = Array(items.suffix(safeCount))
+            totalDiscarded += items.count
+            itemVersion += 1
+            print("[FeedLoader] Memory warning: trimmed to \(items.count) items")
+        }
+        reservoir.removeAll()
+        reservoirCount = 0
+        URLCache.shared.removeAllCachedResponses()
+    }
+
     func clearAllFilters() {
         selectedCategory = nil
         selectedMood = .all

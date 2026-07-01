@@ -58,6 +58,9 @@ struct FeedScreen: View {
             OnboardingTipsView()
         }
         .task { await loader.start(); updateBadge() }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
+            loader.emergencyTrim()
+        }
         .onChange(of: loader.readItemIDs.count) { _, _ in updateBadge() }
         .onChange(of: loader.networkMonitor.isConnected) { _, connected in
             if connected && loader.fetchErrorCount > 0 {
@@ -339,7 +342,12 @@ struct SkeletonLoadingView: View {
                 }.padding(.vertical, 8)
             }
         }.disabled(true).accessibilityLabel("Loading articles")
-        .onAppear { Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { _ in withAnimation(.easeInOut(duration: 0.4)) { messageIndex = (messageIndex + 1) % messages.count } } }
+        .task {
+            while !Task.isCancelled {
+                try? await Task.sleep(for: .seconds(2.5))
+                withAnimation(.easeInOut(duration: 0.4)) { messageIndex = (messageIndex + 1) % messages.count }
+            }
+        }
     }
 }
 struct SkeletonCardView: View {
