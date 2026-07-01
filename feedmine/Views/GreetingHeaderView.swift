@@ -3,7 +3,22 @@ import SwiftUI
 struct GreetingHeaderView: View {
     @Environment(FeedLoader.self) private var loader
     var onSurpriseMe: (() -> Void)?
+    @AppStorage("lastOpenDate") private var lastOpenDate = Date.timeIntervalSinceReferenceDate
+    @AppStorage("streakCount") private var streakCount = 0
     @AppStorage("accentColorName") private var accentColorName = "blue"
+
+    private var currentStreak: Int {
+        let calendar = Calendar.current
+        let last = Date(timeIntervalSinceReferenceDate: lastOpenDate)
+
+        if calendar.isDateInToday(last) {
+            return streakCount
+        } else if calendar.isDateInYesterday(last) {
+            return streakCount + 1
+        } else {
+            return 1
+        }
+    }
 
     private var greeting: String {
         let hour = Calendar.current.component(.hour, from: Date())
@@ -40,6 +55,22 @@ struct GreetingHeaderView: View {
                         Text(greeting)
                             .font(.title3)
                             .fontWeight(.bold)
+
+                        if currentStreak > 1 {
+                            HStack(spacing: 2) {
+                                Image(systemName: "flame.fill")
+                                    .font(.caption2)
+                                    .foregroundStyle(.orange)
+                                Text("\(currentStreak)")
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.orange)
+                            }
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(Color.orange.opacity(0.1))
+                            .clipShape(Capsule())
+                        }
                     }
 
                     HStack(spacing: 8) {
@@ -108,6 +139,23 @@ struct GreetingHeaderView: View {
             .padding(.horizontal, 16)
             .padding(.top, 12)
             .padding(.bottom, 8)
+            .onAppear { updateStreak() }
         }
+    }
+
+    private func updateStreak() {
+        let calendar = Calendar.current
+        let today = Date()
+        let last = Date(timeIntervalSinceReferenceDate: lastOpenDate)
+
+        if calendar.isDateInToday(last) {
+            // Already logged today
+            return
+        } else if calendar.isDateInYesterday(last) {
+            streakCount = currentStreak
+        } else {
+            streakCount = 1
+        }
+        lastOpenDate = today.timeIntervalSinceReferenceDate
     }
 }
