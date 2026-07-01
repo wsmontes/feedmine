@@ -124,28 +124,53 @@ struct FeedScreen: View {
                             Color.clear.frame(height: 0).id("top")
                         }
 
-                        // Floating scroll-to-top button
+                        // Floating action buttons
                         if showScrollButton {
-                            Button {
-                                let impact = UIImpactFeedbackGenerator(style: .soft)
-                                impact.impactOccurred()
-                                withAnimation(.easeInOut(duration: 0.5)) {
-                                    proxy.scrollTo("top", anchor: .top)
+                            VStack(spacing: 12) {
+                                // Jump to next unread
+                                if let nextUnreadID = loader.filteredItems.first(where: { !loader.isRead($0.id) })?.id {
+                                    Button {
+                                        let impact = UIImpactFeedbackGenerator(style: .soft)
+                                        impact.impactOccurred()
+                                        withAnimation(.easeInOut(duration: 0.4)) {
+                                            proxy.scrollTo(nextUnreadID, anchor: .center)
+                                        }
+                                    } label: {
+                                        Image(systemName: "chevron.down.circle.fill")
+                                            .font(.title3)
+                                            .foregroundStyle(.white)
+                                            .frame(width: 44, height: 44)
+                                            .background(
+                                                Circle()
+                                                    .fill(.green.opacity(0.9))
+                                                    .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
+                                            )
+                                    }
+                                    .accessibilityLabel("Jump to next unread")
                                 }
-                                showScrollButton = false
-                            } label: {
-                                Image(systemName: "arrow.up")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                    .foregroundStyle(.white)
-                                    .frame(width: 44, height: 44)
-                                    .background(
-                                        Circle()
-                                            .fill(.blue.opacity(0.9))
-                                            .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
-                                    )
+
+                                // Scroll to top
+                                Button {
+                                    let impact = UIImpactFeedbackGenerator(style: .soft)
+                                    impact.impactOccurred()
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        proxy.scrollTo("top", anchor: .top)
+                                    }
+                                    showScrollButton = false
+                                } label: {
+                                    Image(systemName: "arrow.up")
+                                        .font(.title3)
+                                        .fontWeight(.semibold)
+                                        .foregroundStyle(.white)
+                                        .frame(width: 44, height: 44)
+                                        .background(
+                                            Circle()
+                                                .fill(.blue.opacity(0.9))
+                                                .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
+                                        )
+                                }
+                                .accessibilityLabel("Scroll to top")
                             }
-                            .accessibilityLabel("Scroll to top")
                             .padding(.trailing, 16)
                             .padding(.bottom, 16)
                             .transition(.scale.combined(with: .opacity))
