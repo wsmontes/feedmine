@@ -35,6 +35,7 @@ struct FeedScreen: View {
                 DebugStatusBar()
             }
             ErrorBannerView()
+            GreetingHeaderView()
             ReadingStatsView()
             SearchBarView()
             CategoryFilterBar()
