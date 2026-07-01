@@ -19,6 +19,7 @@ struct FeedScreen: View {
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
     @AppStorage("showDebugBar") private var showDebugBar = true
+    @AppStorage("nightMode") private var nightMode = false
     @AppStorage("accentColorName") private var accentColorName = "blue"
 
     private var accentColor: Color {
@@ -236,6 +237,13 @@ struct FeedScreen: View {
             OnboardingTipsView()
         }
         .toast(isPresented: $showToast, message: toastMessage, systemImage: toastIcon)
+        .overlay {
+            if nightMode {
+                Color.black.opacity(0.35)
+                    .ignoresSafeArea()
+                    .allowsHitTesting(false)
+            }
+        }
     }
 
     private func updateBadge() {
