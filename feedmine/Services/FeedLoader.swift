@@ -111,6 +111,7 @@ final class FeedLoader {
 
     // MARK: - Internal state
     private let fetcher = RSSFetcher()
+    let networkMonitor = NetworkMonitor()
     private(set) var sources: [FeedSource] = []
     private var reservoir: [FeedItem] = []
     private var loadedIDs: Set<String> = []
@@ -135,6 +136,7 @@ final class FeedLoader {
         guard !hasStarted else { return }
         hasStarted = true
 
+        networkMonitor.start()
         loadingState = .initial
 
         // Step 1: Parse OPML
