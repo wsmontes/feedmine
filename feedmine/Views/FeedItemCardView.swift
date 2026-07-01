@@ -4,34 +4,48 @@ import UIKit
 struct FeedItemCardView: View {
     let item: FeedItem
     let isRead: Bool
-    var onOpen: (() -> Void)?
+    let isBookmarked: Bool
+    var onBookmark: (() -> Void)?
     @State private var appeared = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Hero image
-            if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 180)
-                            .clipped()
-                            .overlay(
-                                isRead ?
-                                Color.black.opacity(0.15) : nil
-                            )
-                    case .failure, .empty:
-                        gradientPlaceholder
-                            .frame(height: 180)
-                    @unknown default:
-                        gradientPlaceholder
-                            .frame(height: 180)
+            // Hero image with bookmark overlay
+            ZStack(alignment: .topTrailing) {
+                if let imageURL = item.imageURL, let url = URL(string: imageURL) {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: 180)
+                                .clipped()
+                                .overlay(isRead ? Color.black.opacity(0.15) : nil)
+                        case .failure, .empty:
+                            gradientPlaceholder.frame(height: 180)
+                        @unknown default:
+                            gradientPlaceholder.frame(height: 180)
+                        }
                     }
                 }
+
+                // Bookmark button
+                Button {
+                    let impact = UIImpactFeedbackGenerator(style: .soft)
+                    impact.impactOccurred()
+                    onBookmark?()
+                } label: {
+                    Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                        .font(.title3)
+                        .foregroundStyle(isBookmarked ? .yellow : .white)
+                        .shadow(color: .black.opacity(0.4), radius: 4)
+                        .padding(12)
+                }
+                .buttonStyle(.plain)
             }
+            .frame(height: item.imageURL != nil ? 180 : 0)
+            .clipped()
 
             // Category + source
             HStack(spacing: 4) {
@@ -57,7 +71,6 @@ struct FeedItemCardView: View {
                     Image(systemName: "checkmark.circle.fill")
                         .font(.caption)
                         .foregroundStyle(.green)
-                        .transition(.scale.combined(with: .opacity))
                 }
             }
             .padding(.horizontal, 16)
@@ -98,8 +111,16 @@ struct FeedItemCardView: View {
         .offset(y: appeared ? 0 : 16)
         .contextMenu {
             Button {
-                let url = URL(string: item.url)
-                UIPasteboard.general.url = url
+                onBookmark?()
+            } label: {
+                Label(
+                    isBookmarked ? "Remove Bookmark" : "Bookmark",
+                    systemImage: isBookmarked ? "bookmark.slash" : "bookmark"
+                )
+            }
+
+            Button {
+                UIPasteboard.general.url = URL(string: item.url)
                 let impact = UIImpactFeedbackGenerator(style: .light)
                 impact.impactOccurred()
             } label: {
@@ -132,7 +153,6 @@ struct FeedItemCardView: View {
         formatter.unitsStyle = .full
         let relative = formatter.localizedString(for: date, relativeTo: Date())
 
-        // If within last 7 days, use relative. Otherwise use short date.
         if Date().timeIntervalSince(date) < 7 * 24 * 3600 {
             return relative
         }
@@ -149,10 +169,7 @@ struct FeedItemCardView: View {
         Rectangle()
             .fill(
                 LinearGradient(
-                    colors: [
-                        Color(.systemGray5),
-                        Color(.systemGray4)
-                    ],
+                    colors: [Color(.systemGray5), Color(.systemGray4)],
                     startPoint: .top,
                     endPoint: .bottom
                 )

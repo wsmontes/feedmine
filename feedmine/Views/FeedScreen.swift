@@ -28,7 +28,9 @@ struct FeedScreen: View {
                         ForEach(Array(loader.filteredItems.enumerated()), id: \.element.id) { index, item in
                             FeedItemCardView(
                                 item: item,
-                                isRead: loader.isRead(item.id)
+                                isRead: loader.isRead(item.id),
+                                isBookmarked: loader.isBookmarked(item.id),
+                                onBookmark: { loader.toggleBookmark(item.id) }
                             )
                                 .padding(.horizontal, 12)
                                 .scrollTransition(.animated(.spring(duration: 0.4))) { content, phase in

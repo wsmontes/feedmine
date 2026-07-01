@@ -52,6 +52,27 @@ final class FeedLoader {
         readItemIDs.contains(itemID)
     }
 
+    /// Bookmarked item IDs
+    private(set) var bookmarkedIDs: Set<String> = []
+
+    func toggleBookmark(_ itemID: String) {
+        if bookmarkedIDs.contains(itemID) {
+            bookmarkedIDs.remove(itemID)
+        } else {
+            bookmarkedIDs.insert(itemID)
+        }
+    }
+
+    func isBookmarked(_ itemID: String) -> Bool {
+        bookmarkedIDs.contains(itemID)
+    }
+
+    /// Bookmarked items sorted by date
+    var bookmarkedItems: [FeedItem] {
+        items.filter { bookmarkedIDs.contains($0.id) }
+            .sorted { $0.publishedAt > $1.publishedAt }
+    }
+
     // Debug counters
     private(set) var opmlFileCount = 0
     private(set) var sourceCount = 0
