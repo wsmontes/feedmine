@@ -41,8 +41,21 @@ struct SourceManagementView: View {
                         ForEach(sources, id: \.url) { source in
                             HStack {
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text(source.title)
-                                        .font(.subheadline)
+                                    HStack(spacing: 4) {
+                                        Text(source.title)
+                                            .font(.subheadline)
+                                        let health = loader.healthFor(source)
+                                        if health.isStale {
+                                            Image(systemName: "exclamationmark.triangle.fill")
+                                                .font(.caption2)
+                                                .foregroundStyle(.orange)
+                                        }
+                                        if health.consecutiveFailures > 0 {
+                                            Text("\(health.consecutiveFailures) fails")
+                                                .font(.caption2)
+                                                .foregroundStyle(.red)
+                                        }
+                                    }
                                     Text(source.url)
                                         .font(.caption2)
                                         .foregroundStyle(.secondary)

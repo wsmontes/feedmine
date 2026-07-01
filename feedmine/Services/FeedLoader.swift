@@ -134,6 +134,34 @@ final class FeedLoader {
     /// When the feed was last refreshed (nil = never)
     private(set) var lastRefreshDate: Date?
 
+    /// Per-source health tracking
+    struct SourceHealth {
+        var lastFetchDate: Date?
+        var consecutiveFailures: Int = 0
+        var lastArticleCount: Int = 0
+        var isStale: Bool { consecutiveFailures >= 3 }
+    }
+    private(set) var sourceHealth: [String: SourceHealth] = [:]
+
+    func healthFor(_ source: FeedSource) -> SourceHealth {
+        sourceHealth[source.url] ?? SourceHealth()
+    }
+
+    private func updateSourceHealth(failedSources: Int, totalSources: Int, totalItems: Int) {
+        let now = Date()
+        for source in enabledSources {
+            var health = sourceHealth[source.url] ?? SourceHealth()
+            health.lastFetchDate = now
+            health.lastArticleCount = totalItems / max(totalSources, 1)
+            if failedSources > 0 && totalItems == 0 {
+                health.consecutiveFailures += 1
+            } else {
+                health.consecutiveFailures = 0
+            }
+            sourceHealth[source.url] = health
+        }
+    }
+
     /// Available categories from loaded sources
     var availableCategories: [String] {
         let cats = Set(sources.map { $0.category }).sorted()
@@ -302,6 +330,8 @@ final class FeedLoader {
         let batch = await fetcher.fetchAll(enabledSources)
         totalFetched = batch.items.count
         fetchErrorCount = batch.failedSourceCount
+
+        updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: enabledSources.count, totalItems: batch.items.count)
         emptyFeedCount = batch.emptySourceCount
 
         // Step 3: Deduplicate and register ALL accepted item IDs
@@ -344,6 +374,8 @@ final class FeedLoader {
         let batch = await fetcher.fetchAll(enabledSources)
         totalFetched = batch.items.count
         fetchErrorCount = batch.failedSourceCount
+
+        updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: enabledSources.count, totalItems: batch.items.count)
         emptyFeedCount = batch.emptySourceCount
 
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
