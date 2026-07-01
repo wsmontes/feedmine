@@ -146,7 +146,7 @@ struct FeedScreen: View {
                         // Daily Briefing + Carousel (only when unfiltered)
                         if loader.selectedCategory == nil && loader.selectedMood == .all && loader.searchQuery.isEmpty {
                             DailyBriefingCard()
-                                .padding(.horizontal, 12)
+                                .padding(.horizontal, 6)
                                 .padding(.top, 4)
                             TopStoriesCarousel()
                                 .padding(.top, 8)
@@ -160,7 +160,7 @@ struct FeedScreen: View {
                                         onOpen: { previewItem = item },
                                         onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } }
                                     )
-                                    .padding(.horizontal, 8)
+                                    .padding(.horizontal, 6)
                                     .contentShape(Rectangle())
                                     .onAppear {
                                         appearedItemIDs.insert(item.id)
