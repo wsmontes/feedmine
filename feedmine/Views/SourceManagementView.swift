@@ -2,6 +2,21 @@ import SwiftUI
 
 struct SourceManagementView: View {
     @Environment(FeedLoader.self) private var loader
+    @State private var isTesting = false
+    @State private var testResults: [String: SourceStatus] = [:]
+
+    enum SourceStatus {
+        case ok, failed, testing
+        var icon: String {
+            switch self { case .ok: "checkmark.circle.fill"; case .failed: "xmark.circle.fill"; case .testing: "circle.dashed" }
+        }
+        var color: Color {
+            switch self { case .ok: .green; case .failed: .red; case .testing: .gray }
+        }
+        var label: String {
+            switch self { case .ok: "OK"; case .failed: "Failed"; case .testing: "Testing..." }
+        }
+    }
 
     private var sourcesByCategory: [(String, [FeedSource])] {
         let grouped = Dictionary(grouping: loader.sources, by: \.category)
@@ -68,6 +83,44 @@ struct SourceManagementView: View {
                 }
 
                 Section {
+                    Button {
+                        Task { await testSources() }
+                    } label: {
+                        HStack {
+                            Label("Test All Sources", systemImage: "checkmark.circle")
+                            Spacer()
+                            if isTesting {
+                                ProgressView()
+                            }
+                        }
+                    }
+                    .disabled(isTesting)
+
+                    if !testResults.isEmpty {
+                        ForEach(testResults.sorted(by: { $0.key < $1.key }), id: \.key) { name, status in
+                            HStack {
+                                Image(systemName: status.icon)
+                                    .font(.caption)
+                                    .foregroundStyle(status.color)
+                                Text(name)
+                                    .font(.caption)
+                                Spacer()
+                                Text(status.label)
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Health Check")
+                } footer: {
+                    if !testResults.isEmpty {
+                        let ok = testResults.values.filter { $0 == .ok }.count
+                        Text("\(ok)/\(testResults.count) sources responding")
+                    }
+                }
+
+                Section {
                     ShareLink(item: opmlString) {
                         Label("Export as OPML", systemImage: "square.and.arrow.up")
                     }
@@ -83,6 +136,43 @@ struct SourceManagementView: View {
 
     private var opmlString: String {
         OPMLParser.exportOPML(sources: loader.sources)
+    }
+
+    private func testSources() async {
+        isTesting = true
+        testResults = [:]
+
+        for source in loader.sources {
+            testResults[source.title] = .testing
+        }
+
+        await withTaskGroup(of: (String, SourceStatus).self) { group in
+            for source in loader.sources {
+                group.addTask {
+                    guard let url = URL(string: source.url) else {
+                        return (source.title, .failed)
+                    }
+                    var request = URLRequest(url: url)
+                    request.timeoutInterval = 10
+                    request.setValue("FeedminePrototype/1.0", forHTTPHeaderField: "User-Agent")
+                    do {
+                        let (_, response) = try await URLSession.shared.data(for: request)
+                        if let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) {
+                            return (source.title, .ok)
+                        }
+                        return (source.title, .failed)
+                    } catch {
+                        return (source.title, .failed)
+                    }
+                }
+            }
+
+            for await (name, status) in group {
+                testResults[name] = status
+            }
+        }
+
+        isTesting = false
     }
 
     private func categoryIcon(_ category: String) -> String {
