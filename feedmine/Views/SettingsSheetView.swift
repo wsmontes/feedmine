@@ -1,0 +1,156 @@
+import SwiftUI
+
+struct SettingsSheetView: View {
+    @Environment(FeedLoader.self) private var loader
+    @AppStorage("showDebugBar") private var showDebugBar = true
+    @AppStorage("fontSize") private var fontSize = FontSize.medium.rawValue
+    @AppStorage("accentColorName") private var accentColorName = "blue"
+
+    @State private var showClearReadConfirmation = false
+    @State private var showClearBookmarksConfirmation = false
+
+    enum FontSize: String, CaseIterable {
+        case small, medium, large
+    }
+
+    private let accentColors: [(name: String, color: Color)] = [
+        ("blue", .blue),
+        ("indigo", .indigo),
+        ("purple", .purple),
+        ("pink", .pink),
+        ("orange", .orange),
+        ("green", .green),
+        ("teal", .teal)
+    ]
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                // MARK: - Appearance
+                Section("Appearance") {
+                    HStack {
+                        Text("Font Size")
+                        Spacer()
+                        Picker("", selection: $fontSize) {
+                            Text("Small").tag(FontSize.small.rawValue)
+                            Text("Medium").tag(FontSize.medium.rawValue)
+                            Text("Large").tag(FontSize.large.rawValue)
+                        }
+                        .pickerStyle(.segmented)
+                        .frame(width: 200)
+                    }
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Accent Color")
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 7), spacing: 8) {
+                            ForEach(accentColors, id: \.name) { item in
+                                Circle()
+                                    .fill(item.color)
+                                    .frame(width: 32, height: 32)
+                                    .overlay(
+                                        accentColorName == item.name ?
+                                        Circle().stroke(Color.primary, lineWidth: 3) : nil
+                                    )
+                                    .onTapGesture {
+                                        accentColorName = item.name
+                                    }
+                            }
+                        }
+                    }
+                }
+
+                // MARK: - Debug
+                Section("Debug") {
+                    Toggle("Show Debug Status Bar", isOn: $showDebugBar)
+                }
+
+                // MARK: - Data
+                Section("Data") {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("\(loader.readItemIDs.count) articles read")
+                                .font(.subheadline)
+                            Text("\(loader.bookmarkedIDs.count) bookmarks")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                    }
+
+                    Button(role: .destructive) {
+                        showClearReadConfirmation = true
+                    } label: {
+                        Label("Clear Read History", systemImage: "eye.slash")
+                    }
+                    .disabled(loader.readItemIDs.isEmpty)
+                    .confirmationDialog(
+                        "Clear all read history?",
+                        isPresented: $showClearReadConfirmation
+                    ) {
+                        Button("Clear All", role: .destructive) {
+                            withAnimation {
+                                loader.readItemIDs.removeAll()
+                            }
+                        }
+                    }
+
+                    Button(role: .destructive) {
+                        showClearBookmarksConfirmation = true
+                    } label: {
+                        Label("Clear All Bookmarks", systemImage: "bookmark.slash")
+                    }
+                    .disabled(loader.bookmarkedIDs.isEmpty)
+                    .confirmationDialog(
+                        "Remove all bookmarks?",
+                        isPresented: $showClearBookmarksConfirmation
+                    ) {
+                        Button("Clear All", role: .destructive) {
+                            withAnimation {
+                                loader.bookmarkedIDs.removeAll()
+                            }
+                        }
+                    }
+                }
+
+                // MARK: - About
+                Section("About") {
+                    HStack {
+                        Text("Version")
+                        Spacer()
+                        Text("1.0 (Prototype)")
+                            .foregroundStyle(.secondary)
+                    }
+                    HStack {
+                        Text("Sources")
+                        Spacer()
+                        Text("\(loader.sourceCount) feeds · \(loader.opmlFileCount) files")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .presentationDetents([.medium, .large])
+    }
+}
+
+// MARK: - Public helpers for font size
+
+extension SettingsSheetView.FontSize {
+    var titleSize: Font {
+        switch self {
+        case .small: return .subheadline
+        case .medium: return .headline
+        case .large: return .title3
+        }
+    }
+
+    var bodySize: Font {
+        switch self {
+        case .small: return .caption
+        case .medium: return .subheadline
+        case .large: return .body
+        }
+    }
+}

@@ -46,7 +46,7 @@ final class FeedLoader {
     }
 
     /// Track which items have been opened
-    private(set) var readItemIDs: Set<String> = []
+    var readItemIDs: Set<String> = []
 
     func markAsRead(_ itemID: String) {
         readItemIDs.insert(itemID)
@@ -57,7 +57,7 @@ final class FeedLoader {
     }
 
     /// Bookmarked item IDs
-    private(set) var bookmarkedIDs: Set<String> = []
+    var bookmarkedIDs: Set<String> = []
 
     func toggleBookmark(_ itemID: String) {
         if bookmarkedIDs.contains(itemID) {

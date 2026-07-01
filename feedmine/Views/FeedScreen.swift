@@ -12,15 +12,19 @@ struct FeedScreen: View {
     @State private var selectedArticle: ArticleRoute?
     @State private var appearedItemIDs: Set<String> = []
     @State private var showScrollButton = false
+    @State private var showSettings = false
+    @AppStorage("showDebugBar") private var showDebugBar = true
 
     var body: some View {
         VStack(spacing: 0) {
-            DebugStatusBar()
+            if showDebugBar {
+                DebugStatusBar()
+            }
             ErrorBannerView()
             ReadingStatsView()
             SearchBarView()
             CategoryFilterBar()
-            LayoutToggleView()
+            LayoutToggleView(showSettings: $showSettings)
 
             if loader.loadingState == .initial && loader.items.isEmpty {
                 SkeletonLoadingView()
@@ -168,6 +172,9 @@ struct FeedScreen: View {
         .sheet(item: $selectedArticle) { route in
             SafariView(url: route.url)
         }
+        .sheet(isPresented: $showSettings) {
+            SettingsSheetView()
+        }
     }
 }
 
@@ -258,8 +265,21 @@ struct SkeletonCardView: View {
 struct LayoutToggleView: View {
     @Environment(FeedLoader.self) private var loader
 
+    @Binding var showSettings: Bool
+
     var body: some View {
         HStack {
+            Button {
+                showSettings = true
+            } label: {
+                Image(systemName: "gearshape.fill")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .padding(8)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Settings")
+
             Spacer()
             HStack(spacing: 0) {
                 Button {
