@@ -305,6 +305,34 @@ final class FeedLoader {
     private var retryCount = 0
     private var retryTask: Task<Void, Never>?
 
+    // MARK: - Helpers
+
+    /// Interleave items by category for feed variety — one from each category, round-robin
+    private func interleave(_ items: [FeedItem]) -> [FeedItem] {
+        var byCategory: [String: [FeedItem]] = [:]
+        for item in items {
+            byCategory[item.category, default: []].append(item)
+        }
+        // Sort each category's items by date descending
+        for cat in byCategory.keys {
+            byCategory[cat]?.sort { $0.publishedAt > $1.publishedAt }
+        }
+        var result: [FeedItem] = []
+        let catNames = byCategory.keys.sorted()
+        var indices = Dictionary(uniqueKeysWithValues: catNames.map { ($0, 0) })
+        var added = true
+        while added {
+            added = false
+            for cat in catNames {
+                guard let list = byCategory[cat], indices[cat]! < list.count else { continue }
+                result.append(list[indices[cat]!])
+                indices[cat]! += 1
+                added = true
+            }
+        }
+        return result
+    }
+
     // MARK: - Constants
     static let maxBuffer = 300
     static let loadMoreThreshold = 15
@@ -390,8 +418,8 @@ final class FeedLoader {
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
             loadedIDs.formUnion(actualNew.map(\.id))
 
-            reservoir.append(contentsOf: actualNew.sorted { $0.publishedAt > $1.publishedAt })
-            reservoir.sort { $0.publishedAt > $1.publishedAt }
+            reservoir.append(contentsOf: interleave(actualNew))
+            reservoir = interleave(reservoir)
 
             // Show content immediately after first batch
             if items.isEmpty && !reservoir.isEmpty {
@@ -451,7 +479,7 @@ final class FeedLoader {
             loadedIDs = Set(Array(loadedIDs).suffix(Self.maxLoadedIDs))  // cap to prevent unbounded growth
         }
 
-        reservoir = actualNew.sorted { $0.publishedAt > $1.publishedAt }
+        reservoir = interleave(actualNew)
         if reservoir.count > Self.maxReservoirSize {
             reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
         }
@@ -564,9 +592,8 @@ final class FeedLoader {
             loadedIDs = Set(Array(loadedIDs).suffix(Self.maxLoadedIDs))
         }
 
-        let sorted = actualNew.sorted { $0.publishedAt > $1.publishedAt }
-        reservoir.append(contentsOf: sorted)
-        reservoir.sort { $0.publishedAt > $1.publishedAt }
+        reservoir.append(contentsOf: interleave(actualNew))
+        reservoir = interleave(reservoir)
         if reservoir.count > Self.maxReservoirSize {
             reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
         }
