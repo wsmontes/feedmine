@@ -335,10 +335,10 @@ final class FeedLoader {
 
     // MARK: - Constants
     static let maxBuffer = 300
-    static let loadMoreThreshold = 30   // trigger fetch well before user hits bottom
+    static let pageSize = 20            // how many to show/move at a time
+    static let loadMoreThreshold = 5    // when only N items remain visible, load more
     static let discardBatchSize = 50
-    static let initialWindowSize = 50
-    static let reservoirLowWatermark = 50  // keep bigger buffer ready
+    static let reservoirLowWatermark = 30  // fetch more when reserve drops below this
     static let safetyZoneRadius = 50
     static let maxLoadedIDs = 5000        // prevent unbounded memory growth
     static let maxReservoirSize = 500     // cap reservoir to avoid memory pressure
@@ -432,8 +432,8 @@ final class FeedLoader {
         }
 
         // Top up visible window to initialWindowSize
-        if items.count < Self.initialWindowSize && !reservoir.isEmpty {
-            let needed = Self.initialWindowSize - items.count
+        if items.count < Self.pageSize && !reservoir.isEmpty {
+            let needed = Self.pageSize - items.count
             let toMove = min(needed, reservoir.count)
             items.append(contentsOf: reservoir.prefix(toMove))
             reservoir.removeFirst(toMove)
@@ -484,7 +484,7 @@ final class FeedLoader {
             reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
         }
 
-        let windowSize = min(Self.initialWindowSize, reservoir.count)
+        let windowSize = min(Self.pageSize, reservoir.count)
         items = Array(reservoir.prefix(windowSize))
         reservoir.removeFirst(windowSize)
         reservoirCount = reservoir.count
@@ -520,7 +520,7 @@ final class FeedLoader {
         }
 
         // Step 2: Move from reservoir to visible (show content we already have)
-        moveFromReservoirToVisible(count: Self.loadMoreThreshold)
+        moveFromReservoirToVisible(count: Self.pageSize)
 
         // Step 3: Always trim after adding items (regardless of network fetch)
         trimBufferIfNeeded()
