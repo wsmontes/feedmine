@@ -368,27 +368,50 @@ final class FeedLoader {
             return
         }
 
-        // Step 2: Fetch from all sources
-        let batch = await fetcher.fetchAll(enabledSources)
-        totalFetched = batch.items.count
-        fetchErrorCount = batch.failedSourceCount
+        // Step 2: Fetch progressively in chunks — shows content fast, doesn't block
+        let activeSources = enabledSources
+        let chunkSize = 20
+        var allFetched = 0
+        var allFailed = 0
 
-        updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: enabledSources.count, totalItems: batch.items.count)
-        emptyFeedCount = batch.emptySourceCount
+        for chunkStart in stride(from: 0, to: activeSources.count, by: chunkSize) {
+            let end = min(chunkStart + chunkSize, activeSources.count)
+            let chunk = Array(activeSources[chunkStart..<end])
+            let batch = await fetcher.fetchAll(chunk, maxConcurrent: 3)
 
-        // Step 3: Deduplicate and register ALL accepted item IDs
-        let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
-        loadedIDs.formUnion(actualNew.map(\.id))
+            allFetched += batch.items.count
+            allFailed += batch.failedSourceCount
+            totalFetched = allFetched
+            fetchErrorCount = allFailed
+            emptyFeedCount += batch.emptySourceCount
 
-        // Step 4: Sort by publish date descending, fill reservoir
-        reservoir = actualNew.sorted { $0.publishedAt > $1.publishedAt }
+            updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: chunk.count, totalItems: batch.items.count)
 
-        // Step 5: Move initial window from reservoir to visible items
-        let windowSize = min(Self.initialWindowSize, reservoir.count)
-        items = Array(reservoir.prefix(windowSize))
-        reservoir.removeFirst(windowSize)
-        reservoirCount = reservoir.count
-        itemVersion += 1
+            let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
+            loadedIDs.formUnion(actualNew.map(\.id))
+
+            reservoir.append(contentsOf: actualNew.sorted { $0.publishedAt > $1.publishedAt })
+            reservoir.sort { $0.publishedAt > $1.publishedAt }
+
+            // Show content immediately after first batch
+            if items.isEmpty && !reservoir.isEmpty {
+                let w = min(20, reservoir.count)
+                items = Array(reservoir.prefix(w))
+                reservoir.removeFirst(w)
+                reservoirCount = reservoir.count
+                itemVersion += 1
+            }
+        }
+
+        // Top up visible window to initialWindowSize
+        if items.count < Self.initialWindowSize && !reservoir.isEmpty {
+            let needed = Self.initialWindowSize - items.count
+            let toMove = min(needed, reservoir.count)
+            items.append(contentsOf: reservoir.prefix(toMove))
+            reservoir.removeFirst(toMove)
+            reservoirCount = reservoir.count
+            itemVersion += 1
+        }
 
         lastRefreshDate = .now
         loadingState = .idle
