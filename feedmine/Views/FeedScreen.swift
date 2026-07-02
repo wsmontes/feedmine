@@ -1,17 +1,10 @@
 import SwiftUI
-import SafariServices
 import UIKit
-
-struct ArticleRoute: Identifiable {
-    let id = UUID()
-    let url: URL
-}
 
 struct FeedScreen: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(FeedLoader.self) private var loader
-    @State private var selectedArticle: ArticleRoute?
-    @State private var previewItem: FeedItem?
+    @State private var articleItem: FeedItem?
     @State private var appearedItemIDs: Set<String> = []
     @State private var showScrollButton = false
     @State private var showSettings = false
@@ -80,8 +73,7 @@ struct FeedScreen: View {
                 Task { await loader.refresh() }
             }
         }
-        .sheet(item: $selectedArticle) { route in SafariView(url: route.url) }
-        .sheet(item: $previewItem) { item in ArticlePreviewSheet(item: item) }
+        .sheet(item: $articleItem) { item in ArticleReaderView(item: item) }
         .sheet(isPresented: $showSettings) { SettingsSheetView() }
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
@@ -192,7 +184,7 @@ struct FeedScreen: View {
                             Section {
                                 ForEach(Array(section.items.enumerated()), id: \.element.id) { index, item in
                                     FeedItemView(item: item, index: index,
-                                        onOpen: { previewItem = item },
+                                        onOpen: { articleItem = item },
                                         onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } }
                                     )
                                     .padding(.horizontal, 6)
@@ -337,18 +329,6 @@ struct CompactErrorBanner: View {
             .background(Color.red.opacity(0.85))
         }
     }
-}
-
-// MARK: - Safari View
-
-private struct SafariView: UIViewControllerRepresentable {
-    let url: URL
-    func makeUIViewController(context: Context) -> SFSafariViewController {
-        let config = SFSafariViewController.Configuration()
-        config.entersReaderIfAvailable = true
-        return SFSafariViewController(url: url, configuration: config)
-    }
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
 }
 
 // MARK: - Skeleton Loading (inline version)
