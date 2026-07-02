@@ -27,9 +27,11 @@ targets:
         type: folder
     info:
       path: feedmine/Info.plist
+      properties:
+        UILaunchScreen: {}
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.feedmine.app
       TARGETED_DEVICE_FAMILY: "1"  # iPhone only
-      DEVELOPMENT_TEAM: ""
+      DEVELOPMENT_TEAM: "BU5227WFYX"
     dependencies:
       - package: FeedKit
