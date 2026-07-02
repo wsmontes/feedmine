@@ -16,16 +16,10 @@ all: build install launch
 # ── Build ────────────────────────────────────────────────
 build:
 	@echo "🔨 Building Feedmine..."
-	@# Only regenerate if project.yml is newer than xcodeproj
-	@if [ project.yml -nt $(PROJECT)/project.pbxproj ]; then \
-		echo "  → Regenerating project..."; \
-		xcodegen generate --spec project.yml --quiet; \
-	fi
 	xcodebuild -project $(PROJECT) -scheme $(SCHEME) \
-		-destination 'platform=iOS,id=$(DEVICE_14PLUS)' \
+		-destination "platform=iOS,id=$(DEVICE_14PLUS)" \
 		-allowProvisioningUpdates \
-		-allowProvisioningDeviceRegistration \
-		build 2>&1 | grep -E 'BUILD|error:|warning:' | tail -5
+		-configuration Debug build 2>&1 | tail -3
 
 # ── Install ──────────────────────────────────────────────
 install:

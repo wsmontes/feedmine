@@ -32,6 +32,7 @@ targets:
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.feedmine.app
       TARGETED_DEVICE_FAMILY: "1"  # iPhone only
-      DEVELOPMENT_TEAM: "BU5227WFYX"
+      CODE_SIGN_STYLE: Automatic
+      DEVELOPMENT_TEAM: "955573A4YH"
     dependencies:
       - package: FeedKit
