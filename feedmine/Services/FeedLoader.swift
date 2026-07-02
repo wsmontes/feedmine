@@ -144,12 +144,14 @@ final class FeedLoader {
             sources: sources,
             lastRefreshDate: lastRefreshDate,
             streakCount: UserDefaults.standard.integer(forKey: "streakCount"),
-            lastOpenDate: UserDefaults.standard.double(forKey: "lastOpenDate")
+            lastOpenDate: UserDefaults.standard.double(forKey: "lastOpenDate"),
+            readTimestamps: readTimestamps
         )
     }
 
     func restoreState(from state: FeedState) {
         readItemIDs = Set(state.readItemIDs)
+        readTimestamps = state.readTimestamps
         bookmarkedIDs = Set(state.bookmarkedIDs)
         disabledSourceIDs = Set(state.disabledSourceIDs)
         if !state.sources.isEmpty {
@@ -157,7 +159,6 @@ final class FeedLoader {
             sourceCount = sources.count
         }
         lastRefreshDate = state.lastRefreshDate
-        // Streak is handled by GreetingHeaderView AppStorage
     }
 
     func saveNow() {
@@ -198,11 +199,13 @@ final class FeedLoader {
         return cats
     }
 
-    /// Track which items have been opened
+    /// Track which items have been opened, with timestamps for cleanup
     var readItemIDs: Set<String> = []
+    var readTimestamps: [String: Date] = [:]
 
     func markAsRead(_ itemID: String) {
         readItemIDs.insert(itemID)
+        readTimestamps[itemID] = Date()
         capReadIDsIfNeeded()
         PersistenceManager.shared.save(buildState())
     }

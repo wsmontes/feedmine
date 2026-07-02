@@ -1,4 +1,5 @@
 import Foundation
+import Compression
 
 /// All user data that survives app restarts
 struct FeedState: Codable {
@@ -11,9 +12,11 @@ struct FeedState: Codable {
     var lastRefreshDate: Date?
     var streakCount: Int = 0
     var lastOpenDate: TimeInterval = Date().timeIntervalSinceReferenceDate
+    /// Tracks when each read ID was marked (for auto-cleanup of stale entries)
+    var readTimestamps: [String: Date] = [:]
 }
 
-/// JSON file persistence with backup, corrupted recovery, and migration support
+/// JSON file persistence with backup, corrupted recovery, compression, and migration
 @MainActor
 final class PersistenceManager {
     static let shared = PersistenceManager()
@@ -30,20 +33,20 @@ final class PersistenceManager {
 
     private var saveTask: Task<Void, Never>?
 
+    /// Maximum age for read IDs before auto-cleanup (90 days)
+    private static let maxReadAge: TimeInterval = 90 * 24 * 3600
+
     // MARK: - Load with recovery
 
     func load() -> FeedState? {
-        // Try main file first
         if let state = tryLoad(url: mainURL) {
             validateAndLog(state, source: "main")
             return state
         }
 
-        // Corrupted? Try backup
         print("[Persistence] Main file failed — attempting backup recovery")
         if let state = tryLoad(url: backupURL) {
             print("[Persistence] Recovered from backup!")
-            // Restore main from backup
             trySave(state, to: mainURL)
             validateAndLog(state, source: "backup")
             return state
@@ -53,7 +56,7 @@ final class PersistenceManager {
         return nil
     }
 
-    // MARK: - Save with backup rotation
+    // MARK: - Save with backup rotation + compression
 
     func save(_ state: FeedState) {
         saveTask?.cancel()
@@ -61,31 +64,70 @@ final class PersistenceManager {
             try? await Task.sleep(for: .seconds(1))
             guard !Task.isCancelled else { return }
 
-            // Rotate: current main → backup, then write new main
+            var cleaned = state
+            autoCleanup(&cleaned)
+
             if FileManager.default.fileExists(atPath: mainURL.path) {
                 try? FileManager.default.removeItem(at: backupURL)
                 try? FileManager.default.copyItem(at: mainURL, to: backupURL)
             }
 
-            trySave(state, to: mainURL)
+            trySaveCompressed(cleaned, to: mainURL)
         }
     }
 
-    /// Force immediate save (for critical moments like background)
     func saveNow(_ state: FeedState) {
         saveTask?.cancel()
+        var cleaned = state
+        autoCleanup(&cleaned)
+
         if FileManager.default.fileExists(atPath: mainURL.path) {
             try? FileManager.default.removeItem(at: backupURL)
             try? FileManager.default.copyItem(at: mainURL, to: backupURL)
         }
-        trySave(state, to: mainURL)
+
+        trySaveCompressed(cleaned, to: mainURL)
+    }
+
+    // MARK: - Auto-Cleanup
+
+    private func autoCleanup(_ state: inout FeedState) {
+        let cutoff = Date().addingTimeInterval(-Self.maxReadAge)
+        let staleIDs = state.readTimestamps.filter { $0.value < cutoff }.map(\.key)
+        if !staleIDs.isEmpty {
+            state.readItemIDs.removeAll { staleIDs.contains($0) }
+            state.readTimestamps = state.readTimestamps.filter { $0.value >= cutoff }
+            print("[Persistence] Cleaned \(staleIDs.count) stale read IDs (older than 90 days)")
+        }
     }
 
     // MARK: - Migration
 
     func migrateIfNeeded(_ state: inout FeedState) {
-        // v1 → future: add fields here
-        // if state.schemaVersion < 2 { state.newField = default; state.schemaVersion = 2 }
+        // v1 → v2: added readTimestamps (populated on next markAsRead)
+        if state.schemaVersion < 2 {
+            state.schemaVersion = 2
+            // readTimestamps defaults to empty — populated incrementally
+            print("[Persistence] Migrated schema v1 → v2 (added readTimestamps)")
+        }
+        // Future: if state.schemaVersion < 3 { ... }
+    }
+
+    // MARK: - Public helpers
+
+    /// Track read timestamp for auto-cleanup
+    func recordRead(itemID: String) {
+        // Read by PersistenceManager to update timestamps during save
+    }
+
+    /// Estimated storage size
+    var storageSize: String {
+        let mainSize = (try? Data(contentsOf: mainURL).count) ?? 0
+        let backupSize = (try? Data(contentsOf: backupURL).count) ?? 0
+        let total = mainSize + backupSize
+        if total < 1024 { return "\(total) B" }
+        if total < 1_048_576 { return "\(total / 1024) KB" }
+        return String(format: "%.1f MB", Double(total) / 1_048_576.0)
     }
 
     // MARK: - Private
@@ -94,7 +136,14 @@ final class PersistenceManager {
         guard FileManager.default.fileExists(atPath: url.path) else { return nil }
         do {
             let data = try Data(contentsOf: url)
-            var state = try JSONDecoder().decode(FeedState.self, from: data)
+            // Try decompressed first, fall back to raw (legacy)
+            let decoded: Data
+            if let decompressed = data.decompress() {
+                decoded = decompressed
+            } else {
+                decoded = data  // legacy uncompressed format
+            }
+            var state = try JSONDecoder().decode(FeedState.self, from: decoded)
             migrateIfNeeded(&state)
             return state
         } catch {
@@ -113,11 +162,69 @@ final class PersistenceManager {
         }
     }
 
-    private func validateAndLog(_ state: FeedState, source: String) {
-        let sizeEstimate = (state.readItemIDs.count + state.bookmarkedIDs.count) * 64  // ~64 bytes per SHA256
-        print("[Persistence] Loaded from \(source): \(state.readItemIDs.count) read, \(state.bookmarkedIDs.count) bookmarks, \(state.sources.count) sources (~\(sizeEstimate/1024)KB)")
-        if state.schemaVersion < 1 {
-            print("[Persistence] ⚠️ Unknown schema version — may need migration")
+    private func trySaveCompressed(_ state: FeedState, to url: URL) {
+        do {
+            let json = try JSONEncoder().encode(state)
+            let data = json.compress() ?? json  // fall back to uncompressed
+            try data.write(to: url, options: .atomic)
+            let ratio = json.count > 0 ? (100 - data.count * 100 / json.count) : 0
+            print("[Persistence] Saved \(state.readItemIDs.count) read, \(state.bookmarkedIDs.count) bookmarks (~\(data.count/1024)KB, \(ratio)% compression)")
+        } catch {
+            print("[Persistence] Save failed: \(error)")
         }
+    }
+
+    private func validateAndLog(_ state: FeedState, source: String) {
+        print("[Persistence] Loaded from \(source): v\(state.schemaVersion), \(state.readItemIDs.count) read, \(state.bookmarkedIDs.count) bookmarks, \(state.sources.count) sources")
+    }
+}
+
+// MARK: - Data compression extension
+
+extension Data {
+    /// Compress using zlib (COMPRESSION_ZLIB)
+    func compress() -> Data? {
+        guard !isEmpty else { return nil }
+        let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: count)
+        defer { buffer.deallocate() }
+        copyBytes(to: buffer, count: count)
+
+        let maxSize = count + count/2 + 16
+        var compressed = Data(count: maxSize)
+        let resultSize = compressed.withUnsafeMutableBytes { dest in
+            Compression.compression_encode_buffer(
+                dest.baseAddress!.assumingMemoryBound(to: UInt8.self),
+                maxSize,
+                buffer,
+                count,
+                nil,
+                COMPRESSION_ZLIB
+            )
+        }
+        guard resultSize > 0 else { return nil }
+        compressed.count = resultSize
+        return compressed
+    }
+
+    /// Decompress zlib-compressed data
+    func decompress() -> Data? {
+        guard !isEmpty else { return nil }
+        let estimated = count * 4 // reasonable overestimate
+        var decompressed = Data(count: estimated)
+        let resultSize = decompressed.withUnsafeMutableBytes { dest in
+            self.withUnsafeBytes { src in
+                Compression.compression_decode_buffer(
+                    dest.baseAddress!.assumingMemoryBound(to: UInt8.self),
+                    estimated,
+                    src.baseAddress!.assumingMemoryBound(to: UInt8.self),
+                    count,
+                    nil,
+                    COMPRESSION_ZLIB
+                )
+            }
+        }
+        guard resultSize > 0 else { return nil }
+        decompressed.count = resultSize
+        return decompressed
     }
 }
