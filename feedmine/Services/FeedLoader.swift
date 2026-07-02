@@ -397,7 +397,7 @@ final class FeedLoader {
         }
 
         // Step 2: Fetch progressively in chunks — shows content fast, doesn't block
-        let activeSources = enabledSources
+        let activeSources = enabledSources.shuffled()  // random order for variety
         let chunkSize = 20
         var allFetched = 0
         var allFailed = 0

@@ -170,6 +170,7 @@ struct FeedScreen: View {
             ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack(spacing: 10) {
+                        Color.clear.frame(height: 0).id("top")
                         // Daily Briefing + Carousel (only when unfiltered)
                         if loader.selectedCategory == nil && loader.selectedMood == .all && loader.searchQuery.isEmpty {
                             DailyBriefingCard()
@@ -203,8 +204,6 @@ struct FeedScreen: View {
                     .padding(.top, 48)
                     .safeAreaInset(edge: .bottom) { Color.clear.frame(height: 20) }
                 }
-                .overlay(alignment: .top) { Color.clear.frame(height: 0).id("top") }
-
                 // Floating action buttons
                 if showScrollButton { floatingButtons(proxy: proxy) }
             }
