@@ -37,6 +37,7 @@ struct FeedItemCardView: View {
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
+                                .frame(maxWidth: .infinity)
                                 .frame(height: 220)
                                 .clipped()
                                 .overlay(isRead ? Color.black.opacity(0.15) : nil)
@@ -62,7 +63,7 @@ struct FeedItemCardView: View {
                 }
                 .buttonStyle(.plain)
             }
-            .frame(height: item.imageURL != nil ? 180 : 0)
+            .frame(height: item.imageURL != nil ? 220 : 0)
             .clipped()
 
             // Category + source
