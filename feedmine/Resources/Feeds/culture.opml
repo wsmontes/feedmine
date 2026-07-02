@@ -4,9 +4,9 @@
   <body>
     <outline text="Culture">
       <outline title="Aeon" xmlUrl="https://aeon.co/feed.rss" type="rss"/>
-      <outline title="The Atlantic" xmlUrl="https://www.theatlantic.com/feed/all/" type="rss"/>
       <outline title="Longreads" xmlUrl="https://longreads.com/feed/" type="rss"/>
-      <outline title="The New Yorker" xmlUrl="https://www.newyorker.com/feed/everything" type="rss"/>
+      <outline title="The Marginalian" xmlUrl="https://www.themarginalian.org/feed/" type="rss"/>
+      <outline title="Open Culture" xmlUrl="https://www.openculture.com/feed" type="rss"/>
     </outline>
   </body>
 </opml>
