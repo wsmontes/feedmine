@@ -115,9 +115,10 @@ final class PersistenceManager {
 
     // MARK: - Public helpers
 
-    /// Track read timestamp for auto-cleanup
-    func recordRead(itemID: String) {
-        // Read by PersistenceManager to update timestamps during save
+    /// Check if persistence is healthy (files exist, can be read)
+    var isHealthy: Bool {
+        guard FileManager.default.fileExists(atPath: mainURL.path) else { return true }  // no file = fresh start = healthy
+        return tryLoad(url: mainURL) != nil || tryLoad(url: backupURL) != nil
     }
 
     /// Estimated storage size
@@ -131,6 +132,40 @@ final class PersistenceManager {
     }
 
     // MARK: - Private
+
+    /// Validate state data makes sense before saving
+    private func validate(_ state: FeedState) -> Bool {
+        // Negative counts indicate data corruption
+        guard state.readItemIDs.count >= 0,
+              state.bookmarkedIDs.count >= 0,
+              state.disabledSourceIDs.count >= 0,
+              state.sources.count >= 0 else {
+            print("[Persistence] ⚠️ Validation failed: negative counts detected")
+            return false
+        }
+        // ID lists should be unique
+        if Set(state.readItemIDs).count != state.readItemIDs.count {
+            print("[Persistence] ⚠️ Validation failed: duplicate read IDs")
+        }
+        if Set(state.bookmarkedIDs).count != state.bookmarkedIDs.count {
+            print("[Persistence] ⚠️ Validation failed: duplicate bookmark IDs")
+        }
+        return true
+    }
+
+    /// Check sufficient disk space (reject saves if < 10MB free)
+    private var hasDiskSpace: Bool {
+        do {
+            let values = try mainURL.resourceValues(forKeys: [.volumeAvailableCapacityKey])
+            if let free = values.volumeAvailableCapacity, free < 10_485_760 {
+                print("[Persistence] ⚠️ Low disk space (\(free/1_048_576)MB free) — skipping save")
+                return false
+            }
+        } catch {
+            return true  // err on the side of trying
+        }
+        return true
+    }
 
     private func tryLoad(url: URL) -> FeedState? {
         guard FileManager.default.fileExists(atPath: url.path) else { return nil }
@@ -163,6 +198,8 @@ final class PersistenceManager {
     }
 
     private func trySaveCompressed(_ state: FeedState, to url: URL) {
+        guard validate(state) else { return }
+        guard hasDiskSpace else { return }
         do {
             let json = try JSONEncoder().encode(state)
             let data = json.compress() ?? json  // fall back to uncompressed
