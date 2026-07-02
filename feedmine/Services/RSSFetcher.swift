@@ -185,12 +185,18 @@ actor RSSFetcher {
             content: rawContent
         )
 
+        // Sanitize: truncate long titles, strip HTML, cap source names
+        let sanitizedTitle = strippingHTMLTags(title ?? "Untitled")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        let truncatedTitle = String(sanitizedTitle.prefix(200))
+        let sanitizedSource = String(source.title.prefix(50))
+
         return FeedItem(
             id: id,
-            sourceTitle: source.title,
+            sourceTitle: sanitizedSource,
             sourceURL: source.url,
             category: source.category,
-            title: title ?? "Untitled",
+            title: truncatedTitle.isEmpty ? "Untitled" : truncatedTitle,
             excerpt: excerpt,
             url: resolvedLink,
             imageURL: imageURL,
@@ -253,9 +259,17 @@ actor RSSFetcher {
     /// Extract excerpt from available fields in priority order.
     private func extractExcerpt(description: String?, content: String?) -> String {
         let raw = description ?? content ?? ""
-        let stripped = strippingHTMLTags(raw).trimmingCharacters(in: .whitespacesAndNewlines)
+        let stripped = strippingHTMLTags(raw)
+            .replacingOccurrences(of: "\n", with: " ")
+            .replacingOccurrences(of: "  ", with: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
         if stripped.isEmpty { return "No description" }
-        return String(stripped.prefix(200))
+        // Find last full word within 200 char limit
+        let capped = String(stripped.prefix(200))
+        if let lastSpace = capped.lastIndex(of: " "), lastSpace > capped.startIndex {
+            return String(capped[..<lastSpace]).trimmingCharacters(in: .whitespaces)
+        }
+        return capped
     }
 
     /// Strip HTML tags using NSAttributedString conversion.
