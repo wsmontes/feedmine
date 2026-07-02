@@ -309,15 +309,19 @@ final class FeedLoader {
 
     /// Interleave items by category for feed variety — one from each category, round-robin
     private func interleave(_ items: [FeedItem]) -> [FeedItem] {
+        guard items.count > 1 else { return items }
         var byCategory: [String: [FeedItem]] = [:]
         for item in items {
             byCategory[item.category, default: []].append(item)
         }
+        // Only interleave if we have multiple categories
+        guard byCategory.count > 1 else { return items }
         // Sort each category's items by date descending
         for cat in byCategory.keys {
             byCategory[cat]?.sort { $0.publishedAt > $1.publishedAt }
         }
         var result: [FeedItem] = []
+        result.reserveCapacity(items.count)
         let catNames = byCategory.keys.sorted()
         var indices = Dictionary(uniqueKeysWithValues: catNames.map { ($0, 0) })
         var added = true
@@ -418,12 +422,15 @@ final class FeedLoader {
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
             loadedIDs.formUnion(actualNew.map(\.id))
 
-            reservoir.append(contentsOf: interleave(actualNew))
-            reservoir = interleave(reservoir)
+            // Just append date-sorted during loading — interleave once at the end
+            reservoir.append(contentsOf: actualNew.sorted { $0.publishedAt > $1.publishedAt })
+            if reservoir.count > Self.maxReservoirSize {
+                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
+            }
 
             // Show content immediately after first batch
             if items.isEmpty && !reservoir.isEmpty {
-                let w = min(20, reservoir.count)
+                let w = min(Self.pageSize, reservoir.count)
                 items = Array(reservoir.prefix(w))
                 reservoir.removeFirst(w)
                 reservoirCount = reservoir.count
@@ -431,7 +438,9 @@ final class FeedLoader {
             }
         }
 
-        // Top up visible window to initialWindowSize
+        // Interleave once + top up visible window
+        reservoir = interleave(reservoir)
+        reservoirCount = reservoir.count
         if items.count < Self.pageSize && !reservoir.isEmpty {
             let needed = Self.pageSize - items.count
             let toMove = min(needed, reservoir.count)
