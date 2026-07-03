@@ -187,7 +187,7 @@ struct FeedScreen: View {
                             DailyBriefingCard()
                                 .padding(.horizontal, 6)
                                 .padding(.top, 4)
-                            TopStoriesCarousel()
+                            WhatsNewCarousel()
                                 .padding(.top, 8)
                         }
 

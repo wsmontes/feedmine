@@ -18,6 +18,8 @@ struct FeedState: Codable {
     var cachedItems: [FeedItem] = []
     /// Last visible item ID — restores scroll position on relaunch
     var lastVisibleItemID: String? = nil
+    /// Source URLs the user has clicked at least once — drives "What's New"
+    var clickedSourceURLs: [String] = []
 }
 
 /// JSON file persistence with backup, corrupted recovery, compression, and migration

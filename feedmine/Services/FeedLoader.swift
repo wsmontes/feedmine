@@ -155,7 +155,8 @@ final class FeedLoader {
             streakCount: UserDefaults.standard.integer(forKey: "streakCount"),
             lastOpenDate: UserDefaults.standard.double(forKey: "lastOpenDate"),
             readTimestamps: readTimestamps,
-            lastVisibleItemID: lastVisibleItemID
+            lastVisibleItemID: lastVisibleItemID,
+            clickedSourceURLs: Array(clickedSourceURLs)
         )
     }
 
@@ -170,6 +171,7 @@ final class FeedLoader {
         }
         lastRefreshDate = state.lastRefreshDate
         lastVisibleItemID = state.lastVisibleItemID
+        clickedSourceURLs = Set(state.clickedSourceURLs)
     }
 
     /// Build a FeedState that INCLUDES cached articles for instant cold launch
@@ -225,8 +227,39 @@ final class FeedLoader {
     func markAsRead(_ itemID: String) {
         readItemIDs.insert(itemID)
         readTimestamps[itemID] = Date()
+        // Track clicked source for "What's New"
+        if let item = (items + reservoir).first(where: { $0.id == itemID }) {
+            clickedSourceURLs.insert(item.sourceURL)
+        }
         capReadIDsIfNeeded()
         PersistenceManager.shared.save(buildState())
+    }
+
+    /// Source URLs the user has clicked at least once
+    var clickedSourceURLs: Set<String> = []
+
+    /// Item IDs already known at launch — "What's New" only shows items arriving AFTER this snapshot
+    private var whatsNewBaselineIDs: Set<String> = []
+
+    /// "What's New" — only items with images, not in memory at launch, unread, deduped.
+    var whatIsNewItems: [FeedItem] {
+        let pool = (items + reservoir)
+            .filter { item in
+                !readItemIDs.contains(item.id)         // unread
+                && !whatsNewBaselineIDs.contains(item.id) // arrived after launch
+                && item.imageURL != nil                   // has image
+            }
+        // Deduplicate by ID (preserve first occurrence = most recent position)
+        var seen = Set<String>()
+        let unique = pool.filter { seen.insert($0.id).inserted }
+        let sorted = unique.sorted { $0.publishedAt > $1.publishedAt }
+
+        if !clickedSourceURLs.isEmpty {
+            let fromClicked = sorted.filter { clickedSourceURLs.contains($0.sourceURL) }
+            if !fromClicked.isEmpty { return fromClicked }
+        }
+        // Fallback: freshest arrivals from any source
+        return Array(sorted.prefix(10))
     }
 
     func markAllAsRead() {
@@ -402,8 +435,8 @@ final class FeedLoader {
             }
             filteredOutItems = nonMatching
         } else {
-            // Filter cleared: merge everything back
-            let merged = allItems.sorted { $0.publishedAt > $1.publishedAt }
+            // Filter cleared: merge everything back, re-interleave for category variety
+            let merged = interleave(allItems)
             let w = min(Self.pageSize, merged.count)
             items = Array(merged.prefix(w))
             reservoir = Array(merged.dropFirst(w))
@@ -486,6 +519,9 @@ final class FeedLoader {
         } else {
             loadingState = .initial
         }
+
+        // Snapshot current IDs — "What's New" only shows items arriving AFTER this
+        whatsNewBaselineIDs = loadedIDs
 
         // Step 2: Parse OPML (non-blocking for cached path — UI already live)
         let parseResult = await OPMLParser.parseAll()

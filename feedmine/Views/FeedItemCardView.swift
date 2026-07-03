@@ -28,42 +28,45 @@ struct FeedItemCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Hero image with bookmark overlay
-            ZStack(alignment: .topTrailing) {
-                if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-                    AsyncImage(url: url) { phase in
-                        switch phase {
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(height: 220)
-                                .clipped()
-                                .overlay(isRead ? Color.black.opacity(0.15) : nil)
-                        case .failure, .empty:
-                            gradientPlaceholder
-                        @unknown default:
+            // Hero image — fixed aspect ratio guarantees every card is identical shape
+            Rectangle()
+                .fill(.clear)
+                .aspectRatio(16/9, contentMode: .fit)
+                .overlay(alignment: .topTrailing) {
+                    Group {
+                        if let imageURL = item.imageURL, let url = URL(string: imageURL) {
+                            AsyncImage(url: url) { phase in
+                                switch phase {
+                                case .success(let image):
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                case .failure, .empty:
+                                    gradientPlaceholder
+                                @unknown default:
+                                    gradientPlaceholder
+                                }
+                            }
+                            .overlay(isRead ? Color.black.opacity(0.15) : nil)
+                        } else {
                             gradientPlaceholder
                         }
                     }
-                }
 
-                // Bookmark button
-                Button {
-                    let impact = UIImpactFeedbackGenerator(style: .soft)
-                    impact.impactOccurred()
-                    onBookmark?()
-                } label: {
-                    Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                        .font(.title3)
-                        .foregroundStyle(isBookmarked ? .yellow : .white)
-                        .shadow(color: .black.opacity(0.4), radius: 4)
-                        .padding(12)
+                    Button {
+                        let impact = UIImpactFeedbackGenerator(style: .soft)
+                        impact.impactOccurred()
+                        onBookmark?()
+                    } label: {
+                        Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                            .font(.title3)
+                            .foregroundStyle(isBookmarked ? .yellow : .white)
+                            .shadow(color: .black.opacity(0.4), radius: 4)
+                            .padding(12)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
-            }
-            .frame(height: item.imageURL != nil ? 220 : 0)
-            .clipped()
+                .clipped()
 
             // Category + source
             HStack(spacing: 4) {
