@@ -8,6 +8,7 @@ struct FeedItemCardView: View {
     let appearDelay: Double
     var onBookmark: (() -> Void)?
     @State private var appeared = false
+    @State private var imageLoadFailed = false
     @AppStorage("fontSize") private var fontSize = "medium"
 
     private var titleFont: Font {
@@ -28,45 +29,33 @@ struct FeedItemCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Hero image — fixed aspect ratio guarantees every card is identical shape
-            Rectangle()
-                .fill(.clear)
-                .aspectRatio(16/9, contentMode: .fit)
-                .overlay(alignment: .topTrailing) {
-                    Group {
-                        if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-                            AsyncImage(url: url) { phase in
-                                switch phase {
-                                case .success(let image):
-                                    image
-                                        .resizable()
-                                        .scaledToFill()
-                                case .failure, .empty:
-                                    gradientPlaceholder
-                                @unknown default:
-                                    gradientPlaceholder
-                                }
-                            }
-                            .overlay(isRead ? Color.black.opacity(0.15) : nil)
-                        } else {
-                            gradientPlaceholder
+            // Hero image — only shown when URL exists AND loads successfully
+            if let imageURL = item.imageURL, !imageLoadFailed {
+                Color.clear
+                    .aspectRatio(16/9, contentMode: .fit)
+                    .overlay {
+                        CachedAsyncImage(url: URL(string: imageURL), onResult: { success in
+                            if !success { imageLoadFailed = true }
+                        })
+                        .scaledToFill()
+                        .overlay(isRead ? Color.black.opacity(0.15) : nil)
+                    }
+                    .clipped()
+                    .overlay(alignment: .topTrailing) {
+                        Button {
+                            let impact = UIImpactFeedbackGenerator(style: .soft)
+                            impact.impactOccurred()
+                            onBookmark?()
+                        } label: {
+                            Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                                .font(.title3)
+                                .foregroundStyle(isBookmarked ? .yellow : .white)
+                                .shadow(color: .black.opacity(0.4), radius: 4)
+                                .padding(12)
                         }
+                        .buttonStyle(.plain)
                     }
-
-                    Button {
-                        let impact = UIImpactFeedbackGenerator(style: .soft)
-                        impact.impactOccurred()
-                        onBookmark?()
-                    } label: {
-                        Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                            .font(.title3)
-                            .foregroundStyle(isBookmarked ? .yellow : .white)
-                            .shadow(color: .black.opacity(0.4), radius: 4)
-                            .padding(12)
-                    }
-                    .buttonStyle(.plain)
-                }
-                .clipped()
+            }
 
             // Category + source
             HStack(spacing: 4) {
@@ -142,6 +131,7 @@ struct FeedItemCardView: View {
             .padding(.top, 8)
             .padding(.bottom, 16)
         }
+        .frame(maxWidth: .infinity)
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .overlay(alignment: .leading) {

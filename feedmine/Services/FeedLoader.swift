@@ -256,10 +256,10 @@ final class FeedLoader {
 
         if !clickedSourceURLs.isEmpty {
             let fromClicked = sorted.filter { clickedSourceURLs.contains($0.sourceURL) }
-            if !fromClicked.isEmpty { return fromClicked }
+            if !fromClicked.isEmpty { return fromClicked.shuffled() }
         }
-        // Fallback: freshest arrivals from any source
-        return Array(sorted.prefix(10))
+        // Fallback: freshest arrivals from any source, shuffled
+        return Array(sorted.prefix(10)).shuffled()
     }
 
     func markAllAsRead() {
@@ -348,7 +348,13 @@ final class FeedLoader {
 
     // MARK: - Internal state
     private let fetcher = RSSFetcher()
+    private let prefetcher = ImagePrefetcher()
     let networkMonitor = NetworkMonitor()
+    /// Whether to pre-download images before cards appear (default: true)
+    var prefetchImages: Bool {
+        get { UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true }
+        set { UserDefaults.standard.set(newValue, forKey: "prefetchImages") }
+    }
     private(set) var sources: [FeedSource] = []
     private var reservoir: [FeedItem] = []
     private var loadedIDs: Set<String> = []
@@ -363,22 +369,24 @@ final class FeedLoader {
 
     // MARK: - Helpers
 
-    /// Interleave items by category for feed variety — one from each category, round-robin
+    /// Interleave items by category for feed variety — shuffled within categories, random category order
     private func interleave(_ items: [FeedItem]) -> [FeedItem] {
         guard items.count > 1 else { return items }
         var byCategory: [String: [FeedItem]] = [:]
         for item in items {
             byCategory[item.category, default: []].append(item)
         }
-        // Only interleave if we have multiple categories
-        guard byCategory.count > 1 else { return items }
-        // Sort each category's items by date descending
+        guard byCategory.count > 1 else {
+            // Single category: just shuffle
+            return items.shuffled()
+        }
+        // Shuffle each category + random category order
         for cat in byCategory.keys {
-            byCategory[cat]?.sort { $0.publishedAt > $1.publishedAt }
+            byCategory[cat] = byCategory[cat]?.shuffled()
         }
         var result: [FeedItem] = []
         result.reserveCapacity(items.count)
-        let catNames = byCategory.keys.sorted()
+        let catNames = byCategory.keys.shuffled()
         var indices = Dictionary(uniqueKeysWithValues: catNames.map { ($0, 0) })
         var added = true
         while added {
@@ -482,6 +490,37 @@ final class FeedLoader {
         URLCache.shared.removeAllCachedResponses()
     }
 
+    /// Re-interleave all content for fresh variety — no network call.
+    /// On app reopen: reshuffle for variety + fetch new content in background.
+    func refreshIfStale() async {
+        guard !sources.isEmpty else { return }
+
+        // Reshuffle all content for fresh variety on reopen
+        if !items.isEmpty {
+            let all = interleave(items + reservoir + filteredOutItems)
+            let w = min(Self.pageSize, all.count)
+            items = Array(all.prefix(w))
+            reservoir = Array(all.dropFirst(w))
+            if reservoir.count > Self.maxReservoirSize {
+                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
+            }
+            filteredOutItems.removeAll()
+            reservoirCount = reservoir.count
+            itemVersion += 1
+        }
+
+        // Fetch new content in background
+        let shouldFetch: Bool
+        if let last = lastRefreshDate {
+            shouldFetch = Date().timeIntervalSince(last) > 900 || items.count < 10
+        } else {
+            shouldFetch = true
+        }
+        guard shouldFetch else { return }
+        await fetchFreshContent()
+        PersistenceManager.shared.save(buildStateWithItems())
+    }
+
     func clearAllFilters() {
         selectedCategory = nil
         selectedMood = .all
@@ -575,6 +614,8 @@ final class FeedLoader {
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
             loadedIDs.formUnion(actualNew.map(\.id))
 
+            prefetchImagesIfNeeded(for: actualNew)
+
             // Just append date-sorted during loading — interleave once at the end
             reservoir.append(contentsOf: actualNew.sorted { $0.publishedAt > $1.publishedAt })
             if reservoir.count > Self.maxReservoirSize {
@@ -631,6 +672,8 @@ final class FeedLoader {
 
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
             loadedIDs.formUnion(actualNew.map(\.id))
+
+            prefetchImagesIfNeeded(for: actualNew)
 
             // Merge new items into reservoir (interleaved), don't touch visible items
             reservoir.append(contentsOf: interleave(actualNew))
@@ -786,6 +829,8 @@ final class FeedLoader {
             loadedIDs = Set(Array(loadedIDs).suffix(Self.maxLoadedIDs))
         }
 
+        prefetchImagesIfNeeded(for: actualNew)
+
         reservoir.append(contentsOf: interleave(actualNew))
         reservoir = interleave(reservoir)
         if reservoir.count > Self.maxReservoirSize {
@@ -794,6 +839,14 @@ final class FeedLoader {
         reservoirCount = reservoir.count
 
         PersistenceManager.shared.save(buildStateWithItems())
+    }
+
+    /// Prefetch images for items if the setting is enabled
+    private func prefetchImagesIfNeeded(for items: [FeedItem]) {
+        guard prefetchImages else { return }
+        let urls = items.compactMap { $0.imageURL }
+        guard !urls.isEmpty else { return }
+        Task { await prefetcher.prefetch(urls: urls) }
     }
 
     /// Schedule an automatic retry with exponential backoff when all sources fail

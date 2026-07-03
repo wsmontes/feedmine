@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsSheetView: View {
     @Environment(FeedLoader.self) private var loader
     @AppStorage("showDebugBar") private var showDebugBar = true
+    @AppStorage("prefetchImages") private var prefetchImages = true
     @AppStorage("nightMode") private var nightMode = false
     @AppStorage("fontSize") private var fontSize = FontSize.medium.rawValue
     @AppStorage("accentColorName") private var accentColorName = "blue"
@@ -68,6 +69,11 @@ struct SettingsSheetView: View {
                 }
 
                 // MARK: - Reading
+                Section("Performance") {
+                    Toggle("Preload Images", systemImage: "photo.stack.fill", isOn: $prefetchImages)
+                        .tint(.blue)
+                }
+
                 Section("Reading") {
                     Toggle("Night Mode", systemImage: "moon.stars.fill", isOn: $nightMode)
                         .tint(.orange)

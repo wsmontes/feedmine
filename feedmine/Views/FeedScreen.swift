@@ -69,10 +69,7 @@ struct FeedScreen: View {
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            if let lastRefresh = loader.lastRefreshDate,
-               Date().timeIntervalSince(lastRefresh) > 900 {  // 15 min stale threshold
-                Task { await loader.refresh() }
-            }
+            Task { await loader.refreshIfStale() }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
             loader.emergencyTrim()

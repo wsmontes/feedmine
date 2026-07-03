@@ -416,19 +416,13 @@ struct WhatsNewCard: View {
 
     @ViewBuilder
     private var cardBackground: some View {
-        if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-            AsyncImage(url: url) { phase in
-                switch phase {
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                case .failure, .empty:
-                    gradientFill
-                @unknown default:
-                    gradientFill
+        if let imageURL = item.imageURL {
+            Color.clear
+                .overlay {
+                    CachedAsyncImage(url: URL(string: imageURL))
+                        .scaledToFill()
                 }
-            }
+                .clipped()
         } else {
             gradientFill
         }
