@@ -104,10 +104,16 @@ final class FeedLoader {
 
     func selectMood(_ mood: MoodFilter) {
         selectedMood = (selectedMood == mood) ? .all : mood
+        rebuildForFilter()
     }
 
     /// Search query for filtering by title and excerpt
     var searchQuery = ""
+
+    /// Called by the view when searchQuery changes — triggers filter rebuild
+    func searchQueryChanged() {
+        rebuildForFilter()
+    }
 
     /// Items filtered by selected mood, category, AND search query
     var filteredItems: [FeedItem] {
@@ -134,6 +140,9 @@ final class FeedLoader {
     /// When the feed was last refreshed (nil = never)
     private(set) var lastRefreshDate: Date?
 
+    /// Last item visible at top of scroll — persisted for position restore on relaunch
+    var lastVisibleItemID: String?
+
     // MARK: - Persistence
 
     func buildState() -> FeedState {
@@ -145,7 +154,8 @@ final class FeedLoader {
             lastRefreshDate: lastRefreshDate,
             streakCount: UserDefaults.standard.integer(forKey: "streakCount"),
             lastOpenDate: UserDefaults.standard.double(forKey: "lastOpenDate"),
-            readTimestamps: readTimestamps
+            readTimestamps: readTimestamps,
+            lastVisibleItemID: lastVisibleItemID
         )
     }
 
@@ -159,6 +169,15 @@ final class FeedLoader {
             sourceCount = sources.count
         }
         lastRefreshDate = state.lastRefreshDate
+        lastVisibleItemID = state.lastVisibleItemID
+    }
+
+    /// Build a FeedState that INCLUDES cached articles for instant cold launch
+    func buildStateWithItems() -> FeedState {
+        var state = buildState()
+        let allItems = (items + reservoir).sorted { $0.publishedAt > $1.publishedAt }
+        state.cachedItems = Array(allItems.prefix(200))  // cap at 200 most recent
+        return state
     }
 
     func saveNow() {
@@ -300,10 +319,14 @@ final class FeedLoader {
     private(set) var sources: [FeedSource] = []
     private var reservoir: [FeedItem] = []
     private var loadedIDs: Set<String> = []
-    private var currentVisibleIndex: Int = 0
+    private(set) var currentVisibleIndex: Int = 0
     private var hasStarted = false
     private var retryCount = 0
     private var retryTask: Task<Void, Never>?
+    private var filteredOutItems: [FeedItem] = []  // items excluded by active filter; restored when filter clears
+    private var hasActiveFilter: Bool {
+        selectedCategory != nil || selectedMood != .all || !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
 
     // MARK: - Helpers
 
@@ -337,6 +360,63 @@ final class FeedLoader {
         return result
     }
 
+    /// Rebuild items + reservoir when filters change so the feed shows matching content
+    /// from the full dataset (not just the visible buffer).
+    private func rebuildForFilter() {
+        // Pool everything we have: visible items + reservoir + previously filtered-out
+        let allItems = items + reservoir + filteredOutItems
+
+        if hasActiveFilter {
+            // Build filter predicate
+            let predicate: (FeedItem) -> Bool = { item in
+                let moodMatch = self.selectedMood == .all || self.selectedMood.matches(item.title)
+                let catMatch: Bool
+                if let cat = self.selectedCategory {
+                    catMatch = item.category.lowercased() == cat.lowercased()
+                } else {
+                    catMatch = true
+                }
+                let q = self.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+                let searchMatch: Bool
+                if q.isEmpty {
+                    searchMatch = true
+                } else {
+                    searchMatch = item.title.localizedCaseInsensitiveContains(q)
+                        || item.excerpt.localizedCaseInsensitiveContains(q)
+                }
+                return moodMatch && catMatch && searchMatch
+            }
+
+            var matching: [FeedItem] = []
+            var nonMatching: [FeedItem] = []
+            for item in allItems {
+                if predicate(item) { matching.append(item) } else { nonMatching.append(item) }
+            }
+
+            // Show first pageSize matches, rest go to reservoir
+            let w = min(Self.pageSize, matching.count)
+            items = Array(matching.prefix(w))
+            reservoir = Array(matching.dropFirst(w))
+            if reservoir.count > Self.maxReservoirSize {
+                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
+            }
+            filteredOutItems = nonMatching
+        } else {
+            // Filter cleared: merge everything back
+            let merged = allItems.sorted { $0.publishedAt > $1.publishedAt }
+            let w = min(Self.pageSize, merged.count)
+            items = Array(merged.prefix(w))
+            reservoir = Array(merged.dropFirst(w))
+            if reservoir.count > Self.maxReservoirSize {
+                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
+            }
+            filteredOutItems = []
+        }
+
+        reservoirCount = reservoir.count
+        itemVersion += 1
+    }
+
     // MARK: - Constants
     static let maxBuffer = 300
     static let pageSize = 20            // how many to show/move at a time
@@ -351,6 +431,7 @@ final class FeedLoader {
 
     func selectCategory(_ category: String?) {
         selectedCategory = (selectedCategory == category) ? nil : category
+        rebuildForFilter()
     }
 
     /// Aggressive trim on memory warning — keep only visible + safety zone
@@ -372,21 +453,41 @@ final class FeedLoader {
         selectedCategory = nil
         selectedMood = .all
         searchQuery = ""
+        rebuildForFilter()
     }
 
     func start() async {
         guard !hasStarted else { return }
         hasStarted = true
 
-        // Restore persisted state (bookmarks, read items, sources, disabled sources)
+        // Step 1: Restore persisted state + show cached items IMMEDIATELY
+        var cachedItems: [FeedItem] = []
         if let saved = PersistenceManager.shared.load() {
             restoreState(from: saved)
+            cachedItems = saved.cachedItems
         }
 
         networkMonitor.start()
-        loadingState = .initial
 
-        // Step 1: Parse OPML
+        // Show cached content BEFORE any I/O — UI must be instant
+        if !cachedItems.isEmpty {
+            loadedIDs.formUnion(cachedItems.map(\.id))
+            let interleaved = interleave(cachedItems)
+            let w = min(Self.pageSize, interleaved.count)
+            items = Array(interleaved.prefix(w))
+            reservoir = Array(interleaved.dropFirst(w))
+            if reservoir.count > Self.maxReservoirSize {
+                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
+            }
+            reservoirCount = reservoir.count
+            itemVersion += 1
+            totalFetched = cachedItems.count
+            loadingState = .idle  // content is visible — no skeleton!
+        } else {
+            loadingState = .initial
+        }
+
+        // Step 2: Parse OPML (non-blocking for cached path — UI already live)
         let parseResult = await OPMLParser.parseAll()
         sources = parseResult.sources
         opmlFileCount = parseResult.fileCount
@@ -400,7 +501,23 @@ final class FeedLoader {
             return
         }
 
-        // Step 2: Fetch progressively in chunks — shows content fast, doesn't block
+        // Step 3: Fetch fresh content
+        if !cachedItems.isEmpty {
+            // UI already live with cache → fetch in background, merge into reservoir
+            Task { await self.fetchFreshContent() }
+        } else {
+            // No cache → progressive fetch, show content as it arrives
+            await fetchAllContent()
+            loadingState = .idle
+            PersistenceManager.shared.save(buildStateWithItems())
+            if items.isEmpty && fetchErrorCount > 0 {
+                scheduleRetryIfAllFailed()
+            }
+        }
+    }
+
+    /// Fetch all enabled sources in chunks — used when there's NO cached content.
+    private func fetchAllContent() async {
         let activeSources = enabledSources.shuffled()  // random order for variety
         let chunkSize = 20
         var allFetched = 0
@@ -451,9 +568,47 @@ final class FeedLoader {
         }
 
         lastRefreshDate = .now
+    }
+
+    /// Fetch fresh content in background while cached items are already displayed.
+    /// New items are merged into the reservoir so they appear as the user scrolls.
+    private func fetchFreshContent() async {
+        loadingState = .refreshing
+
+        let activeSources = enabledSources.shuffled()
+        let chunkSize = 20
+        var allFetched = 0
+        var allFailed = 0
+
+        for chunkStart in stride(from: 0, to: activeSources.count, by: chunkSize) {
+            let end = min(chunkStart + chunkSize, activeSources.count)
+            let chunk = Array(activeSources[chunkStart..<end])
+            let batch = await fetcher.fetchAll(chunk, maxConcurrent: 3)
+
+            allFetched += batch.items.count
+            allFailed += batch.failedSourceCount
+            totalFetched = allFetched
+            fetchErrorCount = allFailed
+            emptyFeedCount += batch.emptySourceCount
+
+            updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: chunk.count, totalItems: batch.items.count)
+
+            let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
+            loadedIDs.formUnion(actualNew.map(\.id))
+
+            // Merge new items into reservoir (interleaved), don't touch visible items
+            reservoir.append(contentsOf: interleave(actualNew))
+            reservoir = interleave(reservoir)
+            if reservoir.count > Self.maxReservoirSize {
+                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
+            }
+            reservoirCount = reservoir.count
+        }
+
+        lastRefreshDate = .now
         loadingState = .idle
 
-        PersistenceManager.shared.save(buildState())
+        PersistenceManager.shared.save(buildStateWithItems())
 
         // Auto-retry with backoff if nothing loaded
         if items.isEmpty && fetchErrorCount > 0 {
@@ -468,6 +623,7 @@ final class FeedLoader {
         loadedIDs.removeAll()
         reservoir.removeAll()
         items.removeAll()
+        filteredOutItems.removeAll()
         totalDiscarded = 0
 
         guard !sources.isEmpty else {
@@ -501,15 +657,15 @@ final class FeedLoader {
 
         lastRefreshDate = .now
         loadingState = .idle
+
+        PersistenceManager.shared.save(buildStateWithItems())
     }
 
     func loadMoreIfNeeded(currentItem: FeedItem) async {
-        // Track visible position
+        // Track visible position (always update, even during fetch/refresh)
         if let index = items.firstIndex(where: { $0.id == currentItem.id }) {
             currentVisibleIndex = index
         }
-
-        guard loadingState == .idle else { return }
 
         // Guard: item may have been trimmed between onAppear and this execution
         guard let itemIndex = items.firstIndex(where: { $0.id == currentItem.id }) else {
@@ -519,23 +675,16 @@ final class FeedLoader {
         // Only trigger when near the bottom
         guard itemIndex >= items.count - Self.loadMoreThreshold else { return }
 
-        // Step 1: If reservoir is empty, fetch first
-        var didFetch = false
-        if reservoir.isEmpty {
-            loadingState = .loadingMore
-            await refillReservoir()
-            loadingState = .idle
-            didFetch = true
-        }
-
-        // Step 2: Move from reservoir to visible (show content we already have)
+        // Step 1: ALWAYS move from reservoir to visible (works even during background fetch)
         moveFromReservoirToVisible(count: Self.pageSize)
 
-        // Step 3: Always trim after adding items (regardless of network fetch)
+        // Step 2: Always trim after adding items
         trimBufferIfNeeded()
 
-        // Step 4: Refill reservoir in background if low (skip if Step 1 already fetched)
-        if !didFetch && reservoir.count < Self.reservoirLowWatermark {
+        // Step 3: Refill reservoir — only when idle (don't compete with fetchFreshContent)
+        guard loadingState == .idle else { return }
+
+        if reservoir.isEmpty || reservoir.count < Self.reservoirLowWatermark {
             loadingState = .loadingMore
             await refillReservoir()
             loadingState = .idle
@@ -607,6 +756,8 @@ final class FeedLoader {
             reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
         }
         reservoirCount = reservoir.count
+
+        PersistenceManager.shared.save(buildStateWithItems())
     }
 
     /// Schedule an automatic retry with exponential backoff when all sources fail

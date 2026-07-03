@@ -1,7 +1,7 @@
 import Foundation
 import CryptoKit
 
-struct FeedItem: Identifiable, Sendable {
+struct FeedItem: Identifiable, Sendable, Codable {
     let id: String
     let sourceTitle: String
     let sourceURL: String

@@ -6,7 +6,9 @@ struct FeedScreen: View {
     @Environment(FeedLoader.self) private var loader
     @State private var articleItem: FeedItem?
     @State private var appearedItemIDs: Set<String> = []
+    @State private var hasScrolledToSaved = false
     @State private var showScrollButton = false
+    @State private var lastScrollIndex: Int = 0
     @State private var showSettings = false
     @State private var showSources = false
     @State private var showFilters = false
@@ -52,10 +54,18 @@ struct FeedScreen: View {
             toastOverlay
             OnboardingTipsView()
         }
-        .task { await loader.start(); updateBadge() }
+        .task {
+            await loader.start()
+            updateBadge()
+        }
         .onChange(of: scenePhase) { _, phase in
             if phase == .background {
-                PersistenceManager.shared.saveNow(loader.buildState())
+                // Save scroll position using currentVisibleIndex (tracked by loadMoreIfNeeded)
+                let est = max(0, loader.currentVisibleIndex - 7)
+                if est < loader.filteredItems.count {
+                    loader.lastVisibleItemID = loader.filteredItems[est].id
+                }
+                PersistenceManager.shared.saveNow(loader.buildStateWithItems())
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
@@ -67,6 +77,7 @@ struct FeedScreen: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
             loader.emergencyTrim()
         }
+        .onChange(of: loader.searchQuery) { _, _ in loader.searchQueryChanged() }
         .onChange(of: loader.readItemIDs.count) { _, _ in updateBadge() }
         .onChange(of: loader.networkMonitor.isConnected) { _, connected in
             if connected && loader.fetchErrorCount > 0 {
@@ -166,8 +177,8 @@ struct FeedScreen: View {
     // MARK: - Feed Scroll
 
     private var feedScrollView: some View {
-        ZStack(alignment: .bottomTrailing) {
-            ScrollViewReader { proxy in
+        ScrollViewReader { proxy in
+            ZStack(alignment: .bottom) {
                 ScrollView {
                     LazyVStack(spacing: 10) {
                         Color.clear.frame(height: 0).id("top")
@@ -188,11 +199,18 @@ struct FeedScreen: View {
                                         onOpen: { articleItem = item },
                                         onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } }
                                     )
+                                    .id(item.id)
                                     .padding(.horizontal, 6)
                                     .contentShape(Rectangle())
                                     .onAppear {
                                         appearedItemIDs.insert(item.id)
-                                        showScrollButton = index > 20
+                                        let idx = loader.currentVisibleIndex
+                                        let goingUp = idx < lastScrollIndex
+                                        lastScrollIndex = idx
+                                        let shouldShow = goingUp && idx > 12
+                                        if shouldShow != showScrollButton {
+                                            showScrollButton = shouldShow
+                                        }
                                         Task { await loader.loadMoreIfNeeded(currentItem: item) }
                                     }
                                 }
@@ -202,9 +220,21 @@ struct FeedScreen: View {
                         }
                     }
                     .padding(.top, 48)
-                    .safeAreaInset(edge: .bottom) { Color.clear.frame(height: 20) }
+                    .safeAreaInset(edge: .bottom) {
+                        Color.clear.frame(height: 14).background(.ultraThinMaterial)
+                    }
                 }
-                // Floating action buttons
+                .onAppear {
+                    guard !hasScrolledToSaved, let savedID = loader.lastVisibleItemID else { return }
+                    hasScrolledToSaved = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        withAnimation(.easeOut(duration: 0.3)) {
+                            proxy.scrollTo(savedID, anchor: .top)
+                        }
+                    }
+                }
+
+                // Bottom material bar — outside ScrollView, properly layered in ZStack
                 if showScrollButton { floatingButtons(proxy: proxy) }
             }
         }
@@ -225,7 +255,8 @@ struct FeedScreen: View {
     // MARK: - Floating Buttons
 
     private func floatingButtons(proxy: ScrollViewProxy) -> some View {
-        VStack(spacing: 12) {
+        HStack {
+            Spacer()
             Button {
                 let impact = UIImpactFeedbackGenerator(style: .soft)
                 impact.impactOccurred()
@@ -235,15 +266,16 @@ struct FeedScreen: View {
                 showScrollButton = false
             } label: {
                 Image(systemName: "arrow.up")
-                    .font(.title3).fontWeight(.semibold).foregroundStyle(.white)
-                    .frame(width: 44, height: 44)
-                    .background(Circle().fill(.blue.opacity(0.9)).shadow(color: .black.opacity(0.2), radius: 8, y: 4))
+                    .frame(width: 36, height: 36)
+                    .background(Color(.systemGray6))
+                    .clipShape(Circle())
             }
             .accessibilityLabel("Scroll to top")
         }
-        .padding(.trailing, 16)
-        .padding(.bottom, 32)
-        .transition(.scale.combined(with: .opacity))
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(.ultraThinMaterial)
+        .transition(.move(edge: .bottom).combined(with: .opacity))
     }
 
     // MARK: - Overlays

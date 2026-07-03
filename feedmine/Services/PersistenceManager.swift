@@ -4,7 +4,7 @@ import Compression
 /// All user data that survives app restarts
 struct FeedState: Codable {
     /// Bump on format changes to trigger migration
-    var schemaVersion: Int = 1
+    var schemaVersion: Int = 2
     var readItemIDs: [String] = []
     var bookmarkedIDs: [String] = []
     var disabledSourceIDs: [String] = []
@@ -14,6 +14,10 @@ struct FeedState: Codable {
     var lastOpenDate: TimeInterval = Date().timeIntervalSinceReferenceDate
     /// Tracks when each read ID was marked (for auto-cleanup of stale entries)
     var readTimestamps: [String: Date] = [:]
+    /// Cached feed items for instant launch — survives app restarts
+    var cachedItems: [FeedItem] = []
+    /// Last visible item ID — restores scroll position on relaunch
+    var lastVisibleItemID: String? = nil
 }
 
 /// JSON file persistence with backup, corrupted recovery, compression, and migration
@@ -104,11 +108,11 @@ final class PersistenceManager {
     // MARK: - Migration
 
     func migrateIfNeeded(_ state: inout FeedState) {
-        // v1 → v2: added readTimestamps (populated on next markAsRead)
+        // v1 → v2: added cachedItems for instant launch (defaults to empty — populated on next fetch)
         if state.schemaVersion < 2 {
             state.schemaVersion = 2
-            // readTimestamps defaults to empty — populated incrementally
-            print("[Persistence] Migrated schema v1 → v2 (added readTimestamps)")
+            state.cachedItems = []
+            print("[Persistence] Migrated schema v1 → v2 (added cachedItems)")
         }
         // Future: if state.schemaVersion < 3 { ... }
     }
