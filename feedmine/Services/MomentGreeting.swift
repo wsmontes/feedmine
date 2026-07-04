@@ -11,24 +11,35 @@ struct MomentGreeting {
             return score > 0 ? (filled, score) : nil
         }.sorted { $0.1 > $1.1 }
 
+        var pick: String?
         // Night → prefer night templates
         if ctx.hour < 5 || ctx.hour >= 23 {
             let night = candidates.filter { t in
                 t.0.contains("sleep") || t.0.contains("late") || t.0.contains("tea")
                 || t.0.contains("night") || t.0.contains("3 AM")
             }
-            if let pick = night.randomElement() { return pick.0 }
+            pick = night.randomElement()?.0
         }
         // Long session → prefer check-in
-        if ctx.sessionLevel == .extended || ctx.sessionLevel == .marathon {
+        if pick == nil && (ctx.sessionLevel == .extended || ctx.sessionLevel == .marathon) {
             let checkins = candidates.filter { t in
                 t.0.contains("stretch") || t.0.contains("break") || t.0.contains("walk")
                 || t.0.contains("phone down") || t.0.contains("eyes") || t.0.contains("outside")
             }
-            if let pick = checkins.randomElement() { return pick.0 }
+            pick = checkins.randomElement()?.0
         }
+        if pick == nil { pick = candidates.first?.0 }
+        let raw = pick ?? "\(slots["time"] ?? "Hello"). Here's what's new."
+        // Remove any unfilled [slot] markers + add punctuation
+        let cleaned = cleanUnfilledSlots(raw)
+        let trimmed = cleaned.trimmingCharacters(in: .whitespaces)
+        if trimmed.hasSuffix(".") || trimmed.hasSuffix("?") || trimmed.hasSuffix("!") { return trimmed }
+        return trimmed + "."
+    }
 
-        return candidates.first?.0 ?? "\(slots["time"] ?? "Hello"). Here's what's new."
+    private static func cleanUnfilledSlots(_ text: String) -> String {
+        text.replacingOccurrences(of: #"\[\w+\]"#, with: "", options: .regularExpression)
+            .replacingOccurrences(of: "  ", with: " ")
     }
 
     private static func fillSlots(_ ctx: AppContext) -> [String: String] {
@@ -46,7 +57,7 @@ struct MomentGreeting {
 
         s["weekday"] = ctx.isWeekend
             ? (ctx.weekday == .saturday ? "Saturday unwind" : "Lazy Sunday")
-            : "\(ctx.weekday)"
+            : String(describing: ctx.weekday).capitalized
 
         s["session"] = ctx.sessionLevel == .justOpened ? "Just opened" :
             ctx.sessionLevel == .settlingIn ? "Getting comfortable" :
@@ -89,15 +100,14 @@ struct MomentGreeting {
     }
 
     private static let templates: [String] = [
-        // Warm & welcoming
-        "[time]. [weather] outside — perfect reading weather.",
-        "[time]! [weather] means a good day to stay curious.",
-        "[weekday]. [weather]. We saved you a seat.",
+        // Warm &amp; welcoming
         "[time]. [season] air, fresh stories.",
         "[weekday]. The coffee's hot, the news is fresh.",
         "[time]. [personal] — here's what's happening.",
-        "[time]. [weather]. [personal]",
         "[time]. Nothing urgent, just interesting.",
+        "[time]. The world's already spinning — let's catch up.",
+        "[weekday]. [personal]",
+        "[time]. [season]. Good day to be curious.",
 
         // Gentle check-in
         "[time]. [session] — everything ok?",
@@ -108,25 +118,26 @@ struct MomentGreeting {
         "[session] on a [weekday]. Just checking in.",
         "Still here? [session]. No judgment — we get it.",
         "[session]. Pause. Breathe. The news will be here.",
+        "[session]. Phone down for a bit? The stories will wait.",
 
         // Late night
-        "It's late. [weather]. Maybe sleep soon?",
         "[time]. Insomnia? A warm tea might help. 🍵",
         "Burning the midnight oil? [session] — but rest matters too.",
-        "The night is quiet. [weather]. Perfect for thinking.",
         "3 AM thoughts? We've got you. But tomorrow-you needs sleep.",
+        "The world is asleep. Just you and the words.",
+        "[time]. Can't sleep? We'll keep you company.",
 
-        // Quick & playful
+        // Quick &amp; playful
         "[time]! [weekday] — let's see what the world's up to.",
-        "[weather]. So naturally, you're reading. Respect.",
         "[weekday]. [session] — just a quick one or settling in?",
-        "[time]. [weather]. The algorithm can't replicate this.",
         "You again. [session]. We're flattered, honestly.",
+        "[time]. [weekday]. [personal]",
+        "Oh, [weekday]. Let's see what you missed.",
 
         // Deep focus
         "[time]. Quiet hours. Deep reading time.",
         "[session] of focused reading. Your brain says thanks.",
         "[weekday]. Slow down. Read deeply.",
-        "[weather] outside, but in here it's just you and the words.",
+        "[time]. Just you, the words, and [season].",
     ]
 }

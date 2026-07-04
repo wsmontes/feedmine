@@ -525,6 +525,23 @@ final class FeedLoader {
         URLCache.shared.removeAllCachedResponses()
     }
 
+    /// Shake-to-refresh: dump visible items, re-interleave reservoir, fetch new content
+    func shakeToRefresh() {
+        guard !items.isEmpty || !reservoir.isEmpty else { return }
+        // Mark all visible items as seen so they never come back
+        readItemIDs.formUnion(items.map(\.id))
+        reservoir.append(contentsOf: items)
+        items.removeAll()
+        currentVisibleIndex = 0
+        reservoir = interleave(reservoir)
+        let w = min(Self.pageSize, reservoir.count)
+        items = Array(reservoir.prefix(w))
+        reservoir.removeFirst(w)
+        reservoirCount = reservoir.count
+        itemVersion += 1
+        Task { await self.fetchFreshContent() }
+    }
+
     /// Re-interleave all content for fresh variety — no network call.
     /// On app reopen: reshuffle for variety + fetch new content in background.
     func refreshIfStale() async {

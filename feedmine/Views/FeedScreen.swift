@@ -49,6 +49,11 @@ struct FeedScreen: View {
                 Spacer()
             }
 
+            // Shake detector — hidden behind everything
+            ShakeDetector { loader.shakeToRefresh() }
+                .frame(width: 0, height: 0)
+                .allowsHitTesting(false)
+
             // Mini player bar
             VStack {
                 Spacer()
@@ -181,10 +186,12 @@ struct FeedScreen: View {
                 ScrollView {
                     LazyVStack(spacing: 10) {
                         Color.clear.frame(height: 0).id("top")
-                        // MomentCard — contextual greeting (only when unfiltered)
+                        // MomentCard + What's New (only when unfiltered)
                         if loader.selectedCategory == nil && loader.selectedMood == .all && loader.searchQuery.isEmpty {
                             MomentCard()
                                 .padding(.top, 4)
+                            WhatsNewCarousel()
+                                .padding(.top, 8)
                         }
 
                         // Date sections with cards
