@@ -118,7 +118,7 @@ enum PaletteFamily: String, CaseIterable {
 
     var subtitle: String {
         switch self {
-        case .warmEarth:    "Coral → Bronze · Default"
+        case .warmEarth:    "Amber → Deep Coral · Brand"
         case .coolSky:      "Ice blue → Indigo"
         case .botanical:    "Moss → Pine"
         case .lavenderHour: "Lavender → Amethyst"
@@ -128,11 +128,11 @@ enum PaletteFamily: String, CaseIterable {
 
     func accent(for period: CircadianPeriod) -> Color {
         switch (self, period) {
-        case (.warmEarth, .dawn):      Color(hex: "#E87461")
-        case (.warmEarth, .morning):   Color(hex: "#D4874B")
-        case (.warmEarth, .afternoon): Color(hex: "#C4613D")
-        case (.warmEarth, .evening):   Color(hex: "#B8653A")
-        case (.warmEarth, .night):     Color(hex: "#8B6F5C")
+        case (.warmEarth, .dawn):      Color(hex: "#FFB238")  // brand Amber
+        case (.warmEarth, .morning):   Color(hex: "#FF9A3C")  // amber→coral
+        case (.warmEarth, .afternoon): Color(hex: "#FF7A45")  // brand Coral
+        case (.warmEarth, .evening):   Color(hex: "#E8483C")  // brand Deep Coral
+        case (.warmEarth, .night):     Color(hex: "#B8403A")  // deeper coral
 
         case (.coolSky, .dawn):      Color(hex: "#7BA4C4")
         case (.coolSky, .morning):   Color(hex: "#5B8FAD")

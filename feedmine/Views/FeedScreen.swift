@@ -392,13 +392,14 @@ struct CompactGreeting: View {
     @Environment(FeedLoader.self) private var loader
     @State private var engine = CircadianEngine.shared
     @State private var sparkle = false
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         HStack(spacing: 4) {
-            Image(systemName: sparkle ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right")
-                .font(.caption)
-                .foregroundStyle(engine.accent)
-                .symbolEffect(.pulse, options: .repeating, value: sparkle)
+            Image("Symbol-Gradient")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 18, height: 18)
             Text("Feedmine").font(.caption).fontWeight(.bold)
             Text("·\(loader.sourceCount) sources").font(.caption2).foregroundStyle(.secondary)
             if loader.totalFetched > 0 {

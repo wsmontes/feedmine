@@ -40,6 +40,7 @@
 		50CD8A545B5E40E113B133E9 /* culture.opml in Resources */ = {isa = PBXBuildFile; fileRef = 233EDA0AE4F5AA62EB6F7A0F /* culture.opml */; };
 		510351311C294B4E1F7824D6 /* tech.opml in Resources */ = {isa = PBXBuildFile; fileRef = B0C68ECC3CC970CA77B8583D /* tech.opml */; };
 		5EFA46FE94B54E925BFA5B32 /* apple.opml in Resources */ = {isa = PBXBuildFile; fileRef = 0606C45AA86887849D55BDA3 /* apple.opml */; };
+		6170CDE69FD93E263E3D200C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05278E701F7B9808BEE3B943 /* Assets.xcassets */; };
 		64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */; };
 		67048E03F4B32DE5C427C442 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416A9F2FBED61538361B41D /* PersistenceManager.swift */; };
 		6986DBDE303222A19B7A5798 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A1E8E7D34C1FBFB2EA6CC6 /* SearchBarView.swift */; };
@@ -83,6 +84,7 @@
 /* Begin PBXFileReference section */
 		01C4ABF16D3BCCA6595D02EA /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 		03D717CB0C5A21DD9A5E6505 /* travel.opml */ = {isa = PBXFileReference; path = travel.opml; sourceTree = "<group>"; };
+		05278E701F7B9808BEE3B943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0606C45AA86887849D55BDA3 /* apple.opml */ = {isa = PBXFileReference; path = apple.opml; sourceTree = "<group>"; };
 		0CB4233F029C53681617CA22 /* DailyBriefingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBriefingCard.swift; sourceTree = "<group>"; };
 		0E2A96EFA10A9D618AEA036A /* SourceManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceManagementView.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		FA8AD510866687C9EE3BBEBD /* feedmine */ = {
 			isa = PBXGroup;
 			children = (
+				05278E701F7B9808BEE3B943 /* Assets.xcassets */,
 				BF1685743420892F86C34AC8 /* ContentView.swift */,
 				4F27D4A089C0A2A81E64B2BC /* feedmineApp.swift */,
 				9E8D4BC74BB01746A998D0A0 /* Info.plist */,
@@ -366,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6170CDE69FD93E263E3D200C /* Assets.xcassets in Resources */,
 				CF36595BD78C6471862CCDFA /* Feeds in Resources */,
 				5EFA46FE94B54E925BFA5B32 /* apple.opml in Resources */,
 				13D2356B68E723507839D3D4 /* architecture.opml in Resources */,
