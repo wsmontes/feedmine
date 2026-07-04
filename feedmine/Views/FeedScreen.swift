@@ -8,6 +8,9 @@ struct FeedScreen: View {
     @State private var appearedItemIDs: Set<String> = []
     @State private var showScrollButton = false
     @State private var lastScrollIndex: Int = 0
+    @State private var searchText = ""
+    @State private var isSearching = false
+    @FocusState private var searchFocused: Bool
     @State private var showSettings = false
     @State private var showSources = false
     @State private var showFilters = false
@@ -46,7 +49,15 @@ struct FeedScreen: View {
             // Floating compact header
             VStack(spacing: 0) {
                 compactHeader
+                if isSearching { searchBar.transition(.move(edge: .top).combined(with: .opacity)) }
                 Spacer()
+            }
+
+            // Tap-to-dismiss when search keyboard is up — intercepts first tap
+            if isSearching && searchFocused {
+                Color.clear
+                    .contentShape(Rectangle())
+                    .onTapGesture { searchFocused = false }
             }
 
             // Shake detector — hidden behind everything
@@ -81,7 +92,13 @@ struct FeedScreen: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
             loader.emergencyTrim()
         }
-        .onChange(of: loader.searchQuery) { _, _ in loader.searchQueryChanged() }
+        .onChange(of: searchText) { _, query in
+            loader.searchQuery = query
+            loader.searchQueryChanged()
+        }
+        .onChange(of: searchFocused) { _, focused in
+            if !focused && searchText.isEmpty { isSearching = false }
+        }
         .onChange(of: loader.readItemIDs.count) { _, _ in updateBadge() }
         .onChange(of: loader.networkMonitor.isConnected) { _, connected in
             if connected && loader.fetchErrorCount > 0 {
@@ -117,8 +134,17 @@ struct FeedScreen: View {
 
                 Spacer()
 
-                // Filter + action buttons
+                // Search + filter + action buttons
                 HStack(spacing: 4) {
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.3)) { isSearching.toggle() }
+                        if isSearching { searchText = "" }
+                    } label: {
+                        Image(systemName: isSearching ? "magnifyingglass.circle.fill" : "magnifyingglass")
+                            .frame(width: 36, height: 36)
+                            .background(Color(.systemGray6))
+                            .clipShape(Circle())
+                    }
                     if loader.bookmarkedIDs.count > 0 {
                         Button { showBookmarks = true } label: {
                             Image(systemName: "bookmark.fill")
@@ -136,6 +162,32 @@ struct FeedScreen: View {
             .padding(.vertical, 8)
             .background(.ultraThinMaterial)
         }
+    }
+
+    private var searchBar: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+            TextField("Search articles...", text: $searchText)
+                .focused($searchFocused)
+                .textFieldStyle(.plain)
+                .onSubmit { searchFocused = false }
+            if !searchText.isEmpty {
+                Button {
+                    searchText = ""; isSearching = false; searchFocused = false
+                    loader.searchQuery = ""; loader.searchQueryChanged()
+                } label: {
+                    Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                }
+            }
+            Button("Cancel") {
+                searchText = ""; isSearching = false; searchFocused = false
+                loader.searchQuery = ""; loader.searchQueryChanged()
+            }
+            .font(.caption).foregroundStyle(.blue)
+        }
+        .padding(.horizontal, 12).padding(.vertical, 8)
+        .background(.ultraThinMaterial)
+        .onAppear { searchFocused = true }
     }
 
     private var filterButton: some View {
@@ -186,10 +238,11 @@ struct FeedScreen: View {
                 ScrollView {
                     LazyVStack(spacing: 10) {
                         Color.clear.frame(height: 0).id("top")
-                        // MomentCard + What's New (only when unfiltered)
-                        if loader.selectedCategory == nil && loader.selectedMood == .all && loader.searchQuery.isEmpty {
-                            MomentCard()
-                                .padding(.top, 4)
+                        // MomentCard — always visible (greeting, not a feed item)
+                        MomentCard()
+                            .padding(.top, 12)
+                        // What's New carousel — only when unfiltered
+                        if loader.selectedCategory == nil && loader.selectedMood == .all && loader.selectedContentType == .all && loader.searchQuery.isEmpty {
                             WhatsNewCarousel()
                                 .padding(.top, 8)
                         }
@@ -230,6 +283,15 @@ struct FeedScreen: View {
                         Color.clear.frame(height: 14).background(.ultraThinMaterial)
                     }
                 }
+                .scrollDismissesKeyboard(.immediately)
+                .onScrollGeometryChange(for: CGFloat.self, of: { geo in
+                    geo.contentOffset.y
+                }, action: { _, newOffset in
+                    // Pull down past -70pt (overscroll bounce) → reveal search
+                    if newOffset < -110 && !isSearching {
+                        withAnimation(.easeInOut(duration: 0.25)) { isSearching = true }
+                    }
+                })
                 // Bottom material bar — outside ScrollView, properly layered in ZStack
                 if showScrollButton { floatingButtons(proxy: proxy) }
             }
@@ -335,6 +397,11 @@ struct CompactDebugInfo: View {
             }
         }
     }
+}
+
+struct ScrollOffKey: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = nextValue() }
 }
 
 struct CompactGreeting: View {

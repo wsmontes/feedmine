@@ -7,37 +7,20 @@ struct FilterSheetView: View {
     var body: some View {
         NavigationStack {
             List {
+                // Clear at top
                 Section {
-                    HStack {
-                        Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                        TextField("Search articles...", text: Binding(
-                            get: { loader.searchQuery },
-                            set: { loader.searchQuery = $0 }
-                        ))
+                    Button(role: .destructive) {
+                        loader.clearAllFilters()
+                        dismiss()
+                    } label: {
+                        Label("Clear All Filters", systemImage: "xmark.circle")
                     }
-                }
-                Section("Category") {
-                    Button { loader.selectCategory(nil); dismiss() } label: {
-                        HStack {
-                            Label("All Categories", systemImage: "square.grid.2x2")
-                            Spacer()
-                            if loader.selectedCategory == nil { Image(systemName: "checkmark").foregroundStyle(.blue) }
-                        }
-                    }
-                    ForEach(loader.availableCategories, id: \.self) { cat in
-                        Button { loader.selectCategory(cat); dismiss() } label: {
-                            HStack {
-                                Label(cat, systemImage: categoryIcon(cat))
-                                Spacer()
-                                if loader.selectedCategory == cat { Image(systemName: "checkmark").foregroundStyle(.blue) }
-                            }
-                        }
-                    }
+                    .disabled(loader.selectedCategory == nil && loader.selectedMood == .all && loader.selectedContentType == .all && loader.searchQuery.isEmpty)
                 }
 
                 Section("Content Type") {
                     ForEach(FeedLoader.ContentType.allCases) { type in
-                        Button { loader.selectContentType(type); dismiss() } label: {
+                        Button { loader.selectContentType(type) } label: {
                             HStack {
                                 Label(type.rawValue, systemImage: type.icon)
                                 Spacer()
@@ -47,9 +30,28 @@ struct FilterSheetView: View {
                     }
                 }
 
+                Section("Category") {
+                    Button { loader.selectCategory(nil) } label: {
+                        HStack {
+                            Label("All Categories", systemImage: "square.grid.2x2")
+                            Spacer()
+                            if loader.selectedCategory == nil { Image(systemName: "checkmark").foregroundStyle(.blue) }
+                        }
+                    }
+                    ForEach(loader.availableCategories, id: \.self) { cat in
+                        Button { loader.selectCategory(cat) } label: {
+                            HStack {
+                                Label(cat, systemImage: categoryIcon(cat))
+                                Spacer()
+                                if loader.selectedCategory == cat { Image(systemName: "checkmark").foregroundStyle(.blue) }
+                            }
+                        }
+                    }
+                }
+
                 Section("Mood") {
                     ForEach(FeedLoader.MoodFilter.allCases) { mood in
-                        Button { loader.selectMood(mood); dismiss() } label: {
+                        Button { loader.selectMood(mood) } label: {
                             HStack {
                                 Label(mood.rawValue, systemImage: mood.icon)
                                 Spacer()
@@ -57,16 +59,6 @@ struct FilterSheetView: View {
                             }
                         }
                     }
-                }
-
-                Section {
-                    Button(role: .destructive) {
-                        loader.clearAllFilters()
-                        dismiss()
-                    } label: {
-                        Label("Clear All Filters", systemImage: "xmark.circle")
-                    }
-                    .disabled(loader.selectedCategory == nil && loader.selectedMood == .all && loader.searchQuery.isEmpty)
                 }
             }
             .navigationTitle("Filters")

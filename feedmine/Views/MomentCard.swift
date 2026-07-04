@@ -7,22 +7,16 @@ struct MomentCard: View {
     private var ctx: AppContext { AppContext.shared }
 
     var body: some View {
-        if loader.loadingState != .initial && !loader.items.isEmpty {
-            Text(greeting)
+        if !loader.items.isEmpty {
+            Text(MomentGreeting.generate())
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                .onAppear { refreshGreeting() }
                 .onReceive(Timer.publish(every: 30, on: .main, in: .common).autoconnect()) { _ in
-                    refreshGreeting()
+                    AppContext.shared.refresh()
                 }
         }
-    }
-
-    private func refreshGreeting() {
-        AppContext.shared.refresh()
-        greeting = MomentGreeting.generate()
     }
 }

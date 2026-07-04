@@ -84,6 +84,7 @@ final class FeedLoader {
 
     func selectContentType(_ type: ContentType) {
         selectedContentType = (selectedContentType == type) ? .all : type
+        UserDefaults.standard.set(selectedContentType.rawValue, forKey: "filterContentType")
         rebuildForFilter()
     }
 
@@ -136,6 +137,7 @@ final class FeedLoader {
 
     func selectMood(_ mood: MoodFilter) {
         selectedMood = (selectedMood == mood) ? .all : mood
+        UserDefaults.standard.set(selectedMood.rawValue, forKey: "filterMood")
         rebuildForFilter()
     }
 
@@ -165,8 +167,21 @@ final class FeedLoader {
                 $0.title.localizedCaseInsensitiveContains(query) ||
                 $0.excerpt.localizedCaseInsensitiveContains(query)
             }
+            // Sort by relevance: exact title match > partial title match > content match
+            let q = query.lowercased()
+            result.sort { a, b in
+                let scoreA = searchScore(a, q); let scoreB = searchScore(b, q)
+                return scoreA > scoreB
+            }
         }
         return result
+    }
+
+    private func searchScore(_ item: FeedItem, _ q: String) -> Int {
+        let t = item.title.lowercased(); let e = item.excerpt.lowercased()
+        if t == q { return 100 }; if t.hasPrefix(q) { return 80 }
+        if t.contains(q) { return 60 }; if e.contains(q) { return 30 }
+        return 10
     }
 
     /// Number of unique item IDs tracked (dedup count)
@@ -507,6 +522,7 @@ final class FeedLoader {
 
     func selectCategory(_ category: String?) {
         selectedCategory = (selectedCategory == category) ? nil : category
+        UserDefaults.standard.set(selectedCategory, forKey: "filterCategory")
         rebuildForFilter()
     }
 
@@ -525,8 +541,10 @@ final class FeedLoader {
         URLCache.shared.removeAllCachedResponses()
     }
 
-    /// Shake-to-refresh: dump visible items, re-interleave reservoir, fetch new content
+    /// Shake-to-refresh: dump visible items, clear search, re-interleave reservoir, fetch new
     func shakeToRefresh() {
+        // Clear search query
+        searchQuery = ""
         guard !items.isEmpty || !reservoir.isEmpty else { return }
         // Mark all visible items as seen so they never come back
         readItemIDs.formUnion(items.map(\.id))
@@ -593,6 +611,13 @@ final class FeedLoader {
         }
 
         networkMonitor.start()
+
+        // Restore persisted filter selections
+        if let cat = UserDefaults.standard.string(forKey: "filterCategory") { selectedCategory = cat }
+        if let moodRaw = UserDefaults.standard.string(forKey: "filterMood"),
+           let mood = MoodFilter(rawValue: moodRaw) { selectedMood = mood }
+        if let typeRaw = UserDefaults.standard.string(forKey: "filterContentType"),
+           let type = ContentType(rawValue: typeRaw) { selectedContentType = type }
 
         // Fetch weather in background (non-blocking)
         Task { await WeatherService.shared.fetch() }
