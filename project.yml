@@ -29,6 +29,8 @@ targets:
       path: feedmine/Info.plist
       properties:
         UILaunchScreen: {}
+        UIBackgroundModes:
+          - audio
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.feedmine.app
       TARGETED_DEVICE_FAMILY: "1"  # iPhone only
