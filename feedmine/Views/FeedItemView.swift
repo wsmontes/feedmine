@@ -39,6 +39,7 @@ struct FeedItemView: View {
             let impact = UIImpactFeedbackGenerator(style: .light)
             impact.impactOccurred()
             loader.markAsRead(item.id)
+            SessionTracker.shared.onArticleRead()
             if item.isPodcast {
                 AudioPlayerManager.shared.play(item: item)
             } else {

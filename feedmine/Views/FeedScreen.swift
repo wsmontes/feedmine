@@ -64,7 +64,9 @@ struct FeedScreen: View {
             updateBadge()
         }
         .onChange(of: scenePhase) { _, phase in
+            if phase == .active { SessionTracker.shared.onForeground() }
             if phase == .background {
+                SessionTracker.shared.onBackground()
                 PersistenceManager.shared.saveNow(loader.buildStateWithItems())
             }
         }
@@ -179,13 +181,10 @@ struct FeedScreen: View {
                 ScrollView {
                     LazyVStack(spacing: 10) {
                         Color.clear.frame(height: 0).id("top")
-                        // Daily Briefing + Carousel (only when unfiltered)
+                        // MomentCard — contextual greeting (only when unfiltered)
                         if loader.selectedCategory == nil && loader.selectedMood == .all && loader.searchQuery.isEmpty {
-                            DailyBriefingCard()
-                                .padding(.horizontal, 6)
+                            MomentCard()
                                 .padding(.top, 4)
-                            WhatsNewCarousel()
-                                .padding(.top, 8)
                         }
 
                         // Date sections with cards

@@ -577,6 +577,9 @@ final class FeedLoader {
 
         networkMonitor.start()
 
+        // Fetch weather in background (non-blocking)
+        Task { await WeatherService.shared.fetch() }
+
         // Show cached content BEFORE any I/O — UI must be instant
         if !cachedItems.isEmpty {
             loadedIDs.formUnion(cachedItems.map(\.id))
