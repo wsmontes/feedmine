@@ -30,7 +30,7 @@ struct FeedItemCardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             // Hero image — only shown when URL exists AND loads successfully
-            if let imageURL = item.imageURL, !imageLoadFailed {
+            if let imageURL = item.bestImageURL ?? item.imageURL, !imageLoadFailed {
                 Color.clear
                     .aspectRatio(16/9, contentMode: .fit)
                     .overlay {
@@ -55,6 +55,20 @@ struct FeedItemCardView: View {
                         }
                         .buttonStyle(.plain)
                     }
+                    // Play overlays
+                    .overlay {
+                        if item.isYouTube {
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 44))
+                                .foregroundStyle(.white)
+                                .shadow(color: .black.opacity(0.5), radius: 4, y: 2)
+                        } else if item.isPodcast {
+                            Image(systemName: "headphones.circle.fill")
+                                .font(.system(size: 44))
+                                .foregroundStyle(.white)
+                                .shadow(color: .black.opacity(0.5), radius: 4, y: 2)
+                        }
+                    }
             }
 
             // Category + source
@@ -75,7 +89,31 @@ struct FeedItemCardView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
 
-                if isNew {
+                if item.isPodcast {
+                    Text("PODCAST")
+                        .font(.caption2)
+                        .fontWeight(.heavy)
+                        .foregroundStyle(.purple)
+                        .padding(.horizontal, 5)
+                        .padding(.vertical, 1)
+                        .background(Color.purple.opacity(0.1))
+                        .clipShape(Capsule())
+                    if let dur = item.durationFormatted {
+                        Text(dur)
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                if item.isYouTube {
+                    Text("VIDEO")
+                        .font(.caption2)
+                        .fontWeight(.heavy)
+                        .foregroundStyle(.red)
+                        .padding(.horizontal, 5)
+                        .padding(.vertical, 1)
+                        .background(Color.red.opacity(0.1))
+                        .clipShape(Capsule())
+                } else if isNew && !item.isPodcast {
                     Text("NEW")
                         .font(.caption2)
                         .fontWeight(.heavy)

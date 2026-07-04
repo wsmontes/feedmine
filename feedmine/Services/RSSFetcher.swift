@@ -107,6 +107,21 @@ actor RSSFetcher {
         )
     }
 
+    // MARK: - Audio extraction
+
+    private func extractAudio(from item: RSSFeedItem) -> String? {
+        guard let enclosure = item.enclosure,
+              let type = enclosure.attributes?.type,
+              type.hasPrefix("audio/") || type == "audio/mpeg" || type == "audio/mp3" || type == "audio/mp4",
+              let url = enclosure.attributes?.url else { return nil }
+        return url
+    }
+
+    private func extractDuration(from item: RSSFeedItem) -> TimeInterval? {
+        let dur = item.iTunes?.iTunesDuration ?? 0
+        return dur > 0 ? dur : nil
+    }
+
     // MARK: - Private
 
     private func extractItems(from feed: Feed, source: FeedSource) -> [FeedItem] {
@@ -128,7 +143,9 @@ actor RSSFetcher {
                 }
             case .rss(let rssFeed):
                 return (rssFeed.items ?? []).compactMap { item in
-                    makeItem(
+                    let audio = extractAudio(from: item)
+                    let duration = extractDuration(from: item)
+                    return makeItem(
                         guid: item.guid?.value,
                         link: item.link,
                         title: item.title,
@@ -136,7 +153,9 @@ actor RSSFetcher {
                         source: source,
                         rawDescription: item.description,
                         rawContent: item.content?.contentEncoded,
-                        imageURL: extractImageURL(from: item)
+                        imageURL: extractImageURL(from: item),
+                        audioURL: audio,
+                        duration: duration
                     )
                 }
             case .json(let jsonFeed):
@@ -166,7 +185,9 @@ actor RSSFetcher {
         source: FeedSource,
         rawDescription: String?,
         rawContent: String?,
-        imageURL: String?
+        imageURL: String?,
+        audioURL: String? = nil,
+        duration: TimeInterval? = nil
     ) -> FeedItem? {
         let resolvedLink = link ?? ""
         // Discard items without a clickable URL
@@ -200,7 +221,9 @@ actor RSSFetcher {
             excerpt: excerpt,
             url: resolvedLink,
             imageURL: imageURL,
-            publishedAt: publishedAt ?? Date()
+            publishedAt: publishedAt ?? Date(),
+            audioURL: audioURL,
+            duration: duration
         )
     }
 

@@ -50,6 +50,12 @@ struct FeedScreen: View {
                 Spacer()
             }
 
+            // Mini player bar
+            VStack {
+                Spacer()
+                MiniPlayerBar()
+            }
+
             // Toast + Onboarding overlays
             toastOverlay
             OnboardingTipsView()
@@ -201,12 +207,15 @@ struct FeedScreen: View {
                                     .contentShape(Rectangle())
                                     .onAppear {
                                         appearedItemIDs.insert(item.id)
-                                        let idx = loader.currentVisibleIndex
-                                        let goingUp = idx < lastScrollIndex
-                                        lastScrollIndex = idx
-                                        let shouldShow = goingUp && idx > 12
-                                        if shouldShow != showScrollButton {
-                                            showScrollButton = shouldShow
+                                        // Debounced: only check every 8 items to reduce state updates
+                                        if appearedItemIDs.count % 8 == 0 {
+                                            let idx = loader.currentVisibleIndex
+                                            let goingUp = idx < lastScrollIndex
+                                            lastScrollIndex = idx
+                                            let shouldShow = goingUp && idx > 12
+                                            if shouldShow != showScrollButton {
+                                                showScrollButton = shouldShow
+                                            }
                                         }
                                         Task { await loader.loadMoreIfNeeded(currentItem: item) }
                                     }

@@ -39,7 +39,11 @@ struct FeedItemView: View {
             let impact = UIImpactFeedbackGenerator(style: .light)
             impact.impactOccurred()
             loader.markAsRead(item.id)
-            onOpen?()
+            if item.isPodcast {
+                AudioPlayerManager.shared.play(item: item)
+            } else {
+                onOpen?()
+            }
         }
         .swipeActions(edge: .leading) {
             Button {

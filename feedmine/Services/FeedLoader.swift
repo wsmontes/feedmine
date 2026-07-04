@@ -18,7 +18,7 @@ final class FeedLoader {
 
     /// Group items into date-based sections for section headers
     struct DateSection: Identifiable {
-        let id = UUID()
+        var id: String { title }  // stable across recomputes — prevents flicker
         let title: String
         let items: [FeedItem]
     }
@@ -247,7 +247,7 @@ final class FeedLoader {
             .filter { item in
                 !readItemIDs.contains(item.id)         // unread
                 && !whatsNewBaselineIDs.contains(item.id) // arrived after launch
-                && item.imageURL != nil                   // has image
+                && item.bestImageURL != nil                   // has image or YouTube thumbnail
             }
         // Deduplicate by ID (preserve first occurrence = most recent position)
         var seen = Set<String>()
@@ -785,7 +785,6 @@ final class FeedLoader {
             items.removeFirst(aboveToDiscard)
             currentVisibleIndex -= aboveToDiscard
             totalDiscarded += aboveToDiscard
-            itemVersion += 1
         }
 
         // Priority 2: if still over, discard from far below
@@ -797,10 +796,10 @@ final class FeedLoader {
                 if belowToDiscard > 0 {
                     items.removeLast(belowToDiscard)
                     totalDiscarded += belowToDiscard
-                    itemVersion += 1
                 }
             }
         }
+        // Note: callers bump itemVersion once after all mutations complete
     }
 
     // MARK: - Private
@@ -844,7 +843,7 @@ final class FeedLoader {
     /// Prefetch images for items if the setting is enabled
     private func prefetchImagesIfNeeded(for items: [FeedItem]) {
         guard prefetchImages else { return }
-        let urls = items.compactMap { $0.imageURL }
+        let urls = items.compactMap { $0.bestImageURL }
         guard !urls.isEmpty else { return }
         Task { await prefetcher.prefetch(urls: urls) }
     }
