@@ -109,12 +109,52 @@ actor RSSFetcher {
 
     // MARK: - Audio extraction
 
-    private func extractAudio(from item: RSSFeedItem) -> String? {
-        guard let enclosure = item.enclosure,
-              let type = enclosure.attributes?.type,
-              type.hasPrefix("audio/") || type == "audio/mpeg" || type == "audio/mp3" || type == "audio/mp4",
-              let url = enclosure.attributes?.url else { return nil }
-        return url
+    private func extractAudio(from item: RSSFeedItem, source: FeedSource) -> String? {
+        // Standard enclosure
+        if let enc = item.enclosure,
+           let type = enc.attributes?.type?.lowercased(),
+           let url = enc.attributes?.url,
+           type.hasPrefix("audio/") {
+            return url
+        }
+        // Media namespace
+        if let contents = item.media?.mediaContents {
+            for m in contents {
+                if let t = m.attributes?.type?.lowercased(),
+                   let u = m.attributes?.url,
+                   t.hasPrefix("audio/") {
+                    return u
+                }
+            }
+        }
+        // Podcast source fallback — any enclosure URL from a known podcast host
+        if let url = item.enclosure?.attributes?.url, !url.isEmpty {
+            let s = source.url.lowercased()
+            if s.contains("feeds.simplecast") || s.contains("feeds.megaphone") ||
+               s.contains("libsyn") || s.contains("feeds.npr.org") ||
+               s.contains("rss.art19") || s.contains("rss.acast") ||
+               s.contains("feeds.transistor") || s.contains("feeds.bbci.co.uk") ||
+               s.contains("lexfridman.com") || s.contains("peterattiamd.com") ||
+               s.contains("feeds.marketplace.org") || s.contains("thisamericanlife.org") ||
+               s.contains("animalspirits.") || s.contains("investlikethebest.") ||
+               s.contains("stratechery.com") || s.contains("feeds.megaphone.fm/") ||
+               s.contains("revolutionspodcast") || s.contains("feeds.simplecast.com/") {
+                return url
+            }
+        }
+        return nil
+    }
+
+    private func extractAtomAudio(from entry: AtomFeedEntry) -> String? {
+        guard let links = entry.links else { return nil }
+        for link in links {
+            if let type = link.attributes?.type?.lowercased(),
+               let href = link.attributes?.href,
+               type.hasPrefix("audio/") || type == "audio/mpeg" || type == "audio/mp3" {
+                return href
+            }
+        }
+        return nil
     }
 
     private func extractDuration(from item: RSSFeedItem) -> TimeInterval? {
@@ -130,6 +170,7 @@ actor RSSFetcher {
             case .atom(let atomFeed):
                 return (atomFeed.entries ?? []).compactMap { entry in
                     let rawContent = entry.content?.value ?? entry.summary?.value ?? ""
+                    let audio = extractAtomAudio(from: entry)
                     return makeItem(
                         guid: entry.id,
                         link: entry.links?.first?.attributes?.href ?? entry.id,
@@ -138,12 +179,13 @@ actor RSSFetcher {
                         source: source,
                         rawDescription: entry.summary?.value ?? entry.content?.value,
                         rawContent: entry.content?.value,
-                        imageURL: extractFirstImageFromHTML(rawContent)
+                        imageURL: extractFirstImageFromHTML(rawContent),
+                        audioURL: audio
                     )
                 }
             case .rss(let rssFeed):
                 return (rssFeed.items ?? []).compactMap { item in
-                    let audio = extractAudio(from: item)
+                    let audio = extractAudio(from: item, source: source)
                     let duration = extractDuration(from: item)
                     return makeItem(
                         guid: item.guid?.value,

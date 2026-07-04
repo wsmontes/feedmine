@@ -16,8 +16,6 @@ struct FeedState: Codable {
     var readTimestamps: [String: Date] = [:]
     /// Cached feed items for instant launch — survives app restarts
     var cachedItems: [FeedItem] = []
-    /// Last visible item ID — restores scroll position on relaunch
-    var lastVisibleItemID: String? = nil
     /// Source URLs the user has clicked at least once — drives "What's New"
     var clickedSourceURLs: [String] = []
 }

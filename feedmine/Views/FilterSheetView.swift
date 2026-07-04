@@ -35,6 +35,18 @@ struct FilterSheetView: View {
                     }
                 }
 
+                Section("Content Type") {
+                    ForEach(FeedLoader.ContentType.allCases) { type in
+                        Button { loader.selectContentType(type); dismiss() } label: {
+                            HStack {
+                                Label(type.rawValue, systemImage: type.icon)
+                                Spacer()
+                                if loader.selectedContentType == type { Image(systemName: "checkmark").foregroundStyle(.blue) }
+                            }
+                        }
+                    }
+                }
+
                 Section("Mood") {
                     ForEach(FeedLoader.MoodFilter.allCases) { mood in
                         Button { loader.selectMood(mood); dismiss() } label: {

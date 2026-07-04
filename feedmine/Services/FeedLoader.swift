@@ -55,6 +55,38 @@ final class FeedLoader {
     enum FeedLayout { case card, list }
     var layout: FeedLayout = .card
 
+    /// Content type filter
+    enum ContentType: String, CaseIterable, Identifiable {
+        case all = "All"
+        case text = "Articles"
+        case video = "Videos"
+        case audio = "Podcasts"
+
+        var id: String { rawValue }
+        var icon: String {
+            switch self {
+            case .all: return "circle.grid.3x3.fill"
+            case .text: return "doc.text.fill"
+            case .video: return "play.rectangle.fill"
+            case .audio: return "headphones"
+            }
+        }
+        func matches(_ item: FeedItem) -> Bool {
+            switch self {
+            case .all: return true
+            case .text: return !item.isYouTube && !item.isPodcast
+            case .video: return item.isYouTube
+            case .audio: return item.isPodcast
+            }
+        }
+    }
+    var selectedContentType: ContentType = .all
+
+    func selectContentType(_ type: ContentType) {
+        selectedContentType = (selectedContentType == type) ? .all : type
+        rebuildForFilter()
+    }
+
     /// Mood filter
     enum MoodFilter: String, CaseIterable, Identifiable {
         case all = "All"
@@ -124,6 +156,9 @@ final class FeedLoader {
         if let category = selectedCategory {
             result = result.filter { $0.category.lowercased() == category.lowercased() }
         }
+        if selectedContentType != .all {
+            result = result.filter { selectedContentType.matches($0) }
+        }
         let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         if !query.isEmpty {
             result = result.filter {
@@ -140,9 +175,6 @@ final class FeedLoader {
     /// When the feed was last refreshed (nil = never)
     private(set) var lastRefreshDate: Date?
 
-    /// Last item visible at top of scroll — persisted for position restore on relaunch
-    var lastVisibleItemID: String?
-
     // MARK: - Persistence
 
     func buildState() -> FeedState {
@@ -155,7 +187,6 @@ final class FeedLoader {
             streakCount: UserDefaults.standard.integer(forKey: "streakCount"),
             lastOpenDate: UserDefaults.standard.double(forKey: "lastOpenDate"),
             readTimestamps: readTimestamps,
-            lastVisibleItemID: lastVisibleItemID,
             clickedSourceURLs: Array(clickedSourceURLs)
         )
     }
@@ -170,7 +201,6 @@ final class FeedLoader {
             sourceCount = sources.count
         }
         lastRefreshDate = state.lastRefreshDate
-        lastVisibleItemID = state.lastVisibleItemID
         clickedSourceURLs = Set(state.clickedSourceURLs)
     }
 
@@ -345,6 +375,8 @@ final class FeedLoader {
     private(set) var totalDiscarded = 0
     private(set) var fetchErrorCount = 0
     private(set) var emptyFeedCount = 0
+    private(set) var podcastSourceCount = 0
+    private(set) var podcastItemCount = 0
 
     // MARK: - Internal state
     private let fetcher = RSSFetcher()
@@ -364,37 +396,39 @@ final class FeedLoader {
     private var retryTask: Task<Void, Never>?
     private var filteredOutItems: [FeedItem] = []  // items excluded by active filter; restored when filter clears
     private var hasActiveFilter: Bool {
-        selectedCategory != nil || selectedMood != .all || !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        selectedCategory != nil || selectedMood != .all || selectedContentType != .all || !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     // MARK: - Helpers
 
-    /// Interleave items by category for feed variety — shuffled within categories, random category order
+    /// Interleave by type+category for mixed variety — text, video, audio appear alternating
     private func interleave(_ items: [FeedItem]) -> [FeedItem] {
         guard items.count > 1 else { return items }
-        var byCategory: [String: [FeedItem]] = [:]
+        // Composite key: "type:category" → e.g. "video:Tech", "audio:News", "text:Science"
+        var buckets: [String: [FeedItem]] = [:]
         for item in items {
-            byCategory[item.category, default: []].append(item)
+            let type: String = item.isPodcast ? "audio" : (item.isYouTube ? "video" : "text")
+            let key = "\(type):\(item.category)"
+            buckets[key, default: []].append(item)
         }
-        guard byCategory.count > 1 else {
-            // Single category: just shuffle
+        guard buckets.count > 1 else {
             return items.shuffled()
         }
-        // Shuffle each category + random category order
-        for cat in byCategory.keys {
-            byCategory[cat] = byCategory[cat]?.shuffled()
+        // Shuffle each bucket + random key order for variety
+        for key in buckets.keys {
+            buckets[key] = buckets[key]?.shuffled()
         }
         var result: [FeedItem] = []
         result.reserveCapacity(items.count)
-        let catNames = byCategory.keys.shuffled()
-        var indices = Dictionary(uniqueKeysWithValues: catNames.map { ($0, 0) })
+        let keys = buckets.keys.shuffled()
+        var indices = Dictionary(uniqueKeysWithValues: keys.map { ($0, 0) })
         var added = true
         while added {
             added = false
-            for cat in catNames {
-                guard let list = byCategory[cat], indices[cat]! < list.count else { continue }
-                result.append(list[indices[cat]!])
-                indices[cat]! += 1
+            for key in keys {
+                guard let list = buckets[key], indices[key]! < list.count else { continue }
+                result.append(list[indices[key]!])
+                indices[key]! += 1
                 added = true
             }
         }
@@ -425,7 +459,8 @@ final class FeedLoader {
                     searchMatch = item.title.localizedCaseInsensitiveContains(q)
                         || item.excerpt.localizedCaseInsensitiveContains(q)
                 }
-                return moodMatch && catMatch && searchMatch
+                let typeMatch = self.selectedContentType == .all || self.selectedContentType.matches(item)
+                return moodMatch && catMatch && searchMatch && typeMatch
             }
 
             var matching: [FeedItem] = []
@@ -524,6 +559,7 @@ final class FeedLoader {
     func clearAllFilters() {
         selectedCategory = nil
         selectedMood = .all
+        selectedContentType = .all
         searchQuery = ""
         rebuildForFilter()
     }
@@ -593,7 +629,7 @@ final class FeedLoader {
 
     /// Fetch all enabled sources in chunks — used when there's NO cached content.
     private func fetchAllContent() async {
-        let activeSources = enabledSources.shuffled()  // random order for variety
+        let activeSources = interleaveSourcesByType(enabledSources)  // mixed types in early chunks
         let chunkSize = 20
         var allFetched = 0
         var allFailed = 0
@@ -613,6 +649,10 @@ final class FeedLoader {
 
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
             loadedIDs.formUnion(actualNew.map(\.id))
+
+            // Track podcast items
+            let newPodcastItems = actualNew.filter { $0.isPodcast }
+            if !newPodcastItems.isEmpty { podcastItemCount += newPodcastItems.count }
 
             prefetchImagesIfNeeded(for: actualNew)
 
@@ -838,6 +878,29 @@ final class FeedLoader {
         reservoirCount = reservoir.count
 
         PersistenceManager.shared.save(buildStateWithItems())
+    }
+
+    /// Interleave sources so podcast/video/text all appear in early chunks
+    private func interleaveSourcesByType(_ sources: [FeedSource]) -> [FeedSource] {
+        let podcasts = sources.filter { $0.url.contains("feeds.simplecast") || $0.url.contains("feeds.megaphone") || $0.url.contains("feeds.npr.org") || $0.url.contains("libsyn") || $0.url.contains("feeds.transistor") || $0.url.contains("rss.acast") || $0.url.contains("feeds.bbci.co.uk") || $0.url.contains("lexfridman.com") || $0.url.contains("peterattiamd.com") || $0.url.contains("rss.art19.com") || $0.url.contains("feeds.marketplace.org") || $0.url.contains("thisamericanlife.org") || $0.url.contains("stratechery.com") || $0.url.contains("feeds.megaphone.fm/animalspirits") || $0.url.contains("animalspirits") || $0.url.contains("investlikethebest") }
+        let videos = sources.filter { $0.url.contains("youtube.com/feeds") }
+        let text = sources.filter { s in !podcasts.contains(where: { $0.url == s.url }) && !videos.contains(where: { $0.url == s.url }) }
+
+        let pShuffled = podcasts.shuffled()
+        let vShuffled = videos.shuffled()
+        let tShuffled = text.shuffled()
+        var result: [FeedSource] = []
+        // Seed first positions with one of each type so early chunks always have variety
+        if let first = tShuffled.first { result.append(first) }
+        if let first = vShuffled.first { result.append(first) }
+        if let first = pShuffled.first { result.append(first) }
+        let maxCount = max(pShuffled.count, vShuffled.count, tShuffled.count)
+        for i in 0..<maxCount {
+            if i < tShuffled.count { result.append(tShuffled[i]) }
+            if i < vShuffled.count { result.append(vShuffled[i]) }
+            if i < pShuffled.count { result.append(pShuffled[i]) }
+        }
+        return result
     }
 
     /// Prefetch images for items if the setting is enabled

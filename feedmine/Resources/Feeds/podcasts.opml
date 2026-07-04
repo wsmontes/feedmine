@@ -2,7 +2,7 @@
 <opml version="1.0">
   <head><title>Podcast Feeds</title></head>
   <body>
-    <outline text="News & Politics">
+    <outline text="News &amp; Politics">
       <outline title="The Daily (NYT)" xmlUrl="https://feeds.simplecast.com/54nAGcIl" type="rss"/>
       <outline title="Up First (NPR)" xmlUrl="https://feeds.npr.org/510318/podcast.xml" type="rss"/>
       <outline title="Post Reports (WaPo)" xmlUrl="https://feeds.megaphone.fm/washingtonpost264" type="rss"/>
@@ -48,7 +48,7 @@
       <outline title="Invisibilia (NPR)" xmlUrl="https://feeds.npr.org/510307/podcast.xml" type="rss"/>
       <outline title="Short Wave (NPR)" xmlUrl="https://feeds.npr.org/510351/podcast.xml" type="rss"/>
     </outline>
-    <outline text="Business & Finance">
+    <outline text="Business &amp; Finance">
       <outline title="Planet Money (NPR)" xmlUrl="https://feeds.npr.org/510289/podcast.xml" type="rss"/>
       <outline title="The Indicator (NPR)" xmlUrl="https://feeds.npr.org/510325/podcast.xml" type="rss"/>
       <outline title="Masters of Scale (Reid Hoffman)" xmlUrl="https://rss.art19.com/masters-of-scale" type="rss"/>
@@ -62,7 +62,7 @@
       <outline title="Marketplace (APM)" xmlUrl="https://feeds.marketplace.org/marketplace" type="rss"/>
       <outline title="Goldman Sachs Exchanges" xmlUrl="https://feeds.megaphone.fm/GSM5997883204" type="rss"/>
     </outline>
-    <outline text="Culture & Society">
+    <outline text="Culture &amp; Society">
       <outline title="This American Life" xmlUrl="https://www.thisamericanlife.org/podcast/rss.xml" type="rss"/>
       <outline title="99% Invisible" xmlUrl="https://feeds.simplecast.com/BqbsxVfO" type="rss"/>
       <outline title="Reply All" xmlUrl="https://feeds.simplecast.com/YqW0f2NV" type="rss"/>

@@ -6,7 +6,6 @@ struct FeedScreen: View {
     @Environment(FeedLoader.self) private var loader
     @State private var articleItem: FeedItem?
     @State private var appearedItemIDs: Set<String> = []
-    @State private var hasScrolledToSaved = false
     @State private var showScrollButton = false
     @State private var lastScrollIndex: Int = 0
     @State private var showSettings = false
@@ -66,11 +65,6 @@ struct FeedScreen: View {
         }
         .onChange(of: scenePhase) { _, phase in
             if phase == .background {
-                // Save scroll position using currentVisibleIndex (tracked by loadMoreIfNeeded)
-                let est = max(0, loader.currentVisibleIndex - 7)
-                if est < loader.filteredItems.count {
-                    loader.lastVisibleItemID = loader.filteredItems[est].id
-                }
                 PersistenceManager.shared.saveNow(loader.buildStateWithItems())
             }
         }
@@ -138,7 +132,7 @@ struct FeedScreen: View {
     }
 
     private var filterButton: some View {
-        let activeCount = (loader.selectedCategory != nil ? 1 : 0) + (loader.selectedMood != .all ? 1 : 0) + (!loader.searchQuery.isEmpty ? 1 : 0)
+        let activeCount = (loader.selectedCategory != nil ? 1 : 0) + (loader.selectedMood != .all ? 1 : 0) + (loader.selectedContentType != .all ? 1 : 0) + (!loader.searchQuery.isEmpty ? 1 : 0)
         return Button {
             showFilters = true
         } label: {
@@ -230,16 +224,6 @@ struct FeedScreen: View {
                         Color.clear.frame(height: 14).background(.ultraThinMaterial)
                     }
                 }
-                .onAppear {
-                    guard !hasScrolledToSaved, let savedID = loader.lastVisibleItemID else { return }
-                    hasScrolledToSaved = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                        withAnimation(.easeOut(duration: 0.3)) {
-                            proxy.scrollTo(savedID, anchor: .top)
-                        }
-                    }
-                }
-
                 // Bottom material bar — outside ScrollView, properly layered in ZStack
                 if showScrollButton { floatingButtons(proxy: proxy) }
             }
@@ -335,6 +319,10 @@ struct CompactDebugInfo: View {
                     .foregroundStyle(.white)
                     .padding(.horizontal, 6).padding(.vertical, 2)
                     .background(Capsule().fill(.blue))
+            }
+            if loader.podcastItemCount > 0 {
+                Text("🎧\(loader.podcastItemCount)")
+                    .font(.caption2).foregroundStyle(.purple)
             }
             if loader.fetchErrorCount > 0 {
                 Text("·\(loader.fetchErrorCount) err").font(.caption2).foregroundStyle(.orange)
