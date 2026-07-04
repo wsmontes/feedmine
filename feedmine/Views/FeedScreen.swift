@@ -339,12 +339,23 @@ struct CompactDebugInfo: View {
 
 struct CompactGreeting: View {
     @Environment(FeedLoader.self) private var loader
+    @State private var sparkle = false
+
     var body: some View {
         HStack(spacing: 4) {
-            Image(systemName: "antenna.radiowaves.left.and.right").font(.caption).foregroundStyle(.blue)
+            Image(systemName: sparkle ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right")
+                .font(.caption).foregroundStyle(.blue)
+                .symbolEffect(.pulse, options: .repeating, value: sparkle)
             Text("Feedmine").font(.caption).fontWeight(.bold)
             Text("·\(loader.sourceCount) sources").font(.caption2).foregroundStyle(.secondary)
+            if loader.totalFetched > 0 {
+                Text("·\(loader.totalFetched) fetched")
+                    .font(.caption2)
+                    .foregroundStyle(.blue.opacity(0.7))
+                    .contentTransition(.numericText())
+            }
         }
+        .onAppear { sparkle = true }
     }
 }
 
