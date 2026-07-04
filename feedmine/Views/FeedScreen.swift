@@ -391,16 +391,14 @@ struct ScrollOffKey: PreferenceKey {
 struct CompactGreeting: View {
     @Environment(FeedLoader.self) private var loader
     @State private var engine = CircadianEngine.shared
-    @State private var sparkle = false
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         HStack(spacing: 4) {
             Image("Symbol-Gradient")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 18, height: 18)
-            Text("Feedmine").font(.caption).fontWeight(.bold)
+                .frame(width: 16, height: 16)
+            Text("feedmine").font(.caption).fontWeight(.bold)
             Text("·\(loader.sourceCount) sources").font(.caption2).foregroundStyle(.secondary)
             if loader.totalFetched > 0 {
                 Text("·\(loader.totalFetched) fetched")
@@ -409,7 +407,6 @@ struct CompactGreeting: View {
                     .contentTransition(.numericText())
             }
         }
-        .onAppear { sparkle = true }
     }
 }
 
