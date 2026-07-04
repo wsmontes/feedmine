@@ -1,0 +1,326 @@
+import SwiftUI
+import Observation
+
+// MARK: - Period & Palette Types
+
+enum CircadianPeriod: String, CaseIterable {
+    case dawn, morning, afternoon, evening, night
+
+    static func from(hour: Int) -> CircadianPeriod {
+        switch hour {
+        case 5..<8:  .dawn
+        case 8..<12: .morning
+        case 12..<17: .afternoon
+        case 17..<21: .evening
+        default:      .night
+        }
+    }
+
+    var label: String {
+        switch self {
+        case .dawn:      "Dawn"
+        case .morning:   "Morning"
+        case .afternoon: "Afternoon"
+        case .evening:   "Evening"
+        case .night:     "Night"
+        }
+    }
+
+    var emoji: String {
+        switch self {
+        case .dawn:      "🌅"
+        case .morning:   "☀️"
+        case .afternoon: "🔆"
+        case .evening:   "🌅"
+        case .night:     "🌙"
+        }
+    }
+
+    /// San Francisco weight varies subtly by period
+    var fontWeight: Font.Weight {
+        switch self {
+        case .dawn:      .light
+        case .morning:   .regular
+        case .afternoon: .medium
+        case .evening:   .regular
+        case .night:     .light
+        }
+    }
+
+    /// Subtle letter-spacing drift (in points)
+    var letterSpacing: CGFloat {
+        switch self {
+        case .dawn:      0.3
+        case .morning:   0
+        case .afternoon: -0.1
+        case .evening:   0.1
+        case .night:     0.5
+        }
+    }
+
+    /// Body line-height multiplier
+    var lineHeight: CGFloat {
+        switch self {
+        case .dawn:      1.50
+        case .morning:   1.45
+        case .afternoon: 1.35
+        case .evening:   1.50
+        case .night:     1.55
+        }
+    }
+
+    /// Card internal padding
+    var cardPadding: CGFloat {
+        switch self {
+        case .dawn:      16
+        case .morning:   14
+        case .afternoon: 14
+        case .evening:   18
+        case .night:     22
+        }
+    }
+
+    /// Gap between cards in LazyVStack
+    var cardGap: CGFloat {
+        switch self {
+        case .dawn:      16
+        case .morning:   12
+        case .afternoon: 10
+        case .evening:   14
+        case .night:     18
+        }
+    }
+
+    /// Card corner radius
+    var cardRadius: CGFloat {
+        switch self {
+        case .dawn:      14
+        case .morning:   14
+        case .afternoon: 10
+        case .evening:   14
+        case .night:     16
+        }
+    }
+}
+
+enum PaletteFamily: String, CaseIterable {
+    case warmEarth, coolSky, botanical, lavenderHour, monochrome
+
+    var label: String {
+        switch self {
+        case .warmEarth:    "Warm Earth"
+        case .coolSky:      "Cool Sky"
+        case .botanical:    "Botanical"
+        case .lavenderHour: "Lavender Hour"
+        case .monochrome:   "Monochrome"
+        }
+    }
+
+    var subtitle: String {
+        switch self {
+        case .warmEarth:    "Coral → Bronze · Default"
+        case .coolSky:      "Ice blue → Indigo"
+        case .botanical:    "Moss → Pine"
+        case .lavenderHour: "Lavender → Amethyst"
+        case .monochrome:   "Warm gray · Subdued"
+        }
+    }
+
+    func accent(for period: CircadianPeriod) -> Color {
+        switch (self, period) {
+        case (.warmEarth, .dawn):      Color(hex: "#E87461")
+        case (.warmEarth, .morning):   Color(hex: "#D4874B")
+        case (.warmEarth, .afternoon): Color(hex: "#C4613D")
+        case (.warmEarth, .evening):   Color(hex: "#B8653A")
+        case (.warmEarth, .night):     Color(hex: "#8B6F5C")
+
+        case (.coolSky, .dawn):      Color(hex: "#7BA4C4")
+        case (.coolSky, .morning):   Color(hex: "#5B8FAD")
+        case (.coolSky, .afternoon): Color(hex: "#4A7C9B")
+        case (.coolSky, .evening):   Color(hex: "#3D5F80")
+        case (.coolSky, .night):     Color(hex: "#2C3E5A")
+
+        case (.botanical, .dawn):      Color(hex: "#7AAA7A")
+        case (.botanical, .morning):   Color(hex: "#5E9465")
+        case (.botanical, .afternoon): Color(hex: "#4A7A4A")
+        case (.botanical, .evening):   Color(hex: "#3D5E3D")
+        case (.botanical, .night):     Color(hex: "#2E4A2E")
+
+        case (.lavenderHour, .dawn):      Color(hex: "#B8A4C8")
+        case (.lavenderHour, .morning):   Color(hex: "#9B82B5")
+        case (.lavenderHour, .afternoon): Color(hex: "#7E5F9E")
+        case (.lavenderHour, .evening):   Color(hex: "#684C8A")
+        case (.lavenderHour, .night):     Color(hex: "#4A3570")
+
+        case (.monochrome, .dawn):      Color(hex: "#B0A89E")
+        case (.monochrome, .morning):   Color(hex: "#9E9690")
+        case (.monochrome, .afternoon): Color(hex: "#8C8580")
+        case (.monochrome, .evening):   Color(hex: "#7A7370")
+        case (.monochrome, .night):     Color(hex: "#686260")
+        }
+    }
+
+    /// Subtle page background tint per period (over base #FAF8F5)
+    func pageTint(for period: CircadianPeriod) -> Color {
+        switch (self, period) {
+        case (_, .dawn):      Color(hex: "#FAF8F5")
+        case (_, .morning):   Color(hex: "#FAF8F5")
+        case (_, .afternoon): Color(hex: "#F8F5F0")
+        case (_, .evening):   Color(hex: "#F5F0E8")
+        case (_, .night):     Color(hex: "#F0EBE4")
+        }
+    }
+}
+
+enum FontStyle: String, CaseIterable {
+    case system, newYork, sfMono
+
+    var label: String {
+        switch self {
+        case .system:  "System"
+        case .newYork: "New York"
+        case .sfMono:  "SF Mono"
+        }
+    }
+}
+
+// MARK: - Color Helper
+
+extension Color {
+    init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int: UInt64 = 0
+        Scanner(string: hex).scanHexInt64(&int)
+        let r = Double((int >> 16) & 0xFF) / 255.0
+        let g = Double((int >> 8) & 0xFF) / 255.0
+        let b = Double(int & 0xFF) / 255.0
+        self.init(red: r, green: g, blue: b)
+    }
+}
+
+// MARK: - CircadianEngine Singleton
+
+@MainActor
+@Observable
+final class CircadianEngine {
+    static let shared = CircadianEngine()
+
+    var isCircadianOn: Bool {
+        didSet { UserDefaults.standard.set(isCircadianOn, forKey: "circadianPaletteOn") }
+    }
+    var paletteFamilyRaw: String {
+        didSet { UserDefaults.standard.set(paletteFamilyRaw, forKey: "paletteFamily") }
+    }
+    var isCircadianTypographyOn: Bool {
+        didSet { UserDefaults.standard.set(isCircadianTypographyOn, forKey: "circadianTypographyOn") }
+    }
+    var fontStyleRaw: String {
+        didSet { UserDefaults.standard.set(fontStyleRaw, forKey: "fontStyle") }
+    }
+
+    private(set) var period: CircadianPeriod = .morning
+    private var lastHour: Int = -1
+
+    private init() {
+        let d = UserDefaults.standard
+        if d.object(forKey: "circadianPaletteOn") == nil { d.set(true, forKey: "circadianPaletteOn") }
+        if d.object(forKey: "circadianTypographyOn") == nil { d.set(true, forKey: "circadianTypographyOn") }
+        isCircadianOn = d.bool(forKey: "circadianPaletteOn")
+        paletteFamilyRaw = d.string(forKey: "paletteFamily") ?? PaletteFamily.warmEarth.rawValue
+        isCircadianTypographyOn = d.bool(forKey: "circadianTypographyOn")
+        fontStyleRaw = d.string(forKey: "fontStyle") ?? FontStyle.system.rawValue
+        refresh()
+    }
+
+    var paletteFamily: PaletteFamily {
+        PaletteFamily(rawValue: paletteFamilyRaw) ?? .warmEarth
+    }
+
+    var fontStyle: FontStyle {
+        FontStyle(rawValue: fontStyleRaw) ?? .system
+    }
+
+    /// The currently active accent color
+    var accent: Color {
+        guard isCircadianOn else { return paletteFamily.accent(for: .morning) }
+        return paletteFamily.accent(for: period)
+    }
+
+    /// Page background color
+    var pageBackground: Color {
+        guard isCircadianOn else { return Color(hex: "#FAF8F5") }
+        return paletteFamily.pageTint(for: period)
+    }
+
+    /// Active font weight (nil = don't override, use system default)
+    var activeFontWeight: Font.Weight? {
+        guard isCircadianTypographyOn else { return nil }
+        return period.fontWeight
+    }
+
+    /// Active letter spacing (0 = default)
+    var activeLetterSpacing: CGFloat {
+        guard isCircadianTypographyOn else { return 0 }
+        return period.letterSpacing
+    }
+
+    // Convenience pass-throughs for current period
+    var cardPadding: CGFloat { period.cardPadding }
+    var cardGap: CGFloat { period.cardGap }
+    var cardRadius: CGFloat { period.cardRadius }
+    var bodyLineHeight: CGFloat { period.lineHeight }
+
+    /// Re-evaluate period from system clock
+    func refresh() {
+        let hour = Calendar.current.component(.hour, from: Date())
+        guard hour != lastHour else { return }
+        lastHour = hour
+        let newPeriod = CircadianPeriod.from(hour: hour)
+        if newPeriod != period {
+            withAnimation(.easeInOut(duration: 2.0)) {
+                period = newPeriod
+            }
+        }
+    }
+
+    // MARK: - Font Factory
+
+    /// Returns a Font for the given role, respecting the selected font style and circadian weight.
+    func font(for role: FontRole, size: CGFloat? = nil) -> Font {
+        let baseSize = size ?? role.defaultSize
+        switch fontStyle {
+        case .system:
+            return .system(size: baseSize, weight: isCircadianTypographyOn ? period.fontWeight : role.defaultWeight)
+        case .newYork:
+            return .custom("New York", size: baseSize).weight(isCircadianTypographyOn ? period.fontWeight : role.defaultWeight)
+        case .sfMono:
+            return .system(size: baseSize, weight: isCircadianTypographyOn ? period.fontWeight : role.defaultWeight, design: .monospaced)
+        }
+    }
+}
+
+enum FontRole {
+    case momentCard, sectionHeader, cardTitle, cardBody, cardMeta, uiLabel
+
+    var defaultSize: CGFloat {
+        switch self {
+        case .momentCard:    14  // .subheadline
+        case .sectionHeader: 13
+        case .cardTitle:     17
+        case .cardBody:      14
+        case .cardMeta:      11
+        case .uiLabel:       14
+        }
+    }
+
+    var defaultWeight: Font.Weight {
+        switch self {
+        case .momentCard:    .regular
+        case .sectionHeader: .semibold
+        case .cardTitle:     .semibold
+        case .cardBody:      .regular
+        case .cardMeta:      .regular
+        case .uiLabel:       .medium
+        }
+    }
+}

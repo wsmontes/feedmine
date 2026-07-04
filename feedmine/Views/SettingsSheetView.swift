@@ -6,11 +6,16 @@ struct SettingsSheetView: View {
     @AppStorage("prefetchImages") private var prefetchImages = true
     @AppStorage("nightMode") private var nightMode = false
     @AppStorage("fontSize") private var fontSize = FontSize.medium.rawValue
-    @AppStorage("accentColorName") private var accentColorName = "blue"
+    @AppStorage("circadianPaletteOn") private var circadianPaletteOn = true
+    @AppStorage("paletteFamily") private var paletteFamilyRaw = PaletteFamily.warmEarth.rawValue
+    @AppStorage("circadianTypographyOn") private var circadianTypographyOn = true
+    @AppStorage("fontStyle") private var fontStyleRaw = FontStyle.system.rawValue
 
     @State private var showClearReadConfirmation = false
     @State private var showClearBookmarksConfirmation = false
     @State private var showResetConfirmation = false
+    @State private var showPalettePicker = false
+    @State private var showFontStylePicker = false
 
     private var topCategory: String? {
         let readItems = loader.items.filter { loader.isRead($0.id) }
@@ -18,19 +23,15 @@ struct SettingsSheetView: View {
         return grouped.max(by: { $0.value.count < $1.value.count })?.key
     }
 
-    enum FontSize: String, CaseIterable {
-        case small, medium, large
+    enum FontSize: String, CaseIterable { case small, medium, large }
+
+    private var selectedPalette: PaletteFamily {
+        PaletteFamily(rawValue: paletteFamilyRaw) ?? .warmEarth
     }
 
-    private let accentColors: [(name: String, color: Color)] = [
-        ("blue", .blue),
-        ("indigo", .indigo),
-        ("purple", .purple),
-        ("pink", .pink),
-        ("orange", .orange),
-        ("green", .green),
-        ("teal", .teal)
-    ]
+    private var selectedFontStyle: FontStyle {
+        FontStyle(rawValue: fontStyleRaw) ?? .system
+    }
 
     var body: some View {
         NavigationStack {
@@ -48,27 +49,56 @@ struct SettingsSheetView: View {
                         .pickerStyle(.segmented)
                         .frame(width: 200)
                     }
+                }
 
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Accent Color")
-                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 7), spacing: 8) {
-                            ForEach(accentColors, id: \.name) { item in
-                                Circle()
-                                    .fill(item.color)
-                                    .frame(width: 32, height: 32)
-                                    .overlay(
-                                        accentColorName == item.name ?
-                                        Circle().stroke(Color.primary, lineWidth: 3) : nil
-                                    )
-                                    .onTapGesture {
-                                        accentColorName = item.name
-                                    }
+                // MARK: - Circadian Design
+                Section {
+                    Toggle("Adaptive Palette", systemImage: "paintpalette.fill", isOn: $circadianPaletteOn)
+                        .tint(CircadianEngine.shared.accent)
+
+                    if circadianPaletteOn {
+                        Button {
+                            showPalettePicker = true
+                        } label: {
+                            HStack {
+                                Text("Palette Family")
+                                Spacer()
+                                Text(selectedPalette.label)
+                                    .foregroundStyle(.secondary)
+                                Image(systemName: "chevron.right")
+                                    .font(.caption)
+                                    .foregroundStyle(.tertiary)
                             }
                         }
                     }
+
+                    Toggle("Adaptive Typography", systemImage: "textformat.size", isOn: $circadianTypographyOn)
+                        .tint(CircadianEngine.shared.accent)
+
+                    Button {
+                        showFontStylePicker = true
+                    } label: {
+                        HStack {
+                            Text("Font Style")
+                            Spacer()
+                            Text(selectedFontStyle.label)
+                                .foregroundStyle(.secondary)
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundStyle(.tertiary)
+                        }
+                    }
+                } header: {
+                    Text("Circadian Design")
+                } footer: {
+                    if circadianPaletteOn {
+                        Text("Colors and typography shift subtly with the time of day. ")
+                            + Text("\(CircadianEngine.shared.period.emoji) \(CircadianEngine.shared.period.label) now")
+                            .foregroundStyle(CircadianEngine.shared.accent)
+                    }
                 }
 
-                // MARK: - Reading
+                // MARK: - Performance
                 Section("Performance") {
                     Toggle("Preload Images", systemImage: "photo.stack.fill", isOn: $prefetchImages)
                         .tint(.blue)
@@ -88,11 +118,9 @@ struct SettingsSheetView: View {
                 Section("Data") {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("\(loader.readItemIDs.count) articles read")
-                                .font(.subheadline)
+                            Text("\(loader.readItemIDs.count) articles read").font(.subheadline)
                             Text("\(loader.bookmarkedIDs.count) bookmarks")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                                .font(.caption).foregroundStyle(.secondary)
                         }
                         Spacer()
                     }
@@ -103,14 +131,9 @@ struct SettingsSheetView: View {
                         Label("Clear Read History", systemImage: "eye.slash")
                     }
                     .disabled(loader.readItemIDs.isEmpty)
-                    .confirmationDialog(
-                        "Clear all read history?",
-                        isPresented: $showClearReadConfirmation
-                    ) {
+                    .confirmationDialog("Clear all read history?", isPresented: $showClearReadConfirmation) {
                         Button("Clear All", role: .destructive) {
-                            withAnimation {
-                                loader.readItemIDs.removeAll()
-                            }
+                            withAnimation { loader.readItemIDs.removeAll() }
                         }
                     }
 
@@ -120,14 +143,9 @@ struct SettingsSheetView: View {
                         Label("Clear All Bookmarks", systemImage: "bookmark.slash")
                     }
                     .disabled(loader.bookmarkedIDs.isEmpty)
-                    .confirmationDialog(
-                        "Remove all bookmarks?",
-                        isPresented: $showClearBookmarksConfirmation
-                    ) {
+                    .confirmationDialog("Remove all bookmarks?", isPresented: $showClearBookmarksConfirmation) {
                         Button("Clear All", role: .destructive) {
-                            withAnimation {
-                                loader.bookmarkedIDs.removeAll()
-                            }
+                            withAnimation { loader.bookmarkedIDs.removeAll() }
                         }
                     }
                 }
@@ -171,9 +189,7 @@ struct SettingsSheetView: View {
                         HStack {
                             Text("Last saved")
                             Spacer()
-                            Text(date, style: .relative)
-                                .foregroundStyle(.secondary)
-                                .font(.caption)
+                            Text(date, style: .relative).foregroundStyle(.secondary).font(.caption)
                         }
                     }
                 }
@@ -198,29 +214,21 @@ struct SettingsSheetView: View {
                     } label: {
                         Label("Share My Stats", systemImage: "chart.bar.fill")
                     }
-                } header: {
-                    Text("Share")
-                }
+                } header: { Text("Share") }
 
                 // MARK: - About
                 Section("About") {
                     HStack {
-                        Text("Version")
-                        Spacer()
-                        Text("1.0 (Prototype)")
-                            .foregroundStyle(.secondary)
+                        Text("Version"); Spacer()
+                        Text("1.0 (Prototype)").foregroundStyle(.secondary)
                     }
                     HStack {
-                        Text("Sources")
-                        Spacer()
-                        Text("\(loader.sourceCount) feeds · \(loader.opmlFileCount) files")
-                            .foregroundStyle(.secondary)
+                        Text("Sources"); Spacer()
+                        Text("\(loader.sourceCount) feeds · \(loader.opmlFileCount) files").foregroundStyle(.secondary)
                     }
                     HStack {
-                        Text("Built with")
-                        Spacer()
-                        Text("SwiftUI · FeedKit · Claude Code")
-                            .foregroundStyle(.secondary)
+                        Text("Built with"); Spacer()
+                        Text("SwiftUI · FeedKit · Claude Code").foregroundStyle(.secondary)
                     }
                 }
 
@@ -231,16 +239,117 @@ struct SettingsSheetView: View {
                     Link(destination: URL(string: "https://github.com/nmdias/FeedKit")!) {
                         Label("FeedKit on GitHub", systemImage: "link")
                     }
-                } header: {
-                    Text("Feedback")
-                } footer: {
+                } header: { Text("Feedback") } footer: {
                     Text("Feedmine is an independent RSS reader built for curious minds.")
                 }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $showPalettePicker) {
+                palettePickerSheet
+            }
+            .sheet(isPresented: $showFontStylePicker) {
+                fontStylePickerSheet
+            }
         }
         .presentationDetents([.medium, .large])
+    }
+
+    // MARK: - Palette Picker Sheet
+
+    private var palettePickerSheet: some View {
+        NavigationStack {
+            List {
+                ForEach(PaletteFamily.allCases, id: \.rawValue) { family in
+                    Button {
+                        paletteFamilyRaw = family.rawValue
+                        showPalettePicker = false
+                    } label: {
+                        HStack(spacing: 12) {
+                            // Color swatches
+                            HStack(spacing: 3) {
+                                ForEach(CircadianPeriod.allCases, id: \.rawValue) { period in
+                                    RoundedRectangle(cornerRadius: 3)
+                                        .fill(family.accent(for: period))
+                                        .frame(width: 10, height: 24)
+                                }
+                            }
+                            VStack(alignment: .leading) {
+                                Text(family.label)
+                                    .foregroundStyle(.primary)
+                                Text(family.subtitle)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                            if family == selectedPalette {
+                                Image(systemName: "checkmark")
+                                    .foregroundStyle(CircadianEngine.shared.accent)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Palette Family")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") { showPalettePicker = false }
+                }
+            }
+        }
+        .presentationDetents([.medium])
+    }
+
+    // MARK: - Font Style Picker Sheet
+
+    private var fontStylePickerSheet: some View {
+        NavigationStack {
+            List {
+                ForEach(FontStyle.allCases, id: \.rawValue) { style in
+                    Button {
+                        fontStyleRaw = style.rawValue
+                        showFontStylePicker = false
+                    } label: {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(style.label)
+                                    .font(style == .newYork
+                                        ? .custom("New York", size: 17)
+                                        : style == .sfMono
+                                            ? .system(size: 17, design: .monospaced)
+                                            : .system(size: 17))
+                                    .foregroundStyle(.primary)
+                                Text(styleDescription(style))
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                            if style == selectedFontStyle {
+                                Image(systemName: "checkmark")
+                                    .foregroundStyle(CircadianEngine.shared.accent)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Font Style")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") { showFontStylePicker = false }
+                }
+            }
+        }
+        .presentationDetents([.medium])
+    }
+
+    private func styleDescription(_ style: FontStyle) -> String {
+        switch style {
+        case .system: return "San Francisco — weight shifts with time of day"
+        case .newYork: return "New York — serif editorial, fixed"
+        case .sfMono: return "SF Mono — technical, fixed"
+        }
     }
 }
 

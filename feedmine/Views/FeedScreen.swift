@@ -19,25 +19,15 @@ struct FeedScreen: View {
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
     @State private var headerCompact = false
-    @AppStorage("showDebugBar") private var showDebugBar = false  // default OFF per user research
+    @State private var engine = CircadianEngine.shared
+    @AppStorage("showDebugBar") private var showDebugBar = false
     @AppStorage("nightMode") private var nightMode = false
-    @AppStorage("accentColorName") private var accentColorName = "blue"
-
-    private var accentColor: Color {
-        switch accentColorName {
-        case "indigo": return .indigo
-        case "purple": return .purple
-        case "pink": return .pink
-        case "orange": return .orange
-        case "green": return .green
-        case "teal": return .teal
-        default: return .blue
-        }
-    }
 
     var body: some View {
         ZStack(alignment: .top) {
-            // Full-bleed feed content
+            // Full-bleed feed content with circadian page tint
+            engine.pageBackground.ignoresSafeArea()
+
             if loader.loadingState == .initial && loader.items.isEmpty {
                 SkeletonLoadingView()
             } else if loader.items.isEmpty && loader.loadingState != .initial {
@@ -53,14 +43,14 @@ struct FeedScreen: View {
                 Spacer()
             }
 
-            // Tap-to-dismiss when search keyboard is up — intercepts first tap
+            // Tap-to-dismiss search
             if isSearching && searchFocused {
                 Color.clear
                     .contentShape(Rectangle())
                     .onTapGesture { searchFocused = false }
             }
 
-            // Shake detector — hidden behind everything
+            // Shake detector
             ShakeDetector { loader.shakeToRefresh() }
                 .frame(width: 0, height: 0)
                 .allowsHitTesting(false)
@@ -78,16 +68,23 @@ struct FeedScreen: View {
         .task {
             await loader.start()
             updateBadge()
+            engine.refresh()
         }
         .onChange(of: scenePhase) { _, phase in
-            if phase == .active { SessionTracker.shared.onForeground() }
+            if phase == .active {
+                SessionTracker.shared.onForeground()
+                engine.refresh()
+            }
             if phase == .background {
                 SessionTracker.shared.onBackground()
                 PersistenceManager.shared.saveNow(loader.buildStateWithItems())
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            Task { await loader.refreshIfStale() }
+            Task {
+                engine.refresh()
+                await loader.refreshIfStale()
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
             loader.emergencyTrim()
@@ -110,7 +107,8 @@ struct FeedScreen: View {
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
         .sheet(isPresented: $showBookmarks) { BookmarksSheetView() }
-        .tint(accentColor)
+        .tint(engine.accent)
+        .animation(.easeInOut(duration: 2.0), value: engine.period)
         .overlay { if nightMode { nightOverlay } }
     }
 
@@ -118,13 +116,8 @@ struct FeedScreen: View {
 
     private var compactHeader: some View {
         VStack(spacing: 0) {
-            // Status bar area padding
             Color.clear.frame(height: 0)
-
-            // Error banners
             CompactErrorBanner()
-
-            // Main control bar: debug + greeting + buttons
             HStack(spacing: 8) {
                 if showDebugBar {
                     CompactDebugInfo()
@@ -134,7 +127,6 @@ struct FeedScreen: View {
 
                 Spacer()
 
-                // Search + filter + action buttons
                 HStack(spacing: 4) {
                     Button {
                         withAnimation(.easeInOut(duration: 0.3)) { isSearching.toggle() }
@@ -142,20 +134,34 @@ struct FeedScreen: View {
                     } label: {
                         Image(systemName: isSearching ? "magnifyingglass.circle.fill" : "magnifyingglass")
                             .frame(width: 36, height: 36)
-                            .background(Color(.systemGray6))
+                            .background(engine.accent.opacity(0.1))
                             .clipShape(Circle())
                     }
                     if loader.bookmarkedIDs.count > 0 {
                         Button { showBookmarks = true } label: {
                             Image(systemName: "bookmark.fill")
                                 .frame(width: 36, height: 36)
-                                .background(Color(.systemGray6))
+                                .background(engine.accent.opacity(0.1))
                                 .clipShape(Circle())
                         }
                     }
                     filterButton
-                    sourcesButton
-                    settingsButton
+                    Menu {
+                        Button { showSources = true } label: {
+                            Label("Sources", systemImage: "antenna.radiowaves.left.and.right")
+                        }
+                        Button { showBookmarks = true } label: {
+                            Label("Bookmarks", systemImage: "bookmark.fill")
+                        }
+                        Button { showSettings = true } label: {
+                            Label("Settings", systemImage: "gearshape")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .frame(width: 36, height: 36)
+                            .background(engine.accent.opacity(0.1))
+                            .clipShape(Circle())
+                    }
                 }
             }
             .padding(.horizontal, 12)
@@ -183,7 +189,7 @@ struct FeedScreen: View {
                 searchText = ""; isSearching = false; searchFocused = false
                 loader.searchQuery = ""; loader.searchQueryChanged()
             }
-            .font(.caption).foregroundStyle(.blue)
+            .font(.caption).foregroundStyle(engine.accent)
         }
         .padding(.horizontal, 12).padding(.vertical, 8)
         .background(.ultraThinMaterial)
@@ -198,35 +204,17 @@ struct FeedScreen: View {
             ZStack(alignment: .topTrailing) {
                 Image(systemName: "line.3.horizontal.decrease")
                     .frame(width: 36, height: 36)
-                    .background(Color(.systemGray6))
+                    .background(engine.accent.opacity(0.1))
                     .clipShape(Circle())
                 if activeCount > 0 {
                     Text("\(activeCount)")
                         .font(.system(size: 9, weight: .bold))
                         .foregroundStyle(.white)
                         .frame(width: 14, height: 14)
-                        .background(Circle().fill(.blue))
+                        .background(Circle().fill(engine.accent))
                         .offset(x: 2, y: -2)
                 }
             }
-        }
-    }
-
-    private var sourcesButton: some View {
-        Button { showSources = true } label: {
-            Image(systemName: "antenna.radiowaves.left.and.right")
-                .frame(width: 36, height: 36)
-                .background(Color(.systemGray6))
-                .clipShape(Circle())
-        }
-    }
-
-    private var settingsButton: some View {
-        Button { showSettings = true } label: {
-            Image(systemName: "gearshape")
-                .frame(width: 36, height: 36)
-                .background(Color(.systemGray6))
-                .clipShape(Circle())
         }
     }
 
@@ -236,18 +224,17 @@ struct FeedScreen: View {
         ScrollViewReader { proxy in
             ZStack(alignment: .bottom) {
                 ScrollView {
-                    LazyVStack(spacing: 10) {
+                    LazyVStack(spacing: engine.cardGap) {
                         Color.clear.frame(height: 0).id("top")
-                        // MomentCard — always visible (greeting, not a feed item)
+                        // MomentCard — contextual greeting
                         MomentCard()
                             .padding(.top, 12)
-                        // What's New carousel — only when unfiltered
+                        // What's New carousel
                         if loader.selectedCategory == nil && loader.selectedMood == .all && loader.selectedContentType == .all && loader.searchQuery.isEmpty {
                             WhatsNewCarousel()
                                 .padding(.top, 8)
                         }
 
-                        // Date sections with cards
                         ForEach(loader.dateSections) { section in
                             Section {
                                 ForEach(Array(section.items.enumerated()), id: \.element.id) { index, item in
@@ -260,7 +247,6 @@ struct FeedScreen: View {
                                     .contentShape(Rectangle())
                                     .onAppear {
                                         appearedItemIDs.insert(item.id)
-                                        // Debounced: only check every 8 items to reduce state updates
                                         if appearedItemIDs.count % 8 == 0 {
                                             let idx = loader.currentVisibleIndex
                                             let goingUp = idx < lastScrollIndex
@@ -287,12 +273,12 @@ struct FeedScreen: View {
                 .onScrollGeometryChange(for: CGFloat.self, of: { geo in
                     geo.contentOffset.y
                 }, action: { _, newOffset in
-                    // Pull down past -70pt (overscroll bounce) → reveal search
                     if newOffset < -110 && !isSearching {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
                         withAnimation(.easeInOut(duration: 0.25)) { isSearching = true }
                     }
                 })
-                // Bottom material bar — outside ScrollView, properly layered in ZStack
                 if showScrollButton { floatingButtons(proxy: proxy) }
             }
         }
@@ -301,9 +287,8 @@ struct FeedScreen: View {
     private func sectionHeader(_ title: String) -> some View {
         HStack {
             Text(title)
-                .font(.caption2)
-                .fontWeight(.semibold)
-                .foregroundStyle(.secondary)
+                .font(engine.font(for: .sectionHeader))
+                .foregroundStyle(engine.accent)
             Spacer()
         }
         .padding(.horizontal, 16)
@@ -325,7 +310,7 @@ struct FeedScreen: View {
             } label: {
                 Image(systemName: "arrow.up")
                     .frame(width: 36, height: 36)
-                    .background(Color(.systemGray6))
+                    .background(engine.accent.opacity(0.12))
                     .clipShape(Circle())
             }
             .accessibilityLabel("Scroll to top")
@@ -389,8 +374,7 @@ struct CompactDebugInfo: View {
                     .background(Capsule().fill(.blue))
             }
             if loader.podcastItemCount > 0 {
-                Text("🎧\(loader.podcastItemCount)")
-                    .font(.caption2).foregroundStyle(.purple)
+                Text("🎧\(loader.podcastItemCount)").font(.caption2).foregroundStyle(.purple)
             }
             if loader.fetchErrorCount > 0 {
                 Text("·\(loader.fetchErrorCount) err").font(.caption2).foregroundStyle(.orange)
@@ -406,19 +390,21 @@ struct ScrollOffKey: PreferenceKey {
 
 struct CompactGreeting: View {
     @Environment(FeedLoader.self) private var loader
+    @State private var engine = CircadianEngine.shared
     @State private var sparkle = false
 
     var body: some View {
         HStack(spacing: 4) {
             Image(systemName: sparkle ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right")
-                .font(.caption).foregroundStyle(.blue)
+                .font(.caption)
+                .foregroundStyle(engine.accent)
                 .symbolEffect(.pulse, options: .repeating, value: sparkle)
             Text("Feedmine").font(.caption).fontWeight(.bold)
             Text("·\(loader.sourceCount) sources").font(.caption2).foregroundStyle(.secondary)
             if loader.totalFetched > 0 {
                 Text("·\(loader.totalFetched) fetched")
                     .font(.caption2)
-                    .foregroundStyle(.blue.opacity(0.7))
+                    .foregroundStyle(engine.accent.opacity(0.7))
                     .contentTransition(.numericText())
             }
         }
@@ -440,19 +426,31 @@ struct CompactErrorBanner: View {
     }
 }
 
-// MARK: - Skeleton Loading (inline version)
+// MARK: - Skeleton Loading (with DreamyGradient from WhatsNew)
+
 struct SkeletonLoadingView: View {
     @State private var messageIndex = 0
+    @State private var engine = CircadianEngine.shared
     private let messages = ["Brewing coffee...", "Scanning the internet...", "Finding articles...", "Finding the best stories...", "Loading your feed...", "Checking sources...", "Almost there...", "Curating articles...", "Tuning antennas...", "Gathering news..."]
+
     var body: some View {
         VStack(spacing: 0) {
-            Text(messages[messageIndex]).font(.subheadline).foregroundStyle(.secondary).padding(.vertical, 16).transition(.opacity.combined(with: .move(edge: .top))).id(messageIndex)
+            Text(messages[messageIndex])
+                .font(engine.font(for: .momentCard))
+                .foregroundStyle(engine.accent)
+                .padding(.vertical, 16)
+                .transition(.opacity.combined(with: .move(edge: .top)))
+                .id(messageIndex)
             ScrollView {
-                VStack(spacing: 12) {
-                    ForEach(0..<6, id: \.self) { _ in SkeletonCardView().padding(.horizontal, 12) }
+                VStack(spacing: engine.cardGap) {
+                    ForEach(0..<6, id: \.self) { _ in
+                        SkeletonCardView().padding(.horizontal, 12)
+                    }
                 }.padding(.vertical, 8)
             }
-        }.disabled(true).accessibilityLabel("Loading articles")
+        }
+        .disabled(true)
+        .accessibilityLabel("Loading articles")
         .task {
             while !Task.isCancelled {
                 try? await Task.sleep(for: .seconds(2.5))
@@ -461,22 +459,78 @@ struct SkeletonLoadingView: View {
         }
     }
 }
+
 struct SkeletonCardView: View {
-    @State private var isAnimating = false
+    @State private var engine = CircadianEngine.shared
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            RoundedRectangle(cornerRadius: 12).fill(shimmerGradient).frame(height: 180)
+            // Dreamy gradient placeholder — same system as WhatsNewCarousel
+            SkeletonDreamyGradient()
+                .frame(height: 180)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
             RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(width: 120, height: 16).padding(.horizontal, 16).padding(.top, 12)
             RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(height: 20).padding(.horizontal, 16).padding(.top, 8)
             RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(width: 200, height: 20).padding(.horizontal, 16).padding(.top, 4)
             RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(height: 40).padding(.horizontal, 16).padding(.top, 4)
             RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(width: 80, height: 12).padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 16)
         }
-        .background(Color(.systemBackground)).clipShape(RoundedRectangle(cornerRadius: 16)).shadow(color: .black.opacity(0.08), radius: 8, y: 2)
-        .onAppear { withAnimation(.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) { isAnimating = true } }
+        .background(Color(.systemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: engine.cardRadius))
+        .shadow(color: .black.opacity(0.04), radius: 8, y: 2)
         .accessibilityHidden(true)
     }
-    private var shimmerGradient: LinearGradient { LinearGradient(colors: [Color(.systemGray5), Color(.systemGray4), Color(.systemGray5)], startPoint: isAnimating ? .topTrailing : .topLeading, endPoint: isAnimating ? .bottomLeading : .bottomTrailing) }
+
+    private var shimmerGradient: LinearGradient {
+        LinearGradient(
+            colors: [engine.accent.opacity(0.15), engine.accent.opacity(0.08), engine.accent.opacity(0.15)],
+            startPoint: .leading,
+            endPoint: .trailing
+        )
+    }
+}
+
+/// A soft, slow dreamy gradient for skeleton cards — same vibe as WhatsNewCarousel
+struct SkeletonDreamyGradient: View {
+    @State private var phase: CGFloat = 0
+    @State private var engine = CircadianEngine.shared
+
+    var body: some View {
+        GeometryReader { geo in
+            ZStack {
+                engine.accent.opacity(0.08)
+                Circle()
+                    .fill(engine.accent.opacity(0.12))
+                    .frame(width: geo.size.width * 0.6)
+                    .blur(radius: 40)
+                    .offset(x: geo.size.width * 0.2 * cos(phase * .pi * 2),
+                            y: geo.size.height * 0.15 * sin(phase * .pi * 1.6))
+                Circle()
+                    .fill(engine.accent.opacity(0.08))
+                    .frame(width: geo.size.width * 0.45)
+                    .blur(radius: 35)
+                    .offset(x: geo.size.width * -0.1 * sin(phase * .pi * 1.8),
+                            y: geo.size.height * -0.1 * cos(phase * .pi * 2.2))
+                // Scanning beam
+                Rectangle()
+                    .fill(
+                        LinearGradient(
+                            colors: [.clear, .clear, .white.opacity(0.2), .white.opacity(0.06), .clear, .clear],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .frame(width: geo.size.width * 0.2)
+                    .blur(radius: 14)
+                    .offset(x: (phase * 1.3 - 0.3) * geo.size.width)
+            }
+            .onAppear {
+                withAnimation(.easeInOut(duration: 8).repeatForever(autoreverses: false)) {
+                    phase = 5
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Empty Filter

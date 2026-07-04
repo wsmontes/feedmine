@@ -10,26 +10,49 @@ struct FeedItemCardView: View {
     @State private var appeared = false
     @State private var imageLoadFailed = false
     @AppStorage("fontSize") private var fontSize = "medium"
+    @State private var engine = CircadianEngine.shared
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    private var isLandscape: Bool { horizontalSizeClass == .regular }
 
     private var titleFont: Font {
         switch fontSize {
-        case "small": return .subheadline
-        case "large": return .title3
-        default: return .headline
+        case "small": return engine.font(for: .cardTitle, size: 14)
+        case "large": return engine.font(for: .cardTitle, size: 20)
+        default: return engine.font(for: .cardTitle)
         }
     }
 
     private var bodyFont: Font {
         switch fontSize {
-        case "small": return .caption
-        case "large": return .body
-        default: return .subheadline
+        case "small": return .system(size: 12)
+        case "large": return .system(size: 15)
+        default: return .system(size: 13)
         }
     }
 
     var body: some View {
+        Group {
+            if isLandscape {
+                landscapeCard
+            } else {
+                portraitCard
+            }
+        }
+        .opacity(appeared ? (isRead ? 0.85 : 1) : 0)
+        .offset(y: appeared ? 0 : 16)
+        .onAppear {
+            withAnimation(.easeOut(duration: 0.4).delay(appearDelay)) {
+                appeared = true
+            }
+        }
+    }
+
+    // MARK: - Portrait Card (vertical, hero image)
+
+    private var portraitCard: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Hero image — only shown when URL exists AND loads successfully
+            // Hero image
             if let imageURL = item.bestImageURL ?? item.imageURL, !imageLoadFailed {
                 Color.clear
                     .aspectRatio(16/9, contentMode: .fit)
@@ -42,36 +65,14 @@ struct FeedItemCardView: View {
                     }
                     .clipped()
                     .overlay(alignment: .topTrailing) {
-                        Button {
-                            let impact = UIImpactFeedbackGenerator(style: .soft)
-                            impact.impactOccurred()
-                            onBookmark?()
-                        } label: {
-                            Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                                .font(.title3)
-                                .foregroundStyle(isBookmarked ? .yellow : .white)
-                                .shadow(color: .black.opacity(0.4), radius: 4)
-                                .padding(12)
-                        }
-                        .buttonStyle(.plain)
+                        cardOverlays
                     }
-                    // Play overlays
                     .overlay {
-                        if item.isYouTube {
-                            Image(systemName: "play.circle.fill")
-                                .font(.system(size: 44))
-                                .foregroundStyle(.white)
-                                .shadow(color: .black.opacity(0.5), radius: 4, y: 2)
-                        } else if item.isPodcast {
-                            Image(systemName: "headphones.circle.fill")
-                                .font(.system(size: 44))
-                                .foregroundStyle(.white)
-                                .shadow(color: .black.opacity(0.5), radius: 4, y: 2)
-                        }
+                        mediaOverlay
                     }
             }
 
-            // Category + source
+            // Category + source row
             HStack(spacing: 4) {
                 Text(item.category)
                     .font(.caption)
@@ -82,55 +83,24 @@ struct FeedItemCardView: View {
                     .background(categoryColor(item.category).opacity(0.12))
                     .clipShape(Capsule())
 
-                Text("·")
-                    .foregroundStyle(.tertiary)
-
-                Text(item.sourceTitle)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                Text("·").foregroundStyle(.tertiary)
+                Text(item.sourceTitle).font(.caption).foregroundStyle(.secondary)
 
                 if item.isPodcast {
-                    Text("PODCAST")
-                        .font(.caption2)
-                        .fontWeight(.heavy)
-                        .foregroundStyle(.purple)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 1)
-                        .background(Color.purple.opacity(0.1))
-                        .clipShape(Capsule())
+                    mediaBadge("PODCAST", color: .purple)
                     if let dur = item.durationFormatted {
-                        Text(dur)
-                            .font(.caption2)
-                            .foregroundStyle(.secondary)
+                        Text(dur).font(.caption2).foregroundStyle(.secondary)
                     }
                 }
                 if item.isYouTube {
-                    Text("VIDEO")
-                        .font(.caption2)
-                        .fontWeight(.heavy)
-                        .foregroundStyle(.red)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 1)
-                        .background(Color.red.opacity(0.1))
-                        .clipShape(Capsule())
+                    mediaBadge("VIDEO", color: .red)
                 } else if isNew && !item.isPodcast {
-                    Text("NEW")
-                        .font(.caption2)
-                        .fontWeight(.heavy)
-                        .foregroundStyle(.blue)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 1)
-                        .background(Color.blue.opacity(0.1))
-                        .clipShape(Capsule())
+                    mediaBadge("NEW", color: .blue)
                 }
 
                 Spacer()
 
-                if isRead {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.caption)
-                        .foregroundStyle(.green)
-                }
+                unreadDot
             }
             .padding(.horizontal, 12)
             .padding(.top, 12)
@@ -138,7 +108,7 @@ struct FeedItemCardView: View {
             // Title
             Text(item.title)
                 .font(titleFont)
-                .fontWeight(.semibold)
+                .fontWeight(engine.activeFontWeight ?? .semibold)
                 .lineLimit(2)
                 .foregroundStyle(isRead ? .secondary : .primary)
                 .padding(.horizontal, 12)
@@ -152,81 +122,174 @@ struct FeedItemCardView: View {
                 .padding(.horizontal, 12)
                 .padding(.top, 6)
 
-            // Relative date + reading time
+            // Meta row
             HStack {
-                Text(formattedDate(item.publishedAt))
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
-                Text("·")
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
-                Text(readingTime)
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
+                Text(formattedDate(item.publishedAt)).font(.caption).foregroundStyle(.tertiary)
+                Text("·").font(.caption).foregroundStyle(.tertiary)
+                Text(readingTime).font(.caption).foregroundStyle(.tertiary)
                 Spacer()
             }
             .padding(.horizontal, 12)
             .padding(.top, 8)
-            .padding(.bottom, 16)
+            .padding(.bottom, engine.cardPadding)
         }
         .frame(maxWidth: .infinity)
         .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .overlay(alignment: .leading) {
-            if !isRead {
-                RoundedRectangle(cornerRadius: 2)
-                    .fill(categoryColor(item.category))
-                    .frame(width: 3)
-                    .padding(.vertical, 16)
-                    .padding(.leading, 1)
-            }
-        }
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color(.separator).opacity(0.5), lineWidth: 0.5)
-        )
-        .opacity(appeared ? (isRead ? 0.85 : 1) : 0)
-        .offset(y: appeared ? 0 : 16)
-        .contextMenu {
-            Button {
-                onBookmark?()
-            } label: {
-                Label(
-                    isBookmarked ? "Remove Bookmark" : "Bookmark",
-                    systemImage: isBookmarked ? "bookmark.slash" : "bookmark"
-                )
+        .clipShape(RoundedRectangle(cornerRadius: engine.cardRadius))
+        .shadow(color: .black.opacity(0.04), radius: 8, y: 2)
+        .contextMenu { cardContextMenu }
+    }
+
+    // MARK: - Landscape Card (horizontal, thumb left)
+
+    private var landscapeCard: some View {
+        HStack(spacing: 12) {
+            // Thumb
+            if let imageURL = item.bestImageURL ?? item.imageURL, !imageLoadFailed {
+                Color.clear
+                    .frame(width: 90, height: 90)
+                    .overlay {
+                        CachedAsyncImage(url: URL(string: imageURL), onResult: { success in
+                            if !success { imageLoadFailed = true }
+                        })
+                        .scaledToFill()
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            } else {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(categoryColor(item.category).opacity(0.15))
+                    .frame(width: 90, height: 90)
+                    .overlay {
+                        Text(String(item.sourceTitle.prefix(1)))
+                            .font(.title2).fontWeight(.bold)
+                            .foregroundStyle(categoryColor(item.category).opacity(0.5))
+                    }
             }
 
-            Button {
-                UIPasteboard.general.url = URL(string: item.url)
-                let impact = UIImpactFeedbackGenerator(style: .light)
-                impact.impactOccurred()
-            } label: {
-                Label("Copy Link", systemImage: "doc.on.doc")
-            }
-
-            Button {
-                if let url = URL(string: item.url) {
-                    UIApplication.shared.open(url)
+            // Content
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(spacing: 4) {
+                    Text(item.category)
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundStyle(categoryColor(item.category))
+                        .padding(.horizontal, 6).padding(.vertical, 2)
+                        .background(categoryColor(item.category).opacity(0.12))
+                        .clipShape(Capsule())
+                    Text("·").font(.caption2).foregroundStyle(.tertiary)
+                    Text(item.sourceTitle).font(.caption2).foregroundStyle(.secondary)
+                    Spacer()
+                    unreadDot
                 }
-            } label: {
-                Label("Open in Safari", systemImage: "safari")
-            }
 
-            ShareLink(item: URL(string: item.url) ?? URL(string: "https://feedmine.app")!) {
-                Label("Share", systemImage: "square.and.arrow.up")
+                Text(item.title)
+                    .font(titleFont)
+                    .fontWeight(engine.activeFontWeight ?? .semibold)
+                    .lineLimit(2)
+                    .foregroundStyle(isRead ? .secondary : .primary)
+                    .padding(.top, 4)
+
+                Text(item.excerpt)
+                    .font(.system(size: 11))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+                    .padding(.top, 3)
+
+                HStack {
+                    Text(formattedDate(item.publishedAt)).font(.caption2).foregroundStyle(.tertiary)
+                    Text("·").font(.caption2).foregroundStyle(.tertiary)
+                    Text(readingTime).font(.caption2).foregroundStyle(.tertiary)
+                    Spacer()
+                }
+                .padding(.top, 4)
             }
         }
-        .onAppear {
-            withAnimation(.easeOut(duration: 0.4).delay(appearDelay)) {
-                appeared = true
+        .padding(12)
+        .frame(maxWidth: .infinity)
+        .background(Color(.systemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .shadow(color: .black.opacity(0.04), radius: 8, y: 2)
+        .contextMenu { cardContextMenu }
+    }
+
+    // MARK: - Shared Elements
+
+    private var unreadDot: some View {
+        Group {
+            if !isRead {
+                Circle()
+                    .fill(engine.accent)
+                    .frame(width: 5, height: 5)
             }
         }
     }
 
-    private var isNew: Bool {
-        Date().timeIntervalSince(item.publishedAt) < 3600 // < 1 hour
+    private var cardOverlays: some View {
+        Button {
+            let impact = UIImpactFeedbackGenerator(style: .soft)
+            impact.impactOccurred()
+            onBookmark?()
+        } label: {
+            Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                .font(.title3)
+                .foregroundStyle(isBookmarked ? .yellow : .white)
+                .shadow(color: .black.opacity(0.4), radius: 4)
+                .padding(12)
+        }
+        .buttonStyle(.plain)
     }
+
+    @ViewBuilder
+    private var mediaOverlay: some View {
+        if item.isYouTube {
+            Image(systemName: "play.circle.fill")
+                .font(.system(size: 44))
+                .foregroundStyle(.white)
+                .shadow(color: .black.opacity(0.5), radius: 4, y: 2)
+        } else if item.isPodcast {
+            Image(systemName: "headphones.circle.fill")
+                .font(.system(size: 44))
+                .foregroundStyle(.white)
+                .shadow(color: .black.opacity(0.5), radius: 4, y: 2)
+        }
+    }
+
+    private func mediaBadge(_ text: String, color: Color) -> some View {
+        Text(text)
+            .font(.caption2).fontWeight(.heavy)
+            .foregroundStyle(color)
+            .padding(.horizontal, 5).padding(.vertical, 1)
+            .background(color.opacity(0.1))
+            .clipShape(Capsule())
+    }
+
+    @ViewBuilder
+    private var cardContextMenu: some View {
+        Button {
+            onBookmark?()
+        } label: {
+            Label(isBookmarked ? "Remove Bookmark" : "Bookmark",
+                  systemImage: isBookmarked ? "bookmark.slash" : "bookmark")
+        }
+        Button {
+            UIPasteboard.general.url = URL(string: item.url)
+            let impact = UIImpactFeedbackGenerator(style: .light)
+            impact.impactOccurred()
+        } label: {
+            Label("Copy Link", systemImage: "doc.on.doc")
+        }
+        Button {
+            if let url = URL(string: item.url) { UIApplication.shared.open(url) }
+        } label: {
+            Label("Open in Safari", systemImage: "safari")
+        }
+        ShareLink(item: URL(string: item.url) ?? URL(string: "https://feedmine.app")!) {
+            Label("Share", systemImage: "square.and.arrow.up")
+        }
+    }
+
+    // MARK: - Helpers
+
+    private var isNew: Bool { Date().timeIntervalSince(item.publishedAt) < 3600 }
 
     private var readingTime: String {
         let wordCount = item.excerpt.split(separator: " ").count
@@ -234,73 +297,24 @@ struct FeedItemCardView: View {
         return "\(minutes) min read"
     }
 
-    // MARK: - Date Formatting
-
     private func formattedDate(_ date: Date) -> String {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
         let relative = formatter.localizedString(for: date, relativeTo: Date())
-
-        if Date().timeIntervalSince(date) < 7 * 24 * 3600 {
-            return relative
-        }
-
+        if Date().timeIntervalSince(date) < 7 * 24 * 3600 { return relative }
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
         return dateFormatter.string(from: date)
     }
 
-    // MARK: - Helpers
-
-    private var gradientPlaceholder: some View {
-        let colors = placeholderColors
-        return ZStack {
-            Rectangle()
-                .fill(
-                    LinearGradient(
-                        colors: colors,
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-
-            VStack(spacing: 8) {
-                // Source initial in a circle
-                Text(String(item.sourceTitle.prefix(1)))
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.white.opacity(0.8))
-                    .frame(width: 56, height: 56)
-                    .background(.white.opacity(0.2))
-                    .clipShape(Circle())
-
-                Text(item.sourceTitle)
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .foregroundStyle(.white.opacity(0.6))
-            }
-        }
-    }
-
-    private var placeholderColors: [Color] {
-        switch item.category.lowercased() {
-        case "tech": return [.blue.opacity(0.3), .indigo.opacity(0.2)]
-        case "news": return [.red.opacity(0.3), .orange.opacity(0.2)]
-        case "science": return [.green.opacity(0.3), .teal.opacity(0.2)]
-        case "design": return [.purple.opacity(0.3), .pink.opacity(0.2)]
-        case "culture": return [.orange.opacity(0.3), .yellow.opacity(0.2)]
-        default: return [Color(.systemGray5), Color(.systemGray4)]
-        }
-    }
-
     private func categoryColor(_ category: String) -> Color {
         switch category.lowercased() {
-        case "tech": return .blue
-        case "news": return .red
-        case "science": return .green
-        case "design": return .purple
-        case "culture": return .orange
+        case "tech": return Color(hex: "#5B7FA5")
+        case "news": return Color(hex: "#B8685C")
+        case "science": return Color(hex: "#6B9E7A")
+        case "design": return Color(hex: "#8B7BA8")
+        case "culture": return Color(hex: "#C4854A")
         default: return .gray
         }
     }
