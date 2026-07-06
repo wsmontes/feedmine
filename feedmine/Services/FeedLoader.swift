@@ -798,6 +798,7 @@ final class FeedLoader {
                 reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
             }
             reservoirCount = reservoir.count
+            itemVersion += 1  // invalidate whatIsNewItems cache
         }
 
         lastRefreshDate = .now
