@@ -48,6 +48,7 @@
 		70F2C5D0AEEC8E1B0EC3F2BD /* programming.opml in Resources */ = {isa = PBXBuildFile; fileRef = 6AB03868BEADADC66E823E06 /* programming.opml */; };
 		72D004892A528079D059F577 /* FeedFetchBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595D303FD10CB2456A989DC /* FeedFetchBatch.swift */; };
 		785D6E99FD2AB46F9137E9B6 /* BookmarksSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B75EEA60ABFE02AB66FF3B /* BookmarksSheetView.swift */; };
+		7B6FD2474CE0A734254AE627 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B50077DA1D77D2A8954743 /* DesignTokens.swift */; };
 		7D059B62DEC97393B3981822 /* DailyBriefingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB4233F029C53681617CA22 /* DailyBriefingCard.swift */; };
 		7D50E979F88694C1588392D8 /* RSSFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAEEDBB109C8C6CAC336D6 /* RSSFetcher.swift */; };
 		7E39E605E7B9F579235AE061 /* FeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E7A90D2773F4370B149BA /* FeedSource.swift */; };
@@ -129,6 +130,7 @@
 		9DF1AECEFE3244BA029AFC3B /* history.opml */ = {isa = PBXFileReference; path = history.opml; sourceTree = "<group>"; };
 		9E8D4BC74BB01746A998D0A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A15CFE1B5B333D4013B39871 /* FilterSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheetView.swift; sourceTree = "<group>"; };
+		A8B50077DA1D77D2A8954743 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
 		AABCAE92C1E148558D414CB0 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		AD9552EF1F96A25C4947BB00 /* environment.opml */ = {isa = PBXFileReference; path = environment.opml; sourceTree = "<group>"; };
 		B0C68ECC3CC970CA77B8583D /* tech.opml */ = {isa = PBXFileReference; path = tech.opml; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				ED7D05837FFFED0BCF4528A1 /* AppContext.swift */,
 				01C4ABF16D3BCCA6595D02EA /* AudioPlayerManager.swift */,
 				85BC7361CDC09C1858857316 /* CircadianEngine.swift */,
+				A8B50077DA1D77D2A8954743 /* DesignTokens.swift */,
 				1B89B6467E341514F26C040B /* FeedLoader.swift */,
 				AABCAE92C1E148558D414CB0 /* ImageCache.swift */,
 				D4D33E3786E84EA594E2A36E /* ImagePrefetcher.swift */,
@@ -412,6 +415,7 @@
 				0D7D2F35B303B7FA834EE8B5 /* ContentView.swift in Sources */,
 				7D059B62DEC97393B3981822 /* DailyBriefingCard.swift in Sources */,
 				0D172F74FC571B2B1C682C66 /* DebugStatusBar.swift in Sources */,
+				7B6FD2474CE0A734254AE627 /* DesignTokens.swift in Sources */,
 				9091D14B5D8B413C453FE0AC /* ErrorBannerView.swift in Sources */,
 				2FFDEE84C9425743CD6CBA2D /* FeedEmptyStateView.swift in Sources */,
 				72D004892A528079D059F577 /* FeedFetchBatch.swift in Sources */,

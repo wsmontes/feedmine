@@ -225,7 +225,7 @@ struct FeedItemCardView: View {
 
     private var cardOverlays: some View {
         Button {
-            let impact = UIImpactFeedbackGenerator(style: .soft)
+            let impact = UIImpactFeedbackGenerator(style: .light)
             impact.impactOccurred()
             onBookmark?()
         } label: {
@@ -309,13 +309,6 @@ struct FeedItemCardView: View {
     }
 
     private func categoryColor(_ category: String) -> Color {
-        switch category.lowercased() {
-        case "tech": return Color(hex: "#5B7FA5")
-        case "news": return Color(hex: "#B8685C")
-        case "science": return Color(hex: "#6B9E7A")
-        case "design": return Color(hex: "#8B7BA8")
-        case "culture": return Color(hex: "#C4854A")
-        default: return .gray
-        }
+        ComponentToken.categoryColor(for: category)
     }
 }

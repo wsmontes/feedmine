@@ -349,6 +349,7 @@ struct SettingsSheetView: View {
         case .system: return "San Francisco — weight shifts with time of day"
         case .newYork: return "New York — serif editorial, fixed"
         case .sfMono: return "SF Mono — technical, fixed"
+        case .georgia: return "Georgia — serif headlines, SF body"
         }
     }
 }

@@ -241,14 +241,11 @@ struct MiniThumb: View {
     let size: CGSize
 
     private var fallbackColor: Color {
-        switch card.category.lowercased() {
-        case "tech": return .blue
-        case "science": return .green
-        case "news": return .red
-        case "design": return .purple
-        case "culture": return .orange
-        default: return .indigo
+        let c = card.category.lowercased()
+        if c == "tech" || c == "news" || c == "science" || c == "design" || c == "culture" {
+            return ComponentToken.categoryColor(for: c)
         }
+        return .indigo
     }
 
     var body: some View {
@@ -406,6 +403,8 @@ struct WhatsNewCard: View {
             }
         }
         .onTapGesture {
+            let impact = UIImpactFeedbackGenerator(style: .light)
+            impact.impactOccurred()
             let url = URL(string: item.url) ?? URL(string: "https://www.google.com")!
             UIApplication.shared.open(url)
             loader.markAsRead(item.id)

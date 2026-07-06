@@ -31,14 +31,7 @@ struct CategoryFilterBar: View {
     }
 
     private func categoryColor(_ category: String) -> Color {
-        switch category.lowercased() {
-        case "tech": return .blue
-        case "news": return .red
-        case "science": return .green
-        case "design": return .purple
-        case "culture": return .orange
-        default: return .gray
-        }
+        ComponentToken.categoryColor(for: category)
     }
 }
 

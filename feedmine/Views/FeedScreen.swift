@@ -138,7 +138,11 @@ struct FeedScreen: View {
                             .clipShape(Circle())
                     }
                     if loader.bookmarkedIDs.count > 0 {
-                        Button { showBookmarks = true } label: {
+                        Button {
+                            let impact = UIImpactFeedbackGenerator(style: .light)
+                            impact.impactOccurred()
+                            showBookmarks = true
+                        } label: {
                             Image(systemName: "bookmark.fill")
                                 .frame(width: 36, height: 36)
                                 .background(engine.accent.opacity(0.1))

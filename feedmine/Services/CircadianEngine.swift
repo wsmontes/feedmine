@@ -173,28 +173,15 @@ enum PaletteFamily: String, CaseIterable {
 }
 
 enum FontStyle: String, CaseIterable {
-    case system, newYork, sfMono
+    case system, newYork, sfMono, georgia
 
     var label: String {
         switch self {
         case .system:  "System"
         case .newYork: "New York"
         case .sfMono:  "SF Mono"
+        case .georgia: "Georgia"
         }
-    }
-}
-
-// MARK: - Color Helper
-
-extension Color {
-    init(hex: String) {
-        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var int: UInt64 = 0
-        Scanner(string: hex).scanHexInt64(&int)
-        let r = Double((int >> 16) & 0xFF) / 255.0
-        let g = Double((int >> 8) & 0xFF) / 255.0
-        let b = Double(int & 0xFF) / 255.0
-        self.init(red: r, green: g, blue: b)
     }
 }
 
@@ -288,39 +275,63 @@ final class CircadianEngine {
     /// Returns a Font for the given role, respecting the selected font style and circadian weight.
     func font(for role: FontRole, size: CGFloat? = nil) -> Font {
         let baseSize = size ?? role.defaultSize
+        let weight = isCircadianTypographyOn ? period.fontWeight : role.defaultWeight
         switch fontStyle {
         case .system:
-            return .system(size: baseSize, weight: isCircadianTypographyOn ? period.fontWeight : role.defaultWeight)
+            return .system(size: baseSize, weight: weight)
         case .newYork:
-            return .custom("New York", size: baseSize).weight(isCircadianTypographyOn ? period.fontWeight : role.defaultWeight)
+            return .custom("New York", size: baseSize).weight(weight)
         case .sfMono:
-            return .system(size: baseSize, weight: isCircadianTypographyOn ? period.fontWeight : role.defaultWeight, design: .monospaced)
+            return .system(size: baseSize, weight: weight, design: .monospaced)
+        case .georgia:
+            // Georgia for headlines/articles, SF for body
+            if role == .cardTitle || role == .articleHeadline || role == .sectionHeader || role == .momentCard {
+                return .custom("Georgia", size: baseSize).weight(weight)
+            }
+            return .system(size: baseSize, weight: weight)
+        }
+    }
+
+    /// Returns the HIG-recommended tracking (letter-spacing) for a given font size.
+    func tracking(for size: CGFloat) -> CGFloat {
+        switch size {
+        case 34...:   return -1.05  // Large Title
+        case 28..<34: return -0.80  // Title 1
+        case 22..<28: return -0.50  // Title 2
+        case 20..<22: return -0.45  // Title 3
+        case 17..<20: return -0.43  // Headline / Body
+        case 15..<17: return -0.24  // Subhead
+        case 13..<15: return -0.08  // Footnote
+        case ..<13:    return +0.12  // Caption (positive tracking for legibility)
+        default:       return 0
         }
     }
 }
 
 enum FontRole {
-    case momentCard, sectionHeader, cardTitle, cardBody, cardMeta, uiLabel
+    case momentCard, sectionHeader, cardTitle, articleHeadline, cardBody, cardMeta, uiLabel
 
     var defaultSize: CGFloat {
         switch self {
-        case .momentCard:    14  // .subheadline
-        case .sectionHeader: 13
-        case .cardTitle:     17
-        case .cardBody:      14
-        case .cardMeta:      11
-        case .uiLabel:       14
+        case .momentCard:      14
+        case .sectionHeader:   13
+        case .cardTitle:       17
+        case .articleHeadline: 19
+        case .cardBody:        14
+        case .cardMeta:        11
+        case .uiLabel:         14
         }
     }
 
     var defaultWeight: Font.Weight {
         switch self {
-        case .momentCard:    .regular
-        case .sectionHeader: .semibold
-        case .cardTitle:     .semibold
-        case .cardBody:      .regular
-        case .cardMeta:      .regular
-        case .uiLabel:       .medium
+        case .momentCard:       .regular
+        case .sectionHeader:    .semibold
+        case .cardTitle:        .semibold
+        case .articleHeadline:  .bold
+        case .cardBody:         .regular
+        case .cardMeta:         .regular
+        case .uiLabel:          .medium
         }
     }
 }

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct FeedEmptyStateView: View {
     @Environment(FeedLoader.self) private var loader
+    @State private var engine = CircadianEngine.shared
 
     var body: some View {
         VStack(spacing: 24) {
@@ -10,12 +11,12 @@ struct FeedEmptyStateView: View {
             // Icon
             ZStack {
                 Circle()
-                    .fill(Color(.systemGray6))
+                    .fill(engine.accent.opacity(0.1))
                     .frame(width: 100, height: 100)
 
                 Image(systemName: iconName)
                     .font(.system(size: 40))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(engine.accent)
             }
 
             // Title
@@ -35,6 +36,8 @@ struct FeedEmptyStateView: View {
             if showActions {
                 VStack(spacing: 12) {
                     Button {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
                         Task { await loader.refresh() }
                     } label: {
                         HStack {
@@ -46,6 +49,7 @@ struct FeedEmptyStateView: View {
                         .frame(maxWidth: 200)
                     }
                     .buttonStyle(.borderedProminent)
+                    .tint(engine.accent)
                     .controlSize(.large)
 
                     if loader.disabledSourceIDs.count > 0 {
@@ -93,7 +97,17 @@ struct FeedEmptyStateView: View {
         } else if loader.sources.isEmpty {
             return "Add .opml files to the Resources/Feeds folder in Xcode and rebuild the app."
         } else {
-            return "Articles will appear here as they're published. Pull to refresh or check back later."
+            return circadianNoArticlesMessage
+        }
+    }
+
+    private var circadianNoArticlesMessage: String {
+        switch engine.period {
+        case .dawn:    return "The world's still quiet. Stories are on their way."
+        case .morning: return "Nothing here yet. Good time to add a source?"
+        case .afternoon: return "All caught up. Quick and clean."
+        case .evening: return "All caught up. These are worth the slow read — come back soon."
+        case .night:   return "All caught up. Sleep well. The news will be here tomorrow."
         }
     }
 

@@ -48,7 +48,7 @@ struct FeedItemView: View {
         }
         .swipeActions(edge: .leading) {
             Button {
-                let impact = UIImpactFeedbackGenerator(style: .medium)
+                let impact = UIImpactFeedbackGenerator(style: .light)
                 impact.impactOccurred()
                 loader.markAsRead(item.id)
             } label: {
@@ -61,7 +61,7 @@ struct FeedItemView: View {
         }
         .swipeActions(edge: .trailing) {
             Button {
-                let impact = UIImpactFeedbackGenerator(style: .medium)
+                let impact = UIImpactFeedbackGenerator(style: .light)
                 impact.impactOccurred()
                 loader.toggleBookmark(item.id)
             } label: {

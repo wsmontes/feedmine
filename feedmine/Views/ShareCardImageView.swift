@@ -97,14 +97,7 @@ struct ShareCardImageView: View {
     }
 
     private var categoryColor: Color {
-        switch item.category.lowercased() {
-        case "tech": return .blue
-        case "news": return .red
-        case "science": return .green
-        case "design": return .purple
-        case "culture": return .orange
-        default: return .gray
-        }
+        ComponentToken.categoryColor(for: item.category)
     }
 }
 
