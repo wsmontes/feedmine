@@ -85,12 +85,10 @@ final class PersistenceManager {
         var cleaned = state
         autoCleanup(&cleaned)
 
-        if FileManager.default.fileExists(atPath: mainURL.path) {
-            try? FileManager.default.removeItem(at: backupURL)
-            try? FileManager.default.copyItem(at: mainURL, to: backupURL)
+        // Offload encode + compress + write to background
+        Task.detached(priority: .userInitiated) {
+            saveStateToDisk(cleaned)
         }
-
-        trySaveCompressed(cleaned, to: mainURL)
     }
 
     // MARK: - Auto-Cleanup
@@ -270,7 +268,7 @@ extension Data {
     }
 }
 
-// MARK: - Free function for off-main-thread loading
+// MARK: - Free functions for off-main-thread I/O
 
 /// Loads persisted state from disk without @MainActor isolation.
 /// Safe to call from Task.detached for cold-start performance.
@@ -316,4 +314,30 @@ func loadPersistedState() -> FeedState? {
     }
     print("[Persistence] No valid state found — fresh start")
     return nil
+}
+
+/// Saves state to disk without @MainActor isolation.
+/// Safe to call from Task.detached for background saves.
+func saveStateToDisk(_ state: FeedState) {
+    let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    let mainURL = docs.appendingPathComponent("feedmine_state.json")
+    let backupURL = docs.appendingPathComponent("feedmine_state.backup.json")
+
+    // Rotate backup
+    if FileManager.default.fileExists(atPath: mainURL.path) {
+        try? FileManager.default.removeItem(at: backupURL)
+        try? FileManager.default.copyItem(at: mainURL, to: backupURL)
+    }
+
+    // Encode + compress + write
+    guard let raw = try? JSONEncoder().encode(state) else {
+        print("[Persistence] JSON encoding failed")
+        return
+    }
+    let data = raw.compress() ?? raw
+    do {
+        try data.write(to: mainURL, options: .atomic)
+    } catch {
+        print("[Persistence] Write failed: \(error)")
+    }
 }
