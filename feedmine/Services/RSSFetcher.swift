@@ -302,17 +302,16 @@ actor RSSFetcher {
 
     /// Extract first <img src> from an HTML string.
     private func extractFirstImageFromHTML(_ html: String) -> String? {
-        // Decode common HTML entities that Atom feeds encode (e.g., &lt;img → <img)
+        // Quick pre-check — skip if no img tag present
+        guard html.contains("<img") || html.contains("&lt;img") else { return nil }
+
         let decoded = html
             .replacingOccurrences(of: "&lt;", with: "<")
             .replacingOccurrences(of: "&gt;", with: ">")
             .replacingOccurrences(of: "&amp;", with: "&")
             .replacingOccurrences(of: "&quot;", with: "\"")
-        let pattern = #"<img[^>]+src=["']([^"']+)["']"#
-        // Try decoded HTML first, fall back to original
         for candidate in [decoded, html] {
-            guard let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive),
-                  let match = regex.firstMatch(in: candidate, range: NSRange(candidate.startIndex..., in: candidate)),
+            guard let match = Self.imgSrcRegex.firstMatch(in: candidate, range: NSRange(candidate.startIndex..., in: candidate)),
                   let range = Range(match.range(at: 1), in: candidate) else {
                 continue
             }
@@ -336,6 +335,9 @@ actor RSSFetcher {
         }
         return capped
     }
+
+    private static let htmlTagRegex = try! NSRegularExpression(pattern: "<[^>]+>")
+    private static let imgSrcRegex = try! NSRegularExpression(pattern: #"<img[^>]+src=["']([^"']+)["']"#, options: .caseInsensitive)
 
     /// Strip HTML tags using regex — avoids WebKit NSAttributedString overhead.
     private func strippingHTMLTags(_ html: String) -> String {

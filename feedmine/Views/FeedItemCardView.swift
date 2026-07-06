@@ -311,15 +311,22 @@ struct FeedItemCardView: View {
         return "\(minutes) min read"
     }
 
+    private static let relativeFormatter: RelativeDateTimeFormatter = {
+        let f = RelativeDateTimeFormatter()
+        f.unitsStyle = .full
+        return f
+    }()
+    private static let shortDateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .short
+        f.timeStyle = .none
+        return f
+    }()
+
     private func formattedDate(_ date: Date) -> String {
-        let formatter = RelativeDateTimeFormatter()
-        formatter.unitsStyle = .full
-        let relative = formatter.localizedString(for: date, relativeTo: Date())
+        let relative = Self.relativeFormatter.localizedString(for: date, relativeTo: Date())
         if Date().timeIntervalSince(date) < 7 * 24 * 3600 { return relative }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
-        return dateFormatter.string(from: date)
+        return Self.shortDateFormatter.string(from: date)
     }
 
     private func categoryColor(_ category: String) -> Color {

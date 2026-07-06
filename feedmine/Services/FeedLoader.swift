@@ -300,15 +300,28 @@ final class FeedLoader {
     /// Item IDs already known at launch — "What's New" only shows items arriving AFTER this snapshot
     private var whatsNewBaselineIDs: Set<String> = []
 
-    /// "What's New" — only items with images, not in memory at launch, unread, deduped.
+    /// "What's New" — only items with images, not in memory at launch, unread, deduped. CACHED.
+    private var cachedWhatsNew: [FeedItem] = []
+    private var cachedWhatsNewVersion = -1
+    private var cachedWhatsNewReadVersion = -1
+
     var whatIsNewItems: [FeedItem] {
+        let readVersion = readItemIDs.count
+        if itemVersion != cachedWhatsNewVersion || readVersion != cachedWhatsNewReadVersion {
+            cachedWhatsNew = computeWhatsNewItems()
+            cachedWhatsNewVersion = itemVersion
+            cachedWhatsNewReadVersion = readVersion
+        }
+        return cachedWhatsNew
+    }
+
+    private func computeWhatsNewItems() -> [FeedItem] {
         let pool = (items + reservoir)
             .filter { item in
-                !readItemIDs.contains(item.id)         // unread
-                && !whatsNewBaselineIDs.contains(item.id) // arrived after launch
-                && item.bestImageURL != nil                   // has image or YouTube thumbnail
+                !readItemIDs.contains(item.id)
+                && !whatsNewBaselineIDs.contains(item.id)
+                && item.bestImageURL != nil
             }
-        // Deduplicate by ID (preserve first occurrence = most recent position)
         var seen = Set<String>()
         let unique = pool.filter { seen.insert($0.id).inserted }
         let sorted = unique.sorted { $0.publishedAt > $1.publishedAt }
@@ -317,7 +330,6 @@ final class FeedLoader {
             let fromClicked = sorted.filter { clickedSourceURLs.contains($0.sourceURL) }
             if !fromClicked.isEmpty { return fromClicked.shuffled() }
         }
-        // Fallback: freshest arrivals from any source, shuffled
         return Array(sorted.prefix(10)).shuffled()
     }
 
@@ -553,6 +565,7 @@ final class FeedLoader {
         }
         reservoir.removeAll()
         reservoirCount = 0
+        filteredOutItems.removeAll()
         URLCache.shared.removeAllCachedResponses()
     }
 
@@ -779,7 +792,7 @@ final class FeedLoader {
             prefetchImagesIfNeeded(for: actualNew)
 
             // Merge new items into reservoir (interleaved), don't touch visible items
-            reservoir.append(contentsOf: interleave(actualNew))
+            reservoir.append(contentsOf: actualNew)
             reservoir = interleave(reservoir)
             if reservoir.count > Self.maxReservoirSize {
                 reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
@@ -929,7 +942,7 @@ final class FeedLoader {
 
         prefetchImagesIfNeeded(for: actualNew)
 
-        reservoir.append(contentsOf: interleave(actualNew))
+        reservoir.append(contentsOf: actualNew)
         reservoir = interleave(reservoir)
         if reservoir.count > Self.maxReservoirSize {
             reservoir = Array(reservoir.prefix(Self.maxReservoirSize))

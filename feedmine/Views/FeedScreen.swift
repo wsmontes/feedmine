@@ -445,7 +445,7 @@ struct SkeletonLoadingView: View {
                 .id(messageIndex)
             ScrollView {
                 VStack(spacing: engine.cardGap) {
-                    ForEach(0..<6, id: \.self) { _ in
+                    ForEach(0..<3, id: \.self) { _ in
                         SkeletonCardView().padding(.horizontal, 12)
                     }
                 }.padding(.vertical, 8)

@@ -17,7 +17,8 @@ final class ImageCache {
     }
 
     func setImage(_ image: UIImage, for url: URL) {
-        cache.setObject(image, forKey: url.absoluteString as NSString)
+        let cost = Int(image.size.width * image.size.height * 4)  // RGBA bytes
+        cache.setObject(image, forKey: url.absoluteString as NSString, cost: cost)
     }
 }
 

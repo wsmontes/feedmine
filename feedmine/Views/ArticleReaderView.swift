@@ -43,7 +43,7 @@ struct ArticleWebView: UIViewRepresentable {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
         let prefs = WKWebpagePreferences()
-        prefs.allowsContentJavaScript = true
+        prefs.allowsContentJavaScript = false
         config.defaultWebpagePreferences = prefs
 
         let webView = WKWebView(frame: .zero, configuration: config)
