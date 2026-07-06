@@ -127,20 +127,9 @@ actor RSSFetcher {
                 }
             }
         }
-        // Podcast source fallback — any enclosure URL from a known podcast host
+        // Fallback: any enclosure URL (audio player validates on playback)
         if let url = item.enclosure?.attributes?.url, !url.isEmpty {
-            let s = source.url.lowercased()
-            if s.contains("feeds.simplecast") || s.contains("feeds.megaphone") ||
-               s.contains("libsyn") || s.contains("feeds.npr.org") ||
-               s.contains("rss.art19") || s.contains("rss.acast") ||
-               s.contains("feeds.transistor") || s.contains("feeds.bbci.co.uk") ||
-               s.contains("lexfridman.com") || s.contains("peterattiamd.com") ||
-               s.contains("feeds.marketplace.org") || s.contains("thisamericanlife.org") ||
-               s.contains("animalspirits.") || s.contains("investlikethebest.") ||
-               s.contains("stratechery.com") || s.contains("feeds.megaphone.fm/") ||
-               s.contains("revolutionspodcast") || s.contains("feeds.simplecast.com/") {
-                return url
-            }
+            return url
         }
         return nil
     }

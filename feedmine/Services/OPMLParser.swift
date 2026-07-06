@@ -10,7 +10,7 @@ struct OPMLParser {
             // Fallback: OPML files at bundle root
             opmlFiles = Bundle.main.urls(forResourcesWithExtension: "opml", subdirectory: nil) ?? []
         }
-        opmlFiles.sort { $0.lastPathComponent < $1.lastPathComponent }
+        opmlFiles.shuffle()
 
         guard !opmlFiles.isEmpty else {
             return OPMLParseResult(sources: [], fileCount: 0, failedFileCount: 0, invalidSourceCount: 0, duplicateSourceCount: 0)

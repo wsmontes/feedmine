@@ -25,7 +25,8 @@ final class FeedLoader {
 
     private var cachedDateSections: [DateSection] = []
     private var cachedDateSectionVersion = -1
-    private var itemVersion = 0  // bumped whenever items change
+    private var itemVersion = 0  // bumped only when visible items[] change
+    private var whatsNewVersion = 0  // bumped when reservoir gets new content (background fetch)
     private var filterVersion = 0  // bumped whenever filters/search change
 
     var dateSections: [DateSection] {
@@ -45,8 +46,9 @@ final class FeedLoader {
             if days < 7 { return "This Week" }
             return "Earlier"
         }
-        // Preserve order: Today, Yesterday, This Week, Earlier
-        let order = ["Today", "Yesterday", "This Week", "Earlier"]
+        // Today always first; remaining sections shuffled so "Earlier" content
+        // occasionally appears higher instead of always buried at the bottom.
+        let order = ["Today"] + ["Yesterday", "This Week", "Earlier"].shuffled()
         return order.compactMap { title in
             grouped[title].map { DateSection(title: title, items: $0) }
         }
@@ -311,7 +313,8 @@ final class FeedLoader {
 
     var whatIsNewItems: [FeedItem] {
         let readVersion = readItemIDs.count
-        if itemVersion != cachedWhatsNewVersion || readVersion != cachedWhatsNewReadVersion {
+        let effectiveVersion = itemVersion &+ whatsNewVersion  // either visible or reservoir changed
+        if effectiveVersion != cachedWhatsNewVersion || readVersion != cachedWhatsNewReadVersion {
             let fresh = computeWhatsNewItems()
             if whatsNewVisible && !cachedWhatsNew.isEmpty {
                 // User is watching — queue new items, keep showing current content
@@ -335,7 +338,7 @@ final class FeedLoader {
                     cachedWhatsNew = fresh
                 }
             }
-            cachedWhatsNewVersion = itemVersion
+            cachedWhatsNewVersion = effectiveVersion
             cachedWhatsNewReadVersion = readVersion
         }
         return cachedWhatsNew
@@ -465,34 +468,111 @@ final class FeedLoader {
     private(set) var sources: [FeedSource] = []
     private var reservoir: [FeedItem] = []
     private var loadedIDs: Set<String> = []
+    private var loadedIDsInsertionOrder: [String] = []  // FIFO for precise trimming
     private(set) var currentVisibleIndex: Int = 0
     private var hasStarted = false
     private var retryCount = 0
     private var retryTask: Task<Void, Never>?
     private var filteredOutItems: [FeedItem] = []  // items excluded by active filter; restored when filter clears
+    /// Items that have appeared on screen — used to deprioritize recently-seen content.
+    /// Key = item ID, Value = when it first appeared in the visible window.
+    private var surfacedItemTimestamps: [String: Date] = [:]
+    /// Items surfaced within this window are pushed to the back of their bucket.
+    private static let surfacedCooldown: TimeInterval = 1800  // 30 minutes
+    /// Number of visible-window moves since last reservoir reshuffle.
+    private var moveCountSinceReshuffle = 0
+    /// Re-interleave the reservoir after this many moves to keep buried items rotating.
+    private static let reshuffleInterval = 5
     private var hasActiveFilter: Bool {
         selectedCategory != nil || selectedMood != .all || selectedContentType != .all || !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     // MARK: - Helpers
 
-    /// Interleave by type+category for mixed variety — text, video, audio appear alternating
+    /// Source-first interleave with type/category variety baked in.
+    ///
+    /// Algorithm (scalable to hundreds of sources):
+    /// 1. Group items by source URL
+    /// 2. Within each source: recency tiers → spread by type+category (inner interleave)
+    /// 3. Assign per-source weights (more items → more round-robin slots, capped at 5)
+    /// 4. Build weighted slot array, spread to avoid adjacent same-source slots
+    /// 5. Round-robin through slots, 1 item per turn → no consecutive same-source items
+    ///
+    /// Result: source alternates every card, types and categories vary within each source's turn.
     private func interleave(_ items: [FeedItem]) -> [FeedItem] {
         guard items.count > 1 else { return items }
-        // Composite key: "type:category" → e.g. "video:Tech", "audio:News", "text:Science"
+
+        // Step 1: Group by source
+        var bySource: [String: [FeedItem]] = [:]
+        for item in items {
+            bySource[item.sourceURL, default: []].append(item)
+        }
+
+        // Single source: spread by type+category within it
+        guard bySource.count > 1 else {
+            return interleaveByTypeCategory(items)
+        }
+
+        // Step 2: Within each source — recency tiers, then spread by type+category
+        let surfacedCutoff = Date().addingTimeInterval(-Self.surfacedCooldown)
+        let staleCutoff = Date().addingTimeInterval(-86400)
+        for key in bySource.keys {
+            let bucket = bySource[key]!
+            let surfacedIDs = Set(bucket.filter { item in
+                guard let ts = surfacedItemTimestamps[item.id] else { return false }
+                return ts > surfacedCutoff
+            }.map(\.id))
+            let staleIDs = Set(bucket.filter { item in
+                !surfacedIDs.contains(item.id) && item.publishedAt < staleCutoff
+            }.map(\.id))
+            let recent = interleaveByTypeCategory(bucket.filter { !surfacedIDs.contains($0.id) && !staleIDs.contains($0.id) }.shuffled())
+            let stale = interleaveByTypeCategory(bucket.filter { staleIDs.contains($0.id) }.shuffled())
+            let surfaced = interleaveByTypeCategory(bucket.filter { surfacedIDs.contains($0.id) }.shuffled())
+            bySource[key] = recent + stale + surfaced
+        }
+
+        // Step 3: Per-source weights — proportional to item count, capped at 5
+        let minCount = max(1, bySource.values.map(\.count).min() ?? 1)
+        let weights: [String: Int] = bySource.mapValues { min(5, max(1, $0.count / minCount)) }
+
+        // Step 4: Build weighted slot array — each source appears `weight` times
+        var slots: [String] = []
+        for (sourceURL, srcItems) in bySource where !srcItems.isEmpty {
+            let w = weights[sourceURL] ?? 1
+            for _ in 0..<w { slots.append(sourceURL) }
+        }
+        // Spread identical slots so no same-source adjacency in the order
+        slots = spreadSlots(slots)
+
+        // Step 5: Round-robin through slots, 1 item per turn
+        var result: [FeedItem] = []
+        result.reserveCapacity(items.count)
+        var indices: [String: Int] = Dictionary(uniqueKeysWithValues: bySource.keys.map { ($0, 0) })
+        var added = true
+        while added {
+            added = false
+            for sourceURL in slots {
+                guard let list = bySource[sourceURL],
+                      indices[sourceURL]! < list.count else { continue }
+                result.append(list[indices[sourceURL]!])
+                indices[sourceURL]! += 1
+                added = true
+            }
+        }
+        return result
+    }
+
+    /// Interleave items by type+category (inner diversity within a source).
+    /// Groups by "type:category", shuffles each bucket, round-robins 1 item per turn.
+    private func interleaveByTypeCategory(_ items: [FeedItem]) -> [FeedItem] {
+        guard items.count > 1 else { return items }
         var buckets: [String: [FeedItem]] = [:]
         for item in items {
-            let type: String = item.isPodcast ? "audio" : (item.isYouTube ? "video" : "text")
-            let key = "\(type):\(item.category)"
-            buckets[key, default: []].append(item)
+            let type = item.isPodcast ? "audio" : (item.isYouTube ? "video" : "text")
+            buckets["\(type):\(item.category)", default: []].append(item)
         }
-        guard buckets.count > 1 else {
-            return items.shuffled()
-        }
-        // Shuffle each bucket + random key order for variety
-        for key in buckets.keys {
-            buckets[key] = buckets[key]?.shuffled()
-        }
+        guard buckets.count > 1 else { return items.shuffled() }
+        for key in buckets.keys { buckets[key] = buckets[key]?.shuffled() }
         var result: [FeedItem] = []
         result.reserveCapacity(items.count)
         let keys = buckets.keys.shuffled()
@@ -502,6 +582,30 @@ final class FeedLoader {
             added = false
             for key in keys {
                 guard let list = buckets[key], indices[key]! < list.count else { continue }
+                result.append(list[indices[key]!])
+                indices[key]! += 1
+                added = true
+            }
+        }
+        return result
+    }
+
+    /// Spread slot entries so no two adjacent slots share the same value.
+    /// Groups identical values, round-robins across groups.
+    private func spreadSlots(_ slots: [String]) -> [String] {
+        var groups: [String: [String]] = [:]
+        for slot in slots { groups[slot, default: []].append(slot) }
+        guard groups.count > 1 else { return slots }
+        for key in groups.keys { groups[key] = groups[key]?.shuffled() }
+        var result: [String] = []
+        result.reserveCapacity(slots.count)
+        let keys = groups.keys.shuffled()
+        var indices = Dictionary(uniqueKeysWithValues: keys.map { ($0, 0) })
+        var added = true
+        while added {
+            added = false
+            for key in keys {
+                guard let list = groups[key], indices[key]! < list.count else { continue }
                 result.append(list[indices[key]!])
                 indices[key]! += 1
                 added = true
@@ -549,9 +653,7 @@ final class FeedLoader {
             let w = min(Self.pageSize, matching.count)
             items = Array(matching.prefix(w))
             reservoir = Array(matching.dropFirst(w))
-            if reservoir.count > Self.maxReservoirSize {
-                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
-            }
+            capReservoir()
             filteredOutItems = nonMatching
         } else {
             // Filter cleared: merge everything back, re-interleave for category variety
@@ -559,14 +661,13 @@ final class FeedLoader {
             let w = min(Self.pageSize, merged.count)
             items = Array(merged.prefix(w))
             reservoir = Array(merged.dropFirst(w))
-            if reservoir.count > Self.maxReservoirSize {
-                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
-            }
+            capReservoir()
             filteredOutItems = []
         }
 
         reservoirCount = reservoir.count
         itemVersion += 1
+        markAsSurfaced(items)
     }
 
     // MARK: - Constants
@@ -619,26 +720,21 @@ final class FeedLoader {
         reservoir.removeFirst(w)
         reservoirCount = reservoir.count
         itemVersion += 1
+        markAsSurfaced(items)
         Task { await self.fetchFreshContent() }
     }
 
     /// Re-interleave all content for fresh variety — no network call.
-    /// On app reopen: reshuffle for variety + fetch new content in background.
+    /// On app reopen: fetch new content in background WITHOUT disturbing visible items.
+    /// The user left the app reading something — we must not reorder or replace their view.
     func refreshIfStale() async {
         guard !sources.isEmpty else { return }
 
-        // Reshuffle all content for fresh variety on reopen
-        if !items.isEmpty {
-            let all = interleave(items + reservoir + filteredOutItems)
-            let w = min(Self.pageSize, all.count)
-            items = Array(all.prefix(w))
-            reservoir = Array(all.dropFirst(w))
-            if reservoir.count > Self.maxReservoirSize {
-                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
-            }
-            filteredOutItems.removeAll()
+        // Only re-interleave reservoir (not visible items!) for variety when user loads more
+        if !reservoir.isEmpty {
+            reservoir = interleave(reservoir)
+            capReservoir()
             reservoirCount = reservoir.count
-            itemVersion += 1
         }
 
         // Fetch new content in background
@@ -689,18 +785,17 @@ final class FeedLoader {
 
         // Show cached content BEFORE any I/O — UI must be instant
         if !cachedItems.isEmpty {
-            loadedIDs.formUnion(cachedItems.map(\.id))
+            registerLoadedIDs(cachedItems.map(\.id))
             let interleaved = interleave(cachedItems)
             let w = min(Self.pageSize, interleaved.count)
             items = Array(interleaved.prefix(w))
             reservoir = Array(interleaved.dropFirst(w))
-            if reservoir.count > Self.maxReservoirSize {
-                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
-            }
+            capReservoir()
             reservoirCount = reservoir.count
             itemVersion += 1
             totalFetched = cachedItems.count
             loadingState = .idle  // content is visible — no skeleton!
+            markAsSurfaced(items)
             // Prefetch images for visible + near-visible cached items
             let visibleCount = min(Self.pageSize, items.count)
             prefetchImagesIfNeeded(for: Array(items.prefix(visibleCount)))
@@ -761,7 +856,7 @@ final class FeedLoader {
             updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: chunk.count, totalItems: batch.items.count)
 
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
-            loadedIDs.formUnion(actualNew.map(\.id))
+            registerLoadedIDs(actualNew.map(\.id))
 
             // Track podcast items
             let newPodcastItems = actualNew.filter { $0.isPodcast }
@@ -771,9 +866,7 @@ final class FeedLoader {
 
             // Just append date-sorted during loading — interleave once at the end
             reservoir.append(contentsOf: actualNew.sorted { $0.publishedAt > $1.publishedAt })
-            if reservoir.count > Self.maxReservoirSize {
-                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
-            }
+            capReservoir()
 
             // Show content immediately after first batch
             if items.isEmpty && !reservoir.isEmpty {
@@ -782,6 +875,7 @@ final class FeedLoader {
                 reservoir.removeFirst(w)
                 reservoirCount = reservoir.count
                 itemVersion += 1
+                markAsSurfaced(items)
             }
         }
 
@@ -824,18 +918,16 @@ final class FeedLoader {
             updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: chunk.count, totalItems: batch.items.count)
 
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
-            loadedIDs.formUnion(actualNew.map(\.id))
+            registerLoadedIDs(actualNew.map(\.id))
 
             prefetchImagesIfNeeded(for: actualNew)
 
             // Merge new items into reservoir (interleaved), don't touch visible items
             reservoir.append(contentsOf: actualNew)
             reservoir = interleave(reservoir)
-            if reservoir.count > Self.maxReservoirSize {
-                reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
-            }
+            capReservoir()
             reservoirCount = reservoir.count
-            itemVersion += 1  // invalidate whatIsNewItems cache
+            whatsNewVersion &+= 1  // invalidate whatIsNewItems without touching date sections
         }
 
         lastRefreshDate = .now
@@ -854,6 +946,7 @@ final class FeedLoader {
 
         // Clear all state
         loadedIDs.removeAll()
+        loadedIDsInsertionOrder.removeAll()
         reservoir.removeAll()
         items.removeAll()
         filteredOutItems.removeAll()
@@ -864,7 +957,7 @@ final class FeedLoader {
             return
         }
 
-        let batch = await fetcher.fetchAll(enabledSources)
+        let batch = await fetcher.fetchAll(enabledSources.shuffled())
         totalFetched = batch.items.count
         fetchErrorCount = batch.failedSourceCount
 
@@ -872,27 +965,25 @@ final class FeedLoader {
         emptyFeedCount = batch.emptySourceCount
 
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
-        loadedIDs.formUnion(actualNew.map(\.id))
-        if loadedIDs.count > Self.maxLoadedIDs {
-            loadedIDs = Set(Array(loadedIDs).suffix(Self.maxLoadedIDs))  // cap to prevent unbounded growth
-        }
+        registerLoadedIDs(actualNew.map(\.id))
 
         reservoir = interleave(actualNew)
-        if reservoir.count > Self.maxReservoirSize {
-            reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
-        }
+        capReservoir()
 
         let windowSize = min(Self.pageSize, reservoir.count)
         items = Array(reservoir.prefix(windowSize))
         reservoir.removeFirst(windowSize)
         reservoirCount = reservoir.count
         itemVersion += 1
+        markAsSurfaced(items)
 
         lastRefreshDate = .now
         loadingState = .idle
 
         PersistenceManager.shared.save(buildStateWithItems())
     }
+
+    private var lastLoadedIndex: Int = -1
 
     func loadMoreIfNeeded(currentItem: FeedItem) async {
         // Single O(n) scan for both position tracking and guard
@@ -903,6 +994,10 @@ final class FeedLoader {
 
         // Only trigger when near the bottom
         guard itemIndex >= items.count - Self.loadMoreThreshold else { return }
+
+        // Debounce: skip if we already loaded at this position (SwiftUI onAppear can refire during scroll)
+        guard itemIndex != lastLoadedIndex else { return }
+        lastLoadedIndex = itemIndex
 
         // Step 1: ALWAYS move from reservoir to visible (works even during background fetch)
         moveFromReservoirToVisible(count: Self.pageSize)
@@ -954,63 +1049,171 @@ final class FeedLoader {
 
     // MARK: - Private
 
+    /// Trim reservoir to maxReservoirSize while preserving source diversity.
+    /// Every source gets at least 1 slot; remaining slots are proportional to item count.
+    /// This ensures 200+ sources all have a presence instead of 20 sources dominating.
+    private func capReservoir() {
+        guard reservoir.count > Self.maxReservoirSize else { return }
+
+        // Group by source — each source is a separate voice
+        var bySource: [String: [FeedItem]] = [:]
+        for item in reservoir {
+            bySource[item.sourceURL, default: []].append(item)
+        }
+        let sourceCount = bySource.count
+        guard sourceCount > 1 else {
+            reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
+            reservoirCount = reservoir.count
+            return
+        }
+
+        // Floor: 1 item per source guarantees every source is represented
+        let floorPerSource = 1
+        let floorSlots = min(sourceCount * floorPerSource, Self.maxReservoirSize)
+        let proportionalSlots = Self.maxReservoirSize - floorSlots
+
+        var selected: [FeedItem] = []
+        var remainingBySource: [String: [FeedItem]] = [:]
+
+        for (sourceURL, items) in bySource {
+            let take = min(floorPerSource, items.count)
+            selected.append(contentsOf: items.prefix(take))
+            if items.count > take {
+                remainingBySource[sourceURL] = Array(items.dropFirst(take))
+            }
+        }
+
+        // Distribute remaining slots proportionally to how many items each source has
+        if proportionalSlots > 0, !remainingBySource.isEmpty {
+            let totalRemaining = remainingBySource.values.map(\.count).reduce(0, +)
+            for (sourceURL, items) in remainingBySource {
+                let fraction = Double(items.count) / Double(max(1, totalRemaining))
+                let extra = min(Int(fraction * Double(proportionalSlots)), items.count)
+                if extra > 0 {
+                    selected.append(contentsOf: items.prefix(extra))
+                    if items.count > extra {
+                        remainingBySource[sourceURL] = Array(items.dropFirst(extra))
+                    } else {
+                        remainingBySource.removeValue(forKey: sourceURL)
+                    }
+                }
+            }
+        }
+
+        // Fill any leftover slots round-robin
+        if selected.count < Self.maxReservoirSize, !remainingBySource.isEmpty {
+            let keys = remainingBySource.keys.shuffled()
+            var indices = Dictionary(uniqueKeysWithValues: keys.map { ($0, 0) })
+            while selected.count < Self.maxReservoirSize {
+                var added = false
+                for key in keys {
+                    guard let list = remainingBySource[key],
+                          indices[key]! < list.count,
+                          selected.count < Self.maxReservoirSize else { continue }
+                    selected.append(list[indices[key]!])
+                    indices[key]! += 1
+                    added = true
+                }
+                if !added { break }
+            }
+        }
+
+        reservoir = interleave(selected)
+        reservoirCount = reservoir.count
+    }
+
+    /// Register new item IDs, tracking insertion order for precise FIFO trimming.
+    private func registerLoadedIDs(_ ids: [String]) {
+        for id in ids {
+            if loadedIDs.insert(id).inserted {
+                loadedIDsInsertionOrder.append(id)
+            }
+        }
+        // Trim oldest IDs when over cap
+        while loadedIDsInsertionOrder.count > Self.maxLoadedIDs {
+            loadedIDs.remove(loadedIDsInsertionOrder.removeFirst())
+        }
+    }
+
+    /// Record items as "surfaced on screen" so interleave deprioritizes them for 30 min.
+    private func markAsSurfaced(_ items: [FeedItem]) {
+        let now = Date()
+        for item in items {
+            if surfacedItemTimestamps[item.id] == nil {
+                surfacedItemTimestamps[item.id] = now
+            }
+        }
+        // Periodic cleanup of expired timestamps
+        if surfacedItemTimestamps.count > 2000 {
+            let cutoff = now.addingTimeInterval(-Self.surfacedCooldown)
+            surfacedItemTimestamps = surfacedItemTimestamps.filter { $0.value > cutoff }
+        }
+    }
+
     private func moveFromReservoirToVisible(count: Int) {
         guard !reservoir.isEmpty else { return }
+
+        // Periodic reshuffle: re-interleave reservoir so items buried at the back
+        // get a chance to surface in a different order.
+        moveCountSinceReshuffle += 1
+        if moveCountSinceReshuffle >= Self.reshuffleInterval && reservoir.count > count {
+            reservoir = interleave(reservoir)
+            moveCountSinceReshuffle = 0
+        }
+
         let toMove = min(count, reservoir.count)
         let batch = Array(reservoir.prefix(toMove))
         items.append(contentsOf: batch)
         reservoir.removeFirst(toMove)
         reservoirCount = reservoir.count
         itemVersion += 1
+        markAsSurfaced(batch)
     }
 
     private func refillReservoir() async {
         guard !enabledSources.isEmpty else { return }
 
-        let batch = await fetcher.fetchAll(enabledSources)
+        let batch = await fetcher.fetchAll(enabledSources.shuffled())
         totalFetched += batch.items.count
         fetchErrorCount += batch.failedSourceCount
         emptyFeedCount += batch.emptySourceCount
 
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
-        loadedIDs.formUnion(actualNew.map(\.id))
-        if loadedIDs.count > Self.maxLoadedIDs {
-            loadedIDs = Set(Array(loadedIDs).suffix(Self.maxLoadedIDs))
-        }
+        registerLoadedIDs(actualNew.map(\.id))
 
         prefetchImagesIfNeeded(for: actualNew)
 
         reservoir.append(contentsOf: actualNew)
         reservoir = interleave(reservoir)
-        if reservoir.count > Self.maxReservoirSize {
-            reservoir = Array(reservoir.prefix(Self.maxReservoirSize))
-        }
+        capReservoir()
         reservoirCount = reservoir.count
 
         PersistenceManager.shared.save(buildStateWithItems())
     }
 
-    /// Interleave sources so podcast/video/text all appear in early chunks
+    /// Interleave YouTube + non-YouTube sources so early chunks have video variety.
+    /// Podcast vs text classification happens at the item level via FeedItem.isPodcast
+    /// (detected from enclosure MIME type, Media RSS, and iTunes namespace — all standards).
     private func interleaveSourcesByType(_ sources: [FeedSource]) -> [FeedSource] {
-        let podcasts = sources.filter { $0.url.contains("feeds.simplecast") || $0.url.contains("feeds.megaphone") || $0.url.contains("feeds.npr.org") || $0.url.contains("libsyn") || $0.url.contains("feeds.transistor") || $0.url.contains("rss.acast") || $0.url.contains("feeds.bbci.co.uk") || $0.url.contains("lexfridman.com") || $0.url.contains("peterattiamd.com") || $0.url.contains("rss.art19.com") || $0.url.contains("feeds.marketplace.org") || $0.url.contains("thisamericanlife.org") || $0.url.contains("stratechery.com") || $0.url.contains("feeds.megaphone.fm/animalspirits") || $0.url.contains("animalspirits") || $0.url.contains("investlikethebest") }
-        let videos = sources.filter { $0.url.contains("youtube.com/feeds") }
-        let text = sources.filter { s in !podcasts.contains(where: { $0.url == s.url }) && !videos.contains(where: { $0.url == s.url }) }
-
-        let pShuffled = podcasts.shuffled()
-        let vShuffled = videos.shuffled()
-        let tShuffled = text.shuffled()
+        let videos = sources.filter { $0.isYouTube }.shuffled()
+        let nonVideos = sources.filter { !$0.isYouTube }.shuffled()
         var result: [FeedSource] = []
-        // Seed first positions with one of each type so early chunks always have variety
-        if let first = tShuffled.first { result.append(first) }
-        if let first = vShuffled.first { result.append(first) }
-        if let first = pShuffled.first { result.append(first) }
-        let maxCount = max(pShuffled.count, vShuffled.count, tShuffled.count)
+        result.reserveCapacity(sources.count)
+        let maxCount = max(videos.count, nonVideos.count)
         for i in 0..<maxCount {
-            if i < tShuffled.count { result.append(tShuffled[i]) }
-            if i < vShuffled.count { result.append(vShuffled[i]) }
-            if i < pShuffled.count { result.append(pShuffled[i]) }
+            if i < nonVideos.count { result.append(nonVideos[i]) }
+            if i < videos.count { result.append(videos[i]) }
         }
         return result
+    }
+
+    /// Prefetch What's New carousel images — called when carousel appears.
+    /// Uses the shared prefetcher so in-flight requests are deduplicated.
+    func prefetchWhatsNewImages() {
+        let carouselItems = whatIsNewItems
+        let urls = carouselItems.compactMap { $0.bestImageURL ?? $0.imageURL }
+        guard !urls.isEmpty else { return }
+        Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
     }
 
     /// Prefetch images for items if the setting is enabled

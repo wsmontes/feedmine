@@ -37,7 +37,10 @@ struct WhatsNewCarousel: View {
                 populatedCarousel
             }
         }
-        .onAppear { loader.whatsNewVisible = true }
+        .onAppear {
+            loader.whatsNewVisible = true
+            loader.prefetchWhatsNewImages()
+        }
         .onDisappear {
             loader.whatsNewVisible = false
             loader.flushWhatsNewQueue()
@@ -417,12 +420,20 @@ struct WhatsNewCard: View {
 
     // MARK: Background
 
+    @State private var imageLoadFailed = false
+
+    private var effectiveImageURL: String? {
+        item.bestImageURL ?? item.imageURL
+    }
+
     @ViewBuilder
     private var cardBackground: some View {
-        if let imageURL = item.imageURL {
+        if let urlStr = effectiveImageURL, !imageLoadFailed {
             Color.clear
                 .overlay {
-                    CachedAsyncImage(url: URL(string: imageURL))
+                    CachedAsyncImage(url: URL(string: urlStr), onResult: { success in
+                        if !success { imageLoadFailed = true }
+                    })
                         .scaledToFill()
                 }
                 .clipped()

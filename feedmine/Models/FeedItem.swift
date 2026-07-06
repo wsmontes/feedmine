@@ -34,13 +34,15 @@ struct FeedItem: Identifiable, Sendable, Codable {
         return nil
     }
 
-    /// YouTube thumbnail URL at max resolution for this video
+    /// YouTube thumbnail URL — hqdefault.jpg always exists for any video.
+    /// maxresdefault.jpg only exists for 1080p+ and returns an ugly gray placeholder otherwise.
     var youTubeThumbnailURL: String? {
         guard let videoID = youTubeVideoID else { return nil }
-        return "https://img.youtube.com/vi/\(videoID)/maxresdefault.jpg"
+        return "https://img.youtube.com/vi/\(videoID)/hqdefault.jpg"
     }
 
-    /// Best available image URL — YouTube thumbnail takes priority over RSS image
+    /// Best available image URL — YouTube thumbnail takes priority over RSS image.
+    /// If the image fails to load, the card falls back to text-only layout.
     var bestImageURL: String? {
         youTubeThumbnailURL ?? imageURL
     }

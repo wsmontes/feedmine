@@ -100,7 +100,8 @@ struct FeedScreen: View {
         .onChange(of: loader.readItemIDs.count) { _, _ in updateBadge() }
         .onChange(of: loader.networkMonitor.isConnected) { _, connected in
             if connected && loader.fetchErrorCount > 0 {
-                Task { await loader.refresh() }
+                // Only fetch new content into reservoir — don't clear visible items
+                Task { await loader.refreshIfStale() }
             }
         }
         .sheet(item: $articleItem) { item in ArticleReaderView(item: item) }
