@@ -14,6 +14,7 @@ struct FeedItemCardView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     private var isLandscape: Bool { horizontalSizeClass == .regular }
+    private var hasImage: Bool { (item.bestImageURL ?? item.imageURL) != nil && !imageLoadFailed }
 
     private var titleFont: Font {
         switch fontSize {
@@ -48,16 +49,16 @@ struct FeedItemCardView: View {
         }
     }
 
-    // MARK: - Portrait Card (vertical, hero image)
+    // MARK: - Portrait Card
 
     private var portraitCard: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Hero image
-            if let imageURL = item.bestImageURL ?? item.imageURL, !imageLoadFailed {
+            // Hero image — only when it actually exists
+            if hasImage {
                 Color.clear
                     .aspectRatio(16/9, contentMode: .fit)
                     .overlay {
-                        CachedAsyncImage(url: URL(string: imageURL), onResult: { success in
+                        CachedAsyncImage(url: URL(string: (item.bestImageURL ?? item.imageURL)!), onResult: { success in
                             if !success { imageLoadFailed = true }
                         })
                         .scaledToFill()
@@ -70,40 +71,16 @@ struct FeedItemCardView: View {
                     .overlay {
                         mediaOverlay
                     }
+                // Source row after image
+                sourceRow
+                    .padding(.horizontal, 12)
+                    .padding(.top, 12)
+            } else {
+                // No image — source row directly at top with extra top padding
+                sourceRow
+                    .padding(.horizontal, 12)
+                    .padding(.top, 14)
             }
-
-            // Category + source row
-            HStack(spacing: 4) {
-                Text(item.category)
-                    .font(.caption)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(categoryColor(item.category))
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(categoryColor(item.category).opacity(0.12))
-                    .clipShape(Capsule())
-
-                Text("·").foregroundStyle(.tertiary)
-                Text(item.sourceTitle).font(.caption).foregroundStyle(.secondary)
-
-                if item.isPodcast {
-                    mediaBadge("PODCAST", color: .purple)
-                    if let dur = item.durationFormatted {
-                        Text(dur).font(.caption2).foregroundStyle(.secondary)
-                    }
-                }
-                if item.isYouTube {
-                    mediaBadge("VIDEO", color: .red)
-                } else if isNew && !item.isPodcast {
-                    mediaBadge("NEW", color: .blue)
-                }
-
-                Spacer()
-
-                unreadDot
-            }
-            .padding(.horizontal, 12)
-            .padding(.top, 12)
 
             // Title
             Text(item.title)
@@ -112,7 +89,7 @@ struct FeedItemCardView: View {
                 .lineLimit(2)
                 .foregroundStyle(isRead ? .secondary : .primary)
                 .padding(.horizontal, 12)
-                .padding(.top, 10)
+                .padding(.top, hasImage ? 10 : 6)
 
             // Excerpt
             Text(item.excerpt)
@@ -122,11 +99,16 @@ struct FeedItemCardView: View {
                 .padding(.horizontal, 12)
                 .padding(.top, 6)
 
-            // Meta row
-            HStack {
-                Text(formattedDate(item.publishedAt)).font(.caption).foregroundStyle(.tertiary)
-                Text("·").font(.caption).foregroundStyle(.tertiary)
-                Text(readingTime).font(.caption).foregroundStyle(.tertiary)
+            // Meta row — reading time first, date second
+            HStack(spacing: 0) {
+                Text(readingTime)
+                    .font(.caption)
+                    .fontWeight(.medium)
+                    .foregroundStyle(engine.accent)
+                Text("  ")
+                Text(formattedDate(item.publishedAt))
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
                 Spacer()
             }
             .padding(.horizontal, 12)
@@ -134,52 +116,43 @@ struct FeedItemCardView: View {
             .padding(.bottom, engine.cardPadding)
         }
         .frame(maxWidth: .infinity)
-        .background(Color(.systemBackground))
+        .background(engine.accent.opacity(0.03))
         .clipShape(RoundedRectangle(cornerRadius: engine.cardRadius))
-        .shadow(color: .black.opacity(0.04), radius: 8, y: 2)
+        .overlay(alignment: .leading) {
+            // Left border accent — category color, dimmed when read
+            RoundedRectangle(cornerRadius: 2)
+                .fill(categoryColor(item.category).opacity(isRead ? 0.25 : 0.8))
+                .frame(width: 3)
+                .padding(.vertical, 12)
+                .padding(.leading, 1)
+        }
         .contextMenu { cardContextMenu }
     }
 
-    // MARK: - Landscape Card (horizontal, thumb left)
+    // MARK: - Landscape Card
 
     private var landscapeCard: some View {
         HStack(spacing: 12) {
-            // Thumb
-            if let imageURL = item.bestImageURL ?? item.imageURL, !imageLoadFailed {
+            // Thumb — honest: only show when image exists
+            if hasImage {
                 Color.clear
                     .frame(width: 90, height: 90)
                     .overlay {
-                        CachedAsyncImage(url: URL(string: imageURL), onResult: { success in
+                        CachedAsyncImage(url: URL(string: (item.bestImageURL ?? item.imageURL)!), onResult: { success in
                             if !success { imageLoadFailed = true }
                         })
                         .scaledToFill()
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 8))
-            } else {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(categoryColor(item.category).opacity(0.15))
-                    .frame(width: 90, height: 90)
-                    .overlay {
-                        Text(String(item.sourceTitle.prefix(1)))
-                            .font(.title2).fontWeight(.bold)
-                            .foregroundStyle(categoryColor(item.category).opacity(0.5))
-                    }
             }
 
             // Content
             VStack(alignment: .leading, spacing: 0) {
-                HStack(spacing: 4) {
-                    Text(item.category)
-                        .font(.system(size: 8, weight: .bold))
-                        .foregroundStyle(categoryColor(item.category))
-                        .padding(.horizontal, 6).padding(.vertical, 2)
-                        .background(categoryColor(item.category).opacity(0.12))
-                        .clipShape(Capsule())
-                    Text("·").font(.caption2).foregroundStyle(.tertiary)
-                    Text(item.sourceTitle).font(.caption2).foregroundStyle(.secondary)
-                    Spacer()
-                    unreadDot
-                }
+                // Source name
+                Text(item.sourceTitle)
+                    .font(.caption)
+                    .fontWeight(.medium)
+                    .lineLimit(1)
 
                 Text(item.title)
                     .font(titleFont)
@@ -194,10 +167,15 @@ struct FeedItemCardView: View {
                     .lineLimit(2)
                     .padding(.top, 3)
 
-                HStack {
-                    Text(formattedDate(item.publishedAt)).font(.caption2).foregroundStyle(.tertiary)
-                    Text("·").font(.caption2).foregroundStyle(.tertiary)
-                    Text(readingTime).font(.caption2).foregroundStyle(.tertiary)
+                HStack(spacing: 0) {
+                    Text(readingTime)
+                        .font(.caption2)
+                        .fontWeight(.medium)
+                        .foregroundStyle(engine.accent)
+                    Text("  ")
+                    Text(formattedDate(item.publishedAt))
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
                     Spacer()
                 }
                 .padding(.top, 4)
@@ -205,23 +183,59 @@ struct FeedItemCardView: View {
         }
         .padding(12)
         .frame(maxWidth: .infinity)
-        .background(Color(.systemBackground))
+        .background(engine.accent.opacity(0.03))
         .clipShape(RoundedRectangle(cornerRadius: 12))
-        .shadow(color: .black.opacity(0.04), radius: 8, y: 2)
+        .overlay(alignment: .leading) {
+            RoundedRectangle(cornerRadius: 2)
+                .fill(categoryColor(item.category).opacity(isRead ? 0.25 : 0.8))
+                .frame(width: 3)
+                .padding(.vertical, 10)
+                .padding(.leading, 1)
+        }
         .contextMenu { cardContextMenu }
     }
 
-    // MARK: - Shared Elements
+    // MARK: - Source Row (portrait only)
 
-    private var unreadDot: some View {
-        Group {
-            if !isRead {
-                Circle()
-                    .fill(engine.accent)
-                    .frame(width: 5, height: 5)
+    private var sourceRow: some View {
+        HStack(spacing: 4) {
+            Text(item.sourceTitle)
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+
+            if item.isPodcast {
+                mediaBadge("PODCAST", color: .purple)
+                if let dur = item.durationFormatted {
+                    Text(dur).font(.caption2).foregroundStyle(.secondary)
+                }
+            }
+            if item.isYouTube {
+                mediaBadge("VIDEO", color: .red)
+            } else if isNew && !item.isPodcast {
+                mediaBadge("NEW", color: .blue)
+            }
+
+            Spacer()
+
+            // Bookmark on text-only cards
+            if !hasImage {
+                Button {
+                    let impact = UIImpactFeedbackGenerator(style: .light)
+                    impact.impactOccurred()
+                    onBookmark?()
+                } label: {
+                    Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                        .font(.caption)
+                        .foregroundStyle(isBookmarked ? .yellow : .secondary)
+                }
+                .buttonStyle(.plain)
             }
         }
     }
+
+    // MARK: - Shared
 
     private var cardOverlays: some View {
         Button {
