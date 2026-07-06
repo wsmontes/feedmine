@@ -494,41 +494,27 @@ struct SkeletonCardView: View {
 
 /// A soft, slow dreamy gradient for skeleton cards — same vibe as WhatsNewCarousel
 struct SkeletonDreamyGradient: View {
-    @State private var phase: CGFloat = 0
     @State private var engine = CircadianEngine.shared
 
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                engine.accent.opacity(0.08)
-                Circle()
-                    .fill(engine.accent.opacity(0.12))
-                    .frame(width: geo.size.width * 0.6)
-                    .blur(radius: 40)
-                    .offset(x: geo.size.width * 0.2 * cos(phase * .pi * 2),
-                            y: geo.size.height * 0.15 * sin(phase * .pi * 1.6))
-                Circle()
-                    .fill(engine.accent.opacity(0.08))
-                    .frame(width: geo.size.width * 0.45)
-                    .blur(radius: 35)
-                    .offset(x: geo.size.width * -0.1 * sin(phase * .pi * 1.8),
-                            y: geo.size.height * -0.1 * cos(phase * .pi * 2.2))
-                // Scanning beam
-                Rectangle()
-                    .fill(
-                        LinearGradient(
-                            colors: [.clear, .clear, .white.opacity(0.2), .white.opacity(0.06), .clear, .clear],
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        )
-                    )
-                    .frame(width: geo.size.width * 0.2)
-                    .blur(radius: 14)
-                    .offset(x: (phase * 1.3 - 0.3) * geo.size.width)
-            }
-            .onAppear {
-                withAnimation(.easeInOut(duration: 8).repeatForever(autoreverses: false)) {
-                    phase = 5
+        TimelineView(.animation) { timeline in
+            let t = timeline.date.timeIntervalSinceReferenceDate
+            let phase = CGFloat(t.truncatingRemainder(dividingBy: 8) / 8)
+            GeometryReader { geo in
+                ZStack {
+                    engine.accent.opacity(0.08)
+                    Circle()
+                        .fill(engine.accent.opacity(0.12))
+                        .frame(width: geo.size.width * 0.6)
+                        .blur(radius: 15)
+                        .offset(x: geo.size.width * 0.2 * cos(phase * .pi * 2),
+                                y: geo.size.height * 0.15 * sin(phase * .pi * 1.6))
+                    Circle()
+                        .fill(engine.accent.opacity(0.08))
+                        .frame(width: geo.size.width * 0.45)
+                        .blur(radius: 12)
+                        .offset(x: geo.size.width * -0.1 * sin(phase * .pi * 1.8),
+                                y: geo.size.height * -0.1 * cos(phase * .pi * 2.2))
                 }
             }
         }

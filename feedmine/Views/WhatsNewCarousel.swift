@@ -85,18 +85,26 @@ struct WhatsNewCarousel: View {
         let category: String
     }
 
-    /// Smart selection: valid URLs with categories, up to 16 unique images
+    /// Smart selection: valid URLs with categories, up to 16 unique images. CACHED.
+    @State private var cachedBrowsingCards: [MiniCardData] = []
+    @State private var browsingCardsHash = 0
+
     private var browsingCards: [MiniCardData] {
-        loader.filteredItems
-            .compactMap { item -> MiniCardData? in
-                guard let url = item.imageURL,
-                      !url.isEmpty,
-                      url.hasPrefix("http"),
-                      url.count > 10 else { return nil }
-                return MiniCardData(imageURL: url, category: item.category)
-            }
-            .prefix(16)
-            .map { $0 }
+        // Use filteredItems count as cheap invalidation signal
+        let currentHash = loader.filteredItems.count
+        if currentHash != browsingCardsHash {
+            cachedBrowsingCards = Array(loader.filteredItems
+                .lazy
+                .compactMap { item -> MiniCardData? in
+                    guard let url = item.imageURL,
+                          !url.isEmpty, url.hasPrefix("http"), url.count > 10
+                    else { return nil }
+                    return MiniCardData(imageURL: url, category: item.category)
+                }
+                .prefix(16))
+            browsingCardsHash = currentHash
+        }
+        return cachedBrowsingCards
     }
 
     private var emptyCarousel: some View {
@@ -157,36 +165,33 @@ struct WhatsNewCarousel: View {
         .clipShape(RoundedRectangle(cornerRadius: 22))
     }
 
-    /// Animated gradient — reliable dreamy backdrop, no image loading needed
+    /// Animated gradient — GPU-efficient via TimelineView (pauses when off-screen)
     struct DreamyGradient: View {
-        @State private var phase: CGFloat = 0
-
         var body: some View {
-            GeometryReader { geo in
-                ZStack {
-                    Color(.systemGray6).opacity(0.25)
-                    Circle()
-                        .fill(.indigo.opacity(0.18))
-                        .frame(width: geo.size.width * 0.7)
-                        .blur(radius: 50)
-                        .offset(x: geo.size.width * 0.25 * cos(phase * .pi * 2),
-                                y: geo.size.height * 0.2 * sin(phase * .pi * 1.6))
-                    Circle()
-                        .fill(.blue.opacity(0.15))
-                        .frame(width: geo.size.width * 0.55)
-                        .blur(radius: 50)
-                        .offset(x: geo.size.width * -0.15 * sin(phase * .pi * 1.8),
-                                y: geo.size.height * -0.15 * cos(phase * .pi * 2.2))
-                    Circle()
-                        .fill(.purple.opacity(0.1))
-                        .frame(width: geo.size.width * 0.5)
-                        .blur(radius: 45)
-                        .offset(x: geo.size.width * 0.1 * sin(phase * .pi * 1.4),
-                                y: geo.size.height * 0.3 * cos(phase * .pi * 1.9))
-                }
-                .onAppear {
-                    withAnimation(.easeInOut(duration: 10).repeatForever(autoreverses: false)) {
-                        phase = 5
+            TimelineView(.animation) { timeline in
+                let t = timeline.date.timeIntervalSinceReferenceDate
+                let phase = CGFloat(t.truncatingRemainder(dividingBy: 10) / 10)
+                GeometryReader { geo in
+                    ZStack {
+                        Color(.systemGray6).opacity(0.25)
+                        Circle()
+                            .fill(.indigo.opacity(0.18))
+                            .frame(width: geo.size.width * 0.7)
+                            .blur(radius: 20)
+                            .offset(x: geo.size.width * 0.25 * cos(phase * .pi * 2),
+                                    y: geo.size.height * 0.2 * sin(phase * .pi * 1.6))
+                        Circle()
+                            .fill(.blue.opacity(0.15))
+                            .frame(width: geo.size.width * 0.55)
+                            .blur(radius: 20)
+                            .offset(x: geo.size.width * -0.15 * sin(phase * .pi * 1.8),
+                                    y: geo.size.height * -0.15 * cos(phase * .pi * 2.2))
+                        Circle()
+                            .fill(.purple.opacity(0.1))
+                            .frame(width: geo.size.width * 0.5)
+                            .blur(radius: 18)
+                            .offset(x: geo.size.width * 0.1 * sin(phase * .pi * 1.4),
+                                    y: geo.size.height * 0.3 * cos(phase * .pi * 1.9))
                     }
                 }
             }
@@ -289,25 +294,22 @@ struct MiniThumb: View {
 // MARK: - Scanning Beam
 
 struct ScanningBeam: View {
-    @State private var pos: CGFloat = -0.3
-
     var body: some View {
-        GeometryReader { geo in
-            Rectangle()
-                .fill(
-                    LinearGradient(
-                        colors: [.clear, .clear, .white.opacity(0.25), .white.opacity(0.08), .clear, .clear],
-                        startPoint: .leading,
-                        endPoint: .trailing
+        TimelineView(.animation) { timeline in
+            let t = timeline.date.timeIntervalSinceReferenceDate
+            let pos = CGFloat((t.truncatingRemainder(dividingBy: 3.2) / 3.2) * 1.6 - 0.3)
+            GeometryReader { geo in
+                Rectangle()
+                    .fill(
+                        LinearGradient(
+                            colors: [.clear, .clear, .white.opacity(0.25), .white.opacity(0.08), .clear, .clear],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
                     )
-                )
-                .frame(width: geo.size.width * 0.25)
-                .blur(radius: 18)
-                .offset(x: pos * geo.size.width)
-        }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 3.2).repeatForever(autoreverses: false)) {
-                pos = 1.3
+                    .frame(width: geo.size.width * 0.25)
+                    .blur(radius: 6)
+                    .offset(x: pos * geo.size.width)
             }
         }
     }
