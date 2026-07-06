@@ -269,3 +269,51 @@ extension Data {
         return decompressed
     }
 }
+
+// MARK: - Free function for off-main-thread loading
+
+/// Loads persisted state from disk without @MainActor isolation.
+/// Safe to call from Task.detached for cold-start performance.
+func loadPersistedState() -> FeedState? {
+    let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    let mainURL = docs.appendingPathComponent("feedmine_state.json")
+    let backupURL = docs.appendingPathComponent("feedmine_state.backup.json")
+
+    func tryLoad(url: URL) -> FeedState? {
+        guard FileManager.default.fileExists(atPath: url.path) else { return nil }
+        do {
+            let data = try Data(contentsOf: url)
+            let decoded: Data
+            if let decompressed = data.decompress() {
+                decoded = decompressed
+            } else {
+                decoded = data
+            }
+            var state = try JSONDecoder().decode(FeedState.self, from: decoded)
+            // Migration
+            if state.schemaVersion < 2 {
+                state.schemaVersion = 2
+                state.cachedItems = []
+            }
+            return state
+        } catch {
+            print("[Persistence] Load error for \(url.lastPathComponent): \(error)")
+            return nil
+        }
+    }
+
+    if let state = tryLoad(url: mainURL) {
+        return state
+    }
+    print("[Persistence] Main file failed — attempting backup recovery")
+    if let state = tryLoad(url: backupURL) {
+        print("[Persistence] Recovered from backup!")
+        // Restore backup to main
+        if let data = try? Data(contentsOf: backupURL) {
+            try? data.write(to: mainURL, options: .atomic)
+        }
+        return state
+    }
+    print("[Persistence] No valid state found — fresh start")
+    return nil
+}

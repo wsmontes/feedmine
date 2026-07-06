@@ -618,9 +618,12 @@ final class FeedLoader {
         guard !hasStarted else { return }
         hasStarted = true
 
-        // Step 1: Restore persisted state + show cached items IMMEDIATELY
+        // Step 1: Restore persisted state off main thread — skeleton visible during I/O
         var cachedItems: [FeedItem] = []
-        if let saved = PersistenceManager.shared.load() {
+        let saved = await Task.detached(priority: .userInitiated) {
+            loadPersistedState()
+        }.value
+        if let saved {
             restoreState(from: saved)
             cachedItems = saved.cachedItems
         }
