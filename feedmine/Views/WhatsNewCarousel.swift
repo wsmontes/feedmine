@@ -248,24 +248,21 @@ struct MiniThumb: View {
         return .indigo
     }
 
+    @State private var miniLoadFailed = false
+
     var body: some View {
         Group {
-            if card.imageURL.isEmpty {
+            if card.imageURL.isEmpty || miniLoadFailed {
                 fallbackGradient
             } else {
-                AsyncImage(url: URL(string: card.imageURL)) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .overlay(.black.opacity(0.2))
-                    case .failure, .empty:
-                        fallbackGradient
-                    @unknown default:
-                        fallbackGradient
+                CachedAsyncImage(
+                    url: URL(string: card.imageURL),
+                    onResult: { success in
+                        if !success { miniLoadFailed = true }
                     }
-                }
+                )
+                .scaledToFill()
+                .overlay(.black.opacity(0.2))
             }
         }
         .frame(width: size.width, height: size.height)
