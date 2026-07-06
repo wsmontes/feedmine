@@ -36,10 +36,8 @@ struct CachedAsyncImage: View {
             if let image = loadedImage {
                 Image(uiImage: image)
                     .resizable()
-            } else if didAttempt {
-                Color.clear
             } else {
-                Color.clear
+                CircadianEngine.shared.accent.opacity(0.05)
                     .task { await load() }
             }
         }

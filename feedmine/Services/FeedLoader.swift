@@ -667,6 +667,9 @@ final class FeedLoader {
             itemVersion += 1
             totalFetched = cachedItems.count
             loadingState = .idle  // content is visible — no skeleton!
+            // Prefetch images for visible + near-visible cached items
+            let visibleCount = min(Self.pageSize, items.count)
+            prefetchImagesIfNeeded(for: Array(items.prefix(visibleCount)))
         } else {
             loadingState = .initial
         }
@@ -977,11 +980,12 @@ final class FeedLoader {
     }
 
     /// Prefetch images for items if the setting is enabled
-    private func prefetchImagesIfNeeded(for items: [FeedItem]) {
+    private func prefetchImagesIfNeeded(for items: [FeedItem], priorityItems: [FeedItem] = []) {
         guard prefetchImages else { return }
         let urls = items.compactMap { $0.bestImageURL }
+        let priority = priorityItems.compactMap { $0.bestImageURL }
         guard !urls.isEmpty else { return }
-        Task { await prefetcher.prefetch(urls: urls) }
+        Task { await prefetcher.prefetch(urls: urls, priorityURLs: priority) }
     }
 
     /// Schedule an automatic retry with exponential backoff when all sources fail
