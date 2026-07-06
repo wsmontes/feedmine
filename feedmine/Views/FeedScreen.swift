@@ -77,6 +77,7 @@ struct FeedScreen: View {
             }
             if phase == .background {
                 SessionTracker.shared.onBackground()
+                loader.flushWhatsNewQueue()
                 PersistenceManager.shared.saveNow(loader.buildStateWithItems())
             }
         }

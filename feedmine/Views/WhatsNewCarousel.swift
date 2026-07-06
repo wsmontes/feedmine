@@ -37,6 +37,11 @@ struct WhatsNewCarousel: View {
                 populatedCarousel
             }
         }
+        .onAppear { loader.whatsNewVisible = true }
+        .onDisappear {
+            loader.whatsNewVisible = false
+            loader.flushWhatsNewQueue()
+        }
     }
 
     // MARK: - Populated Carousel

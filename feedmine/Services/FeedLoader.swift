@@ -304,15 +304,49 @@ final class FeedLoader {
     private var cachedWhatsNew: [FeedItem] = []
     private var cachedWhatsNewVersion = -1
     private var cachedWhatsNewReadVersion = -1
+    private var whatsNewPendingQueue: [FeedItem] = []
+
+    /// Set by WhatsNewCarousel to prevent visible reordering while user is watching.
+    var whatsNewVisible = false
 
     var whatIsNewItems: [FeedItem] {
         let readVersion = readItemIDs.count
         if itemVersion != cachedWhatsNewVersion || readVersion != cachedWhatsNewReadVersion {
-            cachedWhatsNew = computeWhatsNewItems()
+            let fresh = computeWhatsNewItems()
+            if whatsNewVisible && !cachedWhatsNew.isEmpty {
+                // User is watching — queue new items, keep showing current content
+                let newIDs = Set(fresh.map(\.id))
+                let currentIDs = Set(cachedWhatsNew.map(\.id))
+                let added = fresh.filter { !currentIDs.contains($0.id) }
+                if !added.isEmpty {
+                    whatsNewPendingQueue.append(contentsOf: added)
+                }
+                // Remove items that disappeared from fresh (read, filtered out)
+                cachedWhatsNew = cachedWhatsNew.filter { newIDs.contains($0.id) }
+            } else {
+                // Not visible — apply pending queue immediately
+                if !whatsNewPendingQueue.isEmpty {
+                    var merged = fresh
+                    merged.append(contentsOf: whatsNewPendingQueue)
+                    whatsNewPendingQueue.removeAll()
+                    var seen = Set<String>()
+                    cachedWhatsNew = merged.filter { seen.insert($0.id).inserted }.shuffled()
+                } else {
+                    cachedWhatsNew = fresh
+                }
+            }
             cachedWhatsNewVersion = itemVersion
             cachedWhatsNewReadVersion = readVersion
         }
         return cachedWhatsNew
+    }
+
+    /// Flush pending items into the carousel — call when user stops watching.
+    func flushWhatsNewQueue() {
+        guard !whatsNewPendingQueue.isEmpty else { return }
+        whatsNewPendingQueue.removeAll()
+        cachedWhatsNewVersion = -1  // force recompute on next access
+        cachedWhatsNewReadVersion = -1
     }
 
     private func computeWhatsNewItems() -> [FeedItem] {
