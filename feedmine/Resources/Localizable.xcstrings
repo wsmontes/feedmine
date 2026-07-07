@@ -2394,7 +2394,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ articoli"
+            "value": "%@ άρθρα"
           }
         },
         "en-AU": {
@@ -2430,7 +2430,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ Artikel"
+            "value": "%@ artikkelia"
           }
         },
         "fr-CA": {
@@ -2448,7 +2448,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ مقالات"
+            "value": "%@ מאמרים"
           }
         },
         "hi": {
@@ -2466,7 +2466,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ Artikel"
+            "value": "%@ cikk"
           }
         },
         "id": {
@@ -4035,7 +4035,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ fallimenti"
+            "value": "%@ αποτυχίες"
           }
         },
         "en-AU": {
@@ -4071,7 +4071,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ Fehler"
+            "value": "%@ epäonnistumista"
           }
         },
         "fr-CA": {
@@ -4089,7 +4089,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ فشل"
+            "value": "%@ כשלונות"
           }
         },
         "hi": {
@@ -4107,7 +4107,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ Fehler"
+            "value": "%@ hiba"
           }
         },
         "id": {
@@ -4749,7 +4749,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ recuperati"
+            "value": "%@ ανακτήθηκαν"
           }
         },
         "en-AU": {
@@ -4785,7 +4785,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ abgerufen"
+            "value": "%@ haettu"
           }
         },
         "fr-CA": {
@@ -4803,7 +4803,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ تم جلبه"
+            "value": "%@ נשלפו"
           }
         },
         "hi": {
@@ -4821,7 +4821,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ abgerufen"
+            "value": "%@ letöltve"
           }
         },
         "id": {
@@ -6389,7 +6389,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ min di lettura"
+            "value": "%@ λεπτά ανάγνωσης"
           }
         },
         "en-AU": {
@@ -6425,7 +6425,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ Min Lesezeit"
+            "value": "%@ min lukuaika"
           }
         },
         "fr-CA": {
@@ -6443,7 +6443,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ دقائق قراءة"
+            "value": "%@ דקות קריאה"
           }
         },
         "hi": {
@@ -6461,7 +6461,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ Min Lesezeit"
+            "value": "%@ perc olvasás"
           }
         },
         "id": {
@@ -8539,7 +8539,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ nuovi"
+            "value": "%@ νέα"
           }
         },
         "en-AU": {
@@ -8575,7 +8575,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ neu"
+            "value": "%@ uutta"
           }
         },
         "fr-CA": {
@@ -8593,7 +8593,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ جديد"
+            "value": "%@ חדשים"
           }
         },
         "hi": {
@@ -8611,7 +8611,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ neu"
+            "value": "%@ új"
           }
         },
         "id": {
@@ -11164,7 +11164,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ fonti"
+            "value": "%@ πηγές"
           }
         },
         "en-AU": {
@@ -11200,7 +11200,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ Quellen"
+            "value": "%@ lähdettä"
           }
         },
         "fr-CA": {
@@ -11218,7 +11218,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ مصادر"
+            "value": "%@ מקורות"
           }
         },
         "hi": {
@@ -11236,7 +11236,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ Quellen"
+            "value": "%@ forrás"
           }
         },
         "id": {
@@ -15462,7 +15462,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Informazioni"
+            "value": "Σχετικά"
           }
         },
         "en-AU": {
@@ -15498,7 +15498,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Über"
+            "value": "Tietoja"
           }
         },
         "fr-CA": {
@@ -15516,7 +15516,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "حول"
+            "value": "אודות"
           }
         },
         "hi": {
@@ -15534,7 +15534,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Über"
+            "value": "Névjegy"
           }
         },
         "id": {
@@ -16891,7 +16891,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pomeriggio"
+            "value": "Απόγευμα"
           }
         },
         "en-AU": {
@@ -16927,7 +16927,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nachmittag"
+            "value": "Iltapäivä"
           }
         },
         "fr-CA": {
@@ -16945,7 +16945,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "بعد الظهر"
+            "value": "צהריים"
           }
         },
         "hi": {
@@ -16963,7 +16963,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nachmittag"
+            "value": "Délután"
           }
         },
         "id": {
@@ -17369,7 +17369,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tutto"
+            "value": "Όλα"
           }
         },
         "en-AU": {
@@ -17405,7 +17405,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alle"
+            "value": "Kaikki"
           }
         },
         "fr-CA": {
@@ -17423,7 +17423,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الكل"
+            "value": "הכל"
           }
         },
         "hi": {
@@ -17441,7 +17441,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alle"
+            "value": "Összes"
           }
         },
         "id": {
@@ -19752,7 +19752,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aspetto"
+            "value": "Εμφάνιση"
           }
         },
         "en-AU": {
@@ -19788,7 +19788,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Erscheinungsbild"
+            "value": "Ulkoasu"
           }
         },
         "fr-CA": {
@@ -19806,7 +19806,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "المظهر"
+            "value": "מראה"
           }
         },
         "hi": {
@@ -19824,7 +19824,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Erscheinungsbild"
+            "value": "Megjelenés"
           }
         },
         "id": {
@@ -20437,7 +20437,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aprile"
+            "value": "Απρίλιος"
           }
         },
         "en-AU": {
@@ -20473,7 +20473,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "April"
+            "value": "Huhtikuu"
           }
         },
         "fr-CA": {
@@ -20491,7 +20491,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "أبريل"
+            "value": "אפריל"
           }
         },
         "hi": {
@@ -20509,7 +20509,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "April"
+            "value": "Április"
           }
         },
         "id": {
@@ -20915,7 +20915,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Articoli"
+            "value": "Άρθρα"
           }
         },
         "en-AU": {
@@ -20951,7 +20951,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Artikel"
+            "value": "Artikkelit"
           }
         },
         "fr-CA": {
@@ -20969,7 +20969,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مقالات"
+            "value": "מאמרים"
           }
         },
         "hi": {
@@ -20987,7 +20987,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Artikel"
+            "value": "Cikkek"
           }
         },
         "id": {
@@ -21153,7 +21153,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Agosto"
+            "value": "Αύγουστος"
           }
         },
         "en-AU": {
@@ -21189,7 +21189,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "August"
+            "value": "Elokuu"
           }
         },
         "fr-CA": {
@@ -21207,7 +21207,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "أغسطس"
+            "value": "אוגוסט"
           }
         },
         "hi": {
@@ -21225,7 +21225,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "August"
+            "value": "Augusztus"
           }
         },
         "id": {
@@ -21392,7 +21392,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Autunno"
+            "value": "Φθινόπωρο"
           }
         },
         "en-AU": {
@@ -21428,7 +21428,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Herbst"
+            "value": "Syksy"
           }
         },
         "fr-CA": {
@@ -21446,7 +21446,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "خريف"
+            "value": "סתיו"
           }
         },
         "hi": {
@@ -21464,7 +21464,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Herbst"
+            "value": "Ősz"
           }
         },
         "id": {
@@ -22109,7 +22109,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Di Nuovo Online"
+            "value": "Επιστροφή Online"
           }
         },
         "en-AU": {
@@ -22145,7 +22145,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wieder online"
+            "value": "Takaisin verkossa"
           }
         },
         "fr-CA": {
@@ -22163,7 +22163,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "عاد للاتصال"
+            "value": "חזרה למקוון"
           }
         },
         "hi": {
@@ -22181,7 +22181,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wieder online"
+            "value": "Újra Online"
           }
         },
         "id": {
@@ -24673,7 +24673,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Annulla"
+            "value": "Ακύρωση"
           }
         },
         "en-AU": {
@@ -24709,7 +24709,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abbrechen"
+            "value": "Peruuta"
           }
         },
         "fr-CA": {
@@ -24727,7 +24727,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "إلغاء"
+            "value": "ביטול"
           }
         },
         "hi": {
@@ -24745,7 +24745,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abbrechen"
+            "value": "Mégse"
           }
         },
         "id": {
@@ -27059,7 +27059,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sereno"
+            "value": "Αίθριος"
           }
         },
         "en-AU": {
@@ -27095,7 +27095,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Klar"
+            "value": "Selkeää"
           }
         },
         "fr-CA": {
@@ -27113,7 +27113,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "صافي"
+            "value": "בהיר"
           }
         },
         "hi": {
@@ -27131,7 +27131,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Klar"
+            "value": "Derült"
           }
         },
         "id": {
@@ -27298,7 +27298,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cancella Tutto"
+            "value": "Εκκαθάριση Όλων"
           }
         },
         "en-AU": {
@@ -27334,7 +27334,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alles Löschen"
+            "value": "Tyhjennä kaikki"
           }
         },
         "fr-CA": {
@@ -27352,7 +27352,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مسح الكل"
+            "value": "נקה הכל"
           }
         },
         "hi": {
@@ -27370,7 +27370,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alles Löschen"
+            "value": "Összes Törlése"
           }
         },
         "id": {
@@ -28488,7 +28488,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nuvoloso"
+            "value": "Νεφελώδης"
           }
         },
         "en-AU": {
@@ -28524,7 +28524,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bewölkt"
+            "value": "Pilvistä"
           }
         },
         "fr-CA": {
@@ -28542,7 +28542,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "غائم"
+            "value": "מעונן"
           }
         },
         "hi": {
@@ -28560,7 +28560,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bewölkt"
+            "value": "Felhős"
           }
         },
         "id": {
@@ -28727,7 +28727,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Freddo"
+            "value": "Κρύο"
           }
         },
         "en-AU": {
@@ -28763,7 +28763,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kalt"
+            "value": "Kylmä"
           }
         },
         "fr-CA": {
@@ -28781,7 +28781,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "بارد"
+            "value": "קר"
           }
         },
         "hi": {
@@ -28799,7 +28799,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kalt"
+            "value": "Hideg"
           }
         },
         "id": {
@@ -31590,7 +31590,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dati"
+            "value": "Δεδομένα"
           }
         },
         "en-AU": {
@@ -31626,7 +31626,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Daten"
+            "value": "Tiedot"
           }
         },
         "fr-CA": {
@@ -31644,7 +31644,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "بيانات"
+            "value": "נתונים"
           }
         },
         "hi": {
@@ -31662,7 +31662,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Daten"
+            "value": "Adatok"
           }
         },
         "id": {
@@ -31828,7 +31828,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alba"
+            "value": "Αυγή"
           }
         },
         "en-AU": {
@@ -31864,7 +31864,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Morgendämmerung"
+            "value": "Aamunkoitto"
           }
         },
         "fr-CA": {
@@ -31882,7 +31882,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "فجر"
+            "value": "שחר"
           }
         },
         "hi": {
@@ -31900,7 +31900,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Morgendämmerung"
+            "value": "Hajnal"
           }
         },
         "id": {
@@ -32783,7 +32783,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dicembre"
+            "value": "Δεκέμβριος"
           }
         },
         "en-AU": {
@@ -32819,7 +32819,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dezember"
+            "value": "Joulukuu"
           }
         },
         "fr-CA": {
@@ -32837,7 +32837,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ديسمبر"
+            "value": "דצמבר"
           }
         },
         "hi": {
@@ -32855,7 +32855,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dezember"
+            "value": "December"
           }
         },
         "id": {
@@ -33261,7 +33261,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lettura Profonda"
+            "value": "Βαθιά Ανάγνωση"
           }
         },
         "en-AU": {
@@ -33297,7 +33297,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tiefes Lesen"
+            "value": "Syväluku"
           }
         },
         "fr-CA": {
@@ -33315,7 +33315,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "قراءة عميقة"
+            "value": "קריאה עמוקה"
           }
         },
         "hi": {
@@ -33333,7 +33333,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tiefes Lesen"
+            "value": "Mély Olvasás"
           }
         },
         "id": {
@@ -33739,7 +33739,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lettura Profonda"
+            "value": "Βαθιά Ανάγνωση"
           }
         },
         "en-AU": {
@@ -33775,7 +33775,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tiefes Lesen"
+            "value": "Syväluku"
           }
         },
         "fr-CA": {
@@ -33793,7 +33793,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "قراءة عميقة"
+            "value": "קריאה עמוקה"
           }
         },
         "hi": {
@@ -33811,7 +33811,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tiefes Lesen"
+            "value": "Mély Olvasás"
           }
         },
         "id": {
@@ -33978,7 +33978,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Disattivate"
+            "value": "Απενεργοποιημένο"
           }
         },
         "en-AU": {
@@ -34014,7 +34014,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Deaktiviert"
+            "value": "Pois käytöstä"
           }
         },
         "fr-CA": {
@@ -34032,7 +34032,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "معطل"
+            "value": "מושבת"
           }
         },
         "hi": {
@@ -34050,7 +34050,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Deaktiviert"
+            "value": "Letiltva"
           }
         },
         "id": {
@@ -34693,7 +34693,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fatto"
+            "value": "Έτοιμο"
           }
         },
         "en-AU": {
@@ -34729,7 +34729,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fertig"
+            "value": "Valmis"
           }
         },
         "fr-CA": {
@@ -34747,7 +34747,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "تم"
+            "value": "סיום"
           }
         },
         "hi": {
@@ -34765,7 +34765,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fertig"
+            "value": "Kész"
           }
         },
         "id": {
@@ -35170,7 +35170,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Prima"
+            "value": "Νωρίτερα"
           }
         },
         "en-AU": {
@@ -35206,7 +35206,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Früher"
+            "value": "Aiemmin"
           }
         },
         "fr-CA": {
@@ -35224,7 +35224,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "سابقاً"
+            "value": "מוקדם יותר"
           }
         },
         "hi": {
@@ -35242,7 +35242,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Früher"
+            "value": "Korábban"
           }
         },
         "id": {
@@ -36364,7 +36364,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Attivate"
+            "value": "Ενεργοποιημένο"
           }
         },
         "en-AU": {
@@ -36400,7 +36400,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aktiviert"
+            "value": "Käytössä"
           }
         },
         "fr-CA": {
@@ -36418,7 +36418,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مفعل"
+            "value": "מופעל"
           }
         },
         "hi": {
@@ -36436,7 +36436,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aktiviert"
+            "value": "Engedélyezve"
           }
         },
         "id": {
@@ -36602,7 +36602,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Immerso"
+            "value": "Αφοσιωμένος"
           }
         },
         "en-AU": {
@@ -36638,7 +36638,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vertieft"
+            "value": "Sitoutunut"
           }
         },
         "fr-CA": {
@@ -36656,7 +36656,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "متفاعل"
+            "value": "מעורב"
           }
         },
         "hi": {
@@ -36674,7 +36674,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vertieft"
+            "value": "Elmerülve"
           }
         },
         "id": {
@@ -36841,7 +36841,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sera"
+            "value": "Βράδυ"
           }
         },
         "en-AU": {
@@ -36877,7 +36877,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abend"
+            "value": "Ilta"
           }
         },
         "fr-CA": {
@@ -36895,7 +36895,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مساء"
+            "value": "ערב"
           }
         },
         "hi": {
@@ -36913,7 +36913,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abend"
+            "value": "Este"
           }
         },
         "id": {
@@ -38035,7 +38035,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esporta Dati"
+            "value": "Εξαγωγή Δεδομένων"
           }
         },
         "en-AU": {
@@ -38071,7 +38071,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Meine Daten Exportieren"
+            "value": "Vie tiedot"
           }
         },
         "fr-CA": {
@@ -38089,7 +38089,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "تصدير بياناتي"
+            "value": "ייצא נתונים"
           }
         },
         "hi": {
@@ -38107,7 +38107,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Meine Daten Exportieren"
+            "value": "Adatok Exportálása"
           }
         },
         "id": {
@@ -38273,7 +38273,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Estesa"
+            "value": "Εκτεταμένη"
           }
         },
         "en-AU": {
@@ -38309,7 +38309,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Verlängert"
+            "value": "Jatkettu"
           }
         },
         "fr-CA": {
@@ -38327,7 +38327,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ممتد"
+            "value": "מורחב"
           }
         },
         "hi": {
@@ -38345,7 +38345,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Verlängert"
+            "value": "Hosszabbított"
           }
         },
         "id": {
@@ -39229,7 +39229,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Febbraio"
+            "value": "Φεβρουάριος"
           }
         },
         "en-AU": {
@@ -39265,7 +39265,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Februar"
+            "value": "Helmikuu"
           }
         },
         "fr-CA": {
@@ -39283,7 +39283,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "فبراير"
+            "value": "פברואר"
           }
         },
         "hi": {
@@ -39301,7 +39301,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Februar"
+            "value": "Február"
           }
         },
         "id": {
@@ -42297,7 +42297,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Prima Volta"
+            "value": "Πρώτη Φορά"
           }
         },
         "en-AU": {
@@ -42333,7 +42333,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Erstes Mal"
+            "value": "Ensimmäinen kerta"
           }
         },
         "fr-CA": {
@@ -42351,7 +42351,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "أول مرة"
+            "value": "פעם ראשונה"
           }
         },
         "hi": {
@@ -42369,7 +42369,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Erstes Mal"
+            "value": "Első Alkalom"
           }
         },
         "id": {
@@ -42744,7 +42744,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nebbia"
+            "value": "Ομίχλη"
           }
         },
         "en-AU": {
@@ -42780,7 +42780,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nebel"
+            "value": "Sumua"
           }
         },
         "fr-CA": {
@@ -42798,7 +42798,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ضباب"
+            "value": "ערפל"
           }
         },
         "hi": {
@@ -42816,7 +42816,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nebel"
+            "value": "Köd"
           }
         },
         "id": {
@@ -42983,7 +42983,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dimensione Font"
+            "value": "Μέγεθος Γραμματοσειράς"
           }
         },
         "en-AU": {
@@ -43019,7 +43019,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Schriftgröße"
+            "value": "Fonttikoko"
           }
         },
         "fr-CA": {
@@ -43037,7 +43037,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "حجم الخط"
+            "value": "גודל גופן"
           }
         },
         "hi": {
@@ -43055,7 +43055,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Schriftgröße"
+            "value": "Betűméret"
           }
         },
         "id": {
@@ -43906,7 +43906,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Venerdì"
+            "value": "Παρασκευή"
           }
         },
         "en-AU": {
@@ -43942,7 +43942,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Freitag"
+            "value": "Perjantai"
           }
         },
         "fr-CA": {
@@ -43960,7 +43960,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الجمعة"
+            "value": "שישי"
           }
         },
         "hi": {
@@ -43978,7 +43978,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Freitag"
+            "value": "Péntek"
           }
         },
         "id": {
@@ -44862,7 +44862,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "da %@ fonti"
+            "value": "από %@ πηγές"
           }
         },
         "en-AU": {
@@ -44898,7 +44898,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "von %@ Quellen"
+            "value": "%@ lähteestä"
           }
         },
         "fr-CA": {
@@ -44916,7 +44916,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "من %@ مصادر"
+            "value": "מ-%@ מקורות"
           }
         },
         "hi": {
@@ -44934,7 +44934,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "von %@ Quellen"
+            "value": "%@ forrásból"
           }
         },
         "id": {
@@ -45818,7 +45818,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Divertimento"
+            "value": "Διασκέδαση"
           }
         },
         "en-AU": {
@@ -45854,7 +45854,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unterhaltung"
+            "value": "Hauska"
           }
         },
         "fr-CA": {
@@ -45872,7 +45872,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ترفيه"
+            "value": "כיף"
           }
         },
         "hi": {
@@ -45890,7 +45890,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unterhaltung"
+            "value": "Szórakozás"
           }
         },
         "id": {
@@ -47219,7 +47219,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Buon Pomeriggio"
+            "value": "Καλησπέρα"
           }
         },
         "en-AU": {
@@ -47255,7 +47255,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Guten Tag"
+            "value": "Hyvää iltapäivää"
           }
         },
         "fr-CA": {
@@ -47273,7 +47273,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مساء الخير"
+            "value": "צהריים טובים"
           }
         },
         "hi": {
@@ -47291,7 +47291,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Guten Tag"
+            "value": "Jó napot"
           }
         },
         "id": {
@@ -47458,7 +47458,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Buonasera"
+            "value": "Καλό Βράδυ"
           }
         },
         "en-AU": {
@@ -47494,7 +47494,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Guten Abend"
+            "value": "Hyvää iltaa"
           }
         },
         "fr-CA": {
@@ -47512,7 +47512,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مساء الخير"
+            "value": "ערב טוב"
           }
         },
         "hi": {
@@ -47530,7 +47530,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Guten Abend"
+            "value": "Jó estét"
           }
         },
         "id": {
@@ -47697,7 +47697,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Buongiorno"
+            "value": "Καλημέρα"
           }
         },
         "en-AU": {
@@ -47733,7 +47733,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Guten Morgen"
+            "value": "Hyvää huomenta"
           }
         },
         "fr-CA": {
@@ -47751,7 +47751,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "صباح الخير"
+            "value": "בוקר טוב"
           }
         },
         "hi": {
@@ -47769,7 +47769,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Guten Morgen"
+            "value": "Jó reggelt"
           }
         },
         "id": {
@@ -47936,7 +47936,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Buonanotte"
+            "value": "Καληνύχτα"
           }
         },
         "en-AU": {
@@ -47972,7 +47972,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gute Nacht"
+            "value": "Hyvää yötä"
           }
         },
         "fr-CA": {
@@ -47990,7 +47990,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "تصبح على خير"
+            "value": "לילה טוב"
           }
         },
         "hi": {
@@ -48008,7 +48008,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gute Nacht"
+            "value": "Jó éjszakát"
           }
         },
         "id": {
@@ -51457,7 +51457,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ciao"
+            "value": "Γεια"
           }
         },
         "en-AU": {
@@ -51493,7 +51493,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hallo"
+            "value": "Hei"
           }
         },
         "fr-CA": {
@@ -51511,7 +51511,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مرحباً"
+            "value": "שלום"
           }
         },
         "hi": {
@@ -51529,7 +51529,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hallo"
+            "value": "Szia"
           }
         },
         "id": {
@@ -52413,7 +52413,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Molto Caldo"
+            "value": "Καυτό"
           }
         },
         "en-AU": {
@@ -52449,7 +52449,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Heiß"
+            "value": "Kuuma"
           }
         },
         "fr-CA": {
@@ -52467,7 +52467,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "حار"
+            "value": "לוהט"
           }
         },
         "hi": {
@@ -52485,7 +52485,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Heiß"
+            "value": "Forró"
           }
         },
         "id": {
@@ -54322,7 +54322,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ispiratore"
+            "value": "Έμπνευση"
           }
         },
         "en-AU": {
@@ -54358,7 +54358,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inspirierend"
+            "value": "Inspiroiva"
           }
         },
         "fr-CA": {
@@ -54376,7 +54376,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ملهم"
+            "value": "מעורר השראה"
           }
         },
         "hi": {
@@ -54394,7 +54394,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inspirierend"
+            "value": "Inspiráló"
           }
         },
         "id": {
@@ -54560,7 +54560,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gennaio"
+            "value": "Ιανουάριος"
           }
         },
         "en-AU": {
@@ -54596,7 +54596,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Januar"
+            "value": "Tammikuu"
           }
         },
         "fr-CA": {
@@ -54614,7 +54614,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "يناير"
+            "value": "ינואר"
           }
         },
         "hi": {
@@ -54632,7 +54632,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Januar"
+            "value": "Január"
           }
         },
         "id": {
@@ -54799,7 +54799,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Luglio"
+            "value": "Ιούλιος"
           }
         },
         "en-AU": {
@@ -54835,7 +54835,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Juli"
+            "value": "Heinäkuu"
           }
         },
         "fr-CA": {
@@ -54853,7 +54853,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "يوليو"
+            "value": "יולי"
           }
         },
         "hi": {
@@ -54871,7 +54871,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Juli"
+            "value": "Július"
           }
         },
         "id": {
@@ -55038,7 +55038,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Giugno"
+            "value": "Ιούνιος"
           }
         },
         "en-AU": {
@@ -55074,7 +55074,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Juni"
+            "value": "Kesäkuu"
           }
         },
         "fr-CA": {
@@ -55092,7 +55092,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "يونيو"
+            "value": "יוני"
           }
         },
         "hi": {
@@ -55110,7 +55110,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Juni"
+            "value": "Június"
           }
         },
         "id": {
@@ -55755,7 +55755,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appena Aperto"
+            "value": "Μόλις Άνοιξε"
           }
         },
         "en-AU": {
@@ -55791,7 +55791,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gerade Geöffnet"
+            "value": "Juuri avattu"
           }
         },
         "fr-CA": {
@@ -55809,7 +55809,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "افتتح للتو"
+            "value": "זה עתה נפתח"
           }
         },
         "hi": {
@@ -55827,7 +55827,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gerade Geöffnet"
+            "value": "Most Nyitva"
           }
         },
         "id": {
@@ -56950,7 +56950,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lingua"
+            "value": "Γλώσσα"
           }
         },
         "en-AU": {
@@ -56986,7 +56986,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sprache"
+            "value": "Kieli"
           }
         },
         "fr-CA": {
@@ -57004,7 +57004,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "اللغة"
+            "value": "שפה"
           }
         },
         "hi": {
@@ -57022,7 +57022,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sprache"
+            "value": "Nyelv"
           }
         },
         "id": {
@@ -57397,7 +57397,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Grande"
+            "value": "Μεγάλο"
           }
         },
         "en-AU": {
@@ -57433,7 +57433,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Groß"
+            "value": "Suuri"
           }
         },
         "fr-CA": {
@@ -57451,7 +57451,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "كبير"
+            "value": "גדול"
           }
         },
         "hi": {
@@ -57469,7 +57469,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Groß"
+            "value": "Nagy"
           }
         },
         "id": {
@@ -57635,7 +57635,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ultimo salvataggio"
+            "value": "Τελευταία Αποθήκευση"
           }
         },
         "en-AU": {
@@ -57671,7 +57671,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Zuletzt gespeichert"
+            "value": "Viimeksi tallennettu"
           }
         },
         "fr-CA": {
@@ -57689,7 +57689,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "آخر حفظ"
+            "value": "נשמר לאחרונה"
           }
         },
         "hi": {
@@ -57707,7 +57707,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Zuletzt gespeichert"
+            "value": "Utoljára Mentve"
           }
         },
         "id": {
@@ -57873,7 +57873,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Notte Fonda"
+            "value": "Αργά τη Νύχτα"
           }
         },
         "en-AU": {
@@ -57909,7 +57909,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Späte Nacht"
+            "value": "Myöhäinen yö"
           }
         },
         "fr-CA": {
@@ -57927,7 +57927,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "وقت متأخر من الليل"
+            "value": "לילה מאוחר"
           }
         },
         "hi": {
@@ -57945,7 +57945,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Späte Nacht"
+            "value": "Késő Éjszaka"
           }
         },
         "id": {
@@ -59993,7 +59993,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ascolta"
+            "value": "Ακρόαση"
           }
         },
         "en-AU": {
@@ -60029,7 +60029,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Anhören"
+            "value": "Kuuntele"
           }
         },
         "fr-CA": {
@@ -60047,7 +60047,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "استماع"
+            "value": "האזן"
           }
         },
         "hi": {
@@ -60065,7 +60065,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Anhören"
+            "value": "Hallgatás"
           }
         },
         "id": {
@@ -60231,7 +60231,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Caricamento Articoli"
+            "value": "Φόρτωση άρθρων"
           }
         },
         "en-AU": {
@@ -60267,7 +60267,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Artikel Werden Geladen"
+            "value": "Ladataan artikkeleita"
           }
         },
         "fr-CA": {
@@ -60285,7 +60285,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "جاري تحميل المقالات"
+            "value": "טוען מאמרים"
           }
         },
         "hi": {
@@ -60303,7 +60303,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Artikel Werden Geladen"
+            "value": "Cikkek Betöltése"
           }
         },
         "id": {
@@ -61663,7 +61663,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Maratona"
+            "value": "Μαραθώνιος"
           }
         },
         "en-AU": {
@@ -61699,7 +61699,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Marathon"
+            "value": "Maraton"
           }
         },
         "fr-CA": {
@@ -61717,7 +61717,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ماراثون"
+            "value": "מרתון"
           }
         },
         "hi": {
@@ -61735,7 +61735,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Marathon"
+            "value": "Maraton"
           }
         },
         "id": {
@@ -62141,7 +62141,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Marzo"
+            "value": "Μάρτιος"
           }
         },
         "en-AU": {
@@ -62177,7 +62177,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "März"
+            "value": "Maaliskuu"
           }
         },
         "fr-CA": {
@@ -62195,7 +62195,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مارس"
+            "value": "מרץ"
           }
         },
         "hi": {
@@ -62213,7 +62213,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "März"
+            "value": "Március"
           }
         },
         "id": {
@@ -62857,7 +62857,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Maggio"
+            "value": "Μάιος"
           }
         },
         "en-AU": {
@@ -62893,7 +62893,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mai"
+            "value": "Toukokuu"
           }
         },
         "fr-CA": {
@@ -62911,7 +62911,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مايو"
+            "value": "מאי"
           }
         },
         "hi": {
@@ -62929,7 +62929,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mai"
+            "value": "Május"
           }
         },
         "id": {
@@ -63096,7 +63096,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Media"
+            "value": "Μεσαίο"
           }
         },
         "en-AU": {
@@ -63132,7 +63132,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mittel"
+            "value": "Keskikokoinen"
           }
         },
         "fr-CA": {
@@ -63150,7 +63150,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "متوسط"
+            "value": "בינוני"
           }
         },
         "hi": {
@@ -63168,7 +63168,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mittel"
+            "value": "Közepes"
           }
         },
         "id": {
@@ -65007,7 +65007,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lunedì"
+            "value": "Δευτέρα"
           }
         },
         "en-AU": {
@@ -65043,7 +65043,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Montag"
+            "value": "Maanantai"
           }
         },
         "fr-CA": {
@@ -65061,7 +65061,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الإثنين"
+            "value": "שני"
           }
         },
         "hi": {
@@ -65079,7 +65079,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Montag"
+            "value": "Hétfő"
           }
         },
         "id": {
@@ -66201,7 +66201,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mattina"
+            "value": "Πρωί"
           }
         },
         "en-AU": {
@@ -66237,7 +66237,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Morgen"
+            "value": "Aamu"
           }
         },
         "fr-CA": {
@@ -66255,7 +66255,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "صباح"
+            "value": "בוקר"
           }
         },
         "hi": {
@@ -66273,7 +66273,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Morgen"
+            "value": "Reggel"
           }
         },
         "id": {
@@ -68111,7 +68111,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nuova Serie"
+            "value": "Νέο Σερί"
           }
         },
         "en-AU": {
@@ -68147,7 +68147,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neue Serie"
+            "value": "Uusi sarja"
           }
         },
         "fr-CA": {
@@ -68165,7 +68165,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "سلسلة جديدة"
+            "value": "רצף חדש"
           }
         },
         "hi": {
@@ -68183,7 +68183,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neue Serie"
+            "value": "Új Sorozat"
           }
         },
         "id": {
@@ -70230,7 +70230,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Notte"
+            "value": "Νύχτα"
           }
         },
         "en-AU": {
@@ -70266,7 +70266,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nacht"
+            "value": "Yö"
           }
         },
         "fr-CA": {
@@ -70284,7 +70284,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ليل"
+            "value": "לילה"
           }
         },
         "hi": {
@@ -70302,7 +70302,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nacht"
+            "value": "Éjszaka"
           }
         },
         "id": {
@@ -70469,7 +70469,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Modalità Notte"
+            "value": "Νυχτερινή Λειτουργία"
           }
         },
         "en-AU": {
@@ -70505,7 +70505,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nachtmodus"
+            "value": "Yötila"
           }
         },
         "fr-CA": {
@@ -70523,7 +70523,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الوضع الليلي"
+            "value": "מצב לילה"
           }
         },
         "hi": {
@@ -70541,7 +70541,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nachtmodus"
+            "value": "Éjszakai Mód"
           }
         },
         "id": {
@@ -71185,7 +71185,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ancora nessun articolo"
+            "value": "Δεν υπάρχουν άρθρα"
           }
         },
         "en-AU": {
@@ -71221,7 +71221,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Noch keine Artikel"
+            "value": "Ei vielä artikkeleita"
           }
         },
         "fr-CA": {
@@ -71239,7 +71239,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "لا مقالات بعد"
+            "value": "אין מאמרים עדיין"
           }
         },
         "hi": {
@@ -71257,7 +71257,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Noch keine Artikel"
+            "value": "Még Nincsenek Cikkek"
           }
         },
         "id": {
@@ -71661,7 +71661,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nessuna Connessione Internet"
+            "value": "Χωρίς Σύνδεση"
           }
         },
         "en-AU": {
@@ -71697,7 +71697,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Keine Internetverbindung"
+            "value": "Ei internet-yhteyttä"
           }
         },
         "fr-CA": {
@@ -71715,7 +71715,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "لا يوجد اتصال بالإنترنت"
+            "value": "אין חיבור לאינטרנט"
           }
         },
         "hi": {
@@ -71733,7 +71733,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Keine Internetverbindung"
+            "value": "Nincs Internetkapcsolat"
           }
         },
         "id": {
@@ -71899,7 +71899,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Senza fretta"
+            "value": "Χωρίς Βιασύνη"
           }
         },
         "en-AU": {
@@ -71935,7 +71935,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Keine Eile"
+            "value": "Ei kiirettä"
           }
         },
         "fr-CA": {
@@ -71953,7 +71953,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "لا داعي للعجلة"
+            "value": "בלי למהר"
           }
         },
         "hi": {
@@ -71971,7 +71971,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Keine Eile"
+            "value": "Nem kell sietni"
           }
         },
         "id": {
@@ -72854,7 +72854,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Normale"
+            "value": "Κανονικό"
           }
         },
         "en-AU": {
@@ -72890,7 +72890,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Normal"
+            "value": "Normaali"
           }
         },
         "fr-CA": {
@@ -72908,7 +72908,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "عادي"
+            "value": "רגיל"
           }
         },
         "hi": {
@@ -72926,7 +72926,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Normal"
+            "value": "Normál"
           }
         },
         "id": {
@@ -73809,7 +73809,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Novembre"
+            "value": "Νοέμβριος"
           }
         },
         "en-AU": {
@@ -73845,7 +73845,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "November"
+            "value": "Marraskuu"
           }
         },
         "fr-CA": {
@@ -73863,7 +73863,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "نوفمبر"
+            "value": "נובמבר"
           }
         },
         "hi": {
@@ -74048,7 +74048,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ottobre"
+            "value": "Οκτώβριος"
           }
         },
         "en-AU": {
@@ -74084,7 +74084,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Oktober"
+            "value": "Lokakuu"
           }
         },
         "fr-CA": {
@@ -74102,7 +74102,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "أكتوبر"
+            "value": "אוקטובר"
           }
         },
         "hi": {
@@ -74120,7 +74120,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Oktober"
+            "value": "Október"
           }
         },
         "id": {
@@ -74526,7 +74526,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Offline"
+            "value": "Εκτός Σύνδεσης"
           }
         },
         "en-AU": {
@@ -74580,7 +74580,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "غير متصل"
+            "value": "לא מחובר"
           }
         },
         "hi": {
@@ -78080,7 +78080,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Podcasts"
+            "value": "Podcastit"
           }
         },
         "fr-CA": {
@@ -78098,7 +78098,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "بودكاست"
+            "value": "פודקאסטים"
           }
         },
         "hi": {
@@ -78116,7 +78116,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Podcasts"
+            "value": "Podcastek"
           }
         },
         "id": {
@@ -79954,7 +79954,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pioggia"
+            "value": "Βροχή"
           }
         },
         "en-AU": {
@@ -79990,7 +79990,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Regen"
+            "value": "Sadetta"
           }
         },
         "fr-CA": {
@@ -80008,7 +80008,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مطر"
+            "value": "גשם"
           }
         },
         "hi": {
@@ -80026,7 +80026,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Regen"
+            "value": "Eső"
           }
         },
         "id": {
@@ -80193,7 +80193,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lettura"
+            "value": "Ανάγνωση"
           }
         },
         "en-AU": {
@@ -80229,7 +80229,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lesen"
+            "value": "Lukeminen"
           }
         },
         "fr-CA": {
@@ -80247,7 +80247,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "قراءة"
+            "value": "קריאה"
           }
         },
         "hi": {
@@ -80265,7 +80265,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lesen"
+            "value": "Olvasás"
           }
         },
         "id": {
@@ -80908,7 +80908,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aggiorna"
+            "value": "Ανανέωση"
           }
         },
         "en-AU": {
@@ -80944,7 +80944,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aktualisieren"
+            "value": "Päivitä"
           }
         },
         "fr-CA": {
@@ -80962,7 +80962,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "تحديث"
+            "value": "רענן"
           }
         },
         "hi": {
@@ -80980,7 +80980,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aktualisieren"
+            "value": "Frissítés"
           }
         },
         "id": {
@@ -81146,7 +81146,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aggiorna Ora"
+            "value": "Ανανέωση Τώρα"
           }
         },
         "en-AU": {
@@ -81182,7 +81182,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Jetzt Aktualisieren"
+            "value": "Päivitä nyt"
           }
         },
         "fr-CA": {
@@ -81200,7 +81200,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "تحديث الآن"
+            "value": "רענן עכשיו"
           }
         },
         "hi": {
@@ -81218,7 +81218,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Jetzt Aktualisieren"
+            "value": "Frissítés Most"
           }
         },
         "id": {
@@ -81384,7 +81384,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Rimuovi"
+            "value": "Αφαίρεση"
           }
         },
         "en-AU": {
@@ -81420,7 +81420,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Entfernen"
+            "value": "Poista"
           }
         },
         "fr-CA": {
@@ -81438,7 +81438,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "إزالة"
+            "value": "הסר"
           }
         },
         "hi": {
@@ -81456,7 +81456,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Entfernen"
+            "value": "Eltávolítás"
           }
         },
         "id": {
@@ -82098,7 +82098,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reimposta Tutto"
+            "value": "Επαναφορά Όλων"
           }
         },
         "en-AU": {
@@ -82134,7 +82134,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alles Zurücksetzen"
+            "value": "Palauta kaikki"
           }
         },
         "fr-CA": {
@@ -82152,7 +82152,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "إعادة تعيين الكل"
+            "value": "אפס הכל"
           }
         },
         "hi": {
@@ -82170,7 +82170,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alles Zurücksetzen"
+            "value": "Mindent Visszaállít"
           }
         },
         "id": {
@@ -82336,7 +82336,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Riavvio Necessario"
+            "value": "Απαιτείται Επανεκκίνηση"
           }
         },
         "en-AU": {
@@ -82372,7 +82372,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neustart Erforderlich"
+            "value": "Uudelleenkäynnistys vaaditaan"
           }
         },
         "fr-CA": {
@@ -82390,7 +82390,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "إعادة التشغيل مطلوبة"
+            "value": "נדרש אתחול מחדש"
           }
         },
         "hi": {
@@ -82408,7 +82408,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neustart Erforderlich"
+            "value": "Újraindítás Szükséges"
           }
         },
         "id": {
@@ -83769,7 +83769,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sabato"
+            "value": "Σάββατο"
           }
         },
         "en-AU": {
@@ -83805,7 +83805,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Samstag"
+            "value": "Lauantai"
           }
         },
         "fr-CA": {
@@ -83823,7 +83823,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "السبت"
+            "value": "שבת"
           }
         },
         "hi": {
@@ -83841,7 +83841,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Samstag"
+            "value": "Szombat"
           }
         },
         "id": {
@@ -85677,7 +85677,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Invia Feedback"
+            "value": "Αποστολή Σχολίων"
           }
         },
         "en-AU": {
@@ -85713,7 +85713,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Feedback Senden"
+            "value": "Lähetä palautetta"
           }
         },
         "fr-CA": {
@@ -85731,7 +85731,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "إرسال ملاحظات"
+            "value": "שלח משוב"
           }
         },
         "hi": {
@@ -85749,7 +85749,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Feedback Senden"
+            "value": "Visszajelzés Küldése"
           }
         },
         "id": {
@@ -85915,7 +85915,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Settembre"
+            "value": "Σεπτέμβριος"
           }
         },
         "en-AU": {
@@ -85951,7 +85951,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "September"
+            "value": "Syyskuu"
           }
         },
         "fr-CA": {
@@ -85969,7 +85969,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "سبتمبر"
+            "value": "ספטמבר"
           }
         },
         "hi": {
@@ -85987,7 +85987,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "September"
+            "value": "Szeptember"
           }
         },
         "id": {
@@ -86154,7 +86154,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Serio"
+            "value": "Σοβαρό"
           }
         },
         "en-AU": {
@@ -86190,7 +86190,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ernst"
+            "value": "Vakava"
           }
         },
         "fr-CA": {
@@ -86208,7 +86208,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "جاد"
+            "value": "רציני"
           }
         },
         "hi": {
@@ -86226,7 +86226,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ernst"
+            "value": "Komoly"
           }
         },
         "id": {
@@ -86392,7 +86392,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Impostazioni"
+            "value": "Ρυθμίσεις"
           }
         },
         "en-AU": {
@@ -86428,7 +86428,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Einstellungen"
+            "value": "Asetukset"
           }
         },
         "fr-CA": {
@@ -86446,7 +86446,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الإعدادات"
+            "value": "הגדרות"
           }
         },
         "hi": {
@@ -86464,7 +86464,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Einstellungen"
+            "value": "Beállítások"
           }
         },
         "id": {
@@ -87585,7 +87585,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Condividi"
+            "value": "Κοινή Χρήση"
           }
         },
         "en-AU": {
@@ -87621,7 +87621,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Teilen"
+            "value": "Jaa"
           }
         },
         "fr-CA": {
@@ -87639,7 +87639,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مشاركة"
+            "value": "שתף"
           }
         },
         "hi": {
@@ -87657,7 +87657,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Teilen"
+            "value": "Megosztás"
           }
         },
         "id": {
@@ -88299,7 +88299,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Condividi Statistiche"
+            "value": "Κοινή Χρήση Στατιστικών"
           }
         },
         "en-AU": {
@@ -88335,7 +88335,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Meine Statistiken Teilen"
+            "value": "Jaa tilastot"
           }
         },
         "fr-CA": {
@@ -88353,7 +88353,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مشاركة إحصائياتي"
+            "value": "שתף סטטיסטיקות"
           }
         },
         "hi": {
@@ -88371,7 +88371,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Meine Statistiken Teilen"
+            "value": "Statisztikák Megosztása"
           }
         },
         "id": {
@@ -89013,7 +89013,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Scorsa Veloce"
+            "value": "Γρήγορη Ανάγνωση"
           }
         },
         "en-AU": {
@@ -89049,7 +89049,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Überfliegen"
+            "value": "Silmäillen"
           }
         },
         "fr-CA": {
@@ -89067,7 +89067,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "تصفح سريع"
+            "value": "רפרוף"
           }
         },
         "hi": {
@@ -89085,7 +89085,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Überfliegen"
+            "value": "Átfutás"
           }
         },
         "id": {
@@ -90208,7 +90208,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Piccola"
+            "value": "Μικρό"
           }
         },
         "en-AU": {
@@ -90244,7 +90244,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Klein"
+            "value": "Pieni"
           }
         },
         "fr-CA": {
@@ -90262,7 +90262,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "صغير"
+            "value": "קטן"
           }
         },
         "hi": {
@@ -90280,7 +90280,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Klein"
+            "value": "Kicsi"
           }
         },
         "id": {
@@ -90446,7 +90446,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neve"
+            "value": "Χιόνι"
           }
         },
         "en-AU": {
@@ -90482,7 +90482,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Schnee"
+            "value": "Lunta"
           }
         },
         "fr-CA": {
@@ -90500,7 +90500,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ثلج"
+            "value": "שלג"
           }
         },
         "hi": {
@@ -90518,7 +90518,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Schnee"
+            "value": "Hó"
           }
         },
         "id": {
@@ -90685,7 +90685,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fonti"
+            "value": "Πηγές"
           }
         },
         "en-AU": {
@@ -90721,7 +90721,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quellen"
+            "value": "Lähteet"
           }
         },
         "fr-CA": {
@@ -90739,7 +90739,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "المصادر"
+            "value": "מקורות"
           }
         },
         "hi": {
@@ -90757,7 +90757,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quellen"
+            "value": "Források"
           }
         },
         "id": {
@@ -91609,7 +91609,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Primavera"
+            "value": "Άνοιξη"
           }
         },
         "en-AU": {
@@ -91645,7 +91645,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Frühling"
+            "value": "Kevät"
           }
         },
         "fr-CA": {
@@ -91663,7 +91663,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ربيع"
+            "value": "אביב"
           }
         },
         "hi": {
@@ -91681,7 +91681,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Frühling"
+            "value": "Tavasz"
           }
         },
         "id": {
@@ -93043,7 +93043,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Costante"
+            "value": "Σταθερό"
           }
         },
         "en-AU": {
@@ -93079,7 +93079,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Beständig"
+            "value": "Vakaa"
           }
         },
         "fr-CA": {
@@ -93097,7 +93097,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ثابت"
+            "value": "יציב"
           }
         },
         "hi": {
@@ -93115,7 +93115,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Beständig"
+            "value": "Stabil"
           }
         },
         "id": {
@@ -93760,7 +93760,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Estate"
+            "value": "Καλοκαίρι"
           }
         },
         "en-AU": {
@@ -93796,7 +93796,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sommer"
+            "value": "Kesä"
           }
         },
         "fr-CA": {
@@ -93814,7 +93814,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "صيف"
+            "value": "קיץ"
           }
         },
         "hi": {
@@ -93832,7 +93832,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sommer"
+            "value": "Nyár"
           }
         },
         "id": {
@@ -94477,7 +94477,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Domenica"
+            "value": "Κυριακή"
           }
         },
         "en-AU": {
@@ -94513,7 +94513,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sonntag"
+            "value": "Sunnuntai"
           }
         },
         "fr-CA": {
@@ -94531,7 +94531,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الأحد"
+            "value": "ראשון"
           }
         },
         "hi": {
@@ -94549,7 +94549,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sonntag"
+            "value": "Vasárnap"
           }
         },
         "id": {
@@ -97519,7 +97519,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tecnico"
+            "value": "Τεχνικό"
           }
         },
         "en-AU": {
@@ -97555,7 +97555,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Technisch"
+            "value": "Tekninen"
           }
         },
         "fr-CA": {
@@ -97573,7 +97573,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "تقني"
+            "value": "טכני"
           }
         },
         "hi": {
@@ -97591,7 +97591,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Technisch"
+            "value": "Műszaki"
           }
         },
         "id": {
@@ -101786,7 +101786,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Questa Settimana"
+            "value": "Αυτή την Εβδομάδα"
           }
         },
         "en-AU": {
@@ -101822,7 +101822,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Diese Woche"
+            "value": "Tällä viikolla"
           }
         },
         "fr-CA": {
@@ -101840,7 +101840,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "هذا الأسبوع"
+            "value": "השבוע"
           }
         },
         "hi": {
@@ -101858,7 +101858,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Diese Woche"
+            "value": "Ezen a Héten"
           }
         },
         "id": {
@@ -102263,7 +102263,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Temporale"
+            "value": "Καταιγίδα"
           }
         },
         "en-AU": {
@@ -102299,7 +102299,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gewitter"
+            "value": "Ukkonen"
           }
         },
         "fr-CA": {
@@ -102317,7 +102317,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "عاصفة رعدية"
+            "value": "סופת רעמים"
           }
         },
         "hi": {
@@ -102335,7 +102335,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gewitter"
+            "value": "Zivatar"
           }
         },
         "id": {
@@ -102502,7 +102502,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Giovedì"
+            "value": "Πέμπτη"
           }
         },
         "en-AU": {
@@ -102538,7 +102538,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Donnerstag"
+            "value": "Torstai"
           }
         },
         "fr-CA": {
@@ -102556,7 +102556,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الخميس"
+            "value": "חמישי"
           }
         },
         "hi": {
@@ -102574,7 +102574,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Donnerstag"
+            "value": "Csütörtök"
           }
         },
         "id": {
@@ -102980,7 +102980,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Oggi"
+            "value": "Σήμερα"
           }
         },
         "en-AU": {
@@ -103016,7 +103016,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Heute"
+            "value": "Tänään"
           }
         },
         "fr-CA": {
@@ -103034,7 +103034,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "اليوم"
+            "value": "היום"
           }
         },
         "hi": {
@@ -103052,7 +103052,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Heute"
+            "value": "Ma"
           }
         },
         "id": {
@@ -103219,7 +103219,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Domani"
+            "value": "Αύριο"
           }
         },
         "en-AU": {
@@ -103255,7 +103255,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Morgen"
+            "value": "Huomenna"
           }
         },
         "fr-CA": {
@@ -103273,7 +103273,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "غداً"
+            "value": "מחר"
           }
         },
         "hi": {
@@ -103291,7 +103291,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Morgen"
+            "value": "Holnap"
           }
         },
         "id": {
@@ -104650,7 +104650,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Martedì"
+            "value": "Τρίτη"
           }
         },
         "en-AU": {
@@ -104686,7 +104686,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dienstag"
+            "value": "Tiistai"
           }
         },
         "fr-CA": {
@@ -104704,7 +104704,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الثلاثاء"
+            "value": "שלישי"
           }
         },
         "hi": {
@@ -104722,7 +104722,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dienstag"
+            "value": "Kedd"
           }
         },
         "id": {
@@ -106292,7 +106292,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Versione"
+            "value": "Έκδοση"
           }
         },
         "en-AU": {
@@ -106328,7 +106328,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Version"
+            "value": "Versio"
           }
         },
         "fr-CA": {
@@ -106346,7 +106346,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الإصدار"
+            "value": "גרסה"
           }
         },
         "hi": {
@@ -106364,7 +106364,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Version"
+            "value": "Verzió"
           }
         },
         "id": {
@@ -107245,7 +107245,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Video"
+            "value": "Βίντεο"
           }
         },
         "en-AU": {
@@ -107281,7 +107281,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Videos"
+            "value": "Videot"
           }
         },
         "fr-CA": {
@@ -107299,7 +107299,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "فيديوهات"
+            "value": "סרטונים"
           }
         },
         "hi": {
@@ -107317,7 +107317,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Videos"
+            "value": "Videók"
           }
         },
         "id": {
@@ -107961,7 +107961,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Caldo"
+            "value": "Ζεστό"
           }
         },
         "en-AU": {
@@ -107997,7 +107997,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Warm"
+            "value": "Lämmin"
           }
         },
         "fr-CA": {
@@ -108015,7 +108015,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "دافئ"
+            "value": "חם"
           }
         },
         "hi": {
@@ -108033,7 +108033,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Warm"
+            "value": "Meleg"
           }
         },
         "id": {
@@ -108678,7 +108678,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Guarda"
+            "value": "Παρακολούθηση"
           }
         },
         "en-AU": {
@@ -108714,7 +108714,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ansehen"
+            "value": "Katso"
           }
         },
         "fr-CA": {
@@ -108732,7 +108732,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "مشاهدة"
+            "value": "צפה"
           }
         },
         "hi": {
@@ -108750,7 +108750,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ansehen"
+            "value": "Nézés"
           }
         },
         "id": {
@@ -109394,7 +109394,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mercoledì"
+            "value": "Τετάρτη"
           }
         },
         "en-AU": {
@@ -109430,7 +109430,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mittwoch"
+            "value": "Keskiviikko"
           }
         },
         "fr-CA": {
@@ -109448,7 +109448,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "الأربعاء"
+            "value": "רביעי"
           }
         },
         "hi": {
@@ -109466,7 +109466,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mittwoch"
+            "value": "Szerda"
           }
         },
         "id": {
@@ -109872,7 +109872,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fine Settimana"
+            "value": "Σαββατοκύριακο"
           }
         },
         "en-AU": {
@@ -109908,7 +109908,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wochenende"
+            "value": "Viikonloppu"
           }
         },
         "fr-CA": {
@@ -109926,7 +109926,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "عطلة نهاية الأسبوع"
+            "value": "סוף שבוע"
           }
         },
         "hi": {
@@ -109944,7 +109944,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wochenende"
+            "value": "Hétvége"
           }
         },
         "id": {
@@ -111035,7 +111035,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ventoso"
+            "value": "Άνεμος"
           }
         },
         "en-AU": {
@@ -111071,7 +111071,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Windig"
+            "value": "Tuulista"
           }
         },
         "fr-CA": {
@@ -111089,7 +111089,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "رياح"
+            "value": "רוח"
           }
         },
         "hi": {
@@ -111107,7 +111107,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Windig"
+            "value": "Szeles"
           }
         },
         "id": {
@@ -111274,7 +111274,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inverno"
+            "value": "Χειμώνας"
           }
         },
         "en-AU": {
@@ -111310,7 +111310,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Winter"
+            "value": "Talvi"
           }
         },
         "fr-CA": {
@@ -111328,7 +111328,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "شتاء"
+            "value": "חורף"
           }
         },
         "hi": {
@@ -111346,7 +111346,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Winter"
+            "value": "Tél"
           }
         },
         "id": {
@@ -112469,7 +112469,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ieri"
+            "value": "Χθες"
           }
         },
         "en-AU": {
@@ -112505,7 +112505,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gestern"
+            "value": "Eilen"
           }
         },
         "fr-CA": {
@@ -112523,7 +112523,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "أمس"
+            "value": "אתמול"
           }
         },
         "hi": {
@@ -112541,7 +112541,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gestern"
+            "value": "Tegnap"
           }
         },
         "id": {
@@ -116044,7 +116044,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld articoli"
+            "value": "%lld άρθρα"
           }
         },
         "en-AU": {
@@ -116080,7 +116080,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Artikel"
+            "value": "%lld artikkelia"
           }
         },
         "fr-CA": {
@@ -116098,7 +116098,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld مقالات"
+            "value": "%lld מאמרים"
           }
         },
         "hi": {
@@ -116116,7 +116116,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Artikel"
+            "value": "%lld cikk"
           }
         },
         "id": {
@@ -117685,7 +117685,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld fallimenti"
+            "value": "%lld αποτυχίες"
           }
         },
         "en-AU": {
@@ -117721,7 +117721,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Fehler"
+            "value": "%lld epäonnistumista"
           }
         },
         "fr-CA": {
@@ -117739,7 +117739,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld فشل"
+            "value": "%lld כשלונות"
           }
         },
         "hi": {
@@ -117757,7 +117757,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Fehler"
+            "value": "%lld hiba"
           }
         },
         "id": {
@@ -118399,7 +118399,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld recuperati"
+            "value": "%lld ανακτήθηκαν"
           }
         },
         "en-AU": {
@@ -118435,7 +118435,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld abgerufen"
+            "value": "%lld haettu"
           }
         },
         "fr-CA": {
@@ -118453,7 +118453,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld تم جلبه"
+            "value": "%lld נשלפו"
           }
         },
         "hi": {
@@ -118471,7 +118471,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld abgerufen"
+            "value": "%lld letöltve"
           }
         },
         "id": {
@@ -120039,7 +120039,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld min di lettura"
+            "value": "%lld λεπτά ανάγνωσης"
           }
         },
         "en-AU": {
@@ -120075,7 +120075,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Min Lesezeit"
+            "value": "%lld min lukuaika"
           }
         },
         "fr-CA": {
@@ -120093,7 +120093,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld دقائق قراءة"
+            "value": "%lld דקות קריאה"
           }
         },
         "hi": {
@@ -120111,7 +120111,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Min Lesezeit"
+            "value": "%lld perc olvasás"
           }
         },
         "id": {
@@ -122189,7 +122189,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld nuovi"
+            "value": "%lld νέα"
           }
         },
         "en-AU": {
@@ -122225,7 +122225,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld neu"
+            "value": "%lld uutta"
           }
         },
         "fr-CA": {
@@ -122243,7 +122243,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld جديد"
+            "value": "%lld חדשים"
           }
         },
         "hi": {
@@ -122261,7 +122261,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld neu"
+            "value": "%lld új"
           }
         },
         "id": {
@@ -124814,7 +124814,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld fonti"
+            "value": "%lld πηγές"
           }
         },
         "en-AU": {
@@ -124850,7 +124850,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Quellen"
+            "value": "%lld lähdettä"
           }
         },
         "fr-CA": {
@@ -124868,7 +124868,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld مصادر"
+            "value": "%lld מקורות"
           }
         },
         "hi": {
@@ -124886,7 +124886,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Quellen"
+            "value": "%lld forrás"
           }
         },
         "id": {
@@ -130544,7 +130544,7 @@
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "da %lld fonti"
+            "value": "από %lld πηγές"
           }
         },
         "en-AU": {
@@ -130580,7 +130580,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "von %lld Quellen"
+            "value": "%lld lähteestä"
           }
         },
         "fr-CA": {
@@ -130598,7 +130598,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "من %lld مصادر"
+            "value": "מ-%lld מקורות"
           }
         },
         "hi": {
@@ -130616,7 +130616,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "von %lld Quellen"
+            "value": "%lld forrásból"
           }
         },
         "id": {
