@@ -1248,15 +1248,16 @@ final class FeedLoader {
         // Step 2: Always trim after adding items
         trimBufferIfNeeded()
 
-        // Step 3: Refill reservoir — only when idle (don't compete with fetchFreshContent)
-        guard loadingState == .idle else { return }
-
+        // Step 3: Refill reservoir — skip if already refilling
+        guard !isRefilling else { return }
         if reservoir.isEmpty || reservoir.count < Self.reservoirLowWatermark {
-            loadingState = .loadingMore
+            isRefilling = true
             await refillReservoir()
-            loadingState = .idle
+            isRefilling = false
         }
     }
+
+    private var isRefilling = false
 
     func trimBufferIfNeeded() {
         guard items.count > Self.maxBuffer else { return }
