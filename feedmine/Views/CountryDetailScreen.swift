@@ -14,7 +14,26 @@ struct CountryDetailScreen: View {
             ForEach(feedsByCategory, id: \.0) { category, sources in
                 Section {
                     ForEach(sources, id: \.url) { source in
-                        FeedRow(source: source)
+                        HStack {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(source.title).font(.subheadline)
+                                Text(source.url)
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(1)
+                            }
+                            Spacer()
+                            Image(systemName: loader.isSourceEnabled(source.url)
+                                ? "checkmark.circle.fill"
+                                : "circle"
+                            )
+                            .font(.body)
+                            .foregroundStyle(loader.isSourceEnabled(source.url) ? .green : .secondary)
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            loader.toggleSource(source.url)
+                        }
                     }
                 } header: {
                     Label("\(category) (\(sources.count))", systemImage: categoryIcon(category))
@@ -48,40 +67,5 @@ struct CountryDetailScreen: View {
         if lower.contains("diy") || lower.contains("craft") { return "hammer.fill" }
         if lower.contains("game") || lower.contains("gaming") { return "gamecontroller.fill" }
         return "antenna.radiowaves.left.and.right"
-    }
-}
-
-// MARK: - Feed Row (extracted for stable @Observable reads)
-
-private struct FeedRow: View {
-    @Environment(FeedLoader.self) private var loader
-    let source: FeedSource
-    @State private var isOn = false
-
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(source.title).font(.subheadline)
-                Text(source.url)
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-            }
-            Spacer()
-            Toggle("", isOn: $isOn)
-                .labelsHidden()
-                .tint(.green)
-        }
-        .onAppear {
-            isOn = loader.isSourceEnabled(source.url)
-        }
-        .onChange(of: isOn) { _, _ in
-            loader.toggleSource(source.url)
-        }
-        .onChange(of: loader.isSourceEnabled(source.url)) { _, newValue in
-            if isOn != newValue {
-                isOn = newValue
-            }
-        }
     }
 }
