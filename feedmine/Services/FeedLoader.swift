@@ -609,7 +609,17 @@ final class FeedLoader {
         get { UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true }
         set { UserDefaults.standard.set(newValue, forKey: "prefetchImages") }
     }
-    private(set) var sources: [FeedSource] = []
+    private(set) var sources: [FeedSource] = [] {
+        didSet { _sourceRegionMap = nil }
+    }
+    /// Cached url→region map, rebuilt when sources change.
+    private var _sourceRegionMap: [String: String]?
+    private var sourceRegionMap: [String: String] {
+        if let cached = _sourceRegionMap { return cached }
+        let map = Dictionary(sources.map { ($0.url, $0.region) }, uniquingKeysWith: { first, _ in first })
+        _sourceRegionMap = map
+        return map
+    }
     private var reservoir: [FeedItem] = []
     private var loadedIDs: Set<String> = []
     private var loadedIDsInsertionOrder: [String] = []  // FIFO for precise trimming
@@ -767,10 +777,7 @@ final class FeedLoader {
     private func spreadSlotsByCountry(_ slots: [String]) -> [String] {
         guard slots.count > 2 else { return slots }
 
-        let sourceCountry: [String: String] = Dictionary(
-            sources.map { ($0.url, $0.region) },
-            uniquingKeysWith: { first, _ in first }
-        )
+        let sourceCountry = sourceRegionMap
 
         var result = slots
         var pass = 0
@@ -807,10 +814,6 @@ final class FeedLoader {
         // Pool everything EXCEPT items from disabled regions.
         // filteredOutItems contains both filter-excluded and region-disabled items;
         // region-disabled items must stay out of the visible feed.
-        let sourceRegionMap: [String: String] = Dictionary(
-            sources.map { ($0.url, $0.region) },
-            uniquingKeysWith: { first, _ in first }
-        )
         let regionEnabled: (FeedItem) -> Bool = { [self] item in
             let region = sourceRegionMap[item.sourceURL] ?? "global"
             return !disabledRegions.contains(region)
@@ -866,11 +869,6 @@ final class FeedLoader {
     /// Remove items from disabled regions immediately. Preserves scroll
     /// position — no re-interleave, just surgical removal.
     private func rebuildAfterRegionToggle() {
-        let sourceRegionMap: [String: String] = Dictionary(
-            sources.map { ($0.url, $0.region) },
-            uniquingKeysWith: { first, _ in first }
-        )
-
         let isDisabled: (FeedItem) -> Bool = { [self] item in
             let region = sourceRegionMap[item.sourceURL] ?? "global"
             return disabledRegions.contains(region)
