@@ -1445,6 +1445,7 @@ final class FeedLoader {
         updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: batchSources.count, totalItems: batch.items.count, sources: batchSources)
 
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
+        guard !actualNew.isEmpty else { return }
         registerLoadedIDs(actualNew.map(\.id))
 
         prefetchImagesIfNeeded(for: actualNew)
