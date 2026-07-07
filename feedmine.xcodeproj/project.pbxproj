@@ -143,6 +143,7 @@
 		AE00A646473F4E03D4193A74 /* italy.opml in Resources */ = {isa = PBXBuildFile; fileRef = 4B5455D6FB891EE34CAC9111 /* italy.opml */; };
 		B00CE656E2E247020F0F26C0 /* history.opml in Resources */ = {isa = PBXBuildFile; fileRef = 9DF1AECEFE3244BA029AFC3B /* history.opml */; };
 		B56415516465856207906C5F /* latvia.opml in Resources */ = {isa = PBXBuildFile; fileRef = ADA62AB062DCA949F2106CBB /* latvia.opml */; };
+		B6AE9E0F8C29F1AC810114C6 /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A830B06661CF5F11645F54BA /* LocaleManager.swift */; };
 		BC75784C6D92B5B6523BE9B0 /* taiwan.opml in Resources */ = {isa = PBXBuildFile; fileRef = F59F6AB91273CF101E0CCC18 /* taiwan.opml */; };
 		BD6646C8B36B6A616DC24680 /* ArticleReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EBEEC23B00D4353C6DD6A9 /* ArticleReaderView.swift */; };
 		C034E286374D98F29F9FA856 /* youtube_news.opml in Resources */ = {isa = PBXBuildFile; fileRef = 6BBEDC8AF8F6957FC7697295 /* youtube_news.opml */; };
@@ -168,6 +169,7 @@
 		DD9DBF15D721296C50C33A0C /* haiti.opml in Resources */ = {isa = PBXBuildFile; fileRef = CFC56511142768E06AB338E2 /* haiti.opml */; };
 		E15933E9C5253C75E6BF0042 /* SessionTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE7140CB709EB68EA0D2ED /* SessionTracker.swift */; };
 		E29781582EE32CB5B73C10A8 /* iceland.opml in Resources */ = {isa = PBXBuildFile; fileRef = 86A801E2B2B51766778B43E3 /* iceland.opml */; };
+		E914E397420D1E5534EA112B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 99C864B082460925B45F2DEA /* Localizable.xcstrings */; };
 		E944751B285F7BAB051601CC /* armenia.opml in Resources */ = {isa = PBXBuildFile; fileRef = C854E987B5E3C0D2FF2A9F83 /* armenia.opml */; };
 		EB498E6F3FBB5C54A7BA0212 /* feedmineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27D4A089C0A2A81E64B2BC /* feedmineApp.swift */; };
 		EF3088949BD839F288A0A237 /* nicaragua.opml in Resources */ = {isa = PBXBuildFile; fileRef = DF1AC8B3A5F1667A0623DAEF /* nicaragua.opml */; };
@@ -295,6 +297,7 @@
 		9053D7A4650C3681FA958714 /* movies.opml */ = {isa = PBXFileReference; path = movies.opml; sourceTree = "<group>"; };
 		9189993EB37C7B71490A0674 /* diy.opml */ = {isa = PBXFileReference; path = diy.opml; sourceTree = "<group>"; };
 		93A1E8E7D34C1FBFB2EA6CC6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		99C864B082460925B45F2DEA /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B0ACD6ABC2687E49F52CBFA /* united-kingdom.opml */ = {isa = PBXFileReference; path = "united-kingdom.opml"; sourceTree = "<group>"; };
 		9CBDF3CD2D7E4B317EDB1C4A /* hungary.opml */ = {isa = PBXFileReference; path = hungary.opml; sourceTree = "<group>"; };
 		9D972ED3A6BAF02265302FF7 /* indonesia.opml */ = {isa = PBXFileReference; path = indonesia.opml; sourceTree = "<group>"; };
@@ -304,6 +307,7 @@
 		A15CFE1B5B333D4013B39871 /* FilterSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheetView.swift; sourceTree = "<group>"; };
 		A15E21BDF87638F217BCFE97 /* ethiopia.opml */ = {isa = PBXFileReference; path = ethiopia.opml; sourceTree = "<group>"; };
 		A2296F3586B40E8B9BED579F /* czech-republic.opml */ = {isa = PBXFileReference; path = "czech-republic.opml"; sourceTree = "<group>"; };
+		A830B06661CF5F11645F54BA /* LocaleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
 		A8B50077DA1D77D2A8954743 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
 		AABCAE92C1E148558D414CB0 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		AD36B88D1FF2963C7807AAC0 /* serbia.opml */ = {isa = PBXFileReference; path = serbia.opml; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 				1B89B6467E341514F26C040B /* FeedLoader.swift */,
 				AABCAE92C1E148558D414CB0 /* ImageCache.swift */,
 				D4D33E3786E84EA594E2A36E /* ImagePrefetcher.swift */,
+				A830B06661CF5F11645F54BA /* LocaleManager.swift */,
 				51C91A94F430AE1B1D8F7255 /* MomentGreeting.swift */,
 				B126A0070B10B3C716D2C0C7 /* NetworkMonitor.swift */,
 				D43637F484CFF16738302685 /* OPMLParser.swift */,
@@ -497,6 +502,7 @@
 		CB51B4180BE95087ECD62C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				99C864B082460925B45F2DEA /* Localizable.xcstrings */,
 				3F815182CB0585246F621DBA /* Feeds */,
 			);
 			path = Resources;
@@ -668,6 +674,44 @@
 			knownRegions = (
 				Base,
 				en,
+				ar,
+				ca,
+				"zh-Hans",
+				"zh-Hant",
+				hr,
+				cs,
+				da,
+				nl,
+				"en-AU",
+				"en-GB",
+				"en-IN",
+				fi,
+				fr,
+				"fr-CA",
+				de,
+				el,
+				he,
+				hi,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nb,
+				pl,
+				"pt-BR",
+				"pt-PT",
+				ro,
+				ru,
+				sk,
+				es,
+				"es-419",
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
 			);
 			mainGroup = 62C912E6A13BBEE525E730CE;
 			minimizedProjectReferenceProxies = 1;
@@ -691,6 +735,7 @@
 			files = (
 				6170CDE69FD93E263E3D200C /* Assets.xcassets in Resources */,
 				CF36595BD78C6471862CCDFA /* Feeds in Resources */,
+				E914E397420D1E5534EA112B /* Localizable.xcstrings in Resources */,
 				F86FDF5CC907F00EE69C8792 /* algeria.opml in Resources */,
 				8D6B7DBEFF8A186C8E4680FF /* angola.opml in Resources */,
 				5EFA46FE94B54E925BFA5B32 /* apple.opml in Resources */,
@@ -851,6 +896,7 @@
 				D876A028082E2FA9FCCB4FB8 /* GreetingHeaderView.swift in Sources */,
 				998C7F92DD060F9E1469B2DC /* ImageCache.swift in Sources */,
 				4264B303EEFA1A6CCA309F13 /* ImagePrefetcher.swift in Sources */,
+				B6AE9E0F8C29F1AC810114C6 /* LocaleManager.swift in Sources */,
 				23C4092BA7D62055C738AC74 /* MiniPlayerBar.swift in Sources */,
 				166370F0A79604EB5EAE0E46 /* MomentCard.swift in Sources */,
 				25B573E6A77AB15CACA1579E /* MomentGreeting.swift in Sources */,
