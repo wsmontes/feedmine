@@ -901,6 +901,7 @@ final class FeedLoader {
 
         if !restoredFromFiltered.isEmpty {
             reservoir.append(contentsOf: restoredFromFiltered)
+            reservoir = interleave(reservoir)
         }
 
         // Top up visible items if removal depleted them
