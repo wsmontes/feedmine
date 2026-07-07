@@ -352,8 +352,8 @@ final class FeedLoader {
         guard !actualNew.isEmpty else { return }
         registerLoadedIDs(actualNew.map(\.id))
         totalFetched += batch.items.count
+        prefetchImagesIfNeeded(for: actualNew)
 
-        // Mark only these sources as fetched (updateSourceHealth marks ALL enabled)
         let now = Date()
         for src in sourcesArr {
             var h = sourceHealth[src.url] ?? SourceHealth()
