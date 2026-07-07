@@ -893,6 +893,9 @@ final class FeedLoader {
         }
         filteredOutItems = stillDisabled
         filteredOutItems.append(contentsOf: removedFromVisible)
+        if filteredOutItems.count > Self.maxReservoirSize {
+            filteredOutItems = Array(filteredOutItems.prefix(Self.maxReservoirSize))
+        }
 
         if !restoredFromFiltered.isEmpty {
             reservoir.append(contentsOf: restoredFromFiltered)
@@ -1153,8 +1156,15 @@ final class FeedLoader {
     /// Fetch fresh content in background while cached items are already displayed.
     /// New items are merged into the reservoir so they appear as the user scrolls.
     /// Does NOT touch loadingState — this is silent, no UI indication.
+    /// Caps at 200 sources per cycle; subsequent cycles rotate through remaining sources.
     private func fetchFreshContent() async {
-        let activeSources = enabledSources.shuffled()
+        var candidates = enabledSources.shuffled()
+        // Rotate: start from after the last-fetched batch
+        if let lastFetch = lastRefreshDate, candidates.count > 200 {
+            let offset = Int(lastFetch.timeIntervalSince1970) % max(1, candidates.count - 200)
+            candidates = Array(candidates[offset...] + candidates[..<offset])
+        }
+        let activeSources = Array(candidates.prefix(200))
         let chunkSize = 20
         var allFetched = 0
         var allFailed = 0
