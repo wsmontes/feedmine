@@ -58,11 +58,13 @@ struct FeedItemCardView: View {
                 Color.clear
                     .aspectRatio(16/9, contentMode: .fit)
                     .overlay {
-                        CachedAsyncImage(url: URL(string: (item.bestImageURL ?? item.imageURL)!), onResult: { success in
-                            if !success { imageLoadFailed = true }
-                        })
-                        .scaledToFill()
-                        .overlay(isRead ? Color.black.opacity(0.15) : nil)
+                        if let urlStr = item.bestImageURL ?? item.imageURL, let url = URL(string: urlStr) {
+                            CachedAsyncImage(url: url, onResult: { success in
+                                if !success { imageLoadFailed = true }
+                            })
+                            .scaledToFill()
+                            .overlay(isRead ? Color.black.opacity(0.15) : nil)
+                        }
                     }
                     .clipped()
                     .overlay(alignment: .topTrailing) {
@@ -138,10 +140,12 @@ struct FeedItemCardView: View {
                 Color.clear
                     .frame(width: 90, height: 90)
                     .overlay {
-                        CachedAsyncImage(url: URL(string: (item.bestImageURL ?? item.imageURL)!), onResult: { success in
-                            if !success { imageLoadFailed = true }
-                        })
-                        .scaledToFill()
+                        if let urlStr = item.bestImageURL ?? item.imageURL, let url = URL(string: urlStr) {
+                            CachedAsyncImage(url: url, onResult: { success in
+                                if !success { imageLoadFailed = true }
+                            })
+                            .scaledToFill()
+                        }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
