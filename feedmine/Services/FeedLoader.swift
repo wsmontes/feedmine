@@ -800,27 +800,36 @@ final class FeedLoader {
     /// from the full dataset (not just the visible buffer).
     private func rebuildForFilter() {
         filterVersion &+= 1
-        // Pool everything we have: visible items + reservoir + previously filtered-out
-        let allItems = items + reservoir + filteredOutItems
+        // Pool everything EXCEPT items from disabled regions.
+        // filteredOutItems contains both filter-excluded and region-disabled items;
+        // region-disabled items must stay out of the visible feed.
+        let sourceRegionMap: [String: String] = Dictionary(
+            sources.map { ($0.url, $0.region) },
+            uniquingKeysWith: { first, _ in first }
+        )
+        let regionEnabled: (FeedItem) -> Bool = { [self] item in
+            let region = sourceRegionMap[item.sourceURL] ?? "global"
+            return !disabledRegions.contains(region)
+        }
+        let pool = items + reservoir + filteredOutItems
+        var regionDisabled: [FeedItem] = []
+        let allItems = pool.filter { item in
+            if regionEnabled(item) { return true }
+            regionDisabled.append(item)
+            return false
+        }
 
         if hasActiveFilter {
-            // Build filter predicate
             let predicate: (FeedItem) -> Bool = { item in
                 let moodMatch = self.selectedMood == .all || self.selectedMood.matches(item.title)
                 let catMatch: Bool
                 if let cat = self.selectedCategory {
                     catMatch = item.category.lowercased() == cat.lowercased()
-                } else {
-                    catMatch = true
-                }
+                } else { catMatch = true }
                 let q = self.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
                 let searchMatch: Bool
-                if q.isEmpty {
-                    searchMatch = true
-                } else {
-                    searchMatch = item.title.localizedCaseInsensitiveContains(q)
-                        || item.excerpt.localizedCaseInsensitiveContains(q)
-                }
+                if q.isEmpty { searchMatch = true }
+                else { searchMatch = item.title.localizedCaseInsensitiveContains(q) || item.excerpt.localizedCaseInsensitiveContains(q) }
                 let typeMatch = self.selectedContentType == .all || self.selectedContentType.matches(item)
                 return moodMatch && catMatch && searchMatch && typeMatch
             }
@@ -831,20 +840,18 @@ final class FeedLoader {
                 if predicate(item) { matching.append(item) } else { nonMatching.append(item) }
             }
 
-            // Show first pageSize matches, rest go to reservoir
             let w = min(Self.pageSize, matching.count)
             items = Array(matching.prefix(w))
             reservoir = Array(matching.dropFirst(w))
             capReservoir()
-            filteredOutItems = nonMatching
+            filteredOutItems = nonMatching + regionDisabled
         } else {
-            // Filter cleared: merge everything back, re-interleave for category variety
             let merged = interleave(allItems)
             let w = min(Self.pageSize, merged.count)
             items = Array(merged.prefix(w))
             reservoir = Array(merged.dropFirst(w))
             capReservoir()
-            filteredOutItems = []
+            filteredOutItems = regionDisabled
         }
 
         reservoirCount = reservoir.count
