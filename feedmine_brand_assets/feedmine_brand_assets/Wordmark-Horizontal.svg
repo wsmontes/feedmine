@@ -1,0 +1,15 @@
+<svg width="1800" height="520" viewBox="0 0 1800 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+<linearGradient id="fmGradientWM" x1="70" y1="140" x2="410" y2="360" gradientUnits="userSpaceOnUse">
+  <stop offset="0%" stop-color="#FFB238"/>
+  <stop offset="52%" stop-color="#FF7A45"/>
+  <stop offset="100%" stop-color="#E8483C"/>
+</linearGradient>
+</defs>
+  
+  <path d="M135 235 L207 337 L285 193 L369 337 L447 206 L506 278" stroke="url(#fmGradientWM)" stroke-width="70" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="540" cy="160" r="32" fill="#E8483C"/>
+  <text x="620" y="290" font-family="Poppins" font-size="150" font-weight="bold" fill="#141C2A">feed</text>
+  <text x="990" y="290" font-family="Poppins" font-size="150" font-weight="bold" fill="#E8483C">mine</text>
+  <text x="620" y="370" font-family="Poppins" font-size="42" font-weight="400" fill="#5E6473">Your Reading Companion</text>
+</svg>

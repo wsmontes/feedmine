@@ -880,6 +880,7 @@ final class FeedLoader {
         let parseResult = await OPMLParser.parseAll()
         sources = parseResult.sources
         opmlFileCount = parseResult.fileCount
+        print("[FeedLoader] Sources loaded: \(sources.count) total, \(availableCountries.count) countries")
         opmlErrorCount = parseResult.failedFileCount
         invalidSourceCount = parseResult.invalidSourceCount
         duplicateSourceCount = parseResult.duplicateSourceCount

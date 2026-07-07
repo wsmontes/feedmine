@@ -1,0 +1,238 @@
+<h2>MomentCard · Motor de Frases</h2>
+<p class="subtitle">Nada de gradiente, nada de weather, nada de dados externos. Só texto, New York, e inteligência sobre o que o app já sabe.</p>
+
+<!-- Visual: what it looks like -->
+<div class="mockup" style="margin-bottom:20px;">
+  <div class="mockup-header">Como aparece no feed · Manhã · Warm Earth</div>
+  <div class="mockup-body" style="padding:20px 16px;background:#FAF8F5;">
+    <div style="font-family:'New York','Georgia',serif;font-size:22px;font-weight:600;color:#1C1B1A;line-height:1.35;margin-bottom:4px;">
+      Good morning. 34 new stories, 12 from sources you trust.
+    </div>
+    <div style="font-family:system-ui;font-size:12px;color:#D4874B;margin-top:4px;">Weekday routine ☕ · 3-day streak</div>
+    <div style="margin-top:12px;padding-top:12px;border-top:1px solid #E8E4DF;display:flex;gap:24px;">
+      <div><span style="font-size:10px;color:#9E9790;font-family:system-ui;text-transform:uppercase;letter-spacing:0.5px;">Style</span><br><span style="font-size:12px;color:#1C1B1A;font-family:system-ui;">New York 22pt · text only</span></div>
+      <div><span style="font-size:10px;color:#9E9790;font-family:system-ui;text-transform:uppercase;letter-spacing:0.5px;">Data</span><br><span style="font-size:12px;color:#1C1B1A;font-family:system-ui;">Interna do app apenas</span></div>
+      <div><span style="font-size:10px;color:#9E9790;font-family:system-ui;text-transform:uppercase;letter-spacing:0.5px;">Freq</span><br><span style="font-size:12px;color:#1C1B1A;font-family:system-ui;">Atualiza a cada 30s</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Data sources -->
+<h3>Dados que o Motor Usa</h3>
+<p class="subtitle">Tudo interno. Nada de API externa. Informação que o FeedLoader e AppContext já têm.</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px; margin-bottom:20px;">
+  <div style="background:#FFF;border-radius:10px;padding:14px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">⏰ Tempo</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.5;">Hora · minuto · timeOfDay · weekday · weekend · month · season · specialDate · holiday</div>
+  </div>
+  <div style="background:#FFF;border-radius:10px;padding:14px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">📰 Feed</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.5;">totalItems · unreadCount · sourceCount · podcastCount · youtubeCount · newSinceLastOpen · topCategories (3) · lastRefreshDate</div>
+  </div>
+  <div style="background:#FFF;border-radius:10px;padding:14px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">👤 Leitura</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.5;">readCount · bookmarkCount · streakDays · articlesThisSession · readingPace · sessionMinutes</div>
+  </div>
+  <div style="background:#FFF;border-radius:10px;padding:14px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">🔄 Padrões</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.5;">routineMatch · avgOpeningHour · daysWithApp · isFirstOpenToday · isWeekendReader · isNightOwl · topReadingHour</div>
+  </div>
+</div>
+
+<!-- The template system -->
+<h3>Tipos de Slot</h3>
+<p class="subtitle">Cada slot é uma função que retorna texto baseado em dados. Podem ser combinados livremente.</p>
+
+<div style="overflow-x:auto;">
+  <table style="width:100%;border-collapse:collapse;font-family:system-ui;font-size:12px;">
+    <thead>
+      <tr style="border-bottom:2px solid #E8E4DF;color:#6B6560;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;">
+        <th style="text-align:left;padding:8px;">Slot</th>
+        <th style="text-align:left;padding:8px;">Tipo</th>
+        <th style="text-align:left;padding:8px;">Exemplos de saída</th>
+        <th style="text-align:left;padding:8px;">Variações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[greeting]</td><td style="padding:8px;">Time</td><td style="padding:8px;color:#1C1B1A;">Good morning · It's early · Late night · Afternoon · Almost dawn · Good evening</td><td style="padding:8px;color:#9E9790;">12</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[weekday]</td><td style="padding:8px;">Calendar</td><td style="padding:8px;color:#1C1B1A;">Monday — fresh start · Midweek already · Friday's here · Lazy Sunday · Saturday unwind</td><td style="padding:8px;color:#9E9790;">14</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[season]</td><td style="padding:8px;">Calendar</td><td style="padding:8px;color:#1C1B1A;">Spring light · Summer days · Autumn crisp · Winter cozy · Holiday season</td><td style="padding:8px;color:#9E9790;">10</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[count]</td><td style="padding:8px;">Feed</td><td style="padding:8px;color:#1C1B1A;">34 new stories · 12 articles waiting · 8 sources active · A full inbox · Just a few things</td><td style="padding:8px;color:#9E9790;">15</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[sources]</td><td style="padding:8px;">Feed</td><td style="padding:8px;color:#1C1B1A;">from sources you trust · across 12 publications · from your favorite voices · spanning tech, science, design</td><td style="padding:8px;color:#9E9790;">12</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[streak]</td><td style="padding:8px;">Reading</td><td style="padding:8px;color:#1C1B1A;">3-day streak 🔥 · First time today · You're on a roll · Welcome back · 7-day streak!</td><td style="padding:8px;color:#9E9790;">10</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[session]</td><td style="padding:8px;">Reading</td><td style="padding:8px;color:#1C1B1A;">Just opened · A few minutes in · 12 min reading · Settling in · Deep in the zone · 45 min — maybe stretch?</td><td style="padding:8px;color:#9E9790;">14</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[pace]</td><td style="padding:8px;">Reading</td><td style="padding:8px;color:#1C1B1A;">Quick scan today · Taking your time · Speed-reading · Deep dive mode · Skimming through</td><td style="padding:8px;color:#9E9790;">8</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[routine]</td><td style="padding:8px;">Pattern</td><td style="padding:8px;color:#1C1B1A;">Right on schedule · Unusual time for you · Your morning ritual · Night owl hours · Weekend reader</td><td style="padding:8px;color:#9E9790;">10</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[content]</td><td style="padding:8px;">Feed</td><td style="padding:8px;color:#1C1B1A;">Mostly tech today · Design-heavy feed · Lots of science · A podcast-heavy morning · Mixed bag</td><td style="padding:8px;color:#9E9790;">12</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[special]</td><td style="padding:8px;">Calendar</td><td style="padding:8px;color:#1C1B1A;">Happy 4th of July 🇺🇸 · Valentine's — treat yourself · New Year's Eve · Almost Christmas</td><td style="padding:8px;color:#9E9790;">18</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[podcast]</td><td style="padding:8px;">Feed</td><td style="padding:8px;color:#1C1B1A;">3 podcasts ready · 🎧 A new episode from your favorites · Queue up some listening</td><td style="padding:8px;color:#9E9790;">8</td></tr>
+      <tr style="border-bottom:1px solid #E8E4DF;"><td style="padding:8px;font-weight:600;">[bookmarks]</td><td style="padding:8px;">Reading</td><td style="padding:8px;color:#1C1B1A;">5 saved to read later · Your bookmarks are piling up · Nothing saved yet today · 12 waiting in bookmarks</td><td style="padding:8px;color:#9E9790;">8</td></tr>
+      <tr><td style="padding:8px;font-weight:600;">[tone]</td><td style="padding:8px;">Atmosphere</td><td style="padding:8px;color:#1C1B1A;">Take your time · The world can wait · No rush · Let's see what's happening · Nothing urgent · Just interesting things</td><td style="padding:8px;color:#9E9790;">12</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Template examples grouped by intent -->
+<h3 style="margin-top:24px;">60+ Templates — Agrupados por Intenção</h3>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:14px; margin-top:12px;">
+  <div style="background:#FFF;border-radius:12px;padding:16px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">☀️ Bom dia / Abertura (10)</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.6;">
+      1. [greeting]. [count], [sources].<br>
+      2. [weekday]. [count] — let's see what the world's up to.<br>
+      3. [greeting]! [season] light, [count] waiting.<br>
+      4. [weekday]. The coffee's hot, [count].<br>
+      5. [greeting]. [routine] — [count].<br>
+      6. [season] morning. [count], [tone].<br>
+      7. [greeting]. [streak]. [count] to catch up on.<br>
+      8. [weekday]. [sources], [count].<br>
+      9. [greeting]! [content]. [tone].<br>
+      10. [weekday]. [count]. [tone] — here's what matters.
+    </div>
+  </div>
+  <div style="background:#FFF;border-radius:12px;padding:16px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">📖 Leitura / Ritmo (10)</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.6;">
+      11. [session]. [count] later, you're [pace].<br>
+      12. [pace] today. [count] — [tone].<br>
+      13. [session] into your reading. [streak] 🔥<br>
+      14. [bookmarks]. [count] new — [tone].<br>
+      15. [pace]. [sources]. [streak].<br>
+      16. [session]. [count] more won't hurt.<br>
+      17. You've read [readCount] articles here. [count] today.<br>
+      18. [routine]. [pace] — your usual rhythm.<br>
+      19. First read of the day? [count]. [tone].<br>
+      20. [session] deep. Your brain says thanks.
+    </div>
+  </div>
+  <div style="background:#FFF;border-radius:12px;padding:16px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🌙 Noite / Quietude (8)</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.6;">
+      21. Late night. [count]. [tone].<br>
+      22. [greeting]. Insomnia? [count] — gentle reads only.<br>
+      23. Quiet hours. [count], no rush.<br>
+      24. Almost tomorrow. [count] before sleep?<br>
+      25. [greeting]. [routine] — the night reader's club.<br>
+      26. [season] night. [count], [tone].<br>
+      27. Burning the midnight oil? [session].<br>
+      28. The world's asleep. [count] for you.
+    </div>
+  </div>
+  <div style="background:#FFF;border-radius:12px;padding:16px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🎧 Podcast / Mídia (8)</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.6;">
+      29. [greeting]. [podcast] and [count] to read.<br>
+      30. [podcast]. [sources] — eyes or ears, your call.<br>
+      31. Queue up: [podcast] + [count].<br>
+      32. [weekday]. [podcast] for your commute.<br>
+      33. Listening mode? [podcast]. Reading mode? [count].<br>
+      34. [count] to read, [podcast] — full plate.<br>
+      35. New episodes. [podcast]. [tone].<br>
+      36. 🎧 + 📖 = [podcast] + [count]
+    </div>
+  </div>
+  <div style="background:#FFF;border-radius:12px;padding:16px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🎯 Streak & Hábito (8)</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.6;">
+      37. [streak]! [count] for you today.<br>
+      38. [daysWithApp] days with Feedmine. [count] today.<br>
+      39. [routine]. You've been here [daysWithApp] days.<br>
+      40. [streak]. [weekday] — keeping the habit alive.<br>
+      41. [routine]. [pace] at your usual hour.<br>
+      42. First time this early? [count]. Mixing it up!<br>
+      43. [streak]. Consistency is the superpower.<br>
+      44. You're a [topReadingHour] reader. [count].
+    </div>
+  </div>
+  <div style="background:#FFF;border-radius:12px;padding:16px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🎄 Datas especiais (8)</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.6;">
+      45. [special]! [count] — [tone].<br>
+      46. [greeting]. [special]. [count] for the holiday.<br>
+      47. [special] — no rush today. [count] when you're ready.<br>
+      48. [season]. [special] is here. [tone].<br>
+      49. Happy [special]! [count] if you feel like it.<br>
+      50. [special] reading. [count].<br>
+      51. Almost [special]. [count] to wrap up the week.<br>
+      52. [special] vibes. [count], [tone].
+    </div>
+  </div>
+  <div style="background:#FFF;border-radius:12px;padding:16px;border:1px solid #E8E4DF;">
+    <div style="font-size:10px;color:#D4874B;font-family:system-ui;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">💬 Tom Leve / Voz Própria (8)</div>
+    <div style="font-family:system-ui;font-size:12px;color:#1C1B1A;line-height:1.6;">
+      53. You again. [session]. We're flattered, honestly.<br>
+      54. [count] articles. The algorithm can't replicate this.<br>
+      55. [greeting]! [content] — we know you.<br>
+      56. No algorithm. No ads. Just [count] from [sourceCount] sources.<br>
+      57. [weekday]. The internet is loud. This isn't.<br>
+      58. [greeting]. [tone]. Seriously — nothing urgent here.<br>
+      59. Feedmine doesn't know everything. But it knows [count] things.<br>
+      60. [count] stories, zero notifications. You're welcome.
+    </div>
+  </div>
+</div>
+
+<!-- Selection logic -->
+<h3 style="margin-top:24px;">Lógica de Seleção</h3>
+<div class="mockup">
+  <div class="mockup-body" style="padding:16px;background:#FAF8F5;font-family:system-ui;font-size:13px;color:#1C1B1A;line-height:1.7;">
+    <strong>1. Prioridade por contexto:</strong><br>
+    &nbsp;&nbsp;🟢 Special date ativa → grupo [special] (8 templates)<br>
+    &nbsp;&nbsp;🟢 Night (21-5h) → grupo [noite] (8 templates)<br>
+    &nbsp;&nbsp;🟢 Dawn (5-8h) / Morning (8-12h) → grupo [abertura] (10 templates)<br>
+    &nbsp;&nbsp;🟢 Session > 20 min → grupo [leitura] (10 templates)<br>
+    &nbsp;&nbsp;🟢 Podcasts disponíveis → grupo [podcast] (8 templates)<br>
+    &nbsp;&nbsp;🟢 Streak > 3 dias → grupo [streak] (8 templates)<br>
+    &nbsp;&nbsp;🟢 Fallback → grupo [tom leve] (8 templates)<br><br>
+    <strong>2. Preenche slots:</strong> avalia quais dados estão disponíveis, remove slots sem dados<br><br>
+    <strong>3. Escore por completude:</strong> templates com mais slots preenchidos ganham prioridade<br><br>
+    <strong>4. Randomização entre top 3:</strong> evita repetição. Com 60+ templates, combinações são enormes<br><br>
+    <strong>5. Anti-repetição:</strong> nunca repete o mesmo template em menos de 2 horas<br><br>
+    <strong>6. Refresh:</strong> reavalia a cada 30 segundos (já existe hoje). Muda quando o contexto mudar (hora vira, contagem sobe, etc.)
+  </div>
+</div>
+
+<!-- Comparison: current vs proposed -->
+<div style="margin-top:20px;">
+  <h3>Antes e Depois — Mesmo App, Outra Voz</h3>
+  <div class="split">
+    <div class="mockup">
+      <div class="mockup-header">Hoje</div>
+      <div class="mockup-body" style="padding:16px;background:#FAF8F5;">
+        <div style="font-family:system-ui;font-size:14px;color:#9E9790;">Good morning. 34 unread, 12 sources active. Updated 2 min ago.</div>
+      </div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">Proposto</div>
+      <div class="mockup-body" style="padding:16px;background:#FAF8F5;">
+        <div style="font-family:'New York',serif;font-size:20px;font-weight:600;color:#1C1B1A;line-height:1.35;">Wednesday already. 34 new stories, mostly tech and science. Take your time.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="options" style="margin-top:20px;">
+  <div class="option" data-choice="approved" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>Motor de frases aprovado</h3>
+      <p>60+ templates, 14 tipos de slot, dados internos apenas. New York 20-22pt, texto simples, sem enfeite visual.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="more-casual" onclick="toggleSelect(this)">
+    <div class="letter">💬</div>
+    <div class="content">
+      <h3>Tom mais casual ainda</h3>
+      <p>Mais "você", menos formal. Frases como "E aí, 34 coisas novas. Umas boas, outras nem tanto."</p>
+    </div>
+  </div>
+  <div class="option" data-choice="shorter" onclick="toggleSelect(this)">
+    <div class="letter">⏤</div>
+    <div class="content">
+      <h3>Mais curto</h3>
+      <p>Máximo 1-2 slots por template. "Morning. 34 new." em vez de frases elaboradas.</p>
+    </div>
+  </div>
+</div>
