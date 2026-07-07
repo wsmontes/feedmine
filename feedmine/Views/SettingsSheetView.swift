@@ -180,6 +180,10 @@ struct SettingsSheetView: View {
                                 loader.readItemIDs.removeAll()
                                 loader.bookmarkedIDs.removeAll()
                                 loader.disabledSourceIDs.removeAll()
+                                loader.disabledRegions.removeAll()
+                                // Re-apply default: all countries off
+                                let allCountryRegions = Set(loader.sources.filter { $0.isCountryFeed }.map(\.region))
+                                loader.disabledRegions.formUnion(allCountryRegions)
                                 PersistenceManager.shared.save(loader.buildState())
                             }
                         }
