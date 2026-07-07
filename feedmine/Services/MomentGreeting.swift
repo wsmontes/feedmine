@@ -12,7 +12,7 @@ struct MomentGreeting {
         let slots = fillSlots(ctx, loader: loader)
         let candidates = buildCandidates(slots: slots)
         let pick = selectFrom(candidates)
-        let fallback = "\(slots["greeting"] ?? String(localized: "Hello", comment: "Fallback greeting")). \(String(localized: "Here's what's new.", comment: "Fallback subtext"))"
+        let fallback = "\(slots["greeting"] ?? String(localized: "Hello", comment: "Fallback greeting")). \(slots["count"] ?? String(localized: "Here's what's new.", comment: "Fallback subtext"))"
         let raw = pick ?? fallback
         let cleaned = cleanUnfilledSlots(raw)
         let trimmed = cleaned.trimmingCharacters(in: .whitespaces)
@@ -461,108 +461,105 @@ struct MomentGreeting {
         // Priority 0: Special dates
         if !(slots["special"]?.isEmpty ?? true) {
             groups.append(TemplateGroup(name: "special", priority: 0, templates: [
-                "[special] [count] — [tone].",
-                "[greeting]. [special]. [count] for the holiday.",
-                "[special] — no rush today. [count] when you're ready.",
-                "[season]. [special] is here. [tone].",
-                "[special]! [count] if you feel like it.",
-                "[special] reading. [count].",
-                "Almost [special]. [count] to wrap up the week.",
-                "[special] vibes. [count], [tone].",
+                "[special]. [count] · [tone]",
+                "[greeting]. [special]. [count] · [tone]",
+                "[special] · [count] · [tone]",
+                "[season]. [special]. [tone]",
+                "[special]! [count]",
+                "[special]. [count] · [sources]",
+                "[greeting]. [special] · [count]",
+                "[special]. [count], [tone]",
             ]))
         }
 
-        // Priority 1: Night / late night
-        if slots["greeting"]?.contains("Late") == true || slots["greeting"]?.contains("night") == true || slots["greeting"]?.contains("midnight") == true || slots["greeting"]?.contains("asleep") == true || slots["greeting"]?.contains("owl") == true {
+        // Priority 1: Night / late night — check time of day, not translated text
+        let tod = AppContext.shared.timeOfDay
+        if tod == .night || tod == .lateNight {
             groups.append(TemplateGroup(name: "night", priority: 1, templates: [
-                "[greeting]. [count]. [tone].",
-                "[greeting]. Insomnia? [count] — gentle reads only.",
-                "Quiet hours. [count], no rush.",
-                "Almost tomorrow. [count] before sleep?",
-                "[greeting]. [routine] — the night reader's club.",
-                "[season] night. [count], [tone].",
-                "Burning the midnight oil? [session].",
-                "The world's asleep. [count] for you.",
+                "[greeting]. [count]. [tone]",
+                "[greeting]. [count] · [tone]",
+                "[greeting]. [routine] · [count]",
+                "[season] · [greeting]. [count], [tone]",
+                "[greeting]. [session]",
             ]))
         }
 
         // Priority 2: Morning / dawn greeting
         groups.append(TemplateGroup(name: "opening", priority: 2, templates: [
-            "[greeting]. [count], [sources].",
-            "[weekday]. [count] — let's see what the world's up to.",
-            "[greeting]! [season] light, [count] waiting.",
-            "[weekday]. The coffee's hot, [count].",
-            "[greeting]. [routine] — [count].",
-            "[season] morning. [count], [tone].",
-            "[greeting]. [streak]. [count] to catch up on.",
-            "[weekday]. [sources], [count].",
-            "[greeting]! [content]. [tone].",
-            "[weekday]. [count]. [tone] — here's what matters.",
+            "[greeting]. [count], [sources]",
+            "[weekday]. [count] · [sources]",
+            "[greeting]! [count] · [tone]",
+            "[weekday]. [count] · [tone]",
+            "[greeting]. [routine] · [count]",
+            "[season] · [count], [tone]",
+            "[greeting]. [streak]. [count]",
+            "[weekday]. [sources], [count]",
+            "[greeting]! [content]. [tone]",
+            "[weekday]. [count]. [tone]",
         ]))
 
         // Priority 3: Deep session / reading pace
         if !(slots["session"]?.isEmpty ?? true) {
             groups.append(TemplateGroup(name: "reading", priority: 3, templates: [
-                "[session]. [count] later, you're [pace].",
-                "[pace]. [count] — [tone].",
-                "[session] into your reading. [streak]",
-                "[bookmarks]. [count] new — [tone].",
-                "[pace]. [sources]. [streak].",
-                "[session]. [count] more won't hurt.",
-                "[routine]. [pace] — your usual rhythm.",
-                "First read of the day? [count]. [tone].",
-                "[session] deep. Your brain says thanks.",
-                "[session]. Just checking in.",
+                "[session]. [pace] · [tone]",
+                "[pace]. [count] · [tone]",
+                "[session]. [streak]",
+                "[bookmarks]. [count] · [tone]",
+                "[pace]. [sources]. [streak]",
+                "[session]. [count] · [tone]",
+                "[routine]. [pace] · [count]",
+                "[count]. [tone]",
+                "[session] · [count]",
+                "[session]. [tone]",
             ]))
         }
 
         // Priority 4: Podcasts
         if !(slots["podcast"]?.isEmpty ?? true) {
             groups.append(TemplateGroup(name: "podcast", priority: 4, templates: [
-                "[greeting]. [podcast] and [count] to read.",
-                "[podcast]. [sources] — eyes or ears, your call.",
-                "Queue up: [podcast] + [count].",
-                "[weekday]. [podcast] for your commute.",
-                "Listening mode? [podcast]. Reading mode? [count].",
-                "[count] to read, [podcast] — full plate.",
-                "New episodes. [podcast]. [tone].",
-                "🎧 + 📖 = [podcast] + [count]",
+                "[greeting]. [podcast] · [count]",
+                "[podcast]. [sources] · [count]",
+                "[podcast] + [count]",
+                "[weekday]. [podcast] · [count]",
+                "[podcast] · [count] · [tone]",
+                "[count], [podcast]",
+                "[podcast]. [tone]",
+                "🎧 [podcast] + 📖 [count]",
             ]))
         }
 
         // Priority 5: Streaks
         if !(slots["streak"]?.isEmpty ?? true) {
             groups.append(TemplateGroup(name: "streak", priority: 5, templates: [
-                "[streak]! [count] for you today.",
-                "[routine]. [streak].",
-                "[greeting]. [streak]. [count].",
-                "[streak]. [weekday] — keeping the habit alive.",
-                "[routine]. [pace] at your usual hour.",
-                "First time this early? [count]. Mixing it up!",
-                "[streak]. Consistency is the superpower.",
-                "[streak]. [tone].",
+                "[streak]! [count] · [tone]",
+                "[routine]. [streak]",
+                "[greeting]. [streak]. [count]",
+                "[streak]. [weekday] · [count]",
+                "[routine]. [pace] · [count]",
+                "[streak]. [tone]",
+                "[streak]. [sources], [count]",
             ]))
         }
 
         // Priority 6: Playful / voice
         groups.append(TemplateGroup(name: "voice", priority: 6, templates: [
-            "You again. [session]. We're flattered, honestly.",
-            "[count] articles. The algorithm can't replicate this.",
-            "[greeting]! [content] — we know you.",
-            "No algorithm. No ads. Just [count] from [sources].",
-            "[weekday]. The internet is loud. This isn't.",
-            "[greeting]. [tone]. Seriously — nothing urgent here.",
-            "Feedmine doesn't know everything. But it knows [count] things.",
-            "[count] stories, zero notifications. You're welcome.",
+            "[greeting]! [content] · [tone]",
+            "[count]. [sources]. [tone]",
+            "[weekday]. [tone] · [count]",
+            "[greeting]. [count]. [tone]",
+            "[count] · [sources] · [tone]",
+            "[greeting]! [count] · [sources]",
+            "[greeting]. [content] · [count]",
+            "[count] · [tone]",
         ]))
 
         // Priority 7: Fallback — always available
         groups.append(TemplateGroup(name: "fallback", priority: 7, templates: [
-            "[greeting]. [count].",
-            "[greeting]. Here's what's new.",
-            "[greeting]. [weekday]. [count].",
-            "[greeting]. Nothing urgent, just interesting.",
-            "[greeting]. [season]. [count].",
+            "[greeting]. [count]",
+            "[greeting]. [count] · [tone]",
+            "[greeting]. [weekday]. [count]",
+            "[greeting]. [tone]",
+            "[greeting]. [season]. [count]",
         ]))
 
         return groups

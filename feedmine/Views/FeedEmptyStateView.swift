@@ -79,23 +79,23 @@ struct FeedEmptyStateView: View {
 
     private var title: String {
         if loader.loadingState == .initial {
-            return "Loading your feed..."
+            return String(localized: "Loading your feed...", comment: "Empty state title")
         } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
-            return "Couldn't load feeds"
+            return String(localized: "Couldn't load feeds", comment: "Empty state title")
         } else if loader.sources.isEmpty {
-            return "No sources found"
+            return String(localized: "No sources found", comment: "Empty state title")
         } else {
-            return "No articles yet"
+            return String(localized: "No articles yet", comment: "Empty state title")
         }
     }
 
     private var description: String {
         if loader.loadingState == .initial {
-            return "Fetching articles from \(loader.sourceCount) sources."
+            return String(localized: "Fetching articles from \(loader.sourceCount) sources.", comment: "Empty state description")
         } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
-            return "All \(loader.fetchErrorCount) sources failed to load. Check your internet connection and pull to refresh."
+            return String(localized: "All \(loader.fetchErrorCount) sources failed to load. Check your internet connection and pull to refresh.", comment: "Empty state description")
         } else if loader.sources.isEmpty {
-            return "Add .opml files to the Resources/Feeds folder in Xcode and rebuild the app."
+            return String(localized: "Add .opml files to the Resources/Feeds folder in Xcode and rebuild the app.", comment: "Empty state description")
         } else {
             return circadianNoArticlesMessage
         }
@@ -103,11 +103,11 @@ struct FeedEmptyStateView: View {
 
     private var circadianNoArticlesMessage: String {
         switch engine.period {
-        case .dawn:    return "The world's still quiet. Stories are on their way."
-        case .morning: return "Nothing here yet. Good time to add a source?"
-        case .afternoon: return "All caught up. Quick and clean."
-        case .evening: return "All caught up. These are worth the slow read — come back soon."
-        case .night:   return "All caught up. Sleep well. The news will be here tomorrow."
+        case .dawn:    return String(localized: "The world's still quiet. Stories are on their way.", comment: "Empty state — dawn")
+        case .morning: return String(localized: "Nothing here yet. Good time to add a source?", comment: "Empty state — morning")
+        case .afternoon: return String(localized: "All caught up. Quick and clean.", comment: "Empty state — afternoon")
+        case .evening: return String(localized: "All caught up. These are worth the slow read — come back soon.", comment: "Empty state — evening")
+        case .night:   return String(localized: "All caught up. Sleep well. The news will be here tomorrow.", comment: "Empty state — night")
         }
     }
 
