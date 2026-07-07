@@ -981,13 +981,6 @@ final class FeedLoader {
     func refreshIfStale() async {
         guard !sources.isEmpty else { return }
 
-        // Only re-interleave reservoir (not visible items!) for variety when user loads more
-        if !reservoir.isEmpty {
-            reservoir = interleave(reservoir)
-            capReservoir()
-            reservoirCount = reservoir.count
-        }
-
         // Fetch new content in background
         let shouldFetch: Bool
         if let last = lastRefreshDate {
@@ -995,6 +988,15 @@ final class FeedLoader {
         } else {
             shouldFetch = true
         }
+
+        // Only re-interleave reservoir if we're actually fetching new content.
+        // No point in O(n) work on the main actor just for a quick app switch.
+        if shouldFetch && !reservoir.isEmpty {
+            reservoir = interleave(reservoir)
+            capReservoir()
+            reservoirCount = reservoir.count
+        }
+
         guard shouldFetch else { return }
         await fetchFreshContent()
         PersistenceManager.shared.save(buildStateWithItems())

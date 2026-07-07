@@ -65,19 +65,32 @@ final class PersistenceManager {
 
     func save(_ state: FeedState) {
         saveTask?.cancel()
-        saveTask = Task {
+        let captured = state
+        let maxAge = Self.maxReadAge
+        saveTask = Task.detached(priority: .background) { [mainURL, backupURL] in
             try? await Task.sleep(for: .milliseconds(300))
             guard !Task.isCancelled else { return }
 
-            var cleaned = state
-            autoCleanup(&cleaned)
+            var cleaned = captured
+            let cutoff = Date().addingTimeInterval(-maxAge)
+            let staleIDs = cleaned.readTimestamps.filter { $0.value < cutoff }.map(\.key)
+            if !staleIDs.isEmpty {
+                cleaned.readItemIDs.removeAll { staleIDs.contains($0) }
+                cleaned.readTimestamps = cleaned.readTimestamps.filter { $0.value >= cutoff }
+            }
 
             if FileManager.default.fileExists(atPath: mainURL.path) {
                 try? FileManager.default.removeItem(at: backupURL)
                 try? FileManager.default.copyItem(at: mainURL, to: backupURL)
             }
 
-            trySaveCompressed(cleaned, to: mainURL)
+            guard cleaned.readItemIDs.count >= 0,
+                  cleaned.bookmarkedIDs.count >= 0,
+                  cleaned.disabledSourceIDs.count >= 0,
+                  cleaned.sources.count >= 0 else { return }
+            guard let raw = try? JSONEncoder().encode(cleaned) else { return }
+            let data = raw.compress() ?? raw
+            try? data.write(to: mainURL, options: .atomic)
         }
     }
 
