@@ -760,44 +760,39 @@ final class FeedLoader {
     /// Second-pass spread: avoid consecutive slots from the same country.
     /// Uses a greedy swap — when two adjacent slots share a country, swap the
     /// second with the nearest later slot from a different country.
+    /// Multi-pass greedy spread: avoids consecutive same-country slots.
+    /// Runs up to 3 passes to catch adjacencies created by earlier swaps.
     private func spreadSlotsByCountry(_ slots: [String]) -> [String] {
         guard slots.count > 2 else { return slots }
 
-        // Lazy source→country map
         let sourceCountry: [String: String] = Dictionary(
             sources.map { ($0.url, $0.region) },
             uniquingKeysWith: { first, _ in first }
         )
 
         var result = slots
-        for i in 0..<(result.count - 1) {
-            let a = result[i]
-            let b = result[i + 1]
-            let countryA = sourceCountry[a] ?? "global"
-            let countryB = sourceCountry[b] ?? "global"
-            guard countryA == countryB else { continue }
+        var pass = 0
+        var swapped = true
+        while swapped && pass < 3 {
+            swapped = false; pass += 1
+            for i in 0..<(result.count - 1) {
+                let countryA = sourceCountry[result[i]] ?? "global"
+                let countryB = sourceCountry[result[i + 1]] ?? "global"
+                guard countryA == countryB else { continue }
 
-            // Find the nearest later slot from a different country to swap with
-            var swapIdx: Int?
-            for j in (i + 2)..<result.count {
-                let countryJ = sourceCountry[result[j]] ?? "global"
-                if countryJ != countryA {
-                    swapIdx = j
-                    break
+                var swapIdx: Int?
+                for j in (i + 2)..<result.count {
+                    if (sourceCountry[result[j]] ?? "global") != countryA { swapIdx = j; break }
                 }
-            }
-            // Also try looking backward (before i)
-            if swapIdx == nil {
-                for j in stride(from: i - 1, through: 0, by: -1) {
-                    let countryJ = sourceCountry[result[j]] ?? "global"
-                    if countryJ != countryA {
-                        swapIdx = j
-                        break
+                if swapIdx == nil {
+                    for j in stride(from: i - 1, through: 0, by: -1) {
+                        if (sourceCountry[result[j]] ?? "global") != countryA { swapIdx = j; break }
                     }
                 }
-            }
-            if let j = swapIdx {
-                result.swapAt(i + 1, j)
+                if let j = swapIdx {
+                    result.swapAt(i + 1, j)
+                    swapped = true
+                }
             }
         }
         return result
@@ -966,6 +961,7 @@ final class FeedLoader {
         items.removeAll()
         currentVisibleIndex = 0
         reservoir = interleave(reservoir)
+        capReservoir()
         let w = min(Self.pageSize, reservoir.count)
         items = Array(reservoir.prefix(w))
         reservoir.removeFirst(w)
