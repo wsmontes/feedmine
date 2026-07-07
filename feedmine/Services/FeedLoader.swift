@@ -341,13 +341,13 @@ final class FeedLoader {
         registerLoadedIDs(actualNew.map(\.id))
         totalFetched += batch.items.count
 
-        // Merge through the same pipeline as fetchFreshContent
+        // Merge into reservoir — don't touch visible items or bump
+        // itemVersion (no visible change = no UI re-render needed).
         reservoir.append(contentsOf: actualNew)
         reservoir = interleave(reservoir)
         capReservoir()
         reservoirCount = reservoir.count
         whatsNewVersion &+= 1
-        itemVersion += 1
 
         PersistenceManager.shared.save(buildStateWithItems())
     }
@@ -797,39 +797,27 @@ final class FeedLoader {
         markAsSurfaced(items)
     }
 
-    /// Rebuild the visible feed immediately when regions are toggled.
-    /// Items from disabled regions move to filteredOutItems and come back
-    /// when the region is re-enabled — same as other filters.
+    /// Remove items from disabled regions immediately. Preserves scroll
+    /// position — no re-interleave, just surgical removal.
     private func rebuildAfterRegionToggle() {
-        // Map source URLs to their region for quick lookup
         let sourceRegionMap: [String: String] = Dictionary(
             sources.map { ($0.url, $0.region) },
             uniquingKeysWith: { first, _ in first }
         )
 
-        // Pool everything
-        let allItems = items + reservoir + filteredOutItems
-        var enabled: [FeedItem] = []
-        var disabled: [FeedItem] = []
-
-        for item in allItems {
+        let isDisabled: (FeedItem) -> Bool = { [self] item in
             let region = sourceRegionMap[item.sourceURL] ?? "global"
-            if disabledRegions.contains(region) {
-                disabled.append(item)
-            } else {
-                enabled.append(item)
-            }
+            return disabledRegions.contains(region)
         }
 
-        let interleaved = interleave(enabled)
-        let w = min(Self.pageSize, interleaved.count)
-        items = Array(interleaved.prefix(w))
-        reservoir = Array(interleaved.dropFirst(w))
-        capReservoir()
-        filteredOutItems = disabled
+        // Filter visible items and reservoir in-place — no reorder
+        let removed = items.filter(isDisabled)
+        items.removeAll(where: isDisabled)
+        reservoir.removeAll(where: isDisabled)
+        filteredOutItems.append(contentsOf: removed)
+
         reservoirCount = reservoir.count
         itemVersion += 1
-        markAsSurfaced(items)
     }
 
     // MARK: - Constants
@@ -1093,13 +1081,16 @@ final class FeedLoader {
 
             prefetchImagesIfNeeded(for: actualNew)
 
-            // Merge new items into reservoir (interleaved), don't touch visible items
+            // Just accumulate — interleave once at the end to avoid
+            // hammering the main actor with O(n) sorts every chunk.
             reservoir.append(contentsOf: actualNew)
-            reservoir = interleave(reservoir)
-            capReservoir()
-            reservoirCount = reservoir.count
-            whatsNewVersion &+= 1  // invalidate whatIsNewItems without touching date sections
         }
+
+        // Single interleave + cap after all chunks are fetched
+        reservoir = interleave(reservoir)
+        capReservoir()
+        reservoirCount = reservoir.count
+        whatsNewVersion &+= 1
 
         lastRefreshDate = .now
         loadingState = .idle
