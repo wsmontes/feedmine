@@ -338,11 +338,21 @@ final class FeedLoader {
             .prefix(10)
         guard !regionSources.isEmpty else { return }
 
-        let batch = await fetcher.fetchAll(Array(regionSources), maxConcurrent: 10)
+        let sourcesArr = Array(regionSources)
+        let batch = await fetcher.fetchAll(sourcesArr, maxConcurrent: 10)
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
         guard !actualNew.isEmpty else { return }
         registerLoadedIDs(actualNew.map(\.id))
         totalFetched += batch.items.count
+
+        // Mark only these sources as fetched (updateSourceHealth marks ALL enabled)
+        let now = Date()
+        for src in sourcesArr {
+            var h = sourceHealth[src.url] ?? SourceHealth()
+            h.lastFetchDate = now
+            h.consecutiveFailures = 0
+            sourceHealth[src.url] = h
+        }
 
         reservoir.append(contentsOf: actualNew)
         reservoir = interleave(reservoir)
