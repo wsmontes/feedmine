@@ -363,6 +363,7 @@ final class FeedLoader {
         }
 
         reservoir.append(contentsOf: actualNew)
+        dedupReservoir()
         reservoir = interleave(reservoir)
         capReservoir()
         reservoirCount = reservoir.count
@@ -1324,6 +1325,13 @@ final class FeedLoader {
 
     // MARK: - Private
 
+    /// Remove duplicate item IDs from the reservoir (safety net — loadedIDs
+    /// should catch these, but cross-source syndication can slip through).
+    private func dedupReservoir() {
+        var seen = Set<String>()
+        reservoir = reservoir.filter { seen.insert($0.id).inserted }
+    }
+
     /// Trim reservoir to maxReservoirSize while preserving source diversity.
     /// Every source gets at least 1 slot; remaining slots are proportional to item count.
     /// This ensures 200+ sources all have a presence instead of 20 sources dominating.
@@ -1469,6 +1477,7 @@ final class FeedLoader {
         prefetchImagesIfNeeded(for: actualNew)
 
         reservoir.append(contentsOf: actualNew)
+        dedupReservoir()
         reservoir = interleave(reservoir)
         capReservoir()
         reservoirCount = reservoir.count
