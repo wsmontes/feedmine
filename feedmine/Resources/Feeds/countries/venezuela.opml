@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Venezuela Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="El Nacional" xmlUrl="https://www.elnacional.com/feed/" type="rss" />
+      <outline title="Efecto Cocuyo" xmlUrl="https://www.efectococuyo.com/feed/" type="rss" />
+      <outline title="Runrunes" xmlUrl="https://www.runrun.es/feed/" type="rss" />
+      <outline title="Tal Cual" xmlUrl="https://www.talcualdigital.com/feed/" type="rss" />
+      <outline title="Cronica Uno" xmlUrl="https://www.cronica.uno/feed/" type="rss" />
+      <outline title="El Pitazo" xmlUrl="https://www.elpitazo.net/feed/" type="rss" />
+      <outline title="La Patilla" xmlUrl="https://www.lapatilla.com/feed/" type="rss" />
+      <outline title="El Estímulo" xmlUrl="https://www.elestimulo.com/feed/" type="rss" />
+      <outline title="Armando Info" xmlUrl="https://www.armando.info/feed/" type="rss" />
+      <outline title="Prodavinci" xmlUrl="https://www.prodavinci.com/feed/" type="rss" />
+      <outline title="Hispanopost" xmlUrl="https://www.hispanopost.com/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Lider Deportes" xmlUrl="https://www.liderendeportes.com/feed/" type="rss" />
+      <outline title="El Nacional Deportes" xmlUrl="https://www.elnacional.com/deportes/feed/" type="rss" />
+      <outline title="LVBP" xmlUrl="https://www.lvbp.com/rss/" type="rss" />
+      <outline title="Sports Venezuela" xmlUrl="https://www.sportsvenezuela.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="TecnoVE" xmlUrl="https://www.tecnove.com/feed/" type="rss" />
+      <outline title="Startup Venezuela" xmlUrl="https://www.startupvenezuela.com/feed/" type="rss" />
+      <outline title="VE Tech" xmlUrl="https://www.vetech.com/feed/" type="rss" />
+      <outline title="App VE" xmlUrl="https://www.appve.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science" />
+    <outline text="Culture">
+      <outline title="Prodavinci Cultura" xmlUrl="https://www.prodavinci.com/cultura/feed/" type="rss" />
+      <outline title="Venezuela Cultura" xmlUrl="https://www.venezuelaculture.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Musica Venezolana" xmlUrl="https://www.musicavenezolana.com/feed/" type="rss" />
+      <outline title="Joropo Music" xmlUrl="https://www.joropomusic.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Recetas Venezolanas" xmlUrl="https://www.recetasvenezolanas.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Merida Travel" xmlUrl="https://www.meridatravel.com/feed/" type="rss" />
+      <outline title="Explore Venezuela" xmlUrl="https://www.explorevenezuela.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="El Nacional Economia" xmlUrl="https://www.elnacional.com/economia/feed/" type="rss" />
+      <outline title="Descifrado" xmlUrl="https://www.descifrado.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Codigo VE" xmlUrl="https://www.codigove.com/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="Mac Venezuela" xmlUrl="https://www.macvenezuela.com/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

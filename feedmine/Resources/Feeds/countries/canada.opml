@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Canada Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="CBC News" xmlUrl="https://www.cbc.ca/webfeed/rss/rss-topstories" type="rss" />
+      <outline title="Toronto Star" xmlUrl="https://www.thestar.com/rss/" type="rss" />
+      <outline title="National Post" xmlUrl="https://nationalpost.com/feed/" type="rss" />
+      <outline title="Global News" xmlUrl="https://globalnews.ca/feed/" type="rss" />
+      <outline title="The Canadian Press" xmlUrl="https://www.thecanadianpress.com/feed/" type="rss" />
+      <outline title="Vancouver Sun" xmlUrl="https://vancouversun.com/feed/" type="rss" />
+      <outline title="Ottawa Citizen" xmlUrl="https://ottawacitizen.com/feed/" type="rss" />
+      <outline title="Montreal Gazette" xmlUrl="https://montrealgazette.com/feed/" type="rss" />
+      <outline title="Calgary Herald" xmlUrl="https://calgaryherald.com/feed/" type="rss" />
+      <outline title="Edmonton Journal" xmlUrl="https://edmontonjournal.com/feed/" type="rss" />
+      <outline title="Halifax Chronicle Herald" xmlUrl="https://www.thechronicleherald.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Sportsnet" xmlUrl="https://www.sportsnet.ca/feed/" type="rss" />
+      <outline title="CBC Sports" xmlUrl="https://www.cbc.ca/webfeed/rss/rss-sports" type="rss" />
+      <outline title="Global Sports" xmlUrl="https://globalnews.ca/sports/feed/" type="rss" />
+      <outline title="National Post Sports" xmlUrl="https://nationalpost.com/category/sports/feed/" type="rss" />
+      <outline title="The Hockey News" xmlUrl="https://thehockeynews.com/feed/" type="rss" />
+      <outline title="Canadian Running" xmlUrl="https://runningmagazine.ca/feed/" type="rss" />
+      <outline title="Maple Leafs Hot Stove" xmlUrl="https://mapleleafshotstove.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="MobileSyrup" xmlUrl="https://mobilesyrup.com/feed/" type="rss" />
+      <outline title="BetaKit" xmlUrl="https://betakit.com/feed/" type="rss" />
+      <outline title="IT World Canada" xmlUrl="https://www.itworldcanada.com/rss/" type="rss" />
+      <outline title="CBC Tech" xmlUrl="https://www.cbc.ca/webfeed/rss/rss-technology" type="rss" />
+      <outline title="Global Tech" xmlUrl="https://globalnews.ca/tech/feed/" type="rss" />
+      <outline title="TechCrunch CA" xmlUrl="https://techcrunch.com/tag/canada/feed/" type="rss" />
+      <outline title="The Logic" xmlUrl="https://thelogic.co/feed/" type="rss" />
+      <outline title="Financial Post Tech" xmlUrl="https://financialpost.com/category/technology/feed/" type="rss" />
+      <outline title="iPhone in Canada" xmlUrl="https://www.iphoneincanada.ca/feed/" type="rss" />
+      <outline title="Electric Autonomy" xmlUrl="https://electricautonomy.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Canadian Geographic" xmlUrl="https://www.canadiangeographic.ca/feed/" type="rss" />
+      <outline title="Innovation Canada" xmlUrl="https://www.ic.gc.ca/eic/site/icgc.nsf/eng/h_07052.xml" type="rss" />
+      <outline title="David Suzuki Foundation" xmlUrl="https://davidsuzuki.org/feed/" type="rss" />
+      <outline title="Nature Canada" xmlUrl="https://naturecanada.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="CBC Arts" xmlUrl="https://www.cbc.ca/webfeed/rss/rss-arts" type="rss" />
+      <outline title="The Walrus" xmlUrl="https://thewalrus.ca/feed/" type="rss" />
+      <outline title="Nunatsiaq News" xmlUrl="https://nunatsiaq.com/feed/" type="rss" />
+      <outline title="Montecristo Magazine" xmlUrl="https://montecristomagazine.com/feed/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="That Shelf" xmlUrl="https://thatshelf.com/feed/" type="rss" />
+      <outline title="Northern Stars" xmlUrl="https://www.northernstars.ca/feed/" type="rss" />
+      <outline title="Cinema Scope" xmlUrl="https://cinema-scope.com/feed/" type="rss" />
+      <outline title="POV Magazine" xmlUrl="https://povmagazine.com/feed/" type="rss" />
+      <outline title="Brief Take" xmlUrl="https://brieftake.com/feed/" type="rss" />
+      <outline title="Hollywood North Magazine" xmlUrl="https://hnmag.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Canadian Beats" xmlUrl="https://canadianbeats.ca/feed/" type="rss" />
+      <outline title="A Journal of Musical Things" xmlUrl="https://www.ajournalofmusicalthings.com/feed/" type="rss" />
+      <outline title="RANGE" xmlUrl="https://readrange.com/feed/" type="rss" />
+      <outline title="Bad Feeling Magazine" xmlUrl="https://badfeelingmag.com/feed/" type="rss" />
+      <outline title="Sidewalk Hustle" xmlUrl="https://sidewalkhustle.com/feed/" type="rss" />
+      <outline title="Ottawa Showbox" xmlUrl="https://ottawashowbox.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="The Food Blog" xmlUrl="https://www.thefoodblog.net/feed/" type="rss" />
+      <outline title="Anna Olson" xmlUrl="https://annaolson.ca/feed/" type="rss" />
+      <outline title="Baked Canada" xmlUrl="https://bakedtheblog.com/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="CGMagazine" xmlUrl="https://www.cgmagonline.com/feed/" type="rss" />
+      <outline title="The Nerd Stash" xmlUrl="https://thenerdstash.com/feed/" type="rss" />
+      <outline title="Keengamer" xmlUrl="https://www.keengamer.com/feed/" type="rss" />
+      <outline title="Gaming Canada" xmlUrl="https://gamingcanada.ca/feed/" type="rss" />
+      <outline title="COGconnected" xmlUrl="https://cogconnected.com/feed/" type="rss" />
+      <outline title="MobileSyrup Gaming" xmlUrl="https://mobilesyrup.com/categories/gaming/feed/" type="rss" />
+      <outline title="Nintendo Wire CA" xmlUrl="https://nintendowire.com/feed/" type="rss" />
+      <outline title="PlayStation Universe CA" xmlUrl="https://www.psu.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Canadian Geographic Travel" xmlUrl="https://www.canadiangeographic.ca/travel/feed/" type="rss" />
+      <outline title="Explore Canada" xmlUrl="https://www.destinationcanada.com/en/feed/" type="rss" />
+      <outline title="Must Do Canada" xmlUrl="https://www.mustdocanada.com/feed/" type="rss" />
+      <outline title="To Do Canada" xmlUrl="https://www.todocanada.ca/feed/" type="rss" />
+      <outline title="Off Track Travel" xmlUrl="https://www.offtracktravel.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Narcity" xmlUrl="https://www.narcity.com/feed/" type="rss" />
+      <outline title="Daily Hive" xmlUrl="https://dailyhive.com/feed/" type="rss" />
+      <outline title="Curiocity" xmlUrl="https://curiocity.com/feed/" type="rss" />
+      <outline title="604 Now" xmlUrl="https://604now.com/feed/" type="rss" />
+      <outline title="The Sheaf" xmlUrl="https://thesheaf.com/feed/" type="rss" />
+      <outline title="Cult MTL" xmlUrl="https://cultmtl.com/feed/" type="rss" />
+      <outline title="Urban Toronto" xmlUrl="https://urbantoronto.ca/news/feed/" type="rss" />
+      <outline title="Spacing Toronto" xmlUrl="https://spacing.ca/toronto/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Azure Magazine" xmlUrl="https://www.azuremagazine.com/feed/" type="rss" />
+      <outline title="Design Lines" xmlUrl="https://www.designlinesmagazine.com/feed/" type="rss" />
+      <outline title="Canadian Architect" xmlUrl="https://www.canadianarchitect.com/feed/" type="rss" />
+      <outline title="Sight Unseen" xmlUrl="https://www.sightunseen.com/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Chromatic" xmlUrl="https://chromatic.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Canada" xmlUrl="https://www.greenpeace.org/canada/feed/" type="rss" />
+      <outline title="WWF Canada" xmlUrl="https://wwf.ca/feed/" type="rss" />
+      <outline title="David Suzuki Foundation" xmlUrl="https://davidsuzuki.org/feed/" type="rss" />
+      <outline title="Ecojustice" xmlUrl="https://ecojustice.ca/feed/" type="rss" />
+      <outline title="The Narwhal" xmlUrl="https://thenarwhal.ca/feed/" type="rss" />
+      <outline title="Environmental Defence" xmlUrl="https://environmentaldefence.ca/feed/" type="rss" />
+      <outline title="Nature Canada" xmlUrl="https://naturecanada.ca/feed/" type="rss" />
+      <outline title="Sierra Club BC" xmlUrl="https://sierraclub.bc.ca/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="House &amp; Home" xmlUrl="https://houseandhome.com/feed/" type="rss" />
+      <outline title="Canadian Home Trends" xmlUrl="https://canadianhometrends.com/feed/" type="rss" />
+      <outline title="Home Bunch" xmlUrl="https://www.homebunch.com/feed/" type="rss" />
+      <outline title="Making it in the Mountains" xmlUrl="https://makingitinthemountains.com/feed/" type="rss" />
+      <outline title="Love Create Celebrate" xmlUrl="https://lovecreatecelebrate.com/feed/" type="rss" />
+      <outline title="Pretty Handy Girl" xmlUrl="https://www.prettyhandygirl.com/feed/" type="rss" />
+      <outline title="The DIY Mommy" xmlUrl="https://thediymommy.com/feed/" type="rss" />
+      <outline title="A Pretty Fix" xmlUrl="https://aprettyfix.com/feed/" type="rss" />
+      <outline title="Nadine Stay" xmlUrl="https://www.nadinestay.com/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Active History" xmlUrl="https://activehistory.ca/feed/" type="rss" />
+      <outline title="Canadian Museum of History" xmlUrl="https://www.historymuseum.ca/feed/" type="rss" />
+      <outline title="Borealia" xmlUrl="https://earlycanadianhistory.ca/feed/" type="rss" />
+      <outline title="Canada History Blog" xmlUrl="https://canadahistoryblog.wordpress.com/feed/" type="rss" />
+      <outline title="Ontario History" xmlUrl="https://ontariohistoricalsociety.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Canadian Architect" xmlUrl="https://www.canadianarchitect.com/feed/" type="rss" />
+      <outline title="Azure Architecture" xmlUrl="https://www.azuremagazine.com/topic/architecture/feed/" type="rss" />
+      <outline title="ArchDaily Canada" xmlUrl="https://www.archdaily.com/country/canada/feed" type="rss" />
+      <outline title="Spacing" xmlUrl="https://spacing.ca/feed/" type="rss" />
+      <outline title="Urban Toronto" xmlUrl="https://urbantoronto.ca/news/feed/" type="rss" />
+      <outline title="Skyrise Cities" xmlUrl="https://skyrisecities.com/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Canadian Interiors" xmlUrl="https://www.canadianinteriors.com/feed/" type="rss" />
+      <outline title="Design Lines" xmlUrl="https://www.designlinesmagazine.com/feed/" type="rss" />
+      <outline title="The Architect's Newspaper" xmlUrl="https://www.archpaper.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="A List Apart" xmlUrl="https://alistapart.com/main/feed/" type="rss" />
+      <outline title="Codecademy Blog" xmlUrl="https://www.codecademy.com/resources/blog/feed/" type="rss" />
+      <outline title="InfoQ" xmlUrl="https://feed.infoq.com/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Financial Post" xmlUrl="https://financialpost.com/feed/" type="rss" />
+      <outline title="CBC Business" xmlUrl="https://www.cbc.ca/webfeed/rss/rss-business" type="rss" />
+      <outline title="The Logic" xmlUrl="https://thelogic.co/feed/" type="rss" />
+      <outline title="BetaKit" xmlUrl="https://betakit.com/feed/" type="rss" />
+      <outline title="MaRS Discovery District" xmlUrl="https://www.marsdd.com/feed/" type="rss" />
+      <outline title="Startup Canada" xmlUrl="https://www.startupcan.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Canadaland" xmlUrl="https://www.canadaland.com/feed/podcast/" type="rss" />
+      <outline title="The Big Story" xmlUrl="https://thebigstorypodcast.ca/feed/podcast/" type="rss" />
+      <outline title="Front Burner" xmlUrl="https://www.cbc.ca/radio/podcasts/front-burner/rss/" type="rss" />
+      <outline title="The Agenda" xmlUrl="https://www.tvo.org/podcast/the-agenda-with-steve-paikin/feed/" type="rss" />
+      <outline title="History of Canada Podcast" xmlUrl="https://historyofcanada.podbean.com/feed/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="PPOC" xmlUrl="https://www.ppoc.ca/feed/" type="rss" />
+      <outline title="CAPA" xmlUrl="https://capacanada.ca/feed/" type="rss" />
+      <outline title="Digital Camera World" xmlUrl="https://www.digitalcameraworld.com/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="iPhone in Canada" xmlUrl="https://www.iphoneincanada.ca/feed/" type="rss" />
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="The Mac Observer" xmlUrl="https://www.macobserver.com/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Linus Tech Tips" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw" type="rss" />
+    </outline>
+  </body>
+</opml>

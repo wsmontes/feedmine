@@ -1,150 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>YouTube Feeds</title></head>
+  <head>
+    <title>YouTube Feeds</title>
+  </head>
   <body>
     <outline text="Tech">
-      <outline title="MKBHD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBJycsmduvYEL83R_U4JriQ" type="rss"/>
-      <outline title="Linus Tech Tips" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw" type="rss"/>
-      <outline title="Dave2D" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVYamHliCI9rw1tHR1xbkfw" type="rss"/>
-      <outline title="JerryRigEverything" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWFKCr40YwOZQx8FHU_ZqqQ" type="rss"/>
-      <outline title="MrMobile" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSOpcUkE-is7u7c4AkLgqTw" type="rss"/>
-      <outline title="Austin Evans" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXGgrKt94gR6lmN4aN3mYTg" type="rss"/>
-      <outline title="Unbox Therapy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsTcErHg8oDvUnTzoqsYeNw" type="rss"/>
-      <outline title="Hardware Unboxed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI8iQa1hv7oV_Z8D35vVuSg" type="rss"/>
-      <outline title="Gamers Nexus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChIs72whgZI9w6d6FhwGGHA" type="rss"/>
-      <outline title="iJustine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCey_c7U86mJGz1VJWH5CYPA" type="rss"/>
-      <outline title="ShortCircuit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdBK94H6oZT2Q7l0-b0xmMg" type="rss"/>
-      <outline title="Snazzy Labs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO2x-p9gg9TLKneXlibGR7w" type="rss"/>
-      <outline title="This Is Tech Today" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfVhjZ_1vYkGqX3G8h9Bq0Q" type="rss"/>
+      <outline title="MKBHD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBJycsmduvYEL83R_U4JriQ" type="rss" />
+      <outline title="Linus Tech Tips" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw" type="rss" />
+      <outline title="Gamers Nexus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChIs72whgZI9w6d6FhwGGHA" type="rss" />
+      <outline title="iJustine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCey_c7U86mJGz1VJWH5CYPA" type="rss" />
+      <outline title="ShortCircuit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdBK94H6oZT2Q7l0-b0xmMg" type="rss" />
     </outline>
     <outline text="Science">
-      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss"/>
-      <outline title="Kurzgesagt" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q" type="rss"/>
-      <outline title="Vsauce" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA" type="rss"/>
-      <outline title="SmarterEveryDay" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6107grRI4m0o2-emgoDnAA" type="rss"/>
-      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss"/>
-      <outline title="Physics Girl" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7DdEm33SyaTDtWYGO2CwdA" type="rss"/>
-      <outline title="MinutePhysics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUHW94eEFW7hkUMVaZz4eDg" type="rss"/>
-      <outline title="MinuteEarth" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeiYXex_fwgYDonaTcSIk6w" type="rss"/>
-      <outline title="SciShow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZYTClx2T1of7BRZ86-8fow" type="rss"/>
-      <outline title="Real Engineering" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR1IuLEqb6UEA_zQ81kwXfg" type="rss"/>
-      <outline title="Steve Mould" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEIwxahdLz7bap-VDs9h35A" type="rss"/>
-      <outline title="PBS Space Time" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g" type="rss"/>
-      <outline title="The Action Lab" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1VLQPn9fYS2H8Ff9nYJwrg" type="rss"/>
-      <outline title="Kyle Hill" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnjGJz7dlMEeSWXoPJwL5jg" type="rss"/>
-      <outline title="SciShow Space" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrMePiHCWG4Vwqv3t7W9EFg" type="rss"/>
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss" />
     </outline>
     <outline text="Education">
-      <outline title="CrashCourse" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6b17PVsYBQ0ip5gyeme-Q" type="rss"/>
-      <outline title="CGP Grey" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2C_jShtL725hvbm1arSV9w" type="rss"/>
-      <outline title="Wendover Productions" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9RM-iSvTu1uPJb8X5yp3EQ" type="rss"/>
-      <outline title="Half as Interesting" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuCkxoKLYO_EQ2GeFtbM_bw" type="rss"/>
-      <outline title="Practical Engineering" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMOqf8ab-42UUQIdVoKwjlQ" type="rss"/>
-      <outline title="Vox" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLXo7UDZvByw2ixzpQCufnA" type="rss"/>
-      <outline title="TED-Ed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsooa4yRKGN_zEE8iknghZA" type="rss"/>
-      <outline title="3Blue1Brown" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw" type="rss"/>
-      <outline title="Numberphile" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoxcjq-8xIDTYp3uz647V5A" type="rss"/>
-      <outline title="Computerphile" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" type="rss"/>
-      <outline title="Nerdwriter1" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJkMlOu7faDgqh4PfzbpLdg" type="rss"/>
-      <outline title="Tom Scott" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A" type="rss"/>
-      <outline title="Khan Academy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4a-Gbdw7vOaccHmFo40b9g" type="rss"/>
+      <outline title="Computerphile" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" type="rss" />
     </outline>
     <outline text="Design">
-      <outline title="Flux Academy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN7dywl5wDxTu1RM3eJ_h9Q" type="rss"/>
-      <outline title="DesignCourse" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVyRiMvfUNxXeh8Jfu3pxww" type="rss"/>
-      <outline title="The Futur" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-b3c7kxa5vU-bnmaROgvog" type="rss"/>
-      <outline title="Will Paterson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIp9sEZiv36cDG7cEnrVU7Q" type="rss"/>
-      <outline title="Satori Graphics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoeJKtPJLoIBqWq4o8TDLpA" type="rss"/>
-      <outline title="CharliMarieTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4wJYaLxhyQyDkUy7kARpwQ" type="rss"/>
-      <outline title="Abi Connick" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaFBH8UxRFp5P4mCQZ3YgQQ" type="rss"/>
-      <outline title="Jesse Showalter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6K7j7LFH4G5nJ3lQ5ZqB1Q" type="rss"/>
-    </outline>
+      </outline>
     <outline text="Music">
-      <outline title="Rick Beato" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJquYOG5EL82sKTfH9aMA9Q" type="rss"/>
-      <outline title="Andrew Huang" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdcemy56JtVTrsFIOoqvV8g" type="rss"/>
-      <outline title="Adam Neely" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCb1Ti1WKPauPpXkYKVHps6A" type="rss"/>
-      <outline title="Nahre Sol" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8R8FRt1KcPi4QJeKbUj_fw" type="rss"/>
-      <outline title="Middle8" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFeHtx2z3sRqFZ0JpUOFKUg" type="rss"/>
-      <outline title="David Bennett Piano" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz2iUom-6fPhB6L4zWnKWxg" type="rss"/>
-      <outline title="12tone" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTUtqcDkzw7bisadh6AOx5w" type="rss"/>
-      <outline title="Charles Cornell" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4V2RQx0CjHCkHY4QHdpK5w" type="rss"/>
-      <outline title="Paul Davids" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_Oa7Ph3v94omQHWcXNiBHQ" type="rss"/>
-    </outline>
+      </outline>
     <outline text="History">
-      <outline title="Oversimplified" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN5KcXoXh6Ekc6LfXG6Z3AA" type="rss"/>
-      <outline title="History Matters" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22BdTgxefuvUivr2ETJ4RQ" type="rss"/>
-      <outline title="Kings and Generals" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMmaBzfCCwZ2KqaBJjkj0fw" type="rss"/>
-      <outline title="The Armchair Historian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeUJFQ0D9qs6aVNyUt9fkeQ" type="rss"/>
-      <outline title="Invicta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaGZEPkDxj2Fjp0hPFdZXPA" type="rss"/>
-      <outline title="Simple History" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC510QYlOlKNyhy_zdQxnGYw" type="rss"/>
-      <outline title="Epic History TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvPXiKxH-eH9xq-80vpgmKQ" type="rss"/>
-      <outline title="Timeline" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC88lvyJe7aHZmcvzvubDFRg" type="rss"/>
-      <outline title="Historia Civilis" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv_vLHiWVBh_FR9vbeuiY-A" type="rss"/>
+      <outline title="Timeline" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC88lvyJe7aHZmcvzvubDFRg" type="rss" />
     </outline>
     <outline text="News">
-      <outline title="DW News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg" type="rss"/>
-      <outline title="BBC News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC16niRr50-MSBwiO3YDb3RA" type="rss"/>
-      <outline title="FRANCE 24 English" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQfwfsi5VrQ8yKZ-UWmAEFg" type="rss"/>
-      <outline title="Al Jazeera English" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNye-wNBqNL5ZzHSJj3l8Bg" type="rss"/>
-      <outline title="PBS NewsHour" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6ZFN9Tx6xh-skXCuRHCDpQ" type="rss"/>
-      <outline title="CNBC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrp_UI8XtuYfpiqluWLD7Lw" type="rss"/>
-      <outline title="Bloomberg" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg" type="rss"/>
-      <outline title="The Economist" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0p_6t7UsYP8oD5Smxq7SUQ" type="rss"/>
-    </outline>
+      </outline>
     <outline text="Programming">
-      <outline title="Fireship" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPveUzG6sM2Vg2X0w" type="rss"/>
-      <outline title="Theo - t3.gg" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp_FNnGqRxP7CoBvLCGaR7g" type="rss"/>
-      <outline title="ThePrimeagen" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaUxDyGzN7s7MEbkLpYkQ5A" type="rss"/>
-      <outline title="Jack Herrington" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6vRUjYqDuoUsYskuO5iA4g" type="rss"/>
-      <outline title="Kevin Powell" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJZv4d5rbIKd4QHMPm4N9aQ" type="rss"/>
-      <outline title="Web Dev Simplified" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFbNIlppjAuEX4znoulh0Cw" type="rss"/>
-      <outline title="Ben Awad" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-8QAzbLcRglXeN_MY9blyw" type="rss"/>
-      <outline title="Hussein Nasser" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_ML5xP23TOWKUyocI4zX4Q" type="rss"/>
-      <outline title="Continuous Delivery" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCfqyGl3nq_V0bo64CjZh8g" type="rss"/>
-      <outline title="Beyond Fireship" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2Xd-TjJByCkDq5zU4gon6Q" type="rss"/>
-    </outline>
+      </outline>
     <outline text="Gaming">
-      <outline title="Digital Foundry" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9PBzalIjE5MG6i7OV7NE5A" type="rss"/>
-      <outline title="Game Maker's Toolkit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw" type="rss"/>
-      <outline title="Noclip" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0fDG3byEcMtbOqPMymDNbw" type="rss"/>
-      <outline title="Razbuten" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfH6OjDGgai_EsRJqE2Ms7w" type="rss"/>
-      <outline title="Jacob Geller" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeTfBygNb1Tahk5HyF1LYUQ" type="rss"/>
-      <outline title="Design Doc" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0y4hV_3yjZBz0L1QJp9gWg" type="rss"/>
-      <outline title="Skill Up" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChH4ruN3jR5Df1KcK7q7tEA" type="rss"/>
-    </outline>
+      </outline>
     <outline text="Movies">
-      <outline title="Every Frame a Painting" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A" type="rss"/>
-      <outline title="Lessons from the Screenplay" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCErSSa3CaP_GJxmFpdjG9Jw" type="rss"/>
-      <outline title="Thomas Flight" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUyvQV2JsICeLZP4c_h40kA" type="rss"/>
-      <outline title="StudioBinder" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUFoQUGyRvy6WxYwN4WW3Xg" type="rss"/>
-      <outline title="Like Stories of Old" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCs7oU4lTq1F1Fp3YPA3Vz2A" type="rss"/>
-      <outline title="Patrick H Willems" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF1fG3gT17n7VhWmDpPJhBg" type="rss"/>
-      <outline title="CinemaStix" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_tr02z4AjbP2L9xxlv6u5A" type="rss"/>
-      <outline title="The Closer Look" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC missionsfD6wK3vM7nL5vZuA" type="rss"/>
-    </outline>
+      </outline>
     <outline text="Food">
-      <outline title="Binging with Babish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJHA_jMfCvEnv-3kRjTCQXw" type="rss"/>
-      <outline title="Joshua Weissman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChBEbMKI1eCemoOhmGBSpQg" type="rss"/>
-      <outline title="Ethan Chlebowski" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDq5v10l4wkV5-ZBIJJFbzQ" type="rss"/>
-      <outline title="Adam Ragusea" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9_p50tH3WmMslWRWKnM7dQ" type="rss"/>
-      <outline title="J. Kenji Lopez-Alt" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqqJQ_cXSat0KIAVuyEqjQg" type="rss"/>
-      <outline title="Brian Lagerstrom" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCb_eB0K3A8g6nJG8R5iQeMg" type="rss"/>
-      <outline title="Sorted Food" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfYE3WnLk7WnzLp4GFJjR5w" type="rss"/>
-      <outline title="Middle Eats" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ0mE4kICyE7sNVHAzR6U7g" type="rss"/>
+      <outline title="Ethan Chlebowski" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDq5v10l4wkV5-ZBIJJFbzQ" type="rss" />
+      <outline title="Adam Ragusea" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9_p50tH3WmMslWRWKnM7dQ" type="rss" />
     </outline>
     <outline text="Travel">
-      <outline title="Kara and Nate" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4ijq8Cg-8zQKx8OHMl0zFA" type="rss"/>
-      <outline title="Yes Theory" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvK4bOhm4CkAhnNRa4xnPew" type="rss"/>
-      <outline title="Johnny Harris" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmGSJVG3mCRXVOKj6I0oPCQ" type="rss"/>
-      <outline title="Drew Binsky" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0Ize0RLIbGdH5x4wI45G-A" type="rss"/>
-      <outline title="Mark Wiens" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyEd6QBSgat5kkC6svyjudA" type="rss"/>
-    </outline>
+      </outline>
     <outline text="Photography">
-      <outline title="Peter McKinnon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3DkFux8Iv-aYnTRWzwaiBA" type="rss"/>
-      <outline title="Gerald Undone" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC09qASY4ixFS-KXIH6Nw0rg" type="rss"/>
-      <outline title="James Popsys" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgJn5G6FO3a7N8BGJq0SdLw" type="rss"/>
-      <outline title="Sean Tucker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkbTjQqGdL8V1OJqG0L8o8A" type="rss"/>
-      <outline title="Jamie Windsor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7M4g3z_zY4Sk3Qj8U5p6mA" type="rss"/>
-    </outline>
+      </outline>
   </body>
 </opml>

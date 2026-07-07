@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Belarus Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Belarus News" xmlUrl="https://www.belarusnews.by/rss/" type="rss" />
+      <outline title="Minsk News" xmlUrl="https://www.minsknews.by/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Hockey Belarus" xmlUrl="https://www.hockey.by/rss/" type="rss" />
+      <outline title="Football Belarus" xmlUrl="https://www.football.by/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="IT Belarus" xmlUrl="https://www.itbelarus.com/feed/" type="rss" />
+      <outline title="Belarus Tech" xmlUrl="https://www.belarustech.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="NASB" xmlUrl="https://www.nasb.gov.by/rss/" type="rss" />
+      <outline title="Science BY" xmlUrl="https://www.scienceby.com/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Culture BY" xmlUrl="https://www.cultureby.com/feed/" type="rss" />
+      <outline title="Art Belarus" xmlUrl="https://www.artbelarus.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Belarus Music" xmlUrl="https://www.belarusmusic.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food" />
+    <outline text="Travel">
+      <outline title="Visit Belarus" xmlUrl="https://www.visitbelarus.com/rss/" type="rss" />
+      <outline title="Belavia" xmlUrl="https://www.belavia.by/rss/" type="rss" />
+      <outline title="Explore Belarus" xmlUrl="https://www.explorebelarus.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="NBRB" xmlUrl="https://www.nbrb.by/rss/" type="rss" />
+      <outline title="Business Belarus" xmlUrl="https://www.businessbelarus.com/feed/" type="rss" />
+      <outline title="Belarus Investment" xmlUrl="https://www.belarusinvestment.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

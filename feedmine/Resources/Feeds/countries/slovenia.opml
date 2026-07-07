@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Slovenia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Delo" xmlUrl="https://www.delo.si/rss/" type="rss" />
+      <outline title="RTV SLO" xmlUrl="https://www.rtvslo.si/rss/" type="rss" />
+      <outline title="Slovenske Novice" xmlUrl="https://www.slovenskenovice.si/rss/" type="rss" />
+      <outline title="MMC RTV" xmlUrl="https://www.rtvslo.si/rss/" type="rss" />
+      <outline title="Oštro" xmlUrl="https://www.ostro.si/rss/" type="rss" />
+      <outline title="Podcrto" xmlUrl="https://www.podcrto.si/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="RTV Sport" xmlUrl="https://www.rtvslo.si/sport/rss/" type="rss" />
+      <outline title="Nogomania" xmlUrl="https://www.nogomania.com/rss/" type="rss" />
+      <outline title="Sportklub SI" xmlUrl="https://www.sportklub.si/rss/" type="rss" />
+      <outline title="NZS" xmlUrl="https://www.nzs.si/rss/" type="rss" />
+      <outline title="Olimpija" xmlUrl="https://www.nkolimpija.si/rss/" type="rss" />
+      <outline title="Maribor" xmlUrl="https://www.nkmaribor.com/rss/" type="rss" />
+      <outline title="KZS" xmlUrl="https://www.kzs.si/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Monitor SI" xmlUrl="https://www.monitor.si/rss/" type="rss" />
+      <outline title="Mobilni Svet SI" xmlUrl="https://www.mobilni.si/feed/" type="rss" />
+      <outline title="Startup SI" xmlUrl="https://www.startup.si/feed/" type="rss" />
+      <outline title="Netokracija SI" xmlUrl="https://www.netokracija.si/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Univerza MB" xmlUrl="https://www.um.si/rss/" type="rss" />
+      <outline title="ARNES" xmlUrl="https://www.arnes.si/rss/" type="rss" />
+      <outline title="SAZU" xmlUrl="https://www.sazu.si/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="RTV Kultura" xmlUrl="https://www.rtvslo.si/kultura/rss/" type="rss" />
+      <outline title="Moderna Galerija" xmlUrl="https://www.mg-lj.si/rss/" type="rss" />
+      <outline title="SNG Drama" xmlUrl="https://www.drama.si/rss/" type="rss" />
+      <outline title="Kultura SI" xmlUrl="https://www.kultura.si/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Mladina Glasba" xmlUrl="https://www.mladina.si/glasba/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Okusno" xmlUrl="https://www.okusno.si/rss/" type="rss" />
+      <outline title="Slovene Food" xmlUrl="https://www.slovenefood.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Bled Tourism" xmlUrl="https://www.bled.si/rss/" type="rss" />
+      <outline title="Bohinj Travel" xmlUrl="https://www.bohinj.si/rss/" type="rss" />
+      <outline title="Travel Slovenia" xmlUrl="https://www.travelslovenia.org/feed/" type="rss" />
+      <outline title="Adria Airways" xmlUrl="https://www.adria.si/rss/" type="rss" />
+      <outline title="Slovenia Outdoor" xmlUrl="https://www.slovenia-outdoor.com/rss/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="RTV Biznis" xmlUrl="https://www.rtvslo.si/gospodarstvo/rss/" type="rss" />
+      <outline title="Ljubljanska Borza" xmlUrl="https://www.ljse.si/rss/" type="rss" />
+      <outline title="GZS" xmlUrl="https://www.gzs.si/rss/" type="rss" />
+      <outline title="Business Slovenia" xmlUrl="https://www.businessslovenia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="CodeBrainer" xmlUrl="https://www.codebrainer.com/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="RTV Podcasts" xmlUrl="https://www.rtvslo.si/podcast/rss/" type="rss" />
+      <outline title="Slovenia Pod" xmlUrl="https://www.sloveniapodcast.com/feed/" type="rss" />
+      <outline title="Podkast SI" xmlUrl="https://www.podkast.si/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

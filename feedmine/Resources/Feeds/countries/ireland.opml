@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Ireland Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Irish Independent" xmlUrl="https://www.independent.ie/rss/" type="rss" />
+      <outline title="The Journal" xmlUrl="https://www.thejournal.ie/feed/" type="rss" />
+      <outline title="Galway Daily" xmlUrl="https://www.galwaydaily.com/feed/" type="rss" />
+      <outline title="Limerick Post" xmlUrl="https://www.limerickpost.ie/rss/" type="rss" />
+      <outline title="The Ditch" xmlUrl="https://www.ontheditch.com/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Irish Independent Sport" xmlUrl="https://www.independent.ie/sport/rss/" type="rss" />
+      <outline title="The42" xmlUrl="https://www.the42.ie/feed/" type="rss" />
+      <outline title="Pundit Arena" xmlUrl="https://www.punditarena.com/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Silicon Republic" xmlUrl="https://www.siliconrepublic.com/rss/" type="rss" />
+      <outline title="Irish Tech News" xmlUrl="https://www.irishtechnews.ie/feed/" type="rss" />
+      <outline title="TechCentral" xmlUrl="https://www.techcentral.ie/rss/" type="rss" />
+      <outline title="Independent Tech" xmlUrl="https://www.independent.ie/business/technology/rss/" type="rss" />
+      <outline title="Ars Ireland" xmlUrl="https://arstechnica.co.uk/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Silicon Republic Science" xmlUrl="https://www.siliconrepublic.com/innovation/rss/" type="rss" />
+      <outline title="Trinity College Dublin" xmlUrl="https://www.tcd.ie/rss/" type="rss" />
+      <outline title="NUIG" xmlUrl="https://www.nuigalway.ie/rss/" type="rss" />
+      <outline title="Tyndall" xmlUrl="https://www.tyndall.ie/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Irish Independent Arts" xmlUrl="https://www.independent.ie/entertainment/rss/" type="rss" />
+      <outline title="Totally Dublin" xmlUrl="https://www.totallydublin.ie/feed/" type="rss" />
+      <outline title="GoldenPlec" xmlUrl="https://www.goldenplec.com/feed/" type="rss" />
+      <outline title="Visual Artists Ireland" xmlUrl="https://www.visualartists.ie/feed/" type="rss" />
+      <outline title="The Arts Council" xmlUrl="https://www.artscouncil.ie/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Scannain" xmlUrl="https://www.scannain.com/feed/" type="rss" />
+      <outline title="Film Ireland" xmlUrl="https://www.filmireland.net/feed/" type="rss" />
+      <outline title="IFI" xmlUrl="https://www.ifi.ie/rss/" type="rss" />
+      <outline title="Galway Film Fleadh" xmlUrl="https://www.galwayfilmfleadh.com/rss/" type="rss" />
+      <outline title="Film Ireland Mag" xmlUrl="https://www.filmireland.net/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Nialler9" xmlUrl="https://www.nialler9.com/feed/" type="rss" />
+      <outline title="GoldenPlec" xmlUrl="https://www.goldenplec.com/feed/" type="rss" />
+      <outline title="The Last Mixed Tape" xmlUrl="https://www.thelastmixedtape.com/feed/" type="rss" />
+      <outline title="Ticketmaster IE Blog" xmlUrl="https://blog.ticketmaster.ie/feed/" type="rss" />
+      <outline title="For Those I Love" xmlUrl="https://www.2fm.ie/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Irish Times Food" xmlUrl="https://www.irishtimes.com/life-and-style/food-and-drink/rss/" type="rss" />
+      <outline title="CheapEats Dublin" xmlUrl="https://www.cheapeats.ie/feed/" type="rss" />
+      <outline title="Good Food Ireland" xmlUrl="https://www.goodfoodireland.ie/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Gamers.ie" xmlUrl="https://www.gamers.ie/feed/" type="rss" />
+      <outline title="Gamedevelopers.ie" xmlUrl="https://www.gamedevelopers.ie/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Irish Times Travel" xmlUrl="https://www.irishtimes.com/life-and-style/travel/rss/" type="rss" />
+      <outline title="Ireland Before You Die" xmlUrl="https://www.irelandbeforeyoudie.com/feed/" type="rss" />
+      <outline title="The Irish Road Trip" xmlUrl="https://www.theirishroadtrip.com/feed/" type="rss" />
+      <outline title="Chalk and Cheese" xmlUrl="https://www.chalkandcheesetravels.com/feed/" type="rss" />
+      <outline title="Dublin.ie Travel" xmlUrl="https://www.dublin.ie/rss/" type="rss" />
+      <outline title="Wild Atlantic Way" xmlUrl="https://www.wildatlanticway.com/rss/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Broadsheet.ie" xmlUrl="https://www.broadsheet.ie/feed/" type="rss" />
+      <outline title="Lovin Dublin" xmlUrl="https://lovindublin.com/feed/" type="rss" />
+      <outline title="Joe.ie" xmlUrl="https://www.joe.ie/feed/" type="rss" />
+      <outline title="Daily Edge" xmlUrl="https://www.dailyedge.ie/feed/" type="rss" />
+      <outline title="The Liberal" xmlUrl="https://www.theliberal.ie/feed/" type="rss" />
+      <outline title="The Currency" xmlUrl="https://www.thecurrency.news/feed/" type="rss" />
+      <outline title="Dublin People" xmlUrl="https://www.dublinpeople.com/rss/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="NCAD" xmlUrl="https://www.ncad.ie/rss/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Irish Wildlife Trust" xmlUrl="https://www.iwt.ie/rss/" type="rss" />
+      <outline title="Cork Nature" xmlUrl="https://www.corknaturenetwork.ie/feed/" type="rss" />
+      <outline title="Irish Times Climate" xmlUrl="https://www.irishtimes.com/news/environment/rss/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Garden.ie" xmlUrl="https://www.garden.ie/rss/" type="rss" />
+      <outline title="Self Build Ireland" xmlUrl="https://www.selfbuild.ie/rss/" type="rss" />
+      <outline title="Building Ireland" xmlUrl="https://www.buildingireland.ie/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="History Ireland" xmlUrl="https://www.historyireland.com/feed/" type="rss" />
+      <outline title="National Archives IE" xmlUrl="https://www.nationalarchives.ie/rss/" type="rss" />
+      <outline title="Irish Archaeology" xmlUrl="https://www.irisharchaeology.ie/feed/" type="rss" />
+      <outline title="Waterford Museum" xmlUrl="https://www.waterfordmuseum.ie/rss/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Archiseek" xmlUrl="https://www.archiseek.com/feed/" type="rss" />
+      <outline title="Architecture Ireland" xmlUrl="https://www.architectureireland.ie/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Irish Building" xmlUrl="https://www.irishbuildingmagazine.ie/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Intercom Blog" xmlUrl="https://www.intercom.com/blog/feed/" type="rss" />
+      <outline title="Stripe Blog" xmlUrl="https://stripe.com/blog/feed.rss" type="rss" />
+      <outline title="Workday Engineering" xmlUrl="https://medium.com/feed/workday-engineering" type="rss" />
+      <outline title="Toast Engineering" xmlUrl="https://www.toast.com/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="RTE Business" xmlUrl="https://www.rte.ie/business/rss/" type="rss" />
+      <outline title="Irish Independent Business" xmlUrl="https://www.independent.ie/business/rss/" type="rss" />
+      <outline title="The Currency" xmlUrl="https://www.thecurrency.news/feed/" type="rss" />
+      <outline title="Silicon Republic Business" xmlUrl="https://www.siliconrepublic.com/business/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Second Captains" xmlUrl="https://www.secondcaptains.com/feed/" type="rss" />
+      <outline title="The Good Glow" xmlUrl="https://www.thegoodglow.ie/feed/podcast/" type="rss" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast/" type="rss" />
+      <outline title="Motherfocloir" xmlUrl="https://www.headstuff.org/motherfocloir/feed/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Irish Photography" xmlUrl="https://www.irishphotography.ie/feed/" type="rss" />
+      <outline title="Photo Ireland" xmlUrl="https://www.photoireland.org/feed/" type="rss" />
+      <outline title="Gallery of Photography" xmlUrl="https://www.galleryofphotography.ie/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Jacksepticeye" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYzPXprvl5Y-Sf0g4vX-m6g" type="rss" />
+    </outline>
+  </body>
+</opml>

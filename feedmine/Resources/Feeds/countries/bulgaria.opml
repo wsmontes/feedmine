@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Bulgaria Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Dnevnik" xmlUrl="https://www.dnevnik.bg/rss/" type="rss" />
+      <outline title="Capital" xmlUrl="https://www.capital.bg/rss/" type="rss" />
+      <outline title="BNR" xmlUrl="https://www.bnr.bg/rss/" type="rss" />
+      <outline title="Mediapool" xmlUrl="https://www.mediapool.bg/rss/" type="rss" />
+      <outline title="OffNews" xmlUrl="https://www.offnews.bg/rss/" type="rss" />
+      <outline title="Sega" xmlUrl="https://www.segabg.com/rss/" type="rss" />
+      <outline title="Telegraf" xmlUrl="https://www.telegraf.bg/rss/" type="rss" />
+      <outline title="Monitor" xmlUrl="https://www.monitor.bg/rss/" type="rss" />
+      <outline title="Standart" xmlUrl="https://www.standartnews.com/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Gong.bg" xmlUrl="https://www.gong.bg/rss/" type="rss" />
+      <outline title="Sportal" xmlUrl="https://www.sportal.bg/rss/" type="rss" />
+      <outline title="Topsport" xmlUrl="https://www.topsport.bg/rss/" type="rss" />
+      <outline title="Levski" xmlUrl="https://www.levski.bg/rss/" type="rss" />
+      <outline title="CSKA" xmlUrl="https://www.cska.bg/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Kaldata" xmlUrl="https://www.kaldata.com/feed/" type="rss" />
+      <outline title="Nixanbal" xmlUrl="https://www.nixanbal.com/feed/" type="rss" />
+      <outline title="Digital.bg" xmlUrl="https://www.digital.bg/rss/" type="rss" />
+      <outline title="Mobile Bulgaria" xmlUrl="https://www.mobilebulgaria.com/rss/" type="rss" />
+      <outline title="Economy Tech" xmlUrl="https://www.economy.bg/tech/rss/" type="rss" />
+      <outline title="Move BG" xmlUrl="https://www.move.bg/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Nauka BG" xmlUrl="https://www.nauka.bg/feed/" type="rss" />
+      <outline title="Cosmos BG" xmlUrl="https://www.cosmos.bg/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Programata" xmlUrl="https://www.programata.bg/rss/" type="rss" />
+      <outline title="National Gallery" xmlUrl="https://www.nationalgallery.bg/rss/" type="rss" />
+      <outline title="Lira BG" xmlUrl="https://www.lira.bg/feed/" type="rss" />
+      <outline title="Plovdiv Culture" xmlUrl="https://www.plovdiv2019.eu/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Fest Team" xmlUrl="https://www.festteam.bg/rss/" type="rss" />
+      <outline title="Hills of Rock" xmlUrl="https://www.hillsofrock.com/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Balkan Food BG" xmlUrl="https://www.balkanfood.org/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Bulgaria Travel" xmlUrl="https://www.bulgariatravel.org/rss/" type="rss" />
+      <outline title="Sofia Travel" xmlUrl="https://www.visitsofia.bg/rss/" type="rss" />
+      <outline title="Varna Travel" xmlUrl="https://www.varnatravel.com/rss/" type="rss" />
+      <outline title="Bansko Travel" xmlUrl="https://www.bansko.bg/rss/" type="rss" />
+      <outline title="Balkan Travel" xmlUrl="https://www.balkantravel.com/feed/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="NFC" xmlUrl="https://www.nfc.bg/rss/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="PC Mania" xmlUrl="https://www.pcmania.bg/rss/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Club Z" xmlUrl="https://www.clubz.bg/rss/" type="rss" />
+      <outline title="Blitz" xmlUrl="https://www.blitz.bg/rss/" type="rss" />
+      <outline title="Actualno" xmlUrl="https://www.actualno.com/rss/" type="rss" />
+      <outline title="Vesti BG" xmlUrl="https://www.vesti.bg/rss/" type="rss" />
+      <outline title="Bulgaria Blog" xmlUrl="https://www.bulgariablog.com/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Architecture BG" xmlUrl="https://www.architecturebg.com/feed/" type="rss" />
+      <outline title="Creative Bulgaria" xmlUrl="https://www.creativebulgaria.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Climate BG" xmlUrl="https://www.climatebg.org/feed/" type="rss" />
+    </outline>
+    <outline text="DIY" />
+    <outline text="History">
+      <outline title="Bulgarian History" xmlUrl="https://www.bulgarianhistory.org/feed/" type="rss" />
+      <outline title="NIM" xmlUrl="https://www.historymuseum.org/rss/" type="rss" />
+      <outline title="Archives BG" xmlUrl="https://www.archives.government.bg/rss/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Architecture BG" xmlUrl="https://www.architecturebg.com/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="ArchDaily Bulgaria" xmlUrl="https://www.archdaily.com/country/bulgaria/feed/" type="rss" />
+      <outline title="KAB" xmlUrl="https://www.kab.bg/rss/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Sofia Photo" xmlUrl="https://www.sofiaphoto.com/feed/" type="rss" />
+      <outline title="BG Photo" xmlUrl="https://www.bgphoto.net/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Economy BG" xmlUrl="https://www.economy.bg/rss/" type="rss" />
+      <outline title="Forbes Bulgaria" xmlUrl="https://www.forbesbulgaria.com/feed/" type="rss" />
+      <outline title="Business Bulgaria" xmlUrl="https://www.businessbulgaria.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="DevBG" xmlUrl="https://www.dev.bg/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Capital Podcast" xmlUrl="https://www.capital.bg/podcast/rss/" type="rss" />
+      <outline title="Svetoslava" xmlUrl="https://www.svetoslava.com/feed/podcast/" type="rss" />
+      <outline title="Balkanska" xmlUrl="https://www.balkanska.bg/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

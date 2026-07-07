@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Japan Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Yahoo Japan News" xmlUrl="https://news.yahoo.co.jp/rss/topics/top-picks.xml" type="rss" />
+      <outline title="Mainichi Shimbun" xmlUrl="https://mainichi.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Nikkan Sports" xmlUrl="https://www.nikkansports.com/rss/" type="rss" />
+      <outline title="Baseball King" xmlUrl="https://baseballking.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="ITmedia" xmlUrl="https://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml" type="rss" />
+      <outline title="Gigazine" xmlUrl="https://gigazine.net/news/rss_2.0/" type="rss" />
+      <outline title="Gizmodo Japan" xmlUrl="https://www.gizmodo.jp/feed/" type="rss" />
+      <outline title="ASCII" xmlUrl="https://ascii.jp/rss.xml" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Mainichi Science" xmlUrl="https://mainichi.jp/science/rss/" type="rss" />
+      <outline title="Nature Japan" xmlUrl="https://www.nature.com/nature.rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Cinra" xmlUrl="https://www.cinra.net/feed/" type="rss" />
+      <outline title="Idea" xmlUrl="https://www.idea-mag.com/feed/" type="rss" />
+      <outline title="Shift Japan" xmlUrl="https://www.shift.jp.org/feed/" type="rss" />
+      <outline title="Web Design Magazine" xmlUrl="https://www.webdesignmagazine.net/feed/" type="rss" />
+      <outline title="AXIS" xmlUrl="https://www.axismag.jp/feed/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Real Sound Cinema" xmlUrl="https://realsound.jp/movie/rss/" type="rss" />
+      <outline title="Cinemarche" xmlUrl="https://cinemarche.net/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Spincoaster" xmlUrl="https://spincoaster.com/feed/" type="rss" />
+      <outline title="FNMNL" xmlUrl="https://fnmnl.tv/feed/" type="rss" />
+      <outline title="AVYSS" xmlUrl="https://avyss-magazine.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Tabelog" xmlUrl="https://tabelog.com/rss/" type="rss" />
+      <outline title="Savory Japan" xmlUrl="https://savoryjapan.com/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Automaton" xmlUrl="https://automaton-media.com/feed/" type="rss" />
+      <outline title="Nintendo Life Japan" xmlUrl="https://www.nintendolife.com/feed/" type="rss" />
+      <outline title="MoguLive" xmlUrl="https://www.moguravr.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Japan Travel" xmlUrl="https://www.japan.travel/rss/" type="rss" />
+      <outline title="Tokyo Cheapo" xmlUrl="https://tokyocheapo.com/feed/" type="rss" />
+      <outline title="Japan Guide" xmlUrl="https://www.japan-guide.com/rss/" type="rss" />
+      <outline title="RocketNews24" xmlUrl="https://rocketnews24.com/feed/" type="rss" />
+      <outline title="Soranews24" xmlUrl="https://soranews24.com/feed/" type="rss" />
+      <outline title="GaijinPot" xmlUrl="https://blog.gaijinpot.com/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Note" xmlUrl="https://note.com/rss/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Web Design Magazine" xmlUrl="https://www.webdesignmagazine.net/feed/" type="rss" />
+      <outline title="Idea Magazine" xmlUrl="https://www.idea-mag.com/feed/" type="rss" />
+      <outline title="AXIS" xmlUrl="https://www.axismag.jp/feed/" type="rss" />
+      <outline title="JDN" xmlUrl="https://www.japandesign.ne.jp/feed/" type="rss" />
+      <outline title="Design Note" xmlUrl="https://www.design-note.net/feed/" type="rss" />
+      <outline title="Loft Work" xmlUrl="https://www.loftwork.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Japan" xmlUrl="https://www.greenpeace.org/japan/feed/" type="rss" />
+      <outline title="NACS-J" xmlUrl="https://www.nacsj.or.jp/feed/" type="rss" />
+      <outline title="Japan for Sustainability" xmlUrl="https://www.japanfs.org/ja/rss/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Sumica" xmlUrl="https://sumica.net/feed/" type="rss" />
+      <outline title="iecolle" xmlUrl="https://iecolle.com/feed/" type="rss" />
+      <outline title="Roomie" xmlUrl="https://roomie.jp/feed/" type="rss" />
+      <outline title="Tokosie" xmlUrl="https://tokosie.jp/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Rekishi Kaido" xmlUrl="https://www.rekishikaido.gr.jp/rss/" type="rss" />
+      <outline title="Bushoo Japan" xmlUrl="https://bushoojapan.com/feed/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Japan Architect" xmlUrl="https://www.japan-architect.co.jp/feed/" type="rss" />
+      <outline title="Toto Gallery" xmlUrl="https://jp.toto.com/gallerma/rss/" type="rss" />
+      <outline title="Shinkenchiku" xmlUrl="https://shinkenchiku.net/feed/" type="rss" />
+      <outline title="ArchiFuture" xmlUrl="https://www.archifuture.com/feed/" type="rss" />
+      <outline title="ArchDaily Japan" xmlUrl="https://www.archdaily.com/jp/feed" type="rss" />
+      <outline title="Dezeen Japan" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="JIA" xmlUrl="https://www.jia.or.jp/rss/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Qiita" xmlUrl="https://qiita.com/popular-items/feed" type="rss" />
+      <outline title="Zenn" xmlUrl="https://zenn.dev/feed" type="rss" />
+      <outline title="Hatena Developer" xmlUrl="https://developer.hatenastaff.com/feed" type="rss" />
+      <outline title="Developers IO" xmlUrl="https://dev.classmethod.jp/feed/" type="rss" />
+      <outline title="CyberAgent" xmlUrl="https://developers.cyberagent.co.jp/blog/feed/" type="rss" />
+      <outline title="Cookpad Dev" xmlUrl="https://techlife.cookpad.com/feed" type="rss" />
+    </outline>
+    <outline text="Business">
+      </outline>
+    <outline text="Podcasts">
+      <outline title="Nippon Broadcasting" xmlUrl="https://www.1242.com/rss/" type="rss" />
+      <outline title="Bay FM" xmlUrl="https://www.bayfm.co.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Nikon Japan" xmlUrl="https://www.nikon-image.com/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="iPhone Mania" xmlUrl="https://iphone-mania.jp/feed/" type="rss" />
+      <outline title="Gorimaru" xmlUrl="https://gori.me/feed/" type="rss" />
+      <outline title="App Bank" xmlUrl="https://www.appbank.net/feed/" type="rss" />
+      <outline title="Touch Lab" xmlUrl="https://touchlab.jp/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

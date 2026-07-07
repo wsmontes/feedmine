@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Turkey Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Hurriyet" xmlUrl="https://www.hurriyet.com.tr/rss/anasayfa" type="rss" />
+      <outline title="Milliyet" xmlUrl="https://www.milliyet.com.tr/rss/" type="rss" />
+      <outline title="Sabah" xmlUrl="https://www.sabah.com.tr/rss/" type="rss" />
+      <outline title="Sozcu" xmlUrl="https://www.sozcu.com.tr/rss/" type="rss" />
+      <outline title="Haberturk" xmlUrl="https://www.haberturk.com/rss" type="rss" />
+      <outline title="CNN Turk" xmlUrl="https://www.cnnturk.com/rss/" type="rss" />
+      <outline title="BirGun" xmlUrl="https://www.birgun.net/rss/" type="rss" />
+      <outline title="T24" xmlUrl="https://t24.com.tr/rss" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Hurriyet Spor" xmlUrl="https://www.hurriyet.com.tr/rss/spor" type="rss" />
+      <outline title="Milliyet Spor" xmlUrl="https://www.milliyet.com.tr/rss/skor/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="ShiftDelete" xmlUrl="https://www.shiftdelete.net/rss/" type="rss" />
+      <outline title="DonanimHaber" xmlUrl="https://www.donanimhaber.com/rss/" type="rss" />
+      <outline title="Technopat" xmlUrl="https://www.technopat.net/rss/" type="rss" />
+      <outline title="Turk Internet" xmlUrl="https://www.turk-internet.com/rss/" type="rss" />
+      <outline title="Log" xmlUrl="https://www.log.com.tr/rss/" type="rss" />
+      <outline title="Mobilike" xmlUrl="https://www.mobilike.com/feed/" type="rss" />
+      <outline title="TechInside" xmlUrl="https://www.techinside.com/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Hurriyet Bilim" xmlUrl="https://www.hurriyet.com.tr/rss/bilim/" type="rss" />
+      <outline title="Popular Science TR" xmlUrl="https://www.popsci.com.tr/rss/" type="rss" />
+      <outline title="Istanbul Universitesi" xmlUrl="https://www.istanbul.edu.tr/rss/" type="rss" />
+      <outline title="Bogazici Universitesi" xmlUrl="https://www.boun.edu.tr/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Hurriyet Kultur" xmlUrl="https://www.hurriyet.com.tr/rss/kultur-sanat/" type="rss" />
+      <outline title="Milliyet Kultur" xmlUrl="https://www.milliyet.com.tr/rss/kultur-sanat/" type="rss" />
+      <outline title="Sanatatak" xmlUrl="https://www.sanatatak.com/rss/" type="rss" />
+      <outline title="Manifold" xmlUrl="https://www.manifold.press/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Film Hafizasi" xmlUrl="https://www.filmhafizasi.com/rss/" type="rss" />
+      <outline title="Sinema Dergisi" xmlUrl="https://www.sinema.com/rss/" type="rss" />
+      <outline title="Altyazi" xmlUrl="https://www.altyazi.net/rss/" type="rss" />
+      <outline title="Bagimsiz Sinema" xmlUrl="https://www.bagimsizsinema.com/rss/" type="rss" />
+      <outline title="Film Arasi" xmlUrl="https://www.filmarasidergisi.com/rss/" type="rss" />
+      <outline title="Istanbul Film Festival" xmlUrl="https://www.iksv.org/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Milliyet Muzik" xmlUrl="https://www.milliyet.com.tr/rss/muzik/" type="rss" />
+      <outline title="Hurriyet Muzik" xmlUrl="https://www.hurriyet.com.tr/rss/muzik/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Hurriyet Yemek" xmlUrl="https://www.hurriyet.com.tr/rss/yemek/" type="rss" />
+      <outline title="Nefis Yemek Tarifleri" xmlUrl="https://www.nefisyemektarifleri.com/rss/" type="rss" />
+      <outline title="Gastromanya" xmlUrl="https://www.gastromanya.com/rss/" type="rss" />
+      <outline title="Lezzet" xmlUrl="https://www.lezzet.com.tr/rss/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Merlin'in Kazani" xmlUrl="https://www.merlininkazani.com/rss/" type="rss" />
+      <outline title="Oyungezer" xmlUrl="https://www.oyungezer.com.tr/rss/" type="rss" />
+      <outline title="Technopat Oyun" xmlUrl="https://www.technopat.net/oyun/rss/" type="rss" />
+      <outline title="SaveButonu" xmlUrl="https://www.savebutonu.com/feed/" type="rss" />
+      <outline title="FRPNET Gaming" xmlUrl="https://www.frpnet.net/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Hurriyet Seyahat" xmlUrl="https://www.hurriyet.com.tr/rss/seyahat/" type="rss" />
+      <outline title="Yolda Olmak" xmlUrl="https://www.yoldaolmak.com/rss/" type="rss" />
+      <outline title="Kucuk Dunya" xmlUrl="https://www.kucukdunya.com/rss/" type="rss" />
+      <outline title="Nerede Kalinir" xmlUrl="https://www.neredekalinir.com/rss/" type="rss" />
+      <outline title="Rotam" xmlUrl="https://www.rotam.com.tr/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Onedio" xmlUrl="https://onedio.com/rss/" type="rss" />
+      <outline title="Otekileringundemi" xmlUrl="https://www.otekileringundemi.com/rss/" type="rss" />
+      <outline title="Siyah Bant" xmlUrl="https://www.siyahbant.org/feed/" type="rss" />
+      <outline title="140journos" xmlUrl="https://www.140journos.com/rss/" type="rss" />
+      <outline title="Medyascope" xmlUrl="https://www.medyascope.tv/rss/" type="rss" />
+      <outline title="Artigercek" xmlUrl="https://www.artigercek.com/rss/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Mediacat" xmlUrl="https://www.mediacat.com/rss/" type="rss" />
+      <outline title="Campaign TR" xmlUrl="https://www.campaigntr.com/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Turkiye" xmlUrl="https://www.greenpeace.org/turkey/feed/" type="rss" />
+      <outline title="Doga Dernegi" xmlUrl="https://www.dogadernegi.org/rss/" type="rss" />
+      <outline title="Hurriyet Cevre" xmlUrl="https://www.hurriyet.com.tr/rss/cevre/" type="rss" />
+      <outline title="Yesil Gazete" xmlUrl="https://www.yesilgazete.org/rss/" type="rss" />
+      <outline title="EkoIQ" xmlUrl="https://www.ekoiq.com/rss/" type="rss" />
+      <outline title="Iklim Haber" xmlUrl="https://www.iklimhaber.org/rss/" type="rss" />
+      <outline title="Cevreciyiz" xmlUrl="https://www.cevreciyiz.com/rss/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Evim" xmlUrl="https://www.evimdergisi.com.tr/rss/" type="rss" />
+      <outline title="Mimari Tasarim" xmlUrl="https://www.mimaritasarim.com/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Derin Tarih" xmlUrl="https://www.derintarih.com/rss/" type="rss" />
+      <outline title="Atlas Tarih" xmlUrl="https://www.atlastarih.com/rss/" type="rss" />
+      <outline title="Turk Tarih Kurumu" xmlUrl="https://www.ttk.gov.tr/rss/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Arkitera" xmlUrl="https://www.arkitera.com/rss/" type="rss" />
+      <outline title="Yapi" xmlUrl="https://www.yapi.com.tr/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Yapi Dergisi" xmlUrl="https://www.yapidergisi.com/rss/" type="rss" />
+      <outline title="Betonart" xmlUrl="https://www.betonart.com.tr/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Trendyol Tech" xmlUrl="https://medium.com/feed/trendyol-tech" type="rss" />
+      <outline title="Getir Engineering" xmlUrl="https://medium.com/feed/getir" type="rss" />
+      <outline title="iYZico Engineering" xmlUrl="https://medium.com/feed/iyzico-engineering" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Bloomberg HT" xmlUrl="https://www.bloomberght.com/rss/" type="rss" />
+      <outline title="Dunya" xmlUrl="https://www.dunya.com/rss/" type="rss" />
+      <outline title="Ekonomim" xmlUrl="https://www.ekonomim.com/rss/" type="rss" />
+      <outline title="Hurriyet Ekonomi" xmlUrl="https://www.hurriyet.com.tr/rss/ekonomi/" type="rss" />
+      <outline title="Milliyet Ekonomi" xmlUrl="https://www.milliyet.com.tr/rss/ekonomi/" type="rss" />
+      <outline title="Patronlar Dunyasi" xmlUrl="https://www.patronlardunyasi.com/rss/" type="rss" />
+      <outline title="Sozcu Ekonomi" xmlUrl="https://www.sozcu.com.tr/rss/ekonomi/" type="rss" />
+      <outline title="Forbes Turkiye" xmlUrl="https://www.forbes.com.tr/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Medyascope Podcast" xmlUrl="https://www.medyascope.tv/podcast/feed/" type="rss" />
+      <outline title="Fularsiz" xmlUrl="https://www.fularsiz.com/feed/podcast/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Fotografya" xmlUrl="https://www.fotografya.gen.tr/rss/" type="rss" />
+      <outline title="Istanbul Fotograf" xmlUrl="https://www.istanbulfotograf.com/rss/" type="rss" />
+      <outline title="Foto Trek" xmlUrl="https://www.fototrek.com/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="Apple Turk" xmlUrl="https://www.appleturk.com/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

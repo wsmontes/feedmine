@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Iran Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="IRNA" xmlUrl="https://www.irna.ir/rss/" type="rss" />
+      <outline title="Mehr News" xmlUrl="https://www.mehrnews.com/rss/" type="rss" />
+      <outline title="ISNA" xmlUrl="https://www.isna.ir/rss/" type="rss" />
+      <outline title="Tehran Times" xmlUrl="https://www.tehrantimes.com/rss/" type="rss" />
+      <outline title="IFP News" xmlUrl="https://www.ifpnews.com/feed/" type="rss" />
+      <outline title="Press TV" xmlUrl="https://www.presstv.ir/rss/" type="rss" />
+      <outline title="Khabar Online" xmlUrl="https://www.khabaronline.ir/rss/" type="rss" />
+      <outline title="Hamshahri" xmlUrl="https://www.hamshahrionline.ir/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Fars Sport" xmlUrl="https://www.farsnews.ir/sport/rss/" type="rss" />
+      <outline title="Persepolis" xmlUrl="https://www.fc-perspolis.com/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="IT Iran" xmlUrl="https://www.itiran.com/feed/" type="rss" />
+      <outline title="TechRasa" xmlUrl="https://www.techrasa.com/feed/" type="rss" />
+      <outline title="Peivast" xmlUrl="https://www.peivast.com/feed/" type="rss" />
+      <outline title="Iran Digital" xmlUrl="https://www.irandigital.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="IRNA Science" xmlUrl="https://www.irna.ir/science/rss/" type="rss" />
+      <outline title="UT" xmlUrl="https://www.ut.ac.ir/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="IRNA Culture" xmlUrl="https://www.irna.ir/culture/rss/" type="rss" />
+      <outline title="Art Iran" xmlUrl="https://www.artiran.com/feed/" type="rss" />
+      <outline title="Persian Culture" xmlUrl="https://www.persianculture.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Tehran Music" xmlUrl="https://www.tehranmusic.com/feed/" type="rss" />
+      <outline title="Persian Rap" xmlUrl="https://www.persianrap.com/feed/" type="rss" />
+      <outline title="Fajr Festival" xmlUrl="https://www.fajrmusicfestival.com/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Iran Food" xmlUrl="https://www.iranfood.com/feed/" type="rss" />
+      <outline title="Iranian Cuisine" xmlUrl="https://www.iraniancuisine.com/feed/" type="rss" />
+      <outline title="Sofreh Irani" xmlUrl="https://www.sofrehirani.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Shiraz Travel" xmlUrl="https://www.shiraztravel.com/rss/" type="rss" />
+      <outline title="Yazd Tourism" xmlUrl="https://www.yazdtourism.com/rss/" type="rss" />
+      <outline title="Visit Iran" xmlUrl="https://www.visitiran.ir/rss/" type="rss" />
+      <outline title="Explore Iran" xmlUrl="https://www.exploreiran.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="IRNA Economy" xmlUrl="https://www.irna.ir/economy/rss/" type="rss" />
+      <outline title="Financial Tribune" xmlUrl="https://www.financialtribune.com/rss/" type="rss" />
+      <outline title="Eghtesad Online" xmlUrl="https://www.eghtesadonline.com/rss/" type="rss" />
+      <outline title="Iran Business" xmlUrl="https://www.iranbusiness.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Digikala Tech" xmlUrl="https://www.digikala.com/mag/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

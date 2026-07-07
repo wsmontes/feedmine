@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Germany Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Der Spiegel" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" type="rss" />
+      <outline title="Die Zeit" xmlUrl="https://newsfeed.zeit.de/index" type="rss" />
+      <outline title="FAZ" xmlUrl="https://www.faz.net/rss/aktuell/" type="rss" />
+      <outline title="Süddeutsche Zeitung" xmlUrl="https://rss.sueddeutsche.de/rss/Topthemen" type="rss" />
+      <outline title="Die Welt" xmlUrl="https://www.welt.de/feeds/latest.rss" type="rss" />
+      <outline title="Tagesschau" xmlUrl="https://www.tagesschau.de/xml/rss2/" type="rss" />
+      <outline title="taz" xmlUrl="https://taz.de/!p4608;rss/" type="rss" />
+      <outline title="Handelsblatt" xmlUrl="https://www.handelsblatt.com/contentexport/feed/top-themen" type="rss" />
+      <outline title="Deutsche Welle" xmlUrl="https://rss.dw.com/xml/rss-de-all" type="rss" />
+      <outline title="n-tv" xmlUrl="https://www.n-tv.de/rss" type="rss" />
+      <outline title="ZDF heute" xmlUrl="https://www.zdf.de/rss/zdf/nachrichten" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Spiegel Sport" xmlUrl="https://www.spiegel.de/sport/index.rss" type="rss" />
+      <outline title="Zeit Sport" xmlUrl="https://newsfeed.zeit.de/sport/index" type="rss" />
+      <outline title="Transfermarkt" xmlUrl="https://www.transfermarkt.de/rss/news" type="rss" />
+      <outline title="ran" xmlUrl="https://www.ran.de/rss.xml" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Heise Online" xmlUrl="https://www.heise.de/rss/heise-atom.xml" type="rss" />
+      <outline title="Golem" xmlUrl="https://rss.golem.de/rss.php?feed=ATOM1.0" type="rss" />
+      <outline title="Netzpolitik" xmlUrl="https://netzpolitik.org/feed/" type="rss" />
+      <outline title="t3n" xmlUrl="https://t3n.de/rss.xml" type="rss" />
+      <outline title="Caschys Blog" xmlUrl="https://stadt-bremerhaven.de/feed/" type="rss" />
+      <outline title="Spiegel Netzwelt" xmlUrl="https://www.spiegel.de/netzwelt/index.rss" type="rss" />
+      <outline title="Zeit Digital" xmlUrl="https://newsfeed.zeit.de/digital/index" type="rss" />
+      <outline title="TechStage" xmlUrl="https://www.techstage.de/rss.xml" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Spiegel Wissenschaft" xmlUrl="https://www.spiegel.de/wissenschaft/index.rss" type="rss" />
+      <outline title="Süddeutsche Wissen" xmlUrl="https://rss.sueddeutsche.de/rss/Wissen" type="rss" />
+      <outline title="National Geographic DE" xmlUrl="https://www.nationalgeographic.de/rss.xml" type="rss" />
+      <outline title="Deutschlandfunk Forschung" xmlUrl="https://www.deutschlandfunk.de/forschung-aktuell-100.rss" type="rss" />
+      <outline title="Quarks" xmlUrl="https://www.quarks.de/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Spiegel Kultur" xmlUrl="https://www.spiegel.de/kultur/index.rss" type="rss" />
+      <outline title="Süddeutsche Kultur" xmlUrl="https://rss.sueddeutsche.de/rss/Kultur" type="rss" />
+      <outline title="Monopol Magazin" xmlUrl="https://www.monopol-magazin.de/rss.xml" type="rss" />
+      <outline title="Art Magazin" xmlUrl="https://www.art-magazin.de/rss.xml" type="rss" />
+      <outline title="Musikexpress" xmlUrl="https://www.musikexpress.de/feed/" type="rss" />
+      <outline title="SZ Magazin" xmlUrl="https://sz-magazin.sueddeutsche.de/rss.xml" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Spiegel Kino" xmlUrl="https://www.spiegel.de/kultur/kino/index.rss" type="rss" />
+      <outline title="Critic.de" xmlUrl="https://www.critic.de/rss.xml" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Musikexpress" xmlUrl="https://www.musikexpress.de/feed/" type="rss" />
+      <outline title="Rolling Stone DE" xmlUrl="https://www.rollingstone.de/feed/" type="rss" />
+      <outline title="Visions" xmlUrl="https://www.visions.de/feed/" type="rss" />
+      <outline title="Spiegel Musik" xmlUrl="https://www.spiegel.de/kultur/musik/index.rss" type="rss" />
+      <outline title="Zeit Musik" xmlUrl="https://newsfeed.zeit.de/musik/index" type="rss" />
+      <outline title="Diffus" xmlUrl="https://diffusmag.de/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="EatSmarter" xmlUrl="https://www.eatsmarter.de/rss.xml" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Mein-MMO" xmlUrl="https://mein-mmo.de/feed/" type="rss" />
+      <outline title="Eurogamer DE" xmlUrl="https://www.eurogamer.de/feed/" type="rss" />
+      <outline title="Nintendo Online" xmlUrl="https://www.nintendo-online.de/rss.xml" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Spiegel Reise" xmlUrl="https://www.spiegel.de/reise/index.rss" type="rss" />
+      <outline title="Süddeutsche Reise" xmlUrl="https://rss.sueddeutsche.de/rss/Reise" type="rss" />
+      <outline title="Reiseuhu" xmlUrl="https://www.reiseuhu.de/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Spreeblick" xmlUrl="https://www.spreeblick.com/feed/" type="rss" />
+      <outline title="Basic Thinking" xmlUrl="https://www.basicthinking.de/feed/" type="rss" />
+      <outline title="Übermedien" xmlUrl="https://uebermedien.de/feed/" type="rss" />
+      <outline title="Stadt Bremerhaven" xmlUrl="https://stadt-bremerhaven.de/feed/" type="rss" />
+      <outline title="Kraftfuttermischwerk" xmlUrl="https://www.kraftfuttermischwerk.de/blogg/feed/" type="rss" />
+      <outline title="Nerdcore" xmlUrl="https://www.nerdcore.de/feed/" type="rss" />
+      <outline title="Der Postillon" xmlUrl="https://www.der-postillon.com/feeds/posts/default" type="rss" />
+      <outline title="Spiegel Netzwelt" xmlUrl="https://www.spiegel.de/netzwelt/index.rss" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Page Online" xmlUrl="https://page-online.de/feed/" type="rss" />
+      <outline title="Design Made in Germany" xmlUrl="https://www.designmadeingermany.de/rss.xml" type="rss" />
+      <outline title="Grafikmagazin" xmlUrl="https://grafikmagazin.de/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Spiegel Klima" xmlUrl="https://www.spiegel.de/wissenschaft/natur/index.rss" type="rss" />
+      <outline title="Utopia" xmlUrl="https://utopia.de/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="DIY Academy" xmlUrl="https://www.diy-academy.eu/rss.xml" type="rss" />
+      <outline title="Maker Faire DE" xmlUrl="https://maker-faire.de/feed/" type="rss" />
+      <outline title="Handmade Kultur" xmlUrl="https://www.handmade-kultur.de/rss.xml" type="rss" />
+      <outline title="Nadelspiel" xmlUrl="https://www.nadelspiel.com/feed/" type="rss" />
+      <outline title="Mach Mal" xmlUrl="https://machmalmitobst.wordpress.com/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Spiegel Geschichte" xmlUrl="https://www.spiegel.de/geschichte/index.rss" type="rss" />
+      <outline title="Deutschlandfunk Geschichte" xmlUrl="https://www.deutschlandfunk.de/kalenderblatt-100.rss" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Dezeen DE" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Heise Developer" xmlUrl="https://www.heise.de/developer/rss/news-atom.xml" type="rss" />
+      <outline title="Golem Dev" xmlUrl="https://rss.golem.de/rss.php?feed=ATOM1.0" type="rss" />
+      <outline title="t3n" xmlUrl="https://t3n.de/rss.xml" type="rss" />
+      <outline title="JAXenter" xmlUrl="https://jaxenter.de/rss.xml" type="rss" />
+      <outline title="Dev-Insider" xmlUrl="https://www.dev-insider.de/rss.xml" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Handelsblatt" xmlUrl="https://www.handelsblatt.com/contentexport/feed/top-themen" type="rss" />
+      <outline title="Spiegel Wirtschaft" xmlUrl="https://www.spiegel.de/wirtschaft/index.rss" type="rss" />
+      <outline title="Zeit Wirtschaft" xmlUrl="https://newsfeed.zeit.de/wirtschaft/index" type="rss" />
+      <outline title="Süddeutsche Wirtschaft" xmlUrl="https://rss.sueddeutsche.de/rss/Wirtschaft" type="rss" />
+      <outline title="Gruenderszene" xmlUrl="https://www.gruenderszene.de/feed/" type="rss" />
+      <outline title="Deutsche Startups" xmlUrl="https://www.deutsche-startups.de/feed/" type="rss" />
+      <outline title="FinanceFWD" xmlUrl="https://financefwd.com/de/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Methodisch inkorrekt" xmlUrl="https://minkorrekt.podigee.io/feed/mp3" type="rss" />
+      <outline title="Logbuch Netzpolitik" xmlUrl="https://logbuch-netzpolitik.de/feed/m4a" type="rss" />
+      <outline title="Hotel Matze" xmlUrl="https://hotelmatze.podigee.io/feed/mp3" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="ProfiFoto" xmlUrl="https://www.profifoto.de/rss.xml" type="rss" />
+      <outline title="Photoscala" xmlUrl="https://www.photoscala.de/rss.xml" type="rss" />
+      <outline title="Fotolehrgang" xmlUrl="https://www.fotolehrgang.de/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="iFun" xmlUrl="https://www.ifun.de/feed/" type="rss" />
+      <outline title="Macerkopf" xmlUrl="https://www.macerkopf.de/feed/" type="rss" />
+      <outline title="iPhone-Ticker" xmlUrl="https://www.iphone-ticker.de/feed/" type="rss" />
+      <outline title="Stadt Bremerhaven Apple" xmlUrl="https://stadt-bremerhaven.de/category/apple/feed/" type="rss" />
+      <outline title="Mac Life" xmlUrl="https://www.maclife.de/rss.xml" type="rss" />
+      <outline title="MacNotes" xmlUrl="https://macnotes.de/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Gronkh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZH94s66wDOTspVoKI7EYpg" type="rss" />
+      <outline title="Kurzgesagt DE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq8ZAAsI89IoJ-fn1gYpO3g" type="rss" />
+    </outline>
+  </body>
+</opml>

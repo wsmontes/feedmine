@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Algeria Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Echorouk" xmlUrl="https://www.echoroukonline.com/rss/" type="rss" />
+      <outline title="Algerie 360" xmlUrl="https://www.algerie360.com/rss/" type="rss" />
+      <outline title="Tout Sur l'Algerie" xmlUrl="https://www.tsa-algerie.com/rss/" type="rss" />
+      <outline title="Algerie Patriotique" xmlUrl="https://www.algeriepatriotique.com/rss/" type="rss" />
+      <outline title="Alg24" xmlUrl="https://www.alg24.net/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="MC Alger" xmlUrl="https://www.mcalger.com/rss/" type="rss" />
+      <outline title="DZ Foot" xmlUrl="https://www.dzfoot.com/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="DZ Tech" xmlUrl="https://www.dztech.com/feed/" type="rss" />
+      <outline title="Mobilis DZ" xmlUrl="https://www.mobilis.dz/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="MESRS Algeria" xmlUrl="https://www.mesrs.dz/rss/" type="rss" />
+      <outline title="CERIST" xmlUrl="https://www.cerist.dz/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Berber Culture" xmlUrl="https://www.berberculture.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Algerian Music" xmlUrl="https://www.algerianmusic.com/feed/" type="rss" />
+      <outline title="Algerian Songs" xmlUrl="https://www.algeriansongs.com/feed/" type="rss" />
+      <outline title="Rai DZ" xmlUrl="https://www.raidz.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Algeria Food" xmlUrl="https://www.algeriafood.com/feed/" type="rss" />
+      <outline title="Algerian Cuisine" xmlUrl="https://www.algeriancuisine.com/feed/" type="rss" />
+      <outline title="Food Algeria" xmlUrl="https://www.foodalgeria.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Visit Algeria" xmlUrl="https://www.visitalgeria.com/rss/" type="rss" />
+      <outline title="Explore Algeria" xmlUrl="https://www.explorealgeria.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business" />
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

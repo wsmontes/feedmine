@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sudan Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Dabanga Sudan" xmlUrl="https://www.dabangasudan.org/rss/" type="rss" />
+      <outline title="Radio Tamazuj" xmlUrl="https://www.radiotamazuj.org/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="SFA" xmlUrl="https://www.sudanfa.com/rss/" type="rss" />
+      <outline title="Khartoum Sport" xmlUrl="https://www.khartoumsport.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Startup Sudan" xmlUrl="https://www.startupsudan.com/feed/" type="rss" />
+      <outline title="Sudan ICT" xmlUrl="https://www.sudanict.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="MoHESR Sudan" xmlUrl="https://www.mohe.gov.sd/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Sudan Culture" xmlUrl="https://www.sudanculture.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Sudanese Songs" xmlUrl="https://www.sudanesesongs.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Sudanese Food" xmlUrl="https://www.sudanesefood.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Visit Sudan" xmlUrl="https://www.visitsudan.com/rss/" type="rss" />
+      <outline title="Explore Sudan" xmlUrl="https://www.exploresudan.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Sudan Economy" xmlUrl="https://www.sudaneconomy.com/feed/" type="rss" />
+      <outline title="Startup Sudan Biz" xmlUrl="https://www.startupsudan.com/feed/" type="rss" />
+      <outline title="Sudan Investment" xmlUrl="https://www.sudaninvestment.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

@@ -1,109 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>YouTube News</title></head>
+  <head>
+    <title>YouTube News</title>
+  </head>
   <body>
     <outline text="News">
-      <outline title="BBC News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC16niRr50-MSBwiO3YDb3RA" type="rss"/>
-      <outline title="Sky News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoMdktPbSTixAyNGwb-UYkQ" type="rss"/>
-      <outline title="CNN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCupvZG-5ko_eiXAupbDfxWw" type="rss"/>
-      <outline title="NBC News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeY0bbntWzzVIaj2z3QigXg" type="rss"/>
-      <outline title="ABC News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBi2mrWuNuyYy4gbM6fU18Q" type="rss"/>
-      <outline title="CBS News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8p1vwvWtl6T73JiExfWs1g" type="rss"/>
-      <outline title="Fox News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXIJgqnII2ZOINSWNOGFThA" type="rss"/>
-      <outline title="MSNBC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaXkIU1QidjPwiAYu6GcHjg" type="rss"/>
-      <outline title="DW News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg" type="rss"/>
-      <outline title="FRANCE 24 English" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQfwfsi5VrQ8yKZ-UWmAEFg" type="rss"/>
-      <outline title="Al Jazeera English" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNye-wNBqNL5ZzHSJj3l8Bg" type="rss"/>
-      <outline title="Euronews" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsNbWjHyKTOMa1JZU3c5n3g" type="rss"/>
-      <outline title="Reuters" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ" type="rss"/>
-      <outline title="Associated Press" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA" type="rss"/>
-      <outline title="The Guardian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHIRBiAd-PtmNxAcLnGfwog" type="rss"/>
-      <outline title="The Telegraph" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPgLNge0xqQHWM5B5EFH9Cg" type="rss"/>
-      <outline title="The Times and Sunday Times" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzK2Z4RhfK6Arq4hTwj5X4A" type="rss"/>
-      <outline title="The Independent" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCshwRhftzkiov5wKR7MStsQ" type="rss"/>
-      <outline title="Bloomberg TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg" type="rss"/>
-      <outline title="CNBC Television" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrp_UI8XtuYfpiqluWLD7Lw" type="rss"/>
-      <outline title="Financial Times" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7GcUCd0SVoJz5IhJ7K4n4A" type="rss"/>
-      <outline title="The Economist" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0p_6t7UsYP8oD5Smxq7SUQ" type="rss"/>
-      <outline title="Forbes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmh7afBz-uWwOSaJiN-3Jcg" type="rss"/>
-      <outline title="Time Magazine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8Su5vZCXWRag13H53zWVwA" type="rss"/>
-      <outline title="New York Times" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqnbDFdCpuN8CMEg0VuEBqA" type="rss"/>
-      <outline title="Washington Post" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHd62-u_v4DvJ8TCFtpi4GA" type="rss"/>
-      <outline title="Wall Street Journal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ" type="rss"/>
-      <outline title="CBC News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuFFtHWoLl5fauMMD5Ww2jA" type="rss"/>
-      <outline title="Global News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChLtXXpo4n1s3k5pQkVagDA" type="rss"/>
-      <outline title="CTV News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiKhedt56J7E8OB6vL5sY6g" type="rss"/>
-      <outline title="ABC News Australia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVgO39Bk5sMo66-6o6Spn6Q" type="rss"/>
-      <outline title="SBS News Australia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxdA2Csk2vCA7n9kKI6cJcA" type="rss"/>
-      <outline title="Channel 4 News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmDkR9pN0RK7WqDt7Zl0gNg" type="rss"/>
-      <outline title="ITV News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuwgDcLrhJ5CqP5j6VnH1wg" type="rss"/>
-      <outline title="NDTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZFMm1mMw3dq3qJ8q7h2N0Q" type="rss"/>
-      <outline title="WION" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_gUM8rL-Lrg6O3aDGZ6B3A" type="rss"/>
-      <outline title="TRT World" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7fWeaHhqgM4Ry-RMpM2YYw" type="rss"/>
-      <outline title="CNA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC83jt4dlz1Gjl58fzQrrKZg" type="rss"/>
-      <outline title="NHK World-Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSPEjw8F2nQDtmUKPFNF7_A" type="rss"/>
-      <outline title="Arirang News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8HX-gUOz7mBRwb0uY_Jqww" type="rss"/>
-      <outline title="PBS NewsHour" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6ZFN9Tx6xh-skXCuRHCDpQ" type="rss"/>
-      <outline title="Vice News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZaT_X_mMbdmjj5xHfaz2zQ" type="rss"/>
-      <outline title="NowThis News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgMJGv4cQl8-q71AyFeFmtg" type="rss"/>
-      <outline title="The Young Turks" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1yBKRuGpC1tSM73Aq8p3Xw" type="rss"/>
-      <outline title="Breaking Points" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-hmmB7wYj4iXl0Dp9jXqVA" type="rss"/>
-      <outline title="Piers Morgan Uncensored" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCskL9mKfp1o5TFl9O6_wb7g" type="rss"/>
-      <outline title="Good Morning Britain" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuLhRj1h7Zj0mG5TSiQzB6Q" type="rss"/>
-      <outline title="TalkTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCui65MAs3TPh6NEC6TAv3MQ" type="rss"/>
-      <outline title="GBNews" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGkuvv6r95-Dz0gJw6p5XOA" type="rss"/>
-      <outline title="Times Radio" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmDx_4fYJrG1CszhN2MpebQ" type="rss"/>
-      <outline title="LBC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCb_9gB9c-0YLfYXQDYqLXlw" type="rss"/>
-      <outline title="The Rest Is Politics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvs4009e4s0q2XqWz8gN-mA" type="rss"/>
-      <outline title="TLDR News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSMqdmUNC_Ti1s9kGzQX0fA" type="rss"/>
-      <outline title="TLDR News EU" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-uhvhoipjh6lG6jZqZq6lA" type="rss"/>
-      <outline title="TLDR News Global" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk_im9EoF1oG8pN0YJ7lw6w" type="rss"/>
-      <outline title="VisualPolitik EN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTIcmSfGq8X3oMq4iW9jJew" type="rss"/>
-      <outline title="CaspianReport" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqJYt2kKJqXz6kqW8mHj7pA" type="rss"/>
-      <outline title="Good Times Bad Times" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYH5tO8Y7q7iX4oH7bJfTgQ" type="rss"/>
-      <outline title="Economics Explained" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ4AMrDcNrfy3X6nsUQ-rAw" type="rss"/>
-      <outline title="NPR" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJn16lFs2C0Mv3kZ0eOXwXw" type="rss"/>
-      <outline title="ProPublica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7QvUY5E2E4Y2Pm5B9gFJqA" type="rss"/>
-      <outline title="Frontline PBS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3ScyryU9Oy9Wse3a8OAmYQ" type="rss"/>
-      <outline title="60 Minutes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsDtYzUnQKqJ5QkYVJ9hS5g" type="rss"/>
-      <outline title="ABC News In-depth" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgxR9oM7DpgFN6n8JkTwG7g" type="rss"/>
-      <outline title="Meet The Press" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpzQxJgB7qW5HKqV6m0pWnA" type="rss"/>
-      <outline title="Face the Nation" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi7sHj6h5pJ9sFhQxKpPzNw" type="rss"/>
-      <outline title="This Week ABC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5jJ6oQnR0vXhH4xLtJmzGg" type="rss"/>
-      <outline title="State of the Union CNN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyXGwBQx7PCj0sMqEh7nDQw" type="rss"/>
-      <outline title="Fox News Sunday" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCs7l0q2gV2XhO0cQ5jHsWqA" type="rss"/>
-      <outline title="The Hill" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4X5O0AZ9Vf5Jt5W8dPm0FA" type="rss"/>
-      <outline title="Politico" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6j5nNlKz5G8pYhQj3tBxHg" type="rss"/>
-      <outline title="Axios" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW7kYj8n3J9XoKJqG5VvG3A" type="rss"/>
-      <outline title="Vox News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLXo7UDZvByw2ixzpQCufnA" type="rss"/>
-      <outline title="The Atlantic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn4DQqP0bH6QGj2p0KkX5Dw" type="rss"/>
-      <outline title="The New Yorker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2s0uRLI3jQk3j4XqQ0XRYA" type="rss"/>
-      <outline title="Foreign Policy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpJ1nT4kXbJ4K7mF7k9xGnw" type="rss"/>
-      <outline title="Council on Foreign Relations" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrC8mOqJQpoB7NuIMKIS6rQ" type="rss"/>
-      <outline title="Brookings Institution" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkYkPZZtWqXvKj6dq2wvCdg" type="rss"/>
-      <outline title="Chatham House" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzPqKqjXqVnNcH5YxJY2QbA" type="rss"/>
-      <outline title="Carnegie Endowment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxGqQnKjJqo3K5qQx8wGzTg" type="rss"/>
-      <outline title="RUSI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8jQnKjHqo9K8qQx5wGzBg" type="rss"/>
-      <outline title="CSIS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz4jQnKjHqo3K2qQx8wGzRg" type="rss"/>
-      <outline title="Hudson Institute" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw6jQnKjXqo3K0qQx7wGzCg" type="rss"/>
-      <outline title="Hoover Institution" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz1jQnKjDqo3K9qQx8wGzPg" type="rss"/>
-      <outline title="Peterson Institute" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg5jQnKjTqo3K4qQx9wGzLg" type="rss"/>
-      <outline title="World Economic Forum" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeXjQnKjKqo3K7qQx2wGzEg" type="rss"/>
-      <outline title="IMF" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz9jQnKjMqo3K6qQx6wGzNg" type="rss"/>
-      <outline title="World Bank" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz7jQnKjAqo3K1qQx3wGzIg" type="rss"/>
-      <outline title="United Nations" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5O114-PQNYkurlbHf7Rlzg" type="rss"/>
-      <outline title="NATO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzJqEnpR5qVfCmGhDU5pN2g" type="rss"/>
-      <outline title="EU Debates" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzXpEnpR6qVfCmGhDU6pN3h" type="rss"/>
-      <outline title="RealLifeLore" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK--7xp9rYR5XmJ9O9M9s2A" type="rss"/>
-      <outline title="Wendover Productions" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9RM-iSvTu1uPJb8X5yp3EQ" type="rss"/>
-      <outline title="Polymatter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUMZk3Pj3Q9V8n6r5IvQ0qg" type="rss"/>
-      <outline title="Kurzgesagt" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q" type="rss"/>
-      <outline title="Johnny Harris" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmGSJVG3mCRXVOKj6I0oPCQ" type="rss"/>
-      <outline title="Vice News Reports" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWF2nNf0Nq0PXdxTtDnDkrA" type="rss"/>
-      <outline title="AJ+" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-3jIAlnQmbbVMV6gR7K8aQ" type="rss"/>
-      <outline title="The Intercept" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkEBDb3aqRpN5nTqF9kL1cA" type="rss"/>
-      <outline title="Democracy Now!" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzuqE7-t13O4NIDYJfak2DQ" type="rss"/>
-      <outline title="The Real News Network" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2Cz8sOqY7HmE8xT0fBqRxg" type="rss"/>
+      <outline title="Fox News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXIJgqnII2ZOINSWNOGFThA" type="rss" />
+      <outline title="MSNBC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaXkIU1QidjPwiAYu6GcHjg" type="rss" />
+      <outline title="Wall Street Journal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ" type="rss" />
+      <outline title="TRT World" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7fWeaHhqgM4Ry-RMpM2YYw" type="rss" />
     </outline>
   </body>
 </opml>

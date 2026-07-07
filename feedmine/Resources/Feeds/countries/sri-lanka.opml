@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sri Lanka Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Ada Derana" xmlUrl="https://www.adaderana.lk/rss/" type="rss" />
+      <outline title="Daily Mirror" xmlUrl="https://www.dailymirror.lk/rss/" type="rss" />
+      <outline title="News First" xmlUrl="https://www.newsfirst.lk/rss/" type="rss" />
+      <outline title="Daily FT" xmlUrl="https://www.ft.lk/rss/" type="rss" />
+      <outline title="Colombo Page" xmlUrl="https://www.colombopage.com/rss/" type="rss" />
+      <outline title="Lankadeepa" xmlUrl="https://www.lankadeepa.lk/rss/" type="rss" />
+      <outline title="The Island" xmlUrl="https://www.island.lk/rss/" type="rss" />
+      <outline title="EconomyNext" xmlUrl="https://www.economynext.com/rss/" type="rss" />
+      <outline title="Tamil Mirror" xmlUrl="https://www.tamilmirror.lk/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Daily Mirror Sports" xmlUrl="https://www.dailymirror.lk/sports/rss/" type="rss" />
+      <outline title="Ada Derana Sports" xmlUrl="https://www.adaderana.lk/sports/rss/" type="rss" />
+      <outline title="The Papare" xmlUrl="https://www.thepapare.com/feed/" type="rss" />
+      <outline title="Sri Lanka Cricket" xmlUrl="https://www.srilankacricket.lk/rss/" type="rss" />
+      <outline title="Cricbuzz SL" xmlUrl="https://www.cricbuzz.com/cricket-team/sri-lanka/rss/" type="rss" />
+      <outline title="Colombo FC" xmlUrl="https://www.colombofc.com/rss/" type="rss" />
+      <outline title="Sri Lanka Sports" xmlUrl="https://www.srilankasports.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Readme LK" xmlUrl="https://www.readme.lk/feed/" type="rss" />
+      <outline title="Ada Derana Tech" xmlUrl="https://www.adaderana.lk/technology/rss/" type="rss" />
+      <outline title="Tech Wire LK" xmlUrl="https://www.techwire.lk/feed/" type="rss" />
+      <outline title="SL IT" xmlUrl="https://www.slit.com/feed/" type="rss" />
+      <outline title="Digital LK" xmlUrl="https://www.digitallk.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="UoP" xmlUrl="https://www.pdn.ac.lk/rss/" type="rss" />
+      <outline title="Arthur C Clarke" xmlUrl="https://www.accimt.ac.lk/rss/" type="rss" />
+      <outline title="SL Medical" xmlUrl="https://www.slmedical.org/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Daily Mirror Culture" xmlUrl="https://www.dailymirror.lk/culture/rss/" type="rss" />
+      <outline title="Galle Literary" xmlUrl="https://www.galleliteraryfestival.com/rss/" type="rss" />
+      <outline title="Art Sri Lanka" xmlUrl="https://www.artsrilanka.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Lanka Music" xmlUrl="https://www.lankamusic.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Yamu LK" xmlUrl="https://www.yamu.lk/feed/" type="rss" />
+      <outline title="Sri Lanka Food" xmlUrl="https://www.srilankafood.com/feed/" type="rss" />
+      <outline title="Rice and Curry" xmlUrl="https://www.riceandcurry.com/feed/" type="rss" />
+      <outline title="Ceylon Kitchen" xmlUrl="https://www.ceylonkitchen.com/feed/" type="rss" />
+      <outline title="Sri Lankan Food" xmlUrl="https://www.srilankanfood.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Sri Lanka Travel" xmlUrl="https://www.srilanka.travel/rss/" type="rss" />
+      <outline title="SriLankan Airlines" xmlUrl="https://www.srilankan.com/rss/" type="rss" />
+      <outline title="Sigiriya" xmlUrl="https://www.sigiriya.info/rss/" type="rss" />
+      <outline title="Travel SL" xmlUrl="https://www.travelsl.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="EconomyNext SL" xmlUrl="https://www.economynext.com/rss/" type="rss" />
+      <outline title="Lanka Business" xmlUrl="https://www.lankabusinessonline.com/rss/" type="rss" />
+      <outline title="Economy LK" xmlUrl="https://www.economylk.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Dev LK" xmlUrl="https://www.devlk.com/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

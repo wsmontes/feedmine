@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Lithuania Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Delfi" xmlUrl="https://www.delfi.lt/rss/" type="rss" />
+      <outline title="15min" xmlUrl="https://www.15min.lt/rss/" type="rss" />
+      <outline title="Lrytas" xmlUrl="https://www.lrytas.lt/rss/" type="rss" />
+      <outline title="TV3" xmlUrl="https://www.tv3.lt/rss/" type="rss" />
+      <outline title="Verslo Zinios" xmlUrl="https://www.vz.lt/rss/" type="rss" />
+      <outline title="Respublika" xmlUrl="https://www.respublika.lt/rss/" type="rss" />
+      <outline title="Kauno Diena" xmlUrl="https://www.kauno.diena.lt/rss/" type="rss" />
+      <outline title="Vakaru Ekspresas" xmlUrl="https://www.ve.lt/rss/" type="rss" />
+      <outline title="Alfa" xmlUrl="https://www.alfa.lt/rss/" type="rss" />
+      <outline title="Etaplius" xmlUrl="https://www.etaplius.lt/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Delfi Sportas" xmlUrl="https://www.delfi.lt/sportas/rss/" type="rss" />
+      <outline title="15min Sportas" xmlUrl="https://www.15min.lt/sportas/rss/" type="rss" />
+      <outline title="Krepsinis" xmlUrl="https://www.krepsinis.net/rss/" type="rss" />
+      <outline title="BasketNews" xmlUrl="https://www.basketnews.lt/rss/" type="rss" />
+      <outline title="EuroBasket LT" xmlUrl="https://www.eurobasket.lt/rss/" type="rss" />
+      <outline title="LFF" xmlUrl="https://www.lff.lt/rss/" type="rss" />
+      <outline title="Rytas" xmlUrl="https://www.rytasvilnius.lt/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Delfi Tech" xmlUrl="https://www.delfi.lt/mokslas/rss/" type="rss" />
+      <outline title="Startup Lithuania" xmlUrl="https://www.startuplithuania.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Delfi Mokslas" xmlUrl="https://www.delfi.lt/mokslas/rss/" type="rss" />
+      <outline title="KTU" xmlUrl="https://www.ktu.lt/rss/" type="rss" />
+      <outline title="Mokslo Lietuva" xmlUrl="https://www.mokslolietuva.lt/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Delfi Kultura" xmlUrl="https://www.delfi.lt/kultura/rss/" type="rss" />
+      <outline title="15min Kultura" xmlUrl="https://www.15min.lt/kultura/rss/" type="rss" />
+      <outline title="Lithuanian Culture" xmlUrl="https://www.lithuanianculture.lt/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Delfi Muzika" xmlUrl="https://www.delfi.lt/muzika/rss/" type="rss" />
+      <outline title="M-1" xmlUrl="https://www.m-1.lt/rss/" type="rss" />
+      <outline title="ZIP FM" xmlUrl="https://www.zipfm.lt/rss/" type="rss" />
+      <outline title="Galapagai" xmlUrl="https://www.galapagai.lt/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Delfi Maistas" xmlUrl="https://www.delfi.lt/maistas/rss/" type="rss" />
+      <outline title="15min Maistas" xmlUrl="https://www.15min.lt/maistas/rss/" type="rss" />
+      <outline title="Receptai LT" xmlUrl="https://www.receptai.lt/rss/" type="rss" />
+      <outline title="Lamaistas" xmlUrl="https://www.lamaistas.lt/rss/" type="rss" />
+      <outline title="Gardu Gardu" xmlUrl="https://www.gardugardu.lt/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Delfi Travel" xmlUrl="https://www.delfi.lt/keliones/rss/" type="rss" />
+      <outline title="Vilnius Tourism" xmlUrl="https://www.vilnius-tourism.lt/rss/" type="rss" />
+      <outline title="Klaipeda Travel" xmlUrl="https://www.klaipedatravel.lt/rss/" type="rss" />
+      <outline title="Explore Lithuania" xmlUrl="https://www.explorelithuania.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Verslo Zinios" xmlUrl="https://www.vz.lt/rss/" type="rss" />
+      <outline title="Delfi Verslas" xmlUrl="https://www.delfi.lt/verslas/rss/" type="rss" />
+      <outline title="15min Verslas" xmlUrl="https://www.15min.lt/verslas/rss/" type="rss" />
+      <outline title="Startup Lithuania Biz" xmlUrl="https://www.startuplithuania.com/feed/" type="rss" />
+      <outline title="Invest Lithuania" xmlUrl="https://www.investlithuania.com/rss/" type="rss" />
+      <outline title="LPK" xmlUrl="https://www.lpk.lt/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Devbridge LT" xmlUrl="https://www.devbridge.com/blog/feed/" type="rss" />
+      <outline title="CodeAcademy LT" xmlUrl="https://www.codeacademy.lt/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Delfi Podcast" xmlUrl="https://www.delfi.lt/podcast/rss/" type="rss" />
+      <outline title="Radio Vilnius" xmlUrl="https://www.radiovilnius.lt/rss/" type="rss" />
+      <outline title="Podcastas LT" xmlUrl="https://www.podcastas.lt/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

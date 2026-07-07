@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Paraguay Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Hoy Paraguay" xmlUrl="https://www.hoy.com.py/rss/" type="rss" />
+      <outline title="SNT" xmlUrl="https://www.snt.com.py/rss/" type="rss" />
+      <outline title="ADN Paraguayo" xmlUrl="https://www.adndigital.com.py/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="APF" xmlUrl="https://www.apf.org.py/rss/" type="rss" />
+      <outline title="Cerro Porteno" xmlUrl="https://www.cerro.com.py/rss/" type="rss" />
+      <outline title="Versus PY" xmlUrl="https://www.versus.com.py/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Digital PY" xmlUrl="https://www.digitalpy.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="UCA Paraguay" xmlUrl="https://www.uca.edu.py/rss/" type="rss" />
+      <outline title="OMAPA" xmlUrl="https://www.omapa.org.py/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Paraguay Art" xmlUrl="https://www.paraguayart.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Radio Venus" xmlUrl="https://www.venus.com.py/rss/" type="rss" />
+    </outline>
+    <outline text="Food" />
+    <outline text="Travel">
+      <outline title="Asuncion Tourism" xmlUrl="https://www.asuncion.gov.py/rss/" type="rss" />
+      <outline title="Itaipu" xmlUrl="https://www.itaipu.gov.py/rss/" type="rss" />
+      <outline title="Encarnacion Travel" xmlUrl="https://www.encarnacion.gov.py/rss/" type="rss" />
+      <outline title="Explore Paraguay" xmlUrl="https://www.exploreparaguay.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Paraguay Business" xmlUrl="https://www.paraguaybusiness.com/feed/" type="rss" />
+      <outline title="Business PY" xmlUrl="https://www.businesspy.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

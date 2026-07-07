@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>South Korea Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Yonhap News" xmlUrl="https://www.yna.co.kr/rss/" type="rss" />
+      <outline title="JoongAng Ilbo" xmlUrl="https://rss.joins.com/joins_news_list.xml" type="rss" />
+      <outline title="Hankyoreh" xmlUrl="https://www.hani.co.kr/rss/" type="rss" />
+      <outline title="KBS News" xmlUrl="https://news.kbs.co.kr/rss/" type="rss" />
+      <outline title="SBS News" xmlUrl="https://news.sbs.co.kr/rss/" type="rss" />
+      <outline title="Korea Times" xmlUrl="https://www.koreatimes.co.kr/www/rss/rss.xml" type="rss" />
+      <outline title="Korea Herald" xmlUrl="https://www.koreaherald.com/rss/" type="rss" />
+      <outline title="Maeil Business" xmlUrl="https://www.mk.co.kr/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Sports Chosun" xmlUrl="https://sports.chosun.com/rss/" type="rss" />
+      <outline title="Sports Donga" xmlUrl="https://sports.donga.com/rss/" type="rss" />
+      <outline title="IS Plus" xmlUrl="https://isplus.com/rss/" type="rss" />
+      <outline title="Star News" xmlUrl="https://star.mt.co.kr/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="ETNews" xmlUrl="https://www.etnews.com/rss/" type="rss" />
+      <outline title="Venture Square" xmlUrl="https://www.venturesquare.net/feed/" type="rss" />
+      <outline title="Platum" xmlUrl="https://platum.kr/feed/" type="rss" />
+      <outline title="Byline Network" xmlUrl="https://byline.network/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Science Books" xmlUrl="https://sciencebooks.tistory.com/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Museum News" xmlUrl="https://www.museumnews.kr/feed/" type="rss" />
+      <outline title="Art Korea" xmlUrl="https://www.artkorea.kr/feed/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Cine21" xmlUrl="https://www.cine21.com/rss/" type="rss" />
+      <outline title="Sports Khan Movie" xmlUrl="https://sports.khan.co.kr/entertainment/rss/" type="rss" />
+      <outline title="My Daily" xmlUrl="https://www.mydaily.co.kr/rss/" type="rss" />
+      <outline title="TV Daily" xmlUrl="https://tvdaily.co.kr/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Genie Music" xmlUrl="https://www.genie.co.kr/rss/" type="rss" />
+      <outline title="TenAsia" xmlUrl="https://tenasia.hankyung.com/rss/" type="rss" />
+      <outline title="Idology" xmlUrl="https://idology.kr/feed/" type="rss" />
+      <outline title="Seoul Beats" xmlUrl="https://seoulbeats.com/feed/" type="rss" />
+      <outline title="Soompi" xmlUrl="https://www.soompi.com/feed/" type="rss" />
+      <outline title="Koreaboo" xmlUrl="https://www.koreaboo.com/feed/" type="rss" />
+      <outline title="Asian Junkie" xmlUrl="https://www.asianjunkie.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Mangchi" xmlUrl="https://www.maangchi.com/feed/" type="rss" />
+      <outline title="Korean Bapsang" xmlUrl="https://www.koreanbapsang.com/feed/" type="rss" />
+      <outline title="My Korean Kitchen" xmlUrl="https://mykoreankitchen.com/feed/" type="rss" />
+      <outline title="Kimchimari" xmlUrl="https://kimchimari.com/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Game Meca" xmlUrl="https://www.gamemeca.com/rss/" type="rss" />
+      <outline title="Game Donga" xmlUrl="https://game.donga.com/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Jeju Travel" xmlUrl="https://www.visitjeju.net/rss/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Naver Blog" xmlUrl="https://section.blog.naver.com/rss/" type="rss" />
+      <outline title="Korea Blog" xmlUrl="https://blog.naver.com/rss/" type="rss" />
+      <outline title="Pressian" xmlUrl="https://www.pressian.com/rss/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="i-Design" xmlUrl="https://www.idesign.co.kr/rss/" type="rss" />
+      <outline title="Tripod Design" xmlUrl="https://tripoddesign.com/feed/" type="rss" />
+      <outline title="Design Log" xmlUrl="https://designlog.tistory.com/rss" type="rss" />
+      <outline title="Typography Seoul" xmlUrl="https://www.typographyseoul.com/feed/" type="rss" />
+      <outline title="Creative Korea" xmlUrl="https://creativekorea.tistory.com/rss" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Korea" xmlUrl="https://www.greenpeace.org/korea/feed/" type="rss" />
+      <outline title="KFEM" xmlUrl="https://www.kfem.or.kr/rss/" type="rss" />
+      <outline title="Green Korea" xmlUrl="https://www.greenkorea.org/rss/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Dalin" xmlUrl="https://m.blog.naver.com/rss/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="National Museum Korea" xmlUrl="https://www.museum.go.kr/rss/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="C3 Korea" xmlUrl="https://www.c3korea.com/rss/" type="rss" />
+      <outline title="ArchDaily Korea" xmlUrl="https://www.archdaily.com/country/south-korea/feed" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Architecture Lab" xmlUrl="https://www.architecturelab.net/feed/" type="rss" />
+      <outline title="Masil Wide" xmlUrl="https://masilwide.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Kakao Tech" xmlUrl="https://tech.kakao.com/feed/" type="rss" />
+      <outline title="Line Engineering" xmlUrl="https://engineering.linecorp.com/ko/feed/" type="rss" />
+      <outline title="Coupang Tech" xmlUrl="https://medium.com/feed/coupang-engineering" type="rss" />
+      <outline title="Wooahan Tech" xmlUrl="https://techblog.woowahan.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Maeil Business" xmlUrl="https://www.mk.co.kr/rss/" type="rss" />
+      <outline title="Seoul Economic Daily" xmlUrl="https://www.sedaily.com/rss/" type="rss" />
+      <outline title="Financial News" xmlUrl="https://www.fnnews.com/rss/" type="rss" />
+      <outline title="Herald Economy" xmlUrl="https://biz.heraldcorp.com/rss/" type="rss" />
+      <outline title="EDAILY" xmlUrl="https://www.edaily.co.kr/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Naver Audio" xmlUrl="https://audioclip.naver.com/rss/" type="rss" />
+      <outline title="Podty" xmlUrl="https://www.podty.me/rss/" type="rss" />
+      <outline title="TBS eFM" xmlUrl="https://www.tbs.seoul.kr/rss/" type="rss" />
+      <outline title="BBS" xmlUrl="https://www.bbsi.co.kr/rss/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Korea Photo Art" xmlUrl="https://www.koreaphotoart.com/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="UnderKG" xmlUrl="https://www.underkg.co.kr/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

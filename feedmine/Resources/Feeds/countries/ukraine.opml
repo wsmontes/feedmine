@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Ukraine Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Ukrainska Pravda" xmlUrl="https://www.pravda.com.ua/rss/" type="rss" />
+      <outline title="UNIAN" xmlUrl="https://www.unian.ua/rss/" type="rss" />
+      <outline title="TSN" xmlUrl="https://www.tsn.ua/rss/" type="rss" />
+      <outline title="ZN" xmlUrl="https://www.zn.ua/rss/" type="rss" />
+      <outline title="NV" xmlUrl="https://www.nv.ua/rss/" type="rss" />
+      <outline title="24 Kanal" xmlUrl="https://www.24tv.ua/rss/" type="rss" />
+      <outline title="Fakty" xmlUrl="https://www.fakty.ua/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Sport Arena" xmlUrl="https://www.sportarena.com/rss/" type="rss" />
+      <outline title="Dynamo Kyiv" xmlUrl="https://www.fcdynamo.com/rss/" type="rss" />
+      <outline title="Champion" xmlUrl="https://www.champion.com.ua/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Ain" xmlUrl="https://www.ain.ua/feed/" type="rss" />
+      <outline title="Dev UA" xmlUrl="https://www.dev.ua/rss/" type="rss" />
+      <outline title="HiTech Expert" xmlUrl="https://www.hitechexpert.top/feed/" type="rss" />
+      <outline title="Gagadget" xmlUrl="https://www.gagadget.com/rss/" type="rss" />
+      <outline title="Tech Today" xmlUrl="https://www.techtoday.in.ua/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="KNU" xmlUrl="https://www.knu.ua/rss/" type="rss" />
+      <outline title="Lviv University" xmlUrl="https://www.lnu.edu.ua/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Chytomo" xmlUrl="https://www.chytomo.com/feed/" type="rss" />
+      <outline title="Mystetskyi Arsenal" xmlUrl="https://www.artarsenal.in.ua/rss/" type="rss" />
+      <outline title="Pinchuk Art Centre" xmlUrl="https://www.pinchukartcentre.org/rss/" type="rss" />
+      <outline title="Ukrainian Institute" xmlUrl="https://www.ui.org.ua/rss/" type="rss" />
+      <outline title="Dovzhenko Centre" xmlUrl="https://www.dovzhenkocentre.org/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Planeta Kino" xmlUrl="https://www.planetakino.ua/rss/" type="rss" />
+      <outline title="Cineast" xmlUrl="https://www.cineast.com.ua/feed/" type="rss" />
+      <outline title="Moviegram" xmlUrl="https://www.moviegram.com.ua/feed/" type="rss" />
+      <outline title="Docudays UA" xmlUrl="https://www.docudays.ua/rss/" type="rss" />
+      <outline title="Odesa Film Festival" xmlUrl="https://www.oiff.com.ua/rss/" type="rss" />
+      <outline title="Dovzhenko Film" xmlUrl="https://www.dovzhenkofilm.com.ua/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Comma" xmlUrl="https://www.comma.com.ua/feed/" type="rss" />
+      <outline title="Muzvar" xmlUrl="https://www.muzvar.com.ua/feed/" type="rss" />
+      <outline title="Atlas Weekend" xmlUrl="https://www.atlasweekend.com/rss/" type="rss" />
+      <outline title="Ukrainian Music" xmlUrl="https://www.ukrainianmusic.org/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Retsepty UA" xmlUrl="https://www.retsepty.com.ua/feed/" type="rss" />
+      <outline title="Borsch UA" xmlUrl="https://www.borsch.com.ua/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="PlayUA" xmlUrl="https://www.playua.net/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Ukraine Travel" xmlUrl="https://www.ukraine.com/rss/" type="rss" />
+      <outline title="Lviv Travel" xmlUrl="https://www.lviv.travel/rss/" type="rss" />
+      <outline title="Karpaty Travel" xmlUrl="https://www.karpaty.travel/rss/" type="rss" />
+      <outline title="Ukrainer" xmlUrl="https://www.ukrainer.net/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Radio Svoboda" xmlUrl="https://www.radiosvoboda.org/rss/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Telegraf Design" xmlUrl="https://www.telegraf.design/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Design Lviv" xmlUrl="https://www.designlviv.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Ministry of Environment" xmlUrl="https://www.mepr.gov.ua/rss/" type="rss" />
+      <outline title="Chornobyl" xmlUrl="https://www.chornobyl.net/rss/" type="rss" />
+      <outline title="EcoAction" xmlUrl="https://www.ecoaction.org.ua/feed/" type="rss" />
+      <outline title="Carpaty Environment" xmlUrl="https://www.carpaty.net/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Home Ukraine" xmlUrl="https://www.homeukraine.com/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Holodomor Museum" xmlUrl="https://www.holodomormuseum.org.ua/rss/" type="rss" />
+      <outline title="Ukraine History" xmlUrl="https://www.ukrainehistory.com/feed/" type="rss" />
+      <outline title="Trypillia" xmlUrl="https://www.trypillia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="ArchDaily Ukraine" xmlUrl="https://www.archdaily.com/country/ukraine/feed/" type="rss" />
+      <outline title="NSAU" xmlUrl="https://www.nsau.org/rss/" type="rss" />
+      <outline title="PRAGMATIKA" xmlUrl="https://www.pragmatika.media/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Readdle Blog" xmlUrl="https://www.readdle.com/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="EP Business" xmlUrl="https://www.epravda.com.ua/rss/" type="rss" />
+      <outline title="Startup Ukraine" xmlUrl="https://www.startupukraine.com/feed/" type="rss" />
+      <outline title="UFuture" xmlUrl="https://www.ufuture.com/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Hromadske Podcast" xmlUrl="https://www.hromadske.radio/podcasts/rss/" type="rss" />
+      <outline title="Urban Space Radio" xmlUrl="https://www.urbanspaceradio.com/rss/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

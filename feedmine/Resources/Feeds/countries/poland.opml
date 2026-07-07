@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Poland Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Polsat News" xmlUrl="https://www.polsatnews.pl/rss/" type="rss" />
+      <outline title="OKO.press" xmlUrl="https://oko.press/feed/" type="rss" />
+      <outline title="Notes from Poland" xmlUrl="https://notesfrompoland.com/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Polsat Sport" xmlUrl="https://www.polsatsport.pl/rss/" type="rss" />
+      <outline title="Weszlo" xmlUrl="https://weszlo.com/feed/" type="rss" />
+      <outline title="Pilkanozna" xmlUrl="https://www.pilkanozna.pl/rss/" type="rss" />
+      <outline title="Legia Warszawa" xmlUrl="https://legia.com/rss.xml" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Spider's Web" xmlUrl="https://spidersweb.pl/feed/" type="rss" />
+      <outline title="Niebezpiecznik" xmlUrl="https://niebezpiecznik.pl/feed/" type="rss" />
+      <outline title="Benchmark" xmlUrl="https://www.benchmark.pl/rss.xml" type="rss" />
+      <outline title="Tabletowo" xmlUrl="https://www.tabletowo.pl/feed/" type="rss" />
+      <outline title="Instalki" xmlUrl="https://www.instalki.pl/rss/" type="rss" />
+      <outline title="Telepolis" xmlUrl="https://www.telepolis.pl/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Gazeta Wyborcza Nauka" xmlUrl="https://wyborcza.pl/nauka/rss.xml" type="rss" />
+      <outline title="Focus PL" xmlUrl="https://www.focus.pl/rss/" type="rss" />
+      <outline title="National Geographic PL" xmlUrl="https://www.national-geographic.pl/rss/" type="rss" />
+      <outline title="Polska Akademia Nauk" xmlUrl="https://www.pan.pl/rss/" type="rss" />
+      <outline title="AstroNet" xmlUrl="https://www.astronet.pl/rss/" type="rss" />
+      <outline title="Crazy Nauka" xmlUrl="https://www.crazynauka.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Gazeta Wyborcza Kultura" xmlUrl="https://wyborcza.pl/kultura/rss.xml" type="rss" />
+      <outline title="Dwutygodnik" xmlUrl="https://www.dwutygodnik.com/rss/" type="rss" />
+      <outline title="Notes Na 6 Tygodni" xmlUrl="https://www.nn6t.pl/rss/" type="rss" />
+      <outline title="Magazyn Szum" xmlUrl="https://magazynszum.pl/feed/" type="rss" />
+      <outline title="Kultura u Podstaw" xmlUrl="https://kulturaupodstaw.pl/feed/" type="rss" />
+      <outline title="Kultura Liberalna" xmlUrl="https://kulturaliberalna.pl/feed/" type="rss" />
+      <outline title="Fragile" xmlUrl="https://fragile.net.pl/feed/" type="rss" />
+      <outline title="O.pl" xmlUrl="https://www.o.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Filmweb" xmlUrl="https://www.filmweb.pl/rss/news" type="rss" />
+      <outline title="Stopklatka" xmlUrl="https://stopklatka.pl/rss/" type="rss" />
+      <outline title="Polski Instytut Sztuki Filmowej" xmlUrl="https://www.pisf.pl/rss/" type="rss" />
+      <outline title="Telemagazyn" xmlUrl="https://www.telemagazyn.pl/rss/" type="rss" />
+      <outline title="Film.org.pl" xmlUrl="https://film.org.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="CGM" xmlUrl="https://www.cgm.pl/feed/" type="rss" />
+      <outline title="Portal Muzyczny" xmlUrl="https://www.portalmuzyczny.pl/feed/" type="rss" />
+      <outline title="Nowa Muzyka" xmlUrl="https://nowamuzyka.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Kwestia Smaku" xmlUrl="https://www.kwestiasmaku.com/rss.xml" type="rss" />
+      <outline title="Jadlonomia" xmlUrl="https://www.jadlonomia.com/feed/" type="rss" />
+      <outline title="Gotuj z Cukiereczkiem" xmlUrl="https://gotujzcukiereczkiem.pl/feed/" type="rss" />
+      <outline title="Swojskie Smaki" xmlUrl="https://swojskiesmaki.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Gry Online" xmlUrl="https://www.gry-online.pl/rss/news.xml" type="rss" />
+      <outline title="CD-Action" xmlUrl="https://www.cdaction.pl/rss/" type="rss" />
+      <outline title="Gry-Online Newsy" xmlUrl="https://www.gry-online.pl/rss/news.xml" type="rss" />
+      <outline title="Eurogamer PL" xmlUrl="https://www.eurogamer.pl/feed/" type="rss" />
+      <outline title="PS Site" xmlUrl="https://www.pssite.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Polska Po Godzinach" xmlUrl="https://www.polskapogodzinach.pl/rss/" type="rss" />
+      <outline title="Podrozuj" xmlUrl="https://www.podrozuj.pl/feed/" type="rss" />
+      <outline title="Gdzie Wyjechac" xmlUrl="https://www.gdziewyjechac.pl/rss/" type="rss" />
+      <outline title="Daleko Niedaleko" xmlUrl="https://dalekoniedaleko.pl/feed/" type="rss" />
+      <outline title="Travel Polska" xmlUrl="https://travelpolska.pl/feed/" type="rss" />
+      <outline title="Busem Przez Swiat" xmlUrl="https://busemprzezswiat.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Demotywatory" xmlUrl="https://demotywatory.pl/rss/" type="rss" />
+      <outline title="Wykop" xmlUrl="https://www.wykop.pl/rss/" type="rss" />
+      <outline title="Bezprawnik" xmlUrl="https://bezprawnik.pl/feed/" type="rss" />
+      <outline title="Mowimy Jak" xmlUrl="https://mowimyjak.se.pl/rss/" type="rss" />
+      <outline title="Spider's Web" xmlUrl="https://spidersweb.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Design Alive" xmlUrl="https://www.designalive.pl/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="White Mad" xmlUrl="https://www.whitemad.pl/feed/" type="rss" />
+      <outline title="Sztuka Wnetrza" xmlUrl="https://sztuka-wnetrza.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Polska" xmlUrl="https://www.greenpeace.org/poland/feed/" type="rss" />
+      <outline title="SmogLab" xmlUrl="https://smoglab.pl/feed/" type="rss" />
+      <outline title="Teraz Srodowisko" xmlUrl="https://www.teraz-srodowisko.pl/rss/" type="rss" />
+      <outline title="EkoNews" xmlUrl="https://www.ekonews.com.pl/feed/" type="rss" />
+      <outline title="Nauka Klimat" xmlUrl="https://naukaoklimacie.pl/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Dobrzemieszkaj" xmlUrl="https://www.dobrzemieszkaj.pl/rss/" type="rss" />
+      <outline title="Majsterkowo" xmlUrl="https://majsterkowo.pl/feed/" type="rss" />
+      <outline title="Domowniczy" xmlUrl="https://www.domowniczy.pl/feed/" type="rss" />
+      <outline title="Happy Home" xmlUrl="https://www.happyhome.com.pl/feed/" type="rss" />
+      <outline title="Moje DIY" xmlUrl="https://mojediy.pl/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Ciekawostki Historyczne" xmlUrl="https://ciekawostkihistoryczne.pl/feed/" type="rss" />
+      <outline title="Twoja Historia" xmlUrl="https://twojahistoria.pl/feed/" type="rss" />
+      <outline title="Historia.org.pl" xmlUrl="https://historia.org.pl/feed/" type="rss" />
+      <outline title="Wielka Historia" xmlUrl="https://wielkahistoria.pl/feed/" type="rss" />
+      <outline title="Kronika Dziejow" xmlUrl="https://www.kronikadziejow.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="White Mad Architecture" xmlUrl="https://www.whitemad.pl/category/architektura/feed/" type="rss" />
+      <outline title="ArchDaily Poland" xmlUrl="https://www.archdaily.com/country/poland/feed" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Builder Polska" xmlUrl="https://builderpolska.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="CD Projekt Dev" xmlUrl="https://www.cdprojekt.com/en/media/rss/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Puls Biznesu" xmlUrl="https://www.pb.pl/rss/" type="rss" />
+      <outline title="Forbes Polska" xmlUrl="https://www.forbes.pl/rss.xml" type="rss" />
+      <outline title="Money PL" xmlUrl="https://www.money.pl/rss/" type="rss" />
+      <outline title="Bankier" xmlUrl="https://www.bankier.pl/rss/wiadomosci.xml" type="rss" />
+      <outline title="Mam Startup" xmlUrl="https://mamstartup.pl/feed/" type="rss" />
+      <outline title="CEO Magazyn" xmlUrl="https://ceo.com.pl/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Imponderabilia" xmlUrl="https://imponderabilia.pl/feed/podcast/" type="rss" />
+      <outline title="Podcast Go" xmlUrl="https://podcastgo.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Fotopolis" xmlUrl="https://www.fotopolis.pl/rss/" type="rss" />
+      <outline title="Digital Camera Polska" xmlUrl="https://www.digitalcamera.pl/rss/" type="rss" />
+      <outline title="Fotografuj" xmlUrl="https://www.fotografuj.pl/rss/" type="rss" />
+      <outline title="ZPAF" xmlUrl="https://www.zpaf.pl/rss/" type="rss" />
+      <outline title="Ale Foto" xmlUrl="https://alefoto.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="Apple World Today" xmlUrl="https://www.appleworld.today/feed/" type="rss" />
+      <outline title="iMagazine" xmlUrl="https://www.imagazine.pl/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

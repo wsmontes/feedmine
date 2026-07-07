@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Ivory Coast Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Fraternite Matin" xmlUrl="https://www.fratmat.info/rss/" type="rss" />
+      <outline title="AIP" xmlUrl="https://www.aip.ci/rss/" type="rss" />
+      <outline title="Connection Ivoirienne" xmlUrl="https://www.connectionivoirienne.net/feed/" type="rss" />
+      <outline title="Yeclo CI" xmlUrl="https://www.yeclo.com/rss/" type="rss" />
+      <outline title="Afrique Sur 7" xmlUrl="https://www.afrique-sur7.ci/rss/" type="rss" />
+      <outline title="L'intelligent d'Abidjan" xmlUrl="https://www.lintelligentdabidjan.ci/rss/" type="rss" />
+      <outline title="RTI" xmlUrl="https://www.rti.ci/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="FIF" xmlUrl="https://www.fif.ci/rss/" type="rss" />
+      <outline title="Didier Drogba" xmlUrl="https://www.didierdrogba.com/rss/" type="rss" />
+      <outline title="Basket CI" xmlUrl="https://www.basketci.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Digital CI" xmlUrl="https://www.digitalci.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="INPHB" xmlUrl="https://www.inphb.ci/rss/" type="rss" />
+      <outline title="Pasteur CI" xmlUrl="https://www.pasteur.ci/rss/" type="rss" />
+      <outline title="CNRA CI" xmlUrl="https://www.cnra.ci/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Ivoire Heritage" xmlUrl="https://www.ivoireheritage.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Radio CI" xmlUrl="https://www.radioci.com/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="CI Food" xmlUrl="https://www.cifood.com/feed/" type="rss" />
+      <outline title="Ivorian Food" xmlUrl="https://www.ivorianfood.com/feed/" type="rss" />
+      <outline title="Abidjan Food" xmlUrl="https://www.abidjanfood.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Air Cote d'Ivoire" xmlUrl="https://www.aircotedivoire.com/rss/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Fraternite Matin Eco" xmlUrl="https://www.fratmat.info/economie/rss/" type="rss" />
+      <outline title="Business CI" xmlUrl="https://www.businessci.com/feed/" type="rss" />
+      <outline title="CCI CI" xmlUrl="https://www.cci.ci/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="iPhone CI" xmlUrl="https://www.iphoneci.com/feed/" type="rss" />
+      <outline title="Mac CI" xmlUrl="https://www.macci.com/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>

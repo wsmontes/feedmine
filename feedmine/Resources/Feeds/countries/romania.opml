@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head><title>Romania Feeds</title></head>
+  <body>
+    <outline text="News">
+      <outline title="Digi24" xmlUrl="https://www.digi24.ro/rss/" type="rss"/>
+      <outline title="HotNews" xmlUrl="https://www.hotnews.ro/rss/" type="rss"/>
+      <outline title="Adevarul" xmlUrl="https://www.adevarul.ro/rss/" type="rss"/>
+      <outline title="Gandul" xmlUrl="https://www.gandul.ro/rss/" type="rss"/>
+      <outline title="Libertatea" xmlUrl="https://www.libertatea.ro/rss/" type="rss"/>
+      <outline title="Mediafax" xmlUrl="https://www.mediafax.ro/rss/" type="rss"/>
+      <outline title="Stiripesurse" xmlUrl="https://www.stiripesurse.ro/rss/" type="rss"/>
+      <outline title="ProTV" xmlUrl="https://www.protv.ro/rss/" type="rss"/>
+      <outline title="Antena 3" xmlUrl="https://www.antena3.ro/rss/" type="rss"/>
+      <outline title="Romania TV" xmlUrl="https://www.romaniatv.net/rss/" type="rss"/>
+      <outline title="News.ro" xmlUrl="https://www.news.ro/rss/" type="rss"/>
+      <outline title="Agerpres" xmlUrl="https://www.agerpres.ro/rss/" type="rss"/>
+      <outline title="Recorder" xmlUrl="https://www.recorder.ro/feed/" type="rss"/>
+      <outline title="Republica" xmlUrl="https://www.republica.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Sports">
+      <outline title="Gazeta Sporturilor" xmlUrl="https://www.gsp.ro/rss/" type="rss"/>
+      <outline title="ProSport" xmlUrl="https://www.prosport.ro/rss/" type="rss"/>
+      <outline title="Digi Sport" xmlUrl="https://www.digisport.ro/rss/" type="rss"/>
+      <outline title="Eurosport RO" xmlUrl="https://www.eurosport.ro/rss/" type="rss"/>
+      <outline title="Sport.ro" xmlUrl="https://www.sport.ro/rss/" type="rss"/>
+      <outline title="Fanatik RO" xmlUrl="https://www.fanatik.ro/rss/" type="rss"/>
+      <outline title="FRF" xmlUrl="https://www.frf.ro/rss/" type="rss"/>
+      <outline title="Steaua" xmlUrl="https://www.steaua.ro/rss/" type="rss"/>
+      <outline title="Dinamo" xmlUrl="https://www.dinamo1948.ro/rss/" type="rss"/>
+      <outline title="Rapid" xmlUrl="https://www.fcrapid.ro/rss/" type="rss"/>
+      <outline title="Telekom Sport" xmlUrl="https://www.telekomsport.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Technology">
+      <outline title="Go4IT" xmlUrl="https://www.go4it.ro/rss/" type="rss"/>
+      <outline title="Hit.ro" xmlUrl="https://www.hit.ro/rss/" type="rss"/>
+      <outline title="PC Garage" xmlUrl="https://www.pcgarage.ro/rss/" type="rss"/>
+      <outline title="Softpedia" xmlUrl="https://www.softpedia.com/rss/" type="rss"/>
+      <outline title="Zona IT" xmlUrl="https://www.zonait.ro/rss/" type="rss"/>
+      <outline title="Computer Blog" xmlUrl="https://www.computerblog.ro/rss/" type="rss"/>
+      <outline title="IT Moldova" xmlUrl="https://www.itmoldova.ro/rss/" type="rss"/>
+      <outline title="Startup Cafe" xmlUrl="https://www.startupcafe.ro/rss/" type="rss"/>
+      <outline title="Business Cover" xmlUrl="https://www.businesscover.ro/rss/" type="rss"/>
+      <outline title="Mobilissimo" xmlUrl="https://www.mobilissimo.ro/rss/" type="rss"/>
+      <outline title="Playtech" xmlUrl="https://www.playtech.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Science">
+      <outline title="Digi24 Stiinta" xmlUrl="https://www.digi24.ro/rss/stiinta/" type="rss"/>
+      <outline title="HotNews Stiinta" xmlUrl="https://www.hotnews.ro/stiinta/rss/" type="rss"/>
+      <outline title="Adevarul Stiinta" xmlUrl="https://www.adevarul.ro/stiinta/rss/" type="rss"/>
+      <outline title="Stiinta si Tehnica" xmlUrl="https://www.stiintasitehnica.com/rss/" type="rss"/>
+      <outline title="UBB" xmlUrl="https://www.ubbcluj.ro/rss/" type="rss"/>
+      <outline title="Universitatea Bucuresti" xmlUrl="https://www.unibuc.ro/rss/" type="rss"/>
+      <outline title="UAIC" xmlUrl="https://www.uaic.ro/rss/" type="rss"/>
+      <outline title="Academia Romana" xmlUrl="https://www.acad.ro/rss/" type="rss"/>
+      <outline title="Descopera" xmlUrl="https://www.descopera.ro/rss/" type="rss"/>
+      <outline title="Science Hub RO" xmlUrl="https://www.sciencehub.ro/feed/" type="rss"/>
+      <outline title="Astro Info" xmlUrl="https://www.astro-info.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Culture">
+      <outline title="Digi24 Cultura" xmlUrl="https://www.digi24.ro/rss/cultura/" type="rss"/>
+      <outline title="HotNews Cultura" xmlUrl="https://www.hotnews.ro/cultura/rss/" type="rss"/>
+      <outline title="Adevarul Cultura" xmlUrl="https://www.adevarul.ro/cultura/rss/" type="rss"/>
+      <outline title="Suplimentul de Cultura" xmlUrl="https://www.suplimentuldecultura.ro/rss/" type="rss"/>
+      <outline title="Observator Cultural" xmlUrl="https://www.observatorcultural.ro/rss/" type="rss"/>
+      <outline title="Dilema Veche" xmlUrl="https://www.dilemaveche.ro/rss/" type="rss"/>
+      <outline title="Scena9" xmlUrl="https://www.scena9.ro/rss/" type="rss"/>
+      <outline title="Bookhub" xmlUrl="https://www.bookhub.ro/rss/" type="rss"/>
+      <outline title="LiterNet" xmlUrl="https://www.liternet.ro/rss/" type="rss"/>
+      <outline title="ArtLine" xmlUrl="https://www.artline.ro/rss/" type="rss"/>
+      <outline title="Modernism" xmlUrl="https://www.modernism.ro/feed/" type="rss"/>
+    </outline>
+    <outline text="Movies">
+      <outline title="Cinemagia" xmlUrl="https://www.cinemagia.ro/rss/" type="rss"/>
+      <outline title="CinemaRx" xmlUrl="https://www.cinemarx.ro/rss/" type="rss"/>
+      <outline title="FilmNow" xmlUrl="https://www.filmnow.ro/rss/" type="rss"/>
+      <outline title="MovieNews" xmlUrl="https://www.movienews.ro/rss/" type="rss"/>
+      <outline title="Aarc" xmlUrl="https://www.aarc.ro/rss/" type="rss"/>
+      <outline title="TIFF" xmlUrl="https://www.tiff.ro/rss/" type="rss"/>
+      <outline title="Film Menu" xmlUrl="https://www.filmmenu.ro/rss/" type="rss"/>
+      <outline title="Liternet Film" xmlUrl="https://www.liternet.ro/film/rss/" type="rss"/>
+      <outline title="Agenda LiterNet" xmlUrl="https://www.agenda.liternet.ro/rss/" type="rss"/>
+      <outline title="Iute" xmlUrl="https://www.iute.ro/rss/" type="rss"/>
+      <outline title="Cinemil" xmlUrl="https://www.cinemil.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Music">
+      <outline title="InfoMusic" xmlUrl="https://www.infomusic.ro/rss/" type="rss"/>
+      <outline title="Metalhead" xmlUrl="https://www.metalhead.ro/rss/" type="rss"/>
+      <outline title="Muzica Radio" xmlUrl="https://www.muzicaradio.ro/rss/" type="rss"/>
+      <outline title="BestMusic" xmlUrl="https://www.bestmusic.ro/rss/" type="rss"/>
+      <outline title="Urban" xmlUrl="https://www.urban.ro/rss/" type="rss"/>
+      <outline title="Maximum Rock" xmlUrl="https://www.maximumrock.ro/rss/" type="rss"/>
+      <outline title="Zile si Nopti" xmlUrl="https://www.zilesinopti.ro/rss/" type="rss"/>
+      <outline title="Radio Guerrilla" xmlUrl="https://www.radioguerrilla.ro/rss/" type="rss"/>
+      <outline title="Europa FM" xmlUrl="https://www.europafm.ro/rss/" type="rss"/>
+      <outline title="Untold Festival" xmlUrl="https://www.untold.com/rss/" type="rss"/>
+      <outline title="Electric Castle" xmlUrl="https://www.electriccastle.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Food">
+      <outline title="Retete Culinare" xmlUrl="https://www.reteteculinare.ro/rss/" type="rss"/>
+      <outline title="Gustos" xmlUrl="https://www.gustos.ro/rss/" type="rss"/>
+      <outline title="Bucataras" xmlUrl="https://www.bucataras.ro/rss/" type="rss"/>
+      <outline title="Retete Practice" xmlUrl="https://www.retetepractice.ro/rss/" type="rss"/>
+      <outline title="Pofta Buna" xmlUrl="https://www.pofta-buna.com/rss/" type="rss"/>
+      <outline title="Adi Hadean" xmlUrl="https://www.adihadean.ro/feed/" type="rss"/>
+      <outline title="GastroArt" xmlUrl="https://www.gastroart.ro/rss/" type="rss"/>
+      <outline title="Foodstory" xmlUrl="https://www.foodstory.ro/rss/" type="rss"/>
+      <outline title="Gourmet RO" xmlUrl="https://www.gourmet.ro/rss/" type="rss"/>
+      <outline title="Vinul" xmlUrl="https://www.vinul.ro/rss/" type="rss"/>
+      <outline title="Crame" xmlUrl="https://www.crameromania.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Gaming">
+      <outline title="Computer Games" xmlUrl="https://www.computer-games.ro/rss/" type="rss"/>
+      <outline title="LEVEL RO" xmlUrl="https://www.level.ro/rss/" type="rss"/>
+      <outline title="GameOver RO" xmlUrl="https://www.gameover.ro/rss/" type="rss"/>
+      <outline title="Jocuri" xmlUrl="https://www.jocuri.ro/rss/" type="rss"/>
+      <outline title="IGN Romania" xmlUrl="https://ro.ign.com/feed/" type="rss"/>
+      <outline title="Nivelul 2" xmlUrl="https://www.nivelul2.ro/rss/" type="rss"/>
+      <outline title="PlayStation RO" xmlUrl="https://blog.ro.playstation.com/feed/" type="rss"/>
+      <outline title="Nintendo RO" xmlUrl="https://www.nintendo.ro/rss/" type="rss"/>
+      <outline title="Zona Jocurilor" xmlUrl="https://www.zonajocurilor.ro/rss/" type="rss"/>
+      <outline title="Esports RO" xmlUrl="https://www.esports.ro/feed/" type="rss"/>
+      <outline title="RGX" xmlUrl="https://www.rgx.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Travel">
+      <outline title="Calatorie" xmlUrl="https://www.calatorie.ro/rss/" type="rss"/>
+      <outline title="AmFostAcolo" xmlUrl="https://www.amfostacolo.ro/rss/" type="rss"/>
+      <outline title="Turist Info" xmlUrl="https://www.turistinfo.ro/rss/" type="rss"/>
+      <outline title="Romania Turistica" xmlUrl="https://www.romaniatravel.ro/rss/" type="rss"/>
+      <outline title="Adevarul Travel" xmlUrl="https://www.adevarul.ro/travel/rss/" type="rss"/>
+      <outline title="Vacante" xmlUrl="https://www.vacante.md/rss/" type="rss"/>
+      <outline title="TravelMag" xmlUrl="https://www.travelmag.ro/rss/" type="rss"/>
+      <outline title="Brasov Tourism" xmlUrl="https://www.brasovtourism.eu/rss/" type="rss"/>
+      <outline title="Sibiu Tourism" xmlUrl="https://www.turism.sibiu.ro/rss/" type="rss"/>
+      <outline title="Cluj Tourism" xmlUrl="https://www.visitcluj.ro/rss/" type="rss"/>
+      <outline title="Wizz Air RO" xmlUrl="https://www.wizzair.com/ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Blogs">
+      <outline title="Republica" xmlUrl="https://www.republica.ro/rss/" type="rss"/>
+      <outline title="Vice Romania" xmlUrl="https://www.vice.com/ro/rss/" type="rss"/>
+      <outline title="PressOne" xmlUrl="https://www.pressone.ro/rss/" type="rss"/>
+      <outline title="DOR" xmlUrl="https://www.decatorevista.ro/rss/" type="rss"/>
+      <outline title="Casa Jurnalistului" xmlUrl="https://www.casajurnalistului.ro/rss/" type="rss"/>
+      <outline title="Biziday" xmlUrl="https://www.biziday.ro/rss/" type="rss"/>
+      <outline title="Mindcraft Stories" xmlUrl="https://www.mindcraftstories.ro/rss/" type="rss"/>
+      <outline title="Contributors" xmlUrl="https://www.contributors.ro/rss/" type="rss"/>
+      <outline title="Lumea Politicii" xmlUrl="https://www.lumeapoliticii.ro/rss/" type="rss"/>
+      <outline title="Ceai de Minte" xmlUrl="https://www.ceaideaminte.ro/rss/" type="rss"/>
+      <outline title="Zeppelin" xmlUrl="https://www.e-zeppelin.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Design">
+      <outline title="Igloo" xmlUrl="https://www.igloo.ro/rss/" type="rss"/>
+      <outline title="Designist" xmlUrl="https://www.designist.ro/rss/" type="rss"/>
+      <outline title="Arhitectura" xmlUrl="https://www.arhitectura-1906.ro/rss/" type="rss"/>
+      <outline title="Zeppelin Design" xmlUrl="https://www.e-zeppelin.ro/design/rss/" type="rss"/>
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss"/>
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss"/>
+      <outline title="Graphic Front" xmlUrl="https://www.graphicfront.ro/rss/" type="rss"/>
+      <outline title="Design Cafe" xmlUrl="https://www.designcafe.ro/rss/" type="rss"/>
+      <outline title="Maitland Design" xmlUrl="https://www.maitland.ro/feed/" type="rss"/>
+      <outline title="The Design Magazine RO" xmlUrl="https://www.thedesignmagazine.ro/feed/" type="rss"/>
+      <outline title="BrandMinds" xmlUrl="https://www.brandminds.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Romania" xmlUrl="https://www.greenpeace.org/romania/feed/" type="rss"/>
+      <outline title="WWF Romania" xmlUrl="https://www.wwf.ro/rss/" type="rss"/>
+      <outline title="Agent Green" xmlUrl="https://www.agentgreen.ro/rss/" type="rss"/>
+      <outline title="Digi24 Mediu" xmlUrl="https://www.digi24.ro/rss/mediu/" type="rss"/>
+      <outline title="HotNews Mediu" xmlUrl="https://www.hotnews.ro/mediu/rss/" type="rss"/>
+      <outline title="Green Report" xmlUrl="https://www.green-report.ro/rss/" type="rss"/>
+      <outline title="Info Mediu" xmlUrl="https://www.infomediu.eu/rss/" type="rss"/>
+      <outline title="Saptamana Verde" xmlUrl="https://www.saptamanaverde.ro/rss/" type="rss"/>
+      <outline title="Eco Romania" xmlUrl="https://www.ecoromania.ro/feed/" type="rss"/>
+      <outline title="Natura News" xmlUrl="https://www.natura-news.ro/feed/" type="rss"/>
+      <outline title="MaiMultVerde" xmlUrl="https://www.maimultverde.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="DIY">
+      <outline title="Casamea" xmlUrl="https://www.casamea.ro/rss/" type="rss"/>
+      <outline title="Deco Ideea" xmlUrl="https://www.deco-ideea.ro/rss/" type="rss"/>
+      <outline title="BricoDepot RO Blog" xmlUrl="https://www.bricodepot.ro/blog/feed/" type="rss"/>
+      <outline title="Dedeman Blog" xmlUrl="https://www.dedeman.ro/ro/blog/feed/" type="rss"/>
+      <outline title="Hornbach RO" xmlUrl="https://www.hornbach.ro/blog/feed/" type="rss"/>
+      <outline title="Leroy Merlin RO" xmlUrl="https://www.leroymerlin.ro/blog/feed/" type="rss"/>
+      <outline title="DIY Romania" xmlUrl="https://www.diyromania.ro/feed/" type="rss"/>
+      <outline title="Bricolaj" xmlUrl="https://www.bricolaj.ro/rss/" type="rss"/>
+      <outline title="E-facut" xmlUrl="https://www.e-facut.ro/rss/" type="rss"/>
+      <outline title="Manualul Meseriașului" xmlUrl="https://www.manualulmeseriasului.ro/rss/" type="rss"/>
+      <outline title="Facut in Casa" xmlUrl="https://www.facutincasa.ro/feed/" type="rss"/>
+    </outline>
+    <outline text="History">
+      <outline title="Historia" xmlUrl="https://www.historia.ro/rss/" type="rss"/>
+      <outline title="HotNews Istorie" xmlUrl="https://www.hotnews.ro/istorie/rss/" type="rss"/>
+      <outline title="Descopera Istorie" xmlUrl="https://www.descopera.ro/istorie/rss/" type="rss"/>
+      <outline title="Romania Istorica" xmlUrl="https://www.romaniaistorica.ro/rss/" type="rss"/>
+      <outline title="Istorie Veche" xmlUrl="https://www.istorieveche.ro/rss/" type="rss"/>
+      <outline title="Povesti din Istorie" xmlUrl="https://www.povestidinistorie.ro/rss/" type="rss"/>
+      <outline title="Muzeul National" xmlUrl="https://www.muzeulnational.ro/rss/" type="rss"/>
+      <outline title="Institutul Cultural Roman" xmlUrl="https://www.icr.ro/rss/" type="rss"/>
+      <outline title="Arheologie" xmlUrl="https://www.arheologie.ro/rss/" type="rss"/>
+      <outline title="Memorialul Victimelor" xmlUrl="https://www.memorialsighet.ro/rss/" type="rss"/>
+      <outline title="Cultura Istorie" xmlUrl="https://www.culturaistorie.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Architecture">
+      <outline title="Arhitectura" xmlUrl="https://www.arhitectura-1906.ro/rss/" type="rss"/>
+      <outline title="Igloo Architecture" xmlUrl="https://www.igloo.ro/arhitectura/rss/" type="rss"/>
+      <outline title="Zeppelin Architecture" xmlUrl="https://www.e-zeppelin.ro/arhitectura/rss/" type="rss"/>
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss"/>
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss"/>
+      <outline title="Ordinul Arhitecților" xmlUrl="https://www.oar.sr.ro/rss/" type="rss"/>
+      <outline title="Arhi Forum" xmlUrl="https://www.arhiforum.ro/rss/" type="rss"/>
+      <outline title="Spațiul Construit" xmlUrl="https://www.spatiulconstruit.ro/rss/" type="rss"/>
+      <outline title="Arhitext Design" xmlUrl="https://www.arhitextdesign.ro/rss/" type="rss"/>
+      <outline title="Locuințe" xmlUrl="https://www.locuinte.ro/rss/" type="rss"/>
+      <outline title="Case și Grădini" xmlUrl="https://www.casesigradini.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss"/>
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss"/>
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss"/>
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss"/>
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss"/>
+      <outline title="Today Software Magazine" xmlUrl="https://www.todaysoftmag.com/rss/" type="rss"/>
+      <outline title="IT Spark" xmlUrl="https://www.itspark.ro/rss/" type="rss"/>
+      <outline title="CodeBerry Blog" xmlUrl="https://www.codeberryschool.com/blog/ro/feed/" type="rss"/>
+      <outline title="Bitdefender Blog" xmlUrl="https://www.bitdefender.com/blog/rss/" type="rss"/>
+      <outline title="UiPath Blog" xmlUrl="https://www.uipath.com/blog/rss" type="rss"/>
+      <outline title="eMAG Engineering" xmlUrl="https://www.emag.ro/blog/feed/" type="rss"/>
+    </outline>
+    <outline text="Business">
+      <outline title="Ziarul Financiar" xmlUrl="https://www.zf.ro/rss/" type="rss"/>
+      <outline title="Economica" xmlUrl="https://www.economica.net/rss/" type="rss"/>
+      <outline title="Business Magazin" xmlUrl="https://www.businessmagazin.ro/rss/" type="rss"/>
+      <outline title="Wall-Street" xmlUrl="https://www.wall-street.ro/rss/" type="rss"/>
+      <outline title="DailyBusiness" xmlUrl="https://www.dailybusiness.ro/rss/" type="rss"/>
+      <outline title="Profit.ro" xmlUrl="https://www.profit.ro/rss/" type="rss"/>
+      <outline title="Forbes Romania" xmlUrl="https://www.forbes.ro/rss/" type="rss"/>
+      <outline title="Curs de Guvernare" xmlUrl="https://www.cursdeguvernare.ro/rss/" type="rss"/>
+      <outline title="Financial Intelligence" xmlUrl="https://www.financialintelligence.ro/rss/" type="rss"/>
+      <outline title="Startup.ro" xmlUrl="https://www.startup.ro/rss/" type="rss"/>
+      <outline title="Club Antreprenor" xmlUrl="https://www.clubantreprenor.ro/feed/" type="rss"/>
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Podcast Romania" xmlUrl="https://www.podcastromania.ro/rss/" type="rss"/>
+      <outline title="Radio Guerrilla Podcast" xmlUrl="https://www.radioguerrilla.ro/podcast/rss/" type="rss"/>
+      <outline title="Europa FM Podcast" xmlUrl="https://www.europafm.ro/podcast/rss/" type="rss"/>
+      <outline title="HotNews Podcast" xmlUrl="https://www.hotnews.ro/podcast/rss/" type="rss"/>
+      <outline title="Digi24 Podcast" xmlUrl="https://www.digi24.ro/podcast/rss/" type="rss"/>
+      <outline title="În fața ta" xmlUrl="https://www.infatzata.ro/feed/podcast/" type="rss"/>
+      <outline title="Mind Architect" xmlUrl="https://www.mindarchitect.ro/feed/podcast/" type="rss"/>
+      <outline title="Pe Bune" xmlUrl="https://www.pebune.ro/feed/podcast/" type="rss"/>
+      <outline title="Vorbitorincii" xmlUrl="https://www.vorbitorincii.ro/feed/podcast/" type="rss"/>
+      <outline title="Starea Nației" xmlUrl="https://www.stareanatiei.ro/feed/podcast/" type="rss"/>
+      <outline title="Bucharest Podcast" xmlUrl="https://www.bucharestpodcast.ro/feed/" type="rss"/>
+    </outline>
+    <outline text="Photography">
+      <outline title="Fotografia" xmlUrl="https://www.fotografia.ro/rss/" type="rss"/>
+      <outline title="Photo Magazine" xmlUrl="https://www.photography.ro/rss/" type="rss"/>
+      <outline title="Nikon RO" xmlUrl="https://www.nikon.ro/rss/" type="rss"/>
+      <outline title="Canon RO" xmlUrl="https://www.canon.ro/rss/" type="rss"/>
+      <outline title="Sony RO" xmlUrl="https://www.sony.ro/rss/" type="rss"/>
+      <outline title="Fuji RO" xmlUrl="https://www.fujifilm.ro/rss/" type="rss"/>
+      <outline title="F64" xmlUrl="https://www.f64.ro/rss/" type="rss"/>
+      <outline title="ClubFoto" xmlUrl="https://www.clubfoto.ro/rss/" type="rss"/>
+      <outline title="Photo Travel" xmlUrl="https://www.phototravel.ro/rss/" type="rss"/>
+      <outline title="Fotografii Profesionisti" xmlUrl="https://www.fotografiiprofesionisti.ro/rss/" type="rss"/>
+      <outline title="Observatorul de Artă" xmlUrl="https://www.observatoruldearta.ro/rss/" type="rss"/>
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss"/>
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss"/>
+      <outline title="Apple Insider" xmlUrl="https://appleinsider.com/rss/" type="rss"/>
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss"/>
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss"/>
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss"/>
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss"/>
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss"/>
+      <outline title="iDevice" xmlUrl="https://www.idevice.ro/rss/" type="rss"/>
+      <outline title="Apple Romania" xmlUrl="https://www.appleromania.ro/feed/" type="rss"/>
+      <outline title="iPhone Romania" xmlUrl="https://www.iphoneromania.ro/feed/" type="rss"/>
+    </outline>
+    <outline text="YouTube">
+      <outline title="Selly" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbABqGFg8u_cXrXvTE5B9Zg" type="rss"/>
+      <outline title="iRaphahell" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJEi2GDvZKHvF6kZ2F4Vm4g" type="rss"/>
+      <outline title="Doza de Happy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4R2X2t_GkP_HNlDKoLM4zQ" type="rss"/>
+      <outline title="Digi24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6Cmr7Km4TUb9T0mWyTfLhA" type="rss"/>
+      <outline title="Antena 3" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSGVHm_7XLATFPSEFqzyfqg" type="rss"/>
+      <outline title="Romania TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdfQ1OrnQ3gOLLKQdLdR4TQ" type="rss"/>
+      <outline title="Pro TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN8LOKaBmkPw9k8p5RrrV8Q" type="rss"/>
+      <outline title="Zaiafet" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkNsGkPY4jHnPkCfjH_klww" type="rss"/>
+      <outline title="Creative Monkeyz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcW8YZ6s8Dx6Uvq9kK3qLrA" type="rss"/>
+      <outline title="Maxim" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW8NqLi0FgSBI7RvYqJqG2A" type="rss"/>
+      <outline title="BackPackYourLife" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHch8b3g7JiBx5QqgRFzB_Q" type="rss"/>
+      <outline title="Marilu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnrOiiVCWX4Ns_hBRmf4PJw" type="rss"/>
+      <outline title="Bogdan Hriscu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd2_7YNXYkKpNQx-OqJyRyA" type="rss"/>
+      <outline title="Teo"s Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNm1bGkHZPknN5sfKh3C0QA" type="rss"/>
+      <outline title="Brasov" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF4fMmW1HhG3YFkNPqPxRDA" type="rss"/>
+      <outline title="Atentie Cad MERE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbA9gJ8GJ5b9QyQv4vC4cPw" type="rss"/>
+      <outline title="Zuza" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaNv5NLSqFtZS_rRtOOkz7Q" type="rss"/>
+      <outline title="Andreea Balaban" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiWQpWvD2KwRgByqZ3mYmYA" type="rss"/>
+    </outline>
+  </body>
+</opml>

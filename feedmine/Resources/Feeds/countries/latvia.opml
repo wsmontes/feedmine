@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Latvia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Delfi LV" xmlUrl="https://www.delfi.lv/rss/" type="rss" />
+      <outline title="LSM" xmlUrl="https://www.lsm.lv/rss/" type="rss" />
+      <outline title="TVNET" xmlUrl="https://www.tvnet.lv/rss/" type="rss" />
+      <outline title="Apollo" xmlUrl="https://www.apollo.lv/rss/" type="rss" />
+      <outline title="Jauns" xmlUrl="https://www.jauns.lv/rss/" type="rss" />
+      <outline title="Diena" xmlUrl="https://www.diena.lv/rss/" type="rss" />
+      <outline title="LA" xmlUrl="https://www.la.lv/rss/" type="rss" />
+      <outline title="Sestdiena" xmlUrl="https://www.sestdiena.lv/rss/" type="rss" />
+      <outline title="LSM ENG" xmlUrl="https://www.lsm.lv/en/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Delfi Sports" xmlUrl="https://www.delfi.lv/sports/rss/" type="rss" />
+      <outline title="LSM Sports" xmlUrl="https://www.lsm.lv/sports/rss/" type="rss" />
+      <outline title="SportaCentrs" xmlUrl="https://www.sportacentrs.com/rss/" type="rss" />
+      <outline title="Sportazinas" xmlUrl="https://www.sportazinas.com/rss/" type="rss" />
+      <outline title="Basketbols LV" xmlUrl="https://www.basket.lv/rss/" type="rss" />
+      <outline title="LFF LV" xmlUrl="https://www.lff.lv/rss/" type="rss" />
+      <outline title="VEF Riga" xmlUrl="https://www.vefriga.com/rss/" type="rss" />
+      <outline title="Latvian Sports" xmlUrl="https://www.latviansports.com/feed/" type="rss" />
+      <outline title="Hokejs LV" xmlUrl="https://www.hokejs.lv/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Kursors" xmlUrl="https://www.kursors.lv/rss/" type="rss" />
+      <outline title="Startup Latvia" xmlUrl="https://www.startuplatvia.eu/feed/" type="rss" />
+      <outline title="LIAA Tech" xmlUrl="https://www.liaa.gov.lv/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="LU" xmlUrl="https://www.lu.lv/rss/" type="rss" />
+      <outline title="VIAA" xmlUrl="https://www.viaa.gov.lv/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Delfi Kultura" xmlUrl="https://www.delfi.lv/kultura/rss/" type="rss" />
+      <outline title="LSM Kultura" xmlUrl="https://www.lsm.lv/kultura/rss/" type="rss" />
+      <outline title="Kroders" xmlUrl="https://www.kroders.lv/rss/" type="rss" />
+      <outline title="Rigas Ritmi" xmlUrl="https://www.rigasritmi.lv/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Radio SWH" xmlUrl="https://www.radioswh.lv/rss/" type="rss" />
+      <outline title="Pieci LV" xmlUrl="https://www.pieci.lv/rss/" type="rss" />
+      <outline title="Positivus Festival" xmlUrl="https://www.positivusfestival.com/rss/" type="rss" />
+      <outline title="Latvijas Radio 5" xmlUrl="https://www.pieci.lv/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Receptes LV" xmlUrl="https://www.receptes.lv/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Latvia Travel" xmlUrl="https://www.latvia.travel/rss/" type="rss" />
+      <outline title="Sigulda Travel" xmlUrl="https://www.sigulda.lv/rss/" type="rss" />
+      <outline title="Jurmala Tourism" xmlUrl="https://www.visitjurmala.lv/rss/" type="rss" />
+      <outline title="Explore Latvia" xmlUrl="https://www.explorelatvia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Delfi Bizness" xmlUrl="https://www.delfi.lv/bizness/rss/" type="rss" />
+      <outline title="Db LV" xmlUrl="https://www.db.lv/rss/" type="rss" />
+      <outline title="Startup Latvia Biz" xmlUrl="https://www.startuplatvia.eu/feed/" type="rss" />
+      <outline title="LIAA" xmlUrl="https://www.liaa.gov.lv/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Twino Tech" xmlUrl="https://www.twino.com/blog/feed/" type="rss" />
+      <outline title="Mintos Engineering" xmlUrl="https://www.mintos.com/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Delfi Podcast" xmlUrl="https://www.delfi.lv/podkasti/rss/" type="rss" />
+      <outline title="Pieci Podcast" xmlUrl="https://www.pieci.lv/podkasti/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="iDeal Latvia" xmlUrl="https://www.ideal.lv/blog/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube" />
+  </body>
+</opml>
