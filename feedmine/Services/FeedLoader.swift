@@ -423,8 +423,9 @@ final class FeedLoader {
     func markAsRead(_ itemID: String) {
         readItemIDs.insert(itemID)
         readTimestamps[itemID] = Date()
-        // Track clicked source for "What's New"
-        if let item = (items + reservoir).first(where: { $0.id == itemID }) {
+        // Track clicked source for "What's New" — check visible items first
+        if let item = items.first(where: { $0.id == itemID })
+            ?? reservoir.first(where: { $0.id == itemID }) {
             clickedSourceURLs.insert(item.sourceURL)
         }
         capReadIDsIfNeeded()
