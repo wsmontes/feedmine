@@ -1055,9 +1055,8 @@ final class FeedLoader {
 
     /// Fetch fresh content in background while cached items are already displayed.
     /// New items are merged into the reservoir so they appear as the user scrolls.
+    /// Does NOT touch loadingState — this is silent, no UI indication.
     private func fetchFreshContent() async {
-        loadingState = .refreshing
-
         let activeSources = enabledSources.shuffled()
         let chunkSize = 20
         var allFetched = 0
@@ -1093,7 +1092,6 @@ final class FeedLoader {
         whatsNewVersion &+= 1
 
         lastRefreshDate = .now
-        loadingState = .idle
 
         PersistenceManager.shared.save(buildStateWithItems())
 
