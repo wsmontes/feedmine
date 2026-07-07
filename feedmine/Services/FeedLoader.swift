@@ -333,6 +333,9 @@ final class FeedLoader {
     /// Fetch a small batch (10 sources) from a newly enabled region to seed
     /// the reservoir quickly. The full region is picked up by refillReservoir.
     private func seedRegionContent(_ region: String) async {
+        // Abort if region was disabled before fetch even started
+        guard !disabledRegions.contains(region) else { return }
+
         let regionSources = sources
             .filter { $0.region == region && !disabledSourceIDs.contains($0.url) }
             .prefix(10)
@@ -340,6 +343,10 @@ final class FeedLoader {
 
         let sourcesArr = Array(regionSources)
         let batch = await fetcher.fetchAll(sourcesArr, maxConcurrent: 10)
+
+        // Re-check: region may have been disabled while fetch was in flight
+        guard !disabledRegions.contains(region) else { return }
+
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
         guard !actualNew.isEmpty else { return }
         registerLoadedIDs(actualNew.map(\.id))
