@@ -319,6 +319,7 @@ final class FeedLoader {
         } else {
             disabledRegions.insert(region)
         }
+        rebuildAfterRegionToggle()
         PersistenceManager.shared.save(buildState())
     }
 
@@ -336,6 +337,7 @@ final class FeedLoader {
         } else {
             disabledRegions.subtract(allCountryRegions)
         }
+        rebuildAfterRegionToggle()
         PersistenceManager.shared.save(buildState())
     }
 
@@ -355,6 +357,7 @@ final class FeedLoader {
         } else {
             disabledRegions.insert("global")
         }
+        rebuildAfterRegionToggle()
         PersistenceManager.shared.save(buildState())
     }
 
@@ -750,6 +753,41 @@ final class FeedLoader {
             filteredOutItems = []
         }
 
+        reservoirCount = reservoir.count
+        itemVersion += 1
+        markAsSurfaced(items)
+    }
+
+    /// Rebuild the visible feed immediately when regions are toggled.
+    /// Items from disabled regions move to filteredOutItems and come back
+    /// when the region is re-enabled — same as other filters.
+    private func rebuildAfterRegionToggle() {
+        // Map source URLs to their region for quick lookup
+        let sourceRegionMap: [String: String] = Dictionary(
+            sources.map { ($0.url, $0.region) },
+            uniquingKeysWith: { first, _ in first }
+        )
+
+        // Pool everything
+        let allItems = items + reservoir + filteredOutItems
+        var enabled: [FeedItem] = []
+        var disabled: [FeedItem] = []
+
+        for item in allItems {
+            let region = sourceRegionMap[item.sourceURL] ?? "global"
+            if disabledRegions.contains(region) {
+                disabled.append(item)
+            } else {
+                enabled.append(item)
+            }
+        }
+
+        let interleaved = interleave(enabled)
+        let w = min(Self.pageSize, interleaved.count)
+        items = Array(interleaved.prefix(w))
+        reservoir = Array(interleaved.dropFirst(w))
+        capReservoir()
+        filteredOutItems = disabled
         reservoirCount = reservoir.count
         itemVersion += 1
         markAsSurfaced(items)
