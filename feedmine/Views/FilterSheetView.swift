@@ -33,7 +33,14 @@ struct FilterSheetView: View {
                     NavigationLink {
                         CountriesListScreen()
                     } label: {
-                        Label("Countries", systemImage: "globe")
+                        HStack {
+                            Label("Countries", systemImage: "globe")
+                            Spacer()
+                            let enabled = loader.availableCountries.filter { loader.isRegionEnabled($0.region) }.count
+                            Text("\(enabled) on")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                 }
 
