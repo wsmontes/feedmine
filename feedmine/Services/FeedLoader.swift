@@ -265,9 +265,9 @@ final class FeedLoader {
         sourceHealth[source.url] ?? SourceHealth()
     }
 
-    private func updateSourceHealth(failedSources: Int, totalSources: Int, totalItems: Int) {
+    private func updateSourceHealth(failedSources: Int, totalSources: Int, totalItems: Int, sources: [FeedSource]) {
         let now = Date()
-        for source in enabledSources {
+        for source in sources {
             var health = sourceHealth[source.url] ?? SourceHealth()
             health.lastFetchDate = now
             health.lastArticleCount = totalItems / max(totalSources, 1)
@@ -1040,7 +1040,7 @@ final class FeedLoader {
             fetchErrorCount = allFailed
             emptyFeedCount += batch.emptySourceCount
 
-            updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: chunk.count, totalItems: batch.items.count)
+            updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: chunk.count, totalItems: batch.items.count, sources: chunk)
 
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
             registerLoadedIDs(actualNew.map(\.id))
@@ -1102,7 +1102,7 @@ final class FeedLoader {
             fetchErrorCount = allFailed
             emptyFeedCount += batch.emptySourceCount
 
-            updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: chunk.count, totalItems: batch.items.count)
+            updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: chunk.count, totalItems: batch.items.count, sources: chunk)
 
             let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
             registerLoadedIDs(actualNew.map(\.id))
@@ -1150,7 +1150,7 @@ final class FeedLoader {
         totalFetched = batch.items.count
         fetchErrorCount = batch.failedSourceCount
 
-        updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: enabledSources.count, totalItems: batch.items.count)
+        updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: enabledSources.count, totalItems: batch.items.count, sources: enabledSources)
         emptyFeedCount = batch.emptySourceCount
 
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
@@ -1376,7 +1376,7 @@ final class FeedLoader {
         totalFetched += batch.items.count
         fetchErrorCount += batch.failedSourceCount
         emptyFeedCount += batch.emptySourceCount
-        updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: batchSources.count, totalItems: batch.items.count)
+        updateSourceHealth(failedSources: batch.failedSourceCount, totalSources: batchSources.count, totalItems: batch.items.count, sources: batchSources)
 
         let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
         registerLoadedIDs(actualNew.map(\.id))
