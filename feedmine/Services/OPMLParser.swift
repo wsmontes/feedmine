@@ -22,8 +22,16 @@ struct OPMLParser {
 
         for fileURL in opmlFiles {
             let fileName = fileURL.deletingPathExtension().lastPathComponent
+            let region: String = {
+                let components = fileURL.pathComponents
+                if let idx = components.lastIndex(of: "countries") {
+                    let countryFile = components.last ?? fileName
+                    return "countries/\((countryFile as NSString).deletingPathExtension)"
+                }
+                return "global"
+            }()
             do {
-                let (sources, invalids) = try parseFile(url: fileURL, fallbackCategory: fileName.capitalized)
+                let (sources, invalids) = try parseFile(url: fileURL, fallbackCategory: fileName.capitalized, region: region)
                 allSources.append(contentsOf: sources)
                 invalidSourceCount += invalids
             } catch {
@@ -46,10 +54,10 @@ struct OPMLParser {
 
     // MARK: - Private
 
-    private static func parseFile(url: URL, fallbackCategory: String) throws -> (sources: [FeedSource], invalidCount: Int) {
+    private static func parseFile(url: URL, fallbackCategory: String, region: String) throws -> (sources: [FeedSource], invalidCount: Int) {
         let data = try Data(contentsOf: url)
         let parser = XMLParser(data: data)
-        let delegate = OPMLDelegate(fallbackCategory: fallbackCategory)
+        let delegate = OPMLDelegate(fallbackCategory: fallbackCategory, region: region)
         parser.delegate = delegate
         parser.parse()
 
@@ -130,14 +138,16 @@ struct OPMLParser {
 
 private final class OPMLDelegate: NSObject, XMLParserDelegate {
     let fallbackCategory: String
+    let region: String
     var sources: [FeedSource] = []
     var invalidSourceCount = 0
 
     private var categoryStack: [String] = []
     private var outlinePushStack: [Bool] = []  // tracks which opens pushed a category
 
-    init(fallbackCategory: String) {
+    init(fallbackCategory: String, region: String = "global") {
         self.fallbackCategory = fallbackCategory
+        self.region = region
     }
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
@@ -175,7 +185,8 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
             FeedSource(
                 title: title.isEmpty ? category : title,
                 url: xmlUrl,
-                category: category
+                category: category,
+                region: region
             )
         )
     }

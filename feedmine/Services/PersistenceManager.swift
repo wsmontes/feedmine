@@ -4,10 +4,11 @@ import Compression
 /// All user data that survives app restarts
 struct FeedState: Codable {
     /// Bump on format changes to trigger migration
-    var schemaVersion: Int = 2
+    var schemaVersion: Int = 3
     var readItemIDs: [String] = []
     var bookmarkedIDs: [String] = []
     var disabledSourceIDs: [String] = []
+    var disabledRegions: [String] = []
     var sources: [FeedSource] = []
     var lastRefreshDate: Date?
     var streakCount: Int = 0
@@ -112,7 +113,12 @@ final class PersistenceManager {
             state.cachedItems = []
             print("[Persistence] Migrated schema v1 → v2 (added cachedItems)")
         }
-        // Future: if state.schemaVersion < 3 { ... }
+        // v2 → v3: added disabledRegions for country feeds toggles
+        if state.schemaVersion < 3 {
+            state.schemaVersion = 3
+            state.disabledRegions = []
+            print("[Persistence] Migrated schema v2 → v3 (added disabledRegions)")
+        }
     }
 
     // MARK: - Public helpers
@@ -292,6 +298,10 @@ func loadPersistedState() -> FeedState? {
             if state.schemaVersion < 2 {
                 state.schemaVersion = 2
                 state.cachedItems = []
+            }
+            if state.schemaVersion < 3 {
+                state.schemaVersion = 3
+                state.disabledRegions = []
             }
             return state
         } catch {

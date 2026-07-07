@@ -213,6 +213,7 @@ final class FeedLoader {
             readItemIDs: Array(readItemIDs),
             bookmarkedIDs: Array(bookmarkedIDs),
             disabledSourceIDs: Array(disabledSourceIDs),
+            disabledRegions: Array(disabledRegions),
             sources: sources,
             lastRefreshDate: lastRefreshDate,
             streakCount: UserDefaults.standard.integer(forKey: "streakCount"),
@@ -227,6 +228,7 @@ final class FeedLoader {
         readTimestamps = state.readTimestamps
         bookmarkedIDs = Set(state.bookmarkedIDs)
         disabledSourceIDs = Set(state.disabledSourceIDs)
+        disabledRegions = Set(state.disabledRegions)
         if !state.sources.isEmpty {
             sources = state.sources
             sourceCount = sources.count
@@ -275,10 +277,70 @@ final class FeedLoader {
         }
     }
 
-    /// Available categories from loaded sources
+    /// Available categories from global (non-country) sources only.
+    /// Country categories must not mix with global topic categories.
     var availableCategories: [String] {
-        let cats = Set(sources.map { $0.category }).sorted()
+        let cats = Set(sources
+            .filter { $0.region == "global" }
+            .map(\.category))
+            .sorted()
         return cats
+    }
+
+    // MARK: - Country feeds
+
+    var availableCountries: [Country] {
+        let grouped = Dictionary(grouping: sources, by: \.region)
+        return grouped
+            .filter { $0.key.hasPrefix("countries/") }
+            .compactMap { region, feeds -> Country? in
+                let slug = region.replacingOccurrences(of: "countries/", with: "")
+                let categories = Array(Set(feeds.map(\.category))).sorted()
+                return Country(
+                    region: region,
+                    name: CountryStore.countryName(for: slug),
+                    flag: CountryStore.countryFlag(for: slug),
+                    feedCount: feeds.count,
+                    categories: categories
+                )
+            }
+            .sorted { $0.name < $1.name }
+    }
+
+    func countryFeeds(for region: String) -> [FeedSource] {
+        sources
+            .filter { $0.region == region }
+            .sorted { $0.category < $1.category || ($0.category == $1.category && $0.title < $1.title) }
+    }
+
+    func toggleRegion(_ region: String) {
+        if disabledRegions.contains(region) {
+            disabledRegions.remove(region)
+        } else {
+            disabledRegions.insert(region)
+        }
+        PersistenceManager.shared.save(buildState())
+    }
+
+    func isRegionEnabled(_ region: String) -> Bool {
+        !disabledRegions.contains(region)
+    }
+
+    func toggleAllCountries() {
+        let allCountryRegions = Set(sources
+            .filter { $0.isCountryFeed }
+            .map(\.region))
+        let anyEnabled = allCountryRegions.contains { !disabledRegions.contains($0) }
+        if anyEnabled {
+            disabledRegions.formUnion(allCountryRegions)
+        } else {
+            disabledRegions.subtract(allCountryRegions)
+        }
+        PersistenceManager.shared.save(buildState())
+    }
+
+    var isAnyCountryEnabled: Bool {
+        sources.contains { $0.isCountryFeed && !disabledRegions.contains($0.region) }
     }
 
     /// Track which items have been opened, with timestamps for cleanup
@@ -399,9 +461,17 @@ final class FeedLoader {
     /// Disabled source URLs — persisted concept (in-memory for prototype)
     var disabledSourceIDs: Set<String> = []
 
-    /// Only enabled sources
+    /// Disabled country regions — persisted. When a region is disabled, all its feeds
+    /// are excluded from enabledSources regardless of per-source toggles.
+    var disabledRegions: Set<String> = []
+
+    /// Only enabled sources (respects both per-source and per-region toggles)
     var enabledSources: [FeedSource] {
-        sources.filter { !disabledSourceIDs.contains($0.url) }
+        sources.filter { source in
+            if disabledSourceIDs.contains(source.url) { return false }
+            if source.isCountryFeed && disabledRegions.contains(source.region) { return false }
+            return true
+        }
     }
 
     func toggleSource(_ sourceURL: String) {
