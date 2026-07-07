@@ -869,6 +869,8 @@ final class FeedLoader {
     /// Remove items from disabled regions immediately. Preserves scroll
     /// position — no re-interleave, just surgical removal.
     private func rebuildAfterRegionToggle() {
+        // Nothing disabled → nothing to remove
+        guard !disabledRegions.isEmpty else { return }
         let isDisabled: (FeedItem) -> Bool = { [self] item in
             let region = sourceRegionMap[item.sourceURL] ?? "global"
             return disabledRegions.contains(region)
