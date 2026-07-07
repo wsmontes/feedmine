@@ -669,7 +669,8 @@ final class FeedLoader {
 
         // Step 2: Within each source — recency tiers, then spread by type+category
         let surfacedCutoff = Date().addingTimeInterval(-Self.surfacedCooldown)
-        let staleCutoff = Date().addingTimeInterval(-86400)
+        let staleNewsCutoff = Date().addingTimeInterval(-86400)     // 1 day for news
+        let staleEvergreenCutoff = Date().addingTimeInterval(-604800) // 7 days for blogs/tutorials
         for key in bySource.keys {
             let bucket = bySource[key]!
             let surfacedIDs = Set(bucket.filter { item in
@@ -677,7 +678,9 @@ final class FeedLoader {
                 return ts > surfacedCutoff
             }.map(\.id))
             let staleIDs = Set(bucket.filter { item in
-                !surfacedIDs.contains(item.id) && item.publishedAt < staleCutoff
+                if surfacedIDs.contains(item.id) { return false }
+                let cutoff = item.isTimeless ? staleEvergreenCutoff : staleNewsCutoff
+                return item.publishedAt < cutoff
             }.map(\.id))
             let recent = interleaveByTypeCategory(bucket.filter { !surfacedIDs.contains($0.id) && !staleIDs.contains($0.id) }.shuffled())
             let stale = interleaveByTypeCategory(bucket.filter { staleIDs.contains($0.id) }.shuffled())

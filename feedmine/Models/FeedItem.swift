@@ -50,6 +50,23 @@ struct FeedItem: Identifiable, Sendable, Codable {
     /// True if this item has an audio enclosure (podcast episode)
     var isPodcast: Bool { audioURL != nil }
 
+    /// Atemporal content (blogs, science, tutorials) ages slowly.
+    /// News and sports are time-sensitive. Used for stale cutoff and sorting.
+    var isTimeless: Bool {
+        let lower = category.lowercased()
+        if lower.contains("news") || lower.contains("sport") { return false }
+        if lower.contains("blog") || lower.contains("science") || lower.contains("tech")
+            || lower.contains("programming") || lower.contains("culture")
+            || lower.contains("history") || lower.contains("design")
+            || lower.contains("food") || lower.contains("diy")
+            || lower.contains("music") || lower.contains("movie")
+            || lower.contains("photography") || lower.contains("travel")
+            || lower.contains("environment") || lower.contains("architecture") { return true }
+        // Video/podcast content is timeless
+        if isYouTube || isPodcast { return true }
+        return false
+    }
+
     /// Formatted duration string, e.g. "34 min"
     var durationFormatted: String? {
         guard let d = duration, d > 0 else { return nil }

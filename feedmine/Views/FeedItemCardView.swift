@@ -310,8 +310,22 @@ struct FeedItemCardView: View {
     private var isNew: Bool { Date().timeIntervalSince(item.publishedAt) < 3600 }
 
     private var readingTime: String {
+        if item.isYouTube { return "Watch" }
+        if item.isPodcast { return "Listen" }
+        // Excerpt is too short for accurate WPM. Categorize by length tier.
         let wordCount = item.excerpt.split(separator: " ").count
-        let minutes = max(1, Int(ceil(Double(wordCount) / 200.0)))
+        let minutes: Int
+        switch wordCount {
+        case 0..<15:  minutes = 1   // headline-only
+        case 15..<40: minutes = 2   // short blurb
+        case 40..<80: minutes = 3   // paragraph
+        default:      minutes = 4   // substantial excerpt
+        }
+        // Longer-form sources hint at deeper content
+        let cat = item.category.lowercased()
+        if cat.contains("science") || cat.contains("tech") || cat.contains("programming") {
+            return "\(minutes + 1) min read"
+        }
         return "\(minutes) min read"
     }
 
