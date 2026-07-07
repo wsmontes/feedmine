@@ -314,12 +314,20 @@ final class FeedLoader {
     }
 
     func toggleRegion(_ region: String) {
-        if disabledRegions.contains(region) {
+        let wasDisabled = disabledRegions.contains(region)
+        if wasDisabled {
             disabledRegions.remove(region)
         } else {
             disabledRegions.insert(region)
         }
         rebuildAfterRegionToggle()
+
+        // When enabling a region, fetch its feeds in background so content
+        // appears in the feed after the next interleave cycle.
+        if wasDisabled {
+            Task { await self.fetchRegionContent(region) }
+        }
+
         PersistenceManager.shared.save(buildState())
     }
 
@@ -327,17 +335,46 @@ final class FeedLoader {
         !disabledRegions.contains(region)
     }
 
+    /// Fetch content for a newly enabled region and merge through the standard pipeline.
+    private func fetchRegionContent(_ region: String) async {
+        let regionSources = sources.filter { $0.region == region && !disabledSourceIDs.contains($0.url) }
+        guard !regionSources.isEmpty else { return }
+
+        let batch = await fetcher.fetchAll(regionSources.shuffled(), maxConcurrent: 15)
+        let actualNew = batch.items.filter { !loadedIDs.contains($0.id) }
+        registerLoadedIDs(actualNew.map(\.id))
+        totalFetched += batch.items.count
+
+        // Merge through the same pipeline as fetchFreshContent
+        reservoir.append(contentsOf: actualNew)
+        reservoir = interleave(reservoir)
+        capReservoir()
+        reservoirCount = reservoir.count
+        whatsNewVersion &+= 1
+        itemVersion += 1
+
+        PersistenceManager.shared.save(buildStateWithItems())
+    }
+
     func toggleAllCountries() {
         let allCountryRegions = Set(sources
             .filter { $0.isCountryFeed }
             .map(\.region))
         let anyEnabled = allCountryRegions.contains { !disabledRegions.contains($0) }
+        let wasEnabling = !anyEnabled  // we're about to enable all
         if anyEnabled {
             disabledRegions.formUnion(allCountryRegions)
         } else {
             disabledRegions.subtract(allCountryRegions)
         }
         rebuildAfterRegionToggle()
+
+        if wasEnabling {
+            for region in allCountryRegions {
+                Task { await self.fetchRegionContent(region) }
+            }
+        }
+
         PersistenceManager.shared.save(buildState())
     }
 
@@ -352,12 +389,18 @@ final class FeedLoader {
     }
 
     func toggleGlobalFeeds() {
-        if disabledRegions.contains("global") {
+        let wasDisabled = disabledRegions.contains("global")
+        if wasDisabled {
             disabledRegions.remove("global")
         } else {
             disabledRegions.insert("global")
         }
         rebuildAfterRegionToggle()
+
+        if wasDisabled {
+            Task { await self.fetchRegionContent("global") }
+        }
+
         PersistenceManager.shared.save(buildState())
     }
 
