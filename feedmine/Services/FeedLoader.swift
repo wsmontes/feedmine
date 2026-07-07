@@ -343,6 +343,21 @@ final class FeedLoader {
         sources.contains { $0.isCountryFeed && !disabledRegions.contains($0.region) }
     }
 
+    // MARK: - Global feeds toggle
+
+    var isGlobalFeedsEnabled: Bool {
+        !disabledRegions.contains("global")
+    }
+
+    func toggleGlobalFeeds() {
+        if disabledRegions.contains("global") {
+            disabledRegions.remove("global")
+        } else {
+            disabledRegions.insert("global")
+        }
+        PersistenceManager.shared.save(buildState())
+    }
+
     /// Track which items have been opened, with timestamps for cleanup
     var readItemIDs: Set<String> = []
     var readTimestamps: [String: Date] = [:]
@@ -469,7 +484,7 @@ final class FeedLoader {
     var enabledSources: [FeedSource] {
         sources.filter { source in
             if disabledSourceIDs.contains(source.url) { return false }
-            if source.isCountryFeed && disabledRegions.contains(source.region) { return false }
+            if disabledRegions.contains(source.region) { return false }
             return true
         }
     }

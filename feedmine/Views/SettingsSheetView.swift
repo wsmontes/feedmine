@@ -98,15 +98,6 @@ struct SettingsSheetView: View {
                     }
                 }
 
-                // MARK: - Feeds
-                Section("Feeds") {
-                    NavigationLink {
-                        CountriesListScreen()
-                    } label: {
-                        Label("Countries", systemImage: "globe")
-                    }
-                }
-
                 // MARK: - Performance
                 Section("Performance") {
                     Toggle("Preload Images", systemImage: "photo.stack.fill", isOn: $prefetchImages)
