@@ -773,23 +773,34 @@ final class FeedLoader {
 
         // Remove disabled items from visible + reservoir
         let removedFromVisible = items.filter(isDisabled)
+        let visibleChanged = !removedFromVisible.isEmpty
         items.removeAll(where: isDisabled)
+        let reservoirBefore = reservoir.count
         reservoir.removeAll(where: isDisabled)
 
         // Process filteredOutItems: re-enabled items come back to reservoir
         var stillDisabled: [FeedItem] = []
+        var restoredFromFiltered: [FeedItem] = []
         for item in filteredOutItems {
             if isDisabled(item) {
                 stillDisabled.append(item)
             } else {
-                reservoir.append(item)
+                restoredFromFiltered.append(item)
             }
         }
         filteredOutItems = stillDisabled
         filteredOutItems.append(contentsOf: removedFromVisible)
 
-        reservoirCount = reservoir.count
-        itemVersion += 1
+        if !restoredFromFiltered.isEmpty {
+            reservoir.append(contentsOf: restoredFromFiltered)
+        }
+
+        // Only bump version if visible items or reservoir actually changed
+        let reservoirChanged = reservoir.count != reservoirBefore || !restoredFromFiltered.isEmpty
+        if visibleChanged || reservoirChanged {
+            reservoirCount = reservoir.count
+            itemVersion += 1
+        }
     }
 
     // MARK: - Constants
