@@ -7,7 +7,7 @@ struct ArticleReaderView: View {
 
     var body: some View {
         NavigationStack {
-            ArticleWebView(url: URL(string: item.url))
+            ArticleWebView(url: URL(string: item.url), item: item)
                 .ignoresSafeArea(edges: .bottom)
                 .navigationTitle(item.sourceTitle)
                 .navigationBarTitleDisplayMode(.inline)
@@ -38,12 +38,14 @@ struct ArticleReaderView: View {
 
 struct ArticleWebView: UIViewRepresentable {
     let url: URL?
+    let item: FeedItem?
 
     func makeUIView(context: Context) -> WKWebView {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
+        config.mediaTypesRequiringUserActionForPlayback = []
         let prefs = WKWebpagePreferences()
-        prefs.allowsContentJavaScript = false
+        prefs.allowsContentJavaScript = true
         config.defaultWebpagePreferences = prefs
 
         let webView = WKWebView(frame: .zero, configuration: config)
@@ -52,7 +54,13 @@ struct ArticleWebView: UIViewRepresentable {
         webView.scrollView.contentInsetAdjustmentBehavior = .automatic
 
         if let url {
-            webView.load(URLRequest(url: url))
+            // YouTube embed loads faster and works better in WebView
+            if let videoID = item?.youTubeVideoID,
+               let embedURL = URL(string: "https://www.youtube.com/embed/\(videoID)") {
+                webView.load(URLRequest(url: embedURL))
+            } else {
+                webView.load(URLRequest(url: url))
+            }
         }
         return webView
     }
