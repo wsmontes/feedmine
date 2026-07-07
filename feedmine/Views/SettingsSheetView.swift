@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsSheetView: View {
     @Environment(FeedLoader.self) private var loader
+    @Environment(LocaleManager.self) private var localeManager
     @AppStorage("showDebugBar") private var showDebugBar = true
     @AppStorage("prefetchImages") private var prefetchImages = true
     @AppStorage("nightMode") private var nightMode = false
@@ -16,6 +17,7 @@ struct SettingsSheetView: View {
     @State private var showResetConfirmation = false
     @State private var showPalettePicker = false
     @State private var showFontStylePicker = false
+    @State private var showRestartAlert = false
 
     private var topCategory: String? {
         let readItems = loader.items.filter { loader.isRead($0.id) }
@@ -49,6 +51,24 @@ struct SettingsSheetView: View {
                         .pickerStyle(.segmented)
                         .frame(width: 200)
                     }
+                }
+
+                // MARK: - Language
+                Section {
+                    NavigationLink {
+                        languagePickerView
+                    } label: {
+                        HStack {
+                            Text("Language")
+                            Spacer()
+                            Text(localeManager.selectedLanguage.displayName)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                } header: {
+                    Text("Language")
+                } footer: {
+                    Text("Changing the language requires restarting the app.")
                 }
 
                 // MARK: - Circadian Design
@@ -255,6 +275,12 @@ struct SettingsSheetView: View {
             .sheet(isPresented: $showFontStylePicker) {
                 fontStylePickerSheet
             }
+            .alert(String(localized: "Restart Required", comment: "Language change alert title"),
+                   isPresented: $showRestartAlert) {
+                Button(String(localized: "OK", comment: "Dismiss alert")) { }
+            } message: {
+                Text("Please restart FeedMine to apply the new language.")
+            }
         }
         .presentationDetents([.medium, .large])
     }
@@ -355,6 +381,35 @@ struct SettingsSheetView: View {
         case .sfMono: return "SF Mono — technical, fixed"
         case .georgia: return "Georgia — serif headlines, SF body"
         }
+    }
+
+    // MARK: - Language Picker
+
+    private var languagePickerView: some View {
+        List {
+            ForEach(LocaleManager.supportedLanguages) { language in
+                Button {
+                    if language.code != localeManager.selectedLanguage.code {
+                        localeManager.selectLanguage(language)
+                        showRestartAlert = true
+                    }
+                } label: {
+                    HStack {
+                        Text(language.displayName)
+                            .foregroundStyle(.primary)
+                        Spacer()
+                        Text(language.code)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        if language.code == localeManager.selectedLanguage.code {
+                            Image(systemName: "checkmark")
+                                .foregroundStyle(CircadianEngine.shared.accent)
+                        }
+                    }
+                }
+            }
+        }
+        .navigationTitle(String(localized: "Language", comment: "Language picker title"))
     }
 }
 
