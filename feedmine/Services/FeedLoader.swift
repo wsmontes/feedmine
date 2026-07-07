@@ -676,8 +676,9 @@ final class FeedLoader {
             let w = weights[sourceURL] ?? 1
             for _ in 0..<w { slots.append(sourceURL) }
         }
-        // Spread identical slots so no same-source adjacency in the order
+        // Spread slots to avoid same-source AND same-country adjacency
         slots = spreadSlots(slots)
+        slots = spreadSlotsByCountry(slots)
 
         // Step 5: Round-robin through slots, 1 item per turn
         var result: [FeedItem] = []
@@ -744,6 +745,52 @@ final class FeedLoader {
                 result.append(list[indices[key]!])
                 indices[key]! += 1
                 added = true
+            }
+        }
+        return result
+    }
+
+    /// Second-pass spread: avoid consecutive slots from the same country.
+    /// Uses a greedy swap — when two adjacent slots share a country, swap the
+    /// second with the nearest later slot from a different country.
+    private func spreadSlotsByCountry(_ slots: [String]) -> [String] {
+        guard slots.count > 2 else { return slots }
+
+        // Lazy source→country map
+        let sourceCountry: [String: String] = Dictionary(
+            sources.map { ($0.url, $0.region) },
+            uniquingKeysWith: { first, _ in first }
+        )
+
+        var result = slots
+        for i in 0..<(result.count - 1) {
+            let a = result[i]
+            let b = result[i + 1]
+            let countryA = sourceCountry[a] ?? "global"
+            let countryB = sourceCountry[b] ?? "global"
+            guard countryA == countryB else { continue }
+
+            // Find the nearest later slot from a different country to swap with
+            var swapIdx: Int?
+            for j in (i + 2)..<result.count {
+                let countryJ = sourceCountry[result[j]] ?? "global"
+                if countryJ != countryA {
+                    swapIdx = j
+                    break
+                }
+            }
+            // Also try looking backward (before i)
+            if swapIdx == nil {
+                for j in stride(from: i - 1, through: 0, by: -1) {
+                    let countryJ = sourceCountry[result[j]] ?? "global"
+                    if countryJ != countryA {
+                        swapIdx = j
+                        break
+                    }
+                }
+            }
+            if let j = swapIdx {
+                result.swapAt(i + 1, j)
             }
         }
         return result
