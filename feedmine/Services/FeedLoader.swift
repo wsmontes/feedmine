@@ -243,8 +243,9 @@ final class FeedLoader {
     /// Build a FeedState that INCLUDES cached articles for instant cold launch
     func buildStateWithItems() -> FeedState {
         var state = buildState()
-        let allItems = (items + reservoir).sorted { $0.publishedAt > $1.publishedAt }
-        state.cachedItems = Array(allItems.prefix(200))  // cap at 200 most recent
+        // No sort — items+reservoir are consumed as-is. The interleave on
+        // next launch handles variety. Saves O(n log n) on the main actor.
+        state.cachedItems = Array((items + reservoir).prefix(200))
         return state
     }
 
@@ -1448,6 +1449,7 @@ final class FeedLoader {
         let previouslyFetched = enabledSources.filter { sourceHealth[$0.url]?.lastFetchDate != nil }.shuffled()
         let prioritized = neverFetched + previouslyFetched
         let batchSources = Array(prioritized.prefix(40))
+        guard !batchSources.isEmpty else { return }
         let batch = await fetcher.fetchAll(batchSources, maxConcurrent: 15)
         totalFetched += batch.items.count
         fetchErrorCount += batch.failedSourceCount
