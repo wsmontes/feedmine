@@ -41,6 +41,10 @@ struct WhatsNewCarousel: View {
         .onAppear {
             loader.whatsNewVisible = true
             loader.prefetchWhatsNewImages()
+            recomputeBrowsingCards()
+        }
+        .onChange(of: loader.filteredItems.count) { _, _ in
+            recomputeBrowsingCards()
         }
         .onDisappear {
             loader.whatsNewVisible = false
@@ -98,22 +102,27 @@ struct WhatsNewCarousel: View {
     @State private var cachedBrowsingCards: [MiniCardData] = []
     @State private var browsingCardsHash = 0
 
-    private var browsingCards: [MiniCardData] {
-        // Use filteredItems count as cheap invalidation signal
+    private var browsingCards: [MiniCardData] { cachedBrowsingCards }
+
+    /// Rebuild the cached browsing cards. Called only from modifiers
+    /// (onAppear/onChange) — never from `body` — so we don't mutate @State
+    /// mid-render, which is undefined behavior in SwiftUI. The cache keeps
+    /// MiniCardData ids (fresh UUIDs) stable so the film-strip marquee isn't
+    /// rebuilt on every frame.
+    private func recomputeBrowsingCards() {
+        // filteredItems.count is a cheap invalidation signal.
         let currentHash = loader.filteredItems.count
-        if currentHash != browsingCardsHash {
-            cachedBrowsingCards = Array(loader.filteredItems
-                .lazy
-                .compactMap { item -> MiniCardData? in
-                    guard let url = item.imageURL,
-                          !url.isEmpty, url.hasPrefix("http"), url.count > 10
-                    else { return nil }
-                    return MiniCardData(imageURL: url, category: item.category)
-                }
-                .prefix(16))
-            browsingCardsHash = currentHash
-        }
-        return cachedBrowsingCards
+        guard currentHash != browsingCardsHash else { return }
+        cachedBrowsingCards = Array(loader.filteredItems
+            .lazy
+            .compactMap { item -> MiniCardData? in
+                guard let url = item.imageURL,
+                      !url.isEmpty, url.hasPrefix("http"), url.count > 10
+                else { return nil }
+                return MiniCardData(imageURL: url, category: item.category)
+            }
+            .prefix(16))
+        browsingCardsHash = currentHash
     }
 
     private var emptyCarousel: some View {
