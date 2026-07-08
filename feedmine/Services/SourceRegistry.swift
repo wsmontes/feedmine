@@ -45,10 +45,18 @@ final class SourceRegistry {
     static func categoryKey(_ name: String) -> String { "cat:\(name)" }
     static func sourceKey(_ url: String) -> String { "url:\(url)" }
 
-    // MARK: - Feed resolution (O(1))
+    // MARK: - Feed resolution (O(1) — all Dict/Set lookups)
+
+    /// url → FeedSource, rebuilt when sources change
+    private var sourceByURL: [String: FeedSource] = [:]
+
+    private func rebuildCaches() {
+        sourceByURL = Dictionary(uniqueKeysWithValues: sources.map { ($0.url, $0) })
+        _regionMap = nil
+    }
 
     func isSourceEnabled(_ sourceURL: String) -> Bool {
-        guard let source = sources.first(where: { $0.url == sourceURL }) else { return false }
+        guard let source = sourceByURL[sourceURL] else { return false }
         if disabled.contains(Self.sourceKey(sourceURL)) { return false }
         if disabled.contains(Self.regionKey(source.region)) { return false }
         // Country check — parent of region
@@ -77,10 +85,19 @@ final class SourceRegistry {
 
     func toggleRegion(_ region: String) {
         let key = Self.regionKey(region)
+        let prefix = "\(region)/"
         if disabled.contains(key) {
+            // Enabling — cascade down to sub-regions
             disabled.remove(key)
+            for sub in sources.map(\.region) where sub.hasPrefix(prefix) {
+                disabled.remove(Self.regionKey(sub))
+            }
         } else {
+            // Disabling — cascade down to sub-regions
             disabled.insert(key)
+            for sub in sources.map(\.region) where sub.hasPrefix(prefix) {
+                disabled.insert(Self.regionKey(sub))
+            }
         }
         recomputeActiveCounts()
         saveState()
@@ -221,11 +238,11 @@ final class SourceRegistry {
     func loadFromOPML() async {
         let result = await OPMLParser.parseAll()
         sources = result.sources
+        rebuildCaches()
         opmlFileCount = result.fileCount
         opmlErrorCount = result.failedFileCount
         invalidSourceCount = result.invalidSourceCount
         duplicateSourceCount = result.duplicateSourceCount
-        _regionMap = nil
 
         // Restore persisted toggle state
         loadState()
