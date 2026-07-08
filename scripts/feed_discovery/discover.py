@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import html
 import re
 from urllib.parse import urljoin, urlparse
@@ -95,13 +96,10 @@ async def _is_live_feed(session: aiohttp.ClientSession, url: str, timeout: int) 
 
 
 async def _probe_feeds(session: aiohttp.ClientSession, root: str, timeout: int) -> list[str]:
-    """Last resort: try common feed paths, keep only ones that are real feeds."""
-    out: list[str] = []
-    for path in COMMON_PATHS:
-        url = urljoin(root + "/", path.lstrip("/"))
-        if await _is_live_feed(session, url, timeout):
-            out.append(url)
-    return out
+    """Last resort: try common feed paths concurrently, keep only real feeds."""
+    urls = [urljoin(root + "/", path.lstrip("/")) for path in COMMON_PATHS]
+    results = await asyncio.gather(*(_is_live_feed(session, u, timeout) for u in urls))
+    return [url for url, ok in zip(urls, results) if ok]
 
 
 async def discover_feeds(
