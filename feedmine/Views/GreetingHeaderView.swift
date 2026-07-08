@@ -151,10 +151,15 @@ struct GreetingHeaderView: View {
         }
     }
 
+    private static let relativeFormatter: RelativeDateTimeFormatter = {
+        let f = RelativeDateTimeFormatter()
+        f.unitsStyle = .abbreviated
+        return f
+    }()
+
     private func relativeTime(from date: Date) -> String {
-        let formatter = RelativeDateTimeFormatter()
-        formatter.unitsStyle = .abbreviated
-        return formatter.localizedString(for: date, relativeTo: Date())
+        // Reuse a cached formatter instead of allocating one per header render.
+        Self.relativeFormatter.localizedString(for: date, relativeTo: Date())
     }
 
     private func updateStreak() {
