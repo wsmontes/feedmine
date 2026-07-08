@@ -42,6 +42,17 @@ final class FeedStore {
     var activeCategory: String?
     var activeContentType: FeedLoader.ContentType = .all
     var activeMood: FeedLoader.MoodFilter = .all
+    /// Safety filter: excludes items from disabled regions.
+    private func isRegionEnabled(_ item: FeedItem) -> Bool {
+        let region = registry.regionFor(sourceURL: item.sourceURL)
+        return !registry.disabledRegions.contains(region)
+    }
+
+    /// Apply all active filters to a list of items.
+    private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
+        items.filter(isRegionEnabled).filter(filterContentType)
+    }
+
     private var filterContentType: (FeedItem) -> Bool {
         switch activeContentType {
         case .all: return { _ in true }
@@ -102,7 +113,7 @@ final class FeedStore {
         let cached = try? await loadReservoir()
         if let items = cached, !items.isEmpty {
             reservoir.seed(items: items)
-            visibleItems = reservoir.visibleItems.filter(filterContentType)
+            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
             reservoirCount = reservoir.reservoirCount
             loadingState = .idle
         }
@@ -329,7 +340,7 @@ final class FeedStore {
         reservoir.append(actualNew)
         // Only update visibleItems if no active search
         if !isSearching {
-            visibleItems = reservoir.visibleItems.filter(filterContentType)
+            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
             reservoirCount = reservoir.reservoirCount
         }
 
@@ -354,7 +365,7 @@ final class FeedStore {
             reservoir.append(actualNew)
             if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
                 reservoir.moveToVisible(count: Reservoir.pageSize)
-                visibleItems = reservoir.visibleItems.filter(filterContentType)
+                visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
                 reservoirCount = reservoir.reservoirCount
             }
         }
@@ -384,7 +395,7 @@ final class FeedStore {
         }) ?? []
         let feedItems = items.map { $0.toFeedItem() }
         reservoir.seed(items: feedItems)
-        visibleItems = reservoir.visibleItems.filter(filterContentType)
+        visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
         reservoirCount = reservoir.reservoirCount
     }
 
@@ -421,21 +432,25 @@ final class FeedStore {
 
     func toggleRegion(_ region: String) {
         let wasDisabled = registry.disabledRegions.contains(region)
+        let sourceURLs = registry.sources.filter { $0.region == region }.map(\.url)
         registry.toggleRegion(region)
         if wasDisabled {
-            // Enabling: prioritize in scheduler, seed content, reload SQLite items
-            scheduler.prioritize(region: region)
-            Task { await seedRegion(region) }
-            Task { await reloadFromSQLite() }
+            // Enabling: prioritize in scheduler, seed + reload sequentially
+            scheduler.prioritize(sourceURLs: sourceURLs)
+            Task {
+                await seedRegion(region)
+                await reloadFromSQLite()
+            }
         } else {
             // Disabling: remove from scheduler, purge from reservoir
-            scheduler.remove(region: region)
+            scheduler.remove(sourceURLs: sourceURLs)
             reservoir.removeRegion(region)
-            visibleItems = reservoir.visibleItems
+            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
             reservoirCount = reservoir.reservoirCount
         }
     }
 
+    /// Fetch a seed batch from a newly enabled region and push to top of feed.
     private func seedRegion(_ region: String) async {
         let regionSources = registry.enabledSources
             .filter { $0.region == region }
@@ -447,13 +462,30 @@ final class FeedStore {
         guard !actualNew.isEmpty else { return }
         for id in actualNew.map(\.id) { loadedIDs.insert(id) }
         loadedIDsCount = loadedIDs.count
-        for item in actualNew {
-            let record = FeedItemRecord(from: item, region: region)
-            try? await db.write { db in try record.insert(db) }
+        // Write to SQLite + record fetch health
+        let sourceURLsWithItems = Set(result.items.map(\.sourceURL))
+        for source in batch {
+            scheduler.recordFetch(sourceURL: source.url, success: sourceURLsWithItems.contains(source.url))
         }
-        reservoir.append(actualNew)
-        visibleItems = reservoir.visibleItems
+        do {
+            let itemsWithRegions = actualNew.map { ($0, region) }
+            try await db.write { db in
+                for (item, _) in itemsWithRegions {
+                    let record = FeedItemRecord(from: item, region: region)
+                    try record.insert(db)
+                }
+            }
+        } catch {
+            print("[FeedStore] seedRegion write error: \(error)")
+        }
+        // Prepend seed items to visible feed so they appear at top immediately
+        var combined = actualNew
+        combined.append(contentsOf: reservoir.visibleItems)
+        reservoir.seed(items: combined)
+        visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
         reservoirCount = reservoir.reservoirCount
+        // Match persistent searches against seed items
+        await matchPersistentSearches(actualNew)
     }
 
     // MARK: - Persistent search
@@ -783,7 +815,7 @@ final class FeedStore {
         }
         // Move visible back to reservoir, re-interleave, re-slice
         reservoir.shakeReshuffle()
-        visibleItems = reservoir.visibleItems.filter(filterContentType)
+        visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
         reservoirCount = reservoir.reservoirCount
         // Force fetch — bypass staleness check
         lastRefreshDate = nil

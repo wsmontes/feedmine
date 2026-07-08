@@ -86,13 +86,19 @@ final class SourceScheduler {
         }
     }
 
-    func prioritize(region: String) {
-        // Will be used when toggling ON — all sources in region get nil lastFetchedAt
-        // which puts them at the front of LRU. Handled by caller clearing entries.
+    func prioritize(sourceURLs: [String]) {
+        // Clear lastFetchedAt so these sources appear at the front of LRU
+        for url in sourceURLs {
+            lastFetchedAt.removeValue(forKey: url)
+            consecutiveFailures.removeValue(forKey: url)
+        }
     }
 
-    func remove(region: String) {
-        // Remove sources from tracking when region toggled OFF. Handled by caller.
+    func remove(sourceURLs: [String]) {
+        for url in sourceURLs {
+            lastFetchedAt.removeValue(forKey: url)
+            consecutiveFailures.removeValue(forKey: url)
+        }
     }
 
     // MARK: - Private
