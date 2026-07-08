@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "Verify RSS/Atom feed URLs in OPML files — fast, concurrent, with in-place cleaning."
 requires-python = ">=3.10"
 license = {text = "MIT"}
-dependencies = ["aiohttp>=3.9"]
+dependencies = ["aiohttp>=3.9", "ddgs>=6.0"]
 
 [project.scripts]
 feedmine-verify = "feedmine_verify.cli:main"
@@ -15,3 +15,10 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["feedmine_verify*"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["scripts/feed_discovery/tests"]
