@@ -43,7 +43,10 @@ final class Reservoir {
     // MARK: - Append new items from fetch
 
     func append(_ items: [FeedItem]) {
-        reservoir.append(contentsOf: items)
+        let visibleIDs = Set(visibleItems.map(\.id))
+        let trulyNew = items.filter { !visibleIDs.contains($0.id) }
+        guard !trulyNew.isEmpty else { return }
+        reservoir.append(contentsOf: trulyNew)
         dedupReservoir()
         reservoir = interleave(reservoir)
         capReservoir()
@@ -58,6 +61,10 @@ final class Reservoir {
             reservoir = interleave(reservoir)
             moveCountSinceReshuffle = 0
         }
+        let visibleIDs = Set(visibleItems.map(\.id))
+        // Remove items already in visible to prevent duplicates
+        reservoir.removeAll { visibleIDs.contains($0.id) }
+        guard !reservoir.isEmpty else { return }
         let toMove = min(count, reservoir.count)
         let batch = Array(reservoir.prefix(toMove))
         visibleItems.append(contentsOf: batch)

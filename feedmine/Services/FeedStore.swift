@@ -112,6 +112,8 @@ final class FeedStore {
         // Warm start: hydrate from SQLite
         let cached = try? await loadReservoir()
         if let items = cached, !items.isEmpty {
+            for item in items { loadedIDs.insert(item.id) }
+            loadedIDsCount = loadedIDs.count
             reservoir.seed(items: items)
             visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
             reservoirCount = reservoir.reservoirCount
@@ -442,6 +444,8 @@ final class FeedStore {
         if !prepend.isEmpty {
             feedItems = prepend + feedItems
         }
+        // Register all loaded IDs to prevent re-fetch duplicates
+        for item in feedItems { loadedIDs.insert(item.id) }
         reservoir.seed(items: feedItems)
         visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
         reservoirCount = reservoir.reservoirCount
