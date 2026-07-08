@@ -172,11 +172,16 @@ final class SourceRegistry {
     func isRegionEnabled(_ region: String) -> Bool {
         // Directly enabled
         if !disabledRegions.contains(region) { return true }
-        // Parent disabled but check if any sub-region overrides
+        // Check feed-level overrides within this region or its sub-regions
+        let prefix = "\(region)/"
+        let regionSources = sources.filter { src in
+            src.region == region || src.region.hasPrefix(prefix)
+        }
+        let hasOverride = regionSources.contains { overrideSourceIDs.contains($0.url) }
+        if hasOverride { return true }
+        // Country: check if any sub-region is enabled
         if region.hasPrefix("countries/") && !region.dropFirst("countries/".count).contains("/") {
-            // This is a country — check sub-regions
-            let prefix = "\(region)/"
-            let hasEnabledSubRegion = sources
+            let hasEnabledSubRegion = regionSources
                 .map(\.region)
                 .filter { $0.hasPrefix(prefix) }
                 .contains { !disabledRegions.contains($0) }

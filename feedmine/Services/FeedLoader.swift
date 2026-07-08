@@ -354,7 +354,7 @@ final class FeedLoader {
         store.resetWhatsNewBaseline()
         Task { await loadWhatsNew() }
     }
-    func toggleSource(_ sourceURL: String) { store.registry.toggleSource(sourceURL) }
+    func toggleSource(_ sourceURL: String) { store.toggleSource(sourceURL) }
     func isRegionEnabled(_ region: String) -> Bool { store.registry.isRegionEnabled(region) }
     func isSourceEnabled(_ url: String) -> Bool { store.registry.isSourceEnabled(url) }
     func toggleCategory(_ category: String) { store.toggleCategory(category) }

@@ -312,6 +312,40 @@ final class FeedStore {
         scheduler.lastFetchedAt[sourceURL]
     }
 
+    func toggleSource(_ sourceURL: String) {
+        let wasEnabled = registry.isSourceEnabled(sourceURL)
+        registry.toggleSource(sourceURL)
+        if !wasEnabled {
+            // Enabling a single feed — fetch it immediately
+            if let source = registry.sources.first(where: { $0.url == sourceURL }) {
+                Task {
+                    let result = await fetcher.fetchAll([source], maxConcurrent: 1)
+                    let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
+                    guard !actualNew.isEmpty else { return }
+                    for id in actualNew.map(\.id) { loadedIDs.insert(id) }
+                    loadedIDsCount = loadedIDs.count
+                    let region = registry.regionFor(sourceURL: sourceURL)
+                    for item in actualNew {
+                        try? await db.write { db in
+                            try FeedItemRecord(from: item, region: region).insert(db)
+                        }
+                    }
+                    // Prepend to visible feed
+                    var combined = actualNew
+                    combined.append(contentsOf: reservoir.visibleItems)
+                    reservoir.seed(items: combined)
+                    visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+                    reservoirCount = reservoir.reservoirCount
+                }
+            }
+        } else {
+            // Disabling — remove from visible
+            reservoir.removeRegion(registry.regionFor(sourceURL: sourceURL))
+            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+            reservoirCount = reservoir.reservoirCount
+        }
+    }
+
     func isCategoryEnabled(_ category: String) -> Bool {
         registry.isCategoryEnabled(category)
     }
