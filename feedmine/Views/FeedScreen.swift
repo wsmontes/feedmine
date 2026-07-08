@@ -67,6 +67,7 @@ struct FeedScreen: View {
         }
         .task {
             await loader.start()
+            await loader.refreshBookmarkState()
             updateBadge()
             engine.refresh()
         }

@@ -211,8 +211,30 @@ final class FeedLoader {
     // MARK: - Read / Bookmark
 
     var readItemIDs: Set<String> { store.readItemIDs }
-    var bookmarkedItems: [FeedItem] { [] } // Task 11 implements
-    var bookmarkedIDs: Set<String> { [] }  // Task 11 implements
+
+    /// Cached bookmark item IDs — refreshed on load and on toggle.
+    private var bookmarkItemIDs: Set<String> = []
+
+    var bookmarkedItems: [FeedItem] {
+        items.filter { bookmarkItemIDs.contains($0.id) }
+    }
+
+    var bookmarkedIDs: Set<String> { bookmarkItemIDs }
+
+    /// Reload bookmark state from FeedStore (call on appear and after toggle).
+    func refreshBookmarkState() async {
+        do {
+            let lists = try await store.allBookmarkLists()
+            guard let defaultID = lists.first(where: { $0.isDefault })?.id ?? lists.first?.id else {
+                bookmarkItemIDs = []
+                return
+            }
+            let items = try await store.bookmarkedItems(listID: defaultID)
+            bookmarkItemIDs = Set(items.map(\.id))
+        } catch {
+            print("[FeedLoader] refreshBookmarkState error: \(error)")
+        }
+    }
 
     // MARK: - Resources
 
@@ -324,6 +346,7 @@ final class FeedLoader {
     func toggleBookmark(_ itemID: String) {
         Task {
             try? await store.toggleBookmark(itemID: itemID)
+            await refreshBookmarkState()
         }
     }
 
