@@ -168,15 +168,20 @@ final class FeedLoader {
         }
         let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         if !query.isEmpty {
-            result = result.filter {
-                $0.title.localizedCaseInsensitiveContains(query) ||
-                $0.excerpt.localizedCaseInsensitiveContains(query)
-            }
             let q = query.lowercased()
-            result.sort { a, b in
-                let scoreA = searchScore(a, q); let scoreB = searchScore(b, q)
-                return scoreA > scoreB
-            }
+            // Score each surviving item once, then sort by the precomputed
+            // score. Scoring inside the sort comparator re-ran searchScore
+            // (which lowercases title + excerpt) on every one of the ~n·log n
+            // comparisons — expensive on each keystroke. sorted(by:) is stable,
+            // so equal scores keep their original (date) order as before.
+            result = result
+                .filter {
+                    $0.title.localizedCaseInsensitiveContains(query) ||
+                    $0.excerpt.localizedCaseInsensitiveContains(query)
+                }
+                .map { (item: $0, score: searchScore($0, q)) }
+                .sorted { $0.score > $1.score }
+                .map(\.item)
         }
         return result
     }
