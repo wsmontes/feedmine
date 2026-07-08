@@ -127,9 +127,9 @@ struct OPMLParser {
 
         """
         for (category, feeds) in grouped.sorted(by: { $0.key < $1.key }) {
-            xml += "    <outline text=\"\(category)\">\n"
+            xml += "    <outline text=\"\(xmlEscape(category))\">\n"
             for feed in feeds {
-                xml += "      <outline title=\"\(feed.title)\" xmlUrl=\"\(feed.url)\" type=\"rss\"/>\n"
+                xml += "      <outline title=\"\(xmlEscape(feed.title))\" xmlUrl=\"\(xmlEscape(feed.url))\" type=\"rss\"/>\n"
             }
             xml += "    </outline>\n"
         }
@@ -138,6 +138,18 @@ struct OPMLParser {
         </opml>
         """
         return xml
+    }
+
+    /// Escape text for safe inclusion in an XML attribute value. `&` must be
+    /// replaced first, or the entities produced by the later replacements would
+    /// themselves be re-escaped. Without this, titles/URLs containing `"`, `&`,
+    /// or `<` produce malformed OPML that fails to re-import.
+    private static func xmlEscape(_ s: String) -> String {
+        s.replacingOccurrences(of: "&", with: "&amp;")
+            .replacingOccurrences(of: "<", with: "&lt;")
+            .replacingOccurrences(of: ">", with: "&gt;")
+            .replacingOccurrences(of: "\"", with: "&quot;")
+            .replacingOccurrences(of: "'", with: "&apos;")
     }
 
     static func normalizeURL(_ raw: String) -> String {
