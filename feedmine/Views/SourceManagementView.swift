@@ -204,33 +204,45 @@ struct SourceManagementView: View {
             testResults[source.title] = .testing
         }
 
+        // Bound concurrency with a sliding window. loader.sources can hold
+        // thousands of feeds; firing that many simultaneous URLSession requests
+        // exhausts the connection pool and produces mass false failures. Keep
+        // at most `cap` in flight, refilling each slot as it completes.
+        let cap = 10
         await withTaskGroup(of: (String, SourceStatus).self) { group in
-            for source in loader.sources {
-                group.addTask {
-                    guard let url = URL(string: source.url) else {
-                        return (source.title, .failed)
-                    }
-                    var request = URLRequest(url: url)
-                    request.timeoutInterval = 10
-                    request.setValue("FeedminePrototype/1.0", forHTTPHeaderField: "User-Agent")
-                    do {
-                        let (_, response) = try await URLSession.shared.data(for: request)
-                        if let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) {
-                            return (source.title, .ok)
-                        }
-                        return (source.title, .failed)
-                    } catch {
-                        return (source.title, .failed)
-                    }
-                }
+            var iterator = loader.sources.makeIterator()
+            var started = 0
+            while started < cap, let source = iterator.next() {
+                group.addTask { await Self.testSource(source) }
+                started += 1
             }
-
-            for await (name, status) in group {
+            while let (name, status) = await group.next() {
                 testResults[name] = status
+                if let source = iterator.next() {
+                    group.addTask { await Self.testSource(source) }
+                }
             }
         }
 
         isTesting = false
+    }
+
+    private static func testSource(_ source: FeedSource) async -> (String, SourceStatus) {
+        guard let url = URL(string: source.url) else {
+            return (source.title, .failed)
+        }
+        var request = URLRequest(url: url)
+        request.timeoutInterval = 10
+        request.setValue("FeedminePrototype/1.0", forHTTPHeaderField: "User-Agent")
+        do {
+            let (_, response) = try await URLSession.shared.data(for: request)
+            if let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) {
+                return (source.title, .ok)
+            }
+            return (source.title, .failed)
+        } catch {
+            return (source.title, .failed)
+        }
     }
 
     private func categoryIcon(_ category: String) -> String {
