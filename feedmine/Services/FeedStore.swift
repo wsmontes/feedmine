@@ -40,6 +40,7 @@ final class FeedStore {
     // MARK: - Read state
     private(set) var readItemIDs: Set<String> = []
     private var loadedIDs: Set<String> = []  // Bloom filter for dedup
+    private var _defaultListID: Int64?
 
     // MARK: - Init
     init() throws {
@@ -395,6 +396,157 @@ final class FeedStore {
                 }
             }
         }
+    }
+
+    // MARK: - Bookmark CRUD
+
+    func allBookmarkLists() async throws -> [BookmarkList] {
+        try await db.read { db in
+            let records = try BookmarkListRecord.order(Column("sort_order")).fetchAll(db)
+            return try records.map { r in
+                let count = try BookmarkItemRecord.filter(Column("list_id") == r.id!).fetchCount(db)
+                return BookmarkList(
+                    id: r.id!, name: r.name, sortOrder: r.sortOrder,
+                    createdAt: r.createdAt, isDefault: r.isDefault,
+                    searchQuery: r.searchQuery, searchRegion: r.searchRegion,
+                    searchCategory: r.searchCategory, searchActive: r.searchActive,
+                    itemCount: count
+                )
+            }
+        }
+    }
+
+    func createBookmarkList(name: String, searchQuery: String? = nil,
+                            region: String? = nil, category: String? = nil) async throws -> Int64 {
+        try await db.write { db in
+            var record = BookmarkListRecord(
+                id: nil, name: name, sortOrder: 0,
+                createdAt: Date(), isDefault: false,
+                searchQuery: searchQuery, searchRegion: region,
+                searchCategory: category, searchActive: searchQuery != nil
+            )
+            try record.insert(db)
+            return record.id!
+        }
+    }
+
+    func toggleBookmark(itemID: String, listID: Int64? = nil) async throws {
+        let targetListID = listID ?? defaultListID()
+        try await db.write { db in
+            let existing = try BookmarkItemRecord
+                .filter(Column("list_id") == targetListID && Column("item_id") == itemID)
+                .fetchCount(db)
+            if existing > 0 {
+                try db.execute(sql: "DELETE FROM bookmark_item WHERE list_id = ? AND item_id = ?",
+                              arguments: [targetListID, itemID])
+            } else {
+                try db.execute(sql: """
+                    INSERT INTO bookmark_item (list_id, item_id, added_at) VALUES (?, ?, ?)
+                """, arguments: [targetListID, itemID, Int(Date().timeIntervalSince1970)])
+            }
+        }
+    }
+
+    func isBookmarked(itemID: String, listID: Int64? = nil) async throws -> Bool {
+        let targetListID = listID ?? defaultListID()
+        return try await db.read { db in
+            try BookmarkItemRecord
+                .filter(Column("list_id") == targetListID && Column("item_id") == itemID)
+                .fetchCount(db) > 0
+        }
+    }
+
+    func bookmarkedItems(listID: Int64? = nil) async throws -> [FeedItem] {
+        let targetListID = listID ?? defaultListID()
+        let records: [FeedItemRecord] = try await db.read { db in
+            try FeedItemRecord
+                .joining(required: FeedItemRecord.hasMany(BookmarkItemRecord.self)
+                    .filter(Column("list_id") == targetListID))
+                .order(Column("published_at").desc)
+                .fetchAll(db)
+        }
+        return records.map { $0.toFeedItem() }
+    }
+
+    func deleteBookmarkList(_ id: Int64) async throws {
+        try await db.write { db in
+            let isDefault = try Bool.fetchOne(db, sql: "SELECT is_default FROM bookmark_list WHERE id = ?", arguments: [id]) ?? false
+            guard !isDefault else { return }
+            try db.execute(sql: "DELETE FROM bookmark_list WHERE id = ?", arguments: [id])
+        }
+    }
+
+    // MARK: - Persistent Search (Active)
+
+    func activeSearches() async throws -> [ActiveSearch] {
+        let records: [BookmarkListRecord] = try await db.read { db in
+            try BookmarkListRecord
+                .filter(Column("search_active") == 1)
+                .fetchAll(db)
+        }
+        return records.map { r in
+            ActiveSearch(
+                id: r.id!, name: r.name,
+                searchQuery: r.searchQuery ?? "",
+                region: r.searchRegion, category: r.searchCategory
+            )
+        }
+    }
+
+    /// Build composite feed from multiple active searches with tiered scoring.
+    func compositeSearchFeed() async throws -> [FeedItem] {
+        let searches = try await activeSearches()
+        guard !searches.isEmpty else { return [] }
+
+        var scored: [(FeedItem, Int)] = []
+        for search in searches {
+            guard let pattern = FTS5Pattern(matchingAllTokensIn: search.searchQuery) else { continue }
+            let records: [FeedItemRecord] = try await db.read { db in
+                var request = FeedItemRecord
+                    .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                    .matching(pattern)
+                if let r = search.region {
+                    request = request.filter(Column("region") == r)
+                }
+                if let c = search.category {
+                    request = request.filter(Column("category") == c)
+                }
+                return try request.limit(50).fetchAll(db)
+            }
+            for record in records {
+                let item = record.toFeedItem()
+                let score = search.matches(item, itemRegion: registry.regionFor(sourceURL: item.sourceURL))
+                scored.append((item, score + 1))
+            }
+        }
+
+        // Deduplicate and sum scores
+        var bestScore: [String: (FeedItem, Int)] = [:]
+        for (item, score) in scored {
+            if let existing = bestScore[item.id] {
+                bestScore[item.id] = (item, existing.1 + score)
+            } else {
+                bestScore[item.id] = (item, score)
+            }
+        }
+
+        // Sort: score DESC, within score preserve order
+        let sorted = bestScore.values.sorted { a, b in
+            if a.1 != b.1 { return a.1 > b.1 }
+            return true
+        }
+        return sorted.map { $0.0 }
+    }
+
+    // MARK: - Private helpers
+
+    private func defaultListID() -> Int64 {
+        if let cached = _defaultListID { return cached }
+        let id: Int64 = (try? db.read { db in
+            try Int64.fetchOne(db, sql: "SELECT id FROM bookmark_list WHERE is_default = 1 LIMIT 1")
+        }) ?? 1
+        _defaultListID = id
+        return id
     }
 
     // MARK: - Emergency
