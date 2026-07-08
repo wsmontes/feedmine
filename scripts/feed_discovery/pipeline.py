@@ -11,6 +11,7 @@ from . import discover, search, verify
 from .heuristic import host_of, is_national
 from .models import Candidate, Country
 from .opml import normalize_url
+from .sources import podcasts, youtube
 
 
 @dataclass
@@ -68,6 +69,31 @@ async def process_country(
     root_feeds: dict[str, list[str]] = {}  # domain root -> discovered feed URLs
 
     for category in categories:
+        if category in ("Podcasts", "YouTube"):
+            fn = podcasts.discover if category == "Podcasts" else youtube.discover
+            sourced = await fn(country, session, cfg)
+            to_verify: list[Candidate] = []
+            for cand in sourced:
+                norm = normalize_url(cand.url)
+                if norm in seen_feed_urls:
+                    continue
+                seen_feed_urls.add(norm)
+                cand.is_new = norm not in existing_urls
+                if not cand.is_new:
+                    candidates.append(cand)
+                    continue
+                to_verify.append(cand)
+            verdicts = await _bounded_gather(
+                cfg.concurrency,
+                [verify.verify_feed(session, c.url, cfg.timeout) for c in to_verify],
+            )
+            for cand, (is_live, status, title) in zip(to_verify, verdicts):
+                cand.is_live, cand.status_code = is_live, status
+                if title:
+                    cand.title = title
+                candidates.append(cand)
+            continue
+
         # --- Search (sequential: DDG politeness delay per query) ---
         page_urls: list[str] = []
         seen_pages: set[str] = set()
