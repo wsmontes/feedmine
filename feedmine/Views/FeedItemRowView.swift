@@ -88,10 +88,17 @@ struct FeedItemRowView: View {
             .frame(width: 56, height: 56)
     }
 
+    private static let relativeFormatter: RelativeDateTimeFormatter = {
+        let f = RelativeDateTimeFormatter()
+        f.unitsStyle = .abbreviated
+        return f
+    }()
+
     private func formattedDate(_ date: Date) -> String {
-        let formatter = RelativeDateTimeFormatter()
-        formatter.unitsStyle = .abbreviated
-        return formatter.localizedString(for: date, relativeTo: Date())
+        // Reuse a cached formatter — allocating RelativeDateTimeFormatter per
+        // row (this runs on every row render) is expensive. Safe as a shared
+        // static: rows render on the main actor. Matches FeedItemCardView.
+        Self.relativeFormatter.localizedString(for: date, relativeTo: Date())
     }
 
     private func categoryColor(_ category: String) -> Color {
