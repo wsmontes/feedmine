@@ -3,6 +3,7 @@ import Observation
 
 /// Manages the feed source catalog: OPML parsing, enabled/disabled state,
 /// country/region groupings. Extracted from FeedLoader.
+@MainActor
 @Observable
 final class SourceRegistry {
     private(set) var sources: [FeedSource] = []

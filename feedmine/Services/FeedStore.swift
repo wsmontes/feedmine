@@ -1,22 +1,394 @@
 import Foundation
 import GRDB
+import Observation
 
+@MainActor
+@Observable
 final class FeedStore {
+    // MARK: - Subcomponents
     let db: DatabaseQueue
+    let registry = SourceRegistry()
+    let scheduler = SourceScheduler()
+    let reservoir = Reservoir()
+    let fetcher = RSSFetcher()
+    let networkMonitor = NetworkMonitor()
 
+    // MARK: - Public state
+    private(set) var visibleItems: [FeedItem] = []
+    private(set) var reservoirCount: Int = 0
+    private(set) var loadingState: FeedLoadingState = .idle
+    private(set) var lastRefreshDate: Date?
+    private(set) var totalFetched = 0
+    private(set) var fetchErrorCount = 0
+    private(set) var emptyFeedCount = 0
+
+    // MARK: - Filter state (bidirectional)
+    var activeRegion: String?
+    var activeCategory: String?
+    var activeContentType: FeedLoader.ContentType = .all
+    var isSearching = false
+    private var searchResults: [FeedItem] = []
+
+    // MARK: - Read state
+    private(set) var readItemIDs: Set<String> = []
+    private var loadedIDs: Set<String> = []  // Bloom filter for dedup
+
+    // MARK: - Init
     init() throws {
+        self.db = try DatabaseQueue(path: Self.dbPath, configuration: Self.dbConfig)
+        try Self.migrate(db)
+        // Create default "Favorites" list if not exists
+        try? db.write { db in
+            let count = try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM bookmark_list WHERE is_default = 1") ?? 0
+            if count == 0 {
+                try db.execute(sql: """
+                    INSERT INTO bookmark_list (name, sort_order, created_at, is_default)
+                    VALUES ('Favorites', 0, \(Int(Date().timeIntervalSince1970)), 1)
+                """)
+            }
+        }
+    }
+
+    private static var dbPath: String {
         let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let dbURL = docs.appendingPathComponent("feedmine.sqlite")
+        return docs.appendingPathComponent("feedmine.sqlite").path
+    }
+
+    private static var dbConfig: Configuration {
         var config = Configuration()
         config.prepareDatabase { db in
             try db.execute(sql: "PRAGMA journal_mode = WAL")
             try db.execute(sql: "PRAGMA foreign_keys = ON")
         }
-        self.db = try DatabaseQueue(path: dbURL.path, configuration: config)
-        try migrate()
+        return config
     }
 
-    private func migrate() throws {
+    // MARK: - Start (cold + warm)
+
+    func start() async {
+        loadingState = .initial
+        networkMonitor.start()
+        await registry.loadFromOPML()
+        reservoir.sourceRegionMap = registry.regionMap
+
+        // Warm start: hydrate from SQLite
+        let cached = try? await loadReservoir()
+        if let items = cached, !items.isEmpty {
+            reservoir.seed(items: items)
+            visibleItems = reservoir.visibleItems
+            reservoirCount = reservoir.reservoirCount
+            loadingState = .idle
+        }
+
+        guard !registry.enabledSources.isEmpty else {
+            loadingState = .idle
+            return
+        }
+
+        // Background: start fetching
+        await fetchNextBatch()
+
+        // If still empty, progressive fetch
+        if visibleItems.isEmpty {
+            await progressiveFetch()
+        }
+        loadingState = .idle
+    }
+
+    // MARK: - Scroll
+    private var lastLoadedIndex = -1
+
+    func loadMoreIfNeeded(currentItem: FeedItem) async {
+        guard let itemIndex = visibleItems.firstIndex(where: { $0.id == currentItem.id }) else { return }
+        guard itemIndex >= visibleItems.count - Reservoir.loadMoreThreshold else { return }
+        guard itemIndex != lastLoadedIndex else { return }
+        lastLoadedIndex = itemIndex
+
+        scheduler.recordConsumption()
+        reservoir.moveToVisible(count: Reservoir.pageSize)
+        reservoir.trimBuffer(currentVisibleIndex: itemIndex)
+        visibleItems = reservoir.visibleItems
+        reservoirCount = reservoir.reservoirCount
+
+        if reservoir.reservoirCount < Reservoir.reservoirLowWatermark {
+            await fetchNextBatch()
+        }
+    }
+
+    // MARK: - Stale refresh
+    func refreshIfStale() async {
+        guard !registry.enabledSources.isEmpty else { return }
+        let shouldFetch: Bool
+        if let last = lastRefreshDate {
+            shouldFetch = Date().timeIntervalSince(last) > 900 || visibleItems.count < 10
+        } else {
+            shouldFetch = true
+        }
+        guard shouldFetch else { return }
+        await fetchNextBatch()
+    }
+
+    // MARK: - Filter
+    func setFilter(region: String?, category: String?, type: FeedLoader.ContentType) {
+        activeRegion = region
+        activeCategory = category
+        activeContentType = type
+        Task { await reloadFromSQLite() }
+    }
+
+    func clearAllFilters() {
+        activeRegion = nil
+        activeCategory = nil
+        activeContentType = .all
+        Task { await reloadFromSQLite() }
+    }
+
+    // MARK: - Search
+    func search(_ query: String) {
+        isSearching = true
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !q.isEmpty else {
+            searchResults = []
+            visibleItems = []
+            return
+        }
+        Task {
+            guard let pattern = FTS5Pattern(matchingAllTokensIn: q) else {
+                searchResults = []
+                visibleItems = []
+                return
+            }
+            let results: [FeedItemRecord] = try await db.read { db in
+                try FeedItemRecord
+                    .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                    .matching(pattern)
+                    .order(Column("published_at").desc)
+                    .limit(100)
+                    .fetchAll(db)
+            }
+            searchResults = results.map { $0.toFeedItem() }
+            visibleItems = searchResults
+        }
+    }
+
+    func clearSearch() {
+        isSearching = false
+        searchResults = []
+        Task { await reloadFromSQLite() }
+    }
+
+    // MARK: - Read
+    func markAsRead(_ itemID: String) {
+        readItemIDs.insert(itemID)
+        Task {
+            try await db.write { db in
+                try db.execute(sql: """
+                    UPDATE feed_item SET is_read = 1, opened_at = \(Int(Date().timeIntervalSince1970))
+                    WHERE id = ?
+                """, arguments: [itemID])
+            }
+        }
+    }
+
+    // MARK: - Private: fetch
+
+    private func fetchNextBatch() async {
+        guard !isSearching else { return }
+        let sourcesByRegion = Dictionary(grouping: registry.enabledSources, by: \.region)
+        let batch = scheduler.nextBatch(
+            reservoir: reservoir.reservoir,
+            sourcesByRegion: sourcesByRegion,
+            activeRegion: activeRegion,
+            activeCategory: activeCategory
+        )
+        guard !batch.isEmpty else { return }
+
+        let result = await fetcher.fetchAll(batch, maxConcurrent: 15)
+        totalFetched += result.items.count
+        fetchErrorCount += result.failedSourceCount
+        emptyFeedCount += result.emptySourceCount
+
+        for source in batch {
+            scheduler.recordFetch(sourceURL: source.url, success: true)
+        }
+
+        let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
+        guard !actualNew.isEmpty else { return }
+        for id in actualNew.map(\.id) { loadedIDs.insert(id) }
+
+        // Write to SQLite
+        do {
+            for item in actualNew {
+                let region = registry.regionFor(sourceURL: item.sourceURL)
+                let record = FeedItemRecord(from: item, region: region)
+                try await db.write { db in
+                    try record.insert(db)
+                }
+            }
+        } catch {
+            print("[FeedStore] SQLite write error: \(error)")
+        }
+
+        // Append to reservoir
+        reservoir.append(actualNew)
+        // Only update visibleItems if no active search
+        if !isSearching {
+            visibleItems = reservoir.visibleItems
+            reservoirCount = reservoir.reservoirCount
+        }
+
+        lastRefreshDate = .now
+
+        // Check persistent searches
+        await matchPersistentSearches(actualNew)
+    }
+
+    private func progressiveFetch() async {
+        let allEnabled = registry.enabledSources
+        let chunkSize = 20
+        for chunkStart in stride(from: 0, to: min(allEnabled.count, 60), by: chunkSize) {
+            let end = min(chunkStart + chunkSize, allEnabled.count)
+            let chunk = Array(allEnabled[chunkStart..<end])
+            let result = await fetcher.fetchAll(chunk, maxConcurrent: 15)
+            totalFetched += result.items.count
+            let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
+            for id in actualNew.map(\.id) { loadedIDs.insert(id) }
+            reservoir.append(actualNew)
+            if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
+                reservoir.moveToVisible(count: Reservoir.pageSize)
+                visibleItems = reservoir.visibleItems
+                reservoirCount = reservoir.reservoirCount
+            }
+        }
+        lastRefreshDate = .now
+    }
+
+    private func reloadFromSQLite() async {
+        guard !isSearching else { return }
+        let region = activeRegion
+        let category = activeCategory
+        let items: [FeedItemRecord] = (try? await db.read { db in
+            var request = FeedItemRecord
+                .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+            if let r = region { request = request.filter(Column("region") == r) }
+            if let c = category { request = request.filter(Column("category") == c) }
+            return try request
+                .order(Column("published_at").desc)
+                .limit(200)
+                .fetchAll(db)
+        }) ?? []
+        let feedItems = items.map { $0.toFeedItem() }
+        reservoir.seed(items: feedItems)
+        visibleItems = reservoir.visibleItems
+        reservoirCount = reservoir.reservoirCount
+    }
+
+    private func loadReservoir() async throws -> [FeedItem]? {
+        let records: [FeedItemRecord] = try await db.read { db in
+            try FeedItemRecord
+                .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                .order(Column("published_at").desc)
+                .limit(200)
+                .fetchAll(db)
+        }
+        guard !records.isEmpty else { return nil }
+        return records.map { $0.toFeedItem() }
+    }
+
+    // MARK: - Region toggle
+
+    func toggleRegion(_ region: String) {
+        let wasDisabled = registry.disabledRegions.contains(region)
+        registry.toggleRegion(region)
+        if wasDisabled {
+            reservoir.removeRegion(region)
+            visibleItems = reservoir.visibleItems
+            reservoirCount = reservoir.reservoirCount
+            scheduler.prioritize(region: region)
+            // Check if persistent searches depend on this region
+            Task { await seedRegion(region) }
+        } else {
+            // Enabled — remove from scheduler, purge visible
+            scheduler.remove(region: region)
+            reservoir.removeRegion(region)
+            visibleItems = reservoir.visibleItems
+            reservoirCount = reservoir.reservoirCount
+        }
+    }
+
+    private func seedRegion(_ region: String) async {
+        let regionSources = registry.enabledSources
+            .filter { $0.region == region }
+            .prefix(10)
+        guard !regionSources.isEmpty else { return }
+        let batch = Array(regionSources)
+        let result = await fetcher.fetchAll(batch, maxConcurrent: 10)
+        let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
+        guard !actualNew.isEmpty else { return }
+        for id in actualNew.map(\.id) { loadedIDs.insert(id) }
+        for item in actualNew {
+            let record = FeedItemRecord(from: item, region: region)
+            try? await db.write { db in try record.insert(db) }
+        }
+        reservoir.append(actualNew)
+        visibleItems = reservoir.visibleItems
+        reservoirCount = reservoir.reservoirCount
+    }
+
+    // MARK: - Persistent search
+
+    private func matchPersistentSearches(_ items: [FeedItem]) async {
+        // Get all active persistent searches
+        let searches: [BookmarkListRecord] = (try? await db.read { db in
+            try BookmarkListRecord
+                .filter(Column("search_active") == 1)
+                .fetchAll(db)
+        }) ?? []
+        guard !searches.isEmpty else { return }
+
+        for search in searches {
+            guard let query = search.searchQuery else { continue }
+            guard let pattern = FTS5Pattern(matchingAllTokensIn: query) else { continue }
+            for item in items {
+                var matches = true
+                if let region = search.searchRegion, region != registry.regionFor(sourceURL: item.sourceURL) {
+                    matches = false
+                }
+                if let cat = search.searchCategory, cat != item.category {
+                    matches = false
+                }
+                if matches {
+                    // FTS5 match
+                    let ftsMatch: Bool = (try? await db.read { db in
+                        try FeedItemRecord
+                            .filter(Column("id") == item.id)
+                            .matching(pattern)
+                            .fetchCount(db) > 0
+                    }) ?? false
+                    if ftsMatch {
+                        try? await db.write { db in
+                            try db.execute(sql: """
+                                INSERT OR IGNORE INTO bookmark_item (list_id, item_id, added_at)
+                                VALUES (?, ?, ?)
+                            """, arguments: [search.id!, item.id, Int(Date().timeIntervalSince1970)])
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // MARK: - Emergency
+
+    func emergencyTrim() {
+        reservoir.emergencyTrim()
+        visibleItems = reservoir.visibleItems
+        reservoirCount = reservoir.reservoirCount
+    }
+
+    // MARK: - Migration
+
+    static func migrate(_ db: DatabaseQueue) throws {
         var migrator = DatabaseMigrator()
         migrator.registerMigration("v1") { db in
             try db.create(table: "feed_item") { t in
@@ -85,18 +457,6 @@ final class FeedStore {
             """)
         }
         try migrator.migrate(db)
-    }
-
-    // MARK: - Write
-
-    /// Bulk insert fetched items into SQLite. Skips duplicates (ON CONFLICT IGNORE via PK).
-    func writeItems(_ items: [FeedItem], region: String) async throws {
-        let records = items.map { FeedItemRecord(from: $0, region: region) }
-        try await db.write { db in
-            for record in records {
-                try record.insert(db)
-            }
-        }
     }
 }
 
