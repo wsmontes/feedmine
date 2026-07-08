@@ -1,34 +1,32 @@
-# Task 1 Report: FeedLoader — itemsForSource() + carouselStates dict
+# Task 1: Add GRDB Dependency via Xcode SPM
 
 ## Status: DONE
 
-## Commits
+## Changes Made
 
-- `6263146` — feat: FeedLoader — itemsForSource(), carouselStates, loadMoreForSource()
+**File modified:** `feedmine.xcodeproj/project.pbxproj`
 
-## Test results
+Four edits were made following the existing FeedKit entries as a template:
 
-```
-xcodebuild -project feedmine.xcodeproj -scheme feedmine -destination "platform=iOS Simulator,name=iPhone 14 Plus" -configuration Debug build 2>&1 | grep -E "error:|BUILD" | head -5
-** BUILD SUCCEEDED **
-```
+1. **`packageProductDependencies` array**: Added `84A0FFEB3E1F43D99D8D1E5A /* GRDB */` to the feedmine target's package product dependencies.
 
-## What was implemented
+2. **`packageReferences` array**: Added `4DE9E548AA344E3580B04798 /* XCRemoteSwiftPackageReference "GRDB.swift" */` to the project's package references.
 
-All five steps from the brief were completed in `feedmine/Services/FeedLoader.swift`:
+3. **`XCRemoteSwiftPackageReference` section**: Added the GRDB.swift package reference with:
+   - `repositoryURL`: `https://github.com/groue/GRDB.swift`
+   - `requirement`: `exactVersion 7.4.0`
 
-1. **SourceCarouselState class** — `@Observable final class` with `currentIndex`, `items`, `isActive`, `lastAccessed` properties, placed before `final class FeedLoader`
-2. **carouselStates dict** — `var carouselStates: [String: SourceCarouselState] = [:]` and `private let maxCarouselStates = 5` added inside FeedLoader
-3. **itemsForSource()** — filters `filteredItems` by `sourceURL`, sorted by `publishedAt` descending, limited to `limit` (default 30). If fewer than 5 matches, triggers `loadMoreForSource()` in a `Task`
-4. **loadMoreForSource()** — async placeholder that calls `await refresh()` (full refresh)
-5. **evictOldestCarouselIfNeeded()** — private helper that evicts the least-recently-accessed carousel state when count exceeds 5
+4. **`XCSwiftPackageProductDependency` section**: Added the GRDB product dependency pointing to the package reference with `productName: GRDB`.
 
-## Self-review findings
+## UUIDs Generated
 
-- The `itemsForSource()` method accesses `filteredItems` (a computed property on `@MainActor` FeedLoader) from inside a `Task` closure when `result.count < 5`. This is safe because the `Task` inherits the `@MainActor` context from the calling method.
-- `loadMoreForSource()` delegates to `refresh()`, which clears all state. This is intentionally a placeholder — the brief notes that a targeted single-source fetch should replace this implementation later.
-- The `SourceCarouselState` class is intentionally not marked `@MainActor` since its properties are simple value types. It is always accessed through `FeedLoader.carouselStates` which is main-actor-isolated, providing implicit isolation.
+| Item | UUID |
+|------|------|
+| Package reference | `4DE9E548AA344E3580B04798` |
+| Product dependency | `84A0FFEB3E1F43D99D8D1E5A` |
 
-## Concerns
+## Verification
 
-- None. The build succeeded with no errors or warnings. The implementation exactly follows the brief specification.
+- `xcodebuild -resolvePackageDependencies` — resolved GRDB.swift at 7.4.0
+- `xcodebuild -project feedmine.xcodeproj -scheme feedmine -destination 'platform=iOS Simulator,name=iPhone 14 Plus' build` — **BUILD SUCCEEDED**
+- Temporary `import GRDB` verification file compiled successfully and was removed after verification.
