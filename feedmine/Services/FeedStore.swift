@@ -582,6 +582,56 @@ final class FeedStore {
         }
     }
 
+    /// Toggle search_active on a persistent search bookmark list.
+    /// When activated, retroactively adds matching existing items to the list.
+    func toggleSearchActive(listID: Int64) async throws {
+        let wasActive: Bool = try await db.read { db in
+            try Bool.fetchOne(db, sql: "SELECT search_active FROM bookmark_list WHERE id = ?", arguments: [listID]) ?? false
+        }
+        let newState = !wasActive
+        try await db.write { db in
+            try db.execute(sql: "UPDATE bookmark_list SET search_active = ? WHERE id = ?",
+                          arguments: [newState, listID])
+        }
+        // If activating, retroactively match existing items in SQLite
+        if newState {
+            try await retroMatchSearch(listID: listID)
+        }
+    }
+
+    /// Retroactively add all existing items in SQLite that match a persistent search.
+    private func retroMatchSearch(listID: Int64) async throws {
+        let search: BookmarkListRecord? = try await db.read { db in
+            try BookmarkListRecord.fetchOne(db, key: listID)
+        }
+        guard let search, let query = search.searchQuery,
+              let pattern = FTS5Pattern(matchingAllTokensIn: query) else { return }
+
+        let records: [FeedItemRecord] = try await db.read { db in
+            var request = FeedItemRecord
+                .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                .matching(pattern)
+            if let region = search.searchRegion {
+                request = request.filter(Column("region") == region)
+            }
+            if let cat = search.searchCategory {
+                request = request.filter(Column("category") == cat)
+            }
+            return try request.fetchAll(db)
+        }
+
+        guard !records.isEmpty else { return }
+        let now = Int(Date().timeIntervalSince1970)
+        try await db.write { db in
+            for record in records {
+                try db.execute(sql: """
+                    INSERT OR IGNORE INTO bookmark_item (list_id, item_id, added_at)
+                    VALUES (?, ?, ?)
+                """, arguments: [listID, record.id, now])
+            }
+        }
+    }
+
     // MARK: - Persistent Search (Active)
 
     func activeSearches() async throws -> [ActiveSearch] {

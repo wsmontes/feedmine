@@ -327,6 +327,21 @@ final class FeedLoader {
         }
     }
 
+    func loadActiveSearches() async throws -> [ActiveSearch] {
+        try await store.activeSearches()
+    }
+
+    func toggleSearchActive(listID: Int64) async throws {
+        try await store.toggleSearchActive(listID: listID)
+    }
+
+    /// Whether any persistent search is currently active — main feed should use composite mode.
+    var hasActiveSearches: Bool {
+        // Inferred: checked each time bookmark views need to know.
+        // For now, main feed checks via loadActiveSearches() on appear.
+        false
+    }
+
     func isBookmarked(_ itemID: String) -> Bool { false }
 
     func markAllAsRead() {
