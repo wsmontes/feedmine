@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from .country_meta import COUNTRY_META, display_name
+from .country_meta import COUNTRY_META, CITIES, display_name, native_name
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 COUNTRIES_DIR = REPO_ROOT / "feedmine" / "Resources" / "Feeds" / "countries"
@@ -22,10 +22,12 @@ def build() -> dict:
         cctld, lang, use_cctld = meta
         result[slug] = {
             "name": display_name(slug),
+            "native_name": native_name(slug),
             "cctld": cctld,
             "use_cctld": use_cctld,
             "lang": lang,
             "ddg_region": f"{cctld}-{lang}",
+            "cities": CITIES.get(slug, []),
             "allowlist": [],
         }
     if missing:

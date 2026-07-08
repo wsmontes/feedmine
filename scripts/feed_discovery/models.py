@@ -12,6 +12,8 @@ class Country:
     lang: str
     ddg_region: str
     allowlist: list[str] = field(default_factory=list)
+    native_name: str = ""
+    cities: list[str] = field(default_factory=list)
 
 
 @dataclass

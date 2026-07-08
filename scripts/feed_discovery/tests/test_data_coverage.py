@@ -28,5 +28,12 @@ def test_every_category_has_english_pack():
         assert kw.get(cat, {}).get("en"), f"no en keywords for {cat}"
 
 
+def test_every_country_has_native_name_and_cities():
+    countries = registry.load_countries(DATA / "countries.json")
+    for slug, c in countries.items():
+        assert c.native_name, slug
+        assert len(c.cities) >= 1, slug
+
+
 def test_blocklist_loads_nonempty():
     assert len(registry.load_blocklist(DATA / "blocklist.txt")) > 5

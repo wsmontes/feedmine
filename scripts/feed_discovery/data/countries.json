@@ -1,810 +1,1539 @@
 {
   "algeria": {
     "name": "Algeria",
+    "native_name": "Algeria",
     "cctld": "dz",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "dz-ar",
+    "cities": [
+      "Alger",
+      "Oran",
+      "Constantine",
+      "Annaba"
+    ],
     "allowlist": []
   },
   "angola": {
     "name": "Angola",
+    "native_name": "Angola",
     "cctld": "ao",
     "use_cctld": true,
     "lang": "pt",
     "ddg_region": "ao-pt",
+    "cities": [
+      "Luanda",
+      "Benguela",
+      "Huambo",
+      "Lobito"
+    ],
     "allowlist": []
   },
   "argentina": {
     "name": "Argentina",
+    "native_name": "Argentina",
     "cctld": "ar",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "ar-es",
+    "cities": [
+      "Buenos Aires",
+      "Córdoba",
+      "Rosario",
+      "Mendoza",
+      "La Plata"
+    ],
     "allowlist": []
   },
   "armenia": {
     "name": "Armenia",
+    "native_name": "Հայաստան",
     "cctld": "am",
     "use_cctld": true,
     "lang": "hy",
     "ddg_region": "am-hy",
+    "cities": [
+      "Yerevan",
+      "Gyumri",
+      "Vanadzor"
+    ],
     "allowlist": []
   },
   "australia": {
     "name": "Australia",
+    "native_name": "Australia",
     "cctld": "au",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "au-en",
+    "cities": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Perth",
+      "Adelaide"
+    ],
     "allowlist": []
   },
   "austria": {
     "name": "Austria",
+    "native_name": "Österreich",
     "cctld": "at",
     "use_cctld": true,
     "lang": "de",
     "ddg_region": "at-de",
+    "cities": [
+      "Wien",
+      "Graz",
+      "Linz",
+      "Salzburg"
+    ],
     "allowlist": []
   },
   "azerbaijan": {
     "name": "Azerbaijan",
+    "native_name": "Azerbaijan",
     "cctld": "az",
     "use_cctld": true,
     "lang": "az",
     "ddg_region": "az-az",
+    "cities": [
+      "Baku",
+      "Ganja",
+      "Sumqayit"
+    ],
     "allowlist": []
   },
   "bangladesh": {
     "name": "Bangladesh",
+    "native_name": "Bangladesh",
     "cctld": "bd",
     "use_cctld": true,
     "lang": "bn",
     "ddg_region": "bd-bn",
+    "cities": [
+      "Dhaka",
+      "Chittagong",
+      "Khulna",
+      "Rajshahi"
+    ],
     "allowlist": []
   },
   "belarus": {
     "name": "Belarus",
+    "native_name": "Беларусь",
     "cctld": "by",
     "use_cctld": true,
     "lang": "be",
     "ddg_region": "by-be",
+    "cities": [
+      "Minsk",
+      "Gomel",
+      "Mogilev",
+      "Brest"
+    ],
     "allowlist": []
   },
   "belgium": {
     "name": "Belgium",
+    "native_name": "België",
     "cctld": "be",
     "use_cctld": true,
     "lang": "nl",
     "ddg_region": "be-nl",
+    "cities": [
+      "Bruxelles",
+      "Antwerpen",
+      "Gent",
+      "Liège",
+      "Brugge"
+    ],
     "allowlist": []
   },
   "bolivia": {
     "name": "Bolivia",
+    "native_name": "Bolivia",
     "cctld": "bo",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "bo-es",
+    "cities": [
+      "La Paz",
+      "Santa Cruz",
+      "Cochabamba",
+      "El Alto",
+      "Sucre"
+    ],
     "allowlist": []
   },
   "brazil": {
     "name": "Brazil",
+    "native_name": "Brasil",
     "cctld": "br",
     "use_cctld": true,
     "lang": "pt",
     "ddg_region": "br-pt",
+    "cities": [
+      "São Paulo",
+      "Rio de Janeiro",
+      "Brasília",
+      "Salvador",
+      "Belo Horizonte"
+    ],
     "allowlist": []
   },
   "bulgaria": {
     "name": "Bulgaria",
+    "native_name": "България",
     "cctld": "bg",
     "use_cctld": true,
     "lang": "bg",
     "ddg_region": "bg-bg",
+    "cities": [
+      "Sofia",
+      "Plovdiv",
+      "Varna",
+      "Burgas"
+    ],
     "allowlist": []
   },
   "cambodia": {
     "name": "Cambodia",
+    "native_name": "Cambodia",
     "cctld": "kh",
     "use_cctld": true,
     "lang": "km",
     "ddg_region": "kh-km",
+    "cities": [
+      "Phnom Penh",
+      "Siem Reap",
+      "Battambang"
+    ],
     "allowlist": []
   },
   "canada": {
     "name": "Canada",
+    "native_name": "Canada",
     "cctld": "ca",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ca-en",
+    "cities": [
+      "Toronto",
+      "Montréal",
+      "Vancouver",
+      "Calgary",
+      "Ottawa"
+    ],
     "allowlist": []
   },
   "chile": {
     "name": "Chile",
+    "native_name": "Chile",
     "cctld": "cl",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "cl-es",
+    "cities": [
+      "Santiago",
+      "Valparaíso",
+      "Concepción",
+      "Viña del Mar",
+      "Antofagasta"
+    ],
     "allowlist": []
   },
   "china": {
     "name": "China",
+    "native_name": "中国",
     "cctld": "cn",
     "use_cctld": true,
     "lang": "zh",
     "ddg_region": "cn-zh",
+    "cities": [
+      "Beijing",
+      "Shanghai",
+      "Guangzhou",
+      "Shenzhen",
+      "Chengdu"
+    ],
     "allowlist": []
   },
   "colombia": {
     "name": "Colombia",
+    "native_name": "Colombia",
     "cctld": "co",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "co-es",
+    "cities": [
+      "Bogotá",
+      "Medellín",
+      "Cali",
+      "Barranquilla",
+      "Cartagena"
+    ],
     "allowlist": []
   },
   "costa-rica": {
     "name": "Costa Rica",
+    "native_name": "Costa Rica",
     "cctld": "cr",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "cr-es",
+    "cities": [
+      "San José",
+      "Alajuela",
+      "Cartago",
+      "Heredia"
+    ],
     "allowlist": []
   },
   "croatia": {
     "name": "Croatia",
+    "native_name": "Hrvatska",
     "cctld": "hr",
     "use_cctld": true,
     "lang": "hr",
     "ddg_region": "hr-hr",
+    "cities": [
+      "Zagreb",
+      "Split",
+      "Rijeka",
+      "Osijek"
+    ],
     "allowlist": []
   },
   "cuba": {
     "name": "Cuba",
+    "native_name": "Cuba",
     "cctld": "cu",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "cu-es",
+    "cities": [
+      "La Habana",
+      "Santiago de Cuba",
+      "Camagüey",
+      "Holguín"
+    ],
     "allowlist": []
   },
   "cyprus": {
     "name": "Cyprus",
+    "native_name": "Cyprus",
     "cctld": "cy",
     "use_cctld": true,
     "lang": "el",
     "ddg_region": "cy-el",
+    "cities": [
+      "Nicosia",
+      "Limassol",
+      "Larnaca",
+      "Paphos"
+    ],
     "allowlist": []
   },
   "czech-republic": {
     "name": "Czech Republic",
+    "native_name": "Česko",
     "cctld": "cz",
     "use_cctld": true,
     "lang": "cs",
     "ddg_region": "cz-cs",
+    "cities": [
+      "Praha",
+      "Brno",
+      "Ostrava",
+      "Plzeň"
+    ],
     "allowlist": []
   },
   "denmark": {
     "name": "Denmark",
+    "native_name": "Danmark",
     "cctld": "dk",
     "use_cctld": true,
     "lang": "da",
     "ddg_region": "dk-da",
+    "cities": [
+      "København",
+      "Aarhus",
+      "Odense",
+      "Aalborg"
+    ],
     "allowlist": []
   },
   "dominican-republic": {
     "name": "Dominican Republic",
+    "native_name": "Dominican Republic",
     "cctld": "do",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "do-es",
+    "cities": [
+      "Santo Domingo",
+      "Santiago",
+      "La Romana",
+      "Punta Cana"
+    ],
     "allowlist": []
   },
   "ecuador": {
     "name": "Ecuador",
+    "native_name": "Ecuador",
     "cctld": "ec",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "ec-es",
+    "cities": [
+      "Quito",
+      "Guayaquil",
+      "Cuenca",
+      "Ambato"
+    ],
     "allowlist": []
   },
   "egypt": {
     "name": "Egypt",
+    "native_name": "مصر",
     "cctld": "eg",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "eg-ar",
+    "cities": [
+      "Cairo",
+      "Alexandria",
+      "Giza",
+      "Luxor"
+    ],
     "allowlist": []
   },
   "el-salvador": {
     "name": "El Salvador",
+    "native_name": "El Salvador",
     "cctld": "sv",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "sv-es",
+    "cities": [
+      "San Salvador",
+      "Santa Ana",
+      "San Miguel",
+      "Soyapango"
+    ],
     "allowlist": []
   },
   "estonia": {
     "name": "Estonia",
+    "native_name": "Eesti",
     "cctld": "ee",
     "use_cctld": true,
     "lang": "et",
     "ddg_region": "ee-et",
+    "cities": [
+      "Tallinn",
+      "Tartu",
+      "Narva",
+      "Pärnu"
+    ],
     "allowlist": []
   },
   "ethiopia": {
     "name": "Ethiopia",
+    "native_name": "Ethiopia",
     "cctld": "et",
     "use_cctld": true,
     "lang": "am",
     "ddg_region": "et-am",
+    "cities": [
+      "Addis Ababa",
+      "Dire Dawa",
+      "Mekelle"
+    ],
     "allowlist": []
   },
   "finland": {
     "name": "Finland",
+    "native_name": "Suomi",
     "cctld": "fi",
     "use_cctld": true,
     "lang": "fi",
     "ddg_region": "fi-fi",
+    "cities": [
+      "Helsinki",
+      "Espoo",
+      "Tampere",
+      "Vantaa",
+      "Turku"
+    ],
     "allowlist": []
   },
   "france": {
     "name": "France",
+    "native_name": "France",
     "cctld": "fr",
     "use_cctld": true,
     "lang": "fr",
     "ddg_region": "fr-fr",
+    "cities": [
+      "Paris",
+      "Marseille",
+      "Lyon",
+      "Toulouse",
+      "Nice"
+    ],
     "allowlist": []
   },
   "georgia": {
     "name": "Georgia",
+    "native_name": "საქართველო",
     "cctld": "ge",
     "use_cctld": true,
     "lang": "ka",
     "ddg_region": "ge-ka",
+    "cities": [
+      "Tbilisi",
+      "Batumi",
+      "Kutaisi"
+    ],
     "allowlist": []
   },
   "germany": {
     "name": "Germany",
+    "native_name": "Deutschland",
     "cctld": "de",
     "use_cctld": true,
     "lang": "de",
     "ddg_region": "de-de",
+    "cities": [
+      "Berlin",
+      "München",
+      "Hamburg",
+      "Köln",
+      "Frankfurt"
+    ],
     "allowlist": []
   },
   "ghana": {
     "name": "Ghana",
+    "native_name": "Ghana",
     "cctld": "gh",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "gh-en",
+    "cities": [
+      "Accra",
+      "Kumasi",
+      "Tamale",
+      "Takoradi"
+    ],
     "allowlist": []
   },
   "greece": {
     "name": "Greece",
+    "native_name": "Elláda",
     "cctld": "gr",
     "use_cctld": true,
     "lang": "el",
     "ddg_region": "gr-el",
+    "cities": [
+      "Athina",
+      "Thessaloniki",
+      "Patra",
+      "Iraklio"
+    ],
     "allowlist": []
   },
   "guatemala": {
     "name": "Guatemala",
+    "native_name": "Guatemala",
     "cctld": "gt",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "gt-es",
+    "cities": [
+      "Guatemala",
+      "Quetzaltenango",
+      "Escuintla",
+      "Mixco"
+    ],
     "allowlist": []
   },
   "haiti": {
     "name": "Haiti",
+    "native_name": "Haiti",
     "cctld": "ht",
     "use_cctld": true,
     "lang": "fr",
     "ddg_region": "ht-fr",
+    "cities": [
+      "Port-au-Prince",
+      "Cap-Haïtien",
+      "Gonaïves"
+    ],
     "allowlist": []
   },
   "honduras": {
     "name": "Honduras",
+    "native_name": "Honduras",
     "cctld": "hn",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "hn-es",
+    "cities": [
+      "Tegucigalpa",
+      "San Pedro Sula",
+      "La Ceiba",
+      "Choloma"
+    ],
     "allowlist": []
   },
   "hungary": {
     "name": "Hungary",
+    "native_name": "Magyarország",
     "cctld": "hu",
     "use_cctld": true,
     "lang": "hu",
     "ddg_region": "hu-hu",
+    "cities": [
+      "Budapest",
+      "Debrecen",
+      "Szeged",
+      "Miskolc"
+    ],
     "allowlist": []
   },
   "iceland": {
     "name": "Iceland",
+    "native_name": "Ísland",
     "cctld": "is",
     "use_cctld": true,
     "lang": "is",
     "ddg_region": "is-is",
+    "cities": [
+      "Reykjavík",
+      "Kópavogur",
+      "Hafnarfjörður",
+      "Akureyri"
+    ],
     "allowlist": []
   },
   "india": {
     "name": "India",
+    "native_name": "India",
     "cctld": "in",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "in-en",
+    "cities": [
+      "Mumbai",
+      "Delhi",
+      "Bengaluru",
+      "Kolkata",
+      "Chennai"
+    ],
     "allowlist": []
   },
   "indonesia": {
     "name": "Indonesia",
+    "native_name": "Indonesia",
     "cctld": "id",
     "use_cctld": true,
     "lang": "id",
     "ddg_region": "id-id",
+    "cities": [
+      "Jakarta",
+      "Surabaya",
+      "Bandung",
+      "Medan",
+      "Semarang"
+    ],
     "allowlist": []
   },
   "iran": {
     "name": "Iran",
+    "native_name": "ایران",
     "cctld": "ir",
     "use_cctld": true,
     "lang": "fa",
     "ddg_region": "ir-fa",
+    "cities": [
+      "Tehran",
+      "Mashhad",
+      "Isfahan",
+      "Tabriz"
+    ],
     "allowlist": []
   },
   "iraq": {
     "name": "Iraq",
+    "native_name": "Iraq",
     "cctld": "iq",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "iq-ar",
+    "cities": [
+      "Baghdad",
+      "Basra",
+      "Mosul",
+      "Erbil"
+    ],
     "allowlist": []
   },
   "ireland": {
     "name": "Ireland",
+    "native_name": "Ireland",
     "cctld": "ie",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ie-en",
+    "cities": [
+      "Dublin",
+      "Cork",
+      "Galway",
+      "Limerick"
+    ],
     "allowlist": []
   },
   "israel": {
     "name": "Israel",
+    "native_name": "ישראל",
     "cctld": "il",
     "use_cctld": true,
     "lang": "he",
     "ddg_region": "il-he",
+    "cities": [
+      "Jerusalem",
+      "Tel Aviv",
+      "Haifa",
+      "Beersheba"
+    ],
     "allowlist": []
   },
   "italy": {
     "name": "Italy",
+    "native_name": "Italia",
     "cctld": "it",
     "use_cctld": true,
     "lang": "it",
     "ddg_region": "it-it",
+    "cities": [
+      "Roma",
+      "Milano",
+      "Napoli",
+      "Torino",
+      "Palermo"
+    ],
     "allowlist": []
   },
   "ivory-coast": {
     "name": "Ivory Coast",
+    "native_name": "Ivory Coast",
     "cctld": "ci",
     "use_cctld": true,
     "lang": "fr",
     "ddg_region": "ci-fr",
+    "cities": [
+      "Abidjan",
+      "Yamoussoukro",
+      "Bouaké",
+      "San-Pédro"
+    ],
     "allowlist": []
   },
   "jamaica": {
     "name": "Jamaica",
+    "native_name": "Jamaica",
     "cctld": "jm",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "jm-en",
+    "cities": [
+      "Kingston",
+      "Montego Bay",
+      "Spanish Town",
+      "Portmore"
+    ],
     "allowlist": []
   },
   "japan": {
     "name": "Japan",
+    "native_name": "日本",
     "cctld": "jp",
     "use_cctld": true,
     "lang": "ja",
     "ddg_region": "jp-ja",
+    "cities": [
+      "Tokyo",
+      "Osaka",
+      "Yokohama",
+      "Nagoya",
+      "Sapporo"
+    ],
     "allowlist": []
   },
   "kazakhstan": {
     "name": "Kazakhstan",
+    "native_name": "Kazakhstan",
     "cctld": "kz",
     "use_cctld": true,
     "lang": "kk",
     "ddg_region": "kz-kk",
+    "cities": [
+      "Almaty",
+      "Astana",
+      "Shymkent",
+      "Karaganda"
+    ],
     "allowlist": []
   },
   "kenya": {
     "name": "Kenya",
+    "native_name": "Kenya",
     "cctld": "ke",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ke-en",
+    "cities": [
+      "Nairobi",
+      "Mombasa",
+      "Kisumu",
+      "Nakuru"
+    ],
     "allowlist": []
   },
   "latvia": {
     "name": "Latvia",
+    "native_name": "Latvija",
     "cctld": "lv",
     "use_cctld": true,
     "lang": "lv",
     "ddg_region": "lv-lv",
+    "cities": [
+      "Riga",
+      "Daugavpils",
+      "Liepāja",
+      "Jelgava"
+    ],
     "allowlist": []
   },
   "lithuania": {
     "name": "Lithuania",
+    "native_name": "Lietuva",
     "cctld": "lt",
     "use_cctld": true,
     "lang": "lt",
     "ddg_region": "lt-lt",
+    "cities": [
+      "Vilnius",
+      "Kaunas",
+      "Klaipėda",
+      "Šiauliai"
+    ],
     "allowlist": []
   },
   "luxembourg": {
     "name": "Luxembourg",
+    "native_name": "Luxembourg",
     "cctld": "lu",
     "use_cctld": true,
     "lang": "fr",
     "ddg_region": "lu-fr",
+    "cities": [
+      "Luxembourg",
+      "Esch-sur-Alzette",
+      "Differdange"
+    ],
     "allowlist": []
   },
   "malaysia": {
     "name": "Malaysia",
+    "native_name": "Malaysia",
     "cctld": "my",
     "use_cctld": true,
     "lang": "ms",
     "ddg_region": "my-ms",
+    "cities": [
+      "Kuala Lumpur",
+      "George Town",
+      "Ipoh",
+      "Johor Bahru"
+    ],
     "allowlist": []
   },
   "malta": {
     "name": "Malta",
+    "native_name": "Malta",
     "cctld": "mt",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "mt-en",
+    "cities": [
+      "Valletta",
+      "Birkirkara",
+      "Sliema",
+      "Qormi"
+    ],
     "allowlist": []
   },
   "mexico": {
     "name": "Mexico",
+    "native_name": "México",
     "cctld": "mx",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "mx-es",
+    "cities": [
+      "Ciudad de México",
+      "Guadalajara",
+      "Monterrey",
+      "Puebla",
+      "Tijuana"
+    ],
     "allowlist": []
   },
   "morocco": {
     "name": "Morocco",
+    "native_name": "المغرب",
     "cctld": "ma",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "ma-ar",
+    "cities": [
+      "Casablanca",
+      "Rabat",
+      "Marrakech",
+      "Fès",
+      "Tanger"
+    ],
     "allowlist": []
   },
   "myanmar": {
     "name": "Myanmar",
+    "native_name": "Myanmar",
     "cctld": "mm",
     "use_cctld": true,
     "lang": "my",
     "ddg_region": "mm-my",
+    "cities": [
+      "Yangon",
+      "Mandalay",
+      "Naypyidaw"
+    ],
     "allowlist": []
   },
   "nepal": {
     "name": "Nepal",
+    "native_name": "Nepal",
     "cctld": "np",
     "use_cctld": true,
     "lang": "ne",
     "ddg_region": "np-ne",
+    "cities": [
+      "Kathmandu",
+      "Pokhara",
+      "Lalitpur",
+      "Biratnagar"
+    ],
     "allowlist": []
   },
   "netherlands": {
     "name": "Netherlands",
+    "native_name": "Nederland",
     "cctld": "nl",
     "use_cctld": true,
     "lang": "nl",
     "ddg_region": "nl-nl",
+    "cities": [
+      "Amsterdam",
+      "Rotterdam",
+      "Den Haag",
+      "Utrecht",
+      "Eindhoven"
+    ],
     "allowlist": []
   },
   "new-zealand": {
     "name": "New Zealand",
+    "native_name": "New Zealand",
     "cctld": "nz",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "nz-en",
+    "cities": [
+      "Auckland",
+      "Wellington",
+      "Christchurch",
+      "Hamilton"
+    ],
     "allowlist": []
   },
   "nicaragua": {
     "name": "Nicaragua",
+    "native_name": "Nicaragua",
     "cctld": "ni",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "ni-es",
+    "cities": [
+      "Managua",
+      "León",
+      "Masaya",
+      "Granada"
+    ],
     "allowlist": []
   },
   "nigeria": {
     "name": "Nigeria",
+    "native_name": "Nigeria",
     "cctld": "ng",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ng-en",
+    "cities": [
+      "Lagos",
+      "Abuja",
+      "Kano",
+      "Ibadan",
+      "Port Harcourt"
+    ],
     "allowlist": []
   },
   "norway": {
     "name": "Norway",
+    "native_name": "Norge",
     "cctld": "no",
     "use_cctld": true,
     "lang": "no",
     "ddg_region": "no-no",
+    "cities": [
+      "Oslo",
+      "Bergen",
+      "Trondheim",
+      "Stavanger"
+    ],
     "allowlist": []
   },
   "pakistan": {
     "name": "Pakistan",
+    "native_name": "Pakistan",
     "cctld": "pk",
     "use_cctld": true,
     "lang": "ur",
     "ddg_region": "pk-ur",
+    "cities": [
+      "Karachi",
+      "Lahore",
+      "Islamabad",
+      "Faisalabad",
+      "Rawalpindi"
+    ],
     "allowlist": []
   },
   "panama": {
     "name": "Panama",
+    "native_name": "Panamá",
     "cctld": "pa",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "pa-es",
+    "cities": [
+      "Panamá",
+      "Colón",
+      "David",
+      "Santiago"
+    ],
     "allowlist": []
   },
   "paraguay": {
     "name": "Paraguay",
+    "native_name": "Paraguay",
     "cctld": "py",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "py-es",
+    "cities": [
+      "Asunción",
+      "Ciudad del Este",
+      "San Lorenzo",
+      "Encarnación"
+    ],
     "allowlist": []
   },
   "peru": {
     "name": "Peru",
+    "native_name": "Perú",
     "cctld": "pe",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "pe-es",
+    "cities": [
+      "Lima",
+      "Arequipa",
+      "Trujillo",
+      "Chiclayo",
+      "Cusco"
+    ],
     "allowlist": []
   },
   "philippines": {
     "name": "Philippines",
+    "native_name": "Philippines",
     "cctld": "ph",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ph-en",
+    "cities": [
+      "Manila",
+      "Quezon City",
+      "Cebu",
+      "Davao"
+    ],
     "allowlist": []
   },
   "poland": {
     "name": "Poland",
+    "native_name": "Polska",
     "cctld": "pl",
     "use_cctld": true,
     "lang": "pl",
     "ddg_region": "pl-pl",
+    "cities": [
+      "Warszawa",
+      "Kraków",
+      "Łódź",
+      "Wrocław",
+      "Poznań"
+    ],
     "allowlist": []
   },
   "portugal": {
     "name": "Portugal",
+    "native_name": "Portugal",
     "cctld": "pt",
     "use_cctld": true,
     "lang": "pt",
     "ddg_region": "pt-pt",
+    "cities": [
+      "Lisboa",
+      "Porto",
+      "Braga",
+      "Coimbra",
+      "Faro"
+    ],
     "allowlist": []
   },
   "puerto-rico": {
     "name": "Puerto Rico",
+    "native_name": "Puerto Rico",
     "cctld": "pr",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "pr-es",
+    "cities": [
+      "San Juan",
+      "Bayamón",
+      "Ponce",
+      "Carolina"
+    ],
     "allowlist": []
   },
   "qatar": {
     "name": "Qatar",
+    "native_name": "Qatar",
     "cctld": "qa",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "qa-ar",
+    "cities": [
+      "Doha",
+      "Al Rayyan",
+      "Al Wakrah"
+    ],
     "allowlist": []
   },
   "romania": {
     "name": "Romania",
+    "native_name": "România",
     "cctld": "ro",
     "use_cctld": true,
     "lang": "ro",
     "ddg_region": "ro-ro",
+    "cities": [
+      "București",
+      "Cluj-Napoca",
+      "Timișoara",
+      "Iași",
+      "Constanța"
+    ],
     "allowlist": []
   },
   "russia": {
     "name": "Russia",
+    "native_name": "Россия",
     "cctld": "ru",
     "use_cctld": true,
     "lang": "ru",
     "ddg_region": "ru-ru",
+    "cities": [
+      "Moskva",
+      "Sankt-Peterburg",
+      "Novosibirsk",
+      "Yekaterinburg",
+      "Kazan"
+    ],
     "allowlist": []
   },
   "saudi-arabia": {
     "name": "Saudi Arabia",
+    "native_name": "السعودية",
     "cctld": "sa",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "sa-ar",
+    "cities": [
+      "Riyadh",
+      "Jeddah",
+      "Mecca",
+      "Medina",
+      "Dammam"
+    ],
     "allowlist": []
   },
   "serbia": {
     "name": "Serbia",
+    "native_name": "Srbija",
     "cctld": "rs",
     "use_cctld": true,
     "lang": "sr",
     "ddg_region": "rs-sr",
+    "cities": [
+      "Beograd",
+      "Novi Sad",
+      "Niš",
+      "Kragujevac"
+    ],
     "allowlist": []
   },
   "singapore": {
     "name": "Singapore",
+    "native_name": "Singapore",
     "cctld": "sg",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "sg-en",
+    "cities": [
+      "Singapore"
+    ],
     "allowlist": []
   },
   "slovakia": {
     "name": "Slovakia",
+    "native_name": "Slovensko",
     "cctld": "sk",
     "use_cctld": true,
     "lang": "sk",
     "ddg_region": "sk-sk",
+    "cities": [
+      "Bratislava",
+      "Košice",
+      "Prešov",
+      "Žilina"
+    ],
     "allowlist": []
   },
   "slovenia": {
     "name": "Slovenia",
+    "native_name": "Slovenija",
     "cctld": "si",
     "use_cctld": true,
     "lang": "sl",
     "ddg_region": "si-sl",
+    "cities": [
+      "Ljubljana",
+      "Maribor",
+      "Celje",
+      "Kranj"
+    ],
     "allowlist": []
   },
   "south-africa": {
     "name": "South Africa",
+    "native_name": "South Africa",
     "cctld": "za",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "za-en",
+    "cities": [
+      "Johannesburg",
+      "Cape Town",
+      "Durban",
+      "Pretoria",
+      "Gqeberha"
+    ],
     "allowlist": []
   },
   "south-korea": {
     "name": "South Korea",
+    "native_name": "대한민국",
     "cctld": "kr",
     "use_cctld": true,
     "lang": "ko",
     "ddg_region": "kr-ko",
+    "cities": [
+      "Seoul",
+      "Busan",
+      "Incheon",
+      "Daegu"
+    ],
     "allowlist": []
   },
   "spain": {
     "name": "Spain",
+    "native_name": "España",
     "cctld": "es",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "es-es",
+    "cities": [
+      "Madrid",
+      "Barcelona",
+      "Valencia",
+      "Sevilla",
+      "Bilbao"
+    ],
     "allowlist": []
   },
   "sri-lanka": {
     "name": "Sri Lanka",
+    "native_name": "Sri Lanka",
     "cctld": "lk",
     "use_cctld": true,
     "lang": "si",
     "ddg_region": "lk-si",
+    "cities": [
+      "Colombo",
+      "Kandy",
+      "Galle",
+      "Jaffna"
+    ],
     "allowlist": []
   },
   "sudan": {
     "name": "Sudan",
+    "native_name": "Sudan",
     "cctld": "sd",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "sd-ar",
+    "cities": [
+      "Khartoum",
+      "Omdurman",
+      "Port Sudan"
+    ],
     "allowlist": []
   },
   "sweden": {
     "name": "Sweden",
+    "native_name": "Sverige",
     "cctld": "se",
     "use_cctld": true,
     "lang": "sv",
     "ddg_region": "se-sv",
+    "cities": [
+      "Stockholm",
+      "Göteborg",
+      "Malmö",
+      "Uppsala"
+    ],
     "allowlist": []
   },
   "switzerland": {
     "name": "Switzerland",
+    "native_name": "Schweiz",
     "cctld": "ch",
     "use_cctld": true,
     "lang": "de",
     "ddg_region": "ch-de",
+    "cities": [
+      "Zürich",
+      "Genève",
+      "Basel",
+      "Bern",
+      "Lausanne"
+    ],
     "allowlist": []
   },
   "taiwan": {
     "name": "Taiwan",
+    "native_name": "臺灣",
     "cctld": "tw",
     "use_cctld": true,
     "lang": "zh",
     "ddg_region": "tw-zh",
+    "cities": [
+      "Taipei",
+      "Kaohsiung",
+      "Taichung",
+      "Tainan"
+    ],
     "allowlist": []
   },
   "thailand": {
     "name": "Thailand",
+    "native_name": "ประเทศไทย",
     "cctld": "th",
     "use_cctld": true,
     "lang": "th",
     "ddg_region": "th-th",
+    "cities": [
+      "Bangkok",
+      "Nonthaburi",
+      "Chiang Mai",
+      "Phuket"
+    ],
     "allowlist": []
   },
   "tunisia": {
     "name": "Tunisia",
+    "native_name": "Tunisia",
     "cctld": "tn",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "tn-ar",
+    "cities": [
+      "Tunis",
+      "Sfax",
+      "Sousse",
+      "Kairouan"
+    ],
     "allowlist": []
   },
   "turkey": {
     "name": "Turkey",
+    "native_name": "Türkiye",
     "cctld": "tr",
     "use_cctld": true,
     "lang": "tr",
     "ddg_region": "tr-tr",
+    "cities": [
+      "İstanbul",
+      "Ankara",
+      "İzmir",
+      "Bursa",
+      "Antalya"
+    ],
     "allowlist": []
   },
   "uae": {
     "name": "UAE",
+    "native_name": "UAE",
     "cctld": "ae",
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "ae-ar",
+    "cities": [
+      "Dubai",
+      "Abu Dhabi",
+      "Sharjah",
+      "Al Ain"
+    ],
     "allowlist": []
   },
   "ukraine": {
     "name": "Ukraine",
+    "native_name": "Україна",
     "cctld": "ua",
     "use_cctld": true,
     "lang": "uk",
     "ddg_region": "ua-uk",
+    "cities": [
+      "Kyiv",
+      "Kharkiv",
+      "Odesa",
+      "Dnipro",
+      "Lviv"
+    ],
     "allowlist": []
   },
   "united-kingdom": {
     "name": "United Kingdom",
+    "native_name": "United Kingdom",
     "cctld": "uk",
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "uk-en",
+    "cities": [
+      "London",
+      "Manchester",
+      "Birmingham",
+      "Glasgow",
+      "Liverpool"
+    ],
     "allowlist": []
   },
   "uruguay": {
     "name": "Uruguay",
+    "native_name": "Uruguay",
     "cctld": "uy",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "uy-es",
+    "cities": [
+      "Montevideo",
+      "Salto",
+      "Paysandú",
+      "Las Piedras"
+    ],
     "allowlist": []
   },
   "usa": {
     "name": "USA",
+    "native_name": "USA",
     "cctld": "us",
     "use_cctld": false,
     "lang": "en",
     "ddg_region": "us-en",
+    "cities": [
+      "New York",
+      "Los Angeles",
+      "Chicago",
+      "Houston",
+      "Miami"
+    ],
     "allowlist": []
   },
   "venezuela": {
     "name": "Venezuela",
+    "native_name": "Venezuela",
     "cctld": "ve",
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "ve-es",
+    "cities": [
+      "Caracas",
+      "Maracaibo",
+      "Valencia",
+      "Barquisimeto",
+      "Maracay"
+    ],
     "allowlist": []
   },
   "vietnam": {
     "name": "Vietnam",
+    "native_name": "Việt Nam",
     "cctld": "vn",
     "use_cctld": true,
     "lang": "vi",
     "ddg_region": "vn-vi",
+    "cities": [
+      "Hanoi",
+      "Ho Chi Minh City",
+      "Da Nang",
+      "Hai Phong"
+    ],
     "allowlist": []
   }
 }

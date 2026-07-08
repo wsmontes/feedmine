@@ -1,28 +1,155 @@
 {
-  "News": {"en": ["news"], "pt": ["notícias"], "es": ["noticias"], "fr": ["actualités"], "de": ["nachrichten"]},
-  "Sports": {"en": ["sports"], "pt": ["esportes"], "es": ["deportes"], "fr": ["sport"], "de": ["sport"]},
-  "Technology": {"en": ["technology"], "pt": ["tecnologia"], "es": ["tecnología"], "fr": ["technologie"], "de": ["technik"]},
-  "Science": {"en": ["science"], "pt": ["ciência"], "es": ["ciencia"], "fr": ["science"], "de": ["wissenschaft"]},
-  "Culture": {"en": ["culture"], "pt": ["cultura"], "es": ["cultura"], "fr": ["culture"], "de": ["kultur"]},
-  "Movies": {"en": ["movies cinema"], "pt": ["cinema"], "es": ["cine"], "fr": ["cinéma"], "de": ["kino filme"]},
-  "Music": {"en": ["music"], "pt": ["música"], "es": ["música"], "fr": ["musique"], "de": ["musik"]},
-  "Food": {"en": ["food recipes"], "pt": ["comida receitas"], "es": ["comida recetas"], "fr": ["cuisine recettes"], "de": ["essen rezepte"]},
-  "Gaming": {"en": ["gaming games"], "pt": ["games jogos"], "es": ["videojuegos"], "fr": ["jeux vidéo"], "de": ["videospiele"]},
-  "Travel": {"en": ["travel"], "pt": ["viagem"], "es": ["viajes"], "fr": ["voyage"], "de": ["reisen"]},
-  "Blogs": {"en": ["blog"], "pt": ["blog"], "es": ["blog"], "fr": ["blog"], "de": ["blog"]},
-  "Design": {"en": ["design"], "pt": ["design"], "es": ["diseño"], "fr": ["design"], "de": ["design"]},
-  "Environment": {"en": ["environment"], "pt": ["meio ambiente"], "es": ["medio ambiente"], "fr": ["environnement"], "de": ["umwelt"]},
-  "DIY": {"en": ["diy crafts"], "pt": ["artesanato faça você mesmo"], "es": ["manualidades"], "fr": ["bricolage"], "de": ["heimwerken basteln"]},
-  "History": {"en": ["history"], "pt": ["história"], "es": ["historia"], "fr": ["histoire"], "de": ["geschichte"]},
-  "Architecture": {"en": ["architecture"], "pt": ["arquitetura"], "es": ["arquitectura"], "fr": ["architecture"], "de": ["architektur"]},
-  "Programming": {"en": ["programming developer"], "pt": ["programação desenvolvedor"], "es": ["programación"], "fr": ["programmation"], "de": ["programmierung"]},
-  "Business": {"en": ["business economy"], "pt": ["negócios economia"], "es": ["negocios economía"], "fr": ["économie"], "de": ["wirtschaft"]},
-  "Podcasts": {"en": ["podcast"], "pt": ["podcast"], "es": ["podcast"], "fr": ["podcast"], "de": ["podcast"]},
-  "Photography": {"en": ["photography"], "pt": ["fotografia"], "es": ["fotografía"], "fr": ["photographie"], "de": ["fotografie"]},
-  "Health": {"en": ["health"], "pt": ["saúde"], "es": ["salud"], "fr": ["santé"], "de": ["gesundheit"]},
-  "Education": {"en": ["education"], "pt": ["educação"], "es": ["educación"], "fr": ["éducation"], "de": ["bildung"]},
-  "Politics": {"en": ["politics"], "pt": ["política"], "es": ["política"], "fr": ["politique"], "de": ["politik"]},
-  "Humor": {"en": ["humor comedy"], "pt": ["humor"], "es": ["humor"], "fr": ["humour"], "de": ["humor"]},
-  "Apple": {"en": ["apple mac iphone"], "pt": ["apple mac iphone"], "es": ["apple mac iphone"], "fr": ["apple mac iphone"], "de": ["apple mac iphone"]},
-  "YouTube": {"en": ["youtube channel"], "pt": ["canal youtube"], "es": ["canal youtube"], "fr": ["chaîne youtube"], "de": ["youtube kanal"]}
+  "News": {
+    "en": ["news", "newspaper", "daily"],
+    "es": ["noticias", "diario", "periódico", "prensa"],
+    "pt": ["notícias", "jornal", "diário"],
+    "fr": ["actualités", "journal", "quotidien"],
+    "de": ["nachrichten", "zeitung"],
+    "it": ["notizie", "giornale", "quotidiano"],
+    "is": ["fréttir"],
+    "el": ["ειδήσεις", "εφημερίδα"],
+    "cs": ["zprávy", "noviny"],
+    "hr": ["vijesti", "novine"],
+    "sr": ["вести", "novosti"],
+    "sl": ["novice"],
+    "sk": ["správy", "noviny"],
+    "bg": ["новини", "вестник"],
+    "ro": ["știri", "ziar"],
+    "hu": ["hírek", "újság"],
+    "pl": ["wiadomości", "gazeta"],
+    "ru": ["новости", "газета"],
+    "uk": ["новини", "газета"],
+    "tr": ["haber", "gazete"],
+    "fi": ["uutiset", "lehti"],
+    "sv": ["nyheter", "tidning"],
+    "no": ["nyheter", "avis"],
+    "da": ["nyheder", "avis"],
+    "nl": ["nieuws", "krant"],
+    "et": ["uudised", "leht"],
+    "lv": ["ziņas", "avīze"],
+    "lt": ["naujienos", "laikraštis"],
+    "ar": ["أخبار", "صحيفة"],
+    "he": ["חדשות", "עיתון"],
+    "fa": ["اخبار", "روزنامه"],
+    "ja": ["ニュース", "新聞"],
+    "ko": ["뉴스", "신문"],
+    "zh": ["新闻", "报纸"],
+    "th": ["ข่าว", "หนังสือพิมพ์"],
+    "vi": ["tin tức", "báo"],
+    "id": ["berita", "koran"],
+    "ms": ["berita", "akhbar"],
+    "hy": ["նորություններ", "լուրեր"],
+    "ka": ["ამბები", "სიახლეები"],
+    "az": ["xəbər", "xəbərlər"],
+    "kk": ["жаңалықтар"],
+    "bn": ["সংবাদ", "খবর"],
+    "ur": ["خبریں", "اخبار"],
+    "ne": ["समाचार"],
+    "si": ["පුවත්"],
+    "my": ["သတင်း"],
+    "km": ["ព័ត៌មាន"],
+    "am": ["ዜና"],
+    "be": ["навіны", "газета"]
+  },
+  "Sports": {
+    "en": ["sports"], "es": ["deportes", "fútbol"], "pt": ["esportes", "futebol"],
+    "fr": ["sport"], "de": ["sport"], "it": ["sport", "calcio"],
+    "tr": ["spor"], "ru": ["спорт"], "pl": ["sport"], "nl": ["sport"],
+    "ar": ["رياضة"], "ja": ["スポーツ"], "ko": ["스포츠"], "zh": ["体育"]
+  },
+  "Technology": {
+    "en": ["technology", "tech"], "es": ["tecnología"], "pt": ["tecnologia"],
+    "fr": ["technologie"], "de": ["technik"], "it": ["tecnologia"],
+    "ru": ["технологии"], "ja": ["テクノロジー"], "zh": ["科技"]
+  },
+  "Science": {
+    "en": ["science"], "es": ["ciencia"], "pt": ["ciência"],
+    "fr": ["science"], "de": ["wissenschaft"], "it": ["scienza"], "ru": ["наука"]
+  },
+  "Culture": {
+    "en": ["culture"], "es": ["cultura"], "pt": ["cultura"],
+    "fr": ["culture"], "de": ["kultur"], "it": ["cultura"], "ru": ["культура"]
+  },
+  "Movies": {
+    "en": ["movies cinema"], "es": ["cine"], "pt": ["cinema"],
+    "fr": ["cinéma"], "de": ["kino filme"], "it": ["cinema"]
+  },
+  "Music": {
+    "en": ["music"], "es": ["música"], "pt": ["música"],
+    "fr": ["musique"], "de": ["musik"], "it": ["musica"]
+  },
+  "Food": {
+    "en": ["food recipes"], "es": ["comida recetas"], "pt": ["comida receitas"],
+    "fr": ["cuisine recettes"], "de": ["essen rezepte"], "it": ["cucina ricette"]
+  },
+  "Gaming": {
+    "en": ["gaming games"], "es": ["videojuegos"], "pt": ["games jogos"],
+    "fr": ["jeux vidéo"], "de": ["videospiele"], "it": ["videogiochi"]
+  },
+  "Travel": {
+    "en": ["travel"], "es": ["viajes"], "pt": ["viagem"],
+    "fr": ["voyage"], "de": ["reisen"], "it": ["viaggi"]
+  },
+  "Blogs": {
+    "en": ["blog"], "es": ["blog"], "pt": ["blog"], "fr": ["blog"], "de": ["blog"], "it": ["blog"]
+  },
+  "Design": {
+    "en": ["design"], "es": ["diseño"], "pt": ["design"],
+    "fr": ["design"], "de": ["design"], "it": ["design"]
+  },
+  "Environment": {
+    "en": ["environment"], "es": ["medio ambiente"], "pt": ["meio ambiente"],
+    "fr": ["environnement"], "de": ["umwelt"], "it": ["ambiente"]
+  },
+  "DIY": {
+    "en": ["diy crafts"], "es": ["manualidades"], "pt": ["artesanato faça você mesmo"],
+    "fr": ["bricolage"], "de": ["heimwerken basteln"], "it": ["fai da te"]
+  },
+  "History": {
+    "en": ["history"], "es": ["historia"], "pt": ["história"],
+    "fr": ["histoire"], "de": ["geschichte"], "it": ["storia"]
+  },
+  "Architecture": {
+    "en": ["architecture"], "es": ["arquitectura"], "pt": ["arquitetura"],
+    "fr": ["architecture"], "de": ["architektur"], "it": ["architettura"]
+  },
+  "Programming": {
+    "en": ["programming developer"], "es": ["programación"], "pt": ["programação desenvolvedor"],
+    "fr": ["programmation"], "de": ["programmierung"], "it": ["programmazione"]
+  },
+  "Business": {
+    "en": ["business", "economy"], "es": ["economía", "negocios"], "pt": ["economia", "negócios"],
+    "fr": ["économie"], "de": ["wirtschaft"], "it": ["economia"], "ru": ["экономика"]
+  },
+  "Podcasts": {
+    "en": ["podcast"], "es": ["podcast"], "pt": ["podcast"], "fr": ["podcast"], "de": ["podcast"], "it": ["podcast"]
+  },
+  "Photography": {
+    "en": ["photography"], "es": ["fotografía"], "pt": ["fotografia"],
+    "fr": ["photographie"], "de": ["fotografie"], "it": ["fotografia"]
+  },
+  "Health": {
+    "en": ["health"], "es": ["salud"], "pt": ["saúde"],
+    "fr": ["santé"], "de": ["gesundheit"], "it": ["salute"]
+  },
+  "Education": {
+    "en": ["education"], "es": ["educación"], "pt": ["educação"],
+    "fr": ["éducation"], "de": ["bildung"], "it": ["istruzione"]
+  },
+  "Politics": {
+    "en": ["politics"], "es": ["política"], "pt": ["política"],
+    "fr": ["politique"], "de": ["politik"], "it": ["politica"], "ru": ["политика"]
+  },
+  "Humor": {
+    "en": ["humor comedy"], "es": ["humor"], "pt": ["humor"],
+    "fr": ["humour"], "de": ["humor"], "it": ["umorismo"]
+  },
+  "Apple": {
+    "en": ["apple mac iphone"], "es": ["apple mac iphone"], "pt": ["apple mac iphone"],
+    "fr": ["apple mac iphone"], "de": ["apple mac iphone"], "it": ["apple mac iphone"]
+  },
+  "YouTube": {
+    "en": ["youtube channel"], "es": ["canal youtube"], "pt": ["canal youtube"],
+    "fr": ["chaîne youtube"], "de": ["youtube kanal"], "it": ["canale youtube"]
+  }
 }
