@@ -259,17 +259,28 @@ final class FeedStore {
 
     // MARK: - What's New
 
-    /// Items fetched since the baseline snapshot (start of this session).
+    /// Items fetched since the baseline snapshot, respecting all active filters.
     /// Only items with images, unread, capped at 10, shuffled for variety.
     func loadWhatsNewItems() async -> [FeedItem] {
         guard let baseline = whatsNewBaselineDate else { return [] }
         let cutoff = Int(baseline.timeIntervalSince1970)
+        let region = activeRegion
+        let category = activeCategory
+        let disabled = Array(registry.disabledRegions)
         do {
             let records: [FeedItemRecord] = try await db.read { db in
-                try FeedItemRecord
+                var request = FeedItemRecord
                     .filter(Column("fetched_at") > cutoff)
                     .filter(Column("image_url") != nil)
                     .filter(Column("is_read") == 0)
+                if let r = region {
+                    request = request.filter(Column("region") == r)
+                } else if !disabled.isEmpty {
+                    let placeholders = disabled.map { _ in "?" }.joined(separator: ",")
+                    request = request.filter(sql: "region NOT IN (\(placeholders))", arguments: StatementArguments(disabled))
+                }
+                if let c = category { request = request.filter(Column("category") == c) }
+                return try request
                     .order(Column("published_at").desc)
                     .limit(10)
                     .fetchAll(db)
@@ -278,6 +289,11 @@ final class FeedStore {
         } catch {
             return []
         }
+    }
+
+    /// Reset the What's New baseline so newly enabled content appears immediately.
+    func resetWhatsNewBaseline() {
+        whatsNewBaselineDate = Date(timeIntervalSince1970: 0)  // epoch — includes all existing items
     }
 
     // MARK: - Private: fetch
@@ -441,6 +457,7 @@ final class FeedStore {
         if wasDisabled {
             // Enabling: clear memory, seed fresh content, reload from SQLite
             scheduler.prioritize(sourceURLs: sourceURLs)
+            resetWhatsNewBaseline()
             reservoir.clear()
             visibleItems = []
             reservoirCount = 0

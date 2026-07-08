@@ -354,10 +354,19 @@ final class FeedLoader {
         }
     }
 
-    func toggleRegion(_ region: String) { store.toggleRegion(region) }
-    func toggleAllCountries() { store.registry.toggleAllCountries() }
+    func toggleRegion(_ region: String) {
+        store.toggleRegion(region)
+        Task { await loadWhatsNew() }
+    }
+    func toggleAllCountries() {
+        store.registry.toggleAllCountries()
+        store.resetWhatsNewBaseline()
+        Task { await loadWhatsNew() }
+    }
     func toggleGlobalFeeds() {
         store.toggleRegion("global")
+        store.resetWhatsNewBaseline()
+        Task { await loadWhatsNew() }
     }
     func toggleSource(_ sourceURL: String) { store.registry.toggleSource(sourceURL) }
     func isRegionEnabled(_ region: String) -> Bool { store.registry.isRegionEnabled(region) }
