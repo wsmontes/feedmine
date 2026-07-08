@@ -279,7 +279,10 @@ final class FeedLoader {
     private var sourceHealth: [String: SourceHealth] = [:]
 
     func healthFor(_ source: FeedSource) -> SourceHealth {
-        sourceHealth[source.url] ?? SourceHealth()
+        SourceHealth(
+            lastFetchDate: store.lastFetchDate(for: source.url),
+            consecutiveFailures: store.consecutiveFailures(for: source.url)
+        )
     }
 
     // MARK: - Persistence stubs (migrated to SQLite / Task 11)

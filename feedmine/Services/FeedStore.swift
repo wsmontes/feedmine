@@ -230,6 +230,18 @@ final class FeedStore {
         }
     }
 
+    // MARK: - Source health
+
+    /// Last fetch date for a source URL.
+    func lastFetchDate(for sourceURL: String) -> Date? {
+        scheduler.lastFetchedAt[sourceURL]
+    }
+
+    /// Consecutive failures for a source URL.
+    func consecutiveFailures(for sourceURL: String) -> Int {
+        scheduler.consecutiveFailures[sourceURL] ?? 0
+    }
+
     // MARK: - What's New
 
     /// Items fetched since the baseline snapshot (start of this session).

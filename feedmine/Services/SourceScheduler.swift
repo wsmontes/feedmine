@@ -4,8 +4,8 @@ import Foundation
 /// Uses √n fairness between regions, LRU ordering within regions,
 /// and soft cooldown instead of hard timeouts.
 final class SourceScheduler {
-    private var lastFetchedAt: [String: Date] = [:]
-    private var consecutiveFailures: [String: Int] = [:]
+    private(set) var lastFetchedAt: [String: Date] = [:]
+    private(set) var consecutiveFailures: [String: Int] = [:]
     private var consumptionTimestamps: [Date] = []
 
     // MARK: - Public API
