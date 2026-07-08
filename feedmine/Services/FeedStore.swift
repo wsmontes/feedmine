@@ -102,6 +102,12 @@ final class FeedStore {
             await progressiveFetch()
         }
         loadingState = .idle
+
+        // Light maintenance on every launch
+        Task { await performLightExpurgo() }
+        Task.detached(priority: .background) { [weak self] in
+            await self?.performHeavyMaintenance()
+        }
     }
 
     // MARK: - Scroll
@@ -245,6 +251,14 @@ final class FeedStore {
             }
         } catch {
             print("[FeedStore] SQLite write error: \(error)")
+        }
+
+        // Cap items per source after bulk insert
+        if !actualNew.isEmpty {
+            let sourceURLs = Set(actualNew.map(\.sourceURL))
+            for url in sourceURLs {
+                await capSourceItems(sourceURL: url)
+            }
         }
 
         // Append to reservoir
@@ -395,6 +409,72 @@ final class FeedStore {
                     }
                 }
             }
+        }
+    }
+
+    // MARK: - Maintenance
+
+    /// Lightweight cleanup on every launch — deletes up to 500 expired items.
+    func performLightExpurgo() async {
+        let cutoff = Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970) // 30 days
+        do {
+            try await db.write { db in
+                try db.execute(sql: """
+                    DELETE FROM feed_item
+                    WHERE fetched_at < ?
+                      AND is_read = 0
+                      AND id NOT IN (SELECT item_id FROM bookmark_item)
+                    LIMIT 500
+                """, arguments: [cutoff])
+            }
+        } catch {
+            print("[FeedStore] Expurgo error: \(error)")
+        }
+    }
+
+    /// Per-source cap: keep max 50 items per source within 30-day window.
+    func capSourceItems(sourceURL: String) async {
+        do {
+            try await db.write { db in
+                let count = try Int.fetchOne(db, sql: """
+                    SELECT COUNT(*) FROM feed_item WHERE source_url = ?
+                """, arguments: [sourceURL]) ?? 0
+                guard count > 50 else { return }
+                // Delete oldest exceeding 50
+                try db.execute(sql: """
+                    DELETE FROM feed_item WHERE id IN (
+                        SELECT id FROM feed_item WHERE source_url = ?
+                        ORDER BY published_at ASC
+                        LIMIT ?
+                    )
+                """, arguments: [sourceURL, count - 50])
+            }
+        } catch {
+            print("[FeedStore] Source cap error: \(error)")
+        }
+    }
+
+    /// Heavy maintenance — VACUUM + REINDEX. Run once per week in background.
+    func performHeavyMaintenance() async {
+        let lastKey = "lastHeavyMaintenance"
+        let now = Date().timeIntervalSince1970
+        let last = UserDefaults.standard.double(forKey: lastKey)
+        guard now - last > 604800 else { return } // 7 days
+
+        do {
+            try await db.write { db in
+                try db.execute(sql: """
+                    DELETE FROM feed_item
+                    WHERE fetched_at < ?
+                      AND is_read = 0
+                      AND id NOT IN (SELECT item_id FROM bookmark_item)
+                """, arguments: [Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970)])
+            }
+            try await db.vacuum()
+            UserDefaults.standard.set(now, forKey: lastKey)
+            print("[FeedStore] Heavy maintenance complete")
+        } catch {
+            print("[FeedStore] Maintenance error: \(error)")
         }
     }
 
