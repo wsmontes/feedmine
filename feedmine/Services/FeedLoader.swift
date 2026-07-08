@@ -242,10 +242,31 @@ final class FeedLoader {
     var currentVisibleIndex: Int = 0
     var loadedIDsCount: Int { items.count }  // approximates unique loaded count
 
-    // MARK: - What's New (stubs — Task 11 implements full integration)
+    // MARK: - What's New
 
-    var whatIsNewItems: [FeedItem] { [] }
+    private var cachedWhatsNew: [FeedItem] = []
+    var whatIsNewItems: [FeedItem] { cachedWhatsNew }
     var whatsNewVisible = false
+
+    func loadWhatsNew() async {
+        cachedWhatsNew = await store.loadWhatsNewItems()
+    }
+
+    func flushWhatsNewQueue() {
+        // Refresh what's new items — called when user dismisses carousel
+        Task { await loadWhatsNew() }
+    }
+
+    func prefetchWhatsNewImages() {
+        let urls = cachedWhatsNew.compactMap { $0.bestImageURL ?? $0.imageURL }
+        guard !urls.isEmpty else { return }
+        Task {
+            for urlString in urls {
+                guard let url = URL(string: urlString) else { continue }
+                _ = try? await URLSession.shared.data(from: url)
+            }
+        }
+    }
 
     // MARK: - Source health (stub)
 
@@ -274,7 +295,10 @@ final class FeedLoader {
 
     // MARK: - Actions (delegate to store)
 
-    func start() async { await store.start() }
+    func start() async {
+        await store.start()
+        await loadWhatsNew()
+    }
     func loadMoreIfNeeded(currentItem: FeedItem) async {
         await store.loadMoreIfNeeded(currentItem: currentItem)
     }
@@ -379,9 +403,6 @@ final class FeedLoader {
     }
 
     func emergencyTrim() { store.emergencyTrim() }
-
-    func flushWhatsNewQueue() { }   // What's New carousel integration TBD
-    func prefetchWhatsNewImages() { }
 
     var reservoirCount: Int { store.reservoirCount }
     var lastRefreshDate: Date? { store.lastRefreshDate }

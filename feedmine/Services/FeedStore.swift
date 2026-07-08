@@ -40,6 +40,7 @@ final class FeedStore {
     // MARK: - Read state
     private(set) var readItemIDs: Set<String> = []
     private var loadedIDs: Set<String> = []  // Bloom filter for dedup
+    private var whatsNewBaselineDate: Date?    // snapshot from start() for What's New
     private var _defaultListID: Int64?
 
     // MARK: - Init
@@ -91,6 +92,9 @@ final class FeedStore {
 
         // Restore read/bookmark state from SQLite
         await loadReadState()
+
+        // Snapshot baseline for "What's New" — items fetched after this are "new"
+        whatsNewBaselineDate = Date()
 
         guard !registry.enabledSources.isEmpty else {
             loadingState = .idle
@@ -208,6 +212,29 @@ final class FeedStore {
                     WHERE id = ?
                 """, arguments: [itemID])
             }
+        }
+    }
+
+    // MARK: - What's New
+
+    /// Items fetched since the baseline snapshot (start of this session).
+    /// Only items with images, unread, capped at 10, shuffled for variety.
+    func loadWhatsNewItems() async -> [FeedItem] {
+        guard let baseline = whatsNewBaselineDate else { return [] }
+        let cutoff = Int(baseline.timeIntervalSince1970)
+        do {
+            let records: [FeedItemRecord] = try await db.read { db in
+                try FeedItemRecord
+                    .filter(Column("fetched_at") > cutoff)
+                    .filter(Column("image_url") != nil)
+                    .filter(Column("is_read") == 0)
+                    .order(Column("published_at").desc)
+                    .limit(10)
+                    .fetchAll(db)
+            }
+            return records.map { $0.toFeedItem() }.shuffled()
+        } catch {
+            return []
         }
     }
 
