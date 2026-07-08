@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from scripts.feed_discovery.discover import find_feeds_in_html
+from scripts.feed_discovery.discover import find_feeds_in_html, is_comment_feed_title
 
 HTML = """
 <html><head>
@@ -29,3 +29,15 @@ def test_excludes_wordpress_comment_feeds():
             '<link rel="alternate" type="application/rss+xml" href="/comments/feed/">')
     feeds = find_feeds_in_html(html, "https://x.br/")
     assert feeds == ["https://x.br/feed/"]  # comment feed dropped
+
+
+def test_unescapes_ampersand_in_href():
+    html = '<link rel="alternate" type="application/rss+xml" href="/?format=feed&amp;type=rss">'
+    feeds = find_feeds_in_html(html, "https://x.bo/")
+    assert feeds == ["https://x.bo/?format=feed&type=rss"]
+
+
+def test_is_comment_feed_title_matches_wordpress_titles():
+    assert is_comment_feed_title("Comentarios en: INICIO")
+    assert is_comment_feed_title("Comments on: Home")
+    assert not is_comment_feed_title("EL DEBER - Últimas noticias")

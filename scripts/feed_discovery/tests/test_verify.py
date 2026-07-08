@@ -39,3 +39,9 @@ def test_accepts_truncated_feed_body():
 
 def test_parses_cdata_title_with_entities():
     assert parse_feed(CDATA) == (True, "Café & Co")
+
+
+def test_decodes_numeric_and_named_entities_in_title():
+    body = (b'<?xml version="1.0"?><rss><channel>'
+            b"<title>El Mundo &#8211; Diario &amp; Noticias</title></channel></rss>")
+    assert parse_feed(body) == (True, "El Mundo – Diario & Noticias")

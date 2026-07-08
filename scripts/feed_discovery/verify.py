@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 import re
 
 import aiohttp
@@ -17,17 +18,6 @@ _TITLE_RE = re.compile(r"<(?:\w+:)?title[^>]*>(.*?)</(?:\w+:)?title>", re.I | re
 _CDATA_RE = re.compile(r"<!\[CDATA\[(.*?)\]\]>", re.S)
 
 
-def _unescape(text: str) -> str:
-    return (
-        text.replace("&amp;", "&")
-        .replace("&lt;", "<")
-        .replace("&gt;", ">")
-        .replace("&quot;", '"')
-        .replace("&#39;", "'")
-        .replace("&apos;", "'")
-    )
-
-
 def parse_feed(body: bytes) -> tuple[bool, str]:
     text = body.decode("utf-8", errors="ignore")
     if not _ROOT_RE.search(text[:4096]):
@@ -39,7 +29,7 @@ def parse_feed(body: bytes) -> tuple[bool, str]:
         cdata = _CDATA_RE.search(raw)
         if cdata:
             raw = cdata.group(1)
-        title = _unescape(raw.strip())
+        title = html.unescape(raw).strip()
     return True, title
 
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 import re
 from urllib.parse import urljoin, urlparse
 
@@ -15,20 +16,30 @@ _LINK_RE = re.compile(r"<link\b[^>]*>", re.I)
 _HREF_RE = re.compile(r"href\s*=\s*[\"']([^\"']+)[\"']", re.I)
 # WordPress comment feeds and similar are noise, not content feeds.
 _JUNK_RE = re.compile(r"/comments/feed|/comments/rss", re.I)
+# Comment-feed titles (WordPress emits these for page/post comment streams).
+_COMMENT_TITLE_RE = re.compile(
+    r"^\s*(comments on|comment feed|comentarios en|coment[aá]rios (sobre|em|de)|"
+    r"kommentare zu|commentaires (sur|pour)|commenti (a|su)|反馈|评论)\b",
+    re.I,
+)
 
 
 def _is_junk_feed(url: str) -> bool:
     return bool(_JUNK_RE.search(url))
 
 
-def find_feeds_in_html(html: str, base_url: str) -> list[str]:
+def is_comment_feed_title(title: str) -> bool:
+    return bool(_COMMENT_TITLE_RE.match(title or ""))
+
+
+def find_feeds_in_html(html_text: str, base_url: str) -> list[str]:
     out: list[str] = []
-    for tag in _LINK_RE.findall(html):
+    for tag in _LINK_RE.findall(html_text):
         low = tag.lower()
         if "alternate" in low and ("rss+xml" in low or "atom+xml" in low):
             m = _HREF_RE.search(tag)
             if m:
-                url = urljoin(base_url, m.group(1))
+                url = urljoin(base_url, html.unescape(m.group(1)))
                 if not _is_junk_feed(url):
                     out.append(url)
     seen: set[str] = set()
@@ -105,9 +116,9 @@ async def discover_feeds(
     feeds: list[str] = []
 
     # 1. Autodiscover on the result page itself.
-    html = await _fetch_text(session, page_url, timeout)
-    if html:
-        feeds.extend(find_feeds_in_html(html, page_url))
+    page_html = await _fetch_text(session, page_url, timeout)
+    if page_html:
+        feeds.extend(find_feeds_in_html(page_html, page_url))
 
     # 2. Autodiscover on the domain root — most sites advertise their feed on
     #    the homepage even when article/section pages do not. Cached per root.
@@ -115,8 +126,8 @@ async def discover_feeds(
     if root_cache is not None and root in root_cache:
         feeds.extend(root_cache[root])
     else:
-        if urlparse(page_url).path.strip("/") == "" and html:
-            root_feeds = find_feeds_in_html(html, page_url)  # page already is the root
+        if urlparse(page_url).path.strip("/") == "" and page_html:
+            root_feeds = find_feeds_in_html(page_html, page_url)  # page already is the root
         else:
             root_html = await _fetch_text(session, root + "/", timeout)
             root_feeds = find_feeds_in_html(root_html, root + "/") if root_html else []

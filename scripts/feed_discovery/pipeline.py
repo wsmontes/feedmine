@@ -124,6 +124,8 @@ async def process_country(
             [verify.verify_feed(session, c.url, cfg.timeout) for c in to_verify],
         )
         for cand, (is_live, status, title) in zip(to_verify, verdicts):
+            if is_live and discover.is_comment_feed_title(title):
+                is_live = False  # WordPress comment feed, not content
             cand.is_live, cand.status_code, cand.title = is_live, status, title
             candidates.append(cand)
 
