@@ -313,12 +313,19 @@ final class FeedLoader {
         store.setFilter(
             region: store.activeRegion,
             category: selectedCategory,
-            type: selectedContentType
+            type: selectedContentType,
+            mood: selectedMood
         )
     }
 
     func selectMood(_ mood: MoodFilter) {
         selectedMood = (selectedMood == mood) ? .all : mood
+        store.setFilter(
+            region: store.activeRegion,
+            category: selectedCategory,
+            type: selectedContentType,
+            mood: selectedMood
+        )
     }
 
     func selectContentType(_ type: ContentType) {
@@ -326,7 +333,8 @@ final class FeedLoader {
         store.setFilter(
             region: store.activeRegion,
             category: selectedCategory,
-            type: selectedContentType
+            type: selectedContentType,
+            mood: selectedMood
         )
     }
 

@@ -41,6 +41,7 @@ final class FeedStore {
     var activeRegion: String?
     var activeCategory: String?
     var activeContentType: FeedLoader.ContentType = .all
+    var activeMood: FeedLoader.MoodFilter = .all
     private var filterContentType: (FeedItem) -> Bool {
         switch activeContentType {
         case .all: return { _ in true }
@@ -168,10 +169,11 @@ final class FeedStore {
     }
 
     // MARK: - Filter
-    func setFilter(region: String?, category: String?, type: FeedLoader.ContentType) {
+    func setFilter(region: String?, category: String?, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
         activeRegion = region
         activeCategory = category
         activeContentType = type
+        activeMood = mood
         Task { await reloadFromSQLite() }
     }
 
@@ -179,6 +181,7 @@ final class FeedStore {
         activeRegion = nil
         activeCategory = nil
         activeContentType = .all
+        activeMood = .all
         Task { await reloadFromSQLite() }
     }
 
