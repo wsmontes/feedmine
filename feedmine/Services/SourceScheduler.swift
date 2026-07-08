@@ -26,8 +26,12 @@ final class SourceScheduler {
         guard currentBuffer < bufferNeeded else { return [] }
 
         // 3. Measure entropy — distribution of regions/categories in reservoir
+        let urlToRegion: [String: String] = sourcesByRegion.flatMap { region, sources in
+            sources.map { ($0.url, region) }
+        }.reduce(into: [:]) { $0[$1.0] = $1.1 }
+
         let regionDistribution = distribution(of: reservoir, key: { item -> String in
-            item.sourceURL // will be mapped to region by caller
+            urlToRegion[item.sourceURL] ?? "unknown"
         })
         let categoryDistribution = distribution(of: reservoir, key: \.category)
 
@@ -41,6 +45,12 @@ final class SourceScheduler {
         let regionDeficits = deficits(ideal: idealRegionDist, actual: regionDistribution)
         let categoryDeficits = deficits(ideal: idealCategoryDist, actual: categoryDistribution)
 
+        // Boost the active category's deficit if one is set
+        var finalCategoryDeficits = categoryDeficits
+        if let cat = activeCategory {
+            finalCategoryDeficits[cat] = max(finalCategoryDeficits[cat] ?? 0, 1.0)
+        }
+
         // 6. Select sources that compensate deficits
         var selected: [FeedSource] = []
         var selectedURLs = Set<String>()
@@ -51,7 +61,7 @@ final class SourceScheduler {
                 regions: regions,
                 sourcesByRegion: sourcesByRegion,
                 regionDeficits: regionDeficits,
-                categoryDeficits: categoryDeficits,
+                categoryDeficits: finalCategoryDeficits,
                 selectedURLs: selectedURLs
             ) else { break }
             selected.append(best)
@@ -89,7 +99,7 @@ final class SourceScheduler {
 
     private func estimatedBufferNeeded() -> Int {
         let recent = consumptionTimestamps.filter { $0 > Date().addingTimeInterval(-120) }
-        let rate = Double(recent.count) / 2.0 // scrolls per second over last 2 min
+        let rate = Double(recent.count) / 120.0 // scrolls per second over last 2 min
         let target = Int(rate * 180) // 3 min buffer
         return max(50, min(500, target))
     }
