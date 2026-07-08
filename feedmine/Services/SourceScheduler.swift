@@ -163,8 +163,14 @@ final class SourceScheduler {
                         continue // in backoff
                     }
                 }
-                let regionDeficit = regionDeficits[region] ?? 0
-                let catDeficit = categoryDeficits[source.category] ?? 0
+                // Deficits are (ideal - actual) and turn negative when a region
+                // or category is over-represented. Clamp to 0: an
+                // over-represented dimension should mean "no need" (score 0),
+                // not a negative factor — otherwise two negative deficits
+                // multiply into a positive score and the scheduler prefers the
+                // very sources it already has too many of.
+                let regionDeficit = max(0, regionDeficits[region] ?? 0)
+                let catDeficit = max(0, categoryDeficits[source.category] ?? 0)
                 // Content type boost: prefer sources matching active content filter
                 let contentTypeBoost: Double
                 switch activeContentType {
