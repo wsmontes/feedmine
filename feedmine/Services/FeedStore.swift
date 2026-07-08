@@ -89,6 +89,9 @@ final class FeedStore {
             loadingState = .idle
         }
 
+        // Restore read/bookmark state from SQLite
+        await loadReadState()
+
         guard !registry.enabledSources.isEmpty else {
             loadingState = .idle
             return
@@ -341,6 +344,17 @@ final class FeedStore {
         }
         guard !records.isEmpty else { return nil }
         return records.map { $0.toFeedItem() }
+    }
+
+    private func loadReadState() async {
+        do {
+            let ids: [String] = try await db.read { db in
+                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE is_read = 1")
+            }
+            readItemIDs = Set(ids)
+        } catch {
+            print("[FeedStore] loadReadState error: \(error)")
+        }
     }
 
     // MARK: - Region toggle
