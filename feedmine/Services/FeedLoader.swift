@@ -196,7 +196,9 @@ final class FeedLoader {
     }
     var enabledSources: [FeedSource] { store.registry.enabledSources }
     var sources: [FeedSource] { store.registry.sources }
-    var disabledSourceIDs: Set<String> { store.registry.disabledSourceIDs }
+    var disabledSourceIDs: Set<String> {
+        Set(store.registry.sources.filter { !store.registry.isSourceEnabled($0.url) }.map(\.url))
+    }
 
     // MARK: - OPML debug counters
 
@@ -355,12 +357,14 @@ final class FeedLoader {
         Task { await loadWhatsNew() }
     }
     func toggleSource(_ sourceURL: String) { store.toggleSource(sourceURL) }
-    func isRegionEnabled(_ region: String) -> Bool { store.registry.isRegionEnabled(region) }
+    func isRegionEnabled(_ region: String) -> Bool { store.registry.status(of: SourceRegistry.regionKey(region)) != .off }
     func isSourceEnabled(_ url: String) -> Bool { store.registry.isSourceEnabled(url) }
+    func nodeStatus(for key: String) -> NodeStatus { store.registry.status(of: key) }
+    func activeCount(for key: String) -> Int { store.registry.activeCount(for: key) }
     func toggleCategory(_ category: String) { store.toggleCategory(category) }
-    func isCategoryEnabled(_ category: String) -> Bool { store.isCategoryEnabled(category) }
+    func isCategoryEnabled(_ category: String) -> Bool { store.registry.status(of: SourceRegistry.categoryKey(category)) != .off }
     var isAnyCountryEnabled: Bool { store.registry.isAnyCountryEnabled }
-    var isGlobalFeedsEnabled: Bool { store.registry.isRegionEnabled("global") }
+    var isGlobalFeedsEnabled: Bool { store.registry.status(of: SourceRegistry.regionKey("global")) != .off }
 
     func markAsRead(_ itemID: String) { store.markAsRead(itemID) }
     func isRead(_ itemID: String) -> Bool { store.readItemIDs.contains(itemID) }

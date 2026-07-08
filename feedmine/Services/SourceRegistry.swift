@@ -1,17 +1,37 @@
 import Foundation
 import Observation
 
-/// Manages the feed source catalog: OPML parsing, enabled/disabled state,
-/// country/region groupings. Extracted from FeedLoader.
+enum NodeStatus: Equatable {
+    case on
+    case off
+    case partial(activeCount: Int)
+}
+
+/// Manages feed source toggles with a single-set model.
+///
+/// One set: `disabled` tracks what's explicitly OFF.
+/// Everything not in `disabled` is ON by default.
+///
+/// Three states per node:
+/// - ON — not in disabled
+/// - OFF — in disabled, zero active children
+/// - PARTIAL — in disabled, but has ≥1 active child (individual override)
+///
+/// Resolution for a feed (O(1) — 4 Set lookups):
+/// 1. Feed's own key in disabled? → OFF
+/// 2. Feed's region key in disabled? → OFF
+/// 3. Feed's country key in disabled? → OFF
+/// 4. Feed's category key in disabled? → OFF
+/// 5. Otherwise → ON
 @MainActor
 @Observable
 final class SourceRegistry {
     var sources: [FeedSource] = []
-    var disabledRegions: Set<String> = []
-    var disabledSourceIDs: Set<String> = []
-    var disabledCategories: Set<String> = []
-    /// Sources explicitly enabled by the user — overrides region/category blocks
-    private var overrideSourceIDs: Set<String> = []
+    var disabled: Set<String> = []
+
+    /// Cached count of active sources under each region/category key.
+    /// Recomputed after every toggle.
+    private var activeCount: [String: Int] = [:]
 
     // Debug counters
     private(set) var opmlFileCount = 0
@@ -19,20 +39,128 @@ final class SourceRegistry {
     private(set) var duplicateSourceCount = 0
     private(set) var opmlErrorCount = 0
 
+    // MARK: - Key constructors
+
+    static func regionKey(_ path: String) -> String { "region:\(path)" }
+    static func categoryKey(_ name: String) -> String { "cat:\(name)" }
+    static func sourceKey(_ url: String) -> String { "url:\(url)" }
+
+    // MARK: - Feed resolution (O(1))
+
+    func isSourceEnabled(_ sourceURL: String) -> Bool {
+        guard let source = sources.first(where: { $0.url == sourceURL }) else { return false }
+        if disabled.contains(Self.sourceKey(sourceURL)) { return false }
+        if disabled.contains(Self.regionKey(source.region)) { return false }
+        // Country check — parent of region
+        let parts = source.region.split(separator: "/").map(String.init)
+        if parts.count >= 2, parts[0] == "countries" {
+            let countryKey = Self.regionKey(parts.prefix(2).joined(separator: "/"))
+            if disabled.contains(countryKey) { return false }
+        }
+        if disabled.contains(Self.categoryKey(source.category)) { return false }
+        return true
+    }
+
+    // MARK: - Group status (O(1) cached)
+
+    func status(of key: String) -> NodeStatus {
+        if !disabled.contains(key) { return .on }
+        let count = activeCount[key] ?? 0
+        return count > 0 ? .partial(activeCount: count) : .off
+    }
+
+    func activeCount(for key: String) -> Int {
+        activeCount[key] ?? 0
+    }
+
+    // MARK: - Toggle actions
+
+    func toggleRegion(_ region: String) {
+        let key = Self.regionKey(region)
+        if disabled.contains(key) {
+            disabled.remove(key)
+        } else {
+            disabled.insert(key)
+        }
+        recomputeActiveCounts()
+        saveState()
+    }
+
+    func toggleCategory(_ category: String) {
+        let key = Self.categoryKey(category)
+        if disabled.contains(key) {
+            disabled.remove(key)
+        } else {
+            disabled.insert(key)
+        }
+        recomputeActiveCounts()
+        saveState()
+    }
+
+    func toggleSource(_ sourceURL: String) {
+        let key = Self.sourceKey(sourceURL)
+        if disabled.contains(key) {
+            disabled.remove(key)
+        } else {
+            disabled.insert(key)
+        }
+        recomputeActiveCounts()
+        saveState()
+    }
+
+    func toggleAllCountries() {
+        let countryKeys = Set(sources
+            .filter { $0.isCountryFeed }
+            .map { $0.region }
+            .map { Self.regionKey($0) })
+        let anyOn = countryKeys.contains { !disabled.contains($0) }
+        if anyOn {
+            disabled.formUnion(countryKeys)
+        } else {
+            disabled.subtract(countryKeys)
+        }
+        recomputeActiveCounts()
+        saveState()
+    }
+
+    var isAnyCountryEnabled: Bool {
+        sources.contains { $0.isCountryFeed && isSourceEnabled($0.url) }
+    }
+
     // MARK: - Enabled sources
 
     var enabledSources: [FeedSource] {
-        sources.filter { source in
-            if disabledSourceIDs.contains(source.url) { return false }
-            // Explicit override — user enabled this source individually
-            if overrideSourceIDs.contains(source.url) { return true }
-            if disabledRegions.contains(source.region) { return false }
-            if disabledCategories.contains(source.category) { return false }
-            return true
-        }
+        sources.filter { isSourceEnabled($0.url) }
     }
 
     var sourceCount: Int { sources.count }
+
+    // MARK: - Cache
+
+    private func recomputeActiveCounts() {
+        activeCount.removeAll()
+        for source in sources where isSourceEnabled(source.url) {
+            activeCount[Self.regionKey(source.region), default: 0] += 1
+            let parts = source.region.split(separator: "/").map(String.init)
+            if parts.count >= 2, parts[0] == "countries" {
+                activeCount[Self.regionKey(parts.prefix(2).joined(separator: "/")), default: 0] += 1
+            }
+            activeCount[Self.categoryKey(source.category), default: 0] += 1
+        }
+    }
+
+    // MARK: - Persistence
+
+    private func saveState() {
+        UserDefaults.standard.set(Array(disabled), forKey: "toggleDisabled")
+    }
+
+    func loadState() {
+        if let arr = UserDefaults.standard.stringArray(forKey: "toggleDisabled") {
+            disabled = Set(arr)
+        }
+        recomputeActiveCounts()
+    }
 
     // MARK: - Region lookup
 
@@ -88,108 +216,6 @@ final class SourceRegistry {
         .sorted { $0.name < $1.name }
     }
 
-    // MARK: - Toggle actions
-
-    func toggleRegion(_ region: String) {
-        if disabledRegions.contains(region) {
-            // Enabling — cascade DOWN to sub-regions and UP to parents
-            disabledRegions.remove(region)
-            let prefix = "\(region)/"
-            for subRegion in sources.map(\.region) where subRegion.hasPrefix(prefix) {
-                disabledRegions.remove(subRegion)
-            }
-            // Cascade UP: enable parent regions
-            var parts = region.split(separator: "/").map(String.init)
-            while parts.count > 1 {
-                parts.removeLast()
-                let parentRegion = parts.joined(separator: "/")
-                disabledRegions.remove(parentRegion)
-            }
-            // Clear overrides for sources in this region (no longer needed)
-            let regionSources = sources.filter { $0.region == region || $0.region.hasPrefix(prefix) }
-            for src in regionSources {
-                overrideSourceIDs.remove(src.url)
-            }
-        } else {
-            disabledRegions.insert(region)
-            let prefix = "\(region)/"
-            for subRegion in sources.map(\.region) where subRegion.hasPrefix(prefix) {
-                disabledRegions.insert(subRegion)
-            }
-        }
-    }
-
-    func toggleAllCountries() {
-        let allCountryRegions = Set(sources.filter { $0.isCountryFeed }.map(\.region))
-        let anyEnabled = allCountryRegions.contains { !disabledRegions.contains($0) }
-        if anyEnabled {
-            disabledRegions.formUnion(allCountryRegions)
-        } else {
-            disabledRegions.subtract(allCountryRegions)
-        }
-    }
-
-    var isAnyCountryEnabled: Bool {
-        sources.contains { $0.isCountryFeed && !disabledRegions.contains($0.region) }
-    }
-
-    func toggleSource(_ sourceURL: String) {
-        if disabledSourceIDs.contains(sourceURL) {
-            // Enabling — add override so this feed works even if region/category is OFF
-            disabledSourceIDs.remove(sourceURL)
-            overrideSourceIDs.insert(sourceURL)
-        } else {
-            // Disabling — remove override, add to disabled
-            disabledSourceIDs.insert(sourceURL)
-            overrideSourceIDs.remove(sourceURL)
-        }
-    }
-
-    func toggleCategory(_ category: String) {
-        if disabledCategories.contains(category) {
-            disabledCategories.remove(category)
-        } else {
-            disabledCategories.insert(category)
-        }
-    }
-
-    func isSourceEnabled(_ sourceURL: String) -> Bool {
-        if disabledSourceIDs.contains(sourceURL) { return false }
-        // Explicit override — user enabled this source individually
-        if overrideSourceIDs.contains(sourceURL) { return true }
-        // Respect parent hierarchy
-        let region = regionMap[sourceURL] ?? "global"
-        if disabledRegions.contains(region) { return false }
-        if let source = sources.first(where: { $0.url == sourceURL }),
-           disabledCategories.contains(source.category) { return false }
-        return true
-    }
-
-    func isCategoryEnabled(_ category: String) -> Bool {
-        !disabledCategories.contains(category)
-    }
-
-    func isRegionEnabled(_ region: String) -> Bool {
-        // Directly enabled
-        if !disabledRegions.contains(region) { return true }
-        // Check feed-level overrides within this region or its sub-regions
-        let prefix = "\(region)/"
-        let regionSources = sources.filter { src in
-            src.region == region || src.region.hasPrefix(prefix)
-        }
-        let hasOverride = regionSources.contains { overrideSourceIDs.contains($0.url) }
-        if hasOverride { return true }
-        // Country: check if any sub-region is enabled
-        if region.hasPrefix("countries/") && !region.dropFirst("countries/".count).contains("/") {
-            let hasEnabledSubRegion = regionSources
-                .map(\.region)
-                .filter { $0.hasPrefix(prefix) }
-                .contains { !disabledRegions.contains($0) }
-            if hasEnabledSubRegion { return true }
-        }
-        return false
-    }
-
     // MARK: - Load
 
     func loadFromOPML() async {
@@ -201,10 +227,17 @@ final class SourceRegistry {
         duplicateSourceCount = result.duplicateSourceCount
         _regionMap = nil
 
+        // Restore persisted toggle state
+        loadState()
+
         // Countries off by default on first launch
-        if disabledRegions.isEmpty {
-            let allCountryRegions = Set(sources.filter { $0.isCountryFeed }.map(\.region))
-            disabledRegions.formUnion(allCountryRegions)
+        if disabled.isEmpty {
+            for source in sources where source.isCountryFeed {
+                disabled.insert(Self.regionKey(source.region))
+            }
+            saveState()
         }
+
+        recomputeActiveCounts()
     }
 }

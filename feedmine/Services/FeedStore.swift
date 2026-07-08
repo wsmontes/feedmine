@@ -44,10 +44,9 @@ final class FeedStore {
     var activeCategory: String?
     var activeContentType: FeedLoader.ContentType = .all
     var activeMood: FeedLoader.MoodFilter = .all
-    /// Safety filter: excludes items from disabled regions.
-    private func isRegionEnabled(_ item: FeedItem) -> Bool {
-        let region = registry.regionFor(sourceURL: item.sourceURL)
-        return !registry.disabledRegions.contains(region)
+    /// Safety filter: excludes items from disabled regions/categories/feeds.
+    private func isItemEnabled(_ item: FeedItem) -> Bool {
+        registry.isSourceEnabled(item.sourceURL)
     }
 
     /// Prefetch images for items if enabled (default: true).
@@ -60,7 +59,7 @@ final class FeedStore {
 
     /// Apply all active filters to a list of items.
     private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
-        items.filter(isRegionEnabled).filter(filterContentType)
+        items.filter(isItemEnabled).filter(filterContentType)
     }
 
     private var filterContentType: (FeedItem) -> Bool {
@@ -125,7 +124,7 @@ final class FeedStore {
             for item in items { loadedIDs.insert(item.id) }
             loadedIDsCount = loadedIDs.count
             reservoir.seed(items: items)
-            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
             reservoirCount = reservoir.reservoirCount
             loadingState = .idle
         }
@@ -228,7 +227,7 @@ final class FeedStore {
         if regionChanged || categoryChanged {
             Task { await reloadFromSQLite() }
         } else {
-            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
         }
     }
 
@@ -242,7 +241,7 @@ final class FeedStore {
         if hadStructuralFilter {
             Task { await reloadFromSQLite() }
         } else {
-            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
         }
     }
 
@@ -263,17 +262,12 @@ final class FeedStore {
             }
             let region = activeRegion
             let category = activeCategory
-            let disabled = Array(registry.disabledRegions)
+            // disabledRegions filtering now handled in-memory by isItemEnabled
             let results: [FeedItemRecord] = try await db.read { db in
                 var request = FeedItemRecord
                     .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
                     .matching(pattern)
-                if let r = region {
-                    request = request.filter(Column("region") == r)
-                } else if !disabled.isEmpty {
-                    let placeholders = disabled.map { _ in "?" }.joined(separator: ",")
-                    request = request.filter(sql: "region NOT IN (\(placeholders))", arguments: StatementArguments(disabled))
-                }
+                if let r = region { request = request.filter(Column("region") == r) }
                 if let c = category { request = request.filter(Column("category") == c) }
                 return try request
                     .order(Column("published_at").desc)
@@ -282,7 +276,7 @@ final class FeedStore {
             }
             guard isSearching else { return }
             searchResults = results.map { $0.toFeedItem() }
-            visibleItems = searchResults.filter(isRegionEnabled).filter(filterContentType)
+            visibleItems = searchResults.filter(isItemEnabled).filter(filterContentType)
         }
     }
 
@@ -334,20 +328,20 @@ final class FeedStore {
                     var combined = actualNew
                     combined.append(contentsOf: reservoir.visibleItems)
                     reservoir.seed(items: combined)
-                    visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+                    visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
                     reservoirCount = reservoir.reservoirCount
                 }
             }
         } else {
             // Disabling — remove from visible
             reservoir.removeRegion(registry.regionFor(sourceURL: sourceURL))
-            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
             reservoirCount = reservoir.reservoirCount
         }
     }
 
     func isCategoryEnabled(_ category: String) -> Bool {
-        registry.isCategoryEnabled(category)
+        registry.status(of: SourceRegistry.categoryKey(category)) != .off
     }
 
     func toggleCategory(_ category: String) {
@@ -370,19 +364,14 @@ final class FeedStore {
         let cutoff = Int(baseline.timeIntervalSince1970)
         let region = activeRegion
         let category = activeCategory
-        let disabled = Array(registry.disabledRegions)
+        // disabledRegions filtering now handled in-memory by isItemEnabled
         do {
             let records: [FeedItemRecord] = try await db.read { db in
                 var request = FeedItemRecord
                     .filter(Column("fetched_at") > cutoff)
                     .filter(Column("image_url") != nil)
                     .filter(Column("is_read") == 0)
-                if let r = region {
-                    request = request.filter(Column("region") == r)
-                } else if !disabled.isEmpty {
-                    let placeholders = disabled.map { _ in "?" }.joined(separator: ",")
-                    request = request.filter(sql: "region NOT IN (\(placeholders))", arguments: StatementArguments(disabled))
-                }
+                if let r = region { request = request.filter(Column("region") == r) }
                 if let c = category { request = request.filter(Column("category") == c) }
                 return try request
                     .order(Column("published_at").desc)
@@ -465,7 +454,7 @@ final class FeedStore {
         prefetchImagesIfEnabled(for: actualNew)
         // Only update visibleItems if no active search
         if !isSearching {
-            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
             reservoirCount = reservoir.reservoirCount
         }
 
@@ -491,7 +480,7 @@ final class FeedStore {
             prefetchImagesIfEnabled(for: actualNew)
             if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
                 reservoir.moveToVisible(count: Reservoir.pageSize)
-                visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+                visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
                 reservoirCount = reservoir.reservoirCount
             }
         }
@@ -503,15 +492,12 @@ final class FeedStore {
         guard !isSearching else { return }
         let region = activeRegion
         let category = activeCategory
-        let disabled = Array(registry.disabledRegions)
+        // disabledRegions filtering now handled in-memory by isItemEnabled
         let items: [FeedItemRecord] = (try? await db.read { db in
             var request = FeedItemRecord
                 .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
             if let r = region {
                 request = request.filter(Column("region") == r)
-            } else if !disabled.isEmpty {
-                let placeholders = disabled.map { _ in "?" }.joined(separator: ",")
-                request = request.filter(sql: "region NOT IN (\(placeholders))", arguments: StatementArguments(disabled))
             }
             if let c = category { request = request.filter(Column("category") == c) }
             return try request
@@ -527,19 +513,16 @@ final class FeedStore {
         // Register all loaded IDs to prevent re-fetch duplicates
         for item in feedItems { loadedIDs.insert(item.id) }
         reservoir.seed(items: feedItems)
-        visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+        visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
         reservoirCount = reservoir.reservoirCount
     }
 
     private func loadReservoir() async throws -> [FeedItem]? {
-        let disabled = Array(registry.disabledRegions)
+        // disabledRegions filtering now handled in-memory by isItemEnabled
         let records: [FeedItemRecord] = try await db.read { db in
             var request = FeedItemRecord
                 .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
-            if !disabled.isEmpty {
-                let placeholders = disabled.map { _ in "?" }.joined(separator: ",")
-                request = request.filter(sql: "region NOT IN (\(placeholders))", arguments: StatementArguments(disabled))
-            }
+            // Region filter: handled in-memory by isItemEnabled
             return try request
                 .order(Column("published_at").desc)
                 .limit(200)
@@ -563,7 +546,7 @@ final class FeedStore {
     // MARK: - Region toggle
 
     func toggleRegion(_ region: String) {
-        let wasDisabled = registry.disabledRegions.contains(region)
+        let wasDisabled = registry.status(of: SourceRegistry.regionKey(region)) == .off
         let sourceURLs = registry.sources.filter { $0.region == region }.map(\.url)
         registry.toggleRegion(region)
         if wasDisabled {
@@ -590,7 +573,7 @@ final class FeedStore {
             // Disabling: remove from scheduler, purge from reservoir
             scheduler.remove(sourceURLs: sourceURLs)
             reservoir.removeRegion(region)
-            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
             reservoirCount = reservoir.reservoirCount
         }
     }
@@ -955,7 +938,7 @@ final class FeedStore {
         }
         // Move visible back to reservoir, re-interleave, re-slice
         reservoir.shakeReshuffle()
-        visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+        visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
         reservoirCount = reservoir.reservoirCount
         // Force fetch — bypass staleness check
         lastRefreshDate = nil
