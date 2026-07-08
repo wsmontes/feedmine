@@ -774,6 +774,22 @@ final class FeedStore {
         reservoirCount = reservoir.reservoirCount
     }
 
+    /// Shake-to-refresh: mark visible as read, re-interleave reservoir,
+    /// reload from SQLite, force fetch fresh content.
+    func shakeToRefresh() {
+        // Mark visible items as read so they don't come back
+        for item in reservoir.visibleItems {
+            readItemIDs.insert(item.id)
+        }
+        // Move visible back to reservoir, re-interleave, re-slice
+        reservoir.shakeReshuffle()
+        visibleItems = reservoir.visibleItems.filter(filterContentType)
+        reservoirCount = reservoir.reservoirCount
+        // Force fetch — bypass staleness check
+        lastRefreshDate = nil
+        Task { await fetchNextBatch() }
+    }
+
     // MARK: - Migration
 
     static func migrate(_ db: DatabaseQueue) throws {

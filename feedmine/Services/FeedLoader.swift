@@ -418,8 +418,8 @@ final class FeedLoader {
     }
 
     func shakeToRefresh() {
-        store.emergencyTrim()
-        Task { await store.refreshIfStale() }
+        searchQuery = ""
+        store.shakeToRefresh()
     }
 
     func emergencyTrim() { store.emergencyTrim() }

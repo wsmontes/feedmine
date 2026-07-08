@@ -122,6 +122,20 @@ final class Reservoir {
         reservoir.removeAll()
     }
 
+    /// Shake-to-refresh: dump visible items back into reservoir, re-interleave,
+    /// and pull a fresh page. Items already surfaced get pushed to the back.
+    func shakeReshuffle() {
+        guard !visibleItems.isEmpty || !reservoir.isEmpty else { return }
+        reservoir.append(contentsOf: visibleItems)
+        visibleItems.removeAll()
+        reservoir = interleave(reservoir)
+        capReservoir()
+        let w = min(Self.pageSize, reservoir.count)
+        visibleItems = Array(reservoir.prefix(w))
+        reservoir.removeFirst(w)
+        markAsSurfaced(visibleItems)
+    }
+
     // MARK: - Interleave
 
     private func interleave(_ items: [FeedItem]) -> [FeedItem] {
