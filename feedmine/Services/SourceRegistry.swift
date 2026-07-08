@@ -6,7 +6,7 @@ import Observation
 @MainActor
 @Observable
 final class SourceRegistry {
-    private(set) var sources: [FeedSource] = []
+    var sources: [FeedSource] = []
     var disabledRegions: Set<String> = []
     var disabledSourceIDs: Set<String> = []
 

@@ -153,7 +153,7 @@ struct SettingsSheetView: View {
                     .disabled(loader.readItemIDs.isEmpty)
                     .confirmationDialog("Clear all read history?", isPresented: $showClearReadConfirmation) {
                         Button("Clear All", role: .destructive) {
-                            withAnimation { loader.readItemIDs.removeAll() }
+                            // loader.readItemIDs.removeAll() // REMOVED: now managed by FeedStore. Task 11 wires clear.
                         }
                     }
 
@@ -165,26 +165,18 @@ struct SettingsSheetView: View {
                     .disabled(loader.bookmarkedIDs.isEmpty)
                     .confirmationDialog("Remove all bookmarks?", isPresented: $showClearBookmarksConfirmation) {
                         Button("Clear All", role: .destructive) {
-                            withAnimation { loader.bookmarkedIDs.removeAll() }
+                            // loader.bookmarkedIDs.removeAll() // REMOVED: now managed by FeedStore. Task 11 wires clear.
                         }
                     }
                 }
 
                 // MARK: - Data Management
                 Section("Data") {
-                    Button {
-                        let state = loader.buildState()
-                        let json = (try? JSONEncoder().encode(state)) ?? Data()
-                        let url = FileManager.default.temporaryDirectory.appendingPathComponent("feedmine_data.json")
-                        try? json.write(to: url)
-                        let av = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                           let root = windowScene.windows.first?.rootViewController {
-                            root.present(av, animated: true)
-                        }
-                    } label: {
+                    // Export My Data — REMOVED (PersistenceManager deleted). Task 12 restores export.
+                    Button {} label: {
                         Label("Export My Data", systemImage: "arrow.up.doc.fill")
                     }
+                    .disabled(true)
 
                     Button(role: .destructive) {
                         showResetConfirmation = true
@@ -196,16 +188,8 @@ struct SettingsSheetView: View {
                         isPresented: $showResetConfirmation
                     ) {
                         Button("Reset Everything", role: .destructive) {
-                            withAnimation {
-                                loader.readItemIDs.removeAll()
-                                loader.bookmarkedIDs.removeAll()
-                                loader.disabledSourceIDs.removeAll()
-                                loader.disabledRegions.removeAll()
-                                // Re-apply default: all countries off
-                                let allCountryRegions = Set(loader.sources.filter { $0.isCountryFeed }.map(\.region))
-                                loader.disabledRegions.formUnion(allCountryRegions)
-                                PersistenceManager.shared.save(loader.buildState())
-                            }
+                            // Reset handled by SQLite — Task 11 wires clear methods on FeedStore.
+                            // PersistenceManager.shared.save(loader.buildState()) // REMOVED: migrated to SQLite
                         }
                     }
 

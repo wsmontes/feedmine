@@ -34,7 +34,6 @@
 		5E7E15C5AEBD7F2D476F0622 /* RegionDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5156605BFFD0C2F3D02E93 /* RegionDetailScreen.swift */; };
 		6170CDE69FD93E263E3D200C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05278E701F7B9808BEE3B943 /* Assets.xcassets */; };
 		64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */; };
-		67048E03F4B32DE5C427C442 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416A9F2FBED61538361B41D /* PersistenceManager.swift */; };
 		6986DBDE303222A19B7A5798 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A1E8E7D34C1FBFB2EA6CC6 /* SearchBarView.swift */; };
 		72D004892A528079D059F577 /* FeedFetchBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595D303FD10CB2456A989DC /* FeedFetchBatch.swift */; };
 		7814FE910506FDA2317F6948 /* CountriesListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42288409482593B7D53AB4CE /* CountriesListScreen.swift */; };
@@ -111,7 +110,6 @@
 		AABCAE92C1E148558D414CB0 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		AE5156605BFFD0C2F3D02E93 /* RegionDetailScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RegionDetailScreen.swift; path = Views/RegionDetailScreen.swift; sourceTree = "<group>"; };
 		B126A0070B10B3C716D2C0C7 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
-		B416A9F2FBED61538361B41D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		BF1685743420892F86C34AC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C08ABDEC67E17B5A4BF8916C /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		C15E7A90D2773F4370B149BA /* FeedSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSource.swift; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 				51C91A94F430AE1B1D8F7255 /* MomentGreeting.swift */,
 				B126A0070B10B3C716D2C0C7 /* NetworkMonitor.swift */,
 				D43637F484CFF16738302685 /* OPMLParser.swift */,
-				B416A9F2FBED61538361B41D /* PersistenceManager.swift */,
 				66AAEEDBB109C8C6CAC336D6 /* RSSFetcher.swift */,
 				5A7C498739974F8AB16D045C /* Reservoir.swift */,
 				26AE7140CB709EB68EA0D2ED /* SessionTracker.swift */,
@@ -456,7 +453,6 @@
 				383519A7AFEFE67C6FB585A9 /* OPMLParseResult.swift in Sources */,
 				3AEC9DE43D74BC03972B2C0B /* OPMLParser.swift in Sources */,
 				240602E100F6F50B835E9420 /* OnboardingTipsView.swift in Sources */,
-				67048E03F4B32DE5C427C442 /* PersistenceManager.swift in Sources */,
 				7D50E979F88694C1588392D8 /* RSSFetcher.swift in Sources */,
 				138DDECADC064B1FA4E59506 /* Reservoir.swift in Sources */,
 				64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */,

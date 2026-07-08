@@ -78,7 +78,7 @@ struct FeedScreen: View {
             if phase == .background {
                 SessionTracker.shared.onBackground()
                 loader.flushWhatsNewQueue()
-                PersistenceManager.shared.saveNow(loader.buildStateWithItems())
+                // PersistenceManager.shared.saveNow(loader.buildStateWithItems()) // REMOVED: migrated to SQLite
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
