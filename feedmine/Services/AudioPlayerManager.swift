@@ -9,6 +9,7 @@ final class AudioPlayerManager {
     private var player: AVPlayer?
     private var timeObserver: Any?
     private var endObserver: NSObjectProtocol?
+    private var statusObserver: NSKeyValueObservation?
 
     private(set) var currentItem: FeedItem?
     private(set) var isPlaying = false
@@ -71,6 +72,18 @@ final class AudioPlayerManager {
         player?.play()
         isPlaying = true
 
+        // Surface load failures (bad URL, ATS block, 404, unsupported media)
+        // instead of sitting silently "playing". Read Sendable values out of
+        // the item before hopping to the main actor.
+        statusObserver = playerItem.observe(\.status, options: [.new]) { [weak self] item, _ in
+            guard item.status == .failed else { return }
+            let message = item.error.map { String(describing: $0) } ?? "unknown error"
+            Task { @MainActor [weak self] in
+                print("[AudioPlayer] playback failed: \(message)")
+                self?.isPlaying = false
+            }
+        }
+
         // End observer for this item. Capture the token so stop() can remove
         // it — otherwise every new item leaks another NotificationCenter
         // observer that is never torn down.
@@ -130,9 +143,11 @@ final class AudioPlayerManager {
         player?.pause()
         if let observer = timeObserver { player?.removeTimeObserver(observer) }
         if let endObserver { NotificationCenter.default.removeObserver(endObserver) }
+        statusObserver?.invalidate()
         player = nil
         timeObserver = nil
         endObserver = nil
+        statusObserver = nil
         currentItem = nil
         isPlaying = false
         currentTime = 0
