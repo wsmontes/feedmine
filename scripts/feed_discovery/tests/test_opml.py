@@ -20,7 +20,7 @@ def test_existing_feed_urls_reads_opml_normalized():
 def test_emit_opml_matches_project_format():
     xml = opml.emit_opml(
         "Iceland",
-        {"News": [("RÚV", "https://www.ruv.is/rss/frettir")]},
+        {"News": [("RÚV", "https://www.ruv.is/rss/frettir", "")]},
         ["News", "Sports"],
     )
     assert xml.startswith('<?xml version="1.0" encoding="UTF-8"?>')
@@ -31,5 +31,20 @@ def test_emit_opml_matches_project_format():
 
 
 def test_emit_opml_escapes_special_chars():
-    xml = opml.emit_opml("X", {"News": [("A & B", "https://a.br/feed?x=1&y=2")]}, ["News"])
+    xml = opml.emit_opml("X", {"News": [("A & B", "https://a.br/feed?x=1&y=2", "")]}, ["News"])
     assert "&amp;" in xml
+
+
+def test_emit_opml_writes_genre_as_category_attr():
+    xml = opml.emit_opml("X", {"Podcasts": [("Pod", "https://p.bo/feed", "Historia")]}, ["Podcasts"])
+    assert 'category="Historia"' in xml
+    assert 'xmlUrl="https://p.bo/feed"' in xml
+
+
+def test_emit_opml_omits_category_when_genre_blank():
+    xml = opml.emit_opml(
+        "X",
+        {"YouTube": [("Chan", "https://www.youtube.com/feeds/videos.xml?channel_id=UCabc", "")]},
+        ["YouTube"],
+    )
+    assert "category=" not in xml

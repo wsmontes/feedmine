@@ -23,7 +23,7 @@ class Config:
     cache_dir: Path = Path("scripts/feed_discovery/cache")
 
 
-def candidates_to_opml_map(candidates: list[Candidate]) -> dict[str, list[tuple[str, str]]]:
+def candidates_to_opml_map(candidates: list[Candidate]) -> dict[str, list[tuple[str, str, str]]]:
     out: dict[str, list[tuple[str, str]]] = {}
     seen: set[str] = set()
     for c in candidates:
@@ -34,7 +34,7 @@ def candidates_to_opml_map(candidates: list[Candidate]) -> dict[str, list[tuple[
             continue
         seen.add(key)
         title = c.title or host_of(c.url)
-        out.setdefault(c.category, []).append((title, c.url))
+        out.setdefault(c.category, []).append((title, c.url, c.genre))
     return out
 
 

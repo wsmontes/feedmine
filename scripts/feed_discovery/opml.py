@@ -36,10 +36,11 @@ def emit_opml(
         if not feeds:
             continue
         lines.append(f"    <outline text={quoteattr(cat)}>")
-        for title, url in feeds:
-            lines.append(
-                f"      <outline title={quoteattr(title)} xmlUrl={quoteattr(url)} type=\"rss\" />"
-            )
+        for title, url, genre in feeds:
+            attrs = f"title={quoteattr(title)} xmlUrl={quoteattr(url)} type=\"rss\""
+            if genre:
+                attrs += f" category={quoteattr(genre)}"
+            lines.append(f"      <outline {attrs} />")
         lines.append("    </outline>")
     lines.append("  </body>")
     lines.append("</opml>")

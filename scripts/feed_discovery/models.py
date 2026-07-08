@@ -23,6 +23,7 @@ class Candidate:
     url: str
     category: str
     title: str = ""
+    genre: str = ""
     source_page: str = ""
     national: bool = False
     national_reason: str = ""
