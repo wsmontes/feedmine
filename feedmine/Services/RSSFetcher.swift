@@ -135,11 +135,26 @@ actor RSSFetcher {
                 }
             }
         }
-        // Fallback: any enclosure URL (audio player validates on playback)
-        if let url = item.enclosure?.attributes?.url, !url.isEmpty {
+        // Fallback: enclosure with a missing/unknown type but an audio file
+        // extension. Do NOT return enclosures that declare a non-audio type
+        // (image/*, video/*, text/html, …) — those were being surfaced as
+        // unplayable "podcasts". Items whose only enclosure isn't audio simply
+        // aren't podcasts.
+        if let enc = item.enclosure?.attributes,
+           let url = enc.url, !url.isEmpty,
+           (enc.type?.isEmpty ?? true),
+           Self.hasAudioFileExtension(url) {
             return url
         }
         return nil
+    }
+
+    /// True if the URL path ends in a common audio file extension. Uses the URL
+    /// path so query strings (e.g. "…/ep.mp3?token=…") don't defeat the match.
+    private static func hasAudioFileExtension(_ url: String) -> Bool {
+        let path = (URL(string: url)?.path ?? url).lowercased()
+        let exts = [".mp3", ".m4a", ".m4b", ".aac", ".ogg", ".oga", ".opus", ".wav", ".flac"]
+        return exts.contains { path.hasSuffix($0) }
     }
 
     private func extractAtomAudio(from entry: AtomFeedEntry) -> String? {
