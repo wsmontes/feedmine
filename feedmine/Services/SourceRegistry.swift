@@ -88,10 +88,18 @@ final class SourceRegistry {
 
     func toggleRegion(_ region: String) {
         if disabledRegions.contains(region) {
+            // Enabling — cascade DOWN to sub-regions and UP to parents
             disabledRegions.remove(region)
             let prefix = "\(region)/"
             for subRegion in sources.map(\.region) where subRegion.hasPrefix(prefix) {
                 disabledRegions.remove(subRegion)
+            }
+            // Cascade UP: enable parent regions
+            var parts = region.split(separator: "/").map(String.init)
+            while parts.count > 1 {
+                parts.removeLast()
+                let parentRegion = parts.joined(separator: "/")
+                disabledRegions.remove(parentRegion)
             }
         } else {
             disabledRegions.insert(region)
@@ -118,7 +126,22 @@ final class SourceRegistry {
 
     func toggleSource(_ sourceURL: String) {
         if disabledSourceIDs.contains(sourceURL) {
+            // Enabling this feed — cascade UP: enable parent region and category
             disabledSourceIDs.remove(sourceURL)
+            // Enable the source's region
+            let region = regionMap[sourceURL] ?? "global"
+            disabledRegions.remove(region)
+            // Enable parent regions up the hierarchy
+            var parts = region.split(separator: "/").map(String.init)
+            while parts.count > 1 {
+                parts.removeLast()
+                let parentRegion = parts.joined(separator: "/")
+                disabledRegions.remove(parentRegion)
+            }
+            // Enable the source's category
+            if let source = sources.first(where: { $0.url == sourceURL }) {
+                disabledCategories.remove(source.category)
+            }
         } else {
             disabledSourceIDs.insert(sourceURL)
         }
