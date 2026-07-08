@@ -98,7 +98,9 @@ final class SessionTracker {
 
     private func updateRoutine() {
         let cal = Calendar.current; let nowHour = cal.component(.hour, from: Date())
-        var matches = 0; let recent = Array(openTimestamps.prefix(7))
+        // suffix, not prefix: timestamps are appended newest-last, so the most
+        // recent opens are at the end. prefix(7) would sample the oldest opens.
+        var matches = 0; let recent = Array(openTimestamps.suffix(7))
         for ts in recent {
             let h = cal.component(.hour, from: ts)
             if abs(h - nowHour) <= 1 { matches += 1 }
