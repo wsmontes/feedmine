@@ -11,6 +11,7 @@ final class FeedStore {
     let scheduler = SourceScheduler()
     let reservoir = Reservoir()
     let fetcher = RSSFetcher()
+    let prefetcher = ImagePrefetcher()
     let networkMonitor = NetworkMonitor()
 
     // MARK: - Public state
@@ -46,6 +47,14 @@ final class FeedStore {
     private func isRegionEnabled(_ item: FeedItem) -> Bool {
         let region = registry.regionFor(sourceURL: item.sourceURL)
         return !registry.disabledRegions.contains(region)
+    }
+
+    /// Prefetch images for items if enabled (default: true).
+    private func prefetchImagesIfEnabled(for items: [FeedItem]) {
+        guard UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true else { return }
+        let urls = items.compactMap { $0.bestImageURL ?? $0.imageURL }
+        guard !urls.isEmpty else { return }
+        Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
     }
 
     /// Apply all active filters to a list of items.
@@ -384,6 +393,7 @@ final class FeedStore {
 
         // Append to reservoir
         reservoir.append(actualNew)
+        prefetchImagesIfEnabled(for: actualNew)
         // Only update visibleItems if no active search
         if !isSearching {
             visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
@@ -409,6 +419,7 @@ final class FeedStore {
             for id in actualNew.map(\.id) { loadedIDs.insert(id) }
         loadedIDsCount = loadedIDs.count
             reservoir.append(actualNew)
+            prefetchImagesIfEnabled(for: actualNew)
             if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
                 reservoir.moveToVisible(count: Reservoir.pageSize)
                 visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
@@ -535,6 +546,7 @@ final class FeedStore {
             print("[FeedStore] seedRegion write error: \(error)")
         }
         await matchPersistentSearches(actualNew)
+        prefetchImagesIfEnabled(for: actualNew)
         return actualNew
     }
 

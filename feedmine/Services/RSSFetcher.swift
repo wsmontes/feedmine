@@ -237,6 +237,9 @@ actor RSSFetcher {
             content: rawContent
         )
 
+        // Resolve relative image URLs against the article URL
+        let resolvedImageURL = resolveImageURL(imageURL, baseURL: link)
+
         // Sanitize: truncate long titles, strip HTML, cap source names
         let sanitizedTitle = strippingHTMLTags(title ?? "Untitled")
             .trimmingCharacters(in: .whitespacesAndNewlines)
@@ -251,7 +254,7 @@ actor RSSFetcher {
             title: truncatedTitle.isEmpty ? "Untitled" : truncatedTitle,
             excerpt: excerpt,
             url: resolvedLink,
-            imageURL: imageURL,
+            imageURL: resolvedImageURL,
             publishedAt: publishedAt ?? Date(),
             audioURL: audioURL,
             duration: duration
@@ -287,6 +290,21 @@ actor RSSFetcher {
         }
 
         return nil
+    }
+
+    /// Resolve a possibly-relative image URL against the article's base URL.
+    private func resolveImageURL(_ imageURL: String?, baseURL: String?) -> String? {
+        guard let raw = imageURL?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
+        // Already absolute
+        if raw.hasPrefix("http://") || raw.hasPrefix("https://") { return raw }
+        // Data URIs — pass through as-is (CachedAsyncImage handles)
+        if raw.hasPrefix("data:") { return raw }
+        // Protocol-relative URL
+        if raw.hasPrefix("//") { return "https:\(raw)" }
+        // Relative URL — resolve against base
+        guard let base = baseURL, let baseURL = URL(string: base) else { return nil }
+        guard let resolved = URL(string: raw, relativeTo: baseURL) else { return nil }
+        return resolved.absoluteString
     }
 
     /// Extract first <img src> from an HTML string.
