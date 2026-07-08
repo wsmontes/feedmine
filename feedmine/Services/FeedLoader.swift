@@ -357,6 +357,8 @@ final class FeedLoader {
     func toggleSource(_ sourceURL: String) { store.registry.toggleSource(sourceURL) }
     func isRegionEnabled(_ region: String) -> Bool { store.registry.isRegionEnabled(region) }
     func isSourceEnabled(_ url: String) -> Bool { store.registry.isSourceEnabled(url) }
+    func toggleCategory(_ category: String) { store.toggleCategory(category) }
+    func isCategoryEnabled(_ category: String) -> Bool { store.isCategoryEnabled(category) }
     var isAnyCountryEnabled: Bool { store.registry.isAnyCountryEnabled }
     var isGlobalFeedsEnabled: Bool { store.registry.isRegionEnabled("global") }
 

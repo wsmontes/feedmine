@@ -9,6 +9,7 @@ final class SourceRegistry {
     var sources: [FeedSource] = []
     var disabledRegions: Set<String> = []
     var disabledSourceIDs: Set<String> = []
+    var disabledCategories: Set<String> = []
 
     // Debug counters
     private(set) var opmlFileCount = 0
@@ -22,6 +23,7 @@ final class SourceRegistry {
         sources.filter { source in
             if disabledSourceIDs.contains(source.url) { return false }
             if disabledRegions.contains(source.region) { return false }
+            if disabledCategories.contains(source.category) { return false }
             return true
         }
     }
@@ -122,8 +124,20 @@ final class SourceRegistry {
         }
     }
 
+    func toggleCategory(_ category: String) {
+        if disabledCategories.contains(category) {
+            disabledCategories.remove(category)
+        } else {
+            disabledCategories.insert(category)
+        }
+    }
+
     func isSourceEnabled(_ sourceURL: String) -> Bool {
         !disabledSourceIDs.contains(sourceURL)
+    }
+
+    func isCategoryEnabled(_ category: String) -> Bool {
+        !disabledCategories.contains(category)
     }
 
     func isRegionEnabled(_ region: String) -> Bool {

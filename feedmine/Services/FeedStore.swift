@@ -312,6 +312,16 @@ final class FeedStore {
         scheduler.lastFetchedAt[sourceURL]
     }
 
+    func isCategoryEnabled(_ category: String) -> Bool {
+        registry.isCategoryEnabled(category)
+    }
+
+    func toggleCategory(_ category: String) {
+        registry.toggleCategory(category)
+        // Category toggle is structural — reload feed
+        Task { await reloadFromSQLite() }
+    }
+
     /// Consecutive failures for a source URL.
     func consecutiveFailures(for sourceURL: String) -> Int {
         scheduler.consecutiveFailures[sourceURL] ?? 0

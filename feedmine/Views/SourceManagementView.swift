@@ -36,6 +36,22 @@ struct SourceManagementView: View {
                     )
                 }
 
+                // Category toggles
+                Section("Categories") {
+                    ForEach(sourcesByCategory, id: \.0) { category, sources in
+                        HStack {
+                            Label("\(category) (\(sources.count))", systemImage: categoryIcon(category))
+                            Spacer()
+                            Toggle("", isOn: Binding(
+                                get: { loader.isCategoryEnabled(category) },
+                                set: { _ in loader.toggleCategory(category) }
+                            ))
+                            .labelsHidden()
+                            .tint(.green)
+                        }
+                    }
+                }
+
                 ForEach(sourcesByCategory, id: \.0) { category, sources in
                     Section {
                         ForEach(sources, id: \.url) { source in
