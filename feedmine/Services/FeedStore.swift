@@ -373,7 +373,7 @@ final class FeedStore {
         loadingState = .idle
     }
 
-    private func reloadFromSQLite() async {
+    private func reloadFromSQLite(prepend: [FeedItem] = []) async {
         guard !isSearching else { return }
         let region = activeRegion
         let category = activeCategory
@@ -393,7 +393,11 @@ final class FeedStore {
                 .limit(200)
                 .fetchAll(db)
         }) ?? []
-        let feedItems = items.map { $0.toFeedItem() }
+        var feedItems = items.map { $0.toFeedItem() }
+        // Prepend seed items at the top so newly enabled region appears first
+        if !prepend.isEmpty {
+            feedItems = prepend + feedItems
+        }
         reservoir.seed(items: feedItems)
         visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
         reservoirCount = reservoir.reservoirCount
@@ -435,11 +439,14 @@ final class FeedStore {
         let sourceURLs = registry.sources.filter { $0.region == region }.map(\.url)
         registry.toggleRegion(region)
         if wasDisabled {
-            // Enabling: prioritize in scheduler, seed + reload sequentially
+            // Enabling: clear memory, seed fresh content, reload from SQLite
             scheduler.prioritize(sourceURLs: sourceURLs)
+            reservoir.clear()
+            visibleItems = []
+            reservoirCount = 0
             Task {
-                await seedRegion(region)
-                await reloadFromSQLite()
+                let seedItems = await seedRegion(region)
+                await reloadFromSQLite(prepend: seedItems)
             }
         } else {
             // Disabling: remove from scheduler, purge from reservoir
@@ -450,16 +457,16 @@ final class FeedStore {
         }
     }
 
-    /// Fetch a seed batch from a newly enabled region and push to top of feed.
-    private func seedRegion(_ region: String) async {
+    /// Fetch a seed batch from a newly enabled region. Returns items to prepend.
+    private func seedRegion(_ region: String) async -> [FeedItem] {
         let regionSources = registry.enabledSources
             .filter { $0.region == region }
             .prefix(10)
-        guard !regionSources.isEmpty else { return }
+        guard !regionSources.isEmpty else { return [] }
         let batch = Array(regionSources)
         let result = await fetcher.fetchAll(batch, maxConcurrent: 10)
         let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
-        guard !actualNew.isEmpty else { return }
+        guard !actualNew.isEmpty else { return [] }
         for id in actualNew.map(\.id) { loadedIDs.insert(id) }
         loadedIDsCount = loadedIDs.count
         // Write to SQLite + record fetch health
@@ -478,14 +485,8 @@ final class FeedStore {
         } catch {
             print("[FeedStore] seedRegion write error: \(error)")
         }
-        // Prepend seed items to visible feed so they appear at top immediately
-        var combined = actualNew
-        combined.append(contentsOf: reservoir.visibleItems)
-        reservoir.seed(items: combined)
-        visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
-        reservoirCount = reservoir.reservoirCount
-        // Match persistent searches against seed items
         await matchPersistentSearches(actualNew)
+        return actualNew
     }
 
     // MARK: - Persistent search
