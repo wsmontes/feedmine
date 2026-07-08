@@ -64,10 +64,11 @@ final class FeedLoader {
             if days < 7 { return "This Week" }
             return "Earlier"
         }
-        let dayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 0
-        let remaining = ["Yesterday", "This Week", "Earlier"]
-        let rotated = (0..<remaining.count).map { remaining[($0 + dayOfYear) % remaining.count] }
-        let order = ["Today"] + rotated
+        // Fixed chronological order. Previously the last three buckets were
+        // rotated by day-of-year, so on 2 of every 3 days "Earlier" (oldest)
+        // rendered above "Yesterday" — these buckets are inherently
+        // time-ordered and must not be shuffled.
+        let order = ["Today", "Yesterday", "This Week", "Earlier"]
         return order.compactMap { title in
             grouped[title].map { DateSection(title: title, items: $0) }
         }
