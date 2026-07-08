@@ -235,9 +235,7 @@
         <outline title="Rezendeevil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7iyparkdas-4UTSL_gktQg" type="rss" />
         <outline title="Cazalbé" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV01vQ2d-ezdmSmRDv614RQ" type="rss" />
       </outline>
-      <outline title="Rezendeevil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7iyparkdas-4UTSL_gktQg" type="rss" />
       <outline title="Gato Galáctico" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF36i9Lahjh7LD4bbJ_27Fw" type="rss" />
-      <outline title="Cazalbé" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV01vQ2d-ezdmSmRDv614RQ" type="rss" />
       <outline title="Gabie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCumU1s-GNQUP18CVmBTcUvg" type="rss" />
       <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
     </outline>
@@ -270,22 +268,5 @@
       <outline title="Brasil de Fato" xmlUrl="https://www.brasildefato.com.br/feed/" type="rss" />
       <outline title="Nexo Políticas Públicas" xmlUrl="https://pp.nexojornal.com.br/feed/" type="rss" />
     </outline>
-    <outline text="Humor">
-      </outline>
-    <outline text="Podcasts">
-      <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
-      <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
-      <outline title="Mamilos" xmlUrl="https://www.b9.com.br/mamilos/feed/" type="rss" />
-      <outline title="Braincast" xmlUrl="https://www.b9.com.br/braincast/feed/" type="rss" />
-      <outline title="Scicast" xmlUrl="https://www.deviante.com.br/podcasts/scicast/feed/" type="rss" />
-      <outline title="Rádio Novelo" xmlUrl="https://radionovelo.com.br/feed/" type="rss" />
-      <outline title="Guten News" xmlUrl="https://gutennews.com.br/feed/" type="rss" />
-      <outline title="99 Vidas" xmlUrl="https://99vidas.com.br/feed/" type="rss" />
-      <outline title="Inteligência Ltda" xmlUrl="https://inteligencialtda.com/feed/" type="rss" />
-    </outline>
-    <outline text="YouTube">
-      <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
-      <outline title="Jovem Nerd" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYhcqPZ1MmEcuTYhRZkyDlA" type="rss" />
-    </outline>
-  </body>
+      </body>
 </opml>

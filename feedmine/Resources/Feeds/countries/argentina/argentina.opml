@@ -29,7 +29,6 @@
     </outline>
     <outline text="Technology">
       <outline title="iProfesional Tecnología" xmlUrl="https://www.iprofesional.com/tecnologia/rss/" type="rss" />
-      <outline title="FayerWayer" xmlUrl="https://www.fayerwayer.com/feed/" type="rss" />
       <outline title="Tecnovortex" xmlUrl="https://www.tecnovortex.com/feed/" type="rss" />
     </outline>
     <outline text="Science">
@@ -61,7 +60,6 @@
       <outline title="El Quinto Beatle" xmlUrl="https://elquintobeatle.com/feed/" type="rss" />
       <outline title="Rock and Ball" xmlUrl="https://www.rockandball.com.ar/feed/" type="rss" />
       <outline title="Silencio" xmlUrl="https://silencio.com.ar/feed/" type="rss" />
-      <outline title="Indie Rocks" xmlUrl="https://indierocks.mx/feed/" type="rss" />
       <outline title="Zona de Obras" xmlUrl="https://zonadeobras.com/feed/" type="rss" />
     </outline>
     <outline text="Food">
@@ -74,7 +72,6 @@
       <outline title="Cultura Geek" xmlUrl="https://www.culturageek.com.ar/feed/" type="rss" />
       <outline title="Malditos Nerds" xmlUrl="https://malditosnerds.com/feed/" type="rss" />
       <outline title="Press Over" xmlUrl="https://pressover.news/feed/" type="rss" />
-      <outline title="GamerFocus" xmlUrl="https://www.gamerfocus.co/feed/" type="rss" />
       <outline title="Tarreo" xmlUrl="https://tarreo.com/feed/" type="rss" />
       <outline title="Última Ficha" xmlUrl="https://ultimaficha.com/feed/" type="rss" />
       <outline title="Atomix" xmlUrl="https://atomix.vg/feed/" type="rss" />
@@ -83,13 +80,10 @@
       <outline title="Weekend" xmlUrl="https://weekend.perfil.com/feed/" type="rss" />
       <outline title="Turismo 530" xmlUrl="https://www.turismo530.com/feed/" type="rss" />
       <outline title="Viajando por Argentina" xmlUrl="https://www.viajandoporargentina.com/feed/" type="rss" />
-      <outline title="Buena Vibra" xmlUrl="https://www.buenavibra.es/argentina/feed/" type="rss" />
     </outline>
     <outline text="Blogs">
       <outline title="El Planteo" xmlUrl="https://elplanteo.com/feed/" type="rss" />
       <outline title="ViaPais" xmlUrl="https://viapais.com.ar/rss/" type="rss" />
-      <outline title="Diario Registrado" xmlUrl="https://www.diarioregistrado.com/rss/" type="rss" />
-      <outline title="La Política Online" xmlUrl="https://www.lapoliticaonline.com/rss/" type="rss" />
     </outline>
     <outline text="Design">
       <outline title="Oink My God" xmlUrl="https://oinkmygod.com/feed/" type="rss" />
@@ -115,12 +109,10 @@
     </outline>
     <outline text="Architecture">
       <outline title="ARQA" xmlUrl="https://arqa.com/feed/" type="rss" />
-      <outline title="Plataforma Arquitectura" xmlUrl="https://www.plataformaarquitectura.cl/cl/feed/" type="rss" />
-      <outline title="Sociedad Central de Arquitectos" xmlUrl="https://socearq.org/feed/" type="rss" />
+<outline title="Sociedad Central de Arquitectos" xmlUrl="https://socearq.org/feed/" type="rss" />
       <outline title="Revista Plot" xmlUrl="https://revistaplot.com/feed/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Paradigma" xmlUrl="https://www.paradigmadigital.com/feed/" type="rss" />
       <outline title="Digital House" xmlUrl="https://www.digitalhouse.com/ar/blog/feed/" type="rss" />
       <outline title="Mercado Libre Tech" xmlUrl="https://medium.com/feed/mercadolibre-tech" type="rss" />
     </outline>
@@ -146,8 +138,5 @@
 <outline text="Politics">
       <outline title="Chequeado" xmlUrl="https://chequeado.com/feed/" type="rss" />
     </outline>
-    <outline text="Podcasts">
-      <outline title="Radio Ambulante" xmlUrl="https://radioambulante.org/feed/" type="rss" />
-    </outline>
-  </body>
+      </body>
 </opml>

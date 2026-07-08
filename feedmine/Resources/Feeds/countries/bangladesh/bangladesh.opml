@@ -48,12 +48,9 @@
       <outline title="Travel Bangladesh" xmlUrl="https://www.travelbangladesh.com/feed/" type="rss" />
     </outline>
     <outline text="Blogs">
-      <outline title="Future Startup Blog" xmlUrl="https://www.futurestartup.com/feed/" type="rss" />
       <outline title="Bangladesh Brand Forum" xmlUrl="https://www.bangladeshbrandforum.com/feed/" type="rss" />
     </outline>
     <outline text="Design">
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Fashion BD" xmlUrl="https://www.fashionbd.com/feed/" type="rss" />
     </outline>
     <outline text="Environment">
@@ -71,25 +68,15 @@
       <outline title="Bangladesh History" xmlUrl="https://www.bangladeshhistory.com/feed/" type="rss" />
     </outline>
     <outline text="Architecture">
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="ArchDaily Bangladesh" xmlUrl="https://www.archdaily.com/country/bangladesh/feed/" type="rss" />
-      <outline title="Build Bangladesh" xmlUrl="https://www.buildbangladesh.com/feed/" type="rss" />
       <outline title="Construction BD" xmlUrl="https://www.constructionbd.com/feed/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="Brain Station 23" xmlUrl="https://www.brainstation-23.com/blog/feed/" type="rss" />
       <outline title="Pathao Engineering" xmlUrl="https://www.pathao.com/blog/feed/" type="rss" />
-      <outline title="Selise Tech" xmlUrl="https://www.selise.ch/blog/feed/" type="rss" />
     </outline>
     <outline text="Business">
       <outline title="Bangladesh Bank" xmlUrl="https://www.bb.org.bd/rss/" type="rss" />
-      <outline title="Future Startup" xmlUrl="https://www.futurestartup.com/feed/" type="rss" />
       <outline title="LightCastle" xmlUrl="https://www.lightcastlebd.com/feed/" type="rss" />
     </outline>
     <outline text="Podcasts">
@@ -99,13 +86,6 @@
       <outline title="Photography Bangladesh" xmlUrl="https://www.photographybangladesh.com/feed/" type="rss" />
     </outline>
     <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="Gadget BD" xmlUrl="https://www.gadgetbd.com/feed/" type="rss" />
       <outline title="iPhone Bangladesh" xmlUrl="https://www.iphonebangladesh.com/feed/" type="rss" />
     </outline>

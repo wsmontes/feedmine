@@ -102,11 +102,9 @@
     <outline text="Design">
       <outline title="Creative Review" xmlUrl="https://www.creativereview.co.uk/feed/" type="rss" />
       <outline title="Design Week" xmlUrl="https://www.designweek.co.uk/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
       <outline title="Design Museum" xmlUrl="https://designmuseum.org/feed/" type="rss" />
       <outline title="V&amp;A Blog" xmlUrl="https://www.vam.ac.uk/blog/feed/" type="rss" />
       <outline title="Grafik" xmlUrl="https://www.grafik.net/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
     </outline>
     <outline text="Environment">
       <outline title="Greenpeace UK" xmlUrl="https://www.greenpeace.org.uk/feed/" type="rss" />
@@ -134,27 +132,12 @@
     </outline>
     <outline text="Architecture">
       <outline title="Architects Journal" xmlUrl="https://www.architectsjournal.co.uk/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
       <outline title="ArchDaily" xmlUrl="https://www.archdaily.com/feed" type="rss" />
       <outline title="The Modern House" xmlUrl="https://www.themodernhouse.com/journal/feed/" type="rss" />
       <outline title="The Spaces" xmlUrl="https://thespaces.com/feed/" type="rss" />
       <outline title="Icon Magazine" xmlUrl="https://www.iconeye.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
     </outline>
-    <outline text="Programming">
-      <outline title="Dev.to UK" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="A List Apart" xmlUrl="https://alistapart.com/main/feed/" type="rss" />
-      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="DZone" xmlUrl="https://feeds.dzone.com/home" type="rss" />
-      <outline title="Codecademy Blog" xmlUrl="https://www.codecademy.com/resources/blog/feed/" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="The GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
-      <outline title="Martin Fowler" xmlUrl="https://martinfowler.com/feed.atom" type="rss" />
-      <outline title="InfoQ" xmlUrl="https://feed.infoq.com/" type="rss" />
-    </outline>
-    <outline text="Business">
+        <outline text="Business">
       <outline title="Financial Times" xmlUrl="https://www.ft.com/rss/home/uk" type="rss" />
       <outline title="BBC Business" xmlUrl="https://feeds.bbci.co.uk/news/business/rss.xml" type="rss" />
       <outline title="Guardian Business" xmlUrl="https://www.theguardian.com/business/rss" type="rss" />

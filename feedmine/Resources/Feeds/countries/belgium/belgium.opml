@@ -36,7 +36,6 @@
     </outline>
     <outline text="Music">
       <outline title="Studio Brussel" xmlUrl="https://stubru.be/rss/" type="rss" />
-      <outline title="Klara" xmlUrl="https://klara.be/rss/" type="rss" />
       <outline title="MNM" xmlUrl="https://mnm.be/rss/" type="rss" />
       <outline title="Dansende Beren" xmlUrl="https://www.dansendeberen.be/feed/" type="rss" />
       <outline title="Luminous Dash" xmlUrl="https://www.luminousdash.be/feed/" type="rss" />
@@ -70,8 +69,6 @@
     </outline>
     <outline text="Design">
       <outline title="WBDM" xmlUrl="https://www.wbdm.be/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
     </outline>
     <outline text="Environment">
       <outline title="Greenpeace Belgium" xmlUrl="https://www.greenpeace.org/belgium/fr/feed/" type="rss" />
@@ -88,20 +85,11 @@
       <outline title="Erfgoed Vlaanderen" xmlUrl="https://www.erfgoed.net/rss/" type="rss" />
     </outline>
     <outline text="Architecture">
-      <outline title="Bouwen Wonen" xmlUrl="https://www.bouwenwonen.net/rss/" type="rss" />
       <outline title="ArchDaily Belgium" xmlUrl="https://www.archdaily.com/country/belgium/feed" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="A+" xmlUrl="https://www.a-plus.be/rss/" type="rss" />
       <outline title="CIVA" xmlUrl="https://www.civa.brussels/rss/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="Drupal BE" xmlUrl="https://drupal.be/rss.xml" type="rss" />
     </outline>
     <outline text="Business">
@@ -114,15 +102,6 @@
       <outline title="Klara Podcasts" xmlUrl="https://klara.be/podcasts/rss/" type="rss" />
       <outline title="Studio Brussel Podcasts" xmlUrl="https://stubru.be/podcasts/rss/" type="rss" />
       <outline title="MNM Podcasts" xmlUrl="https://mnm.be/podcasts/rss/" type="rss" />
-    </outline>
-<outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
 <outline text="Education">
       <outline title="Onderwijs Vlaanderen" xmlUrl="https://onderwijs.vlaanderen.be/feed/" type="rss" />

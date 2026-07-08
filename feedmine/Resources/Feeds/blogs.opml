@@ -23,6 +23,7 @@
       <outline title="Slack Engineering" xmlUrl="https://slack.engineering/feed" type="rss" />
       <outline title="Stripe Blog" xmlUrl="https://stripe.com/blog/feed.rss" type="rss" />
       <outline title="The Old New Thing (Raymond Chen)" xmlUrl="https://devblogs.microsoft.com/oldnewthing/feed" type="rss" />
+      <outline title="Gregory Szorc" xmlUrl="https://gregoryszorc.com/blog/feed/" type="rss" />
     </outline>
     <outline text="Design &amp; UX">
       <outline title="Frank Chimero" xmlUrl="https://frankchimero.com/feed.xml" type="rss" />
@@ -55,8 +56,6 @@
       <outline title="Book Riot" xmlUrl="https://bookriot.com/feed/" type="rss" />
     </outline>
     <outline text="Science &amp; Nature">
-      <outline title="Gregory Szorc" xmlUrl="https://gregoryszorc.com/blog/feed/" type="rss" />
-      <outline title="Bits About Money" xmlUrl="https://www.bitsaboutmoney.com/archive/rss/" type="rss" />
       <outline title="The last word (Stephen Wolfram)" xmlUrl="https://writings.stephenwolfram.com/feed" type="rss" />
       <outline title="Shtetl-Optimized (Scott Aaronson)" xmlUrl="https://scottaaronson.blog/feed/" type="rss" />
       <outline title="Terry Tao" xmlUrl="https://terrytao.wordpress.com/feed/" type="rss" />
@@ -71,11 +70,8 @@
       <outline title="Farnam Street" xmlUrl="https://fs.blog/feed/" type="rss" />
       <outline title="Cal Newport" xmlUrl="https://calnewport.com/feed/" type="rss" />
       <outline title="Ness Labs" xmlUrl="https://nesslabs.com/feed" type="rss" />
-      <outline title="Study Hacks" xmlUrl="https://calnewport.com/feed/" type="rss" />
       <outline title="Scott H Young" xmlUrl="https://www.scotthyoung.com/blog/feed/" type="rss" />
       <outline title="Mark Manson" xmlUrl="https://markmanson.net/feed" type="rss" />
-      <outline title="The Marginalian" xmlUrl="https://www.themarginalian.org/feed/" type="rss" />
-      <outline title="Brain Food (FS)" xmlUrl="https://fs.blog/feed/" type="rss" />
       <outline title="Stratechery Daily Update" xmlUrl="https://stratechery.com/feed/" type="rss" />
       <outline title="The Art of Manliness" xmlUrl="https://www.artofmanliness.com/feed/" type="rss" />
       <outline title="Ribbonfarm" xmlUrl="https://www.ribbonfarm.com/feed/" type="rss" />
@@ -93,7 +89,7 @@
     </outline>
     <outline text="Culture &amp; Society">
       <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="The东山龙" xmlUrl="https://waxy.org/feed/" type="rss" />
+      <outline title="Waxy" xmlUrl="https://waxy.org/feed/" type="rss" />
       <outline title="Boing Boing" xmlUrl="https://boingboing.net/feed" type="rss" />
       <outline title="The New Inquiry" xmlUrl="https://thenewinquiry.com/feed/" type="rss" />
       <outline title="Real Life Magazine" xmlUrl="https://reallifemag.com/feed/" type="rss" />
@@ -155,6 +151,7 @@
       <outline title="Net Interest" xmlUrl="https://www.netinterest.co/feed" type="rss" />
       <outline title="The Diff" xmlUrl="https://www.thediff.co/feed" type="rss" />
       <outline title="Fintech Business Weekly" xmlUrl="https://fintechbusinessweekly.substack.com/feed" type="rss" />
+      <outline title="Bits About Money" xmlUrl="https://www.bitsaboutmoney.com/archive/rss/" type="rss" />
     </outline>
     <outline text="Food &amp; Lifestyle">
       <outline title="Smitten Kitchen" xmlUrl="https://smittenkitchen.com/feed/" type="rss" />
@@ -165,13 +162,11 @@
       <outline title="Minimalist Baker" xmlUrl="https://minimalistbaker.com/feed/" type="rss" />
       <outline title="Cookie and Kate" xmlUrl="https://cookieandkate.com/feed/" type="rss" />
       <outline title="Cup of Jo" xmlUrl="https://cupofjo.com/feed/" type="rss" />
-      <outline title="A Cup of Jo" xmlUrl="https://cupofjo.com/feed/" type="rss" />
       <outline title="A Beautiful Mess" xmlUrl="https://abeautifulmess.com/feed/" type="rss" />
     </outline>
     <outline text="Gaming &amp; Interactive">
       <outline title="Rock Paper Shotgun" xmlUrl="https://www.rockpapershotgun.com/feed" type="rss" />
       <outline title="The Game Developer" xmlUrl="https://www.gamedeveloper.com/rss.xml" type="rss" />
-      <outline title="Gamasutra" xmlUrl="https://www.gamedeveloper.com/rss.xml" type="rss" />
       <outline title="The Bottom Feeder" xmlUrl="https://jeff-vogel.blogspot.com/feeds/posts/default" type="rss" />
       <outline title="Emily Short" xmlUrl="https://emshort.blog/feed/" type="rss" />
       <outline title="Adrian Hon" xmlUrl="https://mssv.net/feed/" type="rss" />

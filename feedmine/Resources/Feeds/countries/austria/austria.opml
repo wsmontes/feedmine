@@ -53,7 +53,6 @@
       <outline title="Kobuk" xmlUrl="https://www.kobuk.at/feed/" type="rss" />
       <outline title="ZackZack" xmlUrl="https://zackzack.at/feed/" type="rss" />
       <outline title="Moment Magazine" xmlUrl="https://www.moment.at/feed/" type="rss" />
-      <outline title="The Gap Blog" xmlUrl="https://www.thegap.at/feed/" type="rss" />
       <outline title="Augustin" xmlUrl="https://www.augustin.or.at/feed/" type="rss" />
       <outline title="Progress" xmlUrl="https://www.progress-online.at/feed/" type="rss" />
       <outline title="Datum" xmlUrl="https://www.datum.at/feed/" type="rss" />
@@ -61,8 +60,6 @@
     <outline text="Design">
       <outline title="Design Austria" xmlUrl="https://www.designaustria.at/rss/" type="rss" />
       <outline title="Design Monat Graz" xmlUrl="https://www.designmonat.at/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Kunst und Design AT" xmlUrl="https://www.kunstunddesign.at/feed/" type="rss" />
     </outline>
     <outline text="Environment">
@@ -81,26 +78,17 @@
     </outline>
     <outline text="Architecture">
       <outline title="Architekturzentrum Wien" xmlUrl="https://www.azw.at/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="ArchDaily AT" xmlUrl="https://www.archdaily.com/country/austria/feed" type="rss" />
       <outline title="Solid" xmlUrl="https://www.solidbau.at/rss/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="Bitmovin Blog" xmlUrl="https://bitmovin.com/feed/" type="rss" />
       <outline title="Runtastic Tech" xmlUrl="https://www.runtastic.com/blog/feed/" type="rss" />
     </outline>
     <outline text="Business">
       <outline title="Der Standard Wirtschaft" xmlUrl="https://www.derstandard.at/wirtschaft/rss" type="rss" />
       <outline title="Brutkasten" xmlUrl="https://www.brutkasten.com/feed/" type="rss" />
-      <outline title="Der Brutkasten" xmlUrl="https://www.derbrutkasten.com/feed/" type="rss" />
-      <outline title="Leadersnet" xmlUrl="https://www.leadersnet.at/rss/" type="rss" />
+<outline title="Leadersnet" xmlUrl="https://www.leadersnet.at/rss/" type="rss" />
     </outline>
     <outline text="Podcasts">
       <outline title="Der Standard Podcasts" xmlUrl="https://www.derstandard.at/podcast/rss" type="rss" />
@@ -110,17 +98,5 @@
       <outline title="Camera Austria" xmlUrl="https://camera-austria.at/rss/" type="rss" />
       <outline title="Der Standard Foto" xmlUrl="https://www.derstandard.at/foto/rss" type="rss" />
     </outline>
-    <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
-    </outline>
-<outline text="Podcasts">
-      <outline title="ORF Podcasts" xmlUrl="https://sound.orf.at/feed/" type="rss" />
-    </outline>
-  </body>
+      </body>
 </opml>

@@ -52,7 +52,6 @@
       <outline title="The Curb" xmlUrl="https://www.thecurb.com.au/feed/" type="rss" />
       <outline title="Screen Hub" xmlUrl="https://www.screenhub.com.au/feed/" type="rss" />
       <outline title="Dark Horizons" xmlUrl="https://www.darkhorizons.com/feed/" type="rss" />
-      <outline title="We Are Movie Geeks" xmlUrl="https://www.wearemoviegeeks.com/feed/" type="rss" />
     </outline>
     <outline text="Music">
       <outline title="Tone Deaf" xmlUrl="https://tonedeaf.thebrag.com/feed/" type="rss" />
@@ -61,14 +60,12 @@
       <outline title="Rolling Stone Australia" xmlUrl="https://au.rollingstone.com/feed/" type="rss" />
       <outline title="Noise11" xmlUrl="https://www.noise11.com/rss" type="rss" />
       <outline title="Purple Sneakers" xmlUrl="https://purplesneakers.com.au/feed/" type="rss" />
-      <outline title="Backseat Mafia" xmlUrl="https://www.backseatmafia.com/feed/" type="rss" />
     </outline>
     <outline text="Food">
       <outline title="Good Food" xmlUrl="https://www.goodfood.com.au/rss/feed.xml" type="rss" />
       <outline title="Gourmet Traveller" xmlUrl="https://www.gourmettraveller.com.au/feed/" type="rss" />
       <outline title="Bounty Parents" xmlUrl="https://www.bountyparents.com.au/feed/" type="rss" />
       <outline title="RecipeTin Eats" xmlUrl="https://www.recipetineats.com/feed/" type="rss" />
-      <outline title="Nagi Recipe" xmlUrl="https://www.recipetineats.com/feed/" type="rss" />
       <outline title="Not Quite Nigella" xmlUrl="https://www.notquitenigella.com/feed/" type="rss" />
     </outline>
     <outline text="Gaming">
@@ -94,7 +91,6 @@
       <outline title="OutInPerth" xmlUrl="https://www.outinperth.com/feed/" type="rss" />
       <outline title="Star Observer" xmlUrl="https://www.starobserver.com.au/feed/" type="rss" />
       <outline title="Women's Agenda" xmlUrl="https://womensagenda.com.au/feed/" type="rss" />
-      <outline title="Independent Australia" xmlUrl="https://independentaustralia.net/feed/" type="rss" />
       <outline title="New Matilda" xmlUrl="https://newmatilda.com/feed/" type="rss" />
     </outline>
     <outline text="Design">
@@ -102,8 +98,6 @@
       <outline title="Habitus Living" xmlUrl="https://www.habitusliving.com/feed/" type="rss" />
       <outline title="Yellowtrace" xmlUrl="https://www.yellowtrace.com.au/feed/" type="rss" />
       <outline title="The Design Files" xmlUrl="https://thedesignfiles.net/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Green Magazine" xmlUrl="https://greenmagazine.com.au/feed/" type="rss" />
       <outline title="Artichoke" xmlUrl="https://architectureau.com/rss/" type="rss" />
     </outline>
@@ -133,23 +127,11 @@
       <outline title="Australian Institute of Architects" xmlUrl="https://www.architecture.com.au/rss/" type="rss" />
       <outline title="The Local Project" xmlUrl="https://thelocalproject.com.au/feed/" type="rss" />
       <outline title="ArchDaily AU" xmlUrl="https://www.archdaily.com/country/australia/feed" type="rss" />
-      <outline title="Houses Magazine" xmlUrl="https://architectureau.com/rss/" type="rss" />
-      <outline title="Green Magazine" xmlUrl="https://greenmagazine.com.au/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
-      <outline title="Yellowtrace" xmlUrl="https://www.yellowtrace.com.au/feed/" type="rss" />
-      <outline title="Habitus" xmlUrl="https://www.habitusliving.com/feed/" type="rss" />
       <outline title="Est Living" xmlUrl="https://www.estliving.com/feed/" type="rss" />
     </outline>
     <outline text="Programming">
       <outline title="Atlassian Dev Blog" xmlUrl="https://blog.developer.atlassian.com/feed/" type="rss" />
       <outline title="SitePoint" xmlUrl="https://www.sitepoint.com/feed/" type="rss" />
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
     </outline>
     <outline text="Business">
       <outline title="Smart Company" xmlUrl="https://www.smartcompany.com.au/feed/" type="rss" />
@@ -169,18 +151,7 @@
       <outline title="Focus Magazine" xmlUrl="https://www.focusmag.com.au/feed/" type="rss" />
       <outline title="Australian Geographic Photos" xmlUrl="https://www.australiangeographic.com.au/photography/feed/" type="rss" />
     </outline>
-    <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
-      <outline title="The Mac Observer" xmlUrl="https://www.macobserver.com/feed/" type="rss" />
-      <outline title="Macworld" xmlUrl="https://www.macworld.com/feed/" type="rss" />
-    </outline>
-    <outline text="YouTube">
+        <outline text="YouTube">
       <outline title="Mighty Car Mods" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgJRL30YS6XFxq9Ga8W2J3A" type="rss" />
       <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
       <outline title="LazarBeam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw1SQ6QRRtfAhrN_cjkrOgA" type="rss" />
