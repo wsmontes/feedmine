@@ -8,6 +8,7 @@ final class AudioPlayerManager {
 
     private var player: AVPlayer?
     private var timeObserver: Any?
+    private var endObserver: NSObjectProtocol?
 
     private(set) var currentItem: FeedItem?
     private(set) var isPlaying = false
@@ -70,8 +71,10 @@ final class AudioPlayerManager {
         player?.play()
         isPlaying = true
 
-        // End observer for this item
-        NotificationCenter.default.addObserver(
+        // End observer for this item. Capture the token so stop() can remove
+        // it — otherwise every new item leaks another NotificationCenter
+        // observer that is never torn down.
+        endObserver = NotificationCenter.default.addObserver(
             forName: .AVPlayerItemDidPlayToEndTime,
             object: playerItem,
             queue: .main
@@ -126,8 +129,10 @@ final class AudioPlayerManager {
     func stop() {
         player?.pause()
         if let observer = timeObserver { player?.removeTimeObserver(observer) }
+        if let endObserver { NotificationCenter.default.removeObserver(endObserver) }
         player = nil
         timeObserver = nil
+        endObserver = nil
         currentItem = nil
         isPlaying = false
         currentTime = 0
