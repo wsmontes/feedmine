@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Queensland Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Brisbane Times" xmlUrl="https://www.brisbanetimes.com.au/rss/feed.xml" type="rss" />
+      <outline title="Cairns Post" xmlUrl="https://www.cairnspost.com.au/feed/" type="rss" />
+    </outline>
+<outline text="Business">
+      <outline title="Chamber of Commerce Queensland" xmlUrl="https://www.cciq.com.au/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hong Kong Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="SCMP HK" xmlUrl="https://www.scmp.com/rss/4/feed" type="rss" />
+        <outline title="Hong Kong FP" xmlUrl="https://hongkongfp.com/feed/" type="rss" />
+        <outline title="The Standard" xmlUrl="https://www.thestandard.com.hk/rss" type="rss" />
+        <outline title="RTHK News" xmlUrl="https://rthk.hk/rss/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Business" />
+      <outline text="Education">
+        <outline title="HKU" xmlUrl="https://www.hku.hk/rss" type="rss" />
+      </outline></body>
+    </opml>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cantabria Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="El Diario Montañés" xmlUrl="https://www.eldiariomontanes.es/feed/" type="rss" />
+      <outline title="Gobierno de Cantabria" xmlUrl="https://www.cantabria.es/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

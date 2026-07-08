@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Piauí Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Portal O Dia" xmlUrl="https://www.portalodia.com/feed/" type="rss" />
+        <outline title="Governo do Piauí" xmlUrl="https://www.pi.gov.br/feed/" type="rss" />
+        <outline title="Prefeitura de Teresina" xmlUrl="https://www.teresina.pi.gov.br/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+      </outline>
+      <outline text="Culture">
+        <outline title="Cultura PI" xmlUrl="https://www.cultura.pi.gov.br/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="UESPI" xmlUrl="https://www.uespi.br/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+      </outline>
+      <outline text="Blogs">
+        <outline title="Piauí Hoje" xmlUrl="https://piauihoje.com/feed/" type="rss" />
+      </outline></body>
+      <outline text="Podcasts">
+        <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+        <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+      </outline>
+      <outline text="YouTube">
+        <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+        <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+      </outline>
+      <outline text="Cities">
+        <outline text="Parnaíba">
+          <outline title="Parnaíba News" xmlUrl="https://www.parnaibanews.com.br/feed/" type="rss" />
+          <outline title="Pref Parnaíba" xmlUrl="https://www.parnaiba.pi.gov.br/feed/" type="rss" />
+        </outline>
+      </outline>
+
+    </opml>

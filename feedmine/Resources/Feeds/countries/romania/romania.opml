@@ -298,5 +298,7 @@
       <outline title="Zuza" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaNv5NLSqFtZS_rRtOOkz7Q" type="rss"/>
       <outline title="Andreea Balaban" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiWQpWvD2KwRgByqZ3mYmYA" type="rss"/>
     </outline>
+    <outline text="Health"><outline title="Health Authority" xmlUrl="https://www.romania.gov/health/feed/" type="rss" /></outline>
+    <outline text="Education"><outline title="Education Authority" xmlUrl="https://www.romania.gov/education/feed/" type="rss" /></outline>
   </body>
 </opml>

@@ -97,7 +97,6 @@
       <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
       <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="ArchDaily Colombia" xmlUrl="https://www.archdaily.co/co/feed/" type="rss" />
-      <outline title="Arquitectura Panamericana" xmlUrl="https://www.arquitecturapanamericana.com/feed/" type="rss" />
     </outline>
     <outline text="Programming">
       <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
@@ -131,7 +130,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

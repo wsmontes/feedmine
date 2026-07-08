@@ -7,10 +7,15 @@ struct Country: Identifiable, Hashable {
     let flag: String            // "🇧🇷"
     let feedCount: Int
     let categories: [String]
+    /// Sub-regions within this country (e.g., states, provinces).
+    /// Empty when the country has no region-level OPML files.
+    let regions: [Region]
 
     var slug: String {
         region.replacingOccurrences(of: "countries/", with: "")
     }
+
+    var hasRegions: Bool { !regions.isEmpty }
 }
 
 enum CountryStore {

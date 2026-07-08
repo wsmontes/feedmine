@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Rondônia Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Rondoniagora" xmlUrl="https://www.rondoniagora.com/feed/" type="rss" />
+        <outline title="Governo de Rondônia" xmlUrl="https://www.rondonia.ro.gov.br/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Federação Rondoniense" xmlUrl="https://www.ffer.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Cultura RO" xmlUrl="https://www.cultura.ro.gov.br/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="UNIR" xmlUrl="https://www.unir.br/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Fecomércio RO" xmlUrl="https://www.fecomercio-ro.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Blogs">
+      </outline></body>
+    </opml>

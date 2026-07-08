@@ -23,18 +23,15 @@
       <outline title="Cuti UY" xmlUrl="https://www.cuti.org.uy/rss/" type="rss" />
       <outline title="Digital Uruguay" xmlUrl="https://www.digitaluruguay.com/feed/" type="rss" />
     </outline>
-    <outline text="Science" />
-    <outline text="Culture">
+<outline text="Culture">
       <outline title="Uruguay Culture" xmlUrl="https://www.uruguayculture.com/feed/" type="rss" />
       <outline title="Sodre" xmlUrl="https://www.sodre.gub.uy/rss/" type="rss" />
     </outline>
-    <outline text="Music" />
-    <outline text="Food">
+<outline text="Food">
       <outline title="Uruguay Food" xmlUrl="https://www.uruguayfood.com/feed/" type="rss" />
       <outline title="Asado Uruguay" xmlUrl="https://www.asadouruguayo.com/feed/" type="rss" />
     </outline>
     <outline text="Travel">
-      <outline title="Uruguay Travel" xmlUrl="https://www.uruguaynatural.com/rss/" type="rss" />
       <outline title="Buquebus" xmlUrl="https://www.buquebus.com/rss/" type="rss" />
       <outline title="Explore Uruguay" xmlUrl="https://www.exploreuruguay.com/feed/" type="rss" />
       <outline title="Termas Uruguay" xmlUrl="https://www.termasuruguay.com/rss/" type="rss" />
@@ -60,6 +57,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

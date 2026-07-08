@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Puglia Feeds</title>
+  </head>
+  <body>
+<outline text="Sports">
+      <outline title="Lecce" xmlUrl="https://www.uslecce.it/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Università di Bari" xmlUrl="https://www.uniba.it/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Provence-Alpes-Côte d'Azur Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Nice-Matin" xmlUrl="https://www.nicematin.com/rss" type="rss" />
+        <outline title="France 3 PACA" xmlUrl="https://france3-regions.francetvinfo.fr/provence-alpes-cote-d-azur/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education" /></body>
+    </opml>

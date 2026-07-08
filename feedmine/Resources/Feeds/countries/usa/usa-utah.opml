@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Utah Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Salt Lake Tribune" xmlUrl="https://www.sltrib.com/rss" type="rss" />
+        <outline title="Daily Herald (Provo)" xmlUrl="https://www.heraldextra.com/rss" type="rss" />
+        <outline title="Standard-Examiner (Ogden)" xmlUrl="https://www.standard.net/rss" type="rss" />
+        <outline title="Park Record" xmlUrl="https://www.parkrecord.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Governor Cox" xmlUrl="https://governor.utah.gov/rss" type="rss" />
+      </outline>
+      <outline text="Business" />
+      <outline text="Education" />
+      <outline text="Sports" />
+      <outline text="Culture" /></body>
+    </opml>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Berlin Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Berliner Zeitung" xmlUrl="https://www.berliner-zeitung.de/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="HU Berlin" xmlUrl="https://www.hu-berlin.de/rss" type="rss" />
+      </outline></body>
+    </opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gelderland Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      </outline>
+    <outline text="Sports">
+      <outline title="Vitesse" xmlUrl="https://www.vitesse.nl/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      </outline>
+  </body>
+</opml>

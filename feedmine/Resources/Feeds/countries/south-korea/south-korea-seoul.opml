@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Seoul Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="TBS Seoul" xmlUrl="https://tbs.seoul.kr/rss/" type="rss" />
+        <outline title="Seoul News" xmlUrl="https://www.seoulnews.co.kr/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Seoul Metro Gov" xmlUrl="https://english.seoul.go.kr/rss" type="rss" />
+        <outline title="Seoul City Gov" xmlUrl="https://www.seoul.go.kr/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Seoul Economy" xmlUrl="https://www.sedaily.com/rss/" type="rss" />
+      </outline>
+      <outline text="Technology" />
+      <outline text="Education">
+        <outline title="Yonsei Univ" xmlUrl="https://www.yonsei.ac.kr/rss" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Seoul Culture" xmlUrl="https://www.seoulculture.co.kr/rss/" type="rss" />
+      </outline></body>
+    </opml>

@@ -190,6 +190,26 @@
     </outline>
     <outline text="YouTube">
       <outline title="Linus Tech Tips" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw" type="rss" />
+      <outline title="AsapSCIENCE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCC552Sd-3nyi_tk2BudLUzA" type="rss" />
+      <outline title="Matt D'Avella" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ24N4O0bP7LGLBDvye7oCA" type="rss" />
     </outline>
-  </body>
+    <outline text="Health">
+      <outline title="Health Canada" xmlUrl="https://www.canada.ca/en/health-canada/news.xml" type="rss" />
+      <outline title="Canadian Mental Health Association" xmlUrl="https://cmha.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="University Affairs" xmlUrl="https://www.universityaffairs.ca/feed/" type="rss" />
+      <outline title="People for Education" xmlUrl="https://peopleforeducation.ca/feed/" type="rss" />
+      <outline title="CERIC" xmlUrl="https://ceric.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="iPolitics" xmlUrl="https://ipolitics.ca/feed/" type="rss" />
+      <outline title="Policy Options" xmlUrl="https://policyoptions.irpp.org/feed/" type="rss" />
+      <outline title="Hill Times" xmlUrl="https://www.hilltimes.com/feed/" type="rss" />
+      <outline title="Rabble.ca" xmlUrl="https://rabble.ca/feed/" type="rss" />
+    </outline>
+<outline text="Photography">
+      <outline title="Canadian Geographic Photo Club" xmlUrl="https://www.canadiangeographic.ca/photo-club/feed/" type="rss" />
+    </outline>
+</body>
 </opml>

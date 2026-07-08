@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Alberta Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Calgary Herald" xmlUrl="https://calgaryherald.com/feed/" type="rss" />
+      <outline title="Edmonton Journal" xmlUrl="https://edmontonjournal.com/feed/" type="rss" />
+      <outline title="Global Edmonton" xmlUrl="https://globalnews.ca/edmonton/feed/" type="rss" />
+      <outline title="Global Calgary" xmlUrl="https://globalnews.ca/calgary/feed/" type="rss" />
+      <outline title="Lethbridge Herald" xmlUrl="https://lethbridgeherald.com/feed/" type="rss" />
+      <outline title="Red Deer Advocate" xmlUrl="https://www.reddeeradvocate.com/feed/" type="rss" />
+      <outline title="Fort McMurray Today" xmlUrl="https://www.fortmcmurraytoday.com/feed/" type="rss" />
+      <outline title="Medicine Hat News" xmlUrl="https://www.medicinehatnews.com/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Calgary Flames" xmlUrl="https://www.nhl.com/flames/feed/" type="rss" />
+      <outline title="Edmonton Oilers" xmlUrl="https://www.nhl.com/oilers/feed/" type="rss" />
+      <outline title="Calgary Stampeders" xmlUrl="https://www.stampeders.com/feed/" type="rss" />
+      <outline title="Edmonton Elks" xmlUrl="https://www.goelks.com/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Calgary Arts Development" xmlUrl="https://calgaryartsdevelopment.com/feed/" type="rss" />
+    </outline>
+<outline text="Business">
+      <outline title="Calgary Chamber" xmlUrl="https://www.calgarychamber.com/feed/" type="rss" />
+      <outline title="Edmonton Chamber" xmlUrl="https://www.edmontonchamber.com/feed/" type="rss" />
+    </outline>
+    <outline text="Cities">
+<outline text="Jasper">
+        <outline title="Jasper Fitzhugh" xmlUrl="https://www.fitzhugh.ca/feed/" type="rss" />
+      </outline>
+      <outline text="Grande Prairie">
+        <outline title="Daily Herald Tribune" xmlUrl="https://www.dailyheraldtribune.com/feed/" type="rss" />
+      </outline>
+    </outline>
+  </body>
+</opml>

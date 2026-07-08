@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Henan Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Henan Daily" xmlUrl="https://www.henandaily.cn/rss/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Business" />
+      <outline text="Education" /></body>
+    </opml>

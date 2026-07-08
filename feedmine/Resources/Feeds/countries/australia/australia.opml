@@ -181,6 +181,22 @@
       <outline title="Macworld" xmlUrl="https://www.macworld.com/feed/" type="rss" />
     </outline>
     <outline text="YouTube">
-      </outline>
-  </body>
+      <outline title="Mighty Car Mods" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgJRL30YS6XFxq9Ga8W2J3A" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="LazarBeam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw1SQ6QRRtfAhrN_cjkrOgA" type="rss" />
+    </outline>
+    <outline text="Health">
+      <outline title="Australian Department of Health" xmlUrl="https://www.health.gov.au/news/feed" type="rss" />
+      <outline title="Beyond Blue" xmlUrl="https://www.beyondblue.org.au/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="The Conversation AU" xmlUrl="https://theconversation.com/au/articles.atom" type="rss" />
+      <outline title="Universities Australia" xmlUrl="https://www.universitiesaustralia.edu.au/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="The Mandarin" xmlUrl="https://www.themandarin.com.au/feed/" type="rss" />
+      <outline title="Pearls and Irritations" xmlUrl="https://johnmenadue.com/feed/" type="rss" />
+      <outline title="Independent Australia" xmlUrl="https://independentaustralia.net/feed/" type="rss" />
+    </outline>
+</body>
 </opml>

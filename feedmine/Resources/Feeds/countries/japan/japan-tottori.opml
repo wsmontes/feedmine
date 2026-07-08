@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tottori Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics">
+        <outline title="Tottori Pref Gov" xmlUrl="https://www.pref.tottori.lg.jp/rss/" type="rss" />
+      </outline></body>
+    </opml>

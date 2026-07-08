@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Lombardia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Regione Lombardia" xmlUrl="https://www.regione.lombardia.it/wps/portal/istituzionale/feed" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="AC Milan" xmlUrl="https://www.acmilan.com/feed/" type="rss" />
+    </outline>
+<outline text="Cities">
+<outline text="Bergamo">
+        <outline title="Bergamo News" xmlUrl="https://www.bergamonews.it/feed/" type="rss" />
+      </outline>
+    </outline>
+  </body>
+</opml>

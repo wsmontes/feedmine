@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Himachal Pradesh Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Shimla" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128669665.cms" type="rss" />
+        <outline title="Amar Ujala HP" xmlUrl="https://www.amarujala.com/himachal-pradesh/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="HP Gov" xmlUrl="https://himachal.nic.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="NIT Hamirpur" xmlUrl="https://www.nith.ac.in/rss" type="rss" />
+      </outline></body>
+    </opml>

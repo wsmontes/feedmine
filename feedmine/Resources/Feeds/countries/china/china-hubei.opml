@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hubei Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Wuhan Daily" xmlUrl="https://www.wuhan.gov.cn/rss" type="rss" />
+        <outline title="Changjiang Daily" xmlUrl="https://www.cjn.cn/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Wuhan Gov" xmlUrl="http://www.wuhan.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Business" />
+      <outline text="Technology" />
+      <outline text="Education" /></body>
+    </opml>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Murcia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="La Verdad" xmlUrl="https://www.laverdad.es/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

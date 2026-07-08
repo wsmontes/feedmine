@@ -152,5 +152,18 @@
       <outline title="El Xokas" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7iUxlTpWmbXr3j21HPHtww" type="rss" />
       <outline title="Antena 3" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMSOVP8zZq8BGwAJ2sEtOHw" type="rss" />
     </outline>
+    <outline text="Health">
+      <outline title="Salud a Diario" xmlUrl="https://www.saludadiario.es/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="El País Educación" xmlUrl="https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/educacion/portada" type="rss" />
+      <outline title="Educación 3.0" xmlUrl="https://www.educaciontrespuntocero.com/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="El Confidencial" xmlUrl="https://www.elconfidencial.com/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="La Ruina" xmlUrl="https://www.laruina.com/feed/" type="rss" />
+    </outline>
   </body>
 </opml>

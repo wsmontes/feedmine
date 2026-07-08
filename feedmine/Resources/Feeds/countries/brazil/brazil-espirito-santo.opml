@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Espírito Santo Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Tribuna Online" xmlUrl="https://tribunaonline.com.br/feed/" type="rss" />
+      <outline title="Folha Vitória" xmlUrl="https://www.folhavitoria.com.br/feed/" type="rss" />
+      <outline title="Portal 27" xmlUrl="https://www.portal27.com.br/feed/" type="rss" />
+      <outline title="ES Hoje" xmlUrl="https://www.eshoje.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Rio Branco ES" xmlUrl="https://www.riobrancoes.com.br/feed/" type="rss" />
+      <outline title="Federação Capixaba" xmlUrl="https://www.futebolcapixaba.com/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+        </outline>
+    <outline text="Education">
+      </outline>
+    <outline text="Business">
+      <outline title="FINDES" xmlUrl="https://www.findes.com.br/feed/" type="rss" />
+      <outline title="Fecomércio ES" xmlUrl="https://www.fecomercio-es.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      </outline>
+  </body>
+  <outline text="Podcasts">
+    <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+    <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+    <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Vila Velha">
+      <outline title="Vila Velha News" xmlUrl="https://www.vilavelhanews.com.br/feed/" type="rss" />
+      <outline title="Pref Vila Velha" xmlUrl="https://www.vilavelha.es.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Guarapari">
+      <outline title="Guarapari News" xmlUrl="https://www.guapararinews.com.br/feed/" type="rss" />
+      <outline title="Pref Guarapari" xmlUrl="https://www.guarapari.es.gov.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

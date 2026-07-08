@@ -29,8 +29,7 @@
       <outline title="VE Tech" xmlUrl="https://www.vetech.com/feed/" type="rss" />
       <outline title="App VE" xmlUrl="https://www.appve.com/feed/" type="rss" />
     </outline>
-    <outline text="Science" />
-    <outline text="Culture">
+<outline text="Culture">
       <outline title="Prodavinci Cultura" xmlUrl="https://www.prodavinci.com/cultura/feed/" type="rss" />
       <outline title="Venezuela Cultura" xmlUrl="https://www.venezuelaculture.com/feed/" type="rss" />
     </outline>
@@ -67,6 +66,5 @@
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="Mac Venezuela" xmlUrl="https://www.macvenezuela.com/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

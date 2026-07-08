@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Delhi Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Delhi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672004.cms" type="rss" />
+        <outline title="Indian Express Delhi" xmlUrl="https://indianexpress.com/section/cities/delhi/feed/" type="rss" />
+        <outline title="The Hindu Delhi" xmlUrl="https://www.thehindu.com/news/cities/Delhi/feeder/default.rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="IIT Delhi" xmlUrl="https://home.iitd.ac.in/rss" type="rss" />
+      </outline>
+      <outline text="Sports" /></body>
+    </opml>

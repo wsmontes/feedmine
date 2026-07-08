@@ -127,9 +127,7 @@
       <outline title="Radio24syv" xmlUrl="https://www.24syv.dk/rss/" type="rss" />
       <outline title="Third Ear" xmlUrl="https://www.thirdear.dk/feed/podcast/" type="rss" />
     </outline>
-    <outline text="Photography">
-      </outline>
-    <outline text="Apple">
+<outline text="Apple">
       <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
       <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
       <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
@@ -138,7 +136,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

@@ -115,9 +115,7 @@
       <outline title="Studio Brussel Podcasts" xmlUrl="https://stubru.be/podcasts/rss/" type="rss" />
       <outline title="MNM Podcasts" xmlUrl="https://mnm.be/podcasts/rss/" type="rss" />
     </outline>
-    <outline text="Photography">
-      </outline>
-    <outline text="Apple">
+<outline text="Apple">
       <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
       <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
       <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
@@ -126,7 +124,11 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+<outline text="Education">
+      <outline title="Onderwijs Vlaanderen" xmlUrl="https://onderwijs.vlaanderen.be/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Politico EU" xmlUrl="https://www.politico.eu/feed/" type="rss" />
+    </outline>
+</body>
 </opml>

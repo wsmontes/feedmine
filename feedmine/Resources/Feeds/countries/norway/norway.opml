@@ -50,9 +50,7 @@
       <outline title="Musikknyheter" xmlUrl="https://www.musikknyheter.no/rss/" type="rss" />
       <outline title="Ballade Musikk" xmlUrl="https://www.ballade.no/musikk/rss/" type="rss" />
     </outline>
-    <outline text="Food">
-      </outline>
-    <outline text="Gaming">
+<outline text="Gaming">
       <outline title="Gamereactor Norge" xmlUrl="https://www.gamereactor.no/rss/" type="rss" />
       <outline title="IGN Nordic" xmlUrl="https://no.ign.com/feed/" type="rss" />
       <outline title="Spillpikene" xmlUrl="https://spillpikene.no/feed/" type="rss" />
@@ -119,9 +117,7 @@
     <outline text="Podcasts">
       <outline title="P3 Podcast" xmlUrl="https://p3.no/podcast/feed/" type="rss" />
     </outline>
-    <outline text="Photography">
-      </outline>
-    <outline text="Apple">
+<outline text="Apple">
       <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
       <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
       <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
@@ -131,7 +127,5 @@
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="iTek" xmlUrl="https://www.itek.no/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

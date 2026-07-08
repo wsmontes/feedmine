@@ -152,5 +152,15 @@
     </outline>
     <outline text="YouTube">
       </outline>
+    <outline text="Health">
+      <outline title="RIVM" xmlUrl="https://www.rivm.nl/rss/" type="rss" />
+    </outline>
+    <outline text="Education">
+      </outline>
+    <outline text="Politics">
+      <outline title="NOS Politiek" xmlUrl="https://feeds.nos.nl/nosnieuwspolitiek" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      </outline>
   </body>
 </opml>

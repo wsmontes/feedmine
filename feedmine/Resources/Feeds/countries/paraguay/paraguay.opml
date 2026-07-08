@@ -18,7 +18,6 @@
       <outline title="Digital PY" xmlUrl="https://www.digitalpy.com/feed/" type="rss" />
     </outline>
     <outline text="Science">
-      <outline title="UCA Paraguay" xmlUrl="https://www.uca.edu.py/rss/" type="rss" />
       <outline title="OMAPA" xmlUrl="https://www.omapa.org.py/feed/" type="rss" />
     </outline>
     <outline text="Culture">
@@ -27,8 +26,7 @@
     <outline text="Music">
       <outline title="Radio Venus" xmlUrl="https://www.venus.com.py/rss/" type="rss" />
     </outline>
-    <outline text="Food" />
-    <outline text="Travel">
+<outline text="Travel">
       <outline title="Asuncion Tourism" xmlUrl="https://www.asuncion.gov.py/rss/" type="rss" />
       <outline title="Itaipu" xmlUrl="https://www.itaipu.gov.py/rss/" type="rss" />
       <outline title="Encarnacion Travel" xmlUrl="https://www.encarnacion.gov.py/rss/" type="rss" />
@@ -54,6 +52,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

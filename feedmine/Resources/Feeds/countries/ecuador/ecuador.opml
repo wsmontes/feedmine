@@ -3,7 +3,7 @@
   <head><title>Ecuador Feeds</title></head>
   <body>
     <outline text="News">
-      <outline title="El Universo" xmlUrl="https://www.eluniverso.com/arc/outboundfeeds/rss/category/noticias/?website=el-universo&sort=first_publish_date:desc&outputType=xml" type="rss" />
+      <outline title="El Universo" xmlUrl="https://www.eluniverso.com/arc/outboundfeeds/rss/category/noticias/?website=el-universo&amp;sort=first_publish_date:desc&amp;outputType=xml" type="rss" />
                         <outline title="BBC Mundo" xmlUrl="https://feeds.bbci.co.uk/mundo/rss.xml" type="rss" />
       <outline title="El País" xmlUrl="https://elpais.com/rss/feed.html" type="rss" />
       <outline title="BBC News" xmlUrl="https://feeds.bbci.co.uk/news/world/rss.xml" type="rss" />
@@ -196,5 +196,7 @@
       <outline title="Apple Newsroom" xmlUrl="https://www.apple.com/newsroom/rss-feed.rss" type="rss" />
       <outline title="Macworld" xmlUrl="https://www.macworld.com/feed" type="rss" />
     </outline>
+    <outline text="Health"><outline title="Health" xmlUrl="https://www.ecuador.gov/health/feed/" type="rss" /></outline>
+    <outline text="Education"><outline title="Education" xmlUrl="https://www.ecuador.gov/edu/feed/" type="rss" /></outline>
   </body>
 </opml>

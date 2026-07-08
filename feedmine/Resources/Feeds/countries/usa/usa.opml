@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>USA National Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="CNN" xmlUrl="https://www.cnn.com/rss" type="rss" />
+        <outline title="NPR News" xmlUrl="https://feeds.npr.org/1001/rss.xml" type="rss" />
+        <outline title="ABC News" xmlUrl="https://abcnews.go.com/abcnews/rss" type="rss" />
+        <outline title="CBS News" xmlUrl="https://www.cbsnews.com/latest/rss/main" type="rss" />
+        <outline title="NBC News" xmlUrl="https://www.nbcnews.com/rss" type="rss" />
+        <outline title="USA Today" xmlUrl="https://rssfeeds.usatoday.com/usatoday-NewsTopStories" type="rss" />
+        <outline title="The Hill" xmlUrl="https://thehill.com/rss" type="rss" />
+        <outline title="Politico" xmlUrl="https://rss.politico.com/congress.xml" type="rss" />
+        <outline title="Time Magazine" xmlUrl="https://time.com/feed/" type="rss" />
+        <outline title="The Atlantic" xmlUrl="https://www.theatlantic.com/feed/all/" type="rss" />
+        <outline title="Vox" xmlUrl="https://www.vox.com/rss/index.xml" type="rss" />
+        <outline title="ProPublica" xmlUrl="https://www.propublica.org/feeds/propublica/main" type="rss" />
+        <outline title="Mother Jones" xmlUrl="https://www.motherjones.com/feed/" type="rss" />
+        <outline title="Slate" xmlUrl="https://slate.com/feeds/all.rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Wall Street Journal" xmlUrl="https://feeds.a.dj.com/rss/RSSWSJD.xml" type="rss" />
+        <outline title="Business Insider" xmlUrl="https://www.businessinsider.com/rss" type="rss" />
+        <outline title="CNBC" xmlUrl="https://www.cnbc.com/id/100003114/device/rss/rss.html" type="rss" />
+        <outline title="Inc." xmlUrl="https://www.inc.com/rss" type="rss" />
+        <outline title="Fast Company" xmlUrl="https://www.fastcompany.com/rss" type="rss" />
+        <outline title="MarketWatch" xmlUrl="https://www.marketwatch.com/rss" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="TechCrunch" xmlUrl="https://techcrunch.com/feed/" type="rss" />
+        <outline title="The Verge" xmlUrl="https://www.theverge.com/rss/index.xml" type="rss" />
+        <outline title="Wired" xmlUrl="https://www.wired.com/feed/rss" type="rss" />
+        <outline title="Ars Technica" xmlUrl="https://feeds.arstechnica.com/arstechnica/index" type="rss" />
+        <outline title="MIT Technology Review" xmlUrl="https://www.technologyreview.com/feed/" type="rss" />
+        <outline title="ZDNet" xmlUrl="https://www.zdnet.com/news/rss.xml" type="rss" />
+        <outline title="Engadget" xmlUrl="https://www.engadget.com/rss.xml" type="rss" />
+        <outline title="Gizmodo" xmlUrl="https://gizmodo.com/rss" type="rss" />
+        <outline title="VentureBeat" xmlUrl="https://venturebeat.com/feed/" type="rss" />
+        <outline title="Hacker News" xmlUrl="https://hnrss.org/frontpage" type="rss" />
+      </outline>
+      <outline text="Science">
+        <outline title="NASA" xmlUrl="https://www.nasa.gov/rss/dyn/breaking_news.rss" type="rss" />
+        <outline title="Nature" xmlUrl="https://www.nature.com/nature.rss" type="rss" />
+        <outline title="CDC" xmlUrl="https://tools.cdc.gov/api/v2/resources/media/132608.rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="ESPN" xmlUrl="https://www.espn.com/espn/rss/news" type="rss" />
+        <outline title="Yahoo Sports" xmlUrl="https://sports.yahoo.com/rss/" type="rss" />
+        <outline title="The Athletic" xmlUrl="https://theathletic.com/feed/" type="rss" />
+        <outline title="NFL.com" xmlUrl="https://www.nfl.com/rss/rsslanding?searchString=home" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="New Yorker" xmlUrl="https://www.newyorker.com/feed/everything" type="rss" />
+        <outline title="Rolling Stone" xmlUrl="https://www.rollingstone.com/rss" type="rss" />
+        <outline title="Variety" xmlUrl="https://variety.com/feed/" type="rss" />
+        <outline title="Hollywood Reporter" xmlUrl="https://www.hollywoodreporter.com/feed/" type="rss" />
+        <outline title="Pitchfork" xmlUrl="https://pitchfork.com/rss/news/" type="rss" />
+        <outline title="Eater" xmlUrl="https://www.eater.com/rss/index.xml" type="rss" />
+        <outline title="Bon Appetit" xmlUrl="https://www.bonappetit.com/feed/rss" type="rss" />
+      </outline>
+      <outline text="Opinion">
+        <outline title="NYT Opinion" xmlUrl="https://rss.nytimes.com/services/xml/rss/nyt/Opinion.xml" type="rss" />
+        <outline title="Washington Post Opinions" xmlUrl="https://feeds.washingtonpost.com/rss/opinions" type="rss" />
+        <outline title="The Dispatch" xmlUrl="https://thedispatch.com/feed/" type="rss" />
+        <outline title="National Review" xmlUrl="https://www.nationalreview.com/feed/" type="rss" />
+        <outline title="The American Conservative" xmlUrl="https://www.theamericanconservative.com/feed/" type="rss" />
+      </outline>
+      <outline text="Podcasts">
+        <outline title="Radiolab" xmlUrl="https://feeds.simplecast.com/EmVW7VGp" type="rss" />
+        <outline title="The Daily (NYT)" xmlUrl="https://feeds.simplecast.com/54nAGcIl" type="rss" />
+        <outline title="Freakonomics Radio" xmlUrl="https://freakonomics.com/feed/" type="rss" />
+        <outline title="Planet Money" xmlUrl="https://feeds.npr.org/510289/podcast.xml" type="rss" />
+        <outline title="Hidden Brain" xmlUrl="https://feeds.npr.org/510308/podcast.xml" type="rss" />
+      </outline>
+      <outline text="YouTube">
+        <outline title="Kurzgesagt" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q" type="rss" />
+        <outline title="LastWeekTonight" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30fQnuvsztQ" type="rss" />
+        <outline title="Vox" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLXo7UDZvByw2ixzpQCufnA" type="rss" />
+        <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+        <outline title="Vsauce" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA" type="rss" />
+        <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss" />
+      </outline>
+    </body>
+    </opml>

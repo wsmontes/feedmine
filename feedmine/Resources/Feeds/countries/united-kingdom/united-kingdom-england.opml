@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>England Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Manchester Evening News" xmlUrl="https://www.manchestereveningnews.co.uk/rss.xml" type="rss" />
+      <outline title="Liverpool Echo" xmlUrl="https://www.liverpoolecho.co.uk/rss.xml" type="rss" />
+      <outline title="Birmingham Mail" xmlUrl="https://www.birminghammail.co.uk/rss.xml" type="rss" />
+    </outline>
+<outline text="Education">
+      <outline title="University of Cambridge" xmlUrl="https://www.cam.ac.uk/news/feed" type="rss" />
+    </outline>
+</body>
+</opml>

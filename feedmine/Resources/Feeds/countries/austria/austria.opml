@@ -119,7 +119,8 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
+<outline text="Podcasts">
+      <outline title="ORF Podcasts" xmlUrl="https://sound.orf.at/feed/" type="rss" />
+    </outline>
   </body>
 </opml>

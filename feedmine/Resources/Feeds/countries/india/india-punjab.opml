@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Punjab Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Chandigarh" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128671069.cms" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="IIT Ropar" xmlUrl="https://www.iitrpr.ac.in/rss" type="rss" />
+      </outline>
+      <outline text="Sports" /></body>
+    </opml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Kerala Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Kochi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128671519.cms" type="rss" />
+        <outline title="The Hindu Kerala" xmlUrl="https://www.thehindu.com/news/national/kerala/feeder/default.rss" type="rss" />
+        <outline title="Indian Express Kerala" xmlUrl="https://indianexpress.com/section/cities/thiruvananthapuram/feed/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="NIT Calicut" xmlUrl="https://www.nitc.ac.in/rss" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Kerala Tourism" xmlUrl="https://www.keralatourism.org/rss" type="rss" />
+      </outline></body>
+    </opml>

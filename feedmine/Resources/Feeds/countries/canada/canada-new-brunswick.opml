@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>New Brunswick Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Telegraph-Journal" xmlUrl="https://tj.news/feed/" type="rss" />
+      <outline title="Global New Brunswick" xmlUrl="https://globalnews.ca/new-brunswick/feed/" type="rss" />
+      <outline title="Times &amp; Transcript (Moncton)" xmlUrl="https://www.timesandtranscript.com/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Moncton Wildcats" xmlUrl="https://chl.ca/lhjmq-wildcats/feed/" type="rss" />
+      <outline title="Saint John Sea Dogs" xmlUrl="https://chl.ca/lhjmq-seadogs/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Beaverbrook Art Gallery" xmlUrl="https://www.beaverbrookartgallery.org/feed/" type="rss" />
+      <outline title="Harvest Music Festival" xmlUrl="https://www.harvestmusicfest.ca/feed/" type="rss" />
+    </outline>
+<outline text="Business">
+      <outline title="Atlantic Chamber of Commerce" xmlUrl="https://www.atlanticchamber.ca/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

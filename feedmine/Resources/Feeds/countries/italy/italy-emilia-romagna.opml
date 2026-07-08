@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Emilia-Romagna Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Il Resto del Carlino" xmlUrl="https://www.ilrestodelcarlino.it/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Bologna FC" xmlUrl="https://www.bolognafc.it/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Cineteca di Bologna" xmlUrl="https://www.cinetecadibologna.it/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

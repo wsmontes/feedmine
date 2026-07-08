@@ -4,18 +4,20 @@ struct OPMLParser {
     /// Scan the app bundle for all .opml files and parse them into FeedSource entries.
     /// Uses Bundle.urls(forResourcesWithExtension:subdirectory:) with fallback to root.
     static func parseAll() async -> OPMLParseResult {
-        // Collect OPML files from Feeds/ and Feeds/countries/
+        // Recursively collect all OPML files under Feeds/ using FileManager.
+        // Bundle.urls(forResourcesWithExtension:subdirectory:) does NOT recurse
+        // into subdirectories, so we enumerate manually to discover files inside
+        // Feeds/countries/{country}/ (country + region OPMLs).
         var opmlFiles: [URL] = []
-        let feedsDir = Bundle.main.urls(forResourcesWithExtension: "opml", subdirectory: "Feeds") ?? []
-        opmlFiles.append(contentsOf: feedsDir)
-        // Also explicitly search countries subdirectory (some bundle layouts
-        // don't recurse with urls(forResourcesWithExtension:subdirectory:)).
-        let countriesDir = Bundle.main.urls(forResourcesWithExtension: "opml", subdirectory: "Feeds/countries") ?? []
-        opmlFiles.append(contentsOf: countriesDir)
+        if let feedsURL = Bundle.main.resourceURL?.appendingPathComponent("Feeds"),
+           let enumerator = FileManager.default.enumerator(at: feedsURL, includingPropertiesForKeys: nil) {
+            while let fileURL = enumerator.nextObject() as? URL {
+                if fileURL.pathExtension == "opml" {
+                    opmlFiles.append(fileURL)
+                }
+            }
+        }
 
-        // Deduplicate by URL
-        var seen = Set<URL>()
-        opmlFiles = opmlFiles.filter { seen.insert($0).inserted }
         opmlFiles.shuffle()
 
         guard !opmlFiles.isEmpty else {
@@ -30,11 +32,24 @@ struct OPMLParser {
             let fileName = fileURL.deletingPathExtension().lastPathComponent
             let region: String = {
                 let components = fileURL.pathComponents
-                if let idx = components.lastIndex(of: "countries") {
-                    let countryFile = components.last ?? fileName
-                    return "countries/\((countryFile as NSString).deletingPathExtension)"
+                // Region encoding: "countries/{country}" for country-level feeds,
+                // "countries/{country}/{region}" for sub-region feeds.
+                guard let countriesIdx = components.lastIndex(of: "countries"),
+                      countriesIdx + 1 < components.count else {
+                    return "global"
                 }
-                return "global"
+                let countryDir = components[countriesIdx + 1]
+                // Main country feed: e.g. brazil.opml inside brazil/ dir
+                if fileName == countryDir {
+                    return "countries/\(countryDir)"
+                }
+                // Region feed: e.g. brazil-acre.opml → countries/brazil/acre
+                if fileName.hasPrefix("\(countryDir)-") {
+                    let regionSlug = String(fileName.dropFirst(countryDir.count + 1))
+                    return "countries/\(countryDir)/\(regionSlug)"
+                }
+                // Fallback for any other file inside a country directory
+                return "countries/\(countryDir)"
             }()
             do {
                 let (sources, invalids) = try parseFile(url: fileURL, fallbackCategory: fileName.capitalized, region: region)

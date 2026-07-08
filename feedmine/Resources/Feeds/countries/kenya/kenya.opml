@@ -108,9 +108,7 @@
       <outline title="How We Made It Africa" xmlUrl="https://www.howwemadeitinafrica.com/feed/" type="rss" />
       <outline title="Disrupt Africa" xmlUrl="https://www.disrupt-africa.com/feed/" type="rss" />
     </outline>
-    <outline text="Podcasts">
-      </outline>
-    <outline text="Photography">
+<outline text="Photography">
       <outline title="Safari Photos" xmlUrl="https://www.safariphotos.com/feed/" type="rss" />
       <outline title="Picha Kenya" xmlUrl="https://www.picha.co.ke/feed/" type="rss" />
     </outline>
@@ -123,7 +121,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

@@ -76,13 +76,10 @@
       <outline title="Craft Saudi" xmlUrl="https://www.craftsaudi.com/feed/" type="rss" />
       <outline title="Decor Saudi" xmlUrl="https://www.decorsaudi.com/feed/" type="rss" />
     </outline>
-    <outline text="History">
-      </outline>
-    <outline text="Architecture">
+<outline text="Architecture">
       <outline title="Omrania" xmlUrl="https://www.omrania.com/rss/" type="rss" />
       <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
       <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
-      <outline title="MOMRA" xmlUrl="https://www.momra.gov.sa/rss/" type="rss" />
       <outline title="GCC Architecture" xmlUrl="https://www.gccarchitecture.com/feed/" type="rss" />
     </outline>
     <outline text="Programming">
@@ -117,7 +114,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

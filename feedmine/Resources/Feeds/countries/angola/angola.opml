@@ -39,8 +39,7 @@
       <outline title="Angolan Music" xmlUrl="https://www.angolanmusic.com/feed/" type="rss" />
       <outline title="Radio Mais" xmlUrl="https://www.radiomais.co.ao/rss/" type="rss" />
     </outline>
-    <outline text="Food" />
-    <outline text="Travel">
+<outline text="Travel">
       <outline title="TAAG" xmlUrl="https://www.taag.com/rss/" type="rss" />
       <outline title="Explore Angola" xmlUrl="https://www.exploreangola.com/feed/" type="rss" />
     </outline>
@@ -65,6 +64,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

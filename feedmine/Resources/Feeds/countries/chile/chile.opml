@@ -7,7 +7,6 @@
     <outline text="News">
       <outline title="La Tercera" xmlUrl="https://www.latercera.com/rss/" type="rss" />
       <outline title="CNN Chile" xmlUrl="https://www.cnnchile.com/rss/" type="rss" />
-      <outline title="CHV Noticias" xmlUrl="https://www.chvnoticias.cl/rss/" type="rss" />
       <outline title="The Clinic" xmlUrl="https://www.theclinic.cl/feed/" type="rss" />
       <outline title="Ciper Chile" xmlUrl="https://www.ciperchile.cl/feed/" type="rss" />
       <outline title="La Cuarta" xmlUrl="https://www.lacuarta.com/rss/" type="rss" />
@@ -131,9 +130,7 @@
       <outline title="Duna FM" xmlUrl="https://www.duna.cl/podcasts/rss/" type="rss" />
       <outline title="Sonar FM" xmlUrl="https://www.sonarfm.cl/podcasts/rss/" type="rss" />
     </outline>
-    <outline text="Photography">
-      </outline>
-    <outline text="Apple">
+<outline text="Apple">
       <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
       <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
       <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
@@ -143,7 +140,8 @@
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="Reifstore Chile" xmlUrl="https://www.reifstore.cl/blog/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
+<outline text="Education">
+      <outline title="Ministerio de Educación" xmlUrl="https://www.mineduc.cl/feed/" type="rss" />
+    </outline>
   </body>
 </opml>

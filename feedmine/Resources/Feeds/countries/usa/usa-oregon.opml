@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Oregon Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Bend Bulletin" xmlUrl="https://www.bendbulletin.com/rss" type="rss" />
+        <outline title="Portland Mercury" xmlUrl="https://www.portlandmercury.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Governor Kotek" xmlUrl="https://www.oregon.gov/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Portland Biz Journal" xmlUrl="https://feeds.bizjournals.com/portland" type="rss" />
+      </outline>
+      <outline text="Technology" />
+      <outline text="Education" />
+      <outline text="Sports" />
+      <outline text="Culture">
+        <outline title="Eater Portland" xmlUrl="https://pdx.eater.com/rss/index.xml" type="rss" />
+      </outline></body>
+    </opml>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Maryland Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Maryland Matters" xmlUrl="https://www.marylandmatters.org/feed/" type="rss" />
+        <outline title="Baltimore Fishbowl" xmlUrl="https://baltimorefishbowl.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Business">
+        <outline title="Baltimore Biz Journal" xmlUrl="https://feeds.bizjournals.com/baltimore" type="rss" />
+      </outline>
+      <outline text="Technology" />
+      <outline text="Education">
+        <outline title="Johns Hopkins" xmlUrl="https://hub.jhu.edu/feed/" type="rss" />
+        <outline title="Univ of Maryland" xmlUrl="https://today.umd.edu/rss" type="rss" />
+        <outline title="UMBC News" xmlUrl="https://umbc.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Ravens" xmlUrl="https://www.baltimoreravens.com/rss" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Baltimore Magazine" xmlUrl="https://www.baltimoremagazine.com/rss" type="rss" />
+      </outline></body>
+    </opml>

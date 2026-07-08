@@ -159,7 +159,8 @@
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="iStore Blog" xmlUrl="https://www.istore.co.za/blog/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+<outline text="Health">
+      <outline title="Department of Health" xmlUrl="https://www.health.gov.za/feed/" type="rss" />
+    </outline>
+</body>
 </opml>

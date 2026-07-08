@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Guangxi Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Nanning Daily" xmlUrl="https://www.nnrb.com.cn/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Guangxi Gov" xmlUrl="http://www.gxzf.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

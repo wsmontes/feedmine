@@ -70,9 +70,7 @@
       <outline title="Business Times" xmlUrl="https://www.businesstimes.com.sg/rss/" type="rss" />
       <outline title="DollarsAndSense" xmlUrl="https://www.dollarsandsense.sg/feed/" type="rss" />
     </outline>
-    <outline text="Podcasts">
-      </outline>
-    <outline text="Photography">
+<outline text="Photography">
       <outline title="The Photographic Society" xmlUrl="https://www.pss.org.sg/rss/" type="rss" />
       <outline title="Canon SG" xmlUrl="https://www.canon.com.sg/rss/" type="rss" />
       <outline title="Objectifs" xmlUrl="https://www.objectifs.com.sg/rss/" type="rss" />
@@ -86,7 +84,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

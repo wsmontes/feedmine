@@ -109,9 +109,7 @@
       <outline title="Stark Suomi" xmlUrl="https://www.stark-suomi.fi/rss/" type="rss" />
       <outline title="Sisustus Blogi" xmlUrl="https://www.sisustusblogi.fi/feed/" type="rss" />
     </outline>
-    <outline text="History">
-      </outline>
-    <outline text="Architecture">
+<outline text="Architecture">
       <outline title="Arkkitehtuurimuseo" xmlUrl="https://www.mfa.fi/rss/" type="rss" />
       <outline title="SAFA" xmlUrl="https://www.safa.fi/rss/" type="rss" />
       <outline title="Rakennuslehti" xmlUrl="https://www.rakennuslehti.fi/rss/" type="rss" />
@@ -154,7 +152,8 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
+<outline text="Health"><outline title="THL" xmlUrl="https://www.thl.fi/feed/" type="rss" /></outline>
+    <outline text="Education"><outline title="Opetushallitus" xmlUrl="https://www.oph.fi/feed/" type="rss" /></outline>
+    <outline text="Politics"><outline title="YLE Politiikka" xmlUrl="https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&amp;conceptIds=18-218287" type="rss" /></outline>
   </body>
 </opml>

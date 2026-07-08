@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>South Australia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="InDaily" xmlUrl="https://indaily.com.au/feed/" type="rss" />
+    </outline>
+<outline text="Education">
+      <outline title="University of Adelaide" xmlUrl="https://www.adelaide.edu.au/news/feed" type="rss" />
+      <outline title="Flinders University" xmlUrl="https://www.flinders.edu.au/news/feed" type="rss" />
+    </outline>
+</body>
+</opml>

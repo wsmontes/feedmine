@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hawaii Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Honolulu Star-Advertiser" xmlUrl="https://www.staradvertiser.com/rss" type="rss" />
+        <outline title="Hawaii Tribune-Herald" xmlUrl="https://www.hawaiitribune-herald.com/rss" type="rss" />
+        <outline title="Maui News" xmlUrl="https://www.mauinews.com/rss" type="rss" />
+        <outline title="The Garden Island (Kauai)" xmlUrl="https://www.thegardenisland.com/rss" type="rss" />
+        <outline title="Civil Beat" xmlUrl="https://www.civilbeat.org/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Governor Green" xmlUrl="https://governor.hawaii.gov/rss" type="rss" />
+        <outline title="HI Legislature" xmlUrl="https://www.capitol.hawaii.gov/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Univ of Hawaii" xmlUrl="https://www.hawaii.edu/rss" type="rss" />
+      </outline>
+      <outline text="Culture" /></body>
+    </opml>

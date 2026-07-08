@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Shaanxi Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics">
+        <outline title="Shaanxi Gov" xmlUrl="http://www.shaanxi.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Technology" />
+      <outline text="Education" /></body>
+    </opml>

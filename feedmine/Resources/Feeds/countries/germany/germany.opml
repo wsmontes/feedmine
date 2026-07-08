@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Germany National Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Der Spiegel" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" type="rss" />
+        <outline title="Süddeutsche Zeitung" xmlUrl="https://rss.sueddeutsche.de/rss/Topthemen" type="rss" />
+        <outline title="FAZ" xmlUrl="https://www.faz.net/rss/aktuell/" type="rss" />
+        <outline title="Die Welt" xmlUrl="https://www.welt.de/feeds/latest.rss" type="rss" />
+        <outline title="Tagesschau" xmlUrl="https://www.tagesschau.de/xml/rss2/" type="rss" />
+        <outline title="taz" xmlUrl="https://taz.de/!p4608;rss/" type="rss" />
+        <outline title="Deutsche Welle" xmlUrl="https://rss.dw.com/xml/rss-en-all" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Handelsblatt" xmlUrl="https://www.handelsblatt.com/contentexport/feed/top-themen" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="Heise Online" xmlUrl="https://www.heise.de/rss/heise-atom.xml" type="rss" />
+        <outline title="Golem.de" xmlUrl="https://rss.golem.de/rss.php?feed=ATOM1.0" type="rss" />
+        <outline title="Netzpolitik.org" xmlUrl="https://netzpolitik.org/feed/" type="rss" />
+      </outline>
+      <outline text="Sports" /></body>
+    </opml>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Andhra Pradesh Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Vizag" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672832.cms" type="rss" />
+        <outline title="The Hindu AP" xmlUrl="https://www.thehindu.com/news/national/andhra-pradesh/feeder/default.rss" type="rss" />
+        <outline title="Eenadu" xmlUrl="https://www.eenadu.net/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="AP Gov" xmlUrl="https://www.ap.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="IIT Tirupati" xmlUrl="https://iittp.ac.in/rss" type="rss" />
+        <outline title="NIT Warangal" xmlUrl="https://www.nitw.ac.in/rss" type="rss" />
+        <outline title="Andhra University" xmlUrl="https://www.andhrauniversity.edu.in/rss" type="rss" />
+      </outline>
+      <outline text="Sports" /></body>
+    </opml>

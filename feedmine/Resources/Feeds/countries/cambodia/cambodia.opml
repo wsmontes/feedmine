@@ -5,7 +5,6 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="Phnom Penh Post" xmlUrl="https://www.phnompenhpost.com/rss/" type="rss" />
       <outline title="Khmer Times" xmlUrl="https://www.khmertimeskh.com/rss/" type="rss" />
       <outline title="Cambodia Daily" xmlUrl="https://www.cambodiadaily.com/rss/" type="rss" />
       <outline title="VOD Cambodia" xmlUrl="https://www.vodenglish.news/feed/" type="rss" />
@@ -29,8 +28,7 @@
     <outline text="Science">
       <outline title="Pannasastra" xmlUrl="https://www.puc.edu.kh/rss/" type="rss" />
     </outline>
-    <outline text="Culture" />
-    <outline text="Music">
+<outline text="Music">
       <outline title="Cambodia Music" xmlUrl="https://www.cambodiamusic.com/feed/" type="rss" />
       <outline title="Khmer Music" xmlUrl="https://www.khmermusic.com/feed/" type="rss" />
       <outline title="Cambodian Music" xmlUrl="https://www.cambodianmusic.org/feed/" type="rss" />
@@ -69,6 +67,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

@@ -54,9 +54,7 @@
       <outline title="Chill FM" xmlUrl="https://www.chillfm.com/rss/" type="rss" />
       <outline title="Wonderfruit" xmlUrl="https://www.wonderfruitfestival.com/rss/" type="rss" />
     </outline>
-    <outline text="Food">
-      </outline>
-    <outline text="Gaming">
+<outline text="Gaming">
       <outline title="Game Monday" xmlUrl="https://www.gamemonday.com/rss/" type="rss" />
       <outline title="Droidsans Gaming" xmlUrl="https://www.droidsans.com/game/rss/" type="rss" />
       <outline title="Compgamer" xmlUrl="https://www.compgamer.com/feed/" type="rss" />
@@ -139,7 +137,5 @@
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="Mac Thai" xmlUrl="https://www.macthai.com/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

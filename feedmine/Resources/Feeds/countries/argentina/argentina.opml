@@ -143,7 +143,11 @@
     <outline text="Apple">
       <outline title="RedUsers Apple" xmlUrl="https://www.redusers.com/noticias/apple/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
+<outline text="Politics">
+      <outline title="Chequeado" xmlUrl="https://chequeado.com/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Radio Ambulante" xmlUrl="https://radioambulante.org/feed/" type="rss" />
+    </outline>
   </body>
 </opml>

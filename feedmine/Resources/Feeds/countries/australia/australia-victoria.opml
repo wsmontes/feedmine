@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Victoria Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="The Age" xmlUrl="https://www.theage.com.au/rss/feed.xml" type="rss" />
+      <outline title="Geelong Advertiser" xmlUrl="https://www.geelongadvertiser.com.au/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Melbourne Rebels" xmlUrl="https://melbournerebels.rugby/feed/" type="rss" />
+      <outline title="Melbourne Victory" xmlUrl="https://www.melbournevictory.com.au/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="NGV" xmlUrl="https://www.ngv.vic.gov.au/feed/" type="rss" />
+      <outline title="Arts Centre Melbourne" xmlUrl="https://www.artscentremelbourne.com.au/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

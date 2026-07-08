@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Paraíba Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Jornal da Paraíba" xmlUrl="https://www.jornaldaparaiba.com.br/feed/" type="rss" />
+      <outline title="Portal Correio" xmlUrl="https://portalcorreio.com.br/feed/" type="rss" />
+      <outline title="Mais PB" xmlUrl="https://www.maispb.com.br/feed/" type="rss" />
+      <outline title="Polêmica Paraíba" xmlUrl="https://www.polemicaparaiba.com.br/feed/" type="rss" />
+      <outline title="Governo da Paraíba" xmlUrl="https://www.paraiba.pb.gov.br/feed/" type="rss" />
+      <outline title="Blog do Márcio Rangel" xmlUrl="https://marciorangel.com.br/feed/" type="rss" />
+      <outline title="Paraíba Online" xmlUrl="https://www.paraibaonline.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Botafogo PB" xmlUrl="https://www.botafogopb.com.br/feed/" type="rss" />
+      <outline title="Treze" xmlUrl="https://www.trezefc.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Guia João Pessoa" xmlUrl="https://www.guiajoaopessoa.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="UFPB" xmlUrl="https://www.ufpb.br/feed/" type="rss" />
+      <outline title="UEPB" xmlUrl="https://www.uepb.edu.br/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Inova PB" xmlUrl="https://inovapb.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      </outline>
+    <outline text="Blogs">
+      <outline title="Blog do Heron Cid" xmlUrl="https://www.heroncid.com.br/feed/" type="rss" />
+    </outline>
+  </body>
+  <outline text="Podcasts">
+    <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+    <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+    <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Campina Grande">
+      <outline title="Campina News" xmlUrl="https://www.campinanews.com.br/feed/" type="rss" />
+      <outline title="Pref Campina" xmlUrl="https://www.campinagrande.pb.gov.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

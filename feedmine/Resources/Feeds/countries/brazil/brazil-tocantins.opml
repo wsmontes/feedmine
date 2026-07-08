@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tocantins Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Conexão Tocantins" xmlUrl="https://conexaoto.com.br/feed/" type="rss" />
+      <outline title="Governo do Tocantins" xmlUrl="https://www.to.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Federação Tocantinense" xmlUrl="https://www.ftf.org.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Cultura TO" xmlUrl="https://www.cultura.to.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+        </outline>
+    <outline text="Business">
+      <outline title="Fecomércio TO" xmlUrl="https://www.fecomercioto.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      </outline>
+  </body>
+</opml>

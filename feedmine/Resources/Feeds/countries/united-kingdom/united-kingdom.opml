@@ -189,6 +189,22 @@
     </outline>
     <outline text="YouTube">
       <outline title="DanTDM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCS5Oz6CHmeoF7vSad0qqXfw" type="rss" />
+      <outline title="KSI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVtFOytbRpEvzLjvqGG5gxQ" type="rss" />
+      <outline title="Tom Scott" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A" type="rss" />
+      <outline title="Colin Furze" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp68_FLety0O-n9QU6phsgw" type="rss" />
     </outline>
-  </body>
+    <outline text="Health">
+      <outline title="NHS England News" xmlUrl="https://www.england.nhs.uk/feed/" type="rss" />
+      <outline title="BMJ" xmlUrl="https://www.bmj.com/rss/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="The Conversation UK" xmlUrl="https://theconversation.com/uk/articles.atom" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="BBC Politics" xmlUrl="https://feeds.bbci.co.uk/news/politics/rss.xml" type="rss" />
+      <outline title="Guardian Politics" xmlUrl="https://www.theguardian.com/politics/rss" type="rss" />
+      <outline title="Politics.co.uk" xmlUrl="https://www.politics.co.uk/feed/" type="rss" />
+      <outline title="openDemocracy" xmlUrl="https://www.opendemocracy.net/feed/" type="rss" />
+    </outline>
+</body>
 </opml>

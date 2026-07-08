@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Ontario Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="TVO" xmlUrl="https://www.tvo.org/feed" type="rss" />
+      <outline title="Ontario Government News" xmlUrl="https://news.ontario.ca/en/feed" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Ontario Hockey League" xmlUrl="https://ontariohockeyleague.com/feed/" type="rss" />
+      <outline title="Maple Leafs Hot Stove" xmlUrl="https://mapleleafshotstove.com/feed/" type="rss" />
+      <outline title="Blue Jays Nation" xmlUrl="https://bluejaysnation.com/feed/" type="rss" />
+      <outline title="Raptors Republic" xmlUrl="https://www.raptorsrepublic.com/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="CBC Arts" xmlUrl="https://www.cbc.ca/webfeed/rss/rss-arts" type="rss" />
+      <outline title="TIFF" xmlUrl="https://www.tiff.net/feed/" type="rss" />
+      <outline title="Stratford Festival" xmlUrl="https://www.stratfordfestival.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="McMaster University" xmlUrl="https://www.mcmaster.ca/feed/" type="rss" />
+      <outline title="Western University" xmlUrl="https://news.westernu.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="MaRS Discovery District" xmlUrl="https://www.marsdd.com/feed/" type="rss" />
+      <outline title="Vector Institute" xmlUrl="https://vectorinstitute.ai/feed/" type="rss" />
+      <outline title="TechAlliance" xmlUrl="https://www.techalliance.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Ontario Chamber of Commerce" xmlUrl="https://occ.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="The Agenda with Steve Paikin" xmlUrl="https://www.tvo.org/podcast/the-agenda-with-steve-paikin/feed/" type="rss" />
+      <outline title="ON Politics" xmlUrl="https://www.tvo.org/podcast/onpolitics/feed/" type="rss" />
+    </outline>
+    <outline text="Cities">
+      <outline text="Ottawa">
+        <outline title="Ottawa Citizen" xmlUrl="https://ottawacitizen.com/feed/" type="rss" />
+      </outline>
+      <outline text="Mississauga">
+        <outline title="City of Mississauga" xmlUrl="https://www.mississauga.ca/feed/" type="rss" />
+      </outline>
+      <outline text="Hamilton">
+        <outline title="Hamilton Spectator" xmlUrl="https://www.thespec.com/feed/" type="rss" />
+      </outline>
+      <outline text="Kitchener-Waterloo">
+        <outline title="Waterloo Region Record" xmlUrl="https://www.therecord.com/feed/" type="rss" />
+      </outline>
+      <outline text="London">
+        <outline title="London Free Press" xmlUrl="https://lfpress.com/feed/" type="rss" />
+      </outline>
+      <outline text="Windsor">
+        <outline title="Windsor Star" xmlUrl="https://windsorstar.com/feed/" type="rss" />
+        <outline title="City of Windsor" xmlUrl="https://www.citywindsor.ca/feed/" type="rss" />
+      </outline>
+    </outline>
+  </body>
+</opml>

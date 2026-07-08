@@ -74,7 +74,6 @@
       <outline title="Daily Edge" xmlUrl="https://www.dailyedge.ie/feed/" type="rss" />
       <outline title="The Liberal" xmlUrl="https://www.theliberal.ie/feed/" type="rss" />
       <outline title="The Currency" xmlUrl="https://www.thecurrency.news/feed/" type="rss" />
-      <outline title="Dublin People" xmlUrl="https://www.dublinpeople.com/rss/" type="rss" />
     </outline>
     <outline text="Design">
       <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
@@ -144,5 +143,5 @@
     <outline text="YouTube">
       <outline title="Jacksepticeye" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYzPXprvl5Y-Sf0g4vX-m6g" type="rss" />
     </outline>
-  </body>
+</body>
 </opml>

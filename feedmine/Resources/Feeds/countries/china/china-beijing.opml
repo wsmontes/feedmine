@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0"><head><title>Beijing Feeds</title></head><body>
+<outline text="News">
+<outline title="Beijing Daily" xmlUrl="https://www.bjd.com.cn/rss/" type="rss"/>
+<outline title="Beijing Evening News" xmlUrl="https://www.bjwb.com.cn/rss/" type="rss"/>
+<outline title="Beijing News" xmlUrl="https://www.bjnews.com.cn/rss/" type="rss"/>
+<outline title="China Daily Beijing" xmlUrl="https://www.chinadaily.com.cn/m/beijing/rss/" type="rss"/>
+<outline title="People's Daily Beijing" xmlUrl="http://bj.people.com.cn/rss/" type="rss"/>
+<outline title="Xinhua Beijing" xmlUrl="http://www.xinhuanet.com/local/bj.htm" type="rss"/>
+<outline title="Beijing Review" xmlUrl="http://www.bjreview.com/rss/" type="rss"/>
+<outline title="Global Times Metro" xmlUrl="https://www.globaltimes.cn/metro-beijing/rss/" type="rss"/>
+<outline title="Beijing Today" xmlUrl="http://www.chinadaily.com.cn/m/beijing/rss/" type="rss"/>
+<outline title="Beijing TV News" xmlUrl="https://www.btime.com/rss/" type="rss"/>
+</outline>
+<outline text="Politics">
+<outline title="Beijing Gov" xmlUrl="http://www.beijing.gov.cn/rss" type="rss"/>
+<outline title="Beijing Municipal" xmlUrl="https://english.beijing.gov.cn/rss" type="rss"/>
+<outline title="E-Beijing" xmlUrl="http://www.ebeijing.gov.cn/rss" type="rss"/>
+</outline>
+<outline text="Business">
+<outline title="Beijing Business Today" xmlUrl="https://www.bbtnews.com.cn/rss/" type="rss"/>
+<outline title="Beijing Economic Info" xmlUrl="http://www.beinet.net.cn/rss" type="rss"/>
+<outline title="Invest Beijing" xmlUrl="http://www.investbeijing.gov.cn/rss" type="rss"/>
+</outline>
+<outline text="Technology">
+<outline title="Zhongguancun News" xmlUrl="https://www.zgcnews.com/rss/" type="rss"/>
+<outline title="Beijing S&T" xmlUrl="http://www.bjkw.gov.cn/rss" type="rss"/>
+<outline title="Tsinghua Tech Review" xmlUrl="https://www.mittrchina.com/rss/" type="rss"/>
+<outline title="Haidian District" xmlUrl="http://www.bjhd.gov.cn/rss" type="rss"/>
+</outline>
+<outline text="Education">
+<outline title="Tsinghua Univ" xmlUrl="https://news.tsinghua.edu.cn/rss/" type="rss"/>
+<outline title="Peking Univ" xmlUrl="https://news.pku.edu.cn/rss/" type="rss"/>
+<outline title="Renmin Univ" xmlUrl="https://www.ruc.edu.cn/rss" type="rss"/>
+<outline title="Beijing Normal Univ" xmlUrl="https://www.bnu.edu.cn/rss" type="rss"/>
+<outline title="Beihang Univ" xmlUrl="https://www.buaa.edu.cn/rss" type="rss"/>
+</outline>
+<outline text="Culture">
+<outline title="Beijing Culture" xmlUrl="http://www.beijingculture.gov.cn/rss" type="rss"/>
+<outline title="Time Out Beijing" xmlUrl="https://www.timeoutbeijing.com/rss/" type="rss"/>
+<outline title="Beijing Tourism" xmlUrl="http://english.visitbeijing.com.cn/rss" type="rss"/>
+</outline>
+</body></opml>

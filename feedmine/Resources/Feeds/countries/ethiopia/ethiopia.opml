@@ -18,13 +18,10 @@
       <outline title="Addis Sport" xmlUrl="https://www.addissport.com/feed/" type="rss" />
       <outline title="Ethio Sport" xmlUrl="https://www.ethiosport.com/feed/" type="rss" />
     </outline>
-    <outline text="Technology" />
-    <outline text="Science">
+<outline text="Science">
       <outline title="Space Science ET" xmlUrl="https://www.etssti.org/rss/" type="rss" />
     </outline>
-    <outline text="Culture" />
-    <outline text="Music" />
-    <outline text="Food">
+<outline text="Food">
       <outline title="Ethiopian Food" xmlUrl="https://www.ethiopianfood.com/feed/" type="rss" />
       <outline title="Ethiopian Cuisine" xmlUrl="https://www.ethiopiancuisine.com/feed/" type="rss" />
       <outline title="Addis Eats" xmlUrl="https://www.addiseats.com/feed/" type="rss" />
@@ -41,7 +38,6 @@
     <outline text="Business">
       <outline title="Capital Ethiopia Biz" xmlUrl="https://www.capitalethiopia.com/business/feed/" type="rss" />
       <outline title="Ethiopian Business" xmlUrl="https://www.ethiopianbusiness.com/feed/" type="rss" />
-      <outline title="2Merkato" xmlUrl="https://www.2merkato.com/rss/" type="rss" />
       <outline title="NBE" xmlUrl="https://www.nbe.gov.et/rss/" type="rss" />
       <outline title="Business Ethiopia" xmlUrl="https://www.businessethiopia.com/feed/" type="rss" />
       <outline title="Ethiopian Chamber" xmlUrl="https://www.ethiopianchamber.com/rss/" type="rss" />
@@ -64,6 +60,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

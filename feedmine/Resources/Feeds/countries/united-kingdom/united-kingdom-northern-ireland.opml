@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Northern Ireland Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="BBC Northern Ireland" xmlUrl="https://feeds.bbci.co.uk/news/northern_ireland/rss.xml" type="rss" />
+    </outline>
+<outline text="Culture">
+      <outline title="Ulster Museum" xmlUrl="https://www.nmni.com/feed/" type="rss" />
+    </outline>
+<outline text="Business">
+      <outline title="Northern Ireland Chamber" xmlUrl="https://www.northernirelandchamber.com/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

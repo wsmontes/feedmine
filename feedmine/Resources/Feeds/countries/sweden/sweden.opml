@@ -15,7 +15,6 @@
     </outline>
     <outline text="Sports">
       <outline title="Sportbladet" xmlUrl="https://www.aftonbladet.se/sportbladet/rss.xml" type="rss" />
-      <outline title="SVT Sport" xmlUrl="https://www.svt.se/sport/rss.xml" type="rss" />
       <outline title="DN Sport" xmlUrl="https://www.dn.se/sport/rss/" type="rss" />
       <outline title="HockeyNews" xmlUrl="https://hockeynews.se/rss/" type="rss" />
       <outline title="Idrottens Affarer" xmlUrl="https://www.idrottensaffarer.se/rss/" type="rss" />
@@ -37,7 +36,6 @@
       <outline title="Forskning.se" xmlUrl="https://www.forskning.se/feed/" type="rss" />
     </outline>
     <outline text="Culture">
-      <outline title="SVT Kultur" xmlUrl="https://www.svt.se/kultur/rss.xml" type="rss" />
       <outline title="Aftonbladet Kultur" xmlUrl="https://www.aftonbladet.se/kultur/rss.xml" type="rss" />
       <outline title="Kultursidan" xmlUrl="https://www.kultursidan.nu/feed/" type="rss" />
       <outline title="Dagens Arena" xmlUrl="https://www.dagensarena.se/rss/" type="rss" />
@@ -161,6 +159,12 @@
     </outline>
     <outline text="YouTube">
       <outline title="PewDiePie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-lHJZR3Gqxm24_Vd_AJ5Yw" type="rss" />
+    </outline>
+<outline text="Politics">
+      <outline title="Dagens Arena" xmlUrl="https://www.dagensarena.se/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="P3 Dokumentär" xmlUrl="https://api.sr.se/api/rss/pod/3966" type="rss" />
     </outline>
   </body>
 </opml>

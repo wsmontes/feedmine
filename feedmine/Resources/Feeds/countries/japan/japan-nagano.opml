@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nagano Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics">
+        <outline title="Nagano Pref Gov" xmlUrl="https://www.pref.nagano.lg.jp/rss/" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

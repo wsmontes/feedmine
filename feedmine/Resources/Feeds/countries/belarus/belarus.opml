@@ -27,8 +27,7 @@
     <outline text="Music">
       <outline title="Belarus Music" xmlUrl="https://www.belarusmusic.com/feed/" type="rss" />
     </outline>
-    <outline text="Food" />
-    <outline text="Travel">
+<outline text="Travel">
       <outline title="Visit Belarus" xmlUrl="https://www.visitbelarus.com/rss/" type="rss" />
       <outline title="Belavia" xmlUrl="https://www.belavia.by/rss/" type="rss" />
       <outline title="Explore Belarus" xmlUrl="https://www.explorebelarus.com/feed/" type="rss" />
@@ -52,6 +51,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

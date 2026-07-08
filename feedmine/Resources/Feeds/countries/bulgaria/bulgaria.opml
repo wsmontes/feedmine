@@ -76,8 +76,7 @@
     <outline text="Environment">
       <outline title="Climate BG" xmlUrl="https://www.climatebg.org/feed/" type="rss" />
     </outline>
-    <outline text="DIY" />
-    <outline text="History">
+<outline text="History">
       <outline title="Bulgarian History" xmlUrl="https://www.bulgarianhistory.org/feed/" type="rss" />
       <outline title="NIM" xmlUrl="https://www.historymuseum.org/rss/" type="rss" />
       <outline title="Archives BG" xmlUrl="https://www.archives.government.bg/rss/" type="rss" />
@@ -120,6 +119,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

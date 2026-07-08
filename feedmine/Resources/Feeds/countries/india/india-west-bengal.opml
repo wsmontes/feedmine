@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>West Bengal Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Kolkata" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672767.cms" type="rss" />
+        <outline title="The Hindu Kolkata" xmlUrl="https://www.thehindu.com/news/cities/kolkata/feeder/default.rss" type="rss" />
+        <outline title="Indian Express Kolkata" xmlUrl="https://indianexpress.com/section/cities/kolkata/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="West Bengal Gov" xmlUrl="https://www.wb.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="IIT Kharagpur" xmlUrl="https://www.iitkgp.ac.in/rss" type="rss" />
+        <outline title="Jadavpur University" xmlUrl="https://www.jaduniv.edu.in/rss" type="rss" />
+        <outline title="IIEST Shibpur" xmlUrl="https://www.iiests.ac.in/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="East Bengal" xmlUrl="https://www.emamieastbengal.com/rss" type="rss" />
+      </outline></body>
+    </opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sachsen Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Sächsische Zeitung" xmlUrl="https://www.saechsische.de/rss" type="rss" />
+        <outline title="Leipziger Volkszeitung" xmlUrl="https://www.lvz.de/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education" />
+      <outline text="Sports">
+        <outline title="RB Leipzig" xmlUrl="https://rbleipzig.com/rss" type="rss" />
+      </outline></body>
+    </opml>

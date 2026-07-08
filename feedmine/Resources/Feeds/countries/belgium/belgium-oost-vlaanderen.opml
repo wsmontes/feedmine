@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Oost-Vlaanderen Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Het Nieuwsblad" xmlUrl="https://www.nieuwsblad.be/rss/" type="rss" />
+    </outline>
+  </body>
+</opml>

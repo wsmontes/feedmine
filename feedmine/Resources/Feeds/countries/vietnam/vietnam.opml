@@ -41,9 +41,7 @@
     <outline text="Gaming">
       <outline title="Thanh Nien Game" xmlUrl="https://www.thanhnien.vn/game/rss/" type="rss" />
     </outline>
-    <outline text="Travel">
-      </outline>
-    <outline text="Blogs">
+<outline text="Blogs">
       <outline title="Sao Star" xmlUrl="https://www.saostar.vn/rss/" type="rss" />
       <outline title="Yeah1" xmlUrl="https://www.yeah1.com/rss/" type="rss" />
       <outline title="Saigoneer" xmlUrl="https://www.saigoneer.com/rss/" type="rss" />
@@ -92,9 +90,7 @@
       <outline title="Nhip Cau Dau Tu" xmlUrl="https://www.nhipcaudautu.vn/rss/" type="rss" />
       <outline title="Doanh Nhan Saigon" xmlUrl="https://www.doanhnhansaigon.vn/rss/" type="rss" />
     </outline>
-    <outline text="Podcasts">
-      </outline>
-    <outline text="Photography">
+<outline text="Photography">
       <outline title="Canon Vietnam" xmlUrl="https://www.canon.com.vn/rss/" type="rss" />
       <outline title="Camera Vietnam" xmlUrl="https://www.cameravietnam.vn/feed/" type="rss" />
     </outline>
@@ -107,7 +103,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

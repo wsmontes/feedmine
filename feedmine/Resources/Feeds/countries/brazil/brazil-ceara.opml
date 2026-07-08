@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Ceará Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Diário do Nordeste" xmlUrl="https://diariodonordeste.verdesmares.com.br/feed/" type="rss" />
+      <outline title="Tribuna do Ceará" xmlUrl="https://tribunadoceara.com.br/feed/" type="rss" />
+      <outline title="Blog do Eliomar" xmlUrl="https://blogdoeliomar.com.br/feed/" type="rss" />
+      <outline title="Sobral em Revista" xmlUrl="https://sobralemrevista.com.br/feed/" type="rss" />
+      <outline title="Portal IN" xmlUrl="https://www.portal.in/feed/" type="rss" />
+      <outline title="CN7" xmlUrl="https://www.cn7.com.br/feed/" type="rss" />
+      <outline title="Badalo" xmlUrl="https://www.badalo.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Fortaleza EC" xmlUrl="https://www.fortaleza1918.com.br/feed/" type="rss" />
+      <outline title="Ferroviário" xmlUrl="https://www.ferroviario.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+        </outline>
+    <outline text="Education">
+      <outline title="UECE" xmlUrl="https://www.uece.br/feed/" type="rss" />
+      <outline title="IFCE" xmlUrl="https://www.ifce.edu.br/feed/" type="rss" />
+      <outline title="URCA" xmlUrl="https://www.urca.br/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Hub Ceará" xmlUrl="https://hubceara.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="FIEC" xmlUrl="https://www.fiec.org.br/feed/" type="rss" />
+      <outline title="Fecomércio CE" xmlUrl="https://www.fecomercio-ce.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      </outline>
+    <outline text="Blogs">
+      </outline>
+  </body>
+  <outline text="Podcasts">
+    <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+    <outline title="Braincast" xmlUrl="https://www.b9.com.br/braincast/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+    <outline title="Meteoro Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6z3Qag1rP8EyQ" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Caucaia">
+      <outline title="Caucaia News" xmlUrl="https://www.caucaianews.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Caucaia" xmlUrl="https://www.caucaia.ce.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Juazeiro do Norte">
+      <outline title="JN News" xmlUrl="https://www.jnnews.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Juazeiro" xmlUrl="https://www.juazeiro.ce.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sobral">
+      <outline title="Sobral em Revista" xmlUrl="https://sobralemrevista.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Sobral" xmlUrl="https://www.sobral.ce.gov.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

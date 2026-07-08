@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Groningen Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Dagblad van het Noorden" xmlUrl="https://www.dvhn.nl/feed/" type="rss" />
+      <outline title="Provincie Groningen" xmlUrl="https://www.provinciegroningen.nl/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="FC Groningen" xmlUrl="https://www.fcgroningen.nl/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      </outline>
+  </body>
+</opml>

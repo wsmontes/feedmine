@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Rio Grande do Sul Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Sul 21" xmlUrl="https://sul21.com.br/feed/" type="rss" />
+        <outline title="Diário Popular (Pelotas)" xmlUrl="https://www.diariopopular.com.br/feed/" type="rss" />
+        <outline title="Jornal Agora (Rio Grande)" xmlUrl="https://www.jornalagora.com.br/feed/" type="rss" />
+        <outline title="Gazeta de Rosário" xmlUrl="https://gazetaderosario.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+      </outline>
+      <outline text="Culture">
+      </outline>
+      <outline text="Education">
+        <outline title="UFRGS" xmlUrl="https://www.ufrgs.br/ufrgs/feed/" type="rss" />
+        <outline title="UFSM" xmlUrl="https://www.ufsm.br/feed/" type="rss" />
+        <outline title="PUCRS" xmlUrl="https://www.pucrs.br/feed/" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="Tecnopuc" xmlUrl="https://www.pucrs.br/tecnopuc/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Fecomércio RS" xmlUrl="https://www.fecomercio-rs.org.br/feed/" type="rss" />
+      </outline>
+      <outline text="Food">
+      </outline>
+      <outline text="Blogs">
+        <outline title="Blog do Luis Nassif" xmlUrl="https://jornalggn.com.br/feed/" type="rss" />
+        <outline title="Coletiva.net" xmlUrl="https://coletiva.net/feed/" type="rss" />
+        <outline title="Poa 24h" xmlUrl="https://poa24horas.com.br/feed/" type="rss" />
+      </outline></body>
+      <outline text="Podcasts">
+        <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+        <outline title="Fronteiras da Ciência" xmlUrl="https://www.ufrgs.br/frontdaciencia/feed/" type="rss" />
+      </outline>
+      <outline text="YouTube">
+        <outline title="Jovem Nerd" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYhcqPZ1MmEcuTYhRZkyDlA" type="rss" />
+        <outline title="Pirula" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdGpd0gOa5igP8F4MzGOZog" type="rss" />
+      </outline>
+      <outline text="Cities">
+        <outline text="Caxias do Sul">
+          <outline title="Pioneiro" xmlUrl="https://pioneiro.clicrbs.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Caxias" xmlUrl="https://www.caxias.rs.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Canoas">
+          <outline title="Diário de Canoas" xmlUrl="https://www.diariodecanoas.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Canoas" xmlUrl="https://www.canoas.rs.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Santa Maria">
+          <outline title="Diário de Santa Maria" xmlUrl="https://www.diariosm.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Santa Maria" xmlUrl="https://www.santamaria.rs.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Gramado">
+          <outline title="Gramado News" xmlUrl="https://www.gramadonews.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Gramado" xmlUrl="https://www.gramado.rs.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Bento Gonçalves">
+          <outline title="Jornal Semanário" xmlUrl="https://www.jornalsemanario.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Bento" xmlUrl="https://www.bentogoncalves.rs.gov.br/feed/" type="rss" />
+        </outline>
+      </outline>
+
+    </opml>

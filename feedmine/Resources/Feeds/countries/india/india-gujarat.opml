@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gujarat Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Ahmedabad" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670844.cms" type="rss" />
+        <outline title="Indian Express Ahmedabad" xmlUrl="https://indianexpress.com/section/cities/ahmedabad/feed/" type="rss" />
+        <outline title="Divya Bhaskar" xmlUrl="https://www.divyabhaskar.co.in/rss" type="rss" />
+        <outline title="Sandesh" xmlUrl="https://www.sandesh.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Gujarat Gov" xmlUrl="https://www.gujaratindia.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Vibrant Gujarat" xmlUrl="https://vibrantgujarat.com/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="NIT Surat" xmlUrl="https://www.svnit.ac.in/rss" type="rss" />
+      </outline>
+      <outline text="Sports" /></body>
+    </opml>

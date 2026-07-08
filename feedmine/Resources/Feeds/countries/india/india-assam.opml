@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Assam Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Guwahati" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670851.cms" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Assam Gov" xmlUrl="https://assam.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

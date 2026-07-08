@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>France National Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Le Monde" xmlUrl="https://www.lemonde.fr/rss/en_continu.xml" type="rss" />
+        <outline title="Le Figaro" xmlUrl="https://www.lefigaro.fr/rss/figaro_actualites.xml" type="rss" />
+        <outline title="France 24" xmlUrl="https://www.france24.com/en/rss" type="rss" />
+        <outline title="France Info" xmlUrl="https://www.francetvinfo.fr/titres.rss" type="rss" />
+        <outline title="Mediapart" xmlUrl="https://www.mediapart.fr/articles/feed" type="rss" />
+      </outline>
+      <outline text="Business" />
+      <outline text="Technology">
+        <outline title="Numerama" xmlUrl="https://www.numerama.com/feed/" type="rss" />
+        <outline title="Le Monde Tech" xmlUrl="https://www.lemonde.fr/pixels/rss_full.xml" type="rss" />
+      </outline>
+      <outline text="Sports" /></body>
+    </opml>

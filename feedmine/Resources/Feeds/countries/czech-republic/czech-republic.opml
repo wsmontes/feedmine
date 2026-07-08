@@ -172,7 +172,8 @@
       <outline title="Jablickar" xmlUrl="https://www.jablickar.cz/rss/" type="rss" />
       <outline title="Letem Svetem Applem" xmlUrl="https://www.letemsvetemapplem.eu/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+<outline text="Health">
+      <outline title="Ministerstvo zdravotnictví" xmlUrl="https://www.mzcr.cz/feed/" type="rss" />
+    </outline>
+</body>
 </opml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Rajasthan Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Jaipur" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672148.cms" type="rss" />
+        <outline title="Indian Express Jaipur" xmlUrl="https://indianexpress.com/section/cities/jaipur/feed/" type="rss" />
+        <outline title="Rajasthan Patrika" xmlUrl="https://www.patrika.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Rajasthan Gov" xmlUrl="https://rajasthan.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="BITS Pilani" xmlUrl="https://www.bits-pilani.ac.in/rss" type="rss" />
+      </outline>
+      <outline text="Sports" />
+      <outline text="Culture" /></body>
+    </opml>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Campania Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Regione Campania" xmlUrl="https://www.regione.campania.it/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Napoli" xmlUrl="https://www.sscnapoli.it/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

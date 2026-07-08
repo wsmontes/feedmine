@@ -102,9 +102,7 @@
       <outline title="Ordem dos Arquitectos" xmlUrl="https://www.ordemdosarquitectos.org/feed/" type="rss" />
       <outline title="Espaço de Arquitetura" xmlUrl="https://espacodearquitetura.com/feed/" type="rss" />
     </outline>
-    <outline text="Programming">
-      </outline>
-    <outline text="Business">
+<outline text="Business">
       <outline title="ECO" xmlUrl="https://eco.sapo.pt/rss" type="rss" />
       <outline title="Observador Economia" xmlUrl="https://observador.pt/seccao/economia/rss/" type="rss" />
       <outline title="SAPO Economia" xmlUrl="https://economia.sapo.pt/rss" type="rss" />
@@ -121,7 +119,5 @@
     <outline text="Apple">
       <outline title="Pplware Apple" xmlUrl="https://pplware.sapo.pt/category/apple/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
-  </body>
+</body>
 </opml>

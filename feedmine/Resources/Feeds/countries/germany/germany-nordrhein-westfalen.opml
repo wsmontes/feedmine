@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nordrhein-Westfalen Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="WAZ" xmlUrl="https://www.waz.de/rss/" type="rss" />
+        <outline title="Ruhr Nachrichten" xmlUrl="https://www.ruhrnachrichten.de/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education" />
+      <outline text="Sports" /></body>
+    </opml>

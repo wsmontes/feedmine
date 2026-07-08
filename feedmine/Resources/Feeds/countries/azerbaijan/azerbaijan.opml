@@ -22,14 +22,10 @@
     <outline text="Science">
       <outline title="Education AZ" xmlUrl="https://www.edu.gov.az/rss/" type="rss" />
     </outline>
-    <outline text="Culture">
-      <outline title="Culture AZ" xmlUrl="https://www.culture.az/feed/" type="rss" />
-    </outline>
-    <outline text="Music">
+<outline text="Music">
       <outline title="Eurovision AZ" xmlUrl="https://www.eurovisionaz.com/feed/" type="rss" />
     </outline>
-    <outline text="Food" />
-    <outline text="Travel">
+<outline text="Travel">
       <outline title="Explore Azerbaijan" xmlUrl="https://www.exploreazerbaijan.com/feed/" type="rss" />
       <outline title="Baku Explorer" xmlUrl="https://www.bakuexplorer.com/feed/" type="rss" />
     </outline>
@@ -54,6 +50,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

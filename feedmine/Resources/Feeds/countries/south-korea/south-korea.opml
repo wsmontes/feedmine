@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>South Korea National Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Yonhap News" xmlUrl="https://en.yna.co.kr/RSS/news.xml" type="rss" />
+        <outline title="Korea Herald" xmlUrl="https://www.koreaherald.com/rss/" type="rss" />
+        <outline title="Korea Times" xmlUrl="https://www.koreatimes.co.kr/www/rss/rss.xml" type="rss" />
+        <outline title="KBS World" xmlUrl="https://world.kbs.co.kr/rss/rss_news.htm" type="rss" />
+        <outline title="Arirang News" xmlUrl="https://www.arirang.com/rss/" type="rss" />
+        <outline title="Hankyoreh" xmlUrl="https://www.hani.co.kr/rss/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Maeil Business" xmlUrl="https://www.mk.co.kr/rss/" type="rss" />
+      </outline>
+      <outline text="Technology" />
+      <outline text="Sports" />
+      <outline text="Culture">
+        <outline title="Soompi" xmlUrl="https://www.soompi.com/rss" type="rss" />
+      </outline></body>
+    </opml>

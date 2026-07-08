@@ -40,8 +40,7 @@
       <outline title="Visit Algeria" xmlUrl="https://www.visitalgeria.com/rss/" type="rss" />
       <outline title="Explore Algeria" xmlUrl="https://www.explorealgeria.com/feed/" type="rss" />
     </outline>
-    <outline text="Business" />
-    <outline text="Programming">
+<outline text="Programming">
       <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
       <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
       <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
@@ -57,6 +56,5 @@
       <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
       <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
-    <outline text="YouTube" />
-  </body>
+</body>
 </opml>

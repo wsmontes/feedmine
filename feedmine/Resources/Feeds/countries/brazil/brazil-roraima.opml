@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Roraima Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Roraima em Tempo" xmlUrl="https://www.roraimaemtempo.com.br/feed/" type="rss" />
+        <outline title="Folha BV" xmlUrl="https://www.folhabv.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+      </outline>
+      <outline text="Culture">
+      </outline>
+      <outline text="Education">
+        <outline title="IFRR" xmlUrl="https://www.ifrr.edu.br/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Fecomércio RR" xmlUrl="https://www.fecomerciorr.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Blogs">
+        <outline title="Boa Vista News" xmlUrl="https://boavistanews.com.br/feed/" type="rss" />
+        <outline title="RR Notícias" xmlUrl="https://rrnoticias.com.br/feed/" type="rss" />
+      </outline></body>
+    </opml>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Zhejiang Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Hangzhou Daily" xmlUrl="https://www.hangzhou.com.cn/rss/" type="rss" />
+        <outline title="Ningbo Daily" xmlUrl="https://www.nbd.com.cn/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Zhejiang Gov" xmlUrl="http://www.zj.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Business" />
+      <outline text="Technology">
+        <outline title="Alibaba News" xmlUrl="https://www.alizila.com/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Zhejiang Univ" xmlUrl="https://www.zju.edu.cn/rss" type="rss" />
+        <outline title="Zhejiang Tech Univ" xmlUrl="https://www.zjut.edu.cn/rss" type="rss" />
+      </outline></body>
+    </opml>

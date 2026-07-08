@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nouvelle-Aquitaine Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Sud Ouest" xmlUrl="https://www.sudouest.fr/rss" type="rss" />
+        <outline title="France 3 N-A" xmlUrl="https://france3-regions.francetvinfo.fr/nouvelle-aquitaine/rss" type="rss" />
+      </outline>
+      <outline text="Politics" /></body>
+    </opml>

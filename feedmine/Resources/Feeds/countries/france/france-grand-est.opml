@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Grand Est Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="DNA Strasbourg" xmlUrl="https://www.dna.fr/rss" type="rss" />
+        <outline title="L'Est Républicain" xmlUrl="https://www.estrepublicain.fr/rss" type="rss" />
+        <outline title="France 3 Grand Est" xmlUrl="https://france3-regions.francetvinfo.fr/grand-est/rss" type="rss" />
+      </outline>
+      <outline text="Politics" /></body>
+    </opml>

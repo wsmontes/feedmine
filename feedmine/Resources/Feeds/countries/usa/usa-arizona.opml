@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Arizona Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="East Valley Tribune" xmlUrl="https://www.eastvalleytribune.com/rss" type="rss" />
+        <outline title="Phoenix New Times" xmlUrl="https://www.phoenixnewtimes.com/feed/" type="rss" />
+        <outline title="Tucson Weekly" xmlUrl="https://www.tucsonweekly.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="AZ Legislature" xmlUrl="https://www.azleg.gov/rss" type="rss" />
+        <outline title="AZ Mirror" xmlUrl="https://www.azmirror.com/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Phoenix Biz Journal" xmlUrl="https://feeds.bizjournals.com/phoenix" type="rss" />
+        <outline title="AZ Big Media" xmlUrl="https://azbigmedia.com/feed/" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="ASU Research" xmlUrl="https://research.asu.edu/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="ASU News" xmlUrl="https://news.asu.edu/rss" type="rss" />
+        <outline title="U Arizona News" xmlUrl="https://news.arizona.edu/rss" type="rss" />
+        <outline title="Northern Arizona U" xmlUrl="https://news.nau.edu/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Coyotes" xmlUrl="https://www.nhl.com/coyotes/rss/news" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Phoenix Magazine" xmlUrl="https://www.phoenixmag.com/feed/" type="rss" />
+      </outline>
+      <outline text="Blogs" /></body>
+    </opml>

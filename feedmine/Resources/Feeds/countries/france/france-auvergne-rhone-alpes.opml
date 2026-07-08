@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Auvergne-Rhône-Alpes Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Le Progrès Lyon" xmlUrl="https://www.leprogres.fr/rss" type="rss" />
+        <outline title="Le Dauphiné Libéré" xmlUrl="https://www.ledauphine.com/rss" type="rss" />
+        <outline title="France 3 AURA" xmlUrl="https://france3-regions.francetvinfo.fr/auvergne-rhone-alpes/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="Univ Lyon 1" xmlUrl="https://www.univ-lyon1.fr/rss" type="rss" />
+      </outline></body>
+    </opml>

@@ -298,5 +298,7 @@
       <outline title="Taiwan Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpViMhIq1lJnXkh3nTcnRSA" type="rss"/>
       <outline title="Formosa TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPVYH2jQfzsSBDRWnT64gXA" type="rss"/>
     </outline>
+    <outline text="Health"><outline title="Health" xmlUrl="https://www.taiwan.gov/health/feed/" type="rss" /></outline>
+    <outline text="Education"><outline title="Education" xmlUrl="https://www.taiwan.gov/edu/feed/" type="rss" /></outline>
   </body>
 </opml>

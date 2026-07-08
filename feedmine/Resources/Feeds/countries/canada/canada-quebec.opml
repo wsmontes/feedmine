@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Quebec Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Radio-Canada Québec" xmlUrl="https://ici.radio-canada.ca/rss/4159" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Montréal Canadiens" xmlUrl="https://www.nhl.com/canadiens/feed/" type="rss" />
+      <outline title="Montréal Alouettes" xmlUrl="https://www.montrealalouettes.com/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Le Canal Auditif" xmlUrl="https://lecanalauditif.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Mila" xmlUrl="https://mila.quebec/en/feed/" type="rss" />
+      <outline title="Québec Numérique" xmlUrl="https://www.quebecnumerique.com/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

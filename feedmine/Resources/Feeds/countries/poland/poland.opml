@@ -155,7 +155,18 @@
       <outline title="Apple World Today" xmlUrl="https://www.appleworld.today/feed/" type="rss" />
       <outline title="iMagazine" xmlUrl="https://www.imagazine.pl/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
+<outline text="Health">
+      <outline title="Ministerstwo Zdrowia" xmlUrl="https://www.gov.pl/web/zdrowie/feed" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Ministerstwo Edukacji" xmlUrl="https://www.gov.pl/web/edukacja/feed" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="OKO.press" xmlUrl="https://oko.press/feed/" type="rss" />
+      <outline title="Krytyka Polityczna" xmlUrl="https://krytykapolityczna.pl/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Radio Naukowe" xmlUrl="https://radionaukowe.pl/feed/podcast/" type="rss" />
+    </outline>
   </body>
 </opml>

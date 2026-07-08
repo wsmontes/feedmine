@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hauts-de-France Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="France 3 HdF" xmlUrl="https://france3-regions.francetvinfo.fr/hauts-de-france/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Région HdF" xmlUrl="https://www.hautsdefrance.fr/rss" type="rss" />
+        <outline title="Lille Mairie" xmlUrl="https://www.lille.fr/rss" type="rss" />
+      </outline></body>
+    </opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Oklahoma Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics" />
+      <outline text="Business" />
+      <outline text="Education">
+        <outline title="Univ of Tulsa" xmlUrl="https://www.utulsa.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports" />
+      <outline text="Culture" /></body>
+    </opml>

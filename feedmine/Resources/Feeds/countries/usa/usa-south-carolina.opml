@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>South Carolina Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Post and Courier (Charleston)" xmlUrl="https://www.postandcourier.com/rss" type="rss" />
+        <outline title="The State (Columbia)" xmlUrl="https://www.thestate.com/rss" type="rss" />
+        <outline title="Sun News (Myrtle Beach)" xmlUrl="https://www.myrtlebeachonline.com/rss" type="rss" />
+        <outline title="Charleston City Paper" xmlUrl="https://www.charlestoncitypaper.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="SC Daily Gazette" xmlUrl="https://scdailygazette.com/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="GSA Business" xmlUrl="https://gsabusiness.com/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Clemson News" xmlUrl="https://news.clemson.edu/feed/" type="rss" />
+        <outline title="Furman University" xmlUrl="https://www.furman.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Charleston Battery" xmlUrl="https://www.charlestonbattery.com/rss" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Eater Charleston" xmlUrl="https://charleston.eater.com/rss/index.xml" type="rss" />
+      </outline></body>
+    </opml>

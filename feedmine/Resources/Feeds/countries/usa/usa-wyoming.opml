@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wyoming Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics">
+        <outline title="Governor Gordon" xmlUrl="https://governor.wyo.gov/rss" type="rss" />
+        <outline title="WY Legislature" xmlUrl="https://www.wyoleg.gov/rss" type="rss" />
+      </outline>
+      <outline text="Education" />
+      <outline text="Culture" /></body>
+    </opml>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Amapá Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Seles Nafes" xmlUrl="https://www.selesnafes.com/feed/" type="rss" />
+        <outline title="Diário do Amapá" xmlUrl="https://www.diariodoamapa.com.br/feed/" type="rss" />
+        <outline title="Prefeitura de Macapá" xmlUrl="https://www.macapa.ap.gov.br/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Federação Amapaense" xmlUrl="https://www.fafamapa.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Cultura AP" xmlUrl="https://www.cultura.ap.gov.br/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+      </outline>
+      <outline text="Business">
+      </outline>
+      <outline text="Blogs">
+        <outline title="Macapá News" xmlUrl="https://macapanews.com.br/feed/" type="rss" />
+      </outline></body>
+    </opml>

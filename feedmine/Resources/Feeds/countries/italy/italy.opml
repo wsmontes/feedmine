@@ -141,9 +141,7 @@
       <outline title="Finanza.com" xmlUrl="https://www.finanza.com/feed/" type="rss" />
       <outline title="Wall Street Italia" xmlUrl="https://www.wallstreetitalia.com/feed/" type="rss" />
     </outline>
-    <outline text="Podcasts">
-      </outline>
-    <outline text="Photography">
+<outline text="Photography">
       <outline title="Fotografia.it" xmlUrl="https://www.fotografia.it/feed/" type="rss" />
       <outline title="Fotografare in Digitale" xmlUrl="https://www.fotografareindigitale.com/feed/" type="rss" />
       <outline title="Fotocult" xmlUrl="https://www.fotocult.it/feed/" type="rss" />
@@ -155,7 +153,21 @@
       <outline title="Macitynet" xmlUrl="https://www.macitynet.it/feed/" type="rss" />
       <outline title="Melablog" xmlUrl="https://www.melablog.it/feed/" type="rss" />
     </outline>
-    <outline text="YouTube">
-      </outline>
+<outline text="Health">
+      <outline title="Ministero della Salute" xmlUrl="https://www.salute.gov.it/portale/news/rss.jsp" type="rss" />
+      <outline title="Salute La Repubblica" xmlUrl="https://www.repubblica.it/rss/salute/rss2.0.xml" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Il Sole 24 Ore Scuola" xmlUrl="https://www.ilsole24ore.com/rss/scuola.xml" type="rss" />
+      <outline title="Tuttoscuola" xmlUrl="https://www.tuttoscuola.com/feed/" type="rss" />
+      <outline title="Orizzonte Scuola" xmlUrl="https://www.orizzontescuola.it/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Open" xmlUrl="https://www.open.online/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Il Post Podcast" xmlUrl="https://www.ilpost.it/podcast/feed/" type="rss" />
+      <outline title="Radio24 Podcast" xmlUrl="https://www.radio24.ilsole24ore.com/podcast/feed/" type="rss" />
+    </outline>
   </body>
 </opml>
