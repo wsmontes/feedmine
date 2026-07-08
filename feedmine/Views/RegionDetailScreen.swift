@@ -14,6 +14,20 @@ struct RegionDetailScreen: View {
 
     var body: some View {
         List {
+            // Sub-region toggle
+            Section {
+                HStack {
+                    Label("\(region.name) feeds", systemImage: "mappin.and.ellipse")
+                    Spacer()
+                    Toggle("", isOn: Binding(
+                        get: { loader.isRegionEnabled(region.path) },
+                        set: { _ in loader.toggleRegion(region.path) }
+                    ))
+                    .labelsHidden()
+                    .tint(.green)
+                }
+            }
+
             ForEach(feedsByCategory, id: \.0) { category, sources in
                 Section {
                     ForEach(sources, id: \.url) { source in

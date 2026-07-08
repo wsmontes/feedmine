@@ -15,21 +15,28 @@ struct CountryDetailScreen: View {
             if country.hasRegions {
                 Section {
                     ForEach(country.regions) { region in
-                        NavigationLink {
-                            RegionDetailScreen(region: region, country: country)
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image(systemName: "mappin.and.ellipse")
-                                    .font(.title3)
-                                    .foregroundStyle(.secondary)
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(region.name).font(.body)
-                                    Text("\(region.feedCount) feeds")
-                                        .font(.caption)
+                        HStack(spacing: 12) {
+                            NavigationLink {
+                                RegionDetailScreen(region: region, country: country)
+                            } label: {
+                                HStack(spacing: 12) {
+                                    Image(systemName: "mappin.and.ellipse")
+                                        .font(.title3)
                                         .foregroundStyle(.secondary)
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(region.name).font(.body)
+                                        Text("\(region.feedCount) feeds")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
                                 }
-                                Spacer()
                             }
+                            Toggle("", isOn: Binding(
+                                get: { loader.isRegionEnabled(region.path) },
+                                set: { _ in loader.toggleRegion(region.path) }
+                            ))
+                            .labelsHidden()
+                            .tint(.green)
                         }
                     }
                 } header: {
