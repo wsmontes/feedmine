@@ -103,7 +103,10 @@ final class FeedLoader {
             }
         }
     }
-    var selectedContentType: ContentType = .all
+    // Single source of truth: all filter state lives in FeedStore
+    var selectedContentType: ContentType { store.activeContentType }
+    var selectedMood: MoodFilter { store.activeMood }
+    var selectedCategory: String? { store.activeCategory }
 
     // MARK: - Mood Filter
 
@@ -147,29 +150,21 @@ final class FeedLoader {
             }
         }
     }
-    var selectedMood: MoodFilter = .all
-
-    // MARK: - Category Filter
-
-    var selectedCategory: String?
 
     // MARK: - Search
 
     var searchQuery: String = ""
     var isSearching: Bool { store.isSearching }
 
-    // MARK: - Filtered Items
+    // MARK: - Filtered Items (reads from FeedStore as single source)
 
     var filteredItems: [FeedItem] {
         var result = items
-        if selectedMood != .all {
-            result = result.filter { selectedMood.matches($0.title) }
+        if store.activeMood != .all {
+            result = result.filter { store.activeMood.matches($0.title) }
         }
-        if let cat = selectedCategory {
-            result = result.filter { $0.category.lowercased() == cat.lowercased() }
-        }
-        if selectedContentType != .all {
-            result = result.filter { selectedContentType.matches($0) }
+        if store.activeContentType != .all {
+            result = result.filter { store.activeContentType.matches($0) }
         }
         let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         if !query.isEmpty {
@@ -309,39 +304,24 @@ final class FeedLoader {
     func refresh() async { await store.start() }
 
     func selectCategory(_ category: String?) {
-        selectedCategory = (selectedCategory == category) ? nil : category
-        store.setFilter(
-            region: store.activeRegion,
-            category: selectedCategory,
-            type: selectedContentType,
-            mood: selectedMood
-        )
+        let newValue = (store.activeCategory == category) ? nil : category
+        store.setFilter(region: store.activeRegion, category: newValue,
+                        type: store.activeContentType, mood: store.activeMood)
     }
 
     func selectMood(_ mood: MoodFilter) {
-        selectedMood = (selectedMood == mood) ? .all : mood
-        store.setFilter(
-            region: store.activeRegion,
-            category: selectedCategory,
-            type: selectedContentType,
-            mood: selectedMood
-        )
+        let newValue = (store.activeMood == mood) ? .all : mood
+        store.setFilter(region: store.activeRegion, category: store.activeCategory,
+                        type: store.activeContentType, mood: newValue)
     }
 
     func selectContentType(_ type: ContentType) {
-        selectedContentType = (selectedContentType == type) ? .all : type
-        store.setFilter(
-            region: store.activeRegion,
-            category: selectedCategory,
-            type: selectedContentType,
-            mood: selectedMood
-        )
+        let newValue = (store.activeContentType == type) ? .all : type
+        store.setFilter(region: store.activeRegion, category: store.activeCategory,
+                        type: newValue, mood: store.activeMood)
     }
 
     func clearAllFilters() {
-        selectedCategory = nil
-        selectedMood = .all
-        selectedContentType = .all
         searchQuery = ""
         store.clearAllFilters()
     }

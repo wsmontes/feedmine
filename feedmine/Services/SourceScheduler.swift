@@ -14,7 +14,8 @@ final class SourceScheduler {
         reservoir: [FeedItem],
         sourcesByRegion: [String: [FeedSource]],
         activeRegion: String?,
-        activeCategory: String?
+        activeCategory: String?,
+        activeContentType: String? = nil  // "video", "audio", or nil for all
     ) -> [FeedSource] {
         // 1. Determine scope
         let regions = activeRegion.map { [$0] } ?? Array(sourcesByRegion.keys)
@@ -62,7 +63,8 @@ final class SourceScheduler {
                 sourcesByRegion: sourcesByRegion,
                 regionDeficits: regionDeficits,
                 categoryDeficits: finalCategoryDeficits,
-                selectedURLs: selectedURLs
+                selectedURLs: selectedURLs,
+                activeContentType: activeContentType
             ) else { break }
             selected.append(best)
             selectedURLs.insert(best.url)
@@ -142,7 +144,8 @@ final class SourceScheduler {
         sourcesByRegion: [String: [FeedSource]],
         regionDeficits: [String: Double],
         categoryDeficits: [String: Double],
-        selectedURLs: Set<String>
+        selectedURLs: Set<String>,
+        activeContentType: String?
     ) -> FeedSource? {
         var best: FeedSource?
         var bestScore = -Double.infinity
@@ -162,6 +165,14 @@ final class SourceScheduler {
                 }
                 let regionDeficit = regionDeficits[region] ?? 0
                 let catDeficit = categoryDeficits[source.category] ?? 0
+                // Content type boost: prefer sources matching active content filter
+                let contentTypeBoost: Double
+                switch activeContentType {
+                case "video":  contentTypeBoost = source.isYouTube ? 3.0 : 1.0
+                case "audio":  contentTypeBoost = 1.0  // no source-level podcast flag; item-level only
+                case "text":   contentTypeBoost = source.isYouTube ? 0.3 : 1.0
+                default:       contentTypeBoost = 1.0
+                }
                 // Soft cooldown: applies 0→1 weight over 30 min
                 let timeFactor: Double
                 if let last = lastFetchedAt[source.url] {
@@ -169,7 +180,7 @@ final class SourceScheduler {
                 } else {
                     timeFactor = 1.0 // never fetched → full priority
                 }
-                let score = regionDeficit * catDeficit * timeFactor
+                let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost
                 if score > bestScore {
                     bestScore = score
                     best = source

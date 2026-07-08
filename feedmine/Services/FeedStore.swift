@@ -182,19 +182,32 @@ final class FeedStore {
 
     // MARK: - Filter
     func setFilter(region: String?, category: String?, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
+        let regionChanged = activeRegion != region
+        let categoryChanged = activeCategory != category
         activeRegion = region
         activeCategory = category
         activeContentType = type
         activeMood = mood
-        Task { await reloadFromSQLite() }
+        if regionChanged || categoryChanged {
+            // Structural filter change — reload from SQLite with new query
+            Task { await reloadFromSQLite() }
+        } else {
+            // In-memory-only filter change (mood, content type) — re-apply locally
+            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+        }
     }
 
     func clearAllFilters() {
+        let hadStructuralFilter = activeRegion != nil || activeCategory != nil
         activeRegion = nil
         activeCategory = nil
         activeContentType = .all
         activeMood = .all
-        Task { await reloadFromSQLite() }
+        if hadStructuralFilter {
+            Task { await reloadFromSQLite() }
+        } else {
+            visibleItems = reservoir.visibleItems.filter(isRegionEnabled).filter(filterContentType)
+        }
     }
 
     // MARK: - Search
@@ -212,17 +225,28 @@ final class FeedStore {
                 visibleItems = []
                 return
             }
+            let region = activeRegion
+            let category = activeCategory
+            let disabled = Array(registry.disabledRegions)
             let results: [FeedItemRecord] = try await db.read { db in
-                try FeedItemRecord
+                var request = FeedItemRecord
                     .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
                     .matching(pattern)
+                if let r = region {
+                    request = request.filter(Column("region") == r)
+                } else if !disabled.isEmpty {
+                    let placeholders = disabled.map { _ in "?" }.joined(separator: ",")
+                    request = request.filter(sql: "region NOT IN (\(placeholders))", arguments: StatementArguments(disabled))
+                }
+                if let c = category { request = request.filter(Column("category") == c) }
+                return try request
                     .order(Column("published_at").desc)
                     .limit(100)
                     .fetchAll(db)
             }
             guard isSearching else { return }
             searchResults = results.map { $0.toFeedItem() }
-            visibleItems = searchResults
+            visibleItems = searchResults.filter(isRegionEnabled).filter(filterContentType)
         }
     }
 
@@ -301,11 +325,15 @@ final class FeedStore {
     private func fetchNextBatch() async {
         guard !isSearching else { return }
         let sourcesByRegion = Dictionary(grouping: registry.enabledSources, by: \.region)
+        let contentTypeStr: String? = switch activeContentType {
+        case .video: "video"; case .audio: "audio"; case .text: "text"; default: nil
+        }
         let batch = scheduler.nextBatch(
             reservoir: reservoir.reservoir,
             sourcesByRegion: sourcesByRegion,
             activeRegion: activeRegion,
-            activeCategory: activeCategory
+            activeCategory: activeCategory,
+            activeContentType: contentTypeStr
         )
         guard !batch.isEmpty else { return }
 
