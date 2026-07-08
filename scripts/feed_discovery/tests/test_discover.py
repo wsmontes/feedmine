@@ -22,3 +22,10 @@ def test_deduplicates_preserving_order():
     html = ('<link rel="alternate" type="application/rss+xml" href="/feed/">'
             '<link rel="alternate" type="application/rss+xml" href="/feed/">')
     assert find_feeds_in_html(html, "https://x.br/") == ["https://x.br/feed/"]
+
+
+def test_excludes_wordpress_comment_feeds():
+    html = ('<link rel="alternate" type="application/rss+xml" href="/feed/">'
+            '<link rel="alternate" type="application/rss+xml" href="/comments/feed/">')
+    feeds = find_feeds_in_html(html, "https://x.br/")
+    assert feeds == ["https://x.br/feed/"]  # comment feed dropped

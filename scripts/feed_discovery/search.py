@@ -10,7 +10,7 @@ from .registry import keywords_for
 # Categories where local/regional outlets dominate — worth anchoring to city
 # names as well as the country name. Global-leaning categories skip cities.
 LOCAL_CATEGORIES = {"News", "Sports", "Politics", "Business", "Culture", "Blogs"}
-MAX_QUERIES_PER_CATEGORY = 5
+MAX_QUERIES_PER_CATEGORY = 6
 
 
 def build_query(terms: list[str]) -> str:
@@ -20,21 +20,34 @@ def build_query(terms: list[str]) -> str:
 
 def build_queries(country: Country, category: str, keywords: dict) -> list[str]:
     """Anchored search queries for one (country, category) from the search
-    dictionary: category term synonyms x country name / native name / cities.
-    The national heuristic still filters results, so anchoring only raises
-    recall of local outlets — it never loosens precision."""
+    dictionary. When the country uses its ccTLD, constrain the search with the
+    ``site:.<cctld>`` operator (proven to return ~100% national results on DDG),
+    combined with local term synonyms + city names. Countries without a used
+    ccTLD (e.g. USA) fall back to country/native-name anchoring and rely on the
+    allowlist heuristic. The national heuristic still filters either way."""
     terms = keywords_for(keywords, category, country.lang) or ["news"]
     queries: list[str] = []
-    anchors = [country.name]
-    if country.native_name and country.native_name != country.name:
-        anchors.append(country.native_name)
-    for anchor in anchors:
-        queries.append(f"{terms[0]} {anchor} RSS")
-    for term in terms[1:3]:
-        queries.append(f"{term} {country.name} RSS")
-    if category in LOCAL_CATEGORIES:
-        for city in country.cities[:2]:
-            queries.append(f"{terms[0]} {city} RSS")
+
+    if country.use_cctld:
+        site = f"site:.{country.cctld}"
+        for term in terms[:3]:
+            queries.append(f"{term} rss {site}")
+        queries.append(f"{country.name} rss {site}")
+        if category in LOCAL_CATEGORIES:
+            for city in country.cities[:2]:
+                queries.append(f"{terms[0]} {city} rss {site}")
+    else:
+        anchors = [country.name]
+        if country.native_name and country.native_name != country.name:
+            anchors.append(country.native_name)
+        for anchor in anchors:
+            queries.append(f"{terms[0]} {anchor} rss")
+        for term in terms[1:3]:
+            queries.append(f"{term} {country.name} rss")
+        if category in LOCAL_CATEGORIES:
+            for city in country.cities[:2]:
+                queries.append(f"{terms[0]} {city} rss")
+
     seen: set[str] = set()
     unique: list[str] = []
     for q in queries:

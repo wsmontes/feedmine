@@ -8,6 +8,8 @@ from scripts.feed_discovery.models import Country
 
 BO = Country("bolivia", "Bolivia", "bo", True, "es", "bo-es", [], "Bolivia",
              ["La Paz", "Santa Cruz"])
+US = Country("usa", "USA", "us", False, "en", "us-en", ["nytimes.com"], "USA",
+             ["New York", "Los Angeles"])
 
 
 def test_build_query_uses_first_term_and_rss():
@@ -15,27 +17,28 @@ def test_build_query_uses_first_term_and_rss():
     assert search.build_query([]) == "news RSS feed"
 
 
-def test_build_queries_anchors_country_and_cities_for_local_category():
+def test_build_queries_uses_site_operator_for_cctld_country():
     kw = {"News": {"es": ["noticias", "diario"]}}
     qs = search.build_queries(BO, "News", kw)
-    assert "noticias Bolivia RSS" in qs
-    assert "diario Bolivia RSS" in qs          # synonym anchored to country
-    assert "noticias La Paz RSS" in qs         # city anchoring (local category)
-    assert "noticias Santa Cruz RSS" in qs
+    assert "noticias rss site:.bo" in qs
+    assert "diario rss site:.bo" in qs          # synonym, TLD-constrained
+    assert "Bolivia rss site:.bo" in qs         # country-name anchor
+    assert "noticias La Paz rss site:.bo" in qs  # city anchoring (local category)
 
 
 def test_build_queries_skips_cities_for_global_category():
-    kw = {"Programming": {"en": ["programming"]}}
+    kw = {"Programming": {"es": ["programación"]}}
     qs = search.build_queries(BO, "Programming", kw)
-    assert qs == ["programming Bolivia RSS"]   # no city anchoring
+    assert "programación rss site:.bo" in qs
+    assert all("La Paz" not in q for q in qs)    # no city anchoring
+    assert all(q.endswith("site:.bo") for q in qs)
 
 
-def test_build_queries_adds_native_name_when_different():
-    br = Country("brazil", "Brazil", "br", True, "pt", "br-pt", [], "Brasil", ["São Paulo"])
-    kw = {"News": {"pt": ["notícias"]}}
-    qs = search.build_queries(br, "News", kw)
-    assert "notícias Brazil RSS" in qs
-    assert "notícias Brasil RSS" in qs         # native name anchor
+def test_build_queries_without_cctld_anchors_by_name():
+    kw = {"News": {"en": ["news"]}}
+    qs = search.build_queries(US, "News", kw)
+    assert all("site:" not in q for q in qs)     # no TLD filter when ccTLD unused
+    assert any("USA" in q for q in qs)
 
 
 def test_search_returns_cached_without_network(tmp_path: Path):
