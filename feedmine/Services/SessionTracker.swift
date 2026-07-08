@@ -80,7 +80,10 @@ final class SessionTracker {
         let elapsed = Int(Date().timeIntervalSince(start) / 60)
         if elapsed > 0 {
             AppContext.shared.sessionMinutes += elapsed
-            sessionStart = Date()
+            // Advance by the whole minutes just counted, not to "now": resetting
+            // to Date() discarded the sub-minute remainder every tick, steadily
+            // undercounting session time.
+            sessionStart = start.addingTimeInterval(TimeInterval(elapsed * 60))
             defaults.set(AppContext.shared.sessionMinutes, forKey: "sessionMinutesToday")
         }
     }
