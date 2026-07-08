@@ -14,7 +14,7 @@ struct WhatsNewCarousel: View {
                     .font(.caption2)
                     .foregroundStyle(.blue)
                     .symbolEffect(.pulse)
-                Text("What's New")
+                Text(loader.whatsNewLabel)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                 if !items.isEmpty {
@@ -423,7 +423,7 @@ struct WhatsNewCard: View {
         .onTapGesture {
             let impact = UIImpactFeedbackGenerator(style: .light)
             impact.impactOccurred()
-            loader.markAsRead(item.id)
+            loader.markWhatsNewAsRead(item.id)
             onOpen(item)
         }
     }

@@ -18,7 +18,12 @@ struct OPMLParser {
             }
         }
 
-        opmlFiles.shuffle()
+        // Sort files for a STABLE, deterministic parse order. Dedup keeps the
+        // first occurrence of a duplicated feed URL, so ordering decides which
+        // region/category owns it — that ownership must not change across
+        // launches. (Randomizing fetch order, if wanted, belongs in the
+        // scheduler, not here where it corrupts canonical source metadata.)
+        opmlFiles.sort { $0.path < $1.path }
 
         guard !opmlFiles.isEmpty else {
             return OPMLParseResult(sources: [], fileCount: 0, failedFileCount: 0, invalidSourceCount: 0, duplicateSourceCount: 0)
@@ -52,7 +57,8 @@ struct OPMLParser {
                 return "countries/\(countryDir)"
             }()
             do {
-                let (sources, invalids) = try parseFile(url: fileURL, fallbackCategory: fileName.capitalized, region: region)
+                let kind = mediaKind(for: fileName)
+                let (sources, invalids) = try parseFile(url: fileURL, fallbackCategory: fileName.capitalized, region: region, mediaKind: kind)
                 allSources.append(contentsOf: sources)
                 invalidSourceCount += invalids
             } catch {
@@ -75,10 +81,10 @@ struct OPMLParser {
 
     // MARK: - Private
 
-    private static func parseFile(url: URL, fallbackCategory: String, region: String) throws -> (sources: [FeedSource], invalidCount: Int) {
+    private static func parseFile(url: URL, fallbackCategory: String, region: String, mediaKind: MediaKind = .text) throws -> (sources: [FeedSource], invalidCount: Int) {
         let data = try Data(contentsOf: url)
         let parser = XMLParser(data: data)
-        let delegate = OPMLDelegate(fallbackCategory: fallbackCategory, region: region)
+        let delegate = OPMLDelegate(fallbackCategory: fallbackCategory, region: region, mediaKind: mediaKind)
         parser.delegate = delegate
         parser.parse()
 
@@ -101,6 +107,15 @@ struct OPMLParser {
         }
 
         return result
+    }
+
+    /// Derive the media kind from an OPML filename, so the scheduler can
+    /// differentiate podcast/video/text sources at the collection level.
+    static func mediaKind(for fileName: String) -> MediaKind {
+        let lower = fileName.lowercased()
+        if lower.contains("podcast") { return .audio }
+        if lower.contains("youtube") { return .video }
+        return .text
     }
 
     /// Lowercase scheme and host only. Trim whitespace. Remove trailing slash. Preserve path/query case.
@@ -172,15 +187,17 @@ struct OPMLParser {
 private final class OPMLDelegate: NSObject, XMLParserDelegate {
     let fallbackCategory: String
     let region: String
+    let mediaKind: MediaKind
     var sources: [FeedSource] = []
     var invalidSourceCount = 0
 
     private var categoryStack: [String] = []
     private var outlinePushStack: [Bool] = []  // tracks which opens pushed a category
 
-    init(fallbackCategory: String, region: String = "global") {
+    init(fallbackCategory: String, region: String = "global", mediaKind: MediaKind = .text) {
         self.fallbackCategory = fallbackCategory
         self.region = region
+        self.mediaKind = mediaKind
     }
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
@@ -219,7 +236,8 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
                 title: title.isEmpty ? category : title,
                 url: xmlUrl,
                 category: category,
-                region: region
+                region: region,
+                mediaKind: mediaKind
             )
         )
     }

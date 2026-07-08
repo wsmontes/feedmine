@@ -96,6 +96,25 @@ final class Reservoir {
         }
     }
 
+    // MARK: - Remove a single source (toggle one feed OFF)
+
+    /// Remove only the items belonging to one feed URL, then top up the visible
+    /// page from the reservoir if it fell below a full page. Unlike
+    /// `removeRegion`, this leaves sibling feeds in the same region untouched —
+    /// disabling one feed must not empty the whole region from the buffer.
+    func removeSource(_ sourceURL: String) {
+        let isDisabled: (FeedItem) -> Bool = { $0.sourceURL == sourceURL }
+        visibleItems.removeAll(where: isDisabled)
+        reservoir.removeAll(where: isDisabled)
+        if visibleItems.count < Self.pageSize && !reservoir.isEmpty {
+            let needed = min(Self.pageSize - visibleItems.count, reservoir.count)
+            let batch = Array(reservoir.prefix(needed))
+            visibleItems.append(contentsOf: batch)
+            reservoir.removeFirst(needed)
+            markAsSurfaced(batch)
+        }
+    }
+
     // MARK: - Remove region (toggle OFF)
 
     func removeRegion(_ region: String) {

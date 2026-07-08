@@ -16,6 +16,7 @@ struct MiniPlayerBar: View {
                             Capsule()
                                 .fill(.blue)
                                 .frame(width: geo.size.width * player.progress, height: 3)
+                                .animation(.smooth(duration: 0.5), value: player.progress)
                         }
                 }
                 .frame(height: 3)
@@ -55,6 +56,8 @@ struct MiniPlayerBar: View {
 
                     // Play/Pause
                     Button {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
                         player.togglePlayPause()
                     } label: {
                         Image(systemName: player.isPlaying ? "pause.fill" : "play.fill")
@@ -64,6 +67,8 @@ struct MiniPlayerBar: View {
 
                     // Close
                     Button {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
                         player.stop()
                     } label: {
                         Image(systemName: "xmark.circle.fill")
@@ -80,7 +85,8 @@ struct MiniPlayerBar: View {
                 FullPlayerView()
             }
             .transition(.move(edge: .bottom).combined(with: .opacity))
-            .animation(.easeInOut(duration: 0.3), value: player.currentItem?.id)
+            .animation(.spring(response: 0.35, dampingFraction: 0.8), value: player.currentItem != nil)
+            .animation(.spring(response: 0.35, dampingFraction: 0.8), value: player.currentItem?.id)
         }
     }
 }
@@ -132,7 +138,12 @@ struct FullPlayerView: View {
                 VStack(spacing: 8) {
                     Slider(value: Binding(
                         get: { player.currentTime },
-                        set: { player.seek(to: $0) }
+                        set: { newValue in
+                            // Only commit seek on meaningful drag movement
+                            if abs(newValue - player.currentTime) > 0.5 {
+                                player.seek(to: newValue)
+                            }
+                        }
                     ), in: 0...max(player.duration, 1))
                     .tint(.blue)
 
@@ -151,31 +162,33 @@ struct FullPlayerView: View {
                 .padding(.horizontal, 32)
 
                 // Controls
-                HStack(spacing: 40) {
-                    Button { player.seekBackward(15) } label: {
+                HStack(spacing: 60) {
+                    Button {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
+                        player.seekBackward(15)
+                    } label: {
                         Image(systemName: "gobackward.15")
                             .font(.title)
                     }
 
-                    Button { player.seekBackward(15) } label: {
-                        Image(systemName: "backward.fill")
-                            .font(.title2)
-                    }
-
                     Button {
+                        let impact = UIImpactFeedbackGenerator(style: .medium)
+                        impact.impactOccurred()
                         player.togglePlayPause()
                     } label: {
                         Image(systemName: player.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                             .font(.system(size: 64))
                             .foregroundStyle(.blue)
+                            .contentTransition(.symbolEffect(.replace))
                     }
+                    .animation(.interactiveSpring(response: 0.3, dampingFraction: 0.6), value: player.isPlaying)
 
-                    Button { player.seekForward(15) } label: {
-                        Image(systemName: "forward.fill")
-                            .font(.title2)
-                    }
-
-                    Button { player.seekForward(15) } label: {
+                    Button {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
+                        player.seekForward(15)
+                    } label: {
                         Image(systemName: "goforward.15")
                             .font(.title)
                     }
@@ -197,7 +210,11 @@ struct FullPlayerView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") { dismiss() }
+                    Button("Done") {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
+                        dismiss()
+                    }
                 }
             }
         }

@@ -118,6 +118,7 @@ enum CountryStore {
         "uae": "🇦🇪",
         "ukraine": "🇺🇦",
         "united-kingdom": "🇬🇧",
+        "usa": "🇺🇸",
         "uruguay": "🇺🇾",
         "venezuela": "🇻🇪",
         "vietnam": "🇻🇳",
@@ -150,6 +151,7 @@ enum CountryStore {
         "sweden": "SE", "switzerland": "CH", "taiwan": "TW", "thailand": "TH",
         "tunisia": "TN", "turkey": "TR", "uae": "AE", "ukraine": "UA",
         "united-kingdom": "GB", "uruguay": "UY", "venezuela": "VE", "vietnam": "VN",
+        "usa": "US",
     ]
 
     // MARK: - Public API

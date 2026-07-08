@@ -3,9 +3,17 @@ import SwiftUI
 struct SourceManagementView: View {
     @Environment(FeedLoader.self) private var loader
     @State private var isTesting = false
-    @State private var testResults: [String: SourceStatus] = [:]
+    /// Keyed by source URL (not title) — many feeds share a title, which would
+    /// collide and overwrite each other's result. Title is carried in the value
+    /// for display.
+    @State private var testResults: [String: TestResult] = [:]
     @State private var showFileImporter = false
     @State private var importError: String?
+
+    struct TestResult {
+        let title: String
+        var status: SourceStatus
+    }
 
     enum SourceStatus {
         case ok, failed, testing
@@ -128,15 +136,15 @@ struct SourceManagementView: View {
                     .disabled(isTesting)
 
                     if !testResults.isEmpty {
-                        ForEach(testResults.sorted(by: { $0.key < $1.key }), id: \.key) { name, status in
+                        ForEach(testResults.sorted(by: { $0.value.title < $1.value.title }), id: \.key) { _, result in
                             HStack {
-                                Image(systemName: status.icon)
+                                Image(systemName: result.status.icon)
                                     .font(.caption)
-                                    .foregroundStyle(status.color)
-                                Text(name)
+                                    .foregroundStyle(result.status.color)
+                                Text(result.title)
                                     .font(.caption)
                                 Spacer()
-                                Text(status.label)
+                                Text(result.status.label)
                                     .font(.caption2)
                                     .foregroundStyle(.secondary)
                             }
@@ -146,7 +154,7 @@ struct SourceManagementView: View {
                     Text("Health Check")
                 } footer: {
                     if !testResults.isEmpty {
-                        let ok = testResults.values.filter { $0 == .ok }.count
+                        let ok = testResults.values.filter { $0.status == .ok }.count
                         Text("\(ok)/\(testResults.count) sources responding")
                     }
                 }
@@ -201,7 +209,7 @@ struct SourceManagementView: View {
         testResults = [:]
 
         for source in loader.sources {
-            testResults[source.title] = .testing
+            testResults[source.url] = TestResult(title: source.title, status: .testing)
         }
 
         // Bound concurrency with a sliding window. loader.sources can hold
@@ -216,8 +224,8 @@ struct SourceManagementView: View {
                 group.addTask { await Self.testSource(source) }
                 started += 1
             }
-            while let (name, status) = await group.next() {
-                testResults[name] = status
+            while let (url, status) = await group.next() {
+                testResults[url]?.status = status
                 if let source = iterator.next() {
                     group.addTask { await Self.testSource(source) }
                 }
@@ -229,7 +237,7 @@ struct SourceManagementView: View {
 
     private static func testSource(_ source: FeedSource) async -> (String, SourceStatus) {
         guard let url = URL(string: source.url) else {
-            return (source.title, .failed)
+            return (source.url, .failed)
         }
         var request = URLRequest(url: url)
         request.timeoutInterval = 10
@@ -237,11 +245,11 @@ struct SourceManagementView: View {
         do {
             let (_, response) = try await URLSession.shared.data(for: request)
             if let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) {
-                return (source.title, .ok)
+                return (source.url, .ok)
             }
-            return (source.title, .failed)
+            return (source.url, .failed)
         } catch {
-            return (source.title, .failed)
+            return (source.url, .failed)
         }
     }
 

@@ -8,6 +8,7 @@ struct FeedItemView: View {
     let index: Int
     var onOpen: (() -> Void)?
     var onCopy: (() -> Void)?
+    var onPlaybackFailed: (() -> Void)?
 
     var body: some View {
         Group {
@@ -38,11 +39,17 @@ struct FeedItemView: View {
         .onTapGesture {
             let impact = UIImpactFeedbackGenerator(style: .light)
             impact.impactOccurred()
-            loader.markAsRead(item.id)
-            SessionTracker.shared.onArticleRead()
             if item.isPodcast {
-                AudioPlayerManager.shared.play(item: item)
+                if AudioPlayerManager.shared.play(item: item) {
+                    loader.markAsRead(item.id)
+                    SessionTracker.shared.onArticleRead()
+                } else {
+                    onPlaybackFailed?()
+                    return
+                }
             } else {
+                loader.markAsRead(item.id)
+                SessionTracker.shared.onArticleRead()
                 onOpen?()
             }
         }
@@ -84,6 +91,7 @@ struct FeedItemView: View {
 
             Button {
                 loader.searchQuery = item.sourceTitle
+                loader.searchQueryChanged()
             } label: {
                 Label("Show more from \(item.sourceTitle)", systemImage: "arrow.triangle.branch")
             }

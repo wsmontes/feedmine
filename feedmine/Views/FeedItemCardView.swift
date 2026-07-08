@@ -233,8 +233,10 @@ struct FeedItemCardView: View {
                     Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
                         .font(.caption)
                         .foregroundStyle(isBookmarked ? .yellow : .secondary)
+                        .contentTransition(.symbolEffect(.replace))
                 }
                 .buttonStyle(.plain)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isBookmarked)
             }
         }
     }
@@ -252,8 +254,10 @@ struct FeedItemCardView: View {
                 .foregroundStyle(isBookmarked ? .yellow : .white)
                 .shadow(color: .black.opacity(0.4), radius: 4)
                 .padding(12)
+                .contentTransition(.symbolEffect(.replace))
         }
         .buttonStyle(.plain)
+        .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isBookmarked)
     }
 
     @ViewBuilder

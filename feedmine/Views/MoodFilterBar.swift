@@ -8,7 +8,9 @@ struct MoodFilterBar: View {
             HStack(spacing: 6) {
                 ForEach(FeedLoader.MoodFilter.allCases) { mood in
                     Button {
-                        withAnimation(.easeInOut(duration: 0.2)) {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                             loader.selectMood(mood)
                         }
                     } label: {
@@ -26,6 +28,8 @@ struct MoodFilterBar: View {
                             Capsule()
                                 .fill(loader.selectedMood == mood ? moodColor(mood) : Color(.systemGray6))
                         )
+                        .scaleEffect(loader.selectedMood == mood ? 1.0 : 0.97)
+                        .animation(.spring(response: 0.3, dampingFraction: 0.7), value: loader.selectedMood)
                     }
                     .buttonStyle(.plain)
                 }

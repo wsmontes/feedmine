@@ -22,6 +22,7 @@ struct FeedScreen: View {
     @State private var engine = CircadianEngine.shared
     @AppStorage("showDebugBar") private var showDebugBar = false
     @AppStorage("nightMode") private var nightMode = false
+    @State private var player = AudioPlayerManager.shared
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -79,6 +80,7 @@ struct FeedScreen: View {
             if phase == .background {
                 SessionTracker.shared.onBackground()
                 loader.flushWhatsNewQueue()
+                AudioPlayerManager.shared.savePosition()
                 // PersistenceManager.shared.saveNow(loader.buildStateWithItems()) // REMOVED: migrated to SQLite
             }
         }
@@ -104,6 +106,13 @@ struct FeedScreen: View {
                 toastMessage = msg; toastIcon = "antenna.radiowaves.left.and.right"
                 withAnimation { showToast = true }
                 loader.clearToggleMessage()
+            }
+        }
+        .onChange(of: player.lastPlaybackError) { _, error in
+            if let error {
+                toastMessage = error; toastIcon = "exclamationmark.triangle"
+                withAnimation { showToast = true }
+                player.clearPlaybackError()
             }
         }
         .onChange(of: loader.networkMonitor.isConnected) { _, connected in
@@ -149,6 +158,7 @@ struct FeedScreen: View {
                             .frame(width: 36, height: 36)
                             .background(engine.accent.opacity(0.1))
                             .clipShape(Circle())
+                            .contentTransition(.symbolEffect(.replace))
                     }
                     if loader.bookmarkedIDs.count > 0 {
                         Button {
@@ -294,13 +304,19 @@ struct FeedScreen: View {
                                 ForEach(Array(section.items.enumerated()), id: \.element.id) { index, item in
                                     FeedItemView(item: item, index: index,
                                         onOpen: { articleItem = item },
-                                        onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } }
+                                        onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } },
+                                        onPlaybackFailed: {
+                                            toastMessage = "Audio unavailable"
+                                            toastIcon = "exclamationmark.triangle"
+                                            withAnimation { showToast = true }
+                                        }
                                     )
                                     .id(item.id)
                                     .padding(.horizontal, 6)
                                     .contentShape(Rectangle())
                                     .onAppear {
                                         appearedItemIDs.insert(item.id)
+                                        loader.noteVisibleIndex(for: item)
                                         if appearedItemIDs.count % 8 == 0 {
                                             let idx = loader.currentVisibleIndex
                                             let goingUp = idx < lastScrollIndex
@@ -316,6 +332,12 @@ struct FeedScreen: View {
                             } header: {
                                 sectionHeader(section.title)
                             }
+                        }
+
+                        // Filters/search matched nothing, but the feed itself
+                        // has content — show guidance instead of a blank screen.
+                        if loader.dateSections.isEmpty && !loader.items.isEmpty {
+                            EmptyFilterView(category: loader.selectedCategory ?? "matching")
                         }
                     }
                     .padding(.top, 48)
@@ -373,6 +395,7 @@ struct FeedScreen: View {
         .padding(.vertical, 8)
         .background(.ultraThinMaterial)
         .transition(.move(edge: .bottom).combined(with: .opacity))
+        .animation(.spring(response: 0.35, dampingFraction: 0.8), value: showScrollButton)
     }
 
     // MARK: - Overlays
@@ -392,8 +415,9 @@ struct FeedScreen: View {
                 .padding(.bottom, 100)
                 .transition(.move(edge: .bottom).combined(with: .opacity))
                 .onAppear { DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation(.easeOut(duration: 0.3)) { showToast = false }
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { showToast = false }
                 }}
+                .animation(.spring(response: 0.35, dampingFraction: 0.8), value: showToast)
             }
         }
     }

@@ -1,4 +1,5 @@
 import AVFoundation
+import MediaPlayer
 import Observation
 
 @MainActor
@@ -10,14 +11,23 @@ final class AudioPlayerManager {
     private var timeObserver: Any?
     private var endObserver: NSObjectProtocol?
     private var statusObserver: NSKeyValueObservation?
+    private var interruptionObserver: NSObjectProtocol?
+    private var routeChangeObserver: NSObjectProtocol?
 
     private(set) var currentItem: FeedItem?
     private(set) var isPlaying = false
     private(set) var currentTime: TimeInterval = 0
     private(set) var duration: TimeInterval = 0
+    private(set) var lastPlaybackError: String?
+
+    private let defaults = UserDefaults.standard
+    private static let savedItemIDKey = "lastPodcastItemID"
+    private static let savedPositionKey = "lastPodcastPosition"
 
     private init() {
         setupAudioSession()
+        setupRemoteCommandCenter()
+        observeAudioNotifications()
     }
 
     // MARK: - Audio Session (background playback)
@@ -39,16 +49,166 @@ final class AudioPlayerManager {
         }
     }
 
+    // MARK: - Remote Command Center (lock screen / Control Center)
+
+    private func setupRemoteCommandCenter() {
+        let cc = MPRemoteCommandCenter.shared()
+
+        cc.playCommand.addTarget { [weak self] _ in
+            Task { @MainActor [weak self] in self?.togglePlayPause() }
+            return .success
+        }
+        cc.pauseCommand.addTarget { [weak self] _ in
+            Task { @MainActor [weak self] in
+                if self?.isPlaying == true { self?.togglePlayPause() }
+            }
+            return .success
+        }
+        cc.togglePlayPauseCommand.addTarget { [weak self] _ in
+            Task { @MainActor [weak self] in self?.togglePlayPause() }
+            return .success
+        }
+        cc.skipForwardCommand.preferredIntervals = [15]
+        cc.skipForwardCommand.addTarget { [weak self] _ in
+            Task { @MainActor [weak self] in self?.seekForward(15) }
+            return .success
+        }
+        cc.skipBackwardCommand.preferredIntervals = [15]
+        cc.skipBackwardCommand.addTarget { [weak self] _ in
+            Task { @MainActor [weak self] in self?.seekBackward(15) }
+            return .success
+        }
+        cc.changePlaybackPositionCommand.addTarget { [weak self] event in
+            guard let e = event as? MPChangePlaybackPositionCommandEvent else { return .commandFailed }
+            Task { @MainActor [weak self] in self?.seek(to: e.positionTime) }
+            return .success
+        }
+        cc.nextTrackCommand.isEnabled = false
+        cc.previousTrackCommand.isEnabled = false
+    }
+
+    // MARK: - Audio Notifications (interruption / route change)
+
+    private func observeAudioNotifications() {
+        let session = AVAudioSession.sharedInstance()
+
+        interruptionObserver = NotificationCenter.default.addObserver(
+            forName: AVAudioSession.interruptionNotification,
+            object: session,
+            queue: .main
+        ) { [weak self] notification in
+            let typeRaw = notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt
+            let optionRaw = notification.userInfo?[AVAudioSessionInterruptionOptionKey] as? UInt
+            MainActor.assumeIsolated { self?.handleInterruption(typeRaw: typeRaw, optionRaw: optionRaw) }
+        }
+
+        routeChangeObserver = NotificationCenter.default.addObserver(
+            forName: AVAudioSession.routeChangeNotification,
+            object: session,
+            queue: .main
+        ) { [weak self] notification in
+            let reasonRaw = notification.userInfo?[AVAudioSessionRouteChangeReasonKey] as? UInt
+            MainActor.assumeIsolated { self?.handleRouteChange(reasonRaw: reasonRaw) }
+        }
+    }
+
+    private func handleInterruption(typeRaw: UInt?, optionRaw: UInt?) {
+        guard let typeRaw,
+              let type = AVAudioSession.InterruptionType(rawValue: typeRaw) else { return }
+
+        switch type {
+        case .began:
+            player?.pause()
+            isPlaying = false
+            updateNowPlaying()
+        case .ended:
+            if let optionRaw,
+               AVAudioSession.InterruptionOptions(rawValue: optionRaw).contains(.shouldResume) {
+                activateSession()
+                player?.play()
+                isPlaying = true
+                updateNowPlaying()
+            }
+        @unknown default: break
+        }
+    }
+
+    private func handleRouteChange(reasonRaw: UInt?) {
+        guard let reasonRaw,
+              let reason = AVAudioSession.RouteChangeReason(rawValue: reasonRaw) else { return }
+
+        if reason == .oldDeviceUnavailable {
+            player?.pause()
+            isPlaying = false
+            updateNowPlaying()
+        }
+    }
+
+    // MARK: - Now Playing Info
+
+    private func updateNowPlaying() {
+        guard let item = currentItem else {
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+            return
+        }
+
+        var info: [String: Any] = [
+            MPMediaItemPropertyTitle: item.title,
+            MPMediaItemPropertyArtist: item.sourceTitle,
+            MPNowPlayingInfoPropertyElapsedPlaybackTime: currentTime,
+            MPMediaItemPropertyPlaybackDuration: duration,
+            MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? 1.0 : 0.0,
+        ]
+
+        // Artwork — use cached image if available; skip if not yet cached
+        if let urlString = item.bestImageURL ?? item.imageURL,
+           let url = URL(string: urlString),
+           let image = ImageCache.shared.image(for: url) {
+            info[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(
+                boundsSize: image.size,
+                requestHandler: { _ in image }
+            )
+        }
+
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+    }
+
+    // MARK: - Position Persistence
+
+    func savePosition() {
+        guard let id = currentItem?.id, currentTime > 0 else { return }
+        defaults.set(id, forKey: Self.savedItemIDKey)
+        defaults.set(currentTime, forKey: Self.savedPositionKey)
+    }
+
+    private func restorePositionIfNeeded(for item: FeedItem) {
+        guard item.id == defaults.string(forKey: Self.savedItemIDKey) else { return }
+        let savedTime = defaults.double(forKey: Self.savedPositionKey)
+        guard savedTime > 5 else { return }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self, self.currentItem?.id == item.id else { return }
+            self.seek(to: savedTime)
+        }
+    }
+
     // MARK: - Playback
 
-    func play(item: FeedItem) {
-        guard let url = item.audioPlaybackURL else { return }
+    @discardableResult
+    func play(item: FeedItem) -> Bool {
+        lastPlaybackError = nil
+
+        guard let url = item.audioPlaybackURL else {
+            lastPlaybackError = "Audio unavailable"
+            return false
+        }
 
         if currentItem?.id == item.id {
             activateSession()
             player?.play()
             isPlaying = true
-            return
+            updateNowPlaying()
+            return true
         }
 
         stop()
@@ -60,12 +220,21 @@ final class AudioPlayerManager {
         player = AVPlayer(playerItem: playerItem)
         player?.play()
         isPlaying = true
+        updateNowPlaying()
+
+        // Restore saved position for this item
+        restorePositionIfNeeded(for: item)
 
         // Surface load failures instead of sitting silently "playing".
         statusObserver = playerItem.observe(\.status, options: [.new]) { [weak self] item, _ in
             let failed = item.status == .failed
             Task { @MainActor [weak self] in
-                if failed { self?.isPlaying = false }
+                guard let self else { return }
+                if failed {
+                    self.isPlaying = false
+                    self.lastPlaybackError = "Playback failed"
+                    self.updateNowPlaying()
+                }
             }
         }
 
@@ -79,22 +248,32 @@ final class AudioPlayerManager {
         ) { [weak self] _ in
             Task { @MainActor [weak self] in
                 self?.isPlaying = false
+                self?.updateNowPlaying()
+                // Clear saved position — episode finished
+                UserDefaults.standard.removeObject(forKey: Self.savedItemIDKey)
+                UserDefaults.standard.removeObject(forKey: Self.savedPositionKey)
             }
         }
 
         // Periodic time observer
-        timeObserver = player?.addPeriodicTimeObserver(
-            forInterval: CMTime(seconds: 0.5, preferredTimescale: 600),
-            queue: .main
-        ) { [weak self] time in
+        let interval = CMTime(seconds: 0.5, preferredTimescale: 600)
+        timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
             Task { @MainActor [weak self] in
                 guard let self else { return }
                 self.currentTime = time.seconds
                 if self.duration == 0, let dur = self.player?.currentItem?.duration.seconds, dur.isFinite {
                     self.duration = dur
                 }
+                // Update lock screen elapsed time
+                self.updateNowPlaying()
+                // Persist position every ~5 seconds
+                if Int(self.currentTime) % 5 == 0 && self.currentTime > 0 {
+                    self.savePosition()
+                }
             }
         }
+
+        return true
     }
 
     func togglePlayPause() {
@@ -107,11 +286,13 @@ final class AudioPlayerManager {
             player?.play()
             isPlaying = true
         }
+        updateNowPlaying()
     }
 
     func seek(to time: TimeInterval) {
         player?.seek(to: CMTime(seconds: time, preferredTimescale: 600))
         currentTime = time
+        updateNowPlaying()
     }
 
     func seekForward(_ seconds: Double = 15) {
@@ -125,6 +306,7 @@ final class AudioPlayerManager {
     }
 
     func stop() {
+        savePosition()
         player?.pause()
         if let observer = timeObserver { player?.removeTimeObserver(observer) }
         if let endObserver { NotificationCenter.default.removeObserver(endObserver) }
@@ -137,6 +319,11 @@ final class AudioPlayerManager {
         isPlaying = false
         currentTime = 0
         duration = 0
+        updateNowPlaying()
+    }
+
+    func clearPlaybackError() {
+        lastPlaybackError = nil
     }
 
     // MARK: - Helpers

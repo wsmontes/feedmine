@@ -7,22 +7,23 @@ enum NodeStatus: Equatable {
     case partial(activeCount: Int)
 }
 
-/// Manages feed source toggles with a single-set model.
+/// Manages feed source toggles with a two-set model.
 ///
-/// One set: `disabled` tracks what's explicitly OFF.
-/// Everything not in `disabled` is ON by default.
+/// `disabled` tracks what's explicitly OFF (a feed, region, country, or
+/// category key). `enabledOverrides` tracks individual feeds explicitly turned
+/// ON so they show even while a parent group is OFF — without this, a single
+/// `disabled` set cannot represent "country off, but keep this one feed."
 ///
-/// Three states per node:
+/// Three states per group node:
 /// - ON — not in disabled
 /// - OFF — in disabled, zero active children
-/// - PARTIAL — in disabled, but has ≥1 active child (individual override)
+/// - PARTIAL — in disabled, but has ≥1 active child (an enabledOverride)
 ///
-/// Resolution for a feed (O(1) — 4 Set lookups):
-/// 1. Feed's own key in disabled? → OFF
-/// 2. Feed's region key in disabled? → OFF
-/// 3. Feed's country key in disabled? → OFF
-/// 4. Feed's category key in disabled? → OFF
-/// 5. Otherwise → ON
+/// Resolution for a feed (O(1) — a handful of Set lookups):
+/// 1. Feed's own key in disabled? → OFF (explicit off wins over everything)
+/// 2. Feed's own key in enabledOverrides? → ON (explicit on beats a parent off)
+/// 3. Feed's region / country / category key in disabled? → OFF
+/// 4. Otherwise → ON
 @MainActor
 @Observable
 final class SourceRegistry {
@@ -34,6 +35,8 @@ final class SourceRegistry {
         didSet { rebuildCaches() }
     }
     var disabled: Set<String> = []
+    /// Feed URL keys explicitly turned ON despite a disabled parent group.
+    var enabledOverrides: Set<String> = []
 
     /// Cached count of active sources under each region/category key.
     /// Recomputed after every toggle.
@@ -63,7 +66,9 @@ final class SourceRegistry {
 
     func isSourceEnabled(_ sourceURL: String) -> Bool {
         guard let source = sourceByURL[sourceURL] else { return false }
-        if disabled.contains(Self.sourceKey(sourceURL)) { return false }
+        let ownKey = Self.sourceKey(sourceURL)
+        if disabled.contains(ownKey) { return false }          // explicit OFF wins
+        if enabledOverrides.contains(ownKey) { return true }   // explicit ON beats a disabled parent
         if disabled.contains(Self.regionKey(source.region)) { return false }
         // Country check — parent of region
         let parts = source.region.split(separator: "/").map(String.init)
@@ -104,6 +109,11 @@ final class SourceRegistry {
             for sub in sources.map(\.region) where sub.hasPrefix(prefix) {
                 disabled.insert(Self.regionKey(sub))
             }
+            // Disabling a group clears per-feed overrides beneath it, so the
+            // whole region really goes dark.
+            for source in sources where source.region == region || source.region.hasPrefix(prefix) {
+                enabledOverrides.remove(Self.sourceKey(source.url))
+            }
         }
         recomputeActiveCounts()
         saveState()
@@ -115,6 +125,9 @@ final class SourceRegistry {
             disabled.remove(key)
         } else {
             disabled.insert(key)
+            for source in sources where source.category == category {
+                enabledOverrides.remove(Self.sourceKey(source.url))
+            }
         }
         recomputeActiveCounts()
         saveState()
@@ -122,10 +135,17 @@ final class SourceRegistry {
 
     func toggleSource(_ sourceURL: String) {
         let key = Self.sourceKey(sourceURL)
-        if disabled.contains(key) {
-            disabled.remove(key)
-        } else {
+        if isSourceEnabled(sourceURL) {
+            // Turn OFF — drop any override, mark explicitly disabled.
+            enabledOverrides.remove(key)
             disabled.insert(key)
+        } else {
+            // Turn ON — clear an explicit off first; if a parent group still
+            // disables it, record an explicit override so it shows anyway.
+            disabled.remove(key)
+            if !isSourceEnabled(sourceURL) {
+                enabledOverrides.insert(key)
+            }
         }
         recomputeActiveCounts()
         saveState()
@@ -139,6 +159,9 @@ final class SourceRegistry {
         let anyOn = countryKeys.contains { !disabled.contains($0) }
         if anyOn {
             disabled.formUnion(countryKeys)
+            for source in sources where source.region.hasPrefix("countries/") {
+                enabledOverrides.remove(Self.sourceKey(source.url))
+            }
         } else {
             disabled.subtract(countryKeys)
         }
@@ -176,11 +199,15 @@ final class SourceRegistry {
 
     private func saveState() {
         UserDefaults.standard.set(Array(disabled), forKey: "toggleDisabled")
+        UserDefaults.standard.set(Array(enabledOverrides), forKey: "toggleEnabledOverrides")
     }
 
     func loadState() {
         if let arr = UserDefaults.standard.stringArray(forKey: "toggleDisabled") {
             disabled = Set(arr)
+        }
+        if let arr = UserDefaults.standard.stringArray(forKey: "toggleEnabledOverrides") {
+            enabledOverrides = Set(arr)
         }
         recomputeActiveCounts()
     }

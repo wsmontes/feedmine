@@ -58,9 +58,20 @@ final class FeedStore {
         Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
     }
 
-    /// Apply all active filters to a list of items.
+    /// Apply all active filters to a list of items — single source of truth.
+    /// Every visibleItems assignment must pass through here so pagination
+    /// (loadMoreIfNeeded) and the UI (FeedLoader.filteredItems) agree on count.
+    /// Single-pass to avoid intermediate array allocations.
     private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
-        items.filter(isItemEnabled).filter(filterContentType)
+        let category = activeCategory
+        let mood = activeMood
+        let contentType = filterContentType
+        return items.filter { item in
+            isItemEnabled(item)
+            && (category == nil || item.category == category)
+            && contentType(item)
+            && (mood == .all || mood.matches(item.title))
+        }
     }
 
     private var filterContentType: (FeedItem) -> Bool {
@@ -78,8 +89,10 @@ final class FeedStore {
     private(set) var readItemIDs: Set<String> = []
     private(set) var loadedIDsCount: Int = 0
     private var loadedIDs: Set<String> = []  // Bloom filter for dedup
-    private var whatsNewBaselineDate: Date?    // snapshot from start() for What's New
+    private static let lastWhatsNewSeenAtKey = "last_whats_new_seen_at"
+    private var whatsNewBaselineDate: Date?    // persisted across sessions; advanced on dismiss
     private var _defaultListID: Int64?
+    private var hasStarted = false             // guards one-time startup work
 
     // MARK: - Init
     init() throws {
@@ -94,6 +107,49 @@ final class FeedStore {
                     VALUES ('Favorites', 0, \(Int(Date().timeIntervalSince1970)), 1)
                 """)
             }
+        }
+        loadSourceHealth()
+    }
+
+    // MARK: - Source Health Persistence
+
+    private func loadSourceHealth() {
+        do {
+            let records = try db.read { db in try SourceHealthRecord.loadAll(db) }
+            for r in records {
+                scheduler.loadHealth(
+                    url: r.url,
+                    lastFetchAt: Date(timeIntervalSince1970: TimeInterval(r.lastFetchAt)),
+                    consecutiveFailures: r.consecutiveFailures
+                )
+            }
+        } catch {
+            print("[FeedStore] loadSourceHealth failed: \(error)")
+        }
+    }
+
+    private func saveSourceHealth(for sourceURL: String) {
+        do {
+            let health = scheduler.healthSnapshot(for: sourceURL)
+            try db.write { db in
+                try db.execute(sql: """
+                    INSERT INTO source_health (url, last_fetch_at, consecutive_failures, last_status, last_item_count)
+                    VALUES (?, ?, ?, ?, ?)
+                    ON CONFLICT(url) DO UPDATE SET
+                        last_fetch_at = excluded.last_fetch_at,
+                        consecutive_failures = excluded.consecutive_failures,
+                        last_status = excluded.last_status,
+                        last_item_count = excluded.last_item_count
+                    """, arguments: [
+                        sourceURL,
+                        Int(health.lastFetchAt.timeIntervalSince1970),
+                        health.consecutiveFailures,
+                        health.lastStatus,
+                        health.lastItemCount
+                    ])
+            }
+        } catch {
+            print("[FeedStore] saveSourceHealth failed for \(sourceURL): \(error)")
         }
     }
 
@@ -111,9 +167,24 @@ final class FeedStore {
         return config
     }
 
+    /// Epoch-seconds cutoff for the 30-day retention window. All feed_item date
+    /// columns are stored as epoch-second integers, so every comparison uses
+    /// integers too — mixing GRDB's default TEXT date encoding with integer
+    /// cutoffs produced always-true/always-false comparisons (dead expurgo,
+    /// broken What's New).
+    nonisolated private static var thirtyDayCutoffEpoch: Int {
+        Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970)
+    }
+
     // MARK: - Start (cold + warm)
 
+    /// One-time startup: parse OPML, start the network monitor, hydrate from
+    /// SQLite, snapshot the What's New baseline, and kick off the first fetch.
+    /// Idempotent — calling it again (e.g. the view reappearing) is a no-op;
+    /// use `refreshNow()` to pull fresh content after startup.
     func start() async {
+        guard !hasStarted else { return }
+        hasStarted = true
         loadingState = .initial
         networkMonitor.start()
         await registry.loadFromOPML()
@@ -125,7 +196,7 @@ final class FeedStore {
             for item in items { loadedIDs.insert(item.id) }
             loadedIDsCount = loadedIDs.count
             reservoir.seed(items: items)
-            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+            visibleItems = applyFilters(reservoir.visibleItems)
             reservoirCount = reservoir.reservoirCount
             loadingState = .idle
         }
@@ -134,8 +205,13 @@ final class FeedStore {
         restoreFilters()
         await loadReadState()
 
-        // Snapshot baseline for "What's New" — items fetched after this are "new"
-        whatsNewBaselineDate = Date()
+        // Snapshot baseline for "What's New" — persisted so items don't vanish
+        // just because the app restarted. Falls back to now on first launch.
+        if let persisted = UserDefaults.standard.object(forKey: Self.lastWhatsNewSeenAtKey) as? Date {
+            whatsNewBaselineDate = persisted
+        } else {
+            whatsNewBaselineDate = Date()
+        }
 
         guard !registry.enabledSources.isEmpty else {
             loadingState = .idle
@@ -161,7 +237,21 @@ final class FeedStore {
     // MARK: - Scroll
     private var lastLoadedIndex = -1
 
+    /// User-initiated refresh (pull-to-refresh, retry, empty-state button).
+    /// Forces a fresh fetch WITHOUT re-running one-time startup — no re-parsing
+    /// OPML, no restarting the network monitor, no re-hydrating SQLite, no
+    /// baseline reset. Falls back to full startup if the store never started.
+    func refreshNow() async {
+        guard hasStarted else { await start(); return }
+        guard !registry.enabledSources.isEmpty else { return }
+        loadingState = .refreshing
+        lastRefreshDate = nil   // bypass the staleness gate
+        await fetchNextBatch()
+        loadingState = .idle
+    }
+
     func loadMoreIfNeeded(currentItem: FeedItem) async {
+        guard !isSearching else { return }
         guard let itemIndex = visibleItems.firstIndex(where: { $0.id == currentItem.id }) else { return }
         guard itemIndex >= visibleItems.count - Reservoir.loadMoreThreshold else { return }
         guard itemIndex != lastLoadedIndex else { return }
@@ -226,9 +316,13 @@ final class FeedStore {
         activeMood = mood
         persistFilters()
         if regionChanged || categoryChanged {
-            Task { await reloadFromSQLite() }
+            Task {
+                await reloadFromSQLite()
+                if visibleItems.count < 20 { await fetchNextBatch() }
+            }
         } else {
-            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+            visibleItems = applyFilters(reservoir.visibleItems)
+            if visibleItems.count < 20 { Task { await fetchNextBatch() } }
         }
     }
 
@@ -240,9 +334,13 @@ final class FeedStore {
         activeMood = .all
         persistFilters()
         if hadStructuralFilter {
-            Task { await reloadFromSQLite() }
+            Task {
+                await reloadFromSQLite()
+                if visibleItems.count < 20 { await fetchNextBatch() }
+            }
         } else {
-            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+            visibleItems = applyFilters(reservoir.visibleItems)
+            if visibleItems.count < 20 { Task { await fetchNextBatch() } }
         }
     }
 
@@ -266,7 +364,7 @@ final class FeedStore {
             // disabledRegions filtering now handled in-memory by isItemEnabled
             let results: [FeedItemRecord] = try await db.read { db in
                 var request = FeedItemRecord
-                    .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                    .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
                     .matching(pattern)
                 if let r = region { request = request.filter(Column("region") == r) }
                 if let c = category { request = request.filter(Column("category") == c) }
@@ -315,36 +413,20 @@ final class FeedStore {
             if let source = registry.sources.first(where: { $0.url == sourceURL }) {
                 Task {
                     let result = await fetcher.fetchAll([source], maxConcurrent: 1)
-                    let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
+                    let actualNew = await persistFetchedItems(result.items)
                     guard !actualNew.isEmpty else { return }
-                    for id in actualNew.map(\.id) { loadedIDs.insert(id) }
-                    loadedIDsCount = loadedIDs.count
-                    let region = registry.regionFor(sourceURL: sourceURL)
-                    // Insert all items in a single transaction (one WAL commit
-                    // instead of one per item, and atomic). Tolerate individual
-                    // insert failures — a stray duplicate rolls back only its
-                    // own statement, not the whole batch.
-                    try? await db.write { db in
-                        for item in actualNew {
-                            do {
-                                try FeedItemRecord(from: item, region: region).insert(db)
-                            } catch {
-                                // Skip this item, keep the rest
-                            }
-                        }
-                    }
                     // Prepend to visible feed
                     var combined = actualNew
                     combined.append(contentsOf: reservoir.visibleItems)
                     reservoir.seed(items: combined)
-                    visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+                    visibleItems = applyFilters(reservoir.visibleItems)
                     reservoirCount = reservoir.reservoirCount
                 }
             }
         } else {
-            // Disabling — remove from visible
-            reservoir.removeRegion(registry.regionFor(sourceURL: sourceURL))
-            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+            // Disabling — remove only this feed's items, not its whole region.
+            reservoir.removeSource(sourceURL)
+            visibleItems = applyFilters(reservoir.visibleItems)
             reservoirCount = reservoir.reservoirCount
         }
     }
@@ -393,12 +475,64 @@ final class FeedStore {
         }
     }
 
-    /// Reset the What's New baseline so newly enabled content appears immediately.
+    /// Advance the baseline to now and persist it — so items already shown
+    /// in the carousel aren't treated as "new" again next session.
+    func advanceWhatsNewBaseline() {
+        let now = Date()
+        whatsNewBaselineDate = now
+        UserDefaults.standard.set(now, forKey: Self.lastWhatsNewSeenAtKey)
+    }
+
+    /// Reset the What's New baseline to now so newly enabled content appears.
+    /// Items fetched after this point (e.g. seedRegion) will be "new";
+    /// weeks-old DB content won't be.
     func resetWhatsNewBaseline() {
-        whatsNewBaselineDate = Date(timeIntervalSince1970: 0)  // epoch — includes all existing items
+        whatsNewBaselineDate = Date()
     }
 
     // MARK: - Private: fetch
+
+    /// Persist freshly fetched items to SQLite and register them in the
+    /// in-memory dedup set, atomically and consistently. Shared by every fetch
+    /// path so none can diverge:
+    /// - Deduplicates within the batch AND against already-loaded IDs, so two
+    ///   feeds returning the same item in one batch can't collide on insert.
+    /// - Writes in a single transaction, tolerating individual row failures, so
+    ///   one bad/duplicate row can't roll back the whole batch.
+    /// - Registers `loadedIDs` only after the write is attempted, so memory
+    ///   reflects what was actually stored (no desync on write failure).
+    ///
+    /// Returns the deduplicated new items for the reservoir / prefetch / search.
+    @discardableResult
+    private func persistFetchedItems(_ items: [FeedItem], regionOverride: String? = nil) async -> [FeedItem] {
+        var seen = Set<String>()
+        let actualNew = items.filter { item in
+            guard !loadedIDs.contains(item.id) else { return false }
+            return seen.insert(item.id).inserted
+        }
+        guard !actualNew.isEmpty else { return [] }
+
+        // Compute regions on the main actor before entering the write closure.
+        let itemsWithRegions: [(item: FeedItem, region: String)] = actualNew.map { item in
+            (item, regionOverride ?? registry.regionFor(sourceURL: item.sourceURL))
+        }
+        do {
+            try await db.write { db in
+                for (item, region) in itemsWithRegions {
+                    do {
+                        try FeedItemRecord(from: item, region: region).insert(db)
+                    } catch {
+                        // Skip a single bad/duplicate row, keep the rest.
+                    }
+                }
+            }
+        } catch {
+            print("[FeedStore] persist error: \(error)")
+        }
+        for id in actualNew.map(\.id) { loadedIDs.insert(id) }
+        loadedIDsCount = loadedIDs.count
+        return actualNew
+    }
 
     private func fetchNextBatch() async {
         guard !isSearching else { return }
@@ -423,37 +557,21 @@ final class FeedStore {
         fetchErrorCount += result.failedSourceCount
         emptyFeedCount += result.emptySourceCount
 
-        let sourceURLsWithItems = Set(result.items.map(\.sourceURL))
+        // Record accurate per-source health: only a genuine fetch/parse failure
+        // counts against a source. An empty-but-reachable feed is not a failure.
         for source in batch {
-            let hadItems = sourceURLsWithItems.contains(source.url)
-            scheduler.recordFetch(sourceURL: source.url, success: hadItems || result.failedSourceCount == 0)
+            let failed = result.sourceStatuses[source.url] == .failed
+            scheduler.recordFetch(sourceURL: source.url, success: !failed)
+            saveSourceHealth(for: source.url)
         }
 
-        let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
+        let actualNew = await persistFetchedItems(result.items)
         guard !actualNew.isEmpty else { return }
-        for id in actualNew.map(\.id) { loadedIDs.insert(id) }
-        loadedIDsCount = loadedIDs.count
 
         // Diagnostic (opt-in via debug bar): surface non-English items so a
         // mis-languaged feed can be identified. See loop-focus-areas #5.
         if UserDefaults.standard.bool(forKey: "showDebugBar") {
             logNonEnglishItems(actualNew)
-        }
-
-        // Write to SQLite
-        do {
-            // Compute regions in @MainActor context before entering the write closure
-            let itemsWithRegions: [(item: FeedItem, region: String)] = actualNew.map { item in
-                (item, registry.regionFor(sourceURL: item.sourceURL))
-            }
-            try await db.write { db in
-                for (item, region) in itemsWithRegions {
-                    let record = FeedItemRecord(from: item, region: region)
-                    try record.insert(db)
-                }
-            }
-        } catch {
-            print("[FeedStore] SQLite write error: \(error)")
         }
 
         // Cap items per source after bulk insert
@@ -469,7 +587,7 @@ final class FeedStore {
         prefetchImagesIfEnabled(for: actualNew)
         // Only update visibleItems if no active search
         if !isSearching {
-            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+            visibleItems = applyFilters(reservoir.visibleItems)
             reservoirCount = reservoir.reservoirCount
         }
 
@@ -506,14 +624,22 @@ final class FeedStore {
             let chunk = Array(allEnabled[chunkStart..<end])
             let result = await fetcher.fetchAll(chunk, maxConcurrent: 15)
             totalFetched += result.items.count
-            let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
-            for id in actualNew.map(\.id) { loadedIDs.insert(id) }
-        loadedIDsCount = loadedIDs.count
+            fetchErrorCount += result.failedSourceCount
+            emptyFeedCount += result.emptySourceCount
+            for source in chunk {
+                let failed = result.sourceStatuses[source.url] == .failed
+                scheduler.recordFetch(sourceURL: source.url, success: !failed)
+                saveSourceHealth(for: source.url)
+            }
+            // Persist through the shared path — progressive fetch previously
+            // showed items without ever writing them to SQLite.
+            let actualNew = await persistFetchedItems(result.items)
             reservoir.append(actualNew)
             prefetchImagesIfEnabled(for: actualNew)
+            await matchPersistentSearches(actualNew)
             if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
                 reservoir.moveToVisible(count: Reservoir.pageSize)
-                visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+                visibleItems = applyFilters(reservoir.visibleItems)
                 reservoirCount = reservoir.reservoirCount
             }
         }
@@ -528,7 +654,7 @@ final class FeedStore {
         // disabledRegions filtering now handled in-memory by isItemEnabled
         let items: [FeedItemRecord] = (try? await db.read { db in
             var request = FeedItemRecord
-                .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
             if let r = region {
                 request = request.filter(Column("region") == r)
             }
@@ -546,7 +672,7 @@ final class FeedStore {
         // Register all loaded IDs to prevent re-fetch duplicates
         for item in feedItems { loadedIDs.insert(item.id) }
         reservoir.seed(items: feedItems)
-        visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+        visibleItems = applyFilters(reservoir.visibleItems)
         reservoirCount = reservoir.reservoirCount
     }
 
@@ -554,7 +680,7 @@ final class FeedStore {
         // disabledRegions filtering now handled in-memory by isItemEnabled
         let records: [FeedItemRecord] = try await db.read { db in
             var request = FeedItemRecord
-                .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
             // Region filter: handled in-memory by isItemEnabled
             return try request
                 .order(Column("published_at").desc)
@@ -606,7 +732,7 @@ final class FeedStore {
             // Disabling: remove from scheduler, purge from reservoir
             scheduler.remove(sourceURLs: sourceURLs)
             reservoir.removeRegion(region)
-            visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+            visibleItems = applyFilters(reservoir.visibleItems)
             reservoirCount = reservoir.reservoirCount
         }
     }
@@ -619,26 +745,15 @@ final class FeedStore {
         guard !regionSources.isEmpty else { return [] }
         let batch = Array(regionSources)
         let result = await fetcher.fetchAll(batch, maxConcurrent: 10)
-        let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
-        guard !actualNew.isEmpty else { return [] }
-        for id in actualNew.map(\.id) { loadedIDs.insert(id) }
-        loadedIDsCount = loadedIDs.count
-        // Write to SQLite + record fetch health
-        let sourceURLsWithItems = Set(result.items.map(\.sourceURL))
+        // Record fetch health first — reachability is independent of whether the
+        // items turn out to be new.
         for source in batch {
-            scheduler.recordFetch(sourceURL: source.url, success: sourceURLsWithItems.contains(source.url))
+            let failed = result.sourceStatuses[source.url] == .failed
+            scheduler.recordFetch(sourceURL: source.url, success: !failed)
+            saveSourceHealth(for: source.url)
         }
-        do {
-            let itemsWithRegions = actualNew.map { ($0, region) }
-            try await db.write { db in
-                for (item, _) in itemsWithRegions {
-                    let record = FeedItemRecord(from: item, region: region)
-                    try record.insert(db)
-                }
-            }
-        } catch {
-            print("[FeedStore] seedRegion write error: \(error)")
-        }
+        let actualNew = await persistFetchedItems(result.items, regionOverride: region)
+        guard !actualNew.isEmpty else { return [] }
         await matchPersistentSearches(actualNew)
         prefetchImagesIfEnabled(for: actualNew)
         return actualNew
@@ -862,7 +977,7 @@ final class FeedStore {
 
         let records: [FeedItemRecord] = try await db.read { db in
             var request = FeedItemRecord
-                .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
                 .matching(pattern)
             if let region = search.searchRegion {
                 request = request.filter(Column("region") == region)
@@ -912,7 +1027,7 @@ final class FeedStore {
             guard let pattern = FTS5Pattern(matchingAllTokensIn: search.searchQuery) else { continue }
             let records: [FeedItemRecord] = try await db.read { db in
                 var request = FeedItemRecord
-                    .filter(Column("fetched_at") > Date().addingTimeInterval(-2592000))
+                    .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
                     .matching(pattern)
                 if let r = search.region {
                     request = request.filter(Column("region") == r)
@@ -977,7 +1092,7 @@ final class FeedStore {
         }
         // Move visible back to reservoir, re-interleave, re-slice
         reservoir.shakeReshuffle()
-        visibleItems = reservoir.visibleItems.filter(isItemEnabled).filter(filterContentType)
+        visibleItems = applyFilters(reservoir.visibleItems)
         reservoirCount = reservoir.reservoirCount
         // Force fetch — bypass staleness check
         lastRefreshDate = nil
@@ -1054,7 +1169,55 @@ final class FeedStore {
                 VALUES ('Favorites', 0, \(Int(Date().timeIntervalSince1970)), 1)
             """)
         }
+        // v2: earlier builds stored feed_item dates using GRDB's default TEXT
+        // encoding ("yyyy-MM-dd HH:mm:ss.SSS") even though the columns are
+        // INTEGER. That made integer-epoch comparisons (expurgo, What's New)
+        // always-true/always-false. Convert any lingering TEXT timestamps to
+        // epoch seconds in place — we can't drop the cache because bookmark_item
+        // cascades from feed_item and dropping rows would delete users' saves.
+        migrator.registerMigration("v2_epoch_dates") { db in
+            for col in ["published_at", "fetched_at", "opened_at"] {
+                try db.execute(sql: """
+                    UPDATE feed_item
+                    SET \(col) = CAST(strftime('%s', \(col)) AS INTEGER)
+                    WHERE typeof(\(col)) = 'text'
+                """)
+            }
+        }
+        migrator.registerMigration("v3_source_health") { db in
+            try db.create(table: "source_health") { t in
+                t.column("url", .text).primaryKey()
+                t.column("last_fetch_at", .integer).notNull()
+                t.column("consecutive_failures", .integer).notNull().defaults(to: 0)
+                t.column("last_status", .text)
+                t.column("last_item_count", .integer)
+            }
+        }
         try migrator.migrate(db)
+    }
+}
+
+// MARK: - Source Health Record
+
+struct SourceHealthRecord: Codable, PersistableRecord, FetchableRecord {
+    var url: String
+    var lastFetchAt: Int
+    var consecutiveFailures: Int
+    var lastStatus: String?
+    var lastItemCount: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case url
+        case lastFetchAt = "last_fetch_at"
+        case consecutiveFailures = "consecutive_failures"
+        case lastStatus = "last_status"
+        case lastItemCount = "last_item_count"
+    }
+
+    static let databaseTableName = "source_health"
+
+    static func loadAll(_ db: Database) throws -> [SourceHealthRecord] {
+        try fetchAll(db)
     }
 }
 
@@ -1074,10 +1237,10 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
     var imageURL: String?
     var audioURL: String?
     var duration: TimeInterval?
-    var publishedAt: Date
-    var fetchedAt: Date
+    var publishedAt: Int   // epoch seconds
+    var fetchedAt: Int     // epoch seconds
     var isRead: Bool
-    var openedAt: Date?
+    var openedAt: Int?     // epoch seconds
 
     static var databaseTableName: String { "feed_item" }
 
@@ -1111,8 +1274,8 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
         self.imageURL = item.imageURL
         self.audioURL = item.audioURL
         self.duration = item.duration
-        self.publishedAt = item.publishedAt
-        self.fetchedAt = Date()
+        self.publishedAt = Int(item.publishedAt.timeIntervalSince1970)
+        self.fetchedAt = Int(Date().timeIntervalSince1970)
         self.isRead = false
         self.openedAt = nil
     }
@@ -1127,7 +1290,7 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
             excerpt: excerpt,
             url: url,
             imageURL: imageURL,
-            publishedAt: publishedAt,
+            publishedAt: Date(timeIntervalSince1970: TimeInterval(publishedAt)),
             audioURL: audioURL,
             duration: duration
         )

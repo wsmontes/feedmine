@@ -23,7 +23,19 @@ final class SourceScheduler {
 
         // 2. Measure consumption — how much buffer do we need?
         let bufferNeeded = estimatedBufferNeeded()
-        let currentBuffer = reservoir.count
+        // Count items matching the active content-type filter so the gate
+        // doesn't think 300 text articles = "buffer full" when user wants podcasts.
+        let currentBuffer: Int = {
+            guard let ct = activeContentType else { return reservoir.count }
+            return reservoir.filter { item in
+                switch ct {
+                case "video": return item.isYouTube
+                case "audio": return item.isPodcast
+                case "text": return !item.isYouTube && !item.isPodcast
+                default: return true
+                }
+            }.count
+        }()
         guard currentBuffer < bufferNeeded else { return [] }
 
         // 3. Measure entropy — distribution of regions/categories in reservoir
@@ -103,6 +115,35 @@ final class SourceScheduler {
         }
     }
 
+    // MARK: - Persistence hooks (called by FeedStore)
+
+    /// Restore persisted health after app restart.
+    func loadHealth(url: String, lastFetchAt: Date, consecutiveFailures: Int) {
+        if self.lastFetchedAt[url] == nil {
+            self.lastFetchedAt[url] = lastFetchAt
+        }
+        if self.consecutiveFailures[url] == nil {
+            self.consecutiveFailures[url] = consecutiveFailures
+        }
+    }
+
+    /// Snapshot for saving to DB.
+    struct HealthSnapshot {
+        let lastFetchAt: Date
+        let consecutiveFailures: Int
+        let lastStatus: String?
+        let lastItemCount: Int?
+    }
+
+    func healthSnapshot(for url: String) -> HealthSnapshot {
+        HealthSnapshot(
+            lastFetchAt: lastFetchedAt[url] ?? Date(timeIntervalSince1970: 0),
+            consecutiveFailures: consecutiveFailures[url] ?? 0,
+            lastStatus: consecutiveFailures[url, default: 0] > 0 ? "error" : "ok",
+            lastItemCount: nil
+        )
+    }
+
     // MARK: - Private
 
     private func estimatedBufferNeeded() -> Int {
@@ -171,19 +212,19 @@ final class SourceScheduler {
                 // very sources it already has too many of.
                 let regionDeficit = max(0, regionDeficits[region] ?? 0)
                 let catDeficit = max(0, categoryDeficits[source.category] ?? 0)
-                // Content type boost: prefer sources matching active content filter
+                // Content type boost: prefer sources matching active content filter.
+                // Uses source.mediaKind (tagged at OPML parse time) so podcasts,
+                // video, and text sources are correctly differentiated.
                 let contentTypeBoost: Double
                 switch activeContentType {
-                case "video":  contentTypeBoost = source.isYouTube ? 3.0 : 1.0
-                case "audio":  contentTypeBoost = 1.0  // no source-level podcast flag; item-level only
-                case "text":   contentTypeBoost = source.isYouTube ? 0.3 : 1.0
-                // Default (mixed) feed: give YouTube a modest baseline lift.
-                // Video sources are only ~1.7% of all feeds, so with equal
-                // weight they almost never got picked and videos didn't appear
-                // until the user forced the video filter. 2× surfaces them
-                // regularly; supply (few sources) + region/category deficits
-                // keep the mix from being flooded with video.
-                default:       contentTypeBoost = source.isYouTube ? 2.0 : 1.0
+                case "video":  contentTypeBoost = source.mediaKind == .video ? 3.0 : 1.0
+                case "audio":  contentTypeBoost = source.mediaKind == .audio ? 3.0 : 1.0
+                case "text":   contentTypeBoost = source.mediaKind == .video ? 0.3 : (source.mediaKind == .audio ? 0.3 : 1.0)
+                // Default (mixed) feed: give YouTube and podcasts a modest baseline
+                // lift. These are rare (~1.7% and ~1% of all feeds), so with equal
+                // weight they almost never get picked. 2× surfaces them regularly;
+                // supply + region/category deficits keep the mix from being flooded.
+                default:       contentTypeBoost = source.isYouTube ? 2.0 : (source.mediaKind == .audio ? 2.0 : 1.0)
                 }
                 // Soft cooldown: applies 0→1 weight over 30 min
                 let timeFactor: Double

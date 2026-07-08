@@ -158,28 +158,26 @@ final class FeedLoader {
     var isSearching: Bool { store.isSearching }
 
     // MARK: - Filtered Items (reads from FeedStore as single source)
+    // Mood, category, and content-type filtering now happen in FeedStore.applyFilters
+    // so pagination (loadMoreIfNeeded) and the UI agree on visibleItems.count.
 
     var filteredItems: [FeedItem] {
         var result = items
-        if store.activeMood != .all {
-            result = result.filter { store.activeMood.matches($0.title) }
-        }
-        if store.activeContentType != .all {
-            result = result.filter { store.activeContentType.matches($0) }
-        }
         let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         if !query.isEmpty {
             let q = query.lowercased()
-            // Score each surviving item once, then sort by the precomputed
-            // score. Scoring inside the sort comparator re-ran searchScore
-            // (which lowercases title + excerpt) on every one of the ~n·log n
-            // comparisons — expensive on each keystroke. sorted(by:) is stable,
-            // so equal scores keep their original (date) order as before.
-            result = result
-                .filter {
-                    $0.title.localizedCaseInsensitiveContains(query) ||
-                    $0.excerpt.localizedCaseInsensitiveContains(query)
+            if !isSearching {
+                // Instant local filter while FTS is running — expanded to match
+                // FTS5 indexed columns (title, excerpt, source_title, category).
+                result = result.filter {
+                    $0.title.localizedCaseInsensitiveContains(q) ||
+                    $0.excerpt.localizedCaseInsensitiveContains(q) ||
+                    $0.sourceTitle.localizedCaseInsensitiveContains(q)
                 }
+            }
+            // Score and sort by relevance (applies to both local and FTS results).
+            // sorted(by:) is stable so equal scores keep their original ordering.
+            result = result
                 .map { (item: $0, score: searchScore($0, q)) }
                 .sorted { $0.score > $1.score }
                 .map(\.item)
@@ -244,12 +242,34 @@ final class FeedLoader {
 
     var networkMonitor: NetworkMonitor { store.networkMonitor }
     var currentVisibleIndex: Int = 0
+
+    /// Keep `currentVisibleIndex` in sync as rows appear. Nothing updated it
+    /// before, so it was stuck at 0 and the scroll-to-top heuristic never fired.
+    /// Gated by the caller (every Nth appear), so the O(n) lookup over the
+    /// bounded visible buffer is cheap.
+    func noteVisibleIndex(for item: FeedItem) {
+        if let idx = filteredItems.firstIndex(where: { $0.id == item.id }) {
+            currentVisibleIndex = idx
+        }
+    }
     var loadedIDsCount: Int { store.loadedIDsCount }
 
     // MARK: - What's New
 
     private var cachedWhatsNew: [FeedItem] = []
-    var whatIsNewItems: [FeedItem] { cachedWhatsNew }
+    /// What's New items, falling back to active search results when there's
+    /// nothing fresh — so the carousel always has something relevant to show.
+    var whatIsNewItems: [FeedItem] {
+        if !cachedWhatsNew.isEmpty { return cachedWhatsNew }
+        if hasActiveSearches { return activeSearchItems }
+        return []
+    }
+    /// Label for the carousel header — changes based on what's being shown.
+    var whatsNewLabel: String {
+        if !cachedWhatsNew.isEmpty { return "What's New" }
+        if hasActiveSearches { return "Your Alerts" }
+        return "What's New"
+    }
     var whatsNewVisible = false
 
     func loadWhatsNew() async {
@@ -257,8 +277,18 @@ final class FeedLoader {
     }
 
     func flushWhatsNewQueue() {
-        // Refresh what's new items — called when user dismisses carousel
+        // Advance baseline so shown items aren't "new" next session,
+        // then refresh — called when carousel dismisses or app backgrounds.
+        store.advanceWhatsNewBaseline()
         Task { await loadWhatsNew() }
+    }
+
+    /// Mark a What's New item as read and remove it from the carousel immediately.
+    /// This gives instant visual feedback — the card disappears without waiting
+    /// for a full reload cycle.
+    func markWhatsNewAsRead(_ id: String) {
+        store.markAsRead(id)
+        cachedWhatsNew.removeAll { $0.id == id }
     }
 
     func prefetchWhatsNewImages() {
@@ -308,8 +338,14 @@ final class FeedLoader {
     func loadMoreIfNeeded(currentItem: FeedItem) async {
         await store.loadMoreIfNeeded(currentItem: currentItem)
     }
-    func refreshIfStale() async { await store.refreshIfStale() }
-    func refresh() async { await store.start() }
+    func refreshIfStale() async {
+        await store.refreshIfStale()
+        await loadWhatsNew()
+    }
+    func refresh() async {
+        await store.refreshNow()
+        await loadWhatsNew()
+    }
 
     func selectCategory(_ category: String?) {
         let newValue = (store.activeCategory == category) ? nil : category
@@ -402,20 +438,29 @@ final class FeedLoader {
 
     func toggleSearchActive(listID: Int64) async throws {
         try await store.toggleSearchActive(listID: listID)
+        await refreshActiveSearchState()
     }
 
     /// Whether any persistent search is currently active.
     private(set) var hasActiveSearches = false
+
+    /// Items from active saved searches — displayed separately from What's New
+    /// so the two features don't compete for the same state.
+    private(set) var activeSearchItems: [FeedItem] = []
 
     private func refreshActiveSearchState() async {
         do {
             let searches = try await store.activeSearches()
             hasActiveSearches = !searches.isEmpty
             if hasActiveSearches {
-                // Main feed switches to composite mode when searches are active
-                cachedWhatsNew = try await store.compositeSearchFeed()
+                activeSearchItems = try await store.compositeSearchFeed()
+            } else {
+                activeSearchItems = []
             }
-        } catch {}
+        } catch {
+            hasActiveSearches = false
+            activeSearchItems = []
+        }
     }
 
     func isBookmarked(_ itemID: String) -> Bool {

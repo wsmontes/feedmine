@@ -70,6 +70,7 @@ actor RSSFetcher {
         var fetchedSourceCount = 0
         var failedSourceCount = 0
         var emptySourceCount = 0
+        var sourceStatuses: [String: FeedFetchStatus] = [:]
 
         // Sliding-window concurrency: keep up to `maxConcurrent` fetches in
         // flight at all times. As each one finishes we immediately start the
@@ -92,6 +93,7 @@ actor RSSFetcher {
 
             // Drain as results arrive, refilling each freed slot.
             while let result = await group.next() {
+                sourceStatuses[result.source.url] = result.status
                 switch result.status {
                 case .success:
                     fetchedSourceCount += 1
@@ -116,7 +118,8 @@ actor RSSFetcher {
             items: allItems,
             fetchedSourceCount: fetchedSourceCount,
             failedSourceCount: failedSourceCount,
-            emptySourceCount: emptySourceCount
+            emptySourceCount: emptySourceCount,
+            sourceStatuses: sourceStatuses
         )
     }
 
@@ -260,13 +263,22 @@ actor RSSFetcher {
         switch await probeAudio(url) {
         case .playable:
             audioPlayability[urlString] = true
+            trimPlayabilityCache()
             return true
         case .notAudio:
             audioPlayability[urlString] = false
+            trimPlayabilityCache()
             return false
         case .unknown:
             return true   // couldn't confirm — keep it, retry on a later fetch
         }
+    }
+
+    private func trimPlayabilityCache() {
+        guard audioPlayability.count > 500 else { return }
+        // Drop earliest entries to keep cache bounded
+        let keysToRemove = audioPlayability.keys.prefix(audioPlayability.count - 300)
+        for key in keysToRemove { audioPlayability.removeValue(forKey: key) }
     }
 
     private func probeAudio(_ url: URL) async -> AudioProbe {
@@ -355,7 +367,7 @@ actor RSSFetcher {
             case .json(let jsonFeed):
                 return (jsonFeed.items ?? []).compactMap { jsonItem in
                     let audio = extractJSONAudio(from: jsonItem, source: source)
-                    makeItem(
+                    return makeItem(
                         guid: jsonItem.id,
                         link: jsonItem.url,
                         title: jsonItem.title,
@@ -386,9 +398,12 @@ actor RSSFetcher {
         audioURL: String? = nil,
         duration: TimeInterval? = nil
     ) -> FeedItem? {
-        let resolvedLink = link ?? ""
-        // Discard items without a clickable URL
-        guard !resolvedLink.isEmpty else { return nil }
+        let resolvedLink = [link, audioURL]
+            .compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .first { !$0.isEmpty }
+        // Text items need a clickable URL. Podcast items can use their
+        // enclosure URL, because tapping them starts playback instead.
+        guard let resolvedLink else { return nil }
 
         let id = FeedItem.generateID(
             sourceURL: source.url,
@@ -404,7 +419,7 @@ actor RSSFetcher {
         )
 
         // Resolve relative image URLs against the article URL
-        let resolvedImageURL = resolveImageURL(imageURL, baseURL: link)
+        let resolvedImageURL = resolveImageURL(imageURL, baseURL: link ?? source.url)
 
         // Sanitize: truncate long titles, strip HTML, cap source names
         let sanitizedTitle = strippingHTMLTags(title ?? "Untitled")

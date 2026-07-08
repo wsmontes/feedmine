@@ -14,6 +14,8 @@ struct ArticleReaderView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Button {
+                            let impact = UIImpactFeedbackGenerator(style: .light)
+                            impact.impactOccurred()
                             dismiss()
                         } label: {
                             Image(systemName: "xmark.circle.fill")
@@ -34,10 +36,12 @@ struct ArticleReaderView: View {
     }
 }
 
-// MARK: - WKWebView wrapper
-
 struct ArticleWebView: UIViewRepresentable {
     let url: URL?
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
 
     func makeUIView(context: Context) -> WKWebView {
         let config = WKWebViewConfiguration()
@@ -50,6 +54,27 @@ struct ArticleWebView: UIViewRepresentable {
         webView.isOpaque = false
         webView.backgroundColor = .systemBackground
         webView.scrollView.contentInsetAdjustmentBehavior = .automatic
+        webView.navigationDelegate = context.coordinator
+
+        // Thin progress bar at top of web content
+        let progressView = UIProgressView(progressViewStyle: .bar)
+        progressView.tintColor = .systemBlue
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        webView.addSubview(progressView)
+        NSLayoutConstraint.activate([
+            progressView.topAnchor.constraint(equalTo: webView.topAnchor),
+            progressView.leadingAnchor.constraint(equalTo: webView.leadingAnchor),
+            progressView.trailingAnchor.constraint(equalTo: webView.trailingAnchor),
+            progressView.heightAnchor.constraint(equalToConstant: 2)
+        ])
+        context.coordinator.progressView = progressView
+
+        // Observe loading progress
+        context.coordinator.progressObservation = webView.observe(\.estimatedProgress, options: [.new]) { webView, _ in
+            let progress = Float(webView.estimatedProgress)
+            context.coordinator.progressView?.progress = progress
+            context.coordinator.progressView?.isHidden = progress >= 1.0
+        }
 
         if let url {
             webView.load(URLRequest(url: url))
@@ -58,4 +83,13 @@ struct ArticleWebView: UIViewRepresentable {
     }
 
     func updateUIView(_ webView: WKWebView, context: Context) {}
+
+    class Coordinator: NSObject, WKNavigationDelegate {
+        var progressView: UIProgressView?
+        var progressObservation: NSKeyValueObservation?
+
+        deinit {
+            progressObservation?.invalidate()
+        }
+    }
 }

@@ -42,7 +42,11 @@ struct CategoryPill: View {
     let action: () -> Void
 
     var body: some View {
-        Button(action: action) {
+        Button(action: {
+            let impact = UIImpactFeedbackGenerator(style: .light)
+            impact.impactOccurred()
+            action()
+        }) {
             Text(title)
                 .font(.subheadline)
                 .fontWeight(isSelected ? .semibold : .regular)
@@ -53,7 +57,8 @@ struct CategoryPill: View {
                     Capsule()
                         .fill(isSelected ? color : color.opacity(0.1))
                 )
-                .animation(.easeInOut(duration: 0.2), value: isSelected)
+                .scaleEffect(isSelected ? 1.0 : 0.97)
+                .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isSelected)
         }
         .buttonStyle(.plain)
     }
