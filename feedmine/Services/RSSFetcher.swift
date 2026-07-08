@@ -66,27 +66,27 @@ actor RSSFetcher {
         var failedSourceCount = 0
         var emptySourceCount = 0
 
-        // Process in chunks to enforce concurrency cap
-        var remaining = sources
-        while !remaining.isEmpty && !Task.isCancelled {
-            let chunk = Array(remaining.prefix(maxConcurrent))
-            remaining.removeFirst(chunk.count)
+        // Sliding-window concurrency: keep up to `maxConcurrent` fetches in
+        // flight at all times. As each one finishes we immediately start the
+        // next, so a single slow feed can only occupy its own slot — it can't
+        // stall the whole batch. (The previous chunked approach blocked every
+        // free slot until the slowest feed in the chunk returned, so with
+        // maxConcurrent=15 one hung feed idled up to 14 others for the full
+        // request timeout.)
+        let cap = max(1, maxConcurrent)
 
-            let results: [FeedFetchResult] = await withTaskGroup(of: FeedFetchResult.self) { group in
-                for source in chunk {
-                    group.addTask {
-                        await self.fetch(source)
-                    }
-                }
-                var chunkResults: [FeedFetchResult] = []
-                for await result in group {
-                    chunkResults.append(result)
-                }
-                return chunkResults
+        await withTaskGroup(of: FeedFetchResult.self) { group in
+            var iterator = sources.makeIterator()
+
+            // Prime the window.
+            var started = 0
+            while started < cap, let source = iterator.next() {
+                group.addTask { await self.fetch(source) }
+                started += 1
             }
 
-            // Count by status — independent of completion order
-            for result in results {
+            // Drain as results arrive, refilling each freed slot.
+            while let result = await group.next() {
                 switch result.status {
                 case .success:
                     fetchedSourceCount += 1
@@ -95,6 +95,14 @@ actor RSSFetcher {
                     emptySourceCount += 1
                 case .failed:
                     failedSourceCount += 1
+                }
+
+                if Task.isCancelled {
+                    // Stop starting new work; signal in-flight fetches to bail
+                    // early, then keep draining until the window empties.
+                    group.cancelAll()
+                } else if let source = iterator.next() {
+                    group.addTask { await self.fetch(source) }
                 }
             }
         }
