@@ -33,6 +33,7 @@ struct FeedState: Codable {
 @Observable
 final class FeedLoader {
     private let store: FeedStore
+    private let prefetcher = ImagePrefetcher()
 
     // MARK: - UI State (from store)
 
@@ -240,7 +241,7 @@ final class FeedLoader {
 
     var networkMonitor: NetworkMonitor { store.networkMonitor }
     var currentVisibleIndex: Int = 0
-    var loadedIDsCount: Int { items.count }  // approximates unique loaded count
+    var loadedIDsCount: Int { store.loadedIDsCount }
 
     // MARK: - What's New
 
@@ -260,12 +261,7 @@ final class FeedLoader {
     func prefetchWhatsNewImages() {
         let urls = cachedWhatsNew.compactMap { $0.bestImageURL ?? $0.imageURL }
         guard !urls.isEmpty else { return }
-        Task {
-            for urlString in urls {
-                guard let url = URL(string: urlString) else { continue }
-                _ = try? await URLSession.shared.data(from: url)
-            }
-        }
+        Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
     }
 
     // MARK: - Source health (stub)
@@ -303,6 +299,8 @@ final class FeedLoader {
     func start() async {
         await store.start()
         await loadWhatsNew()
+        await refreshBookmarkState()
+        await refreshActiveSearchState()
     }
     func loadMoreIfNeeded(currentItem: FeedItem) async {
         await store.loadMoreIfNeeded(currentItem: currentItem)
@@ -395,14 +393,23 @@ final class FeedLoader {
         try await store.toggleSearchActive(listID: listID)
     }
 
-    /// Whether any persistent search is currently active — main feed should use composite mode.
-    var hasActiveSearches: Bool {
-        // Inferred: checked each time bookmark views need to know.
-        // For now, main feed checks via loadActiveSearches() on appear.
-        false
+    /// Whether any persistent search is currently active.
+    private(set) var hasActiveSearches = false
+
+    private func refreshActiveSearchState() async {
+        do {
+            let searches = try await store.activeSearches()
+            hasActiveSearches = !searches.isEmpty
+            if hasActiveSearches {
+                // Main feed switches to composite mode when searches are active
+                cachedWhatsNew = try await store.compositeSearchFeed()
+            }
+        } catch {}
     }
 
-    func isBookmarked(_ itemID: String) -> Bool { false }
+    func isBookmarked(_ itemID: String) -> Bool {
+        bookmarkItemIDs.contains(itemID)
+    }
 
     func markAllAsRead() {
         for id in items.map(\.id) { store.markAsRead(id) }

@@ -55,6 +55,7 @@ final class FeedStore {
 
     // MARK: - Read state
     private(set) var readItemIDs: Set<String> = []
+    private(set) var loadedIDsCount: Int = 0
     private var loadedIDs: Set<String> = []  // Bloom filter for dedup
     private var whatsNewBaselineDate: Date?    // snapshot from start() for What's New
     private var _defaultListID: Int64?
@@ -298,6 +299,7 @@ final class FeedStore {
         let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
         guard !actualNew.isEmpty else { return }
         for id in actualNew.map(\.id) { loadedIDs.insert(id) }
+        loadedIDsCount = loadedIDs.count
 
         // Write to SQLite
         do {
@@ -348,6 +350,7 @@ final class FeedStore {
             totalFetched += result.items.count
             let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
             for id in actualNew.map(\.id) { loadedIDs.insert(id) }
+        loadedIDsCount = loadedIDs.count
             reservoir.append(actualNew)
             if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
                 reservoir.moveToVisible(count: Reservoir.pageSize)
@@ -443,6 +446,7 @@ final class FeedStore {
         let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
         guard !actualNew.isEmpty else { return }
         for id in actualNew.map(\.id) { loadedIDs.insert(id) }
+        loadedIDsCount = loadedIDs.count
         for item in actualNew {
             let record = FeedItemRecord(from: item, region: region)
             try? await db.write { db in try record.insert(db) }
