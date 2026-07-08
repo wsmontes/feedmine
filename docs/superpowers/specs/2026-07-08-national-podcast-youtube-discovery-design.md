@@ -2,7 +2,8 @@
 
 **Date:** 2026-07-08
 **Branch:** `worktree-feed-discovery`
-**Status:** Approved design, pending implementation plan
+**Status:** Podcasts implemented & validated. YouTube implemented mechanically but
+**deferred** as low-yield (see "Implementation status & findings" below).
 
 ## Context
 
@@ -195,3 +196,40 @@ Existing 42 tests must stay green.
 4. Wire routing into `process_country` + `emit_opml` metadata.
 5. Re-run bolivia (`--country bolivia --fresh`) and evaluate the Podcasts /
    YouTube buckets against this spec's quality bar before running more countries.
+
+## Implementation status & findings (2026-07-08)
+
+Implemented on `worktree-feed-discovery` (60 tests green). E2E bolivia run:
+
+### Podcasts — ✅ delivered
+
+`--country bolivia --category Podcasts --fresh` → **246 national podcasts**.
+iTunes returned 253 results across 6 seed terms (country + 5 cities), **all
+`country == "BOL"`**; 246 unique by `feedUrl`. Genres populated (`Política`,
+`Historia`, `Educación`, …). Titles are unambiguously Bolivian. Coverage is
+term-bounded (several terms hit the 50-result cap), as designed. This is the
+shippable reference output.
+
+### YouTube — ⚠️ deferred (low-yield, keyless + strict)
+
+The full mechanism works: DDG seed → **video/shorts URLs resolved to channels**
+(36/36 `channelId` extracted; the v1 "ignore videos" rule was extended to resolve
+them, since DDG almost never returns channel pages) → `/about` country scrape (35
+channels) → strict `country == name` filter.
+
+**But the yield is 0 Bolivian channels.** The channels DDG surfaces for
+`site:youtube.com <country>` are foreign creators making content *about* Bolivia:
+country distribution was US=15, blank=6, Spain=3, UK=3, Mexico=2, Canada=2,
+Argentina=2, Peru=1, Japan=1 — **Bolivia=0**. The strict filter correctly rejects
+all of them. The bottleneck is the **seed**: a generic country-name query is a
+poor vector for national channels, and keyless discovery has no `regionCode`
+equivalent. It is also unconfirmed whether Bolivian channels reliably set the
+About `country` field (6/35 here left it blank).
+
+**Decision:** ship podcasts now; defer YouTube. The video→channel + strict-filter
+code is kept (correct, tested infrastructure). A follow-up spec should pick one of:
+(a) **brand/domain-anchored seed** — search `site:youtube.com <outlet>` for the
+Bolivian media brands / `.bo` domains already discovered by the main pipeline,
+likely relaxing the nationality signal to "reached via a known-national brand";
+or (b) **YouTube Data API v3** (key + quota, `regionCode=BO`) for a real national
+filter. Both are out of scope here.
