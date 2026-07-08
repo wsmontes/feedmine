@@ -33,12 +33,22 @@ actor ImagePrefetcher {
 
         for url in toFetch { inFlightURLs.insert(url) }
 
-        // Download in batches of 8 to cap concurrency
-        let batchSize = 8
-        for i in stride(from: 0, to: toFetch.count, by: batchSize) {
-            let batch = Array(toFetch[i..<min(i + batchSize, toFetch.count)])
-            await withTaskGroup(of: Void.self) { group in
-                for url in batch {
+        // Sliding-window concurrency: keep up to `maxConcurrent` downloads in
+        // flight and refill each freed slot immediately. The previous fixed
+        // batches of 8 waited for the slowest download in each batch (up to the
+        // 20s resource timeout) before starting the next batch, so one slow
+        // image stalled the rest. Every URL is still processed, so download()'s
+        // defer clears it from inFlightURLs.
+        let maxConcurrent = 8
+        await withTaskGroup(of: Void.self) { group in
+            var iterator = toFetch.makeIterator()
+            var started = 0
+            while started < maxConcurrent, let url = iterator.next() {
+                group.addTask { await self.download(url) }
+                started += 1
+            }
+            while await group.next() != nil {
+                if let url = iterator.next() {
                     group.addTask { await self.download(url) }
                 }
             }
