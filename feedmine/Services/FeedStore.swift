@@ -914,10 +914,12 @@ final class FeedStore {
             }
         }
 
-        // Sort: score DESC, within score preserve order
+        // Sort: score DESC. Must be a strict weak ordering — returning true for
+        // equal scores (the old `return true`) violates sorted(by:)'s contract
+        // and can crash or yield a garbage order. `a.1 > b.1` returns false on
+        // ties, and sorted(by:) is stable, so equal scores keep their order.
         let sorted = bestScore.values.sorted { a, b in
-            if a.1 != b.1 { return a.1 > b.1 }
-            return true
+            a.1 > b.1
         }
         return sorted.map { $0.0 }
     }
