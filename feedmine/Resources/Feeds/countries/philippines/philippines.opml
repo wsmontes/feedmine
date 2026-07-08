@@ -1,243 +1,835 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
+  
+  
   <head>
+    
+    
     <title>Philippines Feeds</title>
+    
+  
   </head>
+  
+  
   <body>
+    
+    
     <outline text="News">
-      <outline title="GMA News" xmlUrl="https://www.gmanetwork.com/rss/" type="rss" />
-      <outline title="Inquirer" xmlUrl="https://www.inquirer.net/rss/" type="rss" />
-      <outline title="Philstar" xmlUrl="https://www.philstar.com/rss/" type="rss" />
-      <outline title="Rappler" xmlUrl="https://www.rappler.com/rss/" type="rss" />
-      <outline title="Inquirer.net" xmlUrl="https://www.inquirer.net/rss/" type="rss" />
-      <outline title="Manila Times" xmlUrl="https://www.manilatimes.net/rss/" type="rss" />
-      <outline title="BWorld" xmlUrl="https://www.bworldonline.com/rss/" type="rss" />
-      <outline title="Minda News" xmlUrl="https://www.mindanews.com/rss/" type="rss" />
+      
+      
+      <outline title="GMA News" xmlUrl="https://www.gmanetwork.com/rss/" type="rss"/>
+      
+      
+      <outline title="Inquirer" xmlUrl="https://www.inquirer.net/rss/" type="rss"/>
+      
+      
+      <outline title="Philstar" xmlUrl="https://www.philstar.com/rss/" type="rss"/>
+      
+      
+      <outline title="Rappler" xmlUrl="https://www.rappler.com/rss/" type="rss"/>
+      
+      
+      <outline title="Inquirer.net" xmlUrl="https://www.inquirer.net/rss/" type="rss"/>
+      
+      
+      <outline title="Manila Times" xmlUrl="https://www.manilatimes.net/rss/" type="rss"/>
+      
+      
+      <outline title="BWorld" xmlUrl="https://www.bworldonline.com/rss/" type="rss"/>
+      
+      
+      <outline title="Minda News" xmlUrl="https://www.mindanews.com/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Sports">
-      <outline title="Tiebreaker Times" xmlUrl="https://www.tiebreakertimes.com.ph/rss/" type="rss" />
-      <outline title="Rappler Sports" xmlUrl="https://www.rappler.com/sports/rss/" type="rss" />
-      <outline title="PBA" xmlUrl="https://www.pba.ph/rss/" type="rss" />
+      
+      
+      <outline title="Tiebreaker Times" xmlUrl="https://www.tiebreakertimes.com.ph/rss/" type="rss"/>
+      
+      
+      <outline title="Rappler Sports" xmlUrl="https://www.rappler.com/sports/rss/" type="rss"/>
+      
+      
+      <outline title="PBA" xmlUrl="https://www.pba.ph/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Technology">
-      <outline title="YugaTech" xmlUrl="https://www.yugatech.com/rss/" type="rss" />
-      <outline title="Unbox PH" xmlUrl="https://www.unbox.ph/rss/" type="rss" />
-      <outline title="GadgetMatch" xmlUrl="https://www.gadgetmatch.com/feed/" type="rss" />
-      <outline title="Technobaboy" xmlUrl="https://www.technobaboy.com/feed/" type="rss" />
-      <outline title="Rappler Tech" xmlUrl="https://www.rappler.com/technology/rss/" type="rss" />
-      <outline title="Manila Shaker" xmlUrl="https://www.manilashaker.com/feed/" type="rss" />
-      <outline title="Jam Online" xmlUrl="https://www.jamonline.ph/feed/" type="rss" />
+      
+      
+      <outline title="YugaTech" xmlUrl="https://www.yugatech.com/rss/" type="rss"/>
+      
+      
+      <outline title="Unbox PH" xmlUrl="https://www.unbox.ph/rss/" type="rss"/>
+      
+      
+      <outline title="GadgetMatch" xmlUrl="https://www.gadgetmatch.com/feed/" type="rss"/>
+      
+      
+      <outline title="Technobaboy" xmlUrl="https://www.technobaboy.com/feed/" type="rss"/>
+      
+      
+      <outline title="Rappler Tech" xmlUrl="https://www.rappler.com/technology/rss/" type="rss"/>
+      
+      
+      <outline title="Manila Shaker" xmlUrl="https://www.manilashaker.com/feed/" type="rss"/>
+      
+      
+      <outline title="Jam Online" xmlUrl="https://www.jamonline.ph/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Science">
-      <outline title="Rappler Science" xmlUrl="https://www.rappler.com/science/rss/" type="rss" />
-      <outline title="UP Diliman" xmlUrl="https://www.upd.edu.ph/rss/" type="rss" />
-      <outline title="DLSU" xmlUrl="https://www.dlsu.edu.ph/rss/" type="rss" />
-      <outline title="FlipScience" xmlUrl="https://www.flipscience.ph/feed/" type="rss" />
+      
+      
+      <outline title="Rappler Science" xmlUrl="https://www.rappler.com/science/rss/" type="rss"/>
+      
+      
+      <outline title="UP Diliman" xmlUrl="https://www.upd.edu.ph/rss/" type="rss"/>
+      
+      
+      <outline title="DLSU" xmlUrl="https://www.dlsu.edu.ph/rss/" type="rss"/>
+      
+      
+      <outline title="FlipScience" xmlUrl="https://www.flipscience.ph/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Culture">
-      <outline title="Rappler Culture" xmlUrl="https://www.rappler.com/life-and-style/arts-culture/rss/" type="rss" />
-      <outline title="Cultural Center PH" xmlUrl="https://www.culturalcenter.gov.ph/rss/" type="rss" />
-      <outline title="Ayala Museum" xmlUrl="https://www.ayalamuseum.org/rss/" type="rss" />
+      
+      
+      <outline title="Rappler Culture" xmlUrl="https://www.rappler.com/life-and-style/arts-culture/rss/" type="rss"/>
+      
+      
+      <outline title="Cultural Center PH" xmlUrl="https://www.culturalcenter.gov.ph/rss/" type="rss"/>
+      
+      
+      <outline title="Ayala Museum" xmlUrl="https://www.ayalamuseum.org/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Movies">
-      <outline title="Rappler Movies" xmlUrl="https://www.rappler.com/entertainment/movies/rss/" type="rss" />
-      <outline title="ABS-CBN Movies" xmlUrl="https://www.abs-cbn.com/movies/rss/" type="rss" />
-      <outline title="CinemaBravo" xmlUrl="https://www.cinemabravo.com/feed/" type="rss" />
+      
+      
+      <outline title="Rappler Movies" xmlUrl="https://www.rappler.com/entertainment/movies/rss/" type="rss"/>
+      
+      
+      <outline title="ABS-CBN Movies" xmlUrl="https://www.abs-cbn.com/movies/rss/" type="rss"/>
+      
+      
+      <outline title="CinemaBravo" xmlUrl="https://www.cinemabravo.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Music">
-      <outline title="Rappler Music" xmlUrl="https://www.rappler.com/entertainment/music/rss/" type="rss" />
-      <outline title="Bandwagon PH" xmlUrl="https://www.bandwagon.asia/philippines/rss/" type="rss" />
-      <outline title="Mellow 94.7" xmlUrl="https://www.mellow947.fm/rss/" type="rss" />
-      <outline title="Rakista" xmlUrl="https://www.rakista.com/feed/" type="rss" />
+      
+      
+      <outline title="Rappler Music" xmlUrl="https://www.rappler.com/entertainment/music/rss/" type="rss"/>
+      
+      
+      <outline title="Bandwagon PH" xmlUrl="https://www.bandwagon.asia/philippines/rss/" type="rss"/>
+      
+      
+      <outline title="Mellow 94.7" xmlUrl="https://www.mellow947.fm/rss/" type="rss"/>
+      
+      
+      <outline title="Rakista" xmlUrl="https://www.rakista.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Food">
-      <outline title="Panlasang Pinoy" xmlUrl="https://www.panlasangpinoy.com/feed/" type="rss" />
-      <outline title="Kawaling Pinoy" xmlUrl="https://www.kawalingpinoy.com/feed/" type="rss" />
-      <outline title="Ang Sarap" xmlUrl="https://www.angsarap.net/feed/" type="rss" />
-      <outline title="Booky" xmlUrl="https://www.booky.ph/blog/feed/" type="rss" />
-      <outline title="Choose Philippines" xmlUrl="https://www.choosephilippines.com/rss/" type="rss" />
+      
+      
+      <outline title="Panlasang Pinoy" xmlUrl="https://www.panlasangpinoy.com/feed/" type="rss"/>
+      
+      
+      <outline title="Kawaling Pinoy" xmlUrl="https://www.kawalingpinoy.com/feed/" type="rss"/>
+      
+      
+      <outline title="Ang Sarap" xmlUrl="https://www.angsarap.net/feed/" type="rss"/>
+      
+      
+      <outline title="Booky" xmlUrl="https://www.booky.ph/blog/feed/" type="rss"/>
+      
+      
+      <outline title="Choose Philippines" xmlUrl="https://www.choosephilippines.com/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Gaming">
-      <outline title="GG Network" xmlUrl="https://www.ggnetwork.tv/rss/" type="rss" />
-      <outline title="Ungeek" xmlUrl="https://www.ungeek.ph/rss/" type="rss" />
-      <outline title="Gaming PH" xmlUrl="https://www.gamingph.com/feed/" type="rss" />
-      <outline title="Mineski" xmlUrl="https://www.mineski.net/feed/" type="rss" />
-      <outline title="Tier One" xmlUrl="https://www.tieroneent.com/feed/" type="rss" />
-      <outline title="Game Ops" xmlUrl="https://www.gameops.ph/feed/" type="rss" />
+      
+      
+      <outline title="GG Network" xmlUrl="https://www.ggnetwork.tv/rss/" type="rss"/>
+      
+      
+      <outline title="Ungeek" xmlUrl="https://www.ungeek.ph/rss/" type="rss"/>
+      
+      
+      <outline title="Gaming PH" xmlUrl="https://www.gamingph.com/feed/" type="rss"/>
+      
+      
+      <outline title="Mineski" xmlUrl="https://www.mineski.net/feed/" type="rss"/>
+      
+      
+      <outline title="Tier One" xmlUrl="https://www.tieroneent.com/feed/" type="rss"/>
+      
+      
+      <outline title="Game Ops" xmlUrl="https://www.gameops.ph/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Travel">
-      <outline title="Rappler Travel" xmlUrl="https://www.rappler.com/life-and-style/travel/rss/" type="rss" />
-      <outline title="Out of Town Blog" xmlUrl="https://www.outoftownblog.com/feed/" type="rss" />
-      <outline title="The Poor Traveler" xmlUrl="https://www.thepoortraveler.net/feed/" type="rss" />
-      <outline title="I am Aileen" xmlUrl="https://www.iamaileen.com/feed/" type="rss" />
-      <outline title="Two Monkeys Travel" xmlUrl="https://www.twomonkeystravelgroup.com/feed/" type="rss" />
+      
+      
+      <outline title="Rappler Travel" xmlUrl="https://www.rappler.com/life-and-style/travel/rss/" type="rss"/>
+      
+      
+      <outline title="Out of Town Blog" xmlUrl="https://www.outoftownblog.com/feed/" type="rss"/>
+      
+      
+      <outline title="The Poor Traveler" xmlUrl="https://www.thepoortraveler.net/feed/" type="rss"/>
+      
+      
+      <outline title="I am Aileen" xmlUrl="https://www.iamaileen.com/feed/" type="rss"/>
+      
+      
+      <outline title="Two Monkeys Travel" xmlUrl="https://www.twomonkeystravelgroup.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Blogs">
-      <outline title="When In Manila" xmlUrl="https://www.wheninmanila.com/feed/" type="rss" />
-      <outline title="Rappler Voices" xmlUrl="https://www.rappler.com/voices/rss/" type="rss" />
-      <outline title="ClickTheCity" xmlUrl="https://www.clickthecity.com/rss/" type="rss" />
+      
+      
+      <outline title="When In Manila" xmlUrl="https://www.wheninmanila.com/feed/" type="rss"/>
+      
+      
+      <outline title="Rappler Voices" xmlUrl="https://www.rappler.com/voices/rss/" type="rss"/>
+      
+      
+      <outline title="ClickTheCity" xmlUrl="https://www.clickthecity.com/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Design">
-      <outline title="Phil Design" xmlUrl="https://www.phildesign.com/feed/" type="rss" />
+      
+      
+      <outline title="Phil Design" xmlUrl="https://www.phildesign.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Environment">
-      <outline title="Greenpeace PH" xmlUrl="https://www.greenpeace.org/philippines/feed/" type="rss" />
-      <outline title="Rappler Environment" xmlUrl="https://www.rappler.com/environment/rss/" type="rss" />
-      <outline title="Inquirer Env" xmlUrl="https://www.inquirer.net/environment/rss/" type="rss" />
-      <outline title="Haribon" xmlUrl="https://www.haribon.org.ph/rss/" type="rss" />
-      <outline title="Forest Foundation PH" xmlUrl="https://www.forestfoundation.ph/feed/" type="rss" />
+      
+      
+      <outline title="Greenpeace PH" xmlUrl="https://www.greenpeace.org/philippines/feed/" type="rss"/>
+      
+      
+      <outline title="Rappler Environment" xmlUrl="https://www.rappler.com/environment/rss/" type="rss"/>
+      
+      
+      <outline title="Inquirer Env" xmlUrl="https://www.inquirer.net/environment/rss/" type="rss"/>
+      
+      
+      <outline title="Haribon" xmlUrl="https://www.haribon.org.ph/rss/" type="rss"/>
+      
+      
+      <outline title="Forest Foundation PH" xmlUrl="https://www.forestfoundation.ph/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="DIY">
-      <outline title="PiPho DIY" xmlUrl="https://www.pipho.com/feed/" type="rss" />
-      <outline title="Crafty PH" xmlUrl="https://www.craftyph.com/feed/" type="rss" />
+      
+      
+      <outline title="PiPho DIY" xmlUrl="https://www.pipho.com/feed/" type="rss"/>
+      
+      
+      <outline title="Crafty PH" xmlUrl="https://www.craftyph.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="History">
-      <outline title="Rappler History" xmlUrl="https://www.rappler.com/nation/history/rss/" type="rss" />
-      <outline title="Phil History" xmlUrl="https://www.philippinehistory.ph/feed/" type="rss" />
-      <outline title="Intramuros" xmlUrl="https://www.intramuros.gov.ph/rss/" type="rss" />
-      <outline title="Bahay Tsinoy" xmlUrl="https://www.bahaytsinoy.org/rss/" type="rss" />
-      <outline title="Lopez Museum" xmlUrl="https://www.lopez-museum.org/rss/" type="rss" />
+      
+      
+      <outline title="Rappler History" xmlUrl="https://www.rappler.com/nation/history/rss/" type="rss"/>
+      
+      
+      <outline title="Phil History" xmlUrl="https://www.philippinehistory.ph/feed/" type="rss"/>
+      
+      
+      <outline title="Intramuros" xmlUrl="https://www.intramuros.gov.ph/rss/" type="rss"/>
+      
+      
+      <outline title="Bahay Tsinoy" xmlUrl="https://www.bahaytsinoy.org/rss/" type="rss"/>
+      
+      
+      <outline title="Lopez Museum" xmlUrl="https://www.lopez-museum.org/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Architecture">
-      <outline title="UAP" xmlUrl="https://www.united-architects.org/rss/" type="rss" />
-      <outline title="Lamudi PH" xmlUrl="https://www.lamudi.com.ph/journal/feed/" type="rss" />
+      
+      
+      <outline title="UAP" xmlUrl="https://www.united-architects.org/rss/" type="rss"/>
+      
+      
+      <outline title="Lamudi PH" xmlUrl="https://www.lamudi.com.ph/journal/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Programming">
-      <outline title="DevCon PH" xmlUrl="https://www.devcon.ph/feed/" type="rss" />
-      <outline title="Tech Pilipinas" xmlUrl="https://www.techpilipinas.com/feed/" type="rss" />
+      
+      
+      <outline title="DevCon PH" xmlUrl="https://www.devcon.ph/feed/" type="rss"/>
+      
+      
+      <outline title="Tech Pilipinas" xmlUrl="https://www.techpilipinas.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Business">
-      <outline title="BusinessWorld" xmlUrl="https://www.bworldonline.com/rss/" type="rss" />
-      <outline title="Rappler Business" xmlUrl="https://www.rappler.com/business/rss/" type="rss" />
+      
+      
+      <outline title="BusinessWorld" xmlUrl="https://www.bworldonline.com/rss/" type="rss"/>
+      
+      
+      <outline title="Rappler Business" xmlUrl="https://www.rappler.com/business/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Podcasts">
-      <outline title="Mahaba-habang Usapan Series" xmlUrl="https://anchor.fm/s/3850bbfc/podcast/rss" type="rss" />
-      <outline title="TL;DR Podcast Philippines" xmlUrl="https://anchor.fm/s/2f6f6434/podcast/rss" type="rss" />
-      <outline title="Supreme Court Ph Podcast" xmlUrl="https://anchor.fm/s/fbd1e45c/podcast/rss" type="rss" />
-      <outline title="Philippine History Today" xmlUrl="https://anchor.fm/s/77b57db4/podcast/rss" type="rss" />
-      <outline title="MYX It Up!" xmlUrl="https://anchor.fm/s/1b890790/podcast/rss" type="rss" />
-      <outline title="Philippine Campfire Stories" xmlUrl="https://feeds.acast.com/public/shows/6191c68c63f33c0012156811" type="rss" />
-      <outline title="Philippines Today" xmlUrl="https://feeds.acast.com/public/shows/668665fff364c6400842e9b4" type="rss" />
-      <outline title="Peso Smart PH: Investing in the Philippines" xmlUrl="https://anchor.fm/s/12495c20/podcast/rss" type="rss" />
-      <outline title="Money Matters By Louis" xmlUrl="https://anchor.fm/s/49d69cc/podcast/rss" type="rss" />
-      <outline title="Wildlife Philippines" xmlUrl="https://anchor.fm/s/3abcd038/podcast/rss" type="rss" />
-      <outline title="Barely Adults Philippines" xmlUrl="https://anchor.fm/s/22449dd8/podcast/rss" type="rss" />
-      <outline title="Cold Cases Philippines" xmlUrl="https://anchor.fm/s/2d995958/podcast/rss" type="rss" />
-      <outline title="Laws and Cases in the Philippines" xmlUrl="https://anchor.fm/s/5b8f0c18/podcast/rss" type="rss" />
-      <outline title="Philippine History Z" xmlUrl="https://rss.buzzsprout.com/1247243.rss" type="rss" />
-      <outline title="History of the Philippines" xmlUrl="https://www.spreaker.com/show/6728102/episodes/feed" type="rss" />
-      <outline title="Philippine Law Channel" xmlUrl="https://anchor.fm/s/2a3a1fcc/podcast/rss" type="rss" />
-      <outline title="Experience The Philippines Podcast" xmlUrl="https://anchor.fm/s/5073690/podcast/rss" type="rss" />
-      <outline title="The Rising Population In The Philippines" xmlUrl="https://anchor.fm/s/53af3c0c/podcast/rss" type="rss" />
-      <outline title="The Daily Briefing Podcast - Philippines" xmlUrl="https://www.spreaker.com/show/6861863/episodes/feed" type="rss" />
-      <outline title="Real Finance People" xmlUrl="https://anchor.fm/s/1011d8f24/podcast/rss" type="rss" />
-      <outline title="The 1987 Constitution of the Republic of the Philippines" xmlUrl="https://anchor.fm/s/2b34d3e0/podcast/rss" type="rss" />
-      <outline title="Power Podcast Philippines" xmlUrl="https://rss.buzzsprout.com/1888925.rss" type="rss" />
-      <outline title="Legal Guide Philippines" xmlUrl="https://anchor.fm/s/691207b4/podcast/rss" type="rss" />
-      <outline title="The History of the Philippines: Empires, Colonization, and Identity — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-the-philippines.xml" type="rss" />
-      <outline title="GTalks" xmlUrl="https://anchor.fm/s/291774dc/podcast/rss" type="rss" />
-      <outline title="Top Gear PH Magazine Podcast" xmlUrl="https://anchor.fm/s/f96b2750/podcast/rss" type="rss" />
-      <outline title="Stories Philippines Podcast - Pinoy Horror Stories" xmlUrl="https://www.spreaker.com/show/6886028/episodes/feed" type="rss" />
-      <outline title="Law School Reflections and Jurisprudence in the Philippines" xmlUrl="https://anchor.fm/s/687dfed4/podcast/rss" type="rss" />
-      <outline title="Outsourcing and Offshoring Philippines" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:246860956/sounds.rss" type="rss" />
-      <outline title='Readings In Philippine History : "Cry in Balintawak"' xmlUrl="https://anchor.fm/s/5a88624c/podcast/rss" type="rss" />
-      <outline title="Maverick Philippine Law Codal" xmlUrl="https://anchor.fm/s/25144c20/podcast/rss" type="rss" />
-      <outline title="Good Times with Mo: The Podcast Year 15" xmlUrl="https://anchor.fm/s/4555b94c/podcast/rss" type="rss" />
-      <outline title="Escape: Stories from the Road" xmlUrl="https://anchor.fm/s/9891da28/podcast/rss" type="rss" />
-      <outline title="Philippine true crime stories" xmlUrl="https://anchor.fm/s/360f4a34/podcast/rss" type="rss" />
-      <outline title="The Big Picture Philippines" xmlUrl="https://rss.libsyn.com/shows/94616/destinations/480910.xml" type="rss" />
-      <outline title="Ogie Diaz Showbiz Update" xmlUrl="https://anchor.fm/s/c3a6fdec/podcast/rss" type="rss" />
-      <outline title="Juan Miguel Severo Scandal At Panulaan" xmlUrl="https://anchor.fm/s/6713e7e8/podcast/rss" type="rss" />
-      <outline title="Philippine Stock Market Weekly" xmlUrl="https://anchor.fm/s/27e54864/podcast/rss" type="rss" />
-      <outline title="Pay It Forward Today" xmlUrl="https://feeds.captivate.fm/pay-it-forward-today/" type="rss" />
-      <outline title="Christian Bible Church of the Philippines | Sunday Messages" xmlUrl="http://feeds.feedburner.com/cbcponline" type="rss" />
-      <outline title="Caritas News On the Go" xmlUrl="https://anchor.fm/s/a3d99330/podcast/rss" type="rss" />
-      <outline title="Advantages of the Philippine's climate,weather and seasons" xmlUrl="https://anchor.fm/s/6103de08/podcast/rss" type="rss" />
-      <outline title="Beefing Up the Philippines: The Podcast" xmlUrl="https://anchor.fm/s/10e8931cc/podcast/rss" type="rss" />
-      <outline title='First-World Philippines with Mike Grogan author of "The Rise of the Pinoy"' xmlUrl="https://anchor.fm/s/7b3e9c4/podcast/rss" type="rss" />
-      <outline title="Church for LGBT - Open Table MCC - Philippines" xmlUrl="https://opentablemcc.ph/feed/podcast/" type="rss" />
-      <outline title="JLJL55 The Best Online Casino Site in the Philippines" xmlUrl="https://ngocbaomedia.com/podcast/jljl55com/rss.xml" type="rss" />
-      <outline title="Philippines" xmlUrl="https://anchor.fm/s/514333ec/podcast/rss" type="rss" />
-      <outline title="Esquire Sessions Live" xmlUrl="https://anchor.fm/s/5f06efb4/podcast/rss" type="rss" />
-      <outline title="The BREW Life" xmlUrl="https://anchor.fm/s/1830c40c/podcast/rss" type="rss" />
-      <outline title="The Manila Times Podcasts" xmlUrl="https://feeds.acast.com/public/shows/5f8060131a7b1d0ab2d65fc9" type="rss" />
-      <outline title="The Manila Bulletin Daily News Rundown" xmlUrl="https://anchor.fm/s/fae57ff4/podcast/rss" type="rss" />
-      <outline title="Manila Club Radio - DJ Mixes" xmlUrl="https://manilaclubbing.podomatic.com/rss2.xml" type="rss" />
-      <outline title="Barangay Love Stories" xmlUrl="https://anchor.fm/s/690e1334/podcast/rss" type="rss" />
-      <outline title="Grimcast Manila" xmlUrl="https://feeds.transistor.fm/grimcast-mnl" type="rss" />
-      <outline title="zamieca.manila" xmlUrl="https://anchor.fm/s/5fb1a79c/podcast/rss" type="rss" />
-      <outline title="Raqi’s Secret Files with Titan Gelo" xmlUrl="https://anchor.fm/s/10557a1b0/podcast/rss" type="rss" />
-      <outline title="Mga Katas ng Nakalipas" xmlUrl="https://anchor.fm/s/105578c98/podcast/rss" type="rss" />
-      <outline title="Dear LOVE" xmlUrl="https://anchor.fm/s/105577e24/podcast/rss" type="rss" />
-      <outline title="The Sit Down by Manila Bulletin" xmlUrl="https://anchor.fm/s/10901903c/podcast/rss" type="rss" />
-      <outline title="Tawa, Let's! with SPIT" xmlUrl="https://anchor.fm/s/29b42ebc/podcast/rss" type="rss" />
-      <outline title="Late Nights by Luna Manila" xmlUrl="https://anchor.fm/s/2a6b1ff0/podcast/rss" type="rss" />
-      <outline title="Destiny Church PH" xmlUrl="https://podcasts.subsplash.com/cxrgr7x/podcast.rss" type="rss" />
-      <outline title="Christian Bible Baptist Church-Manila Preaching Podcast" xmlUrl="https://anchor.fm/s/b7d1aa8/podcast/rss" type="rss" />
-      <outline title="Mad in Manila" xmlUrl="https://anchor.fm/s/1299a478/podcast/rss" type="rss" />
-      <outline title="Chloe’s Inbox" xmlUrl="https://anchor.fm/s/105577460/podcast/rss" type="rss" />
-      <outline title="Lyka Barista Moments" xmlUrl="https://anchor.fm/s/105578720/podcast/rss" type="rss" />
-      <outline title="The Mantou Podcast" xmlUrl="https://anchor.fm/s/1ecfa648/podcast/rss" type="rss" />
-      <outline title="Tina in Manila Talks" xmlUrl="https://anchor.fm/s/1c8ee9c/podcast/rss" type="rss" />
-      <outline title="Beyond Borders by GCAF Manila" xmlUrl="https://anchor.fm/s/59e676bc/podcast/rss" type="rss" />
-      <outline title="The MANUAL Manila" xmlUrl="https://anchor.fm/s/49e8ba4/podcast/rss" type="rss" />
-      <outline title="Not Safe For Work with DJ Shai" xmlUrl="https://anchor.fm/s/1054712a0/podcast/rss" type="rss" />
-      <outline title="AngManila" xmlUrl="https://anchor.fm/s/affdbc4/podcast/rss" type="rss" />
-      <outline title="Manila Graphic Design Podcast" xmlUrl="https://anchor.fm/s/3d823f10/podcast/rss" type="rss" />
-      <outline title="Manila Worship Radio" xmlUrl="https://anchor.fm/s/39fc3274/podcast/rss" type="rss" />
-      <outline title="JCI Manila Podcast" xmlUrl="https://anchor.fm/s/60370950/podcast/rss" type="rss" />
-      <outline title="Manila &amp; Chocolate" xmlUrl="https://feed.podbean.com/manilaandchocolate/feed.xml" type="rss" />
-      <outline title="TengManila" xmlUrl="https://anchor.fm/s/32811f14/podcast/rss" type="rss" />
-      <outline title="Union Church of Manila" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:380794046/sounds.rss" type="rss" />
-      <outline title="Titos of Manila" xmlUrl="https://anchor.fm/s/f09603c/podcast/rss" type="rss" />
-      <outline title="When in Manila" xmlUrl="https://anchor.fm/s/322770e0/podcast/rss" type="rss" />
-      <outline title="ManilaPCGaming Podcast" xmlUrl="https://anchor.fm/s/4c0b0a8/podcast/rss" type="rss" />
-      <outline title="The Manila Report" xmlUrl="https://anchor.fm/s/1de48d84/podcast/rss" type="rss" />
-      <outline title="The ManiLA Podcast's Podcast" xmlUrl="https://themanilapodcast.podomatic.com/rss2.xml" type="rss" />
-      <outline title="C3 Metro Manila" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:261203630/sounds.rss" type="rss" />
-      <outline title="ASMR ♥ Manila Cinderella" xmlUrl="https://anchor.fm/s/13551e9c/podcast/rss" type="rss" />
-      <outline title="Girl Gang Manila by Tina Wells" xmlUrl="https://anchor.fm/s/53399100/podcast/rss" type="rss" />
-      <outline title="The Retrospectives: A Nostalgia Podcast" xmlUrl="https://anchor.fm/s/644f4c00/podcast/rss" type="rss" />
-      <outline title="Manila Rundown" xmlUrl="https://api.substack.com/feed/podcast/6364049/s/302298.rss" type="rss" />
-      <outline title="Music &amp; Everything In Between" xmlUrl="https://anchor.fm/s/355848fc/podcast/rss" type="rss" />
-      <outline title="The TMI Show with Ted Rall and Manila Chan" xmlUrl="https://www.spreaker.com/show/6949897/episodes/feed" type="rss" />
-      <outline title="Man from Manila" xmlUrl="https://anchor.fm/s/ef98ea0/podcast/rss" type="rss" />
-      <outline title="More Than Manila with Alex and Romina" xmlUrl="https://anchor.fm/s/7ca4278/podcast/rss" type="rss" />
-      <outline title="Models of Manila" xmlUrl="https://anchor.fm/s/4169a78/podcast/rss" type="rss" />
-      <outline title="Universidad de Manila" xmlUrl="https://anchor.fm/s/4c3abfc8/podcast/rss" type="rss" />
-      <outline title="The Chop with Latrice Royale &amp; Manila Luzon" xmlUrl="https://rss.art19.com/thechop" type="rss" />
-      <outline title="Corporate Event Planning Tips in Manila, Philippines" xmlUrl="https://manilaevents.podomatic.com/rss2.xml" type="rss" />
-      <outline title="Lifehouse Manila Podcast" xmlUrl="https://anchor.fm/s/68ef6998/podcast/rss" type="rss" />
-      <outline title="The Burning of the U.S flag: A Protest in Quezon City" xmlUrl="https://media.rss.com/the-burning-of-the-us-flag-a-protest-in-quezon-city/feed.xml" type="rss" />
-      <outline title="FaithBapTalks" xmlUrl="https://anchor.fm/s/e838f91c/podcast/rss" type="rss" />
-      <outline title="CEBU LAWYER - PHILIPPINE REAL ESTATE LAWS | CASES" xmlUrl="https://rss.buzzsprout.com/2499841.rss" type="rss" />
-      <outline title="Bradford Church Podcast" xmlUrl="https://anchor.fm/s/18501a50/podcast/rss" type="rss" />
-      <outline title="500YoCCebu" xmlUrl="https://anchor.fm/s/4fba36d8/podcast/rss" type="rss" />
-      <outline title="Tipsy Talks Cebu" xmlUrl="https://anchor.fm/s/56696f1c/podcast/rss" type="rss" />
-      <outline title="Podcasts By The Company Cebu" xmlUrl="https://anchor.fm/s/4c69d038/podcast/rss" type="rss" />
-      <outline title="Sermons from New Covenant Church Cebu" xmlUrl="https://anchor.fm/s/10233f38/podcast/rss" type="rss" />
-      <outline title="Spit and Swallow" xmlUrl="https://anchor.fm/s/e9f28d4/podcast/rss" type="rss" />
-      <outline title="セブCebuのローカル情報広場" xmlUrl="https://anchor.fm/s/47448094/podcast/rss" type="rss" />
-      <outline title="Cebu Homebased Workers" xmlUrl="https://anchor.fm/s/2a263c00/podcast/rss" type="rss" />
-      <outline title="Cebu Newsroom By Dale G. Israel" xmlUrl="https://anchor.fm/s/1316860/podcast/rss" type="rss" />
-      <outline title="#C3Podcasts" xmlUrl="https://anchor.fm/s/9e1c004/podcast/rss" type="rss" />
-      <outline title="Bible Baptist Church Davao" xmlUrl="https://www.sermonaudio.com/rss_source.asp?sourceid=bbcdavao" type="rss" />
-      <outline title="IncogniTalk" xmlUrl="https://anchor.fm/s/6a2df928/podcast/rss" type="rss" />
-      <outline title="Victory Davao Podcast" xmlUrl="https://anchor.fm/s/51b4e884/podcast/rss" type="rss" />
-      <outline title="JCI DAVAO: HANDURAW" xmlUrl="https://anchor.fm/s/e2b6609c/podcast/rss" type="rss" />
-      <outline title="Young Disciples Davao" xmlUrl="https://anchor.fm/s/5cfe3f9c/podcast/rss" type="rss" />
-      <outline title="Ateneo de Davao University - Campus Ministry Office HEC" xmlUrl="https://anchor.fm/s/5f3b1b2c/podcast/rss" type="rss" />
-      <outline title="Bantay Hayop Davao Tidbits" xmlUrl="https://anchor.fm/s/521a6560/podcast/rss" type="rss" />
-      <outline title="Dvo Byz" xmlUrl="https://anchor.fm/s/6a49fb14/podcast/rss" type="rss" />
-      <outline title="PumaPodcast" xmlUrl="https://www.pumapodcast.com/feed/" type="rss" />
-      <outline title="Podcast Network Asia" xmlUrl="https://www.podcastnetworkasia.com/feed/" type="rss" />
+      
+      
+      <outline title="Mahaba-habang Usapan Series" xmlUrl="https://anchor.fm/s/3850bbfc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="TL;DR Podcast Philippines" xmlUrl="https://anchor.fm/s/2f6f6434/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Supreme Court Ph Podcast" xmlUrl="https://anchor.fm/s/fbd1e45c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Philippine History Today" xmlUrl="https://anchor.fm/s/77b57db4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="MYX It Up!" xmlUrl="https://anchor.fm/s/1b890790/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Philippine Campfire Stories" xmlUrl="https://feeds.acast.com/public/shows/6191c68c63f33c0012156811" type="rss"/>
+      
+      
+      <outline title="Philippines Today" xmlUrl="https://feeds.acast.com/public/shows/668665fff364c6400842e9b4" type="rss"/>
+      
+      
+      <outline title="Peso Smart PH: Investing in the Philippines" xmlUrl="https://anchor.fm/s/12495c20/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Money Matters By Louis" xmlUrl="https://anchor.fm/s/49d69cc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Wildlife Philippines" xmlUrl="https://anchor.fm/s/3abcd038/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Barely Adults Philippines" xmlUrl="https://anchor.fm/s/22449dd8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Cold Cases Philippines" xmlUrl="https://anchor.fm/s/2d995958/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Laws and Cases in the Philippines" xmlUrl="https://anchor.fm/s/5b8f0c18/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Philippine History Z" xmlUrl="https://rss.buzzsprout.com/1247243.rss" type="rss"/>
+      
+      
+      <outline title="History of the Philippines" xmlUrl="https://www.spreaker.com/show/6728102/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Philippine Law Channel" xmlUrl="https://anchor.fm/s/2a3a1fcc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Experience The Philippines Podcast" xmlUrl="https://anchor.fm/s/5073690/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Rising Population In The Philippines" xmlUrl="https://anchor.fm/s/53af3c0c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Daily Briefing Podcast - Philippines" xmlUrl="https://www.spreaker.com/show/6861863/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Real Finance People" xmlUrl="https://anchor.fm/s/1011d8f24/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The 1987 Constitution of the Republic of the Philippines" xmlUrl="https://anchor.fm/s/2b34d3e0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Power Podcast Philippines" xmlUrl="https://rss.buzzsprout.com/1888925.rss" type="rss"/>
+      
+      
+      <outline title="Legal Guide Philippines" xmlUrl="https://anchor.fm/s/691207b4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The History of the Philippines: Empires, Colonization, and Identity — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-the-philippines.xml" type="rss"/>
+      
+      
+      <outline title="GTalks" xmlUrl="https://anchor.fm/s/291774dc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Top Gear PH Magazine Podcast" xmlUrl="https://anchor.fm/s/f96b2750/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Stories Philippines Podcast - Pinoy Horror Stories" xmlUrl="https://www.spreaker.com/show/6886028/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Law School Reflections and Jurisprudence in the Philippines" xmlUrl="https://anchor.fm/s/687dfed4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Outsourcing and Offshoring Philippines" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:246860956/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Readings In Philippine History : &quot;Cry in Balintawak&quot;" xmlUrl="https://anchor.fm/s/5a88624c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Maverick Philippine Law Codal" xmlUrl="https://anchor.fm/s/25144c20/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Good Times with Mo: The Podcast Year 15" xmlUrl="https://anchor.fm/s/4555b94c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Escape: Stories from the Road" xmlUrl="https://anchor.fm/s/9891da28/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Philippine true crime stories" xmlUrl="https://anchor.fm/s/360f4a34/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Big Picture Philippines" xmlUrl="https://rss.libsyn.com/shows/94616/destinations/480910.xml" type="rss"/>
+      
+      
+      <outline title="Ogie Diaz Showbiz Update" xmlUrl="https://anchor.fm/s/c3a6fdec/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Juan Miguel Severo Scandal At Panulaan" xmlUrl="https://anchor.fm/s/6713e7e8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Philippine Stock Market Weekly" xmlUrl="https://anchor.fm/s/27e54864/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Pay It Forward Today" xmlUrl="https://feeds.captivate.fm/pay-it-forward-today/" type="rss"/>
+      
+      
+      <outline title="Christian Bible Church of the Philippines | Sunday Messages" xmlUrl="http://feeds.feedburner.com/cbcponline" type="rss"/>
+      
+      
+      <outline title="Caritas News On the Go" xmlUrl="https://anchor.fm/s/a3d99330/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Advantages of the Philippine's climate,weather and seasons" xmlUrl="https://anchor.fm/s/6103de08/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Beefing Up the Philippines: The Podcast" xmlUrl="https://anchor.fm/s/10e8931cc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="First-World Philippines with Mike Grogan author of &quot;The Rise of the Pinoy&quot;" xmlUrl="https://anchor.fm/s/7b3e9c4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Church for LGBT - Open Table MCC - Philippines" xmlUrl="https://opentablemcc.ph/feed/podcast/" type="rss"/>
+      
+      
+      <outline title="JLJL55 The Best Online Casino Site in the Philippines" xmlUrl="https://ngocbaomedia.com/podcast/jljl55com/rss.xml" type="rss"/>
+      
+      
+      <outline title="Philippines" xmlUrl="https://anchor.fm/s/514333ec/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Esquire Sessions Live" xmlUrl="https://anchor.fm/s/5f06efb4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The BREW Life" xmlUrl="https://anchor.fm/s/1830c40c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Manila Times Podcasts" xmlUrl="https://feeds.acast.com/public/shows/5f8060131a7b1d0ab2d65fc9" type="rss"/>
+      
+      
+      <outline title="The Manila Bulletin Daily News Rundown" xmlUrl="https://anchor.fm/s/fae57ff4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Manila Club Radio - DJ Mixes" xmlUrl="https://manilaclubbing.podomatic.com/rss2.xml" type="rss"/>
+      
+      
+      <outline title="Barangay Love Stories" xmlUrl="https://anchor.fm/s/690e1334/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Grimcast Manila" xmlUrl="https://feeds.transistor.fm/grimcast-mnl" type="rss"/>
+      
+      
+      <outline title="zamieca.manila" xmlUrl="https://anchor.fm/s/5fb1a79c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Raqi’s Secret Files with Titan Gelo" xmlUrl="https://anchor.fm/s/10557a1b0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Mga Katas ng Nakalipas" xmlUrl="https://anchor.fm/s/105578c98/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Dear LOVE" xmlUrl="https://anchor.fm/s/105577e24/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Sit Down by Manila Bulletin" xmlUrl="https://anchor.fm/s/10901903c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Tawa, Let's! with SPIT" xmlUrl="https://anchor.fm/s/29b42ebc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Late Nights by Luna Manila" xmlUrl="https://anchor.fm/s/2a6b1ff0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Destiny Church PH" xmlUrl="https://podcasts.subsplash.com/cxrgr7x/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Christian Bible Baptist Church-Manila Preaching Podcast" xmlUrl="https://anchor.fm/s/b7d1aa8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Mad in Manila" xmlUrl="https://anchor.fm/s/1299a478/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Chloe’s Inbox" xmlUrl="https://anchor.fm/s/105577460/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Lyka Barista Moments" xmlUrl="https://anchor.fm/s/105578720/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Mantou Podcast" xmlUrl="https://anchor.fm/s/1ecfa648/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Tina in Manila Talks" xmlUrl="https://anchor.fm/s/1c8ee9c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Beyond Borders by GCAF Manila" xmlUrl="https://anchor.fm/s/59e676bc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The MANUAL Manila" xmlUrl="https://anchor.fm/s/49e8ba4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Not Safe For Work with DJ Shai" xmlUrl="https://anchor.fm/s/1054712a0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="AngManila" xmlUrl="https://anchor.fm/s/affdbc4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Manila Graphic Design Podcast" xmlUrl="https://anchor.fm/s/3d823f10/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Manila Worship Radio" xmlUrl="https://anchor.fm/s/39fc3274/podcast/rss" type="rss"/>
+      
+      
+      <outline title="JCI Manila Podcast" xmlUrl="https://anchor.fm/s/60370950/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Manila &amp; Chocolate" xmlUrl="https://feed.podbean.com/manilaandchocolate/feed.xml" type="rss"/>
+      
+      
+      <outline title="TengManila" xmlUrl="https://anchor.fm/s/32811f14/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Union Church of Manila" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:380794046/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Titos of Manila" xmlUrl="https://anchor.fm/s/f09603c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="When in Manila" xmlUrl="https://anchor.fm/s/322770e0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="ManilaPCGaming Podcast" xmlUrl="https://anchor.fm/s/4c0b0a8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Manila Report" xmlUrl="https://anchor.fm/s/1de48d84/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The ManiLA Podcast's Podcast" xmlUrl="https://themanilapodcast.podomatic.com/rss2.xml" type="rss"/>
+      
+      
+      <outline title="C3 Metro Manila" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:261203630/sounds.rss" type="rss"/>
+      
+      
+      <outline title="ASMR ♥ Manila Cinderella" xmlUrl="https://anchor.fm/s/13551e9c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Girl Gang Manila by Tina Wells" xmlUrl="https://anchor.fm/s/53399100/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Retrospectives: A Nostalgia Podcast" xmlUrl="https://anchor.fm/s/644f4c00/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Manila Rundown" xmlUrl="https://api.substack.com/feed/podcast/6364049/s/302298.rss" type="rss"/>
+      
+      
+      <outline title="Music &amp; Everything In Between" xmlUrl="https://anchor.fm/s/355848fc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The TMI Show with Ted Rall and Manila Chan" xmlUrl="https://www.spreaker.com/show/6949897/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Man from Manila" xmlUrl="https://anchor.fm/s/ef98ea0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="More Than Manila with Alex and Romina" xmlUrl="https://anchor.fm/s/7ca4278/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Models of Manila" xmlUrl="https://anchor.fm/s/4169a78/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Universidad de Manila" xmlUrl="https://anchor.fm/s/4c3abfc8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Chop with Latrice Royale &amp; Manila Luzon" xmlUrl="https://rss.art19.com/thechop" type="rss"/>
+      
+      
+      <outline title="Corporate Event Planning Tips in Manila, Philippines" xmlUrl="https://manilaevents.podomatic.com/rss2.xml" type="rss"/>
+      
+      
+      <outline title="Lifehouse Manila Podcast" xmlUrl="https://anchor.fm/s/68ef6998/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Burning of the U.S flag: A Protest in Quezon City" xmlUrl="https://media.rss.com/the-burning-of-the-us-flag-a-protest-in-quezon-city/feed.xml" type="rss"/>
+      
+      
+      <outline title="FaithBapTalks" xmlUrl="https://anchor.fm/s/e838f91c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="CEBU LAWYER - PHILIPPINE REAL ESTATE LAWS | CASES" xmlUrl="https://rss.buzzsprout.com/2499841.rss" type="rss"/>
+      
+      
+      <outline title="Bradford Church Podcast" xmlUrl="https://anchor.fm/s/18501a50/podcast/rss" type="rss"/>
+      
+      
+      <outline title="500YoCCebu" xmlUrl="https://anchor.fm/s/4fba36d8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Tipsy Talks Cebu" xmlUrl="https://anchor.fm/s/56696f1c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Podcasts By The Company Cebu" xmlUrl="https://anchor.fm/s/4c69d038/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Sermons from New Covenant Church Cebu" xmlUrl="https://anchor.fm/s/10233f38/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Spit and Swallow" xmlUrl="https://anchor.fm/s/e9f28d4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="セブCebuのローカル情報広場" xmlUrl="https://anchor.fm/s/47448094/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Cebu Homebased Workers" xmlUrl="https://anchor.fm/s/2a263c00/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Cebu Newsroom By Dale G. Israel" xmlUrl="https://anchor.fm/s/1316860/podcast/rss" type="rss"/>
+      
+      
+      <outline title="#C3Podcasts" xmlUrl="https://anchor.fm/s/9e1c004/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Bible Baptist Church Davao" xmlUrl="https://www.sermonaudio.com/rss_source.asp?sourceid=bbcdavao" type="rss"/>
+      
+      
+      <outline title="IncogniTalk" xmlUrl="https://anchor.fm/s/6a2df928/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Victory Davao Podcast" xmlUrl="https://anchor.fm/s/51b4e884/podcast/rss" type="rss"/>
+      
+      
+      <outline title="JCI DAVAO: HANDURAW" xmlUrl="https://anchor.fm/s/e2b6609c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Young Disciples Davao" xmlUrl="https://anchor.fm/s/5cfe3f9c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Ateneo de Davao University - Campus Ministry Office HEC" xmlUrl="https://anchor.fm/s/5f3b1b2c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Bantay Hayop Davao Tidbits" xmlUrl="https://anchor.fm/s/521a6560/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Dvo Byz" xmlUrl="https://anchor.fm/s/6a49fb14/podcast/rss" type="rss"/>
+      
+      
+      <outline title="PumaPodcast" xmlUrl="https://www.pumapodcast.com/feed/" type="rss"/>
+      
+      
+      <outline title="Podcast Network Asia" xmlUrl="https://www.podcastnetworkasia.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Photography">
-      <outline title="Canon PH" xmlUrl="https://www.canon.com.ph/rss/" type="rss" />
-      <outline title="Digital Photographer PH" xmlUrl="https://www.digitalphotographer.ph/feed/" type="rss" />
+      
+      
+      <outline title="Canon PH" xmlUrl="https://www.canon.com.ph/rss/" type="rss"/>
+      
+      
+      <outline title="Digital Photographer PH" xmlUrl="https://www.digitalphotographer.ph/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Apple">
-      <outline title="Switch PH" xmlUrl="https://www.switch.com.ph/blog/feed/" type="rss" />
+      
+      
+      <outline title="Switch PH" xmlUrl="https://www.switch.com.ph/blog/feed/" type="rss"/>
+      
+    
     </outline>
-</body>
+    
+
+    <outline text="YouTube">
+      <outline title="StarPlus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-LPIU24bQXVljUXivKEeRQ" type="rss"/>
+      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
+      <outline title="Celine Dept" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1a2ZCw7tugRZYRMnecNj3A" type="rss"/>
+      <outline title="Infobellsмовою гінді" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1ciY6kR3yj3kaKZ6R7ewAg" type="rss"/>
+      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
+      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
+      <outline title="Влад A4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2tsySbe9TNrI-xh2lximHA" type="rss"/>
+      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
+      <outline title="SonyMusicIndiaVEVO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3MLnJtqc_phABBriLRhtgQ" type="rss"/>
+      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
+      <outline title="ARY Digital HD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4JCksJF76g_MdzPVBJoC3Q" type="rss"/>
+      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
+      <outline title="Anaya Kandhal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4wEPe5mrHGAUjjTfXH_C-Q" type="rss"/>
+      <outline title="कलर्स टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
+      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
+      <outline title="Dangal TV Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5AA82B9K5K5Sdx2JpuuuSA" type="rss"/>
+      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
+      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
+      <outline title="ISSEI / いっせい" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6QZ_ss3i_8qLV_RczPZBkw" type="rss"/>
+      <outline title="JioHotstar Kids" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6msOR4-Wf-NMAP24YwobpQ" type="rss"/>
+      <outline title="Billion Surprise Toys" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6sqpmfBwngFZQPPzFjDGTw" type="rss"/>
+      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
+      <outline title="Ben Azelart" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8tCJ55XS8ClDQmfDZogYPQ" type="rss"/>
+      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
+      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
+      <outline title="@shemaroo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9w7VG_ZZwjXCskGZByMBvw" type="rss"/>
+      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9zs_bkRRTJa2kRsakFaFmw" type="rss"/>
+      <outline title="Karla Bustillos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAQB-fgOrLlUm149S3oArOg" type="rss"/>
+      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
+      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
+      <outline title="Topper Guild" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB58HbhbM93ygXfnCJ1K2kA" type="rss"/>
+      <outline title="चुचु टिभी नर्सरी राइम्स एन्ड किड्स सङ्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnZ16ahKA2DZ_T5W0FPUXg" type="rss"/>
+      <outline title="Alan Chikin Chow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCMeCQ4wtdwQuoH7TNThL1A" type="rss"/>
+      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDGmojLIoWpXok597xYo8cg" type="rss"/>
+      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDpenlfHFtjdGpqi8slPybg" type="rss"/>
+      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
+      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss"/>
+      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
+      <outline title="Saregama Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGzzga499Hr2AB1btQ3XtoQ" type="rss"/>
+      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
+      <outline title="PANDA BOI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJbJuOSf-ec7jsPzvQBVC3w" type="rss"/>
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
+      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
+      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
+      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
+      <outline title="केएल ब्रो बिजु रित्भिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5nlHWXVLeOsSjKH2fhmsg" type="rss"/>
+      <outline title="बाङतान टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkAepWjdylmXSltofFvsYQ" type="rss"/>
+      <outline title="WWE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
+      <outline title="@zhong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOKv-bQOCCfZp5vftTZ4MKg" type="rss"/>
+      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
+      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
+      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
+      <outline title="shfa2 - شفا" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ7x25F6YXY9DvGeHFxLhRQ" type="rss"/>
+      <outline title="योलो एभेन्तुरास" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ8TuCvcDMepleXFyOQfyOQ" type="rss"/>
+      <outline title="ABP NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRWFSbif-RFENbBrSiez1DA" type="rss"/>
+      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
+      <outline title="Masha and the Bear" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSgiKiHFAV640il9waFg9cw" type="rss"/>
+      <outline title="อลัน เฉิน สโตกส์ และ เฉิน สโตกส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUdKQXtKb1me2Gt1nz6tzdg" type="rss"/>
+      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
+      <outline title="MR. INDIAN HACKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWWeRmpeFuYY1FdAru58Afw" type="rss"/>
+      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
+      <outline title="ToRung" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXbYlU08sOTBktOtjVsvR6w" type="rss"/>
+      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss"/>
+      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
+      <outline title="Shakira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYLNGLIzMhRTi6ZOLjAPSmw" type="rss"/>
+      <outline title="JuegaGerman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYiGq8XF7YQD00x7wAd62Zg" type="rss"/>
+      <outline title="Alejo Igoa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZs0WwC0Dn_noiQE2BHSTKg" type="rss"/>
+      <outline title="Toys and Colors" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBTm46K3l59CIty88Q_jog" type="rss"/>
+      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
+      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
+      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
+      <outline title="IShowSpeed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd09ztChTkJ9dlY6RLawSog" type="rss"/>
+      <outline title="Alfredo Larin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd5ApCORQsMOZZz5E9oVeFA" type="rss"/>
+      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss"/>
+      <outline title="Sierra &amp; Rhia FAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe6n0z9UbsxYCS8P83f84tw" type="rss"/>
+      <outline title="@HarPalGeoOfficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe9JSDmyqNgA_l2BzGHq1Ug" type="rss"/>
+      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
+      <outline title="Маша и Медведь[b]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfbugOkS8PkqhDfvehIDRBw" type="rss"/>
+      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
+      <outline title="Real fools shorts official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgKEvLp8DXCTMq4QY6wW7bw" type="rss"/>
+      <outline title="Bispo Bruno Leonardo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgi6Wim7jdoW6luCXci83uw" type="rss"/>
+      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
+      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
+      <outline title="Get Movies" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClZkHt2kNIgyrTTPnSQV3SA" type="rss"/>
+      <outline title="Techno Gamerz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl_vAxZpvbO-PFXdDu7EdHw" type="rss"/>
+      <outline title="Bad Bunny" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmBA_wu8xGg1OfOkfW13Q0Q" type="rss"/>
+      <outline title="आचार्य प्रशान्त - Acharya Prashant" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmRZ4Xrzx1PKsg2UieOT6rA" type="rss"/>
+      <outline title="BETER BÖCÜK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnYP-Vc_kPNk--9h6MNI4rA" type="rss"/>
+      <outline title="Fede Vigevani" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoQm-PeHC-cbJclKJYJ8LzA" type="rss"/>
+      <outline title="Ishtar Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCopY0NAzASqmD6eVaRj2TFQ" type="rss"/>
+      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
+      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
+      <outline title="T-Series Bollywood Classics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq-Fj5jknLsUf-MWSy4_brA" type="rss"/>
+      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
+      <outline title="Mikecrack" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ5zFEED1hWs0KNQCQuYdQ" type="rss"/>
+      <outline title="Jess No Limit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrcUbwWMAshF6M6UJcwOK7g" type="rss"/>
+      <outline title="जामजाम इलेक्ट्रोनिक ट्रेडिङ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrnQFuUabBHaw-BRhPo8xEA" type="rss"/>
+      <outline title="ABS-CBN Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCstEtN0pgOmCf02EdXsGChw" type="rss"/>
+      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
+      <outline title="IndiaTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCttspZesZIDEwwpVIgoZtWQ" type="rss"/>
+      <outline title="योर क्रिस्टियानो" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtxD0x6AuNNqdXO9Wp5GHew" type="rss"/>
+      <outline title="Juan de Dios Pantoja" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu9rnHLRV0gvyn2Skm7wsRQ" type="rss"/>
+      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
+      <outline title="shfa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwHE1kM1CPJd_pI9FQ0-4dg" type="rss"/>
+      <outline title="LUCCAS NETO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxk7r8lH6fWkMuWeQn9Gi6g" type="rss"/>
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
+      <outline title="קים דונג ג'וןויו באק האפ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8gf4PK1Qth50lLHdvTCcA" type="rss"/>
+    </outline>
+  </body>
+  
+
 </opml>

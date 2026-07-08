@@ -1,153 +1,505 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
+  
+  
   <head>
+    
+    
     <title>Bangladesh Feeds</title>
+    
+  
   </head>
+  
+  
   <body>
+    
+    
     <outline text="News">
-      <outline title="Channel 24 BD" xmlUrl="https://www.channel24bd.tv/rss/" type="rss" />
+      
+      
+      <outline title="Channel 24 BD" xmlUrl="https://www.channel24bd.tv/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Sports">
-      <outline title="Jugantor Sports" xmlUrl="https://www.jugantor.com/sports/rss/" type="rss" />
+      
+      
+      <outline title="Jugantor Sports" xmlUrl="https://www.jugantor.com/sports/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Technology">
-      <outline title="Future Startup" xmlUrl="https://www.futurestartup.com/feed/" type="rss" />
-      <outline title="Fintech BD" xmlUrl="https://www.fintechbd.com/feed/" type="rss" />
+      
+      
+      <outline title="Future Startup" xmlUrl="https://www.futurestartup.com/feed/" type="rss"/>
+      
+      
+      <outline title="Fintech BD" xmlUrl="https://www.fintechbd.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Science">
-      <outline title="DU" xmlUrl="https://www.du.ac.bd/rss/" type="rss" />
-      <outline title="CU" xmlUrl="https://www.cu.ac.bd/rss/" type="rss" />
-      <outline title="Biggani" xmlUrl="https://www.biggani.org/feed/" type="rss" />
-      <outline title="Science Bee BD" xmlUrl="https://www.sciencebee.com.bd/feed/" type="rss" />
+      
+      
+      <outline title="DU" xmlUrl="https://www.du.ac.bd/rss/" type="rss"/>
+      
+      
+      <outline title="CU" xmlUrl="https://www.cu.ac.bd/rss/" type="rss"/>
+      
+      
+      <outline title="Biggani" xmlUrl="https://www.biggani.org/feed/" type="rss"/>
+      
+      
+      <outline title="Science Bee BD" xmlUrl="https://www.sciencebee.com.bd/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Culture">
-      <outline title="Bengal Foundation" xmlUrl="https://www.bengalfoundation.org/rss/" type="rss" />
+      
+      
+      <outline title="Bengal Foundation" xmlUrl="https://www.bengalfoundation.org/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Movies">
-      <outline title="Dhaka Film Festival" xmlUrl="https://www.dhakafilmfestival.org/rss/" type="rss" />
-      <outline title="Chorki" xmlUrl="https://www.chorki.com/rss/" type="rss" />
-      <outline title="Bongo BD" xmlUrl="https://www.bongobd.com/rss/" type="rss" />
-      <outline title="Dhallywood" xmlUrl="https://www.dhallywood.com/feed/" type="rss" />
+      
+      
+      <outline title="Dhaka Film Festival" xmlUrl="https://www.dhakafilmfestival.org/rss/" type="rss"/>
+      
+      
+      <outline title="Chorki" xmlUrl="https://www.chorki.com/rss/" type="rss"/>
+      
+      
+      <outline title="Bongo BD" xmlUrl="https://www.bongobd.com/rss/" type="rss"/>
+      
+      
+      <outline title="Dhallywood" xmlUrl="https://www.dhallywood.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Music">
-      <outline title="ABC Radio" xmlUrl="https://www.abcradiobd.fm/rss/" type="rss" />
-      <outline title="Gaan Bangla" xmlUrl="https://www.gaanbangla.tv/rss/" type="rss" />
-      <outline title="Bengal Music" xmlUrl="https://www.bengalmusic.com/feed/" type="rss" />
-      <outline title="Bangladesh Music" xmlUrl="https://www.bangladeshmusic.com/feed/" type="rss" />
+      
+      
+      <outline title="ABC Radio" xmlUrl="https://www.abcradiobd.fm/rss/" type="rss"/>
+      
+      
+      <outline title="Gaan Bangla" xmlUrl="https://www.gaanbangla.tv/rss/" type="rss"/>
+      
+      
+      <outline title="Bengal Music" xmlUrl="https://www.bengalmusic.com/feed/" type="rss"/>
+      
+      
+      <outline title="Bangladesh Music" xmlUrl="https://www.bangladeshmusic.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Food">
-      <outline title="Bangladeshi Food" xmlUrl="https://www.bangladeshifood.com/feed/" type="rss" />
-      <outline title="Cook BD" xmlUrl="https://www.cookbd.com/feed/" type="rss" />
-      <outline title="Bangladeshi Recipes" xmlUrl="https://www.bangladeshirecipes.com/feed/" type="rss" />
-      <outline title="Deshi Food" xmlUrl="https://www.deshifood.com/feed/" type="rss" />
+      
+      
+      <outline title="Bangladeshi Food" xmlUrl="https://www.bangladeshifood.com/feed/" type="rss"/>
+      
+      
+      <outline title="Cook BD" xmlUrl="https://www.cookbd.com/feed/" type="rss"/>
+      
+      
+      <outline title="Bangladeshi Recipes" xmlUrl="https://www.bangladeshirecipes.com/feed/" type="rss"/>
+      
+      
+      <outline title="Deshi Food" xmlUrl="https://www.deshifood.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Gaming">
-      <outline title="Future Startup Games" xmlUrl="https://www.futurestartup.com/gaming/feed/" type="rss" />
+      
+      
+      <outline title="Future Startup Games" xmlUrl="https://www.futurestartup.com/gaming/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Travel">
-      <outline title="Travel Bangladesh" xmlUrl="https://www.travelbangladesh.com/feed/" type="rss" />
+      
+      
+      <outline title="Travel Bangladesh" xmlUrl="https://www.travelbangladesh.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Blogs">
-      <outline title="Bangladesh Brand Forum" xmlUrl="https://www.bangladeshbrandforum.com/feed/" type="rss" />
+      
+      
+      <outline title="Bangladesh Brand Forum" xmlUrl="https://www.bangladeshbrandforum.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Design">
-      <outline title="Fashion BD" xmlUrl="https://www.fashionbd.com/feed/" type="rss" />
+      
+      
+      <outline title="Fashion BD" xmlUrl="https://www.fashionbd.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Environment">
-      <outline title="Greenpeace South Asia" xmlUrl="https://www.greenpeace.org/southasia/feed/" type="rss" />
-      <outline title="Nature Bangladesh" xmlUrl="https://www.naturebangladesh.org/feed/" type="rss" />
+      
+      
+      <outline title="Greenpeace South Asia" xmlUrl="https://www.greenpeace.org/southasia/feed/" type="rss"/>
+      
+      
+      <outline title="Nature Bangladesh" xmlUrl="https://www.naturebangladesh.org/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="DIY">
-      <outline title="Home BD" xmlUrl="https://www.homebd.com/feed/" type="rss" />
-      <outline title="Crafts BD" xmlUrl="https://www.craftsbd.com/feed/" type="rss" />
-      <outline title="Aarong Blog" xmlUrl="https://www.aarong.com/blog/feed/" type="rss" />
-      <outline title="Build Bangladesh" xmlUrl="https://www.buildbangladesh.com/feed/" type="rss" />
-      <outline title="Hatil" xmlUrl="https://www.hatil.com/blog/feed/" type="rss" />
+      
+      
+      <outline title="Home BD" xmlUrl="https://www.homebd.com/feed/" type="rss"/>
+      
+      
+      <outline title="Crafts BD" xmlUrl="https://www.craftsbd.com/feed/" type="rss"/>
+      
+      
+      <outline title="Aarong Blog" xmlUrl="https://www.aarong.com/blog/feed/" type="rss"/>
+      
+      
+      <outline title="Build Bangladesh" xmlUrl="https://www.buildbangladesh.com/feed/" type="rss"/>
+      
+      
+      <outline title="Hatil" xmlUrl="https://www.hatil.com/blog/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="History">
-      <outline title="Bangladesh History" xmlUrl="https://www.bangladeshhistory.com/feed/" type="rss" />
+      
+      
+      <outline title="Bangladesh History" xmlUrl="https://www.bangladeshhistory.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Architecture">
-      <outline title="ArchDaily Bangladesh" xmlUrl="https://www.archdaily.com/country/bangladesh/feed/" type="rss" />
-      <outline title="Construction BD" xmlUrl="https://www.constructionbd.com/feed/" type="rss" />
+      
+      
+      <outline title="ArchDaily Bangladesh" xmlUrl="https://www.archdaily.com/country/bangladesh/feed/" type="rss"/>
+      
+      
+      <outline title="Construction BD" xmlUrl="https://www.constructionbd.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Programming">
-      <outline title="Brain Station 23" xmlUrl="https://www.brainstation-23.com/blog/feed/" type="rss" />
-      <outline title="Pathao Engineering" xmlUrl="https://www.pathao.com/blog/feed/" type="rss" />
+      
+      
+      <outline title="Brain Station 23" xmlUrl="https://www.brainstation-23.com/blog/feed/" type="rss"/>
+      
+      
+      <outline title="Pathao Engineering" xmlUrl="https://www.pathao.com/blog/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Business">
-      <outline title="Bangladesh Bank" xmlUrl="https://www.bb.org.bd/rss/" type="rss" />
-      <outline title="LightCastle" xmlUrl="https://www.lightcastlebd.com/feed/" type="rss" />
+      
+      
+      <outline title="Bangladesh Bank" xmlUrl="https://www.bb.org.bd/rss/" type="rss"/>
+      
+      
+      <outline title="LightCastle" xmlUrl="https://www.lightcastlebd.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Podcasts">
-      <outline title="So, We Say! | A Podcast from Bangladesh" xmlUrl="https://anchor.fm/s/392da2c4/podcast/rss" type="rss" />
-      <outline title="Brilliant Bangladesh" xmlUrl="https://anchor.fm/s/5e3e07ac/podcast/rss" type="rss" />
-      <outline title="1971 Bangladesh War" xmlUrl="https://anchor.fm/s/54d27c98/podcast/rss" type="rss" />
-      <outline title="Not Here For: Denying Feminine Rage" xmlUrl="https://anchor.fm/s/49b66900/podcast/rss" type="rss" />
-      <outline title="Bangladesh Angels" xmlUrl="https://anchor.fm/s/56233a10/podcast/rss" type="rss" />
-      <outline title="Bangladesh Liberation War of 1971" xmlUrl="https://anchor.fm/s/1d3b67f4/podcast/rss" type="rss" />
-      <outline title="Bangla Quran | আল-কুরআন এর বাংলা অনুবাদ" xmlUrl="https://anchor.fm/s/59e35a40/podcast/rss" type="rss" />
-      <outline title="Bangladesh" xmlUrl="https://anchor.fm/s/541c55bc/podcast/rss" type="rss" />
-      <outline title="SEO Expert in Bangladesh - Shahin Alam" xmlUrl="https://anchor.fm/s/293c92d0/podcast/rss" type="rss" />
-      <outline title="The Growth Curve" xmlUrl="https://anchor.fm/s/541db358/podcast/rss" type="rss" />
-      <outline title="SEO Expert in Bangladesh" xmlUrl="https://anchor.fm/s/3cdd188c/podcast/rss" type="rss" />
-      <outline title="হামদ ও নাথ | Islamic Poems" xmlUrl="https://anchor.fm/s/5d65acf4/podcast/rss" type="rss" />
-      <outline title='Peña Madridista Bangladesh Podcast "92:48"' xmlUrl="https://anchor.fm/s/2eb120c8/podcast/rss" type="rss" />
-      <outline title="সত্যের সন্ধানে (Shotter Shondhane)" xmlUrl="https://anchor.fm/s/5b7c2ae4/podcast/rss" type="rss" />
-      <outline title="Planet Dhaka" xmlUrl="https://anchor.fm/s/2b503be4/podcast/rss" type="rss" />
-      <outline title="Dhaka Post - ঢাকা পোস্ট" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:922767394/sounds.rss" type="rss" />
-      <outline title="Dhaka to Stockholm" xmlUrl="https://anchor.fm/s/22d7b3c/podcast/rss" type="rss" />
-      <outline title="Aashish" xmlUrl="https://anchor.fm/s/26fc34d0/podcast/rss" type="rss" />
-      <outline title="Partnership Deed" xmlUrl="https://anchor.fm/s/2cad2e5c/podcast/rss" type="rss" />
-      <outline title="The Jaipur Dialogues Podcasts" xmlUrl="https://anchor.fm/s/4a53b688/podcast/rss" type="rss" />
-      <outline title="The #AskAbhijit Show" xmlUrl="https://anchor.fm/s/fd893660/podcast/rss" type="rss" />
-      <outline title="Norsu" xmlUrl="https://anchor.fm/s/57b1894/podcast/rss" type="rss" />
-      <outline title="Bangla Waz" xmlUrl="https://www.spreaker.com/show/4399941/episodes/feed" type="rss" />
-      <outline title="Following On: talkSPORT's cricket show" xmlUrl="https://feeds.acast.com/public/shows/d0e70954-32ac-4e91-86c3-1c34bfb4a075" type="rss" />
-      <outline title="Asia Rising" xmlUrl="https://www.latrobe.edu.au/marketing/assets/podcasts/rssfeeds/asiarising.xml" type="rss" />
-      <outline title="ETA.fm - Twój podcast o Frachcie i Handlu Międzynarodowym" xmlUrl="https://anchor.fm/s/46742584/podcast/rss" type="rss" />
-      <outline title="Documentary on One Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/c7d3b33c-f943-4afb-8665-b0b200e579f7/fc4fa259-0599-486a-87be-b24900bf29c3/40d01f96-e404-4786-ad12-b24900bf29df/podcast.rss" type="rss" />
-      <outline title="Easy Chair with R.J. Rushdoony of Chalcedon Foundation | Reconstructionist Radio" xmlUrl="https://www.reconstructionistradio.com/podcasts/easy-chair-with-r-j-rushdoony/feed/" type="rss" />
-      <outline title="On On! Hash House Harriers Talk and History" xmlUrl="https://anchor.fm/s/55c72248/podcast/rss" type="rss" />
-      <outline title="On the Irrawaddy, A Story of the First Burmese War by G. A. Henty (1832 - 1902)" xmlUrl="https://librivox.org/rss/4561" type="rss" />
-      <outline title="The Documentary Podcast: Archive 2010" xmlUrl="https://podcasts.files.bbci.co.uk/p02p6yx7.rss" type="rss" />
-      <outline title="Ohh Folk!!" xmlUrl="https://anchor.fm/s/6420edb0/podcast/rss" type="rss" />
-      <outline title="The Awful &amp; Awesome Entertainment Wrap" xmlUrl="https://feeds.acast.com/public/shows/5ec24dba84c3fb5c3f29dd3a" type="rss" />
-      <outline title="New Books in South Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT2660294853" type="rss" />
-      <outline title="ALRA TV" xmlUrl="https://anchor.fm/s/76a42b00/podcast/rss" type="rss" />
-      <outline title="Vyakhyaan by Vinod ji Agarwal_'C'" xmlUrl="https://anchor.fm/s/28847150/podcast/rss" type="rss" />
-      <outline title="Voicemails from History" xmlUrl="https://anchor.fm/s/4e77bbc4/podcast/rss" type="rss" />
-      <outline title="Srijan Foundation Talks" xmlUrl="https://raw.githubusercontent.com/sanskrit-coders/rss-feeds/auto-built-feeds/en/SrijanFoundationTalks.rss" type="rss" />
-      <outline title="The World (of) Heritage" xmlUrl="https://anchor.fm/s/426c75cc/podcast/rss" type="rss" />
-      <outline title="Worldview with Suhasini Haidar" xmlUrl="https://feeds.megaphone.fm/THGU5836655568" type="rss" />
-      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" />
-      <outline title="DIVINE LOVE TABERNACLE, New Delhi, India" xmlUrl="https://anchor.fm/s/14906d5c/podcast/rss" type="rss" />
-      <outline title="Munira's Musings" xmlUrl="https://anchor.fm/s/37ede478/podcast/rss" type="rss" />
-      <outline title="Morning Cup of Murder" xmlUrl="https://feeds.megaphone.fm/GLSS3382990828" type="rss" />
-      <outline title="Office Hours with The Capsule" xmlUrl="https://anchor.fm/s/3d0307e0/podcast/rss" type="rss" />
-      <outline title="Books and Authors" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD8783521454" type="rss" />
-      <outline title="Simple Ken - Hosted by Kenny Sebastian" xmlUrl="https://rss.buzzsprout.com/869668.rss" type="rss" />
-      <outline title="Indian History with Dr. Veenus" xmlUrl="https://anchor.fm/s/619af0a4/podcast/rss" type="rss" />
-      <outline title="New Books in Anthropology" xmlUrl="https://feeds.megaphone.fm/LIT5223487889" type="rss" />
-      <outline title="New Books in the Indian Ocean World" xmlUrl="https://feeds.megaphone.fm/newbooksindianoceanworld" type="rss" />
-      <outline title="New Books in Food" xmlUrl="https://feeds.megaphone.fm/LIT3477516260" type="rss" />
-      <outline title="The Thinking Muslim" xmlUrl="https://feeds.acast.com/public/shows/64fc8470defa1f0011d1a4d6" type="rss" />
-      <outline title="Crime, Cults, &amp; Coffee" xmlUrl="https://anchor.fm/s/356fc70c/podcast/rss" type="rss" />
-      <outline title="NL Hafta" xmlUrl="https://feeds.acast.com/public/shows/5ec3d9497cef7479d2ef4798" type="rss" />
-      <outline title="AWR Wavescan - DX Program (WRMI)" xmlUrl="http://feeds.feedburner.com/ENGMI_WAV" type="rss" />
-      <outline title="The Chawalas" xmlUrl="https://anchor.fm/s/5d722cf4/podcast/rss" type="rss" />
-      <outline title="Cobra Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:891648541/sounds.rss" type="rss" />
-      <outline title="Around the World" xmlUrl="https://www.spreaker.com/show/4839821/episodes/feed" type="rss" />
-      <outline title="Travel with Amateur Traveler Podcast" xmlUrl="https://feeds.megaphone.fm/GLSS1857986358" type="rss" />
-      <outline title="AWR - Wavescan" xmlUrl="https://podcasts.awr.org/xml/xmliTunes/ENGMI_WAV.xml" type="rss" />
-      <outline title="ABC Radio Pod" xmlUrl="https://www.abcradiobd.fm/podcasts/rss/" type="rss" />
+      
+      
+      <outline title="So, We Say! | A Podcast from Bangladesh" xmlUrl="https://anchor.fm/s/392da2c4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Brilliant Bangladesh" xmlUrl="https://anchor.fm/s/5e3e07ac/podcast/rss" type="rss"/>
+      
+      
+      <outline title="1971 Bangladesh War" xmlUrl="https://anchor.fm/s/54d27c98/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Not Here For: Denying Feminine Rage" xmlUrl="https://anchor.fm/s/49b66900/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Bangladesh Angels" xmlUrl="https://anchor.fm/s/56233a10/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Bangladesh Liberation War of 1971" xmlUrl="https://anchor.fm/s/1d3b67f4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Bangla Quran | আল-কুরআন এর বাংলা অনুবাদ" xmlUrl="https://anchor.fm/s/59e35a40/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Bangladesh" xmlUrl="https://anchor.fm/s/541c55bc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="SEO Expert in Bangladesh - Shahin Alam" xmlUrl="https://anchor.fm/s/293c92d0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Growth Curve" xmlUrl="https://anchor.fm/s/541db358/podcast/rss" type="rss"/>
+      
+      
+      <outline title="SEO Expert in Bangladesh" xmlUrl="https://anchor.fm/s/3cdd188c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="হামদ ও নাথ | Islamic Poems" xmlUrl="https://anchor.fm/s/5d65acf4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Peña Madridista Bangladesh Podcast &quot;92:48&quot;" xmlUrl="https://anchor.fm/s/2eb120c8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="সত্যের সন্ধানে (Shotter Shondhane)" xmlUrl="https://anchor.fm/s/5b7c2ae4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Planet Dhaka" xmlUrl="https://anchor.fm/s/2b503be4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Dhaka Post - ঢাকা পোস্ট" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:922767394/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Dhaka to Stockholm" xmlUrl="https://anchor.fm/s/22d7b3c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Aashish" xmlUrl="https://anchor.fm/s/26fc34d0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Partnership Deed" xmlUrl="https://anchor.fm/s/2cad2e5c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Jaipur Dialogues Podcasts" xmlUrl="https://anchor.fm/s/4a53b688/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The #AskAbhijit Show" xmlUrl="https://anchor.fm/s/fd893660/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Norsu" xmlUrl="https://anchor.fm/s/57b1894/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Bangla Waz" xmlUrl="https://www.spreaker.com/show/4399941/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Following On: talkSPORT's cricket show" xmlUrl="https://feeds.acast.com/public/shows/d0e70954-32ac-4e91-86c3-1c34bfb4a075" type="rss"/>
+      
+      
+      <outline title="Asia Rising" xmlUrl="https://www.latrobe.edu.au/marketing/assets/podcasts/rssfeeds/asiarising.xml" type="rss"/>
+      
+      
+      <outline title="ETA.fm - Twój podcast o Frachcie i Handlu Międzynarodowym" xmlUrl="https://anchor.fm/s/46742584/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Documentary on One Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/c7d3b33c-f943-4afb-8665-b0b200e579f7/fc4fa259-0599-486a-87be-b24900bf29c3/40d01f96-e404-4786-ad12-b24900bf29df/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Easy Chair with R.J. Rushdoony of Chalcedon Foundation | Reconstructionist Radio" xmlUrl="https://www.reconstructionistradio.com/podcasts/easy-chair-with-r-j-rushdoony/feed/" type="rss"/>
+      
+      
+      <outline title="On On! Hash House Harriers Talk and History" xmlUrl="https://anchor.fm/s/55c72248/podcast/rss" type="rss"/>
+      
+      
+      <outline title="On the Irrawaddy, A Story of the First Burmese War by G. A. Henty (1832 - 1902)" xmlUrl="https://librivox.org/rss/4561" type="rss"/>
+      
+      
+      <outline title="The Documentary Podcast: Archive 2010" xmlUrl="https://podcasts.files.bbci.co.uk/p02p6yx7.rss" type="rss"/>
+      
+      
+      <outline title="Ohh Folk!!" xmlUrl="https://anchor.fm/s/6420edb0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Awful &amp; Awesome Entertainment Wrap" xmlUrl="https://feeds.acast.com/public/shows/5ec24dba84c3fb5c3f29dd3a" type="rss"/>
+      
+      
+      <outline title="New Books in South Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT2660294853" type="rss"/>
+      
+      
+      <outline title="ALRA TV" xmlUrl="https://anchor.fm/s/76a42b00/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Vyakhyaan by Vinod ji Agarwal_'C'" xmlUrl="https://anchor.fm/s/28847150/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Voicemails from History" xmlUrl="https://anchor.fm/s/4e77bbc4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Srijan Foundation Talks" xmlUrl="https://raw.githubusercontent.com/sanskrit-coders/rss-feeds/auto-built-feeds/en/SrijanFoundationTalks.rss" type="rss"/>
+      
+      
+      <outline title="The World (of) Heritage" xmlUrl="https://anchor.fm/s/426c75cc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Worldview with Suhasini Haidar" xmlUrl="https://feeds.megaphone.fm/THGU5836655568" type="rss"/>
+      
+      
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss"/>
+      
+      
+      <outline title="DIVINE LOVE TABERNACLE, New Delhi, India" xmlUrl="https://anchor.fm/s/14906d5c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Munira's Musings" xmlUrl="https://anchor.fm/s/37ede478/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Morning Cup of Murder" xmlUrl="https://feeds.megaphone.fm/GLSS3382990828" type="rss"/>
+      
+      
+      <outline title="Office Hours with The Capsule" xmlUrl="https://anchor.fm/s/3d0307e0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Books and Authors" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD8783521454" type="rss"/>
+      
+      
+      <outline title="Simple Ken - Hosted by Kenny Sebastian" xmlUrl="https://rss.buzzsprout.com/869668.rss" type="rss"/>
+      
+      
+      <outline title="Indian History with Dr. Veenus" xmlUrl="https://anchor.fm/s/619af0a4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="New Books in Anthropology" xmlUrl="https://feeds.megaphone.fm/LIT5223487889" type="rss"/>
+      
+      
+      <outline title="New Books in the Indian Ocean World" xmlUrl="https://feeds.megaphone.fm/newbooksindianoceanworld" type="rss"/>
+      
+      
+      <outline title="New Books in Food" xmlUrl="https://feeds.megaphone.fm/LIT3477516260" type="rss"/>
+      
+      
+      <outline title="The Thinking Muslim" xmlUrl="https://feeds.acast.com/public/shows/64fc8470defa1f0011d1a4d6" type="rss"/>
+      
+      
+      <outline title="Crime, Cults, &amp; Coffee" xmlUrl="https://anchor.fm/s/356fc70c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="NL Hafta" xmlUrl="https://feeds.acast.com/public/shows/5ec3d9497cef7479d2ef4798" type="rss"/>
+      
+      
+      <outline title="AWR Wavescan - DX Program (WRMI)" xmlUrl="http://feeds.feedburner.com/ENGMI_WAV" type="rss"/>
+      
+      
+      <outline title="The Chawalas" xmlUrl="https://anchor.fm/s/5d722cf4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Cobra Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:891648541/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Around the World" xmlUrl="https://www.spreaker.com/show/4839821/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Travel with Amateur Traveler Podcast" xmlUrl="https://feeds.megaphone.fm/GLSS1857986358" type="rss"/>
+      
+      
+      <outline title="AWR - Wavescan" xmlUrl="https://podcasts.awr.org/xml/xmliTunes/ENGMI_WAV.xml" type="rss"/>
+      
+      
+      <outline title="ABC Radio Pod" xmlUrl="https://www.abcradiobd.fm/podcasts/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Photography">
-      <outline title="Photography Bangladesh" xmlUrl="https://www.photographybangladesh.com/feed/" type="rss" />
+      
+      
+      <outline title="Photography Bangladesh" xmlUrl="https://www.photographybangladesh.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Apple">
-      <outline title="Gadget BD" xmlUrl="https://www.gadgetbd.com/feed/" type="rss" />
-      <outline title="iPhone Bangladesh" xmlUrl="https://www.iphonebangladesh.com/feed/" type="rss" />
+      
+      
+      <outline title="Gadget BD" xmlUrl="https://www.gadgetbd.com/feed/" type="rss"/>
+      
+      
+      <outline title="iPhone Bangladesh" xmlUrl="https://www.iphonebangladesh.com/feed/" type="rss"/>
+      
+    
     </outline>
-</body>
+    
+
+    <outline text="YouTube">
+      <outline title="Katy Perry" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-8Q-hLdECwQmaWNwXitYDw" type="rss"/>
+      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
+      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
+      <outline title="ibighit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
+      <outline title="Movieclips" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4OfKwXKN1flzBXiqnQ4hyw" type="rss"/>
+      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
+      <outline title="Bright Side" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4rlAVgAK0SGk-yTfe48Qpw" type="rss"/>
+      <outline title="Colors TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
+      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
+      <outline title="SAB TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
+      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
+      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
+      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
+      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
+      <outline title="whinderssonnunes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCJ9Shh3w90o4LawLcOQ3Bg" type="rss"/>
+      <outline title="Badabun" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCELWvwbUrlcAvvOtWlV8v2Q" type="rss"/>
+      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
+      <outline title="Shemaroo Filmi Gaane" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF1JIbMUs6uqoZEY1Haw0GQ" type="rss"/>
+      <outline title="Zee Music Company" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
+      <outline title="EminemMusic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGgf_k1y-_d-4Eh922iCCJg" type="rss"/>
+      <outline title="Pinkfong! Kids' Stories &amp; Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIu-nhU37Tiqj-KjppUJ7Hg" type="rss"/>
+      <outline title="El Reino Infantil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIvZt-Vuvk9MuCWxiSQyyuw" type="rss"/>
+      <outline title="Justin Bieber" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
+      <outline title="Felipe Neto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIzdh7oty8jCnXUj3eUj2WQ" type="rss"/>
+      <outline title="BangtanTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJCAlMsCuld3v96t-9SffdA" type="rss"/>
+      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
+      <outline title="Alan Walker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrOtniJ0-NWz37R30urifQ" type="rss"/>
+      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
+      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
+      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
+      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
+      <outline title="ChuChu TV Nursery Rhymes &amp; Kids Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
+      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
+      <outline title="Wave Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYLlkv4hivYJlOk6Lo-RHNQ" type="rss"/>
+      <outline title="Aaj Taak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYPvAwZP8pZhSMW8qs7cVCw" type="rss"/>
+      <outline title="HolaSoyGerman." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYiGq8XF7YQD00x7wAd62Zg" type="rss"/>
+      <outline title="Canal KondZilla" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ2HtmLHc33CczdI8PHs2NA" type="rss"/>
+      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZjUXkKr9GiSV43YSaZVO7Q" type="rss"/>
+      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
+      <outline title="YRF" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
+      <outline title="elrubiusOMG" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcjIvuxmWlS5IEQ0JdPV4Ng" type="rss"/>
+      <outline title="กุลชาน กุมาร์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
+      <outline title="Você Sabia?" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj0O6W8yDuLg3iraAXKgCrQ" type="rss"/>
+      <outline title="Zee TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
+      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
+      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
+      <outline title="Fernanfloo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwosQ1lgv4kez9V4xUbJWKQ" type="rss"/>
+      <outline title="Goldmines Telefilms" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
+    </outline>
+  </body>
+  
+
 </opml>

@@ -122,35 +122,33 @@ actor RSSFetcher {
 
     // MARK: - Audio extraction
 
-    private func extractAudio(from item: RSSFeedItem, source: FeedSource) -> String? {
+    private struct AudioEnclosure {
+        let url: String
+        let duration: TimeInterval?
+    }
+
+    private func extractAudio(from item: RSSFeedItem, source: FeedSource) -> AudioEnclosure? {
         // Standard enclosure
-        if let enc = item.enclosure,
-           let type = enc.attributes?.type?.lowercased(),
-           let url = enc.attributes?.url,
-           type.hasPrefix("audio/") {
-            return url
+        if let enc = item.enclosure?.attributes,
+           let url = enc.url,
+           Self.isAudioCandidate(url: url, type: enc.type, medium: nil),
+           let resolved = resolvedAudioURL(url, source: source) {
+            return AudioEnclosure(url: resolved, duration: nil)
         }
+
         // Media namespace
-        if let contents = item.media?.mediaContents {
-            for m in contents {
-                if let t = m.attributes?.type?.lowercased(),
-                   let u = m.attributes?.url,
-                   t.hasPrefix("audio/") {
-                    return u
+        let mediaContents = (item.media?.mediaContents ?? []) + (item.media?.mediaGroup?.mediaContents ?? [])
+        if !mediaContents.isEmpty {
+            for m in mediaContents {
+                guard let attr = m.attributes, let url = attr.url else { continue }
+                if Self.isAudioCandidate(url: url, type: attr.type, medium: attr.medium),
+                   let resolved = resolvedAudioURL(url, source: source) {
+                    let duration = attr.duration.map(TimeInterval.init)
+                    return AudioEnclosure(url: resolved, duration: duration)
                 }
             }
         }
-        // Fallback: enclosure with a missing/unknown type but an audio file
-        // extension. Do NOT return enclosures that declare a non-audio type
-        // (image/*, video/*, text/html, …) — those were being surfaced as
-        // unplayable "podcasts". Items whose only enclosure isn't audio simply
-        // aren't podcasts.
-        if let enc = item.enclosure?.attributes,
-           let url = enc.url, !url.isEmpty,
-           (enc.type?.isEmpty ?? true),
-           Self.hasAudioFileExtension(url) {
-            return url
-        }
+
         return nil
     }
 
@@ -162,16 +160,42 @@ actor RSSFetcher {
         return exts.contains { path.hasSuffix($0) }
     }
 
-    private func extractAtomAudio(from entry: AtomFeedEntry) -> String? {
+    private static func isAudioCandidate(url: String, type: String?, medium: String?) -> Bool {
+        let mediaType = type?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let mediaMedium = medium?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+
+        if mediaMedium == "audio" || mediaType.hasPrefix("audio/") { return true }
+        if mediaType.hasPrefix("image/") || mediaType.hasPrefix("video/") || mediaType.hasPrefix("text/") {
+            return false
+        }
+        return hasAudioFileExtension(url)
+    }
+
+    private func resolvedAudioURL(_ raw: String?, source: FeedSource) -> String? {
+        FeedItem.resolvedMediaURL(from: raw, baseURL: source.url)?.absoluteString
+    }
+
+    private func extractAtomAudio(from entry: AtomFeedEntry, source: FeedSource) -> String? {
         guard let links = entry.links else { return nil }
         for link in links {
-            if let type = link.attributes?.type?.lowercased(),
-               let href = link.attributes?.href,
-               type.hasPrefix("audio/") || type == "audio/mpeg" || type == "audio/mp3" {
-                return href
+            guard let attr = link.attributes, let href = attr.href else { continue }
+            let isEnclosure = attr.rel?.lowercased() == "enclosure"
+            if Self.isAudioCandidate(url: href, type: attr.type, medium: nil) || (isEnclosure && Self.hasAudioFileExtension(href)) {
+                return resolvedAudioURL(href, source: source)
             }
         }
         return nil
+    }
+
+    private func extractJSONAudio(from item: JSONFeedItem, source: FeedSource) -> AudioEnclosure? {
+        guard let attachment = item.attachments?.first(where: {
+            guard let url = $0.url else { return false }
+            return Self.isAudioCandidate(url: url, type: $0.mimeType, medium: nil)
+        }),
+              let resolved = resolvedAudioURL(attachment.url, source: source) else {
+            return nil
+        }
+        return AudioEnclosure(url: resolved, duration: attachment.durationInSeconds)
     }
 
     private func extractDuration(from item: RSSFeedItem) -> TimeInterval? {
@@ -298,7 +322,7 @@ actor RSSFetcher {
             case .atom(let atomFeed):
                 return (atomFeed.entries ?? []).compactMap { entry in
                     let rawContent = entry.content?.value ?? entry.summary?.value ?? ""
-                    let audio = extractAtomAudio(from: entry)
+                    let audio = extractAtomAudio(from: entry, source: source)
                     return makeItem(
                         guid: entry.id,
                         link: entry.links?.first?.attributes?.href ?? entry.id,
@@ -314,7 +338,7 @@ actor RSSFetcher {
             case .rss(let rssFeed):
                 return (rssFeed.items ?? []).compactMap { item in
                     let audio = extractAudio(from: item, source: source)
-                    let duration = extractDuration(from: item)
+                    let duration = extractDuration(from: item) ?? audio?.duration
                     return makeItem(
                         guid: item.guid?.value,
                         link: item.link,
@@ -324,12 +348,13 @@ actor RSSFetcher {
                         rawDescription: item.description,
                         rawContent: item.content?.contentEncoded,
                         imageURL: extractImageURL(from: item),
-                        audioURL: audio,
+                        audioURL: audio?.url,
                         duration: duration
                     )
                 }
             case .json(let jsonFeed):
                 return (jsonFeed.items ?? []).compactMap { jsonItem in
+                    let audio = extractJSONAudio(from: jsonItem, source: source)
                     makeItem(
                         guid: jsonItem.id,
                         link: jsonItem.url,
@@ -338,7 +363,9 @@ actor RSSFetcher {
                         source: source,
                         rawDescription: jsonItem.summary ?? jsonItem.contentText,
                         rawContent: jsonItem.contentHtml,
-                        imageURL: jsonItem.image ?? jsonItem.bannerImage
+                        imageURL: jsonItem.image ?? jsonItem.bannerImage,
+                        audioURL: audio?.url,
+                        duration: audio?.duration
                     )
                 }
             }

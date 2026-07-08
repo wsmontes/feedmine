@@ -10,7 +10,6 @@ final class AudioPlayerManager {
     private var timeObserver: Any?
     private var endObserver: NSObjectProtocol?
     private var statusObserver: NSKeyValueObservation?
-    private var timeControlObserver: NSKeyValueObservation?
 
     private(set) var currentItem: FeedItem?
     private(set) var isPlaying = false
@@ -19,7 +18,6 @@ final class AudioPlayerManager {
 
     private init() {
         setupAudioSession()
-        setupEndPlaybackObserver()
     }
 
     // MARK: - Audio Session (background playback)
@@ -41,20 +39,10 @@ final class AudioPlayerManager {
         }
     }
 
-    // MARK: - Playback ended observer
-
-    private func setupEndPlaybackObserver() {
-        Task { [weak self] in
-            for await _ in NotificationCenter.default.notifications(named: .AVPlayerItemDidPlayToEndTime).prefix(1) {
-                break
-            }
-        }
-    }
-
     // MARK: - Playback
 
     func play(item: FeedItem) {
-        guard let urlString = item.audioURL, let url = URL(string: urlString) else { return }
+        guard let url = item.audioPlaybackURL else { return }
 
         if currentItem?.id == item.id {
             activateSession()
@@ -68,34 +56,16 @@ final class AudioPlayerManager {
         currentItem = item
         duration = item.duration ?? 0
 
-        // TEMP diagnostics — pinpoint why playback stalls. Remove once resolved.
-        let sessionCategory = AVAudioSession.sharedInstance().category.rawValue
-        let sessionActive = AVAudioSession.sharedInstance().isOtherAudioPlaying
-        NSLog("%@", "[AudioPlayer] play url=\(urlString) category=\(sessionCategory) otherAudio=\(sessionActive)")
-
         let playerItem = AVPlayerItem(url: url)
         player = AVPlayer(playerItem: playerItem)
         player?.play()
         isPlaying = true
 
-        // Surface load failures (bad URL, ATS block, 404, unsupported media)
-        // instead of sitting silently "playing". Read Sendable values out of
-        // the item before hopping to the main actor.
+        // Surface load failures instead of sitting silently "playing".
         statusObserver = playerItem.observe(\.status, options: [.new]) { [weak self] item, _ in
-            let status = item.status.rawValue   // 0=unknown 1=readyToPlay 2=failed
-            let message = item.error.map { String(describing: $0) } ?? "nil"
+            let failed = item.status == .failed
             Task { @MainActor [weak self] in
-                NSLog("%@", "[AudioPlayer] item status=\(status) error=\(message)")
-                if item.status == .failed { self?.isPlaying = false }
-            }
-        }
-
-        // TEMP: report why the player is (not) playing.
-        timeControlObserver = player?.observe(\.timeControlStatus, options: [.new]) { player, _ in
-            let control = player.timeControlStatus.rawValue  // 0=paused 1=waiting 2=playing
-            let reason = player.reasonForWaitingToPlay?.rawValue ?? "nil"
-            Task { @MainActor in
-                NSLog("%@", "[AudioPlayer] timeControl=\(control) waitReason=\(reason)")
+                if failed { self?.isPlaying = false }
             }
         }
 
@@ -159,12 +129,10 @@ final class AudioPlayerManager {
         if let observer = timeObserver { player?.removeTimeObserver(observer) }
         if let endObserver { NotificationCenter.default.removeObserver(endObserver) }
         statusObserver?.invalidate()
-        timeControlObserver?.invalidate()
         player = nil
         timeObserver = nil
         endObserver = nil
         statusObserver = nil
-        timeControlObserver = nil
         currentItem = nil
         isPlaying = false
         currentTime = 0

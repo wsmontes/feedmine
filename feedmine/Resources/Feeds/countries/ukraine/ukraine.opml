@@ -1,241 +1,782 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
+  
+  
   <head>
+    
+    
     <title>Ukraine Feeds</title>
+    
+  
   </head>
+  
+  
   <body>
+    
+    
     <outline text="News">
-      <outline title="Ukrainska Pravda" xmlUrl="https://www.pravda.com.ua/rss/" type="rss" />
-      <outline title="UNIAN" xmlUrl="https://www.unian.ua/rss/" type="rss" />
-      <outline title="TSN" xmlUrl="https://www.tsn.ua/rss/" type="rss" />
-      <outline title="ZN" xmlUrl="https://www.zn.ua/rss/" type="rss" />
-      <outline title="NV" xmlUrl="https://www.nv.ua/rss/" type="rss" />
-      <outline title="24 Kanal" xmlUrl="https://www.24tv.ua/rss/" type="rss" />
-      <outline title="Fakty" xmlUrl="https://www.fakty.ua/rss/" type="rss" />
+      
+      
+      <outline title="Ukrainska Pravda" xmlUrl="https://www.pravda.com.ua/rss/" type="rss"/>
+      
+      
+      <outline title="UNIAN" xmlUrl="https://www.unian.ua/rss/" type="rss"/>
+      
+      
+      <outline title="TSN" xmlUrl="https://www.tsn.ua/rss/" type="rss"/>
+      
+      
+      <outline title="ZN" xmlUrl="https://www.zn.ua/rss/" type="rss"/>
+      
+      
+      <outline title="NV" xmlUrl="https://www.nv.ua/rss/" type="rss"/>
+      
+      
+      <outline title="24 Kanal" xmlUrl="https://www.24tv.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Fakty" xmlUrl="https://www.fakty.ua/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Sports">
-      <outline title="Sport Arena" xmlUrl="https://www.sportarena.com/rss/" type="rss" />
-      <outline title="Dynamo Kyiv" xmlUrl="https://www.fcdynamo.com/rss/" type="rss" />
-      <outline title="Champion" xmlUrl="https://www.champion.com.ua/rss/" type="rss" />
+      
+      
+      <outline title="Sport Arena" xmlUrl="https://www.sportarena.com/rss/" type="rss"/>
+      
+      
+      <outline title="Dynamo Kyiv" xmlUrl="https://www.fcdynamo.com/rss/" type="rss"/>
+      
+      
+      <outline title="Champion" xmlUrl="https://www.champion.com.ua/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Technology">
-      <outline title="Ain" xmlUrl="https://www.ain.ua/feed/" type="rss" />
-      <outline title="Dev UA" xmlUrl="https://www.dev.ua/rss/" type="rss" />
-      <outline title="HiTech Expert" xmlUrl="https://www.hitechexpert.top/feed/" type="rss" />
-      <outline title="Gagadget" xmlUrl="https://www.gagadget.com/rss/" type="rss" />
-      <outline title="Tech Today" xmlUrl="https://www.techtoday.in.ua/feed/" type="rss" />
+      
+      
+      <outline title="Ain" xmlUrl="https://www.ain.ua/feed/" type="rss"/>
+      
+      
+      <outline title="Dev UA" xmlUrl="https://www.dev.ua/rss/" type="rss"/>
+      
+      
+      <outline title="HiTech Expert" xmlUrl="https://www.hitechexpert.top/feed/" type="rss"/>
+      
+      
+      <outline title="Gagadget" xmlUrl="https://www.gagadget.com/rss/" type="rss"/>
+      
+      
+      <outline title="Tech Today" xmlUrl="https://www.techtoday.in.ua/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Science">
-      <outline title="KNU" xmlUrl="https://www.knu.ua/rss/" type="rss" />
-      <outline title="Lviv University" xmlUrl="https://www.lnu.edu.ua/rss/" type="rss" />
+      
+      
+      <outline title="KNU" xmlUrl="https://www.knu.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Lviv University" xmlUrl="https://www.lnu.edu.ua/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Culture">
-      <outline title="Chytomo" xmlUrl="https://www.chytomo.com/feed/" type="rss" />
-      <outline title="Mystetskyi Arsenal" xmlUrl="https://www.artarsenal.in.ua/rss/" type="rss" />
-      <outline title="Pinchuk Art Centre" xmlUrl="https://www.pinchukartcentre.org/rss/" type="rss" />
-      <outline title="Ukrainian Institute" xmlUrl="https://www.ui.org.ua/rss/" type="rss" />
-      <outline title="Dovzhenko Centre" xmlUrl="https://www.dovzhenkocentre.org/rss/" type="rss" />
+      
+      
+      <outline title="Chytomo" xmlUrl="https://www.chytomo.com/feed/" type="rss"/>
+      
+      
+      <outline title="Mystetskyi Arsenal" xmlUrl="https://www.artarsenal.in.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Pinchuk Art Centre" xmlUrl="https://www.pinchukartcentre.org/rss/" type="rss"/>
+      
+      
+      <outline title="Ukrainian Institute" xmlUrl="https://www.ui.org.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Dovzhenko Centre" xmlUrl="https://www.dovzhenkocentre.org/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Movies">
-      <outline title="Planeta Kino" xmlUrl="https://www.planetakino.ua/rss/" type="rss" />
-      <outline title="Cineast" xmlUrl="https://www.cineast.com.ua/feed/" type="rss" />
-      <outline title="Moviegram" xmlUrl="https://www.moviegram.com.ua/feed/" type="rss" />
-      <outline title="Docudays UA" xmlUrl="https://www.docudays.ua/rss/" type="rss" />
-      <outline title="Odesa Film Festival" xmlUrl="https://www.oiff.com.ua/rss/" type="rss" />
-      <outline title="Dovzhenko Film" xmlUrl="https://www.dovzhenkofilm.com.ua/rss/" type="rss" />
+      
+      
+      <outline title="Planeta Kino" xmlUrl="https://www.planetakino.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Cineast" xmlUrl="https://www.cineast.com.ua/feed/" type="rss"/>
+      
+      
+      <outline title="Moviegram" xmlUrl="https://www.moviegram.com.ua/feed/" type="rss"/>
+      
+      
+      <outline title="Docudays UA" xmlUrl="https://www.docudays.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Odesa Film Festival" xmlUrl="https://www.oiff.com.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Dovzhenko Film" xmlUrl="https://www.dovzhenkofilm.com.ua/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Music">
-      <outline title="Comma" xmlUrl="https://www.comma.com.ua/feed/" type="rss" />
-      <outline title="Muzvar" xmlUrl="https://www.muzvar.com.ua/feed/" type="rss" />
-      <outline title="Atlas Weekend" xmlUrl="https://www.atlasweekend.com/rss/" type="rss" />
-      <outline title="Ukrainian Music" xmlUrl="https://www.ukrainianmusic.org/feed/" type="rss" />
+      
+      
+      <outline title="Comma" xmlUrl="https://www.comma.com.ua/feed/" type="rss"/>
+      
+      
+      <outline title="Muzvar" xmlUrl="https://www.muzvar.com.ua/feed/" type="rss"/>
+      
+      
+      <outline title="Atlas Weekend" xmlUrl="https://www.atlasweekend.com/rss/" type="rss"/>
+      
+      
+      <outline title="Ukrainian Music" xmlUrl="https://www.ukrainianmusic.org/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Food">
-      <outline title="Retsepty UA" xmlUrl="https://www.retsepty.com.ua/feed/" type="rss" />
-      <outline title="Borsch UA" xmlUrl="https://www.borsch.com.ua/feed/" type="rss" />
+      
+      
+      <outline title="Retsepty UA" xmlUrl="https://www.retsepty.com.ua/feed/" type="rss"/>
+      
+      
+      <outline title="Borsch UA" xmlUrl="https://www.borsch.com.ua/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Gaming">
-      <outline title="PlayUA" xmlUrl="https://www.playua.net/feed/" type="rss" />
+      
+      
+      <outline title="PlayUA" xmlUrl="https://www.playua.net/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Travel">
-      <outline title="Ukraine Travel" xmlUrl="https://www.ukraine.com/rss/" type="rss" />
-      <outline title="Lviv Travel" xmlUrl="https://www.lviv.travel/rss/" type="rss" />
-      <outline title="Karpaty Travel" xmlUrl="https://www.karpaty.travel/rss/" type="rss" />
-      <outline title="Ukrainer" xmlUrl="https://www.ukrainer.net/feed/" type="rss" />
+      
+      
+      <outline title="Ukraine Travel" xmlUrl="https://www.ukraine.com/rss/" type="rss"/>
+      
+      
+      <outline title="Lviv Travel" xmlUrl="https://www.lviv.travel/rss/" type="rss"/>
+      
+      
+      <outline title="Karpaty Travel" xmlUrl="https://www.karpaty.travel/rss/" type="rss"/>
+      
+      
+      <outline title="Ukrainer" xmlUrl="https://www.ukrainer.net/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Blogs">
-      <outline title="Radio Svoboda" xmlUrl="https://www.radiosvoboda.org/rss/" type="rss" />
+      
+      
+      <outline title="Radio Svoboda" xmlUrl="https://www.radiosvoboda.org/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Design">
-      <outline title="Telegraf Design" xmlUrl="https://www.telegraf.design/feed/" type="rss" />
-      <outline title="Design Lviv" xmlUrl="https://www.designlviv.com/feed/" type="rss" />
+      
+      
+      <outline title="Telegraf Design" xmlUrl="https://www.telegraf.design/feed/" type="rss"/>
+      
+      
+      <outline title="Design Lviv" xmlUrl="https://www.designlviv.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Environment">
-      <outline title="Ministry of Environment" xmlUrl="https://www.mepr.gov.ua/rss/" type="rss" />
-      <outline title="Chornobyl" xmlUrl="https://www.chornobyl.net/rss/" type="rss" />
-      <outline title="EcoAction" xmlUrl="https://www.ecoaction.org.ua/feed/" type="rss" />
-      <outline title="Carpaty Environment" xmlUrl="https://www.carpaty.net/feed/" type="rss" />
+      
+      
+      <outline title="Ministry of Environment" xmlUrl="https://www.mepr.gov.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Chornobyl" xmlUrl="https://www.chornobyl.net/rss/" type="rss"/>
+      
+      
+      <outline title="EcoAction" xmlUrl="https://www.ecoaction.org.ua/feed/" type="rss"/>
+      
+      
+      <outline title="Carpaty Environment" xmlUrl="https://www.carpaty.net/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="DIY">
-      <outline title="Home Ukraine" xmlUrl="https://www.homeukraine.com/feed/" type="rss" />
+      
+      
+      <outline title="Home Ukraine" xmlUrl="https://www.homeukraine.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="History">
-      <outline title="Holodomor Museum" xmlUrl="https://www.holodomormuseum.org.ua/rss/" type="rss" />
-      <outline title="Ukraine History" xmlUrl="https://www.ukrainehistory.com/feed/" type="rss" />
-      <outline title="Trypillia" xmlUrl="https://www.trypillia.com/feed/" type="rss" />
+      
+      
+      <outline title="Holodomor Museum" xmlUrl="https://www.holodomormuseum.org.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Ukraine History" xmlUrl="https://www.ukrainehistory.com/feed/" type="rss"/>
+      
+      
+      <outline title="Trypillia" xmlUrl="https://www.trypillia.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Architecture">
-      <outline title="ArchDaily Ukraine" xmlUrl="https://www.archdaily.com/country/ukraine/feed/" type="rss" />
-      <outline title="NSAU" xmlUrl="https://www.nsau.org/rss/" type="rss" />
-      <outline title="PRAGMATIKA" xmlUrl="https://www.pragmatika.media/feed/" type="rss" />
+      
+      
+      <outline title="ArchDaily Ukraine" xmlUrl="https://www.archdaily.com/country/ukraine/feed/" type="rss"/>
+      
+      
+      <outline title="NSAU" xmlUrl="https://www.nsau.org/rss/" type="rss"/>
+      
+      
+      <outline title="PRAGMATIKA" xmlUrl="https://www.pragmatika.media/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Programming">
-      <outline title="Readdle Blog" xmlUrl="https://www.readdle.com/blog/feed/" type="rss" />
+      
+      
+      <outline title="Readdle Blog" xmlUrl="https://www.readdle.com/blog/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Business">
-      <outline title="EP Business" xmlUrl="https://www.epravda.com.ua/rss/" type="rss" />
-      <outline title="Startup Ukraine" xmlUrl="https://www.startupukraine.com/feed/" type="rss" />
-      <outline title="UFuture" xmlUrl="https://www.ufuture.com/rss/" type="rss" />
+      
+      
+      <outline title="EP Business" xmlUrl="https://www.epravda.com.ua/rss/" type="rss"/>
+      
+      
+      <outline title="Startup Ukraine" xmlUrl="https://www.startupukraine.com/feed/" type="rss"/>
+      
+      
+      <outline title="UFuture" xmlUrl="https://www.ufuture.com/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Podcasts">
-      <outline title="Ukraine: The Latest" xmlUrl="https://feeds.acast.com/public/shows/6583012e715d5300169dcdcb" type="rss" />
-      <outline title="Privateer Station: War In Ukraine" xmlUrl="https://www.spreaker.com/show/5647439/episodes/feed" type="rss" />
-      <outline title="Deloitte Ukraine Talks" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:836209903/sounds.rss" type="rss" />
-      <outline title="The Making of Modern Ukraine" xmlUrl="https://yalepodcasts.blubrry.net/category/making-of-modern-ukraine/feed/podcast/" type="rss" />
-      <outline title="Global Minds For Ukraine" xmlUrl="https://anchor.fm/s/9583f168/podcast/rss" type="rss" />
-      <outline title="Ukrainecast" xmlUrl="https://podcasts.files.bbci.co.uk/p0bqztzm.rss" type="rss" />
-      <outline title="Ukraine Without Hype" xmlUrl="https://anchor.fm/s/3ca9dcec/podcast/rss" type="rss" />
-      <outline title="UkraineWorld - українською" xmlUrl="https://anchor.fm/s/f92bb4bc/podcast/rss" type="rss" />
-      <outline title="По вуха у бізнесі" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:580529262/sounds.rss" type="rss" />
-      <outline title="Ukraine Through the Eyes of Others" xmlUrl="https://anchor.fm/s/1030a08f8/podcast/rss" type="rss" />
-      <outline title="Ukraine War Diaries" xmlUrl="https://feeds.captivate.fm/ukraine-war-diaries/" type="rss" />
-      <outline title="Explaining Ukraine" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:379777835/sounds.rss" type="rss" />
-      <outline title="Україна у серці одна | Ukraine In The Heart Of Everyone" xmlUrl="https://anchor.fm/s/2ea2228/podcast/rss" type="rss" />
-      <outline title="Ukraine This Week" xmlUrl="https://anchor.fm/s/e70a4d20/podcast/rss" type="rss" />
-      <outline title="KISS FM Ukraine" xmlUrl="https://www.kissfm.ua/podcast/podcast.xml" type="rss" />
-      <outline title="TA in Ukraine&#10;Подкаст про Транзакційний Аналіз (ТА)." xmlUrl="https://anchor.fm/s/86cc70f0/podcast/rss" type="rss" />
-      <outline title="CEO Club Podcast" xmlUrl="https://anchor.fm/s/35b4b8a8/podcast/rss" type="rss" />
-      <outline title="Эхо Москвы" xmlUrl="https://feedmaster.umputun.com/rss/echo-msk" type="rss" />
-      <outline title="Le Collimateur" xmlUrl="https://feeds.audiomeans.fr/feed/64ee3763-1a46-44c2-8640-3a69405a3ad8.xml" type="rss" />
-      <outline title="Ukraine : une semaine dans la guerre - Tetyana Ogarkova" xmlUrl="https://feeds.transistor.fm/ukraine-une-semaine-dans-la-guerre" type="rss" />
-      <outline title="Жити зараз" xmlUrl="https://anchor.fm/s/f4632348/podcast/rss" type="rss" />
-      <outline title="Blind Spot Ukraine" xmlUrl="https://anchor.fm/s/11044c15c/podcast/rss" type="rss" />
-      <outline title="Was tun, Herr General? - Der Podcast zum Ukraine-Krieg" xmlUrl="https://www.mdr.de/nachrichten/podcast/general/russland-angriff-krieg-ukraine-mdr-100.xml" type="rss" />
-      <outline title="History in the Making: The War in Ukraine" xmlUrl="https://podesis.com/feed/history-in-the-making-the-war-in-ukraine" type="rss" />
-      <outline title="Radio Sprotyv News - Слухай українські новини!&#10;Ukraine will win! Україна переможе!" xmlUrl="https://anchor.fm/s/d8c3d498/podcast/rss" type="rss" />
-      <outline title="In Moscow's Shadows" xmlUrl="https://rss.buzzsprout.com/1026985.rss" type="rss" />
-      <outline title="Whirlwind: America, Russia &amp; Ukraine" xmlUrl="https://feeds.megaphone.fm/whirlwind" type="rss" />
-      <outline title="Християни для України" xmlUrl="https://feed.podbean.com/christianopenacademy/feed.xml" type="rss" />
-      <outline title="Battleground" xmlUrl="https://feeds.acast.com/public/shows/6a22b52017f169d6433fb960" type="rss" />
-      <outline title="The Globalist" xmlUrl="https://www.omnycontent.com/d/playlist/e6127ab7-b81e-456b-893c-a8d600215365/9c42dc1e-9f07-4f76-b8fb-ab8a0120014e/f2eddba2-287e-448b-a454-ab8a01200152/podcast.rss" type="rss" />
-      <outline title="POLITICO Berlin Playbook" xmlUrl="https://feeds.megaphone.fm/ASD3449434491" type="rss" />
-      <outline title="Frontline: The War in Ukraine and Global Security" xmlUrl="https://feeds.acast.com/public/shows/683f1bbef711091cf40ba4cb" type="rss" />
-      <outline title="Проєкт Інтелект" xmlUrl="https://anchor.fm/s/107bbb838/podcast/rss" type="rss" />
-      <outline title="Ukraine Russia War Talk" xmlUrl="https://rss.buzzsprout.com/2279186.rss" type="rss" />
-      <outline title="ДЕРЕК ПРИНС - Ежедневная #молитва и #провозглашение" xmlUrl="https://anchor.fm/s/1234d3e0/podcast/rss" type="rss" />
-      <outline title="L'Ukraine, face à la guerre" xmlUrl="https://anchor.fm/s/c6a2e9fc/podcast/rss" type="rss" />
-      <outline title="Радянське минуле: (пере)осмислення історії" xmlUrl="https://anchor.fm/s/76d5f324/podcast/rss" type="rss" />
-      <outline title="Inside Europe" xmlUrl="https://rss.dw.com/xml/podcast_inside-europe" type="rss" />
-      <outline title="Ukraine Insights" xmlUrl="https://anchor.fm/s/1053aaf24/podcast/rss" type="rss" />
-      <outline title="F1-Ukraine" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:274766784/sounds.rss" type="rss" />
-      <outline title="FAQ-U: Ukraine Explained" xmlUrl="https://feeds.megaphone.fm/faqukraineexplained" type="rss" />
-      <outline title="Church On The Rock Ukraine" xmlUrl="https://anchor.fm/s/ef6c5c24/podcast/rss" type="rss" />
-      <outline title="World Review with Ivo Daalder" xmlUrl="https://feeds.simplecast.com/Gex8ciXw" type="rss" />
-      <outline title="One Decision" xmlUrl="https://feeds.megaphone.fm/NSR7393370733" type="rss" />
-      <outline title="Френдзона" xmlUrl="https://anchor.fm/s/f1d112d4/podcast/rss" type="rss" />
-      <outline title="Точка (без)контакту" xmlUrl="https://anchor.fm/s/d18c9f70/podcast/rss" type="rss" />
-      <outline title="State of the World from NPR" xmlUrl="https://feeds.npr.org/510366/podcast.xml" type="rss" />
-      <outline title="F.A.Z. Podcast für Deutschland" xmlUrl="https://podcastfuerdeutschland.podigee.io/feed/mp3" type="rss" />
-      <outline title="Рок-концерт на Radio ROKS" xmlUrl="https://www.radioroks.ua/podcast/podcast_rok-kontsert.xml" type="rss" />
-      <outline title="Станція 451" xmlUrl="https://anchor.fm/s/3c854d8c/podcast/rss" type="rss" />
-      <outline title="БУДНІ ЛІДЕРА" xmlUrl="https://anchor.fm/s/f96b1b98/podcast/rss" type="rss" />
-      <outline title="Сексуальний подкаст" xmlUrl="https://anchor.fm/s/24a72910/podcast/rss" type="rss" />
-      <outline title="Вулиця Історії України" xmlUrl="https://anchor.fm/s/b50ef99c/podcast/rss" type="rss" />
-      <outline title="Україна за кермом" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1108096714/sounds.rss" type="rss" />
-      <outline title="Історія у параграфах" xmlUrl="https://media.rss.com/paragraphua/feed.xml" type="rss" />
-      <outline title="Здоровий Подкаст" xmlUrl="https://anchor.fm/s/57db741c/podcast/rss" type="rss" />
-      <outline title="Володимир Єрмоленко «Україна розумна»" xmlUrl="http://rss.castbox.fm/everest/9aad8d2df9be41099ea1b984778b40b8.xml" type="rss" />
-      <outline title="ВЧОМПРИКОЛ" xmlUrl="https://anchor.fm/s/720c1990/podcast/rss" type="rss" />
-      <outline title="Україна: Останні Новини" xmlUrl="https://feeds.acast.com/public/shows/67a60b513ef0b176eae6a5d0" type="rss" />
-      <outline title="Експлікація. Війна, Україна, світ." xmlUrl="https://teteva.com/podcasts/feed.rss" type="rss" />
-      <outline title="Рання Чашка" xmlUrl="https://anchor.fm/s/58379d78/podcast/rss" type="rss" />
-      <outline title="ЇЇ" xmlUrl="https://anchor.fm/s/236c97c4/podcast/rss" type="rss" />
-      <outline title="KWS PODCAST" xmlUrl="https://kws-podcast.podigee.io/feed/mp3" type="rss" />
-      <outline title="Україна вголос" xmlUrl="https://hromadske.radio/podcasts/ukraina-vholos/feed" type="rss" />
-      <outline title="НА ЧАСІ / НОВИНИ" xmlUrl="https://media.rss.com/nachasi/feed.xml" type="rss" />
-      <outline title="Україна після карантину" xmlUrl="https://anchor.fm/s/2268f87c/podcast/rss" type="rss" />
-      <outline title="Галилея Україна" xmlUrl="https://anchor.fm/s/e66bcf4c/podcast/rss" type="rss" />
-      <outline title="Прийом" xmlUrl="https://anchor.fm/s/caa6dea0/podcast/rss" type="rss" />
-      <outline title="Ми - Україна / Інтерв'ю" xmlUrl="https://media.rss.com/weukrainetvinterview/feed.xml" type="rss" />
-      <outline title="BASF Аграрні Рішення Україна" xmlUrl="https://rss.buzzsprout.com/2170856.rss" type="rss" />
-      <outline title="Версії реальності" xmlUrl="https://media.rss.com/versiirealnosti/feed.xml" type="rss" />
-      <outline title="Огляд Україна Брюссель" xmlUrl="https://anchor.fm/s/2dcf7f10/podcast/rss" type="rss" />
-      <outline title="UKRAINE BITCOIN PODCAST - Біткоін Україна" xmlUrl="https://anchor.fm/s/ee8d0a38/podcast/rss" type="rss" />
-      <outline title="Храм на Подолі (Київ, Україна)" xmlUrl="https://anchor.fm/s/fd2b66c/podcast/rss" type="rss" />
-      <outline title="Україна On The Record" xmlUrl="https://anchor.fm/s/106478e0/podcast/rss" type="rss" />
-      <outline title="Вчися вухами | Історія України" xmlUrl="https://anchor.fm/s/dcf8bed4/podcast/rss" type="rss" />
-      <outline title="ЗНО/НМТ з історії України" xmlUrl="https://anchor.fm/s/ff21c30c/podcast/rss" type="rss" />
-      <outline title="Радіо Ми з України" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1096102579/sounds.rss" type="rss" />
-      <outline title="Подкаст ДНК України" xmlUrl="https://anchor.fm/s/104ef02e0/podcast/rss" type="rss" />
-      <outline title="Знакові постаті України: їх вбивала росія" xmlUrl="https://anchor.fm/s/bd5278cc/podcast/rss" type="rss" />
-      <outline title="Про Україну, для України" xmlUrl="https://anchor.fm/s/daf98118/podcast/rss" type="rss" />
-      <outline title="Кава Тру-крайм України" xmlUrl="https://anchor.fm/s/fb36c378/podcast/rss" type="rss" />
-      <outline title="Темна історія України" xmlUrl="https://media.rss.com/blogmayster/feed.xml" type="rss" />
-      <outline title="«Відкритий рахунок» — podcast про гастробізнеси України" xmlUrl="https://anchor.fm/s/10e3ddbdc/podcast/rss" type="rss" />
-      <outline title='Виставка "Дохристиянські вірування України"' xmlUrl="https://anchor.fm/s/10bd78334/podcast/rss" type="rss" />
-      <outline title="Новий Заповіт для нової України" xmlUrl="https://novochekhov.com/unt/feed/" type="rss" />
-      <outline title="1325: жінки, мир, безпека — від ООН до України" xmlUrl="https://hromadske.radio/podcasts/1325-zhinky-myr-bezpeka-vid-oon-do-ukrainy/feed" type="rss" />
-      <outline title="Асоціація правників України (АПУ)" xmlUrl="https://anchor.fm/s/4e90c6b4/podcast/rss" type="rss" />
-      <outline title="Польське радіо для України" xmlUrl="https://www.polskieradio.pl/rss/04025714-3f38-4e73-bdf0-27e33c0771cb" type="rss" />
-      <outline title="Оповіді з України -аудіокниги українською" xmlUrl="https://anchor.fm/s/e6cbad18/podcast/rss" type="rss" />
-      <outline title="Невігласка в культурних політиках України" xmlUrl="https://anchor.fm/s/fcd93ad0/podcast/rss" type="rss" />
-      <outline title="Мейкери України. MakersUA" xmlUrl="https://anchor.fm/s/3e45e2a8/podcast/rss" type="rss" />
-      <outline title="Ми з України" xmlUrl="https://latvijasradio.lsm.lv/?rt=site&amp;ac=feed&amp;c=4&amp;s=1190&amp;a=0&amp;id=223" type="rss" />
-      <outline title="Chicken Kyiv: егоїстичний подкаст про українські інтереси" xmlUrl="https://hromadske.radio/podcasts/chicken-kyiv-ehoistychnyy-podkast-pro-ukrainski-inte/feed" type="rss" />
-      <outline title="Церква ICF Київ | ICF Kyiv" xmlUrl="http://archive.icf-kyiv.church/itunes/podcast.xml" type="rss" />
-      <outline title="Київські бізнес-легенди" xmlUrl="https://anchor.fm/s/112154ba0/podcast/rss" type="rss" />
-      <outline title="Kyiv Art Makers" xmlUrl="https://anchor.fm/s/49b34324/podcast/rss" type="rss" />
-      <outline title="Відкрите Богослужіння KYIV † GGWO" xmlUrl="https://anchor.fm/s/8cd7848/podcast/rss" type="rss" />
-      <outline title="Квір у кожен двір" xmlUrl="https://anchor.fm/s/45c1b1ec/podcast/rss" type="rss" />
-      <outline title="Kyiv Future" xmlUrl="https://feeds.castos.com/gk56g" type="rss" />
-      <outline title="The Kyiv Independent Podcasts" xmlUrl="https://anchor.fm/s/82a94098/podcast/rss" type="rss" />
-      <outline title="The Kyiv Post podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:289575438/sounds.rss" type="rss" />
-      <outline title="kyiv ne kiril" xmlUrl="https://feeds.hubhopper.com/1348adce140ebdcfbfca757c0596a1d3.rss" type="rss" />
-      <outline title="Kyiv Post Talks" xmlUrl="https://anchor.fm/s/f288bfec/podcast/rss" type="rss" />
-      <outline title="Kyiv Post Dying For Truth" xmlUrl="https://anchor.fm/s/299090c4/podcast/rss" type="rss" />
-      <outline title="Kyiv Podcast Hub" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:507488979/sounds.rss" type="rss" />
-      <outline title="Two Marines In Kyiv" xmlUrl="https://anchor.fm/s/94088434/podcast/rss" type="rss" />
-      <outline title="Station Kyiv" xmlUrl="https://www.spreaker.com/show/6577528/episodes/feed" type="rss" />
-      <outline title="KyivLab Innovators" xmlUrl="https://anchor.fm/s/a192e464/podcast/rss" type="rss" />
-      <outline title="Diary from Kyiv by St Rita Radio" xmlUrl="https://feeds.transistor.fm/diary-from-kiev-by-st-rita-radio" type="rss" />
-      <outline title="War in Ukraine: Update from Kyiv" xmlUrl="https://feed.podbean.com/updatefromkyiv/feed.xml" type="rss" />
-      <outline title="A Ukrainian American:  Inside Kyiv" xmlUrl="https://feeds.simplecast.com/_TtrI902" type="rss" />
-      <outline title="Amigo em Kyiv" xmlUrl="https://www.spreaker.com/show/4851201/episodes/feed" type="rss" />
-      <outline title="СучФуд" xmlUrl="https://anchor.fm/s/69308c34/podcast/rss" type="rss" />
-      <outline title="Media in Progress" xmlUrl="https://anchor.fm/s/75e4d0ac/podcast/rss" type="rss" />
-      <outline title="Headlines From The Times" xmlUrl="https://feeds.simplecast.com/_lj7xUNU" type="rss" />
-      <outline title="Kink - Kharkiv Edition" xmlUrl="https://feed.pod.co/kink-kharkiv-edition" type="rss" />
-      <outline title="Be informed with Rashyd" xmlUrl="https://anchor.fm/s/7b67a48c/podcast/rss" type="rss" />
-      <outline title="Made in Odesa" xmlUrl="https://anchor.fm/s/11392dc7c/podcast/rss" type="rss" />
-      <outline title="GDG Odesa Podcast" xmlUrl="https://anchor.fm/s/140a05f0/podcast/rss" type="rss" />
-      <outline title="Suara Odesa" xmlUrl="https://anchor.fm/s/534320a8/podcast/rss" type="rss" />
-      <outline title="Hodesa | Odesa'nın Dünyası - Belgesel Türkçe Podcast Çocuklar ve Yetişkinler için Sesli Kitaplar" xmlUrl="https://www.spreaker.com/show/5913659/episodes/feed" type="rss" />
-      <outline title="Dnipro Center for Contemporary Culture" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:936170656/sounds.rss" type="rss" />
-      <outline title="Lviv HR Solutions Podcast" xmlUrl="https://anchor.fm/s/6c6a6cd0/podcast/rss" type="rss" />
-      <outline title="мета-розмова" xmlUrl="https://anchor.fm/s/552641e8/podcast/rss" type="rss" />
-      <outline title="«Запитаю в психолога»" xmlUrl="https://anchor.fm/s/5319a264/podcast/rss" type="rss" />
-      <outline title="CSL Podcast" xmlUrl="https://anchor.fm/s/610be83c/podcast/rss" type="rss" />
-      <outline title="«Прості як двері»" xmlUrl="https://anchor.fm/s/45ce59c4/podcast/rss" type="rss" />
-      <outline title="Lviv Lab Podcasts" xmlUrl="https://anchor.fm/s/22b61328/podcast/rss" type="rss" />
-      <outline title="Malevich Night Club Lviv" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:323479291/sounds.rss" type="rss" />
-      <outline title="Global Shapers Lviv Hub" xmlUrl="https://anchor.fm/s/267e743c/podcast/rss" type="rss" />
-      <outline title="Культурна тривога" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1101451303/sounds.rss" type="rss" />
-      <outline title="Курілка на Пекарській" xmlUrl="https://anchor.fm/s/488fa348/podcast/rss" type="rss" />
-      <outline title="Загугли свій діагноз" xmlUrl="https://anchor.fm/s/4ba35868/podcast/rss" type="rss" />
-      <outline title="Аудіопрогулянки" xmlUrl="https://anchor.fm/s/fe324f70/podcast/rss" type="rss" />
-      <outline title="Твердий Крок" xmlUrl="https://anchor.fm/s/1052b8328/podcast/rss" type="rss" />
-      <outline title="Hromadske Podcast" xmlUrl="https://www.hromadske.radio/podcasts/rss/" type="rss" />
-      <outline title="Urban Space Radio" xmlUrl="https://www.urbanspaceradio.com/rss/" type="rss" />
+      
+      
+      <outline title="Ukraine: The Latest" xmlUrl="https://feeds.acast.com/public/shows/6583012e715d5300169dcdcb" type="rss"/>
+      
+      
+      <outline title="Privateer Station: War In Ukraine" xmlUrl="https://www.spreaker.com/show/5647439/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Deloitte Ukraine Talks" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:836209903/sounds.rss" type="rss"/>
+      
+      
+      <outline title="The Making of Modern Ukraine" xmlUrl="https://yalepodcasts.blubrry.net/category/making-of-modern-ukraine/feed/podcast/" type="rss"/>
+      
+      
+      <outline title="Global Minds For Ukraine" xmlUrl="https://anchor.fm/s/9583f168/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Ukrainecast" xmlUrl="https://podcasts.files.bbci.co.uk/p0bqztzm.rss" type="rss"/>
+      
+      
+      <outline title="Ukraine Without Hype" xmlUrl="https://anchor.fm/s/3ca9dcec/podcast/rss" type="rss"/>
+      
+      
+      <outline title="UkraineWorld - українською" xmlUrl="https://anchor.fm/s/f92bb4bc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="По вуха у бізнесі" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:580529262/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Ukraine Through the Eyes of Others" xmlUrl="https://anchor.fm/s/1030a08f8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Ukraine War Diaries" xmlUrl="https://feeds.captivate.fm/ukraine-war-diaries/" type="rss"/>
+      
+      
+      <outline title="Explaining Ukraine" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:379777835/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Україна у серці одна | Ukraine In The Heart Of Everyone" xmlUrl="https://anchor.fm/s/2ea2228/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Ukraine This Week" xmlUrl="https://anchor.fm/s/e70a4d20/podcast/rss" type="rss"/>
+      
+      
+      <outline title="KISS FM Ukraine" xmlUrl="https://www.kissfm.ua/podcast/podcast.xml" type="rss"/>
+      
+      
+      <outline title="TA in Ukraine
+Подкаст про Транзакційний Аналіз (ТА)." xmlUrl="https://anchor.fm/s/86cc70f0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="CEO Club Podcast" xmlUrl="https://anchor.fm/s/35b4b8a8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Эхо Москвы" xmlUrl="https://feedmaster.umputun.com/rss/echo-msk" type="rss"/>
+      
+      
+      <outline title="Le Collimateur" xmlUrl="https://feeds.audiomeans.fr/feed/64ee3763-1a46-44c2-8640-3a69405a3ad8.xml" type="rss"/>
+      
+      
+      <outline title="Ukraine : une semaine dans la guerre - Tetyana Ogarkova" xmlUrl="https://feeds.transistor.fm/ukraine-une-semaine-dans-la-guerre" type="rss"/>
+      
+      
+      <outline title="Жити зараз" xmlUrl="https://anchor.fm/s/f4632348/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Blind Spot Ukraine" xmlUrl="https://anchor.fm/s/11044c15c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Was tun, Herr General? - Der Podcast zum Ukraine-Krieg" xmlUrl="https://www.mdr.de/nachrichten/podcast/general/russland-angriff-krieg-ukraine-mdr-100.xml" type="rss"/>
+      
+      
+      <outline title="History in the Making: The War in Ukraine" xmlUrl="https://podesis.com/feed/history-in-the-making-the-war-in-ukraine" type="rss"/>
+      
+      
+      <outline title="Radio Sprotyv News - Слухай українські новини!
+Ukraine will win! Україна переможе!" xmlUrl="https://anchor.fm/s/d8c3d498/podcast/rss" type="rss"/>
+      
+      
+      <outline title="In Moscow's Shadows" xmlUrl="https://rss.buzzsprout.com/1026985.rss" type="rss"/>
+      
+      
+      <outline title="Whirlwind: America, Russia &amp; Ukraine" xmlUrl="https://feeds.megaphone.fm/whirlwind" type="rss"/>
+      
+      
+      <outline title="Християни для України" xmlUrl="https://feed.podbean.com/christianopenacademy/feed.xml" type="rss"/>
+      
+      
+      <outline title="Battleground" xmlUrl="https://feeds.acast.com/public/shows/6a22b52017f169d6433fb960" type="rss"/>
+      
+      
+      <outline title="The Globalist" xmlUrl="https://www.omnycontent.com/d/playlist/e6127ab7-b81e-456b-893c-a8d600215365/9c42dc1e-9f07-4f76-b8fb-ab8a0120014e/f2eddba2-287e-448b-a454-ab8a01200152/podcast.rss" type="rss"/>
+      
+      
+      <outline title="POLITICO Berlin Playbook" xmlUrl="https://feeds.megaphone.fm/ASD3449434491" type="rss"/>
+      
+      
+      <outline title="Frontline: The War in Ukraine and Global Security" xmlUrl="https://feeds.acast.com/public/shows/683f1bbef711091cf40ba4cb" type="rss"/>
+      
+      
+      <outline title="Проєкт Інтелект" xmlUrl="https://anchor.fm/s/107bbb838/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Ukraine Russia War Talk" xmlUrl="https://rss.buzzsprout.com/2279186.rss" type="rss"/>
+      
+      
+      <outline title="ДЕРЕК ПРИНС - Ежедневная #молитва и #провозглашение" xmlUrl="https://anchor.fm/s/1234d3e0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="L'Ukraine, face à la guerre" xmlUrl="https://anchor.fm/s/c6a2e9fc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Радянське минуле: (пере)осмислення історії" xmlUrl="https://anchor.fm/s/76d5f324/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Inside Europe" xmlUrl="https://rss.dw.com/xml/podcast_inside-europe" type="rss"/>
+      
+      
+      <outline title="Ukraine Insights" xmlUrl="https://anchor.fm/s/1053aaf24/podcast/rss" type="rss"/>
+      
+      
+      <outline title="F1-Ukraine" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:274766784/sounds.rss" type="rss"/>
+      
+      
+      <outline title="FAQ-U: Ukraine Explained" xmlUrl="https://feeds.megaphone.fm/faqukraineexplained" type="rss"/>
+      
+      
+      <outline title="Church On The Rock Ukraine" xmlUrl="https://anchor.fm/s/ef6c5c24/podcast/rss" type="rss"/>
+      
+      
+      <outline title="World Review with Ivo Daalder" xmlUrl="https://feeds.simplecast.com/Gex8ciXw" type="rss"/>
+      
+      
+      <outline title="One Decision" xmlUrl="https://feeds.megaphone.fm/NSR7393370733" type="rss"/>
+      
+      
+      <outline title="Френдзона" xmlUrl="https://anchor.fm/s/f1d112d4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Точка (без)контакту" xmlUrl="https://anchor.fm/s/d18c9f70/podcast/rss" type="rss"/>
+      
+      
+      <outline title="State of the World from NPR" xmlUrl="https://feeds.npr.org/510366/podcast.xml" type="rss"/>
+      
+      
+      <outline title="F.A.Z. Podcast für Deutschland" xmlUrl="https://podcastfuerdeutschland.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Рок-концерт на Radio ROKS" xmlUrl="https://www.radioroks.ua/podcast/podcast_rok-kontsert.xml" type="rss"/>
+      
+      
+      <outline title="Станція 451" xmlUrl="https://anchor.fm/s/3c854d8c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="БУДНІ ЛІДЕРА" xmlUrl="https://anchor.fm/s/f96b1b98/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Сексуальний подкаст" xmlUrl="https://anchor.fm/s/24a72910/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Вулиця Історії України" xmlUrl="https://anchor.fm/s/b50ef99c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Україна за кермом" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1108096714/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Історія у параграфах" xmlUrl="https://media.rss.com/paragraphua/feed.xml" type="rss"/>
+      
+      
+      <outline title="Здоровий Подкаст" xmlUrl="https://anchor.fm/s/57db741c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Володимир Єрмоленко «Україна розумна»" xmlUrl="http://rss.castbox.fm/everest/9aad8d2df9be41099ea1b984778b40b8.xml" type="rss"/>
+      
+      
+      <outline title="ВЧОМПРИКОЛ" xmlUrl="https://anchor.fm/s/720c1990/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Україна: Останні Новини" xmlUrl="https://feeds.acast.com/public/shows/67a60b513ef0b176eae6a5d0" type="rss"/>
+      
+      
+      <outline title="Експлікація. Війна, Україна, світ." xmlUrl="https://teteva.com/podcasts/feed.rss" type="rss"/>
+      
+      
+      <outline title="Рання Чашка" xmlUrl="https://anchor.fm/s/58379d78/podcast/rss" type="rss"/>
+      
+      
+      <outline title="ЇЇ" xmlUrl="https://anchor.fm/s/236c97c4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="KWS PODCAST" xmlUrl="https://kws-podcast.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Україна вголос" xmlUrl="https://hromadske.radio/podcasts/ukraina-vholos/feed" type="rss"/>
+      
+      
+      <outline title="НА ЧАСІ / НОВИНИ" xmlUrl="https://media.rss.com/nachasi/feed.xml" type="rss"/>
+      
+      
+      <outline title="Україна після карантину" xmlUrl="https://anchor.fm/s/2268f87c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Галилея Україна" xmlUrl="https://anchor.fm/s/e66bcf4c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Прийом" xmlUrl="https://anchor.fm/s/caa6dea0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Ми - Україна / Інтерв'ю" xmlUrl="https://media.rss.com/weukrainetvinterview/feed.xml" type="rss"/>
+      
+      
+      <outline title="BASF Аграрні Рішення Україна" xmlUrl="https://rss.buzzsprout.com/2170856.rss" type="rss"/>
+      
+      
+      <outline title="Версії реальності" xmlUrl="https://media.rss.com/versiirealnosti/feed.xml" type="rss"/>
+      
+      
+      <outline title="Огляд Україна Брюссель" xmlUrl="https://anchor.fm/s/2dcf7f10/podcast/rss" type="rss"/>
+      
+      
+      <outline title="UKRAINE BITCOIN PODCAST - Біткоін Україна" xmlUrl="https://anchor.fm/s/ee8d0a38/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Храм на Подолі (Київ, Україна)" xmlUrl="https://anchor.fm/s/fd2b66c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Україна On The Record" xmlUrl="https://anchor.fm/s/106478e0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Вчися вухами | Історія України" xmlUrl="https://anchor.fm/s/dcf8bed4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="ЗНО/НМТ з історії України" xmlUrl="https://anchor.fm/s/ff21c30c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Радіо Ми з України" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1096102579/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Подкаст ДНК України" xmlUrl="https://anchor.fm/s/104ef02e0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Знакові постаті України: їх вбивала росія" xmlUrl="https://anchor.fm/s/bd5278cc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Про Україну, для України" xmlUrl="https://anchor.fm/s/daf98118/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Кава Тру-крайм України" xmlUrl="https://anchor.fm/s/fb36c378/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Темна історія України" xmlUrl="https://media.rss.com/blogmayster/feed.xml" type="rss"/>
+      
+      
+      <outline title="«Відкритий рахунок» — podcast про гастробізнеси України" xmlUrl="https://anchor.fm/s/10e3ddbdc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Виставка &quot;Дохристиянські вірування України&quot;" xmlUrl="https://anchor.fm/s/10bd78334/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Новий Заповіт для нової України" xmlUrl="https://novochekhov.com/unt/feed/" type="rss"/>
+      
+      
+      <outline title="1325: жінки, мир, безпека — від ООН до України" xmlUrl="https://hromadske.radio/podcasts/1325-zhinky-myr-bezpeka-vid-oon-do-ukrainy/feed" type="rss"/>
+      
+      
+      <outline title="Асоціація правників України (АПУ)" xmlUrl="https://anchor.fm/s/4e90c6b4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Польське радіо для України" xmlUrl="https://www.polskieradio.pl/rss/04025714-3f38-4e73-bdf0-27e33c0771cb" type="rss"/>
+      
+      
+      <outline title="Оповіді з України -аудіокниги українською" xmlUrl="https://anchor.fm/s/e6cbad18/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Невігласка в культурних політиках України" xmlUrl="https://anchor.fm/s/fcd93ad0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Мейкери України. MakersUA" xmlUrl="https://anchor.fm/s/3e45e2a8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Ми з України" xmlUrl="https://latvijasradio.lsm.lv/?rt=site&amp;ac=feed&amp;c=4&amp;s=1190&amp;a=0&amp;id=223" type="rss"/>
+      
+      
+      <outline title="Chicken Kyiv: егоїстичний подкаст про українські інтереси" xmlUrl="https://hromadske.radio/podcasts/chicken-kyiv-ehoistychnyy-podkast-pro-ukrainski-inte/feed" type="rss"/>
+      
+      
+      <outline title="Церква ICF Київ | ICF Kyiv" xmlUrl="http://archive.icf-kyiv.church/itunes/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Київські бізнес-легенди" xmlUrl="https://anchor.fm/s/112154ba0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Kyiv Art Makers" xmlUrl="https://anchor.fm/s/49b34324/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Відкрите Богослужіння KYIV † GGWO" xmlUrl="https://anchor.fm/s/8cd7848/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Квір у кожен двір" xmlUrl="https://anchor.fm/s/45c1b1ec/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Kyiv Future" xmlUrl="https://feeds.castos.com/gk56g" type="rss"/>
+      
+      
+      <outline title="The Kyiv Independent Podcasts" xmlUrl="https://anchor.fm/s/82a94098/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Kyiv Post podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:289575438/sounds.rss" type="rss"/>
+      
+      
+      <outline title="kyiv ne kiril" xmlUrl="https://feeds.hubhopper.com/1348adce140ebdcfbfca757c0596a1d3.rss" type="rss"/>
+      
+      
+      <outline title="Kyiv Post Talks" xmlUrl="https://anchor.fm/s/f288bfec/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Kyiv Post Dying For Truth" xmlUrl="https://anchor.fm/s/299090c4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Kyiv Podcast Hub" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:507488979/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Two Marines In Kyiv" xmlUrl="https://anchor.fm/s/94088434/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Station Kyiv" xmlUrl="https://www.spreaker.com/show/6577528/episodes/feed" type="rss"/>
+      
+      
+      <outline title="KyivLab Innovators" xmlUrl="https://anchor.fm/s/a192e464/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Diary from Kyiv by St Rita Radio" xmlUrl="https://feeds.transistor.fm/diary-from-kiev-by-st-rita-radio" type="rss"/>
+      
+      
+      <outline title="War in Ukraine: Update from Kyiv" xmlUrl="https://feed.podbean.com/updatefromkyiv/feed.xml" type="rss"/>
+      
+      
+      <outline title="A Ukrainian American:  Inside Kyiv" xmlUrl="https://feeds.simplecast.com/_TtrI902" type="rss"/>
+      
+      
+      <outline title="Amigo em Kyiv" xmlUrl="https://www.spreaker.com/show/4851201/episodes/feed" type="rss"/>
+      
+      
+      <outline title="СучФуд" xmlUrl="https://anchor.fm/s/69308c34/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Media in Progress" xmlUrl="https://anchor.fm/s/75e4d0ac/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Headlines From The Times" xmlUrl="https://feeds.simplecast.com/_lj7xUNU" type="rss"/>
+      
+      
+      <outline title="Kink - Kharkiv Edition" xmlUrl="https://feed.pod.co/kink-kharkiv-edition" type="rss"/>
+      
+      
+      <outline title="Be informed with Rashyd" xmlUrl="https://anchor.fm/s/7b67a48c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Made in Odesa" xmlUrl="https://anchor.fm/s/11392dc7c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="GDG Odesa Podcast" xmlUrl="https://anchor.fm/s/140a05f0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Suara Odesa" xmlUrl="https://anchor.fm/s/534320a8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Hodesa | Odesa'nın Dünyası - Belgesel Türkçe Podcast Çocuklar ve Yetişkinler için Sesli Kitaplar" xmlUrl="https://www.spreaker.com/show/5913659/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Dnipro Center for Contemporary Culture" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:936170656/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Lviv HR Solutions Podcast" xmlUrl="https://anchor.fm/s/6c6a6cd0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="мета-розмова" xmlUrl="https://anchor.fm/s/552641e8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="«Запитаю в психолога»" xmlUrl="https://anchor.fm/s/5319a264/podcast/rss" type="rss"/>
+      
+      
+      <outline title="CSL Podcast" xmlUrl="https://anchor.fm/s/610be83c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="«Прості як двері»" xmlUrl="https://anchor.fm/s/45ce59c4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Lviv Lab Podcasts" xmlUrl="https://anchor.fm/s/22b61328/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Malevich Night Club Lviv" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:323479291/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Global Shapers Lviv Hub" xmlUrl="https://anchor.fm/s/267e743c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Культурна тривога" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1101451303/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Курілка на Пекарській" xmlUrl="https://anchor.fm/s/488fa348/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Загугли свій діагноз" xmlUrl="https://anchor.fm/s/4ba35868/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Аудіопрогулянки" xmlUrl="https://anchor.fm/s/fe324f70/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Твердий Крок" xmlUrl="https://anchor.fm/s/1052b8328/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Hromadske Podcast" xmlUrl="https://www.hromadske.radio/podcasts/rss/" type="rss"/>
+      
+      
+      <outline title="Urban Space Radio" xmlUrl="https://www.urbanspaceradio.com/rss/" type="rss"/>
+      
+    
     </outline>
-</body>
+    
+
+    <outline text="YouTube">
+      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
+      <outline title="Infobellsмовою гінді" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1ciY6kR3yj3kaKZ6R7ewAg" type="rss"/>
+      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
+      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
+      <outline title="Влад A4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2tsySbe9TNrI-xh2lximHA" type="rss"/>
+      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
+      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
+      <outline title="ARY Digital HD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4JCksJF76g_MdzPVBJoC3Q" type="rss"/>
+      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4NALVCmcmL5ntpV0thoH6w" type="rss"/>
+      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
+      <outline title="कलर्स टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
+      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
+      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
+      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
+      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
+      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
+      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
+      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
+      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
+      <outline title="चुचु टिभी नर्सरी राइम्स एन्ड किड्स सङ्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnZ16ahKA2DZ_T5W0FPUXg" type="rss"/>
+      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
+      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEdvpU2pFRCVqU6yIPyTpMQ" type="rss"/>
+      <outline title="Shemaroo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF1JIbMUs6uqoZEY1Haw0GQ" type="rss"/>
+      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
+      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
+      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
+      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
+      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
+      <outline title="बाङतान टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkAepWjdylmXSltofFvsYQ" type="rss"/>
+      <outline title="WWE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
+      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
+      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
+      <outline title="PewDiePie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
+      <outline title="BillionSurpriseToys - English Kids Songs &amp; Cartoon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRx3mKNUdl8QE06nEug7p6Q" type="rss"/>
+      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
+      <outline title="อลัน เฉิน สโตกส์ และ เฉิน สโตกส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUdKQXtKb1me2Gt1nz6tzdg" type="rss"/>
+      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
+      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss"/>
+      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
+      <outline title="Toys and Colors" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBTm46K3l59CIty88Q_jog" type="rss"/>
+      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
+      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
+      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
+      <outline title="@HarPalGeoOfficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe9JSDmyqNgA_l2BzGHq1Ug" type="rss"/>
+      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
+      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
+      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
+      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiGm_E4ZwYSHV3bcW1pnSeQ" type="rss"/>
+      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
+      <outline title="Get Movies" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClZkHt2kNIgyrTTPnSQV3SA" type="rss"/>
+      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
+      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
+      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
+      <outline title="जामजाम इलेक्ट्रोनिक ट्रेडिङ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrnQFuUabBHaw-BRhPo8xEA" type="rss"/>
+      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
+      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
+    </outline>
+  </body>
+  
+
 </opml>

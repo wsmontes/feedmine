@@ -1,463 +1,1493 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
+  
+  
   <head>
+    
+    
     <title>Australia Feeds</title>
+    
+  
   </head>
+  
+  
   <body>
+    
+    
     <outline text="News">
-      <outline title="ABC News" xmlUrl="https://www.abc.net.au/news/feed/51120/rss.xml" type="rss" />
-      <outline title="Sydney Morning Herald" xmlUrl="https://www.smh.com.au/rss/feed.xml" type="rss" />
-      <outline title="The Age" xmlUrl="https://www.theage.com.au/rss/feed.xml" type="rss" />
-      <outline title="The Guardian Australia" xmlUrl="https://www.theguardian.com/au/rss" type="rss" />
-      <outline title="SBS News" xmlUrl="https://www.sbs.com.au/news/feed/" type="rss" />
-      <outline title="7News" xmlUrl="https://7news.com.au/rss" type="rss" />
-      <outline title="Sky News Australia" xmlUrl="https://www.skynews.com.au/feed/" type="rss" />
-      <outline title="Crikey" xmlUrl="https://www.crikey.com.au/feed/" type="rss" />
-      <outline title="Brisbane Times" xmlUrl="https://www.brisbanetimes.com.au/rss/feed.xml" type="rss" />
-      <outline title="WA Today" xmlUrl="https://www.watoday.com.au/rss/feed.xml" type="rss" />
+      
+      
+      <outline title="ABC News" xmlUrl="https://www.abc.net.au/news/feed/51120/rss.xml" type="rss"/>
+      
+      
+      <outline title="Sydney Morning Herald" xmlUrl="https://www.smh.com.au/rss/feed.xml" type="rss"/>
+      
+      
+      <outline title="The Age" xmlUrl="https://www.theage.com.au/rss/feed.xml" type="rss"/>
+      
+      
+      <outline title="The Guardian Australia" xmlUrl="https://www.theguardian.com/au/rss" type="rss"/>
+      
+      
+      <outline title="SBS News" xmlUrl="https://www.sbs.com.au/news/feed/" type="rss"/>
+      
+      
+      <outline title="7News" xmlUrl="https://7news.com.au/rss" type="rss"/>
+      
+      
+      <outline title="Sky News Australia" xmlUrl="https://www.skynews.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Crikey" xmlUrl="https://www.crikey.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Brisbane Times" xmlUrl="https://www.brisbanetimes.com.au/rss/feed.xml" type="rss"/>
+      
+      
+      <outline title="WA Today" xmlUrl="https://www.watoday.com.au/rss/feed.xml" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Sports">
-      <outline title="Fox Sports Australia" xmlUrl="https://www.foxsports.com.au/feed/" type="rss" />
-      <outline title="ESPN Australia" xmlUrl="https://www.espn.com.au/rss/" type="rss" />
-      <outline title="AFL" xmlUrl="https://www.afl.com.au/rss" type="rss" />
-      <outline title="Wide World of Sports" xmlUrl="https://wwos.nine.com.au/rss" type="rss" />
+      
+      
+      <outline title="Fox Sports Australia" xmlUrl="https://www.foxsports.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="ESPN Australia" xmlUrl="https://www.espn.com.au/rss/" type="rss"/>
+      
+      
+      <outline title="AFL" xmlUrl="https://www.afl.com.au/rss" type="rss"/>
+      
+      
+      <outline title="Wide World of Sports" xmlUrl="https://wwos.nine.com.au/rss" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Technology">
-      <outline title="Gizmodo Australia" xmlUrl="https://www.gizmodo.com.au/feed/" type="rss" />
-      <outline title="Tech Guide" xmlUrl="https://www.techguide.com.au/feed/" type="rss" />
-      <outline title="IT News" xmlUrl="https://www.itnews.com.au/rss" type="rss" />
-      <outline title="ZDNet Australia" xmlUrl="https://www.zdnet.com.au/rss/" type="rss" />
-      <outline title="ARN" xmlUrl="https://www.arnnet.com.au/rss/" type="rss" />
-      <outline title="EFTM" xmlUrl="https://eftm.com/feed/" type="rss" />
-      <outline title="Ausdroid" xmlUrl="https://ausdroid.net/feed/" type="rss" />
-      <outline title="Pickr" xmlUrl="https://www.pickr.com.au/feed/" type="rss" />
+      
+      
+      <outline title="Gizmodo Australia" xmlUrl="https://www.gizmodo.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Tech Guide" xmlUrl="https://www.techguide.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="IT News" xmlUrl="https://www.itnews.com.au/rss" type="rss"/>
+      
+      
+      <outline title="ZDNet Australia" xmlUrl="https://www.zdnet.com.au/rss/" type="rss"/>
+      
+      
+      <outline title="ARN" xmlUrl="https://www.arnnet.com.au/rss/" type="rss"/>
+      
+      
+      <outline title="EFTM" xmlUrl="https://eftm.com/feed/" type="rss"/>
+      
+      
+      <outline title="Ausdroid" xmlUrl="https://ausdroid.net/feed/" type="rss"/>
+      
+      
+      <outline title="Pickr" xmlUrl="https://www.pickr.com.au/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Science">
-      <outline title="Australian Geographic" xmlUrl="https://www.australiangeographic.com.au/feed/" type="rss" />
-      <outline title="Science Alert" xmlUrl="https://www.sciencealert.com/feed/" type="rss" />
-      <outline title="Australasian Science" xmlUrl="https://www.australasianscience.com.au/feed/" type="rss" />
-      <outline title="Bureau of Meteorology" xmlUrl="https://www.bom.gov.au/rss/" type="rss" />
+      
+      
+      <outline title="Australian Geographic" xmlUrl="https://www.australiangeographic.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Science Alert" xmlUrl="https://www.sciencealert.com/feed/" type="rss"/>
+      
+      
+      <outline title="Australasian Science" xmlUrl="https://www.australasianscience.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Bureau of Meteorology" xmlUrl="https://www.bom.gov.au/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Culture">
-      <outline title="The Guardian AU Culture" xmlUrl="https://www.theguardian.com/au/culture/rss" type="rss" />
-      <outline title="Arts Hub" xmlUrl="https://www.artshub.com.au/feed/" type="rss" />
-      <outline title="Limelight Magazine" xmlUrl="https://limelightmagazine.com.au/feed/" type="rss" />
-      <outline title="Kill Your Darlings" xmlUrl="https://www.killyourdarlings.com.au/feed/" type="rss" />
-      <outline title="Overland" xmlUrl="https://overland.org.au/feed/" type="rss" />
+      
+      
+      <outline title="The Guardian AU Culture" xmlUrl="https://www.theguardian.com/au/culture/rss" type="rss"/>
+      
+      
+      <outline title="Arts Hub" xmlUrl="https://www.artshub.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Limelight Magazine" xmlUrl="https://limelightmagazine.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Kill Your Darlings" xmlUrl="https://www.killyourdarlings.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Overland" xmlUrl="https://overland.org.au/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Movies">
-      <outline title="Screen Australia" xmlUrl="https://www.screenaustralia.gov.au/rss/" type="rss" />
-      <outline title="Film Ink" xmlUrl="https://www.filmink.com.au/feed/" type="rss" />
-      <outline title="Cinema Australia" xmlUrl="https://cinemaaustralia.com.au/feed/" type="rss" />
-      <outline title="The Curb" xmlUrl="https://www.thecurb.com.au/feed/" type="rss" />
-      <outline title="Screen Hub" xmlUrl="https://www.screenhub.com.au/feed/" type="rss" />
-      <outline title="Dark Horizons" xmlUrl="https://www.darkhorizons.com/feed/" type="rss" />
+      
+      
+      <outline title="Screen Australia" xmlUrl="https://www.screenaustralia.gov.au/rss/" type="rss"/>
+      
+      
+      <outline title="Film Ink" xmlUrl="https://www.filmink.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Cinema Australia" xmlUrl="https://cinemaaustralia.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="The Curb" xmlUrl="https://www.thecurb.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Screen Hub" xmlUrl="https://www.screenhub.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Dark Horizons" xmlUrl="https://www.darkhorizons.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Music">
-      <outline title="Tone Deaf" xmlUrl="https://tonedeaf.thebrag.com/feed/" type="rss" />
-      <outline title="Music Feeds" xmlUrl="https://musicfeeds.com.au/feed/" type="rss" />
-      <outline title="Pilerats" xmlUrl="https://pilerats.com/feed/" type="rss" />
-      <outline title="Rolling Stone Australia" xmlUrl="https://au.rollingstone.com/feed/" type="rss" />
-      <outline title="Noise11" xmlUrl="https://www.noise11.com/rss" type="rss" />
-      <outline title="Purple Sneakers" xmlUrl="https://purplesneakers.com.au/feed/" type="rss" />
+      
+      
+      <outline title="Tone Deaf" xmlUrl="https://tonedeaf.thebrag.com/feed/" type="rss"/>
+      
+      
+      <outline title="Music Feeds" xmlUrl="https://musicfeeds.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Pilerats" xmlUrl="https://pilerats.com/feed/" type="rss"/>
+      
+      
+      <outline title="Rolling Stone Australia" xmlUrl="https://au.rollingstone.com/feed/" type="rss"/>
+      
+      
+      <outline title="Noise11" xmlUrl="https://www.noise11.com/rss" type="rss"/>
+      
+      
+      <outline title="Purple Sneakers" xmlUrl="https://purplesneakers.com.au/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Food">
-      <outline title="Good Food" xmlUrl="https://www.goodfood.com.au/rss/feed.xml" type="rss" />
-      <outline title="Gourmet Traveller" xmlUrl="https://www.gourmettraveller.com.au/feed/" type="rss" />
-      <outline title="Bounty Parents" xmlUrl="https://www.bountyparents.com.au/feed/" type="rss" />
-      <outline title="RecipeTin Eats" xmlUrl="https://www.recipetineats.com/feed/" type="rss" />
-      <outline title="Not Quite Nigella" xmlUrl="https://www.notquitenigella.com/feed/" type="rss" />
+      
+      
+      <outline title="Good Food" xmlUrl="https://www.goodfood.com.au/rss/feed.xml" type="rss"/>
+      
+      
+      <outline title="Gourmet Traveller" xmlUrl="https://www.gourmettraveller.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Bounty Parents" xmlUrl="https://www.bountyparents.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="RecipeTin Eats" xmlUrl="https://www.recipetineats.com/feed/" type="rss"/>
+      
+      
+      <outline title="Not Quite Nigella" xmlUrl="https://www.notquitenigella.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Gaming">
-      <outline title="Kotaku Australia" xmlUrl="https://www.kotaku.com.au/feed/" type="rss" />
-      <outline title="Press Start" xmlUrl="https://press-start.com.au/feed/" type="rss" />
-      <outline title="Player2" xmlUrl="https://www.player2.net.au/feed/" type="rss" />
-      <outline title="WellPlayed" xmlUrl="https://www.well-played.com.au/feed/" type="rss" />
-      <outline title="Checkpoint Gaming" xmlUrl="https://checkpointgaming.net/feed/" type="rss" />
-      <outline title="Rocket Chainsaw" xmlUrl="https://www.rocketchainsaw.com.au/feed/" type="rss" />
-      <outline title="Vooks" xmlUrl="https://www.vooks.net/feed/" type="rss" />
-      <outline title="PowerUp Gaming" xmlUrl="https://powerup-gaming.com/feed/" type="rss" />
+      
+      
+      <outline title="Kotaku Australia" xmlUrl="https://www.kotaku.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Press Start" xmlUrl="https://press-start.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Player2" xmlUrl="https://www.player2.net.au/feed/" type="rss"/>
+      
+      
+      <outline title="WellPlayed" xmlUrl="https://www.well-played.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Checkpoint Gaming" xmlUrl="https://checkpointgaming.net/feed/" type="rss"/>
+      
+      
+      <outline title="Rocket Chainsaw" xmlUrl="https://www.rocketchainsaw.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Vooks" xmlUrl="https://www.vooks.net/feed/" type="rss"/>
+      
+      
+      <outline title="PowerUp Gaming" xmlUrl="https://powerup-gaming.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Travel">
-      <outline title="Explore Australia" xmlUrl="https://www.exploreaustralia.net.au/feed/" type="rss" />
-      <outline title="The Travel Temple" xmlUrl="https://www.thetraveltemple.com.au/feed/" type="rss" />
-      <outline title="Y Travel Blog" xmlUrl="https://www.ytravelblog.com/feed/" type="rss" />
-      <outline title="Adventures All Around" xmlUrl="https://www.adventuresallaround.com/feed/" type="rss" />
-      <outline title="Travel Outback Australia" xmlUrl="https://www.traveloutbackaustralia.com/feed/" type="rss" />
+      
+      
+      <outline title="Explore Australia" xmlUrl="https://www.exploreaustralia.net.au/feed/" type="rss"/>
+      
+      
+      <outline title="The Travel Temple" xmlUrl="https://www.thetraveltemple.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Y Travel Blog" xmlUrl="https://www.ytravelblog.com/feed/" type="rss"/>
+      
+      
+      <outline title="Adventures All Around" xmlUrl="https://www.adventuresallaround.com/feed/" type="rss"/>
+      
+      
+      <outline title="Travel Outback Australia" xmlUrl="https://www.traveloutbackaustralia.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Blogs">
-      <outline title="Junkee" xmlUrl="https://junkee.com/feed/" type="rss" />
-      <outline title="Pedestrian TV" xmlUrl="https://www.pedestrian.tv/feed/" type="rss" />
-      <outline title="OutInPerth" xmlUrl="https://www.outinperth.com/feed/" type="rss" />
-      <outline title="Star Observer" xmlUrl="https://www.starobserver.com.au/feed/" type="rss" />
-      <outline title="Women's Agenda" xmlUrl="https://womensagenda.com.au/feed/" type="rss" />
-      <outline title="New Matilda" xmlUrl="https://newmatilda.com/feed/" type="rss" />
+      
+      
+      <outline title="Junkee" xmlUrl="https://junkee.com/feed/" type="rss"/>
+      
+      
+      <outline title="Pedestrian TV" xmlUrl="https://www.pedestrian.tv/feed/" type="rss"/>
+      
+      
+      <outline title="OutInPerth" xmlUrl="https://www.outinperth.com/feed/" type="rss"/>
+      
+      
+      <outline title="Star Observer" xmlUrl="https://www.starobserver.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Women's Agenda" xmlUrl="https://womensagenda.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="New Matilda" xmlUrl="https://newmatilda.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Design">
-      <outline title="Australian Design Review" xmlUrl="https://www.australiandesignreview.com/feed/" type="rss" />
-      <outline title="Habitus Living" xmlUrl="https://www.habitusliving.com/feed/" type="rss" />
-      <outline title="Yellowtrace" xmlUrl="https://www.yellowtrace.com.au/feed/" type="rss" />
-      <outline title="The Design Files" xmlUrl="https://thedesignfiles.net/feed/" type="rss" />
-      <outline title="Green Magazine" xmlUrl="https://greenmagazine.com.au/feed/" type="rss" />
-      <outline title="Artichoke" xmlUrl="https://architectureau.com/rss/" type="rss" />
+      
+      
+      <outline title="Australian Design Review" xmlUrl="https://www.australiandesignreview.com/feed/" type="rss"/>
+      
+      
+      <outline title="Habitus Living" xmlUrl="https://www.habitusliving.com/feed/" type="rss"/>
+      
+      
+      <outline title="Yellowtrace" xmlUrl="https://www.yellowtrace.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="The Design Files" xmlUrl="https://thedesignfiles.net/feed/" type="rss"/>
+      
+      
+      <outline title="Green Magazine" xmlUrl="https://greenmagazine.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Artichoke" xmlUrl="https://architectureau.com/rss/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Environment">
-      <outline title="Greenpeace Australia" xmlUrl="https://www.greenpeace.org.au/feed/" type="rss" />
-      <outline title="Climate Council" xmlUrl="https://www.climatecouncil.org.au/feed/" type="rss" />
-      <outline title="Guardian AU Environment" xmlUrl="https://www.theguardian.com/au/environment/rss" type="rss" />
-      <outline title="RenewEconomy" xmlUrl="https://reneweconomy.com.au/feed/" type="rss" />
-      <outline title="The Fifth Estate" xmlUrl="https://thefifthestate.com.au/feed/" type="rss" />
-      <outline title="Australian Wildlife Conservancy" xmlUrl="https://www.australianwildlife.org/feed/" type="rss" />
+      
+      
+      <outline title="Greenpeace Australia" xmlUrl="https://www.greenpeace.org.au/feed/" type="rss"/>
+      
+      
+      <outline title="Climate Council" xmlUrl="https://www.climatecouncil.org.au/feed/" type="rss"/>
+      
+      
+      <outline title="Guardian AU Environment" xmlUrl="https://www.theguardian.com/au/environment/rss" type="rss"/>
+      
+      
+      <outline title="RenewEconomy" xmlUrl="https://reneweconomy.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="The Fifth Estate" xmlUrl="https://thefifthestate.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Australian Wildlife Conservancy" xmlUrl="https://www.australianwildlife.org/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="DIY">
-      <outline title="Home Beautiful" xmlUrl="https://www.homebeautiful.com.au/feed/" type="rss" />
-      <outline title="Better Homes and Gardens AU" xmlUrl="https://www.bhg.com.au/feed/" type="rss" />
-      <outline title="Renovating for Profit" xmlUrl="https://www.renovatingforprofit.com.au/feed/" type="rss" />
-      <outline title="Little House on the Corner" xmlUrl="https://www.littlehouseonthecorner.com/feed/" type="rss" />
-      <outline title="Making Home Base" xmlUrl="https://www.makinghomebase.com/feed/" type="rss" />
+      
+      
+      <outline title="Home Beautiful" xmlUrl="https://www.homebeautiful.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Better Homes and Gardens AU" xmlUrl="https://www.bhg.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Renovating for Profit" xmlUrl="https://www.renovatingforprofit.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Little House on the Corner" xmlUrl="https://www.littlehouseonthecorner.com/feed/" type="rss"/>
+      
+      
+      <outline title="Making Home Base" xmlUrl="https://www.makinghomebase.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="History">
-      <outline title="Migration Heritage" xmlUrl="https://www.migrationheritage.nsw.gov.au/feed/" type="rss" />
-      <outline title="Sydney Living Museums" xmlUrl="https://sydneylivingmuseums.com.au/feed/" type="rss" />
-      <outline title="Traces Magazine" xmlUrl="https://www.tracesmagazine.com.au/feed/" type="rss" />
-      <outline title="Remembering the Past" xmlUrl="https://www.oldtreasurybuilding.org.au/feed/" type="rss" />
+      
+      
+      <outline title="Migration Heritage" xmlUrl="https://www.migrationheritage.nsw.gov.au/feed/" type="rss"/>
+      
+      
+      <outline title="Sydney Living Museums" xmlUrl="https://sydneylivingmuseums.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Traces Magazine" xmlUrl="https://www.tracesmagazine.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Remembering the Past" xmlUrl="https://www.oldtreasurybuilding.org.au/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Architecture">
-      <outline title="Architecture AU" xmlUrl="https://architectureau.com/rss/" type="rss" />
-      <outline title="Australian Institute of Architects" xmlUrl="https://www.architecture.com.au/rss/" type="rss" />
-      <outline title="The Local Project" xmlUrl="https://thelocalproject.com.au/feed/" type="rss" />
-      <outline title="ArchDaily AU" xmlUrl="https://www.archdaily.com/country/australia/feed" type="rss" />
-      <outline title="Est Living" xmlUrl="https://www.estliving.com/feed/" type="rss" />
+      
+      
+      <outline title="Architecture AU" xmlUrl="https://architectureau.com/rss/" type="rss"/>
+      
+      
+      <outline title="Australian Institute of Architects" xmlUrl="https://www.architecture.com.au/rss/" type="rss"/>
+      
+      
+      <outline title="The Local Project" xmlUrl="https://thelocalproject.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="ArchDaily AU" xmlUrl="https://www.archdaily.com/country/australia/feed" type="rss"/>
+      
+      
+      <outline title="Est Living" xmlUrl="https://www.estliving.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Programming">
-      <outline title="Atlassian Dev Blog" xmlUrl="https://blog.developer.atlassian.com/feed/" type="rss" />
-      <outline title="SitePoint" xmlUrl="https://www.sitepoint.com/feed/" type="rss" />
+      
+      
+      <outline title="Atlassian Dev Blog" xmlUrl="https://blog.developer.atlassian.com/feed/" type="rss"/>
+      
+      
+      <outline title="SitePoint" xmlUrl="https://www.sitepoint.com/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Business">
-      <outline title="Smart Company" xmlUrl="https://www.smartcompany.com.au/feed/" type="rss" />
-      <outline title="Startup Daily" xmlUrl="https://www.startupdaily.net/feed/" type="rss" />
-      <outline title="Dynamic Business" xmlUrl="https://dynamicbusiness.com/feed/" type="rss" />
-      <outline title="Stockhead" xmlUrl="https://stockhead.com.au/feed/" type="rss" />
-      <outline title="Money Magazine AU" xmlUrl="https://www.moneymag.com.au/feed/" type="rss" />
+      
+      
+      <outline title="Smart Company" xmlUrl="https://www.smartcompany.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Startup Daily" xmlUrl="https://www.startupdaily.net/feed/" type="rss"/>
+      
+      
+      <outline title="Dynamic Business" xmlUrl="https://dynamicbusiness.com/feed/" type="rss"/>
+      
+      
+      <outline title="Stockhead" xmlUrl="https://stockhead.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Money Magazine AU" xmlUrl="https://www.moneymag.com.au/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Podcasts">
-      <outline title="Talking Australia" xmlUrl="https://www.omnycontent.com/d/playlist/9f8b43bc-0e14-4a00-935a-abab005879a4/392cd3dc-a212-4688-8d49-ad6000343042/0425576a-9e06-403f-a844-ad6000343054/podcast.rss" type="rss" />
-      <outline title="Voice of Real Australia" xmlUrl="https://anchor.fm/s/a4b51dec/podcast/rss" type="rss" />
-      <outline title="7NEWS Australia Podcast" xmlUrl="https://feeds.acast.com/public/shows/5d62b457-3b2b-5c4e-8bac-6053aaee1cca" type="rss" />
-      <outline title="Conversations" xmlUrl="https://www.abc.net.au/feeds/7711104/podcast.xml" type="rss" />
-      <outline title="Weird Crap in Australia" xmlUrl="https://www.spreaker.com/show/2968350/episodes/feed" type="rss" />
-      <outline title="Not Stupid" xmlUrl="https://www.abc.net.au/feeds/13499150/podcast.xml" type="rss" />
-      <outline title="The Economy, Stupid" xmlUrl="https://www.abc.net.au/feeds/7073958/podcast.xml" type="rss" />
-      <outline title="Insiders" xmlUrl="https://www.abc.net.au/feeds/8618000/podcast.xml" type="rss" />
-      <outline title="Australia All Over" xmlUrl="https://www.abc.net.au/feeds/7677560/podcast.xml" type="rss" />
-      <outline title="What You Should Know: Australia" xmlUrl="https://www.spreaker.com/show/5395647/episodes/feed" type="rss" />
-      <outline title="Australia's Invisible History" xmlUrl="https://www.omnycontent.com/d/playlist/258d2f07-1164-48e4-970c-accc0047a4ed/aa1e107f-e17e-4ad2-add3-ad230185f322/1668b2ee-8881-4c96-8a08-ad240001cda8/podcast.rss" type="rss" />
-      <outline title="Australia Wide" xmlUrl="https://www.abc.net.au/feeds/9261864/podcast.xml" type="rss" />
-      <outline title="Forgotten Australia" xmlUrl="https://feeds.acast.com/public/shows/8dc4b04f-b05b-4eac-9556-2a69d0be13cc" type="rss" />
-      <outline title="60 Minutes - Extra Minutes" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/13d303e5-aa50-4713-8d80-b18001879781/30cf6fa7-bb44-46f5-b41c-b18001884ac6/podcast.rss" type="rss" />
-      <outline title="Australian Politics" xmlUrl="https://www.theguardian.com/australia-news/series/australian-politics-live/podcast.xml" type="rss" />
-      <outline title="Guardian Australia Reads" xmlUrl="https://www.theguardian.com/australia-news/series/australia-reads/podcast.xml" type="rss" />
-      <outline title="60 Minutes - True Crime" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/d197e6ac-efe1-4bd3-92b2-ab830020faa9/3d16937b-8b00-4188-8684-ab830020fac5/podcast.rss" type="rss" />
-      <outline title="Politics Now" xmlUrl="https://www.abc.net.au/feeds/7288214/podcast.xml" type="rss" />
-      <outline title="If You're Listening" xmlUrl="https://www.abc.net.au/feeds/9593214/podcast.xml" type="rss" />
-      <outline title="Australia, Explained" xmlUrl="https://feeds.acast.com/public/shows/62ab031c4001ba0012e3da75" type="rss" />
-      <outline title="ABC News Daily" xmlUrl="https://www.abc.net.au/feeds/9443166/podcast.xml" type="rss" />
-      <outline title="Bloke In A Bar" xmlUrl="https://feeds.megaphone.fm/IKBAR4488239349" type="rss" />
-      <outline title="Central Station - True Stories from Outback Australia" xmlUrl="https://www.omnycontent.com/d/playlist/d3d56d8d-11c9-411a-aade-af8f001be4a7/a3eee463-eab6-4871-9d27-af8f018041e9/06375189-168b-4131-be7c-af8f01804205/podcast.rss" type="rss" />
-      <outline title="Follow The Money" xmlUrl="https://www.omnycontent.com/d/playlist/782a25bc-37bd-4974-8d34-aef5002539a0/58fc67ae-68b3-4bf2-97da-aef50028b79a/1506d216-9e56-4790-980f-aef50028b7b1/podcast.rss" type="rss" />
-      <outline title="Tapt News Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/eeee8fd6-609d-46f5-9b42-ad98002e0ae4/79d0d98c-a634-4cdd-a3d1-ad980034d7b7/podcast.rss" type="rss" />
-      <outline title="Australia Matters" xmlUrl="https://www.omnycontent.com/d/playlist/782a25bc-37bd-4974-8d34-aef5002539a0/2535189c-46e6-44e7-bcdc-b2dd005514be/f17c6624-3dfc-44b7-b42a-b2dd00551e37/podcast.rss" type="rss" />
-      <outline title="Travel Australia Podcast by The Feel Good Family" xmlUrl="https://rss.buzzsprout.com/591940.rss" type="rss" />
-      <outline title="A History of Australia" xmlUrl="https://feed.podbean.com/ahistoryofaustralia/feed.xml" type="rss" />
-      <outline title="Democracy Sausage with Mark Kenny" xmlUrl="https://feeds.acast.com/public/shows/2c2eab86-45bd-53ae-b72f-f474f0e08bc9" type="rss" />
-      <outline title="Unravel" xmlUrl="https://www.abc.net.au/feeds/9758336/podcast.xml" type="rss" />
-      <outline title="AFL Daily" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/8c30cfe4-8785-4fb1-8b38-ad570072390d/487a8045-ed6a-43af-816d-ad5700723925/podcast.rss" type="rss" />
-      <outline title="All In The Mind" xmlUrl="https://www.abc.net.au/feeds/2888650/podcast.xml" type="rss" />
-      <outline title="The Case Of" xmlUrl="https://www.abc.net.au/feeds/103599966/podcast.xml" type="rss" />
-      <outline title="Australia Explained" xmlUrl="https://sbs-ondemand.streamguys1.com/settlement-guide/" type="rss" />
-      <outline title="ABC Business Daily" xmlUrl="https://www.abc.net.au/feeds/106452508/podcast.xml" type="rss" />
-      <outline title="The Missing Australia" xmlUrl="https://feeds.acast.com/public/shows/68871d33e0a86cc3abb92425" type="rss" />
-      <outline title="Australia in the World" xmlUrl="https://feed.podbean.com/australiaintheworld/feed.xml" type="rss" />
-      <outline title="Australia Fair" xmlUrl="https://feeds.sbs.com.au/australia-fair" type="rss" />
-      <outline title="ABC AFL Daily" xmlUrl="https://www.abc.net.au/feeds/103577268/podcast.xml" type="rss" />
-      <outline title="Bikies Inc." xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/9b0bb582-dcea-4f79-97f1-aee10020cd9b/48dcfbd7-3793-4a77-ab03-b02601897f78/podcast.rss" type="rss" />
-      <outline title="Cold Case Western Australia" xmlUrl="https://rss.buzzsprout.com/2264476.rss" type="rss" />
-      <outline title="Politics with Michelle Grattan" xmlUrl="https://feeds.captivate.fm/politics-with-michellegrattan/" type="rss" />
-      <outline title="The Bloomberg Australia Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a49a4c5b-f778-43be-b4ce-b1ea00e6cf36/16b7a685-4c93-4ef1-b6a3-b1ea00e778ab/podcast.rss" type="rss" />
-      <outline title="Life and Crimes with Andrew Rule" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3184259d-eabb-4a13-b4e4-ac2a00524746/dbc970d7-111d-4f16-8744-ac2a00524746/podcast.rss" type="rss" />
-      <outline title="Australia On This Day" xmlUrl="https://feeds.acast.com/public/shows/d785fc98-6d7f-4cda-8644-8ca7faec18ca" type="rss" />
-      <outline title="ABC News Top Stories" xmlUrl="https://www.abc.net.au/feeds/101858056/podcast.xml" type="rss" />
-      <outline title="Background Briefing" xmlUrl="https://www.abc.net.au/feeds/2890982/podcast.xml" type="rss" />
-      <outline title="Cars That Made Australia" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/c4fd82da-bf4e-4b8b-83ba-afe1000b52f1/834af581-7481-457f-9cf2-afe1000d0890/podcast.rss" type="rss" />
-      <outline title="The Fin" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/ceb16ab1-2433-4ebb-8972-af2c004e22a9/3a232925-ea94-4d8f-91a6-af2c005952d1/podcast.rss" type="rss" />
-      <outline title="Roy and HG - Bludging on the Blindside" xmlUrl="https://www.abc.net.au/feeds/12099676/podcast.xml" type="rss" />
-      <outline title="Broadsheet Sydney: Around Town" xmlUrl="https://www.omnycontent.com/d/playlist/7893e4b8-9513-4ca4-a0d9-ad7400415df4/cd16272d-ebf1-4ccd-bbda-b1da0060d744/63f1b2be-8b13-46d9-9e71-b1da0060d760/podcast.rss" type="rss" />
-      <outline title="Sydney Untold" xmlUrl="https://feeds.captivate.fm/sydney-untold/" type="rss" />
-      <outline title="Sydney Ideas" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:197338982/sounds.rss" type="rss" />
-      <outline title="Tails of Sydney" xmlUrl="https://feeds.megaphone.fm/TIDNF1627260600" type="rss" />
-      <outline title="Bondi Badlands" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/3c623487-1ea2-4d2e-8dad-ada4002751ed/c9f25930-011d-4958-a024-ada4002ceff6/podcast.rss" type="rss" />
-      <outline title="Stories From Sydney" xmlUrl="https://feed.podbean.com/storiesfromsydney/feed.xml" type="rss" />
-      <outline title="Lost in Sydney" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3dce2628-7b95-47e3-83dd-ac2a00524771/fb5aef53-4827-46c3-8247-ac2a00524775/podcast.rss" type="rss" />
-      <outline title="Naked City" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/7af5c6f3-1d58-443c-b38c-ab8300272f97/b63d2025-b554-4ec4-bfdd-ab8300272fa1/podcast.rss" type="rss" />
-      <outline title="The SEI Podcast Series" xmlUrl="https://feeds.acast.com/public/shows/6539ae8a238f610012deb93c" type="rss" />
-      <outline title="Sydney Writers' Festival" xmlUrl="https://www.omnycontent.com/d/playlist/7d8922b7-6a8a-4a06-b14f-a616006c3eb2/e7e62a98-c858-4bcc-85fa-a616008352fa/91b936e2-0e85-4fd5-83bf-a61600835303/podcast.rss" type="rss" />
-      <outline title="The Sydney Institute Podcast" xmlUrl="https://feed.podbean.com/thesydneyinstitute/feed.xml" type="rss" />
-      <outline title="Wake Up Sydney" xmlUrl="https://prod.api.pulsepodcasts.com/feed/82.rss" type="rss" />
-      <outline title="Good Weekend Talks" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/938e5ca5-7771-4bc2-852a-ab8300272ea4/5249b1b2-6224-4d5a-b1d1-ab8300272f0a/podcast.rss" type="rss" />
-      <outline title="Sydney Now" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/627698af-6f84-4e21-b888-abc300496f3a/e8c4d339-01d7-4985-9abc-abc3004ce986/podcast.rss" type="rss" />
-      <outline title="Kids’ Health Explained" xmlUrl="https://feed.podbean.com/kidshealthexplained/feed.xml" type="rss" />
-      <outline title="The Morning Edition" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/111d8251-9a05-4c76-bcf0-ab84002d2024/e23e2275-2bcf-4868-b394-ab84002d2037/podcast.rss" type="rss" />
-      <outline title="The Sydney Siege" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/7c4180dc-dc95-4971-b428-af870162dbd4/f655a6a2-33d6-4438-899a-af870162dbf4/podcast.rss" type="rss" />
-      <outline title="News with The Sydney Morning Herald" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/4471c49e-64ba-48b6-83e4-ad88003f89bb/ac1767cc-4769-48cd-a918-ad88004110b7/podcast.rss" type="rss" />
-      <outline title="Inside Politics" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/562f6523-038e-46d4-8249-b12b005f063d/f0d81cb1-6f19-4e3e-8cdb-b12b00610619/podcast.rss" type="rss" />
-      <outline title="True Bloods | A Sydney Swans Fan Podcast" xmlUrl="https://feeds.acast.com/public/shows/63cef7e2b03a6e0012034f2a" type="rss" />
-      <outline title="Morning Service @ St Thomas' Anglican Church North Sydney" xmlUrl="https://st-thomas.org.au/feed/podcast/10am/" type="rss" />
-      <outline title="Abide Sydney" xmlUrl="https://feeds.transistor.fm/abide-sydney" type="rss" />
-      <outline title="Greater Sydney Area HEMS" xmlUrl="https://feed.podbean.com/samuelbulford/feed.xml" type="rss" />
-      <outline title="More than Footy" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/bf192497-5648-4c73-ae23-b122000e88ab/36da0ffb-9f3f-4aec-b3a7-b1220037f2dd/podcast.rss" type="rss" />
-      <outline title="Virginia I The Age &amp; SMH Investigates" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/4d9d2a28-c449-46ff-817f-ae66004009bb/645b1796-dbb2-4f46-bed4-ae660041c457/podcast.rss" type="rss" />
-      <outline title="The Confession" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/ff92199e-cb3f-4d76-b231-af3400406cbd/0db4b2ad-f272-4447-8f6a-af340048d612/podcast.rss" type="rss" />
-      <outline title="Let's Go Rabbitohs Podcast! The Official Podcast of the South Sydney Rabbitohs" xmlUrl="https://feeds.acast.com/public/shows/lets-go-rabbitohs-podcast" type="rss" />
-      <outline title="The Sydney Finn Show" xmlUrl="https://rss.buzzsprout.com/278779.rss" type="rss" />
-      <outline title="The Sydney Table" xmlUrl="https://anchor.fm/s/1130bf428/podcast/rss" type="rss" />
-      <outline title="饭饭而谈Sydney" xmlUrl="https://feed.xyzfm.space/e4km7labfhtm" type="rss" />
-      <outline title="The B2B CMO Podcast with Jon Miller and Sydney Sloan" xmlUrl="https://feeds.transistor.fm/the-b2b-cmo-podcast-with-jon-miller-sydney-sloan" type="rss" />
-      <outline title="We Are Sydney - The Sydney FC Podcast" xmlUrl="https://rss.buzzsprout.com/2547500.rss" type="rss" />
-      <outline title="INChurch Sydney" xmlUrl="https://mitchell-varlow-u4nr.squarespace.com/podcast?format=rss" type="rss" />
-      <outline title="SOUL OF SYDNEY Feel-Good FUNK RADIO" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:52628851/sounds.rss" type="rss" />
-      <outline title="Sydney Marathon Podcast" xmlUrl="https://feed.podbean.com/sydneymarathon/feed.xml" type="rss" />
-      <outline title="The Chapel Sydney" xmlUrl="https://feed.podbean.com/thechapelsydney/feed.xml" type="rss" />
-      <outline title="i61 Sydney" xmlUrl="http://tim-ferris-nzr6.squarespace.com/podcast?format=rss" type="rss" />
-      <outline title="The Sydney EV Podcast" xmlUrl="https://anchor.fm/s/110940c94/podcast/rss" type="rss" />
-      <outline title="Sydney Festival" xmlUrl="https://www.omnycontent.com/d/playlist/df10b682-c9f8-4053-91ba-ac850031782b/3b028bf7-6638-4120-9c62-ac9b00253682/1f99cb53-ce11-423f-9af5-ac9b00271f71/podcast.rss" type="rss" />
-      <outline title="Mirror Sydney" xmlUrl="https://anchor.fm/s/5a03b3e4/podcast/rss" type="rss" />
-      <outline title="Zion Church Sydney" xmlUrl="https://anchor.fm/s/113439590/podcast/rss" type="rss" />
-      <outline title="St Thomas' Anglican Church North Sydney" xmlUrl="https://st-thomas.org.au/feed/podcast/" type="rss" />
-      <outline title="Sydney Institute For Psycho-Analysis" xmlUrl="http://www.jeremywilmot.com.au/Podcast/SIFP/SIFP.xml" type="rss" />
-      <outline title="Sydney Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/80e241be-af69-47f0-a3bb-b3e7016951f7/podcast.rss" type="rss" />
-      <outline title="Sydney Jewish Writers Festival" xmlUrl="https://feeds.acast.com/public/shows/5ecdf8a11e598177e6faf5ff" type="rss" />
-      <outline title="The Future, This Week" xmlUrl="https://www.omnycontent.com/d/playlist/ca87ee0f-a818-4d50-9654-ad5c0022ac0d/15ffd510-2fb9-4049-bcbb-ae2e00513a4e/70e14b80-8c57-476d-ab5e-ae2e00644569/podcast.rss" type="rss" />
-      <outline title="Real Footy" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/61adb2e0-e341-4859-9832-ab8300272ff0/8ad21e4c-66ef-4a60-8991-ab8300272ff5/podcast.rss" type="rss" />
-      <outline title="Stranger Melbourne" xmlUrl="https://anchor.fm/s/56646a58/podcast/rss" type="rss" />
-      <outline title="Melbourne Calling" xmlUrl="https://anchor.fm/s/4e78f250/podcast/rss" type="rss" />
-      <outline title="New to Melbourne Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e594962d-1f17-45d8-a2a8-a474003a75a1/eeb9a057-8232-40e3-ac59-ab580041d874/5f4fa0fb-3559-4c47-92c6-ab5800464039/podcast.rss" type="rss" />
-      <outline title="Broadsheet Melbourne: Around Town" xmlUrl="https://www.omnycontent.com/d/playlist/7893e4b8-9513-4ca4-a0d9-ad7400415df4/1ee870df-6e23-41cb-a62c-b1da0060d79d/4b6925d5-9b17-49fe-8f03-b1da0060d7ab/podcast.rss" type="rss" />
-      <outline title="Look History in the Eye, Melbourne" xmlUrl="https://rss.buzzsprout.com/1930879.rss" type="rss" />
-      <outline title="Absolutely Revolting" xmlUrl="https://www.omnycontent.com/d/playlist/cf92379f-6cb4-4ad2-8504-a7310004d9dd/4dae8fd0-5ebe-41d7-bc7a-b1e80178a0d3/4377a8fe-446e-4c7b-bf6b-b1e8018556b2/podcast.rss" type="rss" />
-      <outline title="MSW - Melbourne Sex Workers" xmlUrl="https://feeds.simplecast.com/5mGxwQ0M" type="rss" />
-      <outline title="City of Melbourne Libraries" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:165507378/sounds.rss" type="rss" />
-      <outline title="Melbourne Marvels" xmlUrl="https://anchor.fm/s/a7fb884c/podcast/rss" type="rss" />
-      <outline title="Melbourne Property Podcast™" xmlUrl="https://anchor.fm/s/100b65f84/podcast/rss" type="rss" />
-      <outline title="The Callback" xmlUrl="https://feed.podbean.com/micomfest/feed.xml" type="rss" />
-      <outline title="Talking Melbourne with Darren James" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/07f474c3-02fd-4992-ad94-a742006484fa/d060be65-6e2c-43fe-8a4a-a9a3016951e0/podcast.rss" type="rss" />
-      <outline title="The Melbourne Property Hour" xmlUrl="https://www.spreaker.com/show/6599358/episodes/feed" type="rss" />
-      <outline title="Informants: Lawyer X" xmlUrl="https://rss.art19.com/informants-lawyer-x" type="rss" />
-      <outline title="Rush Hour Melbourne: Best Bits" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/5242a5de-77e2-435a-a29f-a4df0045cf40/81aaca75-ed84-4191-aa0f-a4df00703490/podcast.rss" type="rss" />
-      <outline title="Melbourne Writers Festival" xmlUrl="https://www.omnycontent.com/d/playlist/14b46de9-1605-4f01-8c1b-ada50001d474/845b035c-cc72-4a4a-9153-ada50002794d/f128583a-567a-4806-8593-ada500027965/podcast.rss" type="rss" />
-      <outline title="Melbourne Deepcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:532373/sounds.rss" type="rss" />
-      <outline title="BackStoppers - The Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:625716441/sounds.rss" type="rss" />
-      <outline title="Melanated in Melbourne" xmlUrl="https://feed.podbean.com/MelanatedinMelbourne/feed.xml" type="rss" />
-      <outline title="LiSTNR Melbourne Local News" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/a7ee56bc-7e19-4bab-9026-ac0d00124f59/7d49bf15-a3b8-4399-ae16-acd40041534a/podcast.rss" type="rss" />
-      <outline title="SACKED: AFL" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3cf89773-059d-487f-8989-ac2a005248e5/04380b70-8721-4d7b-b93d-ac2a005248e9/podcast.rss" type="rss" />
-      <outline title="Talking Teaching" xmlUrl="https://anchor.fm/s/ab382934/podcast/rss" type="rss" />
-      <outline title="Talking Tigers, the Official Richmond podcast" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/f20f4b97-00a3-4e8b-808f-ad570075fa66/2af402a1-9e7f-4c1d-aef0-ad570075fa74/podcast.rss" type="rss" />
-      <outline title="Justice with Jon Faine" xmlUrl="https://anchor.fm/s/fa3b15c8/podcast/rss" type="rss" />
-      <outline title="City on a Hill Melbourne" xmlUrl="https://feeds.captivate.fm/cityonahill-melbourne/" type="rss" />
-      <outline title="The DeeBrief" xmlUrl="https://feeds.acast.com/public/shows/6851d895259ce49e3e26edfb" type="rss" />
-      <outline title="PsychTalks" xmlUrl="https://www.omnycontent.com/d/playlist/8450f03c-225d-47a0-ac01-ae84000e0c16/6d5f1ed1-f1f7-44bb-a3f9-ae8600482932/5ab7a4e7-9799-4fc6-b36b-ae8600512e5e/podcast.rss" type="rss" />
-      <outline title="The Shinboners - North Melbourne Podcast" xmlUrl="https://anchor.fm/s/ef0e938c/podcast/rss" type="rss" />
-      <outline title="Dead Set Legends Melbourne" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/b489b37a-9857-4ef9-9ffb-a4c600094392/e1738195-93ff-4adf-8a5f-a4c6000c3963/podcast.rss" type="rss" />
-      <outline title="Kids Health Info" xmlUrl="https://feeds.megaphone.fm/kidshealthinfo" type="rss" />
-      <outline title="Flourishing Podcast" xmlUrl="https://anchor.fm/s/10f484058/podcast/rss" type="rss" />
-      <outline title="Finding Melbourne's Nature" xmlUrl="https://rss.buzzsprout.com/2599897.rss" type="rss" />
-      <outline title="Knocked Up: The Podcast About Fertility and Women's Health" xmlUrl="https://www.omnycontent.com/d/playlist/a03d4d65-8aeb-4938-9276-aef6003634ef/ecb35a12-89b0-4abb-9bc6-aef6003686f0/68b330b3-9bab-4307-b057-aef60036871a/podcast.rss" type="rss" />
-      <outline title="Melbourne Mavericks Podcast" xmlUrl="https://feeds.megaphone.fm/NTETP3598707281" type="rss" />
-      <outline title="Melbourne Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/3f1e1cf0-1b94-466b-a16d-b3ec0006ca66/podcast.rss" type="rss" />
-      <outline title="The Rush Hour with JB &amp; Billy" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/5242a5de-77e2-435a-a29f-a4df0045cf40/78353fca-c071-44b2-b093-a4df004612c6/podcast.rss" type="rss" />
-      <outline title="Nobody Dies Here: Inside Melbourne's Medically Supervised Injecting Room" xmlUrl="https://feeds.acast.com/public/shows/6417f96475710800115efa26" type="rss" />
-      <outline title="Pies Nation" xmlUrl="https://feeds.acast.com/public/shows/67a1b5939cd0aa28f72331e3" type="rss" />
-      <outline title="Jung Society Melbourne Podcast" xmlUrl="https://rss.buzzsprout.com/1066705.rss" type="rss" />
-      <outline title="Melbourne Lights Church" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:267122007/sounds.rss" type="rss" />
-      <outline title="The Education Hub - Teach Think Treat" xmlUrl="https://feed.podbean.com/educationhubTTT/feed.xml" type="rss" />
-      <outline title="Life, Love and Loss" xmlUrl="https://feeds.megaphone.fm/HNAST8785220943" type="rss" />
-      <outline title="Roos on Radio" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/0e59014e-752f-4b62-a0cf-ae68000740a5/719da107-103c-4f08-aedd-ae68000740b8/podcast.rss" type="rss" />
-      <outline title="The Footy with Broden Kelly" xmlUrl="https://feeds.megaphone.fm/CRDOR9576461777" type="rss" />
-      <outline title="Essential Ethics" xmlUrl="https://feeds.megaphone.fm/HNAST2150704639" type="rss" />
-      <outline title="Unfolded" xmlUrl="https://www.omnycontent.com/d/playlist/cf92379f-6cb4-4ad2-8504-a7310004d9dd/d0a98f7d-d32f-42a8-8a9b-b2f800029e96/f6936229-ee98-4e66-8f21-b2f80002a494/podcast.rss" type="rss" />
-      <outline title="The Education Hub - Conversation with the experts" xmlUrl="https://feed.podbean.com/educationhubcwte/feed.xml" type="rss" />
-      <outline title="Raising the Bar Melbourne" xmlUrl="https://feed.podbean.com/raisingthebarmelbourne/feed.xml" type="rss" />
-      <outline title="North Melbourne Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/758d4e38-d22f-401e-9b73-b3ec0006f35b/podcast.rss" type="rss" />
-      <outline title="This is Brisbane" xmlUrl="https://anchor.fm/s/179b494/podcast/rss" type="rss" />
-      <outline title="Unpacking Brisbane" xmlUrl="https://anchor.fm/s/101534268/podcast/rss" type="rss" />
-      <outline title="LiSTNR Brisbane Local News" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/8e8fb249-644b-4f26-9473-abf90032c10e/619c5056-b5a8-40cf-b78f-acd40041ddd2/podcast.rss" type="rss" />
-      <outline title="Mister Brisbane" xmlUrl="https://api.substack.com/feed/podcast/26599.rss" type="rss" />
-      <outline title="City on a Hill Brisbane" xmlUrl="https://feeds.captivate.fm/cityonahill-brisbane/" type="rss" />
-      <outline title="Living In Brisbane Live!" xmlUrl="https://anchor.fm/s/c32ab8a4/podcast/rss" type="rss" />
-      <outline title="Brisbane Lions Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/3d7a6622-10d8-471f-ba52-b3470021598c/podcast.rss" type="rss" />
-      <outline title="Brisbane Is Weird" xmlUrl="https://rss.libsyn.com/shows/344054/destinations/2808938.xml" type="rss" />
-      <outline title="Brisbane Property Podcast" xmlUrl="https://www.brisbanepropertypodcast.com.au/feed.xml" type="rss" />
-      <outline title="The Roar Deal" xmlUrl="https://anchor.fm/s/ced77b4c/podcast/rss" type="rss" />
-      <outline title="Bluey's Brisbane" xmlUrl="https://feeds.captivate.fm/blueysbrisbane/" type="rss" />
-      <outline title="Brisbane Professionals Podcast" xmlUrl="https://anchor.fm/s/1648b64/podcast/rss" type="rss" />
-      <outline title="Toward The Games: Brisbane 2032" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3508d235-6fdd-4399-b54f-adb1005e674d/ed32ffa5-946f-44d0-b6aa-adb1006073ee/podcast.rss" type="rss" />
-      <outline title="Brisbane News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/phoenix-mercury-the-daily-news-now.xml" type="rss" />
-      <outline title="Bear Talk - Brisbane Style" xmlUrl="https://rss.buzzsprout.com/2419873.rss" type="rss" />
-      <outline title="About Even" xmlUrl="https://feeds.acast.com/public/shows/64e7e33141e6ea0011d94f71" type="rss" />
-      <outline title="Stav, Abby &amp; Matt - B105 Brisbane" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/73ac1c56-d4fb-48b5-9004-b2ea00386782/d0ef5eff-020e-457a-af41-b2ea003867a4/podcast.rss" type="rss" />
-      <outline title="Brisbane Lions Fancast" xmlUrl="https://feed.podbean.com/BLFancast/feed.xml" type="rss" />
-      <outline title="My favourite item" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:650802303/sounds.rss" type="rss" />
-      <outline title="Levels with Willie Mason &amp; Justin Horo" xmlUrl="https://www.omnycontent.com/d/playlist/d3d56d8d-11c9-411a-aade-af8f001be4a7/6690cbd9-7cf2-4c9b-8d4e-afb100491700/c66bfea0-0e98-4f6d-b3a7-afb10049e162/podcast.rss" type="rss" />
-      <outline title="Brisbane Broker Podcast" xmlUrl="https://anchor.fm/s/75cfd2d8/podcast/rss" type="rss" />
-      <outline title="The Compassion Initiative: Just Two Guys in Brisbane talking Compassion. www.thecompassioninitiative.com.au" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:148989799/sounds.rss" type="rss" />
-      <outline title="Illumine" xmlUrl="https://rss.buzzsprout.com/881743.rss" type="rss" />
-      <outline title="Newlife Church: Brisbane" xmlUrl="https://feeds.transistor.fm/newlife-church-brisbane" type="rss" />
-      <outline title="Hillsong Church - Brisbane City" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1397713314/sounds.rss" type="rss" />
-      <outline title="THE Brisbane Channel Podcast: In-Depth" xmlUrl="https://media.rss.com/the-brisbane-channel-in-depth/feed.xml" type="rss" />
-      <outline title="Brisbane Football Review" xmlUrl="https://anchor.fm/s/b3b98a94/podcast/rss" type="rss" />
-      <outline title="The Shovel" xmlUrl="https://anchor.fm/s/3b708fd8/podcast/rss" type="rss" />
-      <outline title="Brisbane Lions Lowdown" xmlUrl="https://anchor.fm/s/10ee030e4/podcast/rss" type="rss" />
-      <outline title="Archdiocese of Brisbane" xmlUrl="https://feeds.castos.com/15z99" type="rss" />
-      <outline title="the YWAM Brisbane Podcast" xmlUrl="https://anchor.fm/s/6d2b3dc/podcast/rss" type="rss" />
-      <outline title="Start Up and Running" xmlUrl="https://anchor.fm/s/107f45dc8/podcast/rss" type="rss" />
-      <outline title="Hillsong Brisbane Central" xmlUrl="https://anchor.fm/s/102dd2978/podcast/rss" type="rss" />
-      <outline title="Light Dark Blue: The Brisbane Grammar School Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/62e7adef-da7c-40e9-9111-af0f00447e94/26cf5621-a663-409b-909f-b034000c551f/23c8c02a-a676-4b36-b288-b034000f3289/podcast.rss" type="rss" />
-      <outline title="The Bye Round With James Graham" xmlUrl="https://www.omnycontent.com/d/playlist/87bedc22-37de-4b24-aca3-aea5002a4362/536befe3-d14f-418c-96e2-aea5002a4de4/e0f66187-0d04-4027-bfeb-aea5002b1a60/podcast.rss" type="rss" />
-      <outline title="Sisters In Colour" xmlUrl="https://anchor.fm/s/14a95588/podcast/rss" type="rss" />
-      <outline title="Sunday Sermons from Every Nation Brisbane Central" xmlUrl="https://feed.podbean.com/enbrisbane/feed.xml" type="rss" />
-      <outline title="NRL 360" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/54e30b5c-13b5-4c51-8a65-ac84006f3b30/c8ff9274-6646-4ba1-ac8a-ac84006f3b39/podcast.rss" type="rss" />
-      <outline title="Where I Belong" xmlUrl="https://rss.buzzsprout.com/1804227.rss" type="rss" />
-      <outline title="Embrace: A Podcast for Survivors by Survivors about Sex and Intimacy" xmlUrl="https://anchor.fm/s/468e2f88/podcast/rss" type="rss" />
-      <outline title="Brisbane News Today | 2 Min | The Local Wire" xmlUrl="https://media.rss.com/brisbane-news-today-2-min-the-local-wire/feed.xml" type="rss" />
-      <outline title="The Sunday Triple M NRL Catch Up" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/bcf86a68-ce97-47af-8c23-a4df004cd80e/a04d4312-d94e-4fab-bc57-a8b7001e085e/podcast.rss" type="rss" />
-      <outline title="City Lights Church Brisbane" xmlUrl="https://www.city-lights.church/broadcasts/4nxebg7wcehdf181t4tzedfvcw.rss" type="rss" />
-      <outline title="Teach Challenge Transform" xmlUrl="https://anchor.fm/s/108315d68/podcast/rss" type="rss" />
-      <outline title="The Roar Deal" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/d752e752-fc67-4ced-80da-ad570072f797/9e747040-8712-46f8-801d-ad570072f7aa/podcast.rss" type="rss" />
-      <outline title="Hello Church Brisbane" xmlUrl="https://feed.podbean.com/hellochurchbrisbane/feed.xml" type="rss" />
-      <outline title="Providence Church Brisbane" xmlUrl="https://providencechurch.com.au/?feed=seriesengine" type="rss" />
-      <outline title="Planet Perth" xmlUrl="https://rtrfm.com.au/podcasts/planet-perth/?podcast_feed" type="rss" />
-      <outline title="Welcome to Perth" xmlUrl="https://rss.buzzsprout.com/422440.rss" type="rss" />
-      <outline title="Perth News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/new-york-liberty-the-daily-news-now.xml" type="rss" />
-      <outline title="Perth County Podcast" xmlUrl="https://feed.podbean.com/perthcounty/feed.xml" type="rss" />
-      <outline title="LiSTNR Perth Local News" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/a6366452-6a50-43a8-a695-ac0d003a197e/bc1403cf-5d6a-44ff-b7ac-acd400428da9/podcast.rss" type="rss" />
-      <outline title="The Far Post Perth" xmlUrl="https://www.omnycontent.com/d/playlist/539709fa-6228-4486-b62b-b13900adb8bf/8378876b-e276-4bbd-a09c-b20300293435/fa01447a-ccf8-47dc-a204-b20300293451/podcast.rss" type="rss" />
-      <outline title="Big Bears Podcast" xmlUrl="https://feeds.acast.com/public/shows/693f911641eacf5e81f57235" type="rss" />
-      <outline title="The Perth Podcast" xmlUrl="https://anchor.fm/s/fe78754/podcast/rss" type="rss" />
-      <outline title="Untold Stories of Perth" xmlUrl="https://www.omnycontent.com/d/playlist/66430868-f4d3-4f38-87f0-abb4001085aa/d5475ba3-34ca-42a5-b0fe-abb400334f66/7bdadcf7-d22c-4886-a17e-abb400334f78/podcast.rss" type="rss" />
-      <outline title="Humans Of Perth" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:120329699/sounds.rss" type="rss" />
-      <outline title="Perth's Stories" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:947333200/sounds.rss" type="rss" />
-      <outline title="True Perth Tales" xmlUrl="https://rss.libsyn.com/shows/59133/destinations/225824.xml" type="rss" />
-      <outline title="The Perth Property Show" xmlUrl="https://feed.podbean.com/theperthpropertyshow/feed.xml" type="rss" />
-      <outline title="Perth Mates Podcast" xmlUrl="https://anchor.fm/s/d6f203c4/podcast/rss" type="rss" />
-      <outline title="The Perth Business Podcast" xmlUrl="https://anchor.fm/s/3829fcd8/podcast/rss" type="rss" />
-      <outline title="The Perth Boys Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:822041647/sounds.rss" type="rss" />
-      <outline title="People of Perth Podcast" xmlUrl="https://anchor.fm/s/e856325c/podcast/rss" type="rss" />
-      <outline title="CurtinFM 100.1 in Perth, Western Australia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:750429835/sounds.rss" type="rss" />
-      <outline title="Perth Wildcast" xmlUrl="https://www.omnycontent.com/d/playlist/820f09cf-2ace-4180-a92d-aa4c0008f5fb/6601a2f7-61e5-47f9-969d-b328003ce9f4/4c426cac-bc39-4411-ba50-b328003ceef7/podcast.rss" type="rss" />
-      <outline title="The Irish in Perth Podcast ☘️" xmlUrl="https://anchor.fm/s/b0728138/podcast/rss" type="rss" />
-      <outline title="So Loquacious" xmlUrl="https://feeds.feedburner.com/SoLoquacious" type="rss" />
-      <outline title="Perth Property Insider Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/fc3f0ae5-cf3a-4e8f-ad4d-aec20063ea1a/119042ec-1825-4c50-8487-aec9002e38c3/9a370908-4647-463e-a9a9-aec9002e38d6/podcast.rss" type="rss" />
-      <outline title="The Perth Football League Radio Show" xmlUrl="https://www.omnycontent.com/d/playlist/40d034d8-cb18-4c0f-9e13-ad1201248777/5f4cd7a9-532d-4403-80f1-b2cf00d71422/6d3edcdd-9c1f-41b9-8f69-b2cf00d71a1b/podcast.rss" type="rss" />
-      <outline title="Heat All-Access" xmlUrl="https://anchor.fm/s/10b565610/podcast/rss" type="rss" />
-      <outline title="A Young Man's Guide to Old Questions" xmlUrl="https://anchor.fm/s/db475168/podcast/rss" type="rss" />
-      <outline title="Perth Footy Podcast" xmlUrl="https://anchor.fm/s/b3c4bdc4/podcast/rss" type="rss" />
-      <outline title="Shaped by Perth" xmlUrl="https://api.substack.com/feed/podcast/9379214.rss" type="rss" />
-      <outline title="Perth Indymedia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:22009164/sounds.rss" type="rss" />
-      <outline title="The Lifestreams South Perth Podcast" xmlUrl="https://feed.podbean.com/lifestreamsccsp/feed.xml" type="rss" />
-      <outline title="Oasis Church Perth" xmlUrl="https://anchor.fm/s/157fa1b0/podcast/rss" type="rss" />
-      <outline title="FREE 'Online' Acting Classes In Perth" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:307395224/sounds.rss" type="rss" />
-      <outline title="The Perth Azzurri Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/539709fa-6228-4486-b62b-b13900adb8bf/43003d6f-f2bb-4547-bdf9-b16700f4032a/9177c1fb-2e02-418a-b584-b16700f75684/podcast.rss" type="rss" />
-      <outline title="Perth Church of Christ" xmlUrl="https://anchor.fm/s/56abc844/podcast/rss" type="rss" />
-      <outline title="C3 Church North Perth" xmlUrl="https://anchor.fm/s/cc94bac/podcast/rss" type="rss" />
-      <outline title="PADCast Perth" xmlUrl="https://feed.pod.space/padcast" type="rss" />
-      <outline title="Calvary Chapel Perth" xmlUrl="https://podcasts.subsplash.com/nq5nqt5/podcast.rss" type="rss" />
-      <outline title="The Mighty Bearcast (Perth Bears NRL Rugby League Podcast)" xmlUrl="https://anchor.fm/s/fa36cd4c/podcast/rss" type="rss" />
-      <outline title="Elevate Church - Perth, Western Australia" xmlUrl="https://www.elevatechurch.me/connect/listen/audio-podcast/" type="rss" />
-      <outline title="Perth News Today | 2 Min | The Local Wire" xmlUrl="https://media.rss.com/perth-news-today-2-min-the-local-wire/feed.xml" type="rss" />
-      <outline title="ASCEND Church Perth" xmlUrl="https://feeds.castos.com/5o930" type="rss" />
-      <outline title="The Perth To Paisley Podcast" xmlUrl="https://feed.podbean.com/perthtopaisley/feed.xml" type="rss" />
-      <outline title="Raising the Bar Perth 2023" xmlUrl="https://anchor.fm/s/105e545d8/podcast/rss" type="rss" />
-      <outline title="Perth Dialogues" xmlUrl="https://anchor.fm/s/daa20820/podcast/rss" type="rss" />
-      <outline title="North Coast Church (Perth)" xmlUrl="https://feed.pod.co/sermons-ncc-2" type="rss" />
-      <outline title="City Report with Dean Bark - Perth, Western Australia Local News" xmlUrl="https://yourpod.news/rss/news/Perth,%20Western%20Australia/city-report-dean-bark" type="rss" />
-      <outline title="Perth Wildcats" xmlUrl="https://audioboom.com/channels/2566716.rss" type="rss" />
-      <outline title="Faith Community Church Sermons" xmlUrl="https://anchor.fm/s/10b113ef4/podcast/rss" type="rss" />
-      <outline title="Laid Back Local - Perth, West Australia Local News" xmlUrl="https://yourpod.news/rss/news/Perth/leah-and-garrett" type="rss" />
-      <outline title="Adelaide Mail Week In Review" xmlUrl="https://feeds.acast.com/public/shows/68c8eebd666ba430d6096ca6" type="rss" />
-      <outline title="Experience Adelaide Podcast" xmlUrl="https://anchor.fm/s/a21e3f00/podcast/rss" type="rss" />
-      <outline title="The Adelaide Show" xmlUrl="https://www.omnycontent.com/d/playlist/f4077a89-6f34-4e4a-88a6-a89e006843e6/1e485067-df0e-4977-b08c-a8e900324653/d72d5b72-9dd7-4fb5-9db3-a8e90032465c/podcast.rss" type="rss" />
-      <outline title="LIFE Adelaide" xmlUrl="https://feed.podbean.com/lifeadelaide/feed.xml" type="rss" />
-      <outline title="Adelaide Connected" xmlUrl="https://anchor.fm/s/f0e86d04/podcast/rss" type="rss" />
-      <outline title="Adelaide News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/minnesota-lynx-the-daily-news-now.xml" type="rss" />
-      <outline title="DJ JoSH Adelaide Podcast Page" xmlUrl="https://djjoshadelaide.podomatic.com/rss2.xml" type="rss" />
-      <outline title="Adelaide Tonight" xmlUrl="https://anchor.fm/s/10fa21d08/podcast/rss" type="rss" />
-      <outline title="Adelaide Property Pod with Robbie Fiacchi" xmlUrl="https://anchor.fm/s/1100d4e0c/podcast/rss" type="rss" />
-      <outline title="Benchmarking Adelaide" xmlUrl="https://anchor.fm/s/102914d8c/podcast/rss" type="rss" />
-      <outline title="Peeled" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/d713087f-43a1-4547-bcbf-b30f0069416c/9e5717a6-2a17-454b-b82d-b30f00694ca1/podcast.rss" type="rss" />
-      <outline title="Adelaide Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/59abfd2a-0a00-4312-b8db-b347001fd582/podcast.rss" type="rss" />
-      <outline title="Notes on Adelaide" xmlUrl="https://www.omnycontent.com/d/playlist/469e3428-2d6c-4a23-8e3c-aef1018514af/f413a493-b812-49cb-bcb8-af01004f1173/e0fa61c1-7f4c-4de7-9d2a-af01004f1198/podcast.rss" type="rss" />
-      <outline title="The Adelaide Central Market Audio Tour" xmlUrl="https://www.omnycontent.com/d/playlist/469e3428-2d6c-4a23-8e3c-aef1018514af/5452e177-d8fc-4952-93dd-b07700743e36/0a9e25fc-83ec-4326-9a30-b0770075caf7/podcast.rss" type="rss" />
-      <outline title="Crows Radio Show" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/06b28a68-a7fa-471b-aadd-ae6000013a24/4ee3e05b-843b-40bb-b02c-ae60000252a6/podcast.rss" type="rss" />
-      <outline title="Green Adelaide Podcast" xmlUrl="https://rss.buzzsprout.com/2186475.rss" type="rss" />
-      <outline title="ABC Adelaide's Talkback Gardening" xmlUrl="https://www.abc.net.au/feeds/8194492/podcast.xml" type="rss" />
-      <outline title="Adelaide Writers' Week" xmlUrl="https://anchor.fm/s/5337839c/podcast/rss" type="rss" />
-      <outline title="The Crowject - An Adelaide Crows Podcast" xmlUrl="https://feeds.acast.com/public/shows/67abcbafb468a1d76fca0b81" type="rss" />
-      <outline title="Crowvid - An Adelaide Crows Podcast" xmlUrl="https://www.spreaker.com/show/5430387/episodes/feed" type="rss" />
-      <outline title="The Dead Set Legends Adelaide Catch Up" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/4be9bd03-4c10-48e4-8b49-a4dd002657d6/6d067240-d1ac-4355-bef3-a4dd00276cd5/podcast.rss" type="rss" />
-      <outline title="AU in Conversation" xmlUrl="https://www.omnycontent.com/d/playlist/f8b3fb5c-ff4b-4a25-ba27-abad0019993c/1dc3d60b-17b4-4c0d-b0dd-b45f0005ef86/a55340cc-381c-40e3-aa0e-b45f0005f4a7/podcast.rss" type="rss" />
-      <outline title="CrowCast - Adelaide Crows Podcasts" xmlUrl="https://www.spreaker.com/show/1614048/episodes/feed" type="rss" />
-      <outline title="Proper Crows Podcast - An Adelaide Crows Podcast" xmlUrl="https://anchor.fm/s/1014e5000/podcast/rss" type="rss" />
-      <outline title="Trinity Church Adelaide" xmlUrl="https://www.trinitycity.church/sermons/feed/podcast/" type="rss" />
-      <outline title="The SYP Podcast" xmlUrl="https://feed.podbean.com/theSYPpodcast/feed.xml" type="rss" />
-      <outline title="Port Adelaide Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/2c3399c6-0b69-41a0-b2e2-b3e7016c7b18/podcast.rss" type="rss" />
-      <outline title="Adelaide Crows Football Club" xmlUrl="https://audioboom.com/channels/2307139.rss" type="rss" />
-      <outline title="Here We Crow - An Adelaide Crows Podcast" xmlUrl="https://rss.buzzsprout.com/1896357.rss" type="rss" />
-      <outline title="Psych(ic) Podcast" xmlUrl="https://anchor.fm/s/36962dd8/podcast/rss" type="rss" />
-      <outline title="Adelaide Heward-Mills" xmlUrl="https://feed.podbean.com/adelaidehewardmills/feed.xml" type="rss" />
-      <outline title="CityLight Church North Adelaide" xmlUrl="https://anchor.fm/s/327e110c/podcast/rss" type="rss" />
-      <outline title="Lifehouse Church Adelaide" xmlUrl="https://rss.buzzsprout.com/2241650.rss" type="rss" />
-      <outline title="Adelaide Festival Podcasts" xmlUrl="https://anchor.fm/s/50b8a790/podcast/rss" type="rss" />
-      <outline title="The Soft Sticks Podcast" xmlUrl="https://anchor.fm/s/103d7dc60/podcast/rss" type="rss" />
-      <outline title="The Weekly Message" xmlUrl="https://anchor.fm/s/f1055ba8/podcast/rss" type="rss" />
-      <outline title="Adelaide Youngies Camp" xmlUrl="https://www.omnycontent.com/d/playlist/c37f218e-68a0-4f4b-b1e9-aa490077ff0f/89d74da9-ba9a-4192-9f8a-b0910174da04/3f12a2d1-2aa5-4392-8d26-b091017ac96a/podcast.rss" type="rss" />
-      <outline title="Classical and Jazz Adelaide - music news and gig guide" xmlUrl="https://rss.buzzsprout.com/2625026.rss" type="rss" />
-      <outline title="Life Church Adelaide" xmlUrl="https://anchor.fm/s/10da37f74/podcast/rss" type="rss" />
-      <outline title="Encounter Church Enfield" xmlUrl="https://media.rss.com/encounter-church-prospect/feed.xml" type="rss" />
-      <outline title="Revolution Church Adelaide" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:10783261/sounds.rss" type="rss" />
-      <outline title="Headspace Sessions Podcast Adelaide" xmlUrl="https://anchor.fm/s/107d65008/podcast/rss" type="rss" />
-      <outline title="The Phantom's Lair SuperCoach Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/2dab1266-1f08-4f4f-97dd-ac2a00524df3/05ea20c2-e44f-42d2-a1ae-ac2a00524df3/podcast.rss" type="rss" />
-      <outline title="Radio Italia Uno Adelaide" xmlUrl="https://anchor.fm/s/387d39d4/podcast/rss" type="rss" />
-      <outline title="The Discovery Pod Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/f8b3fb5c-ff4b-4a25-ba27-abad0019993c/607f45cb-8a50-46b5-88d2-ac4e007e4be3/e0a54606-7c43-48df-bf16-ac4e0080d8b8/podcast.rss" type="rss" />
-      <outline title="Why It Won" xmlUrl="https://anchor.fm/s/10cfa51b0/podcast/rss" type="rss" />
-      <outline title="Encounter Church Henley" xmlUrl="https://media.rss.com/encounter-church-henley/feed.xml" type="rss" />
-      <outline title="Grange Baptist Podcast" xmlUrl="https://anchor.fm/s/1134331f4/podcast/rss" type="rss" />
-      <outline title="Walk the Talk - Adelaide Presbyterian Church" xmlUrl="https://anchor.fm/s/1011108e4/podcast/rss" type="rss" />
-      <outline title="Casefile" xmlUrl="https://casefilepodcast.com/feed/" type="rss" />
-      <outline title="The Howie Games" xmlUrl="https://www.howiegames.com/feed/podcast/" type="rss" />
+      
+      
+      <outline title="Talking Australia" xmlUrl="https://www.omnycontent.com/d/playlist/9f8b43bc-0e14-4a00-935a-abab005879a4/392cd3dc-a212-4688-8d49-ad6000343042/0425576a-9e06-403f-a844-ad6000343054/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Voice of Real Australia" xmlUrl="https://anchor.fm/s/a4b51dec/podcast/rss" type="rss"/>
+      
+      
+      <outline title="7NEWS Australia Podcast" xmlUrl="https://feeds.acast.com/public/shows/5d62b457-3b2b-5c4e-8bac-6053aaee1cca" type="rss"/>
+      
+      
+      <outline title="Conversations" xmlUrl="https://www.abc.net.au/feeds/7711104/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Weird Crap in Australia" xmlUrl="https://www.spreaker.com/show/2968350/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Not Stupid" xmlUrl="https://www.abc.net.au/feeds/13499150/podcast.xml" type="rss"/>
+      
+      
+      <outline title="The Economy, Stupid" xmlUrl="https://www.abc.net.au/feeds/7073958/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Insiders" xmlUrl="https://www.abc.net.au/feeds/8618000/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Australia All Over" xmlUrl="https://www.abc.net.au/feeds/7677560/podcast.xml" type="rss"/>
+      
+      
+      <outline title="What You Should Know: Australia" xmlUrl="https://www.spreaker.com/show/5395647/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Australia's Invisible History" xmlUrl="https://www.omnycontent.com/d/playlist/258d2f07-1164-48e4-970c-accc0047a4ed/aa1e107f-e17e-4ad2-add3-ad230185f322/1668b2ee-8881-4c96-8a08-ad240001cda8/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Australia Wide" xmlUrl="https://www.abc.net.au/feeds/9261864/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Forgotten Australia" xmlUrl="https://feeds.acast.com/public/shows/8dc4b04f-b05b-4eac-9556-2a69d0be13cc" type="rss"/>
+      
+      
+      <outline title="60 Minutes - Extra Minutes" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/13d303e5-aa50-4713-8d80-b18001879781/30cf6fa7-bb44-46f5-b41c-b18001884ac6/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Australian Politics" xmlUrl="https://www.theguardian.com/australia-news/series/australian-politics-live/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Guardian Australia Reads" xmlUrl="https://www.theguardian.com/australia-news/series/australia-reads/podcast.xml" type="rss"/>
+      
+      
+      <outline title="60 Minutes - True Crime" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/d197e6ac-efe1-4bd3-92b2-ab830020faa9/3d16937b-8b00-4188-8684-ab830020fac5/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Politics Now" xmlUrl="https://www.abc.net.au/feeds/7288214/podcast.xml" type="rss"/>
+      
+      
+      <outline title="If You're Listening" xmlUrl="https://www.abc.net.au/feeds/9593214/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Australia, Explained" xmlUrl="https://feeds.acast.com/public/shows/62ab031c4001ba0012e3da75" type="rss"/>
+      
+      
+      <outline title="ABC News Daily" xmlUrl="https://www.abc.net.au/feeds/9443166/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Bloke In A Bar" xmlUrl="https://feeds.megaphone.fm/IKBAR4488239349" type="rss"/>
+      
+      
+      <outline title="Central Station - True Stories from Outback Australia" xmlUrl="https://www.omnycontent.com/d/playlist/d3d56d8d-11c9-411a-aade-af8f001be4a7/a3eee463-eab6-4871-9d27-af8f018041e9/06375189-168b-4131-be7c-af8f01804205/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Follow The Money" xmlUrl="https://www.omnycontent.com/d/playlist/782a25bc-37bd-4974-8d34-aef5002539a0/58fc67ae-68b3-4bf2-97da-aef50028b79a/1506d216-9e56-4790-980f-aef50028b7b1/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Tapt News Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/eeee8fd6-609d-46f5-9b42-ad98002e0ae4/79d0d98c-a634-4cdd-a3d1-ad980034d7b7/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Australia Matters" xmlUrl="https://www.omnycontent.com/d/playlist/782a25bc-37bd-4974-8d34-aef5002539a0/2535189c-46e6-44e7-bcdc-b2dd005514be/f17c6624-3dfc-44b7-b42a-b2dd00551e37/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Travel Australia Podcast by The Feel Good Family" xmlUrl="https://rss.buzzsprout.com/591940.rss" type="rss"/>
+      
+      
+      <outline title="A History of Australia" xmlUrl="https://feed.podbean.com/ahistoryofaustralia/feed.xml" type="rss"/>
+      
+      
+      <outline title="Democracy Sausage with Mark Kenny" xmlUrl="https://feeds.acast.com/public/shows/2c2eab86-45bd-53ae-b72f-f474f0e08bc9" type="rss"/>
+      
+      
+      <outline title="Unravel" xmlUrl="https://www.abc.net.au/feeds/9758336/podcast.xml" type="rss"/>
+      
+      
+      <outline title="AFL Daily" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/8c30cfe4-8785-4fb1-8b38-ad570072390d/487a8045-ed6a-43af-816d-ad5700723925/podcast.rss" type="rss"/>
+      
+      
+      <outline title="All In The Mind" xmlUrl="https://www.abc.net.au/feeds/2888650/podcast.xml" type="rss"/>
+      
+      
+      <outline title="The Case Of" xmlUrl="https://www.abc.net.au/feeds/103599966/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Australia Explained" xmlUrl="https://sbs-ondemand.streamguys1.com/settlement-guide/" type="rss"/>
+      
+      
+      <outline title="ABC Business Daily" xmlUrl="https://www.abc.net.au/feeds/106452508/podcast.xml" type="rss"/>
+      
+      
+      <outline title="The Missing Australia" xmlUrl="https://feeds.acast.com/public/shows/68871d33e0a86cc3abb92425" type="rss"/>
+      
+      
+      <outline title="Australia in the World" xmlUrl="https://feed.podbean.com/australiaintheworld/feed.xml" type="rss"/>
+      
+      
+      <outline title="Australia Fair" xmlUrl="https://feeds.sbs.com.au/australia-fair" type="rss"/>
+      
+      
+      <outline title="ABC AFL Daily" xmlUrl="https://www.abc.net.au/feeds/103577268/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Bikies Inc." xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/9b0bb582-dcea-4f79-97f1-aee10020cd9b/48dcfbd7-3793-4a77-ab03-b02601897f78/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Cold Case Western Australia" xmlUrl="https://rss.buzzsprout.com/2264476.rss" type="rss"/>
+      
+      
+      <outline title="Politics with Michelle Grattan" xmlUrl="https://feeds.captivate.fm/politics-with-michellegrattan/" type="rss"/>
+      
+      
+      <outline title="The Bloomberg Australia Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a49a4c5b-f778-43be-b4ce-b1ea00e6cf36/16b7a685-4c93-4ef1-b6a3-b1ea00e778ab/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Life and Crimes with Andrew Rule" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3184259d-eabb-4a13-b4e4-ac2a00524746/dbc970d7-111d-4f16-8744-ac2a00524746/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Australia On This Day" xmlUrl="https://feeds.acast.com/public/shows/d785fc98-6d7f-4cda-8644-8ca7faec18ca" type="rss"/>
+      
+      
+      <outline title="ABC News Top Stories" xmlUrl="https://www.abc.net.au/feeds/101858056/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Background Briefing" xmlUrl="https://www.abc.net.au/feeds/2890982/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Cars That Made Australia" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/c4fd82da-bf4e-4b8b-83ba-afe1000b52f1/834af581-7481-457f-9cf2-afe1000d0890/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Fin" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/ceb16ab1-2433-4ebb-8972-af2c004e22a9/3a232925-ea94-4d8f-91a6-af2c005952d1/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Roy and HG - Bludging on the Blindside" xmlUrl="https://www.abc.net.au/feeds/12099676/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Broadsheet Sydney: Around Town" xmlUrl="https://www.omnycontent.com/d/playlist/7893e4b8-9513-4ca4-a0d9-ad7400415df4/cd16272d-ebf1-4ccd-bbda-b1da0060d744/63f1b2be-8b13-46d9-9e71-b1da0060d760/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Sydney Untold" xmlUrl="https://feeds.captivate.fm/sydney-untold/" type="rss"/>
+      
+      
+      <outline title="Sydney Ideas" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:197338982/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Tails of Sydney" xmlUrl="https://feeds.megaphone.fm/TIDNF1627260600" type="rss"/>
+      
+      
+      <outline title="Bondi Badlands" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/3c623487-1ea2-4d2e-8dad-ada4002751ed/c9f25930-011d-4958-a024-ada4002ceff6/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Stories From Sydney" xmlUrl="https://feed.podbean.com/storiesfromsydney/feed.xml" type="rss"/>
+      
+      
+      <outline title="Lost in Sydney" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3dce2628-7b95-47e3-83dd-ac2a00524771/fb5aef53-4827-46c3-8247-ac2a00524775/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Naked City" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/7af5c6f3-1d58-443c-b38c-ab8300272f97/b63d2025-b554-4ec4-bfdd-ab8300272fa1/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The SEI Podcast Series" xmlUrl="https://feeds.acast.com/public/shows/6539ae8a238f610012deb93c" type="rss"/>
+      
+      
+      <outline title="Sydney Writers' Festival" xmlUrl="https://www.omnycontent.com/d/playlist/7d8922b7-6a8a-4a06-b14f-a616006c3eb2/e7e62a98-c858-4bcc-85fa-a616008352fa/91b936e2-0e85-4fd5-83bf-a61600835303/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Sydney Institute Podcast" xmlUrl="https://feed.podbean.com/thesydneyinstitute/feed.xml" type="rss"/>
+      
+      
+      <outline title="Wake Up Sydney" xmlUrl="https://prod.api.pulsepodcasts.com/feed/82.rss" type="rss"/>
+      
+      
+      <outline title="Good Weekend Talks" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/938e5ca5-7771-4bc2-852a-ab8300272ea4/5249b1b2-6224-4d5a-b1d1-ab8300272f0a/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Sydney Now" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/627698af-6f84-4e21-b888-abc300496f3a/e8c4d339-01d7-4985-9abc-abc3004ce986/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Kids’ Health Explained" xmlUrl="https://feed.podbean.com/kidshealthexplained/feed.xml" type="rss"/>
+      
+      
+      <outline title="The Morning Edition" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/111d8251-9a05-4c76-bcf0-ab84002d2024/e23e2275-2bcf-4868-b394-ab84002d2037/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Sydney Siege" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/7c4180dc-dc95-4971-b428-af870162dbd4/f655a6a2-33d6-4438-899a-af870162dbf4/podcast.rss" type="rss"/>
+      
+      
+      <outline title="News with The Sydney Morning Herald" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/4471c49e-64ba-48b6-83e4-ad88003f89bb/ac1767cc-4769-48cd-a918-ad88004110b7/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Inside Politics" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/562f6523-038e-46d4-8249-b12b005f063d/f0d81cb1-6f19-4e3e-8cdb-b12b00610619/podcast.rss" type="rss"/>
+      
+      
+      <outline title="True Bloods | A Sydney Swans Fan Podcast" xmlUrl="https://feeds.acast.com/public/shows/63cef7e2b03a6e0012034f2a" type="rss"/>
+      
+      
+      <outline title="Morning Service @ St Thomas' Anglican Church North Sydney" xmlUrl="https://st-thomas.org.au/feed/podcast/10am/" type="rss"/>
+      
+      
+      <outline title="Abide Sydney" xmlUrl="https://feeds.transistor.fm/abide-sydney" type="rss"/>
+      
+      
+      <outline title="Greater Sydney Area HEMS" xmlUrl="https://feed.podbean.com/samuelbulford/feed.xml" type="rss"/>
+      
+      
+      <outline title="More than Footy" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/bf192497-5648-4c73-ae23-b122000e88ab/36da0ffb-9f3f-4aec-b3a7-b1220037f2dd/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Virginia I The Age &amp; SMH Investigates" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/4d9d2a28-c449-46ff-817f-ae66004009bb/645b1796-dbb2-4f46-bed4-ae660041c457/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Confession" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/ff92199e-cb3f-4d76-b231-af3400406cbd/0db4b2ad-f272-4447-8f6a-af340048d612/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Let's Go Rabbitohs Podcast! The Official Podcast of the South Sydney Rabbitohs" xmlUrl="https://feeds.acast.com/public/shows/lets-go-rabbitohs-podcast" type="rss"/>
+      
+      
+      <outline title="The Sydney Finn Show" xmlUrl="https://rss.buzzsprout.com/278779.rss" type="rss"/>
+      
+      
+      <outline title="The Sydney Table" xmlUrl="https://anchor.fm/s/1130bf428/podcast/rss" type="rss"/>
+      
+      
+      <outline title="饭饭而谈Sydney" xmlUrl="https://feed.xyzfm.space/e4km7labfhtm" type="rss"/>
+      
+      
+      <outline title="The B2B CMO Podcast with Jon Miller and Sydney Sloan" xmlUrl="https://feeds.transistor.fm/the-b2b-cmo-podcast-with-jon-miller-sydney-sloan" type="rss"/>
+      
+      
+      <outline title="We Are Sydney - The Sydney FC Podcast" xmlUrl="https://rss.buzzsprout.com/2547500.rss" type="rss"/>
+      
+      
+      <outline title="INChurch Sydney" xmlUrl="https://mitchell-varlow-u4nr.squarespace.com/podcast?format=rss" type="rss"/>
+      
+      
+      <outline title="SOUL OF SYDNEY Feel-Good FUNK RADIO" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:52628851/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Sydney Marathon Podcast" xmlUrl="https://feed.podbean.com/sydneymarathon/feed.xml" type="rss"/>
+      
+      
+      <outline title="The Chapel Sydney" xmlUrl="https://feed.podbean.com/thechapelsydney/feed.xml" type="rss"/>
+      
+      
+      <outline title="i61 Sydney" xmlUrl="http://tim-ferris-nzr6.squarespace.com/podcast?format=rss" type="rss"/>
+      
+      
+      <outline title="The Sydney EV Podcast" xmlUrl="https://anchor.fm/s/110940c94/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Sydney Festival" xmlUrl="https://www.omnycontent.com/d/playlist/df10b682-c9f8-4053-91ba-ac850031782b/3b028bf7-6638-4120-9c62-ac9b00253682/1f99cb53-ce11-423f-9af5-ac9b00271f71/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Mirror Sydney" xmlUrl="https://anchor.fm/s/5a03b3e4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Zion Church Sydney" xmlUrl="https://anchor.fm/s/113439590/podcast/rss" type="rss"/>
+      
+      
+      <outline title="St Thomas' Anglican Church North Sydney" xmlUrl="https://st-thomas.org.au/feed/podcast/" type="rss"/>
+      
+      
+      <outline title="Sydney Institute For Psycho-Analysis" xmlUrl="http://www.jeremywilmot.com.au/Podcast/SIFP/SIFP.xml" type="rss"/>
+      
+      
+      <outline title="Sydney Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/80e241be-af69-47f0-a3bb-b3e7016951f7/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Sydney Jewish Writers Festival" xmlUrl="https://feeds.acast.com/public/shows/5ecdf8a11e598177e6faf5ff" type="rss"/>
+      
+      
+      <outline title="The Future, This Week" xmlUrl="https://www.omnycontent.com/d/playlist/ca87ee0f-a818-4d50-9654-ad5c0022ac0d/15ffd510-2fb9-4049-bcbb-ae2e00513a4e/70e14b80-8c57-476d-ab5e-ae2e00644569/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Real Footy" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/61adb2e0-e341-4859-9832-ab8300272ff0/8ad21e4c-66ef-4a60-8991-ab8300272ff5/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Stranger Melbourne" xmlUrl="https://anchor.fm/s/56646a58/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Melbourne Calling" xmlUrl="https://anchor.fm/s/4e78f250/podcast/rss" type="rss"/>
+      
+      
+      <outline title="New to Melbourne Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e594962d-1f17-45d8-a2a8-a474003a75a1/eeb9a057-8232-40e3-ac59-ab580041d874/5f4fa0fb-3559-4c47-92c6-ab5800464039/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Broadsheet Melbourne: Around Town" xmlUrl="https://www.omnycontent.com/d/playlist/7893e4b8-9513-4ca4-a0d9-ad7400415df4/1ee870df-6e23-41cb-a62c-b1da0060d79d/4b6925d5-9b17-49fe-8f03-b1da0060d7ab/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Look History in the Eye, Melbourne" xmlUrl="https://rss.buzzsprout.com/1930879.rss" type="rss"/>
+      
+      
+      <outline title="Absolutely Revolting" xmlUrl="https://www.omnycontent.com/d/playlist/cf92379f-6cb4-4ad2-8504-a7310004d9dd/4dae8fd0-5ebe-41d7-bc7a-b1e80178a0d3/4377a8fe-446e-4c7b-bf6b-b1e8018556b2/podcast.rss" type="rss"/>
+      
+      
+      <outline title="MSW - Melbourne Sex Workers" xmlUrl="https://feeds.simplecast.com/5mGxwQ0M" type="rss"/>
+      
+      
+      <outline title="City of Melbourne Libraries" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:165507378/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Melbourne Marvels" xmlUrl="https://anchor.fm/s/a7fb884c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Melbourne Property Podcast™" xmlUrl="https://anchor.fm/s/100b65f84/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Callback" xmlUrl="https://feed.podbean.com/micomfest/feed.xml" type="rss"/>
+      
+      
+      <outline title="Talking Melbourne with Darren James" xmlUrl="https://www.omnycontent.com/d/playlist/88b564ea-a9a6-4751-910a-a5d800019396/07f474c3-02fd-4992-ad94-a742006484fa/d060be65-6e2c-43fe-8a4a-a9a3016951e0/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Melbourne Property Hour" xmlUrl="https://www.spreaker.com/show/6599358/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Informants: Lawyer X" xmlUrl="https://rss.art19.com/informants-lawyer-x" type="rss"/>
+      
+      
+      <outline title="Rush Hour Melbourne: Best Bits" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/5242a5de-77e2-435a-a29f-a4df0045cf40/81aaca75-ed84-4191-aa0f-a4df00703490/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Melbourne Writers Festival" xmlUrl="https://www.omnycontent.com/d/playlist/14b46de9-1605-4f01-8c1b-ada50001d474/845b035c-cc72-4a4a-9153-ada50002794d/f128583a-567a-4806-8593-ada500027965/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Melbourne Deepcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:532373/sounds.rss" type="rss"/>
+      
+      
+      <outline title="BackStoppers - The Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:625716441/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Melanated in Melbourne" xmlUrl="https://feed.podbean.com/MelanatedinMelbourne/feed.xml" type="rss"/>
+      
+      
+      <outline title="LiSTNR Melbourne Local News" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/a7ee56bc-7e19-4bab-9026-ac0d00124f59/7d49bf15-a3b8-4399-ae16-acd40041534a/podcast.rss" type="rss"/>
+      
+      
+      <outline title="SACKED: AFL" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3cf89773-059d-487f-8989-ac2a005248e5/04380b70-8721-4d7b-b93d-ac2a005248e9/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Talking Teaching" xmlUrl="https://anchor.fm/s/ab382934/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Talking Tigers, the Official Richmond podcast" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/f20f4b97-00a3-4e8b-808f-ad570075fa66/2af402a1-9e7f-4c1d-aef0-ad570075fa74/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Justice with Jon Faine" xmlUrl="https://anchor.fm/s/fa3b15c8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="City on a Hill Melbourne" xmlUrl="https://feeds.captivate.fm/cityonahill-melbourne/" type="rss"/>
+      
+      
+      <outline title="The DeeBrief" xmlUrl="https://feeds.acast.com/public/shows/6851d895259ce49e3e26edfb" type="rss"/>
+      
+      
+      <outline title="PsychTalks" xmlUrl="https://www.omnycontent.com/d/playlist/8450f03c-225d-47a0-ac01-ae84000e0c16/6d5f1ed1-f1f7-44bb-a3f9-ae8600482932/5ab7a4e7-9799-4fc6-b36b-ae8600512e5e/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Shinboners - North Melbourne Podcast" xmlUrl="https://anchor.fm/s/ef0e938c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Dead Set Legends Melbourne" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/b489b37a-9857-4ef9-9ffb-a4c600094392/e1738195-93ff-4adf-8a5f-a4c6000c3963/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Kids Health Info" xmlUrl="https://feeds.megaphone.fm/kidshealthinfo" type="rss"/>
+      
+      
+      <outline title="Flourishing Podcast" xmlUrl="https://anchor.fm/s/10f484058/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Finding Melbourne's Nature" xmlUrl="https://rss.buzzsprout.com/2599897.rss" type="rss"/>
+      
+      
+      <outline title="Knocked Up: The Podcast About Fertility and Women's Health" xmlUrl="https://www.omnycontent.com/d/playlist/a03d4d65-8aeb-4938-9276-aef6003634ef/ecb35a12-89b0-4abb-9bc6-aef6003686f0/68b330b3-9bab-4307-b057-aef60036871a/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Melbourne Mavericks Podcast" xmlUrl="https://feeds.megaphone.fm/NTETP3598707281" type="rss"/>
+      
+      
+      <outline title="Melbourne Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/3f1e1cf0-1b94-466b-a16d-b3ec0006ca66/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Rush Hour with JB &amp; Billy" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/5242a5de-77e2-435a-a29f-a4df0045cf40/78353fca-c071-44b2-b093-a4df004612c6/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Nobody Dies Here: Inside Melbourne's Medically Supervised Injecting Room" xmlUrl="https://feeds.acast.com/public/shows/6417f96475710800115efa26" type="rss"/>
+      
+      
+      <outline title="Pies Nation" xmlUrl="https://feeds.acast.com/public/shows/67a1b5939cd0aa28f72331e3" type="rss"/>
+      
+      
+      <outline title="Jung Society Melbourne Podcast" xmlUrl="https://rss.buzzsprout.com/1066705.rss" type="rss"/>
+      
+      
+      <outline title="Melbourne Lights Church" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:267122007/sounds.rss" type="rss"/>
+      
+      
+      <outline title="The Education Hub - Teach Think Treat" xmlUrl="https://feed.podbean.com/educationhubTTT/feed.xml" type="rss"/>
+      
+      
+      <outline title="Life, Love and Loss" xmlUrl="https://feeds.megaphone.fm/HNAST8785220943" type="rss"/>
+      
+      
+      <outline title="Roos on Radio" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/0e59014e-752f-4b62-a0cf-ae68000740a5/719da107-103c-4f08-aedd-ae68000740b8/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Footy with Broden Kelly" xmlUrl="https://feeds.megaphone.fm/CRDOR9576461777" type="rss"/>
+      
+      
+      <outline title="Essential Ethics" xmlUrl="https://feeds.megaphone.fm/HNAST2150704639" type="rss"/>
+      
+      
+      <outline title="Unfolded" xmlUrl="https://www.omnycontent.com/d/playlist/cf92379f-6cb4-4ad2-8504-a7310004d9dd/d0a98f7d-d32f-42a8-8a9b-b2f800029e96/f6936229-ee98-4e66-8f21-b2f80002a494/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Education Hub - Conversation with the experts" xmlUrl="https://feed.podbean.com/educationhubcwte/feed.xml" type="rss"/>
+      
+      
+      <outline title="Raising the Bar Melbourne" xmlUrl="https://feed.podbean.com/raisingthebarmelbourne/feed.xml" type="rss"/>
+      
+      
+      <outline title="North Melbourne Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/758d4e38-d22f-401e-9b73-b3ec0006f35b/podcast.rss" type="rss"/>
+      
+      
+      <outline title="This is Brisbane" xmlUrl="https://anchor.fm/s/179b494/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Unpacking Brisbane" xmlUrl="https://anchor.fm/s/101534268/podcast/rss" type="rss"/>
+      
+      
+      <outline title="LiSTNR Brisbane Local News" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/8e8fb249-644b-4f26-9473-abf90032c10e/619c5056-b5a8-40cf-b78f-acd40041ddd2/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Mister Brisbane" xmlUrl="https://api.substack.com/feed/podcast/26599.rss" type="rss"/>
+      
+      
+      <outline title="City on a Hill Brisbane" xmlUrl="https://feeds.captivate.fm/cityonahill-brisbane/" type="rss"/>
+      
+      
+      <outline title="Living In Brisbane Live!" xmlUrl="https://anchor.fm/s/c32ab8a4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Brisbane Lions Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/3d7a6622-10d8-471f-ba52-b3470021598c/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Brisbane Is Weird" xmlUrl="https://rss.libsyn.com/shows/344054/destinations/2808938.xml" type="rss"/>
+      
+      
+      <outline title="Brisbane Property Podcast" xmlUrl="https://www.brisbanepropertypodcast.com.au/feed.xml" type="rss"/>
+      
+      
+      <outline title="The Roar Deal" xmlUrl="https://anchor.fm/s/ced77b4c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Bluey's Brisbane" xmlUrl="https://feeds.captivate.fm/blueysbrisbane/" type="rss"/>
+      
+      
+      <outline title="Brisbane Professionals Podcast" xmlUrl="https://anchor.fm/s/1648b64/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Toward The Games: Brisbane 2032" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/3508d235-6fdd-4399-b54f-adb1005e674d/ed32ffa5-946f-44d0-b6aa-adb1006073ee/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Brisbane News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/phoenix-mercury-the-daily-news-now.xml" type="rss"/>
+      
+      
+      <outline title="Bear Talk - Brisbane Style" xmlUrl="https://rss.buzzsprout.com/2419873.rss" type="rss"/>
+      
+      
+      <outline title="About Even" xmlUrl="https://feeds.acast.com/public/shows/64e7e33141e6ea0011d94f71" type="rss"/>
+      
+      
+      <outline title="Stav, Abby &amp; Matt - B105 Brisbane" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/73ac1c56-d4fb-48b5-9004-b2ea00386782/d0ef5eff-020e-457a-af41-b2ea003867a4/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Brisbane Lions Fancast" xmlUrl="https://feed.podbean.com/BLFancast/feed.xml" type="rss"/>
+      
+      
+      <outline title="My favourite item" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:650802303/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Levels with Willie Mason &amp; Justin Horo" xmlUrl="https://www.omnycontent.com/d/playlist/d3d56d8d-11c9-411a-aade-af8f001be4a7/6690cbd9-7cf2-4c9b-8d4e-afb100491700/c66bfea0-0e98-4f6d-b3a7-afb10049e162/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Brisbane Broker Podcast" xmlUrl="https://anchor.fm/s/75cfd2d8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Compassion Initiative: Just Two Guys in Brisbane talking Compassion. www.thecompassioninitiative.com.au" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:148989799/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Illumine" xmlUrl="https://rss.buzzsprout.com/881743.rss" type="rss"/>
+      
+      
+      <outline title="Newlife Church: Brisbane" xmlUrl="https://feeds.transistor.fm/newlife-church-brisbane" type="rss"/>
+      
+      
+      <outline title="Hillsong Church - Brisbane City" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1397713314/sounds.rss" type="rss"/>
+      
+      
+      <outline title="THE Brisbane Channel Podcast: In-Depth" xmlUrl="https://media.rss.com/the-brisbane-channel-in-depth/feed.xml" type="rss"/>
+      
+      
+      <outline title="Brisbane Football Review" xmlUrl="https://anchor.fm/s/b3b98a94/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Shovel" xmlUrl="https://anchor.fm/s/3b708fd8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Brisbane Lions Lowdown" xmlUrl="https://anchor.fm/s/10ee030e4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Archdiocese of Brisbane" xmlUrl="https://feeds.castos.com/15z99" type="rss"/>
+      
+      
+      <outline title="the YWAM Brisbane Podcast" xmlUrl="https://anchor.fm/s/6d2b3dc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Start Up and Running" xmlUrl="https://anchor.fm/s/107f45dc8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Hillsong Brisbane Central" xmlUrl="https://anchor.fm/s/102dd2978/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Light Dark Blue: The Brisbane Grammar School Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/62e7adef-da7c-40e9-9111-af0f00447e94/26cf5621-a663-409b-909f-b034000c551f/23c8c02a-a676-4b36-b288-b034000f3289/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Bye Round With James Graham" xmlUrl="https://www.omnycontent.com/d/playlist/87bedc22-37de-4b24-aca3-aea5002a4362/536befe3-d14f-418c-96e2-aea5002a4de4/e0f66187-0d04-4027-bfeb-aea5002b1a60/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Sisters In Colour" xmlUrl="https://anchor.fm/s/14a95588/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Sunday Sermons from Every Nation Brisbane Central" xmlUrl="https://feed.podbean.com/enbrisbane/feed.xml" type="rss"/>
+      
+      
+      <outline title="NRL 360" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/54e30b5c-13b5-4c51-8a65-ac84006f3b30/c8ff9274-6646-4ba1-ac8a-ac84006f3b39/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Where I Belong" xmlUrl="https://rss.buzzsprout.com/1804227.rss" type="rss"/>
+      
+      
+      <outline title="Embrace: A Podcast for Survivors by Survivors about Sex and Intimacy" xmlUrl="https://anchor.fm/s/468e2f88/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Brisbane News Today | 2 Min | The Local Wire" xmlUrl="https://media.rss.com/brisbane-news-today-2-min-the-local-wire/feed.xml" type="rss"/>
+      
+      
+      <outline title="The Sunday Triple M NRL Catch Up" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/bcf86a68-ce97-47af-8c23-a4df004cd80e/a04d4312-d94e-4fab-bc57-a8b7001e085e/podcast.rss" type="rss"/>
+      
+      
+      <outline title="City Lights Church Brisbane" xmlUrl="https://www.city-lights.church/broadcasts/4nxebg7wcehdf181t4tzedfvcw.rss" type="rss"/>
+      
+      
+      <outline title="Teach Challenge Transform" xmlUrl="https://anchor.fm/s/108315d68/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Roar Deal" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/d752e752-fc67-4ced-80da-ad570072f797/9e747040-8712-46f8-801d-ad570072f7aa/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Hello Church Brisbane" xmlUrl="https://feed.podbean.com/hellochurchbrisbane/feed.xml" type="rss"/>
+      
+      
+      <outline title="Providence Church Brisbane" xmlUrl="https://providencechurch.com.au/?feed=seriesengine" type="rss"/>
+      
+      
+      <outline title="Planet Perth" xmlUrl="https://rtrfm.com.au/podcasts/planet-perth/?podcast_feed" type="rss"/>
+      
+      
+      <outline title="Welcome to Perth" xmlUrl="https://rss.buzzsprout.com/422440.rss" type="rss"/>
+      
+      
+      <outline title="Perth News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/new-york-liberty-the-daily-news-now.xml" type="rss"/>
+      
+      
+      <outline title="Perth County Podcast" xmlUrl="https://feed.podbean.com/perthcounty/feed.xml" type="rss"/>
+      
+      
+      <outline title="LiSTNR Perth Local News" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/a6366452-6a50-43a8-a695-ac0d003a197e/bc1403cf-5d6a-44ff-b7ac-acd400428da9/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Far Post Perth" xmlUrl="https://www.omnycontent.com/d/playlist/539709fa-6228-4486-b62b-b13900adb8bf/8378876b-e276-4bbd-a09c-b20300293435/fa01447a-ccf8-47dc-a204-b20300293451/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Big Bears Podcast" xmlUrl="https://feeds.acast.com/public/shows/693f911641eacf5e81f57235" type="rss"/>
+      
+      
+      <outline title="The Perth Podcast" xmlUrl="https://anchor.fm/s/fe78754/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Untold Stories of Perth" xmlUrl="https://www.omnycontent.com/d/playlist/66430868-f4d3-4f38-87f0-abb4001085aa/d5475ba3-34ca-42a5-b0fe-abb400334f66/7bdadcf7-d22c-4886-a17e-abb400334f78/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Humans Of Perth" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:120329699/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Perth's Stories" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:947333200/sounds.rss" type="rss"/>
+      
+      
+      <outline title="True Perth Tales" xmlUrl="https://rss.libsyn.com/shows/59133/destinations/225824.xml" type="rss"/>
+      
+      
+      <outline title="The Perth Property Show" xmlUrl="https://feed.podbean.com/theperthpropertyshow/feed.xml" type="rss"/>
+      
+      
+      <outline title="Perth Mates Podcast" xmlUrl="https://anchor.fm/s/d6f203c4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Perth Business Podcast" xmlUrl="https://anchor.fm/s/3829fcd8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Perth Boys Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:822041647/sounds.rss" type="rss"/>
+      
+      
+      <outline title="People of Perth Podcast" xmlUrl="https://anchor.fm/s/e856325c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="CurtinFM 100.1 in Perth, Western Australia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:750429835/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Perth Wildcast" xmlUrl="https://www.omnycontent.com/d/playlist/820f09cf-2ace-4180-a92d-aa4c0008f5fb/6601a2f7-61e5-47f9-969d-b328003ce9f4/4c426cac-bc39-4411-ba50-b328003ceef7/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Irish in Perth Podcast ☘️" xmlUrl="https://anchor.fm/s/b0728138/podcast/rss" type="rss"/>
+      
+      
+      <outline title="So Loquacious" xmlUrl="https://feeds.feedburner.com/SoLoquacious" type="rss"/>
+      
+      
+      <outline title="Perth Property Insider Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/fc3f0ae5-cf3a-4e8f-ad4d-aec20063ea1a/119042ec-1825-4c50-8487-aec9002e38c3/9a370908-4647-463e-a9a9-aec9002e38d6/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Perth Football League Radio Show" xmlUrl="https://www.omnycontent.com/d/playlist/40d034d8-cb18-4c0f-9e13-ad1201248777/5f4cd7a9-532d-4403-80f1-b2cf00d71422/6d3edcdd-9c1f-41b9-8f69-b2cf00d71a1b/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Heat All-Access" xmlUrl="https://anchor.fm/s/10b565610/podcast/rss" type="rss"/>
+      
+      
+      <outline title="A Young Man's Guide to Old Questions" xmlUrl="https://anchor.fm/s/db475168/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Perth Footy Podcast" xmlUrl="https://anchor.fm/s/b3c4bdc4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Shaped by Perth" xmlUrl="https://api.substack.com/feed/podcast/9379214.rss" type="rss"/>
+      
+      
+      <outline title="Perth Indymedia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:22009164/sounds.rss" type="rss"/>
+      
+      
+      <outline title="The Lifestreams South Perth Podcast" xmlUrl="https://feed.podbean.com/lifestreamsccsp/feed.xml" type="rss"/>
+      
+      
+      <outline title="Oasis Church Perth" xmlUrl="https://anchor.fm/s/157fa1b0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="FREE 'Online' Acting Classes In Perth" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:307395224/sounds.rss" type="rss"/>
+      
+      
+      <outline title="The Perth Azzurri Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/539709fa-6228-4486-b62b-b13900adb8bf/43003d6f-f2bb-4547-bdf9-b16700f4032a/9177c1fb-2e02-418a-b584-b16700f75684/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Perth Church of Christ" xmlUrl="https://anchor.fm/s/56abc844/podcast/rss" type="rss"/>
+      
+      
+      <outline title="C3 Church North Perth" xmlUrl="https://anchor.fm/s/cc94bac/podcast/rss" type="rss"/>
+      
+      
+      <outline title="PADCast Perth" xmlUrl="https://feed.pod.space/padcast" type="rss"/>
+      
+      
+      <outline title="Calvary Chapel Perth" xmlUrl="https://podcasts.subsplash.com/nq5nqt5/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Mighty Bearcast (Perth Bears NRL Rugby League Podcast)" xmlUrl="https://anchor.fm/s/fa36cd4c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Elevate Church - Perth, Western Australia" xmlUrl="https://www.elevatechurch.me/connect/listen/audio-podcast/" type="rss"/>
+      
+      
+      <outline title="Perth News Today | 2 Min | The Local Wire" xmlUrl="https://media.rss.com/perth-news-today-2-min-the-local-wire/feed.xml" type="rss"/>
+      
+      
+      <outline title="ASCEND Church Perth" xmlUrl="https://feeds.castos.com/5o930" type="rss"/>
+      
+      
+      <outline title="The Perth To Paisley Podcast" xmlUrl="https://feed.podbean.com/perthtopaisley/feed.xml" type="rss"/>
+      
+      
+      <outline title="Raising the Bar Perth 2023" xmlUrl="https://anchor.fm/s/105e545d8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Perth Dialogues" xmlUrl="https://anchor.fm/s/daa20820/podcast/rss" type="rss"/>
+      
+      
+      <outline title="North Coast Church (Perth)" xmlUrl="https://feed.pod.co/sermons-ncc-2" type="rss"/>
+      
+      
+      <outline title="City Report with Dean Bark - Perth, Western Australia Local News" xmlUrl="https://yourpod.news/rss/news/Perth,%20Western%20Australia/city-report-dean-bark" type="rss"/>
+      
+      
+      <outline title="Perth Wildcats" xmlUrl="https://audioboom.com/channels/2566716.rss" type="rss"/>
+      
+      
+      <outline title="Faith Community Church Sermons" xmlUrl="https://anchor.fm/s/10b113ef4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Laid Back Local - Perth, West Australia Local News" xmlUrl="https://yourpod.news/rss/news/Perth/leah-and-garrett" type="rss"/>
+      
+      
+      <outline title="Adelaide Mail Week In Review" xmlUrl="https://feeds.acast.com/public/shows/68c8eebd666ba430d6096ca6" type="rss"/>
+      
+      
+      <outline title="Experience Adelaide Podcast" xmlUrl="https://anchor.fm/s/a21e3f00/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Adelaide Show" xmlUrl="https://www.omnycontent.com/d/playlist/f4077a89-6f34-4e4a-88a6-a89e006843e6/1e485067-df0e-4977-b08c-a8e900324653/d72d5b72-9dd7-4fb5-9db3-a8e90032465c/podcast.rss" type="rss"/>
+      
+      
+      <outline title="LIFE Adelaide" xmlUrl="https://feed.podbean.com/lifeadelaide/feed.xml" type="rss"/>
+      
+      
+      <outline title="Adelaide Connected" xmlUrl="https://anchor.fm/s/f0e86d04/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Adelaide News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/minnesota-lynx-the-daily-news-now.xml" type="rss"/>
+      
+      
+      <outline title="DJ JoSH Adelaide Podcast Page" xmlUrl="https://djjoshadelaide.podomatic.com/rss2.xml" type="rss"/>
+      
+      
+      <outline title="Adelaide Tonight" xmlUrl="https://anchor.fm/s/10fa21d08/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Adelaide Property Pod with Robbie Fiacchi" xmlUrl="https://anchor.fm/s/1100d4e0c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Benchmarking Adelaide" xmlUrl="https://anchor.fm/s/102914d8c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Peeled" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/d713087f-43a1-4547-bcbf-b30f0069416c/9e5717a6-2a17-454b-b82d-b30f00694ca1/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Adelaide Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/59abfd2a-0a00-4312-b8db-b347001fd582/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Notes on Adelaide" xmlUrl="https://www.omnycontent.com/d/playlist/469e3428-2d6c-4a23-8e3c-aef1018514af/f413a493-b812-49cb-bcb8-af01004f1173/e0fa61c1-7f4c-4de7-9d2a-af01004f1198/podcast.rss" type="rss"/>
+      
+      
+      <outline title="The Adelaide Central Market Audio Tour" xmlUrl="https://www.omnycontent.com/d/playlist/469e3428-2d6c-4a23-8e3c-aef1018514af/5452e177-d8fc-4952-93dd-b07700743e36/0a9e25fc-83ec-4326-9a30-b0770075caf7/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Crows Radio Show" xmlUrl="https://www.omnycontent.com/d/playlist/8ae80818-a88e-475b-9776-ad05005c36ff/06b28a68-a7fa-471b-aadd-ae6000013a24/4ee3e05b-843b-40bb-b02c-ae60000252a6/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Green Adelaide Podcast" xmlUrl="https://rss.buzzsprout.com/2186475.rss" type="rss"/>
+      
+      
+      <outline title="ABC Adelaide's Talkback Gardening" xmlUrl="https://www.abc.net.au/feeds/8194492/podcast.xml" type="rss"/>
+      
+      
+      <outline title="Adelaide Writers' Week" xmlUrl="https://anchor.fm/s/5337839c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Crowject - An Adelaide Crows Podcast" xmlUrl="https://feeds.acast.com/public/shows/67abcbafb468a1d76fca0b81" type="rss"/>
+      
+      
+      <outline title="Crowvid - An Adelaide Crows Podcast" xmlUrl="https://www.spreaker.com/show/5430387/episodes/feed" type="rss"/>
+      
+      
+      <outline title="The Dead Set Legends Adelaide Catch Up" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/4be9bd03-4c10-48e4-8b49-a4dd002657d6/6d067240-d1ac-4355-bef3-a4dd00276cd5/podcast.rss" type="rss"/>
+      
+      
+      <outline title="AU in Conversation" xmlUrl="https://www.omnycontent.com/d/playlist/f8b3fb5c-ff4b-4a25-ba27-abad0019993c/1dc3d60b-17b4-4c0d-b0dd-b45f0005ef86/a55340cc-381c-40e3-aa0e-b45f0005f4a7/podcast.rss" type="rss"/>
+      
+      
+      <outline title="CrowCast - Adelaide Crows Podcasts" xmlUrl="https://www.spreaker.com/show/1614048/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Proper Crows Podcast - An Adelaide Crows Podcast" xmlUrl="https://anchor.fm/s/1014e5000/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Trinity Church Adelaide" xmlUrl="https://www.trinitycity.church/sermons/feed/podcast/" type="rss"/>
+      
+      
+      <outline title="The SYP Podcast" xmlUrl="https://feed.podbean.com/theSYPpodcast/feed.xml" type="rss"/>
+      
+      
+      <outline title="Port Adelaide Clubcast" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/31f1948f-e087-4be9-891c-b346004ecbbc/2c3399c6-0b69-41a0-b2e2-b3e7016c7b18/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Adelaide Crows Football Club" xmlUrl="https://audioboom.com/channels/2307139.rss" type="rss"/>
+      
+      
+      <outline title="Here We Crow - An Adelaide Crows Podcast" xmlUrl="https://rss.buzzsprout.com/1896357.rss" type="rss"/>
+      
+      
+      <outline title="Psych(ic) Podcast" xmlUrl="https://anchor.fm/s/36962dd8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Adelaide Heward-Mills" xmlUrl="https://feed.podbean.com/adelaidehewardmills/feed.xml" type="rss"/>
+      
+      
+      <outline title="CityLight Church North Adelaide" xmlUrl="https://anchor.fm/s/327e110c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Lifehouse Church Adelaide" xmlUrl="https://rss.buzzsprout.com/2241650.rss" type="rss"/>
+      
+      
+      <outline title="Adelaide Festival Podcasts" xmlUrl="https://anchor.fm/s/50b8a790/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Soft Sticks Podcast" xmlUrl="https://anchor.fm/s/103d7dc60/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Weekly Message" xmlUrl="https://anchor.fm/s/f1055ba8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Adelaide Youngies Camp" xmlUrl="https://www.omnycontent.com/d/playlist/c37f218e-68a0-4f4b-b1e9-aa490077ff0f/89d74da9-ba9a-4192-9f8a-b0910174da04/3f12a2d1-2aa5-4392-8d26-b091017ac96a/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Classical and Jazz Adelaide - music news and gig guide" xmlUrl="https://rss.buzzsprout.com/2625026.rss" type="rss"/>
+      
+      
+      <outline title="Life Church Adelaide" xmlUrl="https://anchor.fm/s/10da37f74/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Encounter Church Enfield" xmlUrl="https://media.rss.com/encounter-church-prospect/feed.xml" type="rss"/>
+      
+      
+      <outline title="Revolution Church Adelaide" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:10783261/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Headspace Sessions Podcast Adelaide" xmlUrl="https://anchor.fm/s/107d65008/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Phantom's Lair SuperCoach Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/2dab1266-1f08-4f4f-97dd-ac2a00524df3/05ea20c2-e44f-42d2-a1ae-ac2a00524df3/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Radio Italia Uno Adelaide" xmlUrl="https://anchor.fm/s/387d39d4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Discovery Pod Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/f8b3fb5c-ff4b-4a25-ba27-abad0019993c/607f45cb-8a50-46b5-88d2-ac4e007e4be3/e0a54606-7c43-48df-bf16-ac4e0080d8b8/podcast.rss" type="rss"/>
+      
+      
+      <outline title="Why It Won" xmlUrl="https://anchor.fm/s/10cfa51b0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Encounter Church Henley" xmlUrl="https://media.rss.com/encounter-church-henley/feed.xml" type="rss"/>
+      
+      
+      <outline title="Grange Baptist Podcast" xmlUrl="https://anchor.fm/s/1134331f4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Walk the Talk - Adelaide Presbyterian Church" xmlUrl="https://anchor.fm/s/1011108e4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Casefile" xmlUrl="https://casefilepodcast.com/feed/" type="rss"/>
+      
+      
+      <outline title="The Howie Games" xmlUrl="https://www.howiegames.com/feed/podcast/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Photography">
-      <outline title="Photo Review Australia" xmlUrl="https://www.photoreview.com.au/feed/" type="rss" />
-      <outline title="Digital Photography School" xmlUrl="https://digital-photography-school.com/feed/" type="rss" />
-      <outline title="The Landscape Awards" xmlUrl="https://thelandscapeawards.com/feed/" type="rss" />
-      <outline title="Focus Magazine" xmlUrl="https://www.focusmag.com.au/feed/" type="rss" />
-      <outline title="Australian Geographic Photos" xmlUrl="https://www.australiangeographic.com.au/photography/feed/" type="rss" />
+      
+      
+      <outline title="Photo Review Australia" xmlUrl="https://www.photoreview.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Digital Photography School" xmlUrl="https://digital-photography-school.com/feed/" type="rss"/>
+      
+      
+      <outline title="The Landscape Awards" xmlUrl="https://thelandscapeawards.com/feed/" type="rss"/>
+      
+      
+      <outline title="Focus Magazine" xmlUrl="https://www.focusmag.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Australian Geographic Photos" xmlUrl="https://www.australiangeographic.com.au/photography/feed/" type="rss"/>
+      
+    
     </outline>
-        <outline text="YouTube">
-      <outline title="Mighty Car Mods" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgJRL30YS6XFxq9Ga8W2J3A" type="rss" />
-      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
-      <outline title="LazarBeam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw1SQ6QRRtfAhrN_cjkrOgA" type="rss" />
+    
+        
+    <outline text="YouTube">
+      
+      
+      <outline title="Mighty Car Mods" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgJRL30YS6XFxq9Ga8W2J3A" type="rss"/>
+      
+      
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss"/>
+      
+      
+      <outline title="LazarBeam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw1SQ6QRRtfAhrN_cjkrOgA" type="rss"/>
+      
+    
+      <outline title="StarPlus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-LPIU24bQXVljUXivKEeRQ" type="rss"/>
+      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
+      <outline title="Celine Dept" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1a2ZCw7tugRZYRMnecNj3A" type="rss"/>
+      <outline title="Infobellsмовою гінді" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1ciY6kR3yj3kaKZ6R7ewAg" type="rss"/>
+      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
+      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
+      <outline title="Влад A4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2tsySbe9TNrI-xh2lximHA" type="rss"/>
+      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
+      <outline title="SonyMusicIndiaVEVO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3MLnJtqc_phABBriLRhtgQ" type="rss"/>
+      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
+      <outline title="ARY Digital HD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4JCksJF76g_MdzPVBJoC3Q" type="rss"/>
+      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
+      <outline title="Anaya Kandhal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4wEPe5mrHGAUjjTfXH_C-Q" type="rss"/>
+      <outline title="कलर्स टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
+      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
+      <outline title="Dangal TV Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5AA82B9K5K5Sdx2JpuuuSA" type="rss"/>
+      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
+      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
+      <outline title="ISSEI / いっせい" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6QZ_ss3i_8qLV_RczPZBkw" type="rss"/>
+      <outline title="JioHotstar Kids" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6msOR4-Wf-NMAP24YwobpQ" type="rss"/>
+      <outline title="Billion Surprise Toys" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6sqpmfBwngFZQPPzFjDGTw" type="rss"/>
+      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
+      <outline title="Ben Azelart" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8tCJ55XS8ClDQmfDZogYPQ" type="rss"/>
+      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
+      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
+      <outline title="@shemaroo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9w7VG_ZZwjXCskGZByMBvw" type="rss"/>
+      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9zs_bkRRTJa2kRsakFaFmw" type="rss"/>
+      <outline title="Karla Bustillos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAQB-fgOrLlUm149S3oArOg" type="rss"/>
+      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
+      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
+      <outline title="Topper Guild" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB58HbhbM93ygXfnCJ1K2kA" type="rss"/>
+      <outline title="चुचु टिभी नर्सरी राइम्स एन्ड किड्स सङ्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnZ16ahKA2DZ_T5W0FPUXg" type="rss"/>
+      <outline title="Alan Chikin Chow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCMeCQ4wtdwQuoH7TNThL1A" type="rss"/>
+      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDGmojLIoWpXok597xYo8cg" type="rss"/>
+      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDpenlfHFtjdGpqi8slPybg" type="rss"/>
+      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
+      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss"/>
+      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
+      <outline title="Saregama Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGzzga499Hr2AB1btQ3XtoQ" type="rss"/>
+      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
+      <outline title="PANDA BOI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJbJuOSf-ec7jsPzvQBVC3w" type="rss"/>
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
+      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
+      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
+      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
+      <outline title="केएल ब्रो बिजु रित्भिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5nlHWXVLeOsSjKH2fhmsg" type="rss"/>
+      <outline title="बाङतान टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkAepWjdylmXSltofFvsYQ" type="rss"/>
+      <outline title="WWE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
+      <outline title="@zhong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOKv-bQOCCfZp5vftTZ4MKg" type="rss"/>
+      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
+      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
+      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
+      <outline title="shfa2 - شفا" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ7x25F6YXY9DvGeHFxLhRQ" type="rss"/>
+      <outline title="योलो एभेन्तुरास" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ8TuCvcDMepleXFyOQfyOQ" type="rss"/>
+      <outline title="ABP NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRWFSbif-RFENbBrSiez1DA" type="rss"/>
+      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
+      <outline title="Masha and the Bear" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSgiKiHFAV640il9waFg9cw" type="rss"/>
+      <outline title="อลัน เฉิน สโตกส์ และ เฉิน สโตกส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUdKQXtKb1me2Gt1nz6tzdg" type="rss"/>
+      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
+      <outline title="MR. INDIAN HACKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWWeRmpeFuYY1FdAru58Afw" type="rss"/>
+      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
+      <outline title="ToRung" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXbYlU08sOTBktOtjVsvR6w" type="rss"/>
+      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss"/>
+      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
+      <outline title="Shakira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYLNGLIzMhRTi6ZOLjAPSmw" type="rss"/>
+      <outline title="JuegaGerman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYiGq8XF7YQD00x7wAd62Zg" type="rss"/>
+      <outline title="Alejo Igoa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZs0WwC0Dn_noiQE2BHSTKg" type="rss"/>
+      <outline title="Toys and Colors" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBTm46K3l59CIty88Q_jog" type="rss"/>
+      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
+      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
+      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
+      <outline title="IShowSpeed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd09ztChTkJ9dlY6RLawSog" type="rss"/>
+      <outline title="Alfredo Larin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd5ApCORQsMOZZz5E9oVeFA" type="rss"/>
+      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss"/>
+      <outline title="Sierra &amp; Rhia FAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe6n0z9UbsxYCS8P83f84tw" type="rss"/>
+      <outline title="@HarPalGeoOfficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe9JSDmyqNgA_l2BzGHq1Ug" type="rss"/>
+      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
+      <outline title="Маша и Медведь[b]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfbugOkS8PkqhDfvehIDRBw" type="rss"/>
+      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
+      <outline title="Real fools shorts official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgKEvLp8DXCTMq4QY6wW7bw" type="rss"/>
+      <outline title="Bispo Bruno Leonardo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgi6Wim7jdoW6luCXci83uw" type="rss"/>
+      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
+      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
+      <outline title="Get Movies" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClZkHt2kNIgyrTTPnSQV3SA" type="rss"/>
+      <outline title="Techno Gamerz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl_vAxZpvbO-PFXdDu7EdHw" type="rss"/>
+      <outline title="Bad Bunny" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmBA_wu8xGg1OfOkfW13Q0Q" type="rss"/>
+      <outline title="आचार्य प्रशान्त - Acharya Prashant" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmRZ4Xrzx1PKsg2UieOT6rA" type="rss"/>
+      <outline title="BETER BÖCÜK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnYP-Vc_kPNk--9h6MNI4rA" type="rss"/>
+      <outline title="Fede Vigevani" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoQm-PeHC-cbJclKJYJ8LzA" type="rss"/>
+      <outline title="Ishtar Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCopY0NAzASqmD6eVaRj2TFQ" type="rss"/>
+      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
+      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
+      <outline title="T-Series Bollywood Classics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq-Fj5jknLsUf-MWSy4_brA" type="rss"/>
+      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
+      <outline title="Mikecrack" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ5zFEED1hWs0KNQCQuYdQ" type="rss"/>
+      <outline title="Jess No Limit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrcUbwWMAshF6M6UJcwOK7g" type="rss"/>
+      <outline title="जामजाम इलेक्ट्रोनिक ट्रेडिङ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrnQFuUabBHaw-BRhPo8xEA" type="rss"/>
+      <outline title="ABS-CBN Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCstEtN0pgOmCf02EdXsGChw" type="rss"/>
+      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
+      <outline title="IndiaTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCttspZesZIDEwwpVIgoZtWQ" type="rss"/>
+      <outline title="योर क्रिस्टियानो" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtxD0x6AuNNqdXO9Wp5GHew" type="rss"/>
+      <outline title="Juan de Dios Pantoja" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu9rnHLRV0gvyn2Skm7wsRQ" type="rss"/>
+      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
+      <outline title="shfa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwHE1kM1CPJd_pI9FQ0-4dg" type="rss"/>
+      <outline title="LUCCAS NETO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxk7r8lH6fWkMuWeQn9Gi6g" type="rss"/>
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
+      <outline title="קים דונג ג'וןויו באק האפ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8gf4PK1Qth50lLHdvTCcA" type="rss"/>
     </outline>
+    
+    
     <outline text="Health">
-      <outline title="Australian Department of Health" xmlUrl="https://www.health.gov.au/news/feed" type="rss" />
-      <outline title="Beyond Blue" xmlUrl="https://www.beyondblue.org.au/feed/" type="rss" />
+      
+      
+      <outline title="Australian Department of Health" xmlUrl="https://www.health.gov.au/news/feed" type="rss"/>
+      
+      
+      <outline title="Beyond Blue" xmlUrl="https://www.beyondblue.org.au/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Education">
-      <outline title="The Conversation AU" xmlUrl="https://theconversation.com/au/articles.atom" type="rss" />
-      <outline title="Universities Australia" xmlUrl="https://www.universitiesaustralia.edu.au/feed/" type="rss" />
+      
+      
+      <outline title="The Conversation AU" xmlUrl="https://theconversation.com/au/articles.atom" type="rss"/>
+      
+      
+      <outline title="Universities Australia" xmlUrl="https://www.universitiesaustralia.edu.au/feed/" type="rss"/>
+      
+    
     </outline>
+    
+    
     <outline text="Politics">
-      <outline title="The Mandarin" xmlUrl="https://www.themandarin.com.au/feed/" type="rss" />
-      <outline title="Pearls and Irritations" xmlUrl="https://johnmenadue.com/feed/" type="rss" />
-      <outline title="Independent Australia" xmlUrl="https://independentaustralia.net/feed/" type="rss" />
+      
+      
+      <outline title="The Mandarin" xmlUrl="https://www.themandarin.com.au/feed/" type="rss"/>
+      
+      
+      <outline title="Pearls and Irritations" xmlUrl="https://johnmenadue.com/feed/" type="rss"/>
+      
+      
+      <outline title="Independent Australia" xmlUrl="https://independentaustralia.net/feed/" type="rss"/>
+      
+    
     </outline>
-</body>
+    
+
+  </body>
+  
+
 </opml>

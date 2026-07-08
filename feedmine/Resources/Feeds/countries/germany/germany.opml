@@ -1,366 +1,1147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
+  
+  
   <head>
+    
+    
     <title>Germany National Feeds</title>
+    
+  
   </head>
+  
+  
   <body>
-      <outline text="News">
-        <outline title="Der Spiegel" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" type="rss" />
-        <outline title="Süddeutsche Zeitung" xmlUrl="https://rss.sueddeutsche.de/rss/Topthemen" type="rss" />
-        <outline title="FAZ" xmlUrl="https://www.faz.net/rss/aktuell/" type="rss" />
-        <outline title="Die Welt" xmlUrl="https://www.welt.de/feeds/latest.rss" type="rss" />
-        <outline title="Tagesschau" xmlUrl="https://www.tagesschau.de/xml/rss2/" type="rss" />
-        <outline title="taz" xmlUrl="https://taz.de/!p4608;rss/" type="rss" />
-        <outline title="Deutsche Welle" xmlUrl="https://rss.dw.com/xml/rss-en-all" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="Handelsblatt" xmlUrl="https://www.handelsblatt.com/contentexport/feed/top-themen" type="rss" />
-      </outline>
-      <outline text="Technology">
-        <outline title="Heise Online" xmlUrl="https://www.heise.de/rss/heise-atom.xml" type="rss" />
-        <outline title="Golem.de" xmlUrl="https://rss.golem.de/rss.php?feed=ATOM1.0" type="rss" />
-        <outline title="Netzpolitik.org" xmlUrl="https://netzpolitik.org/feed/" type="rss" />
-      </outline>
-    <outline text="Podcasts">
-      <outline title="Germany in Focus" xmlUrl="https://feeds.acast.com/public/shows/6320231f4eebf90013cfcdd5" type="rss" />
-      <outline title="Germany: Memories of a Nation" xmlUrl="https://podcasts.files.bbci.co.uk/b04dwbwz.rss" type="rss" />
-      <outline title="Inside Europe" xmlUrl="https://rss.dw.com/xml/podcast_inside-europe" type="rss" />
-      <outline title="The Germany Experience" xmlUrl="https://letscast.fm/podcasts/the-germany-experience-f99b4e85/feed" type="rss" />
-      <outline title="This Week in Germany" xmlUrl="https://feeds.feedburner.com/ThisWeekInGermany" type="rss" />
-      <outline title="History of the Germans from the Middle Ages to Reunification" xmlUrl="https://feeds.captivate.fm/history-of-the-germans/" type="rss" />
-      <outline title="In Germany we don't say" xmlUrl="https://anchor.fm/s/f8a06c7c/podcast/rss" type="rss" />
-      <outline title="Everyday Germany" xmlUrl="https://everydaygermany.de/feed/mp3" type="rss" />
-      <outline title="INTO GERMANY! The German Business Podcast" xmlUrl="https://into-germany.podigee.io/feed/mp3" type="rss" />
-      <outline title="Enneagram Germany Podcast" xmlUrl="https://enneagramgermany.podigee.io/feed/mp3" type="rss" />
-      <outline title="F.A.Z. Podcast für Deutschland" xmlUrl="https://podcastfuerdeutschland.podigee.io/feed/mp3" type="rss" />
-      <outline title="Americans in Germany Drinking Whiskey" xmlUrl="https://feed.podbean.com/americansingermanydrinkingwhiskey/feed.xml" type="rss" />
-      <outline title="Interviews" xmlUrl="https://www.deutschlandfunk.de/interviews-108.xml" type="rss" />
-      <outline title="Mad in Germany" xmlUrl="https://feed.podbean.com/madingermanypod/feed.xml" type="rss" />
-      <outline title="OMR Podcast" xmlUrl="https://omr.podigee.io/feed/mp3" type="rss" />
-      <outline title="Eat Science Health" xmlUrl="https://tys15u.podcaster.de/eat-science-health.rss" type="rss" />
-      <outline title="Nash Podcast - Germany" xmlUrl="https://rss.buzzsprout.com/2374889.rss" type="rss" />
-      <outline title="True Crime Germany" xmlUrl="https://cdn.julephosting.de/podcasts/431-true-crime-germany/feed.rss" type="rss" />
-      <outline title="bto – der Ökonomie-Podcast von Dr. Daniel Stelter" xmlUrl="https://feeds.acast.com/public/shows/649948e4db3d690011987638" type="rss" />
-      <outline title="MADE IN GERMANY" xmlUrl="https://madeingermany.podigee.io/feed/mp3" type="rss" />
-      <outline title="50+2 - Der Fussballpodcast mit Nico &amp; Niklas" xmlUrl="https://feeds.megaphone.fm/EYLHE8071230216" type="rss" />
-      <outline title="Packers Talk Germany - Der Green Bay Packers Podcast" xmlUrl="https://anchor.fm/s/fc4f3b14/podcast/rss" type="rss" />
-      <outline title="Eintracht vom Main – Der offizielle Podcast von Eintracht Frankfurt" xmlUrl="https://eintracht.podigee.io/feed/mp3" type="rss" />
-      <outline title="Scalecast" xmlUrl="https://anchor.fm/s/f062893c/podcast/rss" type="rss" />
-      <outline title="Beisenherz und Polak – Friendly Fire" xmlUrl="https://feeds.acast.com/public/shows/678e1585fc105e4d36334a03" type="rss" />
-      <outline title="Mensch - Geschichten aus dem echten Leben unserer Lieblingspromis" xmlUrl="https://feeds.acast.com/public/shows/685e67aa47311de1b6454f7d" type="rss" />
-      <outline title="Wie Wir Lieben" xmlUrl="https://feeds.acast.com/public/shows/6916364fe42e3466f2e3cd4d" type="rss" />
-      <outline title="SWR3 Comedy" xmlUrl="https://www.swr3.de/~podcast/podcasts/podcast-swr3-comedy-100.xml" type="rss" />
-      <outline title="Ein Fall für Sophie - Justiz für Dummies" xmlUrl="https://feeds.acast.com/public/shows/67d2a3b7ba1ef91ed0945891" type="rss" />
-      <outline title="WONDERMOM" xmlUrl="https://feeds.acast.com/public/shows/69f978cb836b4ec718a8ec36" type="rss" />
-      <outline title="Vitamin X - der Podcast" xmlUrl="https://anchor.fm/s/1093d3948/podcast/rss" type="rss" />
-      <outline title="Finanzielle Intelligenz mit Marc Friedrich" xmlUrl="https://anchor.fm/s/17b7674c/podcast/rss" type="rss" />
-      <outline title="Lias Crime Time Germany" xmlUrl="https://liascrimetime.podigee.io/feed/mp3" type="rss" />
-      <outline title="World War II with Tom Hanks" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/cc2b59fa44d0151fa8987e1b01e424bc" type="rss" />
-      <outline title="Nachholspiel" xmlUrl="https://feeds.acast.com/public/shows/64d5dad9b4d0da001046c89e" type="rss" />
-      <outline title="Eins zu Eins. Der Talk" xmlUrl="https://feeds.br.de/eins-zu-eins-der-talk/feed.xml" type="rss" />
-      <outline title="DANIELE GANSER - DER PODCAST" xmlUrl="https://anchor.fm/s/109c88ffc/podcast/rss" type="rss" />
-      <outline title="The Pioneer Hauptstadt Briefing" xmlUrl="https://access.acast.com/rss/hauptstadt-der-podcast" type="rss" />
-      <outline title="Freundschaft Plus - Liebe, Sex und Beziehungen aller Art" xmlUrl="https://feeds.acast.com/public/shows/67f8d64dd5ed0d5b9da3477b" type="rss" />
-      <outline title="Delayland – Germany and the Missing Magic" xmlUrl="https://rss.dw.com/xml/podcast_Merkels_Last_Dance" type="rss" />
-      <outline title="Investieren lernen - Aktien, Geldanlage, Trading, Investing, Immobilien, Vermögen, reich werden, passives Einkommen, Trading, Momentum, Value, Optionen, Börse, Anleihen, Geld anlegen, Bitcoin, Crypto, Startup, ETF, passiv Investieren, Altersvorsorge" xmlUrl="https://rss.buzzsprout.com/1148225.rss" type="rss" />
-      <outline title="Mission Money" xmlUrl="https://cdn.julephosting.de/podcasts/162-mission-money-geld-motivation-erfolg/feed.rss" type="rss" />
-      <outline title="Night Riders Germany - Der Escort-Agentur-Podcast" xmlUrl="https://anchor.fm/s/10e0b9f50/podcast/rss" type="rss" />
-      <outline title="RECHT INTIM" xmlUrl="https://cdn.julephosting.de/podcasts/75-recht-intim/feed.rss" type="rss" />
-      <outline title="Hasenchat Music Podcast Deutsch" xmlUrl="https://anchor.fm/s/f0678630/podcast/rss" type="rss" />
-      <outline title="NÄHEN AUS LEIDENSCHAFT by burda style" xmlUrl="https://rss.buzzsprout.com/2102191.rss" type="rss" />
-      <outline title="The Pioneer World Briefing von Chelsea Spieker und Sigmar Gabriel" xmlUrl="https://access.acast.com/rss/geopolitik-mit-sigmar-gabriel-und-chelsea-spieker" type="rss" />
-      <outline title="Neues aus der Bundespressekonferenz" xmlUrl="https://bpk.podigee.io/feed/mp3" type="rss" />
-      <outline title="programmier.bar – der Podcast für App- und Webentwicklung" xmlUrl="https://rss.buzzsprout.com/176239.rss" type="rss" />
-      <outline title="Interview der Woche" xmlUrl="https://www.deutschlandfunk.de/interview-der-woche-102.xml" type="rss" />
-      <outline title="Deutschlandfunk aktuell" xmlUrl="https://www.deutschlandfunk.de/informationen-am-morgen-102.xml" type="rss" />
-      <outline title="DEUTSCHLAND" xmlUrl="https://deutschlandpodcast.net/feed/mp3/" type="rss" />
-      <outline title="Deutschland3000 mit Eva Schulz" xmlUrl="https://www.ndr.de/n-joy/podcast/podcast4504.xml" type="rss" />
-      <outline title="Gysi gegen Guttenberg – Der Deutschland Podcast" xmlUrl="https://gysi-gegen-guttenberg.podigee.io/feed/mp3" type="rss" />
-      <outline title="Die Reportage" xmlUrl="https://www.deutschlandfunkkultur.de/die-reportage-104.xml" type="rss" />
-      <outline title="Weltzeit" xmlUrl="https://www.deutschlandfunkkultur.de/weltzeit-104.xml" type="rss" />
-      <outline title="Deutschland 33/45" xmlUrl="https://3345deutschland.podigee.io/feed/mp3" type="rss" />
-      <outline title="Eine Stunde History - Deutschlandfunk Nova" xmlUrl="https://www.deutschlandfunknova.de/podcast/eine-stunde-history" type="rss" />
-      <outline title="Die Nervigen" xmlUrl="https://die-nervigen.podigee.io/feed/mp3" type="rss" />
-      <outline title="Team Deutschland Podcast" xmlUrl="https://teamdeutschland.podigee.io/feed/mp3" type="rss" />
-      <outline title="Im Gespräch" xmlUrl="https://www.deutschlandfunkkultur.de/podcast-im-gespraech-100.xml" type="rss" />
-      <outline title="Kakadu – Das Kinderhörspiel" xmlUrl="https://www.kakadu.de/kinderhoerspiel-118.xml" type="rss" />
-      <outline title="Dieser eine Moment – Der Podcast mit Philipp Fleiter" xmlUrl="https://cdn.audiorella.com/podcasts/1806-dieser-eine-moment-der-podcast-mit-philipp-fleiter/feed.rss" type="rss" />
-      <outline title="Erfolg ist kein Zufall – Der Nummer 1 Podcast in Deutschland zum Thema Erfolg" xmlUrl="https://anchor.fm/s/4d21cd00/podcast/rss" type="rss" />
-      <outline title="Deutschland – ein halbes Leben. 35 Jahre Mauerfall" xmlUrl="https://www.mdr.de/kultur/podcast/deutschland-ein-halbes-leben/fuenfunddreissig-jahre-mauerfall-100.xml" type="rss" />
-      <outline title="Breitband" xmlUrl="https://www.deutschlandfunkkultur.de/podcast-breitband-medien-und-digitale-kultur-100.xml" type="rss" />
-      <outline title="Politisches Feuilleton" xmlUrl="https://www.deutschlandfunkkultur.de/politisches-feuilleton-102.xml" type="rss" />
-      <outline title="Lange Nacht" xmlUrl="https://www.deutschlandfunkkultur.de/lange-nacht-106.xml" type="rss" />
-      <outline title="Der AWO-Podcast: Deutschland, Du kannst das!" xmlUrl="https://awo-deutschlanddukannstdas.podigee.io/feed/mp3" type="rss" />
-      <outline title="Lesart" xmlUrl="https://www.deutschlandfunkkultur.de/lesart-das-literaturmagazin-100.xml" type="rss" />
-      <outline title="MUT - Der Deutschland Talk mit Tijen Onaran" xmlUrl="https://anchor.fm/s/fd268e84/podcast/rss" type="rss" />
-      <outline title="Wortwechsel" xmlUrl="https://www.deutschlandfunkkultur.de/wortwechsel-102.xml" type="rss" />
-      <outline title="Länderreport" xmlUrl="https://www.deutschlandfunkkultur.de/laenderreport-102.xml" type="rss" />
-      <outline title="Das Geld zu Gast bei Freunden – Die wirklich wahre Geschichte, wie Deutschland WM-Gastgeber 2006 wurde" xmlUrl="https://www.swr.de/~podcast/sport/fussball/podcast-zu-gast-bei-freunden-100.xml" type="rss" />
-      <outline title="Kakadu – Der Kinderpodcast" xmlUrl="https://www.kakadu.de/kakadu-104.xml" type="rss" />
-      <outline title="Zeitfragen. Feature" xmlUrl="https://www.deutschlandfunkkultur.de/zeitfragen-feature-130.xml" type="rss" />
-      <outline title="Part of the Game - Der NFL Deutschland Podcast" xmlUrl="https://partofthegame.podigee.io/feed/mp3" type="rss" />
-      <outline title="Unter Ladies - Der Podcast von Ladies' Circle Deutschland" xmlUrl="https://anchor.fm/s/1136621b4/podcast/rss" type="rss" />
-      <outline title="Studio 9 - Der Tag mit ..." xmlUrl="https://www.deutschlandfunkkultur.de/studio-9-der-tag-mit-102.xml" type="rss" />
-      <outline title="pv magazine Deutschland" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:193368690/sounds.rss" type="rss" />
-      <outline title="Sein und Streit" xmlUrl="https://www.deutschlandfunkkultur.de/sein-und-streit-das-philosophiemagazin-102.xml" type="rss" />
-      <outline title="Fazit" xmlUrl="https://www.deutschlandfunkkultur.de/podcast-fazit-kultur-vom-tage-100.xml" type="rss" />
-      <outline title="Studio 9" xmlUrl="https://www.deutschlandfunkkultur.de/studio-102.xml" type="rss" />
-      <outline title="Plus Eins" xmlUrl="https://www.deutschlandfunkkultur.de/plus-eins-102.xml" type="rss" />
-      <outline title="Das Literarische Quartett" xmlUrl="https://www.deutschlandfunkkultur.de/das-literarische-quartett-102.xml" type="rss" />
-      <outline title="ZIRKELTRAINING - der offizielle Podcast des Magischen Zirkels von Deutschland e.V." xmlUrl="https://fkrxto.podcaster.de/zirkeltraining-mzvd.rss" type="rss" />
-      <outline title="Tatort Deutschland – Wahre Kriminalfälle und Verbrechen" xmlUrl="https://tatort-deutschland.podigee.io/feed/mp3" type="rss" />
-      <outline title="Die Geschichte geht weiter - Victor Klemperers Tagebücher 1918-1959" xmlUrl="https://www.deutschlandfunkkultur.de/klemperer-102.xml" type="rss" />
-      <outline title="Kompressor" xmlUrl="https://www.deutschlandfunkkultur.de/podcast-kompressor-magazin-fuer-popkultur-100.xml" type="rss" />
-      <outline title="Post aus Korea - Gemischtes aus Deutschland und Korea" xmlUrl="https://anchor.fm/s/2f78d500/podcast/rss" type="rss" />
-      <outline title="Inside Deutschland: Your Guide to Careers in Germany" xmlUrl="https://inside-deutschland.podigee.io/feed/mp3" type="rss" />
-      <outline title="People of Science – Wer macht Wissenschaft?" xmlUrl="https://www.deutschlandfunkkultur.de/people-of-science-102.xml" type="rss" />
-      <outline title="Zeitfragen" xmlUrl="https://www.deutschlandfunkkultur.de/zeitfragen-magazin-114.xml" type="rss" />
-      <outline title="Radio Deutschland Eins - Das Talkradio" xmlUrl="http://live.radio-deutschland-eins.com/podcast/feed901.xml" type="rss" />
-      <outline title="Im Osten - wo Deutschland sich entscheidet" xmlUrl="https://imosten.podigee.io/feed/mp3" type="rss" />
-      <outline title="Tacheles" xmlUrl="https://www.deutschlandfunkkultur.de/tacheles-102.xml" type="rss" />
-      <outline title="Der Theaterpodcast" xmlUrl="https://www.deutschlandfunkkultur.de/der-theaterpodcast-108.xml" type="rss" />
-      <outline title="100 % Berlin" xmlUrl="https://www.rbb888.de/podcast/100ProzentBerlin.xml/feed=podcast.xml" type="rss" />
-      <outline title="Geheimnisvolle Orte" xmlUrl="https://www.rbb-online.de/podcasts/geheimnisvolle-orte/index.xml/feed=podcast.xml" type="rss" />
-      <outline title="BERLIN GESCHICHTE" xmlUrl="https://qn4o4z.podcaster.de/berlingeschichte.rss" type="rss" />
-      <outline title="Sex in Berlin (DE)" xmlUrl="https://feeds.acast.com/public/shows/69c116947878605e116a1145" type="rss" />
-      <outline title="Berlin Unboxed" xmlUrl="https://berlinunboxed.podigee.io/feed/mp3" type="rss" />
-      <outline title="Berlin Code – mit Linda Zervakis" xmlUrl="https://www.inforadio.de/podcast/feeds/berlin-code/berlin-code-aus-dem-ard-hauptstadtstudio-mit-linda-zervakis.xml/feed=podcast.xml" type="rss" />
-      <outline title="Baywatch Berlin" xmlUrl="https://baywatch-berlin.podigee.io/feed/mp3" type="rss" />
-      <outline title="Tatort Berlin" xmlUrl="https://tatort-berlin.podigee.io/feed/mp3" type="rss" />
-      <outline title="Eine Runde Berlin" xmlUrl="https://einerundeberlin.podigee.io/feed/mp3" type="rss" />
-      <outline title="So ist Berlin" xmlUrl="https://www.spreaker.com/show/4811826/episodes/feed" type="rss" />
-      <outline title="Berlin-Schicksalsjahre einer Stadt" xmlUrl="https://www.inforadio.de/podcast/feeds/berlin-schicksalsjahre-einer-stadt/berlin-schicksalsjahre-einer-stadt.xml/feed=podcast.xml" type="rss" />
-      <outline title="Mein Berlin - Der Hauptstadtpodcast" xmlUrl="https://mein-berlin.podigee.io/feed/mp3" type="rss" />
-      <outline title="Kunst in Berlin" xmlUrl="https://kunst-in-berlin.podigee.io/feed/mp3" type="rss" />
-      <outline title="Die Mauerstadt – Wildes West-Berlin" xmlUrl="https://www.rbb-online.de/podcasts/die-mauerstadt/index.xml/feed=podcast.xml" type="rss" />
-      <outline title="Dark Berlin" xmlUrl="https://darkberlin.podigee.io/feed/mp3" type="rss" />
-      <outline title="True Stories Berlin" xmlUrl="https://anchor.fm/s/f1a62178/podcast/rss" type="rss" />
-      <outline title="Berlin Sounds Inside – Der Musiktalk mit Anja Caspary" xmlUrl="https://www.radiodrei.de/podcasts/berlin-sounds-inside/index.xml/feed=podcast.xml" type="rss" />
-      <outline title="Berlin und Brandenburg" xmlUrl="https://www.inforadio.de/podcast/feeds/berlin-und-brandenburg/berlin-und-brandenburg.xml/feed=podcast.xml" type="rss" />
-      <outline title="Das Neue Berlin" xmlUrl="https://dasneue.berlin/feed/m4a/" type="rss" />
-      <outline title="Podcast Berlin" xmlUrl="https://feeds.ivoox.com/feed_fg_f1901892_filtro_1.xml" type="rss" />
-      <outline title="The Hillsong Berlin Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:49171490/sounds.rss" type="rss" />
-      <outline title="CALCIO BERLIN" xmlUrl="https://cdn.audiorella.com/podcasts/1779-calcio-berlin/feed.rss" type="rss" />
-      <outline title="The Joko in Berlin Podcast" xmlUrl="https://anchor.fm/s/6973dfc0/podcast/rss" type="rss" />
-      <outline title="Heute minus 100 - Es geschah in Berlin" xmlUrl="https://www.inforadio.de/podcast/feeds/heute-minus-100/heute-minus-100.xml/feed=podcast.xml" type="rss" />
-      <outline title="Deep Doku" xmlUrl="https://www.rbb-online.de/podcasts/deep-doku/index.xml/feed=podcast.xml" type="rss" />
-      <outline title="Fünf Minuten Berlin (Tagesspiegel Archiv)" xmlUrl="https://fuenfminutenberlin.podigee.io/feed/mp3" type="rss" />
-      <outline title="Berlin Booth" xmlUrl="https://feeds.acast.com/public/shows/66421b400122a60013098e1a" type="rss" />
-      <outline title="DER TAG in Berlin und Brandenburg" xmlUrl="https://www.inforadio.de/podcast/feeds/der-tag-in-berlin-und-brandenburg/rbb-der-tag-in-berlin-und-brandenburg.xml/feed=podcast.xml" type="rss" />
-      <outline title="The Spectrum Berlin - Raum für Neurodivergenz" xmlUrl="https://anchor.fm/s/111b2647c/podcast/rss" type="rss" />
-      <outline title="FLOPCAST.BERLIN" xmlUrl="https://anchor.fm/s/112b4fd44/podcast/rss" type="rss" />
-      <outline title="Nachgehakt - Der Podcast der Verbraucherzentrale Berlin" xmlUrl="https://nachgehakt.podigee.io/feed/mp3" type="rss" />
-      <outline title="AMEN Berlin" xmlUrl="https://c3nycberlin.podcaster.de/c3nyc-berlin.rss" type="rss" />
-      <outline title="Berliner Ensemble Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a545ccfeb8820016dceddd" type="rss" />
-      <outline title="Radio CityLAB Berlin" xmlUrl="https://radiocitylab.podigee.io/feed/mp3" type="rss" />
-      <outline title="Berlin Story News" xmlUrl="https://berlin-story-news.podigee.io/feed/mp3" type="rss" />
-      <outline title="Orte und Worte" xmlUrl="https://www.rbb-online.de/podcasts/orte-und-worte/index.xml/feed=podcast.xml" type="rss" />
-      <outline title="ICF Berlin" xmlUrl="https://feeds.megaphone.fm/icfberlin" type="rss" />
-      <outline title="QOMPASS der queere Berlin-Podcast" xmlUrl="https://jgiygt.podcasterin.de/qompass-der-queere-berlin-podcast.rss" type="rss" />
-      <outline title="75 Jahre Kriegsende - Nach Berlin" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:815690011/sounds.rss" type="rss" />
-      <outline title="TeaTime.Berlin - Zeitmanagement für Königinnen" xmlUrl="https://dxu3wm.podcaster.de/stressismus.rss" type="rss" />
-      <outline title="POLITICO Berlin Playbook" xmlUrl="https://feeds.megaphone.fm/ASD3449434491" type="rss" />
-      <outline title="Berlin und Janine" xmlUrl="https://www.rbb888.de/podcast/berlin_und_janine.feed.podcast.xml" type="rss" />
-      <outline title="DW Berlin Briefing - Inside German politics" xmlUrl="https://rss.dw.com/xml/podcast_Berlin_Briefing" type="rss" />
-      <outline title="Lage der Nation - der Politik-Podcast aus Berlin" xmlUrl="https://feeds.lagedernation.org/feeds/ldn-mp3.xml" type="rss" />
-      <outline title="Bibi Blocksberg und die Generation Kassettenkinder" xmlUrl="https://bibiblocksberg-und-die-generation-kassettenkinder.podigee.io/feed/mp3" type="rss" />
-      <outline title="Das Berlin Hörspiel" xmlUrl="https://www.rbb-online.de/podcasts/das-berlin-hoerspiel/hoerspiel-feed.xml/feed=podcast.xml" type="rss" />
-      <outline title="Im Visier – Verbrecherjagd in Berlin und Brandenburg" xmlUrl="https://www.rbb-online.de/podcasts/im-visier/index.xml/feed=podcast.xml" type="rss" />
-      <outline title="Zukunftsmacher*innen - Der Alumni-Podcast der TU Berlin" xmlUrl="https://zukunftsmacher.podigee.io/feed/mp3" type="rss" />
-      <outline title="Airlift from Berlin Review" xmlUrl="https://blnreview.podigee.io/feed/mp3" type="rss" />
-      <outline title="einfach München – der Podcast" xmlUrl="https://einfach-muenchen.podigee.io/feed/mp3" type="rss" />
-      <outline title="Hey München" xmlUrl="https://muenchenpersoenlich.podigee.io/feed/mp3" type="rss" />
-      <outline title="München – Deine Straßen" xmlUrl="https://anchor.fm/s/f87b9d0c/podcast/rss" type="rss" />
-      <outline title="Isarkanal - nachhaltig durch München" xmlUrl="https://anchor.fm/s/4f70070c/podcast/rss" type="rss" />
-      <outline title="95.5 Charivari - Das München-Briefing - Münchens erster Nachrichtenpodcast" xmlUrl="https://feeds.acast.com/public/shows/648ae8299bdbb900117b34d5" type="rss" />
-      <outline title="„Auf eine Runde mit...“ – der Tourismus-Podcast der Stadt München" xmlUrl="https://einfachmuenchen.podigee.io/feed/mp3" type="rss" />
-      <outline title="Mensch, München" xmlUrl="https://menschmuenchen.podigee.io/feed/mp3" type="rss" />
-      <outline title="München Moments" xmlUrl="https://muenchen-moments.podigee.io/feed/mp3" type="rss" />
-      <outline title="Münchner Zeitgeschichten" xmlUrl="https://muenchner-zeitgeschichten.podigee.io/feed/mp3" type="rss" />
-      <outline title="WIE SPIELST DU DAS? - Der Resi Podcast" xmlUrl="https://residenztheater.podcaster.de/resi-podcast.rss" type="rss" />
-      <outline title="München in 5 Minuten" xmlUrl="https://anchor.fm/s/5097defc/podcast/rss" type="rss" />
-      <outline title="Haus und Grund München erklärt" xmlUrl="https://feeds.acast.com/public/shows/haus-grund-munchen-erklart" type="rss" />
-      <outline title="SERVUS MÜNCHEN" xmlUrl="https://servus-muenchen.podigee.io/feed/mp3" type="rss" />
-      <outline title="Der Mensch und sein Gehirn - Ringvorlesung (WiSe 2010-2011)" xmlUrl="http://xserve04.itunes.uni-muenchen.de/itunesu/KongresseEvents/2010-11WS_Ringvorlesung/video.de/1011WS_RingV_V.rss" type="rss" />
-      <outline title="Olympische Spiele 1972 - Als die Welt nach München kam" xmlUrl="https://olympischespiele1972.podigee.io/feed/mp3" type="rss" />
-      <outline title="München Digital Podcast" xmlUrl="https://anchor.fm/s/f2ac29f0/podcast/rss" type="rss" />
-      <outline title="Nachruf auf mich" xmlUrl="https://feeds.acast.com/public/shows/648c391352fc6000119f6ebe" type="rss" />
-      <outline title="report München" xmlUrl="https://feeds.br.de/report-muenchen/feed.xml" type="rss" />
-      <outline title="München: SozialKritisch" xmlUrl="https://muenchen-sozialkritisch.podcaster.de/muc.rss" type="rss" />
-      <outline title="KinderUni München" xmlUrl="http://xserve04.itunes.uni-muenchen.de/itunesu/KongresseEvents/KinderUni/2009_2010_WiSe/hd.de/09_10ws_kiuni_hd.rss" type="rss" />
-      <outline title="LMU Crashkurs ZPO" xmlUrl="https://cast.itunes.uni-muenchen.de/vod/playlists/kA1g7Z2nuA/mobile.rss" type="rss" />
-      <outline title="Radio München" xmlUrl="http://feeds.feedburner.com/RadioMuenchen" type="rss" />
-      <outline title="KinderUni München" xmlUrl="http://xserve04.itunes.uni-muenchen.de/itunesu/KongresseEvents/KinderUni/2009_2010_WiSe/video.de/09_10ws_kiuni_v.rss" type="rss" />
-      <outline title="Reisewarnung - mit missio München unterwegs" xmlUrl="https://reisewarnung.podigee.io/feed/mp3" type="rss" />
-      <outline title="Italienisch lernen in München" xmlUrl="https://anchor.fm/s/3fc3ff5c/podcast/rss" type="rss" />
-      <outline title="WISSEN SCHÜTZT TIERE - Der Podcast der Auffangstation für Reptilien, München." xmlUrl="https://auffangstation-fuer-reptilien.podigee.io/feed/mp3" type="rss" />
-      <outline title="Islamisches Zentrum München's Podcast" xmlUrl="https://rss.buzzsprout.com/1950087.rss" type="rss" />
-      <outline title="Der RE/MAX Prime ImmoTalk München - werden Sie zum Experten der eigenen 4 Wände!" xmlUrl="https://immotalk-muenchen.podigee.io/feed/mp3" type="rss" />
-      <outline title="emmanuel4you München" xmlUrl="https://feed.podbean.com/emmanuel4you/feed.xml" type="rss" />
-      <outline title="Ev. Gemeinschaft München Predigten" xmlUrl="https://podcast9d3369.podigee.io/feed/mp3" type="rss" />
-      <outline title="Maranatha Church München" xmlUrl="https://podcast.maranathachurch.de/podcast-feed.xml" type="rss" />
-      <outline title="WEISS &amp; BLAU - der offizielle Löwen-Podcast" xmlUrl="https://lmw0pw.podcaster.de/weiss-blau.rss" type="rss" />
-      <outline title="ICF München | Podcast" xmlUrl="https://feeds.megaphone.fm/ICFMOVEMENT3558326249" type="rss" />
-      <outline title="Der Garten-Staudinger Podcast - Gartentalk aus München" xmlUrl="https://anchor.fm/s/1063a7abc/podcast/rss" type="rss" />
-      <outline title="Meisterschulen am Ostbahnhof, München" xmlUrl="https://anchor.fm/s/107cb4c1c/podcast/rss" type="rss" />
-      <outline title="ICF München | Video-Podcast HD" xmlUrl="https://icf-videopodcast.de/podcast/feed/rssfeed.xml" type="rss" />
-      <outline title="Tanzgespräche – Der Tanzbüro München Podcast" xmlUrl="https://anchor.fm/s/106e7325c/podcast/rss" type="rss" />
-      <outline title="FeG München Mitte Predigt Podcast" xmlUrl="https://feg-mm.de/feg-mm-predigten/" type="rss" />
-      <outline title="Kommunalcast 2026: Der Mitgliederpodcast der FDP München" xmlUrl="https://anchor.fm/s/10a8ad530/podcast/rss" type="rss" />
-      <outline title="Haus und Grund München erklärt" xmlUrl="https://feeds.acast.com/public/shows/686b87653b5dc9fc22d918f4" type="rss" />
-      <outline title="Mediathek - Lora München" xmlUrl="https://podcast.lora924.de/publisher/episode_feed/all.xml" type="rss" />
-      <outline title="Sicherheit in München: Schlösser, Schlüssel und mehr" xmlUrl="https://feeds.castos.com/x4m7v" type="rss" />
-      <outline title="FC Bayern Podcast" xmlUrl="https://fcbayern-podcast.podigee.io/feed/mp3" type="rss" />
-      <outline title="DOK.fest München Podcast. Im Kino. Zuhause." xmlUrl="https://anchor.fm/s/c0ef8d8/podcast/rss" type="rss" />
-      <outline title="FeG München Ost Predigt Podcast" xmlUrl="https://feg-mo.de/feg-mo-predigten/" type="rss" />
-      <outline title="ICF München | Video-Podcast SD" xmlUrl="https://icf-videopodcast.de/podcast/feed/rssfeed_SD.xml" type="rss" />
-      <outline title="True Crime - echte Fälle aus München und Bayern" xmlUrl="https://feeds.acast.com/public/shows/68e8ce0af513ad2b81ff1349" type="rss" />
-      <outline title="Creating Waves. Der FILMFEST MÜNCHEN Podcast." xmlUrl="https://anchor.fm/s/104bcbd58/podcast/rss" type="rss" />
-      <outline title='"Feel Hamburg"' xmlUrl="https://www.ndr.de/903/podcast5108.xml" type="rss" />
-      <outline title="In Hamburg unterwegs" xmlUrl="https://anchor.fm/s/29e57b0c/podcast/rss" type="rss" />
-      <outline title="040 Streng vertraulich: Die Lage in Hamburg" xmlUrl="https://cdn.audiorella.com/podcasts/1531-040-streng-vertraulich-die-lage-in-hamburg/feed.rss" type="rss" />
-      <outline title="True Crime Hamburg. Der Polizei-Podcast" xmlUrl="https://www.ndr.de/903/podcast-286.xml" type="rss" />
-      <outline title="Hamburg Heute - Nachrichten Podcast" xmlUrl="https://www.ndr.de/903/podcast4778.xml" type="rss" />
-      <outline title="Hamburg am Morgen - Dein Update für die Hansestadt (mit Marzel Becker)" xmlUrl="https://cdn.julephosting.de/podcasts/1158-becker-am-morgen/feed.rss" type="rss" />
-      <outline title="Was wird aus Hamburg? – Stadtentwicklung im Fokus" xmlUrl="https://cdn.julephosting.de/podcasts/224-was-wird-aus-hamburg/feed.rss" type="rss" />
-      <outline title="HAMBURG AKTUELL - Der Stadtnachrichten Podcast von Radio Hamburg und HAMBURG ZWEI" xmlUrl="https://letscast.fm/podcasts/hamburg-aktuell-der-stadtnachrichten-podcast-von-radio-hamburg-und-hamburg-zwei-eb890ef9/feed" type="rss" />
-      <outline title="Gute Leude - Das Hamburg Gespräch" xmlUrl="https://guteleude.podigee.io/feed/mp3" type="rss" />
-      <outline title="Die Elbe rauf – Der Hamburg-Podcast" xmlUrl="https://cdn.julephosting.de/podcasts/920-die-elbe-rauf-der-hamburg-podcast/feed.rss" type="rss" />
-      <outline title="Hamburg Podcast – by Haspa" xmlUrl="https://anchor.fm/s/c2079b4/podcast/rss" type="rss" />
-      <outline title="Einfach mal raus! Der Podcast für Kurzreisen und Ausflüge in die Metropolregion Hamburg" xmlUrl="https://tqftsw.podcaster.de/einfachmalraus.rss" type="rss" />
-      <outline title="Hamburg, was willst du wissen?" xmlUrl="https://www.hamburgwaswillstduwissen.de/feed/mp3" type="rss" />
-      <outline title="Hamburg, watt nu?" xmlUrl="https://hamburg-watt-nu.podigee.io/feed/mp3" type="rss" />
-      <outline title="NDR 90,3 - Die Nachrichten für Hamburg" xmlUrl="https://www.ndr.de/podcast/podcast4346.xml" type="rss" />
-      <outline title="Hamburg-News – der aktuelle Nachrichten-Überblick um 17 h" xmlUrl="https://cdn.julephosting.de/podcasts/275-hamburg-news/feed.rss" type="rss" />
-      <outline title="Durch die Stadt: Hamburg - Audio Guide &amp; Stadtführung" xmlUrl="https://hamburg-audioguide.podigee.io/feed/mp3" type="rss" />
-      <outline title="Hallo Hamburg! Stadt neu bauen - der Podcast" xmlUrl="https://stadtneubauen.podigee.io/feed/mp3" type="rss" />
-      <outline title="Zwischen Hamburg und Haiti" xmlUrl="https://www.ndr.de/nachrichten/info/podcast3012.xml" type="rss" />
-      <outline title="Hamburg 2040" xmlUrl="https://hamburg2040.podigee.io/feed/mp3" type="rss" />
-      <outline title="Hummel, Hummel - Mord, Mord!" xmlUrl="https://hummelhummelmordmord.podigee.io/feed/mp3" type="rss" />
-      <outline title="Unser Tor zur Welt – Hafen Hamburg" xmlUrl="https://cdn.audiorella.com/podcasts/1527-unser-tor-zur-welt-hafen-hamburg/feed.rss" type="rss" />
-      <outline title="HAVEN Hamburg" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:314744877/sounds.rss" type="rss" />
-      <outline title="Nachtzug nach Hamburg" xmlUrl="https://letscast.fm/podcasts/nachtzug-nach-hamburg-2320adf1/feed" type="rss" />
-      <outline title="Radio Hamburg Nachrichten" xmlUrl="https://radiohamburgnachrichten.podigee.io/feed/mp3" type="rss" />
-      <outline title="Guten Quatsch Hamburg - Eure Radio Hamburg Comedyshow!" xmlUrl="https://radiohamburgnewsshow.podigee.io/feed/mp3" type="rss" />
-      <outline title="Einmal alles, bitte! – Ein Podcast vom Genuss-Guide Hamburg" xmlUrl="https://einmal-alles-bitte.podigee.io/feed/mp3" type="rss" />
-      <outline title="33 Badewannen - Dein Podcast von HAMBURG WASSER" xmlUrl="https://33-badewannen.podigee.io/feed/mp3" type="rss" />
-      <outline title="ICF Hamburg | Podcast" xmlUrl="https://feeds.megaphone.fm/icfhamburg" type="rss" />
-      <outline title="INSIDE G20 – Hamburg zwischen Gipfel und Abgrund" xmlUrl="https://anchor.fm/s/95ac6fd0/podcast/rss" type="rss" />
-      <outline title="Wissenswelle" xmlUrl="https://www.pod.uni-hamburg.de/1/feed/1.rss" type="rss" />
-      <outline title="Hamburg Florenz Florenz Hamburg" xmlUrl="https://feed.podbean.com/hamburgflorenz/feed.xml" type="rss" />
-      <outline title="Hamburg hOERt ein HOOU" xmlUrl="https://feeds.hoou.de/hamburg-hoert-ein-hoou" type="rss" />
-      <outline title="FERTIGUNGSTECHNISCH.hamburg" xmlUrl="https://www.haw-hamburg.de/fileadmin/TI-MP/Podcasts/IPT/fertigungstechnisch-mp3.xml" type="rss" />
-      <outline title="Im Gruppetto Hamburg" xmlUrl="https://anchor.fm/s/e9744200/podcast/rss" type="rss" />
-      <outline title="Das ist Kunst - Der Podcast der Deichtorhallen Hamburg" xmlUrl="https://dasistkunst.podigee.io/feed/mp3" type="rss" />
-      <outline title="Moin Wien - Servus Hamburg! Ein Dating Podcast" xmlUrl="https://anchor.fm/s/f1d223e0/podcast/rss" type="rss" />
-      <outline title="Rennrad, Gravel und Bikepacking Podcast von Rennrad Hamburg" xmlUrl="https://rennrad-hamburg.de/podcast" type="rss" />
-      <outline title="Psychodrama.Hamburg.Leipzig" xmlUrl="https://anchor.fm/s/10c2f9de4/podcast/rss" type="rss" />
-      <outline title="Staatsoper Hamburg Podcasts" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:206250363/sounds.rss" type="rss" />
-      <outline title="Schulä - 90 Sekunden Lachkunde bei Radio Hamburg" xmlUrl="https://letscast.fm/podcasts/schulae-90-sekunden-lachkunde-bei-radio-hamburg-615a8869/feed" type="rss" />
-      <outline title="Sternenpodcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:15495206/sounds.rss" type="rss" />
-      <outline title="freie-radios.net (Radio Freies Sender Kombinat, Hamburg (FSK))" xmlUrl="http://feeds.feedburner.com/fskhh" type="rss" />
-      <outline title="Wissenschaft als Kompass. Der Podcast der Akademie der Wissenschaften in Hamburg" xmlUrl="https://wissenschaft-als-kompass.podigee.io/feed/mp3" type="rss" />
-      <outline title="Kingdom Ambassadors Centre Hamburg" xmlUrl="https://anchor.fm/s/ac0f3bcc/podcast/rss" type="rss" />
-      <outline title="AMH Podcast (Archaeologisches Museum Hamburg)" xmlUrl="https://amh.de/feed/mp3/" type="rss" />
-      <outline title="Anskar-Kirche Hamburg- Predigten" xmlUrl="https://letscast.fm/podcasts/anskar-kirche-hamburg-predigten-d846f793/feed" type="rss" />
-      <outline title="Gebetshaus Hamburg Podcast" xmlUrl="https://anchor.fm/s/dc97eed8/podcast/rss" type="rss" />
-      <outline title="Eine Geschichte der Stadt Köln" xmlUrl="https://einegeschichtederstadtkoeln.podigee.io/feed/mp3" type="rss" />
-      <outline title="Wat es? Der Veedel CGN Podcast aus Köln" xmlUrl="https://anchor.fm/s/3f549770/podcast/rss" type="rss" />
-      <outline title="INSIDE Stadt Köln" xmlUrl="https://anchor.fm/s/10853fb20/podcast/rss" type="rss" />
-      <outline title="True Crime.Köln" xmlUrl="https://true-crime-koeln-ksta.podigee.io/feed/mp3" type="rss" />
-      <outline title="Das Köln-Ding der Woche" xmlUrl="https://koelnding.podigee.io/feed/mp3" type="rss" />
-      <outline title="1. FC Köln - Der Podcast" xmlUrl="https://fckoeln.podigee.io/feed/mp3" type="rss" />
-      <outline title="Stadtrevue —Der Köln-Podcast" xmlUrl="https://stadtrevue.podigee.io/feed/mp3" type="rss" />
-      <outline title="Stadt mit K – die Woche in Köln" xmlUrl="https://stadt-mit-k-news-fuer-koeln-ksta.podigee.io/feed/mp3" type="rss" />
-      <outline title="Tatort Köln - True Crime mit Felix" xmlUrl="https://anchor.fm/s/f851f81c/podcast/rss" type="rss" />
-      <outline title="Spurensuche Köln" xmlUrl="https://spurensuche-koeln.podigee.io/feed/mp3" type="rss" />
-      <outline title="Anne Colonia - Jeck op Kölle - Köln verliebt 😍" xmlUrl="https://anchor.fm/s/3138044c/podcast/rss" type="rss" />
-      <outline title="Wirtschaft Köln unplugged" xmlUrl="https://anchor.fm/s/51b92ac0/podcast/rss" type="rss" />
-      <outline title="Zwischen Dubai und Köln – mit Anna-Maria und Kim" xmlUrl="https://cdn.audiorella.com/podcasts/1713-zwischen-dubai-und-koln-mit-anna-maria-und-kim/feed.rss" type="rss" />
-      <outline title="Kölsch &amp; Kickern" xmlUrl="https://letscast.fm/podcasts/koelsch-kickern-fd8ae643/feed" type="rss" />
-      <outline title="Das Krankenlager im Wald. Vergessene NS-Verbrechen in Köln" xmlUrl="https://krankenlager-gremberg.podigee.io/feed/mp3" type="rss" />
-      <outline title="Torsten Burmester: Im Gespräch mit Köln." xmlUrl="https://71zmmt.podcaster.de/torsten-burmester-im-gesprach-mit-koeln.rss" type="rss" />
-      <outline title="Eine Runde mit..." xmlUrl="https://oc7lz7.podcaster.de/einerundemit.rss" type="rss" />
-      <outline title="Geschichten aus dem Geißbockheim - der 1. FC Köln Podcast von Sky Sport" xmlUrl="https://cdn.audiorella.com/podcasts/1759-geschichten-aus-dem-geissbockheim-der-1-fc-koln-podcast-von-sky-sport/feed.rss" type="rss" />
-      <outline title="Hör mal, wer da forscht - Der Podcast der TH Köln" xmlUrl="https://th-koeln.podcaster.de/hoer-mal-wer-da-forscht-der-podcast-der-th-koeln.rss" type="rss" />
-      <outline title="KölnAlumni | Hier sprechen: Kluge Köpfe!" xmlUrl="https://koelnalumni.podigee.io/feed/mp3" type="rss" />
-      <outline title="Oper Köln: StageVibes" xmlUrl="https://stage-vibes.podigee.io/feed/mp3" type="rss" />
-      <outline title="Jugend Freikirche Köln" xmlUrl="https://anchor.fm/s/109b1cc4/podcast/rss" type="rss" />
-      <outline title="Informationssicherheits-Podcast der Volksbank Rhein-Erft-Köln eG" xmlUrl="https://informationssicherheits-podcast-vbrek.podigee.io/feed/mp3" type="rss" />
-      <outline title="OHRENBLUT - kommunalpolitischer Podcast für Köln" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:905712973/sounds.rss" type="rss" />
-      <outline title="Monastische Gemeinschaften von Jerusalem | Köln" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:794938288/sounds.rss" type="rss" />
-      <outline title="Auszeit" xmlUrl="https://oc7lz7.podcaster.de/auszeit.rss" type="rss" />
-      <outline title="Gesichter zeigen – der Hochschule für Musik und Tanz Köln" xmlUrl="https://hfmtkoeln.podcaster.de/gesichterzeigen.rss" type="rss" />
-      <outline title="Dreierkette Köln" xmlUrl="https://feeds.acast.com/public/shows/649bfe852aaf1b0011ea7faf" type="rss" />
-      <outline title="Das Megafon - ein Podcast der Seebrücke Köln" xmlUrl="https://das-megafon.podigee.io/feed/mp3" type="rss" />
-      <outline title="Trotzdem Hier - Der Podcast über den 1. FC Köln" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:333072576/sounds.rss" type="rss" />
-      <outline title="Vineyard Köln Predigten" xmlUrl="https://anchor.fm/s/929af50/podcast/rss" type="rss" />
-      <outline title="#mitHerz-Podcast ❤️" xmlUrl="https://anchor.fm/s/dfaa6b14/podcast/rss" type="rss" />
-      <outline title="Stimme der Wirtschaft. Der Podcast der IHK Köln." xmlUrl="https://stimme-der-wirtschaft.podigee.io/feed/mp3" type="rss" />
-      <outline title="Auf Asche - Der Fortuna Köln Podcast" xmlUrl="https://anchor.fm/s/104d5a264/podcast/rss" type="rss" />
-      <outline title="KulturNetzKöln. Der Podcast." xmlUrl="https://kulturnetz.podigee.io/feed/mp3" type="rss" />
-      <outline title="Brotlose Kunst - Der Podcast der Theaterakademie Köln" xmlUrl="https://1j9zimd.podcaster.de/BrotloseKunst.rss" type="rss" />
-      <outline title="Der FC-Podcast" xmlUrl="https://fc-podcast.podigee.io/feed/mp3" type="rss" />
-      <outline title="Das Corona-Update für Köln" xmlUrl="https://jrzayx.podcaster.de/corona-update-koeln.rss" type="rss" />
-      <outline title="freikirche.koeln" xmlUrl="https://anchor.fm/s/77e1fd8/podcast/rss" type="rss" />
-      <outline title="Köln Stockholm Syndrom" xmlUrl="https://rss.buzzsprout.com/1013710.rss" type="rss" />
-      <outline title="Sportsachen - Dein Podcast für den Sportunterricht" xmlUrl="https://oc7lz7.podcaster.de/sporthochschule.rss" type="rss" />
-      <outline title="HandelBar" xmlUrl="https://handelbar.podigee.io/feed/mp3" type="rss" />
-      <outline title="DER OHRWURM – Dein Podcast für Draußen-Abenteuer – mit Kindern für Kinder" xmlUrl="https://ohrwurm-podcast.podigee.io/feed/mp3" type="rss" />
-      <outline title="ZVDH aktuell - Der Info-Podcast für das Dachdeckerhandwerk" xmlUrl="https://zvdh-aktuell.podigee.io/feed/mp3" type="rss" />
-      <outline title="KÖLN CLASH" xmlUrl="https://koelnclash.podigee.io/feed/mp3" type="rss" />
-      <outline title="Let's GO" xmlUrl="https://lets-go.podigee.io/feed/mp3" type="rss" />
-      <outline title="MuWi-Cast" xmlUrl="https://dn6jgv.podcaster.de/muwi-cast.rss" type="rss" />
-      <outline title="And How About You?" xmlUrl="https://andhowaboutyou.podigee.io/feed/mp3" type="rss" />
-      <outline title="CoachCamp im Gespräch - Weiterbildungspodcast für Coaches &amp; Berater:innen" xmlUrl="https://einfach-gut-gemacht.podigee.io/feed/mp3" type="rss" />
-      <outline title="FOrUs | Rund um die Niere" xmlUrl="https://forus-info.podigee.io/feed/mp3" type="rss" />
-      <outline title="Damals in Frankfurt" xmlUrl="https://damalsinfrankfurt.podigee.io/feed/mp3" type="rss" />
-      <outline title="Frankfurt Untitled Podcast" xmlUrl="https://frankfurt.podcaster.de/frankfurt-untitled.rss" type="rss" />
-      <outline title="Frankfurt Crime Main" xmlUrl="https://anchor.fm/s/998b87bc/podcast/rss" type="rss" />
-      <outline title="Am Puls der Stadt" xmlUrl="https://klsv9c.podcaster.de/am-puls-der-stadt.rss" type="rss" />
-      <outline title="Journal Frankfurt - Die Woche" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:297935602/sounds.rss" type="rss" />
-      <outline title="Frankfurt Für Dich - der Podcast" xmlUrl="https://spd-frankfurt.podigee.io/feed/mp3" type="rss" />
-      <outline title="Schauspiel Frankfurt" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:141541741/sounds.rss" type="rss" />
-      <outline title="MIKE CHECK – Der Podcast für Frankfurt" xmlUrl="https://ptekkq.podcaster.de/mike-check.rss" type="rss" />
-      <outline title="Global Village 069 - Die Welt zu Hause in Frankfurt" xmlUrl="https://global-village-069.podigee.io/feed/mp3" type="rss" />
-      <outline title="SCHIRN PODCAST" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:11490690/sounds.rss" type="rss" />
-      <outline title="Regionalverband Frankfurt Rhein Main – Gespräche mit den Machern in der Region" xmlUrl="https://feeds.simplecast.com/h9NNgrf_" type="rss" />
-      <outline title="Eintracht Frankfurt Podcast" xmlUrl="https://www.eintracht-podcast.de/feed/podcast" type="rss" />
-      <outline title="Bahnsinn. Der VGF-Podcast" xmlUrl="https://bahnsinn-hinter-den-kulissen.podigee.io/feed/mp3" type="rss" />
-      <outline title="Hinter dem Zoo geht's weiter - Der Naturschutzpodcast aus Frankfurt" xmlUrl="https://hinterdemzoo.podigee.io/feed/mp3" type="rss" />
-      <outline title="Unerhörtes Mittelalter: Vormoderne Erzählungen und warum man sie unbedingt kennen sollte" xmlUrl="https://unerhoertes-mittelalter.podcaster.de/unerhoertes-mittelalter.rss" type="rss" />
-      <outline title="Mein Finanzplatz - Der Podcast von Frankfurt Main Finance" xmlUrl="https://rss.buzzsprout.com/1459678.rss" type="rss" />
-      <outline title="Auf die Palme gebracht" xmlUrl="https://palmengarten.podcaster.de/auf-die-palme-gebracht.rss" type="rss" />
-      <outline title="Frankfurter Flachpfeifen" xmlUrl="https://anchor.fm/s/458277fc/podcast/rss" type="rss" />
-      <outline title="Aufzeichnungen" xmlUrl="https://anchor.fm/s/537b5a04/podcast/rss" type="rss" />
-      <outline title="Vorträge Hayek-Club Frankfurt am Main e. V." xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:464330286/sounds.rss" type="rss" />
-      <outline title="Frankfurter Stumpe" xmlUrl="https://rss.buzzsprout.com/1238402.rss" type="rss" />
-      <outline title="Auftakt – Audioeinführungen der Oper Frankfurt" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1302695976/sounds.rss" type="rss" />
-      <outline title="Frankfurt" xmlUrl="https://anchor.fm/s/37b23dc4/podcast/rss" type="rss" />
-      <outline title="Frankfurt CityChurch - Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:340278773/sounds.rss" type="rss" />
-      <outline title="Heute schon gelebt? Life Coaching Frankfurt" xmlUrl="https://4ipean.podcaster.de/heute-schon-gelebt.rss" type="rss" />
-      <outline title="Für Eigentümer und Vermieter" xmlUrl="https://feeds.captivate.fm/haus-und-grund-frankfurt/" type="rss" />
-      <outline title="Ecclesia Frankfurt" xmlUrl="https://hpa4c5.podcaster.de/Ecclesia.rss" type="rss" />
-      <outline title="FeG Frankfurt" xmlUrl="https://anchor.fm/s/79555270/podcast/rss" type="rss" />
-      <outline title="Frankfurter Aktientalk" xmlUrl="https://24942465.hs-sites-eu1.com/podcasts/269853201596/rss.xml" type="rss" />
-      <outline title="Adlerinnen Podcast - Der erste Fan Stammtisch der Eintracht Frankfurt Frauen" xmlUrl="https://anchor.fm/s/eac2d400/podcast/rss" type="rss" />
-      <outline title="Sofa-Akademie" xmlUrl="https://i1hkba.podcaster.de/sofa-akademie.rss" type="rss" />
-      <outline title="FRANKFURT SKYLINERS Podcast" xmlUrl="https://anchor.fm/s/bb8846c/podcast/rss" type="rss" />
-      <outline title="Kritische Ökonomik Frankfurt" xmlUrl="https://feeds.feedburner.com/koeffm" type="rss" />
-      <outline title="BembelBros - Frankfurter Eishockeytalk" xmlUrl="https://anchor.fm/s/4d993c64/podcast/rss" type="rss" />
-      <outline title="Waldhessengebabbel - Dein Eintracht Frankfurt Fanclub Podcast aus Waldhessen" xmlUrl="https://anchor.fm/s/3883f2ec/podcast/rss" type="rss" />
-      <outline title="Energieimpulse Frankfurt" xmlUrl="https://energieimpulsefrankfurt.podigee.io/feed/mp3" type="rss" />
-      <outline title="Predigten der FCG Frankfurt" xmlUrl="https://anchor.fm/s/9acb7eac/podcast/rss" type="rss" />
-      <outline title="Hey Eintracht Frankfurt Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:307040321/sounds.rss" type="rss" />
-      <outline title="Move Church - Campus Frankfurt" xmlUrl="https://anchor.fm/s/74e60f7c/podcast/rss" type="rss" />
-      <outline title="Adler Podcast - Der Eintracht Frankfurt Fan Stammtisch" xmlUrl="https://anchor.fm/s/98e7f32c/podcast/rss" type="rss" />
-      <outline title="AI Hub Frankfurt" xmlUrl="https://anchor.fm/s/10e6d78ec/podcast/rss" type="rss" />
-      <outline title="Frankfurter Demokratie-Café - Freimaurer-Interviews" xmlUrl="https://wr0c6m.podcaster.de/fdc.rss" type="rss" />
-      <outline title="LÖWENGEBRÜLL" xmlUrl="https://loewenfrankfurt.podigee.io/feed/mp3" type="rss" />
-      <outline title="Tagessegen" xmlUrl="https://podcast.katholisch.de/1/1-tagessegen.xml" type="rss" />
-      <outline title="Frankfurter Regulierungspodcast (FCCR) – mit Host Erkan Wisler" xmlUrl="https://frankfurter-regulierungspodcast.podigee.io/feed/mp3" type="rss" />
-      <outline title="Eintracht Aktuell" xmlUrl="https://eintracht-aktuell.podigee.io/feed/mp3" type="rss" />
-      <outline title="Medizin im Fokus" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1338906405/sounds.rss" type="rss" />
+    
+      
+    <outline text="News">
+      
+        
+      <outline title="Der Spiegel" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" type="rss"/>
+      
+        
+      <outline title="Süddeutsche Zeitung" xmlUrl="https://rss.sueddeutsche.de/rss/Topthemen" type="rss"/>
+      
+        
+      <outline title="FAZ" xmlUrl="https://www.faz.net/rss/aktuell/" type="rss"/>
+      
+        
+      <outline title="Die Welt" xmlUrl="https://www.welt.de/feeds/latest.rss" type="rss"/>
+      
+        
+      <outline title="Tagesschau" xmlUrl="https://www.tagesschau.de/xml/rss2/" type="rss"/>
+      
+        
+      <outline title="taz" xmlUrl="https://taz.de/!p4608;rss/" type="rss"/>
+      
+        
+      <outline title="Deutsche Welle" xmlUrl="https://rss.dw.com/xml/rss-en-all" type="rss"/>
+      
+      
     </outline>
-      <outline text="Sports" /></body>
-    </opml>
+    
+      
+    <outline text="Business">
+      
+        
+      <outline title="Handelsblatt" xmlUrl="https://www.handelsblatt.com/contentexport/feed/top-themen" type="rss"/>
+      
+      
+    </outline>
+    
+      
+    <outline text="Technology">
+      
+        
+      <outline title="Heise Online" xmlUrl="https://www.heise.de/rss/heise-atom.xml" type="rss"/>
+      
+        
+      <outline title="Golem.de" xmlUrl="https://rss.golem.de/rss.php?feed=ATOM1.0" type="rss"/>
+      
+        
+      <outline title="Netzpolitik.org" xmlUrl="https://netzpolitik.org/feed/" type="rss"/>
+      
+      
+    </outline>
+    
+    
+    <outline text="Podcasts">
+      
+      
+      <outline title="Germany in Focus" xmlUrl="https://feeds.acast.com/public/shows/6320231f4eebf90013cfcdd5" type="rss"/>
+      
+      
+      <outline title="Germany: Memories of a Nation" xmlUrl="https://podcasts.files.bbci.co.uk/b04dwbwz.rss" type="rss"/>
+      
+      
+      <outline title="Inside Europe" xmlUrl="https://rss.dw.com/xml/podcast_inside-europe" type="rss"/>
+      
+      
+      <outline title="The Germany Experience" xmlUrl="https://letscast.fm/podcasts/the-germany-experience-f99b4e85/feed" type="rss"/>
+      
+      
+      <outline title="This Week in Germany" xmlUrl="https://feeds.feedburner.com/ThisWeekInGermany" type="rss"/>
+      
+      
+      <outline title="History of the Germans from the Middle Ages to Reunification" xmlUrl="https://feeds.captivate.fm/history-of-the-germans/" type="rss"/>
+      
+      
+      <outline title="In Germany we don't say" xmlUrl="https://anchor.fm/s/f8a06c7c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Everyday Germany" xmlUrl="https://everydaygermany.de/feed/mp3" type="rss"/>
+      
+      
+      <outline title="INTO GERMANY! The German Business Podcast" xmlUrl="https://into-germany.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Enneagram Germany Podcast" xmlUrl="https://enneagramgermany.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="F.A.Z. Podcast für Deutschland" xmlUrl="https://podcastfuerdeutschland.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Americans in Germany Drinking Whiskey" xmlUrl="https://feed.podbean.com/americansingermanydrinkingwhiskey/feed.xml" type="rss"/>
+      
+      
+      <outline title="Interviews" xmlUrl="https://www.deutschlandfunk.de/interviews-108.xml" type="rss"/>
+      
+      
+      <outline title="Mad in Germany" xmlUrl="https://feed.podbean.com/madingermanypod/feed.xml" type="rss"/>
+      
+      
+      <outline title="OMR Podcast" xmlUrl="https://omr.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Eat Science Health" xmlUrl="https://tys15u.podcaster.de/eat-science-health.rss" type="rss"/>
+      
+      
+      <outline title="Nash Podcast - Germany" xmlUrl="https://rss.buzzsprout.com/2374889.rss" type="rss"/>
+      
+      
+      <outline title="True Crime Germany" xmlUrl="https://cdn.julephosting.de/podcasts/431-true-crime-germany/feed.rss" type="rss"/>
+      
+      
+      <outline title="bto – der Ökonomie-Podcast von Dr. Daniel Stelter" xmlUrl="https://feeds.acast.com/public/shows/649948e4db3d690011987638" type="rss"/>
+      
+      
+      <outline title="MADE IN GERMANY" xmlUrl="https://madeingermany.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="50+2 - Der Fussballpodcast mit Nico &amp; Niklas" xmlUrl="https://feeds.megaphone.fm/EYLHE8071230216" type="rss"/>
+      
+      
+      <outline title="Packers Talk Germany - Der Green Bay Packers Podcast" xmlUrl="https://anchor.fm/s/fc4f3b14/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Eintracht vom Main – Der offizielle Podcast von Eintracht Frankfurt" xmlUrl="https://eintracht.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Scalecast" xmlUrl="https://anchor.fm/s/f062893c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Beisenherz und Polak – Friendly Fire" xmlUrl="https://feeds.acast.com/public/shows/678e1585fc105e4d36334a03" type="rss"/>
+      
+      
+      <outline title="Mensch - Geschichten aus dem echten Leben unserer Lieblingspromis" xmlUrl="https://feeds.acast.com/public/shows/685e67aa47311de1b6454f7d" type="rss"/>
+      
+      
+      <outline title="Wie Wir Lieben" xmlUrl="https://feeds.acast.com/public/shows/6916364fe42e3466f2e3cd4d" type="rss"/>
+      
+      
+      <outline title="SWR3 Comedy" xmlUrl="https://www.swr3.de/~podcast/podcasts/podcast-swr3-comedy-100.xml" type="rss"/>
+      
+      
+      <outline title="Ein Fall für Sophie - Justiz für Dummies" xmlUrl="https://feeds.acast.com/public/shows/67d2a3b7ba1ef91ed0945891" type="rss"/>
+      
+      
+      <outline title="WONDERMOM" xmlUrl="https://feeds.acast.com/public/shows/69f978cb836b4ec718a8ec36" type="rss"/>
+      
+      
+      <outline title="Vitamin X - der Podcast" xmlUrl="https://anchor.fm/s/1093d3948/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Finanzielle Intelligenz mit Marc Friedrich" xmlUrl="https://anchor.fm/s/17b7674c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Lias Crime Time Germany" xmlUrl="https://liascrimetime.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="World War II with Tom Hanks" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/cc2b59fa44d0151fa8987e1b01e424bc" type="rss"/>
+      
+      
+      <outline title="Nachholspiel" xmlUrl="https://feeds.acast.com/public/shows/64d5dad9b4d0da001046c89e" type="rss"/>
+      
+      
+      <outline title="Eins zu Eins. Der Talk" xmlUrl="https://feeds.br.de/eins-zu-eins-der-talk/feed.xml" type="rss"/>
+      
+      
+      <outline title="DANIELE GANSER - DER PODCAST" xmlUrl="https://anchor.fm/s/109c88ffc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="The Pioneer Hauptstadt Briefing" xmlUrl="https://access.acast.com/rss/hauptstadt-der-podcast" type="rss"/>
+      
+      
+      <outline title="Freundschaft Plus - Liebe, Sex und Beziehungen aller Art" xmlUrl="https://feeds.acast.com/public/shows/67f8d64dd5ed0d5b9da3477b" type="rss"/>
+      
+      
+      <outline title="Delayland – Germany and the Missing Magic" xmlUrl="https://rss.dw.com/xml/podcast_Merkels_Last_Dance" type="rss"/>
+      
+      
+      <outline title="Investieren lernen - Aktien, Geldanlage, Trading, Investing, Immobilien, Vermögen, reich werden, passives Einkommen, Trading, Momentum, Value, Optionen, Börse, Anleihen, Geld anlegen, Bitcoin, Crypto, Startup, ETF, passiv Investieren, Altersvorsorge" xmlUrl="https://rss.buzzsprout.com/1148225.rss" type="rss"/>
+      
+      
+      <outline title="Mission Money" xmlUrl="https://cdn.julephosting.de/podcasts/162-mission-money-geld-motivation-erfolg/feed.rss" type="rss"/>
+      
+      
+      <outline title="Night Riders Germany - Der Escort-Agentur-Podcast" xmlUrl="https://anchor.fm/s/10e0b9f50/podcast/rss" type="rss"/>
+      
+      
+      <outline title="RECHT INTIM" xmlUrl="https://cdn.julephosting.de/podcasts/75-recht-intim/feed.rss" type="rss"/>
+      
+      
+      <outline title="Hasenchat Music Podcast Deutsch" xmlUrl="https://anchor.fm/s/f0678630/podcast/rss" type="rss"/>
+      
+      
+      <outline title="NÄHEN AUS LEIDENSCHAFT by burda style" xmlUrl="https://rss.buzzsprout.com/2102191.rss" type="rss"/>
+      
+      
+      <outline title="The Pioneer World Briefing von Chelsea Spieker und Sigmar Gabriel" xmlUrl="https://access.acast.com/rss/geopolitik-mit-sigmar-gabriel-und-chelsea-spieker" type="rss"/>
+      
+      
+      <outline title="Neues aus der Bundespressekonferenz" xmlUrl="https://bpk.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="programmier.bar – der Podcast für App- und Webentwicklung" xmlUrl="https://rss.buzzsprout.com/176239.rss" type="rss"/>
+      
+      
+      <outline title="Interview der Woche" xmlUrl="https://www.deutschlandfunk.de/interview-der-woche-102.xml" type="rss"/>
+      
+      
+      <outline title="Deutschlandfunk aktuell" xmlUrl="https://www.deutschlandfunk.de/informationen-am-morgen-102.xml" type="rss"/>
+      
+      
+      <outline title="DEUTSCHLAND" xmlUrl="https://deutschlandpodcast.net/feed/mp3/" type="rss"/>
+      
+      
+      <outline title="Deutschland3000 mit Eva Schulz" xmlUrl="https://www.ndr.de/n-joy/podcast/podcast4504.xml" type="rss"/>
+      
+      
+      <outline title="Gysi gegen Guttenberg – Der Deutschland Podcast" xmlUrl="https://gysi-gegen-guttenberg.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Die Reportage" xmlUrl="https://www.deutschlandfunkkultur.de/die-reportage-104.xml" type="rss"/>
+      
+      
+      <outline title="Weltzeit" xmlUrl="https://www.deutschlandfunkkultur.de/weltzeit-104.xml" type="rss"/>
+      
+      
+      <outline title="Deutschland 33/45" xmlUrl="https://3345deutschland.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Eine Stunde History - Deutschlandfunk Nova" xmlUrl="https://www.deutschlandfunknova.de/podcast/eine-stunde-history" type="rss"/>
+      
+      
+      <outline title="Die Nervigen" xmlUrl="https://die-nervigen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Team Deutschland Podcast" xmlUrl="https://teamdeutschland.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Im Gespräch" xmlUrl="https://www.deutschlandfunkkultur.de/podcast-im-gespraech-100.xml" type="rss"/>
+      
+      
+      <outline title="Kakadu – Das Kinderhörspiel" xmlUrl="https://www.kakadu.de/kinderhoerspiel-118.xml" type="rss"/>
+      
+      
+      <outline title="Dieser eine Moment – Der Podcast mit Philipp Fleiter" xmlUrl="https://cdn.audiorella.com/podcasts/1806-dieser-eine-moment-der-podcast-mit-philipp-fleiter/feed.rss" type="rss"/>
+      
+      
+      <outline title="Erfolg ist kein Zufall – Der Nummer 1 Podcast in Deutschland zum Thema Erfolg" xmlUrl="https://anchor.fm/s/4d21cd00/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Deutschland – ein halbes Leben. 35 Jahre Mauerfall" xmlUrl="https://www.mdr.de/kultur/podcast/deutschland-ein-halbes-leben/fuenfunddreissig-jahre-mauerfall-100.xml" type="rss"/>
+      
+      
+      <outline title="Breitband" xmlUrl="https://www.deutschlandfunkkultur.de/podcast-breitband-medien-und-digitale-kultur-100.xml" type="rss"/>
+      
+      
+      <outline title="Politisches Feuilleton" xmlUrl="https://www.deutschlandfunkkultur.de/politisches-feuilleton-102.xml" type="rss"/>
+      
+      
+      <outline title="Lange Nacht" xmlUrl="https://www.deutschlandfunkkultur.de/lange-nacht-106.xml" type="rss"/>
+      
+      
+      <outline title="Der AWO-Podcast: Deutschland, Du kannst das!" xmlUrl="https://awo-deutschlanddukannstdas.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Lesart" xmlUrl="https://www.deutschlandfunkkultur.de/lesart-das-literaturmagazin-100.xml" type="rss"/>
+      
+      
+      <outline title="MUT - Der Deutschland Talk mit Tijen Onaran" xmlUrl="https://anchor.fm/s/fd268e84/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Wortwechsel" xmlUrl="https://www.deutschlandfunkkultur.de/wortwechsel-102.xml" type="rss"/>
+      
+      
+      <outline title="Länderreport" xmlUrl="https://www.deutschlandfunkkultur.de/laenderreport-102.xml" type="rss"/>
+      
+      
+      <outline title="Das Geld zu Gast bei Freunden – Die wirklich wahre Geschichte, wie Deutschland WM-Gastgeber 2006 wurde" xmlUrl="https://www.swr.de/~podcast/sport/fussball/podcast-zu-gast-bei-freunden-100.xml" type="rss"/>
+      
+      
+      <outline title="Kakadu – Der Kinderpodcast" xmlUrl="https://www.kakadu.de/kakadu-104.xml" type="rss"/>
+      
+      
+      <outline title="Zeitfragen. Feature" xmlUrl="https://www.deutschlandfunkkultur.de/zeitfragen-feature-130.xml" type="rss"/>
+      
+      
+      <outline title="Part of the Game - Der NFL Deutschland Podcast" xmlUrl="https://partofthegame.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Unter Ladies - Der Podcast von Ladies' Circle Deutschland" xmlUrl="https://anchor.fm/s/1136621b4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Studio 9 - Der Tag mit ..." xmlUrl="https://www.deutschlandfunkkultur.de/studio-9-der-tag-mit-102.xml" type="rss"/>
+      
+      
+      <outline title="pv magazine Deutschland" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:193368690/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Sein und Streit" xmlUrl="https://www.deutschlandfunkkultur.de/sein-und-streit-das-philosophiemagazin-102.xml" type="rss"/>
+      
+      
+      <outline title="Fazit" xmlUrl="https://www.deutschlandfunkkultur.de/podcast-fazit-kultur-vom-tage-100.xml" type="rss"/>
+      
+      
+      <outline title="Studio 9" xmlUrl="https://www.deutschlandfunkkultur.de/studio-102.xml" type="rss"/>
+      
+      
+      <outline title="Plus Eins" xmlUrl="https://www.deutschlandfunkkultur.de/plus-eins-102.xml" type="rss"/>
+      
+      
+      <outline title="Das Literarische Quartett" xmlUrl="https://www.deutschlandfunkkultur.de/das-literarische-quartett-102.xml" type="rss"/>
+      
+      
+      <outline title="ZIRKELTRAINING - der offizielle Podcast des Magischen Zirkels von Deutschland e.V." xmlUrl="https://fkrxto.podcaster.de/zirkeltraining-mzvd.rss" type="rss"/>
+      
+      
+      <outline title="Tatort Deutschland – Wahre Kriminalfälle und Verbrechen" xmlUrl="https://tatort-deutschland.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Die Geschichte geht weiter - Victor Klemperers Tagebücher 1918-1959" xmlUrl="https://www.deutschlandfunkkultur.de/klemperer-102.xml" type="rss"/>
+      
+      
+      <outline title="Kompressor" xmlUrl="https://www.deutschlandfunkkultur.de/podcast-kompressor-magazin-fuer-popkultur-100.xml" type="rss"/>
+      
+      
+      <outline title="Post aus Korea - Gemischtes aus Deutschland und Korea" xmlUrl="https://anchor.fm/s/2f78d500/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Inside Deutschland: Your Guide to Careers in Germany" xmlUrl="https://inside-deutschland.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="People of Science – Wer macht Wissenschaft?" xmlUrl="https://www.deutschlandfunkkultur.de/people-of-science-102.xml" type="rss"/>
+      
+      
+      <outline title="Zeitfragen" xmlUrl="https://www.deutschlandfunkkultur.de/zeitfragen-magazin-114.xml" type="rss"/>
+      
+      
+      <outline title="Radio Deutschland Eins - Das Talkradio" xmlUrl="http://live.radio-deutschland-eins.com/podcast/feed901.xml" type="rss"/>
+      
+      
+      <outline title="Im Osten - wo Deutschland sich entscheidet" xmlUrl="https://imosten.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Tacheles" xmlUrl="https://www.deutschlandfunkkultur.de/tacheles-102.xml" type="rss"/>
+      
+      
+      <outline title="Der Theaterpodcast" xmlUrl="https://www.deutschlandfunkkultur.de/der-theaterpodcast-108.xml" type="rss"/>
+      
+      
+      <outline title="100 % Berlin" xmlUrl="https://www.rbb888.de/podcast/100ProzentBerlin.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Geheimnisvolle Orte" xmlUrl="https://www.rbb-online.de/podcasts/geheimnisvolle-orte/index.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="BERLIN GESCHICHTE" xmlUrl="https://qn4o4z.podcaster.de/berlingeschichte.rss" type="rss"/>
+      
+      
+      <outline title="Sex in Berlin (DE)" xmlUrl="https://feeds.acast.com/public/shows/69c116947878605e116a1145" type="rss"/>
+      
+      
+      <outline title="Berlin Unboxed" xmlUrl="https://berlinunboxed.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Berlin Code – mit Linda Zervakis" xmlUrl="https://www.inforadio.de/podcast/feeds/berlin-code/berlin-code-aus-dem-ard-hauptstadtstudio-mit-linda-zervakis.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Baywatch Berlin" xmlUrl="https://baywatch-berlin.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Tatort Berlin" xmlUrl="https://tatort-berlin.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Eine Runde Berlin" xmlUrl="https://einerundeberlin.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="So ist Berlin" xmlUrl="https://www.spreaker.com/show/4811826/episodes/feed" type="rss"/>
+      
+      
+      <outline title="Berlin-Schicksalsjahre einer Stadt" xmlUrl="https://www.inforadio.de/podcast/feeds/berlin-schicksalsjahre-einer-stadt/berlin-schicksalsjahre-einer-stadt.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Mein Berlin - Der Hauptstadtpodcast" xmlUrl="https://mein-berlin.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Kunst in Berlin" xmlUrl="https://kunst-in-berlin.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Die Mauerstadt – Wildes West-Berlin" xmlUrl="https://www.rbb-online.de/podcasts/die-mauerstadt/index.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Dark Berlin" xmlUrl="https://darkberlin.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="True Stories Berlin" xmlUrl="https://anchor.fm/s/f1a62178/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Berlin Sounds Inside – Der Musiktalk mit Anja Caspary" xmlUrl="https://www.radiodrei.de/podcasts/berlin-sounds-inside/index.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Berlin und Brandenburg" xmlUrl="https://www.inforadio.de/podcast/feeds/berlin-und-brandenburg/berlin-und-brandenburg.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Das Neue Berlin" xmlUrl="https://dasneue.berlin/feed/m4a/" type="rss"/>
+      
+      
+      <outline title="Podcast Berlin" xmlUrl="https://feeds.ivoox.com/feed_fg_f1901892_filtro_1.xml" type="rss"/>
+      
+      
+      <outline title="The Hillsong Berlin Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:49171490/sounds.rss" type="rss"/>
+      
+      
+      <outline title="CALCIO BERLIN" xmlUrl="https://cdn.audiorella.com/podcasts/1779-calcio-berlin/feed.rss" type="rss"/>
+      
+      
+      <outline title="The Joko in Berlin Podcast" xmlUrl="https://anchor.fm/s/6973dfc0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Heute minus 100 - Es geschah in Berlin" xmlUrl="https://www.inforadio.de/podcast/feeds/heute-minus-100/heute-minus-100.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Deep Doku" xmlUrl="https://www.rbb-online.de/podcasts/deep-doku/index.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Fünf Minuten Berlin (Tagesspiegel Archiv)" xmlUrl="https://fuenfminutenberlin.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Berlin Booth" xmlUrl="https://feeds.acast.com/public/shows/66421b400122a60013098e1a" type="rss"/>
+      
+      
+      <outline title="DER TAG in Berlin und Brandenburg" xmlUrl="https://www.inforadio.de/podcast/feeds/der-tag-in-berlin-und-brandenburg/rbb-der-tag-in-berlin-und-brandenburg.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="The Spectrum Berlin - Raum für Neurodivergenz" xmlUrl="https://anchor.fm/s/111b2647c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="FLOPCAST.BERLIN" xmlUrl="https://anchor.fm/s/112b4fd44/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Nachgehakt - Der Podcast der Verbraucherzentrale Berlin" xmlUrl="https://nachgehakt.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="AMEN Berlin" xmlUrl="https://c3nycberlin.podcaster.de/c3nyc-berlin.rss" type="rss"/>
+      
+      
+      <outline title="Berliner Ensemble Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a545ccfeb8820016dceddd" type="rss"/>
+      
+      
+      <outline title="Radio CityLAB Berlin" xmlUrl="https://radiocitylab.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Berlin Story News" xmlUrl="https://berlin-story-news.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Orte und Worte" xmlUrl="https://www.rbb-online.de/podcasts/orte-und-worte/index.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="ICF Berlin" xmlUrl="https://feeds.megaphone.fm/icfberlin" type="rss"/>
+      
+      
+      <outline title="QOMPASS der queere Berlin-Podcast" xmlUrl="https://jgiygt.podcasterin.de/qompass-der-queere-berlin-podcast.rss" type="rss"/>
+      
+      
+      <outline title="75 Jahre Kriegsende - Nach Berlin" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:815690011/sounds.rss" type="rss"/>
+      
+      
+      <outline title="TeaTime.Berlin - Zeitmanagement für Königinnen" xmlUrl="https://dxu3wm.podcaster.de/stressismus.rss" type="rss"/>
+      
+      
+      <outline title="POLITICO Berlin Playbook" xmlUrl="https://feeds.megaphone.fm/ASD3449434491" type="rss"/>
+      
+      
+      <outline title="Berlin und Janine" xmlUrl="https://www.rbb888.de/podcast/berlin_und_janine.feed.podcast.xml" type="rss"/>
+      
+      
+      <outline title="DW Berlin Briefing - Inside German politics" xmlUrl="https://rss.dw.com/xml/podcast_Berlin_Briefing" type="rss"/>
+      
+      
+      <outline title="Lage der Nation - der Politik-Podcast aus Berlin" xmlUrl="https://feeds.lagedernation.org/feeds/ldn-mp3.xml" type="rss"/>
+      
+      
+      <outline title="Bibi Blocksberg und die Generation Kassettenkinder" xmlUrl="https://bibiblocksberg-und-die-generation-kassettenkinder.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Das Berlin Hörspiel" xmlUrl="https://www.rbb-online.de/podcasts/das-berlin-hoerspiel/hoerspiel-feed.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Im Visier – Verbrecherjagd in Berlin und Brandenburg" xmlUrl="https://www.rbb-online.de/podcasts/im-visier/index.xml/feed=podcast.xml" type="rss"/>
+      
+      
+      <outline title="Zukunftsmacher*innen - Der Alumni-Podcast der TU Berlin" xmlUrl="https://zukunftsmacher.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Airlift from Berlin Review" xmlUrl="https://blnreview.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="einfach München – der Podcast" xmlUrl="https://einfach-muenchen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Hey München" xmlUrl="https://muenchenpersoenlich.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="München – Deine Straßen" xmlUrl="https://anchor.fm/s/f87b9d0c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Isarkanal - nachhaltig durch München" xmlUrl="https://anchor.fm/s/4f70070c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="95.5 Charivari - Das München-Briefing - Münchens erster Nachrichtenpodcast" xmlUrl="https://feeds.acast.com/public/shows/648ae8299bdbb900117b34d5" type="rss"/>
+      
+      
+      <outline title="„Auf eine Runde mit...“ – der Tourismus-Podcast der Stadt München" xmlUrl="https://einfachmuenchen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Mensch, München" xmlUrl="https://menschmuenchen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="München Moments" xmlUrl="https://muenchen-moments.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Münchner Zeitgeschichten" xmlUrl="https://muenchner-zeitgeschichten.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="WIE SPIELST DU DAS? - Der Resi Podcast" xmlUrl="https://residenztheater.podcaster.de/resi-podcast.rss" type="rss"/>
+      
+      
+      <outline title="München in 5 Minuten" xmlUrl="https://anchor.fm/s/5097defc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Haus und Grund München erklärt" xmlUrl="https://feeds.acast.com/public/shows/haus-grund-munchen-erklart" type="rss"/>
+      
+      
+      <outline title="SERVUS MÜNCHEN" xmlUrl="https://servus-muenchen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Der Mensch und sein Gehirn - Ringvorlesung (WiSe 2010-2011)" xmlUrl="http://xserve04.itunes.uni-muenchen.de/itunesu/KongresseEvents/2010-11WS_Ringvorlesung/video.de/1011WS_RingV_V.rss" type="rss"/>
+      
+      
+      <outline title="Olympische Spiele 1972 - Als die Welt nach München kam" xmlUrl="https://olympischespiele1972.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="München Digital Podcast" xmlUrl="https://anchor.fm/s/f2ac29f0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Nachruf auf mich" xmlUrl="https://feeds.acast.com/public/shows/648c391352fc6000119f6ebe" type="rss"/>
+      
+      
+      <outline title="report München" xmlUrl="https://feeds.br.de/report-muenchen/feed.xml" type="rss"/>
+      
+      
+      <outline title="München: SozialKritisch" xmlUrl="https://muenchen-sozialkritisch.podcaster.de/muc.rss" type="rss"/>
+      
+      
+      <outline title="KinderUni München" xmlUrl="http://xserve04.itunes.uni-muenchen.de/itunesu/KongresseEvents/KinderUni/2009_2010_WiSe/hd.de/09_10ws_kiuni_hd.rss" type="rss"/>
+      
+      
+      <outline title="LMU Crashkurs ZPO" xmlUrl="https://cast.itunes.uni-muenchen.de/vod/playlists/kA1g7Z2nuA/mobile.rss" type="rss"/>
+      
+      
+      <outline title="Radio München" xmlUrl="http://feeds.feedburner.com/RadioMuenchen" type="rss"/>
+      
+      
+      <outline title="KinderUni München" xmlUrl="http://xserve04.itunes.uni-muenchen.de/itunesu/KongresseEvents/KinderUni/2009_2010_WiSe/video.de/09_10ws_kiuni_v.rss" type="rss"/>
+      
+      
+      <outline title="Reisewarnung - mit missio München unterwegs" xmlUrl="https://reisewarnung.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Italienisch lernen in München" xmlUrl="https://anchor.fm/s/3fc3ff5c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="WISSEN SCHÜTZT TIERE - Der Podcast der Auffangstation für Reptilien, München." xmlUrl="https://auffangstation-fuer-reptilien.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Islamisches Zentrum München's Podcast" xmlUrl="https://rss.buzzsprout.com/1950087.rss" type="rss"/>
+      
+      
+      <outline title="Der RE/MAX Prime ImmoTalk München - werden Sie zum Experten der eigenen 4 Wände!" xmlUrl="https://immotalk-muenchen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="emmanuel4you München" xmlUrl="https://feed.podbean.com/emmanuel4you/feed.xml" type="rss"/>
+      
+      
+      <outline title="Ev. Gemeinschaft München Predigten" xmlUrl="https://podcast9d3369.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Maranatha Church München" xmlUrl="https://podcast.maranathachurch.de/podcast-feed.xml" type="rss"/>
+      
+      
+      <outline title="WEISS &amp; BLAU - der offizielle Löwen-Podcast" xmlUrl="https://lmw0pw.podcaster.de/weiss-blau.rss" type="rss"/>
+      
+      
+      <outline title="ICF München | Podcast" xmlUrl="https://feeds.megaphone.fm/ICFMOVEMENT3558326249" type="rss"/>
+      
+      
+      <outline title="Der Garten-Staudinger Podcast - Gartentalk aus München" xmlUrl="https://anchor.fm/s/1063a7abc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Meisterschulen am Ostbahnhof, München" xmlUrl="https://anchor.fm/s/107cb4c1c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="ICF München | Video-Podcast HD" xmlUrl="https://icf-videopodcast.de/podcast/feed/rssfeed.xml" type="rss"/>
+      
+      
+      <outline title="Tanzgespräche – Der Tanzbüro München Podcast" xmlUrl="https://anchor.fm/s/106e7325c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="FeG München Mitte Predigt Podcast" xmlUrl="https://feg-mm.de/feg-mm-predigten/" type="rss"/>
+      
+      
+      <outline title="Kommunalcast 2026: Der Mitgliederpodcast der FDP München" xmlUrl="https://anchor.fm/s/10a8ad530/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Haus und Grund München erklärt" xmlUrl="https://feeds.acast.com/public/shows/686b87653b5dc9fc22d918f4" type="rss"/>
+      
+      
+      <outline title="Mediathek - Lora München" xmlUrl="https://podcast.lora924.de/publisher/episode_feed/all.xml" type="rss"/>
+      
+      
+      <outline title="Sicherheit in München: Schlösser, Schlüssel und mehr" xmlUrl="https://feeds.castos.com/x4m7v" type="rss"/>
+      
+      
+      <outline title="FC Bayern Podcast" xmlUrl="https://fcbayern-podcast.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="DOK.fest München Podcast. Im Kino. Zuhause." xmlUrl="https://anchor.fm/s/c0ef8d8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="FeG München Ost Predigt Podcast" xmlUrl="https://feg-mo.de/feg-mo-predigten/" type="rss"/>
+      
+      
+      <outline title="ICF München | Video-Podcast SD" xmlUrl="https://icf-videopodcast.de/podcast/feed/rssfeed_SD.xml" type="rss"/>
+      
+      
+      <outline title="True Crime - echte Fälle aus München und Bayern" xmlUrl="https://feeds.acast.com/public/shows/68e8ce0af513ad2b81ff1349" type="rss"/>
+      
+      
+      <outline title="Creating Waves. Der FILMFEST MÜNCHEN Podcast." xmlUrl="https://anchor.fm/s/104bcbd58/podcast/rss" type="rss"/>
+      
+      
+      <outline title="&quot;Feel Hamburg&quot;" xmlUrl="https://www.ndr.de/903/podcast5108.xml" type="rss"/>
+      
+      
+      <outline title="In Hamburg unterwegs" xmlUrl="https://anchor.fm/s/29e57b0c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="040 Streng vertraulich: Die Lage in Hamburg" xmlUrl="https://cdn.audiorella.com/podcasts/1531-040-streng-vertraulich-die-lage-in-hamburg/feed.rss" type="rss"/>
+      
+      
+      <outline title="True Crime Hamburg. Der Polizei-Podcast" xmlUrl="https://www.ndr.de/903/podcast-286.xml" type="rss"/>
+      
+      
+      <outline title="Hamburg Heute - Nachrichten Podcast" xmlUrl="https://www.ndr.de/903/podcast4778.xml" type="rss"/>
+      
+      
+      <outline title="Hamburg am Morgen - Dein Update für die Hansestadt (mit Marzel Becker)" xmlUrl="https://cdn.julephosting.de/podcasts/1158-becker-am-morgen/feed.rss" type="rss"/>
+      
+      
+      <outline title="Was wird aus Hamburg? – Stadtentwicklung im Fokus" xmlUrl="https://cdn.julephosting.de/podcasts/224-was-wird-aus-hamburg/feed.rss" type="rss"/>
+      
+      
+      <outline title="HAMBURG AKTUELL - Der Stadtnachrichten Podcast von Radio Hamburg und HAMBURG ZWEI" xmlUrl="https://letscast.fm/podcasts/hamburg-aktuell-der-stadtnachrichten-podcast-von-radio-hamburg-und-hamburg-zwei-eb890ef9/feed" type="rss"/>
+      
+      
+      <outline title="Gute Leude - Das Hamburg Gespräch" xmlUrl="https://guteleude.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Die Elbe rauf – Der Hamburg-Podcast" xmlUrl="https://cdn.julephosting.de/podcasts/920-die-elbe-rauf-der-hamburg-podcast/feed.rss" type="rss"/>
+      
+      
+      <outline title="Hamburg Podcast – by Haspa" xmlUrl="https://anchor.fm/s/c2079b4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Einfach mal raus! Der Podcast für Kurzreisen und Ausflüge in die Metropolregion Hamburg" xmlUrl="https://tqftsw.podcaster.de/einfachmalraus.rss" type="rss"/>
+      
+      
+      <outline title="Hamburg, was willst du wissen?" xmlUrl="https://www.hamburgwaswillstduwissen.de/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Hamburg, watt nu?" xmlUrl="https://hamburg-watt-nu.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="NDR 90,3 - Die Nachrichten für Hamburg" xmlUrl="https://www.ndr.de/podcast/podcast4346.xml" type="rss"/>
+      
+      
+      <outline title="Hamburg-News – der aktuelle Nachrichten-Überblick um 17 h" xmlUrl="https://cdn.julephosting.de/podcasts/275-hamburg-news/feed.rss" type="rss"/>
+      
+      
+      <outline title="Durch die Stadt: Hamburg - Audio Guide &amp; Stadtführung" xmlUrl="https://hamburg-audioguide.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Hallo Hamburg! Stadt neu bauen - der Podcast" xmlUrl="https://stadtneubauen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Zwischen Hamburg und Haiti" xmlUrl="https://www.ndr.de/nachrichten/info/podcast3012.xml" type="rss"/>
+      
+      
+      <outline title="Hamburg 2040" xmlUrl="https://hamburg2040.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Hummel, Hummel - Mord, Mord!" xmlUrl="https://hummelhummelmordmord.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Unser Tor zur Welt – Hafen Hamburg" xmlUrl="https://cdn.audiorella.com/podcasts/1527-unser-tor-zur-welt-hafen-hamburg/feed.rss" type="rss"/>
+      
+      
+      <outline title="HAVEN Hamburg" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:314744877/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Nachtzug nach Hamburg" xmlUrl="https://letscast.fm/podcasts/nachtzug-nach-hamburg-2320adf1/feed" type="rss"/>
+      
+      
+      <outline title="Radio Hamburg Nachrichten" xmlUrl="https://radiohamburgnachrichten.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Guten Quatsch Hamburg - Eure Radio Hamburg Comedyshow!" xmlUrl="https://radiohamburgnewsshow.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Einmal alles, bitte! – Ein Podcast vom Genuss-Guide Hamburg" xmlUrl="https://einmal-alles-bitte.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="33 Badewannen - Dein Podcast von HAMBURG WASSER" xmlUrl="https://33-badewannen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="ICF Hamburg | Podcast" xmlUrl="https://feeds.megaphone.fm/icfhamburg" type="rss"/>
+      
+      
+      <outline title="INSIDE G20 – Hamburg zwischen Gipfel und Abgrund" xmlUrl="https://anchor.fm/s/95ac6fd0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Wissenswelle" xmlUrl="https://www.pod.uni-hamburg.de/1/feed/1.rss" type="rss"/>
+      
+      
+      <outline title="Hamburg Florenz Florenz Hamburg" xmlUrl="https://feed.podbean.com/hamburgflorenz/feed.xml" type="rss"/>
+      
+      
+      <outline title="Hamburg hOERt ein HOOU" xmlUrl="https://feeds.hoou.de/hamburg-hoert-ein-hoou" type="rss"/>
+      
+      
+      <outline title="FERTIGUNGSTECHNISCH.hamburg" xmlUrl="https://www.haw-hamburg.de/fileadmin/TI-MP/Podcasts/IPT/fertigungstechnisch-mp3.xml" type="rss"/>
+      
+      
+      <outline title="Im Gruppetto Hamburg" xmlUrl="https://anchor.fm/s/e9744200/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Das ist Kunst - Der Podcast der Deichtorhallen Hamburg" xmlUrl="https://dasistkunst.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Moin Wien - Servus Hamburg! Ein Dating Podcast" xmlUrl="https://anchor.fm/s/f1d223e0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Rennrad, Gravel und Bikepacking Podcast von Rennrad Hamburg" xmlUrl="https://rennrad-hamburg.de/podcast" type="rss"/>
+      
+      
+      <outline title="Psychodrama.Hamburg.Leipzig" xmlUrl="https://anchor.fm/s/10c2f9de4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Staatsoper Hamburg Podcasts" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:206250363/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Schulä - 90 Sekunden Lachkunde bei Radio Hamburg" xmlUrl="https://letscast.fm/podcasts/schulae-90-sekunden-lachkunde-bei-radio-hamburg-615a8869/feed" type="rss"/>
+      
+      
+      <outline title="Sternenpodcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:15495206/sounds.rss" type="rss"/>
+      
+      
+      <outline title="freie-radios.net (Radio Freies Sender Kombinat, Hamburg (FSK))" xmlUrl="http://feeds.feedburner.com/fskhh" type="rss"/>
+      
+      
+      <outline title="Wissenschaft als Kompass. Der Podcast der Akademie der Wissenschaften in Hamburg" xmlUrl="https://wissenschaft-als-kompass.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Kingdom Ambassadors Centre Hamburg" xmlUrl="https://anchor.fm/s/ac0f3bcc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="AMH Podcast (Archaeologisches Museum Hamburg)" xmlUrl="https://amh.de/feed/mp3/" type="rss"/>
+      
+      
+      <outline title="Anskar-Kirche Hamburg- Predigten" xmlUrl="https://letscast.fm/podcasts/anskar-kirche-hamburg-predigten-d846f793/feed" type="rss"/>
+      
+      
+      <outline title="Gebetshaus Hamburg Podcast" xmlUrl="https://anchor.fm/s/dc97eed8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Eine Geschichte der Stadt Köln" xmlUrl="https://einegeschichtederstadtkoeln.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Wat es? Der Veedel CGN Podcast aus Köln" xmlUrl="https://anchor.fm/s/3f549770/podcast/rss" type="rss"/>
+      
+      
+      <outline title="INSIDE Stadt Köln" xmlUrl="https://anchor.fm/s/10853fb20/podcast/rss" type="rss"/>
+      
+      
+      <outline title="True Crime.Köln" xmlUrl="https://true-crime-koeln-ksta.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Das Köln-Ding der Woche" xmlUrl="https://koelnding.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="1. FC Köln - Der Podcast" xmlUrl="https://fckoeln.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Stadtrevue —Der Köln-Podcast" xmlUrl="https://stadtrevue.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Stadt mit K – die Woche in Köln" xmlUrl="https://stadt-mit-k-news-fuer-koeln-ksta.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Tatort Köln - True Crime mit Felix" xmlUrl="https://anchor.fm/s/f851f81c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Spurensuche Köln" xmlUrl="https://spurensuche-koeln.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Anne Colonia - Jeck op Kölle - Köln verliebt 😍" xmlUrl="https://anchor.fm/s/3138044c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Wirtschaft Köln unplugged" xmlUrl="https://anchor.fm/s/51b92ac0/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Zwischen Dubai und Köln – mit Anna-Maria und Kim" xmlUrl="https://cdn.audiorella.com/podcasts/1713-zwischen-dubai-und-koln-mit-anna-maria-und-kim/feed.rss" type="rss"/>
+      
+      
+      <outline title="Kölsch &amp; Kickern" xmlUrl="https://letscast.fm/podcasts/koelsch-kickern-fd8ae643/feed" type="rss"/>
+      
+      
+      <outline title="Das Krankenlager im Wald. Vergessene NS-Verbrechen in Köln" xmlUrl="https://krankenlager-gremberg.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Torsten Burmester: Im Gespräch mit Köln." xmlUrl="https://71zmmt.podcaster.de/torsten-burmester-im-gesprach-mit-koeln.rss" type="rss"/>
+      
+      
+      <outline title="Eine Runde mit..." xmlUrl="https://oc7lz7.podcaster.de/einerundemit.rss" type="rss"/>
+      
+      
+      <outline title="Geschichten aus dem Geißbockheim - der 1. FC Köln Podcast von Sky Sport" xmlUrl="https://cdn.audiorella.com/podcasts/1759-geschichten-aus-dem-geissbockheim-der-1-fc-koln-podcast-von-sky-sport/feed.rss" type="rss"/>
+      
+      
+      <outline title="Hör mal, wer da forscht - Der Podcast der TH Köln" xmlUrl="https://th-koeln.podcaster.de/hoer-mal-wer-da-forscht-der-podcast-der-th-koeln.rss" type="rss"/>
+      
+      
+      <outline title="KölnAlumni | Hier sprechen: Kluge Köpfe!" xmlUrl="https://koelnalumni.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Oper Köln: StageVibes" xmlUrl="https://stage-vibes.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Jugend Freikirche Köln" xmlUrl="https://anchor.fm/s/109b1cc4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Informationssicherheits-Podcast der Volksbank Rhein-Erft-Köln eG" xmlUrl="https://informationssicherheits-podcast-vbrek.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="OHRENBLUT - kommunalpolitischer Podcast für Köln" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:905712973/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Monastische Gemeinschaften von Jerusalem | Köln" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:794938288/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Auszeit" xmlUrl="https://oc7lz7.podcaster.de/auszeit.rss" type="rss"/>
+      
+      
+      <outline title="Gesichter zeigen – der Hochschule für Musik und Tanz Köln" xmlUrl="https://hfmtkoeln.podcaster.de/gesichterzeigen.rss" type="rss"/>
+      
+      
+      <outline title="Dreierkette Köln" xmlUrl="https://feeds.acast.com/public/shows/649bfe852aaf1b0011ea7faf" type="rss"/>
+      
+      
+      <outline title="Das Megafon - ein Podcast der Seebrücke Köln" xmlUrl="https://das-megafon.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Trotzdem Hier - Der Podcast über den 1. FC Köln" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:333072576/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Vineyard Köln Predigten" xmlUrl="https://anchor.fm/s/929af50/podcast/rss" type="rss"/>
+      
+      
+      <outline title="#mitHerz-Podcast ❤️" xmlUrl="https://anchor.fm/s/dfaa6b14/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Stimme der Wirtschaft. Der Podcast der IHK Köln." xmlUrl="https://stimme-der-wirtschaft.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Auf Asche - Der Fortuna Köln Podcast" xmlUrl="https://anchor.fm/s/104d5a264/podcast/rss" type="rss"/>
+      
+      
+      <outline title="KulturNetzKöln. Der Podcast." xmlUrl="https://kulturnetz.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Brotlose Kunst - Der Podcast der Theaterakademie Köln" xmlUrl="https://1j9zimd.podcaster.de/BrotloseKunst.rss" type="rss"/>
+      
+      
+      <outline title="Der FC-Podcast" xmlUrl="https://fc-podcast.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Das Corona-Update für Köln" xmlUrl="https://jrzayx.podcaster.de/corona-update-koeln.rss" type="rss"/>
+      
+      
+      <outline title="freikirche.koeln" xmlUrl="https://anchor.fm/s/77e1fd8/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Köln Stockholm Syndrom" xmlUrl="https://rss.buzzsprout.com/1013710.rss" type="rss"/>
+      
+      
+      <outline title="Sportsachen - Dein Podcast für den Sportunterricht" xmlUrl="https://oc7lz7.podcaster.de/sporthochschule.rss" type="rss"/>
+      
+      
+      <outline title="HandelBar" xmlUrl="https://handelbar.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="DER OHRWURM – Dein Podcast für Draußen-Abenteuer – mit Kindern für Kinder" xmlUrl="https://ohrwurm-podcast.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="ZVDH aktuell - Der Info-Podcast für das Dachdeckerhandwerk" xmlUrl="https://zvdh-aktuell.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="KÖLN CLASH" xmlUrl="https://koelnclash.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Let's GO" xmlUrl="https://lets-go.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="MuWi-Cast" xmlUrl="https://dn6jgv.podcaster.de/muwi-cast.rss" type="rss"/>
+      
+      
+      <outline title="And How About You?" xmlUrl="https://andhowaboutyou.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="CoachCamp im Gespräch - Weiterbildungspodcast für Coaches &amp; Berater:innen" xmlUrl="https://einfach-gut-gemacht.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="FOrUs | Rund um die Niere" xmlUrl="https://forus-info.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Damals in Frankfurt" xmlUrl="https://damalsinfrankfurt.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Frankfurt Untitled Podcast" xmlUrl="https://frankfurt.podcaster.de/frankfurt-untitled.rss" type="rss"/>
+      
+      
+      <outline title="Frankfurt Crime Main" xmlUrl="https://anchor.fm/s/998b87bc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Am Puls der Stadt" xmlUrl="https://klsv9c.podcaster.de/am-puls-der-stadt.rss" type="rss"/>
+      
+      
+      <outline title="Journal Frankfurt - Die Woche" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:297935602/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Frankfurt Für Dich - der Podcast" xmlUrl="https://spd-frankfurt.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Schauspiel Frankfurt" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:141541741/sounds.rss" type="rss"/>
+      
+      
+      <outline title="MIKE CHECK – Der Podcast für Frankfurt" xmlUrl="https://ptekkq.podcaster.de/mike-check.rss" type="rss"/>
+      
+      
+      <outline title="Global Village 069 - Die Welt zu Hause in Frankfurt" xmlUrl="https://global-village-069.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="SCHIRN PODCAST" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:11490690/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Regionalverband Frankfurt Rhein Main – Gespräche mit den Machern in der Region" xmlUrl="https://feeds.simplecast.com/h9NNgrf_" type="rss"/>
+      
+      
+      <outline title="Eintracht Frankfurt Podcast" xmlUrl="https://www.eintracht-podcast.de/feed/podcast" type="rss"/>
+      
+      
+      <outline title="Bahnsinn. Der VGF-Podcast" xmlUrl="https://bahnsinn-hinter-den-kulissen.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Hinter dem Zoo geht's weiter - Der Naturschutzpodcast aus Frankfurt" xmlUrl="https://hinterdemzoo.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Unerhörtes Mittelalter: Vormoderne Erzählungen und warum man sie unbedingt kennen sollte" xmlUrl="https://unerhoertes-mittelalter.podcaster.de/unerhoertes-mittelalter.rss" type="rss"/>
+      
+      
+      <outline title="Mein Finanzplatz - Der Podcast von Frankfurt Main Finance" xmlUrl="https://rss.buzzsprout.com/1459678.rss" type="rss"/>
+      
+      
+      <outline title="Auf die Palme gebracht" xmlUrl="https://palmengarten.podcaster.de/auf-die-palme-gebracht.rss" type="rss"/>
+      
+      
+      <outline title="Frankfurter Flachpfeifen" xmlUrl="https://anchor.fm/s/458277fc/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Aufzeichnungen" xmlUrl="https://anchor.fm/s/537b5a04/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Vorträge Hayek-Club Frankfurt am Main e. V." xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:464330286/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Frankfurter Stumpe" xmlUrl="https://rss.buzzsprout.com/1238402.rss" type="rss"/>
+      
+      
+      <outline title="Auftakt – Audioeinführungen der Oper Frankfurt" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1302695976/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Frankfurt" xmlUrl="https://anchor.fm/s/37b23dc4/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Frankfurt CityChurch - Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:340278773/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Heute schon gelebt? Life Coaching Frankfurt" xmlUrl="https://4ipean.podcaster.de/heute-schon-gelebt.rss" type="rss"/>
+      
+      
+      <outline title="Für Eigentümer und Vermieter" xmlUrl="https://feeds.captivate.fm/haus-und-grund-frankfurt/" type="rss"/>
+      
+      
+      <outline title="Ecclesia Frankfurt" xmlUrl="https://hpa4c5.podcaster.de/Ecclesia.rss" type="rss"/>
+      
+      
+      <outline title="FeG Frankfurt" xmlUrl="https://anchor.fm/s/79555270/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Frankfurter Aktientalk" xmlUrl="https://24942465.hs-sites-eu1.com/podcasts/269853201596/rss.xml" type="rss"/>
+      
+      
+      <outline title="Adlerinnen Podcast - Der erste Fan Stammtisch der Eintracht Frankfurt Frauen" xmlUrl="https://anchor.fm/s/eac2d400/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Sofa-Akademie" xmlUrl="https://i1hkba.podcaster.de/sofa-akademie.rss" type="rss"/>
+      
+      
+      <outline title="FRANKFURT SKYLINERS Podcast" xmlUrl="https://anchor.fm/s/bb8846c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Kritische Ökonomik Frankfurt" xmlUrl="https://feeds.feedburner.com/koeffm" type="rss"/>
+      
+      
+      <outline title="BembelBros - Frankfurter Eishockeytalk" xmlUrl="https://anchor.fm/s/4d993c64/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Waldhessengebabbel - Dein Eintracht Frankfurt Fanclub Podcast aus Waldhessen" xmlUrl="https://anchor.fm/s/3883f2ec/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Energieimpulse Frankfurt" xmlUrl="https://energieimpulsefrankfurt.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Predigten der FCG Frankfurt" xmlUrl="https://anchor.fm/s/9acb7eac/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Hey Eintracht Frankfurt Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:307040321/sounds.rss" type="rss"/>
+      
+      
+      <outline title="Move Church - Campus Frankfurt" xmlUrl="https://anchor.fm/s/74e60f7c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Adler Podcast - Der Eintracht Frankfurt Fan Stammtisch" xmlUrl="https://anchor.fm/s/98e7f32c/podcast/rss" type="rss"/>
+      
+      
+      <outline title="AI Hub Frankfurt" xmlUrl="https://anchor.fm/s/10e6d78ec/podcast/rss" type="rss"/>
+      
+      
+      <outline title="Frankfurter Demokratie-Café - Freimaurer-Interviews" xmlUrl="https://wr0c6m.podcaster.de/fdc.rss" type="rss"/>
+      
+      
+      <outline title="LÖWENGEBRÜLL" xmlUrl="https://loewenfrankfurt.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Tagessegen" xmlUrl="https://podcast.katholisch.de/1/1-tagessegen.xml" type="rss"/>
+      
+      
+      <outline title="Frankfurter Regulierungspodcast (FCCR) – mit Host Erkan Wisler" xmlUrl="https://frankfurter-regulierungspodcast.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Eintracht Aktuell" xmlUrl="https://eintracht-aktuell.podigee.io/feed/mp3" type="rss"/>
+      
+      
+      <outline title="Medizin im Fokus" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1338906405/sounds.rss" type="rss"/>
+      
+    
+    </outline>
+    
+      
+    <outline text="Sports"/>
+    <outline text="YouTube">
+      <outline title="Musik." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-9-kyTW8ZkZNDHQJ6FgpwQ" type="rss"/>
+      <outline title="Stokes Twins" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-lHJZR3Gqxm24_Vd_AJ5Yw" type="rss"/>
+      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
+      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
+      <outline title="A4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2tsySbe9TNrI-xh2lximHA" type="rss"/>
+      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
+      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
+      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC513PdAP2-jWkJunTh5kXRw" type="rss"/>
+      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
+      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
+      <outline title="HAR PAL GEO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC62pPLZqx8JIrtW1kT5NPWA" type="rss"/>
+      <outline title="Ary Digital HD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6ApcZBKUPwuL4QcGeWaTZw" type="rss"/>
+      <outline title="YouTube." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBR8-60-B28hp2BmDPdntcQ" type="rss"/>
+      <outline title="Sport." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEgdi0XIXXZ-qJOFPf4JSKw" type="rss"/>
+      <outline title="Beliebt auf YouTube." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF0pVplsI8R5kcAqgtoRqoA" type="rss"/>
+      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
+      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
+      <outline title="BANGTANTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJCAlMsCuld3v96t-9SffdA" type="rss"/>
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
+      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
+      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
+      <outline title="केएल ब्रो बिजु रित्भिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5nlHWXVLeOsSjKH2fhmsg" type="rss"/>
+      <outline title="ทีเคโอ กรุป โฮลดิงส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
+      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
+      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
+      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
+      <outline title="योलो एभेन्तुरास" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ8TuCvcDMepleXFyOQfyOQ" type="rss"/>
+      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRijo3ddMTht_IHyNSNXpNQ" type="rss"/>
+      <outline title="Infobells - Hindi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU_AsfgtKjwR4qaSwgsWn-w" type="rss"/>
+      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
+      <outline title="Nachrichten." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYfdidRxbB8Qhf0Nx7ioOYw" type="rss"/>
+      <outline title="Alejo Igoa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZs0WwC0Dn_noiQE2BHSTKg" type="rss"/>
+      <outline title="Toys and Colors" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBTm46K3l59CIty88Q_jog" type="rss"/>
+      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
+      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
+      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
+      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
+      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
+      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
+      <outline title="Filme &amp; Serien." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClgRkhTL3_hImCAmdLfDE4g" type="rss"/>
+      <outline title="Fede Vigevani" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoQm-PeHC-cbJclKJYJ8LzA" type="rss"/>
+      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
+      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
+      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq-Fj5jknLsUf-MWSy4_brA" type="rss"/>
+      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
+      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
+      <outline title="योर क्रिस्टियानो" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtxD0x6AuNNqdXO9Wp5GHew" type="rss"/>
+      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
+      <outline title="קים דונג ג'וןויו באק האפ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8gf4PK1Qth50lLHdvTCcA" type="rss"/>
+    </outline>
+  </body>
+  
+    
+</opml>

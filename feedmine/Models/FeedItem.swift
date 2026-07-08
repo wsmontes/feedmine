@@ -55,6 +55,12 @@ struct FeedItem: Identifiable, Sendable, Codable {
     /// True if this item has an audio enclosure (podcast episode)
     var isPodcast: Bool { audioURL != nil }
 
+    /// URL that can be handed to AVFoundation. Podcast feeds occasionally
+    /// publish protocol-relative or feed-relative enclosure URLs.
+    var audioPlaybackURL: URL? {
+        Self.resolvedMediaURL(from: audioURL, baseURL: sourceURL)
+    }
+
     /// Atemporal content (blogs, science, tutorials) ages slowly.
     /// News and sports are time-sensitive. Used for stale cutoff and sorting.
     var isTimeless: Bool {
@@ -90,6 +96,30 @@ struct FeedItem: Identifiable, Sendable, Codable {
             title: title, excerpt: excerpt, url: url, imageURL: imageURL,
             publishedAt: publishedAt, audioURL: nil, duration: nil
         )
+    }
+
+    static func resolvedMediaURL(from rawValue: String?, baseURL: String? = nil) -> URL? {
+        guard var raw = rawValue?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else {
+            return nil
+        }
+
+        raw = raw
+            .replacingOccurrences(of: "&amp;", with: "&")
+            .replacingOccurrences(of: "&quot;", with: "\"")
+            .replacingOccurrences(of: "&apos;", with: "'")
+
+        let base = baseURL.flatMap(URL.init(string:))
+        if raw.hasPrefix("//") {
+            raw = "\(base?.scheme ?? "https"):\(raw)"
+        }
+
+        guard let url = URL(string: raw, relativeTo: base)?.absoluteURL,
+              let scheme = url.scheme?.lowercased(),
+              scheme == "http" || scheme == "https",
+              url.host != nil else {
+            return nil
+        }
+        return url
     }
 
     /// SHA256("sourceURL|guid_or_link") — unique across feeds
