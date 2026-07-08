@@ -10,6 +10,8 @@ final class SourceRegistry {
     var disabledRegions: Set<String> = []
     var disabledSourceIDs: Set<String> = []
     var disabledCategories: Set<String> = []
+    /// Sources explicitly enabled by the user — overrides region/category blocks
+    private var overrideSourceIDs: Set<String> = []
 
     // Debug counters
     private(set) var opmlFileCount = 0
@@ -22,6 +24,8 @@ final class SourceRegistry {
     var enabledSources: [FeedSource] {
         sources.filter { source in
             if disabledSourceIDs.contains(source.url) { return false }
+            // Explicit override — user enabled this source individually
+            if overrideSourceIDs.contains(source.url) { return true }
             if disabledRegions.contains(source.region) { return false }
             if disabledCategories.contains(source.category) { return false }
             return true
@@ -101,6 +105,11 @@ final class SourceRegistry {
                 let parentRegion = parts.joined(separator: "/")
                 disabledRegions.remove(parentRegion)
             }
+            // Clear overrides for sources in this region (no longer needed)
+            let regionSources = sources.filter { $0.region == region || $0.region.hasPrefix(prefix) }
+            for src in regionSources {
+                overrideSourceIDs.remove(src.url)
+            }
         } else {
             disabledRegions.insert(region)
             let prefix = "\(region)/"
@@ -126,24 +135,13 @@ final class SourceRegistry {
 
     func toggleSource(_ sourceURL: String) {
         if disabledSourceIDs.contains(sourceURL) {
-            // Enabling this feed — cascade UP: enable parent region and category
+            // Enabling — add override so this feed works even if region/category is OFF
             disabledSourceIDs.remove(sourceURL)
-            // Enable the source's region
-            let region = regionMap[sourceURL] ?? "global"
-            disabledRegions.remove(region)
-            // Enable parent regions up the hierarchy
-            var parts = region.split(separator: "/").map(String.init)
-            while parts.count > 1 {
-                parts.removeLast()
-                let parentRegion = parts.joined(separator: "/")
-                disabledRegions.remove(parentRegion)
-            }
-            // Enable the source's category
-            if let source = sources.first(where: { $0.url == sourceURL }) {
-                disabledCategories.remove(source.category)
-            }
+            overrideSourceIDs.insert(sourceURL)
         } else {
+            // Disabling — remove override, add to disabled
             disabledSourceIDs.insert(sourceURL)
+            overrideSourceIDs.remove(sourceURL)
         }
     }
 
@@ -157,10 +155,11 @@ final class SourceRegistry {
 
     func isSourceEnabled(_ sourceURL: String) -> Bool {
         if disabledSourceIDs.contains(sourceURL) { return false }
-        // Respect parent hierarchy: region must be enabled
+        // Explicit override — user enabled this source individually
+        if overrideSourceIDs.contains(sourceURL) { return true }
+        // Respect parent hierarchy
         let region = regionMap[sourceURL] ?? "global"
         if disabledRegions.contains(region) { return false }
-        // Respect category toggle
         if let source = sources.first(where: { $0.url == sourceURL }),
            disabledCategories.contains(source.category) { return false }
         return true
