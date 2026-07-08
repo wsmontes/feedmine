@@ -12,6 +12,10 @@ class Country:
     lang: str
     ddg_region: str
     allowlist: list[str] = field(default_factory=list)
+    native_name: str = ""
+    cities: list[str] = field(default_factory=list)
+    iso2: str = ""
+    iso3: str = ""
 
 
 @dataclass
@@ -19,6 +23,7 @@ class Candidate:
     url: str
     category: str
     title: str = ""
+    genre: str = ""
     source_page: str = ""
     national: bool = False
     national_reason: str = ""
