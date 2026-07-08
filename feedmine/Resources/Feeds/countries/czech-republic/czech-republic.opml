@@ -93,8 +93,6 @@
       <outline title="CzechDesign" xmlUrl="https://www.czechdesign.cz/rss/" type="rss" />
       <outline title="Design Cabinet" xmlUrl="https://www.designcabinet.cz/rss/" type="rss" />
       <outline title="DesignMag" xmlUrl="https://www.designmag.cz/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Czech Architecture" xmlUrl="https://www.archiweb.cz/rss/" type="rss" />
       <outline title="Dolce Vita" xmlUrl="https://www.dolcevita.cz/rss/" type="rss" />
     </outline>
@@ -123,18 +121,11 @@
     <outline text="Architecture">
       <outline title="Archiweb" xmlUrl="https://www.archiweb.cz/rss/" type="rss" />
       <outline title="StavbaWeb" xmlUrl="https://www.stavbaweb.cz/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Stavitel" xmlUrl="https://www.stavitel.cz/rss/" type="rss" />
       <outline title="Materialy" xmlUrl="https://www.imaterialy.cz/rss/" type="rss" />
       <outline title="ASB" xmlUrl="https://www.asb-portal.cz/rss/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="Root CZ" xmlUrl="https://www.root.cz/rss/" type="rss" />
       <outline title="Zdrojak" xmlUrl="https://www.zdrojak.cz/rss/" type="rss" />
       <outline title="ITnetwork" xmlUrl="https://www.itnetwork.cz/rss/" type="rss" />
@@ -162,13 +153,6 @@
       <outline title="Megapixel" xmlUrl="https://www.megapixel.cz/blog/feed/" type="rss" />
     </outline>
     <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="Jablickar" xmlUrl="https://www.jablickar.cz/rss/" type="rss" />
       <outline title="Letem Svetem Applem" xmlUrl="https://www.letemsvetemapplem.eu/feed/" type="rss" />
     </outline>

@@ -73,8 +73,6 @@
     <outline text="Design">
       <outline title="Octogon" xmlUrl="https://www.octogon.hu/rss/" type="rss" />
       <outline title="Design Hungary" xmlUrl="https://www.designhungary.hu/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="MOME" xmlUrl="https://www.mome.hu/rss/" type="rss" />
       <outline title="Epiteszforum" xmlUrl="https://www.epiteszforum.hu/rss/" type="rss" />
       <outline title="Budapest Design Week" xmlUrl="https://www.budapestdesignweek.hu/rss/" type="rss" />
@@ -98,18 +96,11 @@
     <outline text="Architecture">
       <outline title="Építészfórum" xmlUrl="https://www.epiteszforum.hu/rss/" type="rss" />
       <outline title="Octogon" xmlUrl="https://www.octogon.hu/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="ArchDaily HU" xmlUrl="https://www.archdaily.com/country/hungary/feed" type="rss" />
       <outline title="HAP" xmlUrl="https://www.hap.hu/rss/" type="rss" />
       <outline title="Archikon" xmlUrl="https://www.archikon.hu/rss/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="Techblog HU" xmlUrl="https://www.techblog.hu/rss/" type="rss" />
       <outline title="Ustream Blog" xmlUrl="https://www.ustream.tv/blog/feed/" type="rss" />
     </outline>
@@ -129,15 +120,6 @@
       <outline title="Foto Magazin" xmlUrl="https://www.fotomagazin.hu/rss/" type="rss" />
       <outline title="Capa Központ" xmlUrl="https://www.capacenter.hu/rss/" type="rss" />
       <outline title="Foto Video" xmlUrl="https://www.fotovideo.hu/rss/" type="rss" />
-    </outline>
-    <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
 </body>
 </opml>

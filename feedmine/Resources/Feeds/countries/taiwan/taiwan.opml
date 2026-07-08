@@ -151,8 +151,6 @@
     <outline text="Design">
       <outline title="Shopping Design" xmlUrl="https://www.shoppingdesign.com.tw/rss/" type="rss"/>
       <outline title="Design Taiwan" xmlUrl="https://www.designtaiwan.com/feed/" type="rss"/>
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss"/>
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss"/>
       <outline title="MOT TIMES" xmlUrl="https://www.mottimes.com/rss/" type="rss"/>
       <outline title="Taiwan Design" xmlUrl="https://www.taiwandesign.org/feed/" type="rss"/>
       <outline title="Golden Pin" xmlUrl="https://www.goldenpin.org.tw/rss/" type="rss"/>
@@ -203,8 +201,6 @@
     <outline text="Architecture">
       <outline title="Architect Taiwan" xmlUrl="https://www.architect.tw/feed/" type="rss"/>
       <outline title="Taiwan Architecture" xmlUrl="https://www.taiwanarchitecture.com/feed/" type="rss"/>
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss"/>
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss"/>
       <outline title="ArchDaily TW" xmlUrl="https://www.archdaily.com/country/taiwan/feed/" type="rss"/>
       <outline title="Architectural Institute TW" xmlUrl="https://www.airoc.org.tw/rss/" type="rss"/>
       <outline title="Taipei Architecture" xmlUrl="https://www.taipeiarchitecture.com/feed/" type="rss"/>
@@ -214,11 +210,6 @@
       <outline title="Tainan Architecture" xmlUrl="https://www.tainanarchitecture.com/feed/" type="rss"/>
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss"/>
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss"/>
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss"/>
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss"/>
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss"/>
       <outline title="iThome Dev" xmlUrl="https://www.ithome.com.tw/dev/rss/" type="rss"/>
       <outline title="Star Rocket" xmlUrl="https://www.starrocket.io/feed/" type="rss"/>
       <outline title="GDG Taipei" xmlUrl="https://www.gdg-taipei.org/feed/" type="rss"/>
@@ -266,14 +257,7 @@
       <outline title="Photo Taiwan" xmlUrl="https://www.phototw.net/feed/" type="rss"/>
     </outline>
     <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss"/>
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss"/>
       <outline title="Apple Insider" xmlUrl="https://appleinsider.com/rss/" type="rss"/>
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss"/>
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss"/>
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss"/>
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss"/>
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss"/>
       <outline title="Studio A TW" xmlUrl="https://www.studioa.com.tw/blog/feed/" type="rss"/>
       <outline title="iPhone Taiwan" xmlUrl="https://www.iphonetaiwan.com/feed/" type="rss"/>
       <outline title="Mac Taiwan" xmlUrl="https://www.mactaiwan.com/feed/" type="rss"/>

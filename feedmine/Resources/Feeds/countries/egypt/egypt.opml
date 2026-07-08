@@ -69,10 +69,6 @@
       <outline title="Identity Magazine" xmlUrl="https://www.identity-mag.com/feed/" type="rss" />
       <outline title="Egyptian Gazette" xmlUrl="https://www.egyptian-gazette.com/rss/" type="rss" />
     </outline>
-    <outline text="Design">
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
-    </outline>
     <outline text="Environment">
       <outline title="Greenpeace MENA" xmlUrl="https://www.greenpeace.org/mena/feed/" type="rss" />
       <outline title="Egyptian Environment" xmlUrl="https://www.eeaa.gov.eg/rss/" type="rss" />
@@ -91,18 +87,11 @@
       <outline title="Egyptian Archeology" xmlUrl="https://www.egyptianarchaeology.com/feed/" type="rss" />
     </outline>
     <outline text="Architecture">
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Urban Egypt" xmlUrl="https://www.urbanegypt.com/feed/" type="rss" />
       <outline title="Alexandria Architecture" xmlUrl="https://www.alexarch.com/feed/" type="rss" />
       <outline title="ArchCairo" xmlUrl="https://www.archcairo.com/feed/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="EgFwd" xmlUrl="https://www.egfwd.com/feed/" type="rss" />
       <outline title="ArabWIC" xmlUrl="https://www.arabwic.org/feed/" type="rss" />
     </outline>
@@ -120,13 +109,6 @@
       <outline title="Photo Egypt" xmlUrl="https://www.photoegypt.com/feed/" type="rss" />
     </outline>
     <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="Tradeline Egypt" xmlUrl="https://www.tradeline-egypt.com/blog/feed/" type="rss" />
     </outline>
 </body>

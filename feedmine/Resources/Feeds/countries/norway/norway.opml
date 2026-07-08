@@ -71,10 +71,6 @@
       <outline title="Stoff" xmlUrl="https://www.stoffmagasin.no/feed/" type="rss" />
       <outline title="Journalisten" xmlUrl="https://journalisten.no/rss/" type="rss" />
     </outline>
-    <outline text="Design">
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
-    </outline>
     <outline text="Environment">
       <outline title="Greenpeace Norge" xmlUrl="https://www.greenpeace.org/norway/feed/" type="rss" />
       <outline title="Naturvernforbundet" xmlUrl="https://naturvernforbundet.no/rss/" type="rss" />
@@ -94,16 +90,8 @@
     </outline>
     <outline text="Architecture">
       <outline title="Snohetta" xmlUrl="https://www.snohetta.no/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="Kahoot Blog" xmlUrl="https://www.kahoot.com/blog/feed/" type="rss" />
       <outline title="Schibsted Tech" xmlUrl="https://medium.com/feed/schibsted" type="rss" />
     </outline>
@@ -118,13 +106,6 @@
       <outline title="P3 Podcast" xmlUrl="https://p3.no/podcast/feed/" type="rss" />
     </outline>
 <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="iTek" xmlUrl="https://www.itek.no/feed/" type="rss" />
     </outline>
 </body>

@@ -103,7 +103,6 @@
       <outline title="Design Lines" xmlUrl="https://www.designlinesmagazine.com/feed/" type="rss" />
       <outline title="Canadian Architect" xmlUrl="https://www.canadianarchitect.com/feed/" type="rss" />
       <outline title="Sight Unseen" xmlUrl="https://www.sightunseen.com/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
       <outline title="Chromatic" xmlUrl="https://chromatic.ca/feed/" type="rss" />
     </outline>
     <outline text="Environment">
@@ -141,21 +140,9 @@
       <outline title="Spacing" xmlUrl="https://spacing.ca/feed/" type="rss" />
       <outline title="Urban Toronto" xmlUrl="https://urbantoronto.ca/news/feed/" type="rss" />
       <outline title="Skyrise Cities" xmlUrl="https://skyrisecities.com/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
       <outline title="Canadian Interiors" xmlUrl="https://www.canadianinteriors.com/feed/" type="rss" />
       <outline title="Design Lines" xmlUrl="https://www.designlinesmagazine.com/feed/" type="rss" />
       <outline title="The Architect's Newspaper" xmlUrl="https://www.archpaper.com/feed/" type="rss" />
-    </outline>
-    <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
-      <outline title="A List Apart" xmlUrl="https://alistapart.com/main/feed/" type="rss" />
-      <outline title="Codecademy Blog" xmlUrl="https://www.codecademy.com/resources/blog/feed/" type="rss" />
-      <outline title="InfoQ" xmlUrl="https://feed.infoq.com/" type="rss" />
     </outline>
     <outline text="Business">
       <outline title="Financial Post" xmlUrl="https://financialpost.com/feed/" type="rss" />
@@ -179,14 +166,6 @@
     </outline>
     <outline text="Apple">
       <outline title="iPhone in Canada" xmlUrl="https://www.iphoneincanada.ca/feed/" type="rss" />
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
-      <outline title="The Mac Observer" xmlUrl="https://www.macobserver.com/feed/" type="rss" />
     </outline>
     <outline text="YouTube">
       <outline title="Linus Tech Tips" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw" type="rss" />

@@ -90,8 +90,6 @@
       <outline title="Deko" xmlUrl="https://www.dekolehti.fi/rss/" type="rss" />
       <outline title="Design Museum Helsinki" xmlUrl="https://www.designmuseum.fi/rss/" type="rss" />
       <outline title="Habita" xmlUrl="https://www.habitare.fi/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Scandinavian Design" xmlUrl="https://scandinaviandesign.fi/feed/" type="rss" />
       <outline title="Arabia" xmlUrl="https://www.arabia.fi/rss/" type="rss" />
     </outline>
@@ -114,18 +112,10 @@
       <outline title="SAFA" xmlUrl="https://www.safa.fi/rss/" type="rss" />
       <outline title="Rakennuslehti" xmlUrl="https://www.rakennuslehti.fi/rss/" type="rss" />
       <outline title="Alvar Aalto" xmlUrl="https://www.alvaraalto.fi/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Wood Architecture" xmlUrl="https://www.woodarchitecture.fi/rss/" type="rss" />
       <outline title="Betoni" xmlUrl="https://www.betoni.com/rss/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="Rovio Blog" xmlUrl="https://www.rovio.com/blog/feed/" type="rss" />
       <outline title="Wolt Engineering" xmlUrl="https://blog.wolt.com/engineering/feed/" type="rss" />
     </outline>
@@ -142,15 +132,6 @@
     <outline text="Photography">
       <outline title="Kamera" xmlUrl="https://www.kamera-lehti.fi/rss/" type="rss" />
       <outline title="Suomen Luontokuvaajat" xmlUrl="https://www.sll.fi/rss/" type="rss" />
-    </outline>
-    <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
 <outline text="Health"><outline title="THL" xmlUrl="https://www.thl.fi/feed/" type="rss" /></outline>
     <outline text="Education"><outline title="Opetushallitus" xmlUrl="https://www.oph.fi/feed/" type="rss" /></outline>

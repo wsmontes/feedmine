@@ -91,8 +91,6 @@
     <outline text="Design">
       <outline title="Design Indaba" xmlUrl="https://www.designindaba.com/rss/" type="rss" />
       <outline title="Between 10 and 5" xmlUrl="https://www.10and5.com/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="House and Leisure" xmlUrl="https://www.houseandleisure.co.za/rss/" type="rss" />
       <outline title="VISI Magazine" xmlUrl="https://www.visi.co.za/rss/" type="rss" />
       <outline title="SA Decor" xmlUrl="https://www.sadecor.co.za/feed/" type="rss" />
@@ -118,17 +116,10 @@
     <outline text="Architecture">
       <outline title="Architecture ZA" xmlUrl="https://www.architecturesa.com/rss/" type="rss" />
       <outline title="Leading Architecture" xmlUrl="https://www.leadingarchitecture.co.za/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="House and Leisure" xmlUrl="https://www.houseandleisure.co.za/rss/" type="rss" />
       <outline title="SA Building Review" xmlUrl="https://www.sabuildingreview.co.za/rss/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="BSG Blog" xmlUrl="https://www.bsg.co.za/blog/feed/" type="rss" />
       <outline title="SovTech Blog" xmlUrl="https://www.sovtech.co.za/blog/feed/" type="rss" />
     </outline>
@@ -150,13 +141,6 @@
       <outline title="Fuji SA" xmlUrl="https://www.fujifilm.co.za/rss/" type="rss" />
     </outline>
     <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
       <outline title="iStore Blog" xmlUrl="https://www.istore.co.za/blog/feed/" type="rss" />
     </outline>
 <outline text="Health">

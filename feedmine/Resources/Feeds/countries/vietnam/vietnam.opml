@@ -49,8 +49,6 @@
     </outline>
     <outline text="Design">
       <outline title="RGBVN" xmlUrl="https://www.rgb.vn/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Vietdesigner" xmlUrl="https://www.vietdesigner.net/feed/" type="rss" />
       <outline title="Kien Viet" xmlUrl="https://www.kienviet.net/feed/" type="rss" />
     </outline>
@@ -71,18 +69,11 @@
     <outline text="Architecture">
       <outline title="Kien Viet" xmlUrl="https://www.kienviet.net/feed/" type="rss" />
       <outline title="Ashui" xmlUrl="https://www.ashui.com/rss/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Noi That" xmlUrl="https://www.noithat.net/rss/" type="rss" />
       <outline title="Viet Architects" xmlUrl="https://www.vietarchitects.com/feed/" type="rss" />
       <outline title="Tap Chi Kien Truc" xmlUrl="https://www.tapchikientruc.com.vn/feed/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="TopDev" xmlUrl="https://www.topdev.vn/blog/feed/" type="rss" />
       <outline title="Kipalog" xmlUrl="https://www.kipalog.com/rss/" type="rss" />
     </outline>
@@ -93,15 +84,6 @@
 <outline text="Photography">
       <outline title="Canon Vietnam" xmlUrl="https://www.canon.com.vn/rss/" type="rss" />
       <outline title="Camera Vietnam" xmlUrl="https://www.cameravietnam.vn/feed/" type="rss" />
-    </outline>
-    <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
 </body>
 </opml>

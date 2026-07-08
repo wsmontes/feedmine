@@ -90,8 +90,6 @@
       <outline title="Svensk Form" xmlUrl="https://svenskform.se/rss/" type="rss" />
       <outline title="Nordic Design" xmlUrl="https://www.nordicdesign.ca/feed/" type="rss" />
       <outline title="Trendenser" xmlUrl="https://trendenser.se/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Scandinavian Design" xmlUrl="https://scandinaviandesign.com/feed/" type="rss" />
     </outline>
     <outline text="Environment">
@@ -118,8 +116,6 @@
       <outline title="Arkitektur" xmlUrl="https://arkitektur.se/rss/" type="rss" />
       <outline title="ArchDaily Sweden" xmlUrl="https://www.archdaily.com/country/sweden/feed" type="rss" />
       <outline title="White Arkitekter" xmlUrl="https://whitearkitekter.com/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Arkinova" xmlUrl="https://www.arkinova.se/feed/" type="rss" />
     </outline>
     <outline text="Programming">
@@ -141,15 +137,6 @@
       <outline title="Svenska Fotografers Forbund" xmlUrl="https://www.sfoto.se/rss/" type="rss" />
       <outline title="Moderskeppet" xmlUrl="https://moderskeppet.se/feed/" type="rss" />
       <outline title="Fotobutik" xmlUrl="https://www.fotobutik.se/feed/" type="rss" />
-    </outline>
-    <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
     </outline>
     <outline text="YouTube">
       <outline title="PewDiePie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-lHJZR3Gqxm24_Vd_AJ5Yw" type="rss" />

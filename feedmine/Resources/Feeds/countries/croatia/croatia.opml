@@ -72,8 +72,6 @@
     </outline>
     <outline text="Design">
       <outline title="Dizajn HR" xmlUrl="https://www.dizajn.hr/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="Croatian Design" xmlUrl="https://www.croatiandesign.com/feed/" type="rss" />
       <outline title="Zagreb Design Week" xmlUrl="https://www.zagrebdesignweek.com/rss/" type="rss" />
     </outline>
@@ -90,17 +88,10 @@
     </outline>
     <outline text="Architecture">
       <outline title="Pogledaj" xmlUrl="https://www.pogledaj.to/feed/" type="rss" />
-      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
-      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
       <outline title="ArchDaily Croatia" xmlUrl="https://www.archdaily.com/country/croatia/feed/" type="rss" />
       <outline title="UHA" xmlUrl="https://www.uha.hr/rss/" type="rss" />
     </outline>
     <outline text="Programming">
-      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
-      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
-      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
-      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
-      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
       <outline title="Five Minutes" xmlUrl="https://www.fiveminutes.eu/feed/" type="rss" />
       <outline title="CROZ Blog" xmlUrl="https://www.croz.net/blog/feed/" type="rss" />
     </outline>
@@ -120,14 +111,5 @@
       <outline title="Split Photo" xmlUrl="https://www.splitphoto.com/feed/" type="rss" />
       <outline title="Fotoklub Zagreb" xmlUrl="https://www.fotoklubzagreb.hr/feed/" type="rss" />
     </outline>
-    <outline text="Apple">
-      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
-      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
-      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
-      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
-      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
-      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
-      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
-    </outline>
-</body>
+    </body>
 </opml>
