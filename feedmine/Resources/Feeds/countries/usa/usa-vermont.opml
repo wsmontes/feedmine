@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Vermont Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="VTDigger" xmlUrl="https://vtdigger.org/feed/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="Univ of Vermont" xmlUrl="https://www.uvm.edu/rss" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Vermont Public" xmlUrl="https://www.vermontpublic.org/rss" type="rss" />
+      </outline></body>
+    </opml>

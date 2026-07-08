@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Chile Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="La Tercera" xmlUrl="https://www.latercera.com/rss/" type="rss" />
+      <outline title="CNN Chile" xmlUrl="https://www.cnnchile.com/rss/" type="rss" />
+      <outline title="The Clinic" xmlUrl="https://www.theclinic.cl/feed/" type="rss" />
+      <outline title="Ciper Chile" xmlUrl="https://www.ciperchile.cl/feed/" type="rss" />
+      <outline title="La Cuarta" xmlUrl="https://www.lacuarta.com/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="La Tercera Deportes" xmlUrl="https://www.latercera.com/deportes/rss/" type="rss" />
+      <outline title="RedGol" xmlUrl="https://www.redgol.cl/rss/" type="rss" />
+      <outline title="Dale Albo" xmlUrl="https://www.dalealbo.cl/feed/" type="rss" />
+      <outline title="Colo-Colo" xmlUrl="https://www.colocolo.cl/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="FayerWayer" xmlUrl="https://www.fayerwayer.com/feed/" type="rss" />
+      <outline title="Pisapapeles" xmlUrl="https://www.pisapapeles.net/feed/" type="rss" />
+      <outline title="Mouse" xmlUrl="https://www.mouse.cl/rss/" type="rss" />
+      <outline title="OhMyGeek" xmlUrl="https://www.ohmygeek.net/feed/" type="rss" />
+      <outline title="Zoom Tecnologico" xmlUrl="https://www.zoomtecnologico.com/feed/" type="rss" />
+      <outline title="La Tercera Tech" xmlUrl="https://www.latercera.com/tecnologia/rss/" type="rss" />
+      <outline title="TXS Plus" xmlUrl="https://www.txsplus.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="La Tercera Ciencia" xmlUrl="https://www.latercera.com/ciencia/rss/" type="rss" />
+      <outline title="PUC" xmlUrl="https://www.uc.cl/rss/" type="rss" />
+      <outline title="UdeC" xmlUrl="https://www.udec.cl/rss/" type="rss" />
+      <outline title="CONICYT" xmlUrl="https://www.conicyt.cl/rss/" type="rss" />
+      <outline title="INACH" xmlUrl="https://www.inach.cl/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="La Tercera Cultura" xmlUrl="https://www.latercera.com/cultura/rss/" type="rss" />
+      <outline title="Culturizarte" xmlUrl="https://www.culturizarte.cl/feed/" type="rss" />
+      <outline title="Arte al Limite" xmlUrl="https://www.arteallimite.com/feed/" type="rss" />
+      <outline title="MAC Chile" xmlUrl="https://www.mac.uchile.cl/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="La Tercera Cine" xmlUrl="https://www.latercera.com/cine/rss/" type="rss" />
+      <outline title="CinemaChile" xmlUrl="https://www.cinemachile.cl/rss/" type="rss" />
+      <outline title="FICValdivia" xmlUrl="https://www.ficvaldivia.cl/rss/" type="rss" />
+      <outline title="SANFIC" xmlUrl="https://www.sanfic.com/rss/" type="rss" />
+      <outline title="FIDOCS" xmlUrl="https://www.fidocs.cl/rss/" type="rss" />
+      <outline title="CineChile" xmlUrl="https://www.cinechile.cl/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Rock and Pop" xmlUrl="https://www.rockandpop.cl/rss/" type="rss" />
+      <outline title="Futuro" xmlUrl="https://www.futuro.cl/rss/" type="rss" />
+      <outline title="Radio Concierto" xmlUrl="https://www.concierto.cl/rss/" type="rss" />
+      <outline title="Lollapalooza Chile" xmlUrl="https://www.lollapaloozacl.com/rss/" type="rss" />
+      <outline title="Musica Popular" xmlUrl="https://www.musicapopular.cl/rss/" type="rss" />
+      <outline title="Solo Artistas Chilenos" xmlUrl="https://www.soloartistaschilenos.cl/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="La Tercera Comida" xmlUrl="https://www.latercera.com/comida/rss/" type="rss" />
+      <outline title="Cocina Chilena" xmlUrl="https://www.cocinachilena.cl/feed/" type="rss" />
+      <outline title="Sabores de Chile" xmlUrl="https://www.saboresdechile.cl/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Niubie" xmlUrl="https://www.niubie.com/feed/" type="rss" />
+      <outline title="PlayStation LATAM" xmlUrl="https://blog.latam.playstation.com/feed/" type="rss" />
+      <outline title="LevelUp Chile" xmlUrl="https://www.levelupchile.cl/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Chile Travel" xmlUrl="https://www.chile.travel/rss/" type="rss" />
+      <outline title="La Tercera Viajes" xmlUrl="https://www.latercera.com/viajes/rss/" type="rss" />
+      <outline title="Sernatur" xmlUrl="https://www.sernatur.cl/rss/" type="rss" />
+      <outline title="Patagonia Travel" xmlUrl="https://www.patagonia-chile.com/rss/" type="rss" />
+      <outline title="Torres del Paine" xmlUrl="https://www.torresdelpaine.com/rss/" type="rss" />
+      <outline title="Sky Airline Blog" xmlUrl="https://www.skyairline.com/chile/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="The Clinic" xmlUrl="https://www.theclinic.cl/feed/" type="rss" />
+      <outline title="Ciper" xmlUrl="https://www.ciperchile.cl/feed/" type="rss" />
+      <outline title="El Quinto Poder" xmlUrl="https://www.elquintopoder.cl/feed/" type="rss" />
+      <outline title="El Ciudadano" xmlUrl="https://www.elciudadano.cl/feed/" type="rss" />
+      <outline title="Radio JGM" xmlUrl="https://www.radiojgm.uchile.cl/feed/" type="rss" />
+      <outline title="La Voz de los que Sobran" xmlUrl="https://www.lavozdelosquesobran.cl/feed/" type="rss" />
+      <outline title="Pousta" xmlUrl="https://www.pousta.com/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Revista Materia" xmlUrl="https://www.revistamateria.com/feed/" type="rss" />
+      <outline title="Plataforma Arquitectura" xmlUrl="https://www.plataformaarquitectura.cl/cl/feed/" type="rss" />
+      <outline title="Marca Chile" xmlUrl="https://www.marcachile.cl/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Chile" xmlUrl="https://www.greenpeace.org/chile/feed/" type="rss" />
+      <outline title="WWF Chile" xmlUrl="https://www.wwf.cl/rss/" type="rss" />
+      <outline title="La Tercera Ambiente" xmlUrl="https://www.latercera.com/ambiente/rss/" type="rss" />
+      <outline title="Codex Verde" xmlUrl="https://www.codexverde.cl/feed/" type="rss" />
+      <outline title="Patagonia Verde" xmlUrl="https://www.patagoniaverde.org/feed/" type="rss" />
+      <outline title="Chile Sustentable" xmlUrl="https://www.chilesustentable.net/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Sodimac Blog" xmlUrl="https://www.sodimac.cl/sodimac-cl/blog/feed/" type="rss" />
+      <outline title="Maestro Chile" xmlUrl="https://www.maestro.cl/blog/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="La Tercera Historia" xmlUrl="https://www.latercera.com/historia/rss/" type="rss" />
+      <outline title="Chile Precolombino" xmlUrl="https://www.chileprecolombino.cl/rss/" type="rss" />
+      <outline title="Fundacion Futuro" xmlUrl="https://www.fundacionfuturo.cl/rss/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Plataforma Arquitectura" xmlUrl="https://www.plataformaarquitectura.cl/cl/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="ArchDaily Chile" xmlUrl="https://www.archdaily.cl/cl/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Startup Chile" xmlUrl="https://www.startupchile.org/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Pulso" xmlUrl="https://www.latercera.com/pulso/rss/" type="rss" />
+      <outline title="La Tercera Negocios" xmlUrl="https://www.latercera.com/negocios/rss/" type="rss" />
+      <outline title="Emprendedores CL" xmlUrl="https://www.emprendedores.cl/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="La Tercera Podcasts" xmlUrl="https://www.latercera.com/podcasts/rss/" type="rss" />
+      <outline title="Duna FM" xmlUrl="https://www.duna.cl/podcasts/rss/" type="rss" />
+      <outline title="Sonar FM" xmlUrl="https://www.sonarfm.cl/podcasts/rss/" type="rss" />
+    </outline>
+<outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="Reifstore Chile" xmlUrl="https://www.reifstore.cl/blog/feed/" type="rss" />
+    </outline>
+<outline text="Education">
+      <outline title="Ministerio de Educación" xmlUrl="https://www.mineduc.cl/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

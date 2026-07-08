@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Bihar Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Patna" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670846.cms" type="rss" />
+        <outline title="Indian Express Patna" xmlUrl="https://indianexpress.com/section/cities/patna/feed/" type="rss" />
+        <outline title="Prabhat Khabar" xmlUrl="https://www.prabhatkhabar.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Bihar Gov" xmlUrl="https://state.bihar.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

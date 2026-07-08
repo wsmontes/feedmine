@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Bourgogne-Franche-Comté Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Le Bien Public" xmlUrl="https://www.bienpublic.com/rss" type="rss" />
+        <outline title="France 3 BFC" xmlUrl="https://france3-regions.francetvinfo.fr/bourgogne-franche-comte/rss" type="rss" />
+      </outline>
+      <outline text="Politics" /></body>
+    </opml>

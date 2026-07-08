@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Western Australia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="WA Today" xmlUrl="https://www.watoday.com.au/rss/feed.xml" type="rss" />
+      <outline title="The West Australian" xmlUrl="https://thewest.com.au/feed/" type="rss" />
+      <outline title="PerthNow" xmlUrl="https://www.perthnow.com.au/feed/" type="rss" />
+    </outline>
+<outline text="Culture">
+      <outline title="Art Gallery of WA" xmlUrl="https://www.artgallery.wa.gov.au/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Curtin University" xmlUrl="https://www.curtin.edu.au/news/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="CCIWA" xmlUrl="https://www.cciwa.com/feed/" type="rss" />
+    </outline>
+    <outline text="Cities">
+      <outline text="Fremantle">
+        <outline title="City of Fremantle" xmlUrl="https://www.fremantle.wa.gov.au/feed/" type="rss" />
+      </outline>
+</outline>
+  </body>
+</opml>

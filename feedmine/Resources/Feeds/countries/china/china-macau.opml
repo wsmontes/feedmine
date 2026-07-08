@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0"><head><title>Macau Feeds</title></head><body>
+      <outline text="News">
+        <outline title="Macau Daily Times" xmlUrl="https://www.macaudailytimes.com.mo/rss" type="rss" />
+        <outline title="TDM Macau" xmlUrl="https://www.tdm.com.mo/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Macau Gov" xmlUrl="https://www.gov.mo/rss" type="rss" />
+      </outline></body>
+    </opml>

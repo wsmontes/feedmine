@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Colombia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="El Tiempo" xmlUrl="https://www.eltiempo.com/rss/" type="rss" />
+      <outline title="El Heraldo" xmlUrl="https://www.elheraldo.co/rss/" type="rss" />
+      <outline title="La Republica" xmlUrl="https://www.larepublica.co/rss/" type="rss" />
+      <outline title="La Silla Vacia" xmlUrl="https://www.lasillavacia.com/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Win Sports" xmlUrl="https://www.winsports.co/rss/" type="rss" />
+      <outline title="Capsulas de Carreno" xmlUrl="https://www.antena2.com/rss/" type="rss" />
+      <outline title="Nacional" xmlUrl="https://www.atlnacional.com.co/rss/" type="rss" />
+      <outline title="FCF" xmlUrl="https://www.fcf.com.co/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Enter.co" xmlUrl="https://www.enter.co/feed/" type="rss" />
+      <outline title="FayerWayer" xmlUrl="https://www.fayerwayer.com/feed/" type="rss" />
+      <outline title="Hipertextual" xmlUrl="https://www.hipertextual.com/feed/" type="rss" />
+      <outline title="TecnoMagazine" xmlUrl="https://www.tecnomagazine.net/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="RCN Ciencia" xmlUrl="https://www.rcnradio.com/ciencia/rss/" type="rss" />
+      <outline title="Parque Explora" xmlUrl="https://www.parqueexplora.org/rss/" type="rss" />
+      <outline title="Maloka" xmlUrl="https://www.maloka.org/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Museo de Antioquia" xmlUrl="https://www.museodeantioquia.co/rss/" type="rss" />
+      <outline title="Museo Botero" xmlUrl="https://www.banrepcultural.org/museo-botero/rss/" type="rss" />
+      <outline title="Banco de la Republica Cultural" xmlUrl="https://www.banrepcultural.org/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Pantalla Colombia" xmlUrl="https://www.pantallacolombia.com/feed/" type="rss" />
+      <outline title="CineVista" xmlUrl="https://www.cinevistablog.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Shock" xmlUrl="https://www.shock.co/rss/" type="rss" />
+      <outline title="Radioacktiva" xmlUrl="https://www.radioacktiva.com/rss/" type="rss" />
+      <outline title="Tropicana" xmlUrl="https://www.tropicanafm.com/rss/" type="rss" />
+      <outline title="Olimpica Stereo" xmlUrl="https://www.olimpicastereo.com.co/rss/" type="rss" />
+      <outline title="Colombia Music" xmlUrl="https://www.colombiamusic.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Cocina y Vino" xmlUrl="https://www.cocinayvino.com/feed/" type="rss" />
+      <outline title="La Barra" xmlUrl="https://www.revistalabarra.com/rss/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="LevelUp" xmlUrl="https://www.levelup.com/feed/" type="rss" />
+      <outline title="Tarreo" xmlUrl="https://www.tarreo.com/feed/" type="rss" />
+      <outline title="GamerFocus" xmlUrl="https://www.gamerfocus.co/feed/" type="rss" />
+      <outline title="Atomix" xmlUrl="https://www.atomix.vg/feed/" type="rss" />
+      <outline title="PlayStation LATAM" xmlUrl="https://blog.latam.playstation.com/feed/" type="rss" />
+      <outline title="Enter Co Gaming" xmlUrl="https://www.enter.co/gaming/feed/" type="rss" />
+      <outline title="Gaming Colombia" xmlUrl="https://www.gamingcolombia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Medellin Travel" xmlUrl="https://www.medellin.travel/rss/" type="rss" />
+      <outline title="Cartagena Travel" xmlUrl="https://www.cartagenadeindias.travel/rss/" type="rss" />
+      <outline title="Viva Air" xmlUrl="https://www.vivaair.com/co/rss/" type="rss" />
+      <outline title="El Heraldo Viajes" xmlUrl="https://www.elheraldo.co/viajes/rss/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Las2Orillas" xmlUrl="https://www.las2orillas.co/feed/" type="rss" />
+      <outline title="La Silla Vacia" xmlUrl="https://www.lasillavacia.com/rss/" type="rss" />
+      <outline title="Razon Publica" xmlUrl="https://www.razonpublica.com/rss/" type="rss" />
+      <outline title="Colombia Plural" xmlUrl="https://www.colombiaplural.com/feed/" type="rss" />
+      <outline title="Hacemos Memoria" xmlUrl="https://www.hacemosmemoria.org/feed/" type="rss" />
+      <outline title="Mutante" xmlUrl="https://www.mutante.org/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Revista Axxis" xmlUrl="https://www.revistaaxxis.com.co/feed/" type="rss" />
+      <outline title="Marcas Colombia" xmlUrl="https://www.marcascolombia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Colombia" xmlUrl="https://www.greenpeace.org/colombia/feed/" type="rss" />
+      <outline title="WWF Colombia" xmlUrl="https://www.wwf.org.co/rss/" type="rss" />
+      <outline title="Parques Nacionales" xmlUrl="https://www.parquesnacionales.gov.co/rss/" type="rss" />
+      <outline title="MinAmbiente" xmlUrl="https://www.minambiente.gov.co/rss/" type="rss" />
+      <outline title="FCDS" xmlUrl="https://www.fcds.org.co/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Homecenter Blog" xmlUrl="https://www.homecenter.com.co/homecenter-co/blog/feed/" type="rss" />
+      <outline title="Craft Colombia" xmlUrl="https://www.craftcolombia.com/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Banrep Cultural Historia" xmlUrl="https://www.banrepcultural.org/historia/rss/" type="rss" />
+      <outline title="Museo del Oro" xmlUrl="https://www.banrepcultural.org/bogota/museo-del-oro/rss/" type="rss" />
+      <outline title="Historia de Colombia" xmlUrl="https://www.historiadecolombia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Sociedad Colombiana Arquitectos" xmlUrl="https://www.sociedadcolombianadearquitectos.org/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="ArchDaily Colombia" xmlUrl="https://www.archdaily.co/co/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Rappi Engineering" xmlUrl="https://www.rappi.com/blog/feed/" type="rss" />
+      <outline title="MercadoLibre CO" xmlUrl="https://www.mercadolibre.com.co/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="La Republica" xmlUrl="https://www.larepublica.co/rss/" type="rss" />
+      <outline title="Portafolio" xmlUrl="https://www.portafolio.co/rss/" type="rss" />
+      <outline title="Colombia Fintech" xmlUrl="https://www.colombiafintech.co/feed/" type="rss" />
+      <outline title="Emprendedores CO" xmlUrl="https://www.emprendedores.co/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="RCN Podcasts" xmlUrl="https://www.rcnradio.com/podcasts/rss/" type="rss" />
+      <outline title="Presunto Podcast" xmlUrl="https://www.presuntopodcast.com/feed/" type="rss" />
+      <outline title="Eureka Colombia" xmlUrl="https://www.eurekacolombia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Colombia en Fotos" xmlUrl="https://www.colombiaenfotos.com/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

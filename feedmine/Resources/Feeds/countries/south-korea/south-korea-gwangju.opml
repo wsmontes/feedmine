@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gwangju Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics">
+        <outline title="Gwangju Metro Gov" xmlUrl="https://www.gwangju.go.kr/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Chonnam Natl Univ" xmlUrl="https://www.jnu.ac.kr/rss" type="rss" />
+      </outline></body>
+    </opml>

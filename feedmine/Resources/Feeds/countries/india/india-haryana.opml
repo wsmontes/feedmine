@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Haryana Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Gurgaon" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670875.cms" type="rss" />
+        <outline title="Indian Express Chandigarh" xmlUrl="https://indianexpress.com/section/cities/chandigarh/feed/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education" /></body>
+    </opml>

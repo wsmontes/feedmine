@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>West-Vlaanderen Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Krant van West-Vlaanderen" xmlUrl="https://www.kw.be/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

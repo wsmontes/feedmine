@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tamil Nadu Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Chennai" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670698.cms" type="rss" />
+        <outline title="The Hindu Chennai" xmlUrl="https://www.thehindu.com/news/cities/chennai/feeder/default.rss" type="rss" />
+        <outline title="The Hindu Madurai" xmlUrl="https://www.thehindu.com/news/cities/Madurai/feeder/default.rss" type="rss" />
+        <outline title="Indian Express Chennai" xmlUrl="https://indianexpress.com/section/cities/chennai/feed/" type="rss" />
+        <outline title="Dinamalar" xmlUrl="https://www.dinamalar.com/rss" type="rss" />
+        <outline title="Dinamani" xmlUrl="https://www.dinamani.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="TN Government" xmlUrl="https://www.tn.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Hindu Business Line" xmlUrl="https://www.thehindubusinessline.com/feeder/default.rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="IIT Madras" xmlUrl="https://www.iitm.ac.in/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+</outline>
+      <outline text="Culture">
+        <outline title="TN Tourism" xmlUrl="https://www.tamilnadutourism.tn.gov.in/rss" type="rss" />
+      </outline></body>
+    </opml>

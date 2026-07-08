@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Uttarakhand Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Dehradun" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672715.cms" type="rss" />
+        <outline title="Amar Ujala UK" xmlUrl="https://www.amarujala.com/uttarakhand/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Uttarakhand Gov" xmlUrl="https://uk.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="NIT Uttarakhand" xmlUrl="https://www.nituk.ac.in/rss" type="rss" />
+      </outline></body>
+    </opml>

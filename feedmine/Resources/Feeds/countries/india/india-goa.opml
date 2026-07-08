@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Goa Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Goa" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670678.cms" type="rss" />
+        <outline title="The Hindu Goa" xmlUrl="https://www.thehindu.com/news/national/goa/feeder/default.rss" type="rss" />
+        <outline title="Navhind Times" xmlUrl="https://www.navhindtimes.in/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Goa Gov" xmlUrl="https://www.goa.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="IIT Goa" xmlUrl="https://www.iitgoa.ac.in/rss" type="rss" />
+        <outline title="NIT Goa" xmlUrl="https://www.nitgoa.ac.in/rss" type="rss" />
+      </outline>
+      <outline text="Culture" /></body>
+    </opml>

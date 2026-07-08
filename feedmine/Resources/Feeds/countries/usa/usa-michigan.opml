@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Michigan Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Detroit Metro Times" xmlUrl="https://www.metrotimes.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Bridge Michigan" xmlUrl="https://www.bridgemi.com/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+      </outline>
+      <outline text="Technology">
+        <outline title="Automoblog Detroit" xmlUrl="https://www.automoblog.net/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="U Michigan News" xmlUrl="https://news.umich.edu/feed/" type="rss" />
+        <outline title="Michigan State News" xmlUrl="https://msutoday.msu.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Detroit Red Wings" xmlUrl="https://www.nhl.com/redwings/rss/news" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="WDET Detroit" xmlUrl="https://wdet.org/rss" type="rss" />
+        <outline title="Eater Detroit" xmlUrl="https://detroit.eater.com/rss/index.xml" type="rss" />
+        <outline title="Hour Detroit" xmlUrl="https://www.hourdetroit.com/rss" type="rss" />
+      </outline>
+      <outline text="Blogs">
+        <outline title="Daily Detroit" xmlUrl="https://dailydetroit.com/feed/" type="rss" />
+      </outline></body>
+    </opml>

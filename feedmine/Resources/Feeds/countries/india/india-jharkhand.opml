@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Jharkhand Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Ranchi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672152.cms" type="rss" />
+        <outline title="Prabhat Khabar Jharkhand" xmlUrl="https://www.prabhatkhabar.com/state/jharkhand/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="NIT Jamshedpur" xmlUrl="https://www.nitjsr.ac.in/rss" type="rss" />
+      </outline></body>
+    </opml>

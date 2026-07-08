@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Massachusetts Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="WBUR Boston" xmlUrl="https://www.wbur.org/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="MA Legislature" xmlUrl="https://malegislature.gov/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Boston Biz Journal" xmlUrl="https://feeds.bizjournals.com/boston" type="rss" />
+        <outline title="Worcester Biz Journal" xmlUrl="https://www.wbjournal.com/rss" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="MIT News" xmlUrl="https://news.mit.edu/rss/feed" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="MIT News" xmlUrl="https://news.mit.edu/rss/feed" type="rss" />
+        <outline title="Harvard News" xmlUrl="https://news.harvard.edu/gazette/feed/" type="rss" />
+        <outline title="Boston University" xmlUrl="https://www.bu.edu/rss" type="rss" />
+        <outline title="Northeastern News" xmlUrl="https://news.northeastern.edu/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Bruins" xmlUrl="https://www.nhl.com/bruins/rss/news" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="WBUR" xmlUrl="https://www.wbur.org/rss" type="rss" />
+        <outline title="Eater Boston" xmlUrl="https://boston.eater.com/rss/index.xml" type="rss" />
+      </outline>
+      <outline text="Blogs">
+        <outline title="Streetsblog MASS" xmlUrl="https://mass.streetsblog.org/feed/" type="rss" />
+      </outline></body>
+    </opml>

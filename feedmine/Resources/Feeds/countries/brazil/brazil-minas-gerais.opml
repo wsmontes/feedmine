@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Minas Gerais Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Estado de Minas" xmlUrl="https://www.em.com.br/feed/" type="rss" />
+      <outline title="Governo de MG" xmlUrl="https://www.mg.gov.br/feed/" type="rss" />
+      <outline title="Câmara BH" xmlUrl="https://www.cmbh.mg.gov.br/feed/" type="rss" />
+      <outline title="Tribuna de Minas (JF)" xmlUrl="https://tribunademinas.com.br/feed/" type="rss" />
+      <outline title="G37 (Divinópolis)" xmlUrl="https://g37.com.br/feed/" type="rss" />
+      <outline title="Jornal de Lavras" xmlUrl="https://www.jornaldelavras.com.br/feed/" type="rss" />
+      <outline title="Correio de Minas" xmlUrl="https://correiodeminas.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Atlético Mineiro" xmlUrl="https://www.atletico.com.br/feed/" type="rss" />
+      <outline title="Cruzeiro" xmlUrl="https://www.cruzeiro.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Guia BH" xmlUrl="https://www.guiabh.com.br/feed/" type="rss" />
+      <outline title="Sou BH" xmlUrl="https://soubh.uai.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="UFMG" xmlUrl="https://ufmg.br/feed/" type="rss" />
+      <outline title="UFJF" xmlUrl="https://www2.ufjf.br/feed/" type="rss" />
+      <outline title="UFV" xmlUrl="https://www.ufv.br/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Startup BH" xmlUrl="https://www.startupbh.com.br/feed/" type="rss" />
+      <outline title="Hub Tecnologia MG" xmlUrl="https://hubtecnologia.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Fecomércio MG" xmlUrl="https://www.fecomerciomg.org.br/feed/" type="rss" />
+      <outline title="Mercado Comum" xmlUrl="https://www.mercadocomum.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Fartura Brasil MG" xmlUrl="https://www.farturabrasil.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      </outline>
+  </body>
+  <outline text="Podcasts">
+    <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+    <outline title="Guten News" xmlUrl="https://gutennews.com.br/feed/" type="rss" />
+    <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Jovem Nerd" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYhcqPZ1MmEcuTYhRZkyDlA" type="rss" />
+    <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+    <outline title="Coisa de Nerd" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZx8ZHB4Bh8hDVoXpl9ifVQ" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Uberlândia">
+      <outline title="Diário de Uberlândia" xmlUrl="https://diariodeuberlandia.com.br/feed/" type="rss" />
+      <outline title="Uberlândia News" xmlUrl="https://www.uberlandianews.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Uberlândia" xmlUrl="https://www.uberlandia.mg.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Juiz de Fora">
+      <outline title="Tribuna de Minas" xmlUrl="https://tribunademinas.com.br/feed/" type="rss" />
+      <outline title="Prefeitura JF" xmlUrl="https://www.pjf.mg.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Montes Claros">
+      <outline title="Montes Claros News" xmlUrl="https://www.montesclarosnews.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Montes Claros" xmlUrl="https://www.montesclaros.mg.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Uberaba">
+      <outline title="Jornal da Manhã" xmlUrl="https://jmonline.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Uberaba" xmlUrl="https://www.uberaba.mg.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Governador Valadares">
+      <outline title="GV News" xmlUrl="https://www.gvnews.com.br/feed/" type="rss" />
+      <outline title="Prefeitura GV" xmlUrl="https://www.valadares.mg.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Ipatinga">
+      <outline title="Plox Ipatinga" xmlUrl="https://www.plox.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Ipatinga" xmlUrl="https://www.ipatinga.mg.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Ouro Preto">
+      <outline title="Jornal O Liberal" xmlUrl="https://www.jornaloliberal.net/feed/" type="rss" />
+      <outline title="Prefeitura Ouro Preto" xmlUrl="https://www.ouropreto.mg.gov.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

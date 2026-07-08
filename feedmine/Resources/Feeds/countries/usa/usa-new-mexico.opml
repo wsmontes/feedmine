@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>New Mexico Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Carlsbad Current-Argus" xmlUrl="https://www.currentargus.com/rss" type="rss" />
+        <outline title="Source NM" xmlUrl="https://sourcenm.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Business">
+        <outline title="Albuquerque Biz First" xmlUrl="https://feeds.bizjournals.com/albuquerque" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Univ of New Mexico" xmlUrl="https://news.unm.edu/rss" type="rss" />
+      </outline>
+      <outline text="Culture" /></body>
+    </opml>

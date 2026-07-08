@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fukushima Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics">
+        <outline title="Fukushima Pref Gov" xmlUrl="https://www.pref.fukushima.lg.jp/rss/" type="rss" />
+      </outline></body>
+    </opml>

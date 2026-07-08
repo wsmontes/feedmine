@@ -18,11 +18,11 @@ enum CircadianPeriod: String, CaseIterable {
 
     var label: String {
         switch self {
-        case .dawn:      "Dawn"
-        case .morning:   "Morning"
-        case .afternoon: "Afternoon"
-        case .evening:   "Evening"
-        case .night:     "Night"
+        case .dawn:      String(localized: "Dawn", comment: "Circadian period")
+        case .morning:   String(localized: "Morning", comment: "Circadian period")
+        case .afternoon: String(localized: "Afternoon", comment: "Circadian period")
+        case .evening:   String(localized: "Evening", comment: "Circadian period")
+        case .night:     String(localized: "Night", comment: "Circadian period")
         }
     }
 
@@ -108,21 +108,21 @@ enum PaletteFamily: String, CaseIterable {
 
     var label: String {
         switch self {
-        case .warmEarth:    "Warm Earth"
-        case .coolSky:      "Cool Sky"
-        case .botanical:    "Botanical"
-        case .lavenderHour: "Lavender Hour"
-        case .monochrome:   "Monochrome"
+        case .warmEarth:    String(localized: "Warm Earth", comment: "Palette family name")
+        case .coolSky:      String(localized: "Cool Sky", comment: "Palette family name")
+        case .botanical:    String(localized: "Botanical", comment: "Palette family name")
+        case .lavenderHour: String(localized: "Lavender Hour", comment: "Palette family name")
+        case .monochrome:   String(localized: "Monochrome", comment: "Palette family name")
         }
     }
 
     var subtitle: String {
         switch self {
-        case .warmEarth:    "Amber → Deep Coral · Brand"
-        case .coolSky:      "Ice blue → Indigo"
-        case .botanical:    "Moss → Pine"
-        case .lavenderHour: "Lavender → Amethyst"
-        case .monochrome:   "Warm gray · Subdued"
+        case .warmEarth:    String(localized: "Amber → Deep Coral · Brand", comment: "Palette family subtitle")
+        case .coolSky:      String(localized: "Ice blue → Indigo", comment: "Palette family subtitle")
+        case .botanical:    String(localized: "Moss → Pine", comment: "Palette family subtitle")
+        case .lavenderHour: String(localized: "Lavender → Amethyst", comment: "Palette family subtitle")
+        case .monochrome:   String(localized: "Warm gray · Subdued", comment: "Palette family subtitle")
         }
     }
 
@@ -177,10 +177,10 @@ enum FontStyle: String, CaseIterable {
 
     var label: String {
         switch self {
-        case .system:  "System"
-        case .newYork: "New York"
-        case .sfMono:  "SF Mono"
-        case .georgia: "Georgia"
+        case .system:  String(localized: "System", comment: "Font style name")
+        case .newYork: String(localized: "New York", comment: "Font style name")
+        case .sfMono:  String(localized: "SF Mono", comment: "Font style name")
+        case .georgia: String(localized: "Georgia", comment: "Font style name")
         }
     }
 }

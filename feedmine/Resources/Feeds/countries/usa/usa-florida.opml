@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Florida Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Miami Herald" xmlUrl="https://www.miamiherald.com/rss" type="rss" />
+        <outline title="Bradenton Herald" xmlUrl="https://www.bradenton.com/rss" type="rss" />
+        <outline title="Miami New Times" xmlUrl="https://www.miaminewtimes.com/feed/" type="rss" />
+        <outline title="Creative Loafing Tampa" xmlUrl="https://www.cltampa.com/feed/" type="rss" />
+        <outline title="Orlando Weekly" xmlUrl="https://www.orlandoweekly.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Florida House" xmlUrl="https://www.myfloridahouse.gov/rss" type="rss" />
+        <outline title="City of Jacksonville News" xmlUrl="https://www.coj.net/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Orlando Business Journal" xmlUrl="https://feeds.bizjournals.com/orlando" type="rss" />
+        <outline title="Jacksonville Business Journal" xmlUrl="https://feeds.bizjournals.com/jacksonville" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="FIU Tech" xmlUrl="https://news.fiu.edu/rss" type="rss" />
+        <outline title="UCF Research News" xmlUrl="https://www.ucf.edu/news/feed/" type="rss" />
+        <outline title="Miami Tech News" xmlUrl="https://refreshmiami.com/feed/" type="rss" />
+        <outline title="Tampa Bay Tech" xmlUrl="https://tampabay.tech/feed/" type="rss" />
+        <outline title="Embry-Riddle News" xmlUrl="https://news.erau.edu/rss" type="rss" />
+        <outline title="Florida High Tech Corridor" xmlUrl="https://floridahightech.com/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="FSU News" xmlUrl="https://news.fsu.edu/feed/" type="rss" />
+        <outline title="UCF News" xmlUrl="https://www.ucf.edu/news/feed/" type="rss" />
+        <outline title="FIU News" xmlUrl="https://news.fiu.edu/rss" type="rss" />
+        <outline title="FAU News" xmlUrl="https://www.fau.edu/news/rss" type="rss" />
+        <outline title="Florida Tech News" xmlUrl="https://news.fit.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Florida Panthers" xmlUrl="https://www.nhl.com/panthers/rss/news" type="rss" />
+        <outline title="Tampa Bay Lightning" xmlUrl="https://www.nhl.com/lightning/rss/news" type="rss" />
+        <outline title="Daytona 500" xmlUrl="https://www.daytonainternationalspeedway.com/rss" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Eater Miami" xmlUrl="https://miami.eater.com/rss/index.xml" type="rss" />
+      </outline>
+      <outline text="Environment">
+      </outline>
+      <outline text="Blogs">
+        <outline title="Florida Rambler" xmlUrl="https://www.floridarambler.com/feed/" type="rss" />
+        <outline title="Tampa Magazines" xmlUrl="https://tampamagazines.com/feed/" type="rss" />
+        <outline title="Ocean Drive Magazine" xmlUrl="https://oceandrive.com/feed/" type="rss" />
+      </outline></body>
+    </opml>

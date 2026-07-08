@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Odisha Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Bhubaneswar" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672455.cms" type="rss" />
+        <outline title="The Hindu Odisha" xmlUrl="https://www.thehindu.com/news/national/odisha/feeder/default.rss" type="rss" />
+        <outline title="Sambad" xmlUrl="https://www.sambad.in/rss" type="rss" />
+        <outline title="Dharitri" xmlUrl="https://www.dharitri.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="IIT Bhubaneswar" xmlUrl="https://www.iitbbs.ac.in/rss" type="rss" />
+      </outline></body>
+    </opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Madhya Pradesh Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Bhopal" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670845.cms" type="rss" />
+        <outline title="Indian Express Bhopal" xmlUrl="https://indianexpress.com/section/cities/bhopal/feed/" type="rss" />
+        <outline title="Patrika MP" xmlUrl="https://www.patrika.com/madhya-pradesh/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="MP Gov" xmlUrl="https://mp.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

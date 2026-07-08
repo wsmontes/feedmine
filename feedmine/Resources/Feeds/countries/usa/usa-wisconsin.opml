@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wisconsin Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics">
+        <outline title="City of Milwaukee" xmlUrl="https://city.milwaukee.gov/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Milwaukee Biz Journal" xmlUrl="https://feeds.bizjournals.com/milwaukee" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="UW Madison" xmlUrl="https://news.wisc.edu/feed/" type="rss" />
+        <outline title="UW Milwaukee" xmlUrl="https://uwm.edu/news/feed/" type="rss" />
+      </outline>
+      <outline text="Sports" />
+      <outline text="Culture">
+        <outline title="WPR News" xmlUrl="https://www.wpr.org/rss" type="rss" />
+        <outline title="Milwaukee Magazine" xmlUrl="https://www.milwaukeemag.com/feed/" type="rss" />
+      </outline></body>
+    </opml>

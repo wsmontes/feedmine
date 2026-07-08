@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tokyo Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Metropolis Japan" xmlUrl="https://metropolisjapan.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education">
+        <outline title="Tokyo Tech" xmlUrl="https://www.titech.ac.jp/rss" type="rss" />
+      </outline>
+      <outline text="Culture" /></body>
+    </opml>

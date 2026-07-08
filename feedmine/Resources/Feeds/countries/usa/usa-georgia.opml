@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Georgia Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Macon Telegraph" xmlUrl="https://www.macon.com/rss" type="rss" />
+        <outline title="Columbus Ledger-Enquirer" xmlUrl="https://www.ledger-enquirer.com/rss" type="rss" />
+        <outline title="Creative Loafing Atlanta" xmlUrl="https://creativeloafing.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="GA General Assembly" xmlUrl="https://www.legis.ga.gov/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Atlanta Business Chronicle" xmlUrl="https://feeds.bizjournals.com/atlanta" type="rss" />
+        <outline title="Georgia Trend" xmlUrl="https://www.georgiatrend.com/feed/" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="Hypepotamus" xmlUrl="https://hypepotamus.com/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="UGA News" xmlUrl="https://news.uga.edu/feed/" type="rss" />
+        <outline title="Georgia State Univ" xmlUrl="https://news.gsu.edu/feed/" type="rss" />
+        <outline title="Georgia Southern" xmlUrl="https://www.georgiasouthern.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+      </outline>
+      <outline text="Culture">
+        <outline title="GPB News" xmlUrl="https://www.gpb.org/rss" type="rss" />
+        <outline title="Eater Atlanta" xmlUrl="https://atlanta.eater.com/rss/index.xml" type="rss" />
+        <outline title="Atlanta Magazine" xmlUrl="https://www.atlantamagazine.com/feed/" type="rss" />
+      </outline>
+      <outline text="Blogs">
+        <outline title="Saporta Report" xmlUrl="https://saportareport.com/feed/" type="rss" />
+        <outline title="Rough Draft Atlanta" xmlUrl="https://roughdraftatlanta.com/feed/" type="rss" />
+      </outline></body>
+    </opml>

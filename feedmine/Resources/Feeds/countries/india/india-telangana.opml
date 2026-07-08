@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Telangana Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Hyderabad" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128671089.cms" type="rss" />
+        <outline title="The Hindu Hyderabad" xmlUrl="https://www.thehindu.com/news/cities/Hyderabad/feeder/default.rss" type="rss" />
+        <outline title="Indian Express Hyderabad" xmlUrl="https://indianexpress.com/section/cities/hyderabad/feed/" type="rss" />
+        <outline title="Namaste Telangana" xmlUrl="https://www.namasthetelangana.com/rss" type="rss" />
+        <outline title="Telangana Today" xmlUrl="https://telanganatoday.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Telangana Gov" xmlUrl="https://www.telangana.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="IIIT Hyderabad" xmlUrl="https://www.iiit.ac.in/rss" type="rss" />
+        <outline title="Univ of Hyderabad" xmlUrl="https://www.uohyd.ac.in/rss" type="rss" />
+      </outline></body>
+    </opml>

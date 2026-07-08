@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Ulsan Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Ulsan Daily" xmlUrl="https://www.ulsannews.com/rss/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Business" />
+      <outline text="Education" /></body>
+    </opml>

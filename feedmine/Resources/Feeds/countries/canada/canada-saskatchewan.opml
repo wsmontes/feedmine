@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Saskatchewan Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Saskatoon StarPhoenix" xmlUrl="https://thestarphoenix.com/feed/" type="rss" />
+      <outline title="Regina Leader-Post" xmlUrl="https://leaderpost.com/feed/" type="rss" />
+      <outline title="Global Saskatoon" xmlUrl="https://globalnews.ca/saskatoon/feed/" type="rss" />
+      <outline title="Global Regina" xmlUrl="https://globalnews.ca/regina/feed/" type="rss" />
+      <outline title="Prince Albert Daily Herald" xmlUrl="https://www.paherald.sk.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Saskatchewan Roughriders" xmlUrl="https://www.riderville.com/feed/" type="rss" />
+      <outline title="Saskatoon Blades" xmlUrl="https://chl.ca/whl-blades/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Saskatchewan Arts Board" xmlUrl="https://www.skarts.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="University of Regina" xmlUrl="https://www.uregina.ca/external/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Saskatchewan Chamber of Commerce" xmlUrl="https://www.saskchamber.com/feed/" type="rss" />
+    </outline>
+    <outline text="Cities">
+      <outline text="Moose Jaw">
+        <outline title="City of Moose Jaw" xmlUrl="https://www.moosejaw.ca/feed/" type="rss" />
+      </outline>
+</outline>
+  </body>
+</opml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Shandong Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Jinan Daily" xmlUrl="https://www.jinandaily.com/rss/" type="rss" />
+        <outline title="Xinhua Shandong" xmlUrl="http://www.xinhuanet.com/local/sd.htm" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Shandong Gov" xmlUrl="http://www.shandong.gov.cn/rss" type="rss" />
+        <outline title="Jinan Gov" xmlUrl="http://www.jinan.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Qingdao Port" xmlUrl="http://www.qdport.com/rss/" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Occitanie Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="France 3 Occitanie" xmlUrl="https://france3-regions.francetvinfo.fr/occitanie/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Toulouse Mairie" xmlUrl="https://www.toulouse.fr/rss" type="rss" />
+      </outline></body>
+    </opml>

@@ -31,6 +31,46 @@ targets:
         UILaunchScreen: {}
         UIBackgroundModes:
           - audio
+        CFBundleLocalizations:
+          - ar
+          - ca
+          - zh-Hans
+          - zh-Hant
+          - hr
+          - cs
+          - da
+          - nl
+          - en
+          - en-AU
+          - en-GB
+          - en-IN
+          - fi
+          - fr
+          - fr-CA
+          - de
+          - el
+          - he
+          - hi
+          - hu
+          - id
+          - it
+          - ja
+          - ko
+          - ms
+          - nb
+          - pl
+          - pt-BR
+          - pt-PT
+          - ro
+          - ru
+          - sk
+          - es
+          - es-419
+          - sv
+          - th
+          - tr
+          - uk
+          - vi
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.feedmine.app
       TARGETED_DEVICE_FAMILY: "1"  # iPhone only

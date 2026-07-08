@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Jalisco Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Gobierno de Jalisco" xmlUrl="https://www.jalisco.gob.mx/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Yukon Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Whitehorse Star" xmlUrl="https://www.whitehorsestar.com/feed/" type="rss" />
+      <outline title="Yukon News" xmlUrl="https://www.yukon-news.com/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Yukon Quest" xmlUrl="https://www.yukonquest.com/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Yukon Arts Centre" xmlUrl="https://www.yukonartscentre.com/feed/" type="rss" />
+      <outline title="Yukon Film Society" xmlUrl="https://www.yukonfilmsociety.com/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Yukon University" xmlUrl="https://www.yukonu.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Yukon Chamber of Commerce" xmlUrl="https://www.yukonchamber.com/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

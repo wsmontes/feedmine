@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Denmark Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="DR" xmlUrl="https://www.dr.dk/nyheder/service/feeds/allenyheder" type="rss" />
+      <outline title="Jyllands-Posten" xmlUrl="https://jyllands-posten.dk/rss/" type="rss" />
+      <outline title="Information" xmlUrl="https://www.information.dk/feed/" type="rss" />
+      <outline title="Borsen" xmlUrl="https://borsen.dk/rss/" type="rss" />
+      <outline title="Altinget" xmlUrl="https://www.altinget.dk/rss" type="rss" />
+      <outline title="Kristeligt Dagblad" xmlUrl="https://www.kristeligt-dagblad.dk/rss" type="rss" />
+      <outline title="Nordjyske" xmlUrl="https://nordjyske.dk/rss" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Tipsbladet" xmlUrl="https://www.tipsbladet.dk/rss/" type="rss" />
+      <outline title="Jyllands-Posten Sport" xmlUrl="https://jyllands-posten.dk/sport/rss/" type="rss" />
+      <outline title="FC Kobenhavn" xmlUrl="https://www.fck.dk/rss" type="rss" />
+      <outline title="DBU" xmlUrl="https://www.dbu.dk/rss" type="rss" />
+      <outline title="Badminton DK" xmlUrl="https://www.badminton.dk/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Version2" xmlUrl="https://www.version2.dk/rss" type="rss" />
+      <outline title="Ingenioren" xmlUrl="https://ing.dk/rss/" type="rss" />
+      <outline title="Mobilsiden" xmlUrl="https://www.mobilsiden.dk/rss/" type="rss" />
+      <outline title="MereMobil" xmlUrl="https://meremobil.dk/rss/" type="rss" />
+      <outline title="Techsavvy" xmlUrl="https://techsavvy.dk/feed/" type="rss" />
+      <outline title="Digital DK" xmlUrl="https://www.digital.dk/feed/" type="rss" />
+      <outline title="Prosa" xmlUrl="https://www.prosa.dk/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Videnskab.dk" xmlUrl="https://videnskab.dk/rss.xml" type="rss" />
+      <outline title="Kobenhavns Universitet" xmlUrl="https://www.ku.dk/rss/" type="rss" />
+      <outline title="Grundforskning" xmlUrl="https://dg.dk/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Iscene" xmlUrl="https://www.iscene.dk/rss/" type="rss" />
+      <outline title="Kulturtid" xmlUrl="https://www.kulturtid.dk/feed/" type="rss" />
+      <outline title="Louisiana" xmlUrl="https://www.louisiana.dk/rss" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Soundvenue Film" xmlUrl="https://soundvenue.com/film/rss/" type="rss" />
+      <outline title="Odense Film Festival" xmlUrl="https://www.filmfestival.dk/rss/" type="rss" />
+      <outline title="Filmz" xmlUrl="https://www.filmz.dk/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Soundvenue" xmlUrl="https://soundvenue.com/musik/rss/" type="rss" />
+      <outline title="GAFFA DK" xmlUrl="https://gaffa.dk/rss/" type="rss" />
+      <outline title="Side33" xmlUrl="https://www.side33.dk/rss/" type="rss" />
+      <outline title="Bandsoftomorrow" xmlUrl="https://bandsoftomorrow.com/feed/" type="rss" />
+      <outline title="Undertoner" xmlUrl="https://www.undertoner.dk/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Valdemarsro" xmlUrl="https://www.valdemarsro.dk/rss/" type="rss" />
+      <outline title="Mad &amp; Venner" xmlUrl="https://madogvenner.dk/feed/" type="rss" />
+      <outline title="Madbloggen" xmlUrl="https://www.madbloggen.dk/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Gamereactor DK" xmlUrl="https://www.gamereactor.dk/rss/" type="rss" />
+      <outline title="IGN Nordic" xmlUrl="https://dk.ign.com/feed/" type="rss" />
+      <outline title="Eurogamer DK" xmlUrl="https://www.eurogamer.dk/feed/" type="rss" />
+      <outline title="Gameplay DK" xmlUrl="https://www.gameplay.dk/rss/" type="rss" />
+      <outline title="PSlife" xmlUrl="https://www.pslife.dk/rss/" type="rss" />
+      <outline title="Pixel.tv" xmlUrl="https://pixel.tv/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Jyllands-Posten Rejser" xmlUrl="https://jyllands-posten.dk/rejser/rss/" type="rss" />
+      <outline title="Rejs365" xmlUrl="https://www.rejs365.dk/feed/" type="rss" />
+      <outline title="De Berejstes Klub" xmlUrl="https://www.deberejstesklub.dk/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="POV International" xmlUrl="https://pov.international/feed/" type="rss" />
+      <outline title="Dagens" xmlUrl="https://www.dagens.dk/rss/" type="rss" />
+      <outline title="Solidaritet" xmlUrl="https://solidaritet.dk/feed/" type="rss" />
+      <outline title="Arbejderen" xmlUrl="https://arbejderen.dk/rss/" type="rss" />
+      <outline title="Globalnyt" xmlUrl="https://www.globalnyt.dk/rss/" type="rss" />
+      <outline title="Journalisten" xmlUrl="https://journalisten.dk/rss/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Design DK" xmlUrl="https://www.designdenmark.dk/rss/" type="rss" />
+      <outline title="Bo Bedre" xmlUrl="https://bobedre.dk/rss/" type="rss" />
+      <outline title="Rum" xmlUrl="https://www.rum.dk/feed/" type="rss" />
+      <outline title="Designmuseum Danmark" xmlUrl="https://designmuseum.dk/rss/" type="rss" />
+      <outline title="Dansk Design Center" xmlUrl="https://ddc.dk/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Danmark" xmlUrl="https://www.greenpeace.dk/rss/" type="rss" />
+      <outline title="WWF Danmark" xmlUrl="https://www.wwf.dk/rss" type="rss" />
+      <outline title="Energiwatch" xmlUrl="https://energiwatch.dk/rss" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Bolig Magasinet" xmlUrl="https://boligmagasinet.dk/rss/" type="rss" />
+      <outline title="DIY Danmark" xmlUrl="https://diydanmark.dk/feed/" type="rss" />
+      <outline title="Havedesign" xmlUrl="https://www.havedesign.dk/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Nationalmuseet" xmlUrl="https://natmus.dk/rss/" type="rss" />
+      <outline title="Rigsarkivet" xmlUrl="https://www.sa.dk/rss/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Arkitekten" xmlUrl="https://www.arkitekten.dk/rss/" type="rss" />
+      <outline title="Arkitektur DK" xmlUrl="https://arkitektforeningen.dk/rss" type="rss" />
+      <outline title="Byggeri" xmlUrl="https://www.byggeri.dk/rss/" type="rss" />
+      <outline title="3XN" xmlUrl="https://www.3xn.com/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Version2 Dev" xmlUrl="https://www.version2.dk/rss" type="rss" />
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Unity Copenhagen" xmlUrl="https://blog.unity.com/rss" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Borsen" xmlUrl="https://borsen.dk/rss/" type="rss" />
+      <outline title="Finans" xmlUrl="https://finans.dk/rss/" type="rss" />
+      <outline title="Jyllands-Posten Erhverv" xmlUrl="https://jyllands-posten.dk/erhverv/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Radio24syv" xmlUrl="https://www.24syv.dk/rss/" type="rss" />
+      <outline title="Third Ear" xmlUrl="https://www.thirdear.dk/feed/podcast/" type="rss" />
+    </outline>
+<outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

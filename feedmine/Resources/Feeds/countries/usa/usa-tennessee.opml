@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tennessee Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Memphis Flyer" xmlUrl="https://www.memphisflyer.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="TN General Assembly" xmlUrl="https://www.capitol.tn.gov/rss" type="rss" />
+        <outline title="Tennessee Lookout" xmlUrl="https://tennesseelookout.com/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Nashville Biz Journal" xmlUrl="https://feeds.bizjournals.com/nashville" type="rss" />
+        <outline title="Memphis Biz Journal" xmlUrl="https://feeds.bizjournals.com/memphis" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="Vanderbilt Research" xmlUrl="https://research.vanderbilt.edu/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Vanderbilt News" xmlUrl="https://news.vanderbilt.edu/feed/" type="rss" />
+        <outline title="UT Knoxville" xmlUrl="https://news.utk.edu/feed/" type="rss" />
+        <outline title="MTSU News" xmlUrl="https://mtsunews.com/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Nashville Predators" xmlUrl="https://www.nhl.com/predators/rss/news" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="WPLN Nashville" xmlUrl="https://wpln.org/rss" type="rss" />
+        <outline title="Eater Nashville" xmlUrl="https://nashville.eater.com/rss/index.xml" type="rss" />
+      </outline></body>
+    </opml>

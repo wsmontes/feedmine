@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>La Réunion Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="France Info Réunion" xmlUrl="https://la1ere.francetvinfo.fr/reunion/rss" type="rss" />
+      </outline>
+      <outline text="Politics" /></body>
+    </opml>

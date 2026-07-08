@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Angola Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Jornal de Angola" xmlUrl="https://www.jornaldeangola.ao/rss/" type="rss" />
+      <outline title="O Pais" xmlUrl="https://www.opais.ao/rss/" type="rss" />
+      <outline title="Novo Jornal" xmlUrl="https://www.novojornal.co.ao/rss/" type="rss" />
+      <outline title="Club K" xmlUrl="https://www.club-k.net/rss/" type="rss" />
+      <outline title="Rede Angola" xmlUrl="https://www.redeangola.info/feed/" type="rss" />
+      <outline title="Correio Kianda" xmlUrl="https://www.correiokianda.info/rss/" type="rss" />
+      <outline title="Maka Angola" xmlUrl="https://www.makaangola.org/feed/" type="rss" />
+      <outline title="Angola24h" xmlUrl="https://www.angola24horas.com/rss/" type="rss" />
+      <outline title="VOA Angola" xmlUrl="https://www.voaportugues.com/rss/angola/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Jornal de Angola Desporto" xmlUrl="https://www.jornaldeangola.ao/desporto/rss/" type="rss" />
+      <outline title="Petro Atletico" xmlUrl="https://www.petroatletico.co.ao/rss/" type="rss" />
+      <outline title="1o de Agosto" xmlUrl="https://www.primeiroagosto.com/rss/" type="rss" />
+      <outline title="Girabola" xmlUrl="https://www.girabola.com/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Startup Angola" xmlUrl="https://www.startupangola.com/feed/" type="rss" />
+      <outline title="Angola IT" xmlUrl="https://www.angolait.com/feed/" type="rss" />
+      <outline title="Menos Fios" xmlUrl="https://www.menosfios.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="MED Angola" xmlUrl="https://www.med.gov.ao/rss/" type="rss" />
+      <outline title="MESCTI" xmlUrl="https://www.mescti.gov.ao/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Angola Heritage" xmlUrl="https://www.angolaheritage.com/feed/" type="rss" />
+      <outline title="MINCULT" xmlUrl="https://www.mincult.gov.ao/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Angola Music" xmlUrl="https://www.angolamusic.com/feed/" type="rss" />
+      <outline title="Angolan Music" xmlUrl="https://www.angolanmusic.com/feed/" type="rss" />
+      <outline title="Radio Mais" xmlUrl="https://www.radiomais.co.ao/rss/" type="rss" />
+    </outline>
+<outline text="Travel">
+      <outline title="TAAG" xmlUrl="https://www.taag.com/rss/" type="rss" />
+      <outline title="Explore Angola" xmlUrl="https://www.exploreangola.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Jornal Economia" xmlUrl="https://www.jornaldeangola.ao/economia/rss/" type="rss" />
+      <outline title="BNA" xmlUrl="https://www.bna.ao/rss/" type="rss" />
+      <outline title="Startup Angola Biz" xmlUrl="https://www.startupangola.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

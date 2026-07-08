@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>New Jersey Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="NJ Spotlight News" xmlUrl="https://www.njspotlightnews.org/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="NJ Legislature" xmlUrl="https://www.njleg.state.nj.us/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="NJ Biz" xmlUrl="https://njbiz.com/feed/" type="rss" />
+        <outline title="ROI-NJ" xmlUrl="https://www.roi-nj.com/feed/" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="NJ Tech Council" xmlUrl="https://www.njtc.org/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Montclair State" xmlUrl="https://www.montclair.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="NJ Devils" xmlUrl="https://www.nhl.com/devils/rss/news" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Eater NY (NJ coverage)" xmlUrl="https://ny.eater.com/rss/index.xml" type="rss" />
+        <outline title="New Jersey Monthly" xmlUrl="https://njmonthly.com/feed/" type="rss" />
+      </outline>
+      <outline text="Blogs">
+        <outline title="Jersey Digs" xmlUrl="https://jerseydigs.com/feed/" type="rss" />
+        <outline title="Hoboken Girl" xmlUrl="https://www.hobokengirl.com/feed/" type="rss" />
+      </outline></body>
+    </opml>

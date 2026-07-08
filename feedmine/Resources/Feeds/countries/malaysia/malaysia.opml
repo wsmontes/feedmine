@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Malaysia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Malay Mail" xmlUrl="https://www.malaymail.com/rss/" type="rss" />
+      <outline title="Utusan Malaysia" xmlUrl="https://www.utusan.com.my/rss/" type="rss" />
+      <outline title="The Malaysian Insight" xmlUrl="https://www.themalaysianinsight.com/rss/" type="rss" />
+      <outline title="Sinar Harian" xmlUrl="https://www.sinarharian.com.my/rss/" type="rss" />
+      <outline title="Kosmo" xmlUrl="https://www.kosmo.com.my/rss/" type="rss" />
+      <outline title="Astro Awani" xmlUrl="https://www.astroawani.com/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="The Star Sports" xmlUrl="https://www.thestar.com.my/sport/rss/" type="rss" />
+      <outline title="Malay Mail Sports" xmlUrl="https://www.malaymail.com/sports/rss/" type="rss" />
+      <outline title="Utusan Sukan" xmlUrl="https://www.utusan.com.my/sukan/rss/" type="rss" />
+      <outline title="Vocket FC" xmlUrl="https://www.vocketfc.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Soyacincau" xmlUrl="https://www.soyacincau.com/feed/" type="rss" />
+      <outline title="Lowyat" xmlUrl="https://www.lowyat.net/rss/" type="rss" />
+      <outline title="MDroid" xmlUrl="https://www.mdroid.my/feed/" type="rss" />
+      <outline title="The Star Tech" xmlUrl="https://www.thestar.com.my/tech/rss/" type="rss" />
+      <outline title="Zing Gadget" xmlUrl="https://www.zinggadget.com/feed/" type="rss" />
+      <outline title="Paultan Tech" xmlUrl="https://www.paultan.org/rss/" type="rss" />
+      <outline title="KL Gadget Guy" xmlUrl="https://www.klgadgetguy.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="The Star Science" xmlUrl="https://www.thestar.com.my/tech/tech-news/rss/" type="rss" />
+      <outline title="UPM" xmlUrl="https://www.upm.edu.my/rss/" type="rss" />
+      <outline title="Science Media MY" xmlUrl="https://www.sciencemediacentremalaysia.com/feed/" type="rss" />
+      <outline title="MOSTI" xmlUrl="https://www.mosti.gov.my/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="The Star Culture" xmlUrl="https://www.thestar.com.my/lifestyle/culture/rss/" type="rss" />
+      <outline title="Baskl" xmlUrl="https://www.baskl.com.my/feed/" type="rss" />
+      <outline title="Ilham Gallery" xmlUrl="https://www.ilhamgallery.com/rss/" type="rss" />
+      <outline title="Kakiseni" xmlUrl="https://www.kakiseni.com/feed/" type="rss" />
+      <outline title="SINI" xmlUrl="https://www.sini.com.my/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Cinema Online" xmlUrl="https://www.cinema.com.my/rss/" type="rss" />
+      <outline title="TGV Cinemas" xmlUrl="https://www.tgv.com.my/rss/" type="rss" />
+      <outline title="The Star Movies" xmlUrl="https://www.thestar.com.my/lifestyle/entertainment/movies/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Era FM" xmlUrl="https://www.era.fm/rss/" type="rss" />
+      <outline title="Bandwagon MY" xmlUrl="https://www.bandwagon.asia/malaysia/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="HungryGoWhere MY" xmlUrl="https://www.hungrygowhere.my/rss/" type="rss" />
+      <outline title="FriedChillies" xmlUrl="https://www.friedchillies.com/feed/" type="rss" />
+      <outline title="KL Foodie" xmlUrl="https://www.klfoodie.com/feed/" type="rss" />
+      <outline title="Eat Drink KL" xmlUrl="https://www.eatdrinkkl.com/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Kakuchopurei" xmlUrl="https://www.kakuchopurei.com/feed/" type="rss" />
+      <outline title="Pokde" xmlUrl="https://www.pokde.net/feed/" type="rss" />
+      <outline title="MyGameOn" xmlUrl="https://www.mygameon.my/feed/" type="rss" />
+      <outline title="GameAxis" xmlUrl="https://www.gameaxis.com/feed/" type="rss" />
+      <outline title="Level Up KL" xmlUrl="https://www.levelupkl.com/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="The Star Travel" xmlUrl="https://www.thestar.com.my/lifestyle/travel/rss/" type="rss" />
+      <outline title="AirAsia Blog" xmlUrl="https://www.airasia.com/rss/" type="rss" />
+      <outline title="Malaysia Asia" xmlUrl="https://www.malaysia-asia.my/feed/" type="rss" />
+      <outline title="Places and Foods" xmlUrl="https://www.placesandfoods.com/feed/" type="rss" />
+      <outline title="Asian Itinerary" xmlUrl="https://www.asianitinerary.com/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Cilisos" xmlUrl="https://www.cilisos.my/feed/" type="rss" />
+      <outline title="Says" xmlUrl="https://www.says.com/feed/" type="rss" />
+      <outline title="Rojak Daily" xmlUrl="https://www.rojakdaily.com/feed/" type="rss" />
+      <outline title="The Rakyat Post" xmlUrl="https://www.therakyatpost.com/feed/" type="rss" />
+      <outline title="Siakap Keli" xmlUrl="https://www.siakapkeli.my/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Malaysia Design Archive" xmlUrl="https://www.malaysiadesignarchive.org/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace MY" xmlUrl="https://www.greenpeace.org/malaysia/feed/" type="rss" />
+      <outline title="WWF Malaysia" xmlUrl="https://www.wwf.org.my/rss/" type="rss" />
+      <outline title="The Star Green" xmlUrl="https://www.thestar.com.my/news/environment/rss/" type="rss" />
+      <outline title="Free Malaysia Green" xmlUrl="https://www.freemalaysiatoday.com/category/nation/environment/feed/" type="rss" />
+      <outline title="EcoKnights" xmlUrl="https://www.ecoknights.org.my/feed/" type="rss" />
+      <outline title="DOE Malaysia" xmlUrl="https://www.doe.gov.my/rss/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Home Decoration MY" xmlUrl="https://www.homedecor.com.my/feed/" type="rss" />
+      <outline title="Ace Hardware MY" xmlUrl="https://www.acehardware.com.my/blog/feed/" type="rss" />
+      <outline title="Houz Depot" xmlUrl="https://www.houzdepot.com/blog/feed/" type="rss" />
+      <outline title="My Reno Diary" xmlUrl="https://www.myrenodiary.com/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Badan Warisan" xmlUrl="https://www.badanwarisanmalaysia.org/feed/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Malaysia Property" xmlUrl="https://www.malaysiaproperty.com.my/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Grab MY Tech" xmlUrl="https://www.grab.com/my/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="The Star Business" xmlUrl="https://www.thestar.com.my/business/rss/" type="rss" />
+      <outline title="Free Malaysia Biz" xmlUrl="https://www.freemalaysiatoday.com/category/business/feed/" type="rss" />
+      <outline title="BFM" xmlUrl="https://www.bfm.my/rss/" type="rss" />
+      <outline title="Vulcan Post MY" xmlUrl="https://www.vulcanpost.com/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="BFM Podcasts" xmlUrl="https://www.bfm.my/podcast/rss/" type="rss" />
+      <outline title="Studio Sembang" xmlUrl="https://www.studiosembang.com/feed/podcast/" type="rss" />
+      <outline title="Keluar Sekejap" xmlUrl="https://www.keluarsekejap.com/feed/podcast/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Photo Malaysia" xmlUrl="https://www.photomalaysia.com/feed/" type="rss" />
+      <outline title="Canon MY" xmlUrl="https://www.canon.com.my/rss/" type="rss" />
+      <outline title="Kl Photography" xmlUrl="https://www.klphotography.com/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

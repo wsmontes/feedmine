@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Uttar Pradesh Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Lucknow" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672759.cms" type="rss" />
+        <outline title="Amar Ujala" xmlUrl="https://www.amarujala.com/rss" type="rss" />
+        <outline title="Indian Express Lucknow" xmlUrl="https://indianexpress.com/section/cities/lucknow/feed/" type="rss" />
+        <outline title="The Pioneer Lucknow" xmlUrl="https://www.dailypioneer.com/rss" type="rss" />
+        <outline title="Live Hindustan" xmlUrl="https://www.livehindustan.com/rss" type="rss" />
+        <outline title="Dainik Bhaskar UP" xmlUrl="https://www.bhaskar.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="UP Government" xmlUrl="https://up.gov.in/rss" type="rss" />
+        <outline title="Noida Authority" xmlUrl="https://www.noidaauthorityonline.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+</outline>
+      <outline text="Culture">
+        <outline title="UP Tourism" xmlUrl="https://uptourism.gov.in/rss" type="rss" />
+      </outline></body>
+    </opml>

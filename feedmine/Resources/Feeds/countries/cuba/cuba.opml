@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cuba Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Juventud Rebelde" xmlUrl="https://www.juventudrebelde.cu/rss/" type="rss" />
+      <outline title="OnCubaNews" xmlUrl="https://www.oncubanews.com/feed/" type="rss" />
+      <outline title="Periodico Cubano" xmlUrl="https://www.periodicocubano.com/feed/" type="rss" />
+      <outline title="Trabajadores" xmlUrl="https://www.trabajadores.cu/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Pelota Cubana" xmlUrl="https://www.pelotacubanausa.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Joven Club" xmlUrl="https://www.jovenclub.cu/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Salud Cuba" xmlUrl="https://www.saludcuba.com/feed/" type="rss" />
+      <outline title="MES" xmlUrl="https://www.mes.gob.cu/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="La Jiribilla" xmlUrl="https://www.lajiribilla.cu/rss/" type="rss" />
+      <outline title="Cartelera Cuba" xmlUrl="https://www.carteleracuba.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Radio Taino" xmlUrl="https://www.radiotaino.icrt.cu/rss/" type="rss" />
+      <outline title="Radio Progreso" xmlUrl="https://www.radioprogreso.icrt.cu/rss/" type="rss" />
+      <outline title="Musicuba" xmlUrl="https://www.musicuba.com/feed/" type="rss" />
+      <outline title="Son Cubano" xmlUrl="https://www.soncubano.com/feed/" type="rss" />
+      <outline title="Cuban Jazz" xmlUrl="https://www.cubanjazz.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Cuban Cuisine" xmlUrl="https://www.cubancuisine.com/feed/" type="rss" />
+      <outline title="Cuban Kitchen" xmlUrl="https://www.cubankitchen.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="GoCuba" xmlUrl="https://www.gocuba.ca/feed/" type="rss" />
+      <outline title="Cuban Travel" xmlUrl="https://www.cubantravel.com/feed/" type="rss" />
+      <outline title="Varadero Travel" xmlUrl="https://www.varadero.travel/rss/" type="rss" />
+      <outline title="Explore Cuba" xmlUrl="https://www.explorecuba.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Cuban Economy" xmlUrl="https://www.cubaneconomy.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Code CU" xmlUrl="https://www.codecu.com/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

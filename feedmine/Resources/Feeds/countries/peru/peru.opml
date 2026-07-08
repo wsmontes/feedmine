@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Peru Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="El Comercio" xmlUrl="https://www.elcomercio.pe/rss/" type="rss" />
+      <outline title="Gestion" xmlUrl="https://www.gestion.pe/rss/" type="rss" />
+      <outline title="ATV" xmlUrl="https://www.atv.pe/rss/" type="rss" />
+      <outline title="IDL-Reporteros" xmlUrl="https://www.idl-reporteros.pe/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Depor" xmlUrl="https://www.depor.com/rss/" type="rss" />
+      <outline title="Movistar Deportes" xmlUrl="https://www.movistardeportes.pe/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="FayerWayer" xmlUrl="https://www.fayerwayer.com/feed/" type="rss" />
+      <outline title="Mercado Negro" xmlUrl="https://www.mercadonegro.pe/feed/" type="rss" />
+      <outline title="Digital Peru" xmlUrl="https://www.digitalperu.pe/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="PUCP" xmlUrl="https://www.pucp.edu.pe/rss/" type="rss" />
+      <outline title="UPCH" xmlUrl="https://www.cayetano.edu.pe/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Museo de Arte de Lima" xmlUrl="https://www.mali.pe/rss/" type="rss" />
+      <outline title="Agencia de Noticias Cultural" xmlUrl="https://www.agenciaperu.com/cultural/rss/" type="rss" />
+      <outline title="Cultura Peru" xmlUrl="https://www.culturaperu.org/feed/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Cinemark Peru" xmlUrl="https://www.cinemark-peru.com/rss/" type="rss" />
+      <outline title="Retina Latina" xmlUrl="https://www.retinalatina.org/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Radio Nacional" xmlUrl="https://www.radionacional.com.pe/rss/" type="rss" />
+      <outline title="Musica Peruana" xmlUrl="https://www.musicaperuana.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Buenazo" xmlUrl="https://www.buenazo.pe/rss/" type="rss" />
+      <outline title="Mistura" xmlUrl="https://www.mistura.pe/feed/" type="rss" />
+      <outline title="Comida Peruana" xmlUrl="https://www.comida-peruana.com/feed/" type="rss" />
+      <outline title="Peru Delights" xmlUrl="https://www.perudelights.com/feed/" type="rss" />
+      <outline title="Gastro Peru" xmlUrl="https://www.gastroperu.com/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="LevelUp" xmlUrl="https://www.levelup.com/feed/" type="rss" />
+      <outline title="Tarreo" xmlUrl="https://www.tarreo.com/feed/" type="rss" />
+      <outline title="GamerFocus" xmlUrl="https://www.gamerfocus.co/feed/" type="rss" />
+      <outline title="PlayStation LATAM" xmlUrl="https://blog.latam.playstation.com/feed/" type="rss" />
+      <outline title="Gaming Peru" xmlUrl="https://www.gamingperu.com/feed/" type="rss" />
+      <outline title="Esports Peru" xmlUrl="https://www.esportsperu.com/feed/" type="rss" />
+      <outline title="Peru Gamers" xmlUrl="https://www.perugamers.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Peru Travel" xmlUrl="https://www.peru.travel/rss/" type="rss" />
+      <outline title="Cusco Travel" xmlUrl="https://www.cusco.travel/rss/" type="rss" />
+      <outline title="Lima Travel" xmlUrl="https://www.limatravelperu.com/feed/" type="rss" />
+      <outline title="Y tu que planes" xmlUrl="https://www.ytuqueplanes.com/rss/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="La Mula" xmlUrl="https://www.lamula.pe/feed/" type="rss" />
+      <outline title="El Búho" xmlUrl="https://www.elbuho.pe/feed/" type="rss" />
+      <outline title="Wayka" xmlUrl="https://www.wayka.pe/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="ArchDaily Peru" xmlUrl="https://www.archdaily.pe/pe/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Peru" xmlUrl="https://www.greenpeace.org/peru/feed/" type="rss" />
+      <outline title="WWF Peru" xmlUrl="https://www.wwf.org.pe/rss/" type="rss" />
+      <outline title="SPDA" xmlUrl="https://www.spda.org.pe/feed/" type="rss" />
+      <outline title="SERNANP" xmlUrl="https://www.sernanp.gob.pe/rss/" type="rss" />
+      <outline title="Aidesep" xmlUrl="https://www.aidesep.org.pe/feed/" type="rss" />
+      <outline title="Actualidad Ambiental" xmlUrl="https://www.actualidadambiental.pe/feed/" type="rss" />
+      <outline title="Conservamos por Naturaleza" xmlUrl="https://www.conservamospornaturaleza.org/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Sodimac Peru" xmlUrl="https://www.sodimac.com.pe/sodimac-pe/blog/feed/" type="rss" />
+      <outline title="Promart" xmlUrl="https://www.promart.pe/blog/feed/" type="rss" />
+      <outline title="Cassinelli" xmlUrl="https://www.cassinelli.com.pe/blog/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Museo Larco" xmlUrl="https://www.museolarco.org/rss/" type="rss" />
+      <outline title="Historia del Peru" xmlUrl="https://www.historiadelperu.com/feed/" type="rss" />
+      <outline title="Culturas Peruanas" xmlUrl="https://www.culturasperuanas.com/feed/" type="rss" />
+      <outline title="Arqueologia Peru" xmlUrl="https://www.arqueologiadelperu.com/feed/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="ArchDaily Peru" xmlUrl="https://www.archdaily.pe/pe/feed/" type="rss" />
+      <outline title="CAP" xmlUrl="https://www.cap.org.pe/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Arquitectura y Ciudad" xmlUrl="https://www.arquitecturayciudad.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Crehana Blog" xmlUrl="https://www.crehana.com/blog/feed/" type="rss" />
+      <outline title="Kambista Tech" xmlUrl="https://www.kambista.com/blog/feed/" type="rss" />
+      <outline title="Peru Apps" xmlUrl="https://www.peruapps.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Gestion" xmlUrl="https://www.gestion.pe/rss/" type="rss" />
+      <outline title="Semana Economica" xmlUrl="https://www.semanaeconomica.com/rss/" type="rss" />
+      <outline title="Peru Retail" xmlUrl="https://www.peru-retail.com/feed/" type="rss" />
+      <outline title="Startup Peru" xmlUrl="https://www.startup.pe/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Exitosa" xmlUrl="https://www.exitosanoticias.pe/podcasts/rss/" type="rss" />
+      <outline title="Podcast Peru" xmlUrl="https://www.podcastperu.com/feed/" type="rss" />
+      <outline title="El Buen Librero" xmlUrl="https://www.elbuenlibrero.com/feed/podcast/" type="rss" />
+    </outline>
+<outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

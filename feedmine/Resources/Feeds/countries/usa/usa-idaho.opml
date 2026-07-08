@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Idaho Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Idaho Statesman (Boise)" xmlUrl="https://www.idahostatesman.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Governor Little" xmlUrl="https://gov.idaho.gov/rss" type="rss" />
+        <outline title="ID Legislature" xmlUrl="https://legislature.idaho.gov/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Boise State" xmlUrl="https://www.boisestate.edu/rss" type="rss" />
+      </outline>
+      <outline text="Culture" /></body>
+    </opml>

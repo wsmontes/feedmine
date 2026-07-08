@@ -67,6 +67,7 @@ struct FeedScreen: View {
         }
         .task {
             await loader.start()
+            await loader.refreshBookmarkState()
             updateBadge()
             engine.refresh()
         }
@@ -78,7 +79,7 @@ struct FeedScreen: View {
             if phase == .background {
                 SessionTracker.shared.onBackground()
                 loader.flushWhatsNewQueue()
-                PersistenceManager.shared.saveNow(loader.buildStateWithItems())
+                // PersistenceManager.shared.saveNow(loader.buildStateWithItems()) // REMOVED: migrated to SQLite
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
@@ -292,7 +293,7 @@ struct FeedScreen: View {
 
     private func sectionHeader(_ title: String) -> some View {
         HStack {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(engine.font(for: .sectionHeader))
                 .foregroundStyle(engine.accent)
             Spacer()

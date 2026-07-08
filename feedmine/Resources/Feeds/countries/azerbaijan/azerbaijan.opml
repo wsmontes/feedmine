@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Azerbaijan Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Trend" xmlUrl="https://www.trend.az/rss/" type="rss" />
+      <outline title="Report" xmlUrl="https://www.report.az/rss/" type="rss" />
+      <outline title="Qafqazinfo" xmlUrl="https://www.qafqazinfo.az/rss/" type="rss" />
+      <outline title="Azernews" xmlUrl="https://www.azernews.az/rss/" type="rss" />
+      <outline title="Modern" xmlUrl="https://www.modern.az/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Azerisport" xmlUrl="https://www.azerisport.com/rss/" type="rss" />
+      <outline title="AFFA" xmlUrl="https://www.affa.az/rss/" type="rss" />
+      <outline title="Qarabag FK" xmlUrl="https://www.qarabagh.com/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Tech AZ" xmlUrl="https://www.tech.az/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Education AZ" xmlUrl="https://www.edu.gov.az/rss/" type="rss" />
+    </outline>
+<outline text="Music">
+      <outline title="Eurovision AZ" xmlUrl="https://www.eurovisionaz.com/feed/" type="rss" />
+    </outline>
+<outline text="Travel">
+      <outline title="Explore Azerbaijan" xmlUrl="https://www.exploreazerbaijan.com/feed/" type="rss" />
+      <outline title="Baku Explorer" xmlUrl="https://www.bakuexplorer.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Azerbaijan Business" xmlUrl="https://www.azerbaijanbusiness.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Code Academy Baku" xmlUrl="https://www.code.edu.az/feed/" type="rss" />
+      <outline title="Code AZ" xmlUrl="https://www.code.az/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Switzerland Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="NZZ" xmlUrl="https://www.nzz.ch/recent.rss" type="rss" />
+      <outline title="Tages-Anzeiger" xmlUrl="https://www.tagesanzeiger.ch/rss.html" type="rss" />
+      <outline title="Le Temps" xmlUrl="https://www.letemps.ch/rss/" type="rss" />
+      <outline title="Bluewin" xmlUrl="https://www.bluewin.ch/de/rss/" type="rss" />
+      <outline title="Republik" xmlUrl="https://www.republik.ch/feed/" type="rss" />
+      <outline title="Aargauer Zeitung" xmlUrl="https://www.aargauerzeitung.ch/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="NZZ Sport" xmlUrl="https://www.nzz.ch/sport.rss" type="rss" />
+      <outline title="Tages-Anzeiger Sport" xmlUrl="https://www.tagesanzeiger.ch/sport/rss.html" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Netzwoche" xmlUrl="https://www.netzwoche.ch/rss.xml" type="rss" />
+      <outline title="Swiss IT Magazine" xmlUrl="https://www.itmagazine.ch/rss/" type="rss" />
+      <outline title="Gadget.ch" xmlUrl="https://www.gadget.ch/feed/" type="rss" />
+      <outline title="IT Daily" xmlUrl="https://www.it-daily.net/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="NZZ Science" xmlUrl="https://www.nzz.ch/wissenschaft.rss" type="rss" />
+      <outline title="CERN" xmlUrl="https://home.cern/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="NZZ Kultur" xmlUrl="https://www.nzz.ch/feuilleton.rss" type="rss" />
+      <outline title="Tages-Anzeiger Kultur" xmlUrl="https://www.tagesanzeiger.ch/kultur/rss.html" type="rss" />
+      <outline title="Pro Helvetia" xmlUrl="https://prohelvetia.ch/de/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="OutNow" xmlUrl="https://outnow.ch/feed/" type="rss" />
+      <outline title="Cineuropa CH" xmlUrl="https://cineuropa.org/rss-ch.aspx" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Tages-Anzeiger Musik" xmlUrl="https://www.tagesanzeiger.ch/kultur/musik/rss.html" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Schweizer Familie" xmlUrl="https://www.schweizerfamilie.ch/rss/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="eSports.ch" xmlUrl="https://www.esports.ch/feed/" type="rss" />
+      <outline title="Nintendo CH" xmlUrl="https://www.nintendo.ch/de/News/rss/" type="rss" />
+      <outline title="PocketPC CH" xmlUrl="https://www.pocketpc.ch/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="NZZ Travel" xmlUrl="https://www.nzz.ch/reise.rss" type="rss" />
+      <outline title="Reiseblog CH" xmlUrl="https://www.reiseblog.ch/feed/" type="rss" />
+      <outline title="Swiss Nomads" xmlUrl="https://swissnomads.ch/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Bluewin Blog" xmlUrl="https://www.bluewin.ch/de/rss/" type="rss" />
+      <outline title="Journal B" xmlUrl="https://www.journal-b.ch/feed/" type="rss" />
+      <outline title="Zentralplus" xmlUrl="https://www.zentralplus.ch/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Hochparterre" xmlUrl="https://www.hochparterre.ch/rss/" type="rss" />
+      <outline title="Design Switzerland" xmlUrl="https://www.designswitzerland.ch/rss/" type="rss" />
+      <outline title="ECAL" xmlUrl="https://www.ecal.ch/fr/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Spotter" xmlUrl="https://www.designspotter.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Schweiz" xmlUrl="https://www.greenpeace.ch/de/rss/" type="rss" />
+      <outline title="NZZ Umwelt" xmlUrl="https://www.nzz.ch/umwelt.rss" type="rss" />
+      <outline title="Klimaschutz CH" xmlUrl="https://www.klimaschutz.ch/feed/" type="rss" />
+      <outline title="Alpeninitiative" xmlUrl="https://www.alpeninitiative.ch/rss/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Hornbach CH" xmlUrl="https://www.hornbach.ch/rss/" type="rss" />
+      <outline title="Selbst Machen CH" xmlUrl="https://www.selbstmachen.ch/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="NZZ Geschichte" xmlUrl="https://www.nzz.ch/geschichte.rss" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Hochparterre" xmlUrl="https://www.hochparterre.ch/rss/" type="rss" />
+      <outline title="SIA" xmlUrl="https://www.sia.ch/de/rss/" type="rss" />
+      <outline title="ArchDaily CH" xmlUrl="https://www.archdaily.com/country/switzerland/feed" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="NZZ Wirtschaft" xmlUrl="https://www.nzz.ch/wirtschaft.rss" type="rss" />
+      <outline title="Tages-Anzeiger Wirtschaft" xmlUrl="https://www.tagesanzeiger.ch/wirtschaft/rss.html" type="rss" />
+      <outline title="Startupticker" xmlUrl="https://www.startupticker.ch/de/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="NZZ Podcast" xmlUrl="https://www.nzz.ch/podcast.rss" type="rss" />
+      <outline title="Tages-Anzeiger Podcasts" xmlUrl="https://www.tagesanzeiger.ch/podcast/rss.html" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Foto CH" xmlUrl="https://www.foto-ch.ch/rss/" type="rss" />
+      <outline title="Swiss Photo Club" xmlUrl="https://www.swissphotoclub.ch/feed/" type="rss" />
+      <outline title="NZZ Foto" xmlUrl="https://www.nzz.ch/foto.rss" type="rss" />
+      <outline title="Fotointern" xmlUrl="https://www.fotointern.ch/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="Apfel Blog" xmlUrl="https://www.apfelblog.ch/feed/" type="rss" />
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

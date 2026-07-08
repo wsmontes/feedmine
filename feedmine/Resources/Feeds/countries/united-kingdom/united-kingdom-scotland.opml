@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Scotland Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="BBC Scotland" xmlUrl="https://feeds.bbci.co.uk/news/scotland/rss.xml" type="rss" />
+      <outline title="Daily Record" xmlUrl="https://www.dailyrecord.co.uk/rss.xml" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Celtic FC" xmlUrl="https://www.celticfc.com/feed/" type="rss" />
+    </outline>
+<outline text="Business">
+      <outline title="Scottish Chambers of Commerce" xmlUrl="https://www.scottishchambers.org.uk/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

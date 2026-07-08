@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sicilia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Regione Sicilia" xmlUrl="https://www.regione.sicilia.it/feed/" type="rss" />
+      <outline title="Giornale di Sicilia" xmlUrl="https://www.giornaledisicilia.it/feed/" type="rss" />
+    </outline>
+<outline text="Education">
+      <outline title="Università di Palermo" xmlUrl="https://www.unipa.it/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

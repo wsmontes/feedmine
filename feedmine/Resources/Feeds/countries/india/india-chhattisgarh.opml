@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Chhattisgarh Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Raipur" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672745.cms" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Chhattisgarh Gov" xmlUrl="https://cgstate.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

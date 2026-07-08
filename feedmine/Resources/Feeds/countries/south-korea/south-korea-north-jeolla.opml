@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>North Jeolla Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Jeonbuk Ilbo" xmlUrl="https://www.jeonbuk.co.kr/rss/" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education" /></body>
+    </opml>

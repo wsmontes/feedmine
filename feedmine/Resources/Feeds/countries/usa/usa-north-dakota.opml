@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>North Dakota Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Minot Daily News" xmlUrl="https://www.minotdailynews.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education" />
+      <outline text="Culture" /></body>
+    </opml>

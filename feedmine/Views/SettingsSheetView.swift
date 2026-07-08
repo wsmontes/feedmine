@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsSheetView: View {
     @Environment(FeedLoader.self) private var loader
+    @Environment(LocaleManager.self) private var localeManager
     @AppStorage("showDebugBar") private var showDebugBar = true
     @AppStorage("prefetchImages") private var prefetchImages = true
     @AppStorage("nightMode") private var nightMode = false
@@ -16,6 +17,7 @@ struct SettingsSheetView: View {
     @State private var showResetConfirmation = false
     @State private var showPalettePicker = false
     @State private var showFontStylePicker = false
+    @State private var showRestartAlert = false
 
     private var topCategory: String? {
         let readItems = loader.items.filter { loader.isRead($0.id) }
@@ -49,6 +51,24 @@ struct SettingsSheetView: View {
                         .pickerStyle(.segmented)
                         .frame(width: 200)
                     }
+                }
+
+                // MARK: - Language
+                Section {
+                    NavigationLink {
+                        languagePickerView
+                    } label: {
+                        HStack {
+                            Text("Language")
+                            Spacer()
+                            Text(localeManager.selectedLanguage.displayName)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                } header: {
+                    Text("Language")
+                } footer: {
+                    Text("Changing the language requires restarting the app.")
                 }
 
                 // MARK: - Circadian Design
@@ -133,7 +153,7 @@ struct SettingsSheetView: View {
                     .disabled(loader.readItemIDs.isEmpty)
                     .confirmationDialog("Clear all read history?", isPresented: $showClearReadConfirmation) {
                         Button("Clear All", role: .destructive) {
-                            withAnimation { loader.readItemIDs.removeAll() }
+                            // loader.readItemIDs.removeAll() // REMOVED: now managed by FeedStore. Task 11 wires clear.
                         }
                     }
 
@@ -145,26 +165,18 @@ struct SettingsSheetView: View {
                     .disabled(loader.bookmarkedIDs.isEmpty)
                     .confirmationDialog("Remove all bookmarks?", isPresented: $showClearBookmarksConfirmation) {
                         Button("Clear All", role: .destructive) {
-                            withAnimation { loader.bookmarkedIDs.removeAll() }
+                            // loader.bookmarkedIDs.removeAll() // REMOVED: now managed by FeedStore. Task 11 wires clear.
                         }
                     }
                 }
 
                 // MARK: - Data Management
                 Section("Data") {
-                    Button {
-                        let state = loader.buildState()
-                        let json = (try? JSONEncoder().encode(state)) ?? Data()
-                        let url = FileManager.default.temporaryDirectory.appendingPathComponent("feedmine_data.json")
-                        try? json.write(to: url)
-                        let av = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                           let root = windowScene.windows.first?.rootViewController {
-                            root.present(av, animated: true)
-                        }
-                    } label: {
+                    // Export My Data — REMOVED (PersistenceManager deleted). Task 12 restores export.
+                    Button {} label: {
                         Label("Export My Data", systemImage: "arrow.up.doc.fill")
                     }
+                    .disabled(true)
 
                     Button(role: .destructive) {
                         showResetConfirmation = true
@@ -176,16 +188,8 @@ struct SettingsSheetView: View {
                         isPresented: $showResetConfirmation
                     ) {
                         Button("Reset Everything", role: .destructive) {
-                            withAnimation {
-                                loader.readItemIDs.removeAll()
-                                loader.bookmarkedIDs.removeAll()
-                                loader.disabledSourceIDs.removeAll()
-                                loader.disabledRegions.removeAll()
-                                // Re-apply default: all countries off
-                                let allCountryRegions = Set(loader.sources.filter { $0.isCountryFeed }.map(\.region))
-                                loader.disabledRegions.formUnion(allCountryRegions)
-                                PersistenceManager.shared.save(loader.buildState())
-                            }
+                            // Reset handled by SQLite — Task 11 wires clear methods on FeedStore.
+                            // PersistenceManager.shared.save(loader.buildState()) // REMOVED: migrated to SQLite
                         }
                     }
 
@@ -254,6 +258,12 @@ struct SettingsSheetView: View {
             }
             .sheet(isPresented: $showFontStylePicker) {
                 fontStylePickerSheet
+            }
+            .alert(String(localized: "Restart Required", comment: "Language change alert title"),
+                   isPresented: $showRestartAlert) {
+                Button(String(localized: "OK", comment: "Dismiss alert")) { }
+            } message: {
+                Text("Please restart FeedMine to apply the new language.")
             }
         }
         .presentationDetents([.medium, .large])
@@ -355,6 +365,35 @@ struct SettingsSheetView: View {
         case .sfMono: return "SF Mono — technical, fixed"
         case .georgia: return "Georgia — serif headlines, SF body"
         }
+    }
+
+    // MARK: - Language Picker
+
+    private var languagePickerView: some View {
+        List {
+            ForEach(LocaleManager.supportedLanguages) { language in
+                Button {
+                    if language.code != localeManager.selectedLanguage.code {
+                        localeManager.selectLanguage(language)
+                        showRestartAlert = true
+                    }
+                } label: {
+                    HStack {
+                        Text(language.displayName)
+                            .foregroundStyle(.primary)
+                        Spacer()
+                        Text(language.code)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        if language.code == localeManager.selectedLanguage.code {
+                            Image(systemName: "checkmark")
+                                .foregroundStyle(CircadianEngine.shared.accent)
+                        }
+                    }
+                }
+            }
+        }
+        .navigationTitle(String(localized: "Language", comment: "Language picker title"))
     }
 }
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hunan Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics">
+        <outline title="Hunan Gov" xmlUrl="http://www.hunan.gov.cn/rss" type="rss" />
+        <outline title="Changsha Gov" xmlUrl="http://www.changsha.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

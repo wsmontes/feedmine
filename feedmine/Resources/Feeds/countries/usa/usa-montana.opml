@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Montana Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Montana Free Press" xmlUrl="https://montanafreepress.org/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="MT Legislature" xmlUrl="https://leg.mt.gov/rss" type="rss" />
+      </outline>
+      <outline text="Education" />
+      <outline text="Culture" /></body>
+    </opml>

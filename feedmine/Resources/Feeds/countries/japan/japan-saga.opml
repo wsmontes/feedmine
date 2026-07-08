@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Saga Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Saga Shimbun" xmlUrl="https://www.saga-s.co.jp/rss/" type="rss" />
+      </outline>
+      <outline text="Politics" /></body>
+    </opml>

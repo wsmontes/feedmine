@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Saudi Arabia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Saudi Gazette" xmlUrl="https://www.saudigazette.com.sa/rss/" type="rss" />
+      <outline title="Okaz" xmlUrl="https://www.okaz.com.sa/rss/" type="rss" />
+      <outline title="Al-Madina" xmlUrl="https://www.al-madina.com/rss/" type="rss" />
+      <outline title="Al-Watan" xmlUrl="https://www.alwatan.com.sa/rss/" type="rss" />
+      <outline title="SPA" xmlUrl="https://www.spa.gov.sa/rss/" type="rss" />
+      <outline title="Sabq" xmlUrl="https://www.sabq.org/rss/" type="rss" />
+      <outline title="Al-Bilad" xmlUrl="https://www.albiladpress.com/rss/" type="rss" />
+      <outline title="Makkah Newspaper" xmlUrl="https://www.makkahnewspaper.com/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Arriyadiyah" xmlUrl="https://www.arriyadiyah.com/rss/" type="rss" />
+      <outline title="Dawri Plus" xmlUrl="https://www.dawriplus.com/rss/" type="rss" />
+      <outline title="Al Nassr" xmlUrl="https://www.alnassr.com/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Saudi Gamer" xmlUrl="https://www.saudigamer.com/rss/" type="rss" />
+      <outline title="Unlimit Tech" xmlUrl="https://www.unlimit-tech.com/feed/" type="rss" />
+      <outline title="TechRadar ME" xmlUrl="https://www.techradar.com/me/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="KAUST" xmlUrl="https://www.kaust.edu.sa/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Misk Art" xmlUrl="https://www.miskartinstitute.org/rss/" type="rss" />
+      <outline title="Jeddah Season" xmlUrl="https://www.jeddahseason.com/rss/" type="rss" />
+      <outline title="Riyadh Season" xmlUrl="https://www.riyadhseason.com/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Red Sea Film Festival" xmlUrl="https://www.redseafilmfest.com/rss/" type="rss" />
+      <outline title="Film Saudi" xmlUrl="https://www.filmsaudi.com/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Rotana Music" xmlUrl="https://www.rotana.net/rss/" type="rss" />
+      <outline title="Al-Fan" xmlUrl="https://www.alfan.com/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Saudi Food" xmlUrl="https://www.saudifood.com/feed/" type="rss" />
+      <outline title="Taste Saudi" xmlUrl="https://www.tastesaudi.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Saudia Airlines" xmlUrl="https://www.saudia.com/rss/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Saudi Gamer" xmlUrl="https://www.saudigamer.com/rss/" type="rss" />
+      <outline title="Arab Gamers" xmlUrl="https://www.arabgamers.com/rss/" type="rss" />
+      <outline title="Esports Arabia" xmlUrl="https://www.esportsarabia.com/feed/" type="rss" />
+      <outline title="VGA4A" xmlUrl="https://www.vga4a.com/rss/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Riyadh Connect" xmlUrl="https://www.riyadhconnect.com/feed/" type="rss" />
+      <outline title="Jeddah Blog" xmlUrl="https://www.jeddah-blog.com/feed/" type="rss" />
+      <outline title="Blue Abaya" xmlUrl="https://www.blueabaya.com/feed/" type="rss" />
+      <outline title="Saudi Scoop" xmlUrl="https://www.saudiscoop.com/feed/" type="rss" />
+      <outline title="American Bedu" xmlUrl="https://www.americanbedu.com/feed/" type="rss" />
+      <outline title="Saudi Woman" xmlUrl="https://www.saudiwoman.me/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Misk Design" xmlUrl="https://www.miskartinstitute.org/design/rss/" type="rss" />
+      <outline title="Arabesque Design" xmlUrl="https://www.arabesquedesign.com/feed/" type="rss" />
+      <outline title="Interior Design SA" xmlUrl="https://www.interiordesignsa.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace ME" xmlUrl="https://www.greenpeace.org/mena/feed/" type="rss" />
+      <outline title="Saudi Wildlife" xmlUrl="https://www.swa.gov.sa/rss/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Craft Saudi" xmlUrl="https://www.craftsaudi.com/feed/" type="rss" />
+      <outline title="Decor Saudi" xmlUrl="https://www.decorsaudi.com/feed/" type="rss" />
+    </outline>
+<outline text="Architecture">
+      <outline title="Omrania" xmlUrl="https://www.omrania.com/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="GCC Architecture" xmlUrl="https://www.gccarchitecture.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Saudi Codes" xmlUrl="https://www.saudicodes.com/feed/" type="rss" />
+      <outline title="STC Dev" xmlUrl="https://www.stc.com.sa/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Argaam" xmlUrl="https://www.argaam.com/rss/" type="rss" />
+      <outline title="Saudi Vision 2030" xmlUrl="https://www.vision2030.gov.sa/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Finjan" xmlUrl="https://www.finjanpodcast.com/feed/" type="rss" />
+      <outline title="Arab Cast" xmlUrl="https://www.arabcast.org/rss/" type="rss" />
+      <outline title="Kerning Cultures" xmlUrl="https://www.kerningcultures.com/feed/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Saudi Photography" xmlUrl="https://www.saudiphotography.com/feed/" type="rss" />
+      <outline title="KSA Photos" xmlUrl="https://www.ksaphotos.com/feed/" type="rss" />
+      <outline title="Misk Photo" xmlUrl="https://www.miskartinstitute.org/photo/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

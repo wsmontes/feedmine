@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Paraná Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Gazeta do Povo" xmlUrl="https://www.gazetadopovo.com.br/feed/" type="rss" />
+        <outline title="Bem Paraná" xmlUrl="https://www.bemparana.com.br/feed/" type="rss" />
+        <outline title="Band News Curitiba" xmlUrl="https://bandnewsfmcuritiba.com/feed/" type="rss" />
+        <outline title="Diário dos Campos (PG)" xmlUrl="https://www.diariodoscampos.com.br/feed/" type="rss" />
+        <outline title="Folha de Londrina" xmlUrl="https://www.folhadelondrina.com.br/feed/" type="rss" />
+        <outline title="Tribuna do Paraná" xmlUrl="https://www.tribunapr.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Athletico Paranaense" xmlUrl="https://www.athletico.com.br/feed/" type="rss" />
+        <outline title="Coritiba" xmlUrl="https://www.coritiba.com.br/feed/" type="rss" />
+        <outline title="Paraná Clube" xmlUrl="https://www.paranaclube.com.br/feed/" type="rss" />
+        <outline title="Federação Paranaense de Futebol" xmlUrl="https://www.federacaopr.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Festival de Teatro de Curitiba" xmlUrl="https://www.festivaldecuritiba.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="UFPR" xmlUrl="https://www.ufpr.br/feed/" type="rss" />
+        <outline title="PUCPR" xmlUrl="https://www.pucpr.br/feed/" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="Parque Tecnológico Itaipu" xmlUrl="https://www.pti.org.br/feed/" type="rss" />
+        <outline title="Hotmilk PUCPR" xmlUrl="https://hotmilk.pucpr.br/feed/" type="rss" />
+        <outline title="Vale do Pinhão" xmlUrl="https://www.valedopinhao.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Gazeta do Povo Economia" xmlUrl="https://www.gazetadopovo.com.br/economia/feed/" type="rss" />
+        <outline title="Fecomércio PR" xmlUrl="https://www.fecomerciopr.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Food">
+        <outline title="Curitiba Honesta" xmlUrl="https://curitibahonesta.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Blogs">
+        <outline title="Blog do Esmael" xmlUrl="https://www.esmaelmorais.com.br/feed/" type="rss" />
+        <outline title="Blog do Tarobá" xmlUrl="https://www.tarobanews.com/feed/" type="rss" />
+        <outline title="Curitiba Cult" xmlUrl="https://curitibacult.com.br/feed/" type="rss" />
+        <outline title="Curitiba de Graça" xmlUrl="https://curitibadegraca.com.br/feed/" type="rss" />
+      </outline></body>
+      <outline text="Podcasts">
+        <outline title="Braincast" xmlUrl="https://www.b9.com.br/braincast/feed/" type="rss" />
+        <outline title="Scicast" xmlUrl="https://www.deviante.com.br/podcasts/scicast/feed/" type="rss" />
+      </outline>
+      <outline text="YouTube">
+        <outline title="Coisa de Nerd" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZx8ZHB4Bh8hDVoXpl9ifVQ" type="rss" />
+        <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+      </outline>
+      <outline text="Cities">
+        <outline text="Maringá">
+          <outline title="O Diário Maringá" xmlUrl="https://www.odiariomaringa.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Maringá" xmlUrl="https://www.maringa.pr.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Cascavel">
+          <outline title="Gazeta de Cascavel" xmlUrl="https://www.gazetadecascavel.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Cascavel" xmlUrl="https://www.cascavel.pr.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Ponta Grossa">
+          <outline title="Diário dos Campos" xmlUrl="https://www.diariodoscampos.com.br/feed/" type="rss" />
+          <outline title="Prefeitura PG" xmlUrl="https://www.pontagrossa.pr.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Foz do Iguaçu">
+          <outline title="Click Foz" xmlUrl="https://www.clickfozdoiguacu.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Foz" xmlUrl="https://www.fozdoiguacu.pr.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Guarapuava">
+          <outline title="Rede Sul News" xmlUrl="https://www.redesuldenoticias.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Guarapuava" xmlUrl="https://www.guarapuava.pr.gov.br/feed/" type="rss" />
+        </outline>
+      </outline>
+
+    </opml>

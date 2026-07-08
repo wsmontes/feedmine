@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Prince Edward Island Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="The Guardian (Charlottetown)" xmlUrl="https://www.theguardian.pe.ca/feed/" type="rss" />
+      <outline title="CBC PEI" xmlUrl="https://www.cbc.ca/webfeed/rss/rss-pei" type="rss" />
+      <outline title="PEI Government News" xmlUrl="https://www.princeedwardisland.ca/en/feed" type="rss" />
+      <outline title="Journal Pioneer (Summerside)" xmlUrl="https://www.journalpioneer.com/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Charlottetown Islanders" xmlUrl="https://chl.ca/lhjmq-islanders/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Confederation Centre of the Arts" xmlUrl="https://www.confederationcentre.com/feed/" type="rss" />
+      <outline title="PEI Arts Council" xmlUrl="https://www.peiartscouncil.com/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Holland College" xmlUrl="https://www.hollandcollege.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Greater Charlottetown Area Chamber" xmlUrl="https://www.charlottetownchamber.com/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

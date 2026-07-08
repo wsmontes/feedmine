@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Washington Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Seattle Times" xmlUrl="https://www.seattletimes.com/feed/" type="rss" />
+        <outline title="Spokesman-Review (Spokane)" xmlUrl="https://www.spokesman.com/feeds/stories/" type="rss" />
+        <outline title="Tacoma News Tribune" xmlUrl="https://www.thenewstribune.com/rss" type="rss" />
+        <outline title="Bellingham Herald" xmlUrl="https://www.bellinghamherald.com/rss" type="rss" />
+        <outline title="Everett Herald" xmlUrl="https://www.heraldnet.com/rss" type="rss" />
+        <outline title="Tri-City Herald" xmlUrl="https://www.tri-cityherald.com/rss" type="rss" />
+        <outline title="Olympian (Olympia)" xmlUrl="https://www.theolympian.com/rss" type="rss" />
+        <outline title="The Stranger" xmlUrl="https://www.thestranger.com/rss" type="rss" />
+        <outline title="Crosscut" xmlUrl="https://crosscut.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="WA Legislature" xmlUrl="https://leg.wa.gov/rss" type="rss" />
+        <outline title="WA State Standard" xmlUrl="https://washingtonstatestandard.com/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Puget Sound Biz Journal" xmlUrl="https://feeds.bizjournals.com/seattle" type="rss" />
+        <outline title="Spokane Journal of Biz" xmlUrl="https://www.spokanejournal.com/rss" type="rss" />
+        <outline title="Seattle Magazine" xmlUrl="https://www.seattlemag.com/rss" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="GeekWire" xmlUrl="https://www.geekwire.com/feed/" type="rss" />
+        <outline title="Microsoft News" xmlUrl="https://news.microsoft.com/feed/" type="rss" />
+        <outline title="Amazon Blog" xmlUrl="https://www.aboutamazon.com/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="UW News" xmlUrl="https://www.washington.edu/news/feed/" type="rss" />
+        <outline title="Washington State U" xmlUrl="https://news.wsu.edu/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Seattle Kraken" xmlUrl="https://www.nhl.com/kraken/rss/news" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Eater Seattle" xmlUrl="https://seattle.eater.com/rss/index.xml" type="rss" />
+      </outline>
+      <outline text="Blogs">
+        <outline title="Seattle Bike Blog" xmlUrl="https://www.seattlebikeblog.com/feed/" type="rss" />
+        <outline title="Capitol Hill Seattle" xmlUrl="https://www.capitolhillseattle.com/feed/" type="rss" />
+        <outline title="West Seattle Blog" xmlUrl="https://westseattleblog.com/feed/" type="rss" />
+      </outline></body>
+    </opml>

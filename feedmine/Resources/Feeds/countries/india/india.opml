@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>India National Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India" xmlUrl="https://timesofindia.indiatimes.com/rssfeedstopstories.cms" type="rss" />
+        <outline title="The Hindu" xmlUrl="https://www.thehindu.com/news/feeder/default.rss" type="rss" />
+        <outline title="Indian Express" xmlUrl="https://indianexpress.com/feed/" type="rss" />
+        <outline title="Hindustan Times" xmlUrl="https://www.hindustantimes.com/rss/topnews/rssfeed.xml" type="rss" />
+        <outline title="NDTV" xmlUrl="https://feeds.feedburner.com/ndtvnews-top-stories" type="rss" />
+        <outline title="India Today" xmlUrl="https://www.indiatoday.in/rss/1206578" type="rss" />
+        <outline title="The Wire" xmlUrl="https://thewire.in/feed/" type="rss" />
+        <outline title="The Quint" xmlUrl="https://www.thequint.com/feed" type="rss" />
+        <outline title="BBC India" xmlUrl="https://feeds.bbci.co.uk/news/world/asia/india/rss.xml" type="rss" />
+        <outline title="PTI News" xmlUrl="https://www.ptinews.com/feed" type="rss" />
+        <outline title="The Print" xmlUrl="https://theprint.in/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Economic Times" xmlUrl="https://economictimes.indiatimes.com/rssfeedstopstories.cms" type="rss" />
+        <outline title="Mint" xmlUrl="https://www.livemint.com/rss/news" type="rss" />
+        <outline title="YourStory" xmlUrl="https://yourstory.com/feed" type="rss" />
+        <outline title="Inc42" xmlUrl="https://inc42.com/feed/" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="Gadgets 360" xmlUrl="https://feeds.feedburner.com/gadgets360-latest" type="rss" />
+        <outline title="Inc42 Tech" xmlUrl="https://inc42.com/feed/" type="rss" />
+        <outline title="Medianama" xmlUrl="https://www.medianama.com/feed/" type="rss" />
+        <outline title="Trak.in" xmlUrl="https://trak.in/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="ESPN Cricinfo" xmlUrl="https://www.espncricinfo.com/rss/content/story/feeds/0.xml" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Frontline" xmlUrl="https://frontline.thehindu.com/feeder/default.rss" type="rss" />
+      </outline></body>
+    </opml>

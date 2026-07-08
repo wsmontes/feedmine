@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Liaoning Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Shenyang Daily" xmlUrl="https://www.sydaily.com/rss/" type="rss" />
+        <outline title="Dalian News" xmlUrl="https://www.daliannews.com/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Liaoning Gov" xmlUrl="http://www.ln.gov.cn/rss" type="rss" />
+        <outline title="Shenyang Gov" xmlUrl="http://www.shenyang.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Dalian FTZ" xmlUrl="http://www.dlftz.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

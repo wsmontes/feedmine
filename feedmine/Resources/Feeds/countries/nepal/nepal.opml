@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nepal Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Kathmandu Post" xmlUrl="https://www.kathmandupost.com/rss/" type="rss" />
+      <outline title="Himalayan Times" xmlUrl="https://www.thehimalayantimes.com/rss/" type="rss" />
+      <outline title="Online Khabar" xmlUrl="https://www.onlinekhabar.com/rss/" type="rss" />
+      <outline title="Ekantipur" xmlUrl="https://www.ekantipur.com/rss/" type="rss" />
+      <outline title="Annapurna Post" xmlUrl="https://www.annapurnapost.com/rss/" type="rss" />
+      <outline title="Image Khabar" xmlUrl="https://www.imagekhabar.com/rss/" type="rss" />
+      <outline title="Ratopati" xmlUrl="https://www.ratopati.com/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Kathmandu Post Sports" xmlUrl="https://www.kathmandupost.com/sports/rss/" type="rss" />
+      <outline title="ANFA" xmlUrl="https://www.the-anfa.com/rss/" type="rss" />
+      <outline title="Cricket Nepal" xmlUrl="https://www.cricketnepal.org/rss/" type="rss" />
+      <outline title="NPC Nepal" xmlUrl="https://www.npc.gov.np/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="TechSansar" xmlUrl="https://www.techsansar.com/feed/" type="rss" />
+      <outline title="IT Nepal" xmlUrl="https://www.itnepal.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="KU Nepal" xmlUrl="https://www.ku.edu.np/rss/" type="rss" />
+      <outline title="Pokhara University" xmlUrl="https://www.pu.edu.np/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Kathmandu Post Culture" xmlUrl="https://www.kathmandupost.com/culture/rss/" type="rss" />
+      <outline title="Nepal Art" xmlUrl="https://www.nepalart.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Nepal Music" xmlUrl="https://www.nepalmusic.com/feed/" type="rss" />
+      <outline title="Radio Kantipur" xmlUrl="https://www.radiokantipur.com/rss/" type="rss" />
+      <outline title="Hits FM Nepal" xmlUrl="https://www.hitsfm.com.np/rss/" type="rss" />
+      <outline title="Music Nepal" xmlUrl="https://www.musicnepal.com/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Nepal Food" xmlUrl="https://www.nepalfood.com/feed/" type="rss" />
+      <outline title="Momo Nepal" xmlUrl="https://www.momonepal.com/feed/" type="rss" />
+      <outline title="Kathmandu Food" xmlUrl="https://www.kathmandufood.com/feed/" type="rss" />
+      <outline title="Food Nepal" xmlUrl="https://www.foodnepal.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Nepal Tourism" xmlUrl="https://www.welcomenepal.com/rss/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Kathmandu Post Biz" xmlUrl="https://www.kathmandupost.com/money/rss/" type="rss" />
+      <outline title="NRB" xmlUrl="https://www.nrb.org.np/rss/" type="rss" />
+      <outline title="Nepal Economy" xmlUrl="https://www.nepaleconomy.com/feed/" type="rss" />
+      <outline title="Business Nepal" xmlUrl="https://www.businessnepal.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

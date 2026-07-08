@@ -11,6 +11,33 @@ struct CountryDetailScreen: View {
 
     var body: some View {
         List {
+            // Sub-regions section — shown when the country has region-level OPML files
+            if country.hasRegions {
+                Section {
+                    ForEach(country.regions) { region in
+                        NavigationLink {
+                            RegionDetailScreen(region: region, country: country)
+                        } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: "mappin.and.ellipse")
+                                    .font(.title3)
+                                    .foregroundStyle(.secondary)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(region.name).font(.body)
+                                    Text("\(region.feedCount) feeds")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                                Spacer()
+                            }
+                        }
+                    }
+                } header: {
+                    Label("Regions (\(country.regions.count))", systemImage: "map.fill")
+                }
+            }
+
+            // Country-level feeds grouped by category
             ForEach(feedsByCategory, id: \.0) { category, sources in
                 Section {
                     ForEach(sources, id: \.url) { source in

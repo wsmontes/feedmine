@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Distrito Federal Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Correio Braziliense" xmlUrl="https://www.correiobraziliense.com.br/feed/" type="rss" />
+      <outline title="Metrópoles" xmlUrl="https://www.metropoles.com/feed/" type="rss" />
+      <outline title="Jornal de Brasília" xmlUrl="https://jornaldebrasilia.com.br/feed/" type="rss" />
+      <outline title="Brasil 247" xmlUrl="https://www.brasil247.com/feed/" type="rss" />
+      <outline title="Agência Brasil" xmlUrl="https://agenciabrasil.ebc.com.br/feed/" type="rss" />
+      <outline title="Poder360" xmlUrl="https://www.poder360.com.br/feed/" type="rss" />
+      <outline title="Blog do Noblat" xmlUrl="https://www.metropoles.com/blog-do-noblat/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Brasiliense FC" xmlUrl="https://www.brasiliensefc.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Cultura DF" xmlUrl="https://www.cultura.df.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="IFB" xmlUrl="https://www.ifb.edu.br/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Fecomércio DF" xmlUrl="https://www.fecomerciodf.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Blog da Cidade" xmlUrl="https://blogdacidade.com.br/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

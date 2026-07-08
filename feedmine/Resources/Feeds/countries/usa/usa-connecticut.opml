@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Connecticut Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Waterbury Republican-American" xmlUrl="https://www.rep-am.com/rss" type="rss" />
+        <outline title="CT Mirror" xmlUrl="https://ctmirror.org/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Governor Lamont" xmlUrl="https://portal.ct.gov/rss" type="rss" />
+      </outline>
+      <outline text="Business" />
+      <outline text="Education">
+        <outline title="UConn Today" xmlUrl="https://today.uconn.edu/feed/" type="rss" />
+        <outline title="Trinity College" xmlUrl="https://www.trincoll.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="UConn Huskies" xmlUrl="https://uconnhuskies.com/rss" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="CT Magazine" xmlUrl="https://www.connecticutmag.com/rss" type="rss" />
+      </outline></body>
+    </opml>

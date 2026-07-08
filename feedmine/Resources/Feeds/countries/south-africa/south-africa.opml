@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>South Africa Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="IOL" xmlUrl="https://www.iol.co.za/rss/" type="rss" />
+      <outline title="Daily Maverick" xmlUrl="https://www.dailymaverick.co.za/rss/" type="rss" />
+      <outline title="Mail &amp; Guardian" xmlUrl="https://www.mg.co.za/rss/" type="rss" />
+      <outline title="SABC News" xmlUrl="https://www.sabcnews.com/rss/" type="rss" />
+      <outline title="Citizen" xmlUrl="https://www.citizen.co.za/rss/" type="rss" />
+      <outline title="The South African" xmlUrl="https://www.thesouthafrican.com/feed/" type="rss" />
+      <outline title="Fin24" xmlUrl="https://www.fin24.com/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Sport24" xmlUrl="https://www.sport24.co.za/rss/" type="rss" />
+      <outline title="SuperSport" xmlUrl="https://www.supersport.com/rss/" type="rss" />
+      <outline title="KickOff" xmlUrl="https://www.kickoff.com/rss/" type="rss" />
+      <outline title="Soccer Laduma" xmlUrl="https://www.soccerladuma.co.za/rss/" type="rss" />
+      <outline title="Cricket SA" xmlUrl="https://www.cricket.co.za/rss/" type="rss" />
+      <outline title="The South African Sport" xmlUrl="https://www.thesouthafrican.com/sport/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="ITWeb" xmlUrl="https://www.itweb.co.za/rss/" type="rss" />
+      <outline title="TechCentral" xmlUrl="https://www.techcentral.co.za/rss/" type="rss" />
+      <outline title="htxt.africa" xmlUrl="https://www.htxt.co.za/feed/" type="rss" />
+      <outline title="Stuff SA" xmlUrl="https://www.stuff.co.za/rss/" type="rss" />
+      <outline title="Burn Media" xmlUrl="https://www.burnmedia.co.za/feed/" type="rss" />
+      <outline title="Memeburn" xmlUrl="https://www.memeburn.com/rss/" type="rss" />
+      <outline title="Bandwidth Blog" xmlUrl="https://www.bandwidthblog.com/feed/" type="rss" />
+      <outline title="VentureBurn" xmlUrl="https://www.ventureburn.com/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Science SABC" xmlUrl="https://www.sabcnews.com/science/rss/" type="rss" />
+      <outline title="SciBraai" xmlUrl="https://www.scibraai.co.za/feed/" type="rss" />
+      <outline title="SANSA" xmlUrl="https://www.sansa.org.za/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Art Times" xmlUrl="https://www.arttimes.co.za/rss/" type="rss" />
+      <outline title="Between 10 and 5" xmlUrl="https://www.10and5.com/feed/" type="rss" />
+      <outline title="Design Indaba" xmlUrl="https://www.designindaba.com/rss/" type="rss" />
+      <outline title="Zeitz MOCAA" xmlUrl="https://www.zeitzmocaa.museum/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Channel24" xmlUrl="https://www.channel24.co.za/rss/" type="rss" />
+      <outline title="Nu Metro" xmlUrl="https://www.numetro.co.za/rss/" type="rss" />
+      <outline title="Ster-Kinekor" xmlUrl="https://www.sterkinekor.com/rss/" type="rss" />
+      <outline title="NFVF" xmlUrl="https://www.nfvf.co.za/rss/" type="rss" />
+      <outline title="Durban Film Festival" xmlUrl="https://www.durbanfilmfest.com/rss/" type="rss" />
+      <outline title="Fortress of Solitude" xmlUrl="https://www.fortressofsolitude.co.za/feed/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Channel24 Music" xmlUrl="https://www.channel24.co.za/Music/rss/" type="rss" />
+      <outline title="Texx and the City" xmlUrl="https://www.texxandthecity.com/feed/" type="rss" />
+      <outline title="Slikour On Life" xmlUrl="https://www.slikouronlife.co.za/rss/" type="rss" />
+      <outline title="SA Music News" xmlUrl="https://www.samusicnews.co.za/feed/" type="rss" />
+      <outline title="YFM" xmlUrl="https://www.yfm.co.za/rss/" type="rss" />
+      <outline title="Kaya FM" xmlUrl="https://www.kayafm.co.za/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Food24" xmlUrl="https://www.food24.com/rss/" type="rss" />
+      <outline title="Eat Out" xmlUrl="https://www.eatout.co.za/rss/" type="rss" />
+      <outline title="Crush Magazine" xmlUrl="https://www.crushmag-online.com/feed/" type="rss" />
+      <outline title="Woolworths Taste" xmlUrl="https://www.woolworths.co.za/taste/rss/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="MWEB Gamezone" xmlUrl="https://www.mweb.co.za/games/rss/" type="rss" />
+      <outline title="Critical Hit SA" xmlUrl="https://www.criticalhit.net/feed/" type="rss" />
+      <outline title="Lazygamer" xmlUrl="https://www.lazygamer.net/feed/" type="rss" />
+      <outline title="Fortress of Solitude" xmlUrl="https://www.fortressofsolitude.co.za/gaming/feed/" type="rss" />
+      <outline title="Nintendo SA" xmlUrl="https://www.nintendo.co.za/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Getaway Magazine" xmlUrl="https://www.getaway.co.za/rss/" type="rss" />
+      <outline title="Travelstart" xmlUrl="https://www.travelstart.co.za/blog/feed/" type="rss" />
+      <outline title="SA Tourism" xmlUrl="https://www.southafrica.net/rss/" type="rss" />
+      <outline title="Travel News SA" xmlUrl="https://www.travelnews.co.za/rss/" type="rss" />
+      <outline title="Cape Town Tourism" xmlUrl="https://www.capetown.travel/rss/" type="rss" />
+      <outline title="Kruger Park" xmlUrl="https://www.krugerpark.co.za/rss/" type="rss" />
+      <outline title="Explore Sideways" xmlUrl="https://www.exploresideways.com/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Daily Maverick" xmlUrl="https://www.dailymaverick.co.za/rss/" type="rss" />
+      <outline title="2OceansVibe" xmlUrl="https://www.2oceansvibe.com/feed/" type="rss" />
+      <outline title="Zululand Observer" xmlUrl="https://www.zululandobserver.co.za/rss/" type="rss" />
+      <outline title="Roodepoort Record" xmlUrl="https://www.roodepoortrecord.co.za/rss/" type="rss" />
+      <outline title="SA People" xmlUrl="https://www.sapeople.com/feed/" type="rss" />
+      <outline title="GroundUp" xmlUrl="https://www.groundup.org.za/rss/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Design Indaba" xmlUrl="https://www.designindaba.com/rss/" type="rss" />
+      <outline title="Between 10 and 5" xmlUrl="https://www.10and5.com/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="House and Leisure" xmlUrl="https://www.houseandleisure.co.za/rss/" type="rss" />
+      <outline title="VISI Magazine" xmlUrl="https://www.visi.co.za/rss/" type="rss" />
+      <outline title="SA Decor" xmlUrl="https://www.sadecor.co.za/feed/" type="rss" />
+      <outline title="Creative Week SA" xmlUrl="https://www.creativeweek.co.za/feed/" type="rss" />
+      <outline title="Loeries" xmlUrl="https://www.loeries.com/rss/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Africa" xmlUrl="https://www.greenpeace.org/africa/en/feed/" type="rss" />
+      <outline title="Endangered Wildlife Trust" xmlUrl="https://www.ewt.org.za/rss/" type="rss" />
+      <outline title="WESSA" xmlUrl="https://www.wessa.org.za/rss/" type="rss" />
+      <outline title="Green Times" xmlUrl="https://www.thegreentimes.co.za/feed/" type="rss" />
+      <outline title="Food and Trees Africa" xmlUrl="https://www.trees.org.za/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Builders SA" xmlUrl="https://www.builders.co.za/blog/feed/" type="rss" />
+      <outline title="Garden and Home" xmlUrl="https://www.gardenandhome.co.za/rss/" type="rss" />
+      <outline title="Homeology" xmlUrl="https://www.homeology.co.za/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Iziko Museums" xmlUrl="https://www.iziko.org.za/rss/" type="rss" />
+      <outline title="Robben Island" xmlUrl="https://www.robben-island.org.za/rss/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Architecture ZA" xmlUrl="https://www.architecturesa.com/rss/" type="rss" />
+      <outline title="Leading Architecture" xmlUrl="https://www.leadingarchitecture.co.za/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="House and Leisure" xmlUrl="https://www.houseandleisure.co.za/rss/" type="rss" />
+      <outline title="SA Building Review" xmlUrl="https://www.sabuildingreview.co.za/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="BSG Blog" xmlUrl="https://www.bsg.co.za/blog/feed/" type="rss" />
+      <outline title="SovTech Blog" xmlUrl="https://www.sovtech.co.za/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Fin24" xmlUrl="https://www.fin24.com/rss/" type="rss" />
+      <outline title="Moneyweb" xmlUrl="https://www.moneyweb.co.za/rss/" type="rss" />
+      <outline title="Bizcommunity" xmlUrl="https://www.bizcommunity.com/RSS/" type="rss" />
+      <outline title="Venture Burn" xmlUrl="https://www.ventureburn.com/rss/" type="rss" />
+      <outline title="SME South Africa" xmlUrl="https://www.smesouthafrica.co.za/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="CliffCentral" xmlUrl="https://www.cliffcentral.com/rss/" type="rss" />
+      <outline title="702" xmlUrl="https://www.702.co.za/rss/" type="rss" />
+      <outline title="CapeTalk" xmlUrl="https://www.capetalk.co.za/rss/" type="rss" />
+      <outline title="Kaya FM Podcast" xmlUrl="https://www.kayafm.co.za/podcast/rss/" type="rss" />
+      <outline title="Solid Gold Podcasts" xmlUrl="https://www.solidgold.co.za/rss/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Fuji SA" xmlUrl="https://www.fujifilm.co.za/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="iStore Blog" xmlUrl="https://www.istore.co.za/blog/feed/" type="rss" />
+    </outline>
+<outline text="Health">
+      <outline title="Department of Health" xmlUrl="https://www.health.gov.za/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

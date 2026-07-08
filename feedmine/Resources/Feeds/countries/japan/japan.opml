@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Japan National Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="NHK News (JP)" xmlUrl="https://www.nhk.or.jp/rss/news/cat0.xml" type="rss" />
+        <outline title="Asahi Shimbun" xmlUrl="https://www.asahi.com/rss/asahi/newsheadlines.rdf" type="rss" />
+        <outline title="Mainichi Shimbun" xmlUrl="https://mainichi.jp/rss/etc/mainichi-flash.rss" type="rss" />
+        <outline title="Japan Times" xmlUrl="https://www.japantimes.co.jp/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Nikkei Asian Review" xmlUrl="https://asia.nikkei.com/rss/feed/nar" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="ITmedia" xmlUrl="https://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml" type="rss" />
+        <outline title="Gizmodo Japan" xmlUrl="https://www.gizmodo.jp/index.xml" type="rss" />
+      </outline>
+      <outline text="Sports">
+        <outline title="Nikkan Sports" xmlUrl="https://www.nikkansports.com/rss/" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="Anime News Network" xmlUrl="https://www.animenewsnetwork.com/newsfeed/" type="rss" />
+      </outline></body>
+    </opml>

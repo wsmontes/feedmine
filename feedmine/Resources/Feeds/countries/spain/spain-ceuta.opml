@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head><title>Ceuta Feeds</title></head>
+  <body>
+    <outline text="News">
+      <outline title="El Faro de Ceuta" xmlUrl="https://www.elfarodeceuta.es/feed/" type="rss" />
+      <outline title="Ciudad de Ceuta" xmlUrl="https://www.ceuta.es/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

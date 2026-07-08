@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Amazonas Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Amazonas Atual" xmlUrl="https://amazonasatual.com.br/feed/" type="rss" />
+        <outline title="Em Tempo" xmlUrl="https://www.emtempo.com.br/feed/" type="rss" />
+        <outline title="Prefeitura de Manaus" xmlUrl="https://www.manaus.am.gov.br/feed/" type="rss" />
+        <outline title="Portal Manaus" xmlUrl="https://www.portalmanaus.com.br/feed/" type="rss" />
+        <outline title="Manaus Alerta" xmlUrl="https://www.manausalerta.com.br/feed/" type="rss" />
+        <outline title="Portal do Holanda" xmlUrl="https://www.portaldoholanda.com.br/feed/" type="rss" />
+      </outline>
+      <outline text="Sports">
+      </outline>
+      <outline text="Culture">
+        <outline title="Cultura AM" xmlUrl="https://www.cultura.am.gov.br/feed/" type="rss" />
+      </outline>
+      <outline text="Education">
+      </outline>
+      <outline text="Environment">
+        <outline title="Amazônia Real" xmlUrl="https://amazoniareal.com.br/feed/" type="rss" />
+        <outline title="Projeto Saúde e Alegria" xmlUrl="https://www.saudeealegria.org.br/feed/" type="rss" />
+        <outline title="Fundação Amazonas Sustentável" xmlUrl="https://www.fas-amazonas.org/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="FIEAM" xmlUrl="https://www.fieam.org.br/feed/" type="rss" />
+      </outline>
+      <outline text="Food">
+      </outline>
+      <outline text="Blogs">
+        <outline title="Blog da Floresta" xmlUrl="https://blogdafloresta.com.br/feed/" type="rss" />
+      </outline></body>
+      <outline text="Podcasts">
+        <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+        <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+      </outline>
+      <outline text="YouTube">
+        <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+        <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+      </outline>
+      <outline text="Cities">
+        <outline text="Manaus">
+          <outline title="Portal Manaus" xmlUrl="https://www.portalmanaus.com.br/feed/" type="rss" />
+          <outline title="Manaus Alerta" xmlUrl="https://www.manausalerta.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Manaus" xmlUrl="https://www.manaus.am.gov.br/feed/" type="rss" />
+        </outline>
+        <outline text="Parintins">
+          <outline title="Parintins News" xmlUrl="https://www.parintinsnews.com.br/feed/" type="rss" />
+          <outline title="Prefeitura Parintins" xmlUrl="https://www.parintins.am.gov.br/feed/" type="rss" />
+        </outline>
+      </outline>
+
+    </opml>

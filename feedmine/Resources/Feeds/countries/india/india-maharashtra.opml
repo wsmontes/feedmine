@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Maharashtra Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Mumbai" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms" type="rss" />
+        <outline title="Times of India Pune" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128669940.cms" type="rss" />
+        <outline title="Indian Express Mumbai" xmlUrl="https://indianexpress.com/section/cities/mumbai/feed/" type="rss" />
+        <outline title="Indian Express Pune" xmlUrl="https://indianexpress.com/section/cities/pune/feed/" type="rss" />
+        <outline title="Free Press Journal" xmlUrl="https://www.freepressjournal.in/rss" type="rss" />
+        <outline title="Loksatta" xmlUrl="https://www.loksatta.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Maharashtra Gov" xmlUrl="https://www.maharashtra.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Economic Times Mumbai" xmlUrl="https://economictimes.indiatimes.com/rssfeeds/13357302.cms" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Univ of Mumbai" xmlUrl="https://mu.ac.in/rss" type="rss" />
+        <outline title="TISS Mumbai" xmlUrl="https://www.tiss.edu/rss" type="rss" />
+      </outline>
+      <outline text="Sports">
+</outline>
+      <outline text="Culture">
+        <outline title="Maharashtra Tourism" xmlUrl="https://www.maharashtratourism.gov.in/rss" type="rss" />
+      </outline></body>
+    </opml>

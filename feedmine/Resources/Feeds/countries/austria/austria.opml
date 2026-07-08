@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Austria Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Der Standard" xmlUrl="https://www.derstandard.at/rss" type="rss" />
+      <outline title="Die Presse" xmlUrl="https://www.diepresse.com/rss" type="rss" />
+      <outline title="Kleine Zeitung" xmlUrl="https://www.kleinezeitung.at/rss" type="rss" />
+      <outline title="Tiroler Tageszeitung" xmlUrl="https://www.tt.com/rss" type="rss" />
+      <outline title="Falter" xmlUrl="https://www.falter.at/rss" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Der Standard Sport" xmlUrl="https://www.derstandard.at/sport/rss" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Der Standard Tech" xmlUrl="https://www.derstandard.at/web/rss" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Der Standard Wissenschaft" xmlUrl="https://www.derstandard.at/wissenschaft/rss" type="rss" />
+      <outline title="APA Science" xmlUrl="https://science.apa.at/rss/" type="rss" />
+      <outline title="Naturhistorisches Museum" xmlUrl="https://www.nhm-wien.ac.at/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Der Standard Kultur" xmlUrl="https://www.derstandard.at/kultur/rss" type="rss" />
+      <outline title="The Gap" xmlUrl="https://www.thegap.at/feed/" type="rss" />
+      <outline title="Volume" xmlUrl="https://volume.at/feed/" type="rss" />
+      <outline title="Musikverein" xmlUrl="https://www.musikverein.at/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Uncut" xmlUrl="https://www.uncut.at/rss/" type="rss" />
+      <outline title="Diagonale" xmlUrl="https://www.diagonale.at/rss/" type="rss" />
+      <outline title="FC Gloria" xmlUrl="https://www.fc-gloria.at/feed/" type="rss" />
+      <outline title="Der Standard Film" xmlUrl="https://www.derstandard.at/film/rss" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Volume Music" xmlUrl="https://volume.at/musik/feed/" type="rss" />
+      <outline title="Skug" xmlUrl="https://skug.at/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Der Standard Essen" xmlUrl="https://www.derstandard.at/essen/rss" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Der Standard Games" xmlUrl="https://www.derstandard.at/games/rss" type="rss" />
+      <outline title="Nintendo AT" xmlUrl="https://www.nintendo.at/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Der Standard Reise" xmlUrl="https://www.derstandard.at/reise/rss" type="rss" />
+      <outline title="OBB Blog" xmlUrl="https://blog.oebb.at/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Kobuk" xmlUrl="https://www.kobuk.at/feed/" type="rss" />
+      <outline title="ZackZack" xmlUrl="https://zackzack.at/feed/" type="rss" />
+      <outline title="Moment Magazine" xmlUrl="https://www.moment.at/feed/" type="rss" />
+      <outline title="The Gap Blog" xmlUrl="https://www.thegap.at/feed/" type="rss" />
+      <outline title="Augustin" xmlUrl="https://www.augustin.or.at/feed/" type="rss" />
+      <outline title="Progress" xmlUrl="https://www.progress-online.at/feed/" type="rss" />
+      <outline title="Datum" xmlUrl="https://www.datum.at/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Design Austria" xmlUrl="https://www.designaustria.at/rss/" type="rss" />
+      <outline title="Design Monat Graz" xmlUrl="https://www.designmonat.at/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Kunst und Design AT" xmlUrl="https://www.kunstunddesign.at/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="WWF Osterreich" xmlUrl="https://www.wwf.at/rss/" type="rss" />
+      <outline title="Der Standard Umwelt" xmlUrl="https://www.derstandard.at/umwelt/rss" type="rss" />
+      <outline title="Bio Osterreich" xmlUrl="https://www.bio-austria.at/rss/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Hornbach Blog AT" xmlUrl="https://www.hornbach.at/blog/feed/" type="rss" />
+      <outline title="Selber Machen AT" xmlUrl="https://www.selbermachen.at/feed/" type="rss" />
+      <outline title="Garten AT" xmlUrl="https://www.garten.at/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Haus der Geschichte" xmlUrl="https://www.hdgoe.at/rss" type="rss" />
+      <outline title="Wien Museum" xmlUrl="https://www.wienmuseum.at/rss" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Architekturzentrum Wien" xmlUrl="https://www.azw.at/rss/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="ArchDaily AT" xmlUrl="https://www.archdaily.com/country/austria/feed" type="rss" />
+      <outline title="Solid" xmlUrl="https://www.solidbau.at/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Bitmovin Blog" xmlUrl="https://bitmovin.com/feed/" type="rss" />
+      <outline title="Runtastic Tech" xmlUrl="https://www.runtastic.com/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Der Standard Wirtschaft" xmlUrl="https://www.derstandard.at/wirtschaft/rss" type="rss" />
+      <outline title="Brutkasten" xmlUrl="https://www.brutkasten.com/feed/" type="rss" />
+      <outline title="Der Brutkasten" xmlUrl="https://www.derbrutkasten.com/feed/" type="rss" />
+      <outline title="Leadersnet" xmlUrl="https://www.leadersnet.at/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Der Standard Podcasts" xmlUrl="https://www.derstandard.at/podcast/rss" type="rss" />
+      <outline title="ZIB Podcast" xmlUrl="https://zib.orf.at/podcast/rss/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Camera Austria" xmlUrl="https://camera-austria.at/rss/" type="rss" />
+      <outline title="Der Standard Foto" xmlUrl="https://www.derstandard.at/foto/rss" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+<outline text="Podcasts">
+      <outline title="ORF Podcasts" xmlUrl="https://sound.orf.at/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

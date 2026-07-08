@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wakayama Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Wakayama Shimpo" xmlUrl="https://www.wakayamashimpo.co.jp/rss/" type="rss" />
+      </outline>
+      <outline text="Politics" /></body>
+    </opml>

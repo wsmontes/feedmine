@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Canarias Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Canarias7" xmlUrl="https://www.canarias7.es/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Universidad de La Laguna" xmlUrl="https://www.ull.es/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

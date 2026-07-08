@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Guangdong Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Guangzhou Daily" xmlUrl="https://www.gzdaily.cn/rss/" type="rss" />
+        <outline title="GD Today" xmlUrl="https://www.newsgd.com/rss/" type="rss" />
+        <outline title="Shenzhen News" xmlUrl="http://www.sznews.com/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Guangzhou Gov" xmlUrl="http://www.gz.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="GD Economic News" xmlUrl="http://www.gdeconomy.com/rss/" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="Tencent Tech" xmlUrl="https://new.qq.com/rss/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Jinan Univ GZ" xmlUrl="https://www.jnu.edu.cn/rss" type="rss" />
+      </outline>
+      <outline text="Culture">
+        <outline title="That's PRD" xmlUrl="https://www.thatsmags.com/rss" type="rss" />
+      </outline></body>
+    </opml>

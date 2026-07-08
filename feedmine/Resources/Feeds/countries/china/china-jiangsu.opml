@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Jiangsu Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Jiangsu Daily" xmlUrl="https://www.jsdaily.cn/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Suzhou Gov" xmlUrl="http://www.suzhou.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="Suzhou Industrial Park" xmlUrl="http://www.sipac.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Technology" />
+      <outline text="Education" /></body>
+    </opml>

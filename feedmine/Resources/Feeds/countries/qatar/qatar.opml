@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Qatar Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Al Jazeera" xmlUrl="https://www.aljazeera.com/xml/rss/all.xml" type="rss" />
+      <outline title="Gulf Times" xmlUrl="https://www.gulf-times.com/rss/" type="rss" />
+      <outline title="The Peninsula" xmlUrl="https://www.thepeninsulaqatar.com/rss/" type="rss" />
+      <outline title="Qatar Tribune" xmlUrl="https://www.qatar-tribune.com/rss/" type="rss" />
+      <outline title="Al Sharq" xmlUrl="https://www.al-sharq.com/rss/" type="rss" />
+      <outline title="Al Raya" xmlUrl="https://www.raya.com/rss/" type="rss" />
+      <outline title="Al Arab Qatar" xmlUrl="https://www.alarab.qa/rss/" type="rss" />
+      <outline title="Doha News" xmlUrl="https://www.dohanews.co/feed/" type="rss" />
+      <outline title="Al Watan" xmlUrl="https://www.al-watan.com/rss/" type="rss" />
+      <outline title="Lusail News" xmlUrl="https://www.lusailnews.net/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Gulf Times Sport" xmlUrl="https://www.gulf-times.com/sport/rss/" type="rss" />
+      <outline title="Al Sadd" xmlUrl="https://www.al-saddclub.com/rss/" type="rss" />
+      <outline title="Al Duhail" xmlUrl="https://www.duhailsc.qa/rss/" type="rss" />
+      <outline title="Aspire" xmlUrl="https://www.aspire.qa/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Gulf Times Tech" xmlUrl="https://www.gulf-times.com/business/tech/rss/" type="rss" />
+      <outline title="Qatar IT" xmlUrl="https://www.qatarit.com/feed/" type="rss" />
+      <outline title="Mada Qatar" xmlUrl="https://www.mada.org.qa/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="QNRF" xmlUrl="https://www.qnrf.org/rss/" type="rss" />
+      <outline title="Sidra Medicine" xmlUrl="https://www.sidra.org/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Qatar Culture" xmlUrl="https://www.qatarculture.com/feed/" type="rss" />
+      <outline title="Doha Film Institute" xmlUrl="https://www.dohafilminstitute.com/rss/" type="rss" />
+      <outline title="Qatar National Library" xmlUrl="https://www.qnl.qa/rss/" type="rss" />
+      <outline title="Qatar Arts" xmlUrl="https://www.qatararts.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Qatar Living Travel" xmlUrl="https://www.qatarliving.com/travel/rss/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Gulf Times Biz" xmlUrl="https://www.gulf-times.com/business/rss/" type="rss" />
+      <outline title="Qatar Business" xmlUrl="https://www.qatarbusiness.com/feed/" type="rss" />
+      <outline title="Qatar Chamber" xmlUrl="https://www.qatarchamber.com/rss/" type="rss" />
+      <outline title="Qatar Economy" xmlUrl="https://www.qatareconomy.com/feed/" type="rss" />
+      <outline title="QFC" xmlUrl="https://www.qfc.qa/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

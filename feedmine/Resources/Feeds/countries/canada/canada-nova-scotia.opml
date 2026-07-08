@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nova Scotia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Halifax Chronicle Herald" xmlUrl="https://www.thechronicleherald.ca/feed/" type="rss" />
+      <outline title="Global Halifax" xmlUrl="https://globalnews.ca/halifax/feed/" type="rss" />
+      <outline title="Nova Scotia Government News" xmlUrl="https://novascotia.ca/news/feed/" type="rss" />
+      <outline title="Cape Breton Post" xmlUrl="https://www.capebretonpost.com/feed/" type="rss" />
+      <outline title="The Coast" xmlUrl="https://www.thecoast.ca/feed/" type="rss" />
+      <outline title="Halifax Examiner" xmlUrl="https://www.halifaxexaminer.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Cape Breton Eagles" xmlUrl="https://chl.ca/lhjmq-eagles/feed/" type="rss" />
+      <outline title="Halifax Mooseheads" xmlUrl="https://chl.ca/lhjmq-mooseheads/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Art Gallery of Nova Scotia" xmlUrl="https://www.artgalleryofnovascotia.ca/feed/" type="rss" />
+      <outline title="Halifax Public Libraries" xmlUrl="https://www.halifaxpubliclibraries.ca/feed/" type="rss" />
+    </outline>
+<outline text="Business">
+      <outline title="Halifax Chamber of Commerce" xmlUrl="https://www.halifaxchamber.com/feed/" type="rss" />
+    </outline>
+    <outline text="Cities">
+      <outline text="Sydney">
+        <outline title="Cape Breton Regional Municipality" xmlUrl="https://www.cbrm.ns.ca/feed/" type="rss" />
+      </outline>
+</outline>
+  </body>
+</opml>

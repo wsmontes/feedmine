@@ -324,9 +324,9 @@ struct FeedItemCardView: View {
         // Longer-form sources hint at deeper content
         let cat = item.category.lowercased()
         if cat.contains("science") || cat.contains("tech") || cat.contains("programming") {
-            return "\(minutes + 1) min read"
+            return String(localized: "\(minutes + 1) min read", comment: "Reading time estimate")
         }
-        return "\(minutes) min read"
+        return String(localized: "\(minutes) min read", comment: "Reading time estimate")
     }
 
     private static let relativeFormatter: RelativeDateTimeFormatter = {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Extremadura Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Hoy" xmlUrl="https://www.hoy.es/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Universidad de Extremadura" xmlUrl="https://www.unex.es/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

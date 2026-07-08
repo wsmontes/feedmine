@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Castilla y León Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="El Norte de Castilla" xmlUrl="https://www.elnortedecastilla.es/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

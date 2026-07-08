@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Croatia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Index HR" xmlUrl="https://www.index.hr/rss/" type="rss" />
+      <outline title="Vecernji List" xmlUrl="https://www.vecernji.hr/rss/" type="rss" />
+      <outline title="24Sata" xmlUrl="https://www.24sata.hr/rss/" type="rss" />
+      <outline title="Tportal" xmlUrl="https://www.tportal.hr/rss/" type="rss" />
+      <outline title="Dnevnik" xmlUrl="https://www.dnevnik.hr/rss/" type="rss" />
+      <outline title="Slobodna Dalmacija" xmlUrl="https://www.slobodnadalmacija.hr/rss/" type="rss" />
+      <outline title="Novi List" xmlUrl="https://www.novilist.hr/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="24Sata Sport" xmlUrl="https://www.24sata.hr/sport/rss/" type="rss" />
+      <outline title="Germanijak" xmlUrl="https://www.germanijak.hr/rss/" type="rss" />
+      <outline title="HNS" xmlUrl="https://www.hns-cff.hr/rss/" type="rss" />
+      <outline title="Dinamo Zagreb" xmlUrl="https://www.gnkdinamo.hr/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Bug HR" xmlUrl="https://www.bug.hr/rss/" type="rss" />
+      <outline title="Racunalo" xmlUrl="https://www.racunalo.com/feed/" type="rss" />
+      <outline title="24Sata Tech" xmlUrl="https://www.24sata.hr/tech/rss/" type="rss" />
+      <outline title="Mob HR" xmlUrl="https://www.mob.hr/feed/" type="rss" />
+      <outline title="GEEK HR" xmlUrl="https://www.geek.hr/feed/" type="rss" />
+      <outline title="NETOKRAT" xmlUrl="https://www.netokracija.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="UniRI" xmlUrl="https://www.uniri.hr/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Klovićevi Dvori" xmlUrl="https://www.galerijaklovic.hr/rss/" type="rss" />
+      <outline title="Culturenet" xmlUrl="https://www.culturenet.hr/rss/" type="rss" />
+      <outline title="Arteist" xmlUrl="https://www.arteist.hr/feed/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="CineStar" xmlUrl="https://www.blitz-cinestar.hr/rss/" type="rss" />
+      <outline title="Cineplexx HR" xmlUrl="https://www.cineplexx.hr/rss/" type="rss" />
+      <outline title="Pula Film Festival" xmlUrl="https://www.pulafilmfestival.hr/rss/" type="rss" />
+      <outline title="Zagreb Film Festival" xmlUrl="https://www.zff.hr/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Muzika HR" xmlUrl="https://www.muzika.hr/rss/" type="rss" />
+      <outline title="Ravno Do Dna" xmlUrl="https://www.ravnododna.com/feed/" type="rss" />
+      <outline title="Ziher" xmlUrl="https://www.ziher.hr/feed/" type="rss" />
+      <outline title="Radio 101" xmlUrl="https://www.radio101.hr/rss/" type="rss" />
+      <outline title="Narodni Radio" xmlUrl="https://www.narodni.hr/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Croatian Food" xmlUrl="https://www.croatianfood.com/feed/" type="rss" />
+      <outline title="24Sata Gastro" xmlUrl="https://www.24sata.hr/gastro/rss/" type="rss" />
+      <outline title="Croatian Cuisine" xmlUrl="https://www.croatiancuisine.com/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="HCL" xmlUrl="https://www.hcl.hr/rss/" type="rss" />
+      <outline title="Ffa HR" xmlUrl="https://www.ffa.hr/feed/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="24Sata Travel" xmlUrl="https://www.24sata.hr/travel/rss/" type="rss" />
+      <outline title="Zagreb Travel" xmlUrl="https://www.infozagreb.hr/rss/" type="rss" />
+      <outline title="Hvar Travel" xmlUrl="https://www.tzhvar.hr/rss/" type="rss" />
+      <outline title="Plitvice Lakes" xmlUrl="https://www.np-plitvicka-jezera.hr/rss/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Srednja HR" xmlUrl="https://www.srednja.hr/feed/" type="rss" />
+      <outline title="Forum TM" xmlUrl="https://www.forum.tm/feed/" type="rss" />
+      <outline title="Libela" xmlUrl="https://www.libela.org/feed/" type="rss" />
+      <outline title="Faktograf" xmlUrl="https://www.faktograf.hr/feed/" type="rss" />
+      <outline title="GONG" xmlUrl="https://www.gong.hr/feed/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Dizajn HR" xmlUrl="https://www.dizajn.hr/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="Croatian Design" xmlUrl="https://www.croatiandesign.com/feed/" type="rss" />
+      <outline title="Zagreb Design Week" xmlUrl="https://www.zagrebdesignweek.com/rss/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Greenpeace Croatia" xmlUrl="https://www.greenpeace.org/croatia/feed/" type="rss" />
+      <outline title="Plavi Svijet" xmlUrl="https://www.plavi-svijet.org/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Home Croatia" xmlUrl="https://www.homecroatia.com/feed/" type="rss" />
+      <outline title="Dom i Vrt" xmlUrl="https://www.domivrt.hr/feed/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Arheologija HR" xmlUrl="https://www.arheologija.hr/feed/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="Pogledaj" xmlUrl="https://www.pogledaj.to/feed/" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="ArchDaily Croatia" xmlUrl="https://www.archdaily.com/country/croatia/feed/" type="rss" />
+      <outline title="UHA" xmlUrl="https://www.uha.hr/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Five Minutes" xmlUrl="https://www.fiveminutes.eu/feed/" type="rss" />
+      <outline title="CROZ Blog" xmlUrl="https://www.croz.net/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Poslovni" xmlUrl="https://www.poslovni.hr/rss/" type="rss" />
+      <outline title="ZSE" xmlUrl="https://www.zse.hr/rss/" type="rss" />
+      <outline title="HGK" xmlUrl="https://www.hgk.hr/rss/" type="rss" />
+      <outline title="Business Croatia" xmlUrl="https://www.businesscroatia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="24Sata Podcast" xmlUrl="https://www.24sata.hr/podcast/rss/" type="rss" />
+      <outline title="Yammat FM" xmlUrl="https://www.yammat.fm/rss/" type="rss" />
+      <outline title="Enter HR" xmlUrl="https://www.enterzagreb.hr/rss/" type="rss" />
+      <outline title="Podcast Inkubator" xmlUrl="https://www.podcastinkubator.com/feed/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="Split Photo" xmlUrl="https://www.splitphoto.com/feed/" type="rss" />
+      <outline title="Fotoklub Zagreb" xmlUrl="https://www.fotoklubzagreb.hr/feed/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

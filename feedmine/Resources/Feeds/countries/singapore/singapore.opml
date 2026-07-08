@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Singapore Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="CNA" xmlUrl="https://www.channelnewsasia.com/rss/" type="rss" />
+      <outline title="Business Times" xmlUrl="https://www.businesstimes.com.sg/rss/" type="rss" />
+      <outline title="Mothership" xmlUrl="https://www.mothership.sg/feed/" type="rss" />
+      <outline title="Tamil Murasu" xmlUrl="https://www.tamilmurasu.com.sg/rss/" type="rss" />
+      <outline title="The Independent SG" xmlUrl="https://www.theindependent.sg/feed/" type="rss" />
+      <outline title="Rice Media" xmlUrl="https://www.ricemedia.co/feed/" type="rss" />
+      <outline title="Wake Up SG" xmlUrl="https://www.wakeupsg.com/feed/" type="rss" />
+      <outline title="MustShareNews" xmlUrl="https://www.mustsharenews.com/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Football SG" xmlUrl="https://www.fas.org.sg/rss/" type="rss" />
+      <outline title="One Championship" xmlUrl="https://www.onefc.com/rss/" type="rss" />
+      <outline title="SINGSOC" xmlUrl="https://www.singaporeolympics.com/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Vulcan Post" xmlUrl="https://www.vulcanpost.com/feed/" type="rss" />
+      <outline title="Geek Culture" xmlUrl="https://www.geekculture.co/feed/" type="rss" />
+      <outline title="Fintech SG" xmlUrl="https://www.fintechnews.sg/feed/" type="rss" />
+      <outline title="SGFIN" xmlUrl="https://www.sgfin.tech/feed/" type="rss" />
+      <outline title="OpenGov Asia" xmlUrl="https://www.opengovasia.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="NUS" xmlUrl="https://www.nus.edu.sg/rss/" type="rss" />
+      <outline title="SMU" xmlUrl="https://www.smu.edu.sg/rss/" type="rss" />
+      <outline title="SUTD" xmlUrl="https://www.sutd.edu.sg/rss/" type="rss" />
+      <outline title="Science Centre SG" xmlUrl="https://www.science.edu.sg/rss/" type="rss" />
+      <outline title="IMDA" xmlUrl="https://www.imda.gov.sg/rss/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Straits Times Arts" xmlUrl="https://www.straitstimes.com/life/arts/rss/" type="rss" />
+      <outline title="Plural Art" xmlUrl="https://www.pluralartmag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="The Projector" xmlUrl="https://www.theprojector.sg/rss/" type="rss" />
+      <outline title="Sinema" xmlUrl="https://www.sinema.sg/feed/" type="rss" />
+      <outline title="SGIFF" xmlUrl="https://www.sgiff.com/rss/" type="rss" />
+      <outline title="Asian Film Archive" xmlUrl="https://www.asianfilmarchive.org/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="NUS Arts Music" xmlUrl="https://www.nusartsfestival.com/rss/" type="rss" />
+      <outline title="Sofar SG" xmlUrl="https://www.sofarsounds.com/singapore/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="SethLui" xmlUrl="https://www.sethlui.com/feed/" type="rss" />
+      <outline title="LadyIronChef" xmlUrl="https://www.ladyironchef.com/feed/" type="rss" />
+      <outline title="I Eat I Shoot" xmlUrl="https://www.ieatishootipost.sg/feed/" type="rss" />
+      <outline title="Rubbish Eat Rubbish Grow" xmlUrl="https://www.rubbisheatrubbishgrow.com/feed/" type="rss" />
+      <outline title="Ate Too Much" xmlUrl="https://www.atetoomuch.com/feed/" type="rss" />
+      <outline title="Michelin Guide SG" xmlUrl="https://www.guide.michelin.com/sg/rss/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Geek Culture Games" xmlUrl="https://www.geekculture.co/gaming/feed/" type="rss" />
+      <outline title="GameAxis" xmlUrl="https://www.gameaxis.com/feed/" type="rss" />
+      <outline title="Asia Game Festival" xmlUrl="https://www.gamescom.asia/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Straits Times Travel" xmlUrl="https://www.straitstimes.com/life/travel/rss/" type="rss" />
+      <outline title="Little Day Out" xmlUrl="https://www.littledayout.com/feed/" type="rss" />
+      <outline title="Travel Wander" xmlUrl="https://www.travelwander.com/feed/" type="rss" />
+      <outline title="Pohtecktoes" xmlUrl="https://www.pohtecktoes.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Business Times" xmlUrl="https://www.businesstimes.com.sg/rss/" type="rss" />
+      <outline title="DollarsAndSense" xmlUrl="https://www.dollarsandsense.sg/feed/" type="rss" />
+    </outline>
+<outline text="Photography">
+      <outline title="The Photographic Society" xmlUrl="https://www.pss.org.sg/rss/" type="rss" />
+      <outline title="Canon SG" xmlUrl="https://www.canon.com.sg/rss/" type="rss" />
+      <outline title="Objectifs" xmlUrl="https://www.objectifs.com.sg/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

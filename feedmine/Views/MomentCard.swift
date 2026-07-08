@@ -14,7 +14,7 @@ struct MomentCard: View {
                     .frame(width: 3)
                     .padding(.vertical, 2)
 
-                Text(greeting)
+                Text(LocalizedStringKey(greeting))
                     .font(engine.font(for: .momentCard))
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)

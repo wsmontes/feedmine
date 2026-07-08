@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sichuan Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Sichuan News" xmlUrl="http://www.newssc.org/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Sichuan Gov" xmlUrl="http://www.sc.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Business">
+</outline>
+      <outline text="Technology">
+        <outline title="Tianfu Software Park" xmlUrl="http://www.tfsp.net/rss/" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Sichuan Univ" xmlUrl="https://www.scu.edu.cn/rss" type="rss" />
+        <outline title="SWUFE" xmlUrl="https://www.swufe.edu.cn/rss" type="rss" />
+      </outline></body>
+    </opml>

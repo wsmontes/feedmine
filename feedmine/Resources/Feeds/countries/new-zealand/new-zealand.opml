@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>New Zealand Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="NZ Herald" xmlUrl="https://www.nzherald.co.nz/rss/" type="rss" />
+      <outline title="RNZ" xmlUrl="https://www.rnz.co.nz/rss/" type="rss" />
+      <outline title="The Press" xmlUrl="https://www.thepress.co.nz/rss/" type="rss" />
+      <outline title="Waikato Times" xmlUrl="https://www.waikatotimes.co.nz/rss/" type="rss" />
+      <outline title="Dominion Post" xmlUrl="https://www.dominionpost.co.nz/rss/" type="rss" />
+      <outline title="Newsroom" xmlUrl="https://www.newsroom.co.nz/rss/" type="rss" />
+      <outline title="Maori TV" xmlUrl="https://www.maoritelevision.com/rss/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="NZ Football" xmlUrl="https://www.nzfootball.co.nz/rss/" type="rss" />
+      <outline title="NZ Sport" xmlUrl="https://www.nzsport.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="IT Brief NZ" xmlUrl="https://www.itbrief.co.nz/rss/" type="rss" />
+      <outline title="NZ Tech" xmlUrl="https://www.nztech.org.nz/rss/" type="rss" />
+      <outline title="Reseller News" xmlUrl="https://www.reseller.co.nz/rss/" type="rss" />
+      <outline title="CIO NZ" xmlUrl="https://www.cio.co.nz/rss/" type="rss" />
+      <outline title="Computerworld NZ" xmlUrl="https://www.computerworld.co.nz/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="Sciblogs" xmlUrl="https://www.sciblogs.co.nz/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="City Gallery Wellington" xmlUrl="https://www.citygallery.org.nz/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="NZ Musician" xmlUrl="https://www.nzmusician.co.nz/rss/" type="rss" />
+      <outline title="The Rock FM" xmlUrl="https://www.therock.net.nz/rss/" type="rss" />
+      <outline title="ZM" xmlUrl="https://www.zmonline.com/rss/" type="rss" />
+      <outline title="Mai FM" xmlUrl="https://www.maifm.co.nz/rss/" type="rss" />
+      <outline title="Hauraki" xmlUrl="https://www.hauraki.co.nz/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Cuisine NZ" xmlUrl="https://www.cuisine.co.nz/rss/" type="rss" />
+      <outline title="Bite NZ" xmlUrl="https://www.bite.co.nz/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="NZ Travel Guide" xmlUrl="https://www.nztravelguide.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="NBR" xmlUrl="https://www.nbr.co.nz/rss/" type="rss" />
+      <outline title="Interest NZ" xmlUrl="https://www.interest.co.nz/rss/" type="rss" />
+      <outline title="NZ Shareholders" xmlUrl="https://www.nzshareholders.co.nz/rss/" type="rss" />
+      <outline title="NZ Business" xmlUrl="https://www.nzbusiness.com/feed/" type="rss" />
+      <outline title="Business NZ" xmlUrl="https://www.businessnz.org.nz/rss/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Xero Engineering" xmlUrl="https://www.xero.com/blog/feed/" type="rss" />
+      <outline title="Vend Engineering" xmlUrl="https://www.vendhq.com/blog/feed/" type="rss" />
+      <outline title="Rocket Lab" xmlUrl="https://www.rocketlabusa.com/updates/rss/" type="rss" />
+      <outline title="Tech NZ" xmlUrl="https://www.technz.com/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Mai FM Podcasts" xmlUrl="https://www.maifm.co.nz/podcasts/rss/" type="rss" />
+      <outline title="The Rock Podcast" xmlUrl="https://www.therock.net.nz/podcasts/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

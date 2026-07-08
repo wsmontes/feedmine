@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Russia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="TASS" xmlUrl="https://tass.ru/rss/v2.xml" type="rss" />
+      <outline title="RIA Novosti" xmlUrl="https://ria.ru/export/rss2/index.xml" type="rss" />
+      <outline title="Interfax" xmlUrl="https://www.interfax.ru/rss.asp" type="rss" />
+      <outline title="Kommersant" xmlUrl="https://www.kommersant.ru/RSS/main.xml" type="rss" />
+      <outline title="Vedomosti" xmlUrl="https://www.vedomosti.ru/rss/news" type="rss" />
+      <outline title="Lenta.ru" xmlUrl="https://lenta.ru/rss/" type="rss" />
+      <outline title="Meduza" xmlUrl="https://meduza.io/rss/all" type="rss" />
+      <outline title="BBC Russian" xmlUrl="https://feeds.bbci.co.uk/russian/rss.xml" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="RIA Sport" xmlUrl="https://rsport.ria.ru/export/rss2/index.xml" type="rss" />
+      <outline title="TASS Sport" xmlUrl="https://tass.ru/rss/sport.xml" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Habr" xmlUrl="https://habr.com/ru/rss/all/all/" type="rss" />
+      <outline title="3DNews" xmlUrl="https://3dnews.ru/news/rss/" type="rss" />
+      <outline title="IXBT" xmlUrl="https://www.ixbt.com/export/rss.xml" type="rss" />
+      <outline title="CNews" xmlUrl="https://www.cnews.ru/rss/" type="rss" />
+      <outline title="TProger" xmlUrl="https://tproger.ru/feed/" type="rss" />
+      <outline title="4PDA" xmlUrl="https://4pda.to/feed/" type="rss" />
+      <outline title="IT World Russia" xmlUrl="https://www.it-world.ru/rss/" type="rss" />
+    </outline>
+    <outline text="Science">
+      <outline title="N+1" xmlUrl="https://nplus1.ru/rss" type="rss" />
+      <outline title="PostNauka" xmlUrl="https://postnauka.ru/feed/" type="rss" />
+      <outline title="Elementy" xmlUrl="https://elementy.ru/rss" type="rss" />
+      <outline title="Naked Science" xmlUrl="https://naked-science.ru/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Colta" xmlUrl="https://www.colta.ru/rss/" type="rss" />
+      <outline title="The Art Newspaper Russia" xmlUrl="https://www.theartnewspaper.ru/rss/" type="rss" />
+      <outline title="Kultura" xmlUrl="https://portal-kultura.ru/rss/" type="rss" />
+      <outline title="Snob" xmlUrl="https://snob.ru/rss/" type="rss" />
+    </outline>
+    <outline text="Movies">
+      <outline title="Kinopoisk" xmlUrl="https://www.kinopoisk.ru/rss/" type="rss" />
+      <outline title="Iskusstvo Kino" xmlUrl="https://kinoart.ru/rss/" type="rss" />
+    </outline>
+    <outline text="Music">
+      <outline title="Soyuz Music" xmlUrl="https://soyuz-music.ru/rss/" type="rss" />
+      <outline title="Reproduktor" xmlUrl="https://reproduktor.net/feed/" type="rss" />
+      <outline title="OpenSpace Music" xmlUrl="https://os.colta.ru/music/rss/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Povar" xmlUrl="https://povar.ru/rss/" type="rss" />
+      <outline title="Gastronom" xmlUrl="https://www.gastronom.ru/rss/" type="rss" />
+      <outline title="1000 Menu" xmlUrl="https://www.1001eda.com/rss/" type="rss" />
+    </outline>
+    <outline text="Gaming">
+      <outline title="Igromania" xmlUrl="https://www.igromania.ru/rss/" type="rss" />
+      <outline title="Kanobu" xmlUrl="https://kanobu.ru/rss/" type="rss" />
+      <outline title="DTF" xmlUrl="https://dtf.ru/rss/all" type="rss" />
+      <outline title="VGTimes" xmlUrl="https://vgtimes.ru/rss/" type="rss" />
+    </outline>
+    <outline text="Travel">
+      <outline title="Skyscanner Russia" xmlUrl="https://www.skyscanner.ru/news/feed/" type="rss" />
+      <outline title="RuTravel" xmlUrl="https://www.rutraveller.ru/rss/" type="rss" />
+      <outline title="Aviasales Blog" xmlUrl="https://www.aviasales.ru/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="VC.ru" xmlUrl="https://vc.ru/rss" type="rss" />
+      <outline title="Lifehacker RU" xmlUrl="https://lifehacker.ru/feed/" type="rss" />
+      <outline title="Adme" xmlUrl="https://www.adme.ru/rss/" type="rss" />
+      <outline title="Fishki" xmlUrl="https://fishki.net/rss/" type="rss" />
+      <outline title="Pikabu" xmlUrl="https://pikabu.ru/rss.php" type="rss" />
+      <outline title="Dirty.ru" xmlUrl="https://d3.ru/rss/" type="rss" />
+    </outline>
+    <outline text="Design">
+      <outline title="Design Mate" xmlUrl="https://design-mate.ru/rss/" type="rss" />
+      <outline title="Cossa Design" xmlUrl="https://www.cossa.ru/rss/" type="rss" />
+      <outline title="Typography RU" xmlUrl="https://typejournal.ru/rss/" type="rss" />
+      <outline title="Sostav" xmlUrl="https://www.sostav.ru/rss/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Bellona" xmlUrl="https://bellona.ru/feed/" type="rss" />
+    </outline>
+    <outline text="DIY">
+      <outline title="Livemaster" xmlUrl="https://www.livemaster.ru/rss/" type="rss" />
+    </outline>
+    <outline text="History">
+      <outline title="Diletant" xmlUrl="https://diletant.media/rss/" type="rss" />
+      <outline title="Historicus" xmlUrl="https://historicus.ru/rss/" type="rss" />
+      <outline title="Pobeda" xmlUrl="https://www.pobeda.ru/rss/" type="rss" />
+      <outline title="Rusorel" xmlUrl="https://www.rusorel.info/rss/" type="rss" />
+    </outline>
+    <outline text="Architecture">
+      <outline title="ArchDaily Russia" xmlUrl="https://www.archdaily.com/rss" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Design Boom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Programming">
+      <outline title="Habr" xmlUrl="https://habr.com/ru/rss/all/all/" type="rss" />
+      <outline title="Tproger" xmlUrl="https://tproger.ru/feed/" type="rss" />
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed/" type="rss" />
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="CSS Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
+      <outline title="Hacker News" xmlUrl="https://news.ycombinator.com/rss" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="Yandex Blog" xmlUrl="https://yandex.ru/blog/company/rss/" type="rss" />
+      <outline title="Kaspersky Blog" xmlUrl="https://www.kaspersky.ru/blog/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Vedomosti Business" xmlUrl="https://www.vedomosti.ru/rss/news" type="rss" />
+      <outline title="Kommersant Business" xmlUrl="https://www.kommersant.ru/RSS/money.xml" type="rss" />
+      <outline title="The Bell" xmlUrl="https://thebell.io/feed/" type="rss" />
+      <outline title="Frank Media" xmlUrl="https://frankmedia.ru/feed/" type="rss" />
+      <outline title="VC.ru" xmlUrl="https://vc.ru/rss" type="rss" />
+      <outline title="Secret Firmy" xmlUrl="https://secretmag.ru/rss/" type="rss" />
+      <outline title="Vc.ru Business" xmlUrl="https://vc.ru/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Radio Mayak" xmlUrl="https://radiomayak.ru/rss/" type="rss" />
+      <outline title="Echo Moskvy" xmlUrl="https://echo.msk.ru/rss/" type="rss" />
+      <outline title="Zavtracast" xmlUrl="https://zavtracast.ru/feed/podcast/" type="rss" />
+    </outline>
+    <outline text="Photography">
+      <outline title="35photo" xmlUrl="https://35photo.ru/rss/" type="rss" />
+      <outline title="Birdinflight" xmlUrl="https://birdinflight.com/ru/rss/" type="rss" />
+      <outline title="Club Foto" xmlUrl="https://club.foto.ru/rss/" type="rss" />
+    </outline>
+    <outline text="Apple">
+      <outline title="MacRumors" xmlUrl="https://feeds.macrumors.com/MacRumors-All" type="rss" />
+      <outline title="9to5Mac" xmlUrl="https://9to5mac.com/feed/" type="rss" />
+      <outline title="iMore" xmlUrl="https://www.imore.com/feed/" type="rss" />
+      <outline title="Cult of Mac" xmlUrl="https://www.cultofmac.com/feed/" type="rss" />
+      <outline title="Daring Fireball" xmlUrl="https://daringfireball.net/feeds/main" type="rss" />
+      <outline title="Six Colors" xmlUrl="https://sixcolors.com/feed/" type="rss" />
+      <outline title="MacStories" xmlUrl="https://www.macstories.net/feed/" type="rss" />
+      <outline title="Deep Apple" xmlUrl="https://deepapple.com/rss/" type="rss" />
+      <outline title="AppleInsider RU" xmlUrl="https://appleinsider.ru/feed/" type="rss" />
+      <outline title="iPhones.ru" xmlUrl="https://www.iphones.ru/feed/" type="rss" />
+    </outline>
+</body>
+</opml>

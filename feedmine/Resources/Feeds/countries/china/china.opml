@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>China National Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Xinhua English" xmlUrl="http://www.xinhuanet.com/english/rss/worldrss.xml" type="rss" />
+        <outline title="Xinhua China" xmlUrl="http://www.xinhuanet.com/english/rss/chinarss.xml" type="rss" />
+        <outline title="China Daily" xmlUrl="https://www.chinadaily.com.cn/rss/world_rss.xml" type="rss" />
+        <outline title="China Daily China" xmlUrl="https://www.chinadaily.com.cn/rss/china_rss.xml" type="rss" />
+        <outline title="CGTN" xmlUrl="https://www.cgtn.com/subscribe/rss/section/world.xml" type="rss" />
+        <outline title="SCMP" xmlUrl="https://www.scmp.com/rss/91/feed" type="rss" />
+        <outline title="Sixth Tone" xmlUrl="https://www.sixthtone.com/rss" type="rss" />
+        <outline title="The Paper" xmlUrl="https://www.thepaper.cn/rss/" type="rss" />
+        <outline title="Shine" xmlUrl="https://www.shine.cn/rss/" type="rss" />
+        <outline title="RADII China" xmlUrl="https://radiichina.com/feed/" type="rss" />
+      </outline>
+      <outline text="Business">
+        <outline title="China Economic Review" xmlUrl="https://chinaeconomicreview.com/feed/" type="rss" />
+      </outline>
+      <outline text="Technology">
+        <outline title="36Kr" xmlUrl="https://36kr.com/feed" type="rss" />
+        <outline title="Huxiu" xmlUrl="https://www.huxiu.com/rss/0.xml" type="rss" />
+        <outline title="TechNode" xmlUrl="https://technode.com/feed/" type="rss" />
+        <outline title="Pandaily" xmlUrl="https://pandaily.com/feed/" type="rss" />
+        <outline title="PingWest" xmlUrl="https://en.pingwest.com/feed" type="rss" />
+        <outline title="Technode China" xmlUrl="https://technode.com/feed/" type="rss" />
+      </outline>
+      <outline text="Science">
+</outline>
+      <outline text="Culture">
+        <outline title="The World of Chinese" xmlUrl="https://www.theworldofchinese.com/feed/" type="rss" />
+        <outline title="That's Mag" xmlUrl="https://www.thatsmags.com/rss" type="rss" />
+        <outline title="China Film Insider" xmlUrl="https://chinafilminsider.com/feed/" type="rss" />
+      </outline></body>
+    </opml>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Île-de-France Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="France 3 Paris IDF" xmlUrl="https://france3-regions.francetvinfo.fr/paris-ile-de-france/rss" type="rss" />
+      </outline>
+      <outline text="Politics" />
+      <outline text="Education" /></body>
+    </opml>

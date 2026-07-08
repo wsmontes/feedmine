@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tianjin Feeds</title>
+  </head>
+  <body>
+      <outline text="News" />
+      <outline text="Politics" />
+      <outline text="Business">
+        <outline title="Tianjin FTZ" xmlUrl="http://www.tjftz.gov.cn/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Nankai Univ" xmlUrl="https://www.nankai.edu.cn/rss" type="rss" />
+      </outline></body>
+    </opml>

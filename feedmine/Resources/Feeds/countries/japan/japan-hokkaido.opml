@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hokkaido Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Hokkaido Shimbun" xmlUrl="https://www.hokkaido-np.co.jp/rss/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="Hokkaido Gov" xmlUrl="https://www.pref.hokkaido.lg.jp/rss/" type="rss" />
+      </outline>
+      <outline text="Education" /></body>
+    </opml>

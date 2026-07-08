@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Jammu and Kashmir Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Times of India Srinagar" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128671092.cms" type="rss" />
+        <outline title="Greater Kashmir" xmlUrl="https://www.greaterkashmir.com/rss" type="rss" />
+        <outline title="Kashmir Observer" xmlUrl="https://kashmirobserver.net/rss" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="J-K Gov" xmlUrl="https://www.jk.gov.in/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="IIT Jammu" xmlUrl="https://www.iitjammu.ac.in/rss" type="rss" />
+        <outline title="NIT Srinagar" xmlUrl="https://www.nitsri.ac.in/rss" type="rss" />
+      </outline></body>
+    </opml>

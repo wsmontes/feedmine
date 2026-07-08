@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sikkim Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="Sikkim Express" xmlUrl="https://www.sikkimexpress.com/rss" type="rss" />
+        <outline title="Sikkim Chronicle" xmlUrl="https://www.thesikkimchronicle.com/rss" type="rss" />
+      </outline>
+      <outline text="Politics" /></body>
+    </opml>

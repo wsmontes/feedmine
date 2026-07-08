@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>South Dakota Feeds</title>
+  </head>
+  <body>
+      <outline text="News">
+        <outline title="South Dakota Searchlight" xmlUrl="https://southdakotasearchlight.com/feed/" type="rss" />
+      </outline>
+      <outline text="Politics">
+        <outline title="SD Legislature" xmlUrl="https://sdlegislature.gov/rss" type="rss" />
+      </outline>
+      <outline text="Education">
+        <outline title="Univ of South Dakota" xmlUrl="https://www.usd.edu/rss" type="rss" />
+      </outline>
+      <outline text="Culture" /></body>
+    </opml>
