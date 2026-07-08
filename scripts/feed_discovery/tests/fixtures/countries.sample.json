@@ -1,0 +1,4 @@
+{
+  "brazil": {"name": "Brazil", "cctld": "br", "use_cctld": true, "lang": "pt", "ddg_region": "br-pt", "allowlist": ["globo.com"]},
+  "usa": {"name": "USA", "cctld": "us", "use_cctld": false, "lang": "en", "ddg_region": "us-en", "allowlist": ["nytimes.com"]}
+}
