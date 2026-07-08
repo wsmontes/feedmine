@@ -80,15 +80,33 @@ final class ImageCache {
 
     private func cacheKey(for url: URL) -> String {
         // Use last 2 path components + host for readability, fallback to hash
-        let sanitized = url.absoluteString
+        let full = url.absoluteString
+        let sanitized = full
             .replacingOccurrences(of: "/", with: "_")
             .replacingOccurrences(of: ":", with: "_")
             .replacingOccurrences(of: "?", with: "_")
             .replacingOccurrences(of: "=", with: "_")
             .replacingOccurrences(of: "&", with: "_")
-        // Truncate — filenames over 255 bytes fail on some filesystems
+        // Short keys are used verbatim for readability.
         if sanitized.utf8.count <= 200 { return sanitized }
-        return String(sanitized.prefix(200))
+        // Filenames over 255 bytes fail on some filesystems, so long keys must
+        // be truncated — but two distinct URLs can share the same 200-char
+        // prefix (e.g. CDN/signed image URLs that differ only in a trailing
+        // query param). Append a stable hash of the full URL so truncated keys
+        // stay unique instead of colliding onto one cache file.
+        return String(sanitized.prefix(160)) + "_" + stableHash(full)
+    }
+
+    /// Deterministic, launch-stable hash (FNV-1a, 64-bit). Unlike
+    /// `String.hashValue` — which is seeded per process — this survives app
+    /// restarts, so disk-cache filenames remain valid across launches.
+    private func stableHash(_ s: String) -> String {
+        var hash: UInt64 = 0xcbf2_9ce4_8422_2325   // FNV-1a offset basis
+        for byte in s.utf8 {
+            hash ^= UInt64(byte)
+            hash = hash &* 0x0000_0100_0000_01b3     // FNV-1a prime
+        }
+        return String(hash, radix: 16)
     }
 
     private func warmMemoryCache() async {
