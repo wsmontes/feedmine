@@ -14,6 +14,8 @@ class Country:
     allowlist: list[str] = field(default_factory=list)
     native_name: str = ""
     cities: list[str] = field(default_factory=list)
+    iso2: str = ""
+    iso3: str = ""
 
 
 @dataclass

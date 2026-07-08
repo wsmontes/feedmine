@@ -27,6 +27,8 @@ def load_countries(path: Path) -> dict[str, Country]:
             allowlist=list(meta.get("allowlist", [])),
             native_name=meta.get("native_name") or meta["name"],
             cities=list(meta.get("cities", [])),
+            iso2=meta.get("iso2", meta["cctld"]).lower(),
+            iso3=(meta.get("iso3") or "").upper(),
         )
     return out
 

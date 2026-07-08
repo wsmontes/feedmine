@@ -6,6 +6,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "dz-ar",
+    "iso2": "dz",
+    "iso3": "DZA",
     "cities": [
       "Alger",
       "Oran",
@@ -21,6 +23,8 @@
     "use_cctld": true,
     "lang": "pt",
     "ddg_region": "ao-pt",
+    "iso2": "ao",
+    "iso3": "AGO",
     "cities": [
       "Luanda",
       "Benguela",
@@ -36,6 +40,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "ar-es",
+    "iso2": "ar",
+    "iso3": "ARG",
     "cities": [
       "Buenos Aires",
       "Córdoba",
@@ -52,6 +58,8 @@
     "use_cctld": true,
     "lang": "hy",
     "ddg_region": "am-hy",
+    "iso2": "am",
+    "iso3": "ARM",
     "cities": [
       "Yerevan",
       "Gyumri",
@@ -66,6 +74,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "au-en",
+    "iso2": "au",
+    "iso3": "AUS",
     "cities": [
       "Sydney",
       "Melbourne",
@@ -82,6 +92,8 @@
     "use_cctld": true,
     "lang": "de",
     "ddg_region": "at-de",
+    "iso2": "at",
+    "iso3": "AUT",
     "cities": [
       "Wien",
       "Graz",
@@ -97,6 +109,8 @@
     "use_cctld": true,
     "lang": "az",
     "ddg_region": "az-az",
+    "iso2": "az",
+    "iso3": "AZE",
     "cities": [
       "Baku",
       "Ganja",
@@ -111,6 +125,8 @@
     "use_cctld": true,
     "lang": "bn",
     "ddg_region": "bd-bn",
+    "iso2": "bd",
+    "iso3": "BGD",
     "cities": [
       "Dhaka",
       "Chittagong",
@@ -126,6 +142,8 @@
     "use_cctld": true,
     "lang": "be",
     "ddg_region": "by-be",
+    "iso2": "by",
+    "iso3": "BLR",
     "cities": [
       "Minsk",
       "Gomel",
@@ -141,6 +159,8 @@
     "use_cctld": true,
     "lang": "nl",
     "ddg_region": "be-nl",
+    "iso2": "be",
+    "iso3": "BEL",
     "cities": [
       "Bruxelles",
       "Antwerpen",
@@ -157,6 +177,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "bo-es",
+    "iso2": "bo",
+    "iso3": "BOL",
     "cities": [
       "La Paz",
       "Santa Cruz",
@@ -173,6 +195,8 @@
     "use_cctld": true,
     "lang": "pt",
     "ddg_region": "br-pt",
+    "iso2": "br",
+    "iso3": "BRA",
     "cities": [
       "São Paulo",
       "Rio de Janeiro",
@@ -189,6 +213,8 @@
     "use_cctld": true,
     "lang": "bg",
     "ddg_region": "bg-bg",
+    "iso2": "bg",
+    "iso3": "BGR",
     "cities": [
       "Sofia",
       "Plovdiv",
@@ -204,6 +230,8 @@
     "use_cctld": true,
     "lang": "km",
     "ddg_region": "kh-km",
+    "iso2": "kh",
+    "iso3": "KHM",
     "cities": [
       "Phnom Penh",
       "Siem Reap",
@@ -218,6 +246,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ca-en",
+    "iso2": "ca",
+    "iso3": "CAN",
     "cities": [
       "Toronto",
       "Montréal",
@@ -234,6 +264,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "cl-es",
+    "iso2": "cl",
+    "iso3": "CHL",
     "cities": [
       "Santiago",
       "Valparaíso",
@@ -250,6 +282,8 @@
     "use_cctld": true,
     "lang": "zh",
     "ddg_region": "cn-zh",
+    "iso2": "cn",
+    "iso3": "CHN",
     "cities": [
       "Beijing",
       "Shanghai",
@@ -266,6 +300,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "co-es",
+    "iso2": "co",
+    "iso3": "COL",
     "cities": [
       "Bogotá",
       "Medellín",
@@ -282,6 +318,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "cr-es",
+    "iso2": "cr",
+    "iso3": "CRI",
     "cities": [
       "San José",
       "Alajuela",
@@ -297,6 +335,8 @@
     "use_cctld": true,
     "lang": "hr",
     "ddg_region": "hr-hr",
+    "iso2": "hr",
+    "iso3": "HRV",
     "cities": [
       "Zagreb",
       "Split",
@@ -312,6 +352,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "cu-es",
+    "iso2": "cu",
+    "iso3": "CUB",
     "cities": [
       "La Habana",
       "Santiago de Cuba",
@@ -327,6 +369,8 @@
     "use_cctld": true,
     "lang": "el",
     "ddg_region": "cy-el",
+    "iso2": "cy",
+    "iso3": "CYP",
     "cities": [
       "Nicosia",
       "Limassol",
@@ -342,6 +386,8 @@
     "use_cctld": true,
     "lang": "cs",
     "ddg_region": "cz-cs",
+    "iso2": "cz",
+    "iso3": "CZE",
     "cities": [
       "Praha",
       "Brno",
@@ -357,6 +403,8 @@
     "use_cctld": true,
     "lang": "da",
     "ddg_region": "dk-da",
+    "iso2": "dk",
+    "iso3": "DNK",
     "cities": [
       "København",
       "Aarhus",
@@ -372,6 +420,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "do-es",
+    "iso2": "do",
+    "iso3": "DOM",
     "cities": [
       "Santo Domingo",
       "Santiago",
@@ -387,6 +437,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "ec-es",
+    "iso2": "ec",
+    "iso3": "ECU",
     "cities": [
       "Quito",
       "Guayaquil",
@@ -402,6 +454,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "eg-ar",
+    "iso2": "eg",
+    "iso3": "EGY",
     "cities": [
       "Cairo",
       "Alexandria",
@@ -417,6 +471,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "sv-es",
+    "iso2": "sv",
+    "iso3": "SLV",
     "cities": [
       "San Salvador",
       "Santa Ana",
@@ -432,6 +488,8 @@
     "use_cctld": true,
     "lang": "et",
     "ddg_region": "ee-et",
+    "iso2": "ee",
+    "iso3": "EST",
     "cities": [
       "Tallinn",
       "Tartu",
@@ -447,6 +505,8 @@
     "use_cctld": true,
     "lang": "am",
     "ddg_region": "et-am",
+    "iso2": "et",
+    "iso3": "ETH",
     "cities": [
       "Addis Ababa",
       "Dire Dawa",
@@ -461,6 +521,8 @@
     "use_cctld": true,
     "lang": "fi",
     "ddg_region": "fi-fi",
+    "iso2": "fi",
+    "iso3": "FIN",
     "cities": [
       "Helsinki",
       "Espoo",
@@ -477,6 +539,8 @@
     "use_cctld": true,
     "lang": "fr",
     "ddg_region": "fr-fr",
+    "iso2": "fr",
+    "iso3": "FRA",
     "cities": [
       "Paris",
       "Marseille",
@@ -493,6 +557,8 @@
     "use_cctld": true,
     "lang": "ka",
     "ddg_region": "ge-ka",
+    "iso2": "ge",
+    "iso3": "GEO",
     "cities": [
       "Tbilisi",
       "Batumi",
@@ -507,6 +573,8 @@
     "use_cctld": true,
     "lang": "de",
     "ddg_region": "de-de",
+    "iso2": "de",
+    "iso3": "DEU",
     "cities": [
       "Berlin",
       "München",
@@ -523,6 +591,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "gh-en",
+    "iso2": "gh",
+    "iso3": "GHA",
     "cities": [
       "Accra",
       "Kumasi",
@@ -538,6 +608,8 @@
     "use_cctld": true,
     "lang": "el",
     "ddg_region": "gr-el",
+    "iso2": "gr",
+    "iso3": "GRC",
     "cities": [
       "Athina",
       "Thessaloniki",
@@ -553,6 +625,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "gt-es",
+    "iso2": "gt",
+    "iso3": "GTM",
     "cities": [
       "Guatemala",
       "Quetzaltenango",
@@ -568,6 +642,8 @@
     "use_cctld": true,
     "lang": "fr",
     "ddg_region": "ht-fr",
+    "iso2": "ht",
+    "iso3": "HTI",
     "cities": [
       "Port-au-Prince",
       "Cap-Haïtien",
@@ -582,6 +658,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "hn-es",
+    "iso2": "hn",
+    "iso3": "HND",
     "cities": [
       "Tegucigalpa",
       "San Pedro Sula",
@@ -597,6 +675,8 @@
     "use_cctld": true,
     "lang": "hu",
     "ddg_region": "hu-hu",
+    "iso2": "hu",
+    "iso3": "HUN",
     "cities": [
       "Budapest",
       "Debrecen",
@@ -612,6 +692,8 @@
     "use_cctld": true,
     "lang": "is",
     "ddg_region": "is-is",
+    "iso2": "is",
+    "iso3": "ISL",
     "cities": [
       "Reykjavík",
       "Kópavogur",
@@ -627,6 +709,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "in-en",
+    "iso2": "in",
+    "iso3": "IND",
     "cities": [
       "Mumbai",
       "Delhi",
@@ -643,6 +727,8 @@
     "use_cctld": true,
     "lang": "id",
     "ddg_region": "id-id",
+    "iso2": "id",
+    "iso3": "IDN",
     "cities": [
       "Jakarta",
       "Surabaya",
@@ -659,6 +745,8 @@
     "use_cctld": true,
     "lang": "fa",
     "ddg_region": "ir-fa",
+    "iso2": "ir",
+    "iso3": "IRN",
     "cities": [
       "Tehran",
       "Mashhad",
@@ -674,6 +762,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "iq-ar",
+    "iso2": "iq",
+    "iso3": "IRQ",
     "cities": [
       "Baghdad",
       "Basra",
@@ -689,6 +779,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ie-en",
+    "iso2": "ie",
+    "iso3": "IRL",
     "cities": [
       "Dublin",
       "Cork",
@@ -704,6 +796,8 @@
     "use_cctld": true,
     "lang": "he",
     "ddg_region": "il-he",
+    "iso2": "il",
+    "iso3": "ISR",
     "cities": [
       "Jerusalem",
       "Tel Aviv",
@@ -719,6 +813,8 @@
     "use_cctld": true,
     "lang": "it",
     "ddg_region": "it-it",
+    "iso2": "it",
+    "iso3": "ITA",
     "cities": [
       "Roma",
       "Milano",
@@ -735,6 +831,8 @@
     "use_cctld": true,
     "lang": "fr",
     "ddg_region": "ci-fr",
+    "iso2": "ci",
+    "iso3": "CIV",
     "cities": [
       "Abidjan",
       "Yamoussoukro",
@@ -750,6 +848,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "jm-en",
+    "iso2": "jm",
+    "iso3": "JAM",
     "cities": [
       "Kingston",
       "Montego Bay",
@@ -765,6 +865,8 @@
     "use_cctld": true,
     "lang": "ja",
     "ddg_region": "jp-ja",
+    "iso2": "jp",
+    "iso3": "JPN",
     "cities": [
       "Tokyo",
       "Osaka",
@@ -781,6 +883,8 @@
     "use_cctld": true,
     "lang": "kk",
     "ddg_region": "kz-kk",
+    "iso2": "kz",
+    "iso3": "KAZ",
     "cities": [
       "Almaty",
       "Astana",
@@ -796,6 +900,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ke-en",
+    "iso2": "ke",
+    "iso3": "KEN",
     "cities": [
       "Nairobi",
       "Mombasa",
@@ -811,6 +917,8 @@
     "use_cctld": true,
     "lang": "lv",
     "ddg_region": "lv-lv",
+    "iso2": "lv",
+    "iso3": "LVA",
     "cities": [
       "Riga",
       "Daugavpils",
@@ -826,6 +934,8 @@
     "use_cctld": true,
     "lang": "lt",
     "ddg_region": "lt-lt",
+    "iso2": "lt",
+    "iso3": "LTU",
     "cities": [
       "Vilnius",
       "Kaunas",
@@ -841,6 +951,8 @@
     "use_cctld": true,
     "lang": "fr",
     "ddg_region": "lu-fr",
+    "iso2": "lu",
+    "iso3": "LUX",
     "cities": [
       "Luxembourg",
       "Esch-sur-Alzette",
@@ -855,6 +967,8 @@
     "use_cctld": true,
     "lang": "ms",
     "ddg_region": "my-ms",
+    "iso2": "my",
+    "iso3": "MYS",
     "cities": [
       "Kuala Lumpur",
       "George Town",
@@ -870,6 +984,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "mt-en",
+    "iso2": "mt",
+    "iso3": "MLT",
     "cities": [
       "Valletta",
       "Birkirkara",
@@ -885,6 +1001,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "mx-es",
+    "iso2": "mx",
+    "iso3": "MEX",
     "cities": [
       "Ciudad de México",
       "Guadalajara",
@@ -901,6 +1019,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "ma-ar",
+    "iso2": "ma",
+    "iso3": "MAR",
     "cities": [
       "Casablanca",
       "Rabat",
@@ -917,6 +1037,8 @@
     "use_cctld": true,
     "lang": "my",
     "ddg_region": "mm-my",
+    "iso2": "mm",
+    "iso3": "MMR",
     "cities": [
       "Yangon",
       "Mandalay",
@@ -931,6 +1053,8 @@
     "use_cctld": true,
     "lang": "ne",
     "ddg_region": "np-ne",
+    "iso2": "np",
+    "iso3": "NPL",
     "cities": [
       "Kathmandu",
       "Pokhara",
@@ -946,6 +1070,8 @@
     "use_cctld": true,
     "lang": "nl",
     "ddg_region": "nl-nl",
+    "iso2": "nl",
+    "iso3": "NLD",
     "cities": [
       "Amsterdam",
       "Rotterdam",
@@ -962,6 +1088,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "nz-en",
+    "iso2": "nz",
+    "iso3": "NZL",
     "cities": [
       "Auckland",
       "Wellington",
@@ -977,6 +1105,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "ni-es",
+    "iso2": "ni",
+    "iso3": "NIC",
     "cities": [
       "Managua",
       "León",
@@ -992,6 +1122,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ng-en",
+    "iso2": "ng",
+    "iso3": "NGA",
     "cities": [
       "Lagos",
       "Abuja",
@@ -1008,6 +1140,8 @@
     "use_cctld": true,
     "lang": "no",
     "ddg_region": "no-no",
+    "iso2": "no",
+    "iso3": "NOR",
     "cities": [
       "Oslo",
       "Bergen",
@@ -1023,6 +1157,8 @@
     "use_cctld": true,
     "lang": "ur",
     "ddg_region": "pk-ur",
+    "iso2": "pk",
+    "iso3": "PAK",
     "cities": [
       "Karachi",
       "Lahore",
@@ -1039,6 +1175,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "pa-es",
+    "iso2": "pa",
+    "iso3": "PAN",
     "cities": [
       "Panamá",
       "Colón",
@@ -1054,6 +1192,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "py-es",
+    "iso2": "py",
+    "iso3": "PRY",
     "cities": [
       "Asunción",
       "Ciudad del Este",
@@ -1069,6 +1209,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "pe-es",
+    "iso2": "pe",
+    "iso3": "PER",
     "cities": [
       "Lima",
       "Arequipa",
@@ -1085,6 +1227,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "ph-en",
+    "iso2": "ph",
+    "iso3": "PHL",
     "cities": [
       "Manila",
       "Quezon City",
@@ -1100,6 +1244,8 @@
     "use_cctld": true,
     "lang": "pl",
     "ddg_region": "pl-pl",
+    "iso2": "pl",
+    "iso3": "POL",
     "cities": [
       "Warszawa",
       "Kraków",
@@ -1116,6 +1262,8 @@
     "use_cctld": true,
     "lang": "pt",
     "ddg_region": "pt-pt",
+    "iso2": "pt",
+    "iso3": "PRT",
     "cities": [
       "Lisboa",
       "Porto",
@@ -1132,6 +1280,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "pr-es",
+    "iso2": "pr",
+    "iso3": "PRI",
     "cities": [
       "San Juan",
       "Bayamón",
@@ -1147,6 +1297,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "qa-ar",
+    "iso2": "qa",
+    "iso3": "QAT",
     "cities": [
       "Doha",
       "Al Rayyan",
@@ -1161,6 +1313,8 @@
     "use_cctld": true,
     "lang": "ro",
     "ddg_region": "ro-ro",
+    "iso2": "ro",
+    "iso3": "ROU",
     "cities": [
       "București",
       "Cluj-Napoca",
@@ -1177,6 +1331,8 @@
     "use_cctld": true,
     "lang": "ru",
     "ddg_region": "ru-ru",
+    "iso2": "ru",
+    "iso3": "RUS",
     "cities": [
       "Moskva",
       "Sankt-Peterburg",
@@ -1193,6 +1349,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "sa-ar",
+    "iso2": "sa",
+    "iso3": "SAU",
     "cities": [
       "Riyadh",
       "Jeddah",
@@ -1209,6 +1367,8 @@
     "use_cctld": true,
     "lang": "sr",
     "ddg_region": "rs-sr",
+    "iso2": "rs",
+    "iso3": "SRB",
     "cities": [
       "Beograd",
       "Novi Sad",
@@ -1224,6 +1384,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "sg-en",
+    "iso2": "sg",
+    "iso3": "SGP",
     "cities": [
       "Singapore"
     ],
@@ -1236,6 +1398,8 @@
     "use_cctld": true,
     "lang": "sk",
     "ddg_region": "sk-sk",
+    "iso2": "sk",
+    "iso3": "SVK",
     "cities": [
       "Bratislava",
       "Košice",
@@ -1251,6 +1415,8 @@
     "use_cctld": true,
     "lang": "sl",
     "ddg_region": "si-sl",
+    "iso2": "si",
+    "iso3": "SVN",
     "cities": [
       "Ljubljana",
       "Maribor",
@@ -1266,6 +1432,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "za-en",
+    "iso2": "za",
+    "iso3": "ZAF",
     "cities": [
       "Johannesburg",
       "Cape Town",
@@ -1282,6 +1450,8 @@
     "use_cctld": true,
     "lang": "ko",
     "ddg_region": "kr-ko",
+    "iso2": "kr",
+    "iso3": "KOR",
     "cities": [
       "Seoul",
       "Busan",
@@ -1297,6 +1467,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "es-es",
+    "iso2": "es",
+    "iso3": "ESP",
     "cities": [
       "Madrid",
       "Barcelona",
@@ -1313,6 +1485,8 @@
     "use_cctld": true,
     "lang": "si",
     "ddg_region": "lk-si",
+    "iso2": "lk",
+    "iso3": "LKA",
     "cities": [
       "Colombo",
       "Kandy",
@@ -1328,6 +1502,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "sd-ar",
+    "iso2": "sd",
+    "iso3": "SDN",
     "cities": [
       "Khartoum",
       "Omdurman",
@@ -1342,6 +1518,8 @@
     "use_cctld": true,
     "lang": "sv",
     "ddg_region": "se-sv",
+    "iso2": "se",
+    "iso3": "SWE",
     "cities": [
       "Stockholm",
       "Göteborg",
@@ -1357,6 +1535,8 @@
     "use_cctld": true,
     "lang": "de",
     "ddg_region": "ch-de",
+    "iso2": "ch",
+    "iso3": "CHE",
     "cities": [
       "Zürich",
       "Genève",
@@ -1373,6 +1553,8 @@
     "use_cctld": true,
     "lang": "zh",
     "ddg_region": "tw-zh",
+    "iso2": "tw",
+    "iso3": "TWN",
     "cities": [
       "Taipei",
       "Kaohsiung",
@@ -1388,6 +1570,8 @@
     "use_cctld": true,
     "lang": "th",
     "ddg_region": "th-th",
+    "iso2": "th",
+    "iso3": "THA",
     "cities": [
       "Bangkok",
       "Nonthaburi",
@@ -1403,6 +1587,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "tn-ar",
+    "iso2": "tn",
+    "iso3": "TUN",
     "cities": [
       "Tunis",
       "Sfax",
@@ -1418,6 +1604,8 @@
     "use_cctld": true,
     "lang": "tr",
     "ddg_region": "tr-tr",
+    "iso2": "tr",
+    "iso3": "TUR",
     "cities": [
       "İstanbul",
       "Ankara",
@@ -1434,6 +1622,8 @@
     "use_cctld": true,
     "lang": "ar",
     "ddg_region": "ae-ar",
+    "iso2": "ae",
+    "iso3": "ARE",
     "cities": [
       "Dubai",
       "Abu Dhabi",
@@ -1449,6 +1639,8 @@
     "use_cctld": true,
     "lang": "uk",
     "ddg_region": "ua-uk",
+    "iso2": "ua",
+    "iso3": "UKR",
     "cities": [
       "Kyiv",
       "Kharkiv",
@@ -1465,6 +1657,8 @@
     "use_cctld": true,
     "lang": "en",
     "ddg_region": "uk-en",
+    "iso2": "gb",
+    "iso3": "GBR",
     "cities": [
       "London",
       "Manchester",
@@ -1481,6 +1675,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "uy-es",
+    "iso2": "uy",
+    "iso3": "URY",
     "cities": [
       "Montevideo",
       "Salto",
@@ -1496,6 +1692,8 @@
     "use_cctld": false,
     "lang": "en",
     "ddg_region": "us-en",
+    "iso2": "us",
+    "iso3": "USA",
     "cities": [
       "New York",
       "Los Angeles",
@@ -1512,6 +1710,8 @@
     "use_cctld": true,
     "lang": "es",
     "ddg_region": "ve-es",
+    "iso2": "ve",
+    "iso3": "VEN",
     "cities": [
       "Caracas",
       "Maracaibo",
@@ -1528,6 +1728,8 @@
     "use_cctld": true,
     "lang": "vi",
     "ddg_region": "vn-vi",
+    "iso2": "vn",
+    "iso3": "VNM",
     "cities": [
       "Hanoi",
       "Ho Chi Minh City",

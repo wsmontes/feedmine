@@ -37,3 +37,11 @@ def test_every_country_has_native_name_and_cities():
 
 def test_blocklist_loads_nonempty():
     assert len(registry.load_blocklist(DATA / "blocklist.txt")) > 5
+
+
+def test_every_country_has_iso2_and_iso3():
+    countries = registry.load_countries(DATA / "countries.json")
+    assert countries, "no countries loaded"
+    for slug, c in countries.items():
+        assert len(c.iso2) == 2 and c.iso2.islower(), f"{slug}: bad iso2 {c.iso2!r}"
+        assert len(c.iso3) == 3 and c.iso3.isupper(), f"{slug}: bad iso3 {c.iso3!r}"
