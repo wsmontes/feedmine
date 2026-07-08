@@ -378,7 +378,7 @@ final class FeedStore {
                     .limit(10)
                     .fetchAll(db)
             }
-            return records.map { $0.toFeedItem() }.shuffled()
+            return records.map { $0.toFeedItem() }.filter(isItemEnabled).shuffled()
         } catch {
             return []
         }
