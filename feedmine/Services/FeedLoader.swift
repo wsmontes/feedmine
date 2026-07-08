@@ -315,23 +315,27 @@ final class FeedLoader {
         let newValue = (store.activeCategory == category) ? nil : category
         store.setFilter(region: store.activeRegion, category: newValue,
                         type: store.activeContentType, mood: store.activeMood)
+        Task { await loadWhatsNew() }
     }
 
     func selectMood(_ mood: MoodFilter) {
         let newValue = (store.activeMood == mood) ? .all : mood
         store.setFilter(region: store.activeRegion, category: store.activeCategory,
                         type: store.activeContentType, mood: newValue)
+        Task { await loadWhatsNew() }
     }
 
     func selectContentType(_ type: ContentType) {
         let newValue = (store.activeContentType == type) ? .all : type
         store.setFilter(region: store.activeRegion, category: store.activeCategory,
                         type: newValue, mood: store.activeMood)
+        Task { await loadWhatsNew() }
     }
 
     func clearAllFilters() {
         searchQuery = ""
         store.clearAllFilters()
+        Task { await loadWhatsNew() }
     }
 
     func searchQueryChanged() {
