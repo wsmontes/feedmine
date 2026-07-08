@@ -82,6 +82,16 @@ struct FeedItem: Identifiable, Sendable, Codable {
         return rem > 0 ? "\(hrs)h \(rem)m" : "\(hrs)h"
     }
 
+    /// A copy with audio stripped — used when an enclosure fails playability
+    /// validation, so the item is no longer treated as a podcast.
+    func withoutAudio() -> FeedItem {
+        FeedItem(
+            id: id, sourceTitle: sourceTitle, sourceURL: sourceURL, category: category,
+            title: title, excerpt: excerpt, url: url, imageURL: imageURL,
+            publishedAt: publishedAt, audioURL: nil, duration: nil
+        )
+    }
+
     /// SHA256("sourceURL|guid_or_link") — unique across feeds
     static func generateID(sourceURL: String, guid: String?, link: String?, title: String? = nil, publishedAt: Date? = nil) -> String {
         let token: String = {

@@ -4,6 +4,10 @@ import FeedKit
 actor RSSFetcher {
     private let session: URLSession
 
+    /// Cache of audio-URL → playable? so repeat fetches never re-probe the same
+    /// enclosure (podcast episode URLs are stable).
+    private var audioPlayability: [String: Bool] = [:]
+
     init() {
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 15
@@ -48,7 +52,8 @@ actor RSSFetcher {
                     print("[RSSFetcher] Empty feed: \(source.title)")
                     return FeedFetchResult(source: source, items: [], status: .empty)
                 }
-                return FeedFetchResult(source: source, items: items, status: .success)
+                let validated = await validateAudio(in: items)
+                return FeedFetchResult(source: source, items: validated, status: .success)
             case .failure(let error):
                 print("[RSSFetcher] Parse failure for \(source.title): \(error)")
                 return FeedFetchResult(source: source, items: [], status: .failed)
@@ -172,6 +177,102 @@ actor RSSFetcher {
     private func extractDuration(from item: RSSFeedItem) -> TimeInterval? {
         let dur = item.iTunes?.iTunesDuration ?? 0
         return dur > 0 ? dur : nil
+    }
+
+    // MARK: - Audio playability validation
+
+    /// Probe the audio enclosures of freshly-parsed items and strip `audioURL`
+    /// from any that don't actually serve playable audio, so unplayable
+    /// "podcasts" never reach the feed. Bounded, cached, and only touches items
+    /// that claim audio — text feeds pay nothing.
+    private func validateAudio(in items: [FeedItem]) async -> [FeedItem] {
+        // Cap probes per feed so a huge episode list can't stall a fetch; the
+        // newest items matter most and appear first.
+        let audioIndices = items.indices.filter { items[$0].audioURL != nil }
+        guard !audioIndices.isEmpty else { return items }
+        let toProbe = Array(audioIndices.prefix(12))
+
+        var playable: [String: Bool] = [:]
+        let cap = 6
+        await withTaskGroup(of: (String, Bool).self) { group in
+            var iterator = toProbe.makeIterator()
+            var started = 0
+            while started < cap, let idx = iterator.next() {
+                guard let audio = items[idx].audioURL else { continue }
+                group.addTask { (audio, await self.isPlayableAudio(audio)) }
+                started += 1
+            }
+            while let (audio, ok) = await group.next() {
+                playable[audio] = ok
+                if let idx = iterator.next(), let next = items[idx].audioURL {
+                    group.addTask { (next, await self.isPlayableAudio(next)) }
+                }
+            }
+        }
+
+        guard !playable.isEmpty else { return items }
+        var result = items
+        for idx in toProbe {
+            if let audio = result[idx].audioURL, playable[audio] == false {
+                result[idx] = result[idx].withoutAudio()
+            }
+        }
+        return result
+    }
+
+    /// True if `urlString` serves playable audio. Cached per actor.
+    private func isPlayableAudio(_ urlString: String) async -> Bool {
+        if let cached = audioPlayability[urlString] { return cached }
+        guard let url = URL(string: urlString) else {
+            audioPlayability[urlString] = false
+            return false
+        }
+        let ok = await probeAudio(url)
+        audioPlayability[urlString] = ok
+        return ok
+    }
+
+    private func probeAudio(_ url: URL) async -> Bool {
+        var head = URLRequest(url: url)
+        head.httpMethod = "HEAD"
+        head.timeoutInterval = 6
+        do {
+            let (_, response) = try await session.data(for: head)
+            if let http = response as? HTTPURLResponse {
+                // Some servers reject HEAD — retry with a 1-byte ranged GET.
+                if http.statusCode == 405 || http.statusCode == 501 {
+                    return await probeAudioRanged(url)
+                }
+                return isAudioResponse(http)
+            }
+            return false
+        } catch {
+            return await probeAudioRanged(url)
+        }
+    }
+
+    private func probeAudioRanged(_ url: URL) async -> Bool {
+        var req = URLRequest(url: url)
+        req.timeoutInterval = 6
+        req.setValue("bytes=0-0", forHTTPHeaderField: "Range")
+        do {
+            let (_, response) = try await session.data(for: req)
+            guard let http = response as? HTTPURLResponse else { return false }
+            return isAudioResponse(http)
+        } catch {
+            return false
+        }
+    }
+
+    /// Accept reachable responses that aren't clearly non-audio. We're lenient
+    /// on content-type (many audio CDNs send octet-stream / video-mp4) to avoid
+    /// dropping real episodes; we only reject dead URLs and obvious HTML/image
+    /// error pages.
+    private func isAudioResponse(_ http: HTTPURLResponse) -> Bool {
+        guard (200...299).contains(http.statusCode) || http.statusCode == 206 else { return false }
+        let type = (http.value(forHTTPHeaderField: "Content-Type") ?? "").lowercased()
+        if type.hasPrefix("text/") || type.hasPrefix("image/") { return false }
+        return true
     }
 
     // MARK: - Private
