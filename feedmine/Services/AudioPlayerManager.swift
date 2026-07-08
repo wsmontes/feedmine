@@ -10,6 +10,7 @@ final class AudioPlayerManager {
     private var timeObserver: Any?
     private var endObserver: NSObjectProtocol?
     private var statusObserver: NSKeyValueObservation?
+    private var timeControlObserver: NSKeyValueObservation?
 
     private(set) var currentItem: FeedItem?
     private(set) var isPlaying = false
@@ -67,6 +68,11 @@ final class AudioPlayerManager {
         currentItem = item
         duration = item.duration ?? 0
 
+        // TEMP diagnostics — pinpoint why playback stalls. Remove once resolved.
+        let sessionCategory = AVAudioSession.sharedInstance().category.rawValue
+        let sessionActive = AVAudioSession.sharedInstance().isOtherAudioPlaying
+        print("[AudioPlayer] play url=\(urlString) category=\(sessionCategory) otherAudio=\(sessionActive)")
+
         let playerItem = AVPlayerItem(url: url)
         player = AVPlayer(playerItem: playerItem)
         player?.play()
@@ -76,11 +82,20 @@ final class AudioPlayerManager {
         // instead of sitting silently "playing". Read Sendable values out of
         // the item before hopping to the main actor.
         statusObserver = playerItem.observe(\.status, options: [.new]) { [weak self] item, _ in
-            guard item.status == .failed else { return }
-            let message = item.error.map { String(describing: $0) } ?? "unknown error"
+            let status = item.status.rawValue   // 0=unknown 1=readyToPlay 2=failed
+            let message = item.error.map { String(describing: $0) } ?? "nil"
             Task { @MainActor [weak self] in
-                print("[AudioPlayer] playback failed: \(message)")
-                self?.isPlaying = false
+                print("[AudioPlayer] item status=\(status) error=\(message)")
+                if item.status == .failed { self?.isPlaying = false }
+            }
+        }
+
+        // TEMP: report why the player is (not) playing.
+        timeControlObserver = player?.observe(\.timeControlStatus, options: [.new]) { player, _ in
+            let control = player.timeControlStatus.rawValue  // 0=paused 1=waiting 2=playing
+            let reason = player.reasonForWaitingToPlay?.rawValue ?? "nil"
+            Task { @MainActor in
+                print("[AudioPlayer] timeControl=\(control) waitReason=\(reason)")
             }
         }
 
@@ -144,10 +159,12 @@ final class AudioPlayerManager {
         if let observer = timeObserver { player?.removeTimeObserver(observer) }
         if let endObserver { NotificationCenter.default.removeObserver(endObserver) }
         statusObserver?.invalidate()
+        timeControlObserver?.invalidate()
         player = nil
         timeObserver = nil
         endObserver = nil
         statusObserver = nil
+        timeControlObserver = nil
         currentItem = nil
         isPlaying = false
         currentTime = 0
