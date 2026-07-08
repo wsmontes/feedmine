@@ -316,8 +316,22 @@ final class FeedLoader {
     func markAsRead(_ itemID: String) { store.markAsRead(itemID) }
     func isRead(_ itemID: String) -> Bool { store.readItemIDs.contains(itemID) }
 
-    // Bookmark stubs — Task 11 wires to SQLite
-    func toggleBookmark(_ itemID: String) { }
+    // MARK: - Bookmark Lists
+
+    func loadBookmarkLists() async throws -> [BookmarkList] {
+        try await store.allBookmarkLists()
+    }
+
+    func loadBookmarkedItems(listID: Int64) async throws -> [FeedItem] {
+        try await store.bookmarkedItems(listID: listID)
+    }
+
+    func toggleBookmark(_ itemID: String) {
+        Task {
+            try? await store.toggleBookmark(itemID: itemID)
+        }
+    }
+
     func isBookmarked(_ itemID: String) -> Bool { false }
 
     func markAllAsRead() {

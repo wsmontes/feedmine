@@ -1,43 +1,19 @@
 import SwiftUI
 
-struct CountryDetailScreen: View {
+/// Displays feed sources for a specific sub-region within a country
+/// (e.g., "California" within USA, "São Paulo" within Brazil).
+struct RegionDetailScreen: View {
     @Environment(FeedLoader.self) private var loader
+    let region: Region
     let country: Country
 
     private var feedsByCategory: [(String, [FeedSource])] {
-        let grouped = Dictionary(grouping: loader.countryFeeds(for: country.region), by: \.category)
+        let grouped = Dictionary(grouping: loader.regionFeeds(for: region.path), by: \.category)
         return grouped.sorted { $0.key < $1.key }
     }
 
     var body: some View {
         List {
-            // Sub-regions section — shown when the country has region-level OPML files
-            if country.hasRegions {
-                Section {
-                    ForEach(country.regions) { region in
-                        NavigationLink {
-                            RegionDetailScreen(region: region, country: country)
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image(systemName: "mappin.and.ellipse")
-                                    .font(.title3)
-                                    .foregroundStyle(.secondary)
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(region.name).font(.body)
-                                    Text("\(region.feedCount) feeds")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                                Spacer()
-                            }
-                        }
-                    }
-                } header: {
-                    Label("Regions (\(country.regions.count))", systemImage: "map.fill")
-                }
-            }
-
-            // Country-level feeds grouped by category
             ForEach(feedsByCategory, id: \.0) { category, sources in
                 Section {
                     ForEach(sources, id: \.url) { source in
@@ -63,7 +39,7 @@ struct CountryDetailScreen: View {
                 }
             }
         }
-        .navigationTitle("\(country.flag) \(country.name)")
+        .navigationTitle(region.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 
