@@ -9,7 +9,6 @@ from . import discover, search, verify
 from .heuristic import host_of, is_national
 from .models import Candidate, Country
 from .opml import normalize_url
-from .registry import keywords_for
 
 
 @dataclass
@@ -50,12 +49,17 @@ async def process_country(
     seen_feed_urls: set[str] = set()
 
     for category in categories:
-        terms = keywords_for(keywords, category, country.lang)
-        query = search.build_query(terms)
-        cache_path = cfg.cache_dir / "search" / country.slug / f"{category}.json"
-        page_urls = search.search(
-            query, country.ddg_region, cfg.max_results, cache_path, cfg.delay, cfg.fresh
-        )
+        queries = search.build_queries(country, category, keywords)
+        page_urls: list[str] = []
+        seen_pages: set[str] = set()
+        for qi, query in enumerate(queries):
+            cache_path = cfg.cache_dir / "search" / country.slug / category / f"{qi}.json"
+            for url in search.search(
+                query, country.ddg_region, cfg.max_results, cache_path, cfg.delay, cfg.fresh
+            ):
+                if url not in seen_pages:
+                    seen_pages.add(url)
+                    page_urls.append(url)
 
         # Discover feed URLs from each result page.
         feed_urls: list[str] = []

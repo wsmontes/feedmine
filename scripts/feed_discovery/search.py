@@ -4,10 +4,44 @@ import json
 import time
 from pathlib import Path
 
+from .models import Country
+from .registry import keywords_for
+
+# Categories where local/regional outlets dominate — worth anchoring to city
+# names as well as the country name. Global-leaning categories skip cities.
+LOCAL_CATEGORIES = {"News", "Sports", "Politics", "Business", "Culture", "Blogs"}
+MAX_QUERIES_PER_CATEGORY = 5
+
 
 def build_query(terms: list[str]) -> str:
     term = terms[0] if terms else "news"
     return f"{term} RSS feed"
+
+
+def build_queries(country: Country, category: str, keywords: dict) -> list[str]:
+    """Anchored search queries for one (country, category) from the search
+    dictionary: category term synonyms x country name / native name / cities.
+    The national heuristic still filters results, so anchoring only raises
+    recall of local outlets — it never loosens precision."""
+    terms = keywords_for(keywords, category, country.lang) or ["news"]
+    queries: list[str] = []
+    anchors = [country.name]
+    if country.native_name and country.native_name != country.name:
+        anchors.append(country.native_name)
+    for anchor in anchors:
+        queries.append(f"{terms[0]} {anchor} RSS")
+    for term in terms[1:3]:
+        queries.append(f"{term} {country.name} RSS")
+    if category in LOCAL_CATEGORIES:
+        for city in country.cities[:2]:
+            queries.append(f"{terms[0]} {city} RSS")
+    seen: set[str] = set()
+    unique: list[str] = []
+    for q in queries:
+        if q not in seen:
+            seen.add(q)
+            unique.append(q)
+    return unique[:MAX_QUERIES_PER_CATEGORY]
 
 
 def _extract_url(row: dict) -> str:
