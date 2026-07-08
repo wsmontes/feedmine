@@ -14,6 +14,7 @@ _CHANNEL_PATH = re.compile(
 _CHANNEL_ID = re.compile(r'"channelId":"(UC[0-9A-Za-z_-]{22})"')
 _COUNTRY = re.compile(r'"country":"([^"]{1,60})"')
 _OG_TITLE = re.compile(r'<meta property="og:title" content="([^"]*)"')
+_VIDEO_ID = re.compile(r"youtube\.com/(?:watch\?v=|shorts/)([A-Za-z0-9_-]+)")
 
 
 def youtube_seed_queries(country: Country) -> list[str]:
@@ -43,6 +44,25 @@ def extract_channel_refs(urls: list[str]) -> list[str]:
             seen.add(ref)
             refs.append(ref)
     return refs
+
+
+def extract_video_urls(urls: list[str]) -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    for u in urls:
+        m = _VIDEO_ID.search(u)
+        if not m:
+            continue
+        vid = m.group(1)
+        if vid not in seen:
+            seen.add(vid)
+            out.append(u)
+    return out
+
+
+def channel_id_from_page(html: str) -> str:
+    m = _CHANNEL_ID.search(html)
+    return m.group(1) if m else ""
 
 
 def about_url(ref: str) -> str:
@@ -84,6 +104,11 @@ def _channel_slug(ref: str) -> str:
     return "".join(ch if ch.isalnum() else "_" for ch in tail)
 
 
+def _video_slug(url: str) -> str:
+    tail = url.split("youtube.com/", 1)[-1]
+    return "".join(ch if ch.isalnum() else "_" for ch in tail)
+
+
 async def discover(country: Country, session, cfg) -> list[Candidate]:
     # --- DDG seed: collect youtube channel refs (search.search is cached) ---
     urls: list[str] = []
@@ -93,6 +118,32 @@ async def discover(country: Country, session, cfg) -> list[Candidate]:
             query, country.ddg_region, cfg.max_results, cache_path, cfg.delay, cfg.fresh
         ))
     refs = extract_channel_refs(urls)
+    seen_refs: set[str] = set(refs)
+
+    # DDG mostly surfaces videos/shorts, not channel pages — resolve each
+    # video to its channel (the video page embeds "channelId":"UC…").
+    for vurl in extract_video_urls(urls):
+        vcache = cfg.cache_dir / "youtube" / country.slug / "videos" / (_video_slug(vurl) + ".json")
+        if not cfg.fresh and vcache.exists():
+            cid = json.loads(vcache.read_text(encoding="utf-8")).get("channel_id", "")
+        else:
+            cid = ""
+            try:
+                async with session.get(
+                    vurl, headers={"User-Agent": _BROWSER_UA},
+                    timeout=aiohttp.ClientTimeout(total=cfg.timeout),
+                ) as resp:
+                    if resp.status == 200:
+                        cid = channel_id_from_page(await resp.text())
+            except (aiohttp.ClientError, TimeoutError):
+                pass
+            vcache.parent.mkdir(parents=True, exist_ok=True)
+            vcache.write_text(json.dumps({"channel_id": cid}, ensure_ascii=False), encoding="utf-8")
+        if cid:
+            ref = f"https://www.youtube.com/channel/{cid}"
+            if ref not in seen_refs:
+                seen_refs.add(ref)
+                refs.append(ref)
 
     # --- Resolve + read About per channel (cached as parsed triple) ---
     cands: list[Candidate] = []

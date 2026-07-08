@@ -86,3 +86,49 @@ def test_discover_uses_cached_ddg_and_about(tmp_path, monkeypatch):
     assert [c.url for c in cands] == \
         ["https://www.youtube.com/feeds/videos.xml?channel_id=UCabcdefghijklmnopqrstuv"]
     assert cands[0].category == "YouTube"
+
+
+def test_extract_video_urls_keeps_watch_and_shorts():
+    urls = [
+        "https://www.youtube.com/watch?v=AAA111",
+        "https://www.youtube.com/watch?v=AAA111&t=5",  # dup video id
+        "https://www.youtube.com/shorts/BBB222",
+        "https://www.youtube.com/channel/UCabcdefghijklmnopqrstuv",  # not a video
+        "https://example.com/x",
+    ]
+    assert youtube.extract_video_urls(urls) == [
+        "https://www.youtube.com/watch?v=AAA111",
+        "https://www.youtube.com/shorts/BBB222",
+    ]
+
+
+def test_channel_id_from_page_extracts_uc():
+    assert youtube.channel_id_from_page('x"channelId":"UCabcdefghijklmnopqrstuv"y') == \
+        "UCabcdefghijklmnopqrstuv"
+    assert youtube.channel_id_from_page("no channel here") == ""
+
+
+def test_discover_resolves_video_to_channel(tmp_path, monkeypatch):
+    import asyncio
+
+    from scripts.feed_discovery.pipeline import Config
+
+    # DDG surfaced a video (the real-world case), not a channel page.
+    monkeypatch.setattr(
+        youtube.search, "search",
+        lambda *a, **k: ["https://www.youtube.com/watch?v=VID123"],
+    )
+    cfg = Config(cache_dir=tmp_path, delay=0, fresh=False)
+    # video page cache → channel id (no network)
+    vcache = tmp_path / "youtube" / "bolivia" / "videos" / "watch_v_VID123.json"
+    vcache.parent.mkdir(parents=True, exist_ok=True)
+    vcache.write_text('{"channel_id": "UCabcdefghijklmnopqrstuv"}', encoding="utf-8")
+    # about cache for the resolved channel (strict country match)
+    acache = tmp_path / "youtube" / "bolivia" / "channel_UCabcdefghijklmnopqrstuv.json"
+    acache.write_text(
+        '{"channel_id": "UCabcdefghijklmnopqrstuv", "country": "Bolivia", "title": "Canal Bo"}',
+        encoding="utf-8",
+    )
+    cands = asyncio.run(youtube.discover(BO, None, cfg))
+    assert [c.url for c in cands] == \
+        ["https://www.youtube.com/feeds/videos.xml?channel_id=UCabcdefghijklmnopqrstuv"]
