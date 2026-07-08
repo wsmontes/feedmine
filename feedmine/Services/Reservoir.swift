@@ -332,7 +332,11 @@ final class Reservoir {
                 if !added { break }
             }
         }
-        reservoir = interleave(selected)
+        // Keep the selected diverse subset, but in the reservoir's existing
+        // order — re-interleaving here would reorder items near the viewport,
+        // the same instability fixed in append()/moveToVisible().
+        let keepIDs = Set(selected.map(\.id))
+        reservoir = reservoir.filter { keepIDs.contains($0.id) }
     }
 
     private func markAsSurfaced(_ items: [FeedItem]) {
