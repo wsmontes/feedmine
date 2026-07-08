@@ -41,9 +41,9 @@ final class FeedLoader {
     var totalFetched: Int { store.totalFetched }
     var fetchErrorCount: Int { store.fetchErrorCount }
     var sourceCount: Int { store.registry.sourceCount }
-    var podcastSourceCount: Int { 0 }
-    var podcastItemCount: Int { 0 }
-    var totalDiscarded: Int { 0 }
+    var podcastSourceCount: Int { store.podcastSourceCount }
+    var podcastItemCount: Int { store.podcastItemCount }
+    var totalDiscarded: Int { store.totalDiscarded }
     var emptyFeedCount: Int { store.emptyFeedCount }
 
     // MARK: - Date Sections

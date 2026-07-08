@@ -21,6 +21,21 @@ final class FeedStore {
     private(set) var totalFetched = 0
     private(set) var fetchErrorCount = 0
     private(set) var emptyFeedCount = 0
+    private(set) var totalDiscarded = 0
+
+    /// Podcast items currently in SQLite
+    var podcastItemCount: Int {
+        (try? db.read { db in
+            try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM feed_item WHERE audio_url IS NOT NULL")
+        }) ?? 0
+    }
+
+    /// Unique podcast sources in SQLite
+    var podcastSourceCount: Int {
+        (try? db.read { db in
+            try Int.fetchOne(db, sql: "SELECT COUNT(DISTINCT source_url) FROM feed_item WHERE audio_url IS NOT NULL")
+        }) ?? 0
+    }
 
     // MARK: - Filter state (bidirectional)
     var activeRegion: String?
