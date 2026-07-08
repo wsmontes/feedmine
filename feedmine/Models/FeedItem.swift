@@ -19,6 +19,11 @@ struct FeedItem: Identifiable, Sendable, Codable {
 
     /// Extracts the YouTube video ID from the URL, if any
     var youTubeVideoID: String? {
+        // Fast reject before allocating URL/URLComponents: this is called per
+        // item during filtering, interleaving, isTimeless, and rendering, and
+        // almost no items are YouTube links. "youtu" covers youtube.com and
+        // youtu.be, and the host checks below still gate real matches.
+        guard url.contains("youtu") else { return nil }
         guard let url = URL(string: url) else { return nil }
         // youtube.com/watch?v=VIDEO_ID
         if url.host?.contains("youtube.com") == true || url.host?.contains("youtu.be") == true {
