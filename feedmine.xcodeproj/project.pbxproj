@@ -67,6 +67,7 @@
 		F130641CF9BD3D64E410894A /* SettingsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534C45AB248D0B885533C04 /* SettingsSheetView.swift */; };
 		F311851139242691553818F4 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D05837FFFED0BCF4528A1 /* AppContext.swift */; };
 		F7849543D7C7A7076E8F8DEA /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126A0070B10B3C716D2C0C7 /* NetworkMonitor.swift */; };
+		138DDECADC064B1FA4E59506 /* Reservoir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C498739974F8AB16D045C /* Reservoir.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,7 @@
 		F9A7D55AFC80E67D103AC583 /* CategoryFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterBar.swift; sourceTree = "<group>"; };
 		FA499573FA22F43B9CCABCB2 /* ShakeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeHandler.swift; sourceTree = "<group>"; };
 		FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetchResult.swift; sourceTree = "<group>"; };
+		5A7C498739974F8AB16D045C /* Reservoir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservoir.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				D43637F484CFF16738302685 /* OPMLParser.swift */,
 				B416A9F2FBED61538361B41D /* PersistenceManager.swift */,
 				66AAEEDBB109C8C6CAC336D6 /* RSSFetcher.swift */,
+				5A7C498739974F8AB16D045C /* Reservoir.swift */,
 				26AE7140CB709EB68EA0D2ED /* SessionTracker.swift */,
 				FA499573FA22F43B9CCABCB2 /* ShakeHandler.swift */,
 				C08ABDEC67E17B5A4BF8916C /* WeatherService.swift */,
@@ -451,6 +454,7 @@
 				240602E100F6F50B835E9420 /* OnboardingTipsView.swift in Sources */,
 				67048E03F4B32DE5C427C442 /* PersistenceManager.swift in Sources */,
 				7D50E979F88694C1588392D8 /* RSSFetcher.swift in Sources */,
+				138DDECADC064B1FA4E59506 /* Reservoir.swift in Sources */,
 				64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */,
 				6986DBDE303222A19B7A5798 /* SearchBarView.swift in Sources */,
 				E15933E9C5253C75E6BF0042 /* SessionTracker.swift in Sources */,
