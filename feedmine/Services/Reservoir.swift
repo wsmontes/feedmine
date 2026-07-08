@@ -105,7 +105,10 @@ final class Reservoir {
         reservoir.removeAll(where: isDisabled)
         // Top up visible if depleted
         if visibleItems.count < Self.pageSize && !reservoir.isEmpty {
-            let needed = Self.pageSize - visibleItems.count
+            // Clamp to reservoir.count: removeFirst(k) crashes when k exceeds
+            // the count, and the reservoir may hold fewer than `needed` items
+            // after a region is removed.
+            let needed = min(Self.pageSize - visibleItems.count, reservoir.count)
             let batch = Array(reservoir.prefix(needed))
             visibleItems.append(contentsOf: batch)
             reservoir.removeFirst(needed)
