@@ -633,30 +633,34 @@ final class FeedStore {
         for search in searches {
             guard let query = search.searchQuery else { continue }
             guard let pattern = FTS5Pattern(matchingAllTokensIn: query) else { continue }
-            for item in items {
-                var matches = true
-                if let region = search.searchRegion, region != registry.regionFor(sourceURL: item.sourceURL) {
-                    matches = false
-                }
-                if let cat = search.searchCategory, cat != item.category {
-                    matches = false
-                }
-                if matches {
-                    // FTS5 match
-                    let ftsMatch: Bool = (try? await db.read { db in
-                        try FeedItemRecord
-                            .filter(Column("id") == item.id)
-                            .matching(pattern)
-                            .fetchCount(db) > 0
-                    }) ?? false
-                    if ftsMatch {
-                        try? await db.write { db in
-                            try db.execute(sql: """
-                                INSERT OR IGNORE INTO bookmark_item (list_id, item_id, added_at)
-                                VALUES (?, ?, ?)
-                            """, arguments: [search.id!, item.id, Int(Date().timeIntervalSince1970)])
-                        }
-                    }
+            // Pre-filter by region/category in memory, then run ONE FTS query
+            // for all candidate ids at once. The previous code issued a separate
+            // FTS read (and write) per item, i.e. O(searches × items) round-trips
+            // on every fetched batch.
+            let candidateIDs = items.filter { item in
+                if let region = search.searchRegion,
+                   region != registry.regionFor(sourceURL: item.sourceURL) { return false }
+                if let cat = search.searchCategory, cat != item.category { return false }
+                return true
+            }.map(\.id)
+            guard !candidateIDs.isEmpty else { continue }
+
+            let matchedIDs: [String] = (try? await db.read { db in
+                try FeedItemRecord
+                    .filter(candidateIDs.contains(Column("id")))
+                    .matching(pattern)
+                    .fetchAll(db)
+                    .map(\.id)
+            }) ?? []
+            guard !matchedIDs.isEmpty else { continue }
+
+            let now = Int(Date().timeIntervalSince1970)
+            try? await db.write { db in
+                for id in matchedIDs {
+                    try db.execute(sql: """
+                        INSERT OR IGNORE INTO bookmark_item (list_id, item_id, added_at)
+                        VALUES (?, ?, ?)
+                    """, arguments: [search.id!, id, now])
                 }
             }
         }
