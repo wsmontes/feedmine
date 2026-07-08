@@ -220,59 +220,74 @@ actor RSSFetcher {
         return result
     }
 
-    /// True if `urlString` serves playable audio. Cached per actor.
+    private enum AudioProbe { case playable, notAudio, unknown }
+
+    /// Whether `urlString` should be treated as playable audio. Only a
+    /// *definitive* negative — a 2xx with a text/image body, or a gone status
+    /// (404/410) — is cached as false and strips the item. Transient failures
+    /// (timeouts, 5xx, rate limits) return true (keep) and are NOT cached, so a
+    /// network blip can't permanently demote a good podcast.
     private func isPlayableAudio(_ urlString: String) async -> Bool {
         if let cached = audioPlayability[urlString] { return cached }
         guard let url = URL(string: urlString) else {
             audioPlayability[urlString] = false
             return false
         }
-        let ok = await probeAudio(url)
-        audioPlayability[urlString] = ok
-        return ok
+        switch await probeAudio(url) {
+        case .playable:
+            audioPlayability[urlString] = true
+            return true
+        case .notAudio:
+            audioPlayability[urlString] = false
+            return false
+        case .unknown:
+            return true   // couldn't confirm — keep it, retry on a later fetch
+        }
     }
 
-    private func probeAudio(_ url: URL) async -> Bool {
+    private func probeAudio(_ url: URL) async -> AudioProbe {
         var head = URLRequest(url: url)
         head.httpMethod = "HEAD"
         head.timeoutInterval = 6
         do {
             let (_, response) = try await session.data(for: head)
-            if let http = response as? HTTPURLResponse {
-                // Some servers reject HEAD — retry with a 1-byte ranged GET.
-                if http.statusCode == 405 || http.statusCode == 501 {
-                    return await probeAudioRanged(url)
-                }
-                return isAudioResponse(http)
+            guard let http = response as? HTTPURLResponse else { return .unknown }
+            // Some servers reject HEAD — retry with a 1-byte ranged GET.
+            if http.statusCode == 405 || http.statusCode == 501 {
+                return await probeAudioRanged(url)
             }
-            return false
+            return classify(http)
         } catch {
             return await probeAudioRanged(url)
         }
     }
 
-    private func probeAudioRanged(_ url: URL) async -> Bool {
+    private func probeAudioRanged(_ url: URL) async -> AudioProbe {
         var req = URLRequest(url: url)
         req.timeoutInterval = 6
         req.setValue("bytes=0-0", forHTTPHeaderField: "Range")
         do {
             let (_, response) = try await session.data(for: req)
-            guard let http = response as? HTTPURLResponse else { return false }
-            return isAudioResponse(http)
+            guard let http = response as? HTTPURLResponse else { return .unknown }
+            return classify(http)
         } catch {
-            return false
+            return .unknown   // network error — can't determine, don't strip
         }
     }
 
-    /// Accept reachable responses that aren't clearly non-audio. We're lenient
-    /// on content-type (many audio CDNs send octet-stream / video-mp4) to avoid
-    /// dropping real episodes; we only reject dead URLs and obvious HTML/image
-    /// error pages.
-    private func isAudioResponse(_ http: HTTPURLResponse) -> Bool {
-        guard (200...299).contains(http.statusCode) || http.statusCode == 206 else { return false }
-        let type = (http.value(forHTTPHeaderField: "Content-Type") ?? "").lowercased()
-        if type.hasPrefix("text/") || type.hasPrefix("image/") { return false }
-        return true
+    /// Classify a probe response. Lenient on content-type (many audio CDNs send
+    /// octet-stream / video-mp4); only a 2xx with a text/image body or a gone
+    /// status (404/410) is a definitive non-audio. Everything else
+    /// (3xx/403/429/5xx) is transient/ambiguous → unknown (keep, don't cache).
+    private func classify(_ http: HTTPURLResponse) -> AudioProbe {
+        let code = http.statusCode
+        if (200...299).contains(code) || code == 206 {
+            let type = (http.value(forHTTPHeaderField: "Content-Type") ?? "").lowercased()
+            if type.hasPrefix("text/") || type.hasPrefix("image/") { return .notAudio }
+            return .playable
+        }
+        if code == 404 || code == 410 { return .notAudio }
+        return .unknown
     }
 
     // MARK: - Private
