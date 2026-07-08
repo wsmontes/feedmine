@@ -1,0 +1,810 @@
+{
+  "algeria": {
+    "name": "Algeria",
+    "cctld": "dz",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "dz-ar",
+    "allowlist": []
+  },
+  "angola": {
+    "name": "Angola",
+    "cctld": "ao",
+    "use_cctld": true,
+    "lang": "pt",
+    "ddg_region": "ao-pt",
+    "allowlist": []
+  },
+  "argentina": {
+    "name": "Argentina",
+    "cctld": "ar",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "ar-es",
+    "allowlist": []
+  },
+  "armenia": {
+    "name": "Armenia",
+    "cctld": "am",
+    "use_cctld": true,
+    "lang": "hy",
+    "ddg_region": "am-hy",
+    "allowlist": []
+  },
+  "australia": {
+    "name": "Australia",
+    "cctld": "au",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "au-en",
+    "allowlist": []
+  },
+  "austria": {
+    "name": "Austria",
+    "cctld": "at",
+    "use_cctld": true,
+    "lang": "de",
+    "ddg_region": "at-de",
+    "allowlist": []
+  },
+  "azerbaijan": {
+    "name": "Azerbaijan",
+    "cctld": "az",
+    "use_cctld": true,
+    "lang": "az",
+    "ddg_region": "az-az",
+    "allowlist": []
+  },
+  "bangladesh": {
+    "name": "Bangladesh",
+    "cctld": "bd",
+    "use_cctld": true,
+    "lang": "bn",
+    "ddg_region": "bd-bn",
+    "allowlist": []
+  },
+  "belarus": {
+    "name": "Belarus",
+    "cctld": "by",
+    "use_cctld": true,
+    "lang": "be",
+    "ddg_region": "by-be",
+    "allowlist": []
+  },
+  "belgium": {
+    "name": "Belgium",
+    "cctld": "be",
+    "use_cctld": true,
+    "lang": "nl",
+    "ddg_region": "be-nl",
+    "allowlist": []
+  },
+  "bolivia": {
+    "name": "Bolivia",
+    "cctld": "bo",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "bo-es",
+    "allowlist": []
+  },
+  "brazil": {
+    "name": "Brazil",
+    "cctld": "br",
+    "use_cctld": true,
+    "lang": "pt",
+    "ddg_region": "br-pt",
+    "allowlist": []
+  },
+  "bulgaria": {
+    "name": "Bulgaria",
+    "cctld": "bg",
+    "use_cctld": true,
+    "lang": "bg",
+    "ddg_region": "bg-bg",
+    "allowlist": []
+  },
+  "cambodia": {
+    "name": "Cambodia",
+    "cctld": "kh",
+    "use_cctld": true,
+    "lang": "km",
+    "ddg_region": "kh-km",
+    "allowlist": []
+  },
+  "canada": {
+    "name": "Canada",
+    "cctld": "ca",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "ca-en",
+    "allowlist": []
+  },
+  "chile": {
+    "name": "Chile",
+    "cctld": "cl",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "cl-es",
+    "allowlist": []
+  },
+  "china": {
+    "name": "China",
+    "cctld": "cn",
+    "use_cctld": true,
+    "lang": "zh",
+    "ddg_region": "cn-zh",
+    "allowlist": []
+  },
+  "colombia": {
+    "name": "Colombia",
+    "cctld": "co",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "co-es",
+    "allowlist": []
+  },
+  "costa-rica": {
+    "name": "Costa Rica",
+    "cctld": "cr",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "cr-es",
+    "allowlist": []
+  },
+  "croatia": {
+    "name": "Croatia",
+    "cctld": "hr",
+    "use_cctld": true,
+    "lang": "hr",
+    "ddg_region": "hr-hr",
+    "allowlist": []
+  },
+  "cuba": {
+    "name": "Cuba",
+    "cctld": "cu",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "cu-es",
+    "allowlist": []
+  },
+  "cyprus": {
+    "name": "Cyprus",
+    "cctld": "cy",
+    "use_cctld": true,
+    "lang": "el",
+    "ddg_region": "cy-el",
+    "allowlist": []
+  },
+  "czech-republic": {
+    "name": "Czech Republic",
+    "cctld": "cz",
+    "use_cctld": true,
+    "lang": "cs",
+    "ddg_region": "cz-cs",
+    "allowlist": []
+  },
+  "denmark": {
+    "name": "Denmark",
+    "cctld": "dk",
+    "use_cctld": true,
+    "lang": "da",
+    "ddg_region": "dk-da",
+    "allowlist": []
+  },
+  "dominican-republic": {
+    "name": "Dominican Republic",
+    "cctld": "do",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "do-es",
+    "allowlist": []
+  },
+  "ecuador": {
+    "name": "Ecuador",
+    "cctld": "ec",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "ec-es",
+    "allowlist": []
+  },
+  "egypt": {
+    "name": "Egypt",
+    "cctld": "eg",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "eg-ar",
+    "allowlist": []
+  },
+  "el-salvador": {
+    "name": "El Salvador",
+    "cctld": "sv",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "sv-es",
+    "allowlist": []
+  },
+  "estonia": {
+    "name": "Estonia",
+    "cctld": "ee",
+    "use_cctld": true,
+    "lang": "et",
+    "ddg_region": "ee-et",
+    "allowlist": []
+  },
+  "ethiopia": {
+    "name": "Ethiopia",
+    "cctld": "et",
+    "use_cctld": true,
+    "lang": "am",
+    "ddg_region": "et-am",
+    "allowlist": []
+  },
+  "finland": {
+    "name": "Finland",
+    "cctld": "fi",
+    "use_cctld": true,
+    "lang": "fi",
+    "ddg_region": "fi-fi",
+    "allowlist": []
+  },
+  "france": {
+    "name": "France",
+    "cctld": "fr",
+    "use_cctld": true,
+    "lang": "fr",
+    "ddg_region": "fr-fr",
+    "allowlist": []
+  },
+  "georgia": {
+    "name": "Georgia",
+    "cctld": "ge",
+    "use_cctld": true,
+    "lang": "ka",
+    "ddg_region": "ge-ka",
+    "allowlist": []
+  },
+  "germany": {
+    "name": "Germany",
+    "cctld": "de",
+    "use_cctld": true,
+    "lang": "de",
+    "ddg_region": "de-de",
+    "allowlist": []
+  },
+  "ghana": {
+    "name": "Ghana",
+    "cctld": "gh",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "gh-en",
+    "allowlist": []
+  },
+  "greece": {
+    "name": "Greece",
+    "cctld": "gr",
+    "use_cctld": true,
+    "lang": "el",
+    "ddg_region": "gr-el",
+    "allowlist": []
+  },
+  "guatemala": {
+    "name": "Guatemala",
+    "cctld": "gt",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "gt-es",
+    "allowlist": []
+  },
+  "haiti": {
+    "name": "Haiti",
+    "cctld": "ht",
+    "use_cctld": true,
+    "lang": "fr",
+    "ddg_region": "ht-fr",
+    "allowlist": []
+  },
+  "honduras": {
+    "name": "Honduras",
+    "cctld": "hn",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "hn-es",
+    "allowlist": []
+  },
+  "hungary": {
+    "name": "Hungary",
+    "cctld": "hu",
+    "use_cctld": true,
+    "lang": "hu",
+    "ddg_region": "hu-hu",
+    "allowlist": []
+  },
+  "iceland": {
+    "name": "Iceland",
+    "cctld": "is",
+    "use_cctld": true,
+    "lang": "is",
+    "ddg_region": "is-is",
+    "allowlist": []
+  },
+  "india": {
+    "name": "India",
+    "cctld": "in",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "in-en",
+    "allowlist": []
+  },
+  "indonesia": {
+    "name": "Indonesia",
+    "cctld": "id",
+    "use_cctld": true,
+    "lang": "id",
+    "ddg_region": "id-id",
+    "allowlist": []
+  },
+  "iran": {
+    "name": "Iran",
+    "cctld": "ir",
+    "use_cctld": true,
+    "lang": "fa",
+    "ddg_region": "ir-fa",
+    "allowlist": []
+  },
+  "iraq": {
+    "name": "Iraq",
+    "cctld": "iq",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "iq-ar",
+    "allowlist": []
+  },
+  "ireland": {
+    "name": "Ireland",
+    "cctld": "ie",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "ie-en",
+    "allowlist": []
+  },
+  "israel": {
+    "name": "Israel",
+    "cctld": "il",
+    "use_cctld": true,
+    "lang": "he",
+    "ddg_region": "il-he",
+    "allowlist": []
+  },
+  "italy": {
+    "name": "Italy",
+    "cctld": "it",
+    "use_cctld": true,
+    "lang": "it",
+    "ddg_region": "it-it",
+    "allowlist": []
+  },
+  "ivory-coast": {
+    "name": "Ivory Coast",
+    "cctld": "ci",
+    "use_cctld": true,
+    "lang": "fr",
+    "ddg_region": "ci-fr",
+    "allowlist": []
+  },
+  "jamaica": {
+    "name": "Jamaica",
+    "cctld": "jm",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "jm-en",
+    "allowlist": []
+  },
+  "japan": {
+    "name": "Japan",
+    "cctld": "jp",
+    "use_cctld": true,
+    "lang": "ja",
+    "ddg_region": "jp-ja",
+    "allowlist": []
+  },
+  "kazakhstan": {
+    "name": "Kazakhstan",
+    "cctld": "kz",
+    "use_cctld": true,
+    "lang": "kk",
+    "ddg_region": "kz-kk",
+    "allowlist": []
+  },
+  "kenya": {
+    "name": "Kenya",
+    "cctld": "ke",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "ke-en",
+    "allowlist": []
+  },
+  "latvia": {
+    "name": "Latvia",
+    "cctld": "lv",
+    "use_cctld": true,
+    "lang": "lv",
+    "ddg_region": "lv-lv",
+    "allowlist": []
+  },
+  "lithuania": {
+    "name": "Lithuania",
+    "cctld": "lt",
+    "use_cctld": true,
+    "lang": "lt",
+    "ddg_region": "lt-lt",
+    "allowlist": []
+  },
+  "luxembourg": {
+    "name": "Luxembourg",
+    "cctld": "lu",
+    "use_cctld": true,
+    "lang": "fr",
+    "ddg_region": "lu-fr",
+    "allowlist": []
+  },
+  "malaysia": {
+    "name": "Malaysia",
+    "cctld": "my",
+    "use_cctld": true,
+    "lang": "ms",
+    "ddg_region": "my-ms",
+    "allowlist": []
+  },
+  "malta": {
+    "name": "Malta",
+    "cctld": "mt",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "mt-en",
+    "allowlist": []
+  },
+  "mexico": {
+    "name": "Mexico",
+    "cctld": "mx",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "mx-es",
+    "allowlist": []
+  },
+  "morocco": {
+    "name": "Morocco",
+    "cctld": "ma",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "ma-ar",
+    "allowlist": []
+  },
+  "myanmar": {
+    "name": "Myanmar",
+    "cctld": "mm",
+    "use_cctld": true,
+    "lang": "my",
+    "ddg_region": "mm-my",
+    "allowlist": []
+  },
+  "nepal": {
+    "name": "Nepal",
+    "cctld": "np",
+    "use_cctld": true,
+    "lang": "ne",
+    "ddg_region": "np-ne",
+    "allowlist": []
+  },
+  "netherlands": {
+    "name": "Netherlands",
+    "cctld": "nl",
+    "use_cctld": true,
+    "lang": "nl",
+    "ddg_region": "nl-nl",
+    "allowlist": []
+  },
+  "new-zealand": {
+    "name": "New Zealand",
+    "cctld": "nz",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "nz-en",
+    "allowlist": []
+  },
+  "nicaragua": {
+    "name": "Nicaragua",
+    "cctld": "ni",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "ni-es",
+    "allowlist": []
+  },
+  "nigeria": {
+    "name": "Nigeria",
+    "cctld": "ng",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "ng-en",
+    "allowlist": []
+  },
+  "norway": {
+    "name": "Norway",
+    "cctld": "no",
+    "use_cctld": true,
+    "lang": "no",
+    "ddg_region": "no-no",
+    "allowlist": []
+  },
+  "pakistan": {
+    "name": "Pakistan",
+    "cctld": "pk",
+    "use_cctld": true,
+    "lang": "ur",
+    "ddg_region": "pk-ur",
+    "allowlist": []
+  },
+  "panama": {
+    "name": "Panama",
+    "cctld": "pa",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "pa-es",
+    "allowlist": []
+  },
+  "paraguay": {
+    "name": "Paraguay",
+    "cctld": "py",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "py-es",
+    "allowlist": []
+  },
+  "peru": {
+    "name": "Peru",
+    "cctld": "pe",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "pe-es",
+    "allowlist": []
+  },
+  "philippines": {
+    "name": "Philippines",
+    "cctld": "ph",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "ph-en",
+    "allowlist": []
+  },
+  "poland": {
+    "name": "Poland",
+    "cctld": "pl",
+    "use_cctld": true,
+    "lang": "pl",
+    "ddg_region": "pl-pl",
+    "allowlist": []
+  },
+  "portugal": {
+    "name": "Portugal",
+    "cctld": "pt",
+    "use_cctld": true,
+    "lang": "pt",
+    "ddg_region": "pt-pt",
+    "allowlist": []
+  },
+  "puerto-rico": {
+    "name": "Puerto Rico",
+    "cctld": "pr",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "pr-es",
+    "allowlist": []
+  },
+  "qatar": {
+    "name": "Qatar",
+    "cctld": "qa",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "qa-ar",
+    "allowlist": []
+  },
+  "romania": {
+    "name": "Romania",
+    "cctld": "ro",
+    "use_cctld": true,
+    "lang": "ro",
+    "ddg_region": "ro-ro",
+    "allowlist": []
+  },
+  "russia": {
+    "name": "Russia",
+    "cctld": "ru",
+    "use_cctld": true,
+    "lang": "ru",
+    "ddg_region": "ru-ru",
+    "allowlist": []
+  },
+  "saudi-arabia": {
+    "name": "Saudi Arabia",
+    "cctld": "sa",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "sa-ar",
+    "allowlist": []
+  },
+  "serbia": {
+    "name": "Serbia",
+    "cctld": "rs",
+    "use_cctld": true,
+    "lang": "sr",
+    "ddg_region": "rs-sr",
+    "allowlist": []
+  },
+  "singapore": {
+    "name": "Singapore",
+    "cctld": "sg",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "sg-en",
+    "allowlist": []
+  },
+  "slovakia": {
+    "name": "Slovakia",
+    "cctld": "sk",
+    "use_cctld": true,
+    "lang": "sk",
+    "ddg_region": "sk-sk",
+    "allowlist": []
+  },
+  "slovenia": {
+    "name": "Slovenia",
+    "cctld": "si",
+    "use_cctld": true,
+    "lang": "sl",
+    "ddg_region": "si-sl",
+    "allowlist": []
+  },
+  "south-africa": {
+    "name": "South Africa",
+    "cctld": "za",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "za-en",
+    "allowlist": []
+  },
+  "south-korea": {
+    "name": "South Korea",
+    "cctld": "kr",
+    "use_cctld": true,
+    "lang": "ko",
+    "ddg_region": "kr-ko",
+    "allowlist": []
+  },
+  "spain": {
+    "name": "Spain",
+    "cctld": "es",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "es-es",
+    "allowlist": []
+  },
+  "sri-lanka": {
+    "name": "Sri Lanka",
+    "cctld": "lk",
+    "use_cctld": true,
+    "lang": "si",
+    "ddg_region": "lk-si",
+    "allowlist": []
+  },
+  "sudan": {
+    "name": "Sudan",
+    "cctld": "sd",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "sd-ar",
+    "allowlist": []
+  },
+  "sweden": {
+    "name": "Sweden",
+    "cctld": "se",
+    "use_cctld": true,
+    "lang": "sv",
+    "ddg_region": "se-sv",
+    "allowlist": []
+  },
+  "switzerland": {
+    "name": "Switzerland",
+    "cctld": "ch",
+    "use_cctld": true,
+    "lang": "de",
+    "ddg_region": "ch-de",
+    "allowlist": []
+  },
+  "taiwan": {
+    "name": "Taiwan",
+    "cctld": "tw",
+    "use_cctld": true,
+    "lang": "zh",
+    "ddg_region": "tw-zh",
+    "allowlist": []
+  },
+  "thailand": {
+    "name": "Thailand",
+    "cctld": "th",
+    "use_cctld": true,
+    "lang": "th",
+    "ddg_region": "th-th",
+    "allowlist": []
+  },
+  "tunisia": {
+    "name": "Tunisia",
+    "cctld": "tn",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "tn-ar",
+    "allowlist": []
+  },
+  "turkey": {
+    "name": "Turkey",
+    "cctld": "tr",
+    "use_cctld": true,
+    "lang": "tr",
+    "ddg_region": "tr-tr",
+    "allowlist": []
+  },
+  "uae": {
+    "name": "UAE",
+    "cctld": "ae",
+    "use_cctld": true,
+    "lang": "ar",
+    "ddg_region": "ae-ar",
+    "allowlist": []
+  },
+  "ukraine": {
+    "name": "Ukraine",
+    "cctld": "ua",
+    "use_cctld": true,
+    "lang": "uk",
+    "ddg_region": "ua-uk",
+    "allowlist": []
+  },
+  "united-kingdom": {
+    "name": "United Kingdom",
+    "cctld": "uk",
+    "use_cctld": true,
+    "lang": "en",
+    "ddg_region": "uk-en",
+    "allowlist": []
+  },
+  "uruguay": {
+    "name": "Uruguay",
+    "cctld": "uy",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "uy-es",
+    "allowlist": []
+  },
+  "usa": {
+    "name": "USA",
+    "cctld": "us",
+    "use_cctld": false,
+    "lang": "en",
+    "ddg_region": "us-en",
+    "allowlist": []
+  },
+  "venezuela": {
+    "name": "Venezuela",
+    "cctld": "ve",
+    "use_cctld": true,
+    "lang": "es",
+    "ddg_region": "ve-es",
+    "allowlist": []
+  },
+  "vietnam": {
+    "name": "Vietnam",
+    "cctld": "vn",
+    "use_cctld": true,
+    "lang": "vi",
+    "ddg_region": "vn-vi",
+    "allowlist": []
+  }
+}
