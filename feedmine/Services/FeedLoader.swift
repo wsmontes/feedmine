@@ -300,11 +300,6 @@ final class FeedLoader {
     func toggleRegion(_ region: String) { store.toggleRegion(region) }
     func toggleAllCountries() { store.registry.toggleAllCountries() }
     func toggleGlobalFeeds() {
-        if store.registry.disabledRegions.contains("global") {
-            store.registry.disabledRegions.remove("global")
-        } else {
-            store.registry.disabledRegions.insert("global")
-        }
         store.toggleRegion("global")
     }
     func toggleSource(_ sourceURL: String) { store.registry.toggleSource(sourceURL) }

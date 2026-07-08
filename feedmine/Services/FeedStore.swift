@@ -229,8 +229,10 @@ final class FeedStore {
         fetchErrorCount += result.failedSourceCount
         emptyFeedCount += result.emptySourceCount
 
+        let sourceURLsWithItems = Set(result.items.map(\.sourceURL))
         for source in batch {
-            scheduler.recordFetch(sourceURL: source.url, success: true)
+            let hadItems = sourceURLsWithItems.contains(source.url)
+            scheduler.recordFetch(sourceURL: source.url, success: hadItems || result.failedSourceCount == 0)
         }
 
         let actualNew = result.items.filter { !loadedIDs.contains($0.id) }
@@ -335,14 +337,12 @@ final class FeedStore {
         let wasDisabled = registry.disabledRegions.contains(region)
         registry.toggleRegion(region)
         if wasDisabled {
-            reservoir.removeRegion(region)
-            visibleItems = reservoir.visibleItems
-            reservoirCount = reservoir.reservoirCount
+            // Enabling: prioritize in scheduler, seed content, reload SQLite items
             scheduler.prioritize(region: region)
-            // Check if persistent searches depend on this region
             Task { await seedRegion(region) }
+            Task { await reloadFromSQLite() }
         } else {
-            // Enabled — remove from scheduler, purge visible
+            // Disabling: remove from scheduler, purge from reservoir
             scheduler.remove(region: region)
             reservoir.removeRegion(region)
             visibleItems = reservoir.visibleItems
