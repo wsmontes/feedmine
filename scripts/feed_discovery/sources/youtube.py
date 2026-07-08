@@ -1,7 +1,11 @@
 from __future__ import annotations
 
+import json
 import re
 
+import aiohttp
+
+from .. import search
 from ..models import Candidate, Country
 
 _CHANNEL_PATH = re.compile(
@@ -70,3 +74,58 @@ def channel_candidate_from_html(html: str, country_name: str) -> Candidate | Non
         url=channel_rss_url(cid), category="YouTube", title=title, genre="",
         national=True, national_reason="youtube about country==name",
     )
+
+
+_BROWSER_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+
+
+def _channel_slug(ref: str) -> str:
+    tail = ref.rstrip("/").split("youtube.com/", 1)[-1]
+    return "".join(ch if ch.isalnum() else "_" for ch in tail)
+
+
+async def discover(country: Country, session, cfg) -> list[Candidate]:
+    # --- DDG seed: collect youtube channel refs (search.search is cached) ---
+    urls: list[str] = []
+    for qi, query in enumerate(youtube_seed_queries(country)):
+        cache_path = cfg.cache_dir / "search" / country.slug / "YouTube" / f"{qi}.json"
+        urls.extend(search.search(
+            query, country.ddg_region, cfg.max_results, cache_path, cfg.delay, cfg.fresh
+        ))
+    refs = extract_channel_refs(urls)
+
+    # --- Resolve + read About per channel (cached as parsed triple) ---
+    cands: list[Candidate] = []
+    seen_ids: set[str] = set()
+    for ref in refs:
+        cache_path = cfg.cache_dir / "youtube" / country.slug / (_channel_slug(ref) + ".json")
+        if not cfg.fresh and cache_path.exists():
+            triple = json.loads(cache_path.read_text(encoding="utf-8"))
+        else:
+            cid = country_field = title = ""
+            try:
+                async with session.get(
+                    about_url(ref), headers={"User-Agent": _BROWSER_UA},
+                    timeout=aiohttp.ClientTimeout(total=cfg.timeout),
+                ) as resp:
+                    if resp.status == 200:
+                        cid, country_field, title = parse_channel_about(await resp.text())
+            except (aiohttp.ClientError, TimeoutError):
+                pass
+            triple = {"channel_id": cid, "country": country_field, "title": title}
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            cache_path.write_text(json.dumps(triple, ensure_ascii=False), encoding="utf-8")
+
+        cid = triple.get("channel_id", "")
+        country_field = triple.get("country", "")
+        if not cid or cid in seen_ids:
+            continue
+        if country_field.strip().lower() != country.name.strip().lower():
+            continue
+        seen_ids.add(cid)
+        cands.append(Candidate(
+            url=channel_rss_url(cid), category="YouTube",
+            title=triple.get("title", ""), genre="",
+            national=True, national_reason="youtube about country==name",
+        ))
+    return cands

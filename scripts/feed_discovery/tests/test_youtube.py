@@ -62,3 +62,27 @@ def test_candidate_kept_only_when_country_matches():
     assert ok.category == "YouTube" and ok.genre == "" and ok.national is True
     assert youtube.channel_candidate_from_html(ABOUT_US, "Bolivia") is None
     assert youtube.channel_candidate_from_html(ABOUT_NO_COUNTRY, "Bolivia") is None
+
+
+def test_discover_uses_cached_ddg_and_about(tmp_path, monkeypatch):
+    import asyncio
+
+    from scripts.feed_discovery.pipeline import Config
+
+    # Stub DDG: one channel URL surfaced, no network.
+    monkeypatch.setattr(
+        youtube.search, "search",
+        lambda *a, **k: ["https://www.youtube.com/channel/UCabcdefghijklmnopqrstuv"],
+    )
+    cfg = Config(cache_dir=tmp_path, delay=0, fresh=False)
+    # Pre-write the parsed /about cache for that channel.
+    ch_cache = tmp_path / "youtube" / "bolivia" / "channel_UCabcdefghijklmnopqrstuv.json"
+    ch_cache.parent.mkdir(parents=True, exist_ok=True)
+    ch_cache.write_text(
+        '{"channel_id": "UCabcdefghijklmnopqrstuv", "country": "Bolivia", "title": "Canal Bo"}',
+        encoding="utf-8",
+    )
+    cands = asyncio.run(youtube.discover(BO, None, cfg))
+    assert [c.url for c in cands] == \
+        ["https://www.youtube.com/feeds/videos.xml?channel_id=UCabcdefghijklmnopqrstuv"]
+    assert cands[0].category == "YouTube"
