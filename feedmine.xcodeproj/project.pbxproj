@@ -68,6 +68,8 @@
 		F311851139242691553818F4 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D05837FFFED0BCF4528A1 /* AppContext.swift */; };
 		F7849543D7C7A7076E8F8DEA /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126A0070B10B3C716D2C0C7 /* NetworkMonitor.swift */; };
 		138DDECADC064B1FA4E59506 /* Reservoir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C498739974F8AB16D045C /* Reservoir.swift */; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* BookmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C9D0E1F2A3B4C5 /* BookmarkList.swift */; };
+		C3D4E5F6A7B8C9D0E1F2A3B4 /* ActiveSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F6A7B8C9D0E1F2A3B4C5D6 /* ActiveSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +135,8 @@
 		FA499573FA22F43B9CCABCB2 /* ShakeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeHandler.swift; sourceTree = "<group>"; };
 		FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetchResult.swift; sourceTree = "<group>"; };
 		5A7C498739974F8AB16D045C /* Reservoir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservoir.swift; sourceTree = "<group>"; };
+		D4E5F6A7B8C9D0E1F2A3B4C5 /* BookmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkList.swift; sourceTree = "<group>"; };
+		E5F6A7B8C9D0E1F2A3B4C5D6 /* ActiveSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +256,8 @@
 		B9167966EC8BB04664D05F65 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D4E5F6A7B8C9D0E1F2A3B4C5 /* BookmarkList.swift */,
+				E5F6A7B8C9D0E1F2A3B4C5D6 /* ActiveSearch.swift */,
 				5F08DCDC7CAEAF98BEFD0654 /* Country.swift */,
 				1595D303FD10CB2456A989DC /* FeedFetchBatch.swift */,
 				FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */,
@@ -421,6 +427,8 @@
 				11D1CE76F9C9C6FB02903C60 /* CircadianEngine.swift in Sources */,
 				0D7D2F35B303B7FA834EE8B5 /* ContentView.swift in Sources */,
 				7814FE910506FDA2317F6948 /* CountriesListScreen.swift in Sources */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* BookmarkList.swift in Sources */,
+				C3D4E5F6A7B8C9D0E1F2A3B4 /* ActiveSearch.swift in Sources */,
 				C45B317AFADC404026F51D49 /* Country.swift in Sources */,
 				D38D54D8947B48111A20C2F1 /* CountryDetailScreen.swift in Sources */,
 				7D059B62DEC97393B3981822 /* DailyBriefingCard.swift in Sources */,
