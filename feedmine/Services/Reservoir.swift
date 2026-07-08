@@ -18,13 +18,11 @@ final class Reservoir {
     static let safetyZoneRadius = 50
     static let maxReservoirSize = 500
     static let surfacedCooldown: TimeInterval = 1800
-    static let reshuffleInterval = 5
 
     private(set) var visibleItems: [FeedItem] = []
     private(set) var reservoir: [FeedItem] = []
     var reservoirCount: Int { reservoir.count }
     private var surfacedTimestamps: [String: Date] = [:]
-    private var moveCountSinceReshuffle = 0
 
     /// URL → region lookup, provided by SourceRegistry
     var sourceRegionMap: [String: String] = [:]
@@ -46,9 +44,13 @@ final class Reservoir {
         let visibleIDs = Set(visibleItems.map(\.id))
         let trulyNew = items.filter { !visibleIDs.contains($0.id) }
         guard !trulyNew.isEmpty else { return }
-        reservoir.append(contentsOf: trulyNew)
+        // Interleave only the NEW items among themselves and append them to the
+        // tail; do not re-interleave the whole reservoir. Re-interleaving here
+        // reordered items the user was about to scroll into, so content shifted
+        // under them right before a tap. dedupReservoir is order-preserving
+        // (keeps the first occurrence), so the existing front stays put.
+        reservoir.append(contentsOf: interleave(trulyNew))
         dedupReservoir()
-        reservoir = interleave(reservoir)
         capReservoir()
     }
 
@@ -56,11 +58,10 @@ final class Reservoir {
 
     func moveToVisible(count: Int) {
         guard !reservoir.isEmpty else { return }
-        moveCountSinceReshuffle += 1
-        if moveCountSinceReshuffle >= Self.reshuffleInterval && reservoir.count > count {
-            reservoir = interleave(reservoir)
-            moveCountSinceReshuffle = 0
-        }
+        // No periodic reshuffle here. Re-interleaving the reservoir every few
+        // pages reordered upcoming items as the user scrolled toward them —
+        // content shifted before they could tap. Diversity comes from
+        // seed()/append(); order stays stable once set.
         let visibleIDs = Set(visibleItems.map(\.id))
         // Remove items already in visible to prevent duplicates
         reservoir.removeAll { visibleIDs.contains($0.id) }
@@ -121,7 +122,6 @@ final class Reservoir {
         visibleItems.removeAll()
         reservoir.removeAll()
         surfacedTimestamps.removeAll()
-        moveCountSinceReshuffle = 0
     }
 
     func emergencyTrim() {
