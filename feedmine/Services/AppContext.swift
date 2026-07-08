@@ -307,7 +307,6 @@ final class AppContext {
     private func matchesSpecialDate(_ d: SpecialDate, cal: Calendar, now: Date) -> Bool {
         let comps = cal.dateComponents([.month,.day,.weekday,.weekdayOrdinal,.year], from: now)
         let m = comps.month ?? 0; let day = comps.day ?? 0; let wd = comps.weekday ?? 0
-        let wy = comps.year ?? 2026
         switch d {
         case .newYearsDay: return m == 1 && day == 1
         case .mlkDay: return m == 1 && wd == 2 && comps.weekdayOrdinal == 3
@@ -328,8 +327,12 @@ final class AppContext {
         case .mothersDay: return m == 5 && wd == 1 && comps.weekdayOrdinal == 2
         case .fathersDay: return m == 6 && wd == 1 && comps.weekdayOrdinal == 3
         case .halloween: return m == 10 && day == 31
-        case .diwali: fallthrough; case .eid: fallthrough; case .hanukkah: fallthrough
-        case .lunarNewYear: fallthrough; case .cincoDeMayo: fallthrough
+        case .cincoDeMayo: return m == 5 && day == 5
+        // Lunar / variable-date holidays need a non-Gregorian calendar we don't
+        // compute yet. Return false rather than falling through: the old
+        // fallthrough chain matched all of these to March 8 (Women's Day) and
+        // never detected Cinco de Mayo on its real date.
+        case .diwali, .eid, .hanukkah, .lunarNewYear: return false
         case .womensDay: return m == 3 && day == 8
         case .prideMonth: return m == 6
         case .userAnniversary: return false // TODO: track first open date in UserDefaults
