@@ -597,21 +597,25 @@ final class FeedStore {
             (item, regionOverride ?? registry.regionFor(sourceURL: item.sourceURL))
         }
         do {
-            // Insert one at a time, tracking successes for loadedIDs sync (#17)
-            var persisted: [FeedItem] = []
-            for (item, region) in itemsWithRegions {
-                do {
-                    try await db.write { db in
+            // Single batch write with SAVEPOINT per item. One bad row
+            // rolls back to its savepoint without killing the whole batch. (#2)
+            let succeeded: [FeedItem] = try await db.write { db -> [FeedItem] in
+                var ok: [FeedItem] = []
+                for (item, region) in itemsWithRegions {
+                    do {
+                        try db.execute(sql: "SAVEPOINT item_insert")
                         try FeedItemRecord(from: item, region: region).insert(db)
+                        try db.execute(sql: "RELEASE SAVEPOINT item_insert")
+                        ok.append(item)
+                    } catch {
+                        try? db.execute(sql: "ROLLBACK TO SAVEPOINT item_insert")
                     }
-                    persisted.append(item)
-                    loadedIDs.insert(item.id)
-                } catch {
-                    // Skip a single bad/duplicate row, keep the rest.
                 }
+                return ok
             }
+            for item in succeeded { loadedIDs.insert(item.id) }
             loadedIDsCount = loadedIDs.count
-            return persisted
+            return succeeded
         } catch {
             print("[FeedStore] persist error: \(error)")
             return []
