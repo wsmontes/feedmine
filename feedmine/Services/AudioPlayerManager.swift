@@ -9,6 +9,7 @@ final class AudioPlayerManager {
 
     private var player: AVPlayer?
     private var timeObserver: Any?
+    private var lastSavedAt: TimeInterval = 0
     private var endObserver: NSObjectProtocol?
     private var statusObserver: NSKeyValueObservation?
     private var interruptionObserver: NSObjectProtocol?
@@ -271,9 +272,10 @@ final class AudioPlayerManager {
                 }
                 // Update lock screen elapsed time
                 self.updateNowPlaying()
-                // Persist position every ~5 seconds
-                if Int(self.currentTime) % 5 == 0 && self.currentTime > 0 {
+                // Persist position every ~5 seconds using elapsed check (#31)
+                if self.currentTime - self.lastSavedAt >= 5, self.currentTime > 0 {
                     self.savePosition()
+                    self.lastSavedAt = self.currentTime
                 }
             }
         }

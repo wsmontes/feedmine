@@ -274,8 +274,7 @@ final class FeedLoader {
     var whatsNewVisible = false
 
     func loadWhatsNew() async {
-        let items = await store.loadWhatsNewItems()
-        if !items.isEmpty { cachedWhatsNew = items }
+        cachedWhatsNew = await store.loadWhatsNewItems()
     }
 
     func flushWhatsNewQueue() {

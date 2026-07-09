@@ -27,18 +27,22 @@ final class FeedStore {
     private(set) var emptyFeedCount = 0
     private(set) var totalDiscarded = 0
 
-    /// Podcast items currently in SQLite
-    var podcastItemCount: Int {
-        (try? db.read { db in
-            try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM feed_item WHERE audio_url IS NOT NULL")
-        }) ?? 0
-    }
+    /// Cached podcast counts — updated after fetch batches, not on every access (#24)
+    private(set) var podcastItemCount = 0
+    private(set) var podcastSourceCount = 0
 
-    /// Unique podcast sources in SQLite
-    var podcastSourceCount: Int {
-        (try? db.read { db in
-            try Int.fetchOne(db, sql: "SELECT COUNT(DISTINCT source_url) FROM feed_item WHERE audio_url IS NOT NULL")
-        }) ?? 0
+    private func refreshPodcastCounts() {
+        Task {
+            do {
+                let (items, sources) = try await db.read { db -> (Int, Int) in
+                    let items = try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM feed_item WHERE audio_url IS NOT NULL") ?? 0
+                    let sources = try Int.fetchOne(db, sql: "SELECT COUNT(DISTINCT source_url) FROM feed_item WHERE audio_url IS NOT NULL") ?? 0
+                    return (items, sources)
+                }
+                podcastItemCount = items
+                podcastSourceCount = sources
+            } catch {}
+        }
     }
 
     // MARK: - Filter state (bidirectional)
@@ -496,7 +500,6 @@ final class FeedStore {
             let records: [FeedItemRecord] = try await db.read { db in
                 var request = FeedItemRecord
                     .filter(Column("fetched_at") > cutoff)
-                    .filter(Column("image_url") != nil)
                     .filter(Column("is_read") == 0)
                 if let r = region { request = request.filter(Column("region") == r) }
                 if let c = category { request = request.filter(Column("category") == c) }
