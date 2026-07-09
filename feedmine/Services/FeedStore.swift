@@ -632,7 +632,7 @@ final class FeedStore {
 
     private func progressiveFetch() async {
         loadingState = .refreshing
-        let allEnabled = registry.enabledSources
+        let allEnabled = registry.enabledSources.shuffled()
         let chunkSize = 20
         for chunkStart in stride(from: 0, to: allEnabled.count, by: chunkSize) {
             let end = min(chunkStart + chunkSize, allEnabled.count)
