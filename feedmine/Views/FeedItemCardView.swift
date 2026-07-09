@@ -212,15 +212,15 @@ struct FeedItemCardView: View {
                 .lineLimit(1)
 
             if item.isPodcast {
-                mediaBadge("PODCAST", color: .purple)
+                mediaBadge("Podcast", color: .purple)
                 if let dur = item.durationFormatted {
                     Text(dur).font(.caption2).foregroundStyle(.secondary)
                 }
             }
             if item.isYouTube {
-                mediaBadge("VIDEO", color: .red)
+                mediaBadge("Video", color: .red)
             } else if isNew && !item.isPodcast {
-                mediaBadge("NEW", color: .blue)
+                mediaBadge("New", color: .blue)
             }
 
             Spacer()
@@ -318,6 +318,7 @@ struct FeedItemCardView: View {
     private var readingTime: String {
         if item.isYouTube { return "Watch" }
         if item.isPodcast { return "Listen" }
+        return "Read"
         // Excerpt is too short for accurate WPM. Categorize by length tier.
         let wordCount = item.excerpt.split(separator: " ").count
         let minutes: Int
