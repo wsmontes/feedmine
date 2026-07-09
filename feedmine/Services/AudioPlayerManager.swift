@@ -21,6 +21,7 @@ final class AudioPlayerManager {
     enum PlaybackState { case idle, loading, playing, paused, failed }
     private(set) var currentTime: TimeInterval = 0
     private(set) var duration: TimeInterval = 0
+    var scrubTime: TimeInterval = 0   // drag target; committed on release (#32)
     private(set) var lastPlaybackError: String?
 
     private let defaults = UserDefaults.standard
@@ -299,7 +300,14 @@ final class AudioPlayerManager {
     func seek(to time: TimeInterval) {
         player?.seek(to: CMTime(seconds: time, preferredTimescale: 600))
         currentTime = time
+        scrubTime = time
         updateNowPlaying()
+    }
+
+    /// Commit scrubber drag position — seek only on release (#32)
+    func commitScrub() {
+        guard abs(scrubTime - currentTime) > 0.5 else { return }
+        seek(to: scrubTime)
     }
 
     func seekForward(_ seconds: Double = 15) {

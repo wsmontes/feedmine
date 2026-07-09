@@ -11,11 +11,11 @@ struct MiniPlayerBar: View {
                 // Progress bar
                 GeometryReader { geo in
                     Capsule()
-                        .fill(.blue.opacity(0.3))
+                        .fill(CircadianEngine.shared.accent.opacity(0.25))
                         .frame(height: 3)
                         .overlay(alignment: .leading) {
                             Capsule()
-                                .fill(.blue)
+                                .fill(CircadianEngine.shared.accent)
                                 .frame(width: geo.size.width * player.progress, height: 3)
                                 .animation(.smooth(duration: 0.5), value: player.progress)
                         }
@@ -83,7 +83,9 @@ struct MiniPlayerBar: View {
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(.ultraThinMaterial)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
+                .padding(.horizontal, 8)
+                .padding(.bottom, 4)
             }
             .onTapGesture { showFullPlayer = true }
             .sheet(isPresented: $showFullPlayer) {
@@ -149,15 +151,12 @@ struct FullPlayerView: View {
                 // Scrubber
                 VStack(spacing: 8) {
                     Slider(value: Binding(
-                        get: { player.currentTime },
-                        set: { newValue in
-                            // Only commit seek on meaningful drag movement
-                            if abs(newValue - player.currentTime) > 0.5 {
-                                player.seek(to: newValue)
-                            }
-                        }
-                    ), in: 0...max(player.duration, 1))
-                    .tint(.blue)
+                        get: { player.scrubTime },
+                        set: { player.scrubTime = $0 }
+                    ), in: 0...max(player.duration, 1), onEditingChanged: { editing in
+                        if !editing { player.commitScrub() }
+                    })
+                    .tint(CircadianEngine.shared.accent)
 
                     HStack {
                         Text(player.currentTimeFormatted)
