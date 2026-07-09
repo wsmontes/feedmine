@@ -476,6 +476,12 @@ actor RSSFetcher {
     /// Resolve a possibly-relative image URL against the article's base URL.
     private func resolveImageURL(_ imageURL: String?, baseURL: String?) -> String? {
         guard let raw = imageURL?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
+        // Reject tracking pixels and spacer GIFs at the source so they never
+        // enter the database or pollute the What's New carousel.
+        let lower = raw.lowercased()
+        if lower.contains("tracking") && lower.contains("pixel") { return nil }
+        if lower.contains("spacer") && (lower.hasSuffix(".gif") || lower.hasSuffix(".png")) { return nil }
+        if lower.hasSuffix("1x1.gif") || lower.hasSuffix("1x1.png") { return nil }
         // Already absolute
         if raw.hasPrefix("http://") || raw.hasPrefix("https://") { return raw }
         // Data URIs — pass through as-is (CachedAsyncImage handles)
