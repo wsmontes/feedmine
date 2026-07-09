@@ -13,6 +13,7 @@ struct FeedItem: Identifiable, Sendable, Codable {
     let publishedAt: Date
     let audioURL: String?
     let duration: TimeInterval?
+    let region: String   // "global" | "countries/brazil/sao-paulo"
 
     /// True if this article links to a YouTube video
     var isYouTube: Bool { youTubeVideoID != nil }
@@ -100,7 +101,7 @@ struct FeedItem: Identifiable, Sendable, Codable {
         FeedItem(
             id: id, sourceTitle: sourceTitle, sourceURL: sourceURL, category: category,
             title: title, excerpt: excerpt, url: url, imageURL: imageURL,
-            publishedAt: publishedAt, audioURL: nil, duration: nil
+            publishedAt: publishedAt, audioURL: nil, duration: nil, region: region
         )
     }
 

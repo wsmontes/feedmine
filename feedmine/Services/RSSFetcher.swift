@@ -438,7 +438,8 @@ actor RSSFetcher {
             imageURL: resolvedImageURL,
             publishedAt: publishedAt ?? Date(),
             audioURL: audioURL,
-            duration: duration
+            duration: duration,
+            region: source.region
         )
     }
 

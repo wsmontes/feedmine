@@ -66,11 +66,15 @@ final class FeedStore {
         let category = activeCategory
         let mood = activeMood
         let contentType = filterContentType
+        let region = activeRegion  // nil = default (global-only, English)
         return items.filter { item in
             isItemEnabled(item)
             && (category == nil || item.category == category)
             && contentType(item)
             && (mood == .all || mood.matches(item.title))
+            // Language/region gate: when no country is active, only global
+            // (curated English) content appears. Country content is opt-in.
+            && (region != nil || item.region == "global")
         }
     }
 
@@ -1359,7 +1363,8 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
             imageURL: imageURL,
             publishedAt: Date(timeIntervalSince1970: TimeInterval(publishedAt)),
             audioURL: audioURL,
-            duration: duration
+            duration: duration,
+            region: region
         )
     }
 }
