@@ -234,10 +234,6 @@ struct SettingsSheetView: View {
                         Text("Sources"); Spacer()
                         Text("\(loader.sourceCount) feeds · \(loader.opmlFileCount) files").foregroundStyle(.secondary)
                     }
-                    HStack {
-                        Text("Built with"); Spacer()
-                        Text("SwiftUI · FeedKit · Claude Code").foregroundStyle(.secondary)
-                    }
                 }
 
                 Section {
