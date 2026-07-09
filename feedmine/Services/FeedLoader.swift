@@ -258,19 +258,9 @@ final class FeedLoader {
     // MARK: - What's New
 
     private var cachedWhatsNew: [FeedItem] = []
-    /// What's New items, falling back to active search results when there's
-    /// nothing fresh — so the carousel always has something relevant to show.
-    var whatIsNewItems: [FeedItem] {
-        if !cachedWhatsNew.isEmpty { return cachedWhatsNew }
-        if hasActiveSearches { return activeSearchItems }
-        return []
-    }
-    /// Label for the carousel header — changes based on what's being shown.
-    var whatsNewLabel: String {
-        if !cachedWhatsNew.isEmpty { return "What's New" }
-        if hasActiveSearches { return "Your Alerts" }
-        return "What's New"
-    }
+    /// What's New items — separate from active search results (#40).
+    var whatIsNewItems: [FeedItem] { cachedWhatsNew }
+    var whatsNewLabel: String { "What's New" }
     var whatsNewVisible = false
 
     func loadWhatsNew() async {

@@ -978,6 +978,7 @@ final class FeedStore {
                     DELETE FROM feed_item WHERE id IN (
                         SELECT id FROM feed_item WHERE source_url = ?
                         AND id NOT IN (SELECT item_id FROM bookmark_item)
+                        AND is_read = 0
                         ORDER BY published_at ASC
                         LIMIT ?
                     )
