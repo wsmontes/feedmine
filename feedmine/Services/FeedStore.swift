@@ -321,6 +321,10 @@ final class FeedStore {
         activeMood = mood
         persistFilters()
         if regionChanged || categoryChanged {
+            // Clear visible items synchronously so the UI reflects the filter
+            // change immediately — no stale content flash, no reordering.
+            visibleItems = []
+            reservoirCount = 0
             Task {
                 await reloadFromSQLite()
                 if visibleItems.count < 20 { await fetchNextBatch() }
@@ -339,6 +343,8 @@ final class FeedStore {
         activeMood = .all
         persistFilters()
         if hadStructuralFilter {
+            visibleItems = []
+            reservoirCount = 0
             Task {
                 await reloadFromSQLite()
                 if visibleItems.count < 20 { await fetchNextBatch() }
@@ -1141,17 +1147,21 @@ final class FeedStore {
     /// Shake-to-refresh: mark visible as read, re-interleave reservoir,
     /// reload from SQLite, force fetch fresh content.
     func shakeToRefresh() {
-        // Mark visible items as read so they don't come back
+        // Mark visible items as surfaced so they deprecate below unseen content
         for item in reservoir.visibleItems {
             readItemIDs.insert(item.id)
         }
-        // Move visible back to reservoir, re-interleave, re-slice
-        reservoir.shakeReshuffle()
-        visibleItems = applyFilters(reservoir.visibleItems)
-        reservoirCount = reservoir.reservoirCount
-        // Force fetch — bypass staleness check
-        lastRefreshDate = nil
-        Task { await fetchNextBatch() }
+        // Clear visible feed and reload fresh content from SQLite.
+        // re-interleaving existing items is NOT a refresh — the user
+        // wants genuinely new content from the database.
+        visibleItems = []
+        reservoirCount = 0
+        reservoir.clear()
+        lastRefreshDate = nil   // bypass staleness check
+        Task {
+            await reloadFromSQLite()
+            if visibleItems.count < 20 { await fetchNextBatch() }
+        }
     }
 
     // MARK: - Migration
