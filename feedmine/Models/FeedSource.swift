@@ -20,8 +20,15 @@ struct FeedSource: Codable, Identifiable, Sendable {
         url.contains("youtube.com/feeds")
     }
 
+    /// Only text news/blog sources are "country feeds" that should be opt-in.
+    /// YouTube and podcast sources keep their country tag for language/region
+    /// filtering but are always globally available — their country association
+    /// is a language overlay, not an enable/disable gate.
+    /// Uses isYouTube / mediaKind.audio instead of just mediaKind because
+    /// YouTube entries inside country OPMLs get mediaKind=.text (the parser
+    /// only tags .video when the OPML *file name* contains "youtube").
     var isCountryFeed: Bool {
-        region.hasPrefix("countries/")
+        region.hasPrefix("countries/") && !isYouTube && mediaKind != .audio
     }
 
     init(title: String, url: String, category: String, region: String = "global", mediaKind: MediaKind = .text) {

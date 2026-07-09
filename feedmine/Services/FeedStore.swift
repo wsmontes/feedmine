@@ -218,12 +218,17 @@ final class FeedStore {
             return
         }
 
-        // Background: start fetching
+        // First batch: fill the visible feed quickly so the user sees content
+        // immediately. The scheduler picks ~17 top-scoring sources.
         await fetchNextBatch()
 
-        // If still empty, progressive fetch
-        if visibleItems.isEmpty {
-            await progressiveFetch()
+        // Background: process ALL remaining enabled sources so YouTube,
+        // podcasts, and other non-text sources don't wait hours for their
+        // turn in the scheduler lottery. Runs as a main-actor Task so
+        // FeedStore state access is safe; each await suspension point
+        // yields the actor for UI work.
+        if !registry.enabledSources.isEmpty {
+            Task { await progressiveFetch() }
         }
         loadingState = .idle
 
@@ -630,14 +635,17 @@ final class FeedStore {
         }
     }
 
+    /// Fetch all remaining enabled sources in chunks. Designed to run as a
+    /// background continuation after the first batch already filled the
+    /// visible feed — does NOT touch loadingState so the UI stays idle.
     private func progressiveFetch() async {
-        loadingState = .refreshing
         let allEnabled = registry.enabledSources.shuffled()
         let chunkSize = 20
+        print("[progressiveFetch] Starting: \(allEnabled.count) sources")
         for chunkStart in stride(from: 0, to: allEnabled.count, by: chunkSize) {
             let end = min(chunkStart + chunkSize, allEnabled.count)
             let chunk = Array(allEnabled[chunkStart..<end])
-            let result = await fetcher.fetchAll(chunk, maxConcurrent: 15)
+            let result = await fetcher.fetchAll(chunk, maxConcurrent: 5)
             totalFetched += result.items.count
             fetchErrorCount += result.failedSourceCount
             emptyFeedCount += result.emptySourceCount
@@ -646,8 +654,6 @@ final class FeedStore {
                 scheduler.recordFetch(sourceURL: source.url, success: !failed)
                 saveSourceHealth(for: source.url)
             }
-            // Persist through the shared path — progressive fetch previously
-            // showed items without ever writing them to SQLite.
             let actualNew = await persistFetchedItems(result.items)
             reservoir.append(actualNew)
             prefetchImagesIfEnabled(for: actualNew)
@@ -658,8 +664,8 @@ final class FeedStore {
                 reservoirCount = reservoir.reservoirCount
             }
         }
+        print("[progressiveFetch] DONE — all \(allEnabled.count) sources processed")
         lastRefreshDate = .now
-        loadingState = .idle
     }
 
     private func reloadFromSQLite(prepend: [FeedItem] = []) async {
