@@ -455,8 +455,10 @@ final class FeedStore {
         let cutoff = Int(baseline.timeIntervalSince1970)
         let region = activeRegion
         let category = activeCategory
-        // disabledRegions filtering now handled in-memory by isItemEnabled
-        do {
+
+        /// Run the What's New query with a given cutoff. Extracted so we can try
+        /// the baseline first, then fall back to a 7-day window if nothing is fresh.
+        func query(cutoff: Int) async throws -> [FeedItem] {
             let records: [FeedItemRecord] = try await db.read { db in
                 var request = FeedItemRecord
                     .filter(Column("fetched_at") > cutoff)
@@ -470,6 +472,19 @@ final class FeedStore {
                     .fetchAll(db)
             }
             return records.map { $0.toFeedItem() }.filter(isItemEnabled).filter(filterContentType).shuffled()
+        }
+
+        do {
+            // 1) Baseline window — items fetched since the user last dismissed
+            let fresh = try await query(cutoff: cutoff)
+            if !fresh.isEmpty { return fresh }
+
+            // 2) Fallback: 7-day sliding window — prevents an eternally empty
+            //    carousel when no new fetches have landed (e.g. staleness gate,
+            //    offline, already-up-to-date feeds).
+            let fallbackCutoff = Int(Date().addingTimeInterval(-604800).timeIntervalSince1970)
+            let fallback = try await query(cutoff: fallbackCutoff)
+            return fallback
         } catch {
             return []
         }

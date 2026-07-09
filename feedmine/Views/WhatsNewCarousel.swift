@@ -42,13 +42,13 @@ struct WhatsNewCarousel: View {
             loader.whatsNewVisible = true
             loader.prefetchWhatsNewImages()
             recomputeBrowsingCards()
+            Task { await loader.loadWhatsNew() }
         }
         .onChange(of: loader.filteredItems.count) { _, _ in
             recomputeBrowsingCards()
         }
         .onDisappear {
             loader.whatsNewVisible = false
-            loader.flushWhatsNewQueue()
         }
     }
 
