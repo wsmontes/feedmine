@@ -671,6 +671,32 @@ final class FeedStore {
         }
         print("[progressiveFetch] DONE — all \(allEnabled.count) sources processed")
         lastRefreshDate = .now
+
+        // Retroactive cap: sources that accumulated >50 items before the cap
+        // existed (e.g. OpenAI Blog at 1000+) get trimmed once after the
+        // initial bulk fetch completes.
+        await capAllSources()
+    }
+
+    /// Cap ALL sources in the database at 50 items each. Runs once after
+    /// progressiveFetch completes the initial bulk fetch. Uses a single
+    /// query to find offenders so we don't scan 855 sources one-by-one.
+    private func capAllSources() async {
+        do {
+            let offenders: [String] = try await db.read { db in
+                try String.fetchAll(db, sql: """
+                    SELECT source_url FROM feed_item
+                    GROUP BY source_url HAVING COUNT(*) > 50
+                """)
+            }
+            guard !offenders.isEmpty else { return }
+            print("[capAllSources] Capping \(offenders.count) sources (>50 items)")
+            for url in offenders {
+                await capSourceItems(sourceURL: url)
+            }
+        } catch {
+            print("[capAllSources] Error: \(error)")
+        }
     }
 
     private func reloadFromSQLite(prepend: [FeedItem] = []) async {
