@@ -8,7 +8,13 @@ actor RSSFetcher {
     /// enclosure (podcast episode URLs are stable).
     private var audioPlayability: [String: Bool] = [:]
 
+    private static let playabilityCacheKey = "audio_playability_cache"
+
     init() {
+        // Restore persisted playability cache (#34) so probes survive restart
+        if let saved = UserDefaults.standard.dictionary(forKey: Self.playabilityCacheKey) as? [String: Bool] {
+            audioPlayability = saved
+        }
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 15
         config.timeoutIntervalForResource = 30
@@ -258,16 +264,19 @@ actor RSSFetcher {
         if let cached = audioPlayability[urlString] { return cached }
         guard let url = URL(string: urlString) else {
             audioPlayability[urlString] = false
+            savePlayabilityCache()
             return false
         }
         switch await probeAudio(url) {
         case .playable:
             audioPlayability[urlString] = true
             trimPlayabilityCache()
+            savePlayabilityCache()
             return true
         case .notAudio:
             audioPlayability[urlString] = false
             trimPlayabilityCache()
+            savePlayabilityCache()
             return false
         case .unknown:
             return true   // couldn't confirm — keep it, retry on a later fetch
@@ -279,6 +288,11 @@ actor RSSFetcher {
         // Drop earliest entries to keep cache bounded
         let keysToRemove = audioPlayability.keys.prefix(audioPlayability.count - 300)
         for key in keysToRemove { audioPlayability.removeValue(forKey: key) }
+        savePlayabilityCache()
+    }
+
+    private func savePlayabilityCache() {
+        UserDefaults.standard.set(audioPlayability, forKey: Self.playabilityCacheKey)
     }
 
     private func probeAudio(_ url: URL) async -> AudioProbe {
