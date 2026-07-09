@@ -656,6 +656,11 @@ final class FeedStore {
             }
             let actualNew = await persistFetchedItems(result.items)
             reservoir.append(actualNew)
+            // Cap items per source so no single feed dominates (>50 items)
+            if !actualNew.isEmpty {
+                let sourceURLs = Set(actualNew.map(\.sourceURL))
+                for url in sourceURLs { await capSourceItems(sourceURL: url) }
+            }
             prefetchImagesIfEnabled(for: actualNew)
             await matchPersistentSearches(actualNew)
             if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
