@@ -472,7 +472,7 @@ final class FeedStore {
                 if let r = region { request = request.filter(Column("region") == r) }
                 if let c = category { request = request.filter(Column("category") == c) }
                 return try request
-                    .order(Column("published_at").desc)
+                    .order(Column("fetched_at").desc)
                     .limit(10)
                     .fetchAll(db)
             }
