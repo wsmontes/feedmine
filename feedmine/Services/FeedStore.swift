@@ -634,7 +634,7 @@ final class FeedStore {
         loadingState = .refreshing
         let allEnabled = registry.enabledSources
         let chunkSize = 20
-        for chunkStart in stride(from: 0, to: min(allEnabled.count, 60), by: chunkSize) {
+        for chunkStart in stride(from: 0, to: allEnabled.count, by: chunkSize) {
             let end = min(chunkStart + chunkSize, allEnabled.count)
             let chunk = Array(allEnabled[chunkStart..<end])
             let result = await fetcher.fetchAll(chunk, maxConcurrent: 15)
