@@ -645,6 +645,9 @@ final class FeedStore {
         for chunkStart in stride(from: 0, to: allEnabled.count, by: chunkSize) {
             let end = min(chunkStart + chunkSize, allEnabled.count)
             let chunk = Array(allEnabled[chunkStart..<end])
+            // Gentle 1s inter-chunk delay (skip first) to avoid rate-limiting
+            // from YouTube and other aggressive CDNs when processing 800+ sources.
+            if chunkStart > 0 { try? await Task.sleep(for: .seconds(1)) }
             let result = await fetcher.fetchAll(chunk, maxConcurrent: 5)
             totalFetched += result.items.count
             fetchErrorCount += result.failedSourceCount
