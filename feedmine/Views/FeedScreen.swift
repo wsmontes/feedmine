@@ -482,12 +482,6 @@ struct CompactGreeting: View {
                 .frame(width: 16, height: 16)
             Text("Feedmine").font(.caption).fontWeight(.bold)
             Text("·\(loader.sourceCount) sources").font(.caption2).foregroundStyle(.secondary)
-            if loader.totalFetched > 0 {
-                Text("·\(loader.totalFetched) fetched")
-                    .font(.caption2)
-                    .foregroundStyle(engine.accent.opacity(0.7))
-                    .contentTransition(.numericText())
-            }
         }
     }
 }
