@@ -23,6 +23,9 @@ final class Reservoir {
     private(set) var reservoir: [FeedItem] = []
     var reservoirCount: Int { reservoir.count }
     private var surfacedTimestamps: [String: Date] = [:]
+    /// Items the user has explicitly marked as read (readItemIDs from FeedStore).
+    /// Read items deprecate harder than surfaced items — pushed to the stale bucket.
+    var readItemIDs: Set<String> = []
 
     /// URL → region lookup, provided by SourceRegistry
     var sourceRegionMap: [String: String] = [:]
@@ -182,15 +185,17 @@ final class Reservoir {
         let staleEvergreenCutoff = Date().addingTimeInterval(-604800)
         for key in bySource.keys {
             let bucket = bySource[key]!
+            // Read items: always stale regardless of timestamp
+            let readIDs = bucket.filter { readItemIDs.contains($0.id) }.map(\.id)
             let surfacedIDs = Set(bucket.filter { item in
                 guard let ts = surfacedTimestamps[item.id] else { return false }
                 return ts > surfacedCutoff
             }.map(\.id))
             let staleIDs = Set(bucket.filter { item in
-                if surfacedIDs.contains(item.id) { return false }
+                if surfacedIDs.contains(item.id) || readIDs.contains(item.id) { return false }
                 let cutoff = item.isTimeless ? staleEvergreenCutoff : staleNewsCutoff
                 return item.publishedAt < cutoff
-            }.map(\.id))
+            }.map(\.id) + readIDs)
             let recent = interleaveByTypeCategory(bucket.filter { !surfacedIDs.contains($0.id) && !staleIDs.contains($0.id) }.shuffled())
             let stale = interleaveByTypeCategory(bucket.filter { staleIDs.contains($0.id) }.shuffled())
             let surfaced = interleaveByTypeCategory(bucket.filter { surfacedIDs.contains($0.id) }.shuffled())

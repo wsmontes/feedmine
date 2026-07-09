@@ -204,6 +204,7 @@ final class FeedStore {
         // Restore persisted filter + read/bookmark state
         restoreFilters()
         await loadReadState()
+        reservoir.readItemIDs = readItemIDs
 
         // Snapshot baseline for "What's New" — persisted so items don't vanish
         // just because the app restarted. Falls back to now on first launch.
@@ -399,6 +400,7 @@ final class FeedStore {
     // MARK: - Read
     func markAsRead(_ itemID: String) {
         readItemIDs.insert(itemID)
+        reservoir.readItemIDs = readItemIDs
         Task {
             try await db.write { db in
                 try db.execute(sql: """
