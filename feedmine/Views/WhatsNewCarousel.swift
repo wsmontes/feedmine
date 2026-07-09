@@ -110,8 +110,10 @@ struct WhatsNewCarousel: View {
     /// MiniCardData ids (fresh UUIDs) stable so the film-strip marquee isn't
     /// rebuilt on every frame.
     private func recomputeBrowsingCards() {
-        // filteredItems.count is a cheap invalidation signal.
-        let currentHash = loader.filteredItems.count
+        // Hash on count + first/last IDs so cards recompose when items change,
+        // not just when count changes (#41).
+        let items = loader.filteredItems
+        let currentHash = items.count ^ (items.first?.id.hashValue ?? 0) ^ (items.last?.id.hashValue ?? 0)
         guard currentHash != browsingCardsHash else { return }
         cachedBrowsingCards = Array(loader.filteredItems
             .lazy

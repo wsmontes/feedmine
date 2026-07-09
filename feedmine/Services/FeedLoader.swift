@@ -375,6 +375,16 @@ final class FeedLoader {
         Task { await loadWhatsNew() }
     }
 
+    func clearReadHistory() {
+        store.clearReadHistory()
+    }
+
+    func clearAllBookmarks() {
+        bookmarkItemIDs.removeAll()
+        store.clearAllBookmarks()
+        Task { await refreshBookmarkState() }
+    }
+
     func searchQueryChanged() {
         if searchQuery.isEmpty {
             store.clearSearch()

@@ -3,7 +3,7 @@ import SwiftUI
 struct SettingsSheetView: View {
     @Environment(FeedLoader.self) private var loader
     @Environment(LocaleManager.self) private var localeManager
-    @AppStorage("showDebugBar") private var showDebugBar = true
+    @AppStorage("showDebugBar") private var showDebugBar = false
     @AppStorage("prefetchImages") private var prefetchImages = true
     @AppStorage("nightMode") private var nightMode = false
     @AppStorage("fontSize") private var fontSize = FontSize.medium.rawValue
@@ -153,7 +153,7 @@ struct SettingsSheetView: View {
                     .disabled(loader.readItemIDs.isEmpty)
                     .confirmationDialog("Clear all read history?", isPresented: $showClearReadConfirmation) {
                         Button("Clear All", role: .destructive) {
-                            // loader.readItemIDs.removeAll() // REMOVED: now managed by FeedStore. Task 11 wires clear.
+                            loader.clearReadHistory()
                         }
                     }
 
@@ -165,7 +165,7 @@ struct SettingsSheetView: View {
                     .disabled(loader.bookmarkedIDs.isEmpty)
                     .confirmationDialog("Remove all bookmarks?", isPresented: $showClearBookmarksConfirmation) {
                         Button("Clear All", role: .destructive) {
-                            // loader.bookmarkedIDs.removeAll() // REMOVED: now managed by FeedStore. Task 11 wires clear.
+                            loader.clearAllBookmarks()
                         }
                     }
                 }

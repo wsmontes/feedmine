@@ -436,6 +436,24 @@ final class FeedStore {
         }
     }
 
+    func clearReadHistory() {
+        readItemIDs.removeAll()
+        reservoir.readItemIDs = []
+        Task {
+            try await db.write { db in
+                try db.execute(sql: "UPDATE feed_item SET is_read = 0, opened_at = NULL")
+            }
+        }
+    }
+
+    func clearAllBookmarks() {
+        Task {
+            try await db.write { db in
+                try db.execute(sql: "DELETE FROM bookmark_item")
+            }
+        }
+    }
+
     // MARK: - Source health
 
     /// Last fetch date for a source URL.
