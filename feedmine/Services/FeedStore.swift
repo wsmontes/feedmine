@@ -544,7 +544,13 @@ final class FeedStore {
             let fresh = try await query(cutoff: cutoff)
             if !fresh.isEmpty { return fresh }
 
-            // 2) Fallback: 7-day sliding window — prevents an eternally empty
+            // 2) Fallback cooldown: if the baseline was advanced recently
+            //    (e.g. user just dismissed the carousel), skip the 7-day
+            //    fallback to respect the dismiss intent. (#37)
+            let cooldownWindow: TimeInterval = 3600 // 1 hour
+            if Date().timeIntervalSince(baseline) < cooldownWindow { return [] }
+
+            // 3) Fallback: 7-day sliding window — prevents an eternally empty
             //    carousel when no new fetches have landed (e.g. staleness gate,
             //    offline, already-up-to-date feeds).
             let fallbackCutoff = Int(Date().addingTimeInterval(-604800).timeIntervalSince1970)
@@ -567,7 +573,9 @@ final class FeedStore {
     /// Items fetched after this point (e.g. seedRegion) will be "new";
     /// weeks-old DB content won't be.
     func resetWhatsNewBaseline() {
-        whatsNewBaselineDate = Date()
+        let now = Date()
+        whatsNewBaselineDate = now
+        UserDefaults.standard.set(now, forKey: Self.lastWhatsNewSeenAtKey)
     }
 
     // MARK: - Private: fetch
