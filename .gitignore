@@ -24,3 +24,9 @@ __pycache__/
 scripts/feed_discovery/cache/
 scripts/feed_discovery/candidates/
 .venv/
+
+# Loop progress artifacts
+.loop_progress.json
+*.zip
+.superpowers/
+.superpowers/
