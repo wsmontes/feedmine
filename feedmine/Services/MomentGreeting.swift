@@ -55,52 +55,8 @@ struct MomentGreeting {
     // MARK: Slot Functions
 
     private static func greetingSlot(_ ctx: AppContext) -> String {
-        let greetings: [String]
-        switch ctx.timeOfDay {
-        case .night:     greetings = [
-            String(localized: "Late night", comment: "Night greeting"),
-            String(localized: "Still up?", comment: "Night greeting"),
-            String(localized: "Past midnight", comment: "Night greeting"),
-            String(localized: "The small hours", comment: "Night greeting"),
-            String(localized: "Quiet night", comment: "Night greeting"),
-        ]
-        case .dawn:      greetings = [
-            String(localized: "Early morning", comment: "Dawn greeting"),
-            String(localized: "Almost dawn", comment: "Dawn greeting"),
-            String(localized: "The sun's waking up", comment: "Dawn greeting"),
-            String(localized: "Before the world stirs", comment: "Dawn greeting"),
-            String(localized: "Dawn patrol", comment: "Dawn greeting"),
-            String(localized: "First light", comment: "Dawn greeting"),
-        ]
-        case .morning:   greetings = [
-            String(localized: "Good morning", comment: "Morning greeting"),
-            String(localized: "Morning", comment: "Morning greeting"),
-            String(localized: "Rise and read", comment: "Morning greeting"),
-            String(localized: "Top of the morning", comment: "Morning greeting"),
-            String(localized: "Bright and early", comment: "Morning greeting"),
-        ]
-        case .afternoon: greetings = [
-            String(localized: "Good afternoon", comment: "Afternoon greeting"),
-            String(localized: "Afternoon", comment: "Afternoon greeting"),
-            String(localized: "Midday check-in", comment: "Afternoon greeting"),
-            String(localized: "Peak afternoon", comment: "Afternoon greeting"),
-            String(localized: "Afternoon light", comment: "Afternoon greeting"),
-        ]
-        case .evening:   greetings = [
-            String(localized: "Good evening", comment: "Evening greeting"),
-            String(localized: "Evening light", comment: "Evening greeting"),
-            String(localized: "Golden hour", comment: "Evening greeting"),
-            String(localized: "Sundown", comment: "Evening greeting"),
-            String(localized: "Twilight time", comment: "Evening greeting"),
-        ]
-        case .lateNight: greetings = [
-            String(localized: "Late night", comment: "Late night greeting"),
-            String(localized: "The world is asleep", comment: "Late night greeting"),
-            String(localized: "Night owl hours", comment: "Late night greeting"),
-            String(localized: "Burning the midnight oil", comment: "Late night greeting"),
-        ]
-        }
-        return greetings.randomElement() ?? String(localized: "Hello", comment: "Default greeting")
+        // Pulled from Greetings.json — add languages and variants there.
+        GreetingStore.random(for: ctx.timeOfDay)
     }
 
     private static func weekdaySlot(_ ctx: AppContext) -> String {

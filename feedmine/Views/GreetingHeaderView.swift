@@ -21,22 +21,15 @@ struct GreetingHeaderView: View {
     }
 
     private var greeting: String {
-        let hour = Calendar.current.component(.hour, from: Date())
-        switch hour {
-        case 5..<12: return "Good morning"
-        case 12..<17: return "Good afternoon"
-        case 17..<22: return "Good evening"
-        default: return "Good night"
-        }
+        GreetingStore.primary(for: TimeOfDay.from(hour: Calendar.current.component(.hour, from: Date())))
     }
 
     private var emoji: String {
-        let hour = Calendar.current.component(.hour, from: Date())
-        switch hour {
-        case 5..<12: return "sunrise.fill"
-        case 12..<17: return "sun.max.fill"
-        case 17..<22: return "sunset.fill"
-        default: return "moon.stars.fill"
+        switch TimeOfDay.from(hour: Calendar.current.component(.hour, from: Date())) {
+        case .dawn, .morning: return "sunrise.fill"
+        case .afternoon: return "sun.max.fill"
+        case .evening: return "sunset.fill"
+        case .night, .lateNight: return "moon.stars.fill"
         }
     }
 

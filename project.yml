@@ -15,6 +15,9 @@ packages:
   FeedKit:
     url: https://github.com/nmdias/FeedKit
     from: 9.0.0
+  GRDB:
+    url: https://github.com/groue/GRDB.swift
+    from: 7.4.0
 
 targets:
   feedmine:
@@ -81,3 +84,11 @@ targets:
       DEVELOPMENT_TEAM: "955573A4YH"
     dependencies:
       - package: FeedKit
+      - package: GRDB
+schemes:
+  feedmine:
+    build:
+      targets:
+        feedmine: all
+    run:
+      config: Debug

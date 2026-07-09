@@ -87,20 +87,14 @@ struct DailyBriefingCard: View {
     }
 
     private var greetingText: String {
-        let hour = Calendar.current.component(.hour, from: Date())
-        switch hour {
-        case 5..<12: return "Good morning"
-        case 12..<17: return "Good afternoon"
-        default: return "Good evening"
-        }
+        GreetingStore.primary(for: TimeOfDay.from(hour: Calendar.current.component(.hour, from: Date())))
     }
 
     private var greetingIcon: String {
-        let hour = Calendar.current.component(.hour, from: Date())
-        switch hour {
-        case 5..<12: return "sunrise.fill"
-        case 12..<17: return "sun.max.fill"
-        default: return "moon.stars.fill"
+        switch TimeOfDay.from(hour: Calendar.current.component(.hour, from: Date())) {
+        case .dawn, .morning: return "sunrise.fill"
+        case .afternoon: return "sun.max.fill"
+        case .evening, .night, .lateNight: return "moon.stars.fill"
         }
     }
 

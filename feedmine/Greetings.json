@@ -1,0 +1,53 @@
+{
+  "_comment": "Greeting variants per time-of-day. Add languages and variants freely.",
+  "periods": {
+    "night":     { "startHour": 0,  "endHour": 5 },
+    "dawn":      { "startHour": 5,  "endHour": 7 },
+    "morning":   { "startHour": 7,  "endHour": 12 },
+    "afternoon": { "startHour": 12, "endHour": 17 },
+    "evening":   { "startHour": 17, "endHour": 21 },
+    "lateNight": { "startHour": 21, "endHour": 24 }
+  },
+  "greetings": {
+    "en": {
+      "night":     ["Late night", "Still up?", "Past midnight", "The small hours", "Quiet night"],
+      "dawn":      ["Early morning", "Almost dawn", "The sun's waking up", "Before the world stirs", "Dawn patrol", "First light"],
+      "morning":   ["Good morning", "Morning", "Rise and read", "Top of the morning", "Bright and early"],
+      "afternoon": ["Good afternoon", "Afternoon", "Midday check-in", "Peak afternoon", "Afternoon light"],
+      "evening":   ["Good evening", "Evening light", "Golden hour", "Sundown", "Twilight time"],
+      "lateNight": ["Late night", "The world is asleep", "Night owl hours", "Burning the midnight oil"]
+    },
+    "pt": {
+      "night":     ["Madrugada", "Ainda acordado?", "Passou da meia-noite", "A cidade dorme", "Noite quieta"],
+      "dawn":      ["Cedo", "Quase amanhecendo", "O sol vai nascer", "Antes do mundo acordar", "Alvorada", "Primeira luz"],
+      "morning":   ["Bom dia", "Manhã", "Hora de ler", "Começando bem", "Dia novo"],
+      "afternoon": ["Boa tarde", "Tarde", "Check-in da tarde", "Meio do dia", "Luz da tarde"],
+      "evening":   ["Boa noite", "Fim de tarde", "Hora dourada", "Pôr do sol", "Anoitecendo"],
+      "lateNight": ["Noite", "O mundo dorme", "Corujão", "Queimando a meia-noite"]
+    },
+    "es": {
+      "night":     ["Madrugada", "¿Todavía despierto?", "Pasó la medianoche", "La ciudad duerme", "Noche tranquila"],
+      "dawn":      ["Temprano", "Casi amanece", "El sol va a salir", "Antes que el mundo despierte", "Amanecer", "Primera luz"],
+      "morning":   ["Buenos días", "Mañana", "A leer", "Empezando bien", "Día nuevo"],
+      "afternoon": ["Buenas tardes", "Tarde", "Check-in de tarde", "Mediodía", "Luz de tarde"],
+      "evening":   ["Buenas noches", "Atardecer", "Hora dorada", "Puesta de sol", "Anocheciendo"],
+      "lateNight": ["Noche", "El mundo duerme", "Noctámbulo", "Quemando medianoche"]
+    },
+    "fr": {
+      "night":     ["Tard dans la nuit", "Encore debout ?", "Après minuit", "Les petites heures", "Nuit calme"],
+      "dawn":      ["Tôt le matin", "Presque l'aube", "Le soleil se lève", "Avant que le monde s'éveille", "Patrouille de l'aube", "Première lumière"],
+      "morning":   ["Bonjour", "Matin", "Debout et lis", "Bien le bonjour", "Tôt et brillant"],
+      "afternoon": ["Bon après-midi", "Après-midi", "Check-in de midi", "Pic d'après-midi", "Lumière d'après-midi"],
+      "evening":   ["Bonsoir", "Lumière du soir", "Heure dorée", "Crépuscule", "Entre chien et loup"],
+      "lateNight": ["Tard", "Le monde dort", "Noctambule", "Brûler l'huile de minuit"]
+    },
+    "de": {
+      "night":     ["Späte Nacht", "Noch wach?", "Nach Mitternacht", "Die kleinen Stunden", "Stille Nacht"],
+      "dawn":      ["Früh am Morgen", "Fast Morgengrauen", "Die Sonne erwacht", "Bevor die Welt sich regt", "Morgenpatrouille", "Erstes Licht"],
+      "morning":   ["Guten Morgen", "Morgen", "Aufstehen und lesen", "Schönsten guten Morgen", "Frisch und früh"],
+      "afternoon": ["Guten Nachmittag", "Nachmittag", "Mittags-Check-in", "Hochsommernachmittag", "Nachmittagslicht"],
+      "evening":   ["Guten Abend", "Abendlicht", "Goldene Stunde", "Sonnenuntergang", "Dämmerung"],
+      "lateNight": ["Spät", "Die Welt schläft", "Nachteule", "Mitternachtsöl brennen"]
+    }
+  }
+}
