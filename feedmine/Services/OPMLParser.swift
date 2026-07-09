@@ -171,12 +171,23 @@ struct OPMLParser {
         let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
         guard var components = URLComponents(string: trimmed) else { return trimmed }
 
-        components.scheme = components.scheme?.lowercased()
-        components.host = components.host?.lowercased()
+        // Normalize scheme to https (http→https equivalence)
+        components.scheme = "https"
+        // Strip www. prefix
+        if let host = components.host?.lowercased(), host.hasPrefix("www.") {
+            components.host = String(host.dropFirst(4))
+        }
 
         var urlString = components.string ?? trimmed
         if urlString.hasSuffix("/") {
             urlString.removeLast()
+        }
+        // Remove common tracking/analytics query params
+        if var url = URL(string: urlString),
+           var comps = URLComponents(url: url, resolvingAgainstBaseURL: false) {
+            let trackingParams = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "ref", "source", "fbclid", "gclid"]
+            comps.queryItems = comps.queryItems?.filter { !trackingParams.contains($0.name) }
+            if let cleaned = comps.string { urlString = cleaned }
         }
         return urlString
     }

@@ -566,21 +566,25 @@ final class FeedStore {
             (item, regionOverride ?? registry.regionFor(sourceURL: item.sourceURL))
         }
         do {
-            try await db.write { db in
-                for (item, region) in itemsWithRegions {
-                    do {
+            // Insert one at a time, tracking successes for loadedIDs sync (#17)
+            var persisted: [FeedItem] = []
+            for (item, region) in itemsWithRegions {
+                do {
+                    try await db.write { db in
                         try FeedItemRecord(from: item, region: region).insert(db)
-                    } catch {
-                        // Skip a single bad/duplicate row, keep the rest.
                     }
+                    persisted.append(item)
+                    loadedIDs.insert(item.id)
+                } catch {
+                    // Skip a single bad/duplicate row, keep the rest.
                 }
             }
+            loadedIDsCount = loadedIDs.count
+            return persisted
         } catch {
             print("[FeedStore] persist error: \(error)")
+            return []
         }
-        for id in actualNew.map(\.id) { loadedIDs.insert(id) }
-        loadedIDsCount = loadedIDs.count
-        return actualNew
     }
 
     private func fetchNextBatch() async {
@@ -923,20 +927,31 @@ final class FeedStore {
     /// Per-source cap: keep max 50 items per source within 30-day window.
     func capSourceItems(sourceURL: String) async {
         do {
+            // Snapshot IDs before deletions so we know what existed
+            let before = Set(try await db.read { db in
+                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE source_url = ?", arguments: [sourceURL])
+            })
             try await db.write { db in
                 let count = try Int.fetchOne(db, sql: """
                     SELECT COUNT(*) FROM feed_item WHERE source_url = ?
                 """, arguments: [sourceURL]) ?? 0
                 guard count > 50 else { return }
-                // Delete oldest exceeding 50
                 try db.execute(sql: """
                     DELETE FROM feed_item WHERE id IN (
                         SELECT id FROM feed_item WHERE source_url = ?
+                        AND id NOT IN (SELECT item_id FROM bookmark_item)
                         ORDER BY published_at ASC
                         LIMIT ?
                     )
                 """, arguments: [sourceURL, count - 50])
             }
+            // Sync loadedIDs: remove IDs that no longer exist in DB (#19)
+            let after = Set(try await db.read { db in
+                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE source_url = ?", arguments: [sourceURL])
+            })
+            let removed = before.subtracting(after)
+            for id in removed { loadedIDs.remove(id) }
+            if !removed.isEmpty { loadedIDsCount = loadedIDs.count }
         } catch {
             print("[FeedStore] Source cap error: \(error)")
         }
@@ -1290,6 +1305,12 @@ final class FeedStore {
                 t.column("last_status", .text)
                 t.column("last_item_count", .integer)
             }
+        }
+        migrator.registerMigration("v4_indexes") { db in
+            try db.create(index: "idx_item_source_pub",
+                          on: "feed_item", columns: ["source_url", "published_at"])
+            try db.create(index: "idx_item_category_fetched",
+                          on: "feed_item", columns: ["category", "fetched_at"])
         }
         try migrator.migrate(db)
     }
