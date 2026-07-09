@@ -30,8 +30,14 @@ struct FeedItem: Identifiable, Sendable, Codable {
             if url.host?.contains("youtu.be") == true {
                 return url.pathComponents.last.flatMap { $0.isEmpty ? nil : $0 }
             }
-            if let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-               let queryItems = components.queryItems,
+            // youtube.com/shorts/VIDEO_ID — second path component after "/shorts/"
+            let components = url.pathComponents
+            if components.count >= 3 && components[1] == "shorts" {
+                return components[2]
+            }
+            // youtube.com/watch?v=VIDEO_ID — query parameter
+            if let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false),
+               let queryItems = urlComponents.queryItems,
                let videoID = queryItems.first(where: { $0.name == "v" })?.value {
                 return videoID
             }

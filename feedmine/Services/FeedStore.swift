@@ -1292,7 +1292,7 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
         self.title = item.title
         self.excerpt = item.excerpt
         self.url = item.url
-        self.imageURL = item.imageURL
+        self.imageURL = item.bestImageURL  // YouTube thumbnail or RSS image
         self.audioURL = item.audioURL
         self.duration = item.duration
         self.publishedAt = Int(item.publishedAt.timeIntervalSince1970)
