@@ -97,6 +97,10 @@ struct FeedScreen: View {
             loader.searchQuery = query
             loader.searchQueryChanged()
         }
+        .onChange(of: loader.searchQuery) { _, query in
+            // Reverse sync: context menu or external change → update UI (#44)
+            if searchText != query { searchText = query }
+        }
         .onChange(of: searchFocused) { _, focused in
             if !focused && searchText.isEmpty { isSearching = false }
         }
@@ -476,7 +480,7 @@ struct CompactGreeting: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 16, height: 16)
-            Text("feedmine").font(.caption).fontWeight(.bold)
+            Text("Feedmine").font(.caption).fontWeight(.bold)
             Text("·\(loader.sourceCount) sources").font(.caption2).foregroundStyle(.secondary)
             if loader.totalFetched > 0 {
                 Text("·\(loader.totalFetched) fetched")
