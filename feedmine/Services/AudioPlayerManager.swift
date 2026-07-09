@@ -11,6 +11,7 @@ final class AudioPlayerManager {
     private var timeObserver: Any?
     private var lastSavedAt: TimeInterval = 0
     private var timeControlObserver: NSKeyValueObservation?
+    private var lastNowPlayingUpdate: TimeInterval = 0
     private var endObserver: NSObjectProtocol?
     private var statusObserver: NSKeyValueObservation?
     private var interruptionObserver: NSObjectProtocol?
@@ -125,14 +126,14 @@ final class AudioPlayerManager {
         case .began:
             player?.pause()
             isPlaying = false
-            updateNowPlaying()
+            updateNowPlaying(force: true)
         case .ended:
             if let optionRaw,
                AVAudioSession.InterruptionOptions(rawValue: optionRaw).contains(.shouldResume) {
                 activateSession()
                 player?.play()
                 isPlaying = true
-                updateNowPlaying()
+                updateNowPlaying(force: true)
             }
         @unknown default: break
         }
@@ -151,7 +152,14 @@ final class AudioPlayerManager {
 
     // MARK: - Now Playing Info
 
-    private func updateNowPlaying() {
+    private func updateNowPlaying(force: Bool = false) {
+        // Throttle: skip rapid updates from 0.5s time observer (#29)
+        if !force {
+            let now = Date().timeIntervalSince1970
+            guard now - lastNowPlayingUpdate >= 1.0 else { return }
+            lastNowPlayingUpdate = now
+        }
+
         guard let item = currentItem else {
             MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
             return
