@@ -42,6 +42,7 @@ struct FeedItemCardView: View {
         }
         .opacity(appeared ? (isRead ? 0.85 : 1) : 0)
         .offset(y: appeared ? 0 : 16)
+        .animation(.spring(response: 0.3, dampingFraction: 0.8), value: imageLoadFailed)
         .onAppear {
             withAnimation(.easeOut(duration: 0.4).delay(appearDelay)) {
                 appeared = true
@@ -73,6 +74,7 @@ struct FeedItemCardView: View {
                     .overlay {
                         mediaOverlay
                     }
+                    .transition(.opacity.combined(with: .scale(scale: 0.97)))
                 // Source row after image
                 sourceRow
                     .padding(.horizontal, 12)

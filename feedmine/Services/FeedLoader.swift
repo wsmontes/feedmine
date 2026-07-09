@@ -57,10 +57,11 @@ final class FeedLoader {
 
     var dateSections: [DateSection] {
         let calendar = Calendar.current
+        let now = Date()
         let grouped = Dictionary(grouping: filteredItems) { item -> String in
             if calendar.isDateInToday(item.publishedAt) { return "Today" }
             if calendar.isDateInYesterday(item.publishedAt) { return "Yesterday" }
-            let days = calendar.dateComponents([.day], from: item.publishedAt, to: Date()).day ?? 0
+            let days = calendar.dateComponents([.day], from: item.publishedAt, to: now).day ?? 0
             if days < 7 { return "This Week" }
             return "Earlier"
         }

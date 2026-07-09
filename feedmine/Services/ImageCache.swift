@@ -76,6 +76,17 @@ final class ImageCache {
         diskCacheSize = 0
     }
 
+    func evict(url: URL) {
+        let key = cacheKey(for: url) as NSString
+        memoryCache.removeObject(forKey: key)
+        let fileURL = diskCacheURL.appendingPathComponent(key as String)
+        if fileManager.fileExists(atPath: fileURL.path) {
+            let size = (try? fileManager.attributesOfItem(atPath: fileURL.path)[.size] as? Int) ?? 0
+            try? fileManager.removeItem(at: fileURL)
+            diskCacheSize = max(0, diskCacheSize - size)
+        }
+    }
+
     // MARK: - Private
 
     private func cacheKey(for url: URL) -> String {
@@ -174,6 +185,10 @@ struct CachedAsyncImage: View {
 
     @State private var loadedImage: UIImage?
     @State private var didAttempt = false
+    @State private var loadFailed = false
+
+    /// Images smaller than this (e.g. 1×1 tracking pixels) are rejected.
+    private static let minImageDimension: CGFloat = 4
 
     private static let session: URLSession = {
         let config = URLSessionConfiguration.default
@@ -189,10 +204,20 @@ struct CachedAsyncImage: View {
             if let image = loadedImage {
                 Image(uiImage: image)
                     .resizable()
-            } else {
-                // Tinted placeholder — matches circadian accent
-                CircadianEngine.shared.accent.opacity(0.05)
+            } else if !didAttempt {
+                // Loading — subtle shimmer placeholder
+                Rectangle()
+                    .fill(.quaternary)
                     .task { await load() }
+            } else {
+                // Failed or no URL — broken-image indicator
+                Rectangle()
+                    .fill(Color(.systemGray6))
+                    .overlay {
+                        Image(systemName: "photo.badge.exclamationmark")
+                            .font(.caption)
+                            .foregroundStyle(.tertiary)
+                    }
             }
         }
     }
@@ -200,11 +225,19 @@ struct CachedAsyncImage: View {
     private func load() async {
         guard let url else {
             didAttempt = true
+            loadFailed = true
             onResult?(false)
             return
         }
         // Tier 1 + 2: memory or disk cache
         if let cached = ImageCache.shared.image(for: url) {
+            guard isValidImage(cached) else {
+                ImageCache.shared.evict(url: url)
+                didAttempt = true
+                loadFailed = true
+                onResult?(false)
+                return
+            }
             loadedImage = cached
             onResult?(true)
             return
@@ -212,17 +245,25 @@ struct CachedAsyncImage: View {
         // Tier 3: network with URLCache
         do {
             let (data, _) = try await Self.session.data(from: url)
-            if let uiImage = UIImage(data: data) {
+            if let uiImage = UIImage(data: data), isValidImage(uiImage) {
                 ImageCache.shared.setImage(uiImage, for: url)
                 loadedImage = uiImage
                 onResult?(true)
             } else {
                 didAttempt = true
+                loadFailed = true
                 onResult?(false)
             }
         } catch {
             didAttempt = true
+            loadFailed = true
             onResult?(false)
         }
+    }
+
+    /// Reject tracking pixels and other near-invisible images.
+    private func isValidImage(_ image: UIImage) -> Bool {
+        image.size.width >= Self.minImageDimension
+        && image.size.height >= Self.minImageDimension
     }
 }

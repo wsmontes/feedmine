@@ -3,6 +3,7 @@ import SwiftUI
 struct MiniPlayerBar: View {
     @State private var player = AudioPlayerManager.shared
     @State private var showFullPlayer = false
+    @State private var artworkFailed = false
 
     var body: some View {
         if let item = player.currentItem {
@@ -23,8 +24,12 @@ struct MiniPlayerBar: View {
 
                 HStack(spacing: 12) {
                     // Artwork
-                    if let url = item.bestImageURL ?? item.imageURL, let imageURL = URL(string: url) {
-                        CachedAsyncImage(url: imageURL)
+                    if !artworkFailed,
+                       let url = item.bestImageURL ?? item.imageURL,
+                       let imageURL = URL(string: url) {
+                        CachedAsyncImage(url: imageURL, onResult: { success in
+                            if !success { artworkFailed = true }
+                        })
                             .scaledToFill()
                             .frame(width: 40, height: 40)
                             .clipShape(RoundedRectangle(cornerRadius: 6))
@@ -87,6 +92,9 @@ struct MiniPlayerBar: View {
             .transition(.move(edge: .bottom).combined(with: .opacity))
             .animation(.spring(response: 0.35, dampingFraction: 0.8), value: player.currentItem != nil)
             .animation(.spring(response: 0.35, dampingFraction: 0.8), value: player.currentItem?.id)
+            .onChange(of: player.currentItem?.id) { _, _ in
+                artworkFailed = false
+            }
         }
     }
 }
@@ -95,6 +103,7 @@ struct MiniPlayerBar: View {
 
 struct FullPlayerView: View {
     @State private var player = AudioPlayerManager.shared
+    @State private var artworkFailed = false
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -103,10 +112,13 @@ struct FullPlayerView: View {
                 Spacer()
 
                 // Artwork
-                if let item = player.currentItem,
+                if !artworkFailed,
+                   let item = player.currentItem,
                    let url = item.bestImageURL ?? item.imageURL,
                    let imageURL = URL(string: url) {
-                    CachedAsyncImage(url: imageURL)
+                    CachedAsyncImage(url: imageURL, onResult: { success in
+                        if !success { artworkFailed = true }
+                    })
                         .scaledToFill()
                         .frame(width: 280, height: 280)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -219,5 +231,8 @@ struct FullPlayerView: View {
             }
         }
         .presentationDetents([.large])
+        .onChange(of: player.currentItem?.id) { _, _ in
+            artworkFailed = false
+        }
     }
 }
