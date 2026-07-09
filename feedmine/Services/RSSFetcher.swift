@@ -482,8 +482,10 @@ actor RSSFetcher {
         if lower.contains("tracking") && lower.contains("pixel") { return nil }
         if lower.contains("spacer") && (lower.hasSuffix(".gif") || lower.hasSuffix(".png")) { return nil }
         if lower.hasSuffix("1x1.gif") || lower.hasSuffix("1x1.png") { return nil }
-        // Already absolute
-        if raw.hasPrefix("http://") || raw.hasPrefix("https://") { return raw }
+        // Already absolute — upgrade HTTP to HTTPS so images don't fail
+        // under ATS (NSAllowsArbitraryLoadsForMedia only covers AV media).
+        if raw.hasPrefix("http://") { return raw.replacingOccurrences(of: "http://", with: "https://") }
+        if raw.hasPrefix("https://") { return raw }
         // Data URIs — pass through as-is (CachedAsyncImage handles)
         if raw.hasPrefix("data:") { return raw }
         // Protocol-relative URL
