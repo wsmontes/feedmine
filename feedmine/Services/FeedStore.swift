@@ -74,7 +74,9 @@ final class FeedStore {
             && (mood == .all || mood.matches(item.title))
             // Language/region gate: when no country is active, only global
             // (curated English) content appears. Country content is opt-in.
-            && (region != nil || item.region == "global")
+            // YouTube and podcasts bypass this gate — their country tag is a
+            // language overlay, not an enable/disable switch.
+            && (region != nil || item.region == "global" || item.isYouTube || item.isPodcast)
         }
     }
 
@@ -194,7 +196,13 @@ final class FeedStore {
         await registry.loadFromOPML()
         reservoir.sourceRegionMap = registry.regionMap
 
-        // Warm start: hydrate from SQLite
+        // Restore persisted filters FIRST so the first render shows
+        // correctly filtered content, not a flash of unfiltered items.
+        restoreFilters()
+        await loadReadState()
+        reservoir.readItemIDs = readItemIDs
+
+        // Warm start: hydrate from SQLite with filters already active
         let cached = try? await loadReservoir()
         if let items = cached, !items.isEmpty {
             for item in items { loadedIDs.insert(item.id) }
@@ -204,11 +212,6 @@ final class FeedStore {
             reservoirCount = reservoir.reservoirCount
             loadingState = .idle
         }
-
-        // Restore persisted filter + read/bookmark state
-        restoreFilters()
-        await loadReadState()
-        reservoir.readItemIDs = readItemIDs
 
         // Snapshot baseline for "What's New" — persisted so items don't vanish
         // just because the app restarted. Falls back to now on first launch.
@@ -647,15 +650,17 @@ final class FeedStore {
         }
     }
 
-    /// Fetch all remaining enabled sources in chunks. Designed to run as a
-    /// background continuation after the first batch already filled the
-    /// visible feed — does NOT touch loadingState so the UI stays idle.
+    /// Fetch a budgeted batch of remaining enabled sources in the background.
+    /// Capped per session to avoid hammering 800+ sources at every launch;
+    /// the rest trickle in via normal refresh cycles. Shuffled for fair
+    /// distribution across text/video/audio types.
     private func progressiveFetch() async {
         let allEnabled = registry.enabledSources.shuffled()
+        let budget = min(allEnabled.count, 200)  // per-session cap
         let chunkSize = 20
-        print("[progressiveFetch] Starting: \(allEnabled.count) sources")
-        for chunkStart in stride(from: 0, to: allEnabled.count, by: chunkSize) {
-            let end = min(chunkStart + chunkSize, allEnabled.count)
+        print("[progressiveFetch] Starting: \(budget)/\(allEnabled.count) sources")
+        for chunkStart in stride(from: 0, to: budget, by: chunkSize) {
+            let end = min(chunkStart + chunkSize, budget)
             let chunk = Array(allEnabled[chunkStart..<end])
             // Gentle 1s inter-chunk delay (skip first) to avoid rate-limiting
             // from YouTube and other aggressive CDNs when processing 800+ sources.

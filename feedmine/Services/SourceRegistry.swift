@@ -284,12 +284,15 @@ final class SourceRegistry {
         // Restore persisted toggle state
         loadState()
 
-        // Countries off by default on first launch
-        if disabled.isEmpty {
+        // Countries off by default on first launch only.
+        // Uses a flag so re-enabling all countries doesn't reset on next launch.
+        let hasInitializedKey = "hasInitializedSourceDefaults"
+        if !UserDefaults.standard.bool(forKey: hasInitializedKey) {
             for source in sources where source.isCountryFeed {
                 disabled.insert(Self.regionKey(source.region))
             }
             saveState()
+            UserDefaults.standard.set(true, forKey: hasInitializedKey)
         }
 
         recomputeActiveCounts()
