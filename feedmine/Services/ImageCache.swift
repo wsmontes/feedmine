@@ -205,12 +205,10 @@ struct CachedAsyncImage: View {
                 Image(uiImage: image)
                     .resizable()
             } else if !didAttempt {
-                // Loading — subtle shimmer placeholder
                 Rectangle()
                     .fill(.quaternary)
                     .task { await load() }
             } else {
-                // Failed or no URL — broken-image indicator
                 Rectangle()
                     .fill(Color(.systemGray6))
                     .overlay {
@@ -219,6 +217,12 @@ struct CachedAsyncImage: View {
                             .foregroundStyle(.tertiary)
                     }
             }
+        }
+        .onChange(of: url?.absoluteString ?? "") { _, _ in
+            // Reset state when URL changes so reused views reload (#48)
+            loadedImage = nil
+            didAttempt = false
+            loadFailed = false
         }
     }
 
