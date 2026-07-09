@@ -231,13 +231,21 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
         }
 
         let category = categoryStack.last ?? fallbackCategory
+        // Per-source mediaKind override: file-level mediaKind is a hint,
+        // but the URL is authoritative. YouTube feeds inside country OPMLs
+        // were getting mediaKind=.text and losing their video boost.
+        let resolvedKind: MediaKind = {
+            if xmlUrl.contains("youtube.com/feeds") { return .video }
+            if xmlUrl.contains("anchor.fm") || xmlUrl.contains("spreaker.com") || xmlUrl.contains("podcast") { return .audio }
+            return mediaKind
+        }()
         sources.append(
             FeedSource(
                 title: title.isEmpty ? category : title,
                 url: xmlUrl,
                 category: category,
                 region: region,
-                mediaKind: mediaKind
+                mediaKind: resolvedKind
             )
         )
     }

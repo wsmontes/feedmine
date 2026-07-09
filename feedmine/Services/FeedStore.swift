@@ -603,7 +603,8 @@ final class FeedStore {
 
         let result = await fetcher.fetchAll(batch, maxConcurrent: 15)
         totalFetched += result.items.count
-        fetchErrorCount += result.failedSourceCount
+        if result.failedSourceCount == 0 { fetchErrorCount = 0 }  // reset on clean batch
+        else { fetchErrorCount += result.failedSourceCount }
         lastFetchSucceeded = result.failedSourceCount == 0
         emptyFeedCount += result.emptySourceCount
 

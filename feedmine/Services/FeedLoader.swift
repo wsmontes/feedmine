@@ -491,6 +491,22 @@ final class FeedLoader {
         store.registry.sources = OPMLParser.deduplicateSources(
             store.registry.sources + newSources
         )
+        // Persist imported sources so they survive app restart.
+        // Saved to a simple JSON file in the app's documents directory.
+        persistImportedSources()
+    }
+
+    private func persistImportedSources() {
+        let imported = store.registry.sources.filter { $0.region == "imported" }
+        guard !imported.isEmpty else { return }
+        do {
+            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                .appendingPathComponent("imported_sources.json")
+            let data = try JSONEncoder().encode(imported)
+            try data.write(to: url)
+        } catch {
+            print("[FeedLoader] Failed to persist imported sources: \(error)")
+        }
     }
 
     func regionFeeds(for regionPath: String) -> [FeedSource] {
