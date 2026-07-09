@@ -153,12 +153,12 @@ final class SourceScheduler {
         let lastItemCount: Int?
     }
 
-    func healthSnapshot(for url: String) -> HealthSnapshot {
+    func healthSnapshot(for url: String, itemCount: Int? = nil) -> HealthSnapshot {
         HealthSnapshot(
             lastFetchAt: lastFetchedAt[url] ?? Date(timeIntervalSince1970: 0),
             consecutiveFailures: consecutiveFailures[url] ?? 0,
             lastStatus: consecutiveFailures[url, default: 0] > 0 ? "error" : "ok",
-            lastItemCount: nil
+            lastItemCount: itemCount
         )
     }
 

@@ -23,6 +23,7 @@ final class FeedStore {
     private(set) var lastRefreshDate: Date?
     private(set) var totalFetched = 0
     private(set) var fetchErrorCount = 0
+    private(set) var lastFetchSucceeded = false  // reset error banner on success
     private(set) var emptyFeedCount = 0
     private(set) var totalDiscarded = 0
 
@@ -99,6 +100,7 @@ final class FeedStore {
     private var whatsNewBaselineDate: Date?    // persisted across sessions; advanced on dismiss
     private var _defaultListID: Int64?
     private var hasStarted = false             // guards one-time startup work
+    private var progressiveFetchTask: Task<Void, Never>?
 
     // MARK: - Init
     init() throws {
@@ -135,27 +137,38 @@ final class FeedStore {
     }
 
     private func saveSourceHealth(for sourceURL: String) {
+        // Single-source write — used for one-off toggles. Bulk paths use
+        // saveSourceHealthBatch for efficiency.
+        saveSourceHealthBatch([(sourceURL, nil)])
+    }
+
+    /// Batch-save source health for multiple URLs in a single transaction.
+    /// Dramatically faster than N individual writes for 800+ sources.
+    private func saveSourceHealthBatch(_ entries: [(url: String, itemCount: Int?)]) {
+        guard !entries.isEmpty else { return }
         do {
-            let health = scheduler.healthSnapshot(for: sourceURL)
             try db.write { db in
-                try db.execute(sql: """
-                    INSERT INTO source_health (url, last_fetch_at, consecutive_failures, last_status, last_item_count)
-                    VALUES (?, ?, ?, ?, ?)
-                    ON CONFLICT(url) DO UPDATE SET
-                        last_fetch_at = excluded.last_fetch_at,
-                        consecutive_failures = excluded.consecutive_failures,
-                        last_status = excluded.last_status,
-                        last_item_count = excluded.last_item_count
-                    """, arguments: [
-                        sourceURL,
-                        Int(health.lastFetchAt.timeIntervalSince1970),
-                        health.consecutiveFailures,
-                        health.lastStatus,
-                        health.lastItemCount
-                    ])
+                for (sourceURL, itemCount) in entries {
+                    let health = scheduler.healthSnapshot(for: sourceURL, itemCount: itemCount)
+                    try db.execute(sql: """
+                        INSERT INTO source_health (url, last_fetch_at, consecutive_failures, last_status, last_item_count)
+                        VALUES (?, ?, ?, ?, ?)
+                        ON CONFLICT(url) DO UPDATE SET
+                            last_fetch_at = excluded.last_fetch_at,
+                            consecutive_failures = excluded.consecutive_failures,
+                            last_status = excluded.last_status,
+                            last_item_count = excluded.last_item_count
+                        """, arguments: [
+                            sourceURL,
+                            Int(health.lastFetchAt.timeIntervalSince1970),
+                            health.consecutiveFailures,
+                            health.lastStatus,
+                            health.lastItemCount
+                        ])
+                }
             }
         } catch {
-            print("[FeedStore] saveSourceHealth failed for \(sourceURL): \(error)")
+            print("[FeedStore] saveSourceHealthBatch error: \(error)")
         }
     }
 
@@ -236,7 +249,7 @@ final class FeedStore {
         // FeedStore state access is safe; each await suspension point
         // yields the actor for UI work.
         if !registry.enabledSources.isEmpty {
-            Task { await progressiveFetch() }
+            progressiveFetchTask = Task { await progressiveFetch() }
         }
         loadingState = .idle
 
@@ -321,6 +334,7 @@ final class FeedStore {
     }
 
     func setFilter(region: String?, category: String?, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
+        progressiveFetchTask?.cancel()
         let regionChanged = activeRegion != region
         let categoryChanged = activeCategory != category
         activeRegion = region
@@ -590,15 +604,18 @@ final class FeedStore {
         let result = await fetcher.fetchAll(batch, maxConcurrent: 15)
         totalFetched += result.items.count
         fetchErrorCount += result.failedSourceCount
+        lastFetchSucceeded = result.failedSourceCount == 0
         emptyFeedCount += result.emptySourceCount
 
-        // Record accurate per-source health: only a genuine fetch/parse failure
-        // counts against a source. An empty-but-reachable feed is not a failure.
+        // Record per-source health in batch
+        var healthEntries: [(url: String, itemCount: Int?)] = []
         for source in batch {
             let failed = result.sourceStatuses[source.url] == .failed
             scheduler.recordFetch(sourceURL: source.url, success: !failed)
-            saveSourceHealth(for: source.url)
+            let count = result.items.filter { $0.sourceURL == source.url }.count
+            healthEntries.append((source.url, count))
         }
+        saveSourceHealthBatch(healthEntries)
 
         let actualNew = await persistFetchedItems(result.items)
         guard !actualNew.isEmpty else { return }
@@ -669,11 +686,15 @@ final class FeedStore {
             totalFetched += result.items.count
             fetchErrorCount += result.failedSourceCount
             emptyFeedCount += result.emptySourceCount
+            // Batch-save source health with real item counts
+            var healthEntries: [(url: String, itemCount: Int?)] = []
             for source in chunk {
                 let failed = result.sourceStatuses[source.url] == .failed
                 scheduler.recordFetch(sourceURL: source.url, success: !failed)
-                saveSourceHealth(for: source.url)
+                let count = result.items.filter { $0.sourceURL == source.url }.count
+                healthEntries.append((source.url, count))
             }
+            saveSourceHealthBatch(healthEntries)
             let actualNew = await persistFetchedItems(result.items)
             reservoir.append(actualNew)
             // Cap items per source so no single feed dominates (>50 items)
