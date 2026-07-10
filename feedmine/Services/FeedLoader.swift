@@ -55,26 +55,6 @@ final class FeedLoader {
         let items: [FeedItem]
     }
 
-    var dateSections: [DateSection] {
-        let calendar = Calendar.current
-        let now = Date()
-        let grouped = Dictionary(grouping: filteredItems) { item -> String in
-            if calendar.isDateInToday(item.publishedAt) { return "Today" }
-            if calendar.isDateInYesterday(item.publishedAt) { return "Yesterday" }
-            let days = calendar.dateComponents([.day], from: item.publishedAt, to: now).day ?? 0
-            if days < 7 { return "This Week" }
-            return "Earlier"
-        }
-        // Fixed chronological order. Previously the last three buckets were
-        // rotated by day-of-year, so on 2 of every 3 days "Earlier" (oldest)
-        // rendered above "Yesterday" — these buckets are inherently
-        // time-ordered and must not be shuffled.
-        let order = ["Today", "Yesterday", "This Week", "Earlier"]
-        return order.compactMap { title in
-            grouped[title].map { DateSection(title: title, items: $0) }
-        }
-    }
-
     // MARK: - Layout
 
     enum FeedLayout { case card, list }
@@ -159,31 +139,53 @@ final class FeedLoader {
     var isSearching: Bool { store.isSearching }
 
     // MARK: - Filtered Items (reads from FeedStore as single source)
-    // Mood, category, and content-type filtering now happen in FeedStore.applyFilters
-    // so pagination (loadMoreIfNeeded) and the UI agree on visibleItems.count.
+
+    private var _cachedFiltered: [FeedItem] = []
+    private var _cacheKey: Int = -1
 
     var filteredItems: [FeedItem] {
+        let key = items.count ^ (items.first?.id.hashValue ?? 0) ^ (items.last?.id.hashValue ?? 0) ^ searchQuery.hashValue
+        if key == _cacheKey { return _cachedFiltered }
+        _cacheKey = key
         var result = items
         let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         if !query.isEmpty {
             let q = query.lowercased()
             if !isSearching {
-                // Instant local filter while FTS is running — expanded to match
-                // FTS5 indexed columns (title, excerpt, source_title, category).
                 result = result.filter {
                     $0.title.localizedCaseInsensitiveContains(q) ||
                     $0.excerpt.localizedCaseInsensitiveContains(q) ||
                     $0.sourceTitle.localizedCaseInsensitiveContains(q)
                 }
             }
-            // Score and sort by relevance (applies to both local and FTS results).
-            // sorted(by:) is stable so equal scores keep their original ordering.
             result = result
                 .map { (item: $0, score: searchScore($0, q)) }
                 .sorted { $0.score > $1.score }
                 .map(\.item)
         }
+        _cachedFiltered = result
         return result
+    }
+
+    private var _cachedSections: [DateSection] = []
+    private var _sectionsCacheKey: Int = -1
+
+    var dateSections: [DateSection] {
+        let key = _cacheKey
+        if key == _sectionsCacheKey, !_cachedSections.isEmpty { return _cachedSections }
+        _sectionsCacheKey = key
+        let calendar = Calendar.current; let now = Date()
+        let grouped = Dictionary(grouping: _cachedFiltered) { item -> String in
+            if calendar.isDateInToday(item.publishedAt) { return "Today" }
+            if calendar.isDateInYesterday(item.publishedAt) { return "Yesterday" }
+            let days = calendar.dateComponents([.day], from: item.publishedAt, to: now).day ?? 0
+            if days < 7 { return "This Week" }
+            return "Earlier"
+        }
+        _cachedSections = ["Today", "Yesterday", "This Week", "Earlier"].compactMap { t in
+            grouped[t].map { DateSection(title: t, items: $0) }
+        }
+        return _cachedSections
     }
 
     private func searchScore(_ item: FeedItem, _ q: String) -> Int {
