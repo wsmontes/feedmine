@@ -40,7 +40,7 @@ struct FeedItemCardView: View {
                 portraitCard
             }
         }
-        .opacity(appeared ? (isRead ? 0.85 : 1) : 0)
+        .opacity(appeared ? (isRead ? 0.92 : 1) : 0)
         .offset(y: appeared ? 0 : 16)
         .animation(.spring(response: 0.3, dampingFraction: 0.8), value: imageLoadFailed)
         .onAppear {
@@ -105,7 +105,10 @@ struct FeedItemCardView: View {
 
             // Meta row — reading time first, date second
             HStack(spacing: 0) {
-                Text(readingTime)
+                HStack(spacing: 3) {
+                    Image(systemName: actionIcon).font(.caption2)
+                    Text(readingTime)
+                }
                     .font(.caption)
                     .fontWeight(.medium)
                     .foregroundStyle(engine.accent)
@@ -178,7 +181,10 @@ struct FeedItemCardView: View {
                     .padding(.top, 3)
 
                 HStack(spacing: 0) {
-                    Text(readingTime)
+                    HStack(spacing: 3) {
+                        Image(systemName: actionIcon).font(.caption2)
+                        Text(readingTime)
+                    }
                         .font(.caption2)
                         .fontWeight(.medium)
                         .foregroundStyle(engine.accent)
@@ -330,22 +336,19 @@ struct FeedItemCardView: View {
     private var readingTime: String {
         if item.isYouTube { return "Watch" }
         if item.isPodcast { return "Listen" }
-        return "Read"
-        // Excerpt is too short for accurate WPM. Categorize by length tier.
         let wordCount = item.excerpt.split(separator: " ").count
-        let minutes: Int
         switch wordCount {
-        case 0..<15:  minutes = 1   // headline-only
-        case 15..<40: minutes = 2   // short blurb
-        case 40..<80: minutes = 3   // paragraph
-        default:      minutes = 4   // substantial excerpt
+        case 0..<15:  return "1 min read"
+        case 15..<40: return "2 min read"
+        case 40..<80: return "3 min read"
+        default:      return "4 min read"
         }
-        // Longer-form sources hint at deeper content
-        let cat = item.category.lowercased()
-        if cat.contains("science") || cat.contains("tech") || cat.contains("programming") {
-            return String(localized: "\(minutes + 1) min read", comment: "Reading time estimate")
-        }
-        return String(localized: "\(minutes) min read", comment: "Reading time estimate")
+    }
+
+    private var actionIcon: String {
+        if item.isYouTube { return "play.rectangle.fill" }
+        if item.isPodcast { return "headphones" }
+        return "clock"
     }
 
     private static let relativeFormatter: RelativeDateTimeFormatter = {
