@@ -9,8 +9,7 @@ final class FeedStore {
     // MARK: - Subcomponents
     let db: DatabaseQueue
 
-    /// Temporary home for the main id (moves to FeedDescriptor in Task 2):
-    static let mainID = UUID(uuidString: "00000000-0000-0000-0000-0000000000FE")!
+    static var mainID: UUID { FeedDescriptor.mainID }
 
     let feedID: UUID
     private let defaults: UserDefaults

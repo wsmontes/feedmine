@@ -103,7 +103,7 @@ enum CircadianPeriod: String, CaseIterable {
     }
 }
 
-enum PaletteFamily: String, CaseIterable {
+enum PaletteFamily: String, CaseIterable, Codable {
     case warmEarth, coolSky, botanical, lavenderHour, monochrome
 
     var label: String {

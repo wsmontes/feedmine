@@ -1615,6 +1615,7 @@
 		C3F31983B67E77A35D74B37C /* bulgaria-pazardzhik.opml in Resources */ = {isa = PBXBuildFile; fileRef = 0FAF2C758967BD8EE7741BB0 /* bulgaria-pazardzhik.opml */; };
 		C4510BBD332828037012DD9B /* jamaica-saint-ann.opml in Resources */ = {isa = PBXBuildFile; fileRef = 3A468DD6AA389BA31A3F1AC6 /* jamaica-saint-ann.opml */; };
 		C45B317AFADC404026F51D49 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F08DCDC7CAEAF98BEFD0654 /* Country.swift */; };
+		A1B2C3D4E5F6000000000002 /* FeedDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000001 /* FeedDescriptor.swift */; };
 		C45F9D00A3268B1250B39812 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89B6467E341514F26C040B /* FeedLoader.swift */; };
 		C4625A3BC895F03AB7316615 /* ecuador-cotopaxi.opml in Resources */ = {isa = PBXBuildFile; fileRef = 51CEA64A4CB13EAD8C3BE28B /* ecuador-cotopaxi.opml */; };
 		C4726663E807A9B8AA0940F6 /* peru.opml in Resources */ = {isa = PBXBuildFile; fileRef = 4E55E8F19A1F9A59F7425CCA /* peru.opml */; };
@@ -4035,6 +4036,7 @@
 		FD1F23545BA3733C950E09F5 /* nigeria-ogun.opml */ = {isa = PBXFileReference; path = "nigeria-ogun.opml"; sourceTree = "<group>"; };
 		FD720003170BA14564E9E458 /* guatemala-sacatepequez.opml */ = {isa = PBXFileReference; path = "guatemala-sacatepequez.opml"; sourceTree = "<group>"; };
 		FD8C0012F229656D9B5E3B02 /* croatia.opml */ = {isa = PBXFileReference; path = croatia.opml; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000000000001 /* FeedDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDescriptor.swift; sourceTree = "<group>"; };
 		FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetchResult.swift; sourceTree = "<group>"; };
 		FDCC238B9CFC2DD8B16FB51C /* ethiopia-south-west.opml */ = {isa = PBXFileReference; path = "ethiopia-south-west.opml"; sourceTree = "<group>"; };
 		FDD5488627E9375DF38F6F39 /* china-taiwan.opml */ = {isa = PBXFileReference; path = "china-taiwan.opml"; sourceTree = "<group>"; };
@@ -5992,6 +5994,7 @@
 				56EEF9E481CF601F9C8F9A02 /* ActiveSearch.swift */,
 				E90FBB1938107205162CC8A5 /* BookmarkList.swift */,
 				5F08DCDC7CAEAF98BEFD0654 /* Country.swift */,
+				A1B2C3D4E5F6000000000001 /* FeedDescriptor.swift */,
 				1595D303FD10CB2456A989DC /* FeedFetchBatch.swift */,
 				FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */,
 				5B17523EA785A32CBF906D42 /* FeedItem.swift */,
@@ -9082,6 +9085,7 @@
 				0D172F74FC571B2B1C682C66 /* DebugStatusBar.swift in Sources */,
 				7B6FD2474CE0A734254AE627 /* DesignTokens.swift in Sources */,
 				9091D14B5D8B413C453FE0AC /* ErrorBannerView.swift in Sources */,
+				A1B2C3D4E5F6000000000002 /* FeedDescriptor.swift in Sources */,
 				2FFDEE84C9425743CD6CBA2D /* FeedEmptyStateView.swift in Sources */,
 				72D004892A528079D059F577 /* FeedFetchBatch.swift in Sources */,
 				31C095E7266DBFAABA880F0C /* FeedFetchResult.swift in Sources */,
