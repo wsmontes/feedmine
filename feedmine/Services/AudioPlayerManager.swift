@@ -165,27 +165,34 @@ final class AudioPlayerManager {
             return
         }
 
+        let episodeTitle = item.title
+        let showTitle = item.sourceTitle
         var info: [String: Any] = [
-            MPMediaItemPropertyTitle: item.title,
-            MPMediaItemPropertyArtist: item.sourceTitle,
+            MPMediaItemPropertyTitle: episodeTitle,
+            MPMediaItemPropertyArtist: showTitle,
+            MPMediaItemPropertyAlbumTitle: "Feedmine",
             MPNowPlayingInfoPropertyElapsedPlaybackTime: currentTime,
-            MPMediaItemPropertyPlaybackDuration: duration,
+            MPMediaItemPropertyPlaybackDuration: max(duration, 1),
             MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? 1.0 : 0.0,
+            MPNowPlayingInfoPropertyMediaType: MPNowPlayingInfoMediaType.audio.rawValue,
+            MPNowPlayingInfoPropertyAssetURL: item.audioPlaybackURL?.absoluteString ?? "",
         ]
+        // Add excerpt as description for richer lock screen info
+        if !item.excerpt.isEmpty {
+            info[MPMediaItemPropertyComments] = item.excerpt
+        }
 
         // Pre-load artwork data on MainActor, then dispatch the
         // MPMediaItemArtwork creation off MainActor so the requestHandler
-        // closure doesn't inherit @MainActor isolation. MediaPlayer calls
-        // requestHandler on its internal */accessQueue — Swift 6 crashes if
-        // the closure was formed on MainActor.
+        // closure doesn't inherit @MainActor isolation.
         if let urlString = item.bestImageURL ?? item.imageURL,
            let url = URL(string: urlString),
            let data = ImageCache.shared.cachedImageData(for: url) {
-            Task.detached {
+            Task.detached { [info] in
                 let artwork = MPMediaItemArtwork(boundsSize: CGSize(width: 600, height: 600)) { _ in
                     UIImage(data: data) ?? UIImage()
                 }
-                var updated = MPNowPlayingInfoCenter.default().nowPlayingInfo ?? [:]
+                var updated = info
                 updated[MPMediaItemPropertyArtwork] = artwork
                 MPNowPlayingInfoCenter.default().nowPlayingInfo = updated
             }
