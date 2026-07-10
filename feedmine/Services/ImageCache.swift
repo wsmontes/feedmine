@@ -29,24 +29,29 @@ final class ImageCache {
 
     func image(for url: URL) -> UIImage? {
         let key = cacheKey(for: url)
-
-        // Tier 1: memory
-        if let img = memoryCache.object(forKey: key as NSString) {
-            return img
-        }
-
-        // Tier 2: disk
+        if let img = memoryCache.object(forKey: key as NSString) { return img }
         let fileURL = diskCacheURL.appendingPathComponent(key)
         guard fileManager.fileExists(atPath: fileURL.path),
               let data = try? Data(contentsOf: fileURL),
-              let img = UIImage(data: data) else {
-            return nil
-        }
-
-        // Promote to memory
+              let img = UIImage(data: data) else { return nil }
         let cost = Int(img.size.width * img.size.height * 4)
         memoryCache.setObject(img, forKey: key as NSString, cost: cost)
         return img
+    }
+
+    /// Off-MainActor disk lookup. Captures the cache key and file URL
+    /// synchronously, then does blocking I/O in a Task.detached.
+    func diskImage(for url: URL) async -> UIImage? {
+        let key = cacheKey(for: url)
+        // Memory hit — return immediately
+        if let img = memoryCache.object(forKey: key as NSString) { return img }
+        let fileURL = diskCacheURL.appendingPathComponent(key)
+        return await Task.detached {
+            guard FileManager.default.fileExists(atPath: fileURL.path),
+                  let data = try? Data(contentsOf: fileURL),
+                  let img = UIImage(data: data) else { return nil }
+            return img
+        }.value
     }
 
     func setImage(_ image: UIImage, for url: URL) {
@@ -228,22 +233,17 @@ struct CachedAsyncImage: View {
 
     private func load() async {
         guard let url else {
-            didAttempt = true
-            loadFailed = true
-            onResult?(false)
+            didAttempt = true; loadFailed = true; onResult?(false)
             return
         }
-        // Tier 1 + 2: memory or disk cache
-        if let cached = ImageCache.shared.image(for: url) {
+        // Tier 1 + 2: memory + disk (disk I/O off MainActor via diskImage)
+        if let cached = await ImageCache.shared.diskImage(for: url) {
             guard isValidImage(cached) else {
                 ImageCache.shared.evict(url: url)
-                didAttempt = true
-                loadFailed = true
-                onResult?(false)
+                didAttempt = true; loadFailed = true; onResult?(false)
                 return
             }
-            loadedImage = cached
-            onResult?(true)
+            loadedImage = cached; onResult?(true)
             return
         }
         // Tier 3: network with URLCache
