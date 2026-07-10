@@ -229,32 +229,34 @@ final class Reservoir {
 
     /// Post-processing pass: scan for back-to-back items that share an
     /// attribute (source, type, category) and swap with a later item that
-    /// breaks the run. Preserves overall ordering while ensuring the feed
-    /// doesn't show two podcasts, two YouTube videos, or two items from
-    /// the same source in a row when alternatives exist.
+    /// breaks the run. O(n) single pass — maintains a look-ahead pointer
+    /// instead of scanning from i+2 each time.
     private func spreadConsecutive(_ items: [FeedItem]) -> [FeedItem] {
         guard items.count > 2 else { return items }
         var result = items
+        var lookAhead = 2
         for i in 0..<(result.count - 1) {
             let a = result[i], b = result[i + 1]
-            let sameSource = a.sourceURL == b.sourceURL
-            let sameType = (a.isYouTube && b.isYouTube) || (a.isPodcast && b.isPodcast) || (!a.isYouTube && !a.isPodcast && !b.isYouTube && !b.isPodcast)
-            let sameCategory = a.category == b.category
-            guard sameSource || sameType || sameCategory else { continue }
-            // Find a swap candidate further down that breaks all shared attributes
-            if let swapIdx = (i + 2..<result.count).first(where: { j in
-                let c = result[j]
-                return a.sourceURL != c.sourceURL
-                    && b.sourceURL != c.sourceURL
+            let clash = a.sourceURL == b.sourceURL
+                || a.category == b.category
+                || (a.isYouTube && b.isYouTube)
+                || (a.isPodcast && b.isPodcast)
+                || (!a.isYouTube && !a.isPodcast && !b.isYouTube && !b.isPodcast)
+            guard clash else { continue }
+            // Advance look-ahead pointer (never rewinds)
+            lookAhead = max(lookAhead, i + 2)
+            while lookAhead < result.count {
+                let c = result[lookAhead]
+                if a.sourceURL != c.sourceURL && b.sourceURL != c.sourceURL
                     && a.category != c.category
-                    && b.category != c.category
-                    && !(a.isYouTube && c.isYouTube)
-                    && !(a.isPodcast && c.isPodcast)
-                    && !(b.isYouTube && c.isYouTube)
-                    && !(b.isPodcast && c.isPodcast)
-            }) {
-                result.swapAt(i + 1, swapIdx)
+                    && !(a.isYouTube && c.isYouTube) && !(a.isPodcast && c.isPodcast)
+                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast) {
+                    result.swapAt(i + 1, lookAhead)
+                    break
+                }
+                lookAhead += 1
             }
+            if lookAhead >= result.count { break }
         }
         return result
     }
