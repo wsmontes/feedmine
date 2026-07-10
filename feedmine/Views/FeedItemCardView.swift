@@ -122,6 +122,10 @@ struct FeedItemCardView: View {
         .frame(maxWidth: .infinity)
         .background(engine.accent.opacity(0.03))
         .clipShape(RoundedRectangle(cornerRadius: engine.cardRadius))
+        .overlay(
+            RoundedRectangle(cornerRadius: engine.cardRadius)
+                .stroke(engine.accent.opacity(0.06), lineWidth: 0.5)
+        )
         .overlay(alignment: .leading) {
             // Left border accent — category color, dimmed when read
             RoundedRectangle(cornerRadius: 2)
@@ -191,6 +195,10 @@ struct FeedItemCardView: View {
         .frame(maxWidth: .infinity)
         .background(engine.accent.opacity(0.03))
         .clipShape(RoundedRectangle(cornerRadius: 12))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(engine.accent.opacity(0.06), lineWidth: 0.5)
+        )
         .overlay(alignment: .leading) {
             RoundedRectangle(cornerRadius: 2)
                 .fill(categoryColor(item.category).opacity(isRead ? 0.25 : 0.8))
