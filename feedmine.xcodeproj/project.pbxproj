@@ -1619,6 +1619,7 @@
 		A1B2C3D4E5F6000000000004 /* FeedTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000003 /* FeedTheme.swift */; };
 		A1B2C3D4E5F6000000000006 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000005 /* FeedManager.swift */; };
 		A1B2C3D4E5F6000000000008 /* RootPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000007 /* RootPagerView.swift */; };
+		A1B2C3D4E5F600000000000A /* FeedCreationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000009 /* FeedCreationPage.swift */; };
 		C45F9D00A3268B1250B39812 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89B6467E341514F26C040B /* FeedLoader.swift */; };
 		C4625A3BC895F03AB7316615 /* ecuador-cotopaxi.opml in Resources */ = {isa = PBXBuildFile; fileRef = 51CEA64A4CB13EAD8C3BE28B /* ecuador-cotopaxi.opml */; };
 		C4726663E807A9B8AA0940F6 /* peru.opml in Resources */ = {isa = PBXBuildFile; fileRef = 4E55E8F19A1F9A59F7425CCA /* peru.opml */; };
@@ -4043,6 +4044,7 @@
 		A1B2C3D4E5F6000000000003 /* FeedTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTheme.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000005 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000007 /* RootPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPagerView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000000000009 /* FeedCreationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCreationPage.swift; sourceTree = "<group>"; };
 		FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetchResult.swift; sourceTree = "<group>"; };
 		FDCC238B9CFC2DD8B16FB51C /* ethiopia-south-west.opml */ = {isa = PBXFileReference; path = "ethiopia-south-west.opml"; sourceTree = "<group>"; };
 		FDD5488627E9375DF38F6F39 /* china-taiwan.opml */ = {isa = PBXFileReference; path = "china-taiwan.opml"; sourceTree = "<group>"; };
@@ -4974,6 +4976,7 @@
 				EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */,
 				CEFF4F67C0D676CDCECEA119 /* RegionDetailScreen.swift */,
 				A1B2C3D4E5F6000000000007 /* RootPagerView.swift */,
+				A1B2C3D4E5F6000000000009 /* FeedCreationPage.swift */,
 				93A1E8E7D34C1FBFB2EA6CC6 /* SearchBarView.swift */,
 				C534C45AB248D0B885533C04 /* SettingsSheetView.swift */,
 				20C0390FC7E6B67E2A2AF044 /* ShareCardImageView.swift */,
@@ -9105,6 +9108,7 @@
 				C45F9D00A3268B1250B39812 /* FeedLoader.swift in Sources */,
 				4551C42E546633FC57E0E1A4 /* FeedScreen.swift in Sources */,
 				A1B2C3D4E5F6000000000008 /* RootPagerView.swift in Sources */,
+				A1B2C3D4E5F600000000000A /* FeedCreationPage.swift in Sources */,
 				7E39E605E7B9F579235AE061 /* FeedSource.swift in Sources */,
 				C4CA39AE33AC4D6BAC4F4807 /* FeedStore.swift in Sources */,
 				A1B2C3D4E5F6000000000004 /* FeedTheme.swift in Sources */,
