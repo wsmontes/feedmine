@@ -190,7 +190,7 @@ struct FullPlayerView: View {
                     } label: {
                         Image(systemName: player.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                             .font(.system(size: 64))
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(CircadianEngine.shared.accent)
                             .contentTransition(.symbolEffect(.replace))
                     }
                     .animation(.interactiveSpring(response: 0.3, dampingFraction: 0.6), value: player.isPlaying)
