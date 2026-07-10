@@ -344,7 +344,7 @@ struct FeedScreen: View {
                     }
                     .padding(.top, 48)
                     .safeAreaInset(edge: .bottom) {
-                        Color.clear.frame(height: 14).background(.ultraThinMaterial)
+                        Color.clear.frame(height: 60).background(.ultraThinMaterial)
                     }
                 }
                 .scrollDismissesKeyboard(.interactively)
@@ -365,12 +365,14 @@ struct FeedScreen: View {
     private func sectionHeader(_ title: String) -> some View {
         HStack {
             Text(LocalizedStringKey(title))
-                .font(engine.font(for: .sectionHeader))
-                .foregroundStyle(engine.accent)
+                .font(.caption)
+                .fontWeight(.medium)
+                .foregroundStyle(.secondary)
             Spacer()
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 4)
+        .padding(.top, 12)
+        .padding(.bottom, 4)
     }
 
     // MARK: - Floating Buttons
