@@ -343,12 +343,23 @@ actor RSSFetcher {
     // MARK: - Private
 
     private func extractItems(from feed: Feed, source: FeedSource) -> [FeedItem] {
+        // Channel-level image fallback for podcasts (many RSS feeds have
+        // artwork at the channel level but not per-episode).
+        let feedImage: String? = {
+            switch feed {
+            case .atom(let a): return a.logo ?? a.icon
+            case .rss(let r):  return r.image?.url
+            case .json(let j): return j.icon ?? j.favicon
+            }
+        }()
+
         let entries: [FeedItem] = {
             switch feed {
             case .atom(let atomFeed):
                 return (atomFeed.entries ?? []).compactMap { entry in
                     let rawContent = entry.content?.value ?? entry.summary?.value ?? ""
                     let audio = extractAtomAudio(from: entry, source: source)
+                    let img = extractFirstImageFromHTML(rawContent) ?? feedImage
                     return makeItem(
                         guid: entry.id,
                         link: entry.links?.first?.attributes?.href ?? entry.id,
@@ -357,7 +368,7 @@ actor RSSFetcher {
                         source: source,
                         rawDescription: entry.summary?.value ?? entry.content?.value,
                         rawContent: entry.content?.value,
-                        imageURL: extractFirstImageFromHTML(rawContent),
+                        imageURL: img,
                         audioURL: audio
                     )
                 }
@@ -365,6 +376,7 @@ actor RSSFetcher {
                 return (rssFeed.items ?? []).compactMap { item in
                     let audio = extractAudio(from: item, source: source)
                     let duration = extractDuration(from: item) ?? audio?.duration
+                    let img = extractImageURL(from: item) ?? feedImage
                     return makeItem(
                         guid: item.guid?.value,
                         link: item.link,
@@ -373,7 +385,7 @@ actor RSSFetcher {
                         source: source,
                         rawDescription: item.description,
                         rawContent: item.content?.contentEncoded,
-                        imageURL: extractImageURL(from: item),
+                        imageURL: img,
                         audioURL: audio?.url,
                         duration: duration
                     )
@@ -381,6 +393,7 @@ actor RSSFetcher {
             case .json(let jsonFeed):
                 return (jsonFeed.items ?? []).compactMap { jsonItem in
                     let audio = extractJSONAudio(from: jsonItem, source: source)
+                    let img = jsonItem.image ?? jsonItem.bannerImage ?? feedImage
                     return makeItem(
                         guid: jsonItem.id,
                         link: jsonItem.url,
@@ -389,7 +402,7 @@ actor RSSFetcher {
                         source: source,
                         rawDescription: jsonItem.summary ?? jsonItem.contentText,
                         rawContent: jsonItem.contentHtml,
-                        imageURL: jsonItem.image ?? jsonItem.bannerImage,
+                        imageURL: img,
                         audioURL: audio?.url,
                         duration: audio?.duration
                     )
