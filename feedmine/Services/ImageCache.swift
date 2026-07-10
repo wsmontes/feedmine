@@ -191,6 +191,7 @@ struct CachedAsyncImage: View {
     @State private var loadedImage: UIImage?
     @State private var didAttempt = false
     @State private var loadFailed = false
+    @State private var retryCount = 0
 
     /// Images smaller than this (e.g. 1×1 tracking pixels) are rejected.
     private static let minImageDimension: CGFloat = 4
@@ -228,6 +229,15 @@ struct CachedAsyncImage: View {
             loadedImage = nil
             didAttempt = false
             loadFailed = false
+            retryCount = 0
+        }
+        .onAppear {
+            // Retry failed loads when card scrolls back into view
+            if loadFailed && retryCount < 3 {
+                loadFailed = false
+                didAttempt = false
+                retryCount += 1
+            }
         }
     }
 
@@ -246,23 +256,28 @@ struct CachedAsyncImage: View {
             loadedImage = cached; onResult?(true)
             return
         }
-        // Tier 3: network with URLCache
-        do {
-            let (data, _) = try await Self.session.data(from: url)
-            if let uiImage = UIImage(data: data), isValidImage(uiImage) {
-                ImageCache.shared.setImage(uiImage, for: url)
-                loadedImage = uiImage
-                onResult?(true)
-            } else {
-                didAttempt = true
-                loadFailed = true
-                onResult?(false)
+        // Tier 3: network with URLCache + retry
+        for attempt in 0..<2 {
+            do {
+                let (data, _) = try await Self.session.data(from: url)
+                if let uiImage = UIImage(data: data), isValidImage(uiImage) {
+                    ImageCache.shared.setImage(uiImage, for: url)
+                    loadedImage = uiImage
+                    onResult?(true)
+                    return
+                }
+                // Invalid image data — don't retry
+                break
+            } catch {
+                if attempt == 0 {
+                    try? await Task.sleep(for: .milliseconds(500))
+                    continue
+                }
             }
-        } catch {
-            didAttempt = true
-            loadFailed = true
-            onResult?(false)
         }
+        didAttempt = true
+        loadFailed = true
+        onResult?(false)
     }
 
     /// Reject tracking pixels and other near-invisible images.
