@@ -3,6 +3,7 @@ import SwiftUI
 struct WhatsNewCarousel: View {
     @Environment(FeedLoader.self) private var loader
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var engine = CircadianEngine.shared
     let onOpen: (FeedItem) -> Void
 
     private var items: [FeedItem] { loader.whatIsNewItems }
@@ -13,7 +14,7 @@ struct WhatsNewCarousel: View {
             HStack(spacing: 6) {
                 Image(systemName: "sparkles")
                     .font(.caption2)
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(engine.accent)
                     .symbolEffect(.pulse)
                 Text(loader.whatsNewLabel)
                     .font(.subheadline)
@@ -25,7 +26,7 @@ struct WhatsNewCarousel: View {
                         .foregroundStyle(.white)
                         .padding(.horizontal, 7)
                         .padding(.vertical, 2)
-                        .background(Capsule().fill(.blue))
+                        .background(Capsule().fill(engine.accent))
                 }
                 Spacer()
             }
@@ -175,7 +176,7 @@ struct WhatsNewCarousel: View {
             VStack(spacing: 8) {
                 Image(systemName: "sparkles")
                     .font(.caption)
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(engine.accent)
                     .symbolEffect(.pulse)
                 Text("Checking for new stories…")
                     .font(.caption)
@@ -349,6 +350,7 @@ struct WhatsNewCard: View {
     let onOpen: (FeedItem) -> Void
     @Environment(FeedLoader.self) private var loader
     @State private var appeared = false
+    @State private var engine = CircadianEngine.shared
 
     private var categoryColor: Color {
         switch item.category.lowercased() {
@@ -396,7 +398,7 @@ struct WhatsNewCard: View {
                     .foregroundStyle(.white)
                     .padding(.horizontal, 6)
                     .padding(.vertical, 3)
-                    .background(.blue.opacity(0.7), in: Capsule())
+                    .background(engine.accent.opacity(0.8), in: Capsule())
                 }
 
                 // Title
