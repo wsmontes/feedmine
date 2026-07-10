@@ -826,18 +826,30 @@ final class FeedStore {
     }
 
     private func loadReservoir() async throws -> [FeedItem]? {
-        // disabledRegions filtering now handled in-memory by isItemEnabled
+        // Fetch a larger pool, then select with diversity: news items favor
+        // recency; everything else is randomized. This prevents a single
+        // prolific source from dominating the first 200 slots.
+        let poolSize = 400
         let records: [FeedItemRecord] = try await db.read { db in
-            var request = FeedItemRecord
+            try FeedItemRecord
                 .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
-            // Region filter: handled in-memory by isItemEnabled
-            return try request
                 .order(Column("published_at").desc)
-                .limit(200)
+                .limit(poolSize)
                 .fetchAll(db)
         }
         guard !records.isEmpty else { return nil }
-        return records.map { $0.toFeedItem() }
+        let items = records.map { $0.toFeedItem() }
+
+        // Split: news items (time-sensitive) keep recency order; everything
+        // else gets shuffled for diversity. Then merge: all news first (most
+        // recent at top), then random non-news, capped at 200.
+        let newsCategories = Set(["news", "News & Politics", "Sports"])
+        var news = items.filter { newsCategories.contains($0.category) }
+        var other = items.filter { !newsCategories.contains($0.category) }.shuffled()
+        // News already ordered by published_at DESC from the query
+        var selected = news + other
+        if selected.count > 200 { selected = Array(selected.prefix(200)) }
+        return selected
     }
 
     private func loadReadState() async {
@@ -1255,8 +1267,8 @@ final class FeedStore {
             readItemIDs.insert(item.id)
         }
         // Clear everything, then force-fetch NEW content from the internet.
-        // reloadFromSQLite alone recycles the same items — the user wants
-        // genuinely fresh content from live feeds.
+        // Reset What's New baseline so fresh items appear in the carousel.
+        resetWhatsNewBaseline()
         visibleItems = []
         reservoirCount = 0
         reservoir.clear()
