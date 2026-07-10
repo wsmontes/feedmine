@@ -1,10 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var loader = FeedLoader()
+    @State private var manager = FeedManager()
 
     var body: some View {
-        FeedScreen()
-            .environment(loader)
+        RootPagerView()
+            .environment(manager)
+            .environment(LocaleManager.shared)
     }
 }

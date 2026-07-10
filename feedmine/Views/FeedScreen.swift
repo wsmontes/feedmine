@@ -4,6 +4,7 @@ import UIKit
 struct FeedScreen: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(FeedLoader.self) private var loader
+    @Environment(\.feedTheme) private var feedTheme
     @State private var articleItem: FeedItem?
     @State private var appearedItemIDs: Set<String> = []
     @State private var showScrollButton = false
@@ -27,7 +28,7 @@ struct FeedScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             // Full-bleed feed content with circadian page tint
-            engine.pageBackground.ignoresSafeArea()
+            feedTheme.pageBackground.ignoresSafeArea()
 
             if loader.loadingState == .initial && loader.items.isEmpty {
                 SkeletonLoadingView()
@@ -131,7 +132,7 @@ struct FeedScreen: View {
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
         .sheet(isPresented: $showBookmarks) { BookmarkBoxesView() }
-        .tint(engine.accent)
+        .tint(feedTheme.accent)
         .animation(.easeInOut(duration: 2.0), value: engine.period)
         .overlay { if nightMode { nightOverlay } }
     }
@@ -160,7 +161,7 @@ struct FeedScreen: View {
                         if isSearching { searchText = "" }
                     } label: {
                         Image(systemName: isSearching ? "magnifyingglass.circle.fill" : "magnifyingglass")
-                            .headerButtonStyle(accent: engine.accent)
+                            .headerButtonStyle(accent: feedTheme.accent)
                             .contentTransition(.symbolEffect(.replace))
                     }
                     Button {
@@ -169,11 +170,11 @@ struct FeedScreen: View {
                         showBookmarks = true
                     } label: {
                         Image(systemName: loader.selectedBookmarkListID != nil ? "bookmark.fill" : "bookmark")
-                            .headerButtonStyle(accent: engine.accent)
+                            .headerButtonStyle(accent: feedTheme.accent)
                     }
                     .overlay(alignment: .topTrailing) {
                         if loader.selectedBookmarkListID != nil {
-                            Circle().fill(engine.accent).frame(width: 6, height: 6)
+                            Circle().fill(feedTheme.accent).frame(width: 6, height: 6)
                         }
                     }
                     filterButton
@@ -186,7 +187,7 @@ struct FeedScreen: View {
                         }
                     } label: {
                         Image(systemName: "ellipsis.circle")
-                            .headerButtonStyle(accent: engine.accent)
+                            .headerButtonStyle(accent: feedTheme.accent)
                     }
                 }
             }
@@ -219,7 +220,7 @@ struct FeedScreen: View {
                     searchText = ""; isSearching = false; searchFocused = false
                     loader.searchQuery = ""; loader.searchQueryChanged()
                 }
-                .font(.caption).foregroundStyle(engine.accent)
+                .font(.caption).foregroundStyle(feedTheme.accent)
             }
         }
         .padding(.horizontal, 12).padding(.vertical, 8)
@@ -260,8 +261,8 @@ struct FeedScreen: View {
                 Image(systemName: "xmark").font(.system(size: 9, weight: .bold))
             }
             .padding(.horizontal, 8).padding(.vertical, 3)
-            .background(Capsule().fill(CircadianEngine.shared.accent.opacity(0.12)))
-            .foregroundStyle(CircadianEngine.shared.accent)
+            .background(Capsule().fill(feedTheme.accent.opacity(0.12)))
+            .foregroundStyle(feedTheme.accent)
         }
     }
 
@@ -272,13 +273,13 @@ struct FeedScreen: View {
         } label: {
             ZStack(alignment: .topTrailing) {
                 Image(systemName: "line.3.horizontal.decrease")
-                    .headerButtonStyle(accent: engine.accent)
+                    .headerButtonStyle(accent: feedTheme.accent)
                 if activeCount > 0 {
                     Text("\(activeCount)")
                         .font(.system(size: 9, weight: .bold))
                         .foregroundStyle(.white)
                         .frame(width: 14, height: 14)
-                        .background(Circle().fill(engine.accent))
+                        .background(Circle().fill(feedTheme.accent))
                         .offset(x: 2, y: -2)
                 }
             }
@@ -300,7 +301,7 @@ struct FeedScreen: View {
                         if loader.selectedBookmarkListID != nil {
                             HStack {
                                 Image(systemName: "bookmark.fill")
-                                    .foregroundStyle(engine.accent)
+                                    .foregroundStyle(feedTheme.accent)
                                 Text(loader.selectedBookmarkListName ?? "Bookmarks")
                                     .font(.headline)
                                     .fontWeight(.semibold)
@@ -406,7 +407,7 @@ struct FeedScreen: View {
             } label: {
                 Image(systemName: "arrow.up")
                     .frame(width: 36, height: 36)
-                    .background(engine.accent.opacity(0.12))
+                    .background(feedTheme.accent.opacity(0.12))
                     .clipShape(Circle())
             }
             .accessibilityLabel("Scroll to top")
