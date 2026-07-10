@@ -1254,16 +1254,16 @@ final class FeedStore {
         for item in reservoir.visibleItems {
             readItemIDs.insert(item.id)
         }
-        // Clear visible feed and reload fresh content from SQLite.
-        // re-interleaving existing items is NOT a refresh — the user
-        // wants genuinely new content from the database.
+        // Clear everything, then force-fetch NEW content from the internet.
+        // reloadFromSQLite alone recycles the same items — the user wants
+        // genuinely fresh content from live feeds.
         visibleItems = []
         reservoirCount = 0
         reservoir.clear()
         lastRefreshDate = nil   // bypass staleness check
         Task {
             await reloadFromSQLite()
-            if visibleItems.count < 20 { await fetchNextBatch() }
+            await fetchNextBatch()  // always fetch, not just when <20
         }
     }
 
