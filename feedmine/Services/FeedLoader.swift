@@ -396,13 +396,8 @@ final class FeedLoader {
 
     var lastToggleMessage: String? { store.lastToggleMessage }
 
-    /// Bumped on every toggle to notify SwiftUI of deep state changes in
-    /// SourceRegistry (which isn't directly observable through FeedStore).
-    var toggleGeneration = 0
-
     func toggleRegion(_ region: String) {
         store.toggleRegion(region)
-        toggleGeneration &+= 1
         Task { await loadWhatsNew() }
     }
 
@@ -411,25 +406,26 @@ final class FeedLoader {
     }
     func toggleAllCountries() {
         store.registry.toggleAllCountries()
-        toggleGeneration &+= 1
         store.resetWhatsNewBaseline()
         Task { await loadWhatsNew() }
     }
     func toggleGlobalFeeds() {
         store.toggleRegion("global")
-        toggleGeneration &+= 1
         store.resetWhatsNewBaseline()
         Task { await loadWhatsNew() }
     }
-    func toggleSource(_ sourceURL: String) { store.toggleSource(sourceURL); toggleGeneration &+= 1 }
-    func isRegionEnabled(_ region: String) -> Bool { _ = toggleGeneration; return store.registry.status(of: SourceRegistry.regionKey(region)) != .off }
+    func toggleSource(_ sourceURL: String) { store.toggleSource(sourceURL) }
+    /// True if the region is not explicitly disabled. Partial (disabled but
+    /// some sources overridden) still counts as disabled from the user's POV.
+    func isRegionEnabled(_ region: String) -> Bool { store.registry.status(of: SourceRegistry.regionKey(region)) == .on }
     func isSourceEnabled(_ url: String) -> Bool { store.registry.isSourceEnabled(url) }
-    func nodeStatus(for key: String) -> NodeStatus { _ = toggleGeneration; return store.registry.status(of: key) }
+    func nodeStatus(for key: String) -> NodeStatus { store.registry.status(of: key) }
     func activeCount(for key: String) -> Int { store.registry.activeCount(for: key) }
-    func toggleCategory(_ category: String) { store.toggleCategory(category); toggleGeneration &+= 1 }
-    func isCategoryEnabled(_ category: String) -> Bool { _ = toggleGeneration; return store.registry.status(of: SourceRegistry.categoryKey(category)) != .off }
-    var isAnyCountryEnabled: Bool { _ = toggleGeneration; return store.registry.isAnyCountryEnabled }
-    var isGlobalFeedsEnabled: Bool { _ = toggleGeneration; return store.registry.status(of: SourceRegistry.regionKey("global")) != .off }
+    func toggleCategory(_ category: String) { store.toggleCategory(category) }
+    /// True if the category is not explicitly disabled.
+    func isCategoryEnabled(_ category: String) -> Bool { store.registry.status(of: SourceRegistry.categoryKey(category)) == .on }
+    var isAnyCountryEnabled: Bool { store.registry.isAnyCountryEnabled }
+    var isGlobalFeedsEnabled: Bool { store.registry.status(of: SourceRegistry.regionKey("global")) == .on }
 
     func markAsRead(_ itemID: String) { store.markAsRead(itemID) }
     func markAsUnread(_ itemID: String) { store.markAsUnread(itemID) }
