@@ -95,11 +95,16 @@ Each feed is an island on disk. Three things become namespaced by `feedID`:
 - `Self.migrate` runs identically per new file — same schema, separate data.
 - Bookmarks, read-history, `source_health`, `feed_item`, What's New baseline: all inside that feed's DB.
 
-### 2. Filters + source toggles — one settings entry per feed
-- `AppSettings` key changes from the single `"app_settings"` to `"app_settings_<id>"`.
-- `toggleDisabled` / `toggleEnabledOverrides` (SourceRegistry on/off state) and filters
-  (`filterRegion/Category/ContentType/Mood`) already live in `AppSettings` → isolated for free.
-- `AppSettings.load()/save()` gain a `feedID` parameter (or become instances with the key embedded).
+### 2. Filters + source toggles — one settings namespace per feed
+- The codebase persists filters and source toggles through **scattered raw `UserDefaults.standard`
+  keys** (`filterRegion/Category/ContentType/Mood`, `toggleDisabled`, `toggleEnabledOverrides`,
+  `last_whats_new_seen_at`, `lastHeavyMaintenance`, source-defaults-initialized) — the `AppSettings`
+  struct exists but is not the live source of truth.
+- Isolation mechanism: each `FeedStore`/`SourceRegistry` receives an **injected `UserDefaults`
+  instance**. Per-feed feeds get `UserDefaults(suiteName: "com.feedmine.feed.<id>")`; the same key
+  strings are reused unchanged, so every feed-scoped key becomes per-feed with no per-key rewrite.
+- Truly global prefs (palette/circadian, `prefetchImages`, `showDebugBar`, `nightMode`, `fontSize`,
+  session/streak) stay on `UserDefaults.standard`.
 
 ### 3. Feeds index — one list at the top
 - New `Codable` blob in `UserDefaults`, key `"feeds_index"`: `[FeedDescriptor]`.
