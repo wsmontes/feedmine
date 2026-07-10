@@ -412,7 +412,7 @@ final class FeedManager {
             name: (name?.isEmpty == true) ? nil : name,
             paletteFamily: family,
             order: feeds.count,
-            createdAt: Date(timeIntervalSince1970: 0)   // Date() is fine at runtime; SwiftUI-safe
+            createdAt: Date()
         )
         let instance = FeedInstance(descriptor: descriptor, loader: Self.makeLoader(for: descriptor))
         feeds.append(instance)
@@ -447,7 +447,8 @@ final class FeedManager {
 }
 ```
 
-Note: use `Date()` for `createdAt` at runtime — the `Date(timeIntervalSince1970: 0)` placeholder above avoids the plan reviewer confusion; in the actual file write `createdAt: Date()`. *(Implementer: use `Date()`.)*
+Note: `FeedDescriptor.main()` uses `Date(timeIntervalSince1970: 0)` for a stable, deterministic
+`createdAt`; `createFeed` uses `Date()` (runtime is fine — this is app code, not a workflow script).
 
 - [ ] **Step 2: Add a `#if DEBUG` self-check for palette assignment (inline logic assert).**
 
@@ -457,13 +458,13 @@ Append to `FeedManager.swift`:
 extension FeedManager {
     /// Cheap runtime self-check — call once from app launch in DEBUG.
     static func _selfCheckPalettePool() {
-        let m = FeedManager()
-        // main only → first free is NOT the main's effective family
         let mainFam = CircadianEngine.shared.paletteFamily
-        assert(m.nextFreeFamily != mainFam, "next free must exclude main's family")
-        // occupied excludes a given secondary id when asked
-        assert(m.occupiedFamilies(excludingSecondary: FeedDescriptor.mainID).isEmpty || true)
-        print("[FeedManager] palette self-check passed (main family=\(mainFam.rawValue), next free=\(m.nextFreeFamily?.rawValue ?? "nil"))")
+        // firstFreeFamily must skip an excluded family
+        let free = FeedDescriptor.firstFreeFamily(excluding: [mainFam])
+        assert(free != nil && free != mainFam, "free family must exclude the occupied one")
+        // excluding all families yields nil (pool exhausted)
+        assert(FeedDescriptor.firstFreeFamily(excluding: Set(PaletteFamily.allCases)) == nil, "full pool → nil")
+        print("[FeedManager] palette self-check passed (main=\(mainFam.rawValue), free=\(free!.rawValue))")
     }
 }
 #endif
