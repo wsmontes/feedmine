@@ -109,7 +109,7 @@ struct FeedItemCardView: View {
                     .font(.caption)
                     .fontWeight(.medium)
                     .foregroundStyle(engine.accent)
-                Text("  ")
+                Text("·")
                 Text(formattedDate(item.publishedAt))
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
@@ -182,7 +182,7 @@ struct FeedItemCardView: View {
                         .font(.caption2)
                         .fontWeight(.medium)
                         .foregroundStyle(engine.accent)
-                    Text("  ")
+                    Text("·")
                     Text(formattedDate(item.publishedAt))
                         .font(.caption2)
                         .foregroundStyle(.tertiary)
@@ -262,7 +262,9 @@ struct FeedItemCardView: View {
             Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
                 .font(.title3)
                 .foregroundStyle(isBookmarked ? .yellow : .white)
-                .shadow(color: .black.opacity(0.4), radius: 4)
+                .frame(width: 36, height: 36)
+                .background(.ultraThinMaterial, in: Circle())
+                .shadow(color: .black.opacity(0.15), radius: 4)
                 .padding(12)
                 .contentTransition(.symbolEffect(.replace))
         }
@@ -273,15 +275,17 @@ struct FeedItemCardView: View {
     @ViewBuilder
     private var mediaOverlay: some View {
         if item.isYouTube {
-            Image(systemName: "play.circle.fill")
-                .font(.system(size: 44))
+            Image(systemName: "play.fill")
+                .font(.system(size: 20, weight: .bold))
                 .foregroundStyle(.white)
-                .shadow(color: .black.opacity(0.5), radius: 4, y: 2)
+                .frame(width: 40, height: 40)
+                .background(.black.opacity(0.35), in: Circle())
         } else if item.isPodcast {
-            Image(systemName: "headphones.circle.fill")
-                .font(.system(size: 44))
+            Image(systemName: "headphones")
+                .font(.system(size: 20, weight: .bold))
                 .foregroundStyle(.white)
-                .shadow(color: .black.opacity(0.5), radius: 4, y: 2)
+                .frame(width: 40, height: 40)
+                .background(.black.opacity(0.35), in: Circle())
         }
     }
 
