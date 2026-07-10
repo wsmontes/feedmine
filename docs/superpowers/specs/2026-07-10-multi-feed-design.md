@@ -261,7 +261,10 @@ Refresh interval / "N" are **code constants** (e.g., 15 min), not UI options.
 - **Main color change frees/occupies a slot:** the main's picker already excludes occupied colors → no collision.
 - **5 feeds:** no creation page; swipe navigates only among the 5.
 - **Audio playing + feed switch:** `AudioPlayerManager.shared` is global → playback continues across feeds;
-  the mini-player floats above any page. No interruption on swipe.
+  the mini-player floats above any page. Concretely: the user can tap a podcast in feed A, swipe to feed B
+  to browse other content, and the podcast keeps playing uninterrupted. The mini-player (and its now-playing
+  item) is a single global instance shared by all feeds — it is **not** reset or rebound when the active
+  feed changes. No interruption on swipe.
 
 ### Database errors
 Each `FeedStore.init` can throw (open/migrate SQLite). If a **secondary** feed fails to open, `FeedManager`
