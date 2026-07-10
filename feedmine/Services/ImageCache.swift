@@ -27,6 +27,15 @@ final class ImageCache {
 
     // MARK: - Public
 
+    /// Raw image data from disk cache — safe to call from any queue.
+    /// UIImage can be created from Data without MainActor.
+    nonisolated func cachedImageData(for url: URL) -> Data? {
+        let key = cacheKey(for: url)
+        let fileURL = diskCacheURL.appendingPathComponent(key)
+        guard FileManager.default.fileExists(atPath: fileURL.path) else { return nil }
+        return try? Data(contentsOf: fileURL)
+    }
+
     func image(for url: URL) -> UIImage? {
         let key = cacheKey(for: url)
         if let img = memoryCache.object(forKey: key as NSString) { return img }
@@ -94,7 +103,7 @@ final class ImageCache {
 
     // MARK: - Private
 
-    private func cacheKey(for url: URL) -> String {
+    private nonisolated func cacheKey(for url: URL) -> String {
         // Use last 2 path components + host for readability, fallback to hash
         let full = url.absoluteString
         let sanitized = full
@@ -116,7 +125,7 @@ final class ImageCache {
     /// Deterministic, launch-stable hash (FNV-1a, 64-bit). Unlike
     /// `String.hashValue` — which is seeded per process — this survives app
     /// restarts, so disk-cache filenames remain valid across launches.
-    private func stableHash(_ s: String) -> String {
+    private nonisolated func stableHash(_ s: String) -> String {
         var hash: UInt64 = 0xcbf2_9ce4_8422_2325   // FNV-1a offset basis
         for byte in s.utf8 {
             hash ^= UInt64(byte)
