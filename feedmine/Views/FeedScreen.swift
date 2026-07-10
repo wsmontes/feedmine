@@ -5,6 +5,7 @@ struct FeedScreen: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(FeedLoader.self) private var loader
     @Environment(\.feedTheme) private var feedTheme
+    @Environment(FeedManager.self) private var feedManager
     @State private var articleItem: FeedItem?
     @State private var appearedItemIDs: Set<String> = []
     @State private var showScrollButton = false
@@ -24,6 +25,12 @@ struct FeedScreen: View {
     @AppStorage("showDebugBar") private var showDebugBar = false
     @AppStorage("nightMode") private var nightMode = false
     @State private var player = AudioPlayerManager.shared
+
+    /// The active feed's display name, if any (nil for main feed).
+    private var feedName: String? {
+        feedManager.feeds.indices.contains(feedManager.activeIndex)
+            ? feedManager.feeds[feedManager.activeIndex].descriptor.name : nil
+    }
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -148,6 +155,11 @@ struct FeedScreen: View {
                     CompactDebugInfo()
                 } else {
                     CompactGreeting()
+                    if let name = feedName {
+                        Text(name)
+                            .font(.caption).fontWeight(.semibold)
+                            .foregroundStyle(feedTheme.accent)
+                    }
                 }
 
                 Spacer()
@@ -522,13 +534,14 @@ struct CompactErrorBanner: View {
 struct SkeletonLoadingView: View {
     @State private var messageIndex = 0
     @State private var engine = CircadianEngine.shared
+    @Environment(\.feedTheme) private var feedTheme
     private let messages = ["Brewing coffee...", "Scanning the internet...", "Finding articles...", "Finding the best stories...", "Loading your feed...", "Checking sources...", "Almost there...", "Curating articles...", "Tuning antennas...", "Gathering news..."]
 
     var body: some View {
         VStack(spacing: 0) {
             Text(messages[messageIndex])
                 .font(engine.font(for: .momentCard))
-                .foregroundStyle(engine.accent)
+                .foregroundStyle(feedTheme.accent)
                 .padding(.vertical, 16)
                 .transition(.opacity.combined(with: .move(edge: .top)))
                 .id(messageIndex)
@@ -553,6 +566,7 @@ struct SkeletonLoadingView: View {
 
 struct SkeletonCardView: View {
     @State private var engine = CircadianEngine.shared
+    @Environment(\.feedTheme) private var feedTheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -574,7 +588,7 @@ struct SkeletonCardView: View {
 
     private var shimmerGradient: LinearGradient {
         LinearGradient(
-            colors: [engine.accent.opacity(0.15), engine.accent.opacity(0.08), engine.accent.opacity(0.15)],
+            colors: [feedTheme.accent.opacity(0.15), feedTheme.accent.opacity(0.08), feedTheme.accent.opacity(0.15)],
             startPoint: .leading,
             endPoint: .trailing
         )
@@ -584,6 +598,7 @@ struct SkeletonCardView: View {
 /// A soft, slow dreamy gradient for skeleton cards — same vibe as WhatsNewCarousel
 struct SkeletonDreamyGradient: View {
     @State private var engine = CircadianEngine.shared
+    @Environment(\.feedTheme) private var feedTheme
 
     var body: some View {
         TimelineView(.animation) { timeline in
@@ -591,15 +606,15 @@ struct SkeletonDreamyGradient: View {
             let phase = CGFloat(t.truncatingRemainder(dividingBy: 8) / 8)
             GeometryReader { geo in
                 ZStack {
-                    engine.accent.opacity(0.08)
+                    feedTheme.accent.opacity(0.08)
                     Circle()
-                        .fill(engine.accent.opacity(0.12))
+                        .fill(feedTheme.accent.opacity(0.12))
                         .frame(width: geo.size.width * 0.6)
                         .blur(radius: 15)
                         .offset(x: geo.size.width * 0.2 * cos(phase * .pi * 2),
                                 y: geo.size.height * 0.15 * sin(phase * .pi * 1.6))
                     Circle()
-                        .fill(engine.accent.opacity(0.08))
+                        .fill(feedTheme.accent.opacity(0.08))
                         .frame(width: geo.size.width * 0.45)
                         .blur(radius: 12)
                         .offset(x: geo.size.width * -0.1 * sin(phase * .pi * 1.8),
