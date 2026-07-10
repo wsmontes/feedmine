@@ -89,10 +89,6 @@ final class FeedStore {
             && (category == nil || item.category == category)
             && contentType(item)
             && (mood == .all || mood.matches(item.title))
-            // Language/region gate: when no country is active, only global
-            // (curated English) content appears. Country content is opt-in.
-            // YouTube and podcasts bypass this gate — their country tag is a
-            // language overlay, not an enable/disable switch.
             && (region != nil || item.region == "global" || item.isYouTube || item.isPodcast)
         }
     }

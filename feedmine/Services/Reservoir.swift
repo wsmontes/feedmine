@@ -128,7 +128,8 @@ final class Reservoir {
 
     func removeRegion(_ region: String) {
         let isDisabled: (FeedItem) -> Bool = { [self] item in
-            (sourceRegionMap[item.sourceURL] ?? "global") == region
+            let itemRegion = sourceRegionMap[item.sourceURL] ?? "global"
+            return itemRegion == region || itemRegion.hasPrefix(region + "/")
         }
         visibleItems.removeAll(where: isDisabled)
         reservoir.removeAll(where: isDisabled)
