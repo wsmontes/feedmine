@@ -1359,6 +1359,23 @@ final class FeedStore {
             try db.create(index: "idx_item_category_fetched",
                           on: "feed_item", columns: ["category", "fetched_at"])
         }
+        migrator.registerMigration("v5_source_toggle") { db in
+            try db.create(table: "source_toggle") { t in
+                t.column("key", .text).primaryKey()
+                t.column("state", .integer).notNull()  // 0=disabled, 1=enabled_override
+            }
+            // Migrate existing UserDefaults data
+            if let disabled = UserDefaults.standard.array(forKey: "toggleDisabled") as? [String] {
+                for key in disabled {
+                    try db.execute(sql: "INSERT OR IGNORE INTO source_toggle (key, state) VALUES (?, 0)", arguments: [key])
+                }
+            }
+            if let overrides = UserDefaults.standard.array(forKey: "toggleEnabledOverrides") as? [String] {
+                for key in overrides {
+                    try db.execute(sql: "INSERT OR REPLACE INTO source_toggle (key, state) VALUES (?, 1)", arguments: [key])
+                }
+            }
+        }
         try migrator.migrate(db)
     }
 }
