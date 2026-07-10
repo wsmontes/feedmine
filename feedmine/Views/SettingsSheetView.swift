@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SettingsSheetView: View {
+    @Environment(FeedManager.self) private var feedManager
     @Environment(FeedLoader.self) private var loader
     @Environment(LocaleManager.self) private var localeManager
     @AppStorage("showDebugBar") private var showDebugBar = false
@@ -18,6 +19,7 @@ struct SettingsSheetView: View {
     @State private var showPalettePicker = false
     @State private var showFontStylePicker = false
     @State private var showRestartAlert = false
+    @State private var showDeleteFeedConfirmation = false
 
     private var topCategory: String? {
         let readItems = loader.items.filter { loader.isRead($0.id) }
@@ -34,6 +36,13 @@ struct SettingsSheetView: View {
     private var selectedFontStyle: FontStyle {
         FontStyle(rawValue: fontStyleRaw) ?? .system
     }
+
+    private var currentFeed: FeedManager.FeedInstance? {
+        feedManager.feeds.indices.contains(feedManager.activeIndex)
+            ? feedManager.feeds[feedManager.activeIndex] : nil
+    }
+
+    private var isSecondaryFeed: Bool { (currentFeed?.descriptor.isMain == false) }
 
     var body: some View {
         NavigationStack {
@@ -230,6 +239,22 @@ struct SettingsSheetView: View {
                     }
                 }
 
+                if isSecondaryFeed, let id = currentFeed?.descriptor.id {
+                    Section {
+                        Button(role: .destructive) {
+                            showDeleteFeedConfirmation = true
+                        } label: {
+                            Label("Delete This Feed", systemImage: "trash")
+                        }
+                    } footer: {
+                        Text("Removes this feed, its sources, and all its saved items. This cannot be undone.")
+                    }
+                    .confirmationDialog("Delete this feed?", isPresented: $showDeleteFeedConfirmation, titleVisibility: .visible) {
+                        Button("Delete Feed", role: .destructive) { feedManager.deleteFeed(id: id) }
+                        Button("Cancel", role: .cancel) { }
+                    }
+                }
+
                 Section {
                     Link(destination: URL(string: "mailto:wmontes@gmail.com?subject=Feedmine%20Feedback")!) {
                         Label("Send Feedback", systemImage: "envelope.fill")
@@ -261,10 +286,16 @@ struct SettingsSheetView: View {
 
     // MARK: - Palette Picker Sheet
 
+    private var selectablePaletteFamilies: [PaletteFamily] {
+        let occupiedBySecondaries = feedManager.occupiedFamilies(excludingSecondary: FeedDescriptor.mainID)
+            .subtracting([selectedPalette])
+        return PaletteFamily.allCases.filter { !occupiedBySecondaries.contains($0) }
+    }
+
     private var palettePickerSheet: some View {
         NavigationStack {
             List {
-                ForEach(PaletteFamily.allCases, id: \.rawValue) { family in
+                ForEach(selectablePaletteFamilies, id: \.rawValue) { family in
                     Button {
                         paletteFamilyRaw = family.rawValue
                         showPalettePicker = false
