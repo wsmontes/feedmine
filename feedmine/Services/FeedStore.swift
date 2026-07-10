@@ -63,13 +63,13 @@ final class FeedStore {
         Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
     }
 
-    /// Aggressive prefetch: visible items first (user sees now), then next
+    /// Aggressive prefetch: visible items first (user sees now), then deep
     /// reservoir batch (user scrolls to soon). Called after seed/moveToVisible
     /// so images are cached before they hit the screen.
     private func prefetchVisibleAndNext() {
         guard UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true else { return }
         let visible = reservoir.visibleItems.compactMap { $0.bestImageURL ?? $0.imageURL }
-        let upcoming = reservoir.upcomingItems(20).compactMap { $0.bestImageURL ?? $0.imageURL }
+        let upcoming = reservoir.upcomingItems(100).compactMap { $0.bestImageURL ?? $0.imageURL }
         let all = Array(Set(visible + upcoming))
         guard !all.isEmpty else { return }
         Task { await prefetcher.prefetch(urls: all, priorityURLs: visible) }

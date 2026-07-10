@@ -8,10 +8,10 @@ actor ImagePrefetcher {
 
     init() {
         let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = 10
-        config.timeoutIntervalForResource = 20
-        config.httpMaximumConnectionsPerHost = 3
-        config.urlCache = URLCache(memoryCapacity: 4 * 1024 * 1024, diskCapacity: 40 * 1024 * 1024)
+        config.timeoutIntervalForRequest = 8
+        config.timeoutIntervalForResource = 15
+        config.httpMaximumConnectionsPerHost = 4
+        config.urlCache = URLCache(memoryCapacity: 8 * 1024 * 1024, diskCapacity: 60 * 1024 * 1024)
         self.session = URLSession(configuration: config)
     }
 
@@ -39,7 +39,7 @@ actor ImagePrefetcher {
         // 20s resource timeout) before starting the next batch, so one slow
         // image stalled the rest. Every URL is still processed, so download()'s
         // defer clears it from inFlightURLs.
-        let maxConcurrent = 8
+        let maxConcurrent = 16
         await withTaskGroup(of: Void.self) { group in
             var iterator = toFetch.makeIterator()
             var started = 0
