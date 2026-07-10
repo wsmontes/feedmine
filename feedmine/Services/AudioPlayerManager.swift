@@ -354,10 +354,12 @@ final class AudioPlayerManager {
         if let observer = timeObserver { player?.removeTimeObserver(observer) }
         if let endObserver { NotificationCenter.default.removeObserver(endObserver) }
         statusObserver?.invalidate()
+        timeControlObserver?.invalidate()
         player = nil
         timeObserver = nil
         endObserver = nil
         statusObserver = nil
+        timeControlObserver = nil
         currentItem = nil
         isPlaying = false
         currentTime = 0
