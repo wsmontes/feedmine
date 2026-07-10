@@ -347,45 +347,34 @@ final class FeedStore {
 
     func setFilter(region: String?, category: String?, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
         progressiveFetchTask?.cancel()
-        let regionChanged = activeRegion != region
-        let categoryChanged = activeCategory != category
         activeRegion = region
         activeCategory = category
         activeContentType = type
         activeMood = mood
         persistFilters()
-        if regionChanged || categoryChanged {
-            // Clear visible items synchronously so the UI reflects the filter
-            // change immediately — no stale content flash, no reordering.
-            visibleItems = []
-            reservoirCount = 0
-            Task {
-                await reloadFromSQLite()
-                if visibleItems.count < 20 { await fetchNextBatch() }
-            }
-        } else {
-            visibleItems = applyFilters(reservoir.visibleItems)
-            if visibleItems.count < 20 { Task { await fetchNextBatch() } }
+        // Content on screen is untouchable. Clear everything, reload fresh.
+        visibleItems = []
+        reservoirCount = 0
+        reservoir.clear()
+        Task {
+            await reloadFromSQLite()
+            if visibleItems.count < 20 { await fetchNextBatch() }
         }
     }
 
     func clearAllFilters() {
-        let hadStructuralFilter = activeRegion != nil || activeCategory != nil
         activeRegion = nil
         activeCategory = nil
         activeContentType = .all
         activeMood = .all
         persistFilters()
-        if hadStructuralFilter {
-            visibleItems = []
-            reservoirCount = 0
-            Task {
-                await reloadFromSQLite()
-                if visibleItems.count < 20 { await fetchNextBatch() }
-            }
-        } else {
-            visibleItems = applyFilters(reservoir.visibleItems)
-            if visibleItems.count < 20 { Task { await fetchNextBatch() } }
+        // Content on screen is untouchable. Clear everything, reload fresh.
+        visibleItems = []
+        reservoirCount = 0
+        reservoir.clear()
+        Task {
+            await reloadFromSQLite()
+            if visibleItems.count < 20 { await fetchNextBatch() }
         }
     }
 
