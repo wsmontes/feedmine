@@ -7,6 +7,7 @@ struct FeedItemCardView: View {
     let isBookmarked: Bool
     let appearDelay: Double
     var onBookmark: (() -> Void)?
+    var isInBookmarkBox: Bool = false
     @State private var appeared = false
     @State private var imageLoadFailed = false
     @AppStorage("fontSize") private var fontSize = "medium"
@@ -103,16 +104,8 @@ struct FeedItemCardView: View {
                 .padding(.horizontal, 12)
                 .padding(.top, 6)
 
-            // Meta row — reading time first, date second
-            HStack(spacing: 0) {
-                HStack(spacing: 3) {
-                    Image(systemName: actionIcon).font(.caption2)
-                    Text(readingTime)
-                }
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .foregroundStyle(engine.accent)
-                Text("·")
+            // Meta row — date only
+            HStack {
                 Text(formattedDate(item.publishedAt))
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
@@ -180,15 +173,7 @@ struct FeedItemCardView: View {
                     .lineLimit(2)
                     .padding(.top, 3)
 
-                HStack(spacing: 0) {
-                    HStack(spacing: 3) {
-                        Image(systemName: actionIcon).font(.caption2)
-                        Text(readingTime)
-                    }
-                        .font(.caption2)
-                        .fontWeight(.medium)
-                        .foregroundStyle(engine.accent)
-                    Text("·")
+                HStack {
                     Text(formattedDate(item.publishedAt))
                         .font(.caption2)
                         .foregroundStyle(.tertiary)
@@ -241,41 +226,80 @@ struct FeedItemCardView: View {
 
             // Bookmark on text-only cards
             if !hasImage {
-                Button {
-                    let impact = UIImpactFeedbackGenerator(style: .light)
-                    impact.impactOccurred()
-                    onBookmark?()
-                } label: {
-                    Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                        .font(.caption)
-                        .foregroundStyle(isBookmarked ? .yellow : .secondary)
-                        .contentTransition(.symbolEffect(.replace))
+                if isInBookmarkBox {
+                    Menu {
+                        BookmarkBoxContextMenu(itemID: item.id)
+                        Divider()
+                        Button(role: .destructive) {
+                            onBookmark?()
+                        } label: {
+                            Label("Remove from Box", systemImage: "bookmark.slash")
+                        }
+                    } label: {
+                        Image(systemName: "bookmark.fill")
+                            .font(.caption)
+                            .foregroundStyle(.yellow)
+                    }
+                    .buttonStyle(.plain)
+                } else {
+                    Button {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
+                        onBookmark?()
+                    } label: {
+                        Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                            .font(.caption)
+                            .foregroundStyle(isBookmarked ? .yellow : .secondary)
+                            .contentTransition(.symbolEffect(.replace))
+                    }
+                    .buttonStyle(.plain)
+                    .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isBookmarked)
                 }
-                .buttonStyle(.plain)
-                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isBookmarked)
             }
         }
     }
 
     // MARK: - Shared
 
+    @ViewBuilder
     private var cardOverlays: some View {
-        Button {
-            let impact = UIImpactFeedbackGenerator(style: .light)
-            impact.impactOccurred()
-            onBookmark?()
-        } label: {
-            Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                .font(.title3)
-                .foregroundStyle(isBookmarked ? .yellow : .white)
-                .frame(width: 36, height: 36)
-                .background(.ultraThinMaterial, in: Circle())
-                .shadow(color: .black.opacity(0.15), radius: 4)
-                .padding(12)
-                .contentTransition(.symbolEffect(.replace))
+        if isInBookmarkBox {
+            Menu {
+                BookmarkBoxContextMenu(itemID: item.id)
+                Divider()
+                Button(role: .destructive) {
+                    onBookmark?()
+                } label: {
+                    Label("Remove from Box", systemImage: "bookmark.slash")
+                }
+            } label: {
+                Image(systemName: "bookmark.fill")
+                    .font(.title3)
+                    .foregroundStyle(.yellow)
+                    .frame(width: 36, height: 36)
+                    .background(.ultraThinMaterial, in: Circle())
+                    .shadow(color: .black.opacity(0.15), radius: 4)
+                    .padding(12)
+            }
+            .buttonStyle(.plain)
+        } else {
+            Button {
+                let impact = UIImpactFeedbackGenerator(style: .light)
+                impact.impactOccurred()
+                onBookmark?()
+            } label: {
+                Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                    .font(.title3)
+                    .foregroundStyle(isBookmarked ? .yellow : .white)
+                    .frame(width: 36, height: 36)
+                    .background(.ultraThinMaterial, in: Circle())
+                    .shadow(color: .black.opacity(0.15), radius: 4)
+                    .padding(12)
+                    .contentTransition(.symbolEffect(.replace))
+            }
+            .buttonStyle(.plain)
+            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isBookmarked)
         }
-        .buttonStyle(.plain)
-        .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isBookmarked)
     }
 
     @ViewBuilder
@@ -306,12 +330,7 @@ struct FeedItemCardView: View {
 
     @ViewBuilder
     private var cardContextMenu: some View {
-        Button {
-            onBookmark?()
-        } label: {
-            Label(isBookmarked ? "Remove Bookmark" : "Bookmark",
-                  systemImage: isBookmarked ? "bookmark.slash" : "bookmark")
-        }
+        BookmarkBoxContextMenu(itemID: item.id)
         Button {
             UIPasteboard.general.url = URL(string: item.url)
             let impact = UIImpactFeedbackGenerator(style: .light)
@@ -332,24 +351,6 @@ struct FeedItemCardView: View {
     // MARK: - Helpers
 
     private var isNew: Bool { Date().timeIntervalSince(item.publishedAt) < 3600 }
-
-    private var readingTime: String {
-        if item.isYouTube { return "Watch" }
-        if item.isPodcast { return "Listen" }
-        let wordCount = item.excerpt.split(separator: " ").count
-        switch wordCount {
-        case 0..<15:  return "1 min read"
-        case 15..<40: return "2 min read"
-        case 40..<80: return "3 min read"
-        default:      return "4 min read"
-        }
-    }
-
-    private var actionIcon: String {
-        if item.isYouTube { return "play.rectangle.fill" }
-        if item.isPodcast { return "headphones" }
-        return "clock"
-    }
 
     private static let relativeFormatter: RelativeDateTimeFormatter = {
         let f = RelativeDateTimeFormatter()

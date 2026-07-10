@@ -8,6 +8,13 @@ struct FeedEmptyStateView: View {
         VStack(spacing: 24) {
             Spacer()
 
+            // Progress spinner during refresh — shows work is happening
+            if loader.loadingState == .refreshing {
+                ProgressView()
+                    .tint(engine.accent)
+                    .scaleEffect(1.2)
+            }
+
             // Icon
             ZStack {
                 Circle()
@@ -68,6 +75,8 @@ struct FeedEmptyStateView: View {
     private var iconName: String {
         if loader.loadingState == .initial {
             return "antenna.radiowaves.left.and.right"
+        } else if loader.loadingState == .refreshing {
+            return "line.3.horizontal.decrease.circle"
         } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
             return "wifi.slash"
         } else if loader.sources.isEmpty {
@@ -80,6 +89,8 @@ struct FeedEmptyStateView: View {
     private var title: String {
         if loader.loadingState == .initial {
             return String(localized: "Loading your feed...", comment: "Empty state title")
+        } else if loader.loadingState == .refreshing {
+            return String(localized: "Filtering articles...", comment: "Empty state title — filter in progress")
         } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
             return String(localized: "Couldn't load feeds", comment: "Empty state title")
         } else if loader.sources.isEmpty {
@@ -92,6 +103,8 @@ struct FeedEmptyStateView: View {
     private var description: String {
         if loader.loadingState == .initial {
             return String(localized: "Fetching articles from \(loader.sourceCount) sources.", comment: "Empty state description")
+        } else if loader.loadingState == .refreshing {
+            return String(localized: "Finding the best matches for your filters.", comment: "Empty state description — filter in progress")
         } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
             return String(localized: "All \(loader.fetchErrorCount) sources failed to load. Check your internet connection and pull to refresh.", comment: "Empty state description")
         } else if loader.sources.isEmpty {
@@ -112,6 +125,6 @@ struct FeedEmptyStateView: View {
     }
 
     private var showActions: Bool {
-        loader.loadingState != .initial
+        loader.loadingState != .initial && loader.loadingState != .refreshing
     }
 }

@@ -359,7 +359,9 @@ actor RSSFetcher {
                 return (atomFeed.entries ?? []).compactMap { entry in
                     let rawContent = entry.content?.value ?? entry.summary?.value ?? ""
                     let audio = extractAtomAudio(from: entry, source: source)
-                    let img = extractFirstImageFromHTML(rawContent) ?? feedImage
+                    let img = bestMediaImageURL(from: entry.media)
+                        ?? extractFirstImageFromHTML(rawContent)
+                        ?? feedImage
                     return makeItem(
                         guid: entry.id,
                         link: entry.links?.first?.attributes?.href ?? entry.id,
@@ -393,7 +395,11 @@ actor RSSFetcher {
             case .json(let jsonFeed):
                 return (jsonFeed.items ?? []).compactMap { jsonItem in
                     let audio = extractJSONAudio(from: jsonItem, source: source)
-                    let img = jsonItem.image ?? jsonItem.bannerImage ?? feedImage
+                    // Check attachments for image types (e.g., "image/jpeg")
+                    let attachmentImage = jsonItem.attachments?.first { att in
+                        att.mimeType?.hasPrefix("image/") == true
+                    }?.url
+                    let img = jsonItem.image ?? jsonItem.bannerImage ?? attachmentImage ?? feedImage
                     return makeItem(
                         guid: jsonItem.id,
                         link: jsonItem.url,
@@ -470,22 +476,43 @@ actor RSSFetcher {
         )
     }
 
-    /// Extract image URL from RSS item in priority order.
-    private func extractImageURL(from item: RSSFeedItem) -> String? {
-        // 1. media:content / media:thumbnail (Media RSS namespace)
-        if let media = item.media,
-           let mediaContent = media.mediaContents?.first,
-           let url = mediaContent.attributes?.url {
-            return url
-        }
-        if let media = item.media,
-           let mediaThumbnails = media.mediaThumbnails,
-           let thumb = mediaThumbnails.first,
-           let url = thumb.attributes?.url {
-            return url
+    /// Pick the best image URL from a Media RSS namespace — largest width
+    /// wins; "image/*" type preferred over "thumbnail/*" when sizes match.
+    private func bestMediaImageURL(from media: MediaNamespace?) -> String? {
+        guard let media else { return nil }
+
+        // 1. media:content — pick largest by width
+        if let contents = media.mediaContents, !contents.isEmpty {
+            let best = contents.max { a, b in
+                let aW = a.attributes?.width.flatMap(Int.init) ?? 0
+                let bW = b.attributes?.width.flatMap(Int.init) ?? 0
+                if aW != bW { return aW < bW }
+                let aImg = a.attributes?.type?.hasPrefix("image/") == true
+                let bImg = b.attributes?.type?.hasPrefix("image/") == true
+                return !aImg && bImg
+            }
+            if let url = best?.attributes?.url { return url }
         }
 
-        // 2. enclosure with image type
+        // 2. media:thumbnails — pick largest by width
+        if let thumbs = media.mediaThumbnails, !thumbs.isEmpty {
+            let best = thumbs.max { a, b in
+                let aW = a.attributes?.width.flatMap(Int.init) ?? 0
+                let bW = b.attributes?.width.flatMap(Int.init) ?? 0
+                return aW < bW
+            }
+            if let url = best?.attributes?.url { return url }
+        }
+
+        return nil
+    }
+
+    /// Extract image URL from RSS item, picking the best available image.
+    private func extractImageURL(from item: RSSFeedItem) -> String? {
+        // 1. media:content / media:thumbnail (Media RSS namespace)
+        if let url = bestMediaImageURL(from: item.media) { return url }
+
+        // 3. enclosure with image type
         if let enclosure = item.enclosure,
            let type = enclosure.attributes?.type,
            type.hasPrefix("image/"),
@@ -493,7 +520,7 @@ actor RSSFetcher {
             return url
         }
 
-        // 3. First <img> in content
+        // 4. First <img> in content
         if let content = item.content?.contentEncoded ?? item.description {
             return extractFirstImageFromHTML(content)
         }

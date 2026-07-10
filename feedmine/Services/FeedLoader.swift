@@ -171,16 +171,26 @@ final class FeedLoader {
     private var _sectionsCacheKey: Int = -1
 
     var dateSections: [DateSection] {
+        // Force filteredItems to refresh _cacheKey and _cachedFiltered before
+        // we read either — without this, dateSections can return stale sections
+        // when accessed before filteredItems in a SwiftUI body evaluation.
+        let items = filteredItems
         let key = _cacheKey
         if key == _sectionsCacheKey, !_cachedSections.isEmpty { return _cachedSections }
         _sectionsCacheKey = key
         let calendar = Calendar.current; let now = Date()
-        let grouped = Dictionary(grouping: _cachedFiltered) { item -> String in
-            if calendar.isDateInToday(item.publishedAt) { return "Today" }
-            if calendar.isDateInYesterday(item.publishedAt) { return "Yesterday" }
-            let days = calendar.dateComponents([.day], from: item.publishedAt, to: now).day ?? 0
-            if days < 7 { return "This Week" }
-            return "Earlier"
+        // Ordered grouping — Dictionary(grouping:) does not preserve array
+        // order, which caused visible cards to reorder on every cache miss.
+        var grouped: [String: [FeedItem]] = [:]
+        for item in items {
+            let section: String
+            if calendar.isDateInToday(item.publishedAt) { section = "Today" }
+            else if calendar.isDateInYesterday(item.publishedAt) { section = "Yesterday" }
+            else {
+                let days = calendar.dateComponents([.day], from: item.publishedAt, to: now).day ?? 0
+                section = days < 7 ? "This Week" : "Earlier"
+            }
+            grouped[section, default: []].append(item)
         }
         _cachedSections = ["Today", "Yesterday", "This Week", "Earlier"].compactMap { t in
             grouped[t].map { DateSection(title: t, items: $0) }
@@ -226,10 +236,40 @@ final class FeedLoader {
 
     var bookmarkedIDs: Set<String> { bookmarkItemIDs }
 
+    /// Currently selected bookmark box — when set, the feed becomes a fixed
+    /// list of that box's contents, ordered by save date. Dismiss to clear.
+    var selectedBookmarkListID: Int64? {
+        get { store.selectedBookmarkListID }
+        set {
+            store.selectedBookmarkListID = newValue
+            if let listID = newValue {
+                // Bookmark mode: load all items from the box
+                Task { @MainActor in
+                    do {
+                        let lists = try await store.allBookmarkLists()
+                        selectedBookmarkListName = lists.first(where: { $0.id == listID })?.name
+                        let items = try await store.bookmarkedItems(listID: listID)
+                        store.loadBookmarkFeed(items: items)
+                    } catch {
+                        store.selectedBookmarkListID = nil
+                        selectedBookmarkListName = nil
+                    }
+                }
+            } else {
+                selectedBookmarkListName = nil
+                store.clearBookmarkFeed()
+            }
+        }
+    }
+
+    /// Name of the currently selected bookmark box, if any.
+    private(set) var selectedBookmarkListName: String? = nil
+
     /// Reload bookmark state from FeedStore (call on appear and after toggle).
     func refreshBookmarkState() async {
         do {
             let lists = try await store.allBookmarkLists()
+            bookmarkLists = lists
             guard let defaultID = lists.first(where: { $0.isDefault })?.id ?? lists.first?.id else {
                 bookmarkItemIDs = []
                 return
@@ -259,33 +299,34 @@ final class FeedLoader {
 
     // MARK: - What's New
 
-    private var cachedWhatsNew: [FeedItem] = []
-    /// What's New items — separate from active search results (#40).
-    var whatIsNewItems: [FeedItem] { cachedWhatsNew }
+    /// What's New items — driven by the reactive pipeline in FeedStore.
+    /// Items accumulate as new content enters the database and are promoted
+    /// to the carousel when the pool reaches the threshold (10).
+    var whatIsNewItems: [FeedItem] { store.whatsNewItems }
     var whatsNewLabel: String { "What's New" }
     var whatsNewVisible = false
 
+    /// Refresh What's New — clears pool, re-seeds from DB, triggers booster fetch.
     func loadWhatsNew() async {
-        cachedWhatsNew = await store.loadWhatsNewItems()
+        store.refreshWhatsNew()
+    }
+
+    /// User scrolled past the carousel — advance to the next batch.
+    func advanceWhatsNewCarousel() {
+        store.advanceWhatsNew()
     }
 
     func flushWhatsNewQueue() {
-        // Advance baseline so shown items aren't "new" next session,
-        // then refresh — called when carousel dismisses or app backgrounds.
-        store.advanceWhatsNewBaseline()
-        Task { await loadWhatsNew() }
+        store.advanceWhatsNew()
     }
 
     /// Mark a What's New item as read and remove it from the carousel immediately.
-    /// This gives instant visual feedback — the card disappears without waiting
-    /// for a full reload cycle.
     func markWhatsNewAsRead(_ id: String) {
         store.markAsRead(id)
-        cachedWhatsNew.removeAll { $0.id == id }
     }
 
     func prefetchWhatsNewImages() {
-        let urls = cachedWhatsNew.compactMap { $0.bestImageURL ?? $0.imageURL }
+        let urls = whatIsNewItems.compactMap { $0.bestImageURL ?? $0.imageURL }
         guard !urls.isEmpty else { return }
         Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
     }
@@ -325,6 +366,7 @@ final class FeedLoader {
     func start() async {
         await store.start()
         await loadWhatsNew()
+        await refreshBookmarkLists()
         await refreshBookmarkState()
         await refreshActiveSearchState()
     }
@@ -441,11 +483,42 @@ final class FeedLoader {
         try await store.bookmarkedItems(listID: listID)
     }
 
-    func toggleBookmark(_ itemID: String) {
+    func toggleBookmark(_ itemID: String, listID: Int64? = nil) {
+        let targetListID = listID ?? store.preferredBookmarkListID
         Task {
-            try? await store.toggleBookmark(itemID: itemID)
+            try? await store.toggleBookmark(itemID: itemID, listID: targetListID)
             await refreshBookmarkState()
         }
+    }
+
+    var preferredBookmarkListID: Int64? {
+        get { store.preferredBookmarkListID }
+        set { store.preferredBookmarkListID = newValue }
+    }
+
+    /// Cached bookmark lists for context menus — loaded at startup, refreshed on changes.
+    var bookmarkLists: [BookmarkList] = []
+
+    func refreshBookmarkLists() async {
+        do { bookmarkLists = try await store.allBookmarkLists() }
+        catch {}
+    }
+
+    @discardableResult
+    func createBookmarkList(name: String) async throws -> Int64 {
+        try await store.createBookmarkList(name: name)
+    }
+
+    func renameBookmarkList(_ id: Int64, name: String) async throws {
+        try await store.renameBookmarkList(id, name: name)
+    }
+
+    func reorderBookmarkList(_ id: Int64, sortOrder: Int) async throws {
+        try await store.reorderBookmarkList(id, sortOrder: sortOrder)
+    }
+
+    func deleteBookmarkList(_ id: Int64) async throws {
+        try await store.deleteBookmarkList(id)
     }
 
     func loadActiveSearches() async throws -> [ActiveSearch] {

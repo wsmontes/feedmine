@@ -56,10 +56,11 @@ struct FeedScreen: View {
                 .frame(width: 0, height: 0)
                 .allowsHitTesting(false)
 
-            // Mini player bar
+            // Mini player bar — full-width bottom bar, always on top
             VStack {
                 Spacer()
                 MiniPlayerBar()
+                    .background(.ultraThinMaterial)
             }
 
             // Toast + Onboarding overlays
@@ -129,7 +130,7 @@ struct FeedScreen: View {
         .sheet(isPresented: $showSettings) { SettingsSheetView() }
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
-        .sheet(isPresented: $showBookmarks) { BookmarksSheetView() }
+        .sheet(isPresented: $showBookmarks) { BookmarkBoxesView() }
         .tint(engine.accent)
         .animation(.easeInOut(duration: 2.0), value: engine.period)
         .overlay { if nightMode { nightOverlay } }
@@ -162,23 +163,23 @@ struct FeedScreen: View {
                             .headerButtonStyle(accent: engine.accent)
                             .contentTransition(.symbolEffect(.replace))
                     }
-                    if loader.bookmarkedIDs.count > 0 {
-                        Button {
-                            let impact = UIImpactFeedbackGenerator(style: .light)
-                            impact.impactOccurred()
-                            showBookmarks = true
-                        } label: {
-                            Image(systemName: "bookmark.fill")
-                                .headerButtonStyle(accent: engine.accent)
+                    Button {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
+                        showBookmarks = true
+                    } label: {
+                        Image(systemName: loader.selectedBookmarkListID != nil ? "bookmark.fill" : "bookmark")
+                            .headerButtonStyle(accent: engine.accent)
+                    }
+                    .overlay(alignment: .topTrailing) {
+                        if loader.selectedBookmarkListID != nil {
+                            Circle().fill(engine.accent).frame(width: 6, height: 6)
                         }
                     }
                     filterButton
                     Menu {
                         Button { showSources = true } label: {
                             Label("Sources", systemImage: "antenna.radiowaves.left.and.right")
-                        }
-                        Button { showBookmarks = true } label: {
-                            Label("Bookmarks", systemImage: "bookmark.fill")
                         }
                         Button { showSettings = true } label: {
                             Label("Settings", systemImage: "gearshape")
@@ -295,8 +296,23 @@ struct FeedScreen: View {
                         // MomentCard — contextual greeting
                         MomentCard()
                             .padding(.top, 12)
-                        // What's New carousel
-                        if loader.selectedCategory == nil && loader.selectedMood == .all && loader.selectedContentType == .all && loader.searchQuery.isEmpty {
+                        // Bookmark box header — replaces What's New in bookmark mode
+                        if loader.selectedBookmarkListID != nil {
+                            HStack {
+                                Image(systemName: "bookmark.fill")
+                                    .foregroundStyle(engine.accent)
+                                Text(loader.selectedBookmarkListName ?? "Bookmarks")
+                                    .font(.headline)
+                                    .fontWeight(.semibold)
+                                Spacer()
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.top, 8)
+                        }
+                        // What's New carousel — hidden in bookmark mode
+                        if loader.selectedBookmarkListID == nil
+                            && loader.selectedCategory == nil && loader.selectedMood == .all
+                            && loader.selectedContentType == .all && loader.searchQuery.isEmpty {
                             WhatsNewCarousel(onOpen: { articleItem = $0 })
                                 .padding(.top, 8)
                         }

@@ -46,17 +46,18 @@ struct FeedItem: Identifiable, Sendable, Codable {
         return nil
     }
 
-    /// YouTube thumbnail URL — hqdefault.jpg always exists for any video.
-    /// maxresdefault.jpg only exists for 1080p+ and returns an ugly gray placeholder otherwise.
+    /// YouTube thumbnail URL — sddefault.jpg (640×480) is more reliable than
+    /// maxresdefault (gray placeholder for non-1080p) and better than hqdefault (480×360).
     var youTubeThumbnailURL: String? {
         guard let videoID = youTubeVideoID else { return nil }
-        return "https://img.youtube.com/vi/\(videoID)/hqdefault.jpg"
+        return "https://img.youtube.com/vi/\(videoID)/sddefault.jpg"
     }
 
-    /// Best available image URL — YouTube thumbnail takes priority over RSS image.
-    /// If the image fails to load, the card falls back to text-only layout.
+    /// Best available image URL — RSS image takes priority over YouTube thumbnail.
+    /// RSS media:content images are typically full-resolution article images (1200×800+),
+    /// while YouTube thumbnails top out at 640×480 (sddefault). YouTube is the fallback.
     var bestImageURL: String? {
-        youTubeThumbnailURL ?? imageURL
+        imageURL ?? youTubeThumbnailURL
     }
 
     /// True if this item has an audio enclosure (podcast episode)

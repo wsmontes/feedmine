@@ -18,7 +18,8 @@ struct FeedItemView: View {
                     isRead: loader.isRead(item.id),
                     isBookmarked: loader.isBookmarked(item.id),
                     appearDelay: Double(index % 8) * 0.04,
-                    onBookmark: { loader.toggleBookmark(item.id) }
+                    onBookmark: { loader.toggleBookmark(item.id) },
+                    isInBookmarkBox: loader.selectedBookmarkListID != nil
                 )
                 .padding(.horizontal, 12)
             } else {
@@ -84,14 +85,7 @@ struct FeedItemView: View {
             .tint(.yellow)
         }
         .contextMenu {
-            Button {
-                loader.toggleBookmark(item.id)
-            } label: {
-                Label(
-                    loader.isBookmarked(item.id) ? "Remove Bookmark" : "Bookmark",
-                    systemImage: loader.isBookmarked(item.id) ? "bookmark.slash" : "bookmark"
-                )
-            }
+            BookmarkBoxContextMenu(itemID: item.id)
 
             Button {
                 loader.searchQuery = item.sourceTitle

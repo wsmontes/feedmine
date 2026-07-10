@@ -15,11 +15,11 @@ struct WhatsNewCarousel: View {
                 Image(systemName: "sparkles")
                     .font(.caption2)
                     .foregroundStyle(engine.accent)
-                    .symbolEffect(.pulse)
-                Text(loader.whatsNewLabel)
+                    .symbolEffect(.variableColor)
+                Text(items.count < 10 ? "Finding new stories…" : loader.whatsNewLabel)
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                if !items.isEmpty {
+                if items.count >= 10 {
                     Text("\(items.count)")
                         .font(.caption2)
                         .fontWeight(.bold)
@@ -33,8 +33,8 @@ struct WhatsNewCarousel: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
 
-            // Content
-            if items.isEmpty {
+            // Content — loading animation while accumulating, populated when ready
+            if items.count < 10 {
                 emptyCarousel
             } else {
                 populatedCarousel
@@ -44,13 +44,13 @@ struct WhatsNewCarousel: View {
             loader.whatsNewVisible = true
             loader.prefetchWhatsNewImages()
             recomputeBrowsingCards()
-            Task { await loader.loadWhatsNew() }
         }
         .onChange(of: loader.filteredItems.count) { _, _ in
             recomputeBrowsingCards()
         }
         .onDisappear {
             loader.whatsNewVisible = false
+            loader.advanceWhatsNewCarousel()
         }
     }
 
@@ -434,8 +434,14 @@ struct WhatsNewCard: View {
         .onTapGesture {
             let impact = UIImpactFeedbackGenerator(style: .light)
             impact.impactOccurred()
-            loader.markWhatsNewAsRead(item.id)
-            onOpen(item)
+            if item.isPodcast {
+                if AudioPlayerManager.shared.play(item: item) {
+                    loader.markWhatsNewAsRead(item.id)
+                }
+            } else {
+                loader.markWhatsNewAsRead(item.id)
+                onOpen(item)
+            }
         }
     }
 

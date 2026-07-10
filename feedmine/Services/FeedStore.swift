@@ -50,6 +50,31 @@ final class FeedStore {
     var activeCategory: String?
     var activeContentType: FeedLoader.ContentType = .all
     var activeMood: FeedLoader.MoodFilter = .all
+    /// When set, the feed shows only items from this bookmark list.
+    var selectedBookmarkListID: Int64?
+    /// Preferred box for saving bookmarks. Defaults to the "Favorites" list.
+    var preferredBookmarkListID: Int64?
+    private(set) var isBookmarkFeed = false
+
+    /// Load a fixed bookmark feed — all items from the box, ordered by save date.
+    /// Pauses all background processes that would modify the screen.
+    func loadBookmarkFeed(items: [FeedItem]) {
+        isBookmarkFeed = true
+        pipelineTask?.cancel()
+        trimDebounceTask?.cancel()
+        progressiveFetchTask?.cancel()
+        backgroundRefreshTask?.cancel()
+        visibleItems = items
+        reservoirCount = 0
+        reservoir.clear()
+    }
+
+    /// Clear bookmark mode and reload the normal feed.
+    func clearBookmarkFeed() {
+        isBookmarkFeed = false
+        startBackgroundRefresh()
+        applyUpdate(.flush())
+    }
     /// Safety filter: excludes items from disabled regions/categories/feeds.
     private func isItemEnabled(_ item: FeedItem) -> Bool {
         registry.isSourceEnabled(item.sourceURL)
@@ -102,15 +127,27 @@ final class FeedStore {
     var isSearching = false
     private var searchResults: [FeedItem] = []
 
-    // MARK: - Read state
+    // MARK: - Read & Seen state
     private(set) var readItemIDs: Set<String> = []
+    /// Items that have appeared in the main feed (surfaced). Tracked
+    /// continuously so What's New can exclude already-seen content.
+    private(set) var surfacedItemIDs: Set<String> = []
     private(set) var loadedIDsCount: Int = 0
     private var loadedIDs: Set<String> = []  // Bloom filter for dedup
     private static let lastWhatsNewSeenAtKey = "last_whats_new_seen_at"
     private var whatsNewBaselineDate: Date?    // persisted across sessions; advanced on dismiss
+
+    // MARK: - What's New reactive pipeline
+    /// Candidates accumulate as new items enter the database. The carousel
+    /// shows the first N when the pool reaches the threshold. Advancing
+    /// removes shown items so the next batch surfaces.
+    private var whatsNewPool: [FeedItem] = []
+    private let whatsNewThreshold = 10
+    private(set) var whatsNewItems: [FeedItem] = []
     private var _defaultListID: Int64?
     private var hasStarted = false             // guards one-time startup work
     private var progressiveFetchTask: Task<Void, Never>?
+    private var backgroundRefreshTask: Task<Void, Never>?
 
     // MARK: - Init
     init() throws {
@@ -231,7 +268,16 @@ final class FeedStore {
             for item in items { loadedIDs.insert(item.id) }
             loadedIDsCount = loadedIDs.count
             reservoir.seed(items: items)
+            markSurfaced(reservoir.visibleItems)
             visibleItems = applyFilters(reservoir.visibleItems)
+            // Top up from reservoir if active filter (e.g. Podcasts) removed
+            // all seeded visible items — don't show empty screen.
+            if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
+                repeat {
+                    reservoir.moveToVisible(count: Reservoir.pageSize)
+                    visibleItems = applyFilters(reservoir.visibleItems)
+                } while visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0
+            }
             reservoirCount = reservoir.reservoirCount
             loadingState = .idle
             prefetchVisibleAndNext()
@@ -264,6 +310,13 @@ final class FeedStore {
         }
         loadingState = .idle
 
+        // Kick off What's New pipeline
+        refreshWhatsNew()
+
+        // Slow-drip background refresh — keeps the database and What's New
+        // fed with fresh content continuously while the app is in foreground.
+        startBackgroundRefresh()
+
         // Light maintenance on every launch
         Task { await performLightExpurgo() }
         Task.detached(priority: .background) { [weak self] in
@@ -271,8 +324,83 @@ final class FeedStore {
         }
     }
 
+    // MARK: - UI Pipeline
+    /// All visibleItems writes route through this single pipeline.
+    /// Category‑A triggers (.flush) cancel everything; scroll/fetch/trim
+    /// chain behind the current task so only one actor mutates the UI.
+    private enum FeedUIUpdate {
+        case flush(forceFetch: Bool = false, skipRead: Bool = false)  // Cancel all, clear, reload fresh
+        case append         // Move from reservoir → visible (scroll)
+        case refresh        // Sync visible from reservoir (after fetch)
+        case trim(Int)      // Trim buffer with currentVisibleIndex
+        case replace([FeedItem])  // Full replace (search, toggle)
+    }
+    private var pipelineTask: Task<Void, Never>?
+
+    /// Single writer for `visibleItems`. Every mutation routes through here.
+    /// - `.flush`: cancels all competing work, clears, then reloads from SQLite.
+    /// - `.append` / `.refresh` / `.trim`: serialized behind the current pipeline.
+    /// - `.replace`: immediate (search results, source toggle — caller owns the data).
+    private func applyUpdate(_ update: FeedUIUpdate) {
+        // Bookmark mode is a fixed snapshot — no screen mutations allowed
+        guard !isBookmarkFeed else { return }
+        switch update {
+        case .flush(let forceFetch, let skipRead):
+            pipelineTask?.cancel()
+            progressiveFetchTask?.cancel()
+            trimDebounceTask?.cancel()
+            visibleItems = []
+            reservoirCount = 0
+            reservoir.clear()
+            pipelineTask = Task { [weak self] in
+                guard let self else { return }
+                await self.reloadFromSQLite(skipRead: skipRead)
+                guard !Task.isCancelled else { return }
+                if forceFetch || self.visibleItems.count < 20 { await self.fetchNextBatch() }
+                self.loadingState = .idle
+            }
+
+        case .append:
+            let prev = pipelineTask
+            pipelineTask = Task { [weak self] in
+                await prev?.value
+                guard !Task.isCancelled, let self else { return }
+                self.reservoir.moveToVisible(count: Reservoir.pageSize)
+                self.markSurfaced(self.reservoir.visibleItems)
+                self.visibleItems = self.reservoir.visibleItems
+                self.reservoirCount = self.reservoir.reservoirCount
+                self.prefetchVisibleAndNext()
+            }
+
+        case .refresh:
+            let prev = pipelineTask
+            pipelineTask = Task { [weak self] in
+                await prev?.value
+                guard !Task.isCancelled, let self else { return }
+                self.markSurfaced(self.reservoir.visibleItems)
+                self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
+                self.reservoirCount = self.reservoir.reservoirCount
+            }
+
+        case .trim(let idx):
+            let prev = pipelineTask
+            pipelineTask = Task { [weak self] in
+                await prev?.value
+                guard !Task.isCancelled, let self else { return }
+                self.reservoir.trimBuffer(currentVisibleIndex: idx)
+                self.visibleItems = self.reservoir.visibleItems
+                self.reservoirCount = self.reservoir.reservoirCount
+            }
+
+        case .replace(let items):
+            pipelineTask?.cancel()
+            visibleItems = items
+        }
+    }
+
     // MARK: - Scroll
     private var lastLoadedIndex = -1
+    private var trimDebounceTask: Task<Void, Never>?
 
     /// User-initiated refresh (pull-to-refresh, retry, empty-state button).
     /// Forces a fresh fetch WITHOUT re-running one-time startup — no re-parsing
@@ -289,17 +417,22 @@ final class FeedStore {
 
     func loadMoreIfNeeded(currentItem: FeedItem) async {
         guard !isSearching else { return }
+        guard !isBookmarkFeed else { return }  // fixed feed, no pagination
         guard let itemIndex = visibleItems.firstIndex(where: { $0.id == currentItem.id }) else { return }
         guard itemIndex >= visibleItems.count - Reservoir.loadMoreThreshold else { return }
         guard itemIndex != lastLoadedIndex else { return }
         lastLoadedIndex = itemIndex
 
         scheduler.recordConsumption()
-        reservoir.moveToVisible(count: Reservoir.pageSize)
-        reservoir.trimBuffer(currentVisibleIndex: itemIndex)
-        visibleItems = reservoir.visibleItems
-        reservoirCount = reservoir.reservoirCount
-        prefetchVisibleAndNext()
+        applyUpdate(.append)
+        // Defer trimming: cancel previous, schedule new after 1.5s pause.
+        trimDebounceTask?.cancel()
+        let idx = itemIndex
+        trimDebounceTask = Task { [weak self] in
+            try? await Task.sleep(for: .seconds(1.5))
+            guard !Task.isCancelled, let self else { return }
+            self.applyUpdate(.trim(idx))
+        }
 
         if reservoir.reservoirCount < Reservoir.reservoirLowWatermark {
             await fetchNextBatch()
@@ -346,36 +479,26 @@ final class FeedStore {
     }
 
     func setFilter(region: String?, category: String?, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
-        progressiveFetchTask?.cancel()
+        loadingState = .refreshing
         activeRegion = region
         activeCategory = category
         activeContentType = type
         activeMood = mood
         persistFilters()
-        // Content on screen is untouchable. Clear everything, reload fresh.
-        visibleItems = []
-        reservoirCount = 0
-        reservoir.clear()
-        Task {
-            await reloadFromSQLite()
-            if visibleItems.count < 20 { await fetchNextBatch() }
-        }
+        refreshWhatsNew()
+        applyUpdate(.flush())
     }
 
     func clearAllFilters() {
+        loadingState = .refreshing
         activeRegion = nil
         activeCategory = nil
         activeContentType = .all
         activeMood = .all
         persistFilters()
         // Content on screen is untouchable. Clear everything, reload fresh.
-        visibleItems = []
-        reservoirCount = 0
-        reservoir.clear()
-        Task {
-            await reloadFromSQLite()
-            if visibleItems.count < 20 { await fetchNextBatch() }
-        }
+        refreshWhatsNew()
+        applyUpdate(.flush())
     }
 
     // MARK: - Search
@@ -384,13 +507,13 @@ final class FeedStore {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !q.isEmpty else {
             searchResults = []
-            visibleItems = []
+            applyUpdate(.replace([]))
             return
         }
         Task {
             guard let pattern = FTS5Pattern(matchingAllTokensIn: q) else {
                 searchResults = []
-                visibleItems = []
+                applyUpdate(.replace([]))
                 return
             }
             let region = activeRegion
@@ -409,17 +532,24 @@ final class FeedStore {
             }
             guard isSearching else { return }
             searchResults = results.map { $0.toFeedItem() }
-            visibleItems = searchResults.filter(isItemEnabled).filter(filterContentType)
+            applyUpdate(.replace(searchResults.filter(isItemEnabled).filter(filterContentType)))
         }
     }
 
     func clearSearch() {
         isSearching = false
         searchResults = []
-        Task { await reloadFromSQLite() }
+        applyUpdate(.flush())
     }
 
-    // MARK: - Read
+    // MARK: - Read & Seen
+
+    /// Mark items as surfaced (appeared on screen in feed or What's New carousel).
+    /// Tracked continuously so we know what the user has already seen.
+    func markSurfaced(_ items: [FeedItem]) {
+        for item in items { surfacedItemIDs.insert(item.id) }
+    }
+
     func markAsRead(_ itemID: String) {
         readItemIDs.insert(itemID)
         reservoir.readItemIDs = readItemIDs
@@ -478,18 +608,19 @@ final class FeedStore {
                     let result = await fetcher.fetchAll([source], maxConcurrent: 1)
                     let actualNew = await persistFetchedItems(result.items)
                     guard !actualNew.isEmpty else { return }
+                    collectWhatsNewCandidates(actualNew)
                     // Prepend to visible feed
                     var combined = actualNew
                     combined.append(contentsOf: reservoir.visibleItems)
                     reservoir.seed(items: combined)
-                    visibleItems = applyFilters(reservoir.visibleItems)
+                    applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
                     reservoirCount = reservoir.reservoirCount
                 }
             }
         } else {
             // Disabling — remove only this feed's items, not its whole region.
             reservoir.removeSource(sourceURL)
-            visibleItems = applyFilters(reservoir.visibleItems)
+            applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
             reservoirCount = reservoir.reservoirCount
         }
     }
@@ -501,7 +632,7 @@ final class FeedStore {
     func toggleCategory(_ category: String) {
         registry.toggleCategory(category)
         // Category toggle is structural — reload feed
-        Task { await reloadFromSQLite() }
+        applyUpdate(.flush())
     }
 
     /// Consecutive failures for a source URL.
@@ -513,49 +644,106 @@ final class FeedStore {
 
     /// Items fetched since the baseline snapshot, respecting all active filters.
     /// Only items with images, unread, capped at 10, shuffled for variety.
-    func loadWhatsNewItems() async -> [FeedItem] {
-        guard let baseline = whatsNewBaselineDate else { return [] }
-        let cutoff = Int(baseline.timeIntervalSince1970)
-        let region = activeRegion
-        let category = activeCategory
+    /// Called every time new items are persisted into the database.
+    /// Feeds the What's New candidate pool — items accumulate in the
+    /// background until the threshold is reached, then the carousel appears.
+    func collectWhatsNewCandidates(_ newItems: [FeedItem]) {
+        let visibleIDs = Set(reservoir.visibleItems.map(\.id))
+        let readIDs = readItemIDs
+        let weekAgo = Date().addingTimeInterval(-604800)  // 7 days
+        let candidates = newItems.filter { item in
+            item.publishedAt > weekAgo
+            && isItemEnabled(item)
+            && filterContentType(item)
+            && (activeMood == .all || activeMood.matches(item.title))
+            && !visibleIDs.contains(item.id)
+            && !readIDs.contains(item.id)
+        }
+        guard !candidates.isEmpty else { return }
+        // Merge into pool: one per source, newest first
+        var pool = (candidates + whatsNewPool).sorted { $0.publishedAt > $1.publishedAt }
+        var seen = Set<String>()
+        pool = pool.filter { seen.insert($0.sourceURL).inserted }
+        whatsNewPool = pool
+        // Promote when threshold reached
+        promoteWhatsNewIfReady()
+    }
 
-        /// Run the What's New query with a given cutoff. Extracted so we can try
-        /// the baseline first, then fall back to a 7-day window if nothing is fresh.
-        func query(cutoff: Int) async throws -> [FeedItem] {
+    /// Promote candidates to the visible carousel when the pool is full.
+    private func promoteWhatsNewIfReady() {
+        guard whatsNewItems.isEmpty, whatsNewPool.count >= whatsNewThreshold else { return }
+        whatsNewItems = Array(whatsNewPool.prefix(whatsNewThreshold))
+        whatsNewPool.removeFirst(min(whatsNewThreshold, whatsNewPool.count))
+        // Carousel items are visible on screen — mark as surfaced
+        markSurfaced(whatsNewItems)
+    }
+
+    /// Advance the carousel: return shown (unclicked) items to the pool so
+    /// they remain available for future selections, then promote next batch.
+    func advanceWhatsNew() {
+        // Return unclicked items to the pool — they were only previewed, not consumed
+        if !whatsNewItems.isEmpty {
+            whatsNewPool = (whatsNewItems + whatsNewPool)
+                .sorted { $0.publishedAt > $1.publishedAt }
+        }
+        whatsNewItems = []
+        promoteWhatsNewIfReady()
+    }
+
+    /// Kick off an aggressive fetch to fill the What's New pool quickly at
+    /// cold start. Runs alongside the DB seed — if the database has nothing,
+    /// this fetches fresh content from the network immediately.
+    func fetchWhatsNewBooster() {
+        Task { [weak self] in
+            guard let self else { return }
+            let sources = self.registry.enabledSources.shuffled().prefix(30)
+            let result = await self.fetcher.fetchAll(Array(sources), maxConcurrent: 5)
+            let actualNew = await self.persistFetchedItems(result.items)
+            if !actualNew.isEmpty {
+                self.reservoir.append(actualNew)
+                self.collectWhatsNewCandidates(actualNew)
+                self.prefetchImagesIfEnabled(for: actualNew)
+                for source in sources {
+                    let ok = result.sourceStatuses[source.url] != .failed
+                    self.scheduler.recordFetch(sourceURL: source.url, success: ok)
+                }
+            }
+        }
+    }
+
+    /// Refresh What's New: clear the pool, re-seed from DB, and trigger
+    /// a booster fetch. Called on any user-triggered update (startup, shake,
+    /// filter change) so the carousel always reflects the current context.
+    func refreshWhatsNew() {
+        whatsNewItems = []
+        whatsNewPool = []
+        Task { await seedWhatsNewFromDB() }
+        fetchWhatsNewBooster()
+    }
+
+    /// Seed the pool from existing SQLite content — runs once at startup
+    /// so the carousel isn't empty while waiting for the first fetch batch.
+    private func seedWhatsNewFromDB() async {
+        guard whatsNewPool.isEmpty else { return }
+        let surfacedIDs = surfacedItemIDs
+        let readIDs = readItemIDs
+        do {
             let records: [FeedItemRecord] = try await db.read { db in
-                var request = FeedItemRecord
-                    .filter(Column("fetched_at") > cutoff)
+                try FeedItemRecord
+                    .filter(Column("published_at") > Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970))
                     .filter(Column("is_read") == 0)
-                if let r = region { request = request.filter(Column("region") == r) }
-                if let c = category { request = request.filter(Column("category") == c) }
-                return try request
-                    .order(Column("fetched_at").desc)
-                    .limit(10)
+                    .order(Column("published_at").desc)
+                    .limit(500)
                     .fetchAll(db)
             }
-            return records.map { $0.toFeedItem() }.filter(isItemEnabled).shuffled()
-        }
-
-        do {
-            // 1) Baseline window — items fetched since the user last dismissed
-            let fresh = try await query(cutoff: cutoff)
-            if !fresh.isEmpty { return fresh }
-
-            // 2) Fallback cooldown: if the baseline was advanced recently
-            //    (e.g. user just dismissed the carousel), skip the 7-day
-            //    fallback to respect the dismiss intent. (#37)
-            let cooldownWindow: TimeInterval = 3600 // 1 hour
-            if Date().timeIntervalSince(baseline) < cooldownWindow { return [] }
-
-            // 3) Fallback: 7-day sliding window — prevents an eternally empty
-            //    carousel when no new fetches have landed (e.g. staleness gate,
-            //    offline, already-up-to-date feeds).
-            let fallbackCutoff = Int(Date().addingTimeInterval(-604800).timeIntervalSince1970)
-            let fallback = try await query(cutoff: fallbackCutoff)
-            return fallback
-        } catch {
-            return []
-        }
+            let items = records.map { $0.toFeedItem() }
+                .filter(isItemEnabled).filter(filterContentType)
+                .filter { !surfacedIDs.contains($0.id) && !readIDs.contains($0.id) }
+                .filter { activeMood == .all || activeMood.matches($0.title) }
+            var seen = Set<String>()
+            whatsNewPool = items.filter { seen.insert($0.sourceURL).inserted }
+            promoteWhatsNewIfReady()
+        } catch {}
     }
 
     /// Advance the baseline to now and persist it — so items already shown
@@ -665,6 +853,9 @@ final class FeedStore {
         let actualNew = await persistFetchedItems(result.items)
         guard !actualNew.isEmpty else { return }
 
+        // Feed the What's New reactive pipeline
+        collectWhatsNewCandidates(actualNew)
+
         // Diagnostic (opt-in via debug bar): surface non-English items so a
         // mis-languaged feed can be identified. See loop-focus-areas #5.
         if UserDefaults.standard.bool(forKey: "showDebugBar") {
@@ -742,6 +933,7 @@ final class FeedStore {
             saveSourceHealthBatch(healthEntries)
             let actualNew = await persistFetchedItems(result.items)
             reservoir.append(actualNew)
+            collectWhatsNewCandidates(actualNew)
             // Cap items per source so no single feed dominates (>50 items)
             if !actualNew.isEmpty {
                 let sourceURLs = Set(actualNew.map(\.sourceURL))
@@ -757,11 +949,47 @@ final class FeedStore {
         }
         print("[progressiveFetch] DONE — all \(allEnabled.count) sources processed")
         lastRefreshDate = .now
-
-        // Retroactive cap: sources that accumulated >50 items before the cap
-        // existed (e.g. OpenAI Blog at 1000+) get trimmed once after the
-        // initial bulk fetch completes.
         await capAllSources()
+    }
+
+    /// Slow-drip background refresh — fetches a small batch of sources every
+    /// few minutes to keep the database and What's New fed with fresh content.
+    /// Complements progressiveFetch (bulk initial fill) with continuous renewal.
+    private func startBackgroundRefresh() {
+        backgroundRefreshTask?.cancel()
+        backgroundRefreshTask = Task { [weak self] in
+            guard let self else { return }
+            let interval: TimeInterval = 150  // 2.5 minutes
+            while !Task.isCancelled {
+                try? await Task.sleep(for: .seconds(interval))
+                guard !Task.isCancelled else { break }
+                guard self.loadingState == .idle, !self.isSearching else { continue }
+                let batchSize = 5
+                let allSources = self.registry.enabledSources.shuffled()
+                let batch = Array(allSources.prefix(batchSize))
+                guard !batch.isEmpty else { continue }
+                let result = await self.fetcher.fetchAll(batch, maxConcurrent: 2)
+                let actualNew = await self.persistFetchedItems(result.items)
+                if !actualNew.isEmpty {
+                    self.reservoir.append(actualNew)
+                    self.collectWhatsNewCandidates(actualNew)
+                    self.prefetchImagesIfEnabled(for: actualNew)
+                    // Cap per source to prevent domination
+                    for url in Set(actualNew.map(\.sourceURL)) { await self.capSourceItems(sourceURL: url) }
+                }
+                // Record fetch health for each source
+                for source in batch {
+                    let success = result.sourceStatuses[source.url] != .failed
+                    self.scheduler.recordFetch(sourceURL: source.url, success: success)
+                }
+                self.lastRefreshDate = .now
+            }
+        }
+    }
+
+    func stopBackgroundRefresh() {
+        backgroundRefreshTask?.cancel()
+        backgroundRefreshTask = nil
     }
 
     /// Cap ALL sources in the database at 50 items each. Runs once after
@@ -785,14 +1013,17 @@ final class FeedStore {
         }
     }
 
-    private func reloadFromSQLite(prepend: [FeedItem] = []) async {
+    private func reloadFromSQLite(prepend: [FeedItem] = [], skipRead: Bool = false) async {
         guard !isSearching else { return }
         let region = activeRegion
         let category = activeCategory
-        // disabledRegions filtering now handled in-memory by isItemEnabled
+        // Always exclude read items — the feed should only show unseen content.
+        // Read/opened items are tracked continuously and this information is
+        // consumed by all feed-population paths (shake, filter, startup).
         let items: [FeedItemRecord] = (try? await db.read { db in
             var request = FeedItemRecord
                 .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
+                .filter(Column("is_read") == 0)
             if let r = region {
                 request = request.filter(Column("region") == r)
             }
@@ -810,7 +1041,16 @@ final class FeedStore {
         // Register all loaded IDs to prevent re-fetch duplicates
         for item in feedItems { loadedIDs.insert(item.id) }
         reservoir.seed(items: feedItems)
+        markSurfaced(reservoir.visibleItems)
         visibleItems = applyFilters(reservoir.visibleItems)
+        // If the active filter (e.g. Podcasts) removed all seeded visible items,
+        // pull more from the reservoir so the screen isn't empty.
+        if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
+            repeat {
+                reservoir.moveToVisible(count: Reservoir.pageSize)
+                visibleItems = applyFilters(reservoir.visibleItems)
+            } while visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0
+        }
         reservoirCount = reservoir.reservoirCount
     }
 
@@ -822,6 +1062,7 @@ final class FeedStore {
         let records: [FeedItemRecord] = try await db.read { db in
             try FeedItemRecord
                 .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
+                .filter(Column("is_read") == 0)
                 .order(Column("published_at").desc)
                 .limit(poolSize)
                 .fetchAll(db)
@@ -865,6 +1106,9 @@ final class FeedStore {
             // Enabling: clear memory, seed fresh content, reload from SQLite
             scheduler.prioritize(sourceURLs: sourceURLs)
             resetWhatsNewBaseline()
+            pipelineTask?.cancel()
+            progressiveFetchTask?.cancel()
+            trimDebounceTask?.cancel()
             reservoir.clear()
             visibleItems = []
             reservoirCount = 0
@@ -885,7 +1129,7 @@ final class FeedStore {
             // Disabling: remove from scheduler (incl. sub-regions), purge from reservoir
             scheduler.remove(sourceURLs: sourceURLs)
             reservoir.removeRegion(region)
-            visibleItems = applyFilters(reservoir.visibleItems)
+            applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
             reservoirCount = reservoir.reservoirCount
         }
     }
@@ -1061,14 +1305,19 @@ final class FeedStore {
     func createBookmarkList(name: String, searchQuery: String? = nil,
                             region: String? = nil, category: String? = nil) async throws -> Int64 {
         try await db.write { db in
-            var record = BookmarkListRecord(
-                id: nil, name: name, sortOrder: 0,
-                createdAt: Date(), isDefault: false,
-                searchQuery: searchQuery, searchRegion: region,
-                searchCategory: category, searchActive: searchQuery != nil
-            )
-            try record.insert(db)
-            return record.id!
+            try db.execute(sql: """
+                INSERT INTO bookmark_list (name, sort_order, created_at, is_default,
+                    search_query, search_region, search_category, search_active)
+                VALUES (?, 0, ?, 0, ?, ?, ?, ?)
+            """, arguments: [
+                name,
+                Int(Date().timeIntervalSince1970),
+                searchQuery,
+                region,
+                category,
+                searchQuery != nil
+            ])
+            return db.lastInsertedRowID
         }
     }
 
@@ -1108,6 +1357,19 @@ final class FeedStore {
                 .fetchAll(db)
         }
         return records.map { $0.toFeedItem() }
+    }
+
+    func renameBookmarkList(_ id: Int64, name: String) async throws {
+        try await db.write { db in
+            try db.execute(sql: "UPDATE bookmark_list SET name = ? WHERE id = ?", arguments: [name, id])
+        }
+    }
+
+    func reorderBookmarkList(_ id: Int64, sortOrder: Int) async throws {
+        try await db.write { db in
+            try db.execute(sql: "UPDATE bookmark_list SET sort_order = ? WHERE id = ?",
+                          arguments: [sortOrder, id])
+        }
     }
 
     func deleteBookmarkList(_ id: Int64) async throws {
@@ -1254,21 +1516,26 @@ final class FeedStore {
     /// Shake-to-refresh: mark visible as read, re-interleave reservoir,
     /// reload from SQLite, force fetch fresh content.
     func shakeToRefresh() {
-        // Mark visible items as surfaced so they deprecate below unseen content
-        for item in reservoir.visibleItems {
-            readItemIDs.insert(item.id)
-        }
-        // Clear everything, then force-fetch NEW content from the internet.
-        // Reset What's New baseline so fresh items appear in the carousel.
-        resetWhatsNewBaseline()
-        visibleItems = []
-        reservoirCount = 0
-        reservoir.clear()
-        lastRefreshDate = nil   // bypass staleness check
+        // Persist visible items as read so they don't reappear after reload.
+        let ids = reservoir.visibleItems.map(\.id)
+        for id in ids { readItemIDs.insert(id) }
+        reservoir.readItemIDs = readItemIDs
         Task {
-            await reloadFromSQLite()
-            await fetchNextBatch()  // always fetch, not just when <20
+            try await db.write { db in
+                for id in ids {
+                    try db.execute(sql: """
+                        UPDATE feed_item SET is_read = 1, opened_at = \(Int(Date().timeIntervalSince1970))
+                        WHERE id = ?
+                    """, arguments: [id])
+                }
+            }
         }
+        // Clear everything, then force-fetch NEW content. The SQLite reload
+        // will skip read items so only unseen content appears.
+        resetWhatsNewBaseline()
+        lastRefreshDate = nil
+        refreshWhatsNew()
+        applyUpdate(.flush(forceFetch: true, skipRead: true))
     }
 
     // MARK: - Migration

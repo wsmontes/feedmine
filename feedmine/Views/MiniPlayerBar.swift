@@ -83,9 +83,6 @@ struct MiniPlayerBar: View {
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
-                .padding(.horizontal, 8)
-                .padding(.bottom, 4)
             }
             .onTapGesture { showFullPlayer = true }
             .sheet(isPresented: $showFullPlayer) {
