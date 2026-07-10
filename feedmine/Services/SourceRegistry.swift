@@ -69,11 +69,9 @@ final class SourceRegistry {
         let ownKey = Self.sourceKey(sourceURL)
         if disabled.contains(ownKey) { return false }          // explicit OFF wins
         if enabledOverrides.contains(ownKey) { return true }   // explicit ON beats a disabled parent
-        // YouTube and podcast sources bypass region/country/category disable.
-        // Their country tag in the OPML is a language overlay for filtering,
-        // not an opt-in gate — they're globally available unless explicitly
-        // toggled off via their source key above.
-        if source.isYouTube || source.mediaKind == .audio { return true }
+        // Region/country/category disable applies to ALL source types.
+        // YouTube and podcasts are not exempt — disabling a country hides
+        // its local-language media alongside its text content.
         if disabled.contains(Self.regionKey(source.region)) { return false }
         // Country check — parent of region
         let parts = source.region.split(separator: "/").map(String.init)

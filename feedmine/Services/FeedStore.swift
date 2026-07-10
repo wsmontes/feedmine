@@ -83,13 +83,11 @@ final class FeedStore {
         let category = activeCategory
         let mood = activeMood
         let contentType = filterContentType
-        let region = activeRegion  // nil = default (global-only, English)
         return items.filter { item in
             isItemEnabled(item)
             && (category == nil || item.category == category)
             && contentType(item)
             && (mood == .all || mood.matches(item.title))
-            && (region != nil || item.region == "global" || item.isYouTube || item.isPodcast)
         }
     }
 
