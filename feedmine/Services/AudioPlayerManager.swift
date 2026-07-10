@@ -165,17 +165,6 @@ final class AudioPlayerManager {
             return
         }
 
-        // Pre-load raw image data on MainActor, then create MPMediaItemArtwork
-        // whose requestHandler creates UIImage from Data — safe on any queue.
-        let artwork: MPMediaItemArtwork? = {
-            guard let urlString = item.bestImageURL ?? item.imageURL,
-                  let url = URL(string: urlString),
-                  let data = ImageCache.shared.cachedImageData(for: url) else { return nil }
-            return MPMediaItemArtwork(boundsSize: CGSize(width: 600, height: 600)) { _ in
-                UIImage(data: data) ?? UIImage()
-            }
-        }()
-
         var info: [String: Any] = [
             MPMediaItemPropertyTitle: item.title,
             MPMediaItemPropertyArtist: item.sourceTitle,
@@ -183,8 +172,26 @@ final class AudioPlayerManager {
             MPMediaItemPropertyPlaybackDuration: duration,
             MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? 1.0 : 0.0,
         ]
-        if let artwork { info[MPMediaItemPropertyArtwork] = artwork }
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+
+        // Pre-load artwork data on MainActor, then dispatch the
+        // MPMediaItemArtwork creation off MainActor so the requestHandler
+        // closure doesn't inherit @MainActor isolation. MediaPlayer calls
+        // requestHandler on its internal */accessQueue — Swift 6 crashes if
+        // the closure was formed on MainActor.
+        if let urlString = item.bestImageURL ?? item.imageURL,
+           let url = URL(string: urlString),
+           let data = ImageCache.shared.cachedImageData(for: url) {
+            Task.detached {
+                let artwork = MPMediaItemArtwork(boundsSize: CGSize(width: 600, height: 600)) { _ in
+                    UIImage(data: data) ?? UIImage()
+                }
+                var updated = MPNowPlayingInfoCenter.default().nowPlayingInfo ?? [:]
+                updated[MPMediaItemPropertyArtwork] = artwork
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = updated
+            }
+        } else {
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+        }
     }
 
     // MARK: - Position Persistence
