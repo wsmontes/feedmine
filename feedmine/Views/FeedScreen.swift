@@ -253,7 +253,7 @@ struct FeedScreen: View {
         Button(action: action) {
             HStack(spacing: 2) {
                 Text(label).font(.caption2).fontWeight(.medium)
-                Image(systemName: "xmark").font(.system(size: 7, weight: .bold))
+                Image(systemName: "xmark").font(.system(size: 9, weight: .bold))
             }
             .padding(.horizontal, 8).padding(.vertical, 3)
             .background(Capsule().fill(CircadianEngine.shared.accent.opacity(0.12)))
