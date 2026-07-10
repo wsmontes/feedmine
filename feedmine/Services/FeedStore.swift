@@ -856,7 +856,10 @@ final class FeedStore {
 
     func toggleRegion(_ region: String) {
         let wasDisabled = registry.status(of: SourceRegistry.regionKey(region)) == .off
-        let sourceURLs = registry.sources.filter { $0.region == region }.map(\.url)
+        // Match exact region + sub-regions (e.g. "countries/brazil/sao-paulo")
+        let sourceURLs = registry.sources.filter {
+            $0.region == region || $0.region.hasPrefix(region + "/")
+        }.map(\.url)
         registry.toggleRegion(region)
         if wasDisabled {
             // Enabling: clear memory, seed fresh content, reload from SQLite
@@ -879,7 +882,7 @@ final class FeedStore {
                 await reloadFromSQLite(prepend: seedItems)
             }
         } else {
-            // Disabling: remove from scheduler, purge from reservoir
+            // Disabling: remove from scheduler (incl. sub-regions), purge from reservoir
             scheduler.remove(sourceURLs: sourceURLs)
             reservoir.removeRegion(region)
             visibleItems = applyFilters(reservoir.visibleItems)
