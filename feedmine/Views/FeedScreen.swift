@@ -159,9 +159,7 @@ struct FeedScreen: View {
                         if isSearching { searchText = "" }
                     } label: {
                         Image(systemName: isSearching ? "magnifyingglass.circle.fill" : "magnifyingglass")
-                            .frame(width: 36, height: 36)
-                            .background(engine.accent.opacity(0.1))
-                            .clipShape(Circle())
+                            .headerButtonStyle(accent: engine.accent)
                             .contentTransition(.symbolEffect(.replace))
                     }
                     if loader.bookmarkedIDs.count > 0 {
@@ -171,9 +169,7 @@ struct FeedScreen: View {
                             showBookmarks = true
                         } label: {
                             Image(systemName: "bookmark.fill")
-                                .frame(width: 36, height: 36)
-                                .background(engine.accent.opacity(0.1))
-                                .clipShape(Circle())
+                                .headerButtonStyle(accent: engine.accent)
                         }
                     }
                     filterButton
@@ -189,15 +185,16 @@ struct FeedScreen: View {
                         }
                     } label: {
                         Image(systemName: "ellipsis.circle")
-                            .frame(width: 36, height: 36)
-                            .background(engine.accent.opacity(0.1))
-                            .clipShape(Circle())
+                            .headerButtonStyle(accent: engine.accent)
                     }
                 }
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
             .background(.ultraThinMaterial)
+            .overlay(alignment: .bottom) {
+                Divider().opacity(0.3)
+            }
         }
     }
 
@@ -271,9 +268,7 @@ struct FeedScreen: View {
         } label: {
             ZStack(alignment: .topTrailing) {
                 Image(systemName: "line.3.horizontal.decrease")
-                    .frame(width: 36, height: 36)
-                    .background(engine.accent.opacity(0.1))
-                    .clipShape(Circle())
+                    .headerButtonStyle(accent: engine.accent)
                 if activeCount > 0 {
                     Text("\(activeCount)")
                         .font(.system(size: 9, weight: .bold))
@@ -598,5 +593,15 @@ struct EmptyFilterView: View {
     let category: String
     var body: some View {
         ContentUnavailableView("No \(category) articles", systemImage: "rectangle.stack.fill", description: Text("This category has articles in the feed, but they may have been trimmed from the visible buffer. Try scrolling through All first.")).padding(.top, 80)
+    }
+}
+
+// MARK: - Header Button Style
+
+extension View {
+    func headerButtonStyle(accent: Color) -> some View {
+        self.frame(width: 36, height: 36)
+            .background(accent.opacity(0.1))
+            .clipShape(Circle())
     }
 }
