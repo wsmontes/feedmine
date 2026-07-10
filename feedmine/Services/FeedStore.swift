@@ -63,6 +63,18 @@ final class FeedStore {
         Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
     }
 
+    /// Aggressive prefetch: visible items first (user sees now), then next
+    /// reservoir batch (user scrolls to soon). Called after seed/moveToVisible
+    /// so images are cached before they hit the screen.
+    private func prefetchVisibleAndNext() {
+        guard UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true else { return }
+        let visible = reservoir.visibleItems.compactMap { $0.bestImageURL ?? $0.imageURL }
+        let upcoming = reservoir.upcomingItems(20).compactMap { $0.bestImageURL ?? $0.imageURL }
+        let all = Array(Set(visible + upcoming))
+        guard !all.isEmpty else { return }
+        Task { await prefetcher.prefetch(urls: all, priorityURLs: visible) }
+    }
+
     /// Apply all active filters to a list of items — single source of truth.
     /// Every visibleItems assignment must pass through here so pagination
     /// (loadMoreIfNeeded) and the UI (FeedLoader.filteredItems) agree on count.
@@ -228,6 +240,7 @@ final class FeedStore {
             visibleItems = applyFilters(reservoir.visibleItems)
             reservoirCount = reservoir.reservoirCount
             loadingState = .idle
+            prefetchVisibleAndNext()
         }
 
         // Snapshot baseline for "What's New" — persisted so items don't vanish
@@ -292,6 +305,7 @@ final class FeedStore {
         reservoir.trimBuffer(currentVisibleIndex: itemIndex)
         visibleItems = reservoir.visibleItems
         reservoirCount = reservoir.reservoirCount
+        prefetchVisibleAndNext()
 
         if reservoir.reservoirCount < Reservoir.reservoirLowWatermark {
             await fetchNextBatch()

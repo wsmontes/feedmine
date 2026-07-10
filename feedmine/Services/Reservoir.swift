@@ -22,6 +22,12 @@ final class Reservoir {
     private(set) var visibleItems: [FeedItem] = []
     private(set) var reservoir: [FeedItem] = []
     var reservoirCount: Int { reservoir.count }
+
+    /// Next N items from the reservoir (not yet visible). Used for prefetching.
+    func upcomingItems(_ count: Int) -> [FeedItem] {
+        Array(reservoir.prefix(count))
+    }
+
     private var surfacedTimestamps: [String: Date] = [:]
     /// Items the user has explicitly marked as read (readItemIDs from FeedStore).
     /// Read items deprecate harder than surfaced items — pushed to the stale bucket.
