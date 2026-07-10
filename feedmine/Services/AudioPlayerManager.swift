@@ -165,17 +165,6 @@ final class AudioPlayerManager {
             return
         }
 
-        // Pre-load artwork on MainActor before passing to MPNowPlayingInfoCenter.
-        // MPMediaItemArtwork.requestHandler runs on MediaPlayer's internal queue
-        // (not MainActor) — calling @MainActor ImageCache from there crashes
-        // with Swift 6 actor isolation checking.
-        let artwork: MPMediaItemArtwork? = {
-            guard let urlString = item.bestImageURL ?? item.imageURL,
-                  let url = URL(string: urlString),
-                  let image = ImageCache.shared.image(for: url) else { return nil }
-            return MPMediaItemArtwork(boundsSize: image.size) { _ in image }
-        }()
-
         var info: [String: Any] = [
             MPMediaItemPropertyTitle: item.title,
             MPMediaItemPropertyArtist: item.sourceTitle,
@@ -183,7 +172,10 @@ final class AudioPlayerManager {
             MPMediaItemPropertyPlaybackDuration: duration,
             MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? 1.0 : 0.0,
         ]
-        if let artwork { info[MPMediaItemPropertyArtwork] = artwork }
+        // Artwork skipped — MPMediaItemArtwork.requestHandler runs on
+        // MediaPlayer's internal */accessQueue. Any @MainActor call
+        // (including ImageCache) from that queue crashes Swift 6 concurrency
+        // checking. Fixed in a future OS update.
 
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
     }
