@@ -26,6 +26,3 @@ struct RootPagerView: View {
         }
     }
 }
-
-// TEMP stub — replaced in Task 7.
-struct FeedDotsIndicator: View { var body: some View { EmptyView() } }
