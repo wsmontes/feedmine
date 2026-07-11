@@ -32,6 +32,11 @@ struct FeedScreen: View {
     @AppStorage("nightMode") private var nightMode = false
     @AppStorage("lastScrollItemID") private var lastScrollItemID = ""
     @State private var scrollTargetID: String? = nil
+    /// True once the user has actually scrolled the feed. Gates the one-shot
+    /// cold-start position restore so it can never yank a user who already
+    /// started reading. (Feed is sacred: it doesn't move on its own.)
+    @State private var userHasScrolled = false
+    @State private var didRestoreScroll = false
     @State private var player = AudioPlayerManager.shared
 
     var body: some View {
@@ -82,19 +87,21 @@ struct FeedScreen: View {
             await loader.refreshBookmarkState()
             updateBadge()
             engine.refresh()
-            // Restore scroll position on cold start
-            if !lastScrollItemID.isEmpty && !loader.items.isEmpty {
+            // Restore scroll position once on cold start — but never if the
+            // user already started scrolling (a delayed restore would yank them).
+            if !didRestoreScroll && !userHasScrolled
+                && !lastScrollItemID.isEmpty && !loader.items.isEmpty {
                 scrollTargetID = lastScrollItemID
             }
+            didRestoreScroll = true
         }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active {
                 SessionTracker.shared.onForeground()
                 engine.refresh()
-                // Restore scroll position if we have one saved
-                if !lastScrollItemID.isEmpty && !loader.items.isEmpty {
-                    scrollTargetID = lastScrollItemID
-                }
+                // Do NOT restore scroll on foreground: SwiftUI already preserves
+                // the position across background, so re-scrolling here only makes
+                // the feed jump under the user. (Feed is sacred.)
             }
             if phase == .background {
                 SessionTracker.shared.onBackground()
@@ -430,6 +437,7 @@ struct FeedScreen: View {
                 .onScrollGeometryChange(for: CGFloat.self, of: { geo in
                     geo.contentOffset.y
                 }, action: { _, newOffset in
+                    if newOffset > 40 { userHasScrolled = true }
                     if newOffset < -110 && !isSearching {
                         let impact = UIImpactFeedbackGenerator(style: .light)
                         impact.impactOccurred()
