@@ -30,6 +30,8 @@ struct FeedScreen: View {
     @State private var engine = CircadianEngine.shared
     @AppStorage("showDebugBar") private var showDebugBar = false
     @AppStorage("nightMode") private var nightMode = false
+    @AppStorage("lastScrollItemID") private var lastScrollItemID = ""
+    @State private var scrollTargetID: String? = nil
     @State private var player = AudioPlayerManager.shared
 
     var body: some View {
@@ -80,17 +82,30 @@ struct FeedScreen: View {
             await loader.refreshBookmarkState()
             updateBadge()
             engine.refresh()
+            // Restore scroll position on cold start
+            if !lastScrollItemID.isEmpty && !loader.items.isEmpty {
+                scrollTargetID = lastScrollItemID
+            }
         }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active {
                 SessionTracker.shared.onForeground()
                 engine.refresh()
+                // Restore scroll position if we have one saved
+                if !lastScrollItemID.isEmpty && !loader.items.isEmpty {
+                    scrollTargetID = lastScrollItemID
+                }
             }
             if phase == .background {
                 SessionTracker.shared.onBackground()
                 loader.flushWhatsNewQueue()
                 AudioPlayerManager.shared.savePosition()
-                // PersistenceManager.shared.saveNow(loader.buildStateWithItems()) // REMOVED: migrated to SQLite
+                // Save scroll position for restoration on next foreground
+                let allItems = loader.dateSections.flatMap(\.items)
+                let idx = min(lastScrollIndex, allItems.count - 1)
+                if idx >= 0, idx < allItems.count {
+                    lastScrollItemID = allItems[idx].id
+                }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
@@ -204,7 +219,45 @@ struct FeedScreen: View {
             .overlay(alignment: .bottom) {
                 Divider().opacity(0.3)
             }
+
+            // Active filter banner — shows what's being filtered and offers clear
+            if loader.selectedCategory != nil || loader.selectedMood != .all || loader.selectedContentType != .all {
+                filterActiveBanner
+                    .transition(.move(edge: .top).combined(with: .opacity))
+            }
         }
+    }
+
+    private var filterActiveBanner: some View {
+        HStack(spacing: 6) {
+            Image(systemName: "line.3.horizontal.decrease")
+                .font(.caption2)
+            Text(filterBannerLabel)
+                .font(.caption2)
+                .fontWeight(.medium)
+            Spacer()
+            Button("Clear") {
+                let impact = UIImpactFeedbackGenerator(style: .light)
+                impact.impactOccurred()
+                withAnimation(.easeInOut(duration: 0.25)) {
+                    loader.clearAllFilters()
+                }
+            }
+            .font(.caption2)
+            .fontWeight(.semibold)
+            .foregroundStyle(engine.accent)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 6)
+        .background(engine.accent.opacity(0.08))
+    }
+
+    private var filterBannerLabel: String {
+        var parts: [String] = []
+        if let cat = loader.selectedCategory { parts.append(cat) }
+        if loader.selectedMood != .all { parts.append(loader.selectedMood.rawValue) }
+        if loader.selectedContentType != .all { parts.append(loader.selectedContentType.rawValue) }
+        return parts.joined(separator: " · ")
     }
 
     private var searchBar: some View {
@@ -385,6 +438,16 @@ struct FeedScreen: View {
                 })
                 if showScrollButton { floatingButtons(proxy: proxy) }
             }
+            .onChange(of: scrollTargetID) { _, targetID in
+                guard let targetID else { return }
+                // Short delay so LazyVStack has time to lay out the target
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        proxy.scrollTo(targetID, anchor: .top)
+                    }
+                }
+                scrollTargetID = nil
+            }
         }
     }
 
@@ -499,6 +562,7 @@ struct ScrollOffKey: PreferenceKey {
 struct CompactGreeting: View {
     @Environment(FeedLoader.self) private var loader
     @State private var engine = CircadianEngine.shared
+    @AppStorage("showDebugBar") private var showDebugBar = false
 
     var body: some View {
         HStack(spacing: 4) {
@@ -508,6 +572,15 @@ struct CompactGreeting: View {
                 .frame(width: 16, height: 16)
             Text("Feedmine").font(.caption).fontWeight(.bold)
             Text("·\(loader.sourceCount) sources").font(.caption2).foregroundStyle(.secondary)
+        }
+        // Secret gesture: triple-tap the greeting to toggle debug bar.
+        // Not exposed in Settings — intentional, for development use only.
+        .onTapGesture(count: 3) {
+            let impact = UIImpactFeedbackGenerator(style: .medium)
+            impact.impactOccurred()
+            withAnimation(.easeInOut(duration: 0.3)) {
+                showDebugBar.toggle()
+            }
         }
     }
 }

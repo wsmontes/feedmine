@@ -4,19 +4,48 @@ struct OnboardingTipsView: View {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @State private var currentTip = 0
 
-    private let tips: [(icon: String, title: String, color: Color)] = [
-        ("hand.tap.fill", "Tap any article to preview", .blue),
-        ("arrow.left.square.fill", "Swipe right to mark read", .green),
-        ("arrow.right.square.fill", "Swipe left to bookmark", .yellow),
-        ("line.3.horizontal.decrease", "Tap to filter by category & mood", .purple),
-        ("gearshape", "Customize in Settings", .orange)
+    /// Onboarding communicates *why* Feedmine is different — anti-algorithm,
+    /// anti-bubble, respect for publishers, open-source, privacy-first.
+    /// Each tip pairs a philosophy statement with a quick mechanic so the
+    /// user learns both the ethos and how to act on it.
+    private let tips: [(icon: String, title: String, subtitle: String, color: Color)] = [
+        (
+            "globe.americas.fill",
+            "Stories from 190 countries",
+            "Not just your corner of the world. Tap Sources to explore by country and region.",
+            .teal
+        ),
+        (
+            "brain.head.profile",
+            "No AI deciding what you see",
+            "You pick the sources. The feed shows everything fairly — not just what drives clicks.",
+            .indigo
+        ),
+        (
+            "newspaper.fill",
+            "We send readers to publishers",
+            "Articles open on the original site. Publishers get the traffic they deserve.",
+            .blue
+        ),
+        (
+            "lock.shield.fill",
+            "Open source. Zero tracking.",
+            "Built in public by one developer. No ads, no accounts, no investors to please.",
+            .green
+        ),
+        (
+            "hand.raised.fill",
+            "Your data stays on your device",
+            "Bookmarks, read history, preferences — all local. Swipe left to save, right to mark read.",
+            .orange
+        )
     ]
 
     var body: some View {
         if !hasSeenOnboarding {
             VStack {
                 Spacer()
-                VStack(spacing: 12) {
+                VStack(spacing: 14) {
                     // Dismiss handle
                     Capsule()
                         .fill(Color(.systemGray4))
@@ -24,15 +53,21 @@ struct OnboardingTipsView: View {
                         .padding(.top, 8)
 
                     // Current tip
-                    HStack(spacing: 12) {
-                        Image(systemName: tips[currentTip].icon)
-                            .font(.title2)
-                            .foregroundStyle(tips[currentTip].color)
-                            .frame(width: 40)
-                        Text(tips[currentTip].title)
+                    VStack(alignment: .leading, spacing: 6) {
+                        HStack(spacing: 12) {
+                            Image(systemName: tips[currentTip].icon)
+                                .font(.title2)
+                                .foregroundStyle(tips[currentTip].color)
+                                .frame(width: 36)
+                            Text(tips[currentTip].title)
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                            Spacer()
+                        }
+                        Text(tips[currentTip].subtitle)
                             .font(.subheadline)
-                            .fontWeight(.medium)
-                        Spacer()
+                            .foregroundStyle(.secondary)
+                            .padding(.leading, 48)
                     }
                     .padding(.horizontal, 20)
 
@@ -52,6 +87,8 @@ struct OnboardingTipsView: View {
                             .font(.caption).foregroundStyle(.secondary)
                         Spacer()
                         Button(currentTip < tips.count - 1 ? "Next" : "Got it!") {
+                            let impact = UIImpactFeedbackGenerator(style: .light)
+                            impact.impactOccurred()
                             withAnimation(.easeInOut(duration: 0.25)) {
                                 if currentTip < tips.count - 1 {
                                     currentTip += 1
@@ -76,7 +113,9 @@ struct OnboardingTipsView: View {
                     DragGesture(minimumDistance: 30)
                         .onEnded { value in
                             if value.translation.height > 50 {
-                                hasSeenOnboarding = true
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    hasSeenOnboarding = true
+                                }
                             }
                         }
                 )

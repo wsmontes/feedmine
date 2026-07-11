@@ -3,7 +3,7 @@ import SwiftUI
 struct SettingsSheetView: View {
     @Environment(FeedLoader.self) private var loader
     @Environment(LocaleManager.self) private var localeManager
-    @AppStorage("showDebugBar") private var showDebugBar = false
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = true
     @AppStorage("prefetchImages") private var prefetchImages = true
     @AppStorage("nightMode") private var nightMode = false
     @AppStorage("fontSize") private var fontSize = FontSize.medium.rawValue
@@ -129,11 +129,6 @@ struct SettingsSheetView: View {
                         .tint(.orange)
                 }
 
-                // MARK: - Debug
-                Section("Debug") {
-                    Toggle("Show Debug Status Bar", isOn: $showDebugBar)
-                }
-
                 // MARK: - Reading Data
                 Section("Reading Data") {
                     HStack {
@@ -228,6 +223,11 @@ struct SettingsSheetView: View {
                         Text("Sources"); Spacer()
                         Text("\(loader.sourceCount) feeds · \(loader.opmlFileCount) files").foregroundStyle(.secondary)
                     }
+                    Button {
+                        hasSeenOnboarding = false
+                    } label: {
+                        Label("Re-watch Intro", systemImage: "sparkles")
+                    }
                 }
 
                 Section {
@@ -238,7 +238,7 @@ struct SettingsSheetView: View {
                         Label("FeedKit on GitHub", systemImage: "link")
                     }
                 } header: { Text("Feedback") } footer: {
-                    Text("Feedmine is an independent RSS reader built for curious minds.")
+                    Text("Feedmine is an independent, open-source RSS reader. No algorithms, no ads, no accounts — just stories from around the world, on your terms.")
                 }
             }
             .navigationTitle("Settings")
