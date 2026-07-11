@@ -25,6 +25,9 @@ scripts/feed_discovery/cache/
 scripts/feed_discovery/candidates/
 .venv/
 
+# Email outreach (contains contact emails — keep private)
+email_outreach/
+
 # Loop progress artifacts
 .loop_progress.json
 *.zip
