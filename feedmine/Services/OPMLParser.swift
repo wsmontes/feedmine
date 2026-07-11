@@ -3,12 +3,12 @@ import Foundation
 struct OPMLParser {
     // MARK: - Parse cache
 
-    /// Bump when the parse logic or FeedSource shape changes so old caches are
-    /// ignored regardless of the input fingerprint.
-    private static let cacheFormatVersion = 1
+    /// Bump when the parse LOGIC or FeedSource shape changes (region derivation,
+    /// mediaKind classification, dedup/normalize) so caches produced by the old
+    /// logic are ignored even within the same app build.
+    private static let cacheFormatVersion = 2
 
-    /// Codable envelope persisted to Caches/. `fingerprint` ties the payload to
-    /// the exact OPML corpus that produced it (see parseAll).
+    /// Codable envelope persisted to Caches/.
     private struct CachedParse: Codable {
         let fingerprint: String
         let sources: [FeedSource]
@@ -18,15 +18,32 @@ struct OPMLParser {
         let duplicateSourceCount: Int
     }
 
+    /// Cache key. The bundled OPML corpus is immutable within a build, so the
+    /// deduped parse result is fully determined by (parse-logic version, app
+    /// build). A new build — App Store update, TestFlight, or a bumped build
+    /// number — changes CFBundleVersion and invalidates the cache. This needs no
+    /// filesystem access, so the cache-hit path is O(1): no directory walk, no
+    /// per-file stat.
+    ///
+    /// Dev note: editing bundled OPML WITHOUT bumping the build number won't
+    /// invalidate the cache — delete the app (or bump cacheFormatVersion) when
+    /// iterating on feed files locally.
+    private static func cacheFingerprint() -> String {
+        let info = Bundle.main.infoDictionary
+        let build = info?["CFBundleVersion"] as? String ?? "0"
+        let short = info?["CFBundleShortVersionString"] as? String ?? "0"
+        return "\(cacheFormatVersion)-\(short)-\(build)"
+    }
+
     private static var cacheURL: URL? {
         FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
-            .first?.appendingPathComponent("opml-parse-cache.json")
+            .first?.appendingPathComponent("opml-parse-cache.plist")
     }
 
     private static func loadCache(fingerprint: String) -> OPMLParseResult? {
         guard let url = cacheURL,
               let data = try? Data(contentsOf: url),
-              let cached = try? JSONDecoder().decode(CachedParse.self, from: data),
+              let cached = try? PropertyListDecoder().decode(CachedParse.self, from: data),
               cached.fingerprint == fingerprint else { return nil }
         return OPMLParseResult(
             sources: cached.sources,
@@ -47,26 +64,34 @@ struct OPMLParser {
             invalidSourceCount: result.invalidSourceCount,
             duplicateSourceCount: result.duplicateSourceCount
         )
-        if let data = try? JSONEncoder().encode(payload) {
-            try? data.write(to: url, options: .atomic)
+        do {
+            let encoder = PropertyListEncoder()
+            encoder.outputFormat = .binary
+            let data = try encoder.encode(payload)
+            try data.write(to: url, options: .atomic)
+        } catch {
+            // Surface a persistently failing cache write (full disk, bad
+            // permissions) instead of silently re-parsing on every launch.
+            print("[OPMLParser] Failed to write parse cache: \(error)")
         }
     }
 
     /// Scan the app bundle for all .opml files and parse them into FeedSource entries.
-    /// Uses Bundle.urls(forResourcesWithExtension:subdirectory:) with fallback to root.
     static func parseAll() async -> OPMLParseResult {
-        // Recursively collect all OPML files under Feeds/ using FileManager.
-        // Bundle.urls(forResourcesWithExtension:subdirectory:) does NOT recurse
-        // into subdirectories, so we enumerate manually to discover files inside
-        // Feeds/countries/{country}/ (country + region OPMLs).
+        // Cache fast path — O(1), no filesystem walk or stat. See cacheFingerprint().
+        let fingerprint = cacheFingerprint()
+        if let cached = loadCache(fingerprint: fingerprint) {
+            return cached
+        }
+
+        // Cache miss: enumerate all bundled OPML files. Bundle.urls(...) does not
+        // recurse, so we walk Feeds/ manually to reach Feeds/countries/{c}/… feeds.
         var opmlFiles: [URL] = []
-        var totalBytes = 0
         if let feedsURL = Bundle.main.resourceURL?.appendingPathComponent("Feeds"),
-           let enumerator = FileManager.default.enumerator(at: feedsURL, includingPropertiesForKeys: [.fileSizeKey]) {
+           let enumerator = FileManager.default.enumerator(at: feedsURL, includingPropertiesForKeys: nil) {
             while let fileURL = enumerator.nextObject() as? URL {
                 if fileURL.pathExtension == "opml" {
                     opmlFiles.append(fileURL)
-                    totalBytes += (try? fileURL.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
                 }
             }
         }
@@ -82,48 +107,39 @@ struct OPMLParser {
             return OPMLParseResult(sources: [], fileCount: 0, failedFileCount: 0, invalidSourceCount: 0, duplicateSourceCount: 0)
         }
 
-        // Disk-cache fast path. The bundled OPML corpus is identical across every
-        // launch of a given app build, yet parsing it means ~1900 file reads + XML
-        // parses. Fingerprint the inputs cheaply (file count + total bytes, both
-        // from stat only — no content reads) and skip the whole parse when the
-        // cached result matches. Any OPML edit changes the byte total, and the
-        // format version guards against parse-logic changes. Cache lives in
-        // Caches/ so the OS may purge it; a miss simply re-parses.
-        let fingerprint = "\(cacheFormatVersion)-\(opmlFiles.count)-\(totalBytes)"
-        if let cached = loadCache(fingerprint: fingerprint) {
-            return cached
-        }
-
-        // Parse files concurrently — each file is independent (own Data read +
-        // XMLParser instance), so this is embarrassingly parallel. Results are
-        // re-collated into the original file-sorted order before dedup, so the
-        // downstream first-occurrence-wins dedup keeps byte-identical ownership
-        // to the previous serial parse.
+        // Parse concurrently but BOUNDED to ~core count in flight. Each parseFile
+        // does synchronous blocking I/O (Data(contentsOf:) + XMLParser); spawning
+        // one task per file (~1900) would over-subscribe the cooperative thread
+        // pool and open ~1900 descriptors at once. A sliding window keeps at most
+        // `maxConcurrency` tasks live while still collating results by original
+        // index, so dedup ownership stays byte-identical to a serial parse.
+        // Honors cancellation: if the parent task is cancelled mid-parse we stop
+        // adding work and do NOT cache the partial result.
         var perFile = [(sources: [FeedSource], invalids: Int, failed: Bool)?](
             repeating: nil, count: opmlFiles.count
         )
+        let maxConcurrency = max(2, ProcessInfo.processInfo.activeProcessorCount)
+        var wasCancelled = false
         await withTaskGroup(of: (index: Int, sources: [FeedSource], invalids: Int, failed: Bool).self) { group in
-            for (idx, fileURL) in opmlFiles.enumerated() {
-                group.addTask {
-                    let fileName = fileURL.deletingPathExtension().lastPathComponent
-                    let region = Self.region(for: fileURL, fileName: fileName)
-                    do {
-                        let kind = Self.mediaKind(for: fileName)
-                        let (sources, invalids) = try Self.parseFile(
-                            url: fileURL,
-                            fallbackCategory: fileName.capitalized,
-                            region: region,
-                            mediaKind: kind
-                        )
-                        return (idx, sources, invalids, false)
-                    } catch {
-                        print("[OPMLParser] Failed to parse \(fileURL.lastPathComponent): \(error)")
-                        return (idx, [], 0, true)
-                    }
-                }
+            var submitted = 0
+            let seed = min(maxConcurrency, opmlFiles.count)
+            while submitted < seed {
+                let idx = submitted, url = opmlFiles[idx]
+                group.addTask { Self.parseOne(idx, url) }
+                submitted += 1
             }
-            for await result in group {
+            while let result = await group.next() {
                 perFile[result.index] = (result.sources, result.invalids, result.failed)
+                if Task.isCancelled {
+                    wasCancelled = true
+                    group.cancelAll()
+                    break
+                }
+                if submitted < opmlFiles.count {
+                    let idx = submitted, url = opmlFiles[idx]
+                    group.addTask { Self.parseOne(idx, url) }
+                    submitted += 1
+                }
             }
         }
 
@@ -148,8 +164,33 @@ struct OPMLParser {
             invalidSourceCount: invalidSourceCount,
             duplicateSourceCount: duplicateSourceCount
         )
-        saveCache(result, fingerprint: fingerprint)
+        // Only cache a COMPLETE parse. A partial result from a transient file
+        // failure or a cancellation must never be persisted, or it would be
+        // served on every later launch until the app build changes.
+        if failedFileCount == 0 && !wasCancelled {
+            saveCache(result, fingerprint: fingerprint)
+        }
         return result
+    }
+
+    /// Parse a single OPML file into sources, tagged with its derived region.
+    /// Pure and Sendable — safe to run as a concurrent child task.
+    private static func parseOne(_ index: Int, _ fileURL: URL) -> (index: Int, sources: [FeedSource], invalids: Int, failed: Bool) {
+        let fileName = fileURL.deletingPathExtension().lastPathComponent
+        let region = region(for: fileURL, fileName: fileName)
+        do {
+            let kind = mediaKind(for: fileName)
+            let (sources, invalids) = try parseFile(
+                url: fileURL,
+                fallbackCategory: fileName.capitalized,
+                region: region,
+                mediaKind: kind
+            )
+            return (index, sources, invalids, false)
+        } catch {
+            print("[OPMLParser] Failed to parse \(fileURL.lastPathComponent): \(error)")
+            return (index, [], 0, true)
+        }
     }
 
     // MARK: - Private
@@ -158,7 +199,7 @@ struct OPMLParser {
     /// - "global" for root/category feeds
     /// - "countries/{country}" for a country-level feed (e.g. brazil.opml in brazil/)
     /// - "countries/{country}/{region}" for a sub-region feed (e.g. brazil-acre.opml)
-    static func region(for fileURL: URL, fileName: String) -> String {
+    private static func region(for fileURL: URL, fileName: String) -> String {
         let components = fileURL.pathComponents
         guard let countriesIdx = components.lastIndex(of: "countries"),
               countriesIdx + 1 < components.count else {
