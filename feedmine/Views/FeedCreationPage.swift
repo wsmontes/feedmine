@@ -30,8 +30,7 @@ struct FeedCreationPage: View {
                     .textFieldStyle(.roundedBorder).padding(.horizontal, 40)
 
                 Button {
-                    let index = manager.createFeed(name: name)
-                    manager.setActive(index)   // jump into the new feed
+                    manager.createFeed(name: name)
                 } label: {
                     Text("Create Feed").font(.headline)
                         .frame(maxWidth: .infinity).padding()

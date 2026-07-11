@@ -11,12 +11,7 @@ struct FeedDotsIndicator: View {
     var body: some View {
         HStack(spacing: 8) {
             ForEach(Array(manager.feeds.enumerated()), id: \.element.id) { index, instance in
-                Circle()
-                    .fill(manager.theme(for: instance.descriptor).accent)
-                    .frame(width: index == manager.activeIndex ? 10 : 7,
-                           height: index == manager.activeIndex ? 10 : 7)
-                    .opacity(index == manager.activeIndex ? 1 : 0.45)
-                    .onTapGesture { withAnimation { manager.setActive(index) } }
+                feedDot(index: index, instance: instance)
             }
             if let creationIndex {
                 Image(systemName: "plus")
@@ -29,5 +24,16 @@ struct FeedDotsIndicator: View {
         .padding(.horizontal, 12).padding(.vertical, 7)
         .background(.ultraThinMaterial, in: Capsule())
         .padding(.bottom, 96)   // clear the mini-player bar
+    }
+
+    @ViewBuilder
+    private func feedDot(index: Int, instance: FeedManager.FeedInstance) -> some View {
+        let isActive = index == manager.activeIndex
+        let size: CGFloat = isActive ? 10 : 7
+        Circle()
+            .fill(manager.theme(for: instance.descriptor).accent)
+            .frame(width: size, height: size)
+            .opacity(isActive ? 1 : 0.45)
+            .onTapGesture { withAnimation { manager.setActive(index) } }
     }
 }

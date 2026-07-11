@@ -5,7 +5,6 @@ struct FeedScreen: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(FeedLoader.self) private var loader
     @Environment(\.feedTheme) private var feedTheme
-    @Environment(FeedManager.self) private var feedManager
     @State private var articleItem: FeedItem?
     @State private var appearedItemIDs: Set<String> = []
     @State private var showScrollButton = false
@@ -26,11 +25,7 @@ struct FeedScreen: View {
     @AppStorage("nightMode") private var nightMode = false
     @State private var player = AudioPlayerManager.shared
 
-    /// The active feed's display name, if any (nil for main feed).
-    private var feedName: String? {
-        feedManager.feeds.indices.contains(feedManager.activeIndex)
-            ? feedManager.feeds[feedManager.activeIndex].descriptor.name : nil
-    }
+    @Environment(\.feedName) private var feedName
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -597,7 +592,6 @@ struct SkeletonCardView: View {
 
 /// A soft, slow dreamy gradient for skeleton cards — same vibe as WhatsNewCarousel
 struct SkeletonDreamyGradient: View {
-    @State private var engine = CircadianEngine.shared
     @Environment(\.feedTheme) private var feedTheme
 
     var body: some View {

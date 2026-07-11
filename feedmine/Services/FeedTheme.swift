@@ -31,3 +31,14 @@ extension EnvironmentValues {
         set { self[FeedThemeKey.self] = newValue }
     }
 }
+
+private struct FeedNameKey: EnvironmentKey {
+    static let defaultValue: String? = nil
+}
+
+extension EnvironmentValues {
+    var feedName: String? {
+        get { self[FeedNameKey.self] }
+        set { self[FeedNameKey.self] = newValue }
+    }
+}

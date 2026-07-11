@@ -79,9 +79,10 @@ final class FeedManager {
     @discardableResult
     func createFeed(name: String?) -> Int {
         guard canCreateMore, let family = nextFreeFamily else { return activeIndex }
+        let trimmed = name?.trimmingCharacters(in: .whitespacesAndNewlines)
         let descriptor = FeedDescriptor(
             id: UUID(),
-            name: (name?.isEmpty == true) ? nil : name,
+            name: (trimmed?.isEmpty == false) ? trimmed : nil,
             paletteFamily: family,
             order: feeds.count,
             createdAt: Date()
@@ -108,7 +109,7 @@ final class FeedManager {
         }
         persistIndex()
         FeedStore.deleteDatabaseFiles(feedID: id)
-        UserDefaults.standard.removeSuite(named: "com.feedmine.feed.\(id.uuidString)")
+        UserDefaults.standard.removePersistentDomain(forName: "com.feedmine.feed.\(id.uuidString)")
         if activeIndex >= feeds.count { activeIndex = max(0, feeds.count - 1) }
     }
 

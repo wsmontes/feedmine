@@ -2,7 +2,6 @@ import SwiftUI
 
 struct RootPagerView: View {
     @Environment(FeedManager.self) private var manager
-    @Environment(LocaleManager.self) private var localeManager
 
     var body: some View {
         @Bindable var manager = manager
@@ -12,6 +11,7 @@ struct RootPagerView: View {
                     FeedScreen()
                         .environment(instance.loader)
                         .environment(\.feedTheme, manager.theme(for: instance.descriptor))
+                        .environment(\.feedName, instance.descriptor.name)
                         .tag(index)
                 }
                 if manager.canCreateMore {

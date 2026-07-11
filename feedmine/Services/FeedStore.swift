@@ -1657,6 +1657,10 @@ final class FeedStore {
         // (UserDefaults is not @Sendable).
         let savedDisabled = defaults.array(forKey: "toggleDisabled") as? [String] ?? []
         let savedOverrides = defaults.array(forKey: "toggleEnabledOverrides") as? [String] ?? []
+        // v5: source toggles remain authoritative in UserDefaults (per-feed suite).
+        // The source_toggle table is a legacy/forward-compat write-only mirror —
+        // a future reader must NOT assume this table is read back. All toggle
+        // state flows through SourceRegistry (backed by UserDefaults).
         migrator.registerMigration("v5_source_toggle") { db in
             try db.create(table: "source_toggle") { t in
                 t.column("key", .text).primaryKey()
