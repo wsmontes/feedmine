@@ -45,7 +45,7 @@ struct WhatsNewCarousel: View {
             loader.prefetchWhatsNewImages()
             recomputeBrowsingCards()
         }
-        .onChange(of: loader.filteredItems.count) { _, _ in
+        .onChange(of: loader.items.count) { _, _ in
             recomputeBrowsingCards()
         }
         .onDisappear {
@@ -112,12 +112,13 @@ struct WhatsNewCarousel: View {
     /// MiniCardData ids (fresh UUIDs) stable so the film-strip marquee isn't
     /// rebuilt on every frame.
     private func recomputeBrowsingCards() {
-        // Hash on count + first/last IDs so cards recompose when items change,
-        // not just when count changes (#41).
-        let items = loader.filteredItems
+        // Use loader.items (cheap array ref) instead of loader.filteredItems
+        // (expensive filter + score + sort). The carousel is only shown when no
+        // filters/search are active, so the two arrays are identical.
+        let items = loader.items
         let currentHash = items.count ^ (items.first?.id.hashValue ?? 0) ^ (items.last?.id.hashValue ?? 0)
         guard currentHash != browsingCardsHash else { return }
-        cachedBrowsingCards = Array(loader.filteredItems
+        cachedBrowsingCards = Array(items
             .lazy
             .compactMap { item -> MiniCardData? in
                 guard let url = item.imageURL,

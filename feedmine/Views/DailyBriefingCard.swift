@@ -3,26 +3,16 @@ import SwiftUI
 struct DailyBriefingCard: View {
     @Environment(FeedLoader.self) private var loader
 
-    private var todayItems: [FeedItem] {
-        loader.filteredItems.filter { Calendar.current.isDateInToday($0.publishedAt) }
-    }
-
-    private var newCount: Int {
-        todayItems.filter { !loader.isRead($0.id) }.count
-    }
-
-    private var topStory: FeedItem? {
-        todayItems.max(by: { a, b in
-            (a.imageURL != nil ? 1 : 0) < (b.imageURL != nil ? 1 : 0)
-        })
-    }
-
-    private var sourceCount: Int {
-        Set(todayItems.map(\.sourceTitle)).count
-    }
-
     var body: some View {
-        if !todayItems.isEmpty && loader.loadingState != .initial {
+        // Single fused pass — filteredItems is computed once, todayItems filtered
+        // once, then all derived values (newCount, topStory, sourceCount) are
+        // extracted in a single scan. The old approach split this across four
+        // separate computed properties, each re-calling filteredItems.
+        let today = loader.filteredItems.filter { Calendar.current.isDateInToday($0.publishedAt) }
+        let brief = Self.brief(today, isRead: { loader.isRead($0) })
+        guard !today.isEmpty, loader.loadingState != .initial else { return AnyView(EmptyView()) }
+
+        return AnyView(
             VStack(spacing: 0) {
                 HStack(alignment: .top, spacing: 16) {
                     // Icon
@@ -41,19 +31,19 @@ struct DailyBriefingCard: View {
                             .font(.headline)
                             .fontWeight(.bold)
 
-                        Text(summaryText)
+                        Text(summaryText(items: today, top: brief.topStory, sourceCount: brief.sourceCount))
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                             .lineLimit(2)
 
                         HStack(spacing: 12) {
-                            if newCount > 0 {
-                                Label("\(newCount) new", systemImage: "sparkles")
+                            if brief.newCount > 0 {
+                                Label("\(brief.newCount) new", systemImage: "sparkles")
                                     .font(.caption)
                                     .foregroundStyle(.blue)
                             }
-                            if sourceCount > 0 {
-                                Label("\(sourceCount) sources", systemImage: "antenna.radiowaves.left.and.right")
+                            if brief.sourceCount > 0 {
+                                Label("\(brief.sourceCount) sources", systemImage: "antenna.radiowaves.left.and.right")
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
                             }
@@ -83,8 +73,34 @@ struct DailyBriefingCard: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
-        }
+        )
     }
+
+    // MARK: - Fused single-pass brief
+
+    private struct Brief {
+        let newCount: Int
+        let topStory: FeedItem?
+        let sourceCount: Int
+    }
+
+    /// Single scan over today's items — extracts newCount, topStory, and
+    /// sourceCount in one pass instead of three separate iterations.
+    private static func brief(_ items: [FeedItem], isRead: (String) -> Bool) -> Brief {
+        var unread = 0
+        var best: FeedItem?
+        var sources = Set<String>()
+        for item in items {
+            if !isRead(item.id) { unread += 1 }
+            sources.insert(item.sourceTitle)
+            if best == nil || (item.imageURL != nil && best?.imageURL == nil) {
+                best = item
+            }
+        }
+        return Brief(newCount: unread, topStory: best, sourceCount: sources.count)
+    }
+
+    // MARK: - Greeting
 
     private var greetingText: String {
         GreetingStore.primary(for: TimeOfDay.from(hour: Calendar.current.component(.hour, from: Date())))
@@ -98,10 +114,10 @@ struct DailyBriefingCard: View {
         }
     }
 
-    private var summaryText: String {
-        if let top = topStory {
+    private func summaryText(items: [FeedItem], top: FeedItem?, sourceCount: Int) -> String {
+        if let top {
             return "Top story: \(top.title)"
         }
-        return "\(todayItems.count) articles from \(sourceCount) sources today."
+        return "\(items.count) articles from \(sourceCount) sources today."
     }
 }

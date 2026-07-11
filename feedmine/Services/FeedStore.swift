@@ -578,6 +578,24 @@ final class FeedStore {
         }
     }
 
+    /// Bulk mark-as-read — single UPDATE with `WHERE id IN (...)` instead of
+    /// N individual writes. Same pattern as `shakeToRefresh`.
+    func markAllAsRead(_ ids: [String]) {
+        guard !ids.isEmpty else { return }
+        for id in ids { readItemIDs.insert(id) }
+        reservoir.readItemIDs = readItemIDs
+        let now = Int(Date().timeIntervalSince1970)
+        let placeholders = Array(repeating: "?", count: ids.count).joined(separator: ",")
+        Task {
+            try await db.write { db in
+                try db.execute(sql: """
+                    UPDATE feed_item SET is_read = 1, opened_at = \(now)
+                    WHERE id IN (\(placeholders))
+                """, arguments: StatementArguments(ids))
+            }
+        }
+    }
+
     func markAsUnread(_ itemID: String) {
         readItemIDs.remove(itemID)
         reservoir.readItemIDs = readItemIDs
@@ -1303,15 +1321,30 @@ final class FeedStore {
 
     func allBookmarkLists() async throws -> [BookmarkList] {
         try await db.read { db in
-            let records = try BookmarkListRecord.order(Column("sort_order")).fetchAll(db)
-            return try records.map { r in
-                let count = try BookmarkItemRecord.filter(Column("list_id") == r.id!).fetchCount(db)
-                return BookmarkList(
-                    id: r.id!, name: r.name, sortOrder: r.sortOrder,
-                    createdAt: r.createdAt, isDefault: r.isDefault,
-                    searchQuery: r.searchQuery, searchRegion: r.searchRegion,
-                    searchCategory: r.searchCategory, searchActive: r.searchActive,
-                    itemCount: count
+            // Single query with LEFT JOIN + GROUP BY replaces the old N+1
+            // pattern (one COUNT per list). All item counts return in one shot.
+            let rows = try Row.fetchAll(db, sql: """
+                SELECT bl.id, bl.name, bl.sort_order, bl.created_at, bl.is_default,
+                       bl.search_query, bl.search_region, bl.search_category,
+                       bl.search_active,
+                       COUNT(bi.item_id) AS item_count
+                FROM bookmark_list bl
+                LEFT JOIN bookmark_item bi ON bi.list_id = bl.id
+                GROUP BY bl.id
+                ORDER BY bl.sort_order
+                """)
+            return rows.map { row in
+                BookmarkList(
+                    id: row["id"],
+                    name: row["name"],
+                    sortOrder: row["sort_order"],
+                    createdAt: Date(timeIntervalSince1970: TimeInterval(row["created_at"] as Int)),
+                    isDefault: (row["is_default"] as Int) != 0,
+                    searchQuery: row["search_query"],
+                    searchRegion: row["search_region"],
+                    searchCategory: row["search_category"],
+                    searchActive: (row["search_active"] as Int) != 0,
+                    itemCount: row["item_count"] as Int
                 )
             }
         }
@@ -1533,16 +1566,20 @@ final class FeedStore {
     func shakeToRefresh() {
         // Persist visible items as read so they don't reappear after reload.
         let ids = reservoir.visibleItems.map(\.id)
+        guard !ids.isEmpty else {
+            applyUpdate(.flush(forceFetch: true, skipRead: true))
+            return
+        }
         for id in ids { readItemIDs.insert(id) }
         reservoir.readItemIDs = readItemIDs
+        let now = Int(Date().timeIntervalSince1970)
+        let placeholders = Array(repeating: "?", count: ids.count).joined(separator: ",")
         Task {
             try await db.write { db in
-                for id in ids {
-                    try db.execute(sql: """
-                        UPDATE feed_item SET is_read = 1, opened_at = \(Int(Date().timeIntervalSince1970))
-                        WHERE id = ?
-                    """, arguments: [id])
-                }
+                try db.execute(sql: """
+                    UPDATE feed_item SET is_read = 1, opened_at = \(now)
+                    WHERE id IN (\(placeholders))
+                """, arguments: StatementArguments(ids))
             }
         }
         // Clear everything, then force-fetch NEW content. The SQLite reload

@@ -3,8 +3,9 @@ import SwiftUI
 struct TopStoriesCarousel: View {
     @Environment(FeedLoader.self) private var loader
 
+    /// Uses loader.items (cheap array ref) — same reasoning as WhatsNewCarousel.
     private var topStories: [FeedItem] {
-        Array(loader.filteredItems.prefix(5))
+        Array(loader.items.prefix(5))
     }
 
     var body: some View {
@@ -47,29 +48,19 @@ struct TopStoryCard: View {
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            // Background
+            // Background — uses CachedAsyncImage for disk cache + downsampling
             if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 300, height: 220)
-                            .clipped()
-                            .overlay(
-                                LinearGradient(
-                                    colors: [.clear, .black.opacity(0.7)],
-                                    startPoint: .center,
-                                    endPoint: .bottom
-                                )
-                            )
-                    case .failure, .empty:
-                        gradientBackground
-                    @unknown default:
-                        gradientBackground
-                    }
-                }
+                CachedAsyncImage(url: url)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 300, height: 220)
+                    .clipped()
+                    .overlay(
+                        LinearGradient(
+                            colors: [.clear, .black.opacity(0.7)],
+                            startPoint: .center,
+                            endPoint: .bottom
+                        )
+                    )
             } else {
                 gradientBackground
             }

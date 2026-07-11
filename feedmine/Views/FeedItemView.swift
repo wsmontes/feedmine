@@ -21,6 +21,7 @@ struct FeedItemView: View {
                     onBookmark: { loader.toggleBookmark(item.id) },
                     isInBookmarkBox: loader.selectedBookmarkListID != nil
                 )
+                .equatable()
                 .padding(.horizontal, 12)
             } else {
                 FeedItemRowView(

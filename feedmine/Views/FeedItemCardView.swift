@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-struct FeedItemCardView: View {
+struct FeedItemCardView: View, Equatable {
     let item: FeedItem
     let isRead: Bool
     let isBookmarked: Bool
@@ -14,8 +14,22 @@ struct FeedItemCardView: View {
     @State private var engine = CircadianEngine.shared
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
+    /// Manual Equatable — skips `onBookmark` (closure, not Equatable) and
+    /// MainActor-isolated properties (@State/@AppStorage/@Environment).
+    nonisolated static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.item == rhs.item
+        && lhs.isRead == rhs.isRead
+        && lhs.isBookmarked == rhs.isBookmarked
+        && lhs.appearDelay == rhs.appearDelay
+        && lhs.isInBookmarkBox == rhs.isInBookmarkBox
+    }
+
     private var isLandscape: Bool { horizontalSizeClass == .regular }
-    private var hasImage: Bool { (item.bestImageURL ?? item.imageURL) != nil && !imageLoadFailed }
+
+    /// Resolved once per render — avoids calling `bestImageURL` (which may
+    /// parse YouTube URLs) multiple times in the same body evaluation.
+    private var resolvedImageURL: String? { item.bestImageURL ?? item.imageURL }
+    private var hasImage: Bool { resolvedImageURL != nil && !imageLoadFailed }
 
     private var titleFont: Font {
         switch fontSize {
@@ -60,7 +74,7 @@ struct FeedItemCardView: View {
                 Color.clear
                     .aspectRatio(16/9, contentMode: .fit)
                     .overlay {
-                        if let urlStr = item.bestImageURL ?? item.imageURL, let url = URL(string: urlStr) {
+                        if let urlStr = resolvedImageURL, let url = URL(string: urlStr) {
                             CachedAsyncImage(url: url, onResult: { success in
                                 if !success { imageLoadFailed = true }
                             })
@@ -142,7 +156,7 @@ struct FeedItemCardView: View {
                 Color.clear
                     .frame(width: 90, height: 90)
                     .overlay {
-                        if let urlStr = item.bestImageURL ?? item.imageURL, let url = URL(string: urlStr) {
+                        if let urlStr = resolvedImageURL, let url = URL(string: urlStr) {
                             CachedAsyncImage(url: url, onResult: { success in
                                 if !success { imageLoadFailed = true }
                             })

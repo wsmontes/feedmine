@@ -141,12 +141,19 @@ final class FeedLoader {
     // MARK: - Filtered Items (reads from FeedStore as single source)
 
     private var _cachedFiltered: [FeedItem] = []
-    private var _cacheKey: Int = -1
+    private var _cachedFirst: String = ""
+    private var _cachedLast: String = ""
+    private var _cachedCount: Int = -1
+    private var _cachedSearch: String = ""
 
     var filteredItems: [FeedItem] {
-        let key = items.count ^ (items.first?.id.hashValue ?? 0) ^ (items.last?.id.hashValue ?? 0) ^ searchQuery.hashValue
-        if key == _cacheKey { return _cachedFiltered }
-        _cacheKey = key
+        let first = items.first?.id ?? ""
+        let last  = items.last?.id ?? ""
+        let count = items.count
+        if first == _cachedFirst, last == _cachedLast, count == _cachedCount, searchQuery == _cachedSearch {
+            return _cachedFiltered
+        }
+        _cachedFirst = first; _cachedLast = last; _cachedCount = count; _cachedSearch = searchQuery
         var result = items
         let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         if !query.isEmpty {
@@ -168,16 +175,21 @@ final class FeedLoader {
     }
 
     private var _cachedSections: [DateSection] = []
-    private var _sectionsCacheKey: Int = -1
+    private var _sectionsFirst: String = ""
+    private var _sectionsLast: String = ""
+    private var _sectionsCount: Int = -1
+    private var _sectionsSearch: String = ""
 
     var dateSections: [DateSection] {
-        // Force filteredItems to refresh _cacheKey and _cachedFiltered before
-        // we read either — without this, dateSections can return stale sections
-        // when accessed before filteredItems in a SwiftUI body evaluation.
+        // Force filteredItems to refresh its cache before we read either —
+        // without this, dateSections can return stale sections when accessed
+        // before filteredItems in a SwiftUI body evaluation.
         let items = filteredItems
-        let key = _cacheKey
-        if key == _sectionsCacheKey, !_cachedSections.isEmpty { return _cachedSections }
-        _sectionsCacheKey = key
+        if _cachedFirst == _sectionsFirst, _cachedLast == _sectionsLast,
+           _cachedCount == _sectionsCount, _cachedSearch == _sectionsSearch,
+           !_cachedSections.isEmpty { return _cachedSections }
+        _sectionsFirst = _cachedFirst; _sectionsLast = _cachedLast
+        _sectionsCount = _cachedCount; _sectionsSearch = _cachedSearch
         let calendar = Calendar.current; let now = Date()
         // Ordered grouping — Dictionary(grouping:) does not preserve array
         // order, which caused visible cards to reorder on every cache miss.
@@ -286,14 +298,15 @@ final class FeedLoader {
     var networkMonitor: NetworkMonitor { store.networkMonitor }
     var currentVisibleIndex: Int = 0
 
-    /// Keep `currentVisibleIndex` in sync as rows appear. Nothing updated it
-    /// before, so it was stuck at 0 and the scroll-to-top heuristic never fired.
-    /// Gated by the caller (every Nth appear), so the O(n) lookup over the
-    /// bounded visible buffer is cheap.
+    /// Direct index setter — caller already knows the position from ForEach
+    /// enumeration, so we skip the O(n) `firstIndex(where:)` scan.
+    func noteVisibleIndex(_ index: Int) {
+        currentVisibleIndex = index
+    }
+
+    /// O(n) fallback kept for any caller that only has an item reference.
     func noteVisibleIndex(for item: FeedItem) {
-        if let idx = filteredItems.firstIndex(where: { $0.id == item.id }) {
-            currentVisibleIndex = idx
-        }
+        noteVisibleIndex(filteredItems.firstIndex(where: { $0.id == item.id }) ?? 0)
     }
     var loadedIDsCount: Int { store.loadedIDsCount }
 
@@ -564,9 +577,7 @@ final class FeedLoader {
     }
 
     func markAllAsRead() {
-        for id in items.map(\.id) { store.markAsRead(id) }
-        // Also mark reservoir items
-        // (visibleItems covers everything the user sees — reservoir is pre-fetch)
+        store.markAllAsRead(items.map(\.id))
     }
 
     func shakeToRefresh() {

@@ -5,21 +5,27 @@ struct ReadingStatsView: View {
 
     private var readCount: Int { loader.readItemIDs.count }
     private var bookmarkCount: Int { loader.bookmarkedIDs.count }
-    private var topCategory: String? {
-        let readItems = loader.items.filter { loader.isRead($0.id) }
-        let grouped = Dictionary(grouping: readItems, by: \.category)
-        return grouped.max(by: { $0.value.count < $1.value.count })?.key
-    }
-    private var topSource: String? {
-        let readItems = loader.items.filter { loader.isRead($0.id) }
-        let grouped = Dictionary(grouping: readItems, by: \.sourceTitle)
-        return grouped.max(by: { $0.value.count < $1.value.count })?.key
+
+    /// Single-pass extraction — fuses top-category and top-source discovery
+    /// into one loop over read items. Previously each was a separate computed
+    /// property, each independently iterating `loader.items`.
+    private func topStats() -> (category: String?, source: String?) {
+        var catTally: [String: Int] = [:]
+        var srcTally: [String: Int] = [:]
+        for item in loader.items where loader.isRead(item.id) {
+            catTally[item.category, default: 0] += 1
+            srcTally[item.sourceTitle, default: 0] += 1
+        }
+        return (
+            catTally.max(by: { $0.value < $1.value })?.key,
+            srcTally.max(by: { $0.value < $1.value })?.key
+        )
     }
 
     @State private var isExpanded = false
 
     var body: some View {
-        if loader.loadingState != .initial && !loader.items.isEmpty {
+        if loader.loadingState != .initial, !loader.items.isEmpty {
             VStack(spacing: 0) {
                 Button {
                     withAnimation(.easeInOut(duration: 0.25)) {
@@ -51,13 +57,14 @@ struct ReadingStatsView: View {
                 .buttonStyle(.plain)
 
                 if isExpanded {
+                    let stats = topStats()
                     HStack(spacing: 24) {
                         StatItem(value: "\(readCount)", label: "Read", icon: "eye.fill", color: .blue)
                         StatItem(value: "\(bookmarkCount)", label: "Saved", icon: "bookmark.fill", color: .yellow)
-                        if let cat = topCategory {
+                        if let cat = stats.category {
                             StatItem(value: cat, label: "Top Category", icon: "tag.fill", color: categoryColor(cat))
                         }
-                        if let src = topSource {
+                        if let src = stats.source {
                             StatItem(value: src, label: "Top Source", icon: "newspaper.fill", color: .orange)
                         }
                     }

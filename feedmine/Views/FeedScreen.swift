@@ -1,12 +1,21 @@
 import SwiftUI
 import UIKit
 
+/// Non-reactive impression counter — mutated on every card `.onAppear`
+/// without triggering SwiftUI body re-evaluation. Only the `% 8` gate
+/// for the scroll-to-top button needs to read it; no render depends on it.
+private final class ImpressionTracker {
+    var seen = Set<String>()
+    var count: Int { seen.count }
+    func mark(_ id: String) { seen.insert(id) }
+}
+
 struct FeedScreen: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(FeedLoader.self) private var loader
     @Environment(\.feedTheme) private var feedTheme
     @State private var articleItem: FeedItem?
-    @State private var appearedItemIDs: Set<String> = []
+    private let impressions = ImpressionTracker()
     @State private var showScrollButton = false
     @State private var lastScrollIndex: Int = 0
     @State private var searchText = ""
@@ -341,9 +350,9 @@ struct FeedScreen: View {
                                     .padding(.horizontal, 6)
                                     .contentShape(Rectangle())
                                     .onAppear {
-                                        appearedItemIDs.insert(item.id)
-                                        loader.noteVisibleIndex(for: item)
-                                        if appearedItemIDs.count % 8 == 0 {
+                                        impressions.mark(item.id)
+                                        loader.noteVisibleIndex(index)
+                                        if impressions.count % 8 == 0 {
                                             let idx = loader.currentVisibleIndex
                                             let goingUp = idx < lastScrollIndex
                                             lastScrollIndex = idx

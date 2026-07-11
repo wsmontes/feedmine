@@ -21,7 +21,10 @@ struct SettingsSheetView: View {
     @State private var showRestartAlert = false
     @State private var showDeleteFeedConfirmation = false
 
-    private var topCategory: String? {
+    /// Computed only when the user taps "Share My Stats" — defers the O(n)
+    /// filter+group operation until actually needed, rather than running on
+    /// every body evaluation.
+    private func computeTopCategory() -> String? {
         let readItems = loader.items.filter { loader.isRead($0.id) }
         let grouped = Dictionary(grouping: readItems, by: \.category)
         return grouped.max(by: { $0.value.count < $1.value.count })?.key
@@ -208,7 +211,7 @@ struct SettingsSheetView: View {
                 // MARK: - Share Stats
                 Section {
                     Button {
-                        let topCat = topCategory ?? "None"
+                        let topCat = computeTopCategory() ?? "None"
                         if let image = renderStatsCard(
                             readCount: loader.readItemIDs.count,
                             bookmarkCount: loader.bookmarkedIDs.count,

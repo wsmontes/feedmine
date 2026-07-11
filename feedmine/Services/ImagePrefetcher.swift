@@ -21,10 +21,11 @@ actor ImagePrefetcher {
         let all = (priorityURLs + urls).compactMap { URL(string: $0) }
         guard !all.isEmpty else { return }
 
-        // Filter out cached or in-flight
+        // Filter out cached or in-flight.
+        // Uses the nonisolated disk-check path to avoid MainActor hops per URL.
         var toFetch: [URL] = []
         for url in all {
-            if await ImageCache.shared.image(for: url) != nil { continue }
+            if ImageCache.hasCachedImageData(for: url) { continue }
             if inFlightURLs.contains(url) { continue }
             if toFetch.contains(url) { continue }
             toFetch.append(url)
@@ -59,9 +60,9 @@ actor ImagePrefetcher {
         defer { inFlightURLs.remove(url) }
         do {
             let (data, _) = try await session.data(from: url)
-            if let uiImage = UIImage(data: data) {
-                await ImageCache.shared.setImage(uiImage, for: url)
-            }
+            guard UIImage(data: data) != nil else { return }
+            // setImage(data:) downsamples before memory cache; raw data goes to disk
+            await ImageCache.shared.setImage(data: data, for: url)
         } catch {
             // Silent fail — will retry on next appearance
         }
