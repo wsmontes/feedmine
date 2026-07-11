@@ -82,22 +82,56 @@ final class SourceScheduler {
             finalCategoryDeficits[cat] = max(finalCategoryDeficits[cat] ?? 0, 1.0)
         }
 
-        // 6. Select sources that compensate deficits
+        // 6. Precompute scores for all eligible sources once, then greedily
+        // select the top N. Previously bestSource() was called in a loop,
+        // re-scanning all 800+ sources each time (O(N × S)). Now we score
+        // once, sort once, and pick from the front (O(S log S)).
+        let deficitNeeded = Int(ceil(Double(bufferNeeded - currentBuffer) / 3.0))
+        let maxSelect = max(deficitNeeded, 10)
+        let now = Date()
+        var scored: [(source: FeedSource, score: Double)] = []
+        scored.reserveCapacity(sourcesByRegion.values.map(\.count).reduce(0, +))
+
+        for region in regions {
+            guard let sources = sourcesByRegion[region] else { continue }
+            let regionDeficit = max(0, regionDeficits[region] ?? 0)
+            for source in sources {
+                let failures = consecutiveFailures[source.url] ?? 0
+                if failures >= 3 {
+                    let backoff = pow(2.0, Double(failures - 2)) * 60
+                    if let last = lastFetchedAt[source.url],
+                       now.timeIntervalSince(last) < backoff { continue }
+                }
+                let catDeficit = max(0, finalCategoryDeficits[source.category] ?? 0)
+
+                let contentTypeBoost: Double = switch activeContentType {
+                case "video": source.mediaKind == .video ? 3.0 : 1.0
+                case "audio": source.mediaKind == .audio ? 3.0 : 1.0
+                case "text":  source.mediaKind == .video ? 0.3 : (source.mediaKind == .audio ? 0.3 : 1.0)
+                default:      source.isYouTube ? 2.0 : (source.mediaKind == .audio ? 2.0 : 1.0)
+                }
+
+                let timeFactor: Double
+                if let last = lastFetchedAt[source.url] {
+                    timeFactor = min(1.0, now.timeIntervalSince(last) / 1800)
+                } else {
+                    timeFactor = 1.0
+                }
+
+                let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost
+                if score > 0 { scored.append((source, score)) }
+            }
+        }
+
+        scored.sort(by: { $0.score > $1.score })
+
         var selected: [FeedSource] = []
         var selectedURLs = Set<String>()
-        let deficitNeeded = Int(ceil(Double(bufferNeeded - currentBuffer) / 3.0)) // ~3 items per source
-
-        for _ in 0..<max(deficitNeeded, 10) {
-            guard let best = bestSource(
-                regions: regions,
-                sourcesByRegion: sourcesByRegion,
-                regionDeficits: regionDeficits,
-                categoryDeficits: finalCategoryDeficits,
-                selectedURLs: selectedURLs,
-                activeContentType: activeContentType
-            ) else { break }
-            selected.append(best)
-            selectedURLs.insert(best.url)
+        selectedURLs.reserveCapacity(maxSelect)
+        for (source, _) in scored {
+            guard selected.count < maxSelect else { break }
+            guard selectedURLs.insert(source.url).inserted else { continue }
+            selected.append(source)
         }
         return selected
     }

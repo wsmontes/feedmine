@@ -286,14 +286,15 @@ final class FeedLoader {
     var networkMonitor: NetworkMonitor { store.networkMonitor }
     var currentVisibleIndex: Int = 0
 
-    /// Keep `currentVisibleIndex` in sync as rows appear. Nothing updated it
-    /// before, so it was stuck at 0 and the scroll-to-top heuristic never fired.
-    /// Gated by the caller (every Nth appear), so the O(n) lookup over the
-    /// bounded visible buffer is cheap.
+    /// Direct index setter — caller already knows the position from ForEach
+    /// enumeration, so we skip the O(n) firstIndex(where:) scan.
+    func noteVisibleIndex(_ index: Int) {
+        currentVisibleIndex = index
+    }
+
+    /// O(n) fallback kept for any caller that only has an item reference.
     func noteVisibleIndex(for item: FeedItem) {
-        if let idx = filteredItems.firstIndex(where: { $0.id == item.id }) {
-            currentVisibleIndex = idx
-        }
+        noteVisibleIndex(filteredItems.firstIndex(where: { $0.id == item.id }) ?? 0)
     }
     var loadedIDsCount: Int { store.loadedIDsCount }
 
@@ -557,9 +558,7 @@ final class FeedLoader {
     }
 
     func markAllAsRead() {
-        for id in items.map(\.id) { store.markAsRead(id) }
-        // Also mark reservoir items
-        // (visibleItems covers everything the user sees — reservoir is pre-fetch)
+        store.markAllAsRead(items.map(\.id))
     }
 
     func shakeToRefresh() {

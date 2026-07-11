@@ -563,6 +563,24 @@ final class FeedStore {
         }
     }
 
+    /// Bulk mark-as-read — single UPDATE with WHERE id IN (...) instead of
+    /// N individual writes. Same pattern as shakeToRefresh.
+    func markAllAsRead(_ ids: [String]) {
+        guard !ids.isEmpty else { return }
+        for id in ids { readItemIDs.insert(id) }
+        reservoir.readItemIDs = readItemIDs
+        let now = Int(Date().timeIntervalSince1970)
+        let placeholders = Array(repeating: "?", count: ids.count).joined(separator: ",")
+        Task {
+            try await db.write { db in
+                try db.execute(sql: """
+                    UPDATE feed_item SET is_read = 1, opened_at = \(now)
+                    WHERE id IN (\(placeholders))
+                """, arguments: StatementArguments(ids))
+            }
+        }
+    }
+
     func markAsUnread(_ itemID: String) {
         readItemIDs.remove(itemID)
         reservoir.readItemIDs = readItemIDs

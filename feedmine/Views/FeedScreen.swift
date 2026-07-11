@@ -1,11 +1,19 @@
 import SwiftUI
 import UIKit
 
+/// Non-reactive impression counter — mutated on every card `.onAppear`
+/// without triggering SwiftUI body re-evaluation.
+private final class ImpressionTracker {
+    var seen = Set<String>()
+    var count: Int { seen.count }
+    func mark(_ id: String) { seen.insert(id) }
+}
+
 struct FeedScreen: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(FeedLoader.self) private var loader
     @State private var articleItem: FeedItem?
-    @State private var appearedItemIDs: Set<String> = []
+    private let impressions = ImpressionTracker()
     @State private var showScrollButton = false
     @State private var lastScrollIndex: Int = 0
     @State private var searchText = ""
@@ -320,7 +328,9 @@ struct FeedScreen: View {
                         ForEach(loader.dateSections) { section in
                             Section {
                                 ForEach(Array(section.items.enumerated()), id: \.element.id) { index, item in
+                                    let isFirst = !impressions.seen.contains(item.id)
                                     FeedItemView(item: item, index: index,
+                                        isFirstAppearance: isFirst,
                                         onOpen: { articleItem = item },
                                         onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } },
                                         onPlaybackFailed: {
@@ -333,9 +343,9 @@ struct FeedScreen: View {
                                     .padding(.horizontal, 6)
                                     .contentShape(Rectangle())
                                     .onAppear {
-                                        appearedItemIDs.insert(item.id)
-                                        loader.noteVisibleIndex(for: item)
-                                        if appearedItemIDs.count % 8 == 0 {
+                                        impressions.mark(item.id)
+                                        loader.noteVisibleIndex(index)
+                                        if impressions.count % 8 == 0 {
                                             let idx = loader.currentVisibleIndex
                                             let goingUp = idx < lastScrollIndex
                                             lastScrollIndex = idx
