@@ -477,12 +477,13 @@ final class FeedStore {
             || (d.string(forKey: "filterContentType").flatMap(FeedLoader.ContentType.init(rawValue:)) ?? .all) != .all
             || (d.string(forKey: "filterMood").flatMap(FeedLoader.MoodFilter.init(rawValue:)) ?? .all) != .all
 
-        // Expire stale filters so the user never opens the app to an empty feed
-        if hasActiveFilters {
+        // Expire stale filters — opt-in only (off by default).
+        // When enabled, filters auto-clear after 4h so the user never
+        // opens the app to an empty or confusing feed.
+        if hasActiveFilters && UserDefaults.standard.bool(forKey: "filterAutoExpire") {
             let setAt = d.double(forKey: "filterSetAt")
             let elapsed = Date().timeIntervalSince1970 - setAt
             if setAt > 0 && elapsed > Self.filterExpirySeconds {
-                // Filters are stale — clear them so the feed shows everything
                 d.removeObject(forKey: "filterRegion")
                 d.removeObject(forKey: "filterCategory")
                 d.removeObject(forKey: "filterContentType")

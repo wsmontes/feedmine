@@ -6,6 +6,7 @@ struct SettingsSheetView: View {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = true
     @AppStorage("prefetchImages") private var prefetchImages = true
     @AppStorage("nightMode") private var nightMode = false
+    @AppStorage("filterAutoExpire") private var filterAutoExpire = false
     @AppStorage("fontSize") private var fontSize = FontSize.medium.rawValue
     @AppStorage("circadianPaletteOn") private var circadianPaletteOn = true
     @AppStorage("paletteFamily") private var paletteFamilyRaw = PaletteFamily.warmEarth.rawValue
@@ -124,9 +125,17 @@ struct SettingsSheetView: View {
                         .tint(.blue)
                 }
 
-                Section("Reading") {
+                Section {
                     Toggle("Night Mode", systemImage: "moon.stars.fill", isOn: $nightMode)
                         .tint(.orange)
+                    Toggle("Auto-clear Filters", systemImage: "clock.arrow.2.circlepath", isOn: $filterAutoExpire)
+                        .tint(.blue)
+                } header: {
+                    Text("Reading")
+                } footer: {
+                    if filterAutoExpire {
+                        Text("Category, mood, and content type filters reset after 4 hours away so you never open to an empty feed.")
+                    }
                 }
 
                 // MARK: - Reading Data
