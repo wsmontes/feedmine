@@ -10,7 +10,7 @@ from ._schema import CountryProfile, SourceConfig, SourceMetrics
 # NOTE: importlib is required because 'global' is a Python keyword,
 # so 'from .global import ...' is a SyntaxError at parse time.
 import importlib
-_global_mod = importlib.import_module("scripts.feed_discovery.profiles.global")
+_global_mod = importlib.import_module(".global", __package__)
 GLOBAL_PROFILE = _global_mod.GLOBAL_PROFILE
 
 # Country -> region mapping. Every country with sub-region OPMLs must be here.
