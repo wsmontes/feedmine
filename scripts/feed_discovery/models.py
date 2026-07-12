@@ -19,6 +19,17 @@ class Country:
 
 
 @dataclass
+class SubRegion:
+    slug: str              # "nigeria-lagos"
+    name: str              # "Lagos"
+    parent_country: str    # "nigeria"
+    iso2: str              # "ng"
+    iso3: str              # "NGA"
+    ddg_region: str        # "ng-en"
+    opml_path: str = ""    # absolute path to the .opml file
+
+
+@dataclass
 class Candidate:
     url: str
     category: str
