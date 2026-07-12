@@ -16,5 +16,13 @@
       <outline title="NGV" xmlUrl="https://www.ngv.vic.gov.au/feed/" type="rss" />
       <outline title="Arts Centre Melbourne" xmlUrl="https://www.artscentremelbourne.com.au/feed/" type="rss" />
     </outline>
-</body>
+    <outline text="Podcasts">
+      <outline title="Eleven new COVID19 cases in Victoria Coronavirus 9 News Australia" xmlUrl="https://anchor.fm/s/5eeb6b2c/podcast/rss" type="rss" category="Health" />
+      <outline title="Our Saviour's Lutheran Church, Knox, Victoria, Australia" xmlUrl="https://oslcknox.podomatic.com/rss2.xml" type="rss" category="Religion" />
+      <outline title="Coarse angling in Victoria, Australia" xmlUrl="https://anchor.fm/s/f8cd2550/podcast/rss" type="rss" category="Education" />
+      <outline title="Worksafe Victoria" xmlUrl="https://joy.org.au/worksafe/feed/podcast" type="rss" category="Society" />
+      <outline title="Inside The Ropes - Golf Victoria" xmlUrl="https://rss.whooshkaa.com/rss/podcast/id/1725" type="rss" />
+      <outline title="Podcasts from St.Andrews Presbyterian Church Hamilton Victoria Australia" xmlUrl="https://feeds2.feedburner.com/blogspot/vcxo" type="rss" category="Religion" />
+    </outline>
+  </body>
 </opml>

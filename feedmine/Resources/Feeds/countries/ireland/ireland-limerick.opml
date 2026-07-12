@@ -4,5 +4,8 @@
     <title>Limerick Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Limerick Archives - Ireland Family Vacations" xmlUrl="https://irelandfamilyvacations.com/category/regions-and-counties/south-west-ireland/limerick/feed" type="rss" category="Society" />
+    </outline>
+  </body>
 </opml>

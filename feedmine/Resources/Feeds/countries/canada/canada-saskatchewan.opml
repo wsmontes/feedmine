@@ -28,6 +28,9 @@
       <outline text="Moose Jaw">
         <outline title="City of Moose Jaw" xmlUrl="https://www.moosejaw.ca/feed/" type="rss" />
       </outline>
-</outline>
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Audio – Canada Waterfowl Hunting in Saskatchewan &amp; Alberta" xmlUrl="https://saskaltawaterfowloutfitters.com/type/audio/feed" type="rss" />
+    </outline>
   </body>
 </opml>

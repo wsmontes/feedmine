@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Galway Feeds</title></head>
+  <head>
+    <title>Galway Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Galway County Council" xmlUrl="https://www.galwaycoco.ie/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="Podcasts">
+      <outline title="Attempting Local: A Year Abroad in Galway, Ireland" xmlUrl="https://anchor.fm/s/190b3394/podcast/rss" type="rss" category="Society" />
+      <outline title="NUI Galway Biodiversity Trail" xmlUrl="https://media.heanet.ie/podcast/8192ef8138322faa0a0fa055d13dd1c5" type="rss" category="Science" />
+      <outline title="Galway Archives - Ireland Family Vacations" xmlUrl="https://irelandfamilyvacations.com/category/regions-and-counties/western-ireland/galway/feed" type="rss" category="Society" />
+    </outline>
+  </body>
+</opml>

@@ -4,5 +4,106 @@
     <title>Sokoto Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Homilies from the National Shrine" xmlUrl="https://feeds.transistor.fm/homilies" type="rss" category="Christianity" />
+      <outline title="#RolandMartinUnfiltered" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/ec5a50b3-3ea1-4b6e-b91b-ae2e00387281/9fce13f2-0092-4f32-888b-ae2e0038728f/podcast.rss" type="rss" category="News" />
+      <outline title="Focus on Africa" xmlUrl="https://podcasts.files.bbci.co.uk/p00gbjvb.rss" type="rss" category="News" />
+      <outline title="DW AfricaLink" xmlUrl="https://rss.dw.com/xml/podcast_africalink" type="rss" category="Politics" />
+      <outline title="IAOMS Podcast Series" xmlUrl="https://rss.buzzsprout.com/684011.rss" type="rss" category="Non-Profit" />
+      <outline title="World War Now Podcast" xmlUrl="https://api.substack.com/feed/podcast/1110600.rss" type="rss" category="Politics" />
+      <outline title="Black Box Down" xmlUrl="https://feeds.megaphone.fm/blackboxdown" type="rss" category="True Crime" />
+      <outline title="LabCast" xmlUrl="https://anchor.fm/s/816c1de0/podcast/rss" type="rss" category="Education" />
+      <outline title="The Relic Radio Show (old time radio)" xmlUrl="http://feeds.feedburner.com/relicradio" type="rss" category="Performing Arts" />
+      <outline title="WBW Theater" xmlUrl="https://anchor.fm/s/d25ca94/podcast/rss" type="rss" category="Performing Arts" />
+      <outline title="The History of Nigeria: Kingdoms, Colonies, and Africa's Giant — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-nigeria.xml" type="rss" category="History" />
+      <outline title="King Dems Podcast | Growth Mindset, Leadership, AI and Business Insights" xmlUrl="https://anchor.fm/s/ecc70f78/podcast/rss" type="rss" category="Entrepreneurship" />
+      <outline title="The National Security Hour" xmlUrl="https://www.americaoutloud.news/category/podcasts/the-national-security-hour/feed/podcast/" type="rss" category="Politics" />
+      <outline title="GTR News, Sports and Entertainment Digest" xmlUrl="https://podcast.zenomedia.com/api/public/podcasts/agxzfnplbm8tc3RhdHNyKwsSCkF1dGhFbnRpdHkYgICwmc2ikQgMCxIHUG9kY2FzdBiAgLC91eDiCgyiAQdsaWJyYXJ5/rss" type="rss" category="Technology" />
+      <outline title="Perseguidos, pero no olvidados" xmlUrl="https://radiomaria.es/feed/podcast/perseguidos-pero-no-olvidados/" type="rss" category="Christianity" />
+      <outline title="The Carrie Abbott Show" xmlUrl="https://rss.libsyn.com/shows/59249/destinations/226469.xml" type="rss" category="Christianity" />
+      <outline title="Doomsday: History's Most Dangerous Podcast" xmlUrl="https://www.spreaker.com/show/4866335/episodes/feed" type="rss" category="Society &amp; Culture" />
+      <outline title="Plane Tales" xmlUrl="http://airlinepilotguy.com/feed/pt/" type="rss" category="Aviation" />
+      <outline title="Airline Pilot Guy - Aviation Podcast" xmlUrl="https://airlinepilotguy.com/feed/podcast/" type="rss" category="Aviation" />
+      <outline title="Morning Report" xmlUrl="https://api.riverside.fm/hosting/g0NrA42R.rss" type="rss" category="Daily News" />
+      <outline title="Best of the Left - Leftist Perspectives on Progressive Politics, News, Culture, Economics and Democracy" xmlUrl="https://rss.pdrl.fm/829673/feeds.libsyn.com/18442/mp3.rss" type="rss" category="Politics" />
+      <outline title="Disaster Area" xmlUrl="https://rss.pdrl.fm/3a4b12/feeds.libsyn.com/110817/rss/?redirect=false" type="rss" category="History" />
+      <outline title="Real America’s Voice" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/361b7027-9198-497d-8d04-b212011690dc/653ce779-5fe0-46a8-99e3-b21201178e5f/podcast.rss" type="rss" category="Politics" />
+      <outline title="Africa Science Focus" xmlUrl="https://rss.buzzsprout.com/1257893.rss" type="rss" category="News" />
+      <outline title="The Georgene Rice Show" xmlUrl="https://www.omnycontent.com/d/playlist/5e27a451-e6e6-4c51-aa03-a7370003783c/684edc6e-167f-4033-88dc-a7fa004fa544/5a5d9c37-2f5e-40b8-bb92-a7fa004fa544/podcast.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Nigeria Daily" xmlUrl="https://rss.buzzsprout.com/1822052.rss" type="rss" category="News Commentary" />
+      <outline title="ESN: Eloquently Saying Nothing" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:3577052/sounds.rss" type="rss" category="Comedy" />
+      <outline title="My African Aesthetic" xmlUrl="https://rss.buzzsprout.com/1362511.rss" type="rss" category="Design" />
+      <outline title="Reimagining Motion" xmlUrl="https://anchor.fm/s/ffa10bd0/podcast/rss" type="rss" category="Technology" />
+      <outline title="She Is..." xmlUrl="https://anchor.fm/s/a6aada74/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Virtual Midwife" xmlUrl="https://anchor.fm/s/2ad03930/podcast/rss" type="rss" category="Kids &amp; Family" />
+      <outline title="Grace United Reformed Church" xmlUrl="https://www.sermonaudio.com/rss_source.rss?sourceid=waupungraceurc" type="rss" category="Christianity" />
+      <outline title="Officer Of The Damn Law (PBWW Channel)" xmlUrl="https://anchor.fm/s/cfbb45c/podcast/rss" type="rss" category="Government" />
+      <outline title="Voces del deporte" xmlUrl="https://mdstrm.com/feeds/6271a4d5d206c3172f3c9a9c/66f449e5400c2bc16c264cf0?property=itunes" type="rss" category="Soccer" />
+      <outline title="SINVELO" xmlUrl="https://anchor.fm/s/76c8bc54/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Wellness Half-hour" xmlUrl="https://anchor.fm/s/21d26024/podcast/rss" type="rss" category="Nutrition" />
+      <outline title="Imperial ChemEng Cast: Researchers in Focus" xmlUrl="https://rss.buzzsprout.com/2095050.rss" type="rss" category="Science" />
+      <outline title="The Journal Gazette" xmlUrl="https://feed.podbean.com/ars-journalgazette/feed.xml" type="rss" category="Daily News" />
+      <outline title="Fin de Semana" xmlUrl="https://www.cope.es/api/es/programas/fin-de-semana/audios/rss.xml" type="rss" category="News" />
+      <outline title="90 Day Fiance Trash Talk" xmlUrl="https://rss.pdrl.fm/4fbaef/feeds.libsyn.com/130248/rss/?redirect=false" type="rss" category="After Shows" />
+      <outline title="Nigeria News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/nigeria-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Daily News" />
+      <outline title="The Inside Story Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/9c074afa-3313-47e8-b802-a9f900789975/223113c5-ff31-4f9a-b650-ada90106df0f/7c994764-510f-469f-80a3-ada901076c74/podcast.rss" type="rss" category="Politics" />
+      <outline title="Perspectives on Islam - from a non-Muslim" xmlUrl="https://anchor.fm/s/109baf0e0/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Foursquare VGC" xmlUrl="https://anchor.fm/s/521adedc/podcast/rss" type="rss" category="Non-Profit" />
+      <outline title="Africa Daily" xmlUrl="https://podcasts.files.bbci.co.uk/p0925ydp.rss" type="rss" category="News" />
+      <outline title="The African Narrative on Climate Change" xmlUrl="https://anchor.fm/s/ea953c84/podcast/rss" type="rss" category="Education" />
+      <outline title="Future Media News" xmlUrl="https://rss.iono.fm/rss/chan/6628" type="rss" category="News" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Hello Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClML9Q9L_hE_xqJ2NC1mPVQ" type="rss" />
+      <outline title="SHARUBUTUN SOKOTO TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6KZFUHCE-U8VCTlTGB4YDQ" type="rss" />
+      <outline title="DJ MARIO SOKOTO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVLhWIybSgggenVry4Wsi1A" type="rss" />
+      <outline title="Dr Engr Mustapha Mohammed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_rhLqUsfVTIT_HtgKR3orA" type="rss" />
+      <outline title="Wakokin Nura Oruma TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNL5v6v9b2xUD_uf9yWVX5g" type="rss" />
+      <outline title="Iconic FM Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC__4I5PqYKBSQGp93hivAaQ" type="rss" />
+      <outline title="HUFFAZUL QUR'AN TV SOKOTO NIGERIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU44mHp_MOxZ85iraB10xEQ" type="rss" />
+      <outline title="mango dan sokoto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDulVf4YKXNQAy9yHHznMgQ" type="rss" />
+      <outline title="Caliphate Times Media" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjWscAorKfty-LFyYSgGIZQ" type="rss" />
+      <outline title="Abdul a fada sokoto " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9_U6gtlbAzonEeGERJeNLA" type="rss" />
+      <outline title="Usmanu Danfodiyo University, Sokoto." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4kK6aok4H8VVJlgWkIHWIA" type="rss" />
+      <outline title="Sokoto ComedyTv " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMhMWHPc91i9gQo1JKLESXQ" type="rss" />
+      <outline title="Sokoto Hennah Palace " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3sUJEVdrHAPoCtKcB169Jg" type="rss" />
+      <outline title="Sokoto Fadama III AF" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3obJSmN0i37IsIoieTbAmQ" type="rss" />
+      <outline title="Chronicles of Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDJzqxt14Ih6hZpHnkA_zsQ" type="rss" />
+      <outline title="Spotlight Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8pS_JeokrcNa05oH9Sl_6Q" type="rss" />
+      <outline title="Gbemisola Yussuff Foundation" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcuHkCRuykQQAc3DYVT4-lQ" type="rss" />
+      <outline title="USAID/TSHIP Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkMsoqssXrT_SoE3WYYxHzA" type="rss" />
+      <outline title="Voice Tv Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC20Wx5hNQQLCh4qS4siNBtw" type="rss" />
+      <outline title="Saifullahi Sagir Bala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7B3rNBFWH_vU25Mar_AgWw" type="rss" />
+      <outline title="YARON MANYA TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCC1y7jB1qnk9tmOLs9uNwdA" type="rss" />
+      <outline title="Sokoto auto sports " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3olPEK9jGhOgrrsrogkM5w" type="rss" />
+      <outline title="Lajnatud Da'awah Sokoto Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC61D5whVg7EduUdjeoq5Zbw" type="rss" />
+      <outline title="Sokoto Tracker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3ASVICeQgsddXuf3YT3hIw" type="rss" />
+      <outline title="Kwatarne Movies Sokoto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdQxHjNc5YSI0lvAHkXOJig" type="rss" />
+      <outline title="SOKOTO, Peace and Unity Film Investment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC25P7vBqFT6kUAglOdv7tIQ" type="rss" />
+      <outline title="ONION MARKET NIGERIA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCo7KC9ZFCgEcQ3ogbTjGKrw" type="rss" />
+      <outline title="Brilliant Footsteps Int'l Academy Sokoto-Nigeria " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL45jJ8WgH5-WwHVAKZlWdA" type="rss" />
+      <outline title="Plan International Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK82bVbEBkRyuNNJlZfzWzw" type="rss" />
+      <outline title="Sokoto ACReSAL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmhToHsWE2c9HaO6tgBnFvw" type="rss" />
+      <outline title="StreetVoice Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7ig6oIzrmrF1bWwmvK3Maw" type="rss" />
+      <outline title="The DEFENDER Nigeria TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzCG2YkossmbOb64Gz3X2nQ" type="rss" />
+      <outline title="Organise Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdRr0fuzZFfjXIaxYb4IzsA" type="rss" />
+      <outline title="Nigerian Chronicles" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSWjBLgd_WnaFVLv2a-O5XA" type="rss" />
+      <outline title="Aleeyou Ainahy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRPLmKI_t0-X2SsoOq3_0Iw" type="rss" />
+      <outline title="TAMBUWAL DAN SOKOTO TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClYZt2ONZvBuBH20H-hcQhw" type="rss" />
+      <outline title="OFFICIAL MANCHIII (OFFICIAL MANCHI)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf4yzJMc-V5_u1zmrK-MDMw" type="rss" />
+      <outline title="KBDANGE TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHVSQWfOOpoVeMCehJ46NmA" type="rss" />
+      <outline title="Alhaji Danladi Dan-Sokoto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8f4Q8ACVOGanQ4dxqKOuWQ" type="rss" />
+      <outline title="imrana Abubakar dan sokoto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCyz_RRRy8nDaFO9smnGNFA" type="rss" />
+      <outline title="Sokoto Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvfBo_34xqkH_RD1bAgwTCg" type="rss" />
+      <outline title="First Baptist Church Sokoto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClCe4Mjzrn2yEyuEn3UAhXQ" type="rss" />
+      <outline title="Alu Tv" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAUyALRtbHt_0Uu7xMAp1gg" type="rss" />
+      <outline title="BUA Group" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3XGanCVZwJBRpwhP0opELQ" type="rss" />
+      <outline title="I.E.T Sokoto Channel Tv" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCViaixKs2gpFeEkHlepORSQ" type="rss" />
+      <outline title="SCROLLBAR TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGiqqT_9lQQ169zRFiC2Jzg" type="rss" />
+      <outline title="JUBREEL A SANEE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8UggDSldxaEwloeh__jhtA" type="rss" />
+      <outline title="ICAN SOKOTO DISTRICT" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9DcXRRV1YT10Ax7ZL3zBCQ" type="rss" />
+      <outline title="Inside Africa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrADEISomOulrn2cpVh7N9A" type="rss" />
+      <outline title="SOZECOM NIGERIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwQxg-dZVMzZ-w6_3ot5DOQ" type="rss" />
+    </outline>
+  </body>
 </opml>

@@ -4,5 +4,8 @@
     <title>Zhetysu Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="The History of Kazakhstan: Nomads, Empire, and Modern Power — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-kazakhstan.xml" type="rss" category="History" />
+    </outline>
+  </body>
 </opml>

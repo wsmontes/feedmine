@@ -125,15 +125,17 @@
       <outline title="Houstonia" xmlUrl="https://www.houstoniamag.com/rss" type="rss" />
       <outline title="San Antonio Magazine" xmlUrl="https://www.sanantoniomag.com/feed/" type="rss" />
     </outline>
-      <outline text="Podcasts">
-        <outline title="The Joe Rogan Experience" xmlUrl="https://feeds.megaphone.fm/GLT5291280423" type="rss" />
-        <outline title="This American Life" xmlUrl="https://www.thisamericanlife.org/feed" type="rss" />
-        <outline title="Stuff You Should Know" xmlUrl="https://feeds.megaphone.fm/stuffyoushouldknow" type="rss" />
-      </outline>
-      <outline text="YouTube">
-        <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRijo3ddMTht_IHyNSNXpNQ" type="rss" />
-        <outline title="Unspeakable" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsK8j2q4qkxxFuyoAq3kViw" type="rss" />
-        <outline title="Markiplier" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7_YxT-KID8kRbqZo7MyscQ" type="rss" />
-      </outline>
+    <outline text="Podcasts">
+      <outline title="The Joe Rogan Experience" xmlUrl="https://feeds.megaphone.fm/GLT5291280423" type="rss" />
+      <outline title="This American Life" xmlUrl="https://www.thisamericanlife.org/feed" type="rss" />
+      <outline title="Stuff You Should Know" xmlUrl="https://feeds.megaphone.fm/stuffyoushouldknow" type="rss" />
+      <outline title="Breakthrough Faith With Bishop Dr. Lawrence Mwamba Dallas Texas USA. 🇺🇸" xmlUrl="https://anchor.fm/s/1d6dc3c0/podcast/rss" type="rss" category="Religion" />
+      <outline title="Talker Texas Ranger USA" xmlUrl="https://pinecast.com/feed/talker-texas-ranger-usa" type="rss" category="Comedy" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRijo3ddMTht_IHyNSNXpNQ" type="rss" />
+      <outline title="Unspeakable" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsK8j2q4qkxxFuyoAq3kViw" type="rss" />
+      <outline title="Markiplier" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7_YxT-KID8kRbqZo7MyscQ" type="rss" />
+    </outline>
   </body>
 </opml>

@@ -4,5 +4,8 @@
     <title>Mérida Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Pistas Salud y algo mas Merida Venezuela" xmlUrl="https://www.spreaker.com/show/1607042/episodes/feed" type="rss" category="Leisure" />
+    </outline>
+  </body>
 </opml>

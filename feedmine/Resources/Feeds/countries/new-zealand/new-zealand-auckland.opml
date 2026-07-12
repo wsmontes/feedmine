@@ -4,5 +4,9 @@
     <title>Auckland Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Pukekohe Community Church" xmlUrl="https://feeds.feedburner.com/pukekohecommunitychurch" type="rss" />
+      <outline title="Doxa Deo Auckland Afrikaans" xmlUrl="https://anchor.fm/s/d0f49b08/podcast/rss" type="rss" category="Religion" />
+    </outline>
+  </body>
 </opml>

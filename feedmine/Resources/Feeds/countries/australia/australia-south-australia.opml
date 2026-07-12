@@ -7,9 +7,44 @@
     <outline text="News">
       <outline title="InDaily" xmlUrl="https://indaily.com.au/feed/" type="rss" />
     </outline>
-<outline text="Education">
+    <outline text="Education">
       <outline title="University of Adelaide" xmlUrl="https://www.adelaide.edu.au/news/feed" type="rss" />
       <outline title="Flinders University" xmlUrl="https://www.flinders.edu.au/news/feed" type="rss" />
     </outline>
-</body>
+    <outline text="Podcasts">
+      <outline title="play / pause / play - The Sounds of South Australia" xmlUrl="https://anchor.fm/s/5275afb0/podcast/rss" type="rss" category="Music" />
+      <outline title="South Australian Country Hour" xmlUrl="https://www.abc.net.au/feeds/9637296/podcast.xml" type="rss" category="Business" />
+      <outline title="New South Wales Country Hour" xmlUrl="https://www.abc.net.au/feeds/9722320/podcast.xml" type="rss" category="Business" />
+      <outline title="AGSA Podcasts" xmlUrl="https://anchor.fm/s/108ba1248/podcast/rss" type="rss" category="Arts" />
+      <outline title="Telos Ministries" xmlUrl="https://anchor.fm/s/f8ca06e0/podcast/rss" type="rss" category="Religion" />
+      <outline title="Our State - South Australia" xmlUrl="https://rss.buzzsprout.com/282170.rss" type="rss" category="Government" />
+      <outline title="The South Australia Business Index Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/469e3428-2d6c-4a23-8e3c-aef1018514af/12d64f6a-12f7-43d6-bf79-af010047c6d4/89b1593c-f767-4c73-9488-af010047c6ec/podcast.rss" type="rss" category="Business" />
+      <outline title="Teach" xmlUrl="https://www.omnycontent.com/d/playlist/fd444271-72ee-4668-8752-aebe00335aa8/5e991fbe-fe30-4fe8-a8f2-aebe00346838/9db0b18b-a9b8-4dec-a0da-aebe0034686c/podcast.rss" type="rss" category="Education" />
+      <outline title="Radyo Pilipino (Adelaide South Australia)" xmlUrl="https://anchor.fm/s/13065e74/podcast/rss" type="rss" category="Business" />
+      <outline title="Florist Adelaide South Australia" xmlUrl="https://www.spreaker.com/show/6348441/episodes/feed" type="rss" category="Arts" />
+      <outline title="Talking Transformative Love" xmlUrl="https://media.rss.com/talkingtransformativelove/feed.xml" type="rss" category="Religion" />
+      <outline title="Export Hub Speak Podcast Series" xmlUrl="https://rss.buzzsprout.com/1874600.rss" type="rss" category="Business" />
+      <outline title="Talking History" xmlUrl="https://historytrust.libsyn.com/rss" type="rss" category="History" />
+      <outline title="Open Persse" xmlUrl="https://www.spreaker.com/show/2813977/episodes/feed" type="rss" category="News" />
+      <outline title="Macedonian Community of Adelaide &amp; South Australia Inc." xmlUrl="https://mcasa.podbean.com/feed.xml" type="rss" category="Business" />
+      <outline title="Carpenters World Travels Australia &amp; the South Seas" xmlUrl="https://www.spreaker.com/show/6900727/episodes/feed" type="rss" category="History" />
+      <outline title="Welcome home from South America 2025" xmlUrl="https://www.spreaker.com/show/6804224/episodes/feed" type="rss" category="Religion" />
+      <outline title="iHeart Far South Coast" xmlUrl="https://www.omnycontent.com/d/playlist/fa326977-3de5-4283-9b8b-af3500c58607/feac460d-243f-4602-871b-b1400169e083/afc62a1b-6acc-45f4-8c46-b140016c7325/podcast.rss" type="rss" category="News" />
+      <outline title="StPius X-cellence" xmlUrl="https://anchor.fm/s/ed260280/podcast/rss" type="rss" category="Kids" />
+      <outline title="Building drought resilience in South Australia – the SA Drought Hub podcast" xmlUrl="https://anchor.fm/s/c7ebc068/podcast/rss" type="rss" category="Science" />
+      <outline title="South Australia Police Fatal 5 True Stories" xmlUrl="https://www.omnycontent.com/d/playlist/f4077a89-6f34-4e4a-88a6-a89e006843e6/7d8c0528-2c22-4a65-8b1b-af850016c0ec/e7b0b497-7cce-424e-ab16-af850018c699/podcast.rss" type="rss" category="True Crime" />
+      <outline title="Dashing away with smoothing iron" xmlUrl="https://anchor.fm/s/54eed9ec/podcast/rss" type="rss" category="History" />
+      <outline title="The Study Room (a podcast by the University of South Australia)" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:412079937/sounds.rss" type="rss" category="Education" />
+      <outline title="Talking History" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:163319429/sounds.rss" type="rss" category="Arts" />
+      <outline title="Football Mania in South Australia" xmlUrl="https://anchor.fm/s/657e7498/podcast/rss" type="rss" category="Sports" />
+      <outline title="Kaspar and Maunder" xmlUrl="https://rss.whooshkaa.com/rss/podcast/id/12188" type="rss" category="Arts" />
+      <outline title="Lions In South Australia 🦁" xmlUrl="https://anchor.fm/s/7b70960/podcast/rss" type="rss" category="News" />
+      <outline title="Australian  Institute of International Affairs South Australia Branch Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:525679524/sounds.rss" type="rss" category="News" />
+      <outline title="CV Conference, Adelaide Sermons" xmlUrl="https://s3.amazonaws.com/thecloudnetwork/1183/sermons.xml" type="rss" />
+      <outline title="Charles Sturt University Podcast Channel" xmlUrl="https://athene.csu.edu.au/~achan/podcast/ifeed.xml" type="rss" category="Education" />
+      <outline title="Our Town" xmlUrl="https://feeds.buzzsprout.com/1219478.rss" type="rss" category="Society" />
+      <outline title="Police Association of South Australia" xmlUrl="https://www.pasa.asn.au/feed" type="rss" />
+      <outline title="Carpenter's World Travels: Australia, New Zealand and Some Other Islands of the South Seas by Frank G. Carpenter (1855 - 1924)" xmlUrl="https://librivox.org/rss/14793" type="rss" category="Arts" />
+    </outline>
+  </body>
 </opml>

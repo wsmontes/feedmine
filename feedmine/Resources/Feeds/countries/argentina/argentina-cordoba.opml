@@ -4,5 +4,8 @@
     <title>Córdoba Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Venta Departamentos Cordoba Argentina" xmlUrl="https://anchor.fm/s/2fd02940/podcast/rss" type="rss" category="Business" />
+    </outline>
+  </body>
 </opml>

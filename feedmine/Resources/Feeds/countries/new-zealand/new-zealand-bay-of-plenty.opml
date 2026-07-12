@@ -4,5 +4,9 @@
     <title>Bay of Plenty Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Property Done Properly New Zealand" xmlUrl="https://anchor.fm/s/101a89ccc/podcast/rss" type="rss" category="Business" />
+      <outline title="Property Done Properly New Zealand" xmlUrl="https://feeds.buzzsprout.com/2455481.rss" type="rss" category="Business" />
+    </outline>
+  </body>
 </opml>

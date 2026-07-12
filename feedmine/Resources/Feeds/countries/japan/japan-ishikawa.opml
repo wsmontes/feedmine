@@ -4,9 +4,19 @@
     <title>Ishikawa Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="Kanazawa Univ" xmlUrl="https://www.kanazawa-u.ac.jp/rss/" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="Kanazawa Univ" xmlUrl="https://www.kanazawa-u.ac.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="Conbini Boys" xmlUrl="https://api.substack.com/feed/podcast/867366.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="おかしなニュースで英語を勉強しよう" xmlUrl="https://feeds.feedburner.com/okashi-na-news-de" type="rss" category="Language Learning" />
+      <outline title="Abroad in Japan" xmlUrl="https://feeds.acast.com/public/shows/4d1eb966-6f07-4562-b9f1-9fd512f9631e" type="rss" category="Places &amp; Travel" />
+      <outline title="Deep in Japan" xmlUrl="https://feeds.transistor.fm/deep-in-japan" type="rss" category="Society &amp; Culture" />
+      <outline title="Audio Japan | Learning Japan with you" xmlUrl="https://anchor.fm/s/f02b1bc8/podcast/rss" type="rss" category="Courses" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+    </outline>
+  </body>
+</opml>

@@ -4,6 +4,14 @@
     <title>Shiga Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Chiaki's Nihongo Café: A Simple Japanese Podcast for Curious Minds" xmlUrl="https://anchor.fm/s/1050734a0/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Friday Night History" xmlUrl="https://anchor.fm/s/3e3d3464/podcast/rss" type="rss" category="History" />
+      <outline title="Uncanny Japan" xmlUrl="https://feeds.megaphone.fm/uncannyjapan" type="rss" category="Society &amp; Culture" />
+      <outline title="LiveCast - Nihongo na Prática" xmlUrl="https://anchor.fm/s/42915f04/podcast/rss" type="rss" category="Language Learning" />
+    </outline>
+  </body>
+</opml>

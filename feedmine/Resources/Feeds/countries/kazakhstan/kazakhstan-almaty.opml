@@ -4,5 +4,10 @@
     <title>Almaty Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Uncover Almaty: Top Attractions and Experiences in Kazakhstan’s Vibrant City" xmlUrl="https://feeds.hubhopper.com/ce9d8ce0720d054bbceacbd09f330ccc.rss" type="rss" category="Society" />
+      <outline title="Unveiling Almaty: Top Places to Visit in Kazakhstan's Cultural Hub" xmlUrl="https://feeds.hubhopper.com/ddb55a8b55a8fa894ce74d00ccbc3686.rss" type="rss" category="Society" />
+      <outline title="Top Activities and Attractions in Almaty, Kazakhstan" xmlUrl="https://feeds.hubhopper.com/880d06533b3ac2350ddb893be5b7e553.rss" type="rss" category="Society" />
+    </outline>
+  </body>
 </opml>

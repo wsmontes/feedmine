@@ -1,9 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0"><head><title>Ladakh Feeds</title></head><body>
-      <outline text="News">
-        <outline title="Reach Ladakh" xmlUrl="https://www.reachladakh.com/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Ladakh Admin" xmlUrl="https://ladakh.gov.in/rss" type="rss" />
-      </outline></body>
-    </opml>
+<opml version="1.0">
+  <head>
+    <title>Ladakh Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Reach Ladakh" xmlUrl="https://www.reachladakh.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Ladakh Admin" xmlUrl="https://ladakh.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Samvaad" xmlUrl="https://anchor.fm/s/f9cd8d8c/podcast/rss" type="rss" category="Politics" />
+      <outline title="Preservation Technology Podcast" xmlUrl="https://www.nps.gov/rss/podcasts/podcast_xml.cfm?id=6782298" type="rss" category="Science" />
+      <outline title="Lion’s Roar Talk Openly" xmlUrl="https://feed.podbean.com/talkopenly/feed.xml" type="rss" category="Buddhism" />
+      <outline title="3.5 BILLION STORIES TO TELL with World Traveling Udon Maker" xmlUrl="https://anchor.fm/s/1e17e800/podcast/rss" type="rss" category="Documentary" />
+      <outline title="Subhabrata Chowdhury" xmlUrl="https://anchor.fm/s/629356e0/podcast/rss" type="rss" category="Books" />
+      <outline title="SAITRIP" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:11000943/sounds.rss" type="rss" category="Music" />
+      <outline title="深夜散歩" xmlUrl="https://anchor.fm/s/101534204/podcast/rss" type="rss" category="Personal Journals" />
+      <outline title="Grounded Sleep Podcast" xmlUrl="https://anchor.fm/s/5a8a5458/podcast/rss" type="rss" category="Mental Health" />
+      <outline title="The Seen and the Unseen - hosted by Amit Varma" xmlUrl="https://rss.libsyn.com/shows/91647/destinations/458496.xml" type="rss" category="Politics" />
+      <outline title="It's Rainmaking Time!®" xmlUrl="https://itsrainmakingtime.ch/feed/podcast/" type="rss" category="News" />
+      <outline title="New Books in Environmental Studies" xmlUrl="https://feeds.megaphone.fm/LIT4982261480" type="rss" category="Natural Sciences" />
+      <outline title="Editor's Picks from The Economist" xmlUrl="https://access.acast.com/rss/8457b14f-24d4-4f1a-a274-e6188315170b" type="rss" category="News" />
+      <outline title="Effortless English Podcast | Learn English with AJ Hoge" xmlUrl="https://rss.libsyn.com/shows/19583/destinations/17067.xml" type="rss" category="Language Learning" />
+      <outline title="Barbarians at the Gate" xmlUrl="https://feeds.blubrry.com/feeds/barbarians.xml" type="rss" category="History" />
+      <outline title="Not After 30 Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:201855006/sounds.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="HT Q&amp;A" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD6781451048" type="rss" category="Politics" />
+      <outline title="Soul of Travel: Women's Wisdom and Mindful Travel" xmlUrl="https://rss.buzzsprout.com/1090604.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Futuresteading" xmlUrl="https://rss.buzzsprout.com/896866.rss" type="rss" category="Personal Journals" />
+      <outline title="The Paranormal Son" xmlUrl="https://feeds.acast.com/public/shows/7b3fdd94-5887-595b-a137-8e8ced01b40d" type="rss" category="Society &amp; Culture" />
+      <outline title="Never Far from Home" xmlUrl="https://rss.libsyn.com/shows/232391/destinations/1717325.xml" type="rss" category="Hockey" />
+      <outline title="Buddha at the Gas Pump" xmlUrl="https://api.riverside.fm/hosting/cgt7BfM8.rss" type="rss" category="Philosophy" />
+      <outline title="Good News Church - WGV Messages" xmlUrl="https://www.goodnewsloves.com/wgv-messages?format=rss" type="rss" category="Christianity" />
+      <outline title="The BIG Show with Glenn, Angel and Tim" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/1b3229b1-0ab7-45fc-9a86-a59300672728/1ae712eb-416e-4741-8d31-a80300a0c90c/podcast.rss" type="rss" category="Comedy" />
+      <outline title="Real Eyes Realize" xmlUrl="https://feeds.captivate.fm/realeyeslove/" type="rss" category="Personal Journals" />
+      <outline title="Australian Hiker" xmlUrl="https://feed.podbean.com/australianhiker/feed.xml" type="rss" category="Wilderness" />
+      <outline title="Local Futures Podcast" xmlUrl="https://feed.podbean.com/localfuturespodcast/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="The Inner World of Filmmaking" xmlUrl="https://anchor.fm/s/75ced234/podcast/rss" type="rss" category="TV &amp; Film" />
+      <outline title="Talk Ultra" xmlUrl="https://rss.libsyn.com/shows/35424/destinations/88544.xml" type="rss" category="Running" />
+      <outline title="News at 7" xmlUrl="https://www.spreaker.com/show/6571256/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Wonders of the World" xmlUrl="https://rss.libsyn.com/shows/89796/destinations/444406.xml" type="rss" category="History" />
+      <outline title="Vb...clat" xmlUrl="https://anchor.fm/s/282351a4/podcast/rss" type="rss" category="Careers" />
+      <outline title="Weltweitwandern" xmlUrl="https://weltweitwandern.podigee.io/feed/mp3" type="rss" category="Places &amp; Travel" />
+      <outline title="Speaking of Jung: Interviews with Jungian Analysts" xmlUrl="https://speakingofjung.squarespace.com/podcast?format=rss" type="rss" category="Self-Improvement" />
+      <outline title="The Straits Times Podcasts" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/03fcbf77-09e8-4cb2-88aa-a8e4008b3e9b/58c27497-cc2d-4f57-8d8c-a8e4008b7584/podcast.rss" type="rss" category="News Commentary" />
+      <outline title="Asian Insider" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/4ce84d8e-d383-469e-a24e-abdb0017cb83/c1d4947f-5d74-4ea1-b9ee-abdb0017cb83/podcast.rss" type="rss" category="Politics" />
+      <outline title="That's So Hindu" xmlUrl="https://feeds.acast.com/public/shows/63c85c5e9ae24b0011601ab4" type="rss" category="Hinduism" />
+      <outline title="Talk Travel Asia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:76158739/sounds.rss" type="rss" category="Leisure" />
+      <outline title="human insights with james cox" xmlUrl="https://anchor.fm/s/17b0bf0/podcast/rss" type="rss" category="Business" />
+      <outline title="Cats of the Wild" xmlUrl="https://anchor.fm/s/2e2e7f60/podcast/rss" type="rss" category="Nature" />
+      <outline title="UFO WARNING" xmlUrl="https://anchor.fm/s/68067e4/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="Dispatch Ajax! Podcast" xmlUrl="https://rss.buzzsprout.com/1710682.rss" type="rss" category="Comedy" />
+      <outline title="DEVOCIÓNAL DIARIO FAMILIAR" xmlUrl="https://anchor.fm/s/144c7304/podcast/rss" type="rss" category="Christianity" />
+      <outline title="The Carleena Show" xmlUrl="https://feeds.fireside.fm/carleena/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="CHANAKYA NEETI: Through The Lens Of Modern World Diplomacy And Strategies" xmlUrl="https://anchor.fm/s/4d479224/podcast/rss" type="rss" category="History" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Mohit Chhikara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC027uEect8BXPFQEgQHYZiQ" type="rss" />
+      <outline title="REWA Society Ladakh, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCStsDzrL_8G61IHVPFauD5A" type="rss" />
+      <outline title="DIPR Ladakh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5vaNXc9QHngT-deykdPGcA" type="rss" />
+      <outline title="Dream Chaser" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXkB9S7KRhr_QNyj43b09Qw" type="rss" />
+      <outline title="KARAN SEHGAL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOo1wW0llRhP3q7H4Z4z1Zg" type="rss" />
+      <outline title="Nomadic Indian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgilhqoyZrXV2EBlaaAtVaw" type="rss" />
+      <outline title="Gutsy Ladka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe2zdJoARINLla8mX8KdWhg" type="rss" />
+      <outline title="Explore The Unseen 2.0" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJWInAK0nFgi4TvgJNlreAQ" type="rss" />
+      <outline title="Shachukul Monastery Ladakh India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmInSH1Xy-DJ-EM3VyQKblA" type="rss" />
+      <outline title="Aarya Voraa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbPZXoMG9Mc8DXCJBtysg7g" type="rss" />
+      <outline title="Himalayan Lagoon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFEWUgxKumoVKYimhypYIxg" type="rss" />
+      <outline title="ladakh india tours and travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCbPI2H66Kya1NuFLn8NWYg" type="rss" />
+      <outline title="Golden Eagle Expedition" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrNIaCRLjRDHBV_BcQVXttA" type="rss" />
+      <outline title="News18 Ladakh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMIraIjM75VfrxBOvIA9OQQ" type="rss" />
+      <outline title="CIBS Ladakh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpswBmC-s3AgNXZnUOO1zhw" type="rss" />
+      <outline title="Kanishk Gupta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIKAsBdkwH3ERoJd3hJQ-Jg" type="rss" />
+      <outline title="JS Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0VN6My1ueOFXDTgzMZSSNQ" type="rss" />
+      <outline title="Lavi &amp; Ollie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAnjsy_m02aOKHUiI6xARjw" type="rss" />
+      <outline title="NEWS UT LADAKH" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfrYgoCtgTxnbooX72cfq6Q" type="rss" />
+      <outline title="XTREME MOTO ADVENTURE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzFRfjs5aM2nqwRDpeKzCQw" type="rss" />
+      <outline title="Roving Lama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkMDKq5xPiyf_T6IO7SuAg" type="rss" />
+      <outline title="Thupstan Ladakh " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjM6Cv3c9Nl9Mnkoyb7iHAg" type="rss" />
+      <outline title="Leh Ladakh Tours India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjJcRRrR6otpRvDjML1uOww" type="rss" />
+      <outline title="Extrovert Indian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkvzhtkUj1z87mJQEYJGnsg" type="rss" />
+      <outline title="Mumbiker Nikhil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNn6AaHharXIbkRleXGboiQ" type="rss" />
+      <outline title="Puma Hotel &amp; Bike rental company leh Ladakh India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaMcksKqQ85HxzUHrXlmnTw" type="rss" />
+      <outline title="Voice of Ladakh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYHnJhREJjVuE96mJjh_kyw" type="rss" />
+      <outline title=" Peaceful Ladakh Press " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7gzKiSU4NqMVgzOFAgxcRg" type="rss" />
+      <outline title="Deep Ranjan Sachan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-i4Cfb5-QrfMJFl_EDOHWw" type="rss" />
+      <outline title="Youth Hostels Association of India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp5wqOVp0e2s7b9sorqp80w" type="rss" />
+      <outline title="Musical Society of Ladakh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8Mm8jOhVMHSoES6_gE5RJg" type="rss" />
+      <outline title="DD Kashir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOqU-HfQxoyImaCW2tCDxJA" type="rss" />
+      <outline title="Ajay Raj" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTP9sDeqayLKuD4QjHKdcIw" type="rss" />
+      <outline title="News18 J&amp;K" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRcye_z41WXpW5JalQm8wJw" type="rss" />
+      <outline title="Rangyul Tumail (ladakh india)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn3lInpki4OKHaksIiBIcVA" type="rss" />
+      <outline title="Sonam Wangchuk" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8gEnWuuNnBc6QPghEFUlhA" type="rss" />
+      <outline title="Swati Rojha" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfA2ry4izp8ldvJVLIlnUCg" type="rss" />
+      <outline title="LIVING IN LADAKH INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN_9-GYnXHE0jNCIFdsIcrg" type="rss" />
+      <outline title="Karan Chogawan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCChcN1MM1V_bSSTESnNYq0Q" type="rss" />
+      <outline title="Aalyan vlogs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtC6-ZXP1RlEHUC31nPBySg" type="rss" />
+      <outline title="Indian Backpacker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYUq_wB2ieVws9K4kmjWcaQ" type="rss" />
+      <outline title="India In Motion" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0EWL3FL95mgUPUtlFwu2bw" type="rss" />
+      <outline title="༄༅།།SONAM GYA Ladakh Official།།།" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVcyJWFkAFd3FI-BOGv_jsQ" type="rss" />
+      <outline title="ladakh india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBFzwgRUgiC40VKXxbBndQg" type="rss" />
+      <outline title="The Sikh Traveller" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLGnFj4hCj-aS4p77Y541Zg" type="rss" />
+      <outline title="Stanzin Norgais Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp3pH-o6ZAlD-0F9U-trGcg" type="rss" />
+      <outline title="ladakh Trip india Pvt. Ltd." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1jYFELzhY3DZN85r-kFNJQ" type="rss" />
+      <outline title="Jatt Prabhjot" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_71IGEjSWBjQ-9AkfmFaZQ" type="rss" />
+      <outline title="Traveling Mondays" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTFz3noLGUS4vsuJvObRtuw" type="rss" />
+      <outline title="Ladakh India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFda3E9kkkjUrnfp-FBgcIQ" type="rss" />
+    </outline>
+  </body>
+</opml>

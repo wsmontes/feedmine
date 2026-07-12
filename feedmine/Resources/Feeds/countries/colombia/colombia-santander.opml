@@ -4,5 +4,9 @@
     <title>Santander Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="diexismo escuchas girón - santander - colombia" xmlUrl="https://www.ivoox.com/feed_fg_f1462092_filtro_1.xml" type="rss" category="Science" />
+      <outline title="musica de Colombia,Santander" xmlUrl="https://www.spreaker.com/show/2230354/episodes/feed" type="rss" category="Society" />
+    </outline>
+  </body>
 </opml>

@@ -4,10 +4,17 @@
     <title>Aichi Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Aichi Pref Gov" xmlUrl="https://www.pref.aichi.jp/rss/" type="rss" />
-        <outline title="Nagoya City" xmlUrl="https://www.city.nagoya.jp/rss/" type="rss" />
-      </outline>
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Aichi Pref Gov" xmlUrl="https://www.pref.aichi.jp/rss/" type="rss" />
+      <outline title="Nagoya City" xmlUrl="https://www.city.nagoya.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Onthespotter PODCAST with Anesh" xmlUrl="https://anchor.fm/s/76569ac/podcast/rss" type="rss" category="Education" />
+      <outline title="Audio Japan | Learning Japan with you" xmlUrl="https://anchor.fm/s/f02b1bc8/podcast/rss" type="rss" category="Courses" />
+    </outline>
+  </body>
+</opml>

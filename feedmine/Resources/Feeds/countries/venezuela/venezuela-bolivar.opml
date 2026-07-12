@@ -4,5 +4,8 @@
     <title>Bolívar Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="DJ Fez (Caracas, VENEZUELA)" xmlUrl="https://fez.podomatic.com/rss2.xml" type="rss" category="Music" />
+    </outline>
+  </body>
 </opml>

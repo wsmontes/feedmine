@@ -4,7 +4,64 @@
     <title>Jilin Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="Confessions of a Pageant King" xmlUrl="https://api.substack.com/feed/podcast/4312339.rss" type="rss" category="How To" />
+      <outline title="Middle Earth - China’s cultural industry podcast" xmlUrl="https://rss.buzzsprout.com/1763226.rss" type="rss" category="TV &amp; Film" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Adrian in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpTLmf4pJRdmyvsjnX_FwWg" type="rss" />
+      <outline title="Look into China 探索中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGCp8rB--toPrVdNCJqa3uQ" type="rss" />
+      <outline title="The Wandering Linguist" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp3AGD_nVR0HoBaofodJn7Q" type="rss" />
+      <outline title="AnnaChina" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFUFAlIfpZ7XNuHD4TJ_Y5Q" type="rss" />
+      <outline title="Lucifer Sky" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTh10KPJzdjG5un9EQa38PQ" type="rss" />
+      <outline title="看见吉林" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyAN9ARvXUd_enppa30r5zg" type="rss" />
+      <outline title="MostDoChin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwsQcFnmy5A1IlhMioKc2TQ" type="rss" />
+      <outline title="八重ちなこ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFfegtEOjjwE4Hn_ceNS8ig" type="rss" />
+      <outline title="Lullaby Walks 4K" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9PIY3ixP1kU9dXfJhzw2zg" type="rss" />
+      <outline title="吉语桥国际频道" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCST1J8_APilDEyDNWpqv2bg" type="rss" />
+      <outline title="Silk Road Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8fDt2JVMzHM5m7GLh81n2w" type="rss" />
+      <outline title="如意" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6J5rJ8zjGWD4Y2VO-yGJ0g" type="rss" />
+      <outline title="Hussain" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBis9iAMHiuc8XvVnu9dEIw" type="rss" />
+      <outline title="Dr Muneeb vlogs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjhwHICqVhN9wxyVbpjo1VQ" type="rss" />
+      <outline title="ChinaDrama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUfsysWHfpEK_1XUIgqSsDw" type="rss" />
+      <outline title="Chinese flavor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAZsd5_IvzzWWPM-HEzKTPw" type="rss" />
+      <outline title="赵东东游记 zhao Dongdong's travelogue" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCE_EMtsvh-e1lFUeGxyzcoA" type="rss" />
+      <outline title="Chalie Hill" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt0R-RUlfJh1z_BLf44Emvg" type="rss" />
+      <outline title="PANDIWI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQhI238rceSFgHuQah9oC4Q" type="rss" />
+      <outline title="李伟" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoWaVBXZbMMmK1pngGXQDPA" type="rss" />
+      <outline title="中国导游佳佳" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBmxjBqbbCEXTGruOL5kJ5Q" type="rss" />
+      <outline title="Chinese Life Buddy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj3xlTI2GOz8lPZw0nESaYQ" type="rss" />
+      <outline title="china cais" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbwtk47ZlfIcObaElcCGiRQ" type="rss" />
+      <outline title="Ulysses Castle" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN5dSn0mcVxNqje6sp1YTiw" type="rss" />
+      <outline title="Landscape" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ8AfVRiJvT1UeqZNO6jE2Q" type="rss" />
+      <outline title="FAZAL OFFICIAL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEQ8xBaMzswNYJCyDkM1I5w" type="rss" />
+      <outline title="koko jiang" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBGEh1pkzapASFjUZtvQm2Q" type="rss" />
+      <outline title="Falling for Jilin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7vxlEZ60JG-vTcK-CPVD9A" type="rss" />
+      <outline title="VISIT JILIN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkwst231qTvLqMfjxUSvlVg" type="rss" />
+      <outline title="Ember1506" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn-uStMNxK9eEgcG3hkjIsw" type="rss" />
+      <outline title="The Traveller" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQR8k5Qgc_agb_UBYpHNyBw" type="rss" />
+      <outline title="Jovi food 美食記錄" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC33L59IQEFkhLNtC-akmuPw" type="rss" />
+      <outline title="Touqeer Premy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHTt47IQ2Msnxxfd8Yb_MGg" type="rss" />
+      <outline title="Real China Street" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCngKwbbU4Ks7SDckauVm7ZQ" type="rss" />
+      <outline title="Gayeon Han" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnH3RDICNzJA1hp_ZKXYSQ" type="rss" />
+      <outline title="Eva Qiao" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEWhQ3LwiHaJnGzRlhwReVA" type="rss" />
+      <outline title="Chinese Embassy in Czechia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpSjajpV9yuLrg5uqoS200Q" type="rss" />
+      <outline title="Plumber Nil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCViJt8SG8HsM3CfMgntmYyA" type="rss" />
+      <outline title="Abdul Wahid Anwar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvPy1FlezCk0pkVCnUOcXbQ" type="rss" />
+      <outline title="WonderfuLife" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFzC6XWrKhJjSF78ZFBJ7dg" type="rss" />
+      <outline title="Blondie in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISrVZmDM4x-Rq9mmNUw7Zw" type="rss" />
+      <outline title="ebi chisai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3tZDMJ-n_WwkBNNKVYIY4A" type="rss" />
+      <outline title="Study and Travel In China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnY2CVE6AwBd0NO9orXgyWQ" type="rss" />
+      <outline title="China with Esmaeil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBK2DXmk0WQQxAq4FXbIdJw" type="rss" />
+      <outline title="FitzPTravels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR-CT68JDJHQYZKQPsa3_0Q" type="rss" />
+      <outline title="citytv" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRrgwcCxFj1h_1U5WhklyjQ" type="rss" />
+      <outline title="JEFF ZY" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5992fcoaMr6Zg9nuwEfrbA" type="rss" />
+      <outline title="Travelholic Attique" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIQLdwmsgP0cFKnTzCYe7Ow" type="rss" />
+      <outline title="Chaos Travel Log 超思旅行日志" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC06UtI-6n7arLKw5F6TJuMw" type="rss" />
+      <outline title="Panpan Xplore" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwFFVFBRxZK8skqFlIuJojg" type="rss" />
+    </outline>
+  </body>
+</opml>

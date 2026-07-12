@@ -4,5 +4,8 @@
     <title>San José Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Carpe Chepe - Historias de San Jose Costa Rica" xmlUrl="https://anchor.fm/s/1ccf4588/podcast/rss" type="rss" category="History" />
+    </outline>
+  </body>
 </opml>

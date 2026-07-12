@@ -4,15 +4,68 @@
     <title>Hong Kong Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="SCMP HK" xmlUrl="https://www.scmp.com/rss/4/feed" type="rss" />
-        <outline title="Hong Kong FP" xmlUrl="https://hongkongfp.com/feed/" type="rss" />
-        <outline title="The Standard" xmlUrl="https://www.thestandard.com.hk/rss" type="rss" />
-        <outline title="RTHK News" xmlUrl="https://rthk.hk/rss/" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Business" />
-      <outline text="Education">
-        <outline title="HKU" xmlUrl="https://www.hku.hk/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="SCMP HK" xmlUrl="https://www.scmp.com/rss/4/feed" type="rss" />
+      <outline title="Hong Kong FP" xmlUrl="https://hongkongfp.com/feed/" type="rss" />
+      <outline title="The Standard" xmlUrl="https://www.thestandard.com.hk/rss" type="rss" />
+      <outline title="RTHK News" xmlUrl="https://rthk.hk/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Business" />
+    <outline text="Education">
+      <outline title="HKU" xmlUrl="https://www.hku.hk/rss" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="中國香港克拉術總會The Kurash Federation of Hong Kong China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCinyTdkZWM_wqeCox6pC7Mg" type="rss" />
+      <outline title="The Hong Kong Polytechnic University" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkio4asleKcQVRVEM8RnXlQ" type="rss" />
+      <outline title="School of Chinese HKU" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKOaLmSPGi2YfCFSQ68MIog" type="rss" />
+      <outline title="中國香港門球總會Hong Kong, China Gateball Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXkIPv9G74UuCygOLRjMTcA" type="rss" />
+      <outline title="The Greater Bay Area of Guangdong-Hong Kong-Macao" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxzhPRgXtyaXFdRSdQIQ1ug" type="rss" />
+      <outline title="Hong Kong Is a part of China香港是中國不可分離的一部分" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7i67q7cyPZUoi_jVm1Bffw" type="rss" />
+      <outline title="Hong Kong -香港🇭🇰" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUzWllwLCH5L6_VfXNG420g" type="rss" />
+      <outline title="China State Construction Engineering (Hong Kong)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCalmraf9ZVZYAM9YlBC_0nA" type="rss" />
+      <outline title="中國香港殘疾人奧委會 - China Hong Kong Paralympic Committee" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC16yskX9kmeXCOdeT1VTP0Q" type="rss" />
+      <outline title="Hong Kong, China Rowing Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnsJXVOYo9gL6tPUlW3Sd2w" type="rss" />
+      <outline title="香港中樂團HKCO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-1MkEc6S8hQn5kibrzOWrg" type="rss" />
+      <outline title="Hong Kong China Rugby" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiuwRynpZOYcT9CEfYfrK1Q" type="rss" />
+      <outline title="HKMTA-Muaythai Association of Hong Kong, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR_q-ZPzod5MIlx5xEln0iQ" type="rss" />
+      <outline title="Fencing Association of Hong Kong, China 中國香港劍擊總會" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr-LluDLviq2XfXuyKhh2oA" type="rss" />
+      <outline title="HONG KONG,CHINA WUSHU UNION" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuEFJeDOfzY1PSE_2bFWrHQ" type="rss" />
+      <outline title="Flying Disc Federation of Hong Kong China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ-AvXBIklIbtSmWZyvjSKg" type="rss" />
+      <outline title="China Mobile Hong Kong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKcEDnGJJ6cmbvg0qabYA2Q" type="rss" />
+      <outline title="中國神學研究院 China Graduate School of Theology" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIWuh1728a0PyL4XeeAU4yg" type="rss" />
+      <outline title="Hong Kong Rope Skipping Federation, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7FvLOLyEyL0QnNeX8Wgzrg" type="rss" />
+      <outline title="The Baseball Association of Hong Kong, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ7bgE48M31Q-24N_pobuaQ" type="rss" />
+      <outline title="China Daily Asia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC54Iljc61Wl6hZ9hwpHhN0A" type="rss" />
+      <outline title="Shuttlecock Association of Hong Kong, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEmRFPhNIuvNoD-RCybucUw" type="rss" />
+      <outline title="Transcendence Hong Kong 香港跨卓頻道" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSphwUwz7NhqknczN73eASg" type="rss" />
+      <outline title="Jokgu Association of Hong Kong,China 中國香港韓式足網球總會" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR1GIKIqtHnTg_1uWYskHQA" type="rss" />
+      <outline title="BBC News 中文" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCb3TZ4SD_Ys3j4z0-8o6auA" type="rss" />
+      <outline title="HKAAA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQzHWmt2EeY0-vahDKkOOPg" type="rss" />
+      <outline title="Volleyball Association of Hong Kong, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTFMXvJEzjBEchYxv49ncdQ" type="rss" />
+      <outline title="Esports Association of Hong Kong, China 中國香港電競總會" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-H4UpSn71pvgy1M8vNHq-g" type="rss" />
+      <outline title="8號電影院 -  HK Movie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKiw9OKbQecHMy_K1JqxKeA" type="rss" />
+      <outline title="無綫新聞 TVB NEWS Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_ifDTtFAcsj-wJ5JfM27CQ" type="rss" />
+      <outline title="Blondie in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISrVZmDM4x-Rq9mmNUw7Zw" type="rss" />
+      <outline title="HONG KONG CHINA CANOE UNION 中國香港獨木舟總會" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCab8chpNnajOXr21B8pVqKw" type="rss" />
+      <outline title="Badminton Association of Hong Kong, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl7kMh-KX_utc-IB2Z71EkA" type="rss" />
+      <outline title="Hong Kong, China Ice Hockey Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPxmRJbgPR1PpW-if1XLNYg" type="rss" />
+      <outline title="China Mobile Hong Kong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVFmoBO8r6HYokqXrSHko7Q" type="rss" />
+      <outline title="Hong Kong China Table Tennis School 中國香港乒乓球學校 (HKCTTS)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfOaY23_PAb45g4K4PmKDOw" type="rss" />
+      <outline title="Zaza in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgWzUjKQukhhAHwVv3dqGgQ" type="rss" />
+      <outline title="Hong Kong, China Tennis Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1c6B-4oA7meM7wlVsPNpyQ" type="rss" />
+      <outline title="中國香港棋院Hong Kong China Chess School" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCseeJFt4dobZ7ZbVPJcIrVQ" type="rss" />
+      <outline title="China Legal Service (Hong Kong)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRKVLG3apUc21gztQwYSsVQ" type="rss" />
+      <outline title="中國香港滾軸運動及滑板總會" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-Z1U12jbZ0waZkdW0YbPjA" type="rss" />
+      <outline title="Hong Kong, China Lacrosse Association 中國香港棍網球總會" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPXU8nL_J82NZmnJ8m6rkQA" type="rss" />
+      <outline title="航拍香港 Fly over Hong Kong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTBr7tk52A2XUKxvoIfwwXQ" type="rss" />
+      <outline title="香港金牛 Hong Kong Bulls" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqM3UYmZfj9aXa4tsXAWUKw" type="rss" />
+      <outline title="中國香港美式橄欖球總會 GFA of Hong Kong, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqLRL8kqGWiQeWX5GVTPEmA" type="rss" />
+      <outline title="Hong Kong China Calisthenics Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_WLidJ1B2s8P3AsZ0xjHdw" type="rss" />
+      <outline title="China Hong Kong Youth Symphony Orchestra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQKO1kiW07-rgdWTW19bxbg" type="rss" />
+      <outline title="香江望神州" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSwoCb9L7sJxL7dmDnicYEQ" type="rss" />
+      <outline title="Squash Association of Hong Kong, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg7QS20BFAFVlHtcL6ksaow" type="rss" />
+      <outline title="中國香港體適能總會" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcSRuEv14ED02aX26XDWJfQ" type="rss" />
+    </outline>
+  </body>
+</opml>

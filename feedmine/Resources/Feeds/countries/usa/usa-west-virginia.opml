@@ -4,16 +4,20 @@
     <title>West Virginia Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Wheeling Intelligencer" xmlUrl="https://www.theintelligencer.net/rss" type="rss" />
-        <outline title="Parkersburg News" xmlUrl="https://www.newsandsentinel.com/rss" type="rss" />
-        <outline title="Morgantown Dominion Post" xmlUrl="https://www.dominionpost.com/rss" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="Marshall Univ" xmlUrl="https://www.marshall.edu/rss" type="rss" />
-      </outline>
-      <outline text="Culture">
-        <outline title="WV Public Broadcasting" xmlUrl="https://www.wvpublic.org/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="Wheeling Intelligencer" xmlUrl="https://www.theintelligencer.net/rss" type="rss" />
+      <outline title="Parkersburg News" xmlUrl="https://www.newsandsentinel.com/rss" type="rss" />
+      <outline title="Morgantown Dominion Post" xmlUrl="https://www.dominionpost.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="Marshall Univ" xmlUrl="https://www.marshall.edu/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="WV Public Broadcasting" xmlUrl="https://www.wvpublic.org/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="SUPERNATURAL APOSTOLIC GLOBAL MINISTRIES - WEST VIRGINIA, USA." xmlUrl="https://podpoint.com/feed/8701" type="rss" category="Religion" />
+    </outline>
+  </body>
+</opml>

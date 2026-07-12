@@ -4,6 +4,14 @@
     <title>Iwate Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
+      <outline title="🌏 Desde el otro Japón / From the Other Japan / 別の日本から" xmlUrl="https://anchor.fm/s/1064b1070/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Audio Japan | Learning Japan with you" xmlUrl="https://anchor.fm/s/f02b1bc8/podcast/rss" type="rss" category="Courses" />
+      <outline title="The Hangar Z Podcast" xmlUrl="https://rss.buzzsprout.com/1281104.rss" type="rss" category="Aviation" />
+      <outline title="Deep Dive from The Japan Times" xmlUrl="https://audioboom.com/channels/4970813.rss" type="rss" category="News" />
+    </outline>
+  </body>
+</opml>

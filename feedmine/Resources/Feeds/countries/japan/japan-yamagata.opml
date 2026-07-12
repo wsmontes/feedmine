@@ -4,6 +4,10 @@
     <title>Yamagata Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Uncanny Japan" xmlUrl="https://feeds.megaphone.fm/uncannyjapan" type="rss" category="Society &amp; Culture" />
+    </outline>
+  </body>
+</opml>

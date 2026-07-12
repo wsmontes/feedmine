@@ -4,8 +4,14 @@
     <title>Niigata Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Niigata Pref Gov" xmlUrl="https://www.pref.niigata.lg.jp/rss/" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Niigata Pref Gov" xmlUrl="https://www.pref.niigata.lg.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="The Austin and Arthur Show｜生の英会話" xmlUrl="https://rss.libsyn.com/shows/361352/destinations/2964902.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Shin Buddhist Sangha Services" xmlUrl="https://feed.podbean.com/takashimiyaji/feed.xml" type="rss" category="Buddhism" />
+    </outline>
+  </body>
+</opml>

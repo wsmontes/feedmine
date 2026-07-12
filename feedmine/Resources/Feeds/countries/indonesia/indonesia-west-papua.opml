@@ -4,5 +4,108 @@
     <title>West Papua Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Travel That Matters" xmlUrl="https://www.omnycontent.com/d/playlist/4fab3663-bc0e-42da-bca1-ab68000eb109/a81eab75-69e0-4876-93e6-ad34013b70d6/dc28538a-5032-4b91-88f6-ad3401592635/podcast.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="The Dig" xmlUrl="https://thedig.blubrry.net/feed/podcast/" type="rss" category="Politics" />
+      <outline title="The History of Indonesia: Islands, Empires, and Independence — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-indonesia.xml" type="rss" category="History" />
+      <outline title="Jacobin Radio" xmlUrl="https://pinecast.com/feed/jacobin" type="rss" category="Politics" />
+      <outline title="Sugar Nutmeg" xmlUrl="https://anchor.fm/s/39dfcc24/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Boundless Body Radio" xmlUrl="https://rss.buzzsprout.com/1244183.rss" type="rss" category="Nutrition" />
+      <outline title="David Gornoski" xmlUrl="https://rss.libsyn.com/shows/214628/destinations/1554941.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Secrets We Keep" xmlUrl="https://www.omnycontent.com/d/playlist/820f09cf-2ace-4180-a92d-aa4c0008f5fb/95acea3b-1420-49df-9b31-b03500251278/a64a1c9c-2de4-4d32-a34b-b03500260776/podcast.rss" type="rss" category="Documentary" />
+      <outline title="Exploring Missions" xmlUrl="https://afr.net/api/v2/podcast/podcastsbyidrss/?id=7734&amp;platform=ApplePodcasts" type="rss" category="Christianity" />
+      <outline title="4Nature" xmlUrl="https://rss.buzzsprout.com/1867219.rss" type="rss" category="Non-Profit" />
+      <outline title="pplpod" xmlUrl="https://media.rss.com/pplpod/feed.xml" type="rss" category="History" />
+      <outline title="Bible League International // The Word in Action Podcast" xmlUrl="https://feeds.blubrry.com/feeds/2856977.xml" type="rss" category="Christianity" />
+      <outline title="Planet: Critical" xmlUrl="https://feed.podbean.com/planetcritical/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Radical Australia" xmlUrl="https://www.3cr.org.au/radicalaustralia/itunes" type="rss" category="News" />
+      <outline title="Perth Indymedia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:22009164/sounds.rss" type="rss" category="News" />
+      <outline title="Accent of Women" xmlUrl="https://www.3cr.org.au/accentofwomen/itunes" type="rss" category="News" />
+      <outline title="The Bohemian Beat Archive" xmlUrl="http://podcast.thebohemianbeat.com/feed.xml" type="rss" category="Arts" />
+      <outline title="Revenge Of The World" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:116241900/sounds.rss" type="rss" category="Comedy" />
+      <outline title="Asia Pacific Currents" xmlUrl="https://www.3cr.org.au/asiapac/itunes" type="rss" category="News" />
+      <outline title="95bFM: The Wire" xmlUrl="https://feeds.95bfm.com/the-wire" type="rss" category="News" />
+      <outline title="95bFM" xmlUrl="https://95bfm.com/bcasts/rss.xml" type="rss" category="Music" />
+      <outline title="Mr M History Podcast" xmlUrl="https://anchor.fm/s/ff0ea2f4/podcast/rss" type="rss" category="History" />
+      <outline title="Green Left Radio" xmlUrl="https://www.3cr.org.au/greenleftweeklyradio/itunes" type="rss" category="News" />
+      <outline title="Crossroads Church Vienna - Sermons" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:104463074/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="World News with BK" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:233865343/sounds.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Pacific Waves" xmlUrl="https://www.rnz.co.nz/podcasts/acast/datelinepacific.rss" type="rss" category="News" />
+      <outline title="ACAPS Audio Reports" xmlUrl="https://media.rss.com/acaps-audio-reports/feed.xml" type="rss" category="Non-Profit" />
+      <outline title="The Ancient Origins News Desk" xmlUrl="https://delivery.trinityaudio.ai/v1/playlist/0xcpwf64/rss" type="rss" category="History" />
+      <outline title="Morning Report" xmlUrl="https://www.rnz.co.nz/acast/morningreport.rss" type="rss" category="News" />
+      <outline title="Climactic" xmlUrl="https://anchor.fm/s/1037220a0/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Indonesia Saga" xmlUrl="https://anchor.fm/s/38886d68/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Briefing" xmlUrl="https://www.omnycontent.com/d/playlist/820f09cf-2ace-4180-a92d-aa4c0008f5fb/043e2cc8-6045-47cd-af36-ab98000641fa/16e65677-c110-4ef1-a534-ab980006a91f/podcast.rss" type="rss" category="Daily News" />
+      <outline title="The Documentary Podcast" xmlUrl="https://podcasts.files.bbci.co.uk/p02nq0lx.rss" type="rss" category="Documentary" />
+      <outline title="Redemption Hills Church Podcast" xmlUrl="https://www.redemptionhills.church/listen?format=rss" type="rss" category="Christianity" />
+      <outline title="Fresno Bible Church Weekly Sermon Podcast" xmlUrl="https://podcasts.subsplash.com/bjkhdjp/podcast.rss" type="rss" category="Christianity" />
+      <outline title="The Archaeology Channel - Audio News from Archaeologica" xmlUrl="http://www.archaeologychannel.org/rss/TACfeed.xml" type="rss" category="News" />
+      <outline title="The Scott Mys Show" xmlUrl="https://rss.introcast.io/1431449603/carnivorecast.libsyn.com/rss" type="rss" category="Nutrition" />
+      <outline title="Tuesday Hometime" xmlUrl="https://www.3cr.org.au/hometimetuesday/itunes" type="rss" category="News" />
+      <outline title="From the Hangar" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:57696924/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="The Three Ravens Podcast" xmlUrl="https://feeds.acast.com/public/shows/6404e1f4c5ea8c0011811194" type="rss" category="Fiction" />
+      <outline title="Saturday Extra - Full program podcast" xmlUrl="https://www.abc.net.au/feeds/2888424/podcast.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Big Fish" xmlUrl="https://www.abc.net.au/feeds/7772678/podcast.xml" type="rss" category="Places &amp; Travel" />
+      <outline title="Thee Generation Podcast" xmlUrl="https://feeds.simplecast.com/V7NFPqJN" type="rss" category="Spirituality" />
+      <outline title="Not For Radio" xmlUrl="https://feeds.megaphone.fm/MEDIAWORKSRADIOLIMITED1580708394" type="rss" category="Comedy" />
+      <outline title="This Way Up: Unpacking human rights for business" xmlUrl="https://audioboom.com/channels/5096518.rss" type="rss" category="Business" />
+      <outline title="Saturday Extra - Separate stories podcast" xmlUrl="https://www.abc.net.au/feeds/2888428/podcast.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Falling Jackfruit" xmlUrl="https://anchor.fm/s/eead518/podcast/rss" type="rss" category="Arts" />
+      <outline title="TOURISM PLACE PODCAST" xmlUrl="https://anchor.fm/s/56f8257c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Reclaiming the Garden" xmlUrl="https://anchor.fm/s/5338a704/podcast/rss" type="rss" category="Spirituality" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="IAGI (Ikatan Ahli Geologi Indonesia) - Indonesian association of Geologists" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU2UrjrOpwTxJ0FGWljHSEw" type="rss" />
+      <outline title="International Coalition for Papua ICP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw9dnJI2qR-E7JQOC0SmWQQ" type="rss" />
+      <outline title="Papua Original - Topic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjqoYBiy3R4UBl7lzc73_Vw" type="rss" />
+      <outline title="Papua &amp; West Papua | Game Tv Official [ id ]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWta1b7Covs7CzOvyhhmn5w" type="rss" />
+      <outline title="West Papua Explore Part Of Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxrNfKoz-Lzw4aQTWMvko-w" type="rss" />
+      <outline title="PapuaFishing" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk6lc_GycBuYvz0Nm6WxA7A" type="rss" />
+      <outline title="West Papua Koteka Community Tv Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvTe12JcKE9TfLtIyLR2Ssw" type="rss" />
+      <outline title="West Papua (WPLO)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdTD5ER8LmlQ_OAIaEQSKMA" type="rss" />
+      <outline title="This Is Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZDjfU8LtshBO2_VxRc-WlA" type="rss" />
+      <outline title="West Papua" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsr7GSTwVIHH7KFiyM_uIkA" type="rss" />
+      <outline title="West Papua Adventure" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHv3qXPc5RzdZBWeTLu7dVQ" type="rss" />
+      <outline title="Diskominfo Papua Barat" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8Tq0iIuF1Dpvvauk3iZRvQ" type="rss" />
+      <outline title="West Papua Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMaUMAAEaQuUjVXncJxsfaQ" type="rss" />
+      <outline title="West Papua Women's Office FRWP (Melbourne)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn67hTPZdcFBSkplPWNv3FA" type="rss" />
+      <outline title="ALL ABOUT PAPUA INDONESIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAF3Vj17tv1O5yvsohZ4HzQ" type="rss" />
+      <outline title="West Papua [Anti Indonesia]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQDiXFqOREpVwACHzEr_RvA" type="rss" />
+      <outline title="TAPOL UK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPkCmFUimcVmvUdDMMnPdOA" type="rss" />
+      <outline title="About West Papua" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqEzKtUva8-0JWC6wFNM75Q" type="rss" />
+      <outline title="Free West Papua Campaign USA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC67CR4nDpWWjaF-xlH5zxPA" type="rss" />
+      <outline title="PAPUA Update - Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuK96E69k4odDklwd5uOidQ" type="rss" />
+      <outline title="West Papua Ujung Panah" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8pQ9oec4-nkjH7vNizHsbA" type="rss" />
+      <outline title="West Papua New Guinea" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfYZwp48SmHVGPCj_ZbrcMQ" type="rss" />
+      <outline title="iWareBatik Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLdT5S2_o78gmMTv1m1v6CQ" type="rss" />
+      <outline title="Jimmy 95 West Papua" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5PGdROkV_m4h9cvl7UmoA" type="rss" />
+      <outline title="Free West Papua Campaign (Nederland)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWzY2mztO4J-F0g8PcaxILA" type="rss" />
+      <outline title="Amira Liveaboard Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7nD9OJmx4BaRq04y2SfeOQ" type="rss" />
+      <outline title="Free West Papua No Indonesia Terorist" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCC1niQrhGSZitgBjPdFvTZQ" type="rss" />
+      <outline title="We are West Papua Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDpOCdu3Ki5DU7tnOCFFmdw" type="rss" />
+      <outline title="Papua Merdeka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDD-2Aqpb61BM6klXqqIHAA" type="rss" />
+      <outline title="welovewestpapua indonesia95" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_TbtgeYI5VR83W_aVL-LYw" type="rss" />
+      <outline title="West Papua News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqK5-Nv-zyn1vF1iKxSfuIg" type="rss" />
+      <outline title="Indonesia Crime Files" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_LRDOObeBFgo1v94BF-7KQ" type="rss" />
+      <outline title="Do You Know Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfHWZAavJrE1Hwi4Irghbtw" type="rss" />
+      <outline title="House of TMS Videos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvyvFchHLBUV8MiIcu6M01A" type="rss" />
+      <outline title="West Papua 1961" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISIMsxEM1ePxTRZUDW41FA" type="rss" />
+      <outline title="FreeWestPapua CampaignWA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5t7xkxlnpQwSl5Cx3p62Gg" type="rss" />
+      <outline title="PAPUA HOLINESS BIBLE CHURCH OF INDONESIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChiabSWBTXjNdWcGALxCMIg" type="rss" />
+      <outline title="Papua Around" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDBFW8p4W9pRx9QdPwgL2ag" type="rss" />
+      <outline title="West Papua Indonesia Cinta Papua" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQPVXk_AerlE_HU7qrKBgHw" type="rss" />
+      <outline title="Papua Global Spices" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaswSW6SF2HLmJxAnYiaofg" type="rss" />
+      <outline title="3LS West Papua" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBUaK4W9kHGAUpqnyEVHGlg" type="rss" />
+      <outline title="WPLO - West Papua" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKBUB30vrO_zZV47ic40_Nw" type="rss" />
+      <outline title="Paradise Broadcasting" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqljKj6-USEerqBOBUgUJ7g" type="rss" />
+      <outline title="WEST PAPUA_KETENGBAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUxCh1V0wGpWt9Fm_GOjSxg" type="rss" />
+      <outline title="Papua Storyteller" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6DlX6kQAOp-e0HjOfF3YBA" type="rss" />
+      <outline title=" #WEST PAPUA UDAPTE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLSWg9etRBmqa2BfudTJxrQ" type="rss" />
+      <outline title="Free West Papua Campaign" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXnJDwb5rdOFlylNLSOLNEg" type="rss" />
+      <outline title="West Papua Explore" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRrR_UJjKV0uyEANxFJDhrw" type="rss" />
+      <outline title="West Papua" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqXEsXf0Fykk_JHIMSDehyQ" type="rss" />
+      <outline title="West Papua Teknologi Tv Official [ id ]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-CHZjVV6y2rDXLTy9_UuWg" type="rss" />
+    </outline>
+  </body>
 </opml>

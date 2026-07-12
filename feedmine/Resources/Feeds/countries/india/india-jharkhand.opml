@@ -4,12 +4,117 @@
     <title>Jharkhand Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Ranchi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672152.cms" type="rss" />
-        <outline title="Prabhat Khabar Jharkhand" xmlUrl="https://www.prabhatkhabar.com/state/jharkhand/rss" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="NIT Jamshedpur" xmlUrl="https://www.nitjsr.ac.in/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="Times of India Ranchi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672152.cms" type="rss" />
+      <outline title="Prabhat Khabar Jharkhand" xmlUrl="https://www.prabhatkhabar.com/state/jharkhand/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="NIT Jamshedpur" xmlUrl="https://www.nitjsr.ac.in/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="In Focus by The Hindu" xmlUrl="https://feeds.megaphone.fm/THGU4956605070" type="rss" category="News Commentary" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Witch, Yes!" xmlUrl="https://pinecast.com/feed/witch-yes" type="rss" category="Spirituality" />
+      <outline title="It's Bigger Than Hip-Hop" xmlUrl="https://www.spreaker.com/show/6088604/episodes/feed" type="rss" category="Society &amp; Culture" />
+      <outline title="Good Things with Rebecca Turner" xmlUrl="https://rss.amperwave.net/v2/feed/telesouth/telesouth-good_things_with_rebecca_turner" type="rss" category="Places &amp; Travel" />
+      <outline title="Taiwan Voices" xmlUrl="https://www.rti.org.tw/en/CombinedProgramPodcastUrl?id=10" type="rss" category="Society &amp; Culture" />
+      <outline title="The Funding Chest" xmlUrl="https://thefundingchest.podomatic.com/rss2.xml" type="rss" category="Leisure" />
+      <outline title="Time Magazine - AIRSLA" xmlUrl="https://pinecast.com/feed/time-magazine-airsla" type="rss" category="Business News" />
+      <outline title="The World" xmlUrl="https://latest-edition.feed.theworld.org/" type="rss" category="News" />
+      <outline title="Climate Emergency" xmlUrl="https://www.omnycontent.com/d/playlist/55de720e-0867-4b8a-9e29-ac8400e69720/bee84628-6837-4503-a5bb-ac88008b2fc3/003fb528-4439-4376-b195-ac88008b2fcd/podcast.rss" type="rss" category="Earth Sciences" />
+      <outline title="Mr. Rishav Talks." xmlUrl="https://anchor.fm/s/25fc4f0c/podcast/rss" type="rss" category="Books" />
+      <outline title="Ideas of India" xmlUrl="https://rss.libsyn.com/shows/288629/destinations/2249435.xml" type="rss" category="Social Sciences" />
+      <outline title="Latest Climate News" xmlUrl="https://feed.podbean.com/atouchofspace/feed.xml" type="rss" category="Earth Sciences" />
+      <outline title="Kidcast Daily" xmlUrl="https://anchor.fm/s/104f66260/podcast/rss" type="rss" category="Education for Kids" />
+      <outline title="The Full Armor of God" xmlUrl="https://thefullarmorofgod.podomatic.com/rss2.xml" type="rss" category="Christianity" />
+      <outline title="Notas de fe y vida" xmlUrl="https://rss.buzzsprout.com/675662.rss" type="rss" category="Christianity" />
+      <outline title="Coaches Don't Play" xmlUrl="https://anchor.fm/s/e92e8fd0/podcast/rss" type="rss" category="Comedy" />
+      <outline title="New City Church" xmlUrl="https://podcasts.subsplash.com/wxp3th5/podcast.rss" type="rss" category="Christianity" />
+      <outline title="Mistress of the Macabre Podcast" xmlUrl="https://rss.buzzsprout.com/1978953.rss" type="rss" category="True Crime" />
+      <outline title="First Baptist Church Fairdale Podcast" xmlUrl="https://www.fbcfairdale.org/feed/?post_type=wpfc_sermon" type="rss" category="Christianity" />
+      <outline title="The #AskAbhijit Show" xmlUrl="https://anchor.fm/s/fd893660/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Awards Chatter" xmlUrl="https://feeds.megaphone.fm/awardschatter" type="rss" category="Film Interviews" />
+      <outline title="The Unbelievers Podcast" xmlUrl="https://www.spreaker.com/show/3244268/episodes/feed" type="rss" category="Comedy" />
+      <outline title="Stance Podcast with Chrystal Genesis" xmlUrl="https://rss.libsyn.com/shows/114821/destinations/650199.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="The Sound Kitchen" xmlUrl="https://apis.rfi.fr/products/get_product/rfi_getpodcast_by_nid?token_application=975d23b8-7a07-11e8-9f62-005056a90194&amp;program.entrepriseId=WB84944-RFI-EN-20110415" type="rss" category="Society &amp; Culture" />
+      <outline title="Hey Changemaker!" xmlUrl="https://feed.podbean.com/heychangemaker/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="World Resources Institute Podcasts Plus" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:15906939/sounds.rss" type="rss" category="Science" />
+      <outline title="SūRYaKaī svāTī - Awakening within the Illusion" xmlUrl="https://anchor.fm/s/206a456c/podcast/rss" type="rss" category="Relationships" />
+      <outline title="MBA Doctor CTC" xmlUrl="https://anchor.fm/s/38358d64/podcast/rss" type="rss" category="How To" />
+      <outline title="Who's Right?" xmlUrl="https://rss.libsyn.com/shows/92096/destinations/461725.xml" type="rss" category="Comedy" />
+      <outline title="Redeye" xmlUrl="https://feeds.zencastr.com/f/_NQkV2dR.rss" type="rss" category="News" />
+      <outline title="Islamic History Podcast" xmlUrl="https://feed.podbean.com/islamichistorypodcast/feed.xml" type="rss" category="Islam" />
+      <outline title="Echoes &amp; Stories of Dharma" xmlUrl="https://media.rss.com/echoes-and-stories-of-dharma/feed.xml" type="rss" category="Spirituality" />
+      <outline title="Vedanta and Yoga" xmlUrl="https://rss.libsyn.com/shows/18757/destinations/13727.xml" type="rss" category="Spirituality" />
+      <outline title="Dr. SHIVA Truth Freedom Health® Podcast" xmlUrl="https://vashiva.com/shiva-podcast/vas-podcast.xml" type="rss" category="Science" />
+      <outline title="KABBpod" xmlUrl="https://feeds.transistor.fm/kabbpod" type="rss" category="Christianity" />
+      <outline title="The INDUStry Show" xmlUrl="https://anchor.fm/s/20707f90/podcast/rss" type="rss" category="Entrepreneurship" />
+      <outline title="Women's Liberation Radio News" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:217793029/sounds.rss" type="rss" category="News" />
+      <outline title="Chilluminati Podcast" xmlUrl="https://audioboom.com/channels/5031584.rss" type="rss" category="True Crime" />
+      <outline title="The Coffee Break" xmlUrl="https://anchor.fm/s/ef6b1850/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Leyendas Legendarias" xmlUrl="https://feeds.simplecast.com/TjkG2gz_" type="rss" category="Comedy" />
+      <outline title="Margii Experiences" xmlUrl="https://anchor.fm/s/ae64bb2c/podcast/rss" type="rss" category="Spirituality" />
+      <outline title="rEvolutionary Woman" xmlUrl="https://revwoman.com/feed/podcast/revolutionary-woman/" type="rss" category="Documentary" />
+      <outline title="beyoutillfull.love" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:288251124/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Daily News Summary" xmlUrl="https://anchor.fm/s/ed4a0a54/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Captain Cool" xmlUrl="https://anchor.fm/s/3e10bd94/podcast/rss" type="rss" category="Sports" />
+      <outline title="The Jesse and Gene Show" xmlUrl="https://rss.buzzsprout.com/937036.rss" type="rss" category="Comedy Interviews" />
+      <outline title="Getaway Diaries" xmlUrl="https://www.spreaker.com/show/6890008/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="DIVINE LOVE TABERNACLE, New Delhi, India" xmlUrl="https://anchor.fm/s/14906d5c/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Asur Akhra Mobile Radio Netarhat, Jharkhand (India)" xmlUrl="https://feeds.redcircle.com/6c4dca8f-a27c-4eb7-934b-59782202dddf" type="rss" category="Education" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Anurag From Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmILNcx7tGuPEX8XKEQ4qLg" type="rss" />
+      <outline title="INDIA JHARKHAND 24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPk2XudbaNuxVU3BakXDnnQ" type="rss" />
+      <outline title="Dance Jharkhand India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqPM-lyp17Dlpo9mxyJVJLw" type="rss" />
+      <outline title="Only for Jobs Jharkhand India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCndi_jHH5PvlHR7kN6IjcQ" type="rss" />
+      <outline title="MR Jharkhand India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC43P8XKoHBDlF3tCEXL4HoA" type="rss" />
+      <outline title="Jharkhand India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1VUN-jgRKHnrQq4knNqQKg" type="rss" />
+      <outline title="Main Jharkhand Hoon मैं झारखण्ड हूँ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ5dLRfF0l90F3QCxSdAfYw" type="rss" />
+      <outline title="Helping Hands Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyFPtxKcCET2eYRDjzgdTdA" type="rss" />
+      <outline title="Jharkhand India News " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_xkSTb6B1vOaTHSCdVIquQ" type="rss" />
+      <outline title="News Watch India (Bihar Jharkhand )" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsVV0VekNIQQAaDmze-YJ-w" type="rss" />
+      <outline title="Voice of Jharkhand " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ35Wi-FcKWiOVZNHn36wGw" type="rss" />
+      <outline title="Tribal India Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCA1Jjmp3XCXO_xxhJ-ReOQQ" type="rss" />
+      <outline title="India Meteorological Department" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_qxTReoq07UVARm87CuyQw" type="rss" />
+      <outline title="NEWS JHARKHAND" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJJnLmtwpg70kbRKni0PzVQ" type="rss" />
+      <outline title="AI India Jharkhand " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCD1cwdSORWHY7XS9kjlBwGw" type="rss" />
+      <outline title="Jharkhand Jobs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOjQ9qz3cBmAO3Hli5X3Gfg" type="rss" />
+      <outline title="Sona News TV Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr7PEtnftjMMgFX1bD5-7MQ" type="rss" />
+      <outline title="Shankar saw India Jharkhand " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkMetUpEkPvVPtR4NspMstQ" type="rss" />
+      <outline title="jharkhand ki khoj" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0XO7aeY377Q6pp3aOtldIw" type="rss" />
+      <outline title="Chief Electoral Officer , Jharkhand " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXQ8hx_QElR6RIwiOPGmrsA" type="rss" />
+      <outline title="INDIA NEWS VIRAL BIHAR /JHARKHAND" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAGRHy8Kbn_HzERWyVmXHfw" type="rss" />
+      <outline title="DB music Jharkhand India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl-xbeQLAgHxmTKcHdmExEA" type="rss" />
+      <outline title="Jharkhand India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQgwFc5uGbCM3xLdTn4TP4Q" type="rss" />
+      <outline title="Echoes of Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpWe1E6H4BW3LppIkCZkN3w" type="rss" />
+      <outline title="Indigenous People of Jharkhand, INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7_ddeSDf6YEfY4JwK6wb6w" type="rss" />
+      <outline title="India News Bihar Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMatIIxgEGX3u0xHdpcQSQQ" type="rss" />
+      <outline title="Jharkhand DD News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZXOTJnelidUi68JANMx5Lg" type="rss" />
+      <outline title="All India Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVrlZV5MMZkVSrLfoTiAs3g" type="rss" />
+      <outline title="News18 Bihar Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC531MlZA5LUbeGwEN_zcppw" type="rss" />
+      <outline title="YOGASANA SPORT ASSOCIATION OF JHARKHAND" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfyvSb0sp2b5aDO2EqkVa6Q" type="rss" />
+      <outline title="NEWS 247 JHARKHAND" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFzLl-VW12135lrQmkKcHyQ" type="rss" />
+      <outline title="News India Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt_xr6ij8dr7wuRQeJ1UUvg" type="rss" />
+      <outline title="india prahari news jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGl0c3F2_iNgTMm91nIH8Ug" type="rss" />
+      <outline title="@AJAYTIGGA youtube ranchi JHARKHAND [](INDIA 🇮🇳)[]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC01Z6TfmtuUeY-PBSppOX6g" type="rss" />
+      <outline title="Capital University Koderma Jharkhand India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcvkajQhZbkHWLYgWZArBow" type="rss" />
+      <outline title="Jharkhand India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCifrwkN_t1Y3LS5cKOig95Q" type="rss" />
+      <outline title="Jharkhand Bird House and Nature lover" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqj3D3GGKRj9EuAgNGRJwBQ" type="rss" />
+      <outline title="Jharkhand Web Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC30w6oayUXG67pRDn401ILg" type="rss" />
+      <outline title="The Prayas India - Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUV0VNtT33DAruuMkgDMhow" type="rss" />
+      <outline title=" Jharkhand India board exams anjan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLnDHuxDe785Vlvi76wP8pw" type="rss" />
+      <outline title="Chanakya News India Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj0LU4vutT_cywJWgRo8sxQ" type="rss" />
+      <outline title="JHARKHAND OF INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4Meh3iY2gYtGNfozFABF2Q" type="rss" />
+      <outline title="Ram Dance Jharkhand India official " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkfwBCE0W9OOw9qOKCJFuEA" type="rss" />
+      <outline title="Jharkhand news express" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfCrlFLVGOR_rV3qiE_8RBg" type="rss" />
+      <outline title="Jharkhand Files" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5mmWv_kRwSQ2BG8mfmqEA" type="rss" />
+      <outline title="jharkhand originality" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm0tDYshXlxHj87NIlDrB3g" type="rss" />
+      <outline title="JHARKHAND JHARNA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCx9vGV-AEFsmVGYfDXK7Czw" type="rss" />
+      <outline title="Zee Bihar Jharkhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZUjHLJivN0OZPC_Wj8JvkA" type="rss" />
+      <outline title="INDIA RJ NEWS JHARKHAND " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9IAmlIZnTahYDKHOxPPv7Q" type="rss" />
+      <outline title="PRIME JHARKHAND NEWS24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2z87jiMXV9UksZoTbJIfjw" type="rss" />
+    </outline>
+  </body>
+</opml>

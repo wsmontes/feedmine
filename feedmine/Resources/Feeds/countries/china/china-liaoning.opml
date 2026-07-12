@@ -4,16 +4,49 @@
     <title>Liaoning Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Shenyang Daily" xmlUrl="https://www.sydaily.com/rss/" type="rss" />
-        <outline title="Dalian News" xmlUrl="https://www.daliannews.com/rss/" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Liaoning Gov" xmlUrl="http://www.ln.gov.cn/rss" type="rss" />
-        <outline title="Shenyang Gov" xmlUrl="http://www.shenyang.gov.cn/rss" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="Dalian FTZ" xmlUrl="http://www.dlftz.gov.cn/rss" type="rss" />
-      </outline>
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Shenyang Daily" xmlUrl="https://www.sydaily.com/rss/" type="rss" />
+      <outline title="Dalian News" xmlUrl="https://www.daliannews.com/rss/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Liaoning Gov" xmlUrl="http://www.ln.gov.cn/rss" type="rss" />
+      <outline title="Shenyang Gov" xmlUrl="http://www.shenyang.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Dalian FTZ" xmlUrl="http://www.dlftz.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="YouTube">
+      <outline title="China Daily 中国日报" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCahujLjSL34EPNxtwKRi_vg" type="rss" />
+      <outline title="Noordin Song نور الدين سونغ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj9ePef-wm8txUaKOs9neMg" type="rss" />
+      <outline title="中国-辽宁-辽阳东旭探房" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLzOH80ozpQeE9WAQHNrgoA" type="rss" />
+      <outline title="medicoabroad1" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCs7FOIiQLclf3kz8xNOFf2Q" type="rss" />
+      <outline title="Ai你们狗粮掉了" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnbwMwPWLsPjjkM4LywUA5A" type="rss" />
+      <outline title="S.Ishibashi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1FuaxDFCj3-XeksNXvR1tg" type="rss" />
+      <outline title="ELIC留学中国 Study in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4q4F1DGByz3DJtCQEHvlg" type="rss" />
+      <outline title="diiiding" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRqpCbeLaIcQacuiaiiZvNA" type="rss" />
+      <outline title="Naushad Aslam vloger" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgmbdkKFdF5RKmDKpRsRf0g" type="rss" />
+      <outline title="南台箱包" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkAJjzX8I95jmNnx1OBaQSA" type="rss" />
+      <outline title="Max Ma in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgUZtN7KwzWMkWMFov0yOZA" type="rss" />
+      <outline title="Pandatourist" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXNVc4SjLVZyYCFUD7oQQ9A" type="rss" />
+      <outline title="Zvikomborero Ingram Chatira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqBEMCrXVBGltcTVRVAvLXw" type="rss" />
+      <outline title="ChinaDrama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUfsysWHfpEK_1XUIgqSsDw" type="rss" />
+      <outline title="Dynastic Destinations" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaPXvPgtOtqaamsLx04_lxA" type="rss" />
+      <outline title="中国🇨🇳辽宁辽弹板簧生产厂家" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwlqYPTsIDzvrD07JKRaSsQ" type="rss" />
+      <outline title="中国红与黑China Red and Black" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCD9J8Vcsv-bPOlI0iC3XUmQ" type="rss" />
+      <outline title="10M大连" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHGRAvRh0M6LO1gXl2aF5vA" type="rss" />
+      <outline title="CHINA中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKPPThuoTmYoHFu9Jsjcfmw" type="rss" />
+      <outline title="FAZAL OFFICIAL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEQ8xBaMzswNYJCyDkM1I5w" type="rss" />
+      <outline title="Cam看世界" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBaNgnYE2i5jqgr7EFfP9zQ" type="rss" />
+      <outline title="China Vlog" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKj09V6TE236IBT3pV-9cJw" type="rss" />
+      <outline title="之声人民" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX26eon5Wt977oZpZ3yO8tw" type="rss" />
+      <outline title="View of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClPE7gW6HoudYTqRQVqaxLw" type="rss" />
+      <outline title="KiraVideo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN8xGEewhWkWuZPjRZApm-w" type="rss" />
+      <outline title="diidiing" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDmduUmxOwhaVwcbFNZ-cNQ" type="rss" />
+      <outline title="Look into China 探索中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGCp8rB--toPrVdNCJqa3uQ" type="rss" />
+      <outline title="Liaoning Explorer" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXoZT6SarK88YLgpczJv8oA" type="rss" />
+      <outline title="中国报告【官方频道】China News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0U14CVbwXqyMwcl9b8PnrA" type="rss" />
+      <outline title="diiidiing" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCae3hIsghyxgzC1uvirjTFw" type="rss" />
+    </outline>
+  </body>
+</opml>

@@ -4,6 +4,89 @@
     <title>Arunachal Pradesh Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Ambiguous Borders" xmlUrl="https://anchor.fm/s/4e973404/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Stories From India" xmlUrl="https://anchor.fm/s/e563890/podcast/rss" type="rss" category="History" />
+      <outline title="The Musafir Stories - India Travel Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/64cf3a81-17df-40ec-990a-af4e00a92e51/f5b69943-5379-4176-a258-af4e00a92e72/podcast.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="JSIA PODCAST" xmlUrl="https://anchor.fm/s/249483a0/podcast/rss" type="rss" category="Social Sciences" />
+      <outline title="FLF, LLC" xmlUrl="https://app.dropwave.io/feed/account/64cb6318-903f-4389-a085-55cdd57b93a9" type="rss" category="News" />
+      <outline title="China Compass" xmlUrl="https://dropwave.io/feed/show/china-compass" type="rss" category="Christianity" />
+      <outline title="Bharat Shakti" xmlUrl="https://anchor.fm/s/32819c14/podcast/rss" type="rss" category="News" />
+      <outline title="The Dusty Mic Chronicles" xmlUrl="https://api.substack.com/feed/podcast/1599412.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="LockerRoom India" xmlUrl="https://anchor.fm/s/25d97d60/podcast/rss" type="rss" category="Sports" />
+      <outline title="ANI Podcast with Smita Prakash" xmlUrl="https://anchor.fm/s/fa8ad6f8/podcast/rss" type="rss" category="Politics" />
+      <outline title="Fight Laugh Feast USA" xmlUrl="https://app.dropwave.io/feed/network/flf-usa" type="rss" category="News" />
+      <outline title="The #AskAbhijit Show" xmlUrl="https://anchor.fm/s/fd893660/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Libre News of The World" xmlUrl="https://www.librenews.world/feed.xml" type="rss" category="Daily News" />
+      <outline title="True Crime Evidence" xmlUrl="https://www.spreaker.com/show/6710923/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Getaway Diaries" xmlUrl="https://www.spreaker.com/show/6890008/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="The Exotic Wonders of India and the World" xmlUrl="https://feeds.hubhopper.com/4cfdcd676707c887a63b86ef71e3998d.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Fine Print: A History and Current Affairs Podcast" xmlUrl="https://anchor.fm/s/e9b4ff70/podcast/rss" type="rss" category="History" />
+      <outline title="Common Threads: An Interfaith Dialogue" xmlUrl="https://feeds.simplecast.com/4g1jyNuN" type="rss" category="Religion" />
+      <outline title="Love For Nature &quot;Biophilia&quot;" xmlUrl="https://anchor.fm/s/db2954d8/podcast/rss" type="rss" category="Pets &amp; Animals" />
+      <outline title="The CCP’s Global Ambitions + NEWS/VIEWS/NOVELS" xmlUrl="https://mp3mp4pdf.net/ccpsglobalambitions.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Narration: Anything For Power - a cartoon biography(2005) + NEWS/VIEWS/NOVELS" xmlUrl="https://mp3mp4pdf.net/anythingforpowermp3.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="(Audio)NEWS/VIEWS/NOVELS" xmlUrl="https://mp3mp4pdf.net/viewsnews.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="State Of Mankind - Documentary/TV(Audio) + NEWS/VIEWS/NOVELS" xmlUrl="http://mp3mp4pdf.net/documentarymp3.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="The CCP’s Global Ambitions + NEWS/VIEWS/NOVELS" xmlUrl="http://mp3mp4pdf.net/ccpsglobalambitionsmp3.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="China in Depth - Past and Present + NEWS/VIEWS/NOVELS" xmlUrl="https://mp3mp4pdf.net/chinaindepth.xml" type="rss" category="TV &amp; Film" />
+      <outline title="VLC TV Series  + NEWS/VIEWS/NOVELS" xmlUrl="https://mp3mp4pdf.net/tvseries-m3u8-vlc.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Wellness Matters + NEWS/VIEWS/NOVELS" xmlUrl="https://mp3mp4pdf.net/wellnessmattersmp3.xml" type="rss" category="TV &amp; Film" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="ARUNACHAL SUPER DANCER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLtWOgXXXicxWtUKOsbKmVw" type="rss" />
+      <outline title="FREEDOM NEWS Arunachal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwN_iTAhuYp-k3KR1uQpZuw" type="rss" />
+      <outline title="CEO ARUNACHAL PRADESH" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClSubU2TLBBpstzqLlS7R6g" type="rss" />
+      <outline title="Arunachal Pradesh Rural Bank " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPpQhUV3n1RL0ZVixGe776Q" type="rss" />
+      <outline title="K4 Kekho Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU2TX3jA3gwQKdPkL7CiB7w" type="rss" />
+      <outline title="IA Arunachal Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQi5l7uwVOMT3paZJGz_QLQ" type="rss" />
+      <outline title="Arunachal 24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQXA_TkPwx8kSKyZLPU5baQ" type="rss" />
+      <outline title="Arunachal Tourism Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtpg6xkL8LmrKoB2vbZ5-Ng" type="rss" />
+      <outline title="ARUNACHAL PRADESH INDIA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfiDI7xE5ENdT2h4Ezuv8uA" type="rss" />
+      <outline title="Mountain Wizard of Arunachal Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNA7Er3QMoC1IYrMGprdWUg" type="rss" />
+      <outline title="Arunachal Pradesh State Legal Services Authority" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTURdvdv2-ynNILOfW583TA" type="rss" />
+      <outline title="Arunachal Pradesh Football Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO_qLII14o-hudyEwOA8Gjg" type="rss" />
+      <outline title="  Herbal Medicine by Yanung Jamoh lego" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoHy8C668GE5kqRdrDHBFfg" type="rss" />
+      <outline title="Arunachalii" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCocsniCl6wER-wPqxWnlRKA" type="rss" />
+      <outline title="Arunachal Outdoor Explorer" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsBcfTE_TJBY4eVGgDjNNFg" type="rss" />
+      <outline title="ARUNACHAL LIVE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAoIiYaxvKdM6prG-et7JA" type="rss" />
+      <outline title="LENZING WEEKLY" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcd2OvCO_0F15hdR3kHlKiw" type="rss" />
+      <outline title="Arunachal Pradesh - Topic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRQ_0D0PFZHhvsJmvffi0fQ" type="rss" />
+      <outline title="MyGov Arunachal Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_Gx7OX3e3LSaT_COgOPTTw" type="rss" />
+      <outline title="@cheymang vlogs Arunachal india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7TljjKSTDe6QZnOhO-LzBQ" type="rss" />
+      <outline title="Arunachal Pradesh, Northeast India - a paradise unexplored" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeMJYhnk5nElgyXlDNg7XOA" type="rss" />
+      <outline title="PMAY Arunachal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZubGx-epVZveIJ2fdQEFxg" type="rss" />
+      <outline title="DD News Arunachal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCebrXqziGdjxt9KrTPmbP5A" type="rss" />
+      <outline title="Visual Ethnography lab R.G.U. Arunachal Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7myoolBp1cnAIhfT3ypfGw" type="rss" />
+      <outline title="NewsFy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJVB8ZNgPGRZQkK-SdAHULw" type="rss" />
+      <outline title="Kanishk Gupta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIKAsBdkwH3ERoJd3hJQ-Jg" type="rss" />
+      <outline title="Ghumakkad Indian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwe9yFyMZLR8s1wun9a0xEw" type="rss" />
+      <outline title="SPM IAS Academy – Arunachal PSC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8XTwBsJM-fRQmcGivtcYgA" type="rss" />
+      <outline title="DIPR Arunachal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOerURRA6mpvrnqKmLA9o8w" type="rss" />
+      <outline title="Seek &amp; Find Learning (Arunachal Pradesh)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0aL8DGirAm5tSvEfyzQjJg" type="rss" />
+      <outline title="Arunachal Pradesh State Lottery" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2q--s26Uyxjnj_g3UxEuWA" type="rss" />
+      <outline title="NORTHEAST PSC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMeONVg2qcKTCnbPh0tDU5A" type="rss" />
+      <outline title="Agri Arunachal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCasCs4FZsZ4KvVXeX3Ml6WA" type="rss" />
+      <outline title="Arunachal University of Studies" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwDMpPEOM2MxRONvreUHibA" type="rss" />
+      <outline title="Arunachal Today" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBqwLf4EBDSQ5FyLCP91sRg" type="rss" />
+      <outline title="ARUNACHAL PRADESH " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHuqIeN4jbwHaRRZHtDwtRQ" type="rss" />
+      <outline title="Iam ARUNACHALEE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGPVqzkcVJtwaAA6YURWjcQ" type="rss" />
+      <outline title="Namit Arunachal Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7MmwZdHyV8Cjg8wFJEGtig" type="rss" />
+      <outline title="CK BLISS by Tage Kanya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_oBhEA5jZ8wIz5x5cLOSIg" type="rss" />
+      <outline title="ATTV-Arunachal Tribune Television" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCckwbfpMnJW7IadBfY7ajnw" type="rss" />
+      <outline title="Arunachal Akuayu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1Tzag8pqvrlwxb8Hh8BdUA" type="rss" />
+      <outline title="Official Channel II Department of Fisheries II Govt of Arunachal Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUBD2KmA-jVedjgJM--z8yA" type="rss" />
+      <outline title="Amazing Arunachal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3k0tnOfnNkfgmL7giIR_3g" type="rss" />
+      <outline title="Ministry of Rural Development, Government of India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC30KBMGqtnLK01RzLX9Njsw" type="rss" />
+      <outline title="Arunachal wilderness" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfS620NpCRmNsdD_8C46Uig" type="rss" />
+      <outline title="Bella Dera Tamin Vlogs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCb-1nH6FChA5415dPbj1b8g" type="rss" />
+      <outline title="Atulyam NIT Arunachal Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_OCo7d-D2D7Bm0_ifDsHYw" type="rss" />
+      <outline title="Nomadic Indian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgilhqoyZrXV2EBlaaAtVaw" type="rss" />
+      <outline title="nature @Arunachal Pradesh Northeast India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVwFom1OXM2iOD9AagNA1Xg" type="rss" />
+      <outline title="Tribes of Arunachal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCME1se23vzhvBqUsg_GyHlA" type="rss" />
+    </outline>
+  </body>
+</opml>

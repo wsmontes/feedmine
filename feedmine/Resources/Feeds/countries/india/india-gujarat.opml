@@ -4,20 +4,78 @@
     <title>Gujarat Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Ahmedabad" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670844.cms" type="rss" />
-        <outline title="Indian Express Ahmedabad" xmlUrl="https://indianexpress.com/section/cities/ahmedabad/feed/" type="rss" />
-        <outline title="Divya Bhaskar" xmlUrl="https://www.divyabhaskar.co.in/rss" type="rss" />
-        <outline title="Sandesh" xmlUrl="https://www.sandesh.com/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Gujarat Gov" xmlUrl="https://www.gujaratindia.gov.in/rss" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="Vibrant Gujarat" xmlUrl="https://vibrantgujarat.com/rss" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="NIT Surat" xmlUrl="https://www.svnit.ac.in/rss" type="rss" />
-      </outline>
-      <outline text="Sports" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Times of India Ahmedabad" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670844.cms" type="rss" />
+      <outline title="Indian Express Ahmedabad" xmlUrl="https://indianexpress.com/section/cities/ahmedabad/feed/" type="rss" />
+      <outline title="Divya Bhaskar" xmlUrl="https://www.divyabhaskar.co.in/rss" type="rss" />
+      <outline title="Sandesh" xmlUrl="https://www.sandesh.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Gujarat Gov" xmlUrl="https://www.gujaratindia.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Vibrant Gujarat" xmlUrl="https://vibrantgujarat.com/rss" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="NIT Surat" xmlUrl="https://www.svnit.ac.in/rss" type="rss" />
+    </outline>
+    <outline text="Sports" />
+    <outline text="Podcasts">
+      <outline title="Car Scrap Dealer In Ahmedabad , Gujarat India" xmlUrl="https://feeds.hubhopper.com/a85b2f9068884103d50ade4450565f7c.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="2012 - India Ijtima (Gujarat)" xmlUrl="https://www.spreaker.com/show/6722358/episodes/feed" type="rss" category="Religion" />
+      <outline title="Industrial Scrap For Sale In Ahmedabad , Gujarat India" xmlUrl="https://feeds.hubhopper.com/35ea99a88f9b9e0d1d2a96629ee605fa.rss" type="rss" category="Business" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="GUJARAT INDIA 🇮🇳" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu-7cZ4zkBSl1wAbvCOK-OA" type="rss" />
+      <outline title="comedy video Gujarat India 900k" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi6eTSZhVXRVrl9wgybHI-g" type="rss" />
+      <outline title="Gujarat From India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWk-pms39U7sVYa0OHWh9GQ" type="rss" />
+      <outline title="Surat Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYGB8NF0oMtmAKTz2qgrXVg" type="rss" />
+      <outline title="life in gujarat india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxRD3ju-LAq5xTYxNbqyJUQ" type="rss" />
+      <outline title="INDIA GUJARAT" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQvICvAy0xkTHc7yeH3F5zQ" type="rss" />
+      <outline title="Gujarat India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCidrHo9EqOS7gd1HYCaqbuQ" type="rss" />
+      <outline title="Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEwhoXqh61MciS7Ka4WRCiw" type="rss" />
+      <outline title="Indian Village Life Gujarat" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZovXbBgKvXBDRv-D-KK56A" type="rss" />
+      <outline title="Gujarat India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3isoHshSuV2tspQQp6cb3A" type="rss" />
+      <outline title="Gujarati Indian Vehicle Wala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrguV7NZHlb96X7DXkGGoQ" type="rss" />
+      <outline title="Gujarat Indian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYWlrZT-A0GT7zMU16Ar5fw" type="rss" />
+      <outline title="GuJarat india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcg9veSF_P6KnLMY0gPE1UQ" type="rss" />
+      <outline title="India Voice Gujarati" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmc1ebX33SkB0h5fGxd0DIQ" type="rss" />
+      <outline title="India &amp; Gujarat News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6Y8DA3xMqhJO7918MfgfSg" type="rss" />
+      <outline title="Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC20S-zbKfAeIt4rPZk5KnUQ" type="rss" />
+      <outline title="India Gujarat" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSP4KeaqW2I-vfuTiKDDOAw" type="rss" />
+      <outline title="India Abroad Gujarati" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHpjpEnhyOpl4xQyIO-QsjQ" type="rss" />
+      <outline title="india gujarat" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6C-YIRT-thrHf1oPnVYm1Q" type="rss" />
+      <outline title="clean Gujarat India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbw49SijyEuvNCbux5HDO9A" type="rss" />
+      <outline title="GUJARAT GIR COW THE PRIDE OF INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP8BmimIy1mAb3ByauLVoeA" type="rss" />
+      <outline title="Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCD9uvuvKJIAqLB85qTY8Opw" type="rss" />
+      <outline title="Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMz6rcPvITvfAHifb_Sj7fw" type="rss" />
+      <outline title="Vibes Of India Gujarati" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkxf7wzwEyIZZASuMeHSmzg" type="rss" />
+      <outline title="gujarat titans India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClbjWZegl9URAZpjbY_TytA" type="rss" />
+      <outline title="Gujarat Titans" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCBe9iIoN9Ar-Elluxca-Xw" type="rss" />
+      <outline title="ChessBase India Gujarati" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDYCh2EP2fYv8WC2L12MwVA" type="rss" />
+      <outline title="Gujarat India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYgIWhv7nIspQbbq3Xk7DfQ" type="rss" />
+      <outline title="Gujarat india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3XvZW-M8lpI6vQZ7ENOGRw" type="rss" />
+      <outline title="Ramjibhai  Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_i6OkWxUiO9ecPY0ebBCjw" type="rss" />
+      <outline title="GUJARAT INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqNvbwi5ga2E23P37ZeVJ3Q" type="rss" />
+      <outline title="GUJARAT INDIA GJ05" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsNxztH0p1dXaAP3srE2xtQ" type="rss" />
+      <outline title="The Better India - Gujarati" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdAbw3kboFd8aA5FmZJDZuw" type="rss" />
+      <outline title="Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp0Ze_YhYyRelvdKt62NCxw" type="rss" />
+      <outline title="Gujarat India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP-4ef2B3knltxyyh00Uoxw" type="rss" />
+      <outline title="Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3N1onbdcfEMITo3V3QNpAg" type="rss" />
+      <outline title="GUJARAT INDIA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY3TB8ceVvRYiL2tbDfblXA" type="rss" />
+      <outline title="HARIKRISHNA EXPORTS RAJKOT GUJARAT INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ9DOGoQOqKRNYSYLHTOETA" type="rss" />
+      <outline title="Ganpat University, GUNI, Gujarat, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSPAqyzjpTPtrQmbU3yFe0A" type="rss" />
+      <outline title="Gujarat India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr1WYiz-wMaizKp0jYz48_w" type="rss" />
+      <outline title="Represent Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB0mx1jBo2xAcDawdKlBwEg" type="rss" />
+      <outline title="CMO Gujarat" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCs7-WsyyKAU7JifmCcwYVQ" type="rss" />
+      <outline title="PUBLIC INDIA NEWS GUJARATI " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv3i0eymt_dcjr2UkVxibUg" type="rss" />
+      <outline title="Gujarat India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0JnI1TB0iXqPC082sq22bA" type="rss" />
+      <outline title="Gujarat Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7Q1wQXsdCOs1OakD7yb-TA" type="rss" />
+      <outline title="in INDIA in GUJARAT" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR_18UD2NMUp26w7F6E5cww" type="rss" />
+      <outline title="gujarat technology india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIvS-3glwxsepJtl5YIXzQg" type="rss" />
+      <outline title="Gujarat Indian restaurant, Vietnam." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtWduvQ176JzKAmdHbRF6cg" type="rss" />
+      <outline title="India News Gujarat" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNQrca4WoGxtxWvabBI64gA" type="rss" />
+      <outline title="Gujarat India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXOMLnzEHVTo468_skOvCVQ" type="rss" />
+    </outline>
+  </body>
+</opml>

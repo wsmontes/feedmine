@@ -4,8 +4,17 @@
     <title>Fukushima Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Fukushima Pref Gov" xmlUrl="https://www.pref.fukushima.lg.jp/rss/" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Fukushima Pref Gov" xmlUrl="https://www.pref.fukushima.lg.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="The Hangar Z Podcast" xmlUrl="https://rss.buzzsprout.com/1281104.rss" type="rss" category="Aviation" />
+      <outline title="TaiwanPlus on ICRT" xmlUrl="https://www.icrt.com.tw/en/ext/rss/TaiwanPlusonICRT.xml" type="rss" category="News" />
+      <outline title="Yoshi Didn't Podcast" xmlUrl="https://anchor.fm/s/d59ac9c/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Learn Japanese w/ Manga Sensei" xmlUrl="https://www.spreaker.com/show/2726599/episodes/feed" type="rss" category="Language Learning" />
+      <outline title="The Kaiju Transmissions Podcast" xmlUrl="https://feed.podbean.com/kaijutransmissions/feed.xml" type="rss" category="Film Reviews" />
+      <outline title="Johnny Massacre's World" xmlUrl="https://anchor.fm/s/fb489d64/podcast/rss" type="rss" category="Politics" />
+    </outline>
+  </body>
+</opml>

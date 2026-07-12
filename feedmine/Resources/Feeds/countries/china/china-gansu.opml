@@ -4,7 +4,66 @@
     <title>Gansu Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="BELLUMARTIS PODCAST" xmlUrl="https://feeds.ivoox.com/feed_fg_f1618669_filtro_1.xml" type="rss" category="History" />
+      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
+      <outline title="I'm Learning Mandarin" xmlUrl="https://anchor.fm/s/647cc43c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="You Can Learn Chinese" xmlUrl="https://anchor.fm/s/f047cea8/podcast/rss" type="rss" category="Language Learning" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="northwest.travel101" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF3XTIMC0Ws3g_Fld4aDwBw" type="rss" />
+      <outline title="Scenery of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0a7n5kP5_HPDcgn1GEZW3w" type="rss" />
+      <outline title="Hidden Northwest China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUwbCltjtPUsWXvpmQ4VP9w" type="rss" />
+      <outline title="Jade Ruyi Scepter Goes Global" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfr-5P3anelsWFXdRqgGJBw" type="rss" />
+      <outline title="White Cat Sees China白猫看中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6vhnMFe9jGCHolHtRDvxsg" type="rss" />
+      <outline title="Northwest China Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdyn2f67HogsTuI8t8WHjFA" type="rss" />
+      <outline title="Chinese Landscape" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9_aqFAqLSBz_2iv8s_4BHg" type="rss" />
+      <outline title="Chinese flavor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAZsd5_IvzzWWPM-HEzKTPw" type="rss" />
+      <outline title="小路宁子" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfT8sLcZPplMPZLJXVBUAZA" type="rss" />
+      <outline title="tianji4517" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCc-cEf7eATEPuorSnIKgICg" type="rss" />
+      <outline title="Iliyad" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEG683T-RRs7lwPBGTZersA" type="rss" />
+      <outline title="RJ M" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWlVsGQEiKyNrqDD6E5G9FA" type="rss" />
+      <outline title="中国有机好物" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEw0IChsMyE29n4ceqPiVSA" type="rss" />
+      <outline title="China Travel_SilkRoad Horizon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtGceJrtBUl0cH1ofELKQhQ" type="rss" />
+      <outline title="China Inbound Center " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6RVqurfh6uK1CiLVEzCqAg" type="rss" />
+      <outline title="Weltkind" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwm4lG2CbxXlVjDgka68UWQ" type="rss" />
+      <outline title="Gansu Today" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCitVKTWBAljH1MEYlU--HUg" type="rss" />
+      <outline title="State of Play in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFdWxQ6Ru6DnJ94y4xMW3KQ" type="rss" />
+      <outline title="WDW" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5V7fPNDXnBPQPfhCJvBtfw" type="rss" />
+      <outline title="Abroad in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-ByLJ5cLWEceumcVUIlSDA" type="rss" />
+      <outline title="Follow the beard to see China 跟着大胡子看中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGQ2A4d8iGTHzb6DXe_R6Hg" type="rss" />
+      <outline title="Zhongjie Fan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyUZxhA0DSNHn_342vflO2w" type="rss" />
+      <outline title="kelly crawford" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsOxNmFgXECR4GXifYprXRQ" type="rss" />
+      <outline title="China Custom Travel_SilkRoad Horizon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8cnS6x19fgcJSCuPseiIQ" type="rss" />
+      <outline title="Maltaccc Maltaccc" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxPTA2dQPTOO6gBQK4v8pgA" type="rss" />
+      <outline title="bribei" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGcCpPc0_7SHfwuubmaKdoA" type="rss" />
+      <outline title="ChinaStar (Made in China)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf2HxDHuZnuDUItC08fRK-w" type="rss" />
+      <outline title="走进中国-NEW CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqj1wAiR0zM8fbHiSqsha6g" type="rss" />
+      <outline title="Dr. Explores" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY7gBJQQmZ4xKzwD2KoROCg" type="rss" />
+      <outline title="Feeling China with Suvi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHwHgaC-oCWhktPLBoHKwgA" type="rss" />
+      <outline title="TOYO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoqekl8ZNFVKzo9bNSR1GSg" type="rss" />
+      <outline title="Aerial China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-k091xKde0PVpz5WuZqGug" type="rss" />
+      <outline title="China National Tourist Office Sydney" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzCuc_hgG6XQhBNIhUWkCsw" type="rss" />
+      <outline title="丝路中国行" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJfRFiaojbkZSVu6gUjRfEg" type="rss" />
+      <outline title="edwin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1VUm8rejFZhojl6dh5tAyA" type="rss" />
+      <outline title="daqi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-M3Grtq10M1nZJfiaWApPA" type="rss" />
+      <outline title="China Pulse" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHxO8-hUrDKk5jWK4pGfvKw" type="rss" />
+      <outline title="Aerial photography of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCo3llW5kMVZIqTQ_7EWT9Rw" type="rss" />
+      <outline title="240hrs in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGZVdrVYvXt0kDBsHgk_xHg" type="rss" />
+      <outline title="shuangxi wang" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCil9Q0mabBZ9KS2SRvLkWNQ" type="rss" />
+      <outline title="Cocina China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9lcl1n9D4u4Qx_1Lxip-vQ" type="rss" />
+      <outline title="华夏光影(China in Lens)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyQRxCe35Alv2Cs0zwfObXQ" type="rss" />
+      <outline title="Visit China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC63Jo91Cg5Sx9r-jmOxmWAw" type="rss" />
+      <outline title="孙二娘带你游中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt-RhZk4X57uup1jbPz4ROg" type="rss" />
+      <outline title="chinatoursnet" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu5MBjv8YtkjYJqUxiAwhHg" type="rss" />
+      <outline title="LANDSCAPE CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpHLQlHOVBMitdAwfjaiabw" type="rss" />
+      <outline title="中国风景 Chinese scenery" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCji0cOUVEAw3fycMv_5H_qA" type="rss" />
+      <outline title="Destination China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-rcj58bnn74ENcdOqPu95A" type="rss" />
+      <outline title="佳景看中国A good view of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdUlWL9LMhFpkw06rFxolog" type="rss" />
+      <outline title="Scenic China 探景中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOCklC5RsEEMTmutaRd-oAQ" type="rss" />
+    </outline>
+  </body>
+</opml>

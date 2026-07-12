@@ -4,5 +4,8 @@
     <title>Bolívar Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Los influenciers en Colombia" xmlUrl="https://anchor.fm/s/5ad27468/podcast/rss" type="rss" category="Arts" />
+    </outline>
+  </body>
 </opml>

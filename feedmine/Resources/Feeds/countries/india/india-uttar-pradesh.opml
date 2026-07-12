@@ -4,21 +4,123 @@
     <title>Uttar Pradesh Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Lucknow" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672759.cms" type="rss" />
-        <outline title="Amar Ujala" xmlUrl="https://www.amarujala.com/rss" type="rss" />
-        <outline title="Indian Express Lucknow" xmlUrl="https://indianexpress.com/section/cities/lucknow/feed/" type="rss" />
-        <outline title="The Pioneer Lucknow" xmlUrl="https://www.dailypioneer.com/rss" type="rss" />
-        <outline title="Live Hindustan" xmlUrl="https://www.livehindustan.com/rss" type="rss" />
-        <outline title="Dainik Bhaskar UP" xmlUrl="https://www.bhaskar.com/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="UP Government" xmlUrl="https://up.gov.in/rss" type="rss" />
-        <outline title="Noida Authority" xmlUrl="https://www.noidaauthorityonline.in/rss" type="rss" />
-      </outline>
-      <outline text="Education">
+    <outline text="News">
+      <outline title="Times of India Lucknow" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672759.cms" type="rss" />
+      <outline title="Amar Ujala" xmlUrl="https://www.amarujala.com/rss" type="rss" />
+      <outline title="Indian Express Lucknow" xmlUrl="https://indianexpress.com/section/cities/lucknow/feed/" type="rss" />
+      <outline title="The Pioneer Lucknow" xmlUrl="https://www.dailypioneer.com/rss" type="rss" />
+      <outline title="Live Hindustan" xmlUrl="https://www.livehindustan.com/rss" type="rss" />
+      <outline title="Dainik Bhaskar UP" xmlUrl="https://www.bhaskar.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="UP Government" xmlUrl="https://up.gov.in/rss" type="rss" />
+      <outline title="Noida Authority" xmlUrl="https://www.noidaauthorityonline.in/rss" type="rss" />
+    </outline>
+    <outline text="Education">
 </outline>
-      <outline text="Culture">
-        <outline title="UP Tourism" xmlUrl="https://uptourism.gov.in/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="Culture">
+      <outline title="UP Tourism" xmlUrl="https://uptourism.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="NPR's Book of the Day" xmlUrl="https://feeds.npr.org/510364/podcast.xml" type="rss" category="Books" />
+      <outline title="Daybreak" xmlUrl="https://feeds.transistor.fm/daybreak-3e66db67-ddb3-4cd3-9ba9-460bd586dcbb" type="rss" category="Business News" />
+      <outline title="ȘtiriCreștine.ro" xmlUrl="https://anchor.fm/s/1ddac344/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Make Education Great Again! w/ Chris Morris" xmlUrl="https://anchor.fm/s/587bbcec/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="Travel123" xmlUrl="https://anchor.fm/s/e4eb584/podcast/rss" type="rss" category="Books" />
+      <outline title="Podcast for the Visually-Impaired" xmlUrl="https://anchor.fm/s/5e1d8888/podcast/rss" type="rss" category="Education" />
+      <outline title="Got Milk? - The Indian Dairy Context." xmlUrl="https://anchor.fm/s/fc4c75b4/podcast/rss" type="rss" category="Business" />
+      <outline title="Reds Ramblings" xmlUrl="https://anchor.fm/s/215d3344/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="ANI Podcast with Smita Prakash" xmlUrl="https://anchor.fm/s/fa8ad6f8/podcast/rss" type="rss" category="Politics" />
+      <outline title="Serial Killers: Real Life Documentaries" xmlUrl="https://www.spreaker.com/show/6214547/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Live From America with Jeremy Herrell" xmlUrl="https://media.rss.com/jeremyherrell/feed.xml" type="rss" category="Government" />
+      <outline title="Calvary South Austin Godcast" xmlUrl="https://feeds.feedburner.com/calvarysouthaustin" type="rss" category="Christianity" />
+      <outline title="Reese On The Radio" xmlUrl="https://www.spreaker.com/show/5118853/episodes/feed" type="rss" category="Politics" />
+      <outline title="The IndiaDirectSourcing’s Podcast" xmlUrl="https://feed.podbean.com/indiadirectsourcing/feed.xml" type="rss" category="Entrepreneurship" />
+      <outline title="The C Report" xmlUrl="https://anchor.fm/s/a39e3b0/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="EH Radio Canadian Politics with a twist" xmlUrl="https://www.spreaker.com/show/2144764/episodes/feed" type="rss" category="News Commentary" />
+      <outline title="Unstress with Dr Ron Ehrlich" xmlUrl="https://www.omnycontent.com/d/playlist/1306acca-8e91-407b-adba-adf70057d15f/773041ac-0ce2-41e4-9337-ae11015b73d3/5c706584-49dd-4e8f-a11b-ae11015b73e6/podcast.rss" type="rss" category="Medicine" />
+      <outline title="TDC Podcast" xmlUrl="https://feeds.libsyn.com/454056/rss" type="rss" category="Comedy" />
+      <outline title="Uttar Pradesh ki Khabrein" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD9618744492" type="rss" category="Daily News" />
+      <outline title="La Criminoteca" xmlUrl="https://feeds.ivoox.com/feed_fg_f12092781_filtro_1.xml" type="rss" category="True Crime" />
+      <outline title="Crime Cafe Podcast" xmlUrl="https://anchor.fm/s/107cb784/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Action Radio with Greg Penglis" xmlUrl="https://www.spreaker.com/show/6449184/episodes/feed" type="rss" category="Politics" />
+      <outline title="This is True, Really News" xmlUrl="https://anchor.fm/s/4b86a268/podcast/rss" type="rss" category="Comedy" />
+      <outline title="The Daily" xmlUrl="https://feeds.simplecast.com/Sl5CSM3S" type="rss" category="Daily News" />
+      <outline title="Live From Studio 6B" xmlUrl="https://rss.art19.com/live-from-studio-6b" type="rss" category="News" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="Stories From India" xmlUrl="https://anchor.fm/s/e563890/podcast/rss" type="rss" category="History" />
+      <outline title="80,000 Hours Podcast" xmlUrl="https://feeds.transistor.fm/80000-hours-podcast" type="rss" category="Education" />
+      <outline title="Sri Ramana Teachings" xmlUrl="https://feed.podbean.com/ramanahou/feed.xml" type="rss" category="Hinduism" />
+      <outline title="The Conservative Input" xmlUrl="https://anchor.fm/s/63c4a12c/podcast/rss" type="rss" category="Politics" />
+      <outline title="Observe and Retort: the news you missed this week" xmlUrl="https://feeds.redcircle.com/5b0e9c86-a3b4-4e74-9a39-09d1920b0236" type="rss" category="News Commentary" />
+      <outline title="Love For Nature &quot;Biophilia&quot;" xmlUrl="https://anchor.fm/s/db2954d8/podcast/rss" type="rss" category="Pets &amp; Animals" />
+      <outline title="This Is Hell!" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:70607212/sounds.rss" type="rss" category="News" />
+      <outline title="CiTR -- End of the World News" xmlUrl="https://www.spreaker.com/show/4253878/episodes/feed" type="rss" category="Society &amp; Culture" />
+      <outline title="Slam the Gavel" xmlUrl="https://rss.buzzsprout.com/1364944.rss" type="rss" category="Government" />
+      <outline title="Slam the Gavel" xmlUrl="https://anchor.fm/s/24d78970/podcast/rss" type="rss" category="Government" />
+      <outline title="Public Health" xmlUrl="https://anchor.fm/s/d2ef63c/podcast/rss" type="rss" category="Health &amp; Fitness" />
+      <outline title="The Brookings Cafeteria" xmlUrl="https://rss.libsyn.com/shows/56255/destinations/209635.xml" type="rss" category="Politics" />
+      <outline title="The Marc Patrone Show" xmlUrl="https://www.spreaker.com/show/4119364/episodes/feed" type="rss" category="News" />
+      <outline title="Better Off" xmlUrl="https://feeds.simplecast.com/7GYf_SIl" type="rss" category="Science" />
+      <outline title="Coronavirus (COVID-19) Press Conferences" xmlUrl="https://feeds.simplecast.com/pRIMLPAE" type="rss" category="Health &amp; Fitness" />
+      <outline title="Ear to Asia" xmlUrl="https://media.rss.com/ear-to-asia/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="The HotSeat | Audio and pdf" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/theHotSeat_iTunesRssAudioPdfLatest300.xml" type="rss" category="Courses" />
+      <outline title="The Politics of Race in American Film" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/thePoliticsOfRaceInAmericanFilm_iTunesAudio.xml" type="rss" category="Courses" />
+      <outline title="LSE IQ podcast" xmlUrl="https://feeds.captivate.fm/lse-iq-podcast/" type="rss" category="Education" />
+      <outline title="Public Authority Podcast" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/thePublicAuthorityPodcast_iTunesAudio.xml" type="rss" category="Courses" />
+      <outline title="LSE IQ" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/lseiqpodcast_iTunesU.xml" type="rss" category="Courses" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Uttar Pradesh Hub" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHwTr9c3R7aMSH9uYWe8Ozg" type="rss" />
+      <outline title="Uttar Pradesh Weather" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHoS_BAhmtDUQm8eXcgWPeA" type="rss" />
+      <outline title="MYBharat Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrmloqHue_bwsx3i7ny6k6g" type="rss" />
+      <outline title="Zee Uttar Pradesh UttaraKhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWmwc3u2ikBG2Xfitc_26gg" type="rss" />
+      <outline title="Uttar Pradesh Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC84RDcta_VIl36WCUQcSbMA" type="rss" />
+      <outline title="Incredible India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMxJPchGLE_CJ1MJbJy-xDQ" type="rss" />
+      <outline title="ALL UTTAR PRADESH ASSOCIATION OF THE DEAF" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlG4PvXHofrnYtZb57x1vQ" type="rss" />
+      <outline title="India News Hindi Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcwAGmtxOptzJd3GbGcGYBA" type="rss" />
+      <outline title="Basketball Federation of India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAaCJZv-gFr-3chb7x998Rw" type="rss" />
+      <outline title="Capital TV Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEJFqp40-QOWiwQLDjpvIFg" type="rss" />
+      <outline title="Uttar Pradesh Government Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC27FroHf6MNL8AONmhHMFGw" type="rss" />
+      <outline title="Azadari Uttar Pradesh India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoaa22H1KFUU2LNBD5WrBmQ" type="rss" />
+      <outline title="Bharat Samachar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8Xb-hkR53QVN4GlUHi1iZg" type="rss" />
+      <outline title="uttar pradesh India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1Ys3Sof6pPemKB3rlKR9jw" type="rss" />
+      <outline title="The Uttar Pradesh Index" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf0KXdgIHk8Ep1U1ZoQtUzQ" type="rss" />
+      <outline title="Yogi Adityanath" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLbKTE8DJz-Yay2WqtQg65Q" type="rss" />
+      <outline title="Cricket Association for the blind in India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuy6-1zMCWGMmDD5VLRLeQQ" type="rss" />
+      <outline title="Uttar Pradesh Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRG4oSzqDtX5en_xAx8ClyQ" type="rss" />
+      <outline title="Amar Ujala Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq7DM5jsVyFHdAe_9CoqxVQ" type="rss" />
+      <outline title="4PM UP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCD2fLRSLsou1D2Fv--flFgQ" type="rss" />
+      <outline title="Transform Rural India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCchSgyVSohWaP40PcKHhlqw" type="rss" />
+      <outline title="Excavators in India 🇮🇳 " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa6u_Gb5W6kReYFAm7XXdyA" type="rss" />
+      <outline title="New Holland Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxWJQd-iWOv6nX5njKIjwvw" type="rss" />
+      <outline title="News State" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeNP3dAy9_A32IWYZq_PZMQ" type="rss" />
+      <outline title="News18 Urdu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9IQhNgS43lmUdU-KdGyb0A" type="rss" />
+      <outline title="One in India Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBRpwYLx6metRyc2bcpTZew" type="rss" />
+      <outline title="National Ayush Mission Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOFWFFgzrdGRViBSkRInLIQ" type="rss" />
+      <outline title="TV9 Uttar Pradesh Uttarakhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_Slh-aWOWKJyuHvqNeyMrA" type="rss" />
+      <outline title="Real Life India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwMxg5ku9wiOdLeutkmfZmw" type="rss" />
+      <outline title="IndiaTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCttspZesZIDEwwpVIgoZtWQ" type="rss" />
+      <outline title="UTTAR PRADESH VIDHAN SABHA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXGStDe957J-0wHPjPuMcjg" type="rss" />
+      <outline title="Doordarshan Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxtPipsf2nUZ9xM33TPe93Q" type="rss" />
+      <outline title="News18 UP Uttarakhand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCafYgzpyw7aIUYOLjjADu7w" type="rss" />
+      <outline title="Uttar Pradesh Urdu Akademi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOgeIImOfDz0n3ek5Ow1RFg" type="rss" />
+      <outline title="News Watch India ( uttar pradesh uttarakhand )" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIZhs9rExlTW6TfVe3HwMKA" type="rss" />
+      <outline title="News India Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNiKU9jtQGVPhYeX4ytTOHA" type="rss" />
+      <outline title="Shreshth Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7FA_bIrFVHv0tKNqsqwX4w" type="rss" />
+      <outline title="India's Vlogs Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIDjWn-UqSDZ8ruznsgM5zg" type="rss" />
+      <outline title="India Meteorological Department" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_qxTReoq07UVARm87CuyQw" type="rss" />
+      <outline title="India News UP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHbJrgTK_cxPQki6PHt5kw" type="rss" />
+      <outline title="UttarPradesh | Varanasi | India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyLjXUvA2juU88x5ibepSQg" type="rss" />
+      <outline title="Uttar pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxAXInGFSoXikWB9Q13b2BQ" type="rss" />
+      <outline title="India Voice Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWqD2KE7pRHL8GILgN4buNQ" type="rss" />
+      <outline title="Aam Aadmi Party Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOndIgj7FjfcVvX36bTwIeQ" type="rss" />
+      <outline title="India Village Uttar Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-IBP-zikEz9FG7vNZOBKYg" type="rss" />
+      <outline title="All India Uttar Pradesh " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP5vOQziO_htQwkeU48Tm9w" type="rss" />
+      <outline title="Sportsadesh Uttar Pradesh India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1NACYcuHc0A66DNEYTaftA" type="rss" />
+      <outline title="PMJAY-UP (Ayushman Uttar Pradesh)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIf1LzMy7VhP1GzSI9pOvuw" type="rss" />
+      <outline title="Uttar Pradesh Cricket Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkTed3zsmEjjcXvhnVBXY2Q" type="rss" />
+      <outline title="Uttar pradesh tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXke6yNl5EOkG9XFSx67y7Q" type="rss" />
+    </outline>
+  </body>
+</opml>

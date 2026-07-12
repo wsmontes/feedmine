@@ -4,9 +4,17 @@
     <title>Okayama Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Okayama Pref Gov" xmlUrl="https://www.pref.okayama.jp/rss/" type="rss" />
-      </outline>
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Okayama Pref Gov" xmlUrl="https://www.pref.okayama.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Abroad in Japan" xmlUrl="https://feeds.acast.com/public/shows/4d1eb966-6f07-4562-b9f1-9fd512f9631e" type="rss" category="Places &amp; Travel" />
+      <outline title="Got Faded Japan" xmlUrl="https://feed.podbean.com/gotfadedjapankrew/feed.xml" type="rss" category="Comedy" />
+    </outline>
+  </body>
+</opml>

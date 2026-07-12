@@ -23,17 +23,24 @@
     <outline text="Culture">
       <outline title="Calgary Arts Development" xmlUrl="https://calgaryartsdevelopment.com/feed/" type="rss" />
     </outline>
-<outline text="Business">
+    <outline text="Business">
       <outline title="Calgary Chamber" xmlUrl="https://www.calgarychamber.com/feed/" type="rss" />
       <outline title="Edmonton Chamber" xmlUrl="https://www.edmontonchamber.com/feed/" type="rss" />
     </outline>
     <outline text="Cities">
-<outline text="Jasper">
+      <outline text="Jasper">
         <outline title="Jasper Fitzhugh" xmlUrl="https://www.fitzhugh.ca/feed/" type="rss" />
       </outline>
       <outline text="Grande Prairie">
         <outline title="Daily Herald Tribune" xmlUrl="https://www.dailyheraldtribune.com/feed/" type="rss" />
       </outline>
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Western Context - News from Alberta, BC, and Canada" xmlUrl="https://westerncontext.ca/episodes.xml" type="rss" category="News" />
+      <outline title="Skillz &amp; Thrillz: Alberta's Trade &amp; Tech Youth" xmlUrl="https://rss.buzzsprout.com/2396769.rss" type="rss" category="Business" />
+      <outline title="Our Savior Lutheran Podcast" xmlUrl="https://oslc-oursavior.com/index.php?option=com_sermonspeaker&amp;view=feed&amp;format=raw&amp;itemid=192" type="rss" category="Religion" />
+      <outline title="County Voice - The Alberta Ag Podcast" xmlUrl="https://www.spreaker.com/show/4970666/episodes/feed" type="rss" category="News" />
+      <outline title="Audio – Canada Waterfowl Hunting in Saskatchewan &amp; Alberta" xmlUrl="https://saskaltawaterfowloutfitters.com/type/audio/feed" type="rss" />
     </outline>
   </body>
 </opml>

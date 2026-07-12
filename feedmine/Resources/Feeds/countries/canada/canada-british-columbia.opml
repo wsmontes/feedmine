@@ -27,13 +27,18 @@
     <outline text="Environment">
       <outline title="Sierra Club BC" xmlUrl="https://sierraclub.bc.ca/feed/" type="rss" />
     </outline>
-<outline text="Cities">
+    <outline text="Cities">
       <outline text="Surrey">
         <outline title="Surrey Now-Leader" xmlUrl="https://www.surreynowleader.com/feed/" type="rss" />
       </outline>
-<outline text="Kelowna">
+      <outline text="Kelowna">
         <outline title="Kelowna Now" xmlUrl="https://www.kelownanow.com/feed/" type="rss" />
       </outline>
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Chronicles of Canada Volume 23 - The Cariboo Trail: A Chronicle of the Gold-fields of British Columbia by Agnes C. Laut" xmlUrl="https://www.loyalbooks.com/book/cariboo-trail-by-agnes-c-laut/feed" type="rss" category="Society" />
+      <outline title="GOABC Guide Outfitters Association of British Columbia Canada" xmlUrl="https://www.goabc.org/feed" type="rss" />
+      <outline title="Chronicles of Canada Volume 23 - The Cariboo Trail: A Chronicle of the Gold-fields of British Columbia by Agnes C. Laut (1871 - 1936)" xmlUrl="https://librivox.org/rss/7793" type="rss" category="Arts" />
     </outline>
   </body>
 </opml>

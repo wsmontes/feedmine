@@ -4,19 +4,104 @@
     <title>Sichuan Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Sichuan News" xmlUrl="http://www.newssc.org/rss/" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Sichuan Gov" xmlUrl="http://www.sc.gov.cn/rss" type="rss" />
-      </outline>
-      <outline text="Business">
+    <outline text="News">
+      <outline title="Sichuan News" xmlUrl="http://www.newssc.org/rss/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Sichuan Gov" xmlUrl="http://www.sc.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Business">
 </outline>
-      <outline text="Technology">
-        <outline title="Tianfu Software Park" xmlUrl="http://www.tfsp.net/rss/" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="Sichuan Univ" xmlUrl="https://www.scu.edu.cn/rss" type="rss" />
-        <outline title="SWUFE" xmlUrl="https://www.swufe.edu.cn/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="Technology">
+      <outline title="Tianfu Software Park" xmlUrl="http://www.tfsp.net/rss/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Sichuan Univ" xmlUrl="https://www.scu.edu.cn/rss" type="rss" />
+      <outline title="SWUFE" xmlUrl="https://www.swufe.edu.cn/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Learn Chinese with Beginner Stories" xmlUrl="https://anchor.fm/s/10b37f6ac/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Everybody WYNNs" xmlUrl="https://anchor.fm/s/269c3f30/podcast/rss" type="rss" category="Kids &amp; Family" />
+      <outline title="Ninos Corner" xmlUrl="https://back.studeo.fm/api/v1/podcasts/93/rss-feeds" type="rss" category="News" />
+      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
+      <outline title="Talk to Me" xmlUrl="https://feeds.simplecast.com/RZI2ZghA" type="rss" category="Arts" />
+      <outline title="Mandarin Blueprint" xmlUrl="https://www.mandarinblueprint.com/feed/podcast/" type="rss" category="Language Learning" />
+      <outline title="Chillchat (Learn Chinese and Chill)" xmlUrl="https://rss.buzzsprout.com/510028.rss" type="rss" category="Language Learning" />
+      <outline title="2013 Edinburgh International Book Festival" xmlUrl="http://eibf.s3.amazonaws.com/xml/2013_Edinburgh_International_Book_festival.xml" type="rss" category="Books" />
+      <outline title="The China Show" xmlUrl="https://rss.art19.com/the-china-show" type="rss" category="News" />
+      <outline title="I'm Learning Mandarin" xmlUrl="https://anchor.fm/s/647cc43c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Takeaway Chinese" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/54" type="rss" category="Education" />
+      <outline title="süßsauer – China Podcast" xmlUrl="https://china.podigee.io/feed/mp3" type="rss" category="Places &amp; Travel" />
+      <outline title="Global Business" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/430" type="rss" category="News" />
+      <outline title="Barbarians at the Gate" xmlUrl="https://feeds.blubrry.com/feeds/barbarians.xml" type="rss" category="History" />
+      <outline title="Eat Your Words Presents: Saved by the Bellini" xmlUrl="https://rss.art19.com/eat-your-words" type="rss" category="Arts" />
+      <outline title="Chinese Language Convo Club - Casual Chinese Speaking Practice" xmlUrl="https://anchor.fm/s/fb56f79c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Learn Chinese | ChineseClass101.com" xmlUrl="https://www.chineseclass101.com/wp-feed-audio-video.php" type="rss" category="Language Learning" />
+      <outline title="You Can Learn Chinese" xmlUrl="https://anchor.fm/s/f047cea8/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Of Course China!" xmlUrl="https://anchor.fm/s/12281308/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Tell Craig Your Story" xmlUrl="https://feed.podbean.com/tellcraigyourstory/feed.xml" type="rss" category="Music Interviews" />
+      <outline title="Learn Chinese in 100 Days | Domino Chinese" xmlUrl="https://anchor.fm/s/518adc10/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Far East Confessions" xmlUrl="https://anchor.fm/s/f4600348/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Eddy LIVE Podcast (ELP)" xmlUrl="https://feed.pod.co/eddy-live" type="rss" category="Personal Journals" />
+      <outline title="Centre for Independent Studies" xmlUrl="https://feed.podbean.com/thecentreforindependentstudies/feed.xml" type="rss" category="News" />
+      <outline title="Podcasts from the UCLA Center for Chinese Studies" xmlUrl="https://www.international.ucla.edu/sites/ccs/rss.aspx" type="rss" category="Courses" />
+      <outline title="China Now" xmlUrl="https://feed.podbean.com/chinanow/feed.xml" type="rss" category="Politics" />
+      <outline title="Throughline" xmlUrl="https://feeds.npr.org/510333/podcast.xml" type="rss" category="History" />
+      <outline title="Learn Mandarin Chinese  - Chinese Audio Lessons" xmlUrl="https://www.melnyks.com/feed/podcast/" type="rss" category="Language Learning" />
+      <outline title="Virginia Is For Laughers" xmlUrl="https://audioboom.com/channels/5049577.rss" type="rss" category="Comedy" />
+      <outline title="Histoire intellectuelle de la Chine - Anne Cheng" xmlUrl="https://podcast.college-de-france.fr/xml2/cdf8-21.xml" type="rss" category="History" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="happy sichuan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtw-qe_Yb_r2BpzF--iIuYA" type="rss" />
+      <outline title="fly over China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXthNi45qoLd0rkhhNDeiUA" type="rss" />
+      <outline title="SVCIT-CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXthV6V8A8wPekUzIP2devQ" type="rss" />
+      <outline title="野风道" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIY1v_77I7i2Y29LBalINVg" type="rss" />
+      <outline title="徒步中国 Trekking in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTROmGNzd8rNPWbzPqq1qoQ" type="rss" />
+      <outline title="China Rural Walks" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdLOPub-AjgA1ucHxQ4rSJA" type="rss" />
+      <outline title="中国风景 Chinese scenery" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCji0cOUVEAw3fycMv_5H_qA" type="rss" />
+      <outline title="This is china" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEamKrdLAAKTt0haAP4Df2g" type="rss" />
+      <outline title="Yun China Walks" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHCmp1_ess_y6AGV2LPwy2A" type="rss" />
+      <outline title="Ragib In China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_ti7QV6Q6tsvJ51Q2-OpTg" type="rss" />
+      <outline title="A Random Walk Down China 漫步中國" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8IsIiaiHNq_hLCd_NavHuQ" type="rss" />
+      <outline title="SilkGate" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnjJEDbjqpCXkYmjTmf4Qqg" type="rss" />
+      <outline title="China Charm" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9-ttW09OvzOGmcxW6aiYCw" type="rss" />
+      <outline title="Morgan Cutbush | Life in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGrCjmt7Ztehq13c0iAHfyw" type="rss" />
+      <outline title="Discover China 探索中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDfIZNwLVZkgGcZJImGiEQA" type="rss" />
+      <outline title="Scenery of Chengdu, Sichuan, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLOefecZA_q_k1F9Z2xulaQ" type="rss" />
+      <outline title="Sichuan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYNV7EAbK1SF2wwCONA7Jtg" type="rss" />
+      <outline title="Hello China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8qs-bgK_p7jNDz4DcYf8vw" type="rss" />
+      <outline title="中国四川广播电视台 China SiChuanTV Official Channel—欢迎订阅!" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT_o3s19ejpRw-Q-5Dp7Sqw" type="rss" />
+      <outline title="Chinese Trump(RyanChen瑞哥英语)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdhzpzxfkZXEmlx4GHADnTQ" type="rss" />
+      <outline title="ヤンチャンCH/楊小溪" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCQ2mSHWMRiLlHWMQaQmt0w" type="rss" />
+      <outline title="ChinaSichuanFood by Elaine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCly-uUXFCjZ0fiO3or_jnQQ" type="rss" />
+      <outline title="TheChillRoamer" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG-91iW7IOyaghjM1c_X1Zw" type="rss" />
+      <outline title="China Street View" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjfciUxB1yhhP_OlZ3CD44g" type="rss" />
+      <outline title="Discover China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXN6Y1br2du2a14TZtFE3ng" type="rss" />
+      <outline title="Jasmine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiT-CTrGfA8NhN3vnMJpllg" type="rss" />
+      <outline title="LONG WAY CHINA DIARIES " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC30KekLjP6LNnpPEiE_MZFg" type="rss" />
+      <outline title="Walking China 4K" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6ULFIxtgRkAtS_aUoadugg" type="rss" />
+      <outline title="Mr. Xu's China (幻海孚日)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCett-NIptSdVowrOocPP8rg" type="rss" />
+      <outline title="中国东方卫视官方频道China DragonTV Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ06BguWKS5GJsEue7u79PQ" type="rss" />
+      <outline title="JACK IN CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCx15TrqThnVQC_XLffaVymA" type="rss" />
+      <outline title="美味四川 Tasty Sichuan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8TpU9By9yKwcRwubxRBAiA" type="rss" />
+      <outline title="China Online Travel Agency" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwmLArhVHLtNArP0gA2Eyqw" type="rss" />
+      <outline title="Michael W" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgTO7VV-u1dAsuJyLE_3BBQ" type="rss" />
+      <outline title="CRI sichuan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsoVN0gyzhDTHQZzfS0aVPA" type="rss" />
+      <outline title="Blondie in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISrVZmDM4x-Rq9mmNUw7Zw" type="rss" />
+      <outline title="Qingcheng Mountain in Sichuan, China." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIX5MUfRdNpwwDTQ9-BIdFA" type="rss" />
+      <outline title="Amazing Sichuan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9A9H_wXKn8ggTTu5LDAsPg" type="rss" />
+      <outline title="China Sichuan Restaurant Amsterdam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChO_lP1c4C-Ris9ffaLNXww" type="rss" />
+      <outline title="Amazing China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI12HwSs6yvHNM46n9viKzw" type="rss" />
+      <outline title="Great Beauty China-大美中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB08GcjxRIRVTWEa_aSuudA" type="rss" />
+      <outline title="Helina _Insider China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEpWjshFLkOwOpjc8yhcQjg" type="rss" />
+      <outline title="SeeChina看中國" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8OxYea7-KXwqCLLktPft6w" type="rss" />
+      <outline title="Aerial China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2ZmoDfZePaDXlsdKwjCuqw" type="rss" />
+      <outline title="ami🖤ワンホンになる【中国旅行】" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYPf1CIuReh1IOhj0JRF5mw" type="rss" />
+      <outline title="Sichuan food culture of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF8PEzs-rwLTOjyW1wGDJqg" type="rss" />
+      <outline title="Jianmen Pass" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyrDKH-O16wCoUhVu-064xQ" type="rss" />
+      <outline title="Daily China Vibez" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfLL93D_hNyy7drSnOU-6xQ" type="rss" />
+      <outline title="跑遍中国 Running In China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9-QpYENB0WZIwPcC6iBirA" type="rss" />
+      <outline title="Walk China - Driving Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5ISB0VMarXLOMRm2B8bN2g" type="rss" />
+    </outline>
+  </body>
+</opml>

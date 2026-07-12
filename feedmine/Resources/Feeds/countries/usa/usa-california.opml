@@ -4,92 +4,101 @@
     <title>California Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Los Angeles Times" xmlUrl="https://www.latimes.com/rss" type="rss" />
-        <outline title="Sacramento Bee" xmlUrl="https://www.sacbee.com/news/local/rss" type="rss" />
-        <outline title="Fresno Bee" xmlUrl="https://www.fresnobee.com/rss" type="rss" />
-        <outline title="Bakersfield Californian" xmlUrl="https://www.bakersfield.com/rss" type="rss" />
-        <outline title="Modesto Bee" xmlUrl="https://www.modbee.com/rss" type="rss" />
-        <outline title="San Luis Obispo Tribune" xmlUrl="https://www.sanluisobispo.com/rss" type="rss" />
-        <outline title="Santa Barbara News-Press" xmlUrl="https://newspress.com/feed/" type="rss" />
-        <outline title="CalMatters" xmlUrl="https://calmatters.org/feed/" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="CA Governor News" xmlUrl="https://www.gov.ca.gov/rss/" type="rss" />
-        <outline title="LA Mayor News" xmlUrl="https://mayor.lacity.gov/rss" type="rss" />
-        <outline title="SF Mayor News" xmlUrl="https://sfmayor.org/rss" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="LA Business Journal" xmlUrl="https://labusinessjournal.com/feed/" type="rss" />
-        <outline title="Sacramento Business Journal" xmlUrl="https://feeds.bizjournals.com/sacramento" type="rss" />
-        <outline title="Orange County Business Journal" xmlUrl="https://www.ocbj.com/feed/" type="rss" />
-        <outline title="TechCrunch SF" xmlUrl="https://techcrunch.com/tag/san-francisco/feed/" type="rss" />
-        <outline title="VentureBeat SF" xmlUrl="https://venturebeat.com/feed/" type="rss" />
-      </outline>
-      <outline text="Technology">
-        <outline title="UC Berkeley News" xmlUrl="https://news.berkeley.edu/feed/" type="rss" />
-        <outline title="UCLA Newsroom" xmlUrl="https://newsroom.ucla.edu/rss" type="rss" />
-        <outline title="USC Viterbi News" xmlUrl="https://viterbischool.usc.edu/feed/" type="rss" />
-        <outline title="Apple Newsroom" xmlUrl="https://www.apple.com/newsroom/rss-feed.rss" type="rss" />
-        <outline title="Google AI Blog" xmlUrl="https://blog.google/technology/ai/rss/" type="rss" />
-        <outline title="Meta Newsroom" xmlUrl="https://about.fb.com/news/feed/" type="rss" />
-        <outline title="Silicon Valley Robotics" xmlUrl="https://svrobo.org/feed/" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="UCLA News" xmlUrl="https://newsroom.ucla.edu/rss" type="rss" />
-        <outline title="UC Davis News" xmlUrl="https://www.ucdavis.edu/news/feed" type="rss" />
-        <outline title="UC Irvine News" xmlUrl="https://news.uci.edu/feed/" type="rss" />
-        <outline title="UC Santa Cruz" xmlUrl="https://news.ucsc.edu/feed/" type="rss" />
-        <outline title="USC News" xmlUrl="https://news.usc.edu/feed/" type="rss" />
-        <outline title="Loyola Marymount News" xmlUrl="https://newsroom.lmu.edu/feed/" type="rss" />
-        <outline title="Santa Clara University News" xmlUrl="https://www.scu.edu/news/rss" type="rss" />
-        <outline title="Chapman University News" xmlUrl="https://news.chapman.edu/feed/" type="rss" />
-      </outline>
-      <outline text="Sports">
-        <outline title="ESPN LA" xmlUrl="https://www.espn.com/espn/rss/los-angeles" type="rss" />
-        <outline title="Lakers Nation" xmlUrl="https://www.lakersnation.com/feed/" type="rss" />
-        <outline title="Kings (NHL) News" xmlUrl="https://www.nhl.com/kings/rss/news" type="rss" />
-        <outline title="Sharks News" xmlUrl="https://www.nhl.com/sharks/rss/news" type="rss" />
-        <outline title="Ducks (NHL) News" xmlUrl="https://www.nhl.com/ducks/rss/news" type="rss" />
-        <outline title="Sacramento Republic FC" xmlUrl="https://www.sacrepublicfc.com/rss" type="rss" />
-      </outline>
-      <outline text="Culture">
-        <outline title="SFist" xmlUrl="https://sfist.com/feed/" type="rss" />
-        <outline title="Eater LA" xmlUrl="https://la.eater.com/rss/index.xml" type="rss" />
-        <outline title="Eater SF" xmlUrl="https://sf.eater.com/rss/index.xml" type="rss" />
-        <outline title="Eater San Diego" xmlUrl="https://sandiego.eater.com/rss/index.xml" type="rss" />
-        <outline title="SF Ballet" xmlUrl="https://www.sfballet.org/feed/" type="rss" />
-        <outline title="Comic-Con San Diego" xmlUrl="https://www.comic-con.org/rss" type="rss" />
-      </outline>
-      <outline text="Environment">
-        <outline title="CA Dept of Water Resources" xmlUrl="https://water.ca.gov/rss" type="rss" />
-        <outline title="Heal the Bay" xmlUrl="https://healthebay.org/feed/" type="rss" />
-        <outline title="Save the Bay SF" xmlUrl="https://savesfbay.org/feed/" type="rss" />
-        <outline title="Yosemite Conservancy" xmlUrl="https://yosemite.org/feed/" type="rss" />
-      </outline>
-      <outline text="Food">
-        <outline title="Eater LA" xmlUrl="https://la.eater.com/rss/index.xml" type="rss" />
-        <outline title="Tasting Table" xmlUrl="https://www.tastingtable.com/rss" type="rss" />
-        <outline title="Wine Enthusiast" xmlUrl="https://www.wineenthusiast.com/feed/" type="rss" />
-      </outline>
-      <outline text="Health">
-        <outline title="Cedars-Sinai News" xmlUrl="https://www.cedars-sinai.org/newsroom/feed/" type="rss" />
-      </outline>
-      <outline text="Transportation">
-        <outline title="Streetsblog LA" xmlUrl="https://la.streetsblog.org/feed/" type="rss" />
-        <outline title="Streetsblog SF" xmlUrl="https://sf.streetsblog.org/feed/" type="rss" />
-        <outline title="Caltrans News" xmlUrl="https://dot.ca.gov/rss" type="rss" />
-        <outline title="LA Metro News" xmlUrl="https://www.metro.net/news/feed/" type="rss" />
-        <outline title="BART News" xmlUrl="https://www.bart.gov/news/rss" type="rss" />
-      </outline>
-      <outline text="Blogs">
-        <outline title="Boing Boing" xmlUrl="https://boingboing.net/feed" type="rss" />
-        <outline title="The Bold Italic" xmlUrl="https://thebolditalic.com/feed/" type="rss" />
-        <outline title="MISSION LOCAL" xmlUrl="https://missionlocal.org/feed/" type="rss" />
-        <outline title="Berkeleyside" xmlUrl="https://www.berkeleyside.org/feed/" type="rss" />
-        <outline title="Palo Alto Online" xmlUrl="https://www.paloaltoonline.com/rss" type="rss" />
-        <outline title="Mountain View Voice" xmlUrl="https://www.mv-voice.com/rss" type="rss" />
-        <outline title="Santa Monica Next" xmlUrl="https://santamonicanext.org/feed/" type="rss" />
-        <outline title="Hoodline SF" xmlUrl="https://hoodline.com/rss/" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="Los Angeles Times" xmlUrl="https://www.latimes.com/rss" type="rss" />
+      <outline title="Sacramento Bee" xmlUrl="https://www.sacbee.com/news/local/rss" type="rss" />
+      <outline title="Fresno Bee" xmlUrl="https://www.fresnobee.com/rss" type="rss" />
+      <outline title="Bakersfield Californian" xmlUrl="https://www.bakersfield.com/rss" type="rss" />
+      <outline title="Modesto Bee" xmlUrl="https://www.modbee.com/rss" type="rss" />
+      <outline title="San Luis Obispo Tribune" xmlUrl="https://www.sanluisobispo.com/rss" type="rss" />
+      <outline title="Santa Barbara News-Press" xmlUrl="https://newspress.com/feed/" type="rss" />
+      <outline title="CalMatters" xmlUrl="https://calmatters.org/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="CA Governor News" xmlUrl="https://www.gov.ca.gov/rss/" type="rss" />
+      <outline title="LA Mayor News" xmlUrl="https://mayor.lacity.gov/rss" type="rss" />
+      <outline title="SF Mayor News" xmlUrl="https://sfmayor.org/rss" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="LA Business Journal" xmlUrl="https://labusinessjournal.com/feed/" type="rss" />
+      <outline title="Sacramento Business Journal" xmlUrl="https://feeds.bizjournals.com/sacramento" type="rss" />
+      <outline title="Orange County Business Journal" xmlUrl="https://www.ocbj.com/feed/" type="rss" />
+      <outline title="TechCrunch SF" xmlUrl="https://techcrunch.com/tag/san-francisco/feed/" type="rss" />
+      <outline title="VentureBeat SF" xmlUrl="https://venturebeat.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="UC Berkeley News" xmlUrl="https://news.berkeley.edu/feed/" type="rss" />
+      <outline title="UCLA Newsroom" xmlUrl="https://newsroom.ucla.edu/rss" type="rss" />
+      <outline title="USC Viterbi News" xmlUrl="https://viterbischool.usc.edu/feed/" type="rss" />
+      <outline title="Apple Newsroom" xmlUrl="https://www.apple.com/newsroom/rss-feed.rss" type="rss" />
+      <outline title="Google AI Blog" xmlUrl="https://blog.google/technology/ai/rss/" type="rss" />
+      <outline title="Meta Newsroom" xmlUrl="https://about.fb.com/news/feed/" type="rss" />
+      <outline title="Silicon Valley Robotics" xmlUrl="https://svrobo.org/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="UCLA News" xmlUrl="https://newsroom.ucla.edu/rss" type="rss" />
+      <outline title="UC Davis News" xmlUrl="https://www.ucdavis.edu/news/feed" type="rss" />
+      <outline title="UC Irvine News" xmlUrl="https://news.uci.edu/feed/" type="rss" />
+      <outline title="UC Santa Cruz" xmlUrl="https://news.ucsc.edu/feed/" type="rss" />
+      <outline title="USC News" xmlUrl="https://news.usc.edu/feed/" type="rss" />
+      <outline title="Loyola Marymount News" xmlUrl="https://newsroom.lmu.edu/feed/" type="rss" />
+      <outline title="Santa Clara University News" xmlUrl="https://www.scu.edu/news/rss" type="rss" />
+      <outline title="Chapman University News" xmlUrl="https://news.chapman.edu/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="ESPN LA" xmlUrl="https://www.espn.com/espn/rss/los-angeles" type="rss" />
+      <outline title="Lakers Nation" xmlUrl="https://www.lakersnation.com/feed/" type="rss" />
+      <outline title="Kings (NHL) News" xmlUrl="https://www.nhl.com/kings/rss/news" type="rss" />
+      <outline title="Sharks News" xmlUrl="https://www.nhl.com/sharks/rss/news" type="rss" />
+      <outline title="Ducks (NHL) News" xmlUrl="https://www.nhl.com/ducks/rss/news" type="rss" />
+      <outline title="Sacramento Republic FC" xmlUrl="https://www.sacrepublicfc.com/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="SFist" xmlUrl="https://sfist.com/feed/" type="rss" />
+      <outline title="Eater LA" xmlUrl="https://la.eater.com/rss/index.xml" type="rss" />
+      <outline title="Eater SF" xmlUrl="https://sf.eater.com/rss/index.xml" type="rss" />
+      <outline title="Eater San Diego" xmlUrl="https://sandiego.eater.com/rss/index.xml" type="rss" />
+      <outline title="SF Ballet" xmlUrl="https://www.sfballet.org/feed/" type="rss" />
+      <outline title="Comic-Con San Diego" xmlUrl="https://www.comic-con.org/rss" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="CA Dept of Water Resources" xmlUrl="https://water.ca.gov/rss" type="rss" />
+      <outline title="Heal the Bay" xmlUrl="https://healthebay.org/feed/" type="rss" />
+      <outline title="Save the Bay SF" xmlUrl="https://savesfbay.org/feed/" type="rss" />
+      <outline title="Yosemite Conservancy" xmlUrl="https://yosemite.org/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
+      <outline title="Eater LA" xmlUrl="https://la.eater.com/rss/index.xml" type="rss" />
+      <outline title="Tasting Table" xmlUrl="https://www.tastingtable.com/rss" type="rss" />
+      <outline title="Wine Enthusiast" xmlUrl="https://www.wineenthusiast.com/feed/" type="rss" />
+    </outline>
+    <outline text="Health">
+      <outline title="Cedars-Sinai News" xmlUrl="https://www.cedars-sinai.org/newsroom/feed/" type="rss" />
+    </outline>
+    <outline text="Transportation">
+      <outline title="Streetsblog LA" xmlUrl="https://la.streetsblog.org/feed/" type="rss" />
+      <outline title="Streetsblog SF" xmlUrl="https://sf.streetsblog.org/feed/" type="rss" />
+      <outline title="Caltrans News" xmlUrl="https://dot.ca.gov/rss" type="rss" />
+      <outline title="LA Metro News" xmlUrl="https://www.metro.net/news/feed/" type="rss" />
+      <outline title="BART News" xmlUrl="https://www.bart.gov/news/rss" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Boing Boing" xmlUrl="https://boingboing.net/feed" type="rss" />
+      <outline title="The Bold Italic" xmlUrl="https://thebolditalic.com/feed/" type="rss" />
+      <outline title="MISSION LOCAL" xmlUrl="https://missionlocal.org/feed/" type="rss" />
+      <outline title="Berkeleyside" xmlUrl="https://www.berkeleyside.org/feed/" type="rss" />
+      <outline title="Palo Alto Online" xmlUrl="https://www.paloaltoonline.com/rss" type="rss" />
+      <outline title="Mountain View Voice" xmlUrl="https://www.mv-voice.com/rss" type="rss" />
+      <outline title="Santa Monica Next" xmlUrl="https://santamonicanext.org/feed/" type="rss" />
+      <outline title="Hoodline SF" xmlUrl="https://hoodline.com/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Grace Presbyterian Church Walnut Creek" xmlUrl="https://rss.buzzsprout.com/2399644.rss" type="rss" category="Religion" />
+      <outline title="South Indian In USA, California" xmlUrl="https://anchor.fm/s/1074ed8bc/podcast/rss" type="rss" category="Society" />
+      <outline title="MOMENT BY MOMENT" xmlUrl="https://anchor.fm/s/1d696690/podcast/rss" type="rss" category="Religion" />
+      <outline title="San Fran, California USA" xmlUrl="https://assets.headphonenews.com/san_francisco_bay_area_california_usa/en/channel.rss" type="rss" category="News" />
+      <outline title="GCI Fairfield Church (Fairfield, California USA)" xmlUrl="https://anchor.fm/s/1c00c6a4/podcast/rss" type="rss" category="Religion" />
+      <outline title="CALIFORNIA (USA) -  &quot;ДАВАЙТЕ ВЫЗДОРАВЛИВАТЬ!&quot;" xmlUrl="https://podster.fm/rss.xml?pid=37055" type="rss" category="Health" />
+    </outline>
+  </body>
+</opml>

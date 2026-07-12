@@ -4,5 +4,11 @@
     <title>Santa Cruz Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Play Deportes (Santa Cruz de la Sierra - Bolivia)" xmlUrl="https://anchor.fm/s/246267e4/podcast/rss" type="rss" category="News" />
+      <outline title="El podcast de Santa Cruz ST Bolivia" xmlUrl="https://www.spreaker.com/show/5646878/episodes/feed" type="rss" category="Society" />
+      <outline title="YEM Santa Cruz Bolivia" xmlUrl="https://www.ivoox.com/feed_fg_f1463033_filtro_1.xml" type="rss" category="Business" />
+      <outline title="Tumpa Radio - Santa Cruz - Bolivia" xmlUrl="https://us.ivoox.com/es/espodcast-tumpa-radio-santa-cruz-bolivia_fg_f159093_filtro_1.xml" type="rss" category="News" />
+    </outline>
+  </body>
 </opml>

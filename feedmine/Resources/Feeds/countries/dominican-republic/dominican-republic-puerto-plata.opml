@@ -4,5 +4,9 @@
     <title>Puerto Plata Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Puerto Plata Cruise Ports" xmlUrl="https://www.puertoplatadr.com/cruiseports/feed/podcast" type="rss" category="Leisure" />
+      <outline title="Puerto Plata Cruise Ports" xmlUrl="https://www.puertoplatadr.com/cruiseports/feed/podcast/puerto-plata-cruise-ports" type="rss" category="Leisure" />
+    </outline>
+  </body>
 </opml>

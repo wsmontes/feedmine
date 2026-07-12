@@ -4,10 +4,77 @@
     <title>Henan Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Henan Daily" xmlUrl="https://www.henandaily.cn/rss/" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Business" />
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Henan Daily" xmlUrl="https://www.henandaily.cn/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Business" />
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="Learn Chinese with Beginner Stories" xmlUrl="https://anchor.fm/s/10b37f6ac/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Victor Sun Podcast 🍯" xmlUrl="https://anchor.fm/s/faefb2e4/podcast/rss" type="rss" category="Arts" />
+      <outline title="ASCENT" xmlUrl="https://media.rss.com/ascent/feed.xml" type="rss" category="Technology" />
+      <outline title="I'm Learning Mandarin" xmlUrl="https://anchor.fm/s/647cc43c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Takeaway Chinese" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/54" type="rss" category="Education" />
+      <outline title="Mandarin Blueprint" xmlUrl="https://www.mandarinblueprint.com/feed/podcast/" type="rss" category="Language Learning" />
+      <outline title="The China Show" xmlUrl="https://rss.art19.com/the-china-show" type="rss" category="News" />
+      <outline title="American Conservative University" xmlUrl="https://feed.podbean.com/acupodcast/feed.xml" type="rss" category="Politics" />
+      <outline title="Podcasts from the UCLA Center for Chinese Studies" xmlUrl="https://www.international.ucla.edu/sites/ccs/rss.aspx" type="rss" category="Courses" />
+      <outline title="Post Reports" xmlUrl="https://podcast.posttv.com/itunes/post-reports.xml" type="rss" category="Daily News" />
+      <outline title="Round Table China" xmlUrl="https://aezfm.meldingcloud.com/rss/program/11" type="rss" category="Society &amp; Culture" />
+      <outline title="Histoire intellectuelle de la Chine - Anne Cheng" xmlUrl="https://podcast.college-de-france.fr/xml2/cdf8-21.xml" type="rss" category="History" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="老家河南" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfsc7XHtPpe3r-TRxGQQnGw" type="rss" />
+      <outline title="乡村中国Rural China Unfiltered" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKcURAj2ODctM9jgDTZI2vw" type="rss" />
+      <outline title="HarmonyHowie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzGpNOSxjgr_wBDqufJaVEA" type="rss" />
+      <outline title="Jingcheng_china_travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCizu-vyTQJhD42K5T1tagiA" type="rss" />
+      <outline title="中国新闻社" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpbfXQsYBJTwq5lCkwGIeuQ" type="rss" />
+      <outline title="China Tours" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtL83Do5OtOQgcXRTjC5WdQ" type="rss" />
+      <outline title="中国河南人" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCy3g5xWd-5gn-nDZ8CqSi5A" type="rss" />
+      <outline title="Life in rural China 中国.河南" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgC_obYuZMZqok0uTyC9JlA" type="rss" />
+      <outline title="河南小园子" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChyvZZhrR1QBBlPJFVFBcsQ" type="rss" />
+      <outline title="Warner Music China华纳音乐中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFUhDDZ0O_Ee615gI4dA_oQ" type="rss" />
+      <outline title="HENAN Couples' Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxp-UYwNYj-p4Rj3LO9GxhQ" type="rss" />
+      <outline title="Yang's Lens" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClMjsDcbaB_u7J07Qk0XUJg" type="rss" />
+      <outline title="Travel Heaven" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu4zDL9eN16Px3zgzwoVweg" type="rss" />
+      <outline title="HaHeHe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6l-w3JSSkmSRrezfIrzgvw" type="rss" />
+      <outline title="WWII:China's Forgotten War" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkdfi-_tGx4xwjBP8XDgCiQ" type="rss" />
+      <outline title="Zhixin Zhang" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-ocAeOGy4k6FNYJ1_DXxDQ" type="rss" />
+      <outline title="ExploringChina漫步中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC04ze0aHzUlcRd_ujooCFZg" type="rss" />
+      <outline title="Like y" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8gZC7r01XHwSCn7EHGNXCg" type="rss" />
+      <outline title="China Today 中国头条" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLsRmY79KkOHBv8RjHg9nRg" type="rss" />
+      <outline title="BuddyUp China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNjAxxJTvtvN4fYoB-B92_w" type="rss" />
+      <outline title="幽州刺史走中國YouZhou Governor Travels Across China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGcxfAacluuGPZp3pTD_83Q" type="rss" />
+      <outline title="RoadToChinaGem" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU6b3g0BoS67ncGCJ_7gX2A" type="rss" />
+      <outline title="Hunan Samar Travel PH" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiUYOld6W-KqgpGyAxM6hqg" type="rss" />
+      <outline title="中国趣事美食分享Chinese Rural Cuisine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFViurgXocKwRib4QQvMefg" type="rss" />
+      <outline title="郭佳导演" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxv8bPjb_WrxfKvoAkzbk8w" type="rss" />
+      <outline title="河南春晚官方 Henan_TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTra_LogoDG6c8ZGEGOqBlQ" type="rss" />
+      <outline title="中國印象" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDmssLF1Gdth3bzlS-uBK1w" type="rss" />
+      <outline title="China 中国美景" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYk0p7MnqjbDwwpBPdd-Wgw" type="rss" />
+      <outline title="This is China 这就是中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuKbHzLkhqWhjRx2HW4ckLg" type="rss" />
+      <outline title="Amazing China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI12HwSs6yvHNM46n9viKzw" type="rss" />
+      <outline title="无名小哥" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZNUn0rOur7uUjnGGkcjPpg" type="rss" />
+      <outline title="Henan(中国河南人)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8YUwtin2O5rMFgVHtGgamw" type="rss" />
+      <outline title="China National Tourist Office Sydney" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzCuc_hgG6XQhBNIhUWkCsw" type="rss" />
+      <outline title="JingCheng_chinatour" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3C2RfPydVNyz3lNiegEhgw" type="rss" />
+      <outline title="面向中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPPko8Z19x9T0jomFUgl44w" type="rss" />
+      <outline title="Yuntai mountain 中国云台山" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkHLOs5_E4qzWYC9UPtCl7g" type="rss" />
+      <outline title="Explore Henan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzVXtYuHc4yeL9ASlT0r1dw" type="rss" />
+      <outline title="iHenan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfzkykNSw_nP8UQtgqp5aNg" type="rss" />
+      <outline title="Wansui Mountain" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzMDuitOjwHJttlzaXSWINw" type="rss" />
+      <outline title="Blondie in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISrVZmDM4x-Rq9mmNUw7Zw" type="rss" />
+      <outline title="China Rail" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz110JF8gtdQH21m0401HSA" type="rss" />
+      <outline title="Ate Clydee life in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg2_iZ0oezYS85B-1CcspjA" type="rss" />
+      <outline title="Discover_Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCllJYUza01mC83XbZbuTJ-A" type="rss" />
+      <outline title="中国乱象 China's chaotic phenomena" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8P39nITefgn5S3e1SmpDdA" type="rss" />
+      <outline title="唯她在中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6GAjUjUy_UVAbVoKy21Uug" type="rss" />
+      <outline title="Naisila di China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC76YcWBoe5qX2yIQuBNo8NQ" type="rss" />
+      <outline title="旅拍中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ4GJmtyO78eGNOKEAqpZcw" type="rss" />
+      <outline title="河南王老太在非洲 Chinese grandma in Africa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0uG3r8pE9P3i4c5sLRrF4Q" type="rss" />
+      <outline title="Masab In China " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRu2PPe0LVooazl4YTQtLlg" type="rss" />
+      <outline title="Real China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCs5MM01Z-nlBkHbueYVgyxg" type="rss" />
+    </outline>
+  </body>
+</opml>

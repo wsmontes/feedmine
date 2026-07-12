@@ -4,9 +4,67 @@
     <title>Tripura Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Tripura Gov" xmlUrl="https://tripura.gov.in/rss" type="rss" />
-      </outline>
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Tripura Gov" xmlUrl="https://tripura.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="Tribal Tales of Tripura" xmlUrl="https://www.omnycontent.com/d/playlist/8ce708b9-c3c2-4eaa-a27d-ac0f007c53c5/eea366b0-ecd4-4ece-a2e6-aea70075c9f4/7137d3ae-056c-49b4-9917-aea7007651d5/podcast.rss" type="rss" category="Social Sciences" />
+      <outline title="morganklloyd" xmlUrl="https://anchor.fm/s/621ae28c/podcast/rss" type="rss" category="Hobbies" />
+      <outline title="DEF talks by Aadi Achint" xmlUrl="https://anchor.fm/s/10901999c/podcast/rss" type="rss" category="Politics" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Tripura Vlogger,India🇮🇳" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZXmBhb-siCHgsUOjucGYEQ" type="rss" />
+      <outline title="Clinton Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnX2Rgk7sq9tiwmuFaIQ1sg" type="rss" />
+      <outline title="Khumsari Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz1rna5C74ZJ9r_urBx9PqA" type="rss" />
+      <outline title="Tripura T/p India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpvSHiaVu_8wofhwpbIdyKQ" type="rss" />
+      <outline title="Tripura India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvtPVMF5T9Z3reuz9Q0rktQ" type="rss" />
+      <outline title="Tripura India Mr M" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7rwuJYVL4juCaLO_GOstLA" type="rss" />
+      <outline title="TRIPURA News 8 BHARAT" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk2fn1EvMLfyKpyLNa5hMEA" type="rss" />
+      <outline title="BTv Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1XIu6MAQ3ReN4VpitaA1gQ" type="rss" />
+      <outline title="India Tripura Music " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNipQ1iBSX5SyjbdiJJ4YRA" type="rss" />
+      <outline title="High Court of Tripura - Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsI5L97cCA3oYKmR-d-hR-Q" type="rss" />
+      <outline title="KOKTRIPURA EXCLUSIVE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyYrS70unXk8Yg5B48eBIxQ" type="rss" />
+      <outline title="TripuraGirll" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPJNbRTSwklv4IJnz07IJnw" type="rss" />
+      <outline title="@Village Life of Bhumita Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgUIIPRF5sP62sKPbzJWDsQ" type="rss" />
+      <outline title="Payel Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSHtFBjD_GLHByupc6RuSXw" type="rss" />
+      <outline title="Techno India University, Tripura (TIUT)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvkiAMgTTsLtveqyw7pKZCQ" type="rss" />
+      <outline title="Tripura Legends" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBcTGDm87VdEnTiY4vglFKg" type="rss" />
+      <outline title="Village cooking Recipes-Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVNZPzKI-xdCmLIwU1HEW_g" type="rss" />
+      <outline title="Suman tripura official " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCg4AjBV_djA9D-EpbvFFkQ" type="rss" />
+      <outline title="Tripura Gyan Tube" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHDv4bXhvEcIurY3IPDHLZw" type="rss" />
+      <outline title="Enjoy Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR0NiX8cEClOAiAWEsGArug" type="rss" />
+      <outline title="Dabin Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtSMflxNTpE5VmlmnYxmPRQ" type="rss" />
+      <outline title="Tracking Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClkvfhF-j1hj4Vv4L9w3HkA" type="rss" />
+      <outline title="Tripura Civil Services(TCS) Today" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtjI2FMUpL9UmE_hBH8AiLg" type="rss" />
+      <outline title="Kuplwng Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5NgYL9vI46A1JQrwqx7y4A" type="rss" />
+      <outline title="Arun Tripura Vlog  (Official )" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5XcuYIHVE_ISptSfUsiMiQ" type="rss" />
+      <outline title="Pronoy Tripura " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz0WsV7LFsWbrl7VNbu79VA" type="rss" />
+      <outline title="Hamari Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2-wD51-XWmq-5h7HtDj-SA" type="rss" />
+      <outline title="Milan Tripura " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnu-tKGcgVY1ig_xg1Zp0CQ" type="rss" />
+      <outline title="Tripura India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9Ho8wwuPB-nWqY6Gath0Ig" type="rss" />
+      <outline title="BHAVAN'S TRIPURA COLLEGE OF SCIENCE &amp; TECHNOLOGY" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu12mVvC4prnDzc1M1-8VxA" type="rss" />
+      <outline title="KATHAR TRIPURA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCAavanihjVFwaIAu8wF0aQ" type="rss" />
+      <outline title="DD News Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOBdY-3fTrO7kRrkNg4Qu6A" type="rss" />
+      <outline title="Tripura Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCciv8j9Uhjv9-PLX8MDrRpQ" type="rss" />
+      <outline title="ICONS OF TRIPURA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAahXsI-Cpw43V10t5nd_2A" type="rss" />
+      <outline title="Network Tripura " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBzpr48C2-9OF1CyyhxEdpQ" type="rss" />
+      <outline title="Trips With Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1927LRKkdDGwWLjGXdbOlg" type="rss" />
+      <outline title="Flavour of Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMWlQaf9CcgWpwYRopi5aWQ" type="rss" />
+      <outline title="TRIPURA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsU4HVMLfILheO0qPNydrgA" type="rss" />
+      <outline title="SFI TRIPURA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcMPYQ9gMvQnVZgl45Wm3LA" type="rss" />
+      <outline title="State Baha'i Council of Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkXgbccEEG-aYNBCM-ibNBA" type="rss" />
+      <outline title="History of Tripura and Folklores 2025" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0UAYqwJ8JZni3tjVE5CaGw" type="rss" />
+      <outline title="CHINI KHORANG TRIPURA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwYDCNWqN2S5QQaPPvCgMVg" type="rss" />
+      <outline title="MBBWS - TRIPURA, INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT2yCkg-4iFKIMM1rwZgJ6w" type="rss" />
+      <outline title="Hriday Tripura ツ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3A2PAEuPFHMI6T7jxYZj_Q" type="rss" />
+      <outline title="Goronti Tripura Vlogger" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWsb4s-bEicGLZHNFSPRaIg" type="rss" />
+      <outline title="Tripura Fortune Lottery" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWZOFzpRjpyUeQHwaN4DAOA" type="rss" />
+      <outline title="Tripura rockerz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeEH31Tbj3toQNL8nEki9_A" type="rss" />
+      <outline title="Bosco Ventures Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9Q9OyiIf2qlUcj8Ew-yqLA" type="rss" />
+      <outline title="Discover Tripura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW5DSsrWsz_FMxSHt7yZOuw" type="rss" />
+      <outline title="Tripura Forest Department" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7d1aky4KiXf9rAl9aetBvw" type="rss" />
+    </outline>
+  </body>
+</opml>

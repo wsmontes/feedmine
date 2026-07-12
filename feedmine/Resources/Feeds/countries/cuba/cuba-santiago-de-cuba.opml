@@ -4,5 +4,12 @@
     <title>Santiago de Cuba Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="La zafra azucarera en Santiago de Cuba" xmlUrl="https://www.ivoox.com/feed_fg_f1669453_filtro_1.xml" type="rss" category="News" />
+      <outline title="Realizarán en Santiago de Cuba Taller y Concurso N" xmlUrl="https://www.ivoox.com/feed_fg_f1614504_filtro_1.xml" type="rss" category="News" />
+      <outline title="Ciencia y técnica en Santiago de Cuba" xmlUrl="https://www.ivoox.com/_fg_f1728325_filtro_1.xml" type="rss" category="Science" />
+      <outline title="El Movimiento agroecológico en Santiago de Cuba va" xmlUrl="https://www.ivoox.com/_fg_f1644322_filtro_1.xml" type="rss" category="News" />
+      <outline title="Se prepara Santiago de Cuba para la Feria Internac" xmlUrl="https://us.ivoox.com/es/espodcast-se-prepara-santiago-cuba-para-feria_fg_f1676802_filtro_1.xml" type="rss" category="Arts" />
+    </outline>
+  </body>
 </opml>

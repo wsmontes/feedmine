@@ -4,5 +4,8 @@
     <title>Meru Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Trinity Reformed Baptist Church, Meru, Kenya." xmlUrl="https://anchor.fm/s/8a656b40/podcast/rss" type="rss" category="Religion" />
+    </outline>
+  </body>
 </opml>

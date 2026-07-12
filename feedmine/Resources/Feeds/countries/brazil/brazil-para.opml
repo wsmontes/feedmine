@@ -4,54 +4,106 @@
     <title>Pará Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Diário do Pará" xmlUrl="https://www.diariodopara.com.br/feed/" type="rss" />
-        <outline title="Prefeitura de Belém" xmlUrl="https://www.belem.pa.gov.br/feed/" type="rss" />
-        <outline title="Zé Dudu (Marabá)" xmlUrl="https://www.zedudu.com.br/feed/" type="rss" />
-        <outline title="Correio de Carajás" xmlUrl="https://www.correiodecarajas.com.br/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Diário do Pará" xmlUrl="https://www.diariodopara.com.br/feed/" type="rss" />
+      <outline title="Prefeitura de Belém" xmlUrl="https://www.belem.pa.gov.br/feed/" type="rss" />
+      <outline title="Zé Dudu (Marabá)" xmlUrl="https://www.zedudu.com.br/feed/" type="rss" />
+      <outline title="Correio de Carajás" xmlUrl="https://www.correiodecarajas.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Federação Paraense" xmlUrl="https://www.fpfpara.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Círio de Nazaré" xmlUrl="https://www.ciriodenazare.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="IFPA" xmlUrl="https://www.ifpa.edu.br/feed/" type="rss" />
+    </outline>
+    <outline text="Environment">
+      <outline title="Amazônia Real" xmlUrl="https://amazoniareal.com.br/feed/" type="rss" />
+      <outline title="InfoAmazonia" xmlUrl="https://infoamazonia.org/feed/" type="rss" />
+      <outline title="Instituto Peabiru" xmlUrl="https://www.peabiru.org.br/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
       </outline>
-      <outline text="Sports">
-        <outline title="Federação Paraense" xmlUrl="https://www.fpfpara.com.br/feed/" type="rss" />
+    <outline text="Food">
       </outline>
-      <outline text="Culture">
-        <outline title="Círio de Nazaré" xmlUrl="https://www.ciriodenazare.com.br/feed/" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="IFPA" xmlUrl="https://www.ifpa.edu.br/feed/" type="rss" />
-      </outline>
-      <outline text="Environment">
-        <outline title="Amazônia Real" xmlUrl="https://amazoniareal.com.br/feed/" type="rss" />
-        <outline title="InfoAmazonia" xmlUrl="https://infoamazonia.org/feed/" type="rss" />
-        <outline title="Instituto Peabiru" xmlUrl="https://www.peabiru.org.br/feed/" type="rss" />
-      </outline>
-      <outline text="Business">
-      </outline>
-      <outline text="Food">
-      </outline>
-      <outline text="Blogs">
-        <outline title="Blog do Jeso" xmlUrl="https://www.jesocarneiro.com.br/feed/" type="rss" />
-        <outline title="Diário Online" xmlUrl="https://www.diarioonline.com.br/feed/" type="rss" />
-      </outline></body>
-      <outline text="Podcasts">
-        <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
-        <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
-      </outline>
-      <outline text="YouTube">
-        <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
-        <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
-      </outline>
-      <outline text="Cities">
-        <outline text="Santarém">
-          <outline title="Gazeta Santarém" xmlUrl="https://www.gazetadesantarem.com.br/feed/" type="rss" />
-          <outline title="Pref Santarém" xmlUrl="https://www.santarem.pa.gov.br/feed/" type="rss" />
-        </outline>
-        <outline text="Marabá">
-          <outline title="Portal Marabá" xmlUrl="https://www.portalmaraba.com.br/feed/" type="rss" />
-          <outline title="Pref Marabá" xmlUrl="https://www.maraba.pa.gov.br/feed/" type="rss" />
-        </outline>
-        <outline text="Alter do Chão">
-          <outline title="Alter do Chão" xmlUrl="https://www.alterdochao.com.br/feed/" type="rss" />
-        </outline>
-      </outline>
-
-    </opml>
+    <outline text="Blogs">
+      <outline title="Blog do Jeso" xmlUrl="https://www.jesocarneiro.com.br/feed/" type="rss" />
+      <outline title="Diário Online" xmlUrl="https://www.diarioonline.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Gringo Comedy Of Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO6TEbVHS3V7Kz_psi0ri8A" type="rss" />
+      <outline title="Big Hockey Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrYMYtUaFdFiXb6arMrFljQ" type="rss" />
+      <outline title="Aquática Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6gQmhfsZ1pQWntACJ2tfmA" type="rss" />
+      <outline title="Empreende Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcRrYQgKy08pTxBoAYvXyfA" type="rss" />
+      <outline title="From Brasil to Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZtRdAIWoWnEY_ZND6nZ9sA" type="rss" />
+      <outline title="Toilets Bathrooms Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNnG_MMLHrf9a0pNfVwZofA" type="rss" />
+      <outline title="7clouds Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmXGyfkhyrwgDQplgXYlErQ" type="rss" />
+      <outline title="Drive Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCb_nrUBha_OPO5cwDqAcIjQ" type="rss" />
+      <outline title="Brazil Papa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVByhJZzRckNRAoT6tyxR-Q" type="rss" />
+      <outline title="Brazil Graphics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwQ0tfHKRcOLvgrXpSBsK1A" type="rss" />
+      <outline title="Brazil Yesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdwol7U5ShRSnHkr2X_3P5A" type="rss" />
+      <outline title="HHI Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCImGX-NgqPhoos7Y0FmFw8Q" type="rss" />
+      <outline title="Dark Country Brazil " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8ljSs2B60WvUYc0hoCNhfA" type="rss" />
+      <outline title="ASMR from Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPchKIWOU96YJ5Xheg6AnbA" type="rss" />
+      <outline title="Supercars Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdvudZ4dKmVJY9UzmwoPxmw" type="rss" />
+      <outline title="Bárbara From Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8dM1XojPrqVhcQgXuNWILA" type="rss" />
+      <outline title="CLIMA BC Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi1vQx48j_nfrMg6XH5PItQ" type="rss" />
+      <outline title="Brodie Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3G51PX8Y7OD4ACj_Uds14g" type="rss" />
+      <outline title="Kings League Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCh5WrXMEdOifhfihh3KwEmg" type="rss" />
+      <outline title="Loops Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCgplXbm_XQPRsS1jxWKaeg" type="rss" />
+      <outline title="Violin Tab Brazil " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO7DGcvwPBNI8v-SVq0Y3Lg" type="rss" />
+      <outline title="Curtindo in Brazil " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrACr42uyBH12e_xjYgZZsA" type="rss" />
+      <outline title="Pucca Brasil - Official of Brazil " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ23vmWaB_AHB2-QoxU7wHg" type="rss" />
+      <outline title="AutoPov Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkaSBASljz7S295QDEU6U_A" type="rss" />
+      <outline title="Brasil Paralelo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKDjjeeBmdaiicey2nImISw" type="rss" />
+      <outline title="GUI BRAZIL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmK8iLYh9DKqMhPyV4ULbsA" type="rss" />
+      <outline title="ATICA DI BRAZIL " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYlDWeqYUgsv0xz3zNrvulg" type="rss" />
+      <outline title="Samuel Hohl / Brazil Calisthenics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHjD-bQZvmCi2YJYamNDn8A" type="rss" />
+      <outline title="BONBON BRAZIL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm--EJzpmt2CDFMowgKj9Tw" type="rss" />
+      <outline title="Brazil Conference" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWkdos8yyJel722WUuc8JmQ" type="rss" />
+      <outline title="Canada Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGpcDddm__xETwATpCBhfwA" type="rss" />
+      <outline title="Charles Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1zUxT75oWndsGFGJKvASBg" type="rss" />
+      <outline title="Luanna Reis Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ8VwYBNbvGWPcA41ylX-kQ" type="rss" />
+      <outline title="Rian Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAVWpHXOZJZK4oOnxgLbqbA" type="rss" />
+      <outline title="Banda Purple Brazil - Deep Purple Tribute" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9fUMZTsUZc7Dtvks26K2Fw" type="rss" />
+      <outline title="World of Giants Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB1OnuAVPvgbRDFPhFPEmMw" type="rss" />
+      <outline title="Brazil Brasil with Renata Lopes and Dennis T.I." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwA1dHFgWoI53x1jc4wauGw" type="rss" />
+      <outline title="Pro Brazil TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpQz2vYhnlz0PXG8qavp8Xw" type="rss" />
+      <outline title="Brazil Buildings Brasil em Obras" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCjvBkgbnCu9C76l3vs_ziA" type="rss" />
+      <outline title="Elite Auto Brazil -  Wheelie - Topic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv-7rqh2GEYntqq5KvYjFFQ" type="rss" />
+      <outline title="Brazil Birding" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6eyOVK5gBKk0DqmmNocknQ" type="rss" />
+      <outline title="Ayu Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU3JjZIPax0rTWYXAKF6sig" type="rss" />
+      <outline title="Caio Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmiVNO87ty3EE1YCuGdMY2w" type="rss" />
+      <outline title="Ana luiza brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxryazQXVwEGAbEyi6l6kDw" type="rss" />
+      <outline title="Brazil Scout " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnMu9cJYP2eYBus5VDRLZtw" type="rss" />
+      <outline title="Brazil Brasil Portuguese Português" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWYF15Cw0-iD660VnNZFOzQ" type="rss" />
+      <outline title="Raja Bhaiya Brazil Wale" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKZuPAg_Z8zbsrprUYeqY-A" type="rss" />
+      <outline title="Ngọc Thủy Family Cuộc Sống Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQsjqloZChlQ_hLK_PzDrjg" type="rss" />
+      <outline title="Team Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOq7Nzgii9oTwt049CVt4qw" type="rss" />
+      <outline title="Sanji Do Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZmfJ1ADQdxoHOV3uuhtOaQ" type="rss" />
+    </outline>
+  </body>
+  <outline text="Podcasts">
+    <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+    <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+    <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Santarém">
+      <outline title="Gazeta Santarém" xmlUrl="https://www.gazetadesantarem.com.br/feed/" type="rss" />
+      <outline title="Pref Santarém" xmlUrl="https://www.santarem.pa.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Marabá">
+      <outline title="Portal Marabá" xmlUrl="https://www.portalmaraba.com.br/feed/" type="rss" />
+      <outline title="Pref Marabá" xmlUrl="https://www.maraba.pa.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Alter do Chão">
+      <outline title="Alter do Chão" xmlUrl="https://www.alterdochao.com.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

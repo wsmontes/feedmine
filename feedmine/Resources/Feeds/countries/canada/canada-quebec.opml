@@ -18,5 +18,8 @@
       <outline title="Mila" xmlUrl="https://mila.quebec/en/feed/" type="rss" />
       <outline title="Québec Numérique" xmlUrl="https://www.quebecnumerique.com/feed/" type="rss" />
     </outline>
-</body>
+    <outline text="Podcasts">
+      <outline title="'Remedial Secession and the 1998 Quebec Secession Reference Case: Did the Supreme Court of Canada Get it Wrong?' - Stephane Beaulac &amp; Frédéric Bérard" xmlUrl="https://rss.sms.cam.ac.uk/rss/media/2377128" type="rss" />
+    </outline>
+  </body>
 </opml>

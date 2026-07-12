@@ -4,5 +4,15 @@
     <title>Sennar Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="The History of Sudan: Kingdoms, Conflict, and Modern Borders — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-sudan.xml" type="rss" category="History" />
+      <outline title="ODI | Think Change" xmlUrl="http://feeds.feedburner.com/ODI/WorldForGirls" type="rss" category="Politics" />
+      <outline title="Globally - La geopolitica spiegata in modo chiaro" xmlUrl="https://feeds.megaphone.fm/ISM5684255413" type="rss" category="Politics" />
+      <outline title="Art in Brief" xmlUrl="https://rss.buzzsprout.com/2445277.rss" type="rss" category="Arts" />
+      <outline title="Focus on Africa" xmlUrl="https://podcasts.files.bbci.co.uk/p00gbjvb.rss" type="rss" category="News" />
+      <outline title="Berlin-Brandenburgische Akademie der Wissenschaften" xmlUrl="https://lisa.gerda-henkel-stiftung.de/podcast_channel_xml.php?podcast_id=10039" type="rss" category="History" />
+      <outline title="London Labour and the London Poor Volume IV" xmlUrl="https://www.spreaker.com/show/6900314/episodes/feed" type="rss" category="History" />
+      <outline title="Indie Radio - News, Podcasts, Talk &amp; Analysis" xmlUrl="https://api.substack.com/feed/podcast/512652.rss" type="rss" category="Daily News" />
+    </outline>
+  </body>
 </opml>

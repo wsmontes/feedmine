@@ -4,6 +4,62 @@
     <title>Toyama Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Hood Nerds Anime and Comics Podcast" xmlUrl="https://anchor.fm/s/423c6ee0/podcast/rss" type="rss" category="Animation &amp; Manga" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="富山観光スポット" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCE8-J-i4ikgMAfSp2Eaf1kg" type="rss" />
+      <outline title="Tomek and Mai in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzhcJYpyZ7ZbVqUcK1m6tkA" type="rss" />
+      <outline title="Country life in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCst_e66-R-4qWivWtT1mnZw" type="rss" />
+      <outline title="Hidden Toyama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfNndizn3ZlHp_2wNt2a2fA" type="rss" />
+      <outline title="Moments in Toyama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCViq0yerGc5nyg_7MQoEOdQ" type="rss" />
+      <outline title="Kenny's Japan Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF23hVvEo4C4Rq6udZZFe2Q" type="rss" />
+      <outline title="TIPTOP JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp7hQEm89QrugOALqh133hQ" type="rss" />
+      <outline title="Go To Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2xKp7k_NlOiZ9LVu5sNAQg" type="rss" />
+      <outline title="TOYAMA TRAVEL GUIDE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUXbQMxoY63-thWNSznCHeQ" type="rss" />
+      <outline title="5oo3" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR0Jqs6YIhiT34la8AB9ZOg" type="rss" />
+      <outline title="Discover.Toyama_富山発見" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6uorNfvjl-xRClekX9gN3w" type="rss" />
+      <outline title="Unseen Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkC8OTZmPhHVk_p5PDxfBUQ" type="rss" />
+      <outline title="Lica In Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKan7ho7H1LWW9cVcJP_shA" type="rss" />
+      <outline title="Mitsusada Toyama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCToxsKQpgO6IdLcTWSbcmrQ" type="rss" />
+      <outline title="Toyama Japan Hiro's Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjU5ApWUPGe-RIVyrkO8hGQ" type="rss" />
+      <outline title="Japan Travel Guide" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfqyhbpyl6Gk9pTuTr0KkOQ" type="rss" />
+      <outline title="Sharla in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLfbmGhvu7xTHXktmMWdfvw" type="rss" />
+      <outline title="Japan Quest" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4V43II_qs_aOQ-9ceDRp1w" type="rss" />
+      <outline title="とやぞー / GOALS TOYAMA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJn0ASCdK2vdGtLZccWPOLA" type="rss" />
+      <outline title="FunaMari JAPAN VLOG" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKaNdib0XzXio5pDLRLhwTg" type="rss" />
+      <outline title="Slice of Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsYrptSABG5GQ_Iw2b7q4YQ" type="rss" />
+      <outline title="Bald Man Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCznu6Ax8RCq8J4Iop-6y3Pw" type="rss" />
+      <outline title="2024 Noto Earthquake &amp; Tsunami Archive" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPkLt43kB5b_klvcp77vqIw" type="rss" />
+      <outline title="Rural Japan walker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzke7wErKMCWN4lqy4iPm1g" type="rss" />
+      <outline title="Sapa Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGPYw-IEmxz2P5f3-j4geyw" type="rss" />
+      <outline title="Anime Travel Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeMDuYd60NhnHOke2XrGN2Q" type="rss" />
+      <outline title="TOYAMA BAY Lab" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkGxahVPJCGkNQLMsYkryOg" type="rss" />
+      <outline title="Driving Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZIdQhj-8h6oAqbyFi_a9Sw" type="rss" />
+      <outline title="truckyarouSakura" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFDdRKeqnpcA5NFAUhB5IaA" type="rss" />
+      <outline title="Nippon Travelogue 東瀛紀行" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnOdqT5_wPlSOxgQpW8gfxQ" type="rss" />
+      <outline title="日本全国道の駅の旅" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIH3mrJlQxmIodiUSuckZww" type="rss" />
+      <outline title="Real estate foreigners (Gaijin) in toyama japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzxgX41QSb6VqC3ge1Pw2Mg" type="rss" />
+      <outline title="Japan With That?" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeEfmxwDTsxYFgKBotineyA" type="rss" />
+      <outline title="Japan Journey " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6_VDQDS8DZqmUHl7v1I4dg" type="rss" />
+      <outline title="A Walking Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCasmPiqJ0668MZImuBzAsiw" type="rss" />
+      <outline title="Asthmatic In Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaQQp1zFB7GAtyD3RPDpsDw" type="rss" />
+      <outline title="KLNIHON" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCM7td-yCNpamcQ2HQhPhKmg" type="rss" />
+      <outline title="Wanderly Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1nkCcta3krsuAvFb5PA-3A" type="rss" />
+      <outline title="Grasya In Toyama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_ShMZ0mxmJqaxbSJgO7J8w" type="rss" />
+      <outline title="じおらま富山。_Diorama_Toyama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEpN4Canz7eW5tpHyHp6I0w" type="rss" />
+      <outline title="Wandering Moments – Japan | さまよう瞬間 – 日本 " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcKQq_-MZfG2g25vH3YbG_A" type="rss" />
+      <outline title="Toyama International Junction" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg0OcJ8lsU8KdFe3d3iPgyA" type="rss" />
+      <outline title="Mizuki Travels Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUPKzbe_Gt64AiPx1AgyPeQ" type="rss" />
+      <outline title="Ookami_to" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UComHQfGUqjz03hyziOU94HA" type="rss" />
+      <outline title="TRAVEL IN JAPAN " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRnDBWNoamndRI-saP0WI3Q" type="rss" />
+      <outline title="A Tale of Two Bays" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdq2KrIO7fcyygo_vefkjig" type="rss" />
+      <outline title="Nippon Walking " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLoxHV7UF1egDnMF3yT_4yQ" type="rss" />
+      <outline title="田舎の日常 富山 Japanese countryside Toyama" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56wI3LFWT6rxhJQLXbzxcA" type="rss" />
+      <outline title="Japan Hotel Focus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCebwZasop2OjYr0auWZ0vUQ" type="rss" />
+      <outline title="Nippon Adventures" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQSNdEsXXe6EQ_QMuMHmOUw" type="rss" />
+    </outline>
+  </body>
+</opml>

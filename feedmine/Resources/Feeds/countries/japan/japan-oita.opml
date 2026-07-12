@@ -4,8 +4,14 @@
     <title>Oita Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Oita Pref Gov" xmlUrl="https://www.pref.oita.jp/rss/" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Oita Pref Gov" xmlUrl="https://www.pref.oita.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Club FREEDOM097 Oita Japan" xmlUrl="https://feeds.transistor.fm/club-freedom" type="rss" category="Music" />
+      <outline title="The Austin and Arthur Show｜生の英会話" xmlUrl="https://rss.libsyn.com/shows/361352/destinations/2964902.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Live in Tokyo with Max D. Capo" xmlUrl="https://podcasts.apple.com/us/podcast/live-in-tokyo-with-max-d-capo/id1723641269" type="rss" category="Places &amp; Travel" />
+    </outline>
+  </body>
+</opml>

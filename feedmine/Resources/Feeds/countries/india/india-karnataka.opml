@@ -4,23 +4,130 @@
     <title>Karnataka Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Bangalore" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128671099.cms" type="rss" />
-        <outline title="The Hindu Bangalore" xmlUrl="https://www.thehindu.com/news/cities/bangalore/feeder/default.rss" type="rss" />
-        <outline title="Indian Express Bangalore" xmlUrl="https://indianexpress.com/section/cities/bangalore/feed/" type="rss" />
-        <outline title="Udayavani" xmlUrl="https://www.udayavani.com/rss" type="rss" />
-        <outline title="Vijaya Karnataka" xmlUrl="https://vijaykarnataka.com/rssfeedstopstories.cms" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Karnataka Gov" xmlUrl="https://www.karnataka.gov.in/rss" type="rss" />
-      </outline>
-      <outline text="Technology">
-        <outline title="YourStory Bangalore" xmlUrl="https://yourstory.com/feed" type="rss" />
-        <outline title="Inc42 Bangalore" xmlUrl="https://inc42.com/feed/" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="IISc Bangalore" xmlUrl="https://iisc.ac.in/rss" type="rss" />
-      </outline>
-      <outline text="Sports">
-</outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="Times of India Bangalore" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128671099.cms" type="rss" />
+      <outline title="The Hindu Bangalore" xmlUrl="https://www.thehindu.com/news/cities/bangalore/feeder/default.rss" type="rss" />
+      <outline title="Indian Express Bangalore" xmlUrl="https://indianexpress.com/section/cities/bangalore/feed/" type="rss" />
+      <outline title="Udayavani" xmlUrl="https://www.udayavani.com/rss" type="rss" />
+      <outline title="Vijaya Karnataka" xmlUrl="https://vijaykarnataka.com/rssfeedstopstories.cms" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Karnataka Gov" xmlUrl="https://www.karnataka.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="YourStory Bangalore" xmlUrl="https://yourstory.com/feed" type="rss" />
+      <outline title="Inc42 Bangalore" xmlUrl="https://inc42.com/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="IISc Bangalore" xmlUrl="https://iisc.ac.in/rss" type="rss" />
+    </outline>
+    <outline text="Sports">
+</outline>
+    <outline text="Podcasts">
+      <outline title="The Exotic Wonders of India and the World" xmlUrl="https://feeds.hubhopper.com/4cfdcd676707c887a63b86ef71e3998d.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Winging It Travel Podcast" xmlUrl="https://feeds.captivate.fm/winging-it-travel/" type="rss" category="Places &amp; Travel" />
+      <outline title="Mag-Book by Materialicasa.it Podcast" xmlUrl="https://anchor.fm/s/ed33a458/podcast/rss" type="rss" category="Design" />
+      <outline title="Nethra's Talk Show" xmlUrl="https://anchor.fm/s/12458cbc/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="ledlights.blog" xmlUrl="https://anchor.fm/s/690d4940/podcast/rss" type="rss" category="Management" />
+      <outline title="Daybreak" xmlUrl="https://feeds.transistor.fm/daybreak-3e66db67-ddb3-4cd3-9ba9-460bd586dcbb" type="rss" category="Business News" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="Moneycontrol Podcast" xmlUrl="https://audioboom.com/channels/4937727.rss" type="rss" category="Business" />
+      <outline title="Dark Asia with Megan" xmlUrl="https://rss.pdrl.fm/9de928/feeds.simplecast.com/hWnM9oo1" type="rss" category="True Crime" />
+      <outline title="MITI Radio" xmlUrl="https://anchor.fm/s/49ad6148/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="No-Cost Extension with Deval Sanghavi" xmlUrl="https://rss.libsyn.com/shows/329384/destinations/2681480.xml" type="rss" category="Non-Profit" />
+      <outline title="The Making Good Podcast" xmlUrl="https://feed.pippa.io/public/shows/the-making-good-podcast" type="rss" category="Technology" />
+      <outline title="First Friends Church - Canton, OH" xmlUrl="https://feeds.transistor.fm/first-friends-church" type="rss" category="Christianity" />
+      <outline title="RELIGIOUS AND SPIRITUALITY OF JAMBOODVIPA, AND EVERYTHING RELATED CONCEPTS OF JAMBOODVIPA." xmlUrl="https://anchor.fm/s/1013eeee4/podcast/rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="The Clean Energy Weekly Brief" xmlUrl="https://feeds.podcastai.com/AcN1AaXLobNy3so06UzNzX.xml" type="rss" category="Earth Sciences" />
+      <outline title="Inspiring Shri Harekala Hajabba" xmlUrl="https://anchor.fm/s/3d96a680/podcast/rss" type="rss" category="Government" />
+      <outline title="Two by Two" xmlUrl="https://feeds.transistor.fm/two-by-two" type="rss" category="Business" />
+      <outline title="DAILY TALKS" xmlUrl="https://anchor.fm/s/2c2a2638/podcast/rss" type="rss" category="News" />
+      <outline title="Immigration Tech &amp; Marketing - The GMI Rocket Show - Hosted by Roman Zelichenko." xmlUrl="https://anchor.fm/s/314536d0/podcast/rss" type="rss" category="Technology" />
+      <outline title="Tea Biz" xmlUrl="https://feeds.redcircle.com/a4e90858-0820-4c9b-a596-550918050867" type="rss" category="Business News" />
+      <outline title="Native Yoga Toddcast" xmlUrl="https://rss.buzzsprout.com/950785.rss" type="rss" category="Alternative Health" />
+      <outline title="Modernize or Die ® Podcast" xmlUrl="https://feeds.transistor.fm/modernize-or-die-podcast" type="rss" category="How To" />
+      <outline title="Girls, Beer, Sports" xmlUrl="https://www.spreaker.com/show/1667203/episodes/feed" type="rss" category="Sports" />
+      <outline title="Current Affairs Daily" xmlUrl="https://anchor.fm/s/620fc348/podcast/rss" type="rss" category="Education" />
+      <outline title="Cuerpos especiales" xmlUrl="https://www.europafm.com/rss/podcast/5035495/podcast.xml" type="rss" category="Comedy" />
+      <outline title="Islām, Leadership, Communication, Dialogue, Learning" xmlUrl="https://anchor.fm/s/41cd3958/podcast/rss" type="rss" category="Islam" />
+      <outline title="The Commuter Devotional" xmlUrl="https://anchor.fm/s/14f244a0/podcast/rss" type="rss" category="Christianity" />
+      <outline title="A Different Breed of News" xmlUrl="https://anchor.fm/s/484ec88c/podcast/rss" type="rss" category="Pets &amp; Animals" />
+      <outline title="News at 7" xmlUrl="https://www.spreaker.com/show/6571256/episodes/feed" type="rss" category="Daily News" />
+      <outline title="In Focus by The Hindu" xmlUrl="https://feeds.megaphone.fm/THGU4956605070" type="rss" category="News Commentary" />
+      <outline title="News at 2" xmlUrl="https://www.spreaker.com/show/6746855/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Stories From India" xmlUrl="https://anchor.fm/s/e563890/podcast/rss" type="rss" category="History" />
+      <outline title="SDG Talks" xmlUrl="https://anchor.fm/s/138fa760/podcast/rss" type="rss" category="Education" />
+      <outline title="🏏Armchair Cricket Podcast 🎧" xmlUrl="https://feeds.megaphone.fm/COMG1516365784" type="rss" category="Cricket" />
+      <outline title="Time Magazine - AIRSLA" xmlUrl="https://pinecast.com/feed/time-magazine-airsla" type="rss" category="Business News" />
+      <outline title="Laughlin Community Church" xmlUrl="https://sermons.logos.com/api/channels/2943200/feed" type="rss" category="Christianity" />
+      <outline title="SUPfm  The International Stand Up Paddle Board Podcast" xmlUrl="https://feeds.captivate.fm/supfm/" type="rss" category="Wilderness" />
+      <outline title="Fruitloops: Serial Killers of Color" xmlUrl="https://rss.introcast.io/1400426755/feeds.megaphone.fm/fruitloops" type="rss" category="True Crime" />
+      <outline title="Nothing But The Truth" xmlUrl="https://www.spreaker.com/show/5500841/episodes/feed" type="rss" category="Politics" />
+      <outline title="The Hindu Daily" xmlUrl="https://anchor.fm/s/101ac2068/podcast/rss" type="rss" category="News" />
+      <outline title="Health Tips' Podcast" xmlUrl="https://tandarost.podomatic.com/rss2.xml" type="rss" category="Fitness" />
+      <outline title="CBN.com - NewsWatch - Video Podcast" xmlUrl="http://podcast.cbn.com/Newswatch.aspx" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Sprung On Food" xmlUrl="https://anchor.fm/s/f94e452c/podcast/rss" type="rss" category="Food" />
+      <outline title="Energizing India Podcast" xmlUrl="https://feeds.simplecast.com/sdAZ6AUC" type="rss" category="Entrepreneurship" />
+      <outline title="Latest Climate News" xmlUrl="https://feed.podbean.com/atouchofspace/feed.xml" type="rss" category="Earth Sciences" />
+      <outline title="Today in India - Morning News Brief" xmlUrl="https://anchor.fm/s/ff80e29c/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Daily News Dose" xmlUrl="https://www.omnycontent.com/d/playlist/38abe477-df60-4cf0-bd9f-b1fe00d0bda4/38a58f8e-482b-4da6-b5a5-b203014eae05/5e4bd9d7-820e-46ca-9e35-b203014eae21/podcast.rss" type="rss" category="Daily News" />
+      <outline title="A+ Report" xmlUrl="https://api.substack.com/feed/podcast/1502145.rss" type="rss" category="Tech News" />
+      <outline title="Final Frontiers Radio Show" xmlUrl="https://rss.libsyn.com/shows/108522/destinations/590366.xml" type="rss" category="Christianity" />
+      <outline title="Breaking the Barriers for a TB Free India" xmlUrl="https://anchor.fm/s/6b0636f8/podcast/rss" type="rss" category="Business" />
+      <outline title="2014 - India Ijtima (karnataka)" xmlUrl="https://www.spreaker.com/show/6722381/episodes/feed" type="rss" category="Religion" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Indian - Karnataka Sign Language Bible" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvl_ZNWETjRWqaTfaiCOESA" type="rss" />
+      <outline title="Navsu ,Karnataka, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLX56HQQcbXDcO1TetC68AQ" type="rss" />
+      <outline title="Karnataka tourism " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0daEC-QlACtpf_efYteH0Q" type="rss" />
+      <outline title="Jignasa Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEApyu834UDTx0djSLniRWA" type="rss" />
+      <outline title="Karnataka Postal Circle" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1vg-FNxLxItPwXYtJuzEtQ" type="rss" />
+      <outline title="Karnataka Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCneC5u4ZF9yHjMnk2YUJu4A" type="rss" />
+      <outline title="Zee Kannada India Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyK6AsWvHIZlL9YmAKTNfyw" type="rss" />
+      <outline title="Couple of Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPYe3p0oai_APf86pSwcmFA" type="rss" />
+      <outline title="Karnataka India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClJFGPXvBWFx8E3fmAO-XHQ" type="rss" />
+      <outline title="Temples in Karnataka India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcbNyqPOSoOhJPLSVbT8Uew" type="rss" />
+      <outline title="Karnataka India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEH-ZUcNu74W5-E75BjQpzw" type="rss" />
+      <outline title="Girish HC From Karnataka India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-wkXcJrDN-bm3sAYfOtKxA" type="rss" />
+      <outline title="Karnataka India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyGNIF9tIhVVXMxr3J74TAg" type="rss" />
+      <outline title="Karnataka India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7s7bxsXu-K3M4hrDgb8wNg" type="rss" />
+      <outline title="Veg Recipes of Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8ywe-yqxdvDFvjKX_TM3yg" type="rss" />
+      <outline title="ATHUMANESAR MINISTRIES KARNATAKA OFFICIAL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqG-NZSwNO4MZBtFunzNCpQ" type="rss" />
+      <outline title="KIOC - KARNATAKA INSTITUTE OF CRICKET " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX4QeJ7H2ShblDg4csluBYA" type="rss" />
+      <outline title="India Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpLeVltoT0JplDv32jXZ9AA" type="rss" />
+      <outline title="India To Bharat" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClKPPV9AC20vz9KM8Z9W5ag" type="rss" />
+      <outline title="Explore #Incredible Karnataka #INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLa0w4s7rq78kaEc8QytIEg" type="rss" />
+      <outline title="Karnataka Flavors " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt3YjfacKrIJYYUNmUPWSew" type="rss" />
+      <outline title="India Today" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYPvAwZP8pZhSMW8qs7cVCw" type="rss" />
+      <outline title="eDAR Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl5RhXKAMDythU5Qyl2E4jQ" type="rss" />
+      <outline title="Maine Coon Cat Karnataka India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLvisxJUFHVQLLh7GRiLErA" type="rss" />
+      <outline title="Karnataka State Haj Committee " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChEnt3cMF0q7zg8klgvMxkQ" type="rss" />
+      <outline title="Hassan Tourism Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNRzOYOvlYUOKozPMsstESA" type="rss" />
+      <outline title="Karnataka TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG8jvVACFeLdmgK3rfakMnw" type="rss" />
+      <outline title="Popular Front of India- Karnataka State" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfHibB4fR8C__S4cLo6YmeA" type="rss" />
+      <outline title="Karnataka - Topic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgejaVIWDijAax6kjqXakuQ" type="rss" />
+      <outline title="Heritage Of Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfoymDorKw7XTHLBZaB39AQ" type="rss" />
+      <outline title="Karnataka Gich" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBzX8Ez78u2YxypMFfYARZw" type="rss" />
+      <outline title="fit karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX8PghcQAHNmb_LVLRqxHKg" type="rss" />
+      <outline title="Beautiful karnataka india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSpX_wayMndP0sqVuHRC_Ag" type="rss" />
+      <outline title="Bangalore Karnataka India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-4xH1ZSRLuqvKWgzd6FvhQ" type="rss" />
+      <outline title="KARNATAKA FINDINGS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1K0sqostfGUevbPD1Hi8zw" type="rss" />
+      <outline title="India karnataka " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjx2WC2o-Q4L5txTkHp4HzQ" type="rss" />
+      <outline title="Karnataka India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEqCU-NUO1CzvZOGndaJcZQ" type="rss" />
+      <outline title="Vijay Karnataka | ವಿಜಯ ಕರ್ನಾಟಕ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCClDtg3ns0xa_d7Q5sK1yOQ" type="rss" />
+      <outline title="Karnataka Bank" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUaEnHZCbzZm86LKkhQwB0A" type="rss" />
+      <outline title="Deeksha Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWCGn6FYpRPTnPhARKdQhTg" type="rss" />
+      <outline title="Karnataka India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnl5_jfOTxCRvCWx_2GRI4A" type="rss" />
+      <outline title="india Karnataka " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7vd7euZQ0M_xdz-exIWiWA" type="rss" />
+      <outline title="Karnataka Indian boy " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfzxg9qr9X61IU5_86Da0uA" type="rss" />
+      <outline title="Karnataka India news today" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbjdRDQ5R_ihv9nBY21-qGw" type="rss" />
+      <outline title="Karnataka Grain &amp; Food Products India Pvt Ltd" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxC5G_vRtpC9YeytDqdtJzQ" type="rss" />
+      <outline title="Karnataka Aquarium Hindi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw0HyEPU2LpVkC7fOi3n_lg" type="rss" />
+      <outline title="YHAI Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC90rYcsBfdE_nLrdrElU7hg" type="rss" />
+      <outline title="Temple Culture Of Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBbMaX_pFc3C9is7bH25cVw" type="rss" />
+      <outline title="Indian Tv Karnataka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQzO3XBci7nn9UNS09526DQ" type="rss" />
+      <outline title="KV NEWS KARNATAKA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCubZC7rT-IBHjcPs4B-bIBA" type="rss" />
+    </outline>
+  </body>
+</opml>
