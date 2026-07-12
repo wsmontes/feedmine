@@ -3,10 +3,8 @@
 from __future__ import annotations
 
 import hashlib
-import hmac
 import os
 import time
-from datetime import datetime, timezone
 from urllib.parse import urlencode
 
 import aiohttp
@@ -44,17 +42,19 @@ class PodcastIndexSource:
             )
 
     def _auth_headers(self) -> dict[str, str]:
-        """Generate X-Auth-Key, X-Auth-Date, Authorization headers."""
-        dt = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
-        string_to_sign = f"{self.api_key}{self.api_secret}{dt}"
-        signature = hmac.new(
-            self.api_secret.encode(), string_to_sign.encode(), hashlib.sha1
-        ).hexdigest()
+        """Generate X-Auth-Key, X-Auth-Date, Authorization headers.
+
+        Auth spec: api_key + api_secret + unix_timestamp → SHA1 hex.
+        See https://podcastindex-org.github.io/docs-api/#overview--authentication-details
+        """
+        epoch_time = int(time.time())
+        data_to_hash = f"{self.api_key}{self.api_secret}{epoch_time}"
+        sha1_hash = hashlib.sha1(data_to_hash.encode()).hexdigest()
         return {
             "User-Agent": "FeedmineDiscovery/1.0",
             "X-Auth-Key": self.api_key,
-            "X-Auth-Date": dt,
-            "Authorization": signature,
+            "X-Auth-Date": str(epoch_time),
+            "Authorization": sha1_hash,
         }
 
     async def search(
