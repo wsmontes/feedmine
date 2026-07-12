@@ -2,11 +2,17 @@ import pytest
 from scripts.feed_discovery.sources._base import SourceProtocol
 from scripts.feed_discovery.sources.podcasts import ITunesSource
 from scripts.feed_discovery.sources.ddg_text import DDGTextSource
+from scripts.feed_discovery.sources.podcast_index import PodcastIndexSource
+from scripts.feed_discovery.sources.deezer import DeezerSource
+from scripts.feed_discovery.sources.youtube_api import YouTubeAPISource
 
 
 ALL_SOURCES = [
     ITunesSource(),
     DDGTextSource(),
+    PodcastIndexSource(),
+    DeezerSource(),
+    YouTubeAPISource(),
 ]
 
 
@@ -49,4 +55,7 @@ def test_registry_can_discover_sources():
         registry[source.name] = source
     assert "itunes" in registry
     assert "ddg_text" in registry
-    assert len(registry) == 2
+    assert "podcast_index" in registry
+    assert "deezer" in registry
+    assert "youtube_api" in registry
+    assert len(registry) == 5
