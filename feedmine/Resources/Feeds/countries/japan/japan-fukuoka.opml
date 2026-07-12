@@ -4,9 +4,78 @@
     <title>Fukuoka Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Fukuoka Pref Gov" xmlUrl="https://www.pref.fukuoka.lg.jp/rss/" type="rss" />
-      </outline>
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Fukuoka Pref Gov" xmlUrl="https://www.pref.fukuoka.lg.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
+      <outline title="Atomic Heart: Poetry +" xmlUrl="https://anchor.fm/s/5ba5b738/podcast/rss" type="rss" category="Personal Journals" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="Living Miracles Community" xmlUrl="https://www.spreaker.com/show/1242364/episodes/feed" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Audio Japan | Learning Japan with you" xmlUrl="https://anchor.fm/s/f02b1bc8/podcast/rss" type="rss" category="Courses" />
+      <outline title="Japan By River Cruise" xmlUrl="https://feeds.transistor.fm/japan-by-river-cruise" type="rss" category="Society &amp; Culture" />
+      <outline title="Arrggh! A Video Game Podcast from The Waffling Taylors" xmlUrl="https://feeds.transistor.fm/the-waffling-taylors-podcast" type="rss" category="Video Games" />
+      <outline title="Deep in Japan" xmlUrl="https://feeds.transistor.fm/deep-in-japan" type="rss" category="Society &amp; Culture" />
+      <outline title="The Travel Wins" xmlUrl="https://www.spreaker.com/show/3480301/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="Got Faded Japan" xmlUrl="https://feed.podbean.com/gotfadedjapankrew/feed.xml" type="rss" category="Comedy" />
+      <outline title="KoreKara Podcast" xmlUrl="https://anchor.fm/s/26fe6304/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Deep Dive from The Japan Times" xmlUrl="https://audioboom.com/channels/4970813.rss" type="rss" category="News" />
+      <outline title="Small Talk Japan" xmlUrl="https://anchor.fm/s/74775ba4/podcast/rss" type="rss" category="Places &amp; Travel" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="ウェザーニュース" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNsidkYpIAQ4QaufptQBPHQ" type="rss" />
+      <outline title="Japanese Food Craftsman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdfhVbZsOMwRn4A0LO5k0ww" type="rss" />
+      <outline title="NHK WORLD-JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSPEjw8F2nQDtmUKPFNF7_A" type="rss" />
+      <outline title="JAL 日本航空【公式】" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC866LucISVOcPmrK2kvx2hg" type="rss" />
+      <outline title="うどんそば 関西 Udonsoba" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsyzqlcYZJUdAV2D9DXjp6g" type="rss" />
+      <outline title="PiQtour Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoC6YquSPNoXwJ9dZzL7_Ag" type="rss" />
+      <outline title="Sunny in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCH3FtiK45GdxH_TcbY51KTw" type="rss" />
+      <outline title="BRONZE MUSEUM JAPAN Traditional Craft Shop" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfy12MCqEtwoo7duY3XNrew" type="rss" />
+      <outline title="福岡タワー【公式】" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5cjuj8z0cMEhVOJu0pgoWw" type="rss" />
+      <outline title="福岡女子LIFE「La Vita Channel」" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC97KqGA-VeApH3A0LlcmOgg" type="rss" />
+      <outline title="Janine in Fukuoka " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkMA_z4uCo4FEOjHSg8Fi2Q" type="rss" />
+      <outline title="World Campus - Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzFt1MdXCU--HcpmlvnK-Jw" type="rss" />
+      <outline title="Unique Japan Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbrFaFMIn_3EAXmDFLtta5w" type="rss" />
+      <outline title="日本センチュリー交響楽団ーJapan Century Symphony Orchestra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiArdqZh7UNiJq8f-M7S6FQ" type="rss" />
+      <outline title="愛投日本 Invest Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ2mWBpQOY-OJcGd_k4DRmQ" type="rss" />
+      <outline title="Chiiii's Perfect Japan Guide / ちーーー's 日本ガイド" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5zit9udvtc00EvNCBoZowA" type="rss" />
+      <outline title="JennyK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOUHvd5DVgIEkoxHDaw4Wtg" type="rss" />
+      <outline title="福岡ソフトバンクホークス公式" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbDAmhyRx9bakv-0Gucglgg" type="rss" />
+      <outline title="TommyTommy Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ6rlGjE5pO0SqMOfxBUrhQ" type="rss" />
+      <outline title="ボートレース福岡" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgyb8el3rLkg8i0bEMboQhA" type="rss" />
+      <outline title="たもグルメ【Japanese food】" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMbiN_9V01_LJrmsyHCO3zA" type="rss" />
+      <outline title="Paolo fromTOKYO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCixD9UbKvDxzGNiPC_fgHyA" type="rss" />
+      <outline title="Solo Travel Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-CWBoT-r7VijIr8YZTtzxA" type="rss" />
+      <outline title="食のつながり" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7ljLL8UKkeVYWsYYZZZrxQ" type="rss" />
+      <outline title="日本うどんそば" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiJIMA4joX81LD5ThM2zPmw" type="rss" />
+      <outline title="Micaela ミカエラ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLi8qtd3QLvXCZLyobiodiw" type="rss" />
+      <outline title="【日本歩】4K Japan Walk" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT-MkwmCfSwvTra64J--qgA" type="rss" />
+      <outline title="吉田社長 Japan TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzfNj5-UEvxOBErW2S3_bSg" type="rss" />
+      <outline title="KiKi.Jp。" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0Ni6aKVaLnvt7hwLGxRROQ" type="rss" />
+      <outline title="日本 Japan Japón" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm-Ljp73yCBwViKUDToIltg" type="rss" />
+      <outline title="Kyushu Live" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqRzwkrmljwrvO6ynt8es1Q" type="rss" />
+      <outline title="Tahiti Heiva in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFxYESCiG8h8XsjhCD2JO8w" type="rss" />
+      <outline title="日本菇菇菇 JAPAN GoGoGo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClw3q8yjcT24yReeqUErlUw" type="rss" />
+      <outline title="Maris Around the World" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1UBKRvAMj83Q743sS18pbg" type="rss" />
+      <outline title="Roger Soares" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN2SbY9QZrY9XfcWkp2y5aQ" type="rss" />
+      <outline title="Experience JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCM0fFACS2gXFvEddnKJ7QpQ" type="rss" />
+      <outline title="Sharmeleon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm8xNi3kuBHE99QH-N_VJVg" type="rss" />
+      <outline title="日本房產頻道" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkZILGxf5eMleMeqfLInomg" type="rss" />
+      <outline title="【MIBUKI &amp; KURORISA】一起去吧" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChrEP5eKUNUx8Hkni4ksbJA" type="rss" />
+      <outline title="Japanese Kitchen Tour" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5mGuCfv9Nzr1QXt5a19pRw" type="rss" />
+      <outline title="うどんそば発祥の地 福岡博多 Udonsoba Fukuoka Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoVShYtQ3yomlrPGYguyjrg" type="rss" />
+      <outline title="Chris To Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq_2MRFrdIS3-AHuY40oC-w" type="rss" />
+      <outline title="日本慢慢來 Japan Chill Life | 福爾摩沙不動產株式会社" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTImcMaesNPUGQJYUV17O8A" type="rss" />
+      <outline title="福岡・佐賀 KBC NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCS8ZQejq2CL-nZcnRWZCA5Q" type="rss" />
+      <outline title="FEEL FUKUOKA JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5Eng-uOVRO-HZzbOf6tyuA" type="rss" />
+      <outline title="日本福岡女孩Yumeko Japan Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmGn4rk7yEBRR-bi9Fo2ypw" type="rss" />
+      <outline title="Abroad in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHL9bfHTxCMi-7vfxQ-AYtg" type="rss" />
+      <outline title="福岡TNC ニュース" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ0U1AoJOKVdlejhjUU1fBg" type="rss" />
+      <outline title="【公式】ポケモンカードチャンネル" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCysOBNRW0rEmLtFptj1TN7A" type="rss" />
+      <outline title="Japan by Food" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCyR9oAyHGSvZnYoGv3Qu1Q" type="rss" />
+    </outline>
+  </body>
+</opml>

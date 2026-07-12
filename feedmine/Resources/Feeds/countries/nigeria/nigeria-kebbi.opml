@@ -4,5 +4,106 @@
     <title>Kebbi Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Focus on Africa" xmlUrl="https://podcasts.files.bbci.co.uk/p00gbjvb.rss" type="rss" category="News" />
+      <outline title="The History of Nigeria: Kingdoms, Colonies, and Africa's Giant — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-nigeria.xml" type="rss" category="History" />
+      <outline title="Nigeria News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/nigeria-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Daily News" />
+      <outline title="Terms and Conditions by Pulse" xmlUrl="https://feed.podbean.com/termsandconditionspulse/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Il Mondo" xmlUrl="https://www.spreaker.com/show/5773405/episodes/feed" type="rss" category="News" />
+      <outline title="Tales of an African Princess in America" xmlUrl="https://anchor.fm/s/25bffd4/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="the way i see it" xmlUrl="https://www.spreaker.com/show/5905056/episodes/feed" type="rss" category="Investing" />
+      <outline title="IAMC Podcast" xmlUrl="https://anchor.fm/s/3db9a900/podcast/rss" type="rss" category="News" />
+      <outline title="one2one" xmlUrl="https://anchor.fm/s/f6e2c81c/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Morning Crossfire With Kofi Bartels" xmlUrl="https://atunwadigital-rss.streamguys1.com/content/nigeriainfo/morningcrossfire.xml" type="rss" category="Daily News" />
+      <outline title="Naija FC" xmlUrl="https://anchor.fm/s/fe75999c/podcast/rss" type="rss" category="Soccer" />
+      <outline title="Freshly Pressed - Wale" xmlUrl="https://podcast.zenomedia.com/api/public/podcasts/agxzfnplbm8tc3RhdHNyKwsSCkF1dGhFbnRpdHkYgICgvZPr1ggMCxIHUG9kY2FzdBiAgOCrgZm4CQyiAQdsaWJyYXJ5/rss" type="rss" category="News" />
+      <outline title="HERcast with Dr. Chito" xmlUrl="https://rss.buzzsprout.com/2257830.rss" type="rss" category="Personal Journals" />
+      <outline title="Invest Africa Insights" xmlUrl="https://anchor.fm/s/1636db28/podcast/rss" type="rss" category="Business News" />
+      <outline title="Emmynet24" xmlUrl="https://anchor.fm/s/103e976a0/podcast/rss" type="rss" category="News" />
+      <outline title="NTD Evening News" xmlUrl="https://feeds.captivate.fm/ntdeveningnews/" type="rss" category="Business News" />
+      <outline title="Eye on Africa" xmlUrl="https://apis.france24.com/products/get_product/f24_getpodcast_by_nid?token_application=33d60288-7e20-11e9-884b-005056a9c687&amp;program.entrepriseId=WB5423603-F24-EN-20130613" type="rss" category="News" />
+      <outline title="WELT Politik zum Hören" xmlUrl="https://politikplaylist.podigee.io/feed/mp3" type="rss" category="Daily News" />
+      <outline title="The Promise Perspective Podcast" xmlUrl="https://rss.buzzsprout.com/1878259.rss" type="rss" category="Christianity" />
+      <outline title="OsazuwaAkonedo" xmlUrl="https://www.spreaker.com/show/4980924/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Moses Mukisa" xmlUrl="https://anchor.fm/s/7c97b4c8/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Stylo News Intel Update: Daglig fördjupande analys av globala händelser" xmlUrl="https://anchor.fm/s/10aae7cec/podcast/rss" type="rss" category="News" />
+      <outline title="AMERICA OUT LOUD PODCAST NETWORK" xmlUrl="https://www.americaoutloud.news/feed/podcast/" type="rss" category="Politics" />
+      <outline title="BORDERLINES With Ireti Bakare-Yusuf" xmlUrl="https://atunwadigital-rss.streamguys1.com/content/nigeriainfo/borderlines.xml" type="rss" category="News" />
+      <outline title="The Debate" xmlUrl="https://apis.france24.com/products/get_product/f24_getpodcast_audio_by_nid?token_application=33d60288-7e20-11e9-884b-005056a9c687&amp;program.entrepriseId=WB4897007-F24-EN-20091009" type="rss" category="News" />
+      <outline title="The Class Prefects" xmlUrl="https://anchor.fm/s/42bbc67c/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="PURELY NEWS with Greatangel" xmlUrl="https://anchor.fm/s/35d14cac/podcast/rss" type="rss" category="News" />
+      <outline title="Building Bridges On JayFM 101.9" xmlUrl="https://anchor.fm/s/40b6c368/podcast/rss" type="rss" category="Non-Profit" />
+      <outline title="The Bearing" xmlUrl="https://rss.buzzsprout.com/1191809.rss" type="rss" category="News Commentary" />
+      <outline title="Lagos talks 913" xmlUrl="https://anchor.fm/s/5ab53f74/podcast/rss" type="rss" category="Politics" />
+      <outline title="Carry On Podcast with Brad Colbert" xmlUrl="https://feed.podbean.com/bradicemancolbert/feed.xml" type="rss" category="Leisure" />
+      <outline title="I Love Your Work (ILYW)" xmlUrl="https://anchor.fm/s/905cd9e8/podcast/rss" type="rss" category="Documentary" />
+      <outline title="The Day After TNB" xmlUrl="https://anchor.fm/s/a80aaf34/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="The Voice of the Youth (Nigeria)" xmlUrl="https://anchor.fm/s/dd9ff7d0/podcast/rss" type="rss" category="Politics" />
+      <outline title="Global News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/global-news-daily-news-now.xml" type="rss" category="Daily News" />
+      <outline title="Malaria Vaccine" xmlUrl="https://feeds.megaphone.fm/NPTNI9254594811" type="rss" category="Medicine" />
+      <outline title="Freshly Pressed - Rolly" xmlUrl="https://podcast.zenomedia.com/api/public/podcasts/agxzfnplbm8tc3RhdHNyKwsSCkF1dGhFbnRpdHkYgICgvZPr1ggMCxIHUG9kY2FzdBiAgOCr4ZPZCQyiAQdsaWJyYXJ5/rss" type="rss" category="News" />
+      <outline title="The Breaks – KUTX" xmlUrl="https://kutkutx.studio/category/the-breaks/feed" type="rss" category="Music Commentary" />
+      <outline title="Stylo News Intel Update: Tägliche Tiefenanalyse globaler Ereignisse" xmlUrl="https://anchor.fm/s/109f6e618/podcast/rss" type="rss" category="News" />
+      <outline title="Stylo News Intel Update: Daily Deep Dive on Global Events" xmlUrl="https://anchor.fm/s/109eb98bc/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Kurz und Knapp - Nachrichten" xmlUrl="https://anchor.fm/s/104126bc8/podcast/rss" type="rss" category="News" />
+      <outline title="Newshour" xmlUrl="https://podcasts.files.bbci.co.uk/p002vsnk.rss" type="rss" category="Daily News" />
+      <outline title="Nigeria Daily" xmlUrl="https://rss.buzzsprout.com/1822052.rss" type="rss" category="News Commentary" />
+      <outline title="FUTA Radio Podcasts" xmlUrl="https://anchor.fm/s/66499f24/podcast/rss" type="rss" category="Technology" />
+      <outline title="Ö1 Journale" xmlUrl="https://podcast.orf.at/podcast/oe1/oe1_journale/oe1_journale.xml" type="rss" category="Politics" />
+      <outline title="Radio Now Podcasts" xmlUrl="https://audiomack.com/rss/radio-now/podcast.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="San Antonio News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-san-antonio-daily-news-now.xml" type="rss" category="Daily News" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Focus On Kebbi Elections 2023" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcC5uCvcIjcqKCMuk_3ET-g" type="rss" />
+      <outline title="CrimeandFacts" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmVFxLpJLdHJdY7bLgP_Erw" type="rss" />
+      <outline title="AfricanHistoryGo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcQ7C4jLALjqDY3SsCh2aUQ" type="rss" />
+      <outline title="Kebbi Legit 24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi1XnUGdmAaY_ECk5H5sl-w" type="rss" />
+      <outline title="Kebbi Daily News TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1Bj7ourRhbtJMhcY1z-ELA" type="rss" />
+      <outline title="Kebbi Taekwondo Academy, Nigeria." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpq18uQuMSd-6ph91CDxz3A" type="rss" />
+      <outline title="The Apostolic Church Nigeria Birnin Kebbi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCds4D7NeYYlksPpD3NW8ZaA" type="rss" />
+      <outline title="PT KEBBI STATE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5kSAp3SJBJWQ3L7NMl3hJQ" type="rss" />
+      <outline title="House of Prayer Church, Zuru Kebbi State, Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC67ooYhpXWRL55ALujDAYXg" type="rss" />
+      <outline title="Tour Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWyeJ5Hr9budyD8kyDkru6Q" type="rss" />
+      <outline title="Theniyifagbemi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWAqXzY2MLxYUf8qVFuJedg" type="rss" />
+      <outline title="TVC News Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgp4A6I8LCWrhUzn-5SbKvA" type="rss" />
+      <outline title="ASSOCIATION OF KEBBI WOMEN ENTREPRENEURS " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTsHFXeCHvWDVzY6nBzEbbg" type="rss" />
+      <outline title="ItzWinnerTv" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcjXWvggay3PInFYogsggeg" type="rss" />
+      <outline title="JABIR NIGERIA KEBBI STATE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwgyKvt-Pp-4DOu1FaKzjBg" type="rss" />
+      <outline title="UDU 2023" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP_67ELDVC0o6cONVMOmOcw" type="rss" />
+      <outline title="Kebbi Poetry Club" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaRnlhZh1idQQxDFfPKn3gw" type="rss" />
+      <outline title="NTA Network" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLLWAXn5F415g2kNAcE_T1g" type="rss" />
+      <outline title="Akpotu Miriam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQBlY9jJ4Y0yG0fCDR32iNQ" type="rss" />
+      <outline title="Ekklesia Pavilion" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-FgHpHxdktgQMUefSzl9hg" type="rss" />
+      <outline title="Black gold History " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSFkBuS5may3SPV1XkrVAjA" type="rss" />
+      <outline title="The Nigerian Export Promotion Council (NEPC)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWzzPLKWI3yWbWuupKpDaPw" type="rss" />
+      <outline title="NIGERIAN ARMED FORCES &amp; MILITARY NEWS " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgkyRvkilflzGX57bHNcqBQ" type="rss" />
+      <outline title="Kebbi Beach Soccer Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYZ6_EHoEC12LL7VnAZtiRQ" type="rss" />
+      <outline title="National Library of Nigeria Abuja" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC935gnrP-N6zuhoB4EoOIwg" type="rss" />
+      <outline title="Naija broadcast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdn7nJ2kB6cV119Gt-ConwA" type="rss" />
+      <outline title="Musteey_valoow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGvxfber5shyz3PwVU-5F2g" type="rss" />
+      <outline title="Ya'u Kebbi state" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC00jiRlLmo3m9qvr64NVI6g" type="rss" />
+      <outline title="Misbahu_Nasiru" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqTG0040tVopz05pjt87b_w" type="rss" />
+      <outline title="PROACT Kebbi and Adamawa State, Nigeria." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI2s_RV4E1TF6sXwgEIyPGA" type="rss" />
+      <outline title="KelvinBuzInc" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnkdePMnsQviBprdd8mUb4Q" type="rss" />
+      <outline title="Federal University Birnin Kebbi FUBK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC08IY3NuOb_fEGFtb1SF8yw" type="rss" />
+      <outline title="KEBBI NEWS UPDATE ONLINE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_BqHrvsIIPokiqyAAAJH8A" type="rss" />
+      <outline title="KEBBI TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIPKh5ru03sOxpU1YXUlulQ" type="rss" />
+      <outline title="Leisure Garden City B/Kebbi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcnPIuMWD0ouQk6hi6NQB6Q" type="rss" />
+      <outline title="KEBBI BLOG NIGERIA LIMITED " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkJQyvoCG2ikqb8BrYzdhlQ" type="rss" />
+      <outline title="ACReSAL Kebbi SPMU" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfKMxGteybsa6q3HQkWQ4Xw" type="rss" />
+      <outline title="NCCF Kebbi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpKAG95jKumlN5nxku4h6Gw" type="rss" />
+      <outline title="DAN KEBBI TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCh_6xA_ymydE8K7z9IM7m6g" type="rss" />
+      <outline title="Y A K TV Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGnrkXg8Mvx12e8-2D6BZWA" type="rss" />
+      <outline title="cultural insights Nigeria " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2Hkgc24h6euqyDVI_LMsmw" type="rss" />
+      <outline title="Nigeria Christian Network" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ9C4m-Oz6bHH1J91J0khig" type="rss" />
+      <outline title="NIHOTOUR Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVMmXG6SGtlSXJwFoBev1iw" type="rss" />
+      <outline title="DambeBattleGround" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtuLyLBSYlXZtuXlbFi2tvQ" type="rss" />
+      <outline title="ALMAJIRI SUPPORT INITIATIVES OF NIGERIA KEBBI STATE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoFHbn7dwBSun37SzfWz8qQ" type="rss" />
+      <outline title="News Agency of Nigeria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4_wKYII2PKPomxql2jfKgg" type="rss" />
+      <outline title="Voice of Nigeria VON" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg-nS6NlLNLem_3reVzEYAg" type="rss" />
+      <outline title="AFRI MISSION" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBmje_c09UBM6vZjtfn7lUg" type="rss" />
+      <outline title="lelna History" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN8_LguW73rAUw6U3LMuZmQ" type="rss" />
+      <outline title="Peekae Alaji" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf_b8BVcYCAe6TKvolystyg" type="rss" />
+    </outline>
+  </body>
 </opml>

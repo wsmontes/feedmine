@@ -4,5 +4,8 @@
     <title>Ankara Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Eşikteki Türkiye" xmlUrl="https://media.rss.com/esiktekiturkiye/feed.xml" type="rss" category="Education" />
+    </outline>
+  </body>
 </opml>

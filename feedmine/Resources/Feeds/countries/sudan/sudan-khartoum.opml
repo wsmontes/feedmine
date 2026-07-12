@@ -4,5 +4,8 @@
     <title>Khartoum Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="On Africa" xmlUrl="https://rss.libsyn.com/shows/132635/destinations/811374.xml" type="rss" category="History" />
+    </outline>
+  </body>
 </opml>

@@ -4,11 +4,73 @@
     <title>Guangxi Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Nanning Daily" xmlUrl="https://www.nnrb.com.cn/rss/" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Guangxi Gov" xmlUrl="http://www.gxzf.gov.cn/rss" type="rss" />
-      </outline>
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Nanning Daily" xmlUrl="https://www.nnrb.com.cn/rss/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Guangxi Gov" xmlUrl="http://www.gxzf.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="EdenRules.com (Audio)" xmlUrl="https://edenrules.com/rss/podcast/audio_en.rss" type="rss" category="Religion" />
+      <outline title="2013 Edinburgh International Book Festival" xmlUrl="http://eibf.s3.amazonaws.com/xml/2013_Edinburgh_International_Book_festival.xml" type="rss" category="Books" />
+      <outline title="Takeaway Chinese" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/54" type="rss" category="Education" />
+      <outline title="Learn Chinese in 100 Days | Domino Chinese" xmlUrl="https://anchor.fm/s/518adc10/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Podcasts from the UCLA Center for Chinese Studies" xmlUrl="https://www.international.ucla.edu/sites/ccs/rss.aspx" type="rss" category="Courses" />
+      <outline title="The China Show" xmlUrl="https://rss.art19.com/the-china-show" type="rss" category="News" />
+      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Jasmine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiT-CTrGfA8NhN3vnMJpllg" type="rss" />
+      <outline title="CVE China Video Express" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJgnmRcjIBfcbIWWmjL7u5Q" type="rss" />
+      <outline title="China 中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4fAPIyUsnk-OU0rd-aMQEQ" type="rss" />
+      <outline title="johnsamu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNG-GMTYzapuOO0T8BPmIfw" type="rss" />
+      <outline title="MJV China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXY4Tp1RGWpBERTYFRgfUdw" type="rss" />
+      <outline title="广西Guangxi旅游纪" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbDcwsmuMJncs7WLLOPYUtQ" type="rss" />
+      <outline title="China Food Tour" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT1_faKz1vLOduJJQj5jrew" type="rss" />
+      <outline title="美食中国 Tasty China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm9VVJPdCZ629FI4Up6fbKw" type="rss" />
+      <outline title="玉林阿婆Guangxi grandma" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKAKOeWzn4jhJ9neM1rvCVQ" type="rss" />
+      <outline title="angleajia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdiSubqx88goxABW7nnGGjA" type="rss" />
+      <outline title="Descubriendo China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUqWXwwrm8HMb-EnTDf1Wew" type="rss" />
+      <outline title="Chinese Wedding Documentary" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmH3Ys9kZ0NqYF_9mAShOJg" type="rss" />
+      <outline title="Chinalysis" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEvwchFY1nztDW3HQVk-HeQ" type="rss" />
+      <outline title="Discover China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMVQwfROuTUim_6MfnVbIxg" type="rss" />
+      <outline title="幽州刺史走中國YouZhou Governor Travels Across China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGcxfAacluuGPZp3pTD_83Q" type="rss" />
+      <outline title="Tanker Truck Driver - Nanning, Guangxi, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0lUrmLzq4GCBdgHMGriDMg" type="rss" />
+      <outline title="Walk China - Driving Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5ISB0VMarXLOMRm2B8bN2g" type="rss" />
+      <outline title="China Daily 中国日报" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCahujLjSL34EPNxtwKRi_vg" type="rss" />
+      <outline title="中国china" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQW5xczUIHL7l-L-dinlOVA" type="rss" />
+      <outline title="中国广西南宁nanning guangxi china" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8nH7uknaQ6_EG3Xn5eKjhg" type="rss" />
+      <outline title="ASCEND CHINA TRAVEL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXaTFXpX60o5EuR5ad0YJxQ" type="rss" />
+      <outline title="Jiuhong Machinery in Liuzhou, Guangxi, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXm8sd9iHtV6HQ9NgY34ECw" type="rss" />
+      <outline title="中国ノーカット" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi_h-Z0x0vSy8qTztf8WTVA" type="rss" />
+      <outline title="中国旅行领队" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCB6BjxCmRIuVUUJeuk7dgg" type="rss" />
+      <outline title="广西国际GXRTV Int'l Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHaVBB4B4mBumal0_oHBemg" type="rss" />
+      <outline title="想记录 XiangRecord" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm7dXAXOVK6y8p7pWSLIvCA" type="rss" />
+      <outline title="Guangxi Asean" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzxX1HZpLD-a0HRvkm7q3XA" type="rss" />
+      <outline title="中国广西电视台官方频道 China GuangXi TV Official Channel 【欢迎订阅】" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL-v-3vCMiN5JR--5ySvn0w" type="rss" />
+      <outline title="Splendors of Guangxi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoOA2PMn4dzAJu79lDSAkJg" type="rss" />
+      <outline title="China Press 中國報" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0x51OBWjnUTMOehT3-4lpg" type="rss" />
+      <outline title="Curious China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClMCvUyKB_lw3iXQMvPAfTA" type="rss" />
+      <outline title="Nanning China Guangxi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8Pmxb7hdirVw1ggezzi7cQ" type="rss" />
+      <outline title="UrbaRain" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoForh6-e0oqsVHi69JQiAQ" type="rss" />
+      <outline title="China Motor Tours" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqA43f9JoDWDNYHXWcR8OIQ" type="rss" />
+      <outline title="China Life Records" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf1D36JJt138TDSQ0Er7fvQ" type="rss" />
+      <outline title="Haifei F" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWt0v8hBqtgZuTIlZDXCEPQ" type="rss" />
+      <outline title="八桂印象 Impressions of Guangxi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjCsq-AS3MO_m6qDYmBgmwA" type="rss" />
+      <outline title="Drone China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTvWnMT2QSkXXyplN96MXAw" type="rss" />
+      <outline title="Panda Paws" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtX_OD8abgOsEn0i8Or6ibQ" type="rss" />
+      <outline title="Cultural Tour China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZx2TfyHRlqBzpAt6_57H2A" type="rss" />
+      <outline title="Chinese Landscape" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9_aqFAqLSBz_2iv8s_4BHg" type="rss" />
+      <outline title="Beautiful Landscape#South China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYxvTUff_FrZZvtJAgnctCA" type="rss" />
+      <outline title="GO AND SEE CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsWvCDY3ZGk0_VQRXsfTCeQ" type="rss" />
+      <outline title="Aerial China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2ZmoDfZePaDXlsdKwjCuqw" type="rss" />
+      <outline title="Amazing food" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBlysWJSr9fVxuWrMgWqEFw" type="rss" />
+      <outline title="壮乡阿婉AWAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtV_wLjlJ393Agn2NtrKt-A" type="rss" />
+      <outline title="黎小明" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYzHN6sGagIz5GrqWjzB-fw" type="rss" />
+      <outline title="Nareehsa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFqngI7FlRCROZB6QoDVFyg" type="rss" />
+      <outline title="光头荣广西果农" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZtEp0UhmPEcCFPyS2fnzVQ" type="rss" />
+      <outline title="中国新闻社" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpbfXQsYBJTwq5lCkwGIeuQ" type="rss" />
+    </outline>
+  </body>
+</opml>

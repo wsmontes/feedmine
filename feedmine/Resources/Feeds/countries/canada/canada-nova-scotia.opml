@@ -20,13 +20,18 @@
       <outline title="Art Gallery of Nova Scotia" xmlUrl="https://www.artgalleryofnovascotia.ca/feed/" type="rss" />
       <outline title="Halifax Public Libraries" xmlUrl="https://www.halifaxpubliclibraries.ca/feed/" type="rss" />
     </outline>
-<outline text="Business">
+    <outline text="Business">
       <outline title="Halifax Chamber of Commerce" xmlUrl="https://www.halifaxchamber.com/feed/" type="rss" />
     </outline>
     <outline text="Cities">
       <outline text="Sydney">
         <outline title="Cape Breton Regional Municipality" xmlUrl="https://www.cbrm.ns.ca/feed/" type="rss" />
       </outline>
-</outline>
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Chronicles of Canada Volume 26 - The Tribune of Nova Scotia: A Chronicle of Joseph Howe by William Lawson Grant" xmlUrl="https://www.loyalbooks.com/book/tribune-of-nova-scotia-by-w-l-grant/feed" type="rss" category="Society" />
+      <outline title="Chronicles of Canada Volume 26 - The Tribune of Nova Scotia: A Chronicle of Joseph Howe by William Lawson Grant (1872 - 1935)" xmlUrl="https://librivox.org/rss/8683" type="rss" category="Arts" />
+      <outline title="Get Fast Cash with Car Title Loans in Nova Scotia – No Credit Checks" xmlUrl="https://feeds.buzzsprout.com/2433203.rss" type="rss" />
+    </outline>
   </body>
 </opml>

@@ -1,9 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0"><head><title>Andaman and Nicobar Feeds</title></head><body>
-      <outline text="News">
-        <outline title="Andaman Chronicle" xmlUrl="https://www.andamanchronicle.net/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="A-N Admin" xmlUrl="https://www.andaman.gov.in/rss" type="rss" />
-      </outline></body>
-    </opml>
+<opml version="1.0">
+  <head>
+    <title>Andaman and Nicobar Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Andaman Chronicle" xmlUrl="https://www.andamanchronicle.net/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="A-N Admin" xmlUrl="https://www.andaman.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="State of the World from NPR" xmlUrl="https://feeds.npr.org/510366/podcast.xml" type="rss" category="Daily News" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="Everything Everywhere Daily: History, Science, Geography &amp; More" xmlUrl="https://feeds.megaphone.fm/ADV3162807280" type="rss" category="History" />
+      <outline title="History Dispatches" xmlUrl="https://rss.pdrl.fm/ccb7c9/feeds.megaphone.fm/ARML6613457202" type="rss" category="History" />
+      <outline title="Nothing But The Truth" xmlUrl="https://www.spreaker.com/show/5500841/episodes/feed" type="rss" category="Politics" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Hashtag Vaarta" xmlUrl="https://www.omnycontent.com/d/playlist/baa19804-d77c-4777-8145-b2a400874018/8fda225d-57f2-4a8a-ad64-b2ac00ccc87f/681663e5-d7eb-4248-aa43-b2ac00ccc887/podcast.rss" type="rss" category="Fiction" />
+      <outline title="Karma Is Supreme" xmlUrl="https://anchor.fm/s/c677b69c/podcast/rss" type="rss" category="Spirituality" />
+      <outline title="The Daily Brief" xmlUrl="https://feeds.simplecast.com/1H1JSMd0" type="rss" category="Investing" />
+      <outline title="Where to Next? with Neil and Sunila Patil" xmlUrl="https://www.spreaker.com/show/4736780/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="Drinks and Destinations" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/0d3abfe1-7fa1-434c-85df-af47008dcf67/74d182ab-aa3d-4b36-862e-af47008dcf7f/podcast.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="The Thing About Wildlife" xmlUrl="https://anchor.fm/s/55702a9c/podcast/rss" type="rss" category="Nature" />
+      <outline title="Writer &amp; Geek" xmlUrl="https://www.omnycontent.com/d/playlist/6244f5b5-c2fb-44f4-86cd-ab6b008158ba/4d604c34-59a8-4f82-a4b2-af5200a6f795/ca7254dc-12d3-475e-a82a-af5200a6f7ba/podcast.rss" type="rss" category="History" />
+      <outline title="In Our Defence" xmlUrl="https://www.spreaker.com/show/5500863/episodes/feed" type="rss" category="Government" />
+      <outline title="Wominspiria️" xmlUrl="https://feeds.hubhopper.com/977dce6101ef180491d5cd9bd47b1d50.rss" type="rss" category="Education" />
+      <outline title="The Core Report" xmlUrl="https://anchor.fm/s/faf1e050/podcast/rss" type="rss" category="Business News" />
+      <outline title="In Focus by The Hindu" xmlUrl="https://feeds.megaphone.fm/THGU4956605070" type="rss" category="News Commentary" />
+      <outline title="surfEXPLORE: Discovering New Surfing Locations Worldwide" xmlUrl="https://anchor.fm/s/10aa4bf2c/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Hudson Institute Events Podcast" xmlUrl="https://feeds.simplecast.com/_011BktN" type="rss" category="Government" />
+      <outline title="National Security Conversations with Happymon Jacob" xmlUrl="https://anchor.fm/s/81fc7188/podcast/rss" type="rss" category="Politics" />
+      <outline title="DECODE_Issues_Unfolded" xmlUrl="https://anchor.fm/s/25370404/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="ChaiNet: The Agentic Commerce Podcast" xmlUrl="https://api.substack.com/feed/podcast/2829326.rss" type="rss" category="Marketing" />
+      <outline title="A History of India" xmlUrl="https://media.rss.com/a-history-of-india/feed.xml" type="rss" category="History" />
+      <outline title="From The Marginlands" xmlUrl="https://rss.buzzsprout.com/2460690.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Eureka- The Ins and Outs of the Content Business" xmlUrl="https://anchor.fm/s/f7953768/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Sea Control" xmlUrl="https://feeds.simplecast.com/OHIsINAK" type="rss" category="History" />
+      <outline title="Heart of Conservation" xmlUrl="https://anchor.fm/s/ed011a74/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Climate Emergency" xmlUrl="https://www.omnycontent.com/d/playlist/55de720e-0867-4b8a-9e29-ac8400e69720/bee84628-6837-4503-a5bb-ac88008b2fc3/003fb528-4439-4376-b195-ac88008b2fcd/podcast.rss" type="rss" category="Earth Sciences" />
+      <outline title="The Jayant Bhandari Show" xmlUrl="https://rss.libsyn.com/shows/543372/destinations/4683857.xml" type="rss" category="Philosophy" />
+      <outline title="South Central" xmlUrl="https://feeds.acast.com/public/shows/67333512b63a79b5811fcc97" type="rss" category="Politics" />
+      <outline title="Indicast -  All Podcasts" xmlUrl="https://feeds2.feedburner.com/IndiCast" type="rss" category="News Commentary" />
+      <outline title="Indicast - Indians on India" xmlUrl="https://feeds.acast.com/public/shows/671e40af08eefaeb80899e85" type="rss" category="Business News" />
+      <outline title="NewSpace India" xmlUrl="https://feeds.transistor.fm/newspace-india" type="rss" category="Technology" />
+      <outline title="Clueless with Gorkey" xmlUrl="https://anchor.fm/s/26b70f40/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Hello Educator" xmlUrl="https://anchor.fm/s/aef8b98/podcast/rss" type="rss" category="Education" />
+      <outline title="Hidden India" xmlUrl="https://anchor.fm/s/5a5bd6c8/podcast/rss" type="rss" category="Education" />
+      <outline title="Drop A Pin" xmlUrl="https://mcsorleys.barstoolsports.com/podcasts/mvloXgt2iqPS30Flt5VfcE4M/feed.xml" type="rss" category="Places &amp; Travel" />
+      <outline title="The #IndianInterest" xmlUrl="https://anchor.fm/s/9055f704/podcast/rss" type="rss" category="News" />
+      <outline title="Politics Theory Other" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:82993400/sounds.rss" type="rss" category="News" />
+      <outline title="The Morning Brief" xmlUrl="https://www.omnycontent.com/d/playlist/60b2e926-e5f8-4b90-a465-aef901163001/95fd7c59-790d-496e-bbde-aef901167fe4/8ae54763-9925-40ca-8c3d-aef901167ffb/podcast.rss" type="rss" category="Business News" />
+      <outline title="Outcast Scholar" xmlUrl="https://anchor.fm/s/3ee44970/podcast/rss" type="rss" category="Books" />
+      <outline title="Fishbowl Studios" xmlUrl="https://anchor.fm/s/93994808/podcast/rss" type="rss" category="Arts" />
+      <outline title="In Godfrey We Trust" xmlUrl="https://feeds.megaphone.fm/GDN8479684915" type="rss" category="Comedy Interviews" />
+      <outline title="The Seen and the Unseen - hosted by Amit Varma" xmlUrl="https://rss.libsyn.com/shows/91647/destinations/458496.xml" type="rss" category="Politics" />
+      <outline title="The Kakinada Show" xmlUrl="https://anchor.fm/s/196ff810/podcast/rss" type="rss" category="Politics" />
+      <outline title="Health Wealth" xmlUrl="https://www.spreaker.com/show/5918323/episodes/feed" type="rss" category="Health &amp; Fitness" />
+      <outline title="Something Bigger Talk Show" xmlUrl="https://anchor.fm/s/f9d550a8/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="The Herpetoculture Network" xmlUrl="https://anchor.fm/s/fc36dec0/podcast/rss" type="rss" category="Education" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="De Foret Resort - At Havelock" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6z5TBZ3JBle8qHUNlJc4hw" type="rss" />
+      <outline title="Andaman Nicobar Tour Operator Andaman Nicobar India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWeq0fbIGiSJEg7C06yO2YA" type="rss" />
+      <outline title="Suhael Ahmed vlogs 1913" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChUYrL1TFct9gXcNYgAP9xQ" type="rss" />
+      <outline title="Indian Backpacker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYUq_wB2ieVws9K4kmjWcaQ" type="rss" />
+      <outline title="SAW JACK ANDAMAN &amp; NICOBAR ISLAND (INDIA)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnPUHyA4B-byi7qL8L-PLsg" type="rss" />
+      <outline title="Andaman and Nicobar Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyx7IlOkhbTuq-aWmcpj5mg" type="rss" />
+      <outline title="Lavjoth Singh Adventure Vlogs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbUJQNuKlDT8c2-z5xiOhBA" type="rss" />
+      <outline title="The Echo Of India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYBKx9gmKBIaFlG_2hYtuUA" type="rss" />
+      <outline title="Travel Vlog Andaman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCazzgZHjxRfISzI-QIA1FQQ" type="rss" />
+      <outline title="Andaman and Nicobar islands..thrugh my eyes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSB79bSPXtIDgVbCWuua56g" type="rss" />
+      <outline title="ANDAMAN FARMER " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmu8IA6ucITaK9ISg9nhqzw" type="rss" />
+      <outline title="V-Logs - Andaman &amp; Nicobar Islands" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQJVaSXeG5YzNY6uziJvCiA" type="rss" />
+      <outline title="Eviland Andaman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzSW4yBD9EWaUvVnuPuhFYA" type="rss" />
+      <outline title="Nomadic Indian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgilhqoyZrXV2EBlaaAtVaw" type="rss" />
+      <outline title="Andaman Nicobar Islands 2775" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6uOWfa8vNMdIqh9RbMWWog" type="rss" />
+      <outline title="Ronnie Nicobari " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt6ntFfaBJd4K26J07_CvNg" type="rss" />
+      <outline title="ANDAMAN DWEEP TOUR &amp; TRAVELS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3q0v0kMgXMtZ55AQwKaFRw" type="rss" />
+      <outline title="ANDAMAN NICOBAR TOUR OPERATORS ASSOCIATION" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl8xn3k6IditnGFdvWrsogQ" type="rss" />
+      <outline title="🎵Andaman and Nicobar Islands Music🎵" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkd7W97FU08ZV-Uv1L_0cLA" type="rss" />
+      <outline title="THE KALAPANI BAND" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKJQLPbD6xPahaVeGYaSZsw" type="rss" />
+      <outline title="Andaman Online Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmu7YH-FcR95io3PngdkP9w" type="rss" />
+      <outline title="Global Andaman Holidays" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcUi-0i0Nvly9rQkraXzUAw" type="rss" />
+      <outline title="Islander Saurav" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqMGMlMo-IMoq3EOjpBL5nA" type="rss" />
+      <outline title="The Amazing Andaman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeD-DmtFBg-TfYZtQD3XBSg" type="rss" />
+      <outline title="Andaman &amp; Nicobar Surf Academy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg1MTDgwgFAoCDhP820IQEg" type="rss" />
+      <outline title="THE NICOBAR ISLANDS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmLjZaBl2ZpHPx0Cxc9VPNA" type="rss" />
+      <outline title="Unseen Andaman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPJmkLgiNDBVL9vn-0F1S3g" type="rss" />
+      <outline title="LeatherBack Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp939YiBHQ-ycvqOLf963Kw" type="rss" />
+      <outline title="SAI Andaman &amp; Nicobar " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOa4QInpYR0kRdakWN75IwA" type="rss" />
+      <outline title="BIBHASH VLOG" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCteV1r6cd9JYSPY7cDrHa1w" type="rss" />
+      <outline title="Dive Andaman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCixyVWZkWa1Q4RrcZlVJzHQ" type="rss" />
+      <outline title="Andaman And Nicobar Islands View " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIyI65fLGhB3SQicHY_yzRQ" type="rss" />
+      <outline title="Vasu vlogs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYuAlFbLH1j40L2KAYzXRSg" type="rss" />
+      <outline title="Andamankaren official Channel " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOaZNvsxLbhkUkWfgjMxxJg" type="rss" />
+      <outline title="Andaman Kitchen" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgTyCSQ8WsM9-bARhkovfYw" type="rss" />
+      <outline title="Andaman Lovers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2J6PUyPyIB6vvV7PvhIyag" type="rss" />
+      <outline title="Jamiat Ulama Andaman &amp; Nicobar Islands" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtd_HMKm7PxagazwgduxJ_w" type="rss" />
+      <outline title="Andaman and Nicobar Islands India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBLI-2qRwYvxCn9DwC-YXdA" type="rss" />
+      <outline title="Passenger Paramvir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK2_PiPOB0VEZfbbaHj-z5w" type="rss" />
+      <outline title="NEWS ANDAMAN 24X7" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW2zhs6L2ZrF-HUKTrTdCEw" type="rss" />
+      <outline title="DST Andaman &amp; Nicobar Islands" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgp-RjW1RDicDtMUQkC2-2w" type="rss" />
+      <outline title="Kanishk Gupta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIKAsBdkwH3ERoJd3hJQ-Jg" type="rss" />
+      <outline title="Andaman Bluebay Holidays (Sashi Kumar)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClaTOafRG6j15M32uQK_MZg" type="rss" />
+      <outline title="ACDIANSTERVLOGS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpuBx3tvepzWLsxkbZeVPiA" type="rss" />
+      <outline title="ANDAMAN STORIES" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSA8toZU29X5ZaJCcXvaHaQ" type="rss" />
+      <outline title="Andaman Nicobar People " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiWZoSS5q2bpWf436ZMZfXg" type="rss" />
+      <outline title="Nicobar Times" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCArSDJlLRPg3BU0v4VTEfUg" type="rss" />
+      <outline title="Inspire Andaman Travels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMWLUe5F7xjmNT5gFOTteEA" type="rss" />
+      <outline title="Go2Andaman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCc2ip2s3yWLI65TgqddZbdA" type="rss" />
+      <outline title="ANDAMAN GAME FISHING" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwni5DvthtsIaLnogNXBhyw" type="rss" />
+    </outline>
+  </body>
+</opml>

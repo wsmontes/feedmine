@@ -4,5 +4,8 @@
     <title>Viseu Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Direto de Portugal - Áudio Motivacional" xmlUrl="https://anchor.fm/s/10d8fd00/podcast/rss" type="rss" category="Education" />
+    </outline>
+  </body>
 </opml>

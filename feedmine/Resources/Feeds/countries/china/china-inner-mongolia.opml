@@ -4,7 +4,60 @@
     <title>Inner Mongolia Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="YouTube">
+      <outline title="InnerMongoliaShorts" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5oMU0ByrVoS-6lQaDCdF-g" type="rss" />
+      <outline title="China in Lens" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5pVQekNc2HAyVvdf6drf4Q" type="rss" />
+      <outline title="Inner mongolia China coal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmZA455DMn9G9f5uJ_0ptcA" type="rss" />
+      <outline title="Inner Mongolia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFOg9H9CmDqvRDj4Wefragg" type="rss" />
+      <outline title="Inner Mongolian Anti Mapper [ALTISM] [MONGOLISM]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRViGHm8Pv5lzM4EnI6jGqQ" type="rss" />
+      <outline title="RoadTrip | China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO2Didumj1w6uvidK0kSy9g" type="rss" />
+      <outline title="Travel in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSGUmFtnRFrIP-dEKRDMMLA" type="rss" />
+      <outline title="Wuhai, Inner Mongolia, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz1mft3ybV8Gcc1V2sJ-4Fg" type="rss" />
+      <outline title="innermongoliansharon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHSvNQYUAhXlZcXvx91bZCw" type="rss" />
+      <outline title="FREEINNERMONGOLIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPXsi9iERhxyRTdvbxegI-g" type="rss" />
+      <outline title="Sumbur the Nomad" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRKAr_D0BprULeUo1lppX7w" type="rss" />
+      <outline title="China Comic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCASMWdcCWf3VhjgqbwBdMAg" type="rss" />
+      <outline title="Sandy Yin -Tour guide in Beijing" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiqk0inPkh6M1MyuGBhBNFg" type="rss" />
+      <outline title="yangzai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7W13Phf684UG9lEQaHrh9g" type="rss" />
+      <outline title="Sinotravel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8V2bmwgC18vObmTQxZx7SQ" type="rss" />
+      <outline title="InnerMongolia ZhuoYuCashmere" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdSnUNFoOrR9wY7ixEel0aQ" type="rss" />
+      <outline title="WorldHatesChina" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUsBJvPywRUfbf8jDFJYCFg" type="rss" />
+      <outline title="𝗔𝗵𝗺𝗲𝗱 𝗘𝗹𝘀𝗮𝘆𝗲𝗱 أحمد السيد " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSh6hjU_eumc8iYgpVFYtng" type="rss" />
+      <outline title="China Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFurNrhZ8LvVQApRA1hCyZw" type="rss" />
+      <outline title="Inner Mongolia " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_x7Hadv4A9yo28cvuDUfRw" type="rss" />
+      <outline title="Inner Mongolian Nomads" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHLMzIe879Sc_hyD1hmSXdA" type="rss" />
+      <outline title="InnerMongolian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMX0i0gZkiVB593zPghV4Kw" type="rss" />
+      <outline title="Zi Ming" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIoo-63vAH4uNzW3CiM9sYQ" type="rss" />
+      <outline title="China Charm" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9-ttW09OvzOGmcxW6aiYCw" type="rss" />
+      <outline title="鹏友的塞外行记 | Peng's Inner Mongolia Journey" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuQmdVm3boTpbDlqN1wuMtg" type="rss" />
+      <outline title="vlog “vlogonmyway” onmyway" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9LOyn1gIfFuk0X6K7k0TSQ" type="rss" />
+      <outline title="People‘s Republic of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI4nxVgTmEvWyPrCviuuSfg" type="rss" />
+      <outline title="gregmnel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCM8oUxAA52bMStsFn6_-Z0A" type="rss" />
+      <outline title="zhang austinxd" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCA-Lz2MpSWxOZ0og1IY4pxA" type="rss" />
+      <outline title="hohhotinnermongolia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt29J2YvrdVkwJ_ojKAvnJA" type="rss" />
+      <outline title="tsagaan ethnic group" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2lMO-XIx_dtWpsG5XtOrJw" type="rss" />
+      <outline title="中国文化推荐官-Universe Han" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCh6RRj3N3dIkWMpPbgGWZQQ" type="rss" />
+      <outline title="实境中国 Virtual Reality China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHtiVy3OySV_6ofFVZ1UcZg" type="rss" />
+      <outline title="HOHHOT Inner Mongolia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuTcn9xAaFDwywBIJBkQTSg" type="rss" />
+      <outline title="BEI WANG" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWQaHG5Ec0kzgkQLWOnSuZQ" type="rss" />
+      <outline title="itsackison | 发现中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLZ3luPlWt2AfadNbxxbnoA" type="rss" />
+      <outline title="money above all" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfmtXXn5KNhszoC_eOfAjEg" type="rss" />
+      <outline title="Yargui | Inner Mongolian Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf6tU0FhadSeqPalQasWFqQ" type="rss" />
+      <outline title="money above all" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu7T-5hSP-mMQ3BW85rVyPA" type="rss" />
+      <outline title="shine my" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIK1un7suZqr5ZswxiqgH-g" type="rss" />
+      <outline title="Namiraa's Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqOgrNdhepqWUMeKXaDTveA" type="rss" />
+      <outline title="凌一北_Ling" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnnrv3mSCDC9weUhGcSjjtQ" type="rss" />
+      <outline title="中国美食" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv6m_6CyeD85jUBx7tcK2iA" type="rss" />
+      <outline title="马里 奥 Mǎlǐào Hiker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-NnAolF5F4HxvIqNWlj_pQ" type="rss" />
+      <outline title="Wynne Florencia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIj5kIT54lzFnbfIM6ZkuBQ" type="rss" />
+      <outline title="Abroad in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-ByLJ5cLWEceumcVUIlSDA" type="rss" />
+      <outline title="Scenic spots in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2vca7krys4Rq3vNLRwx8RQ" type="rss" />
+      <outline title="内蒙古广播电视台官方频道Inner Mongolia TV Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTanyfNr67ZKVxDvdIqBB7Q" type="rss" />
+      <outline title="Inner Mongolia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjwStias0zSuND-5_lBbp5Q" type="rss" />
+      <outline title=" Feng's China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTcupESwmdARPriQ_93dwmw" type="rss" />
+    </outline>
+  </body>
+</opml>

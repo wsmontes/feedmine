@@ -4,5 +4,49 @@
     <title>Rangpur Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="The Sound Kitchen" xmlUrl="https://apis.rfi.fr/products/get_product/rfi_getpodcast_by_nid?token_application=975d23b8-7a07-11e8-9f62-005056a90194&amp;program.entrepriseId=WB84944-RFI-EN-20110415" type="rss" category="Society &amp; Culture" />
+      <outline title="Metaphysical Soul Speak - - The Podcast!" xmlUrl="https://anchor.fm/s/68b012c/podcast/rss" type="rss" category="Spirituality" />
+      <outline title="GHOST MAPS: True Southeast Asian Horror Stories" xmlUrl="https://feeds.acast.com/public/shows/6415a23e0baefa00113bbc1e" type="rss" category="Fiction" />
+      <outline title="Global Crisis. Creative Society" xmlUrl="https://anchor.fm/s/103dc128/podcast/rss" type="rss" category="Daily News" />
+      <outline title="MEI Speaks" xmlUrl="https://anchor.fm/s/32691658/podcast/rss" type="rss" category="Education" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="BIC TALKS" xmlUrl="https://rss.libsyn.com/shows/256754/destinations/1944515.xml" type="rss" category="Politics" />
+      <outline title="The Women's Mosque of America" xmlUrl="https://feed.podbean.com/womensmosque/feed.xml" type="rss" category="Spirituality" />
+      <outline title="Till The Heavens Burst Audiobook" xmlUrl="https://joabyjojo.com/category/podcast/feed/" type="rss" category="Books" />
+      <outline title="Al Jazeera Investigates" xmlUrl="https://www.omnycontent.com/d/playlist/9c074afa-3313-47e8-b802-a9f900789975/64247cc6-b987-4d5d-9358-ad5001241eb8/430db8e3-7d8f-457d-a050-ad5001241ec6/podcast.rss" type="rss" category="News" />
+      <outline title="New Books in South Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT2660294853" type="rss" category="Society &amp; Culture" />
+      <outline title="ArvindRama's Podcast Service" xmlUrl="https://anchor.fm/s/18772f64/podcast/rss" type="rss" category="Entertainment News" />
+      <outline title="The Truth" xmlUrl="https://www.spreaker.com/show/6487495/episodes/feed" type="rss" category="Documentary" />
+      <outline title="New Books in Anthropology" xmlUrl="https://feeds.megaphone.fm/LIT5223487889" type="rss" category="Social Sciences" />
+      <outline title="New Books in Diplomatic History" xmlUrl="https://feeds.megaphone.fm/NBN4221620160" type="rss" category="Books" />
+      <outline title="New Books Network" xmlUrl="https://feeds.megaphone.fm/LIT4543917034" type="rss" category="News" />
+      <outline title="New Books in Geography" xmlUrl="https://feeds.megaphone.fm/LIT1603835782" type="rss" category="Social Sciences" />
+      <outline title="The Cārvāka Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:208848919/sounds.rss" type="rss" category="News" />
+      <outline title="Himal Southasian Podcast Channel" xmlUrl="https://anchor.fm/s/fc53ad5c/podcast/rss" type="rss" category="News" />
+      <outline title="PGurus" xmlUrl="https://anchor.fm/s/6a8b6ef0/podcast/rss" type="rss" category="News" />
+      <outline title="The Sunflower- Palliative Care Podcasts" xmlUrl="https://anchor.fm/s/e4d8da44/podcast/rss" type="rss" category="Medicine" />
+      <outline title="ANI Podcast with Smita Prakash" xmlUrl="https://anchor.fm/s/fa8ad6f8/podcast/rss" type="rss" category="Politics" />
+      <outline title="Good Areas Podcast" xmlUrl="https://feeds.simplecast.com/OCjI_9eh" type="rss" category="Cricket" />
+      <outline title="The Bangla Cricket Podcast" xmlUrl="https://feed.podbean.com/banglacricket/feed.xml" type="rss" category="Cricket" />
+      <outline title="That's So Hindu" xmlUrl="https://feeds.acast.com/public/shows/63c85c5e9ae24b0011601ab4" type="rss" category="Hinduism" />
+      <outline title="International Migration Institute" xmlUrl="https://podcasts.ox.ac.uk/feeds/dad4bbbb-269f-4a7b-8b10-3e76486c2db9/audio.xml" type="rss" category="Education" />
+      <outline title="Earth Matters" xmlUrl="https://www.omnycontent.com/d/playlist/de62ff84-6498-49d0-a266-a9d50120c712/fcffb861-faf3-4128-8c5d-ab090057cc89/7497b14c-94fb-4ff9-9903-ab090057cc8e/podcast.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="South Asia Chat" xmlUrl="https://feed.podbean.com/isas/feed.xml" type="rss" category="Courses" />
+      <outline title="The Muslim Non-profit Show with Tayyab Yunus" xmlUrl="https://media.rss.com/the-muslim-nonprofit-show/feed.xml" type="rss" category="Islam" />
+      <outline title="Empires - An Asian Business Podcast" xmlUrl="https://anchor.fm/s/db2a6d50/podcast/rss" type="rss" category="Documentary" />
+      <outline title="Daily SumUp" xmlUrl="https://feeds.acast.com/public/shows/64d53bc8af8fd800117b9642" type="rss" category="Daily News" />
+      <outline title="The Sword ⚔️ And Spirit" xmlUrl="https://anchor.fm/s/39cdc5b0/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Bits and Pieces : The friendliest cricket podcast" xmlUrl="https://anchor.fm/s/7d379b28/podcast/rss" type="rss" category="Cricket" />
+      <outline title="Conversations On India" xmlUrl="https://anchor.fm/s/5fb37d24/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="KAJ Business &amp; Money LIVE" xmlUrl="https://www.spreaker.com/show/6217536/episodes/feed" type="rss" category="Entrepreneurship" />
+      <outline title="From The Marginlands" xmlUrl="https://rss.buzzsprout.com/2460690.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Late Morning Program with Namarasa" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:18528872/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Brown Pundits" xmlUrl="https://brownpundits.libsyn.com/rss" type="rss" category="Books" />
+      <outline title="SOMOSCÍTRICA Podcast" xmlUrl="https://anchor.fm/s/f442cf8/podcast/rss" type="rss" category="Hobbies" />
+      <outline title="WARDROBE CRISIS with Clare Press" xmlUrl="https://feeds.acast.com/public/shows/60ee3a8f1f9831001383bf3e" type="rss" category="Fashion &amp; Beauty" />
+      <outline title="Intrepid Global Citizen Podcast" xmlUrl="https://rss.buzzsprout.com/1970477.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Bharatvaarta" xmlUrl="https://feeds.megaphone.fm/ISP3702207916" type="rss" category="News Commentary" />
+    </outline>
+  </body>
 </opml>

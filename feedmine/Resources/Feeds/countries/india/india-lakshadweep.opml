@@ -1,6 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0"><head><title>Lakshadweep Feeds</title></head><body>
-      <outline text="Politics">
-        <outline title="Lakshadweep Admin" xmlUrl="https://lakshadweep.gov.in/rss" type="rss" />
-      </outline></body>
-    </opml>
+<opml version="1.0">
+  <head>
+    <title>Lakshadweep Feeds</title>
+  </head>
+  <body>
+    <outline text="Politics">
+      <outline title="Lakshadweep Admin" xmlUrl="https://lakshadweep.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Marine Mammal Science" xmlUrl="https://marinemammalscience.libsyn.com/rss" type="rss" category="Nature" />
+      <outline title="The Alex Drobin Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:806301637/sounds.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="In Our Defence" xmlUrl="https://www.spreaker.com/show/5500863/episodes/feed" type="rss" category="Government" />
+      <outline title="The Morning Brief" xmlUrl="https://www.omnycontent.com/d/playlist/60b2e926-e5f8-4b90-a465-aef901163001/95fd7c59-790d-496e-bbde-aef901167fe4/8ae54763-9925-40ca-8c3d-aef901167ffb/podcast.rss" type="rss" category="Business News" />
+      <outline title="Getaway Diaries" xmlUrl="https://www.spreaker.com/show/6890008/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="News at 7" xmlUrl="https://www.spreaker.com/show/6571256/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Conversations On India" xmlUrl="https://anchor.fm/s/5fb37d24/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Aura Magazine" xmlUrl="https://anchor.fm/s/4e9d83a4/podcast/rss" type="rss" category="Books" />
+      <outline title="Reopening the Wormhole: A Star Trek Deep Space Nine Podcast" xmlUrl="https://rss.libsyn.com/shows/73916/destinations/322449.xml" type="rss" category="TV &amp; Film" />
+      <outline title="The Delhi Public School Podcast" xmlUrl="https://anchor.fm/s/237f682c/podcast/rss" type="rss" category="Education" />
+      <outline title="Daily Dose" xmlUrl="https://feeds.acast.com/public/shows/5ec24883bab33c11af39f705" type="rss" category="News" />
+      <outline title="Perseverance IAS Podcast" xmlUrl="https://anchor.fm/s/51072424/podcast/rss" type="rss" category="Education" />
+      <outline title="Left, Right &amp; Centre" xmlUrl="https://api.videos.ndtv.com/apis/podcast/index/client_key/ndtv-podcast-5d35e3e34a92df17d11d54e0ff241e8b?shows=125&amp;showfull=1&amp;media_type=audio&amp;extra_params=keywords,description" type="rss" category="News" />
+      <outline title="The Ashlars" xmlUrl="https://feeds.hubhopper.com/ab8492b625484b6528d925be73f8b7f1.rss" type="rss" category="Self-Improvement" />
+      <outline title="The Unfiltered Indian" xmlUrl="https://anchor.fm/s/5cd9c298/podcast/rss" type="rss" category="Improv" />
+      <outline title="HW News Editorial with Sujit Nair" xmlUrl="https://feeds.megaphone.fm/ISP8020343316" type="rss" category="Business News" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="The #AskAbhijit Show" xmlUrl="https://anchor.fm/s/fd893660/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Pakistan Geostrategic Review" xmlUrl="https://anchor.fm/s/109c35a0/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="Geeta's World" xmlUrl="https://www.spreaker.com/show/5500873/episodes/feed" type="rss" category="Government" />
+      <outline title="Mango Bae" xmlUrl="https://rss.libsyn.com/shows/173816/destinations/1170773.xml" type="rss" category="Stand-Up" />
+      <outline title="The #IndianInterest" xmlUrl="https://anchor.fm/s/9055f704/podcast/rss" type="rss" category="News" />
+      <outline title="We The People" xmlUrl="https://api.videos.ndtv.com/apis/podcast/index/client_key/ndtv-podcast-5d35e3e34a92df17d11d54e0ff241e8b?shows=219&amp;showfull=1&amp;media_type=audio&amp;extra_params=keywords,description" type="rss" category="News" />
+      <outline title="The DX Mentor" xmlUrl="https://anchor.fm/s/cd49b600/podcast/rss" type="rss" category="Technology" />
+      <outline title="The Bucketlist Project" xmlUrl="https://media.rss.com/the-bucket-list-project/feed.xml" type="rss" category="Personal Journals" />
+      <outline title="In Focus by The Hindu" xmlUrl="https://feeds.megaphone.fm/THGU4956605070" type="rss" category="News Commentary" />
+      <outline title="Outvoted: Unmuting the voiceless" xmlUrl="https://anchor.fm/s/fcb897bc/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="String Reveals by Vinod" xmlUrl="https://anchor.fm/s/1e457f18/podcast/rss" type="rss" category="News" />
+      <outline title="The OoruLabs Podcast" xmlUrl="https://anchor.fm/s/d9a50828/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="THE CHANAKYA DIALOGUES ENGLISH" xmlUrl="https://feeds.hubhopper.com/fcd52f4c07cb3a458ecf4bd0fced222c.rss" type="rss" category="Daily News" />
+      <outline title="Travel Podcast the World" xmlUrl="https://anchor.fm/s/f31d0490/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Far From Fact" xmlUrl="https://anchor.fm/s/5eb2e860/podcast/rss" type="rss" category="Comedy" />
+      <outline title="What's happening?" xmlUrl="https://anchor.fm/s/5d75dfd4/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Where to Next? with Neil and Sunila Patil" xmlUrl="https://www.spreaker.com/show/4736780/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="Psychedelic Musings" xmlUrl="https://anchor.fm/s/57205a10/podcast/rss" type="rss" category="Personal Journals" />
+      <outline title="Expresso Entertainment Update" xmlUrl="https://www.spreaker.com/show/5751157/episodes/feed" type="rss" category="News" />
+      <outline title="The Musafir Stories - India Travel Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/64cf3a81-17df-40ec-990a-af4e00a92e51/f5b69943-5379-4176-a258-af4e00a92e72/podcast.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="The Hindu Editorial" xmlUrl="https://anchor.fm/s/2dbfd358/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Hello Sonoma!" xmlUrl="https://anchor.fm/s/58263e34/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Culinary Historians of Chicago" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:105704174/sounds.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Worldwide Jew Podcast" xmlUrl="https://anchor.fm/s/12ca48d0/podcast/rss" type="rss" category="Judaism" />
+      <outline title="Are You Quizzing Me?" xmlUrl="https://anchor.fm/s/d7afa960/podcast/rss" type="rss" category="Games" />
+      <outline title="Cyrus Says" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/9baef9c9-4ff2-4b4e-a3dd-af540094e334/270ddb3d-16c8-4190-81d4-af540094e347/podcast.rss" type="rss" category="Comedy" />
+      <outline title="The Think Wildlife Podcast" xmlUrl="https://api.substack.com/feed/podcast/1189522.rss" type="rss" category="Nature" />
+      <outline title="Off Gassing: A Scuba Podcast" xmlUrl="https://rss.buzzsprout.com/2191453.rss" type="rss" category="Hobbies" />
+      <outline title="Raj Shamani's Figuring Out" xmlUrl="https://anchor.fm/s/f5347ab0/podcast/rss" type="rss" category="Education" />
+      <outline title="Good Morning, Bangalore with Kay" xmlUrl="https://anchor.fm/s/5bd37c68/podcast/rss" type="rss" category="Entertainment News" />
+      <outline title="Etopia Talks" xmlUrl="https://anchor.fm/s/418d80d8/podcast/rss" type="rss" category="Nature" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="LAK LOGS " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2aJf-bcd1amT-UPU51kgWQ" type="rss" />
+      <outline title="justinz Vlog" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGkvQMSEWFHCmZ4X8pt0y7g" type="rss" />
+      <outline title="Kanishk Gupta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIKAsBdkwH3ERoJd3hJQ-Jg" type="rss" />
+      <outline title="Lakshadweep CyberWorld" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9SREtiOflbef7_eqDVnIpw" type="rss" />
+      <outline title="Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCE7-p2I5ziUWbKa0j6TJBEw" type="rss" />
+      <outline title="Explore Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGTopWlxhvJYpoWaAtQGJnQ" type="rss" />
+      <outline title="INDIA Trotter - Discover India with INDIA Trotter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI7Zc7e2ont1zXpWSjih_OA" type="rss" />
+      <outline title="Arshdeep Singh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR1spvL9dZdQWz34tnKjIuQ" type="rss" />
+      <outline title="Lakshadweep Tour" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnjNhrZqOKzx3PgoSw0Hg8Q" type="rss" />
+      <outline title="LAKSHADWEEP UNION TERRITORY OF INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnCWHAfTzX0NNf_ULEGdRsQ" type="rss" />
+      <outline title="Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC984vvlj8SskPg0ge3p3hEA" type="rss" />
+      <outline title="Lakshadweep Anzari" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0VsJnaSNI9Izgn2W5uiqzA" type="rss" />
+      <outline title="JABIR LAKSHADWEEP " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdNnE3tDIi0N1gcgfnfHE3A" type="rss" />
+      <outline title="Viksit Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnNGfG2obQlhxyxYgnymYXA" type="rss" />
+      <outline title="Aban Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9URRg3qIfS7eHFOGRorgow" type="rss" />
+      <outline title="SR Lakshadweep Tours &amp; Travels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9EcDmq6K8SPcfR6KsiBLYA" type="rss" />
+      <outline title="Indian Paradise Lakshadweep " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9RB1igGr9mQAXA0VC0jNUA" type="rss" />
+      <outline title="Lakshadweep _wowAJ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp2ejtbraNUQyiJGD8vItPw" type="rss" />
+      <outline title="Incredible India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMxJPchGLE_CJ1MJbJy-xDQ" type="rss" />
+      <outline title="Lakshadweep videos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZu7PrxhqkPAFKYuGOfeJDA" type="rss" />
+      <outline title="Lakshadweep India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdJQTlmYLei5DmYur9wy8kw" type="rss" />
+      <outline title="Lak reef" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-rmu5ubEXr1tdsE90bGtYQ" type="rss" />
+      <outline title="Tuna Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9fQefFBY05L4zB-ukMS9Sw" type="rss" />
+      <outline title="Lakshadweep vocals" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCc8tYaFKQQTwddFm_BcqGjA" type="rss" />
+      <outline title="Lakshadweep Football Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPqKh91Xg7M8hT3G1ofh2EA" type="rss" />
+      <outline title="Lakshadweep Life ലക്ഷദ്വീപ് ലൈഫ് " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5Klp4461Mu7f3TiXv_K6uA" type="rss" />
+      <outline title="AQUAHOLIC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCet87yG2DKhxlNb541FLh4g" type="rss" />
+      <outline title="lakshadweep vibes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCicIki14pacTmsaWaXoHwug" type="rss" />
+      <outline title="Lakshadweep Vibes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5pSgJHaNINrRhqKVXrXsrQ" type="rss" />
+      <outline title="Lakshadweep Vibes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTB94z76JRxtMFKsPajbDxg" type="rss" />
+      <outline title="Lakshadweep Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMOQw3kwt-ko_gVCTwnc-4A" type="rss" />
+      <outline title="GoL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDX2UCiA9O44hgVq2_2dSuQ" type="rss" />
+      <outline title="Lakshay Chaudhary" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw-MAyENxFQmVTOLwlg9YkA" type="rss" />
+      <outline title="Safiyulla Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrJlxH8KyicAX7RYJ4gk5Lw" type="rss" />
+      <outline title="ENDE LAKSHADWEEP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFfllHyc9elEkfyQE09PPqA" type="rss" />
+      <outline title="Aneez Traveler Lakshadweep " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbJOrIEejpczH-ht5lYIkog" type="rss" />
+      <outline title="Sifath lakshadweep " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCILriBiV_Ql91gIMRbzvF1w" type="rss" />
+      <outline title="Lakshadweep Ghumo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsjx3YHbD9XZOgvqRFEzMLw" type="rss" />
+      <outline title="Lakshadweep Deaf Islanders Travel Show!" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLEWMmK9VaPH3WSZ5CkVPSg" type="rss" />
+      <outline title="Lakshadweep soul" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO53onpoI3lk1XdOIyV7KMQ" type="rss" />
+      <outline title="Lakshadweep Videos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3FZvxMNhEOkkRYWPNPk1xw" type="rss" />
+      <outline title="Lakshadweep All Videos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7V4Nbtl2DaeeH7VJ8KIplg" type="rss" />
+      <outline title="VOYAGE LAKSHADWEEP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5Htu0218-hK7ocgEgVGBbA" type="rss" />
+      <outline title="LACCA_Divian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtc5V7No4lFxYpVUWhR8LpA" type="rss" />
+      <outline title="Lakshadweep Travel World" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp6QO-vH16RGad3DHml8ELw" type="rss" />
+      <outline title="Lakshadweep Tastic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF3x4py6_RYcSsGmj4sdc1w" type="rss" />
+      <outline title="Tick Mark Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ_QgXg61kgsISx5QcRCVKg" type="rss" />
+      <outline title="Coral Islands " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAFbM23QDRzpY0KyfJu7tWg" type="rss" />
+      <outline title="Lakshadweep Diary" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKhndnG_HxY8iq6d9v9KYEA" type="rss" />
+      <outline title="Beauty of Lakshadweep" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5GSOdPpATghkP_RPnkOOeg" type="rss" />
+    </outline>
+  </body>
+</opml>

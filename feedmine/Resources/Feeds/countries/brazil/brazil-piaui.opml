@@ -4,37 +4,89 @@
     <title>Piauí Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Portal O Dia" xmlUrl="https://www.portalodia.com/feed/" type="rss" />
-        <outline title="Governo do Piauí" xmlUrl="https://www.pi.gov.br/feed/" type="rss" />
-        <outline title="Prefeitura de Teresina" xmlUrl="https://www.teresina.pi.gov.br/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Portal O Dia" xmlUrl="https://www.portalodia.com/feed/" type="rss" />
+      <outline title="Governo do Piauí" xmlUrl="https://www.pi.gov.br/feed/" type="rss" />
+      <outline title="Prefeitura de Teresina" xmlUrl="https://www.teresina.pi.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
       </outline>
-      <outline text="Sports">
+    <outline text="Culture">
+      <outline title="Cultura PI" xmlUrl="https://www.cultura.pi.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="UESPI" xmlUrl="https://www.uespi.br/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
       </outline>
-      <outline text="Culture">
-        <outline title="Cultura PI" xmlUrl="https://www.cultura.pi.gov.br/feed/" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="UESPI" xmlUrl="https://www.uespi.br/feed/" type="rss" />
-      </outline>
-      <outline text="Business">
-      </outline>
-      <outline text="Blogs">
-        <outline title="Piauí Hoje" xmlUrl="https://piauihoje.com/feed/" type="rss" />
-      </outline></body>
-      <outline text="Podcasts">
-        <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
-        <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
-      </outline>
-      <outline text="YouTube">
-        <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
-        <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
-      </outline>
-      <outline text="Cities">
-        <outline text="Parnaíba">
-          <outline title="Parnaíba News" xmlUrl="https://www.parnaibanews.com.br/feed/" type="rss" />
-          <outline title="Pref Parnaíba" xmlUrl="https://www.parnaiba.pi.gov.br/feed/" type="rss" />
-        </outline>
-      </outline>
-
-    </opml>
+    <outline text="Blogs">
+      <outline title="Piauí Hoje" xmlUrl="https://piauihoje.com/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Alguns Edit Aleatório" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZTG56sRAvYkboKlGBHk3eQ" type="rss" />
+      <outline title="MARKOS VENNYCYOS CARVALHO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO2jXCgOjGliX94ZYeFReCw" type="rss" />
+      <outline title="Margarete Coelho" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMY_DADSrnMP4EJwFx5LOBQ" type="rss" />
+      <outline title="HISTÓRIA&amp;BASTIDORES / Prof.Rodrigo José" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyD-QQsjA6CY21zh_E-e_2A" type="rss" />
+      <outline title="Brazilian Munda" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeWlWZSJTFU278b2HNjm7Ww" type="rss" />
+      <outline title="Brasil Urgente" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG-fFAxQjZgJmn0w7Brj5xQ" type="rss" />
+      <outline title="Eryke Gomes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmAbhMtP-jMxOkXDFI8cufQ" type="rss" />
+      <outline title="Free Fire Esports Brasil #FREEFIRE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOaQsQIByJYHyETtw48l_Vw" type="rss" />
+      <outline title="Armando Jr. AJuda na Web" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIHnbcEWN-ovtqATPirqqUw" type="rss" />
+      <outline title="Nova Ceasa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC886s9t7qWq1NkrnoBUGrPQ" type="rss" />
+      <outline title="A Voz do Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_J-FoYbXGh7CWtPlN_Hihg" type="rss" />
+      <outline title="Sc Ball" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL82W5ATPyGjLVoWKSLbcaw" type="rss" />
+      <outline title="Opal Prime Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp51-e89FayFB8nZ9HDCeMg" type="rss" />
+      <outline title="Wesley's POV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcFDP5eQZtIxkg_IcfSGeIw" type="rss" />
+      <outline title="BraziBall" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3OxIL_GvMPMJWMwpL-ILlg" type="rss" />
+      <outline title="Marcelo Sousa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyZGKzO93UxVfhqJR-eTrbw" type="rss" />
+      <outline title="Galdino Santos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWgu_bS-k6ABQIzoUiGWfaw" type="rss" />
+      <outline title="Interiorana" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwaBkiAAYAyw5fp-JM-pC4Q" type="rss" />
+      <outline title="Malu Oficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6fi-HkdWGHWOQGEaH-lIg" type="rss" />
+      <outline title="Break do Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZJM4vgm6Fh3I2DhNLADF0w" type="rss" />
+      <outline title="PORTAL FALA DIRCEU" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWD5P36b9NQqCK6-nrvV9Ug" type="rss" />
+      <outline title="Luzer On The Trip - Edivan e Camila" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKNMt4wdQ_0inHZTLv71HXQ" type="rss" />
+      <outline title="Paisagens" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU3O9aqTgoIcHFZExzGPaoA" type="rss" />
+      <outline title="brasilpoint" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTvlU1d4vn1xCk3TD4rrdpg" type="rss" />
+      <outline title="Gabriely Castro" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrJnRpiEz6pzovfqi6yx1iQ" type="rss" />
+      <outline title="julio" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbV31JD2Bgn9fMkFoAuYHHQ" type="rss" />
+      <outline title="Spectacular Birding Tropical Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBdZKqPqwXfSe79lhXPgvnA" type="rss" />
+      <outline title="Detectorismo Piauí" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJfwCvvLvOQ-qKIODiHUmuw" type="rss" />
+      <outline title="Assis Construção" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRrKfzUtdXCbcW2jxvxMpZw" type="rss" />
+      <outline title="mateus silva" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtCC_EOiLTaXCqLDyG0szuA" type="rss" />
+      <outline title="oipedrodaher" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEmDI96PRniiegjkSmrpZaQ" type="rss" />
+      <outline title="Piauí_contryballs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDJEtf9nAFcaWgrP2lYLgQA" type="rss" />
+      <outline title="Genesiano Corretor de Imóveis" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnwyAE8eOHuPvAxYajQ8uJQ" type="rss" />
+      <outline title="Andrew Montemayor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrBXd-TbhY8ZAhZkGzVpY8g" type="rss" />
+      <outline title="Cidade ai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEDOUGJh9vQiNuZS_Nlhi0Q" type="rss" />
+      <outline title="Governo do Estado do Piauí" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUvn6mz9Su40_xqyZjK5Onw" type="rss" />
+      <outline title="Brasil meu Amor“A hidden place in Brazil”" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfcKRAK8hK3NGgUWtGbrFiA" type="rss" />
+      <outline title="Benício Santos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwVfiwlwp28q7I1Of56kzdg" type="rss" />
+      <outline title="Canal Vôlei Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCas3I6sh_-cf6O2fI1FO9vQ" type="rss" />
+      <outline title="Chic hotel boutique" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk_VTzb1o5K99ggPcQejDEw" type="rss" />
+      <outline title="Brazil Energy Conference" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6Gn_RS7W-urhCad5ZHIsBg" type="rss" />
+      <outline title="CBDE Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbb9X72GbhnleUZXPvhBrsw" type="rss" />
+      <outline title="BRASIL NOVAS ROTAS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVELkrbI1XJdcakUKZ06hyw" type="rss" />
+      <outline title="FPR Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0JkRGZ4RJ_Qtz4tif1jqeg" type="rss" />
+      <outline title="Igreja Universal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2JF7IhMmIz2N-FpwTkQo0w" type="rss" />
+      <outline title="Kelson Lyma" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU8k4nTNkDu72NpZ1WCSTRA" type="rss" />
+      <outline title="Thiago Santos TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdeqlF89SvkGNnSmK_rUaHQ" type="rss" />
+      <outline title="  SETU UMA BENÇÃO . Julio CS Barros " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVO8cnjlPIeuQm2DxAqUqlg" type="rss" />
+      <outline title="Alice Rosa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHZ4yj51XH9PudESGfN_RaQ" type="rss" />
+      <outline title="Andrea Canta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgtdSIwz6M0KP_nl7UNWY_w" type="rss" />
+    </outline>
+  </body>
+  <outline text="Podcasts">
+    <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+    <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+    <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Parnaíba">
+      <outline title="Parnaíba News" xmlUrl="https://www.parnaibanews.com.br/feed/" type="rss" />
+      <outline title="Pref Parnaíba" xmlUrl="https://www.parnaiba.pi.gov.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

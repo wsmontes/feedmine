@@ -4,16 +4,120 @@
     <title>Kerala Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Kochi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128671519.cms" type="rss" />
-        <outline title="The Hindu Kerala" xmlUrl="https://www.thehindu.com/news/national/kerala/feeder/default.rss" type="rss" />
-        <outline title="Indian Express Kerala" xmlUrl="https://indianexpress.com/section/cities/thiruvananthapuram/feed/" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="NIT Calicut" xmlUrl="https://www.nitc.ac.in/rss" type="rss" />
-      </outline>
-      <outline text="Culture">
-        <outline title="Kerala Tourism" xmlUrl="https://www.keralatourism.org/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="Times of India Kochi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128671519.cms" type="rss" />
+      <outline title="The Hindu Kerala" xmlUrl="https://www.thehindu.com/news/national/kerala/feeder/default.rss" type="rss" />
+      <outline title="Indian Express Kerala" xmlUrl="https://indianexpress.com/section/cities/thiruvananthapuram/feed/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="NIT Calicut" xmlUrl="https://www.nitc.ac.in/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Kerala Tourism" xmlUrl="https://www.keralatourism.org/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Travel with Amateur Traveler Podcast" xmlUrl="https://feeds.megaphone.fm/GLSS1857986358" type="rss" category="Places &amp; Travel" />
+      <outline title="The World in First Person" xmlUrl="https://anchor.fm/s/4b363878/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="The 10Adventures Podcast" xmlUrl="https://feed.podbean.com/adventuretravel/feed.xml" type="rss" category="Places &amp; Travel" />
+      <outline title="The Times Of India Podcast" xmlUrl="https://anchor.fm/s/57b0b7e0/podcast/rss" type="rss" category="News" />
+      <outline title="New Books in Sociology" xmlUrl="https://feeds.megaphone.fm/LIT3382719913" type="rss" category="Social Sciences" />
+      <outline title="The Culinary Institute of America" xmlUrl="https://feed.podbean.com/cia/feed.xml" type="rss" category="Food" />
+      <outline title="Pediheart: Pediatric Cardiology Today" xmlUrl="https://www.spreaker.com/show/2823135/episodes/feed" type="rss" category="Health &amp; Fitness" />
+      <outline title="Scientific Sense ®" xmlUrl="https://anchor.fm/s/21a37980/podcast/rss" type="rss" category="Science" />
+      <outline title="New Books in Anthropology" xmlUrl="https://feeds.megaphone.fm/LIT5223487889" type="rss" category="Social Sciences" />
+      <outline title="New Books in Folklore" xmlUrl="https://feeds.megaphone.fm/LIT6330413236" type="rss" category="Arts" />
+      <outline title="METRO TV" xmlUrl="https://anchor.fm/s/4a0095ac/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Fall of Civilizations Podcast" xmlUrl="https://anchor.fm/s/101adcf44/podcast/rss" type="rss" category="History" />
+      <outline title="The Desi Crime Podcast" xmlUrl="https://anchor.fm/s/f6585ee8/podcast/rss" type="rss" category="True Crime" />
+      <outline title="CREATIVE SOCIETY" xmlUrl="https://anchor.fm/s/103db188/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Dr Mary Travelbest Guide" xmlUrl="https://drmarytravelbest.libsyn.com/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Kairos Global Audio Magazine" xmlUrl="https://anchor.fm/s/3b20183c/podcast/rss" type="rss" category="Christianity" />
+      <outline title="The Liberation Fairtrade Podcast" xmlUrl="http://liberation.jellycast.com/podcast/feed/2" type="rss" category="Education" />
+      <outline title="Small Worlds Podcast" xmlUrl="https://anchor.fm/s/36e33754/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Creative Soundscapes with Margaret Soraya" xmlUrl="https://api.substack.com/feed/podcast/1526205.rss" type="rss" category="Visual Arts" />
+      <outline title="Trending Globally: Politics and Policy" xmlUrl="https://feeds.captivate.fm/trending-globally/" type="rss" category="News" />
+      <outline title="JW Sobrevivientes" xmlUrl="https://anchor.fm/s/a390b48/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Two Frogs Travel" xmlUrl="https://nowtoulouse.com/feed/podcast/" type="rss" category="Places &amp; Travel" />
+      <outline title="TellMeWhere2Go" xmlUrl="https://anchor.fm/s/1ec74048/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="New Books in South Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT2660294853" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in Performing Arts" xmlUrl="https://feeds.megaphone.fm/LIT9810498522" type="rss" category="Performing Arts" />
+      <outline title="Are humans Open Minded?" xmlUrl="https://anchor.fm/s/ca8eb00/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="International SOS" xmlUrl="https://feeds.captivate.fm/internationalsos/" type="rss" category="Business" />
+      <outline title="Far East Travels Podcast" xmlUrl="https://www.spreaker.com/show/2913917/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="Behind the Cover with Indiana University Press" xmlUrl="https://feeds.megaphone.fm/NBNK3084099524" type="rss" category="Books" />
+      <outline title="Suwbha Chopra presents" xmlUrl="https://anchor.fm/s/7e665bd8/podcast/rss" type="rss" category="Careers" />
+      <outline title="Let's Talk About Energy" xmlUrl="https://feeds.captivate.fm/energytalks/" type="rss" category="News" />
+      <outline title="Palliative Care Matters" xmlUrl="https://feed.podbean.com/palliativecaremattershost/feed.xml" type="rss" category="Medicine" />
+      <outline title="Travel Voice Notes" xmlUrl="https://anchor.fm/s/e4c5c5e4/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="365 Days of Travel Podcast" xmlUrl="https://rss.libsyn.com/shows/109513/destinations/598121.xml" type="rss" category="Places &amp; Travel" />
+      <outline title="Vector Signals" xmlUrl="https://feeds.transistor.fm/vector-signals" type="rss" category="Life Sciences" />
+      <outline title="Jayapataka Swami Archives" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:17849373/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Dream Drift" xmlUrl="https://anchor.fm/s/fedae284/podcast/rss" type="rss" category="Music" />
+      <outline title="Intro to NLP" xmlUrl="https://anchor.fm/s/6562ee1c/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
+      <outline title="The History of India Podcast" xmlUrl="https://rss.libsyn.com/shows/72278/destinations/309639.xml" type="rss" category="History" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="Unmasked &amp; Open Hearted" xmlUrl="https://rss.libsyn.com/shows/301367/destinations/2398589.xml" type="rss" category="Self-Improvement" />
+      <outline title="In Focus by The Hindu" xmlUrl="https://feeds.megaphone.fm/THGU4956605070" type="rss" category="News Commentary" />
+      <outline title="Christ Church Westerly" xmlUrl="https://anchor.fm/s/7cf85b5c/podcast/rss" type="rss" category="Christianity" />
+      <outline title="After Hours PR3SHOW" xmlUrl="https://anchor.fm/s/2c655adc/podcast/rss" type="rss" category="Comedy Interviews" />
+      <outline title="Get Sleepy: Sleep meditation and stories" xmlUrl="https://feeds.megaphone.fm/SGP8517078272" type="rss" category="Alternative Health" />
+      <outline title="ANI Podcast with Smita Prakash" xmlUrl="https://anchor.fm/s/fa8ad6f8/podcast/rss" type="rss" category="Politics" />
+      <outline title="CPIM Kerala" xmlUrl="https://anchor.fm/s/21d7334c/podcast/rss" type="rss" category="News" />
+      <outline title="esSENSE Club- Freethinkers Community - Kerala India | യുക്തിവാദം" xmlUrl="https://essense.club/category/malayalam/%e0%b4%af%e0%b5%81%e0%b4%95%e0%b5%8d%e0%b4%a4%e0%b4%bf%e0%b4%b5%e0%b4%be%e0%b4%a6%e0%b4%82/feed" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Kerala Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmiF2GcrQwFeiTdnKJ_023A" type="rss" />
+      <outline title="Indian Dental Association Kerala State" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkP3mGY3w0-h2hzkbhDu4ow" type="rss" />
+      <outline title="Hindu's ritual arts of india (Kerala Special)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgG40SP1PhScwMT72MP4Q7A" type="rss" />
+      <outline title="Laws on kerala- India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQLfchknLNOhyzGekwNEeBg" type="rss" />
+      <outline title="Western Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR16EIRGGS_L9Tr_ZX1fZRQ" type="rss" />
+      <outline title="Peniel gospel ministries kerala india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVD5ZaDlIZRa8xhf3jquEWg" type="rss" />
+      <outline title="Moro Living in Kerala,India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrGQjr_CZunoQDe9W0jlVsQ" type="rss" />
+      <outline title="TRUE INDIA KERALA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzyHKeMPMDNY6Ho1tSVliNA" type="rss" />
+      <outline title="Kerala God's Own Country -India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkVOKdgedTzHPM5yKZN4aqA" type="rss" />
+      <outline title="Indian Systems of Medicine, Govt of Kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRNkqtKzfkm6HYq1FIrX6iA" type="rss" />
+      <outline title="Ernakulam kerala india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwlbVGXI4nOR5NNLvn3YnQ" type="rss" />
+      <outline title="keralaindia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCevzqgx9HUD2TvCHH_rz5OA" type="rss" />
+      <outline title="Murali Mohan Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU9wlVyyLPi5COtF2PJx7lA" type="rss" />
+      <outline title="Life in India kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3rQhn9QgaLptMFtJqyVMPg" type="rss" />
+      <outline title="one india kerala " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2skV-EkuaT-Prk8qs97ZZA" type="rss" />
+      <outline title="Village Cooking - Kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8H6icXC3vMR7lWtvDTw2Xg" type="rss" />
+      <outline title="Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC82EWy0VL6go-iCg7fPL0Fw" type="rss" />
+      <outline title="Kerala tour India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEO6hSsa6_kjoQnECFLOgEg" type="rss" />
+      <outline title="Kerala india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsxJW61vk4tCMUwBnI79VdA" type="rss" />
+      <outline title="COME INDIA SEE KERALA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuzmIGGbakC9Ef7Rl39AOfw" type="rss" />
+      <outline title="The New Indian Express - Kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC477_KOnDs-t2beS6f4Wlyw" type="rss" />
+      <outline title="The Bible Society of India-Kerala Auxiliary" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5VBQEAdHWfhd-AYcxkoPyQ" type="rss" />
+      <outline title="Swaraj India Kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtbU5ltI9lgJAZrCTLExbVw" type="rss" />
+      <outline title="Temples Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcLz-sWEhtbZ7S-zJvjPVTQ" type="rss" />
+      <outline title="Kerala Tour Amazing India Videos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZbxSLpnJ1pKcWy4nk-BAPQ" type="rss" />
+      <outline title="India Kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdWGlaJQ2GQvgEVxDy3tOKQ" type="rss" />
+      <outline title="Temples of Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClrSnU0ihUsZjaWdE46bqgw" type="rss" />
+      <outline title="India Kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8YjQxIOxfzs2_NwJMA5xeA" type="rss" />
+      <outline title="INDIAN ARMY, SSC AND KERALA PSC Jobs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqUez1uEzx0dSWjU-C50tOQ" type="rss" />
+      <outline title="S H D V V KERALA INDIA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCalWDiMYpfxOHsUQPaIAVMw" type="rss" />
+      <outline title="Adiyogi Kerala, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3jxeqbPSI47x1yxjH7HPXw" type="rss" />
+      <outline title="Church of God in India, Kerala State" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSdxekqX1dXoXX3AVn_vHBQ" type="rss" />
+      <outline title="KERALA STATE- INDIAN PROSTHODONTIC SOCIETY" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRIT60Gt1fkbkWm7UhLPOsA" type="rss" />
+      <outline title="Speak For India: Kerala Edition" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChHTfu1POuQg-tANoAFmIlA" type="rss" />
+      <outline title="India Kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkOJR5BV2IkJ5pjt_a-M04Q" type="rss" />
+      <outline title="Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm31Ts4-EpdJg9K7JyJPPow" type="rss" />
+      <outline title="WWF India - Kerala State Office" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtTD-wtD8Gr0lsUdmImvK7w" type="rss" />
+      <outline title="Live Cam Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1fQhsxrjcrHjQ4uKOn0axg" type="rss" />
+      <outline title="Incredible Kerala india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_YufL8gMNwqYuVMz_nwtlw" type="rss" />
+      <outline title="Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC16ZXCj9m-j-9lF5EdBYeKg" type="rss" />
+      <outline title="explore Kerala, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmATL7y9L8Z4mL7nZiAZ0Fg" type="rss" />
+      <outline title="BEAUTIFUL KERALA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrv9AoWZZ7yTe1nLUo7dprQ" type="rss" />
+      <outline title="Maher Zain Indian Supporter Club - Kerala India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiUCyGqAkngcvm7MkMVEYtQ" type="rss" />
+      <outline title="Kerala &amp; India Connections" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnz7_99k_SPJ-C6-1C3CCPQ" type="rss" />
+      <outline title="Sk  Kerala  India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ8bcwMNdnuDMxku9oZGizw" type="rss" />
+      <outline title="TEEN INDIA KERALA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpQMNhB-4MO_7Y20ntMW4ZA" type="rss" />
+      <outline title="Indian - Kerala Sign Language Bible" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkOXeMsvC19w7OdQswLhXqw" type="rss" />
+      <outline title="Times Of India - Kerala" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCA6mB38p8Aw1ZTBDdQuTvNw" type="rss" />
+      <outline title="INDIAN LAW INSTITUTE, KERALA STATE UNIT" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6gYdb3jI0Jy4SnPb2UbpoQ" type="rss" />
+      <outline title="LAL Kerala India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClgyLYaFhddRyIaa1H-sI4Q" type="rss" />
+    </outline>
+  </body>
+</opml>

@@ -4,8 +4,69 @@
     <title>Yamaguchi Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Yamaguchi Pref Gov" xmlUrl="https://www.pref.yamaguchi.lg.jp/rss/" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Yamaguchi Pref Gov" xmlUrl="https://www.pref.yamaguchi.lg.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Audio Japan | Learning Japan with you" xmlUrl="https://anchor.fm/s/f02b1bc8/podcast/rss" type="rss" category="Courses" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Deep Dive from The Japan Times" xmlUrl="https://audioboom.com/channels/4970813.rss" type="rss" category="News" />
+      <outline title="INTjAPAN" xmlUrl="https://anchor.fm/s/d9c1fb18/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Radio Sentai Castranger" xmlUrl="https://feed.podbean.com/castranger/feed.xml" type="rss" category="Comedy" />
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Taku /Japanese Sightseeng and Train" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe5Tnl1w5T4i10LmVmmYvQA" type="rss" />
+      <outline title="momonigiri_show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJswTrOTtIfULneX6zxvXaQ" type="rss" />
+      <outline title="Atin Nuryadin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVc825VfHJMTZFCklsV864g" type="rss" />
+      <outline title="Japanese teacher" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkhV7I928J8NMVftIPEazMg" type="rss" />
+      <outline title="Amazing_Japan " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCha2jYVHT1Poek3ewhqIM3A" type="rss" />
+      <outline title="Saskyonara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsX6mluXBBUM6e2Aml7M1Hg" type="rss" />
+      <outline title="Japan Hautnah" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGoQoNgnPgBALRajNe_axKQ" type="rss" />
+      <outline title="Tomo JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnmdmsM59JghOMbdQFa0lnQ" type="rss" />
+      <outline title="山口理容店" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2_-IS78hy8ZeSR08wFGHBQ" type="rss" />
+      <outline title="Hidden Paradise in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVn7CgSMduYra6VzqwNRaPA" type="rss" />
+      <outline title="Yoshiro Yamaguchi (山口よしろう癒し相談室)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKc9oGyPo1b-l473_eQWTSA" type="rss" />
+      <outline title=" Switzerland 🇨🇭" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq6LP7owyIRYZrLHetMn6dg" type="rss" />
+      <outline title="SKYBIRD YAMAGUCHI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCssLPR428E8m6Cb9umuUC7g" type="rss" />
+      <outline title="San'in JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9A7Ivaz9fuj1X0ysHIlYOA" type="rss" />
+      <outline title="No More Lockdown Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvqOzuUdCysSiaxfX-ySVTw" type="rss" />
+      <outline title="Yamaguchi Travel from a Driver’s View　" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYdZ6oZFgFpXLlKFhLyjvHQ" type="rss" />
+      <outline title="I.W.G.P TV （IWAKUNI CITY. YAMAGUCHI. JAPAN）" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtl6VGBK2-QEs_BG2nGyUQw" type="rss" />
+      <outline title="Drawn in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAGTpYbooWeYXEdTpQxKqng" type="rss" />
+      <outline title="Deep JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSKOUdm_ixoBtHjAZy63LkQ" type="rss" />
+      <outline title="WEST JAPAN Chugoku_San'in Sanyo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCABYk3NDSrVvW5MFcxQVARQ" type="rss" />
+      <outline title="k.Kota_films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZKe41Xg1LGaMMjmpiCWDEw" type="rss" />
+      <outline title="Japan POV Experience " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoVmQQHqoF46LFyoi9OFAOw" type="rss" />
+      <outline title="JAPANESE SHAMPOO ASMR" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHplVdsrnLDFar0Xd1C7pJA" type="rss" />
+      <outline title="KemushiChan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbHWBh2s3nRzquz8rAoJk8Q" type="rss" />
+      <outline title="Sydney Michael | マイケル・シドニー" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL_h3gzclNYje5JZvI0_otw" type="rss" />
+      <outline title="West Japan Unlocked: A Visual Journey" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9IJcC7xLYh2F_6FtUXvjTA" type="rss" />
+      <outline title="japan joyride ー日本の車窓ー" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPP9Gc_8VLdmMzyGdbeRShg" type="rss" />
+      <outline title="Let's ask Shogo | Your Japanese Friend in Kyoto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn7DCb9ttrcw9h3vh9dfnVw" type="rss" />
+      <outline title="Japanese Listening with Mochii" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC02tZX6y4-77yrjDYoj6aCg" type="rss" />
+      <outline title="Dhimas Firmansyah" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeOb7A8CyL9O75-iWpvsJjw" type="rss" />
+      <outline title="Omaha Dreaming" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSY2KoiJRZKgohPnFyxnLnA" type="rss" />
+      <outline title="Smash Japan Badminton" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYAQqgutTvYIsi1qYNCNbdA" type="rss" />
+      <outline title="Ary Yamaguchi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpS5Jd6jTkNkqVPG3EtDAaQ" type="rss" />
+      <outline title="ZenZen Japanese Lesson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1NXk2f3gYqVGYMnAKWpr3Q" type="rss" />
+      <outline title="JAPAN-O-MOVIE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI-SYFwts51oGrIG7K2C1_A" type="rss" />
+      <outline title="AMAZING JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkfhiQ6UlMeaYe4jCIhj_bg" type="rss" />
+      <outline title="VAN IN JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCM48y6UOTtJUnoog4xsAINQ" type="rss" />
+      <outline title="Jeremy Explores" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaXG9q1SlUx--8o46U94GKw" type="rss" />
+      <outline title="Quiet Journey | K. Iwasaki" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8q-_OLcOZEu1eeXWhL6A-w" type="rss" />
+      <outline title="NHK WORLD-JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSPEjw8F2nQDtmUKPFNF7_A" type="rss" />
+      <outline title="Kosuke-jp" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCuDxV79wHPPdSv1_bXAIA" type="rss" />
+      <outline title="The airplane kid 山口yamaguchi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtltIzumj-192XeszuDe5pA" type="rss" />
+      <outline title="WEST-JAPAN Wanderer" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOiea5KNlVJDaFrhTn6an_g" type="rss" />
+      <outline title="Yamaguchi City" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8RrSIf4iy2rhBsk4YZCStw" type="rss" />
+      <outline title="WinGoJapan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcltlF35z8NgQ1JVmTR57qw" type="rss" />
+      <outline title="フジ タカ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtT-kj6FkjhWWrs1OEtK8XA" type="rss" />
+      <outline title="MikesNZJapan2010" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVIZwFJkO6SPag4z4BlH-Bg" type="rss" />
+      <outline title="玉酱日本生活" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCje7lyg6hjElbZTMTOYb5_g" type="rss" />
+      <outline title="Yoshiyuki Kobayashi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHiDU0F8JkGo1V-pCpofgqw" type="rss" />
+      <outline title="Little Space Yamaguchi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8bMrKYN7MIsL7K8uKNDo4Q" type="rss" />
+    </outline>
+  </body>
+</opml>

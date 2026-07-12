@@ -4,8 +4,61 @@
     <title>Normandie Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="France 3 Normandie" xmlUrl="https://france3-regions.francetvinfo.fr/normandie/rss" type="rss" />
-      </outline>
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="France 3 Normandie" xmlUrl="https://france3-regions.francetvinfo.fr/normandie/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Nos animaux domestiques" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_9b4c6a3c-9c81-40a1-ac73-e04548374dab.xml" type="rss" category="Science" />
+      <outline title="Les journaux, ICI Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_89852da9-be80-4a1c-bc0c-0e4d8b98b18d.xml" type="rss" category="News" />
+      <outline title="Les journaux, ICI Normandie (Caen)" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_e57b2e32-6fee-4e39-9add-fad0ba8bef56.xml" type="rss" category="News" />
+      <outline title="Le grand agenda du week-end, ICI Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_64fa99c3-3a4f-49a1-a8e5-5a8ae66c285c.xml" type="rss" category="News" />
+      <outline title="ICI Normandie au jardin" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_898e596e-76f4-4414-b3d0-81231d8b9bd5.xml" type="rss" category="Science" />
+      <outline title="Bienvenue chez vous, ICI Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_f8f1d2b0-69a5-46b8-b19d-c1d3cd0c98a2.xml" type="rss" category="Arts" />
+      <outline title="L'événement d'ici, ICI Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_b6f416d0-9380-4e76-b859-baf48758b39c.xml" type="rss" category="Leisure" />
+      <outline title="L'info d'ici, ICI Normandie (Seine-Maritime - Eure)" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_c42ef702-8d71-433a-88e7-7eabcc959401.xml" type="rss" category="News" />
+      <outline title="Le C'KOI ça de Nono et Moumoune ?" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_51049dc3-79fb-4450-90ac-6dc945d06e24.xml" type="rss" category="Comedy" />
+      <outline title="La chronique pêche FB Normandie  (Caen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_17815.xml" type="rss" category="Science" />
+      <outline title="Bienvenue chez vous cuisine par France Bleu Normandie Caen" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_24344.xml" type="rss" category="Arts" />
+      <outline title="Circuits courts FB Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21028.xml" type="rss" category="Arts" />
+      <outline title="Journal de 7h30 France Bleu Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21600.xml" type="rss" category="News" />
+      <outline title="Sous le sabot d'un cheval -  FB Normandie (Caen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20634.xml" type="rss" category="Science" />
+      <outline title="La randonnée, ICI Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_2c4d92b4-11fe-451f-9cb2-c0618580c096.xml" type="rss" category="Leisure" />
+      <outline title="ICI matin, l'invité ICI Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_f058f78b-9a19-4874-afb6-e3af473e554c.xml" type="rss" category="News" />
+      <outline title="L'invité ici matin, ICI Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_94103afc-e625-404a-8a58-ebb56fe8d544.xml" type="rss" category="News" />
+      <outline title="L'invité du 16-19, ici Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_15480.xml" type="rss" category="News" />
+      <outline title="Le journal de 18h, ici Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_17813.xml" type="rss" category="News" />
+      <outline title="Le journal de 12h, ici Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_15406.xml" type="rss" category="News" />
+      <outline title="Le journal de 8h, ici Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_17812.xml" type="rss" category="News" />
+      <outline title="L'info d'ici, ici Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20522.xml" type="rss" category="News" />
+      <outline title="Le journal de 10h, ici Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18241.xml" type="rss" category="News" />
+      <outline title="Suivez le guide FB Normandie Caen" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20297.xml" type="rss" category="Leisure" />
+      <outline title="Bleu Nature France Bleu Normandie (Rouen)" xmlUrl="https://www.ivoox.com/_fg_f1447183_filtro_1.xml" type="rss" category="Science" />
+      <outline title="Normandie Sports FB Normandie Caen" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_15400.xml" type="rss" category="Sports" />
+      <outline title="L'Été des Animaux France Bleu Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20243.xml" type="rss" category="Science" />
+      <outline title="Routes Touristiques France Bleu Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20242.xml" type="rss" category="Leisure" />
+      <outline title="Jardins de Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20245.xml" type="rss" category="Science" />
+      <outline title="Les Assises de la Normandie" xmlUrl="https://api.octopus.saooti.com/rss/emission/44" type="rss" category="News" />
+      <outline title="L'horoscope de Moumoune FB Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_19712.xml" type="rss" category="Comedy" />
+      <outline title="France Bleu au Jardin FB Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_19711.xml" type="rss" category="Science" />
+      <outline title="Journal de 7h30 de France Bleu Normandie (14,61)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_19398.xml" type="rss" category="News" />
+      <outline title="Agenda spectacles matin FB Normandie Caen" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_19401.xml" type="rss" category="News" />
+      <outline title="Le journal de 9h, ici Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_19123.xml" type="rss" category="News" />
+      <outline title="Pronostics Hippiques FB Normandie Caen" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18641.xml" type="rss" category="News" />
+      <outline title="Ca vaut le détour FB Normandie Caen" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18576.xml" type="rss" category="News" />
+      <outline title="Au coeur de la Normandie FB Normandie (Caen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18237.xml" type="rss" category="News" />
+      <outline title="Le Normandie Quiz France Bleu Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18262.xml" type="rss" category="Leisure" />
+      <outline title="La carte blanche FB Normandie Caen" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18240.xml" type="rss" category="News" />
+      <outline title="Le journal de 7h, ici Normandie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_17811.xml" type="rss" category="News" />
+      <outline title="Normandie nature FB Normandie (Caen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_17749.xml" type="rss" category="Science" />
+      <outline title="Les experts du week-end FB Normandie  (Caen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_17754.xml" type="rss" category="News" />
+      <outline title="Les chefs de l'été FB Normandie Caen" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_17751.xml" type="rss" category="Arts" />
+      <outline title="Normandie nature week-end FB Normandie Caen" xmlUrl="https://www.ivoox.com/feed_fg_f1473087_filtro_1.xml" type="rss" category="News" />
+      <outline title="France Bleu Normandie Grand Angle FBN (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_17257.xml" type="rss" category="News" />
+      <outline title="100% Normands France Bleu Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_16502.xml" type="rss" category="News" />
+      <outline title="Santé bien-être France Bleu Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_16482.xml" type="rss" category="Science" />
+      <outline title="Le web Normand France Bleu Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_16487.xml" type="rss" category="News" />
+      <outline title="Journal de 18h France Bleu Normandie (Rouen)" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_15836.xml" type="rss" category="News" />
+    </outline>
+  </body>
+</opml>

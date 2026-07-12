@@ -4,5 +4,8 @@
     <title>Manabí Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Podcast Habla Ecuador" xmlUrl="https://www.ivoox.com/_fg_f151442_filtro_1.xml" type="rss" category="News" />
+    </outline>
+  </body>
 </opml>

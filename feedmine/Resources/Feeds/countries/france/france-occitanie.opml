@@ -4,10 +4,63 @@
     <title>Occitanie Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="France 3 Occitanie" xmlUrl="https://france3-regions.francetvinfo.fr/occitanie/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Toulouse Mairie" xmlUrl="https://www.toulouse.fr/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="France 3 Occitanie" xmlUrl="https://france3-regions.francetvinfo.fr/occitanie/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Toulouse Mairie" xmlUrl="https://www.toulouse.fr/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="L'info d'ici, ICI Occitanie : l'environnement" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_4f5f70d4-5d6e-4fcb-ab74-9b4acffbacdf.xml" type="rss" category="Science" />
+      <outline title="Toulouse, capitale des étoiles" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_e22c92f3-265b-4cfe-81c0-6c3908cc0403.xml" type="rss" category="Science" />
+      <outline title="Les journaux, ICI Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_2c638a4a-1aad-4d65-9625-5f9d343df5d1.xml" type="rss" category="News" />
+      <outline title="La scène toulousaine, ICI Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_0b9f7d96-a62f-4877-b360-36ab6618b492.xml" type="rss" category="Music" />
+      <outline title="Qu'es aquò" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_dcf85357-d2c4-45c7-90e0-9e2b55c4b079.xml" type="rss" category="News" />
+      <outline title="L'éco d'ici, ICI Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_a33a61fe-56fb-47bb-9a17-d46d62955504.xml" type="rss" category="News" />
+      <outline title="Ici c'est rugby ! ICI Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/podcast_8c55dfff-2542-4d98-a424-0e6454ac6d42.xml" type="rss" category="Sports" />
+      <outline title="L'invité du 17/19,ici Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/35099478-7c72-4f9e-a6de-1b928400e9e5/rss_23659.xml" type="rss" category="News" />
+      <outline title="Conta Monde FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_11664.xml" type="rss" category="Society" />
+      <outline title="Côté connecté FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21809.xml" type="rss" category="News" />
+      <outline title="L'invité en Occitanie 08h16" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20927.xml" type="rss" category="News" />
+      <outline title="Le journal de 7h FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20704.xml" type="rss" category="News" />
+      <outline title="Au fil de l'eau en Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20257.xml" type="rss" category="Science" />
+      <outline title="Toute une histoire sur France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18608.xml" type="rss" category="News" />
+      <outline title="La vie pratique FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18261.xml" type="rss" category="Leisure" />
+      <outline title="Le bon plan gourmand de France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_15155.xml" type="rss" category="Arts" />
+      <outline title="ça vaut le détour, l'invité de France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_15138.xml" type="rss" category="News" />
+      <outline title="La balade du Dimanche de FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_15112.xml" type="rss" category="Society" />
+      <outline title="L'association du jour en Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_12654.xml" type="rss" category="News" />
+      <outline title="Le Club France Bleu Occitanie Stade Toulousain" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_12083.xml" type="rss" category="Sports" />
+      <outline title="Les mots d'Oc de France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_12029.xml" type="rss" category="News" />
+      <outline title="Bienvenue chez vous WE - ici Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_22860.xml" type="rss" category="Leisure" />
+      <outline title="A votre service week end ici Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_22854.xml" type="rss" category="Leisure" />
+      <outline title="A votre service - ici Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_23482.xml" type="rss" category="News" />
+      <outline title="Les spécialistes FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_24315.xml" type="rss" category="Society" />
+      <outline title="Côté culture FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_23481.xml" type="rss" category="News" />
+      <outline title="Le choix de la redac FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_23483.xml" type="rss" category="News" />
+      <outline title="Le coup de coeur du libraire FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_23610.xml" type="rss" category="Arts" />
+      <outline title="L'invité de 16h10 de France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_23658.xml" type="rss" category="News" />
+      <outline title="Côté pyrénées FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_23484.xml" type="rss" category="Science" />
+      <outline title="100% Sport Week End FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_23485.xml" type="rss" category="Sports" />
+      <outline title="Le festival de Radio France Occitanie Montpellier" xmlUrl="https://radiofrance-podcast.net/podcast09/35099478-7c72-4f9e-a6de-1b928400e9e5/rss_23316.xml" type="rss" category="Music" />
+      <outline title="Circuit Bleu Côté Saveurs France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_22852.xml" type="rss" category="Arts" />
+      <outline title="La vie en Bleu du week end FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21833.xml" type="rss" category="Leisure" />
+      <outline title="La vie pratique France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21807.xml" type="rss" category="Leisure" />
+      <outline title="La vie tranquille  France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21808.xml" type="rss" category="Leisure" />
+      <outline title="La nouvelle scène France Bleu Occitanie, la quotidienne" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21741.xml" type="rss" category="Music" />
+      <outline title="Le journal de 6h30 FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21635.xml" type="rss" category="News" />
+      <outline title="Circuits courts en Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_21029.xml" type="rss" category="Business" />
+      <outline title="L'invité en Occitanie 07h16" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20925.xml" type="rss" category="News" />
+      <outline title="L'invité en Occitanie 06h46" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20924.xml" type="rss" category="News" />
+      <outline title="Le journal de 12h FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20707.xml" type="rss" category="News" />
+      <outline title="Le journal de 9h FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20706.xml" type="rss" category="News" />
+      <outline title="Le journal de 7h30 FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20705.xml" type="rss" category="News" />
+      <outline title="Le journal de 6h FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20702.xml" type="rss" category="News" />
+      <outline title="Le journal de 17h FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20708.xml" type="rss" category="News" />
+      <outline title="Le journal de 18h FB Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20709.xml" type="rss" category="News" />
+      <outline title="Les journaux de France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20703.xml" type="rss" category="News" />
+      <outline title="100% Club France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20679.xml" type="rss" category="Sports" />
+      <outline title="L'abécédaire gourmand de France Bleu Occitanie" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20258.xml" type="rss" category="Arts" />
+    </outline>
+  </body>
+</opml>

@@ -4,5 +4,8 @@
     <title>Waterford Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Waterford Archives - Ireland Family Vacations" xmlUrl="https://irelandfamilyvacations.com/category/regions-and-counties/south-east-ireland/waterford/feed" type="rss" category="Society" />
+    </outline>
+  </body>
 </opml>

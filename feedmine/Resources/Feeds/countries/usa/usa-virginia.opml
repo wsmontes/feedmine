@@ -4,31 +4,38 @@
     <title>Virginia Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Virginia Mercury" xmlUrl="https://www.virginiamercury.com/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Virginia Mercury" xmlUrl="https://www.virginiamercury.com/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="VA General Assembly" xmlUrl="https://virginiageneralassembly.gov/rss" type="rss" />
+      <outline title="City of Virginia Beach" xmlUrl="https://www.vbgov.com/rss" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Virginia Business" xmlUrl="https://www.virginiabusiness.com/feed/" type="rss" />
+      <outline title="Richmond BizSense" xmlUrl="https://richmondbizsense.com/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
       </outline>
-      <outline text="Politics">
-        <outline title="VA General Assembly" xmlUrl="https://virginiageneralassembly.gov/rss" type="rss" />
-        <outline title="City of Virginia Beach" xmlUrl="https://www.vbgov.com/rss" type="rss" />
+    <outline text="Education">
+      <outline title="William Mary News" xmlUrl="https://news.wm.edu/rss" type="rss" />
+    </outline>
+    <outline text="Sports">
       </outline>
-      <outline text="Business">
-        <outline title="Virginia Business" xmlUrl="https://www.virginiabusiness.com/feed/" type="rss" />
-        <outline title="Richmond BizSense" xmlUrl="https://richmondbizsense.com/feed/" type="rss" />
-      </outline>
-      <outline text="Technology">
-      </outline>
-      <outline text="Education">
-        <outline title="William Mary News" xmlUrl="https://news.wm.edu/rss" type="rss" />
-      </outline>
-      <outline text="Sports">
-      </outline>
-      <outline text="Culture">
-        <outline title="WAMU DC" xmlUrl="https://wamu.org/rss" type="rss" />
-        <outline title="Eater DC" xmlUrl="https://dc.eater.com/rss/index.xml" type="rss" />
-        <outline title="Northern Virginia Mag" xmlUrl="https://northernvirginiamag.com/feed/" type="rss" />
-      </outline>
-      <outline text="Blogs">
-        <outline title="ARLnow" xmlUrl="https://www.arlnow.com/feed/" type="rss" />
-        <outline title="Greater Greater Wash" xmlUrl="https://ggwash.org/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="Culture">
+      <outline title="WAMU DC" xmlUrl="https://wamu.org/rss" type="rss" />
+      <outline title="Eater DC" xmlUrl="https://dc.eater.com/rss/index.xml" type="rss" />
+      <outline title="Northern Virginia Mag" xmlUrl="https://northernvirginiamag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="ARLnow" xmlUrl="https://www.arlnow.com/feed/" type="rss" />
+      <outline title="Greater Greater Wash" xmlUrl="https://ggwash.org/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="St. Paul's Episcopal Church - Richmond Virginia USA" xmlUrl="https://stpaulsrva.blob.core.windows.net/stpaulsrva/stpaulsrva_google.rss" type="rss" category="Religion" />
+      <outline title="VIRGINIA FOR USA" xmlUrl="https://virginiaforusa.org/podcasts-vodcasts" type="rss" />
+      <outline title="Norfolk City Council, Virginia-USA" xmlUrl="https://podcasts.whro.org/cityofnorfolk/council/podcast.xml" type="rss" category="Government" />
+      <outline title="SUPERNATURAL APOSTOLIC GLOBAL MINISTRIES - WEST VIRGINIA, USA." xmlUrl="https://podpoint.com/feed/8701" type="rss" category="Religion" />
+    </outline>
+  </body>
+</opml>

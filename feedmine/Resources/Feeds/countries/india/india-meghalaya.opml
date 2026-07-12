@@ -1,10 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0"><head><title>Meghalaya Feeds</title></head><body>
-      <outline text="News">
-        <outline title="Shillong Times" xmlUrl="https://theshillongtimes.com/rss" type="rss" />
-        <outline title="Meghalaya Monitor" xmlUrl="https://www.meghalayamonitor.com/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Meghalaya Gov" xmlUrl="https://meghalaya.gov.in/rss" type="rss" />
-      </outline></body>
-    </opml>
+<opml version="1.0">
+  <head>
+    <title>Meghalaya Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Shillong Times" xmlUrl="https://theshillongtimes.com/rss" type="rss" />
+      <outline title="Meghalaya Monitor" xmlUrl="https://www.meghalayamonitor.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Meghalaya Gov" xmlUrl="https://meghalaya.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Food with Mark Bittman" xmlUrl="https://feeds.acast.com/public/shows/6216896fd584d100134d4d24" type="rss" category="Food" />
+      <outline title="Weave" xmlUrl="http://cast.rocks/hosting/10875/feeds/IT3S5.xml" type="rss" category="Design" />
+      <outline title="Imperial Beach Church" xmlUrl="https://feeds.acast.com/public/shows/67c62686b48a8f157c35261f" type="rss" category="Christianity" />
+      <outline title="EastLake Church Chula Vista" xmlUrl="https://feeds.acast.com/public/shows/67c62c8fd44a2674cd18225f" type="rss" category="Christianity" />
+      <outline title="KPHRED Work - Life Balance Radio" xmlUrl="https://radio.linkedlocalnetwork.com/public/1/podcast/1efa5dea-529d-6090-8d0e-9b7de03d3464/feed" type="rss" category="Entrepreneurship" />
+      <outline title="Getaway Diaries" xmlUrl="https://www.spreaker.com/show/6890008/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="Paintbrush In My Coffee Cup" xmlUrl="https://anchor.fm/s/f933f410/podcast/rss" type="rss" category="Visual Arts" />
+      <outline title="THE AFTER PARTY LIVE!" xmlUrl="https://feed.podbean.com/theafterpartylive/feed.xml" type="rss" category="News Commentary" />
+      <outline title="Chicken Philosophy" xmlUrl="https://edward-reib.com/cp.xml" type="rss" category="Philosophy" />
+      <outline title="Qilin-Giraffes – The Podcast to Restore your Faith in Humanity" xmlUrl="https://podcast78bad5.podigee.io/feed/mp3" type="rss" category="Documentary" />
+      <outline title="Circle of Blue WaterNews" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:167996345/sounds.rss" type="rss" category="News" />
+      <outline title="Hope Community Church Sermons" xmlUrl="https://podcasts.subsplash.com/htt8bwt/podcast.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="News at 7" xmlUrl="https://www.spreaker.com/show/6571256/episodes/feed" type="rss" category="Daily News" />
+      <outline title="New Books in History" xmlUrl="https://feeds.megaphone.fm/LIT3360275696" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in South Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT2660294853" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in Military History" xmlUrl="https://feeds.megaphone.fm/LIT5868539187" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in British Studies" xmlUrl="https://feeds.megaphone.fm/LIT4185533436" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in Japanese Studies" xmlUrl="https://feeds.megaphone.fm/LIT9977052542" type="rss" category="Books" />
+      <outline title="Streets of Your Town" xmlUrl="https://feeds.captivate.fm/streets-of-your-town/" type="rss" category="News Commentary" />
+      <outline title="Nepal Diaspora Digest" xmlUrl="https://api.substack.com/feed/podcast/3786583/s/179739.rss" type="rss" category="Politics" />
+      <outline title="Nonfiction Kidlit Craft Conversations" xmlUrl="https://podcast.kirstenwlarson.com/feed.xml" type="rss" category="Books" />
+      <outline title="Talk To Zeroes" xmlUrl="https://anchor.fm/s/3f5ddaec/podcast/rss" type="rss" category="Careers" />
+      <outline title="Master Photography" xmlUrl="https://masterphotographypodcast.com/category/roundtable/feed/" type="rss" category="Visual Arts" />
+      <outline title="ViewPoint" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:54627107/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Method To Madness with Mukti Masih" xmlUrl="https://anchor.fm/s/a4a0333c/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Mannahouse Sunday Messages" xmlUrl="https://podcasts.subsplash.com/yp8mqqz/podcast.rss" type="rss" category="Christianity" />
+      <outline title="The Bridgehunter's Chronicles" xmlUrl="https://anchor.fm/s/c37c04c/podcast/rss" type="rss" category="News" />
+      <outline title="Boone United Methodist Church sermons (main sanctuary)" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:51345518/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Let's Know Things" xmlUrl="https://api.substack.com/feed/podcast/1449053.rss" type="rss" category="News Commentary" />
+      <outline title="Hub Podcast" xmlUrl="https://anchor.fm/s/388f6c6c/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Episodes" xmlUrl="https://theantidoteradio.com/feed/podcast/episodes/" type="rss" category="Music Interviews" />
+      <outline title="The Gomaluku Podcast" xmlUrl="https://anchor.fm/s/ccac824/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Signed: Conversations with Digital Mavericks" xmlUrl="https://rss.buzzsprout.com/2541943.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="4Thirty in the Morning" xmlUrl="https://anchor.fm/s/3abea5c0/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="Awebound Voyages" xmlUrl="https://anchor.fm/s/10fc04d28/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="A World of Good" xmlUrl="https://chogglobal.org/feed/podcast/" type="rss" category="Christianity" />
+      <outline title="Trauma and Triggers" xmlUrl="https://anchor.fm/s/e2b0ced4/podcast/rss" type="rss" category="Comedy" />
+      <outline title="The Dr Maya Way" xmlUrl="https://media.rss.com/srivatsa/feed.xml" type="rss" category="Health &amp; Fitness" />
+      <outline title="Doc G" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:256583271/sounds.rss" type="rss" category="Comedy" />
+      <outline title="Summer 2010 | Public lectures and events | Audio and pdf" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/publicLecturesAndEvents_iTunesRssAudioPdf2010SummerTerm.xml" type="rss" category="Courses" />
+      <outline title="Summer 2010 | Public lectures and events | Video" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/publicLecturesAndEvents_iTunesRssVideoPdf2010SummerTerm.xml" type="rss" category="Courses" />
+      <outline title="Mysterious Radio" xmlUrl="https://feeds.captivate.fm/mysteriousradioofficial/" type="rss" category="Social Sciences" />
+      <outline title="The Eddie Hyatt Podcast" xmlUrl="https://feed.podbean.com/Dreddiehyatt/feed.xml" type="rss" category="Christianity" />
+      <outline title="The Changing Earth Podcast, Survival Fiction &amp; Facts" xmlUrl="https://rss.pdrl.fm/285b49/feeds.libsyn.com/69641/rss/?redirect=false" type="rss" category="Fiction" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Books and Boba" xmlUrl="https://feeds.captivate.fm/booksandboba/" type="rss" category="Books" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Bethany Society Meghalaya, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCniwMhF-3SHT24OI_jrkZ3A" type="rss" />
+      <outline title="Kanishk Gupta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIKAsBdkwH3ERoJd3hJQ-Jg" type="rss" />
+      <outline title="Meghalaya India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTrpTuw_eT3NwZkSyZYBQEQ" type="rss" />
+      <outline title="DD Meghalaya Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUfYc_BJr20VGeJ5CeSsG4Q" type="rss" />
+      <outline title="MIT University of Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzFMMq-3y5WqCDHsi84wACg" type="rss" />
+      <outline title="Meghalaya Tour Guide" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVFPSgfjzG8LJLUg2EA5qgA" type="rss" />
+      <outline title="Meghalaya india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpcBA0VR3SXIwDp1OXYuiJA" type="rss" />
+      <outline title="MEGHALAYA PRODUCTION" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu6Tu0VxWmjWFhPjMEsSmIQ" type="rss" />
+      <outline title="All India Radio Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCErjgtYE7D8K9cZXl_l0BPg" type="rss" />
+      <outline title="Meghalaya Legislative Assembly Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT41h74vlZd3OTtQl6LGZaw" type="rss" />
+      <outline title="Traveling Mondays" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTFz3noLGUS4vsuJvObRtuw" type="rss" />
+      <outline title="Reble" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXgD24U7OvDImVkbqhvajng" type="rss" />
+      <outline title="Meghalaya Tourism Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzZ5UsnQWQBDxM6WxU98DHg" type="rss" />
+      <outline title="Meghalaya Popular" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBEdvz96Ka4CFvz7uvgVauw" type="rss" />
+      <outline title="EotH Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ1I8qZ8IUcPD0TGDmKoJ1A" type="rss" />
+      <outline title="MyMeG" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVCdgMWvolV3dwTWD98XD2g" type="rss" />
+      <outline title="Meghalaya Adventure Holiday" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-46NSpB46YnslLoKZgRopw" type="rss" />
+      <outline title="meghalaya cuisine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTk7s7Rb0GKclw3Wn-WyDKw" type="rss" />
+      <outline title="National Institute of Technology Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuOYB7UduyQMDAa12AJ_8zQ" type="rss" />
+      <outline title="MarkBhai Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnCaencoA6yOxs3wiOURcg" type="rss" />
+      <outline title="St. Joseph's Parish, Nongthliew (Meghalaya,India)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnMdvdD1GmQaJrO-mC7Vchg" type="rss" />
+      <outline title="NEN Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpj2BMSI0HcX-3wiBf114nA" type="rss" />
+      <outline title="Meghalaya Mindset" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPR54FxOelW601UTlr6yAIw" type="rss" />
+      <outline title="Crazy  Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDLyTMbTLuyjC78gjdHBu3g" type="rss" />
+      <outline title="Meghalaya Exam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHZvmPMQGHoSa3fpWmuIDmA" type="rss" />
+      <outline title="Meghalaya Travel Vlog " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXLeCHiGhkifBKVM246JiXQ" type="rss" />
+      <outline title="Nomadic Indian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgilhqoyZrXV2EBlaaAtVaw" type="rss" />
+      <outline title="DD NEWS MEGHALAYA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKRTjE7jVnVXHIokTQJg8_Q" type="rss" />
+      <outline title="NLU Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPaERYqK8mjR0yt58QaEtpA" type="rss" />
+      <outline title="Meghalaya Police Cultural Troupe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiUIvaC6b6OHvw6Wfpl3Wmg" type="rss" />
+      <outline title="Escape To Meghalaya-Northeast India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEUhpuyKsVnWAGxoWoyM8IQ" type="rss" />
+      <outline title="The Mobile Lens (Meghalaya)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmJnY9IXUVoPMVfvOkTQyA" type="rss" />
+      <outline title="Ringkumoni-NE India, Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoIy6ZJqdG_MyisR85dUbhw" type="rss" />
+      <outline title="Mahatma Gandhi University Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp8GLF-5PFDn5lAHuHgiIgQ" type="rss" />
+      <outline title="Indian National Congress - Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC51WeHAzaQTHMZlQBlU9eCA" type="rss" />
+      <outline title="Hope Channel Meghalaya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsE_SJNsN40ooddZd8BRlpg" type="rss" />
+      <outline title="Indian Backpacker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYUq_wB2ieVws9K4kmjWcaQ" type="rss" />
+      <outline title="Meghalaya High Court" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAlulU0MrUQkOLQzS_Trf8Q" type="rss" />
+      <outline title="MEGHALAYA PRIME BULLETIN " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7z3_gbZ0ywh_f4qaPDWtPA" type="rss" />
+      <outline title="Eni meghalaya channel official " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi_Fh-rVejHmBmQ4g3A89MQ" type="rss" />
+      <outline title="MEGHALAYA  Shillong Taekwondo Academy " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJifWeT20ejz5Z1oIWlXxHQ" type="rss" />
+      <outline title="Incredible India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMxJPchGLE_CJ1MJbJy-xDQ" type="rss" />
+      <outline title="MEGHALAYA: NORTHEAST INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQWPLSu5UJu_B3tKCrTgVsA" type="rss" />
+      <outline title="USTM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZyv6f5O4eWPPKDd5c4RkFw" type="rss" />
+      <outline title="Incredible Meghalaya, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCajhw3L_JDiTkWJQa4XA2CA" type="rss" />
+      <outline title="Kamkara Hostel Shillong, Meghalaya, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2zp8ervVZEoScX8zR5d7tw" type="rss" />
+      <outline title="R.Marthong (Shillong Meghalaya) Khasi " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqH5V1mmk13i22o2YcxkK9Q" type="rss" />
+      <outline title="MEGHALAYA LIVE NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeTp8qlDUdoUG84oWMxI1cA" type="rss" />
+      <outline title="Meghalaya News 24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC69CVdjRbCQoVSbFzPZGR3w" type="rss" />
+      <outline title="Northeast Media Hub" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCowMlrtr5l991SWBDj-SPEw" type="rss" />
+    </outline>
+  </body>
+</opml>

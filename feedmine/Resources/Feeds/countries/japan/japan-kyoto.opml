@@ -4,7 +4,57 @@
     <title>Kyoto Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="みかのはラジオ Mikanoharadio Kyoto Japan" xmlUrl="https://anchor.fm/s/2cc7a304/podcast/rss" type="rss" category="Documentary" />
+      <outline title="Hattaku Nihongo Podcast" xmlUrl="https://anchor.fm/s/462c0448/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Talk Taiwanese Mandarin with Abby" xmlUrl="https://feeds.soundon.fm/podcasts/8329ce3a-6cc8-4a3c-a12d-1a5b934060a0.xml" type="rss" category="Language Learning" />
+      <outline title="AmaoJapan やさしい日本語" xmlUrl="https://anchor.fm/s/412c0ec/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Akari Talks Japan" xmlUrl="https://anchor.fm/s/1b07a86c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="IVS2024 KYOTO SESSIONS" xmlUrl="https://rss.listen.style/p/ivssessions/rss" type="rss" category="Business" />
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="謝伯伯時間" xmlUrl="https://feed.firstory.me/rss/user/cki7h5zxajbdp08606zzrytfy" type="rss" category="Leisure" />
+      <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
+      <outline title="Shin Buddhist Sangha Services" xmlUrl="https://feed.podbean.com/takashimiyaji/feed.xml" type="rss" category="Buddhism" />
+      <outline title="Dan Snow's History Hit" xmlUrl="https://access.acast.com/rss/c939f8d1-c4bc-478e-8bb9-e5343f9a7ab5" type="rss" category="History" />
+      <outline title="Living Miracles Community" xmlUrl="https://www.spreaker.com/show/1242364/episodes/feed" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Deep in Japan" xmlUrl="https://feeds.transistor.fm/deep-in-japan" type="rss" category="Society &amp; Culture" />
+      <outline title="Beyond Huaxia: A College History of China and Japan" xmlUrl="https://feed.podbean.com/beyondhuaxia/feed.xml" type="rss" category="Education" />
+      <outline title="Chinese Whispers" xmlUrl="https://feeds.acast.com/public/shows/68358ff2998551779f248a35" type="rss" category="Politics" />
+      <outline title="Best of the Spectator" xmlUrl="https://access.acast.com/rss/68358fb5e1abc4be6b0308eb/default" type="rss" category="News Commentary" />
+      <outline title="Dreamlet" xmlUrl="https://anchor.fm/s/1298e894/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Deep Dive from The Japan Times" xmlUrl="https://audioboom.com/channels/4970813.rss" type="rss" category="News" />
+      <outline title="Armunn Righ - Contemplations, Conversations and Podcasts" xmlUrl="https://anchor.fm/s/c7a2018/podcast/rss" type="rss" category="Spirituality" />
+      <outline title="Nightlife" xmlUrl="https://www.abc.net.au/feeds/7642312/podcast.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Arrggh! A Video Game Podcast from The Waffling Taylors" xmlUrl="https://feeds.transistor.fm/the-waffling-taylors-podcast" type="rss" category="Video Games" />
+      <outline title="Learn Japanese with Japanese Made Easy" xmlUrl="https://japanesemadeeasy.com/feed/podcast/" type="rss" category="Language Learning" />
+      <outline title="朝日新聞AJW 英語ニュース（The Asahi Shimbun Asia &amp; Japan Watch）" xmlUrl="https://www.arukiki.jp/asahi_01/ajw_lang_en/feed.rss" type="rss" category="Daily News" />
+      <outline title="Life in 2 Languages" xmlUrl="https://anchor.fm/s/f62b4e94/podcast/rss" type="rss" category="Personal Journals" />
+      <outline title="Laid-back Japanese" xmlUrl="https://anchor.fm/s/d9f9c778/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Hood Nerds Anime and Comics Podcast" xmlUrl="https://anchor.fm/s/423c6ee0/podcast/rss" type="rss" category="Animation &amp; Manga" />
+      <outline title="Learning Japanese &amp; Culture with Maile &amp; Naoki" xmlUrl="https://anchor.fm/s/ed004ef0/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Rintaro Teaches Japanese" xmlUrl="https://anchor.fm/s/8bae25f0/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Frankly Friday" xmlUrl="https://feeds.accessmedia.nz/V2/itunes/44860f48-fc03-4cfc-b78c-a62c2298c10c" type="rss" category="Government" />
+      <outline title="Coffee Break Japanese" xmlUrl="https://feeds.acast.com/public/shows/6790e290455ab42f9db3adf1" type="rss" category="Language Learning" />
+      <outline title="Lazy Fluency - Japanese Podcast | 英会話" xmlUrl="https://rss.libsyn.com/shows/402296/destinations/3322481.xml" type="rss" category="Language Learning" />
+      <outline title="The KrisXperience Show" xmlUrl="https://anchor.fm/s/77e5c258/podcast/rss" type="rss" category="Education" />
+      <outline title="Defunctland" xmlUrl="https://defunctland.podbean.com/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Guy Perryman Interviews" xmlUrl="https://rss.buzzsprout.com/1974823.rss" type="rss" category="Arts" />
+      <outline title="Audio Japan | Learning Japan with you" xmlUrl="https://anchor.fm/s/f02b1bc8/podcast/rss" type="rss" category="Courses" />
+      <outline title="Abroad in Japan" xmlUrl="https://feeds.acast.com/public/shows/4d1eb966-6f07-4562-b9f1-9fd512f9631e" type="rss" category="Places &amp; Travel" />
+      <outline title="Got Faded Japan" xmlUrl="https://feed.podbean.com/gotfadedjapankrew/feed.xml" type="rss" category="Comedy" />
+      <outline title="Japanglish Chat" xmlUrl="https://anchor.fm/s/40fb8f20/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Kotatsu Club Podcast" xmlUrl="https://anchor.fm/s/f5d4b764/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="For the Love of History - world history, women’s history, weird history" xmlUrl="https://feeds.megaphone.fm/ARML4180090624" type="rss" category="History" />
+      <outline title="FlerCast - Una pausa di Design" xmlUrl="https://anchor.fm/s/bfe0657c/podcast/rss" type="rss" category="Design" />
+      <outline title="INTjAPAN" xmlUrl="https://anchor.fm/s/d9c1fb18/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Friday Night History" xmlUrl="https://anchor.fm/s/3e3d3464/podcast/rss" type="rss" category="History" />
+      <outline title="日本人のオージー The Japanese Aussie Podcast" xmlUrl="https://feed.podbean.com/jaketembo/feed.xml" type="rss" category="Language Learning" />
+      <outline title="Double O Cross Church" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:92725400/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Formosa English News" xmlUrl="https://feed.firstory.me/rss/user/ckbrc9xz33pse0918wxz4pc5w" type="rss" category="Daily News" />
+    </outline>
+  </body>
+</opml>

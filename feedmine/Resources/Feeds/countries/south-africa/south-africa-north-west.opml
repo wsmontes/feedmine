@@ -4,5 +4,8 @@
     <title>North West Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Radio Intifada by SWANA (South and West Asia and North Africa) Region Radio" xmlUrl="https://anchor.fm/s/2a1d1ae4/podcast/rss" type="rss" category="News" />
+    </outline>
+  </body>
 </opml>

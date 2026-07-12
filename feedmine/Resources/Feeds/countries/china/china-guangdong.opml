@@ -4,24 +4,108 @@
     <title>Guangdong Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Guangzhou Daily" xmlUrl="https://www.gzdaily.cn/rss/" type="rss" />
-        <outline title="GD Today" xmlUrl="https://www.newsgd.com/rss/" type="rss" />
-        <outline title="Shenzhen News" xmlUrl="http://www.sznews.com/rss/" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Guangzhou Gov" xmlUrl="http://www.gz.gov.cn/rss" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="GD Economic News" xmlUrl="http://www.gdeconomy.com/rss/" type="rss" />
-      </outline>
-      <outline text="Technology">
-        <outline title="Tencent Tech" xmlUrl="https://new.qq.com/rss/" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="Jinan Univ GZ" xmlUrl="https://www.jnu.edu.cn/rss" type="rss" />
-      </outline>
-      <outline text="Culture">
-        <outline title="That's PRD" xmlUrl="https://www.thatsmags.com/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="Guangzhou Daily" xmlUrl="https://www.gzdaily.cn/rss/" type="rss" />
+      <outline title="GD Today" xmlUrl="https://www.newsgd.com/rss/" type="rss" />
+      <outline title="Shenzhen News" xmlUrl="http://www.sznews.com/rss/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Guangzhou Gov" xmlUrl="http://www.gz.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="GD Economic News" xmlUrl="http://www.gdeconomy.com/rss/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Tencent Tech" xmlUrl="https://new.qq.com/rss/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Jinan Univ GZ" xmlUrl="https://www.jnu.edu.cn/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="That's PRD" xmlUrl="https://www.thatsmags.com/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="英语话中国ChinaStory" xmlUrl="https://feed.xyzfm.space/h8g9h3wf6evp" type="rss" category="Education" />
+      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
+      <outline title="Teatime With Jesse" xmlUrl="https://feeds.megaphone.fm/teatimewithjesse" type="rss" category="Comedy Interviews" />
+      <outline title="2013 Edinburgh International Book Festival" xmlUrl="http://eibf.s3.amazonaws.com/xml/2013_Edinburgh_International_Book_festival.xml" type="rss" category="Books" />
+      <outline title="New Books Network" xmlUrl="https://feeds.megaphone.fm/LIT4543917034" type="rss" category="News" />
+      <outline title="Expats On Air" xmlUrl="https://feed.podbean.com/expatsonair/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="The 029 Podcast" xmlUrl="https://anchor.fm/s/f9ecc3c8/podcast/rss" type="rss" category="Arts" />
+      <outline title="OFF THE WOK" xmlUrl="https://anchor.fm/s/3f21c4e4/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Dimsum Mandarin - Learn Mandarin Chinese" xmlUrl="https://feeds.feedburner.com/DimsumMandarin-LearnMandarinChinese" type="rss" category="Language Learning" />
+      <outline title="Chillchat (Learn Chinese and Chill)" xmlUrl="https://rss.buzzsprout.com/510028.rss" type="rss" category="Language Learning" />
+      <outline title="How Did You Do That?" xmlUrl="https://rss.buzzsprout.com/2488651.rss" type="rss" category="How To" />
+      <outline title="Barbarians at the Gate" xmlUrl="https://feeds.blubrry.com/feeds/barbarians.xml" type="rss" category="History" />
+      <outline title="The China Show" xmlUrl="https://rss.art19.com/the-china-show" type="rss" category="News" />
+      <outline title="Ear to Asia" xmlUrl="https://media.rss.com/ear-to-asia/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Strait Talk with Xiangyu" xmlUrl="https://feed.podbean.com/StraitTalkXY/feed.xml" type="rss" category="Politics" />
+      <outline title="98.5 ONE FM Podcasts" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:291490973/sounds.rss" type="rss" category="Music" />
+      <outline title="Eddy LIVE Podcast (ELP)" xmlUrl="https://feed.pod.co/eddy-live" type="rss" category="Personal Journals" />
+      <outline title="Global Business" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/430" type="rss" category="News" />
+      <outline title="Silk And Steel Podcast" xmlUrl="https://feed.podbean.com/silknsteel/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Princeton University Podcast (Audio)" xmlUrl="http://www.kaltura.com/api_v3/getFeed.php?partnerId=1449362&amp;feedId=1_bg27zoyd" type="rss" category="Podcasts" />
+      <outline title="Princeton University Podcast" xmlUrl="http://www.kaltura.com/api_v3/getFeed.php?partnerId=1449362&amp;feedId=1_tm2zdtnp" type="rss" category="Podcasts" />
+      <outline title="Throughline" xmlUrl="https://feeds.npr.org/510333/podcast.xml" type="rss" category="History" />
+      <outline title="Shades of Yellow with CulturedGen" xmlUrl="https://anchor.fm/s/312862bc/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="KTUH Online" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:573293379/sounds.rss" type="rss" category="Education" />
+      <outline title="British Culture: Albion Never Dies" xmlUrl="https://rss.buzzsprout.com/845500.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="One of One" xmlUrl="https://anchor.fm/s/11052f100/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="ChinesePod - Intermediate" xmlUrl="https://anchor.fm/s/317bc3a8/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="EdenRules.com (Audio)" xmlUrl="https://edenrules.com/rss/podcast/audio_en.rss" type="rss" category="Religion" />
+      <outline title="TalkYah 英语唠嗑鸭| Cross-culture experiences (English and Mandarin)" xmlUrl="https://anchor.fm/s/5a8d1c74/podcast/rss" type="rss" category="Society &amp; Culture" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Outhere in China " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrafWGH89I0m7YuBO0HNmDg" type="rss" />
+      <outline title="Abroad in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-ByLJ5cLWEceumcVUIlSDA" type="rss" />
+      <outline title="Digi Edu Pro - Study in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoB72zVjeZD-NrSWYl870wg" type="rss" />
+      <outline title="中国悲剧档案" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWD4yMVAIzNB8mCnCnBiTbg" type="rss" />
+      <outline title="Dannie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNgKoOUAMjdUL2EXKtg9oUA" type="rss" />
+      <outline title="China Travel: Ancient Town、Ancient village" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtg-9McpBW9xtJX_xBll2EA" type="rss" />
+      <outline title="中国広州の街歩き🇨🇳モワンヌファミリー" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpMSAqrlLngZk_s5_uHdvzg" type="rss" />
+      <outline title="chinacurate" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiWOREO-1eW5J7x1oBCpqQA" type="rss" />
+      <outline title="Beautiful Landscape#South China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYxvTUff_FrZZvtJAgnctCA" type="rss" />
+      <outline title="The Greater Bay Area of Guangdong-Hong Kong-Macao" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxzhPRgXtyaXFdRSdQIQ1ug" type="rss" />
+      <outline title="Discover Guangdong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKGAZwtRzypmRef_epInFIg" type="rss" />
+      <outline title="美食中国 Tasty China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm9VVJPdCZ629FI4Up6fbKw" type="rss" />
+      <outline title="守艺中国 | Hands Of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT_1FpYyWQyUi3Xu_fx7ZBA" type="rss" />
+      <outline title="Register company in Guangzhou" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8QsYkI9ArUWb8dlyL15ryQ" type="rss" />
+      <outline title="China Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFurNrhZ8LvVQApRA1hCyZw" type="rss" />
+      <outline title="China Gateway " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuqkO7Y1YlEJD3pB13YP_3A" type="rss" />
+      <outline title="中国Chinaเมืองจีน" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzRKfJEr9otPWPF4tJrQiXQ" type="rss" />
+      <outline title="Guangdong City" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr82f8QzTuW7BG-26c9WFeA" type="rss" />
+      <outline title="Blondie in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISrVZmDM4x-Rq9mmNUw7Zw" type="rss" />
+      <outline title="China Undercover" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuQ5pTs7ANOc2UAf1gR71-A" type="rss" />
+      <outline title="Guangzhou, China Jody" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFo1QQBmCFS5LHn7iFGqFSg" type="rss" />
+      <outline title="Go China Travel 中国 深圳 广州 广东" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGK6b1nhPM66BzC3vofgwbA" type="rss" />
+      <outline title="TVeee World" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvgglJ7z_k3fNTeqOrBBK8w" type="rss" />
+      <outline title="RDang News (Part of Micronet Corp) " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIIIvHCunm2HQCwe8PNvFVA" type="rss" />
+      <outline title="Tocntravel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_iz2knuCH7ePc_V1VRni-w" type="rss" />
+      <outline title="china-country" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcEzSaPjackyJQrw0Ntc0PA" type="rss" />
+      <outline title="Xi Jun Au Pair Cultural Exchange " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu3ZtYnAwyFM6M_2xlGKmxg" type="rss" />
+      <outline title="Amazing Guangdong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7FQC811tHj8XtAknovnoSA" type="rss" />
+      <outline title="The amazing China " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtD46BTSBQL4QohFMA0WyYw" type="rss" />
+      <outline title="cnto cnto (중국주서울관광사무소)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLv7V985YSlFD1dWiKtWQbQ" type="rss" />
+      <outline title="GuangZhou Wonderful" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjFyIvcUWiytTl0mDsG9EAg" type="rss" />
+      <outline title="Nick in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEgst8GqXAg3dCfDvJCiVYw" type="rss" />
+      <outline title="citytv" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRrgwcCxFj1h_1U5WhklyjQ" type="rss" />
+      <outline title="Our Simple Life in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKE5dxf5iGBQEjPaOh1AdrA" type="rss" />
+      <outline title="A Scott In China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtcje7QnCVZAornG-fEE98Q" type="rss" />
+      <outline title="Visual China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSJnI6CMeruA8q9aT0rMPfQ" type="rss" />
+      <outline title="Gwynn" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXLfau3W_gqyRpQk2-lTsxg" type="rss" />
+      <outline title="Touch电视剧" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGaO82iKnSLkskGREHt46Ng" type="rss" />
+      <outline title="Life lens by Zain " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoudYtQpwRXKtUFC6ncZQwQ" type="rss" />
+      <outline title="关于中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLHqq9rg0PSmCqKl3cPdTpA" type="rss" />
+      <outline title="中国公路 China Road" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgPwtBgUe7GFu2wspNK6F4w" type="rss" />
+      <outline title="Fauzi di Guangdong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCD5qW5OsxJ-ZH7PlxstpdbQ" type="rss" />
+      <outline title="China Guangzhou garment trade" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnQd61WxqCD2QXPd3N130lw" type="rss" />
+      <outline title="Follow the beard to see China 跟着大胡子看中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGQ2A4d8iGTHzb6DXe_R6Hg" type="rss" />
+      <outline title="Miss Universe China GuangDong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB5dz_SD3Vs84on8-Edjwug" type="rss" />
+      <outline title="真实中国 Real China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI4fvtOvDkogLP2yyWpdlDw" type="rss" />
+      <outline title="Record China, Guangdong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbZQHCxleRtQhPLtg_K7DxA" type="rss" />
+      <outline title="TC在中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW3wkLbdtFiO3IPyAOEFBmA" type="rss" />
+      <outline title="UrbaRain" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoForh6-e0oqsVHi69JQiAQ" type="rss" />
+      <outline title="小冯游中国Mr. Feng from China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4fbKwVPEQ_leqNfCGPW0Rg" type="rss" />
+    </outline>
+  </body>
+</opml>

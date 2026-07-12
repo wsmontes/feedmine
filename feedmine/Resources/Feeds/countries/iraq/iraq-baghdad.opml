@@ -4,5 +4,8 @@
     <title>Baghdad Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Walking to Baghdad: 20 Years of War in Iraq (The Takeaway)" xmlUrl="https://www.wnycstudios.org/feeds/series/takeaway/walking-baghdad-20-years-war-iraq" type="rss" category="News" />
+    </outline>
+  </body>
 </opml>

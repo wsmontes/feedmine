@@ -4,5 +4,13 @@
     <title>Al Jazirah Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Geopolitics Unplugged" xmlUrl="https://api.substack.com/feed/podcast/3400264.rss" type="rss" category="Politics" />
+      <outline title="Primero Lo Primero" xmlUrl="https://anchor.fm/s/7083b8bc/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Opplysningen 99,3" xmlUrl="https://feeds.transistor.fm/opplysningen-99-3" type="rss" category="News" />
+      <outline title="Presto Presto - Giornali e commenti" xmlUrl="https://podcast.radiopopolare.it/podcast/popolare-prestoprestogiornaliecommenti.xml" type="rss" category="News" />
+      <outline title="Esteri" xmlUrl="https://podcast.radiopopolare.it/podcast/popolare-esteri.xml" type="rss" category="News" />
+      <outline title="Nessun luogo è lontano" xmlUrl="https://backr24.ilsole24ore.com/podcast/luogo-lontano.xml" type="rss" category="News" />
+    </outline>
+  </body>
 </opml>

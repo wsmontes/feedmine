@@ -4,5 +4,12 @@
     <title>Cork Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Cork Archives - Ireland Family Vacations" xmlUrl="https://irelandfamilyvacations.com/category/regions-and-counties/south-west-ireland/cork/feed" type="rss" category="Society" />
+      <outline title="BlarneyToastmasters" xmlUrl="https://anchor.fm/s/5afed9a4/podcast/rss" type="rss" category="Education" />
+      <outline title="Cork 2021 - 24th National Session of EYP Ireland" xmlUrl="https://anchor.fm/s/5d1ba564/podcast/rss" type="rss" category="News" />
+      <outline title="The Happiness Jar" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:225371606/sounds.rss" type="rss" category="Education" />
+      <outline title="National Maritime College of Ireland" xmlUrl="https://www.mycit.ie/itunesu/nmci.xml" type="rss" category="Education" />
+    </outline>
+  </body>
 </opml>

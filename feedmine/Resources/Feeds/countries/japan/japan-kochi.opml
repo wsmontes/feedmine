@@ -4,6 +4,13 @@
     <title>Kochi Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Akari's Heart Read Aloud" xmlUrl="https://rss.buzzsprout.com/1870004.rss" type="rss" category="Language Learning" />
+      <outline title="Anime English Club with Sally Amaki" xmlUrl="https://www.omnycontent.com/d/playlist/67122501-9b17-4d77-84bd-a93d00dc791e/0c076d49-9b05-4dde-b679-b2c70030b77d/838e9b34-89be-442e-94f1-b2c70030bc67/podcast.rss" type="rss" category="Language Learning" />
+      <outline title="Learn Japanese Pod" xmlUrl="https://feeds.feedburner.com/learnjapanesepod" type="rss" category="Language Learning" />
+      <outline title="MOTTO Podcast" xmlUrl="https://anchor.fm/s/3cc171a4/podcast/rss" type="rss" category="Society &amp; Culture" />
+    </outline>
+  </body>
+</opml>

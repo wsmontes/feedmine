@@ -4,5 +4,12 @@
     <title>Salto Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="CTED Salto,Uruguay" xmlUrl="https://www.ivoox.com/feed_fg_f1745242_filtro_1.xml" type="rss" category="Technology" />
+      <outline title="Siglo 21 FM 101.5 Salto (Uruguay)" xmlUrl="https://anchor.fm/s/4ab66ff8/podcast/rss" type="rss" category="Leisure" />
+      <outline title="Now Fm Salto Uruguay" xmlUrl="https://www.spreaker.com/show/5532539/episodes/feed" type="rss" category="Music" />
+      <outline title="LISTA 326 UNIDAD POPULAR SALTO" xmlUrl="https://rss.castbox.fm/everest/da1030cc78784915befda3fa5bcbbb75.xml" type="rss" category="Government" />
+      <outline title="Podcast de Iglesia UCB Salto Uruguay" xmlUrl="https://www.ivoox.com/_fg_f1118140_filtro_1.xml" type="rss" category="Religion" />
+    </outline>
+  </body>
 </opml>

@@ -4,5 +4,9 @@
     <title>Cochabamba Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="RadioLacan.com |VI Seminario Clínico Institucional en Cochabamba, Bolivia Conferencia: Cutting. Cortes en el Cuerpo, una lectura desde el Psicoanálisis." xmlUrl="https://radiolacan.com/es/topic/1036/3?rss=1" type="rss" category="Science" />
+      <outline title="RadioLacan.com |Conferencia Pública de Gustavo Dessal en la Universidad de San Simón, Cochabamba, Bolivia: “Maternidad en el tiempo de la Violencia”." xmlUrl="https://radiolacan.com/es/topic/1183/3?rss=1" type="rss" category="Science" />
+    </outline>
+  </body>
 </opml>

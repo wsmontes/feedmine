@@ -4,5 +4,9 @@
     <title>Limassol Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Water filters in Cyprus in Limassol" xmlUrl="https://feeds.buzzsprout.com/2454939.rss" type="rss" category="Kids" />
+      <outline title="Most Trusted Carpet Cleaning Service in Limassol Cyprus" xmlUrl="https://feeds.hubhopper.com/b09141bb403105347a5367f4b5da9024.rss" type="rss" category="Business" />
+    </outline>
+  </body>
 </opml>

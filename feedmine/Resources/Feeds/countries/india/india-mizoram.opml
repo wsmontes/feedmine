@@ -4,8 +4,87 @@
     <title>Mizoram Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Mizoram Post" xmlUrl="https://www.mizorampost.com/rss" type="rss" />
-      </outline>
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Mizoram Post" xmlUrl="https://www.mizorampost.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Jewish Voice with Jonathan Bernis" xmlUrl="https://podcast.lightcast.com/z8ce07pm3/itunes" type="rss" category="Christianity" />
+      <outline title="EuFMD" xmlUrl="https://www.spreaker.com/show/4432280/episodes/feed" type="rss" category="Science" />
+      <outline title="Jewish Voice with Jonathan Bernis  (audio)" xmlUrl="https://podcast.lightcast.com/35w01x5es/itunes" type="rss" category="Christianity" />
+      <outline title="Redeemed Community Church" xmlUrl="http://redeemedcommunitychurch.org/feed/sermon-podcast/" type="rss" category="Christianity" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="Talking Burma" xmlUrl="https://anchor.fm/s/f7b208c0/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Forefront Church at Harvey Park" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:704920241/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="United Public Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:56295023/sounds.rss" type="rss" category="News" />
+      <outline title="Fivehead Baptist Church's Podcast" xmlUrl="https://rss.buzzsprout.com/4234.rss" type="rss" category="Arts" />
+      <outline title="The Hat Chat Podcast" xmlUrl="https://feeds.megaphone.fm/NSR2241892924" type="rss" category="Comedy" />
+      <outline title="Books and Beyond with Bound" xmlUrl="https://rss.buzzsprout.com/924931.rss" type="rss" category="Books" />
+      <outline title="United Church of God Sermons" xmlUrl="https://www.ucg.org/sermons/rss" type="rss" category="Christianity" />
+      <outline title="City Post Fort Worth Podcast" xmlUrl="https://anchor.fm/s/a6dbc134/podcast/rss" type="rss" category="Christianity" />
+      <outline title="The Hacka Podcast" xmlUrl="https://anchor.fm/s/f0c1307c/podcast/rss" type="rss" category="Christianity" />
+      <outline title="South Asia Chat" xmlUrl="https://feed.podbean.com/isas/feed.xml" type="rss" category="Courses" />
+      <outline title="St. Lorenz Lutheran Church" xmlUrl="https://rss.buzzsprout.com/17388.rss" type="rss" category="Christianity" />
+      <outline title="The Irrawaddy Newscast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:2114445/sounds.rss" type="rss" category="News" />
+      <outline title="Daily News Dose" xmlUrl="https://www.omnycontent.com/d/playlist/38abe477-df60-4cf0-bd9f-b1fe00d0bda4/38a58f8e-482b-4da6-b5a5-b203014eae05/5e4bd9d7-820e-46ca-9e35-b203014eae21/podcast.rss" type="rss" category="Daily News" />
+      <outline title="5th World Sepsis Congress: Sepsis Research and Innovations" xmlUrl="https://www.worldsepsiscongress.org/wsc16?format=rss" type="rss" category="Medicine" />
+      <outline title="Getaway Diaries" xmlUrl="https://www.spreaker.com/show/6890008/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="Herpetological Highlights" xmlUrl="https://feed.podbean.com/herphighlights/feed.xml" type="rss" category="Nature" />
+      <outline title="Missioning" xmlUrl="https://rss.buzzsprout.com/1029217.rss" type="rss" category="Christianity" />
+      <outline title="Occasional Digest" xmlUrl="https://media.rss.com/occasionaldigest/feed.xml" type="rss" category="History" />
+      <outline title="DEF talks by Aadi Achint" xmlUrl="https://anchor.fm/s/10901999c/podcast/rss" type="rss" category="Politics" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Mizoram University" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKNo59aUqIgnMWLVu2OuZIg" type="rss" />
+      <outline title="Mizoram Down Syndrome Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3Rx07v9oQbbtnbZRO9m93w" type="rss" />
+      <outline title="Mizoram Synod" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBojP0mEB4wAOaVJMw7zsBQ" type="rss" />
+      <outline title="Dept. of Commerce, Mizoram Uniersity, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwzTwa5NcuK70sDYQ_qsNQw" type="rss" />
+      <outline title="DD News Mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChh3hbbPv5ljfz4UAKcAOlg" type="rss" />
+      <outline title="BJP MIZORAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNpFcx1dx8aXYuPRcIdxkAQ" type="rss" />
+      <outline title="MIZORAM DIRECTORY" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw9MZz_ZoINH8MRwkK0hZ6w" type="rss" />
+      <outline title="Mission Organic Mizoram Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjI78MQRKEQlLjAV9Q4CfRA" type="rss" />
+      <outline title="Mizoram Roots and Foods" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCodOVBJeRbH8YJtVECxyhuw" type="rss" />
+      <outline title="Mizo Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC78f1voiU4kRKMyvT-q43xw" type="rss" />
+      <outline title="Mizoram Amateur Taekwondo Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEejQusKaCbhZIpFWhlWNuw" type="rss" />
+      <outline title="RAINBOW Mizo Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7AwB-dsv5tLlS1ZBM8NmzA" type="rss" />
+      <outline title="Mizoram Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaz55YTq__Lp2JR6DMoNHkw" type="rss" />
+      <outline title="LESDE Department, Mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3s20-p3oDE0Lwn2nCNZgAQ" type="rss" />
+      <outline title="MDM OFFICIAL, Mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgZC4jrUmOB0Yv3HHAB6tsQ" type="rss" />
+      <outline title="MIZORAM JOURNAL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiu0Z9D7swru789bq3spP3Q" type="rss" />
+      <outline title="Mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCE2cQi6r-0hND_9uF0bXKSQ" type="rss" />
+      <outline title="Esther Hnamte Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVb8VWQ087xAyae56SF1WKQ" type="rss" />
+      <outline title="MIZORAM EDUCATION HUB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCA2jqYaDZls5owwy693tEUg" type="rss" />
+      <outline title="Indian Backpacker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYUq_wB2ieVws9K4kmjWcaQ" type="rss" />
+      <outline title="Alan Rinawma" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7DzH8zmGykyzcqIWMXieAQ" type="rss" />
+      <outline title="Akashvani Aizawl" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa63vucq3veiBgfGaNtdQng" type="rss" />
+      <outline title="Travel our Mizoram, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUltUlSt6OfXbzfLVm44p3g" type="rss" />
+      <outline title="Mizoram Chronicle" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjSEx3vu6ESMZpcEF1J6D9g" type="rss" />
+      <outline title="BTS-ARMY-MIZORAM-INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9dvCVJ2j5tqWFIsiS7oPZw" type="rss" />
+      <outline title="Mizo Skin Clinic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfiIpXFXT3PDoM9uFap98xQ" type="rss" />
+      <outline title="Maria Fanai Vanlalhmangaihi " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaXfbksZFnPtd0cwZi3U2gg" type="rss" />
+      <outline title="Mizo Plays" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWETHf08Z1qTppoyR3AnFUg" type="rss" />
+      <outline title="Lost in Mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCacS8J43BZL3rCddBlYJf_A" type="rss" />
+      <outline title="JB Shelter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeWJsIErhCO7Fd0kmrtqsnw" type="rss" />
+      <outline title="DD MIZORAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8HAwfn7KNURdMj_-DlphPg" type="rss" />
+      <outline title="Mizoram NHM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6QsTRNjwtULkzinym1pvvA" type="rss" />
+      <outline title="ALPHA MIZO PRODUCTION" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0I_JI8qHfFd3UbqTeM1mFQ" type="rss" />
+      <outline title="EXPLORE MIZORAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyNrX06aSZ26HkIB25eo1YQ" type="rss" />
+      <outline title="Lily Tours &amp; Travels, Mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIjkoxdeZfuY7ldKTCpUctw" type="rss" />
+      <outline title="AIR News Aizawl" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCS8MSbOkHLJjN3llO_Isg7Q" type="rss" />
+      <outline title="Hello Mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcGl8ai9bHubLGz70C3hBCQ" type="rss" />
+      <outline title="All in One Mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRfOgP5r1knSc3A6iF4Z7Vg" type="rss" />
+      <outline title="ISA MIZO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr7H2DE825oMkSmtBXNq9Pw" type="rss" />
+      <outline title="Mizoram Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFmoUB4E_a_B6pV6MW3GUUA" type="rss" />
+      <outline title="Kirba Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCH_rjIOWVRow7ApndCfc88g" type="rss" />
+      <outline title="ICFAI University Mizoram Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5XIdim46Y6BomV_16kA5vw" type="rss" />
+      <outline title="CEO MIZORAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnjIgpbyQI3umRf9c8MZiAQ" type="rss" />
+      <outline title="Mizoram Badminton Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoEZ-Qfpv4QRLS4rsdI42jQ" type="rss" />
+      <outline title="RURAL LIFE IN MIZORAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtWAHGwn1AdOWG5l3fjkxfg" type="rss" />
+      <outline title="MGtv mizoram" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5PMO3GdqCIg9_TaMdmvW7Q" type="rss" />
+      <outline title="Best Collection Mizo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAtzc4ncYg0KImh6TA4ycmA" type="rss" />
+      <outline title="Mizoram Darshan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVxjRph6MpZaBfDCATCtztA" type="rss" />
+      <outline title="Govt. Mizoram Law College" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8jYkoN7NQZY31sD_VexPNQ" type="rss" />
+      <outline title="Mizoram State Sports Council MSSC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpAyRA0Y_kdsyc333WDE4Pg" type="rss" />
+    </outline>
+  </body>
+</opml>

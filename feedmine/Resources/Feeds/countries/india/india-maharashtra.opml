@@ -4,27 +4,84 @@
     <title>Maharashtra Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Mumbai" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms" type="rss" />
-        <outline title="Times of India Pune" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128669940.cms" type="rss" />
-        <outline title="Indian Express Mumbai" xmlUrl="https://indianexpress.com/section/cities/mumbai/feed/" type="rss" />
-        <outline title="Indian Express Pune" xmlUrl="https://indianexpress.com/section/cities/pune/feed/" type="rss" />
-        <outline title="Free Press Journal" xmlUrl="https://www.freepressjournal.in/rss" type="rss" />
-        <outline title="Loksatta" xmlUrl="https://www.loksatta.com/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Maharashtra Gov" xmlUrl="https://www.maharashtra.gov.in/rss" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="Economic Times Mumbai" xmlUrl="https://economictimes.indiatimes.com/rssfeeds/13357302.cms" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="Univ of Mumbai" xmlUrl="https://mu.ac.in/rss" type="rss" />
-        <outline title="TISS Mumbai" xmlUrl="https://www.tiss.edu/rss" type="rss" />
-      </outline>
-      <outline text="Sports">
+    <outline text="News">
+      <outline title="Times of India Mumbai" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms" type="rss" />
+      <outline title="Times of India Pune" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128669940.cms" type="rss" />
+      <outline title="Indian Express Mumbai" xmlUrl="https://indianexpress.com/section/cities/mumbai/feed/" type="rss" />
+      <outline title="Indian Express Pune" xmlUrl="https://indianexpress.com/section/cities/pune/feed/" type="rss" />
+      <outline title="Free Press Journal" xmlUrl="https://www.freepressjournal.in/rss" type="rss" />
+      <outline title="Loksatta" xmlUrl="https://www.loksatta.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Maharashtra Gov" xmlUrl="https://www.maharashtra.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Economic Times Mumbai" xmlUrl="https://economictimes.indiatimes.com/rssfeeds/13357302.cms" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Univ of Mumbai" xmlUrl="https://mu.ac.in/rss" type="rss" />
+      <outline title="TISS Mumbai" xmlUrl="https://www.tiss.edu/rss" type="rss" />
+    </outline>
+    <outline text="Sports">
 </outline>
-      <outline text="Culture">
-        <outline title="Maharashtra Tourism" xmlUrl="https://www.maharashtratourism.gov.in/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="Culture">
+      <outline title="Maharashtra Tourism" xmlUrl="https://www.maharashtratourism.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Varsha Nadkarni Kolhapur Maharashtra India" xmlUrl="https://anchor.fm/s/2446151c/podcast/rss" type="rss" category="Books" />
+      <outline title="Ace Engineering Solutions Pune Maharashtra India" xmlUrl="https://feeds.hubhopper.com/65d83539a1e1c6060109fed5fbd1e5e0.rss" type="rss" category="Marketing" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Family Court Pune, Maharashtra, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWYe_Etgsv42DkqURdCjqlg" type="rss" />
+      <outline title="Maharashtra India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5i_P7Pz-lW96uEr-Xxtxbg" type="rss" />
+      <outline title="Nilesh Gaonkar Maharashtra India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC21ugrqyCJ-OKR2_SM_65dg" type="rss" />
+      <outline title="Maharashtra India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNRVwsgjaMOriAnVChg_W8A" type="rss" />
+      <outline title="Indian Farmer" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuVuHrghkZeJHQTjesosDJA" type="rss" />
+      <outline title="India Maharashtra Mumbai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGdEuMSGLlK2BiXxOM9OSPw" type="rss" />
+      <outline title="WAKO INDIA MAHARASHTRA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqfnkDG_dNsJpy5f8MzM14w" type="rss" />
+      <outline title="TBC Tigers Team Sangli ; Maharashtra India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt41l_xL6cGOlou2OHuwfOQ" type="rss" />
+      <outline title="Jai Maharashtra News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmBLIcqOLWwrrAJ-jaCttqw" type="rss" />
+      <outline title="India Maharashtra News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCynFTVwjyq719-AReN5WlYw" type="rss" />
+      <outline title="Mast Maharashtra Tourism " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHj8Kurgtmn2-GMKibVjQ1Q" type="rss" />
+      <outline title="MAHARASHTRA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgH2rdlovmhsuu6jexZqSRA" type="rss" />
+      <outline title="Heritage &amp; Cultural Walks in, Maharashtra India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_6NaaTj6u5wwfIi4Pd5xAw" type="rss" />
+      <outline title="real stand Muslim Khan Maharashtra India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJFl4_qmBOTPPu75j6kSr_A" type="rss" />
+      <outline title="Maharashtra Nav Udyojak Kendra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdlrleA0iqfdwMEeI4h6JQw" type="rss" />
+      <outline title="Maharashtra India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkqPrpi4v8YP3j6ZKPiz-Tg" type="rss" />
+      <outline title="Jay Maharashtra India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT4HUNFhlN56IuNxMG8T5Fg" type="rss" />
+      <outline title="Maharashtra , india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXo1o4_Qg1qBE_4Cn9tzd0Q" type="rss" />
+      <outline title="MAHARASHTRA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjvXVKfyPmA9DaqnDyryV_Q" type="rss" />
+      <outline title="BJP Maharashtra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3oWvf2yKdvFa0Z-AnO40Jw" type="rss" />
+      <outline title="India News Maharashtra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB52LvGkBRbVnWMQttuvOkw" type="rss" />
+      <outline title="MAHARASHTRA HEAD WORKS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkgDwUZf9wFGkfJnJM8N9uA" type="rss" />
+      <outline title="Maharashtra India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsBJrClp2BVWoGv7oW_26aA" type="rss" />
+      <outline title="BHUMI QUAIL BATER FARMING WARDHA MAHARASHTRA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ2o8fMjtHLo9rNhzbxf3yA" type="rss" />
+      <outline title="Maharashtra Dekho" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWapnAqUL3R0-Adx_JV0XvQ" type="rss" />
+      <outline title="Maharashtra, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtjTLgRkBjkC3_MPg3Bu7KQ" type="rss" />
+      <outline title="Maharashtra Mandal Ghana" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLybiVRHdSJqy_Lbc5ZMzFw" type="rss" />
+      <outline title="Maharashtra Chi Shrimanti" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYqZM-MObaDP3HW5UQ0dlSw" type="rss" />
+      <outline title="Maharashtra महाराष्ट्र" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClYl0IHnMiElVRyh1XrBm7Q" type="rss" />
+      <outline title="Vedantu Maharashtra 9 &amp; 10" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtFJiTH4GCYY2IXs39udoUg" type="rss" />
+      <outline title="MAHARASHTRA KARATE  P. S. A. " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGZEkAwGecGwSI3eDfMRgig" type="rss" />
+      <outline title="NEWS MAHARASHTRA / INDIA 🇮🇳" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyh42rVCqOhHVJoW4CFKBow" type="rss" />
+      <outline title="Maharashtra India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvDdH_YK64O6-tQZCDSnLfQ" type="rss" />
+      <outline title="A Cool Family in UK from Maharashtra, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmfq0Dz3aRqtDcpI_oE57jg" type="rss" />
+      <outline title="Maharashtra Mandal Qatar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7Cu3R633g2Mt-tTeIpz-Ag" type="rss" />
+      <outline title="Maharashtra India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpSkcGRJOeF_jho9VbFnohw" type="rss" />
+      <outline title="MAHARASHTRA MOTORS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1UlZ8ylPTuhvBQRp3gul0A" type="rss" />
+      <outline title="MAHARASHTRA COLLECTION" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFbotnl5C9IFNudNdAGk_Tw" type="rss" />
+      <outline title="Tour Operator Maharashtra Mumbai Pune India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnWkD8lX2KCZuvPkXmJvQUQ" type="rss" />
+      <outline title="Maharashtra Desha महाराष्ट्र देशा" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQfL0-rUF8ieDoj6aBTCclQ" type="rss" />
+      <outline title="Lok Bhavan Maharashtra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCb0rZ0A5rPP0yXeSFkfIICA" type="rss" />
+      <outline title="Tamil ponnu in Maharashtra " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ4RMNEMK847VUnsJtAnS7Q" type="rss" />
+      <outline title="Nazar India News Maharashtra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYlybl24qixPACCop-sKd6g" type="rss" />
+      <outline title="Maharashtra India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIIR9_np_rDr83I-CfgfDFg" type="rss" />
+      <outline title="Maharashtra INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_Rd9pyv8qNAMXOErFIPcIw" type="rss" />
+      <outline title="Maharashtra India India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8REYqjrAvh_LHgXk2WP3gQ" type="rss" />
+      <outline title="Maharashtra  India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi3JlVZBWu8TbiYDUJ4upgw" type="rss" />
+      <outline title="KAILASA in MAHARASHTRA,INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNH0vqGEh8qTwlN5KXD_Sbg" type="rss" />
+      <outline title="PRIME MAHARASHTRA NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl3ca_OjZrI_FlyawxMRucw" type="rss" />
+      <outline title="Tata Open Maharashtra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMYB4A7XAN_7Ynahat3iifg" type="rss" />
+    </outline>
+  </body>
+</opml>

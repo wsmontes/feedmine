@@ -4,5 +4,10 @@
     <title>Mon Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Make Money Monday" xmlUrl="https://anchor.fm/s/37f717f0/podcast/rss" type="rss" category="Business" />
+      <outline title="Monland Podcast (Myanmar)" xmlUrl="https://anchor.fm/s/819255dc/podcast/rss" type="rss" category="News" />
+      <outline title="Myanmar Otaku Network" xmlUrl="https://anchor.fm/s/63644ca0/podcast/rss" type="rss" category="Leisure" />
+    </outline>
+  </body>
 </opml>

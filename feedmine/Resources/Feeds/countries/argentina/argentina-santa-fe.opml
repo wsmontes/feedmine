@@ -4,5 +4,10 @@
     <title>Santa Fe Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Rio Noticias Santa Fe Argentina" xmlUrl="https://anchor.fm/s/38973e60/podcast/rss" type="rss" category="News" />
+      <outline title="Liga Argentina" xmlUrl="https://www.ivoox.com/feed_fg_f1704701_filtro_1.xml" type="rss" category="Sports" />
+      <outline title="Radio María Juana | FM 101.9 Mhz – María Juana – Santa Fe – Argentina" xmlUrl="https://radiomariajuana.com/feed" type="rss" />
+    </outline>
+  </body>
 </opml>

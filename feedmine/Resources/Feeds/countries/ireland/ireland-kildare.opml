@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Kildare Feeds</title></head>
+  <head>
+    <title>Kildare Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Kildare County Council" xmlUrl="https://www.kildarecoco.ie/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="Podcasts">
+      <outline title="Kildare Archives - Ireland Family Vacations" xmlUrl="https://irelandfamilyvacations.com/category/regions-and-counties/south-east-ireland/kildare/feed" type="rss" category="Society" />
+    </outline>
+  </body>
+</opml>

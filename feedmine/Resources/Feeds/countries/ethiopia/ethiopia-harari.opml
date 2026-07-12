@@ -4,5 +4,53 @@
     <title>Harari Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Boring History for Sleep" xmlUrl="https://anchor.fm/s/104e3eb08/podcast/rss" type="rss" category="Social Sciences" />
+      <outline title="Cousin Connection Pod" xmlUrl="https://feeds.redcircle.com/bd1a4bd0-cb9b-4202-a6da-d0a4549448e7" type="rss" category="Leisure" />
+      <outline title="Akbar's Chamber - Experts Talk Islam" xmlUrl="https://feed.podbean.com/akbarschamber/feed.xml" type="rss" category="Education" />
+      <outline title="Conflict &amp; Courage" xmlUrl="https://anchor.fm/s/7be1c244/podcast/rss" type="rss" category="Christianity" />
+      <outline title="West Bank Robbery" xmlUrl="https://feeds.captivate.fm/west-bank-robbery/" type="rss" category="Politics" />
+      <outline title="Prophetic Perspective With Amanda Grace" xmlUrl="https://media.rss.com/propheticperspective/feed.xml" type="rss" category="Christianity" />
+      <outline title="Lexicon Valley" xmlUrl="https://feeds.megaphone.fm/SLT4637136223" type="rss" category="Society &amp; Culture" />
+      <outline title="Take FiVe - His Glory" xmlUrl="https://podcasts.subsplash.com/49pdq74/podcast.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Slate Debates" xmlUrl="https://feeds.megaphone.fm/slatelexiconvalley" type="rss" category="Society &amp; Culture" />
+      <outline title="Heartland Newsfeed Podcast Network" xmlUrl="https://www.spreaker.com/show/6051130/episodes/feed" type="rss" category="News" />
+      <outline title="The Brian Nichols Show" xmlUrl="https://feeds.megaphone.fm/brian-nichols" type="rss" category="Politics" />
+      <outline title="The Mouseion - The Professor Wingert Podcast" xmlUrl="https://anchor.fm/s/8b14ac7c/podcast/rss" type="rss" category="Philosophy" />
+      <outline title="ElijahStreams" xmlUrl="https://elijahstreams.com/feed/podcast/elijahstreams" type="rss" category="Christianity" />
+      <outline title="The Gray Area with Sean Illing" xmlUrl="https://feeds.megaphone.fm/theezrakleinshow" type="rss" category="Philosophy" />
+      <outline title="The Jim Bakker Show" xmlUrl="https://feeds.captivate.fm/the-jim-bakker-show/" type="rss" category="Christianity" />
+      <outline title="Coffee and a Mike" xmlUrl="https://rss.libsyn.com/shows/131060/destinations/797488.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="YouthSoup: A Podcast by Listen Up Youth Radio" xmlUrl="https://rss.alivepodcastnetwork.com/youthsoup-a-podcast-by-listen-up-youth-radio" type="rss" category="Personal Journals" />
+      <outline title="Sandy Rios 24/7" xmlUrl="https://afr.net/api/v2/podcast/podcastsbyidrss/?id=1234&amp;platform=ApplePodcasts" type="rss" category="News" />
+      <outline title="SKY IS BLACK" xmlUrl="https://anchor.fm/s/6bf7e9f8/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Not By Works Ministries" xmlUrl="https://feeds.simplecast.com/S_7MHLtX" type="rss" category="Christianity" />
+      <outline title="Oh, By The Way" xmlUrl="https://anchor.fm/s/a78d87c/podcast/rss" type="rss" category="Personal Journals" />
+      <outline title="Rod'sPod CX and BPO" xmlUrl="https://anchor.fm/s/55de1ac/podcast/rss" type="rss" category="Business" />
+      <outline title="The Common Sense Show" xmlUrl="https://back.studeo.fm/api/v1/podcasts/41/rss-feeds" type="rss" category="News" />
+      <outline title="The Free Oromia Podcast" xmlUrl="https://rss.buzzsprout.com/1447450.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The CoffeeGeek Podcast" xmlUrl="https://anchor.fm/s/4c0e5bb8/podcast/rss" type="rss" category="Food" />
+      <outline title="History of Africa" xmlUrl="https://feed.podbean.com/historyofafricapodcast/feed.xml" type="rss" category="History" />
+      <outline title="The Story So Far" xmlUrl="https://anchor.fm/s/c4d36e08/podcast/rss" type="rss" category="Arts" />
+      <outline title="Planet Wekeza: Your Money, Business and Investing Is Your Culture" xmlUrl="https://rss.buzzsprout.com/2167808.rss" type="rss" category="Investing" />
+      <outline title="After Dark" xmlUrl="https://www.americaoutloud.news/category/podcasts/after-dark/feed/podcast/" type="rss" category="News" />
+      <outline title="The Opperman Report'" xmlUrl="https://www.spreaker.com/show/1198501/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Renegade Talk Radio" xmlUrl="https://renegadetalk.podomatic.com/rss2.xml" type="rss" category="Politics" />
+      <outline title="Ethan Brings You the World" xmlUrl="https://www.spreaker.com/show/5601940/episodes/feed" type="rss" category="Self-Improvement" />
+      <outline title="Let Them Fight: A Comedy History Podcast" xmlUrl="https://rss.libsyn.com/shows/172721/destinations/1161407.xml" type="rss" category="Comedy" />
+      <outline title="The Cave of Time" xmlUrl="https://media.zencast.fm/the-cave-of-time/rss" type="rss" category="News Commentary" />
+      <outline title="The Matthew Dark Show-Christ First-America Only" xmlUrl="https://anchor.fm/s/6b0a7b8c/podcast/rss" type="rss" category="Daily News" />
+      <outline title="Bob &amp; Eric Save America" xmlUrl="https://www.spreaker.com/show/4759951/episodes/feed" type="rss" category="News Commentary" />
+      <outline title="Outwest Bible Church Podcast" xmlUrl="https://outwestbible.net/podcast/outwest-podcast.xml" type="rss" category="Christianity" />
+      <outline title="THE SLACKER82ALPHA SHOW" xmlUrl="https://feed.podbean.com/Slacker82alphaPodcast/feed.xml" type="rss" category="Entertainment News" />
+      <outline title="Calvary Chapel Crossfields" xmlUrl="http://cccrossfields.sermon.net/rss/main" type="rss" category="Christianity" />
+      <outline title="The Politics &amp; Punk Rock Podcast" xmlUrl="https://anchor.fm/s/432f3418/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="MeliaCRED: Conversations with Elvis" xmlUrl="https://anchor.fm/s/bdf3a74c/podcast/rss" type="rss" category="Social Sciences" />
+      <outline title="EFCA Theology Podcast" xmlUrl="https://anchor.fm/s/93efb8f0/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Inside Asia Podcast" xmlUrl="https://feed.podbean.com/insideasia/feed.xml" type="rss" category="News" />
+      <outline title="Battlefront: Frontline with Dustin Faulkner" xmlUrl="https://www.spreaker.com/show/4788094/episodes/feed" type="rss" category="News Commentary" />
+      <outline title="Moriel Ministries" xmlUrl="https://rss.buzzsprout.com/1857736.rss" type="rss" category="Christianity" />
+      <outline title="CodeBreakers Live" xmlUrl="https://podcasts.subsplash.com/729fxkp/podcast.rss" type="rss" category="Religion &amp; Spirituality" />
+    </outline>
+  </body>
 </opml>

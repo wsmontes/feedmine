@@ -4,5 +4,12 @@
     <title>San Salvador Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Podcast Iglesia de Cristo San Miguel El Salvador" xmlUrl="https://feeds.ivoox.com/feed_fg_f179295_filtro_1.xml" type="rss" category="Religion" />
+      <outline title="El podcast de CEIP San Salvador Da Arnoi" xmlUrl="https://www.spreaker.com/show/6394446/episodes/feed" type="rss" category="Society" />
+      <outline title="El podcast de Salvador San Agustin Alcan" xmlUrl="https://www.spreaker.com/show/6542207/episodes/feed" type="rss" category="Society" />
+      <outline title="EN VIVO EN EL MOTHE SAN SALVADOR HIDALGO 11-12-12" xmlUrl="https://www.ivoox.com/_fg_f158377_filtro_1.xml" type="rss" category="Music" />
+      <outline title="EN VIVO EN EL MOTHE SAN SALVADOR HIDALGO 11-12-12" xmlUrl="https://www.ivoox.com/_fg_f1058377_filtro_1.xml" type="rss" category="Music" />
+    </outline>
+  </body>
 </opml>

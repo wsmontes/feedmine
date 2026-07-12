@@ -4,5 +4,56 @@
     <title>South Darfur Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Newshour" xmlUrl="https://podcasts.files.bbci.co.uk/p002vsnk.rss" type="rss" category="Daily News" />
+      <outline title="KPFA - Africa Today" xmlUrl="https://kpfa.org/program/africa-today/feed/" type="rss" category="Politics" />
+      <outline title="Code Switch" xmlUrl="https://feeds.npr.org/510312/podcast.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Smart Funny &amp; Black Productions" xmlUrl="https://www.spreaker.com/show/6509436/episodes/feed" type="rss" category="Education for Kids" />
+      <outline title="The Pencilina Pals" xmlUrl="https://anchor.fm/s/4d649a90/podcast/rss" type="rss" category="Books" />
+      <outline title="Best of the Left - Leftist Perspectives on Progressive Politics, News, Culture, Economics and Democracy" xmlUrl="https://rss.pdrl.fm/829673/feeds.libsyn.com/18442/mp3.rss" type="rss" category="Politics" />
+      <outline title="In The News" xmlUrl="https://feeds.acast.com/public/shows/b2fb5f0b-0ce7-4e5c-b6e0-9b1febd06aea" type="rss" category="News" />
+      <outline title="The Political Scene | The New Yorker" xmlUrl="https://feeds.megaphone.fm/CNE3630198409" type="rss" category="Politics" />
+      <outline title="Into Africa" xmlUrl="https://feeds.megaphone.fm/CSIS2314750691" type="rss" category="Government" />
+      <outline title="St. Thomas Episcopal Church" xmlUrl="https://rss.buzzsprout.com/748553.rss" type="rss" category="Christianity" />
+      <outline title="Courageous Clarity Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:158396186/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Pod Save the World" xmlUrl="https://audioboom.com/channels/5166626.rss" type="rss" category="Politics" />
+      <outline title="The Take" xmlUrl="https://www.omnycontent.com/d/playlist/9c074afa-3313-47e8-b802-a9f900789975/09af2160-238f-48b2-b20b-ad4b00ebd8e7/b86dddc1-67a5-41c2-a13c-ad4b00ebd8f5/podcast.rss" type="rss" category="Daily News" />
+      <outline title="Focus on Africa" xmlUrl="https://podcasts.files.bbci.co.uk/p00gbjvb.rss" type="rss" category="News" />
+      <outline title="The Nation Podcasts" xmlUrl="https://feeds.redcircle.com/de5dbe33-63b3-4d3e-a545-07791baa168c" type="rss" category="Politics" />
+      <outline title="7am" xmlUrl="https://www.omnycontent.com/d/playlist/2fb3740d-3436-44af-8cc0-a91900716aa5/62723a1f-3e96-4fc4-882c-b25e0181da4d/70f29d90-2a63-48aa-bf8f-b25e0181da70/podcast.rss" type="rss" category="Daily News" />
+      <outline title="Greener Thoughts" xmlUrl="https://anchor.fm/s/78b3d44/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="As It Happens" xmlUrl="https://www.cbc.ca/podcasting/includes/asithappens.xml" type="rss" category="News" />
+      <outline title="Radio Islam" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:43909738/sounds.rss" type="rss" category="Education" />
+      <outline title="South Sudan In Focus  - VOA Africa" xmlUrl="https://www.voaafrica.com/podcast/?zoneId=1465" type="rss" category="News" />
+      <outline title="The Saint and The Sinner" xmlUrl="https://anchor.fm/s/9640934/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="The Great Battlefield" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:309261616/sounds.rss" type="rss" category="News" />
+      <outline title="On the Ground w Esther Iverem" xmlUrl="https://onthegroundshow.org/feed/podcast/" type="rss" category="Politics" />
+      <outline title="New Books in Diplomatic History" xmlUrl="https://feeds.megaphone.fm/NBN4221620160" type="rss" category="Books" />
+      <outline title="New Books in World Affairs" xmlUrl="https://feeds.megaphone.fm/LIT6200923204" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in National Security" xmlUrl="https://feeds.megaphone.fm/LIT3614552456" type="rss" category="Social Sciences" />
+      <outline title="New Books in East Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT3976960259" type="rss" category="Society &amp; Culture" />
+      <outline title="In Conversation: An OUP Podcast" xmlUrl="https://feeds.megaphone.fm/NBN7311111504" type="rss" category="Books" />
+      <outline title="New Books in Chinese Studies" xmlUrl="https://feeds.megaphone.fm/LIT1170601646" type="rss" category="Books" />
+      <outline title="New Books in Human Rights" xmlUrl="https://feeds.megaphone.fm/NBN4841577731" type="rss" category="Books" />
+      <outline title="Africa Rise and Shine" xmlUrl="https://www.omnycontent.com/d/playlist/8f7208d2-db6e-4bfa-85b5-ad3d00776f1f/c2855d5f-5202-4322-8774-ad4b01237f3c/0d72ab2f-c748-4fd3-b21c-ad4b01237f4a/podcast.rss" type="rss" category="News" />
+      <outline title="Iran: The Latest" xmlUrl="https://feeds.acast.com/public/shows/6583019ebbd71a00175001c8" type="rss" category="News Commentary" />
+      <outline title="The Pragmatic Idealist with Mike Brand" xmlUrl="https://anchor.fm/s/dfdcd360/podcast/rss" type="rss" category="News" />
+      <outline title="ACAPS Audio Reports" xmlUrl="https://media.rss.com/acaps-audio-reports/feed.xml" type="rss" category="Non-Profit" />
+      <outline title="Lawyering Peace" xmlUrl="https://feed.podbean.com/LawyeringPeace/feed.xml" type="rss" category="History" />
+      <outline title="Africa 54 - VOA Africa" xmlUrl="https://www.voaafrica.com/podcast/video.aspx/?zoneId=3589" type="rss" category="News" />
+      <outline title="Sermons from St. John's Southbourne" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:565987425/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="The Project Censored Show" xmlUrl="https://www.projectcensored.org/feed/podcast/the-project-censored-show/" type="rss" category="Education" />
+      <outline title="Policy and Rights" xmlUrl="https://www.spreaker.com/show/3339563/episodes/feed" type="rss" category="Politics" />
+      <outline title="Africa Daily" xmlUrl="https://podcasts.files.bbci.co.uk/p0925ydp.rss" type="rss" category="News" />
+      <outline title="The Inside Story Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/9c074afa-3313-47e8-b802-a9f900789975/223113c5-ff31-4f9a-b650-ada90106df0f/7c994764-510f-469f-80a3-ada901076c74/podcast.rss" type="rss" category="Politics" />
+      <outline title="The Christian Science Monitor" xmlUrl="https://feeds.transistor.fm/aftersight-presents-the-christian-science-monitor" type="rss" category="Christianity" />
+      <outline title="Depictions Media" xmlUrl="https://www.spreaker.com/show/4208927/episodes/feed" type="rss" category="News Commentary" />
+      <outline title="TED Talks Daily" xmlUrl="https://feeds.acast.com/public/shows/67587e77c705e441797aff96" type="rss" category="Society &amp; Culture" />
+      <outline title="Experience Has Made Me Rich" xmlUrl="https://rss.buzzsprout.com/318890.rss" type="rss" category="Philosophy" />
+      <outline title="The World Tonight" xmlUrl="https://podcasts.files.bbci.co.uk/b006qtl3.rss" type="rss" category="News" />
+      <outline title="FuseBox Radio Broadcast" xmlUrl="https://fuseboxradio.podomatic.com/rss2.xml" type="rss" category="Music" />
+      <outline title="Ramadan:  The Ummah Reflects" xmlUrl="https://feed.podbean.com/ummahreflects/feed.xml" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Simple English News Daily" xmlUrl="https://www.spreaker.com/show/4907677/episodes/feed" type="rss" category="Language Learning" />
+    </outline>
+  </body>
 </opml>

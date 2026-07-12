@@ -4,14 +4,18 @@
     <title>Alaska Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Juneau Empire" xmlUrl="https://www.juneauempire.com/rss" type="rss" />
-        <outline title="Peninsula Clarion" xmlUrl="https://www.peninsulaclarion.com/rss" type="rss" />
-        <outline title="Alaska Beacon" xmlUrl="https://alaskabeacon.com/feed/" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="AK Legislature" xmlUrl="https://www.akleg.gov/rss" type="rss" />
-      </outline>
-      <outline text="Education" />
-      <outline text="Culture" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Juneau Empire" xmlUrl="https://www.juneauempire.com/rss" type="rss" />
+      <outline title="Peninsula Clarion" xmlUrl="https://www.peninsulaclarion.com/rss" type="rss" />
+      <outline title="Alaska Beacon" xmlUrl="https://alaskabeacon.com/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="AK Legislature" xmlUrl="https://www.akleg.gov/rss" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="Culture" />
+    <outline text="Podcasts">
+      <outline title="Contractors Success M.A.P. For Contractors All Across The USA Including Alaska And Hawaii" xmlUrl="https://contractorssuccessmap.podomatic.com/rss2.xml" type="rss" category="Business" />
+    </outline>
+  </body>
+</opml>

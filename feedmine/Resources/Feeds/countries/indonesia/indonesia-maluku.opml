@@ -4,5 +4,104 @@
     <title>Maluku Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="The Dig" xmlUrl="https://thedig.blubrry.net/feed/podcast/" type="rss" category="Politics" />
+      <outline title="Jacobin Radio" xmlUrl="https://pinecast.com/feed/jacobin" type="rss" category="Politics" />
+      <outline title="HERstory: Southeast Asia" xmlUrl="https://anchor.fm/s/142b2028/podcast/rss" type="rss" category="Education" />
+      <outline title="Trail Christian Fellowship" xmlUrl="https://www.podserve.fm/series/rss/6826/willing-heart.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Travels Through Time" xmlUrl="https://feed.podbean.com/travelsthroughtime/feed.xml" type="rss" category="History" />
+      <outline title="Confronting Hierarchies: A Podcast on Decoloniality, Peace, and Conflict" xmlUrl="https://anchor.fm/s/ea766728/podcast/rss" type="rss" category="Social Sciences" />
+      <outline title="Talk Travel Asia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:76158739/sounds.rss" type="rss" category="Leisure" />
+      <outline title="BAT Community Podcast" xmlUrl="https://rss.libsyn.com/shows/239039/destinations/1782101.xml" type="rss" category="Technology" />
+      <outline title="Animated Living" xmlUrl="https://rss.buzzsprout.com/1590289.rss" type="rss" category="Self-Improvement" />
+      <outline title="World &amp; Pacific News" xmlUrl="https://www.rnz.co.nz/acast/worldandpacificnews.rss" type="rss" category="News" />
+      <outline title="New Books in National Security" xmlUrl="https://feeds.megaphone.fm/LIT3614552456" type="rss" category="Social Sciences" />
+      <outline title="In Conversation: An OUP Podcast" xmlUrl="https://feeds.megaphone.fm/NBN7311111504" type="rss" category="Books" />
+      <outline title="New Books in Religion" xmlUrl="https://feeds.megaphone.fm/LIT9789987066" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="New Books in Political Science" xmlUrl="https://feeds.megaphone.fm/LIT7047417664" type="rss" category="Social Sciences" />
+      <outline title="New Books in Southeast Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT4430509368" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in Human Rights" xmlUrl="https://feeds.megaphone.fm/NBN4841577731" type="rss" category="Books" />
+      <outline title="SBS Indonesian - SBS Bahasa Indonesia" xmlUrl="https://sbs-ondemand.streamguys1.com/sbs-indonesian/" type="rss" category="Daily News" />
+      <outline title="Relawan Jurnal Indonesia" xmlUrl="https://anchor.fm/s/146ecc60/podcast/rss" type="rss" category="Education" />
+      <outline title="Nature Breaking" xmlUrl="https://rss.libsyn.com/shows/426134/destinations/3546794.xml" type="rss" category="Nature" />
+      <outline title="Jesus 24/7" xmlUrl="https://anchor.fm/s/6de87020/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Truth Be Told Radio Network" xmlUrl="https://anchor.fm/s/1f63341c/podcast/rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Senning Show Full Show Replay" xmlUrl="https://rss-cmg.streamguys1.com/tampa/tam1025/senningshow.xml" type="rss" category="News Commentary" />
+      <outline title="We Don't Play" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:484832487/sounds.rss" type="rss" category="Comedy" />
+      <outline title="People Dancing" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:338676735/sounds.rss" type="rss" category="Arts" />
+      <outline title="The Watchman River Podcast" xmlUrl="https://rss.buzzsprout.com/2227847.rss" type="rss" category="Christianity" />
+      <outline title="UK News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/uk-today-2-min-news.xml" type="rss" category="Daily News" />
+      <outline title="ZIT Radio" xmlUrl="https://anchor.fm/s/7f38a70/podcast/rss" type="rss" category="Tech News" />
+      <outline title="====&quot;Kata-kata Kehidupan&quot;, &quot;Kabar Baik&quot;, &quot;Lagu-lagu Injil&quot; -Bahasa yang Diucapkan di Indonesia dengan Kurang dari Satu Juta P" xmlUrl="https://indonesiagospelsongs1.podomatic.com/rss2.xml" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Podcast Sejarah Indonesia (POSEIDON)" xmlUrl="https://feed.firstory.me/rss/user/clnt06age015901u71c8mhpnh" type="rss" category="History" />
+      <outline title="The History of Indonesia: Islands, Empires, and Independence — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-indonesia.xml" type="rss" category="History" />
+      <outline title="====&quot;Kata-kata Terang&quot;, &quot;Kabar Baik untuk Semua Orang&quot;, &quot;Nyanyian Kehidupan&quot; di Indonesia Bahasa (Termasuk dialek dan Etnis B" xmlUrl="https://indonesiawordsoflife.podomatic.com/rss2.xml" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="&quot;Firman Hidup&quot;, &quot;Kabar Baik&quot; dan &quot;Lagu Injil&quot; - Di Indonesia Bahasa, Dialek dan Bahasa Ethnis. / &quot;Words of Life&quot;, &quot;Good News&quot;" xmlUrl="https://indonesiagoodnews.podomatic.com/rss2.xml" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Cuap Cuap Cuan" xmlUrl="https://anchor.fm/s/16eb4edc/podcast/rss" type="rss" category="Business News" />
+      <outline title="surfEXPLORE: Discovering New Surfing Locations Worldwide" xmlUrl="https://anchor.fm/s/10aa4bf2c/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Siniar Puan" xmlUrl="https://anchor.fm/s/5babefcc/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="RRI TERNATE" xmlUrl="https://anchor.fm/s/29ed6efc/podcast/rss" type="rss" category="Government" />
+      <outline title="RADIO PARLEMEN" xmlUrl="https://anchor.fm/s/1ec96134/podcast/rss" type="rss" category="Politics" />
+      <outline title="New Books in Islamic Studies" xmlUrl="https://feeds.megaphone.fm/LIT7782346334" type="rss" category="Islam" />
+      <outline title="New Books in Christian Studies" xmlUrl="https://feeds.megaphone.fm/LIT4981288691" type="rss" category="Christianity" />
+      <outline title="Peacemakers in Action" xmlUrl="https://rss.libsyn.com/shows/343832/destinations/2806847.xml" type="rss" category="Education" />
+      <outline title="A History of Indonesia" xmlUrl="https://anchor.fm/s/6f15f080/podcast/rss" type="rss" category="History" />
+      <outline title="ADVOCATE by ASEAN Parliamentarians for Human Rights (APHR)" xmlUrl="https://rss.buzzsprout.com/1383070.rss" type="rss" category="Politics" />
+      <outline title="Radical Australia" xmlUrl="https://www.3cr.org.au/radicalaustralia/itunes" type="rss" category="News" />
+      <outline title="Ubud Writers &amp; Readers Festival Podcast" xmlUrl="https://feeds.simplecast.com/eUhy4nqz" type="rss" category="Books" />
+      <outline title="Talking Indonesia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:165729885/sounds.rss" type="rss" category="News" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="BPSDM Provinsi Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHW_qb16TcjbHkB337jJXuw" type="rss" />
+      <outline title="Anjungan Maluku TMII" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCplB59BeadAW6pBYFRFpJVQ" type="rss" />
+      <outline title=" Museum Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGK7RUGohFlVTE47dgsCvTw" type="rss" />
+      <outline title="Maluku Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf_FQqRImxpkQ9smxJzUwLg" type="rss" />
+      <outline title="Land Van Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl79cfoPd1MSlR_VOkk3Bjg" type="rss" />
+      <outline title="BRMP Maluku Utara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC90DfQ0Tn_4qjXDqPv2xGKw" type="rss" />
+      <outline title="KARANTINA MALUKU" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEvGCjZ3y-K_vUvTxVwGE9A" type="rss" />
+      <outline title="Bank Indonesia Malut" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC700izKNqwxLnWOSBC_R-0w" type="rss" />
+      <outline title="Rhythm Of Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPsqKAxbiP2wblss9thqyJg" type="rss" />
+      <outline title="Pii Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzslf-Smyfnz9BSfkMNxfdA" type="rss" />
+      <outline title="Maluku &amp; Sulawesi Earthquake Tsunami 2026 Archive " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK8UPGsU1izFjd80yr_jliw" type="rss" />
+      <outline title="Maluku INDONESIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr9UQgApVHNdiCBMGbu7ysA" type="rss" />
+      <outline title="Tukang Urut Maluku Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz0DY3O63v0g5a7jcdIb6vg" type="rss" />
+      <outline title="TVRI STASIUN MALUKU" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGGsXcmyunGS9e7QmLuamjg" type="rss" />
+      <outline title="Angler Maluku " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFBdAMoEfpsMRs5hfZNM0w" type="rss" />
+      <outline title="Lentera Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdth0Z-cDw4OFRhM59V810g" type="rss" />
+      <outline title="Mata Garuda Maluku Utara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd_rEHVl4FIXd7miWkJd16g" type="rss" />
+      <outline title="Streaming TVRI Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkG1VZMt1w38nC6dbPdVFJw" type="rss" />
+      <outline title="MALUKU PROV TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAZQKIoRTUU2S2hpdLg3zQg" type="rss" />
+      <outline title="Balai Pelestarian Kebudayaan Maluku Utara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2TmbjZ2Q0vVuzFD2SoFwtQ" type="rss" />
+      <outline title="North Maluku Tourism Board" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3ySCQR0VqgEZMDA4CA1OFg" type="rss" />
+      <outline title="Indonesia maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgntDb3qHsMGUPAfYf3aV6w" type="rss" />
+      <outline title="Dprd Provinsi Maluku Utara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSg7QHQ27nTC76BQJUkJBkg" type="rss" />
+      <outline title="Kami indonesia Maluku utara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEbVEnYtvmfvOp-BrgbuNwA" type="rss" />
+      <outline title="Iof Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChrAVedmswEtftzPsE7WaLg" type="rss" />
+      <outline title="Maluku Explorer Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDJgDI_aTi4FQqp-ii6c_Gg" type="rss" />
+      <outline title="Kanwil DJPb Maluku Utara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcRYE_O3vZLsmPTHbwELcNQ" type="rss" />
+      <outline title="Persatuan Wanita Maluku - Indonesia (PERWAMA-INA)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCORm6cVTmsF-iboMd3pu8IA" type="rss" />
+      <outline title="Imigrasi Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUc9C7vzWDuvnN8OZ2DusQg" type="rss" />
+      <outline title="tvri maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-k1Kl7GtQVsTHrZaF8WOmg" type="rss" />
+      <outline title="subaim Maluku indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLMwiSPYqnV6XWGmX0MjtlQ" type="rss" />
+      <outline title="indonesia maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1nKpiKTWZ_Csz20zaX8B-g" type="rss" />
+      <outline title="Balai Bahasa Provinsi Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmyS-2hDk4gFWrvtya8nU9g" type="rss" />
+      <outline title="Maluku Utara Vocalist Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnqCE9cnzGEGK048f1X3sEw" type="rss" />
+      <outline title="Beta Maluku 822" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1c3J75-oHOxHtH5VMkWiQ" type="rss" />
+      <outline title="BPS Provinsi Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOMFN5cPYpieatT-oMUtztA" type="rss" />
+      <outline title="Mata Maluku Impressions" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWO8zvDdNDM4U9HEHflO-dA" type="rss" />
+      <outline title="Bank Indonesia Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiYYBYaUBTlZOi-Pt5CyN2A" type="rss" />
+      <outline title="tvOne Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiRB4t4lyS89VVNH-n6bERA" type="rss" />
+      <outline title="Museum Siwalima Provinsi Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt9apTSE02ns-I3tu9-kVWw" type="rss" />
+      <outline title="Maluku Satu Rasa Salam Sarane Indonesia  (Timika)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4_s-zH7mVmGxYR9r09deXw" type="rss" />
+      <outline title="Maluku Islands Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNabbnyjDT14Ow6Ow5tQJSg" type="rss" />
+      <outline title="baronda maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0To5ZzpNObh_vzLff4foqw" type="rss" />
+      <outline title="explore.maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrFWythv2hfFJFkwIKdwJ2A" type="rss" />
+      <outline title="TV-Maluku ***" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQImgs2adQcEHzss-GKGklw" type="rss" />
+      <outline title="Dispora Maluku" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqC61DLStZ3MyOp9I4JVyFA" type="rss" />
+      <outline title="Maluku Asli" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbX6vL1tL857elvj86m8QzQ" type="rss" />
+      <outline title="JAJAGO KELILING INDONESIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGhyBPcnRfoQ9Qy0xW4bOnw" type="rss" />
+      <outline title="Wonderful Indonesia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7AArQOS1gDZzaTGUQ2ZcQw" type="rss" />
+      <outline title="Balai Bahasa Provinsi Maluku Utara" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8ZS-fstXX4rXd66SAcYVfw" type="rss" />
+    </outline>
+  </body>
 </opml>

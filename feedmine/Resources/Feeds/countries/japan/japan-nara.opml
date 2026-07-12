@@ -4,10 +4,24 @@
     <title>Nara Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Nara Shimbun" xmlUrl="https://www.nara-np.co.jp/rss/" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Nara Pref Gov" xmlUrl="https://www.pref.nara.jp/rss/" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="Nara Shimbun" xmlUrl="https://www.nara-np.co.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Nara Pref Gov" xmlUrl="https://www.pref.nara.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="ShortBlack 接客英語" xmlUrl="https://anchor.fm/s/94a9e450/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Learn Japanese Pod" xmlUrl="https://feeds.feedburner.com/learnjapanesepod" type="rss" category="Language Learning" />
+      <outline title="Defunctland" xmlUrl="https://defunctland.podbean.com/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Let’s Study Japanese with Kevin from a book, ”Kevin Goes to Japan”" xmlUrl="https://feed.podbean.com/Kevinstudyjapanese/feed.xml" type="rss" category="Language Learning" />
+      <outline title="Nihongo to English" xmlUrl="https://rss.buzzsprout.com/2542830.rss" type="rss" category="Language Learning" />
+      <outline title="Laid-back Japanese" xmlUrl="https://anchor.fm/s/d9f9c778/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="Anime English Club with Sally Amaki" xmlUrl="https://www.omnycontent.com/d/playlist/67122501-9b17-4d77-84bd-a93d00dc791e/0c076d49-9b05-4dde-b679-b2c70030b77d/838e9b34-89be-442e-94f1-b2c70030bc67/podcast.rss" type="rss" category="Language Learning" />
+      <outline title="A Course in Miracles (ACIM) Podcast" xmlUrl="https://www.spreaker.com/show/297124/episodes/feed" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Frankly Friday" xmlUrl="https://feeds.accessmedia.nz/V2/itunes/44860f48-fc03-4cfc-b78c-a62c2298c10c" type="rss" category="Government" />
+    </outline>
+  </body>
+</opml>

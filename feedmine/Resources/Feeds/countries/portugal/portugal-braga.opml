@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Braga Feeds</title></head>
+  <head>
+    <title>Braga Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Braga" xmlUrl="https://www.cm-braga.pt/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="Podcasts">
+      <outline title="&quot;Despedida De Tétis E Regresso A Portugal" xmlUrl="https://anchor.fm/s/228db6bc/podcast/rss" type="rss" category="Arts" />
+    </outline>
+  </body>
+</opml>

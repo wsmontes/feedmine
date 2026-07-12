@@ -4,8 +4,21 @@
     <title>Saga Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Saga Shimbun" xmlUrl="https://www.saga-s.co.jp/rss/" type="rss" />
-      </outline>
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Saga Shimbun" xmlUrl="https://www.saga-s.co.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="Predikningar Ryttargårdskyrkan" xmlUrl="https://rosette.ryttargarden.se/rosette/api/podcasts/feed/predikan" type="rss" category="Christianity" />
+      <outline title="Haveristerna" xmlUrl="https://feeds.acast.com/public/shows/5af195bb77c1746339e08ab6" type="rss" category="Society &amp; Culture" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="Class-1A" xmlUrl="https://rss.buzzsprout.com/1867301.rss" type="rss" category="Visual Arts" />
+      <outline title="Skywalking Through Neverland: Keeping the Star Wars Magic Alive" xmlUrl="https://rss.libsyn.com/shows/57486/destinations/216578.xml" type="rss" category="Film Interviews" />
+      <outline title="Skywalking Through Neverland: Keeping the Star Wars Magic Alive" xmlUrl="https://rss.pdrl.fm/432e74/feeds.libsyn.com/57486/rss/?redirect=false" type="rss" category="Film Interviews" />
+      <outline title="The Canadian Threshold" xmlUrl="https://anchor.fm/s/e6b9a5dc/podcast/rss" type="rss" category="Leisure" />
+      <outline title="Deep Dive from The Japan Times" xmlUrl="https://audioboom.com/channels/4970813.rss" type="rss" category="News" />
+      <outline title="Unchained" xmlUrl="https://feeds.megaphone.fm/LSHML4761942757" type="rss" category="Business News" />
+    </outline>
+  </body>
+</opml>

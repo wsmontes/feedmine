@@ -4,5 +4,51 @@
     <title>Rajshahi Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="The Sound Kitchen" xmlUrl="https://apis.rfi.fr/products/get_product/rfi_getpodcast_by_nid?token_application=975d23b8-7a07-11e8-9f62-005056a90194&amp;program.entrepriseId=WB84944-RFI-EN-20110415" type="rss" category="Society &amp; Culture" />
+      <outline title="AWR Wavescan - DX Program (WRMI)" xmlUrl="http://feeds.feedburner.com/ENGMI_WAV" type="rss" category="Technology" />
+      <outline title="AWR - Wavescan" xmlUrl="https://podcasts.awr.org/xml/xmliTunes/ENGMI_WAV.xml" type="rss" category="Christianity" />
+      <outline title="Wavescan" xmlUrl="https://wavescan.podomatic.com/rss2.xml" type="rss" category="Hobbies" />
+      <outline title="The Shortwave Radio Audio Archive" xmlUrl="https://shortwavearchive.com/archive?format=rss" type="rss" category="Technology" />
+      <outline title="Cobra Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:891648541/sounds.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Crime and Coffee Couple - True Crime Podcast" xmlUrl="https://rss.art19.com/crime-and-coffee-couple" type="rss" category="True Crime" />
+      <outline title="Taiwan Voices" xmlUrl="https://www.rti.org.tw/en/CombinedProgramPodcastUrl?id=10" type="rss" category="Society &amp; Culture" />
+      <outline title="[KBS WORLD Radio] K-POP Connection" xmlUrl="http://world.kbs.co.kr/rss/Podcast_kpop_conn_e.xml" type="rss" category="Music" />
+      <outline title="KBS WORLD Radio One Fine Day with Lena Park" xmlUrl="http://world.kbs.co.kr/rss/Podcast_parkofd_e.xml" type="rss" category="Music" />
+      <outline title="New Books in South Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT2660294853" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in the Indian Ocean World" xmlUrl="https://feeds.megaphone.fm/newbooksindianoceanworld" type="rss" category="Books" />
+      <outline title="New Books Network" xmlUrl="https://feeds.megaphone.fm/LIT4543917034" type="rss" category="News" />
+      <outline title="New Books in Food" xmlUrl="https://feeds.megaphone.fm/LIT3477516260" type="rss" category="Food" />
+      <outline title="Gastronomica" xmlUrl="https://feeds.megaphone.fm/NBNK4513772290" type="rss" category="Arts" />
+      <outline title="Brown Pundits" xmlUrl="https://brownpundits.libsyn.com/rss" type="rss" category="Books" />
+      <outline title="The Late Morning Program with Namarasa" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:18528872/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="InAsia" xmlUrl="https://rss.buzzsprout.com/1150757.rss" type="rss" category="News" />
+      <outline title="81 All Out - A Cricket Podcast" xmlUrl="https://anchor.fm/s/949498c/podcast/rss" type="rss" category="Cricket" />
+      <outline title="New Ventures Podcast" xmlUrl="https://anchor.fm/s/5037154/podcast/rss" type="rss" category="Technology" />
+      <outline title="Banglanomics" xmlUrl="https://anchor.fm/s/e6422d18/podcast/rss" type="rss" category="Social Sciences" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="Travel with Amateur Traveler Podcast" xmlUrl="https://feeds.megaphone.fm/GLSS1857986358" type="rss" category="Places &amp; Travel" />
+      <outline title="The #AskAbhijit Show" xmlUrl="https://anchor.fm/s/fd893660/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Kadamba Kanana Swami SoundCloud" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:52009121/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="The Bangladesh Frequency" xmlUrl="https://anchor.fm/s/102707c60/podcast/rss" type="rss" category="Daily News" />
+      <outline title="The Cerebral Cricketer" xmlUrl="https://rss.libsyn.com/shows/570470/destinations/4936140.xml" type="rss" category="Cricket" />
+      <outline title="Around the World" xmlUrl="https://www.spreaker.com/show/4839821/episodes/feed" type="rss" category="Education" />
+      <outline title="Train Tarte Tales" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:323969943/sounds.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Chawalas" xmlUrl="https://anchor.fm/s/5d722cf4/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Affaires Criminelles / True crime de Mogota" xmlUrl="https://anchor.fm/s/103d931c8/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Crime, Cults, &amp; Coffee" xmlUrl="https://anchor.fm/s/356fc70c/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Bangladesh DevCast" xmlUrl="https://anchor.fm/s/10d8208a8/podcast/rss" type="rss" category="Technology" />
+      <outline title="The CricketNews.com Podcast" xmlUrl="https://feeds.hubhopper.com/36bf359f2e7f0468fbba28bb5dd3224b.rss" type="rss" category="Cricket" />
+      <outline title="EBTD Podcasts" xmlUrl="https://anchor.fm/s/1096d4fd4/podcast/rss" type="rss" category="Education" />
+      <outline title="Radio HM" xmlUrl="https://feed.podbean.com/hogardelamadre/feed.xml" type="rss" category="Christianity" />
+      <outline title="Good Areas Podcast" xmlUrl="https://feeds.simplecast.com/OCjI_9eh" type="rss" category="Cricket" />
+      <outline title="The Bangla Cricket Podcast" xmlUrl="https://feed.podbean.com/banglacricket/feed.xml" type="rss" category="Cricket" />
+      <outline title="Travel Tales From Beyond The Brochure" xmlUrl="https://rss.pdrl.fm/b62283/feeds.libsyn.com/124637/rss/?redirect=false" type="rss" category="Places &amp; Travel" />
+      <outline title="ZZZ - The podcast that helps you sleep" xmlUrl="https://feeds.transistor.fm/zzz" type="rss" category="Self-Improvement" />
+      <outline title="BONY Podcast" xmlUrl="https://anchor.fm/s/1d73bf0/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Talk Jhaal Mishti" xmlUrl="https://media.rss.com/talkjhaalmishti/feed.xml" type="rss" category="Personal Journals" />
+      <outline title="Long Take: Life as an Artist" xmlUrl="https://long-take-podcast.podigee.io/feed/mp3" type="rss" category="Music Interviews" />
+      <outline title="The Disaster Response" xmlUrl="https://anchor.fm/s/f7b62068/podcast/rss" type="rss" category="History" />
+    </outline>
+  </body>
 </opml>

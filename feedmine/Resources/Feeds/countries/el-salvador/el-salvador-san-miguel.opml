@@ -4,5 +4,8 @@
     <title>San Miguel Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Podcast Iglesia de Cristo San Miguel El Salvador" xmlUrl="https://feeds.ivoox.com/feed_fg_f179295_filtro_1.xml" type="rss" category="Religion" />
+    </outline>
+  </body>
 </opml>

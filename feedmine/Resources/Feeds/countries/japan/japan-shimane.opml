@@ -4,6 +4,62 @@
     <title>Shimane Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="KuriZen" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdcc9G4LMTUC1spYGLDvDg" type="rss" />
+      <outline title="Exploring around  San'in, JAPAN supported by TSK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgIF6BJtqmhIkmYiLMwkIIQ" type="rss" />
+      <outline title="Sem pressa - Japão " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK7R9sBZAG6dojr1k49sImw" type="rss" />
+      <outline title="須佐神社（島根県）" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4_mCDkJ7yi1NBv_sAS8Uqg" type="rss" />
+      <outline title="LET'S VISIT THE WORLD HERITAGES" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCihPN8d_195-8zv9ivFFDuA" type="rss" />
+      <outline title="about Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdLVEG5f75U_i0PICHElwHg" type="rss" />
+      <outline title="japan mania mania short" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3Zkzor20il7lcWhBjWheJg" type="rss" />
+      <outline title="Planetyze - Japan Best Spots Travel Guide" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzWCxvzei2ENMmjgSPb3-3Q" type="rss" />
+      <outline title="SAVOR JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-IoD1aSbLLmUukyE1WMMbg" type="rss" />
+      <outline title="Pan Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtOyVEtVEiZYpNnLZW-CNRQ" type="rss" />
+      <outline title="Ninja JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHWl53nCJMe2ZvhnH2HJehA" type="rss" />
+      <outline title="和ノ音 - Zen Sound Japan Studio" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyVB_k1v0BJl3pHB0dN3oYg" type="rss" />
+      <outline title="日本農業新聞" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTxdmIvRC0ExnjSbL87rDIg" type="rss" />
+      <outline title="San’in Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgwLVmQkA3HRj3HcZr3W32Q" type="rss" />
+      <outline title="Anime Travel Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeMDuYd60NhnHOke2XrGN2Q" type="rss" />
+      <outline title="モモチャン" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-CrLF9VZsI-JyEBEJNCopw" type="rss" />
+      <outline title="TOWN WALKING JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChcABhsDyS6FmRRYOIufdCw" type="rss" />
+      <outline title="Japan In Motion " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEN1VnBjpiDZja2X4p0_tvA" type="rss" />
+      <outline title="Landen Abroad" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-CuXqTh850qspD4m2tmUhA" type="rss" />
+      <outline title="神楽面職人T.H / japanese craftsman 神楽面Store T.H" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn11ueszGIVzZmuTHbrB9wA" type="rss" />
+      <outline title="JAPAN EXTEND" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8RAAmsAI3M2M8NrGxLQuAA" type="rss" />
+      <outline title="Abroad in Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHL9bfHTxCMi-7vfxQ-AYtg" type="rss" />
+      <outline title="日本刀の美" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDURxZpRZ05WWY88dbIjx5g" type="rss" />
+      <outline title="Journey Through Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLk2iRVt1LrnGWBRWuQ9pRQ" type="rss" />
+      <outline title="Shimane no Sakura &amp;&amp; 島根のさくら" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf3tTxTDJGquzSnx6Y-xGYA" type="rss" />
+      <outline title="Dark Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT2H3E5e59kblgkaEX8aC4Q" type="rss" />
+      <outline title="West Japan Unlocked: A Visual Journey" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9IJcC7xLYh2F_6FtUXvjTA" type="rss" />
+      <outline title="Nanami" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1SuI9H21r3maQCsn3Q5Gfg" type="rss" />
+      <outline title="日本神社旅行 Japan Shrine Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmGVVnrdGMISaxGK1I6SVOA" type="rss" />
+      <outline title="San'in JAPAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9A7Ivaz9fuj1X0ysHIlYOA" type="rss" />
+      <outline title="xannyinjapan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMtmmP8aqV66eZgCLqnGD3A" type="rss" />
+      <outline title="Good Old NIPPON 古き良き日本" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVX5SYCSckZGZRr6XNsX-7Q" type="rss" />
+      <outline title="Japan channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8RyaI4TxiI3cVlsaeEnFRA" type="rss" />
+      <outline title="日本の神社とお寺 Japanese Shrine&amp;Temple" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkHGdiOD_K0SovkNljGIPkA" type="rss" />
+      <outline title="shimane-charm　パワースポット旅" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW6e2Ei51eUXKdiezMnQCQA" type="rss" />
+      <outline title="島根県 飯南町" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi412FcIWQSnAlZaFt1yyJQ" type="rss" />
+      <outline title="NekoAshi Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1M-n887kdaO_d2XCerKxIQ" type="rss" />
+      <outline title="ソラマン" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwNGCh1OFAyYQrbsfDYyioA" type="rss" />
+      <outline title="日本一滝と映る男ch" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC23PjMiSfgrP4mYF6pL11SQ" type="rss" />
+      <outline title="47 Miracles of Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTVb-Vj4nI4qkgjvabycdqw" type="rss" />
+      <outline title="日本の詩情" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv33D9f0yrmSD0X_sBpCJ1g" type="rss" />
+      <outline title="NPO法人重吉伸一サムライ道場" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_YNM5zRwlJSBY2wMjvmNxw" type="rss" />
+      <outline title="Gaijin TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj0_RblvCS0rnkObIOO01BQ" type="rss" />
+      <outline title="momonigiri_show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJswTrOTtIfULneX6zxvXaQ" type="rss" />
+      <outline title="Discover.Shimane" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC88TKtc9z6460_RNTuYHqig" type="rss" />
+      <outline title="Fikri Taufiq" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMaXiuvszGsqvLVg2WYYtYw" type="rss" />
+      <outline title="expedition Japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGQ2yfbgLGHiHAyIhdS_EOw" type="rss" />
+      <outline title="scenery in japan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj89PZeRRYHm_v_H7WeDhWg" type="rss" />
+      <outline title="想いを繋ぐ、日本の旅 -Japan Trip-" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEyBgUB1z4eAZMTJCwyU5xw" type="rss" />
+      <outline title="Japanese Listening with Mochii" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC02tZX6y4-77yrjDYoj6aCg" type="rss" />
+    </outline>
+  </body>
+</opml>

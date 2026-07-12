@@ -1,43 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0"><head><title>Beijing Feeds</title></head><body>
-<outline text="News">
-<outline title="Beijing Daily" xmlUrl="https://www.bjd.com.cn/rss/" type="rss"/>
-<outline title="Beijing Evening News" xmlUrl="https://www.bjwb.com.cn/rss/" type="rss"/>
-<outline title="Beijing News" xmlUrl="https://www.bjnews.com.cn/rss/" type="rss"/>
-<outline title="China Daily Beijing" xmlUrl="https://www.chinadaily.com.cn/m/beijing/rss/" type="rss"/>
-<outline title="People's Daily Beijing" xmlUrl="http://bj.people.com.cn/rss/" type="rss"/>
-<outline title="Xinhua Beijing" xmlUrl="http://www.xinhuanet.com/local/bj.htm" type="rss"/>
-<outline title="Beijing Review" xmlUrl="http://www.bjreview.com/rss/" type="rss"/>
-<outline title="Global Times Metro" xmlUrl="https://www.globaltimes.cn/metro-beijing/rss/" type="rss"/>
-<outline title="Beijing Today" xmlUrl="http://www.chinadaily.com.cn/m/beijing/rss/" type="rss"/>
-<outline title="Beijing TV News" xmlUrl="https://www.btime.com/rss/" type="rss"/>
-</outline>
-<outline text="Politics">
-<outline title="Beijing Gov" xmlUrl="http://www.beijing.gov.cn/rss" type="rss"/>
-<outline title="Beijing Municipal" xmlUrl="https://english.beijing.gov.cn/rss" type="rss"/>
-<outline title="E-Beijing" xmlUrl="http://www.ebeijing.gov.cn/rss" type="rss"/>
-</outline>
-<outline text="Business">
-<outline title="Beijing Business Today" xmlUrl="https://www.bbtnews.com.cn/rss/" type="rss"/>
-<outline title="Beijing Economic Info" xmlUrl="http://www.beinet.net.cn/rss" type="rss"/>
-<outline title="Invest Beijing" xmlUrl="http://www.investbeijing.gov.cn/rss" type="rss"/>
-</outline>
-<outline text="Technology">
-<outline title="Zhongguancun News" xmlUrl="https://www.zgcnews.com/rss/" type="rss"/>
-<outline title="Beijing S&amp;T" xmlUrl="http://www.bjkw.gov.cn/rss" type="rss"/>
-<outline title="Tsinghua Tech Review" xmlUrl="https://www.mittrchina.com/rss/" type="rss"/>
-<outline title="Haidian District" xmlUrl="http://www.bjhd.gov.cn/rss" type="rss"/>
-</outline>
-<outline text="Education">
-<outline title="Tsinghua Univ" xmlUrl="https://news.tsinghua.edu.cn/rss/" type="rss"/>
-<outline title="Peking Univ" xmlUrl="https://news.pku.edu.cn/rss/" type="rss"/>
-<outline title="Renmin Univ" xmlUrl="https://www.ruc.edu.cn/rss" type="rss"/>
-<outline title="Beijing Normal Univ" xmlUrl="https://www.bnu.edu.cn/rss" type="rss"/>
-<outline title="Beihang Univ" xmlUrl="https://www.buaa.edu.cn/rss" type="rss"/>
-</outline>
-<outline text="Culture">
-<outline title="Beijing Culture" xmlUrl="http://www.beijingculture.gov.cn/rss" type="rss"/>
-<outline title="Time Out Beijing" xmlUrl="https://www.timeoutbeijing.com/rss/" type="rss"/>
-<outline title="Beijing Tourism" xmlUrl="http://english.visitbeijing.com.cn/rss" type="rss"/>
-</outline>
-</body></opml>
+<opml version="1.0">
+  <head>
+    <title>Beijing Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Beijing Daily" xmlUrl="https://www.bjd.com.cn/rss/" type="rss" />
+      <outline title="Beijing Evening News" xmlUrl="https://www.bjwb.com.cn/rss/" type="rss" />
+      <outline title="Beijing News" xmlUrl="https://www.bjnews.com.cn/rss/" type="rss" />
+      <outline title="China Daily Beijing" xmlUrl="https://www.chinadaily.com.cn/m/beijing/rss/" type="rss" />
+      <outline title="People's Daily Beijing" xmlUrl="http://bj.people.com.cn/rss/" type="rss" />
+      <outline title="Xinhua Beijing" xmlUrl="http://www.xinhuanet.com/local/bj.htm" type="rss" />
+      <outline title="Beijing Review" xmlUrl="http://www.bjreview.com/rss/" type="rss" />
+      <outline title="Global Times Metro" xmlUrl="https://www.globaltimes.cn/metro-beijing/rss/" type="rss" />
+      <outline title="Beijing Today" xmlUrl="http://www.chinadaily.com.cn/m/beijing/rss/" type="rss" />
+      <outline title="Beijing TV News" xmlUrl="https://www.btime.com/rss/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Beijing Gov" xmlUrl="http://www.beijing.gov.cn/rss" type="rss" />
+      <outline title="Beijing Municipal" xmlUrl="https://english.beijing.gov.cn/rss" type="rss" />
+      <outline title="E-Beijing" xmlUrl="http://www.ebeijing.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Beijing Business Today" xmlUrl="https://www.bbtnews.com.cn/rss/" type="rss" />
+      <outline title="Beijing Economic Info" xmlUrl="http://www.beinet.net.cn/rss" type="rss" />
+      <outline title="Invest Beijing" xmlUrl="http://www.investbeijing.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Zhongguancun News" xmlUrl="https://www.zgcnews.com/rss/" type="rss" />
+      <outline title="Beijing S&amp;T" xmlUrl="http://www.bjkw.gov.cn/rss" type="rss" />
+      <outline title="Tsinghua Tech Review" xmlUrl="https://www.mittrchina.com/rss/" type="rss" />
+      <outline title="Haidian District" xmlUrl="http://www.bjhd.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Tsinghua Univ" xmlUrl="https://news.tsinghua.edu.cn/rss/" type="rss" />
+      <outline title="Peking Univ" xmlUrl="https://news.pku.edu.cn/rss/" type="rss" />
+      <outline title="Renmin Univ" xmlUrl="https://www.ruc.edu.cn/rss" type="rss" />
+      <outline title="Beijing Normal Univ" xmlUrl="https://www.bnu.edu.cn/rss" type="rss" />
+      <outline title="Beihang Univ" xmlUrl="https://www.buaa.edu.cn/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Beijing Culture" xmlUrl="http://www.beijingculture.gov.cn/rss" type="rss" />
+      <outline title="Time Out Beijing" xmlUrl="https://www.timeoutbeijing.com/rss/" type="rss" />
+      <outline title="Beijing Tourism" xmlUrl="http://english.visitbeijing.com.cn/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Learn Chinese with Hehe 和呵呵学中文 (HSK3-4）" xmlUrl="https://anchor.fm/s/108b6bbfc/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Takeaway Chinese" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/54" type="rss" category="Education" />
+      <outline title="探戈故事在中国" xmlUrl="https://feed.xyzfm.space/bllrfvrp9fg7" type="rss" category="Arts" />
+      <outline title="中國點點點" xmlUrl="https://podcast.rthk.hk//podcast/radio1_chinaonthedot.xml" type="rss" category="News" />
+      <outline title="英语话中国ChinaStory" xmlUrl="https://feed.xyzfm.space/h8g9h3wf6evp" type="rss" category="Education" />
+      <outline title="功夫中文/Kung Fu Chinese/コンフー中国語" xmlUrl="https://anchor.fm/s/fe1d9c38/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="《习近平谈治国理政》第四卷中英文版——大家读书" xmlUrl="https://www.ximalaya.com/album/70482103.xml" type="rss" category="Government" />
+      <outline title="Life Center Church NYC" xmlUrl="https://feed.podbean.com/lifecenternyc/feed.xml" type="rss" category="Christianity" />
+      <outline title="KILL TONY" xmlUrl="https://feeds.simplecast.com/JZSQrle9" type="rss" category="Comedy" />
+      <outline title="Mark Leonard's World in 30 Minutes" xmlUrl="https://feeds.acast.com/public/shows/65b12b49ff5af10016347961" type="rss" category="News" />
+      <outline title="Virginia Is For Laughers" xmlUrl="https://audioboom.com/channels/5049577.rss" type="rss" category="Comedy" />
+      <outline title="Church of Zion - Sermons and Sharing" xmlUrl="http://feeds.feedburner.com/CozPodcast" type="rss" category="Christianity" />
+      <outline title="Learn Chinese in 100 Days | Domino Chinese" xmlUrl="https://anchor.fm/s/518adc10/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Human Books Distillery" xmlUrl="https://anchor.fm/s/cfc3cf4c/podcast/rss" type="rss" category="Fitness" />
+      <outline title="Cato Events Podcast" xmlUrl="https://feeds.acast.com/public/shows/cato-event-podcast" type="rss" category="News Commentary" />
+      <outline title="2015 Edinburgh International Book Festival" xmlUrl="http://eibf.s3.amazonaws.com/xml/2015_Edinburgh_International_Book_Festival.xml" type="rss" category="Books" />
+      <outline title="Talk to Me" xmlUrl="https://feeds.simplecast.com/RZI2ZghA" type="rss" category="Arts" />
+      <outline title="The Beijing Hour" xmlUrl="https://aezfm.meldingcloud.com/rss/program/5" type="rss" category="News" />
+      <outline title="Expats On Air" xmlUrl="https://feed.podbean.com/expatsonair/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="The 029 Podcast" xmlUrl="https://anchor.fm/s/f9ecc3c8/podcast/rss" type="rss" category="Arts" />
+      <outline title="Dimsum Mandarin - Learn Mandarin Chinese" xmlUrl="https://feeds.feedburner.com/DimsumMandarin-LearnMandarinChinese" type="rss" category="Language Learning" />
+      <outline title="Coffee Break Chinese" xmlUrl="https://feeds.acast.com/public/shows/58cc3ec5-b23c-4de1-b8cb-21d229533dd9" type="rss" category="Language Learning" />
+      <outline title="Learn Chinese | ChineseClass101.com" xmlUrl="https://www.chineseclass101.com/wp-feed-audio-video.php" type="rss" category="Language Learning" />
+      <outline title="Chinese Learning Podcast | HSK 3 (Season 1)" xmlUrl="https://feeds.castos.com/r38mo" type="rss" category="Courses" />
+      <outline title="Podcasts from the UCLA Center for Chinese Studies" xmlUrl="https://www.international.ucla.edu/sites/ccs/rss.aspx" type="rss" category="Courses" />
+      <outline title="China Now" xmlUrl="https://feed.podbean.com/chinanow/feed.xml" type="rss" category="Politics" />
+      <outline title="I'm Learning Mandarin" xmlUrl="https://anchor.fm/s/647cc43c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="National Museum of Australia – Audio on demand program" xmlUrl="https://www.nma.gov.au/audio/itunes-rss" type="rss" category="Society &amp; Culture" />
+      <outline title="ChinesePod - Beginner" xmlUrl="https://anchor.fm/s/109bf914/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="New Books in Chinese Studies" xmlUrl="https://feeds.megaphone.fm/LIT1170601646" type="rss" category="Books" />
+      <outline title="NTD+" xmlUrl="https://rss.libsyn.com/shows/244145/destinations/1829255.xml" type="rss" category="Politics" />
+      <outline title="Teatime With Jesse" xmlUrl="https://feeds.megaphone.fm/teatimewithjesse" type="rss" category="Comedy Interviews" />
+      <outline title="Pulso Geopolítico" xmlUrl="https://feeds.ivoox.com/feed_fg_f12472168_filtro_1.xml" type="rss" category="Government" />
+      <outline title="The China Show" xmlUrl="https://rss.art19.com/the-china-show" type="rss" category="News" />
+      <outline title="2013 Edinburgh International Book Festival" xmlUrl="http://eibf.s3.amazonaws.com/xml/2013_Edinburgh_International_Book_festival.xml" type="rss" category="Books" />
+      <outline title="Bread + Circus Podcast" xmlUrl="https://anchor.fm/s/9c6542ac/podcast/rss" type="rss" category="Comedy" />
+      <outline title="China en chino" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/554" type="rss" category="Education" />
+      <outline title="TRUE ANON TRUTH FEED" xmlUrl="https://www.patreon.com/public-rss/2963533?show=875184" type="rss" category="Politics" />
+      <outline title="Morning Joe" xmlUrl="https://feeds.simplecast.com/5EFCkAYb" type="rss" category="News" />
+      <outline title="Sott Radio Network" xmlUrl="http://www.sott.net/xml/sott_talk_radio" type="rss" category="News" />
+      <outline title="Chinesisch für unterwegs" xmlUrl="https://anchor.fm/s/48c65924/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Chinese Language Convo Club - Casual Chinese Speaking Practice" xmlUrl="https://anchor.fm/s/fb56f79c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Economist Podcasts" xmlUrl="https://access.acast.com/rss/ec380acc-fe13-46a0-991f-a1e508d126f8" type="rss" category="News" />
+      <outline title="New Books in East Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT3976960259" type="rss" category="Society &amp; Culture" />
+      <outline title="Made in China" xmlUrl="https://rss.buzzsprout.com/1869386.rss" type="rss" category="Business News" />
+      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
+      <outline title="Dissident at the Doorstep" xmlUrl="https://audioboom.com/channels/5166607.rss" type="rss" category="Politics" />
+      <outline title="Factions Of Freedom" xmlUrl="https://www.spreaker.com/show/6512929/episodes/feed" type="rss" category="Society &amp; Culture" />
+      <outline title="NüVoices" xmlUrl="https://rss.buzzsprout.com/1858406.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Beijing Hour" xmlUrl="https://feed.cri.cn/rss/60702a44-7c17-48b4-9858-c3e5bce0ebce.xml" type="rss" category="News" />
+      <outline title="Beijing Calling" xmlUrl="https://feed.cri.cn/rss/4b3fdaf8-7255-e0b3-bbf1-ce391ac9b70e.xml" type="rss" category="Society" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Explore China 探索中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfASUBfPeJeOiAEB_icSZIQ" type="rss" />
+      <outline title="中央芭蕾舞团 National Ballet of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOiaUcSxoXFur4S8FP_ZDog" type="rss" />
+      <outline title="Wandering China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDf9nNrWpbzykcKs3tqyMgg" type="rss" />
+      <outline title="BeeRose in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCakazuhsTJ6nFmD_B0v111g" type="rss" />
+      <outline title="Downtown China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWTA4tlGiATjONCaRRcAJww" type="rss" />
+      <outline title="CCTV中国中央电视台" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcLK3j-XWdGBnt5bR9NJHaQ" type="rss" />
+      <outline title="Houhai English" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmPzyiLGGF1TdSXwl6d7FIA" type="rss" />
+      <outline title="Pika in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3Yo6Xxv7Te9c_6r8yp-nHQ" type="rss" />
+      <outline title="Beijing Walking Tours" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuVDO0oiu5QE89m1bLMm8uw" type="rss" />
+      <outline title="Explore China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjKTkTvqNlIBSZsq2Xr22EQ" type="rss" />
+      <outline title="China Rail" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz110JF8gtdQH21m0401HSA" type="rss" />
+      <outline title="Vivid China鲜活中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_AVhPNCX8a5Dq5AfoLBaZA" type="rss" />
+      <outline title="China Update" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCy287hC44mRWpFLj4hK8gKA" type="rss" />
+      <outline title="Teach English In China, part of Impact Teaching" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjT4vt2bte24Edu0FLGNokA" type="rss" />
+      <outline title="This is china" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEamKrdLAAKTt0haAP4Df2g" type="rss" />
+      <outline title="Amanbol in China🇨🇳" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2OzGNpEV6YxpmjcYb7AWcA" type="rss" />
+      <outline title="Travel China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJlHNo21RF7WIeKnPLu0C1Q" type="rss" />
+      <outline title="People's China 人民中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMLTz69VDeUCpwyBAwtvd4g" type="rss" />
+      <outline title="Taste China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa_pOrzEvZxZnku27qbUaDw" type="rss" />
+      <outline title="Beautiful China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYgi2OfN9EFcZ4qhC6_01kg" type="rss" />
+      <outline title="Director's China Cafe　旧 澁谷司の 中国カフェ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcFtJSIINtnR4WocuEN9YSg" type="rss" />
+      <outline title="In China Walking | 行走中国 " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_eyVh0h9_vsZLq6r5jbAaQ" type="rss" />
+      <outline title="Blondie in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISrVZmDM4x-Rq9mmNUw7Zw" type="rss" />
+      <outline title="中国北京心蓝天儿童成长中心 Beijing Xinlantian Education,China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuqObNqSD2DnbPfVVLDbn8g" type="rss" />
+      <outline title="China Aid" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZjUmdjdOvmS5OGP7uqdBYg" type="rss" />
+      <outline title="China World Hotel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP20lGnI1gRGkaJnd9Q1xQg" type="rss" />
+      <outline title="Beijing Ira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCgURsu5RcmyS4FdM2dbIog" type="rss" />
+      <outline title="Walking in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqfybCGvkKiQ3vX9VZDeKiQ" type="rss" />
+      <outline title="Tomoki / 朋辉 中国留学🇨🇳" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9_Hl2LT8502-vZ3Jc-qg1w" type="rss" />
+      <outline title="实境中国 Virtual Reality China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHtiVy3OySV_6ofFVZ1UcZg" type="rss" />
+      <outline title="Streets in China &amp; 中国街巷" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0EXhA6SQ_snbRHkcSYDzsg" type="rss" />
+      <outline title="中国北京电视台《养生堂》官方频道 China BTV YangShengTang Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFMEF66hLY0rFCDUfYM-POw" type="rss" />
+      <outline title="中国爱乐之声 China Philharmonic Orchestra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyhuxBKZyh_PZuQ1TU-AvFQ" type="rss" />
+      <outline title="China National Opera &amp; Dance Drama Theater 中国歌剧舞剧院" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV2BO-LAFxcOAP93iv7NgPg" type="rss" />
+      <outline title="China  travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyAVmA7qdNkYQINmYniEroA" type="rss" />
+      <outline title="行走在中国 Walking in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsahsONGv-nTLvy8-3ZrdtA" type="rss" />
+      <outline title="차이나통 china fun 中国通" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUUL7sI6Y0D8jWT70zcsPtw" type="rss" />
+      <outline title="City Walk View Beijing China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxiZWPXZhbQ0fzVDDK5BxVQ" type="rss" />
+      <outline title="ExploringChina漫步中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC04ze0aHzUlcRd_ujooCFZg" type="rss" />
+      <outline title="BO-HUI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVlX2hWSlFkpIB4VBOmHTNA" type="rss" />
+      <outline title="中国新闻社" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpbfXQsYBJTwq5lCkwGIeuQ" type="rss" />
+      <outline title="北京广播电视台官方频道 BRTV Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4gENL0K5J_gTODGW0dN3fQ" type="rss" />
+      <outline title="The Bridge School - Learn Chinese in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwTBQMwkCgbkxKDr-HweDZA" type="rss" />
+      <outline title="China travel 中国旅游" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIRcrB3OkSLSD7O_HoVwPeg" type="rss" />
+      <outline title="SHOW ME CHINA  秀我中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC094Us15KM_u2_AlnGGxntQ" type="rss" />
+      <outline title="The Beijing Center" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfn-XdGuIBv4pOAyEhuzVGw" type="rss" />
+      <outline title="Beijing Forestry University International College" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKlbMVJtD7XyZIcI0wNMrNA" type="rss" />
+      <outline title="老北京茶館 - 幽默時政" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpj_AT6Bt1_VT038hmfFGSQ" type="rss" />
+      <outline title="Beautiful Beijing,China [美丽的中国北京]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzftSBMcCHGKO43x049RNTQ" type="rss" />
+      <outline title="Royal Asiatic Society Beijing" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZIB7bAwq4BghrSsD2QjsPw" type="rss" />
+    </outline>
+  </body>
+</opml>

@@ -4,14 +4,85 @@
     <title>Delhi Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Delhi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672004.cms" type="rss" />
-        <outline title="Indian Express Delhi" xmlUrl="https://indianexpress.com/section/cities/delhi/feed/" type="rss" />
-        <outline title="The Hindu Delhi" xmlUrl="https://www.thehindu.com/news/cities/Delhi/feeder/default.rss" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="IIT Delhi" xmlUrl="https://home.iitd.ac.in/rss" type="rss" />
-      </outline>
-      <outline text="Sports" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Times of India Delhi" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128672004.cms" type="rss" />
+      <outline title="Indian Express Delhi" xmlUrl="https://indianexpress.com/section/cities/delhi/feed/" type="rss" />
+      <outline title="The Hindu Delhi" xmlUrl="https://www.thehindu.com/news/cities/Delhi/feeder/default.rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="IIT Delhi" xmlUrl="https://home.iitd.ac.in/rss" type="rss" />
+    </outline>
+    <outline text="Sports" />
+    <outline text="Podcasts">
+      <outline title="DIVINE LOVE TABERNACLE, New Delhi, India" xmlUrl="https://anchor.fm/s/14906d5c/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Immanuel International Church, New Delhi India" xmlUrl="https://feeds.redcircle.com/91574cb0-0953-46b3-8010-b8fb59ce7c9f" type="rss" category="Christianity" />
+      <outline title="The Delhi Sultanate and the Rise of Islamic Rule in India — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-delhi-sultanate-and-the-rise-of-islamic-rule-in-india.xml" type="rss" category="History" />
+      <outline title="The Delhi Sultanate: How Invaders Reshaped Medieval India — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-delhi-sultanate.xml" type="rss" category="History" />
+      <outline title="Delhi Tour Packages" xmlUrl="https://feeds.hubhopper.com/c7128a13913e00d9abfe030316c6c2cd.rss" type="rss" category="Business" />
+      <outline title="SEO Consultant Delhi" xmlUrl="https://feeds.hubhopper.com/a093f1fc272b98e7a08fb1ea15fd2dfa.rss" type="rss" category="Business" />
+      <outline title="Car On Rent in Delhi | Car Rental Company in Delhi" xmlUrl="https://rss.castbox.fm/everest/9fe12d04937445f48ac41b0155e775ba.xml" type="rss" category="Business" />
+      <outline title="Indien set gennem ambassadørens øjne" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:446412360/sounds.rss" type="rss" category="News" />
+      <outline title="NDA Coaching Institute in India-" xmlUrl="https://www.spreaker.com/show/6678193/episodes/feed" type="rss" category="Business" />
+      <outline title="Delhi TourPackages" xmlUrl="https://feeds.hubhopper.com/b4296780c258170e6ef0a16f63b692ea.rss" type="rss" category="Business" />
+      <outline title="Step-by-Step Guide to Renting Laptops from Companies in Delhi" xmlUrl="https://feeds.hubhopper.com/ab97dd3c3c01c0a2f2627f7120491c00.rss" type="rss" category="Society" />
+      <outline title="MUMBAI V/S DELHI STREET FOOD; WHICH CITY OF INDIA HAS BETTER STREET FOOD?" xmlUrl="https://feeds.hubhopper.com/d60fb3d3100ba2da616579a70dd66688.rss" type="rss" category="Society" />
+      <outline title="PPC Service Company Delhi India" xmlUrl="https://anchor.fm/s/ceaa7cf0/podcast/rss" type="rss" category="Business" />
+      <outline title="PPC Service Company Delhi India" xmlUrl="https://anchor.fm/s/cd8be818/podcast/rss" type="rss" category="Business" />
+      <outline title="Epoch India Advisors" xmlUrl="https://anchor.fm/s/63a12594/podcast/rss" type="rss" category="Business" />
+      <outline title="The Most Trusted Eye Care Center in Delhi, India - The Sight Avenue" xmlUrl="https://feeds.hubhopper.com/3f050d2bcb320183ded72a32c9b90df4.rss" type="rss" category="Health" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="🎤 DELHI KE ANDAR DO DHURANDHAR" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXvgc-9onulJmU749kcqJ-Q" type="rss" />
+      <outline title="new saree collection in Delhi India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJlIKfQ7HAxm2JR3PDnvX4w" type="rss" />
+      <outline title="A1 Cart Hub India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1kuW97eilrfueFRLdMgmog" type="rss" />
+      <outline title="Ankit Sharma blogs2.0" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8mER-ubxfr1E-mYfS7VXfA" type="rss" />
+      <outline title="FruQorPly" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmVSRvu5czA7M3ipAmQ45Nw" type="rss" />
+      <outline title="Delhi Darshan_00" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxAXu0b5yJutFPwk5X0xktg" type="rss" />
+      <outline title="TasteBot India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoFSvv1UPPO_MjrFFTgwFHg" type="rss" />
+      <outline title="Delhi Girl Parlour Vlogs " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGsObVn8F95qSSwH7hWYHAw" type="rss" />
+      <outline title="K.K.PLAYING CARDS DELHI INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0LHOaBeTbHmRDTsTd4zwWg" type="rss" />
+      <outline title="Delhi IVF-Best IVF Clinic in India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsJ12PrIeurXfRkwqi3LiXA" type="rss" />
+      <outline title="Crossroads Church - New Delhi, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPOPGi4h-rmvsITMUmi3rkA" type="rss" />
+      <outline title="Dellhi Emmc Team" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdlKeTPDekWkV-wDgZOVt-Q" type="rss" />
+      <outline title="Delhi India 0.8" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfH5pCqjNtR_CTeQDEhjpHw" type="rss" />
+      <outline title="Mohit CHAUHAN New Delhi India you have " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYpgz8BIlB-RRCB8TFG5p8w" type="rss" />
+      <outline title="REAL TV NETWORK DELHI INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAEhVb1atL6yrn9ck8SZ4pw" type="rss" />
+      <outline title="HINDUSTAN UPDATES" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJx-D-n03D5gs4hXG5Zl1tg" type="rss" />
+      <outline title="Balveer Kamala Nehru place New Delhi India ka Chau" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcfrP02iUHb70fyjrbcFiXQ" type="rss" />
+      <outline title="New Delhi, Delhi, India - Topic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBP2L9x_VKk1G-s1t-C8fA" type="rss" />
+      <outline title="Delhi India 55" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgiKgxG3sGZQjQHHZaCoB6Q" type="rss" />
+      <outline title="Delhi India Gate Pawan rajput" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzLD3ItIBwgCbU4yg5IBD4Q" type="rss" />
+      <outline title="Olmec Transgender | Sex Change Surgery in Delhi India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCo9_RSkSjQhfDFVPcT9_aMQ" type="rss" />
+      <outline title="DII (Delhi Institute of India)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22HmJsPiWFGUI_THyIvoFg" type="rss" />
+      <outline title="BIG FM India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMApuFts2zNMp4QU8Ng-oyw" type="rss" />
+      <outline title="Delhi ki Preeti" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4q8I7vpPEZr0d-t-Qr1dZw" type="rss" />
+      <outline title="GREAT INDIA BAND DELHI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCklNDhlJDse6sK_r8xHluBA" type="rss" />
+      <outline title="Delhi Kohhran (Presbyterian Church of India)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UConFm04DqfgCgoKoAd3ABEg" type="rss" />
+      <outline title="The Grand New Delhi India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaYtepPcsS3Eeiljah8FB-g" type="rss" />
+      <outline title="Delhi India 44" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC50x-oJvIykzbJ9ZtgV2jMQ" type="rss" />
+      <outline title="PSESA ESPORTS INDIA " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDh2WONML-oRcR1rQqfWz7w" type="rss" />
+      <outline title="St. Mark's Group of Schools, Delhi, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzQ2w5W2PhaO0KUR8SMaagA" type="rss" />
+      <outline title="Yojna IAS Best IAS Coaching in Delhi India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnxa3YZQ7poJHQDa4g5CJ0w" type="rss" />
+      <outline title="Delhi Darbar Indian Restaurant" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHGUER48a_b2q6M_3ANSMew" type="rss" />
+      <outline title="India YFC Delhi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-MEQdNPNJnDaT_uK_Zkoeg" type="rss" />
+      <outline title="Unseen Delhi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgz3cHE8e-uTGz6aJLZiY7w" type="rss" />
+      <outline title="Prashant Mafia and minister of India and Delhi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoLosMjnBiJ9u8WpT6LrBdA" type="rss" />
+      <outline title="Karate Coach Delhi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPBLxu0-qlf3kDU1OhzToMA" type="rss" />
+      <outline title="NCR Delhi India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuFHj9mMdXUCg_DyxiFTx4Q" type="rss" />
+      <outline title="Delhi India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPG5vJvzNJKw6fdQsCP6G0g" type="rss" />
+      <outline title="Travel.Millionaires.Life.99f" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENpVXh4e2mqfYfzu7tFkA" type="rss" />
+      <outline title="Unfiltered India Lens" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCotn8fIXbklRPEHDZ6t7QOg" type="rss" />
+      <outline title="Raju Kumar Sharma Lodipur New Delhi India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmMJH52NrzLfwP7F3m_jbzg" type="rss" />
+      <outline title="Gurgaon Delhi India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTrD27PlwVtLFCVb-_XOULA" type="rss" />
+      <outline title="Shincheonji, Church of Jesus, New Delhi, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv4k_gQ6rLwf_esMG2nTwrA" type="rss" />
+      <outline title="EDUCATOR INDIA Delhi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmNNPwqctK5nR75E5xODdiA" type="rss" />
+      <outline title="Hemant Delhi India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYj_YE9uuWRcvH4b6UML2vA" type="rss" />
+      <outline title="Jeans Manufacturer jeans manufacture Delhi India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqjUMdLwysIN0ZFhdZcj_bw" type="rss" />
+      <outline title="delhi fast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmw5YnhHJvn9RsPGH02zrSA" type="rss" />
+      <outline title="VICTORY CHURCHES OF INDIA - NEW DELHI - MAIN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwk53NB2wBlW3tZj2VM1z5Q" type="rss" />
+      <outline title="Delhi Walk Diaries " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAf36zGbYFNE03wBe0resVw" type="rss" />
+      <outline title="Iyengar Yogamandala - New Delhi, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbe9gQn4yQ2gm6SugPh91KQ" type="rss" />
+    </outline>
+  </body>
+</opml>

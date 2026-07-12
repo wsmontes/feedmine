@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Castelo Branco Feeds</title></head>
+  <head>
+    <title>Castelo Branco Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Castelo Branco" xmlUrl="https://www.cm-castelobranco.pt/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="Podcasts">
+      <outline title="INSTITUTO BÍBLICO DE CASTELO BRANCO" xmlUrl="https://anchor.fm/s/21adff40/podcast/rss" type="rss" category="Religion" />
+    </outline>
+  </body>
+</opml>

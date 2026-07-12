@@ -8,8 +8,15 @@
       <outline title="Brisbane Times" xmlUrl="https://www.brisbanetimes.com.au/rss/feed.xml" type="rss" />
       <outline title="Cairns Post" xmlUrl="https://www.cairnspost.com.au/feed/" type="rss" />
     </outline>
-<outline text="Business">
+    <outline text="Business">
       <outline title="Chamber of Commerce Queensland" xmlUrl="https://www.cciq.com.au/feed/" type="rss" />
     </outline>
-</body>
+    <outline text="Podcasts">
+      <outline title="Selden Society lecture series Australia" xmlUrl="https://rss.buzzsprout.com/190406.rss" type="rss" category="Education" />
+      <outline title="Queensland Country Hour" xmlUrl="https://www.abc.net.au/feeds/7974242/podcast.xml" type="rss" category="Business" />
+      <outline title="Well Man by selectability Queensland Australia" xmlUrl="https://anchor.fm/s/2321fc8c/podcast/rss" type="rss" category="Health" />
+      <outline title="In conversation with the 2019 Queensland Australians of the Year" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:664850783/sounds.rss" type="rss" category="Government" />
+      <outline title="Inside The Ropes - Golf Queensland" xmlUrl="https://rss.whooshkaa.com/rss/podcast/id/1728" type="rss" />
+    </outline>
+  </body>
 </opml>

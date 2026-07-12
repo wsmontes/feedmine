@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Antofagasta Feeds</title></head>
+  <head>
+    <title>Antofagasta Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Antofagasta" xmlUrl="https://www.goreantofagasta.cl/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="Podcasts">
+      <outline title="Diario Sol (Prensa Radio Sol Antofagasta)" xmlUrl="https://www.ivoox.com/diario-sol-departamento-prensa-radio-sol_fg_f1696567_filtro_1.xml" type="rss" category="News" />
+      <outline title="AUDIO RUTAS DE BARRIO | Antofagasta, Chile" xmlUrl="https://www.spreaker.com/show/6513688/episodes/feed" type="rss" category="Society" />
+      <outline title="Tu vida en una maleta: Inmigrantes en Antofagasta" xmlUrl="https://www.ivoox.com/feed_fg_f1753564_filtro_1.xml" type="rss" category="History" />
+    </outline>
+  </body>
+</opml>

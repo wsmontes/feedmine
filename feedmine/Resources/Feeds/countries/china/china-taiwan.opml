@@ -4,9 +4,112 @@
     <title>Taiwan Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Taiwan News" xmlUrl="https://www.taiwannews.com.tw/rss" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Taiwan News" xmlUrl="https://www.taiwannews.com.tw/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="Speak Chinese Like A Taiwanese Local" xmlUrl="https://anchor.fm/s/e326d2f0/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Landi's Taiwan Diaries" xmlUrl="https://feeds.soundon.fm/podcasts/de8cbde7-bf26-4742-8927-20c2114097eb.xml" type="rss" category="Personal Journals" />
+      <outline title="Easy Mandarin News | Learn Chinese with Daily News" xmlUrl="https://rss.buzzsprout.com/2509414.rss" type="rss" category="Language Learning" />
+      <outline title="Walking Mandarin | 走讀中文" xmlUrl="https://anchor.fm/s/10eb1d488/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="全国两会现场播报 | 中国日报" xmlUrl="https://www.ximalaya.com/album/47208179.xml" type="rss" category="Daily News" />
+      <outline title="英语话中国ChinaStory" xmlUrl="https://feed.xyzfm.space/h8g9h3wf6evp" type="rss" category="Education" />
+      <outline title="Bitesize Chinese 一口中文" xmlUrl="https://feed.firstory.me/rss/user/clbdbpykk01vw01ux6i7kbki9" type="rss" category="Language Learning" />
+      <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
+      <outline title="KEC凱文英文新聞播客網 KEC ENGLISH NEWS PODCAST" xmlUrl="https://anchor.fm/s/a42e20e4/podcast/rss" type="rss" category="News" />
+      <outline title="Learn Chinese from Taiwanese 跟台灣人學中文" xmlUrl="https://anchor.fm/s/84b403f0/podcast/rss" type="rss" category="Education" />
+      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
+      <outline title="台味中文 Learn Chinese, the Taiwanese Way" xmlUrl="https://feed.firstory.me/rss/user/ckqulk5tn5lbb097693kz70uc" type="rss" category="Language Learning" />
+      <outline title="解説！1日5分ビジネス英語" xmlUrl="https://anchor.fm/s/fb04e5d8/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="世界忙什麼?  The World in 5 Mins 留學忙什麼？" xmlUrl="https://feed.firstory.me/rss/user/ckg8d4tdgcghs08751mz294p8" type="rss" category="Daily News" />
+      <outline title="东谈西论" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/d14a562d-2c6f-465d-80d2-ae44009af53e/77c8885e-9b24-4fb4-a01c-ae44009bc0f1/podcast.rss" type="rss" category="News" />
+      <outline title="世界咖啡館" xmlUrl="https://feed.firstory.me/rss/user/ckojhirwu55w50998k5xprspo" type="rss" category="Language Learning" />
+      <outline title="說點英文 | 很 chill 的時事英文口說頻道" xmlUrl="https://feeds.soundon.fm/podcasts/9d2d9398-044a-4ac6-b9de-5cf6ccb86a54.xml" type="rss" category="Language Learning" />
+      <outline title="Mandarin 24/7" xmlUrl="https://anchor.fm/s/70a6d7c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Work to Live" xmlUrl="https://anchor.fm/s/3634ae78/podcast/rss" type="rss" category="Education" />
+      <outline title="The Jesse Kelly Show" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/723a5526-8c62-4255-8c8b-ae2c007cfcc1/f2551c6e-95ed-4d33-9cfb-ae2c007cfcf9/podcast.rss" type="rss" category="News Commentary" />
+      <outline title="Cage Fighting: Cruise Control" xmlUrl="https://anchor.fm/s/2633d648/podcast/rss" type="rss" category="TV &amp; Film" />
+      <outline title="Vinndoggradio Live" xmlUrl="https://anchor.fm/s/fedab6c4/podcast/rss" type="rss" category="Politics" />
+      <outline title="The Downside with Gianmarco Soresi" xmlUrl="https://feeds.megaphone.fm/VMP1717216655" type="rss" category="Comedy" />
+      <outline title="Pulso Geopolítico" xmlUrl="https://feeds.ivoox.com/feed_fg_f12472168_filtro_1.xml" type="rss" category="Government" />
+      <outline title="RushMandarin" xmlUrl="https://anchor.fm/s/108656d24/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Deutsches Programm" xmlUrl="https://www.rti.org.tw/de/programpodcasturl?id=70" type="rss" category="Society &amp; Culture" />
+      <outline title="Teatime With Jesse" xmlUrl="https://feeds.megaphone.fm/teatimewithjesse" type="rss" category="Comedy Interviews" />
+      <outline title="RebelCitySports" xmlUrl="https://anchor.fm/s/455c7d54/podcast/rss" type="rss" category="Entertainment News" />
+      <outline title="AI Polyglot スペイン語+ | 聞き流し Spanish Espanol" xmlUrl="https://podcast.aipolyglot.jp/aipolyglot-ja_es/feed.xml" type="rss" category="Language Learning" />
+      <outline title="Ear to Asia" xmlUrl="https://media.rss.com/ear-to-asia/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Economist Podcasts" xmlUrl="https://access.acast.com/rss/ec380acc-fe13-46a0-991f-a1e508d126f8" type="rss" category="News" />
+      <outline title="I'm Learning Mandarin" xmlUrl="https://anchor.fm/s/647cc43c/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="The Venn Diagram" xmlUrl="https://feeds.castos.com/89kpr" type="rss" category="News" />
+      <outline title="China Now" xmlUrl="https://feed.podbean.com/chinanow/feed.xml" type="rss" category="Politics" />
+      <outline title="Drum Tower from The Economist" xmlUrl="https://access.acast.com/rss/633ebf6dfc7f5a0012acdc97" type="rss" category="News" />
+      <outline title="Ktown Social Club" xmlUrl="https://anchor.fm/s/f45f8bc0/podcast/rss" type="rss" category="News" />
+      <outline title="SpiritWars" xmlUrl="https://www.spreaker.com/show/1928006/episodes/feed" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Sott Radio Network" xmlUrl="http://www.sott.net/xml/sott_talk_radio" type="rss" category="News" />
+      <outline title="New Books Network" xmlUrl="https://feeds.megaphone.fm/LIT4543917034" type="rss" category="News" />
+      <outline title="Courage in the Line of Fire" xmlUrl="https://feeds.simplecast.com/9BNC9lLs" type="rss" category="Christianity" />
+      <outline title="Cato Events Podcast" xmlUrl="https://feeds.acast.com/public/shows/cato-event-podcast" type="rss" category="News Commentary" />
+      <outline title="H3 Podcast" xmlUrl="https://feeds.megaphone.fm/h3podcast" type="rss" category="Comedy" />
+      <outline title="Villain For All Seasons" xmlUrl="https://anchor.fm/s/4deb1f48/podcast/rss" type="rss" category="Politics" />
+      <outline title="The China Show" xmlUrl="https://rss.art19.com/the-china-show" type="rss" category="News" />
+      <outline title="Mandarin Blueprint" xmlUrl="https://www.mandarinblueprint.com/feed/podcast/" type="rss" category="Language Learning" />
+      <outline title="Expats On Air" xmlUrl="https://feed.podbean.com/expatsonair/feed.xml" type="rss" category="Society &amp; Culture" />
+      <outline title="Martha Debayle en W" xmlUrl="http://fapi-top.prisasd.com/podcast/wradiomexico/martha_debayle/itunestfp/podcast.xml" type="rss" category="Arts" />
+      <outline title="Eddy LIVE Podcast (ELP)" xmlUrl="https://feed.pod.co/eddy-live" type="rss" category="Personal Journals" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Four Seas One Family Taiwan 四海一家台灣" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOaVWKXQWBZtatNwJJPgIgw" type="rss" />
+      <outline title="CTBC Brothers 中信兄弟官方頻道" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMNRAapvcYtQks_QmfiTGkA" type="rss" />
+      <outline title="China Museum for Fujian-Taiwan Kinship" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqGA_FehGAM0Cf1dT0rGFmQ" type="rss" />
+      <outline title="Little Fox Chinese - Stories &amp; Songs for Learners" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCipQJmg3yqouy6MRtPv_0Bg" type="rss" />
+      <outline title="China–Taiwan conflict updates" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmTqSZzMrYj4-2B8HAl9DwQ" type="rss" />
+      <outline title="Taiwan Go -  Learn Chinese FREE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG09k0ai1okcxngAPhfow7w" type="rss" />
+      <outline title="Living in Taiwan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTy-0yaDe9-IyRnQOj9ZHcQ" type="rss" />
+      <outline title="Taiwan Travel Guide / 台灣旅遊指南 / 台湾旅行ガイド" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuA8173d9gmDVK1muYMqkkg" type="rss" />
+      <outline title="China's NEW No.1 CHINESE CRYPTO China's Taiwan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChpK2Re7VnAANcmGyTRIpCg" type="rss" />
+      <outline title="Taiwan Matters" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCo5QwGRdiH2FrtEsZNqToog" type="rss" />
+      <outline title="Sony Music China索尼音樂中國" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTXDzc_XXOUCui7o1FlyrZQ" type="rss" />
+      <outline title="Taiwan China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGNoEuGQhQnXiWLWAOtu3Fg" type="rss" />
+      <outline title="Taiwan Apocalypse" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOulgJhxjrEqgV6itWURPjw" type="rss" />
+      <outline title="TAIWAN zanlan mix" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB6q1GJAdb5-YLgEKLIc-zA" type="rss" />
+      <outline title="台湾華語 Taiwan Mandarin Winnie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9SYdAcvY370hYafgAtc4hA" type="rss" />
+      <outline title="Taiwan Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBm8d4qvL8qsMgQbnuE5_6g" type="rss" />
+      <outline title="TEAM TAIWAN UK 英國台灣隊" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRq7OBxpTZo_ZclUYEWs2yQ" type="rss" />
+      <outline title="April Taiwan x Mandarin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt__OFLrH3DVHJM16QVjPaQ" type="rss" />
+      <outline title="Taiwan 🇹🇼 " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmgic03D0Rh6nUiE1GowtZA" type="rss" />
+      <outline title="Taiwan Quest" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLc-lxH_UxlWKDKGUnJvt0g" type="rss" />
+      <outline title="Happy lesson TAIWAN楽しい勉強 즐거운 공부" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC23-P8iUE7CATPekrxLRU4Q" type="rss" />
+      <outline title="Taiwan Veggie Daily" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2lx-bkLCx1w255M8ftdL7Q" type="rss" />
+      <outline title="王志安 " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBKDRq35-L8xev4O7ZqBeLg" type="rss" />
+      <outline title="Garena 傳說對決" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeMjhoCCvujpObnt6yeZeNg" type="rss" />
+      <outline title="Exness China.ForexTrading" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCC-Fd-HpjwgTkWHiS4IYo-g" type="rss" />
+      <outline title="TAIWAN ACTION" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQGg2-yE5PjXqE3TyH70mVQ" type="rss" />
+      <outline title="Taiwan Songs Entertaiment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFzXfigI7iMg6suFThROdoQ" type="rss" />
+      <outline title="Smart Taiwan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvvW9xuDTB4gEyChWkOQ56Q" type="rss" />
+      <outline title="Shirley Ze Yu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCotx4n78YxWRxEKVU3w0EiA" type="rss" />
+      <outline title="70 ' 80 ' 90年代经典老歌- TAIWAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFHoFHi3-_lh030g7VRLipg" type="rss" />
+      <outline title="未来畅想  Future Vision" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGZiNUDK4uWKIXGGw0OKn1Q" type="rss" />
+      <outline title="小猪佩奇 中文官方 - Peppa Pig" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRi0sw4PDw-C2C7fS9hrx5Q" type="rss" />
+      <outline title="YGZ Taiwan (路易斯)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnPR6vE60cByY6uPGnKy53g" type="rss" />
+      <outline title="TAIWAN:NO.1 ISLAND IN CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-CBiSshxN_4LXDEge0Gw-A" type="rss" />
+      <outline title="UMN China Center" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfDDsYCqE5yJf3dYWmFjmBw" type="rss" />
+      <outline title="Congressional-Executive Commission on China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRAT_7MIzUolORlJhYBTzHA" type="rss" />
+      <outline title="元得電子科技 ENCTEC Taiwan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaYUaEM1LOIMoiZkitZeDog" type="rss" />
+      <outline title="Disney Plus TW" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF4_1o9KChgXSVend_jdbdg" type="rss" />
+      <outline title="Taiwan can help " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCab3pOcC8YB1u8YsMM9HO9g" type="rss" />
+      <outline title="Bebefinn 繁體中文 - 兒歌" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnu7XZueZxHth7YWlJc5-vQ" type="rss" />
+      <outline title="台灣不是中國的Taiwan no Is Chinese" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkGsIbtusqg42hj1Ip9cQvg" type="rss" />
+      <outline title="中國台灣Chinese Taiwan 2025" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEbU7NNuGou0UYOWeO-4CMw" type="rss" />
+      <outline title="中華民國外交部 Ministry of Foreign Affairs, ROC〈Taiwan〉" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC71om6I2ST-IyHQKRRJtbTQ" type="rss" />
+      <outline title="Taiwan Issue Blinded by China in the World" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjLEKY7m-uxWsfYiUZrwPMg" type="rss" />
+      <outline title="反台独协会 Anti-Taiwan Independence Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCndf9ZikfwlUYN6XOWZxESw" type="rss" />
+      <outline title="China Taiwan Reunity 中國台灣省回歸線" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcnNm1RbmTgbbbLLAoz24rQ" type="rss" />
+      <outline title="中国China台湾省Taiwan Province" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG6LmFclJKbe51lgLx17-PQ" type="rss" />
+      <outline title="YUI Chinese Podcast Taiwan • 中国語 ポッドキャスト" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCipKoe0xT_L55If9tUHp6iw" type="rss" />
+      <outline title="Fan Chinese Taiwan Music IDN Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiGVLDn79aJHcN2H8O2sk4g" type="rss" />
+      <outline title="SOULElectronics Taiwan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9b1E1u2iDyveYoCZ8xibPQ" type="rss" />
+    </outline>
+  </body>
+</opml>

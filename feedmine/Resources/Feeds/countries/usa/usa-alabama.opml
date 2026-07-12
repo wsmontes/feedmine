@@ -4,20 +4,24 @@
     <title>Alabama Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Governor Ivey" xmlUrl="https://governor.alabama.gov/rss" type="rss" />
-        <outline title="AL Legislature" xmlUrl="https://www.legislature.state.al.us/rss" type="rss" />
-        <outline title="Alabama Reflector" xmlUrl="https://alabamareflector.com/feed/" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="Birmingham Biz Journal" xmlUrl="https://feeds.bizjournals.com/birmingham" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="Univ of Alabama" xmlUrl="https://news.ua.edu/feed/" type="rss" />
-        <outline title="Auburn News" xmlUrl="https://ocm.auburn.edu/rss" type="rss" />
-        <outline title="UAB News" xmlUrl="https://www.uab.edu/rss" type="rss" />
-      </outline>
-      <outline text="Sports" />
-      <outline text="Culture" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Governor Ivey" xmlUrl="https://governor.alabama.gov/rss" type="rss" />
+      <outline title="AL Legislature" xmlUrl="https://www.legislature.state.al.us/rss" type="rss" />
+      <outline title="Alabama Reflector" xmlUrl="https://alabamareflector.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="Birmingham Biz Journal" xmlUrl="https://feeds.bizjournals.com/birmingham" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Univ of Alabama" xmlUrl="https://news.ua.edu/feed/" type="rss" />
+      <outline title="Auburn News" xmlUrl="https://ocm.auburn.edu/rss" type="rss" />
+      <outline title="UAB News" xmlUrl="https://www.uab.edu/rss" type="rss" />
+    </outline>
+    <outline text="Sports" />
+    <outline text="Culture" />
+    <outline text="Podcasts">
+      <outline title="Harvest Church of God Podcast" xmlUrl="https://feedcdn.podbean.com/harvestchurchofgod/feed.xml" type="rss" category="Religion" />
+    </outline>
+  </body>
+</opml>

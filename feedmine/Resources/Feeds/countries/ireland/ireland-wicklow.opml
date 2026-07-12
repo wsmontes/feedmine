@@ -4,5 +4,8 @@
     <title>Wicklow Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Wicklow Archives - Ireland Family Vacations" xmlUrl="https://irelandfamilyvacations.com/category/regions-and-counties/south-east-ireland/wicklow/feed" type="rss" category="Society" />
+    </outline>
+  </body>
 </opml>

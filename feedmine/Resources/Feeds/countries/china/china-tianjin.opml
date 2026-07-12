@@ -4,12 +4,76 @@
     <title>Tianjin Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" />
-      <outline text="Business">
-        <outline title="Tianjin FTZ" xmlUrl="http://www.tjftz.gov.cn/rss" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="Nankai Univ" xmlUrl="https://www.nankai.edu.cn/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Business">
+      <outline title="Tianjin FTZ" xmlUrl="http://www.tjftz.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Nankai Univ" xmlUrl="https://www.nankai.edu.cn/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Coffee Break Chinese" xmlUrl="https://feeds.acast.com/public/shows/58cc3ec5-b23c-4de1-b8cb-21d229533dd9" type="rss" category="Language Learning" />
+      <outline title="You Can Learn Chinese" xmlUrl="https://anchor.fm/s/f047cea8/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Drum Tower from The Economist" xmlUrl="https://access.acast.com/rss/633ebf6dfc7f5a0012acdc97" type="rss" category="News" />
+      <outline title="Economist Podcasts" xmlUrl="https://access.acast.com/rss/ec380acc-fe13-46a0-991f-a1e508d126f8" type="rss" category="News" />
+      <outline title="Chinalogue - Der China Podcast" xmlUrl="https://anchor.fm/s/a5effee8/podcast/rss" type="rss" category="Business" />
+      <outline title="Pulso Geopolítico" xmlUrl="https://feeds.ivoox.com/feed_fg_f12472168_filtro_1.xml" type="rss" category="Government" />
+      <outline title="Podcasts from the UCLA Center for Chinese Studies" xmlUrl="https://www.international.ucla.edu/sites/ccs/rss.aspx" type="rss" category="Courses" />
+      <outline title="Teatime With Jesse" xmlUrl="https://feeds.megaphone.fm/teatimewithjesse" type="rss" category="Comedy Interviews" />
+      <outline title="Global Business" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/430" type="rss" category="News" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="guocuiyuanTJ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6cEdB3saKvzoAsnMnQ0pPA" type="rss" />
+      <outline title="China View" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC01t0kBYdkEHDan1XWMEQnQ" type="rss" />
+      <outline title="FIA F4 CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGT-_lmIxs94mWZe3x-tJ7Q" type="rss" />
+      <outline title="抄叔 Uncle Chao | Artist &amp; Writer" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsYOk4Uv1HEosc_KA7h7W4w" type="rss" />
+      <outline title="Jom Pi China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0kJHqsVdVakgVdMTxkODPg" type="rss" />
+      <outline title="佳景看中国A good view of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdUlWL9LMhFpkw06rFxolog" type="rss" />
+      <outline title="Walking China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_DIitFREZaNs3V0HrOIO3g" type="rss" />
+      <outline title="This is china" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEamKrdLAAKTt0haAP4Df2g" type="rss" />
+      <outline title="Mako Chinese Food Tour" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjYuwFJA8eBZqVXRhpzYyOg" type="rss" />
+      <outline title="istudyChina" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1YgCBwmg5ug2GH0pcXwBsQ" type="rss" />
+      <outline title="City Impression" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJGA8eHNiC5fRPm_010FK_g" type="rss" />
+      <outline title="Calamity Media" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHI_--ApolGM2bCJ8zQ2fDw" type="rss" />
+      <outline title="Song" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCatGYvpUtpmy3Y7ya0Y7TEg" type="rss" />
+      <outline title="文武" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVeh4WiUbdH2HvhR-3sJDRQ" type="rss" />
+      <outline title="爱天津" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCb7EjxIKT27NB3M2OvxrvQw" type="rss" />
+      <outline title="天津青年大力" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv1H1dPlF2aok-7f0jn2S1g" type="rss" />
+      <outline title="胡竣尧" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcJ7Dhe7yDm04YhjrLL4Tbw" type="rss" />
+      <outline title="cnto cnto (중국주서울관광사무소)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLv7V985YSlFD1dWiKtWQbQ" type="rss" />
+      <outline title="Selectchina" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn5Gk96iTBR9oj0ZT-GPj8Q" type="rss" />
+      <outline title="In China Walking | 行走中国 " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_eyVh0h9_vsZLq6r5jbAaQ" type="rss" />
+      <outline title="WeNi On The Way" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtj5ixELLWZubGmzhlMSwaQ" type="rss" />
+      <outline title="Mr. Xu's China (幻海孚日)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCett-NIptSdVowrOocPP8rg" type="rss" />
+      <outline title="han tenshin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEVIhuvkqlFaNqkKrLr_tEA" type="rss" />
+      <outline title="lifeintianjin_2022" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp5aO4Oce1lOQPZo6I3tBBg" type="rss" />
+      <outline title="中国文化推荐官-Universe Han" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCh6RRj3N3dIkWMpPbgGWZQQ" type="rss" />
+      <outline title="BMG CONTENT CREATOR" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1pB1ZrNLXgqYjHHvF_HaSQ" type="rss" />
+      <outline title="Take you to know China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCibAU49C0fF3GKYyempFIkQ" type="rss" />
+      <outline title="FastOrange" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX54gqBwcY3i3L1UMs3tKUA" type="rss" />
+      <outline title="AIDY IN CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ37Dahf8c1qRCP2teiskUg" type="rss" />
+      <outline title="Real China Walk" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgRqcn3GeYm_0a3XCNMHCAw" type="rss" />
+      <outline title="Ting-Daily life  in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOLBhVvL5dcJLMZeQBUu1Vw" type="rss" />
+      <outline title="inside with Ifeoluwa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR76QwcDJTHe3llp9BnLRuw" type="rss" />
+      <outline title="MZ Land - life could be chill in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZhfxm6m9sv0zsWHLgP4sgQ" type="rss" />
+      <outline title="ArTiKaT" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAD7i5gj8CsTNhuUu0vHH8Q" type="rss" />
+      <outline title="Pika in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3Yo6Xxv7Te9c_6r8yp-nHQ" type="rss" />
+      <outline title="中国リアルトーク China Real Talks" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzpPquzEsD6f2B2kIqb4LqQ" type="rss" />
+      <outline title="Chinese Epic Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4zzJTVWWV3TiawzbT9ERKg" type="rss" />
+      <outline title="Study abroad in China中国留学行" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9udThBlvs2ELWladKd3xgQ" type="rss" />
+      <outline title="Chinoy in Tianjin " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiRdKDg89DdjsoZ0smXPlXQ" type="rss" />
+      <outline title="EXPLORE CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5aISV9xhKqvYM98qy1RlCw" type="rss" />
+      <outline title="Next Station: China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3hA7oEMaFVRYV8nSUy9vUw" type="rss" />
+      <outline title="Goldin Financial Holdings Ltd: Hong Kong Real Estate Properties Investments - Tianjin and Guangzhou" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqbUi4f3i8OzbE7_zksHGCQ" type="rss" />
+      <outline title="travelling in China " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP_aRspdsAFySzgWPAC5Wxw" type="rss" />
+      <outline title="钰儿在吃喝玩乐" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6-84nOZLM21Tjxi7cGruQ" type="rss" />
+      <outline title="Kaycee in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC41FgvH14rDuZNZUK-ovg9g" type="rss" />
+      <outline title="中国天津卫视官方频道 China Tianjin TV Official Channel 【欢迎订阅】" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIyqwZoid81ZVPzcrIVTcbQ" type="rss" />
+      <outline title="谊薄云天" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC43GEpfN0-novFMocjKbieg" type="rss" />
+      <outline title="Ceci en China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJd46bAWyx9fidApNwBkT2w" type="rss" />
+      <outline title="Tongverse" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUBh9gvtfkveTNQm6wHHKOg" type="rss" />
+      <outline title="TomHong 汤姆Hong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaIzBopWOEoAwlhAjnI8bxw" type="rss" />
+    </outline>
+  </body>
+</opml>

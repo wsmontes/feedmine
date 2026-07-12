@@ -4,9 +4,16 @@
     <title>Nouvelle-Aquitaine Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Sud Ouest" xmlUrl="https://www.sudouest.fr/rss" type="rss" />
-        <outline title="France 3 N-A" xmlUrl="https://france3-regions.francetvinfo.fr/nouvelle-aquitaine/rss" type="rss" />
-      </outline>
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Sud Ouest" xmlUrl="https://www.sudouest.fr/rss" type="rss" />
+      <outline title="France 3 N-A" xmlUrl="https://france3-regions.francetvinfo.fr/nouvelle-aquitaine/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="La Nouvelle Scène Aquitaine de France Bleu" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_16801.xml" type="rss" category="Music" />
+      <outline title="Chez nous, en Nouvelle-Aquitaine - FB La Rochelle" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_18506.xml" type="rss" category="News" />
+      <outline title="Chez nous, en Nouvelle-Aquitaine - FB La Rochelle" xmlUrl="https://radiofrance-podcast.net/podcast09/35099478-7c72-4f9e-a6de-1b928400e9e5/rss_18506.xml" type="rss" category="News" />
+      <outline title="Actu Nouvelle Aquitaine France Bleu Limousin" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_20536.xml" type="rss" category="News" />
+    </outline>
+  </body>
+</opml>

@@ -4,10 +4,14 @@
     <title>North Dakota Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Minot Daily News" xmlUrl="https://www.minotdailynews.com/rss" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Education" />
-      <outline text="Culture" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Minot Daily News" xmlUrl="https://www.minotdailynews.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="Culture" />
+    <outline text="Podcasts">
+      <outline title="Fargo News Today | 2 Min | The Local Wire" xmlUrl="https://media.rss.com/fargo-news-today-2-min-the-local-wire/feed.xml" type="rss" category="News" />
+    </outline>
+  </body>
+</opml>

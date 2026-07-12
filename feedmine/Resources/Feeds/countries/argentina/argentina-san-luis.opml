@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>San Luis Feeds</title></head>
+  <head>
+    <title>San Luis Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Gobierno de San Luis" xmlUrl="https://www.sanluis.gov.ar/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="Podcasts">
+      <outline title="Santa Misa de Sanidad -San Luis ARGENTINA," xmlUrl="https://www.ivoox.com/_fg_f1800440_filtro_1.xml" type="rss" category="Religion" />
+    </outline>
+  </body>
+</opml>

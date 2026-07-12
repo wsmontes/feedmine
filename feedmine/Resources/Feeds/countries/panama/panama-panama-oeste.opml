@@ -4,5 +4,9 @@
     <title>Panamá Oeste Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="DKG Capítulo Panamá Oeste" xmlUrl="https://anchor.fm/s/c0f8abe0/podcast/rss" type="rss" category="Education" />
+      <outline title="Ruta24" xmlUrl="https://anchor.fm/s/e8d5460/podcast/rss" type="rss" category="Politics" />
+    </outline>
+  </body>
 </opml>

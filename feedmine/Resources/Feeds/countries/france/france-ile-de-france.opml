@@ -4,9 +4,30 @@
     <title>Île-de-France Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="France 3 Paris IDF" xmlUrl="https://france3-regions.francetvinfo.fr/paris-ile-de-france/rss" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="France 3 Paris IDF" xmlUrl="https://france3-regions.francetvinfo.fr/paris-ile-de-france/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="L'hebdo des Iles de France France Bleu Paris" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_14398.xml" type="rss" category="News" />
+      <outline title="Les Experts : jardiner en Ile de France FB Paris" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_15522.xml" type="rss" category="Leisure" />
+      <outline title="Les 12/14" xmlUrl="https://feed.ausha.co/kwzxghrnlyq0" type="rss" category="Health" />
+      <outline title="Ecoute ! il y a un éléphant dans le jardin - L'actualité culturelle des enfants en Ile-de-France" xmlUrl="https://cause-commune.fm/feed/podcast/ecoute-il-y-a-un-elephant-dans-le-jardin" type="rss" category="News" />
+      <outline title="La voix des libéraux" xmlUrl="https://feed.ausha.co/ajgorsxpedke" type="rss" category="Health" />
+      <outline title="Ile-de-France Politiques" xmlUrl="https://feeds.simplecast.com/ojulmhxl" type="rss" category="News" />
+      <outline title="Producteurs d'Ile de France France Bleu Paris" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_19116.xml" type="rss" category="News" />
+      <outline title="Pas de Plan B" xmlUrl="https://api.octopus.saooti.com/rss/emission/16398.rss?slug=itunes.apple.com" type="rss" category="Business" />
+      <outline title="La CGT Caisse d’Epargne Ile de France" xmlUrl="https://www.vodio.fr/rssmedias.php?valeur=1628" type="rss" category="Business" />
+      <outline title="Les podcasts du PRITH Ile-de-France" xmlUrl="https://anchor.fm/s/ecc4bbc4/podcast/rss" type="rss" category="Health" />
+      <outline title="Jeux 2024 : le tremplin francilien" xmlUrl="https://feed.ausha.co/omz2oiw636am" type="rss" category="Society" />
+      <outline title="L'invité de la chambre des métiers et de l'artisanat d'Ile de France" xmlUrl="https://radiofrance-podcast.net/podcast09/rss_22028.xml" type="rss" category="News" />
+      <outline title="Les Nouveaux Entrepreneurs" xmlUrl="https://anchor.fm/s/76a65f74/podcast/rss" type="rss" category="Business" />
+      <outline title="Datacentre UNIF - MESRI Ile-de-France" xmlUrl="https://tube.unif.app/feeds/videos.xml?videochannelid=7" type="rss" />
+      <outline title="Kilomètre 0, le podcast de l’immobilier francilien" xmlUrl="https://feed.ausha.co/odvprsv4x4rm" type="rss" category="Business" />
+      <outline title="Parigo - France 3 Paris Ile-de-France [non off]" xmlUrl="https://peertube.stream/feeds/videos.xml?videochannelid=8882" type="rss" />
+      <outline title="Artisans ! Le podcast qui donne la parole aux artisans, réalisé par Les Jolies Rencontres x La Chambre Régionale de Métiers et de l'Artisanat d'Ile-de-France" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:783966154/sounds.rss" type="rss" category="Society" />
+      <outline title="Loisirs en famille en Ile de France" xmlUrl="https://feeds.ivoox.com/feed_fg_f1356237_filtro_1.xml" type="rss" category="Leisure" />
+    </outline>
+  </body>
+</opml>

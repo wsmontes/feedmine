@@ -4,17 +4,75 @@
     <title>Goa Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Goa" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670678.cms" type="rss" />
-        <outline title="The Hindu Goa" xmlUrl="https://www.thehindu.com/news/national/goa/feeder/default.rss" type="rss" />
-        <outline title="Navhind Times" xmlUrl="https://www.navhindtimes.in/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Goa Gov" xmlUrl="https://www.goa.gov.in/rss" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="IIT Goa" xmlUrl="https://www.iitgoa.ac.in/rss" type="rss" />
-        <outline title="NIT Goa" xmlUrl="https://www.nitgoa.ac.in/rss" type="rss" />
-      </outline>
-      <outline text="Culture" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Times of India Goa" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670678.cms" type="rss" />
+      <outline title="The Hindu Goa" xmlUrl="https://www.thehindu.com/news/national/goa/feeder/default.rss" type="rss" />
+      <outline title="Navhind Times" xmlUrl="https://www.navhindtimes.in/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Goa Gov" xmlUrl="https://www.goa.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="IIT Goa" xmlUrl="https://www.iitgoa.ac.in/rss" type="rss" />
+      <outline title="NIT Goa" xmlUrl="https://www.nitgoa.ac.in/rss" type="rss" />
+    </outline>
+    <outline text="Culture" />
+    <outline text="Podcasts">
+      <outline title="INSPIRE to Reach Higher by Amey Hegde, Motivational Speaker &amp; Corporate Trainer, Goa, India" xmlUrl="https://anchor.fm/s/b5ce3c8/podcast/rss" type="rss" category="Education" />
+      <outline title="Yoga Teacher Training in Goa India" xmlUrl="https://rss.castbox.fm/everest/026ebd3ed06f41d69801b88efb9d6270.xml" type="rss" category="Arts" />
+      <outline title="The Freedom Podcast • By Harvest Ministries - Goa, India" xmlUrl="https://anchor.fm/s/de42890/podcast/rss" type="rss" category="Religion" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Volgger goa india " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGWbxUXSm2GKsOKjOlTJSzw" type="rss" />
+      <outline title="THE LION OF JUDAH CHURCH GOA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYMSfyJXZZ1KmQ1HeWIr_Iw" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTsxFqDedRaboTqxGOq0NBQ" type="rss" />
+      <outline title="ST. ANTHONY CAPUCHIN PROVINCE, GOA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNXVsAJ1EllVdFA4KyHf5vA" type="rss" />
+      <outline title="Bandwagon Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtxn0eHKc4k7Bj6mdbOkIUg" type="rss" />
+      <outline title="Shriniti • Artist | Goa - India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnPWu1wTUKRG7mC-xWteD-A" type="rss" />
+      <outline title="WONDERFUL WORLD OF GOLD DEPOSITS IN GOA, INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxOp3e4bCpD3y591xqYGreQ" type="rss" />
+      <outline title="Cliff de Souza. Mapusa, Goa, india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnfMjdtFD9sU44G8o1Z3JA" type="rss" />
+      <outline title="GOA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBGBHTVisKW6hJZfDwab1yA" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCE1WsYhYm4N7SlsRFZthfdg" type="rss" />
+      <outline title="flyboarding in goa India hydrofly" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0_BDdvXqwSqW_riTA_JzRw" type="rss" />
+      <outline title="GOA INDIA LOVER ♥" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuVvp5XrpSl5VPFyxLKNpuA" type="rss" />
+      <outline title="Elena Pletneva India Goa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpd7h9wgbXE_HQ_8AuBsoxw" type="rss" />
+      <outline title="Amani Events &amp; Productions (Goa,India)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr0BftzMS5oTWxsnrZtmXQQ" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSjY0H1QnIeTBgkEd4Vh04w" type="rss" />
+      <outline title="Chabad of Goa, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHx25u8q7O0hl415Ga_9r8g" type="rss" />
+      <outline title="Wedding car goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEOVKDIvcOHAdcUN_Gk2xmA" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSarBCrRxpNknRo1nds5JBQ" type="rss" />
+      <outline title="Goa India Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeH78QjGeUR7J_ln5DuQa6g" type="rss" />
+      <outline title="RIZWAN GOA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUNKdT8l1jrt7KuF5VjJoKw" type="rss" />
+      <outline title="Shiva Yoga Teacher Training, Goa, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSuZafOYA_9hjTn-JmCAOGw" type="rss" />
+      <outline title="Ivon guest house - goa india Petrov" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2K3R54dGxxjpcEYE5NY3WQ" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMu2agaLXPoD-7Tiki_a_og" type="rss" />
+      <outline title="kattar hindu Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQX2wJZ7Lcmi6opPqrEf7tg" type="rss" />
+      <outline title="Indian Mom GOA Life Rajshree " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcmCb5RwEogAD8WH2ku36CA" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCA8sLZKTyEIzMm2OwLK932Q" type="rss" />
+      <outline title="Vikeink Tattoos Goa India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVmlzfQsYCLkQ-Vv6xaGj6w" type="rss" />
+      <outline title="Goa India FT Vlog" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCo363Idou3XlLcP172Szvrg" type="rss" />
+      <outline title="Goa India Videos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa-HL0bQE_sVPJu5pVS76vg" type="rss" />
+      <outline title="Karan Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP68eNac4KKIlSBbtAZ0ydQ" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfcR-mVgB0WKvFdrT7bjW2w" type="rss" />
+      <outline title="THE WARDROBE GOA, INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwaLJn_sisTxDr7-7Zzjg7Q" type="rss" />
+      <outline title="GloryTv Goa - India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe3-zCIcVYCKR3ndO7_kg3A" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPS110qFKptdYUrcopEx4tw" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJDKYKkhkW5elDII_5xIpZA" type="rss" />
+      <outline title="Kevin Pinto | Wander With Kevin | Goa, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSXaJBPTMRaZUZHPfvGFPSg" type="rss" />
+      <outline title="Travel videos from kolkata Goa India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3cNiobGKDqDczGgEXm2y_g" type="rss" />
+      <outline title="HLI GOA India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChZGGX7XeDd2rJVJISy2kkA" type="rss" />
+      <outline title="GOA INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBXj4kxy8vrF8InUrVP8Rxw" type="rss" />
+      <outline title="Jenny Pereira Goa India 🇮🇳 " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsHfTciWR5PMiq75o_Q_G8A" type="rss" />
+      <outline title="Goa Paradise of India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg_4wmmamDxYUMs9-749P2w" type="rss" />
+      <outline title="Cornerstone Community Church Goa, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZa7WkPk_e3ZiMXIhP6mzHw" type="rss" />
+      <outline title="Yogi Trupta - Yoga Teacher Training in Goa, India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJRcjaV-SEfBDlL2bK5XN1Q" type="rss" />
+      <outline title="Goa-India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGkfEFFIoA8WgFXJV98HUWA" type="rss" />
+      <outline title="Goa-India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyKK7qUFD1XDnO0RXglhDJA" type="rss" />
+      <outline title="S &amp; S Tours &amp; Travels Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5owGbxQTosxybv9E3H4iIg" type="rss" />
+      <outline title="Goa India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQrvzNfbQZvW5CvPJ1bCW3A" type="rss" />
+      <outline title="GC PHOTOGRAPHY &amp; VIDEOGRAPHY - Colva, Goa, INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF62XcAKRwrSM-5F0V_HFpQ" type="rss" />
+      <outline title="Dr.Nandkumar Kamat, Scientist, Goa, India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQzdND3a7_tat4kxF9vv19A" type="rss" />
+      <outline title="mahima Goa India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIg-27ep7AJEiiSFvPWSXgw" type="rss" />
+    </outline>
+  </body>
+</opml>

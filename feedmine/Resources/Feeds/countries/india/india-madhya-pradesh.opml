@@ -4,13 +4,117 @@
     <title>Madhya Pradesh Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Times of India Bhopal" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670845.cms" type="rss" />
-        <outline title="Indian Express Bhopal" xmlUrl="https://indianexpress.com/section/cities/bhopal/feed/" type="rss" />
-        <outline title="Patrika MP" xmlUrl="https://www.patrika.com/madhya-pradesh/rss" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="MP Gov" xmlUrl="https://mp.gov.in/rss" type="rss" />
-      </outline>
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Times of India Bhopal" xmlUrl="https://timesofindia.indiatimes.com/rssfeeds/-2128670845.cms" type="rss" />
+      <outline title="Indian Express Bhopal" xmlUrl="https://indianexpress.com/section/cities/bhopal/feed/" type="rss" />
+      <outline title="Patrika MP" xmlUrl="https://www.patrika.com/madhya-pradesh/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="MP Gov" xmlUrl="https://mp.gov.in/rss" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="Podcasts">
+      <outline title="The Poisoner's Almanac" xmlUrl="https://api.riverside.fm/hosting/oMTkZA15.rss" type="rss" category="True Crime" />
+      <outline title="Short Stories In English And Hindi..From My Diary" xmlUrl="https://anchor.fm/s/34f9e294/podcast/rss" type="rss" category="Stories for Kids" />
+      <outline title="The Archaeology Podcast Network Feed" xmlUrl="https://feeds.simplecast.com/QNDcZ_dQ" type="rss" category="Education" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Express Elections" xmlUrl="https://www.spreaker.com/show/5007918/episodes/feed" type="rss" category="News" />
+      <outline title="Stories From India" xmlUrl="https://anchor.fm/s/e563890/podcast/rss" type="rss" category="History" />
+      <outline title="Mark &amp; Embark" xmlUrl="https://audioboom.com/channels/4980606.rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Marrying Your Passions: The DINK Travel and Adventure Podcast" xmlUrl="https://feeds.alitu.com/74503272" type="rss" category="Places &amp; Travel" />
+      <outline title="Return The Jewels" xmlUrl="https://anchor.fm/s/37f522c4/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Jansampark Madhya Pradesh" xmlUrl="https://anchor.fm/s/4bb7f1d8/podcast/rss" type="rss" category="Government" />
+      <outline title="What Makes Us Human" xmlUrl="https://anchor.fm/s/e77c93d0/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="La Criminoteca" xmlUrl="https://feeds.ivoox.com/feed_fg_f12092781_filtro_1.xml" type="rss" category="True Crime" />
+      <outline title="Let's Go Sightseeing!" xmlUrl="https://anchor.fm/s/5dc4c450/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Spirits with Crime" xmlUrl="https://feeds.redcircle.com/3f0638b5-2d6c-42b5-9a5a-e1be3d257c2f" type="rss" category="True Crime" />
+      <outline title="Northplace Church Podcast" xmlUrl="https://rss.buzzsprout.com/82203.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="A Significant Life" xmlUrl="https://anchor.fm/s/e6135678/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Sunday Service by Pray.com" xmlUrl="https://feeds.megaphone.fm/BVDWV9058871687" type="rss" category="Christianity" />
+      <outline title="Sustainability 101 Podcast" xmlUrl="https://anchor.fm/s/2428719c/podcast/rss" type="rss" category="Earth Sciences" />
+      <outline title="Travels that don't trip on the usual... with Beyonder Travel" xmlUrl="https://feeds.hubhopper.com/16683f29650ba116ab0de385b04df4e2.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="India Unveiled" xmlUrl="https://anchor.fm/s/374be81c/podcast/rss" type="rss" category="History" />
+      <outline title="Srijan Foundation Talks" xmlUrl="https://raw.githubusercontent.com/sanskrit-coders/rss-feeds/auto-built-feeds/en/SrijanFoundationTalks.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Times Of India Podcast" xmlUrl="https://anchor.fm/s/57b0b7e0/podcast/rss" type="rss" category="News" />
+      <outline title="Frontline Conversations" xmlUrl="https://feeds.megaphone.fm/frontlineconversations" type="rss" category="Daily News" />
+      <outline title="Gender &amp; Climate" xmlUrl="https://anchor.fm/s/7299ce20/podcast/rss" type="rss" category="Non-Profit" />
+      <outline title="GrassRoot Ohio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:493670139/sounds.rss" type="rss" category="News" />
+      <outline title="Love For Nature &quot;Biophilia&quot;" xmlUrl="https://anchor.fm/s/db2954d8/podcast/rss" type="rss" category="Pets &amp; Animals" />
+      <outline title="Destination Disaster" xmlUrl="https://feeds.acast.com/public/shows/6254b3a9b2bba4001432d5ee" type="rss" category="Earth Sciences" />
+      <outline title="Crime: the rest is history" xmlUrl="https://anchor.fm/s/4045c474/podcast/rss" type="rss" category="True Crime" />
+      <outline title="The DubSeven Podcast starring illfunk" xmlUrl="https://anchor.fm/s/7dbc27f8/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Leyendas Legendarias" xmlUrl="https://feeds.simplecast.com/TjkG2gz_" type="rss" category="Comedy" />
+      <outline title="Climate Emergency" xmlUrl="https://www.omnycontent.com/d/playlist/55de720e-0867-4b8a-9e29-ac8400e69720/bee84628-6837-4503-a5bb-ac88008b2fc3/003fb528-4439-4376-b195-ac88008b2fcd/podcast.rss" type="rss" category="Earth Sciences" />
+      <outline title="Evidence Locker True Crime" xmlUrl="https://audioboom.com/channels/4981342.rss" type="rss" category="True Crime" />
+      <outline title="Thinkers Dialog" xmlUrl="https://anchor.fm/s/8d91748/podcast/rss" type="rss" category="Books" />
+      <outline title="The Tales by Hazi" xmlUrl="https://anchor.fm/s/224e8118/podcast/rss" type="rss" category="Leisure" />
+      <outline title="A Brief Case" xmlUrl="https://feeds.acast.com/public/shows/659abd0ac41ac10016b5ab21" type="rss" category="True Crime" />
+      <outline title="Art Straight From Heart" xmlUrl="https://anchor.fm/s/48c8a3dc/podcast/rss" type="rss" category="Visual Arts" />
+      <outline title="Top 100 Largest Rivers in the World" xmlUrl="https://feeds.simplecast.com/e_jcLnEd" type="rss" category="Places &amp; Travel" />
+      <outline title="Hinduism" xmlUrl="https://anchor.fm/s/e0cb9fcc/podcast/rss" type="rss" category="Hinduism" />
+      <outline title="News at 2" xmlUrl="https://www.spreaker.com/show/6746855/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Indian Crime Story" xmlUrl="https://anchor.fm/s/2561892c/podcast/rss" type="rss" category="True Crime" />
+      <outline title="The Grace Cycle Show" xmlUrl="https://rss.buzzsprout.com/2503829.rss" type="rss" category="Christianity" />
+      <outline title="Learn With JJ" xmlUrl="https://anchor.fm/s/305db3a0/podcast/rss" type="rss" category="Courses" />
+      <outline title="Perseguidos, pero no olvidados" xmlUrl="https://radiomaria.es/feed/podcast/perseguidos-pero-no-olvidados/" type="rss" category="Christianity" />
+      <outline title="A Swig of History" xmlUrl="https://anchor.fm/s/4db822f0/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Extra Shot of Chai!" xmlUrl="https://rss.buzzsprout.com/2389396.rss" type="rss" category="Arts" />
+      <outline title="Latest Climate News" xmlUrl="https://feed.podbean.com/atouchofspace/feed.xml" type="rss" category="Earth Sciences" />
+      <outline title="Historical Humans" xmlUrl="https://anchor.fm/s/79cbd38c/podcast/rss" type="rss" category="History" />
+      <outline title="SBS Hindi" xmlUrl="https://feeds.sbs.com.au/sbs-hindi" type="rss" category="Daily News" />
+      <outline title="black magic specialist baba ji +91 8440828240  Ujjain Madhya Pradesh   india" xmlUrl="https://anchor.fm/s/10a88efa4/podcast/rss" type="rss" category="Religion" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Indore Physical Academy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC196qeFpI8slOwK8ZWjKndw" type="rss" />
+      <outline title="Unseen MP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnmjzbP9b6bmGX0A-asLzrg" type="rss" />
+      <outline title="Zee Madhya Pradesh Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ79XyTiFbb28NvhmFPZOiw" type="rss" />
+      <outline title="Patrika Madhya Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKrXAcPJPFewJ0z1G-GgjTw" type="rss" />
+      <outline title="NDTV MP Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj3NtH5ZNhmzo91MCDrUu9w" type="rss" />
+      <outline title="KSG IAS - KSG India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6sOW5RX9miothdP0MteJvQ" type="rss" />
+      <outline title="News18 MP Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBwc2cbPpvxNCNEI2-8YrqQ" type="rss" />
+      <outline title="Sampark Madhya Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfy8onJswPh0gbEHucsE5JQ" type="rss" />
+      <outline title="Apna Madhya pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtuceYuC_a6rkZjfU4cu4sA" type="rss" />
+      <outline title="High Court of Madhya Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCIVFftzmBqzBKoijOmIl1A" type="rss" />
+      <outline title="MP Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCH6v_SxtFLtfD4Iptx2WbNg" type="rss" />
+      <outline title="President of India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqrJfqXKFIBs4llVPipWppg" type="rss" />
+      <outline title="News India Madhya Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNVCPLKQ08mpact6YH_A9rg" type="rss" />
+      <outline title="Madhya Pradesh Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl2DCj3sY2pNoHWzP9NjrMg" type="rss" />
+      <outline title="Madhya Pradesh Postal Circle" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp_ne2z8ulecRxQOnHpLCug" type="rss" />
+      <outline title="ET Government" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSvh8VoBer4H2fctHyyJVeA" type="rss" />
+      <outline title="Madhya Pradesh The Heart of India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCejLd1M4W6nA2l5eCLZRs2g" type="rss" />
+      <outline title="Cnews Bharat Madhya Pradesh Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwFw2JwOqY6phWJ_891sQ_g" type="rss" />
+      <outline title="IBC24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBc13XYipnBIBE3Ff8QaaGg" type="rss" />
+      <outline title="NDTV India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CYT9gSNLevX5ey2_6CK0Q" type="rss" />
+      <outline title="india news madhya pradesh " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOqbvmSA3-49ZcPQO9bCn7A" type="rss" />
+      <outline title="MOC India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZRZhngdq6vbxZwe4KJx7Gw" type="rss" />
+      <outline title="Madhya Pradesh-India Air Pollution Awareness" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsm1K024zrtPyo_wLgVuj0g" type="rss" />
+      <outline title="Clean News MP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkzTvW96mwyton90o45-pmw" type="rss" />
+      <outline title="Jansampark MP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnUzqAzWIw4YIfLB6I1lahA" type="rss" />
+      <outline title="SAGAR TV NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0H9yv0_HwJLu_hVj6X3flw" type="rss" />
+      <outline title="Bansal News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL_3_9PhDyZXu1oexm8gtFQ" type="rss" />
+      <outline title="DDUGKY - Madhya Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqxTcLGt05FGe1utVBlfmdA" type="rss" />
+      <outline title="India Meteorological Department" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_qxTReoq07UVARm87CuyQw" type="rss" />
+      <outline title="Room to Read India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIqI1_PqXURuWy6WKHQLcyg" type="rss" />
+      <outline title="SEWA MP (Sewa Madhya Pradesh)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMPrc3xbtgsJ-YPf4G4leIA" type="rss" />
+      <outline title="Madhya Pradesh Weather" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkAEeOK40QrZ9QlPNMayr7w" type="rss" />
+      <outline title="Culture Department Madhya Pradesh " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkWzijGF7QUT1EwfmkEW-iw" type="rss" />
+      <outline title="Sahara Samay Madhya pradesh and Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaeWwdpBBqWfgHaoNBXRcSQ" type="rss" />
+      <outline title="DD Madhya Pradesh दूरदर्शन मध्य प्रदेश" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjL_oswCjWhUUZWnynQDRXw" type="rss" />
+      <outline title="MP HOLIDAYS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdXgvOj_s0LcaZ6UAcjbH3g" type="rss" />
+      <outline title="Directorate Of Sports MP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu2JWae16AEn9ivJ6MvekHA" type="rss" />
+      <outline title="Just In Madhya Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCnFyRTQDN-QyIDvNIAktYQ" type="rss" />
+      <outline title="BJP4MP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2bweOPUMFPUDiZqeRm5RvA" type="rss" />
+      <outline title="News 24 MP &amp; Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsJO8p6lnyjZkuLO2k0qFXA" type="rss" />
+      <outline title="Madhya Pradesh League" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-o1wNzuY0V8BmDLyilrzIA" type="rss" />
+      <outline title="AKSA International" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1pPGYkBq0uLu7-x6AHmcA" type="rss" />
+      <outline title="Indore Physical Academy - Fouji Factory" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdsgnTGjq69wpOzPnqNuebA" type="rss" />
+      <outline title="Aam Aadmi Party Madhya Pradesh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt2B5ou8_T7ZRhqzjTpjvaw" type="rss" />
+      <outline title="NATIONAL SOYBEAN RESEARCH INSTITUTE, INDORE, INDIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNdY5AsfPZqsCO8IxkAuSyQ" type="rss" />
+      <outline title="Madhya Pradesh India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV3Upp5x0FC1ax2sDKcRJzg" type="rss" />
+      <outline title="Vivekanand Tiwari The Traffic cop" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWdC5Q-VxLs2ps_BntXD-6g" type="rss" />
+      <outline title="Madhya Pradesh News- All India Radio" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZUdmAIjG3J8-sGHrPwjRhg" type="rss" />
+      <outline title="India News Madhya Pradesh Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVqsdXjbRSoDexnHvT0PffA" type="rss" />
+      <outline title="GottaDoIndia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn7Aza_I-ko5UmS4jXGD4yQ" type="rss" />
+    </outline>
+  </body>
+</opml>

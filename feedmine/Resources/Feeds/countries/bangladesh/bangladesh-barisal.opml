@@ -4,5 +4,38 @@
     <title>Barisal Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="History Obscura" xmlUrl="https://rss.amperwave.net/v2/feed/podcorn/61309fcf8c3396559bc7276a80c43b1f" type="rss" category="History" />
+      <outline title="Hot Date with Dan and Vicky" xmlUrl="https://rss.pdrl.fm/e55c60/feeds.libsyn.com/65688/rss/?redirect=false" type="rss" category="Film Reviews" />
+      <outline title="Odd &amp; Untold" xmlUrl="https://anchor.fm/s/9ca9c7b0/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Back Home" xmlUrl="https://feeds.castos.com/dq3x" type="rss" category="Music" />
+      <outline title="L'Odyssée d'Asie" xmlUrl="https://anchor.fm/s/65b93218/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Boys In The Cave" xmlUrl="https://rss.libsyn.com/shows/107352/destinations/581614.xml" type="rss" category="Islam" />
+      <outline title="The Thinking Muslim" xmlUrl="https://feeds.acast.com/public/shows/64fc8470defa1f0011d1a4d6" type="rss" category="Islam" />
+      <outline title="Srijan Foundation Talks" xmlUrl="https://raw.githubusercontent.com/sanskrit-coders/rss-feeds/auto-built-feeds/en/SrijanFoundationTalks.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Worth Asking: Gender, Politics, and South Asia" xmlUrl="https://anchor.fm/s/f7e7bd94/podcast/rss" type="rss" category="Politics" />
+      <outline title="Hoje na História - Opera Mundi" xmlUrl="https://feeds.transistor.fm/hoje-na-historia-opera-mundi" type="rss" category="History" />
+      <outline title="Energypreneurs" xmlUrl="https://rss.pdrl.fm/468495/feeds.libsyn.com/180665/rss/?redirect=false" type="rss" category="Entrepreneurship" />
+      <outline title="Blogging Theology" xmlUrl="https://feeds.redcircle.com/1796d08e-0a31-412d-b3fd-a14a489365ce" type="rss" category="Islam" />
+      <outline title="World Cricket Weekly TALK" xmlUrl="https://titangsg.podomatic.com/rss2.xml" type="rss" category="Sports" />
+      <outline title="HT Daily News Wrap" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD4383121932" type="rss" category="Daily News" />
+      <outline title="EPIDEMIC with Dr. Celine Gounder" xmlUrl="https://feeds.simplecast.com/foil5kfJ" type="rss" category="Medicine" />
+      <outline title="Wisden Cricket Weekly" xmlUrl="https://feeds.megaphone.fm/COMG4211358924" type="rss" category="Cricket" />
+      <outline title="Sushama Mane Kasegaon" xmlUrl="https://anchor.fm/s/2e0b4c0c/podcast/rss" type="rss" category="Books" />
+      <outline title="Reiseerlebnisse auf den schönsten Wasserwegen der Welt mit Thurgau Travel" xmlUrl="https://thurgautravel.podcastsounds.de/cms/rss/feed.xml" type="rss" category="Places &amp; Travel" />
+      <outline title="Food 101" xmlUrl="https://anchor.fm/s/114bfccb8/podcast/rss" type="rss" category="Food" />
+      <outline title="Pause Café 9H-12H" xmlUrl="https://feed.ausha.co/w0a6Vi3pXzRD" type="rss" category="Arts" />
+      <outline title="Khooni : The Crimes of India" xmlUrl="https://anchor.fm/s/177c4888/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Myths Your Teacher Hated Podcast" xmlUrl="https://rss.libsyn.com/shows/87684/destinations/428299.xml" type="rss" category="Comedy" />
+      <outline title="Seeking the Gospel Truth" xmlUrl="https://anchor.fm/s/11a1d504/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Coffee News Podcast" xmlUrl="https://anchor.fm/s/39d21d68/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Don Bosco, South Asia" xmlUrl="https://anchor.fm/s/21fd6314/podcast/rss" type="rss" category="News" />
+      <outline title="India Unchained" xmlUrl="https://anchor.fm/s/310a03bc/podcast/rss" type="rss" category="History" />
+      <outline title="Desi Horror" xmlUrl="https://anchor.fm/s/c9b60e30/podcast/rss" type="rss" category="True Crime" />
+      <outline title="News to Enjoy Over Coffee: The Official Coffee News® Podcast" xmlUrl="https://anchor.fm/s/edd7cb0/podcast/rss" type="rss" category="News" />
+      <outline title="RADIO SALESIAN 90.8 FM" xmlUrl="https://anchor.fm/s/3c361c80/podcast/rss" type="rss" category="News" />
+      <outline title="Ain't It Scary? with Sean &amp; Carrie" xmlUrl="https://feeds.megaphone.fm/aintitscary" type="rss" category="True Crime" />
+      <outline title="Indie Radio - News, Podcasts, Talk &amp; Analysis" xmlUrl="https://api.substack.com/feed/podcast/512652.rss" type="rss" category="Daily News" />
+    </outline>
+  </body>
 </opml>

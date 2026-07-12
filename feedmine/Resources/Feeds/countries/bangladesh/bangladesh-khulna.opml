@@ -4,5 +4,50 @@
     <title>Khulna Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="The Civil Engineering Academy Podcast" xmlUrl="https://anchor.fm/s/104f9600/podcast/rss" type="rss" category="Education" />
+      <outline title="Haunted Action" xmlUrl="https://anchor.fm/s/10c69b308/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Beard Before Wicket Podcast" xmlUrl="https://feeds.acast.com/public/shows/67c8bcc8ece4993ac73cefbd" type="rss" category="Cricket" />
+      <outline title="The Late Morning Program with Namarasa" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:18528872/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="The Sham Sharma Show" xmlUrl="https://rss.libsyn.com/shows/125174/destinations/744430.xml" type="rss" category="News Commentary" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="Worldview with Suhasini Haidar" xmlUrl="https://feeds.megaphone.fm/THGU5836655568" type="rss" category="News Commentary" />
+      <outline title="New Ventures Podcast" xmlUrl="https://anchor.fm/s/5037154/podcast/rss" type="rss" category="Technology" />
+      <outline title="Its Cricket Show" xmlUrl="https://feeds.hubhopper.com/a035d0e2afda26c6afbcc95d93e58cc1.rss?eps=all" type="rss" category="Sports" />
+      <outline title="Pilates Unfiltered" xmlUrl="https://rss.libsyn.com/shows/84873/destinations/405893.xml" type="rss" category="Health &amp; Fitness" />
+      <outline title="The World (of) Heritage" xmlUrl="https://anchor.fm/s/426c75cc/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Books and Authors" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD8783521454" type="rss" category="Society &amp; Culture" />
+      <outline title="81 All Out - A Cricket Podcast" xmlUrl="https://anchor.fm/s/949498c/podcast/rss" type="rss" category="Cricket" />
+      <outline title="Office Hours with The Capsule" xmlUrl="https://anchor.fm/s/3d0307e0/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Munira's Musings" xmlUrl="https://anchor.fm/s/37ede478/podcast/rss" type="rss" category="Marketing" />
+      <outline title="Travels that don't trip on the usual... with Beyonder Travel" xmlUrl="https://feeds.hubhopper.com/16683f29650ba116ab0de385b04df4e2.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Voicemails from History" xmlUrl="https://anchor.fm/s/4e77bbc4/podcast/rss" type="rss" category="History" />
+      <outline title="KPFA - Voices of the Middle East and North Africa" xmlUrl="https://kpfa.org/program/voices-of-the-middle-east-and-north-africa/feed/" type="rss" category="Politics" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
+      <outline title="Cricket with an Accent Podcast" xmlUrl="https://feed.podbean.com/cricketwithanaccent/feed.xml" type="rss" category="Cricket" />
+      <outline title="Travel with Amateur Traveler Podcast" xmlUrl="https://feeds.megaphone.fm/GLSS1857986358" type="rss" category="Places &amp; Travel" />
+      <outline title="New Books in Anthropology" xmlUrl="https://feeds.megaphone.fm/LIT5223487889" type="rss" category="Social Sciences" />
+      <outline title="New Books in South Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT2660294853" type="rss" category="Society &amp; Culture" />
+      <outline title="New Books in Environmental Studies" xmlUrl="https://feeds.megaphone.fm/LIT4982261480" type="rss" category="Natural Sciences" />
+      <outline title="New Books in Economics" xmlUrl="https://feeds.megaphone.fm/LIT6811763985" type="rss" category="Social Sciences" />
+      <outline title="New Books in Sociology" xmlUrl="https://feeds.megaphone.fm/LIT3382719913" type="rss" category="Social Sciences" />
+      <outline title="Raising Water podcast" xmlUrl="https://anchor.fm/s/831278ec/podcast/rss" type="rss" category="Government" />
+      <outline title="The HotSeat | Audio and pdf" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/theHotSeat_iTunesRssAudioPdfLatest300.xml" type="rss" category="Courses" />
+      <outline title="The #AskAbhijit Show" xmlUrl="https://anchor.fm/s/fd893660/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Cārvāka Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:208848919/sounds.rss" type="rss" category="News" />
+      <outline title="Left, Right &amp; Centre" xmlUrl="https://api.videos.ndtv.com/apis/podcast/index/client_key/ndtv-podcast-5d35e3e34a92df17d11d54e0ff241e8b?shows=125&amp;showfull=1&amp;media_type=audio&amp;extra_params=keywords,description" type="rss" category="News" />
+      <outline title="TheWaterChannel Podcast" xmlUrl="https://anchor.fm/s/a8eac2e0/podcast/rss" type="rss" category="News" />
+      <outline title="Latest 300 | LSE Public lectures and events | Video" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/publicLecturesAndEvents_iTunesRssVideoOnlyLatest300.xml" type="rss" category="Courses" />
+      <outline title="LSE: Public lectures and events" xmlUrl="https://www.lse.ac.uk/assets/richmedia/webFeeds/publicLecturesAndEvents_iTunesStore.xml" type="rss" category="Courses" />
+      <outline title="KPFA - Making Contact" xmlUrl="https://kpfa.org/program/making-contact/feed/" type="rss" category="Politics" />
+      <outline title="The Times Of India Podcast" xmlUrl="https://anchor.fm/s/57b0b7e0/podcast/rss" type="rss" category="News" />
+      <outline title="Leadership Insights With Prashant" xmlUrl="https://anchor.fm/s/693b4c28/podcast/rss" type="rss" category="Management" />
+      <outline title="Resilience Tracks" xmlUrl="https://anchor.fm/s/10c29810c/podcast/rss" type="rss" category="Natural Sciences" />
+      <outline title="🏏Armchair Cricket Podcast 🎧" xmlUrl="https://feeds.megaphone.fm/COMG1516365784" type="rss" category="Cricket" />
+      <outline title="Global Dispatches -- World News That Matters" xmlUrl="https://rss.libsyn.com/shows/41455/destinations/125334.xml" type="rss" category="Politics" />
+      <outline title="India Rising" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:516956223/sounds.rss" type="rss" category="News" />
+      <outline title="Be Here Now Network Guest Podcast" xmlUrl="https://rss.art19.com/be-here-now-network-guest-podcast" type="rss" category="Spirituality" />
+      <outline title="South Asia Chat" xmlUrl="https://feed.podbean.com/isas/feed.xml" type="rss" category="Courses" />
+    </outline>
+  </body>
 </opml>

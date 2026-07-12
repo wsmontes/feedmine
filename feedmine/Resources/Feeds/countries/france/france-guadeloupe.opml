@@ -4,8 +4,60 @@
     <title>Guadeloupe Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="France Info Guadeloupe" xmlUrl="https://la1ere.francetvinfo.fr/guadeloupe/rss" type="rss" />
-      </outline>
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="France Info Guadeloupe" xmlUrl="https://la1ere.francetvinfo.fr/guadeloupe/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="100 Least Populated Countries" xmlUrl="https://feeds.simplecast.com/srOAq_ss" type="rss" category="Education" />
+      <outline title="Géosciences et environnement" xmlUrl="https://podcast.unil.ch/podcast/fgse/gse.xml" type="rss" category="Education" />
+      <outline title="Wikipedia for Sleep" xmlUrl="https://feeds.megaphone.fm/bedtimewithwikipedia" type="rss" category="Education" />
+      <outline title="You're Dead to Me" xmlUrl="https://podcasts.files.bbci.co.uk/p07mdbhg.rss" type="rss" category="History" />
+      <outline title="New Books in Medicine" xmlUrl="https://feeds.megaphone.fm/LIT3047839729" type="rss" category="Science" />
+      <outline title="Outre-Mer" xmlUrl="https://apis.france24.com/products/get_product/f24_getpodcast_by_nid?token_application=33d60288-7e20-11e9-884b-005056a9c687&amp;program.entrepriseId=WBMZ72111-F24-FR-20210311" type="rss" category="News" />
+      <outline title="C pas si loin" xmlUrl="https://api.octopus.saooti.com/rss/emission/14545.rss" type="rss" category="News Commentary" />
+      <outline title="France-Antilles" xmlUrl="https://feed.ausha.co/b5jwvCmv6RXA" type="rss" category="Daily News" />
+      <outline title="NTD France" xmlUrl="https://anchor.fm/s/98556b10/podcast/rss" type="rss" category="News" />
+      <outline title="Marceau refait l'info" xmlUrl="https://aod.nrjaudio.fm/xml/150.xml" type="rss" category="Comedy" />
+      <outline title="SOLIDAYITI" xmlUrl="https://anchor.fm/s/e05bcbac/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="La France Baladeuse : voyage dans l'Hexagone" xmlUrl="https://feed.ausha.co/BMEQqCgjrg8m" type="rss" category="Places &amp; Travel" />
+      <outline title="5min En Chine PRT" xmlUrl="https://www.spreaker.com/show/5319719/episodes/feed" type="rss" category="Comedy" />
+      <outline title="CORPORATE HARD TALK" xmlUrl="https://anchor.fm/s/2748bd0/podcast/rss" type="rss" category="Business" />
+      <outline title="Impact Basket sur CHOQFM 105.1" xmlUrl="https://feeds.transistor.fm/impact-basket-sur-choqfm-105-1" type="rss" category="Basketball" />
+      <outline title="Teachers Talk Radio" xmlUrl="https://feed.podbean.com/teacherstalkradio/feed.xml" type="rss" category="Education" />
+      <outline title="LE YOLO SHOW" xmlUrl="https://anchor.fm/s/eeb0c838/podcast/rss" type="rss" category="Entertainment News" />
+      <outline title="Matin Gagnant" xmlUrl="https://feeds.transistor.fm/matin-gagnant" type="rss" category="News" />
+      <outline title="ACSEO Tour du Monde" xmlUrl="https://anchor.fm/s/bbcccf48/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Oliwon Lakarayib, une plateforme numérique dédiée à la Caraïbe" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:766417891/sounds.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="L2P Convention" xmlUrl="https://feed.ausha.co/B1XrZh1YVLqz" type="rss" category="Arts" />
+      <outline title="ONZMTL" xmlUrl="https://anchor.fm/s/101367494/podcast/rss" type="rss" category="Music" />
+      <outline title="On se pause et on cause" xmlUrl="https://feed.ausha.co/M9GlrsLQJW66" type="rss" category="Politics" />
+      <outline title="Pour la Gloire de l’Eternel , Dieu des armées" xmlUrl="https://anchor.fm/s/398c1b88/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Choses à Savoir ACTU" xmlUrl="https://feeds.acast.com/public/shows/6605b4637935b00016aeb8da" type="rss" category="News" />
+      <outline title="La chronique d'Anthony Morel" xmlUrl="https://feeds.simplecast.com/_heHcjfR" type="rss" category="News" />
+      <outline title="Throwback Thursday Cold cases At The EGO" xmlUrl="https://www.spreaker.com/show/5373963/episodes/feed" type="rss" category="Comedy Fiction" />
+      <outline title="Jazz Bazar" xmlUrl="https://podcasts.ckiafm.org/emission/33/" type="rss" category="Music" />
+      <outline title="Pivô Podcasts" xmlUrl="https://anchor.fm/s/5b8bf640/podcast/rss" type="rss" category="Visual Arts" />
+      <outline title="100 Most Populated Countries" xmlUrl="https://feeds.simplecast.com/6YTxMZvo" type="rss" category="Places &amp; Travel" />
+      <outline title="L'Europe au fil de l'eau" xmlUrl="https://feeds.acast.com/public/shows/608eafc0e1a9de08141464e2" type="rss" category="Government" />
+      <outline title="La drôle de minute - Karine Dubernet" xmlUrl="https://aod.nrjaudio.fm/xml/200.xml" type="rss" category="Comedy" />
+      <outline title="R22 Tout-Monde" xmlUrl="https://www.r22.fr/podcast" type="rss" category="Arts" />
+      <outline title="Dial It Back Or Die" xmlUrl="https://rss.buzzsprout.com/174244.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Afropop Worldwide" xmlUrl="http://feeds.feedburner.com/afropop/podcast" type="rss" category="Music" />
+      <outline title="Dans les coulisses des marchés publics (d'Outre-mer)" xmlUrl="https://feed.ausha.co/VLW8EcgJWzZA" type="rss" category="Entrepreneurship" />
+      <outline title="ArtMuse" xmlUrl="https://feeds.simplecast.com/XInGBiYf" type="rss" category="Visual Arts" />
+      <outline title="Slomad Stories" xmlUrl="https://anchor.fm/s/10e627b40/podcast/rss" type="rss" category="Places &amp; Travel" />
+      <outline title="Getaway Diaries" xmlUrl="https://www.spreaker.com/show/6890008/episodes/feed" type="rss" category="Places &amp; Travel" />
+      <outline title="The Irish Tech News Podcast" xmlUrl="https://anchor.fm/s/46bd0f88/podcast/rss" type="rss" category="Technology" />
+      <outline title="SPORTALLK" xmlUrl="https://feeds.megaphone.fm/COMG1362761538" type="rss" category="Sports" />
+      <outline title="Not Trivial" xmlUrl="https://anchor.fm/s/dfb66324/podcast/rss" type="rss" category="History" />
+      <outline title="FlexActu" xmlUrl="https://anchor.fm/s/46c23e7c/podcast/rss" type="rss" category="News Commentary" />
+      <outline title="Casser Les Codes : pour avancer plus loin ensemble" xmlUrl="https://feed.ausha.co/bVRkecwJkL7V" type="rss" category="Self-Improvement" />
+      <outline title="SOÛLKREÔL" xmlUrl="https://anchor.fm/s/2e663e78/podcast/rss" type="rss" category="Performing Arts" />
+      <outline title="The Blind Cricket Club" xmlUrl="https://anchor.fm/s/ce262b8/podcast/rss" type="rss" category="Sports" />
+      <outline title="Living Church of God - Audio Sermon Library" xmlUrl="http://feeds2.feedburner.com/LivingChurchOfGod-AudioSermonLibrary" type="rss" category="Christianity" />
+      <outline title="Urban Hit Réunion : Ça D'Rap" xmlUrl="https://feeds.podcastics.com/podcastics/podcasts/rss/8165_dbb81cdecd2038ca53d276fd4436849c.rss" type="rss" category="Music Interviews" />
+      <outline title="The Early Morning Sports Talk Podcast" xmlUrl="https://anchor.fm/s/fa3c794/podcast/rss" type="rss" category="Sports" />
+    </outline>
+  </body>
+</opml>

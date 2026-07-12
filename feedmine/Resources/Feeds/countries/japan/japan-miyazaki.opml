@@ -4,8 +4,19 @@
     <title>Miyazaki Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Miyazaki Nichinichi" xmlUrl="https://www.the-miyanichi.co.jp/rss/" type="rss" />
-      </outline>
-      <outline text="Politics" /></body>
-    </opml>
+    <outline text="News">
+      <outline title="Miyazaki Nichinichi" xmlUrl="https://www.the-miyanichi.co.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Podcasts">
+      <outline title="Shin Buddhist Sangha Services" xmlUrl="https://feed.podbean.com/takashimiyaji/feed.xml" type="rss" category="Buddhism" />
+      <outline title="Armunn Righ - Contemplations, Conversations and Podcasts" xmlUrl="https://anchor.fm/s/c7a2018/podcast/rss" type="rss" category="Spirituality" />
+      <outline title="The Next Best Picture Podcast" xmlUrl="https://rss.introcast.io/1087678387/feeds.megaphone.fm/nextbestpicture" type="rss" category="TV &amp; Film" />
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="Uncanny Japan" xmlUrl="https://feeds.megaphone.fm/uncannyjapan" type="rss" category="Society &amp; Culture" />
+      <outline title="Life in 2 Languages" xmlUrl="https://anchor.fm/s/f62b4e94/podcast/rss" type="rss" category="Personal Journals" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="MLS Fantasy Insider" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:128021404/sounds.rss" type="rss" category="Sports" />
+    </outline>
+  </body>
+</opml>

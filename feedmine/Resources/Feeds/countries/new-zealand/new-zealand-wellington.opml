@@ -4,5 +4,8 @@
     <title>Wellington Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Hope Northern Hills Church" xmlUrl="https://anchor.fm/s/d347dd5c/podcast/rss" type="rss" category="Religion" />
+    </outline>
+  </body>
 </opml>

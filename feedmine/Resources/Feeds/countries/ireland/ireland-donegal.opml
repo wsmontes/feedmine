@@ -4,5 +4,10 @@
     <title>Donegal Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Donegal GAA Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/2798843f-7b1c-4bf3-ad76-b3e90035255e/23b0d362-26e8-48ed-8aca-b3ed0139bafc/476c312d-f691-4df0-be2e-b3ed0139bb0c/podcast.rss" type="rss" category="Sports" />
+      <outline title="Donegal Archives - Ireland Family Vacations" xmlUrl="https://irelandfamilyvacations.com/category/regions-and-counties/north-west-ireland/donegal/feed" type="rss" category="Society" />
+      <outline title="Interview Archives - Donegal Rapeseed Oil - Donegal Ireland" xmlUrl="https://donegalrapeseedoil.ie/interview/feed" type="rss" />
+    </outline>
+  </body>
 </opml>

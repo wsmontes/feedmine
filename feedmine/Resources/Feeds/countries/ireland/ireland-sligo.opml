@@ -4,5 +4,8 @@
     <title>Sligo Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="Podcasts">
+      <outline title="Sligo Archives - Ireland Family Vacations" xmlUrl="https://irelandfamilyvacations.com/category/regions-and-counties/north-west-ireland/sligo/feed" type="rss" category="Society" />
+    </outline>
+  </body>
 </opml>

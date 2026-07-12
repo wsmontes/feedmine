@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Corrientes Feeds</title></head>
+  <head>
+    <title>Corrientes Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Gobierno de Corrientes" xmlUrl="https://www.corrientes.gob.ar/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="Podcasts">
+      <outline title="25deMMA - Radio Sudamericana - Corrientes Argentina" xmlUrl="https://anchor.fm/s/6e10da9c/podcast/rss" type="rss" category="Sports" />
+    </outline>
+  </body>
+</opml>

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Mendoza Feeds</title></head>
+  <head>
+    <title>Mendoza Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Gobierno de Mendoza" xmlUrl="https://www.mendoza.gov.ar/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="Podcasts">
+      <outline title="0 Mendoza Argentina" xmlUrl="https://www.spreaker.com/show/6746680/episodes/feed" type="rss" category="Arts" />
+    </outline>
+  </body>
+</opml>

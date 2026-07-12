@@ -4,11 +4,41 @@
     <title>Okinawa Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Ryukyu Shimpo" xmlUrl="https://ryukyushimpo.jp/rss/" type="rss" />
-      </outline>
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="Univ of the Ryukyus" xmlUrl="https://www.u-ryukyu.ac.jp/rss/" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News">
+      <outline title="Ryukyu Shimpo" xmlUrl="https://ryukyushimpo.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="Univ of the Ryukyus" xmlUrl="https://www.u-ryukyu.ac.jp/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="iYASASA RADIO - イヤササ レディオ- 英語×沖縄ウチナーグチPodcast" xmlUrl="https://anchor.fm/s/588b2ce0/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Japan Top 10 (日本のトップ10) JPOP HITS!" xmlUrl="https://feeds.redcircle.com/4a94e1fd-8ac5-47b1-88fe-3854a6de240a" type="rss" category="Music" />
+      <outline title="jENI NO PIKA PIKA NIHONGO 日本語" xmlUrl="https://anchor.fm/s/6c00c398/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
+      <outline title="林老獅的行腳~Neo、KO 輕鬆聊！" xmlUrl="https://feed.firstory.me/rss/user/cl5jahgrw02mh01tmhs20hamk" type="rss" category="Places &amp; Travel" />
+      <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
+      <outline title="JoshTheCollins Podcast" xmlUrl="https://anchor.fm/s/3d06fa08/podcast/rss" type="rss" category="Leisure" />
+      <outline title="Audio Japan | Learning Japan with you" xmlUrl="https://anchor.fm/s/f02b1bc8/podcast/rss" type="rss" category="Courses" />
+      <outline title="Living Miracles Community" xmlUrl="https://www.spreaker.com/show/1242364/episodes/feed" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Rintaro Teaches Japanese" xmlUrl="https://anchor.fm/s/8bae25f0/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Beyond Huaxia: A College History of China and Japan" xmlUrl="https://feed.podbean.com/beyondhuaxia/feed.xml" type="rss" category="Education" />
+      <outline title="Eddy LIVE Podcast (ELP)" xmlUrl="https://feed.pod.co/eddy-live" type="rss" category="Personal Journals" />
+      <outline title="朝日新聞AJW 英語ニュース（The Asahi Shimbun Asia &amp; Japan Watch）" xmlUrl="https://www.arukiki.jp/asahi_01/ajw_lang_en/feed.rss" type="rss" category="Daily News" />
+      <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
+      <outline title="White Noise" xmlUrl="https://anchor.fm/s/168cbfd4/podcast/rss" type="rss" category="TV &amp; Film" />
+      <outline title="Neutrality Studies" xmlUrl="https://anchor.fm/s/fe578920/podcast/rss" type="rss" category="Politics" />
+      <outline title="J-CATS Japanese Contextual and Theological Studies" xmlUrl="https://anchor.fm/s/c72e39a8/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Trash Taste Podcast" xmlUrl="https://feeds.megaphone.fm/trashtaste" type="rss" category="Animation &amp; Manga" />
+      <outline title="Chinese Whispers" xmlUrl="https://feeds.acast.com/public/shows/68358ff2998551779f248a35" type="rss" category="Politics" />
+      <outline title="Best of the Spectator" xmlUrl="https://access.acast.com/rss/68358fb5e1abc4be6b0308eb/default" type="rss" category="News Commentary" />
+      <outline title="The WW2 Podcast" xmlUrl="https://rss.libsyn.com/shows/65366/destinations/260446.xml" type="rss" category="History" />
+      <outline title="Japanglish Chat" xmlUrl="https://anchor.fm/s/40fb8f20/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="Life in 2 Languages" xmlUrl="https://anchor.fm/s/f62b4e94/podcast/rss" type="rss" category="Personal Journals" />
+      <outline title="Live in Tokyo with Max D. Capo" xmlUrl="https://podcasts.apple.com/us/podcast/live-in-tokyo-with-max-d-capo/id1723641269" type="rss" category="Places &amp; Travel" />
+      <outline title="The Horror of Babylon" xmlUrl="http://feeds.feedburner.com/TheHorrorOfBabylon" type="rss" category="TV &amp; Film" />
+      <outline title="Vidgle" xmlUrl="http://www.vidgle.tv/feed/" type="rss" category="Society &amp; Culture" />
+      <outline title="MOTTO Podcast" xmlUrl="https://anchor.fm/s/3cc171a4/podcast/rss" type="rss" category="Society &amp; Culture" />
+    </outline>
+  </body>
+</opml>

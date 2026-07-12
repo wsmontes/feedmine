@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0"><head><title>Ningxia Feeds</title></head><body>
-      <outline text="News">
-        <outline title="Ningxia Daily" xmlUrl="https://www.nxdaily.cn/rss/" type="rss" />
-      </outline>
-      <outline text="Politics">
-        <outline title="Ningxia Gov" xmlUrl="http://www.nx.gov.cn/rss" type="rss" />
-      </outline></body>
-    </opml>
+<opml version="1.0">
+  <head>
+    <title>Ningxia Feeds</title>
+  </head>
+  <body>
+    <outline text="News">
+      <outline title="Ningxia Daily" xmlUrl="https://www.nxdaily.cn/rss/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Ningxia Gov" xmlUrl="http://www.nx.gov.cn/rss" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
+    </outline>
+    <outline text="YouTube">
+      <outline title="Views of China 环游中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsr5FprG11f5dpMmt6SvABA" type="rss" />
+      <outline title="Yepeng sun" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8HH0bH290PND03CHT_XmPQ" type="rss" />
+      <outline title="佳景看中国A good view of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdUlWL9LMhFpkw06rFxolog" type="rss" />
+      <outline title="Chinese Culture Center Yangon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbmbJGOf8UYe2Rk6VTR4MKQ" type="rss" />
+      <outline title="Nick in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEgst8GqXAg3dCfDvJCiVYw" type="rss" />
+      <outline title="佳非樂隊Jiāfei" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjW56l8vk3jfOO5YpAbwviw" type="rss" />
+      <outline title="Lullaby Walks 4K" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9PIY3ixP1kU9dXfJhzw2zg" type="rss" />
+      <outline title="飞云之上" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyIL1FzFvfdZiSECfAE3q0g" type="rss" />
+      <outline title="Chinalysis" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEvwchFY1nztDW3HQVk-HeQ" type="rss" />
+      <outline title="野风道" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIY1v_77I7i2Y29LBalINVg" type="rss" />
+      <outline title="Abroad in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-ByLJ5cLWEceumcVUIlSDA" type="rss" />
+      <outline title="China Cultural Center in Bangkok" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoYcdBbsfcnEOaWH12oDPHw" type="rss" />
+      <outline title="China National Tourism Administration" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF2wfFE6n4L0PYamzPLlu1g" type="rss" />
+      <outline title="NatureQuest" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKhwu0123j020rSLNqXbzdQ" type="rss" />
+      <outline title="China silkroadtrips" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSeUNAIVC_xcuSYwOolqAaA" type="rss" />
+      <outline title="RoadTrip | China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO2Didumj1w6uvidK0kSy9g" type="rss" />
+      <outline title="Salix Liu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCon8V_ENYmkNBR0ZpChgBJg" type="rss" />
+      <outline title="宁夏卫视官方频道 Ningxia TV Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP1HvpLBR1eOtPkbUF1gxMw" type="rss" />
+      <outline title="Destination China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-rcj58bnn74ENcdOqPu95A" type="rss" />
+      <outline title="China National Tourist Office Sydney" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzCuc_hgG6XQhBNIhUWkCsw" type="rss" />
+      <outline title="China travels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDAhFIRM6YOMa1imSLPyOSg" type="rss" />
+      <outline title="Dr.Raihan Hasan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEEoKRkj35UD1GSWpbhYLvg" type="rss" />
+      <outline title="China Cultural Center in Copenhagen" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0PX4ZSRcUIaNaq1VV6Z-cw" type="rss" />
+      <outline title="Sean King" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHk4vNCBFxQkyNBkNEYtNLA" type="rss" />
+      <outline title="乡野小土豆" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3EL91-Zc_RbrKb7FrIRS8A" type="rss" />
+      <outline title="Maltaccc Maltaccc" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxPTA2dQPTOO6gBQK4v8pgA" type="rss" />
+      <outline title="Zi-China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC64N97D9zy9QKpt_cJ8oSxg" type="rss" />
+      <outline title="梅日一品 Flavors of May" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4v1qnThfWmwoZJUX6hZoQw" type="rss" />
+      <outline title="cccseoul首尔中国文化中心" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwu2haxJectMwcVqST3AH0w" type="rss" />
+      <outline title="Jingcheng_china_travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCizu-vyTQJhD42K5T1tagiA" type="rss" />
+      <outline title="浙江卫视【奔跑吧】官方频道---欢迎订阅" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfj8FsoiPFHn1gZMJaeLEDg" type="rss" />
+      <outline title="China Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCogW5Fdl5YaMM-rxanrNwiw" type="rss" />
+      <outline title="Jason Smith - American Living in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzAlVBRL2-2TrL-8MFvBvzg" type="rss" />
+      <outline title="cnto cnto (중국주서울관광사무소)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLv7V985YSlFD1dWiKtWQbQ" type="rss" />
+      <outline title="Zhiruo Zhou - Topic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCarwmkvkIAK7wyfvM6wYLCQ" type="rss" />
+      <outline title="Elena's New Diary" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCO_nwiTcmRZA_8wD8pPGNeg" type="rss" />
+      <outline title="懂事长来了" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt9ZYbGS-khiVM51P7lvZrQ" type="rss" />
+      <outline title="栾江" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFH85N9T4m5nuzzB9qjSwwg" type="rss" />
+      <outline title="Study abroad in China中国留学行" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9udThBlvs2ELWladKd3xgQ" type="rss" />
+      <outline title="EAZILINE (Study in China)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdFHhUsHRvuYsydAh6gBEUw" type="rss" />
+      <outline title="CN_Zhanbo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrb1LBCoQGp3_ce7Ofq3t8Q" type="rss" />
+      <outline title="Northwest China Cuisine 回味宁夏" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7VHXTPXdprCCyBDdSpRZfQ" type="rss" />
+      <outline title="Linda" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCATLadASkB7rxBXAyJIIfMw" type="rss" />
+      <outline title="Metaverse of Ningxia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbnHCgsQHFf_bkjyWofafkQ" type="rss" />
+      <outline title="Chinese flavor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAZsd5_IvzzWWPM-HEzKTPw" type="rss" />
+      <outline title="赏心悦目中国风" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrZpCS8sHZv1eTp_9fPrIHA" type="rss" />
+      <outline title="Centro Cultural de China en Madrid" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSqYlhFWwnncH-3X5mQQtLg" type="rss" />
+      <outline title="China National Culture Parks" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWJB1DFG9nUTMQQXJIolKmA" type="rss" />
+      <outline title="Mr.XiaoBai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZgYs1v866sjcz3notpAQsg" type="rss" />
+      <outline title="晓风残月" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnpc_VJbb_JqWwee8045hFQ" type="rss" />
+    </outline>
+  </body>
+</opml>
