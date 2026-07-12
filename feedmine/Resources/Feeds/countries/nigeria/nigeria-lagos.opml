@@ -4,5 +4,8 @@
     <title>Lagos Feeds</title>
   </head>
   <body>
-</body>
+    <outline text="YouTube">
+      <outline title="Ludo Liu " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7COoK0H6PqlKFHPqktmkGQ" type="rss" />
+    </outline>
+  </body>
 </opml>
