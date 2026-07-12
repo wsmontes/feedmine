@@ -29,7 +29,13 @@ struct FeedItemCardView: View, Equatable {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     private var isLandscape: Bool { horizontalSizeClass == .regular }
-    private var hasImage: Bool { (item.bestImageURL ?? item.imageURL) != nil && !imageLoadFailed }
+    /// Structural: does this item have an image URL at all? Drives whether the
+    /// card reserves a hero/thumb slot. Deliberately does NOT depend on
+    /// `imageLoadFailed` — a failed load must NOT remove the slot and collapse
+    /// the card, or content below jumps. On failure the slot stays; the image
+    /// area just shows the placeholder. (Feed is sacred: layout never shifts
+    /// from async image state.)
+    private var hasImage: Bool { (item.bestImageURL ?? item.imageURL) != nil }
 
     private var titleFont: Font {
         switch fontSize {
@@ -57,7 +63,6 @@ struct FeedItemCardView: View, Equatable {
         }
         .opacity(appeared ? (isRead ? 0.92 : 1) : 0)
         .offset(y: appeared ? 0 : 16)
-        .animation(.spring(response: 0.3, dampingFraction: 0.8), value: imageLoadFailed)
         .onAppear {
             if isFirstAppearance {
                 withAnimation(.easeOut(duration: 0.4).delay(appearDelay)) {

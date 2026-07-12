@@ -88,20 +88,18 @@ final class Reservoir {
         guard visibleItems.count > Self.maxBuffer else { return }
         let excess = visibleItems.count - Self.maxBuffer
         let toDiscard = min(Self.discardBatchSize, excess)
-        let safeStart = max(0, currentVisibleIndex - Self.safetyZoneRadius)
-        let aboveToDiscard = min(toDiscard, safeStart)
-        if aboveToDiscard > 0 {
-            visibleItems.removeFirst(aboveToDiscard)
-        }
-        let remaining = toDiscard - aboveToDiscard
-        if remaining > 0 && visibleItems.count > Self.maxBuffer {
-            let safeEnd = min(visibleItems.count, currentVisibleIndex + Self.safetyZoneRadius)
-            if safeEnd < visibleItems.count {
-                let belowToDiscard = min(remaining, visibleItems.count - safeEnd)
-                if belowToDiscard > 0 {
-                    visibleItems.removeLast(belowToDiscard)
-                }
-            }
+        // Only ever trim from the TAIL, and only items safely BELOW the viewport
+        // (beyond the safety zone). Removing from the HEAD of a
+        // ScrollView+LazyVStack shifts the scroll offset and makes the feed jump
+        // under the reader — never do that. Tail items are ahead of the user and
+        // get re-supplied from the reservoir when scrolled into. The head (already
+        // seen) grows with scroll depth; that memory cost is accepted so that what
+        // the user has scrolled past never moves. (Feed is sacred.)
+        let safeEnd = min(visibleItems.count, currentVisibleIndex + Self.safetyZoneRadius)
+        guard safeEnd < visibleItems.count else { return }
+        let belowToDiscard = min(toDiscard, visibleItems.count - safeEnd)
+        if belowToDiscard > 0 {
+            visibleItems.removeLast(belowToDiscard)
         }
     }
 

@@ -3,9 +3,10 @@ import SwiftUI
 struct SettingsSheetView: View {
     @Environment(FeedLoader.self) private var loader
     @Environment(LocaleManager.self) private var localeManager
-    @AppStorage("showDebugBar") private var showDebugBar = false
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = true
     @AppStorage("prefetchImages") private var prefetchImages = true
     @AppStorage("nightMode") private var nightMode = false
+    @AppStorage("filterAutoExpire") private var filterAutoExpire = false
     @AppStorage("fontSize") private var fontSize = FontSize.medium.rawValue
     @AppStorage("circadianPaletteOn") private var circadianPaletteOn = true
     @AppStorage("paletteFamily") private var paletteFamilyRaw = PaletteFamily.warmEarth.rawValue
@@ -124,14 +125,17 @@ struct SettingsSheetView: View {
                         .tint(.blue)
                 }
 
-                Section("Reading") {
+                Section {
                     Toggle("Night Mode", systemImage: "moon.stars.fill", isOn: $nightMode)
                         .tint(.orange)
-                }
-
-                // MARK: - Debug
-                Section("Debug") {
-                    Toggle("Show Debug Status Bar", isOn: $showDebugBar)
+                    Toggle("Auto-clear Filters", systemImage: "clock.arrow.2.circlepath", isOn: $filterAutoExpire)
+                        .tint(.blue)
+                } header: {
+                    Text("Reading")
+                } footer: {
+                    if filterAutoExpire {
+                        Text("Category, mood, and content type filters reset after 4 hours away so you never open to an empty feed.")
+                    }
                 }
 
                 // MARK: - Reading Data
@@ -228,6 +232,11 @@ struct SettingsSheetView: View {
                         Text("Sources"); Spacer()
                         Text("\(loader.sourceCount) feeds · \(loader.opmlFileCount) files").foregroundStyle(.secondary)
                     }
+                    Button {
+                        hasSeenOnboarding = false
+                    } label: {
+                        Label("Re-watch Intro", systemImage: "sparkles")
+                    }
                 }
 
                 Section {
@@ -238,7 +247,7 @@ struct SettingsSheetView: View {
                         Label("FeedKit on GitHub", systemImage: "link")
                     }
                 } header: { Text("Feedback") } footer: {
-                    Text("Feedmine is an independent RSS reader built for curious minds.")
+                    Text("Feedmine is an independent, open-source RSS reader. No algorithms, no ads, no accounts — just stories from around the world, on your terms.")
                 }
             }
             .navigationTitle("Settings")

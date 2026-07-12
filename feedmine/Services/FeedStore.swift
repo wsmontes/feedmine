@@ -456,16 +456,43 @@ final class FeedStore {
 
     // MARK: - Filter
 
+    /// Filters expire after 4 hours of inactivity so the user doesn't
+    /// open the app to an empty or confusing feed. Cleared on restore if stale.
+    private static let filterExpirySeconds: TimeInterval = 14400  // 4 hours
+
     private func persistFilters() {
         let d = UserDefaults.standard
         d.set(activeRegion, forKey: "filterRegion")
         d.set(activeCategory, forKey: "filterCategory")
         d.set(activeContentType.rawValue, forKey: "filterContentType")
         d.set(activeMood.rawValue, forKey: "filterMood")
+        // Timestamp so we can expire stale filters on next launch
+        d.set(Date().timeIntervalSince1970, forKey: "filterSetAt")
     }
 
     private func restoreFilters() {
         let d = UserDefaults.standard
+        let hasActiveFilters = d.string(forKey: "filterRegion") != nil
+            || d.string(forKey: "filterCategory") != nil
+            || (d.string(forKey: "filterContentType").flatMap(FeedLoader.ContentType.init(rawValue:)) ?? .all) != .all
+            || (d.string(forKey: "filterMood").flatMap(FeedLoader.MoodFilter.init(rawValue:)) ?? .all) != .all
+
+        // Expire stale filters — opt-in only (off by default).
+        // When enabled, filters auto-clear after 4h so the user never
+        // opens the app to an empty or confusing feed.
+        if hasActiveFilters && UserDefaults.standard.bool(forKey: "filterAutoExpire") {
+            let setAt = d.double(forKey: "filterSetAt")
+            let elapsed = Date().timeIntervalSince1970 - setAt
+            if setAt > 0 && elapsed > Self.filterExpirySeconds {
+                d.removeObject(forKey: "filterRegion")
+                d.removeObject(forKey: "filterCategory")
+                d.removeObject(forKey: "filterContentType")
+                d.removeObject(forKey: "filterMood")
+                d.removeObject(forKey: "filterSetAt")
+                return
+            }
+        }
+
         activeRegion = d.string(forKey: "filterRegion")
         activeCategory = d.string(forKey: "filterCategory")
         if let raw = d.string(forKey: "filterContentType"),
