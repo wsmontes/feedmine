@@ -113,3 +113,57 @@ def test_country_profile_serialization():
     assert d["country"] == "test"
     assert d["sources"]["deezer"]["priority"] == 1
     assert "itunes" in d["disabled_sources"]
+
+
+# ---- GLOBAL_PROFILE tests ----
+# NOTE: importlib is required because 'global' is a Python keyword,
+# so 'from profiles.global import ...' is a SyntaxError at parse time.
+
+import importlib
+_global_mod = importlib.import_module(
+    "scripts.feed_discovery.profiles.global"
+)
+GLOBAL_PROFILE = _global_mod.GLOBAL_PROFILE
+
+
+def test_global_profile_is_country_profile():
+    from scripts.feed_discovery.profiles._schema import CountryProfile
+    assert isinstance(GLOBAL_PROFILE, CountryProfile)
+
+
+def test_global_profile_country_is_wildcard():
+    assert GLOBAL_PROFILE.country == "*"
+
+
+def test_global_profile_has_eight_sources():
+    assert len(GLOBAL_PROFILE.sources) == 8
+
+
+def test_global_profile_sources_ordered_by_priority():
+    priorities = [(name, cfg.priority) for name, cfg in GLOBAL_PROFILE.sources.items()]
+    sorted_by_priority = sorted(priorities, key=lambda x: x[1])
+    assert priorities == sorted_by_priority
+
+
+def test_global_profile_source_names():
+    expected = {
+        "podcast_index", "deezer", "youtube_api", "ddg_text",
+        "itunes", "listen_notes", "spotify", "feedly",
+    }
+    assert set(GLOBAL_PROFILE.sources.keys()) == expected
+
+
+def test_global_profile_youtube_scrape_disabled():
+    pass  # placeholder -- youtube_scrape not in GLOBAL_PROFILE yet
+
+
+def test_global_profile_no_disabled_sources_initially():
+    assert GLOBAL_PROFILE.disabled_sources == set()
+
+
+def test_global_profile_media_domains_empty():
+    assert GLOBAL_PROFILE.media_domains == []
+
+
+def test_global_profile_generation_version():
+    assert GLOBAL_PROFILE.generation_version == 1
