@@ -43,7 +43,7 @@ final class AudioPlayerManager {
         do {
             try session.setCategory(.playback, mode: .default, policy: .longFormAudio)
         } catch {
-            print("AudioSession category failed: \(error)")
+            Log.feed.error("AudioSession category failed: \(error)")
         }
     }
 
@@ -51,7 +51,7 @@ final class AudioPlayerManager {
         do {
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
-            print("AudioSession activate failed: \(error)")
+            Log.feed.error("AudioSession activate failed: \(error)")
         }
     }
 

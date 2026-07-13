@@ -166,7 +166,7 @@ final class ContentFilterStore {
             try data.write(to: persistURL, options: .atomic)
             UserDefaults.standard.set(isEnabled, forKey: "contentFiltersEnabled")
         } catch {
-            print("[ContentFilterStore] persist error: \(error)")
+            Log.feed.error("persist error: \(error)")
         }
     }
 
@@ -180,7 +180,7 @@ final class ContentFilterStore {
             let data = try Data(contentsOf: persistURL)
             filters = try JSONDecoder().decode([ContentFilter].self, from: data)
         } catch {
-            print("[ContentFilterStore] restore error: \(error)")
+            Log.feed.error("restore error: \(error)")
             loadTemplates()
         }
     }

@@ -35,7 +35,7 @@ actor RSSFetcher {
             return FeedFetchResult(source: source, items: [], status: .failed)
         }
         guard let url = URL(string: source.url) else {
-            print("[RSSFetcher] Invalid URL for \(source.title): \(source.url)")
+            Log.network.error("Invalid URL for \(source.title): \(source.url)")
             return FeedFetchResult(source: source, items: [], status: .failed)
         }
 
@@ -44,7 +44,7 @@ actor RSSFetcher {
 
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
-                print("[RSSFetcher] Bad status for \(source.title)")
+                Log.network.warning("Bad status for \(source.title)")
                 return FeedFetchResult(source: source, items: [], status: .failed)
             }
 
@@ -55,17 +55,17 @@ actor RSSFetcher {
             case .success(let feed):
                 let items = extractItems(from: feed, source: source)
                 if items.isEmpty {
-                    print("[RSSFetcher] Empty feed: \(source.title)")
+                    Log.network.info("Empty feed: \(source.title)")
                     return FeedFetchResult(source: source, items: [], status: .empty)
                 }
                 let validated = await validateAudio(in: items)
                 return FeedFetchResult(source: source, items: validated, status: .success)
             case .failure(let error):
-                print("[RSSFetcher] Parse failure for \(source.title): \(error)")
+                Log.network.error("Parse failure for \(source.title): \(error)")
                 return FeedFetchResult(source: source, items: [], status: .failed)
             }
         } catch {
-            print("[RSSFetcher] Network error for \(source.title): \(error)")
+            Log.network.error("Network error for \(source.title): \(error)")
             return FeedFetchResult(source: source, items: [], status: .failed)
         }
     }

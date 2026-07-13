@@ -277,7 +277,7 @@ final class FeedLoader {
             let items = try await store.bookmarkedItems(listID: defaultID)
             bookmarkItemIDs = Set(items.map(\.id))
         } catch {
-            print("[FeedLoader] refreshBookmarkState error: \(error)")
+            Log.feed.error("refreshBookmarkState error: \(error)")
         }
     }
 
@@ -719,7 +719,7 @@ final class FeedLoader {
             let data = try JSONEncoder().encode(imported)
             try data.write(to: url)
         } catch {
-            print("[FeedLoader] Failed to persist imported sources: \(error)")
+            Log.import_.error("Failed to persist imported sources: \(error)")
         }
     }
 
@@ -736,9 +736,9 @@ final class FeedLoader {
             store.registry.sources = OPMLParser.deduplicateSources(
                 store.registry.sources + imported
             )
-            print("[FeedLoader] Restored \(imported.count) imported sources")
+            Log.import_.info("Restored \(imported.count) imported sources")
         } catch {
-            print("[FeedLoader] Failed to restore imported sources: \(error)")
+            Log.import_.error("Failed to restore imported sources: \(error)")
         }
     }
 
