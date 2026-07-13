@@ -65,42 +65,68 @@ struct MomentGreeting {
                 String(localized: "New week, new you. Just kidding", comment: ""),
                 String(localized: "Monday", comment: ""),
                 String(localized: "Another Monday, another chance", comment: ""),
+                String(localized: "Monday. The sequel nobody asked for", comment: ""),
+                String(localized: "Monday called. We answered", comment: ""),
+                String(localized: "Back to reality", comment: ""),
+                String(localized: "Monday. Deep breath", comment: ""),
             ].randomElement()!
         case 3: // Tuesday
             return [
                 String(localized: "Tuesday", comment: ""),
                 String(localized: "Tuesday. The forgotten weekday", comment: ""),
+                String(localized: "It's only Tuesday", comment: ""),
+                String(localized: "Tuesday. Monday's quieter sibling", comment: ""),
             ].randomElement()!
         case 4: // Wednesday
             return [
                 String(localized: "Midweek", comment: ""),
                 String(localized: "Wednesday. Halfway there", comment: ""),
                 String(localized: "Hump day", comment: ""),
+                String(localized: "Wednesday. The week's plot twist", comment: ""),
+                String(localized: "Over the hump", comment: ""),
             ].randomElement()!
         case 5: // Thursday
             return [
                 String(localized: "Thursday. Almost", comment: ""),
                 String(localized: "Thursday", comment: ""),
+                String(localized: "Thursday. Friday's opening act", comment: ""),
+                String(localized: "One more day", comment: ""),
+                String(localized: "Thursday. You can smell the weekend", comment: ""),
             ].randomElement()!
         case 6: // Friday
             return [
                 String(localized: "It's Friday", comment: ""),
                 String(localized: "Friday. Finally", comment: ""),
                 String(localized: "TGIF", comment: ""),
+                String(localized: "Friday! Act accordingly", comment: ""),
+                String(localized: "Friday. Autopilot engaged", comment: ""),
+                String(localized: "The weekend starts now", comment: ""),
             ].randomElement()!
         case 7: // Saturday
             return hour < 11
-                ? String(localized: "Slow Saturday", comment: "")
+                ? [
+                    String(localized: "Slow Saturday", comment: ""),
+                    String(localized: "Saturday. No alarm needed", comment: ""),
+                    String(localized: "Saturday morning. Chef's kiss", comment: ""),
+                ].randomElement()!
                 : [
                     String(localized: "Saturday", comment: ""),
                     String(localized: "Weekend mode", comment: ""),
+                    String(localized: "Saturday. Zero obligations", comment: ""),
+                    String(localized: "Your Saturday, your rules", comment: ""),
                 ].randomElement()!
         case 1: // Sunday
             return hour < 11
-                ? String(localized: "Lazy Sunday", comment: "")
+                ? [
+                    String(localized: "Lazy Sunday", comment: ""),
+                    String(localized: "Sunday. The world can wait", comment: ""),
+                    String(localized: "Sunday morning bliss", comment: ""),
+                ].randomElement()!
                 : [
                     String(localized: "Sunday", comment: ""),
                     String(localized: "Sunday scaries? Not here", comment: ""),
+                    String(localized: "Sunday. Tomorrow is a problem for tomorrow", comment: ""),
+                    String(localized: "The last free hours. Use them well", comment: ""),
                 ].randomElement()!
         default:
             return ""
@@ -182,30 +208,46 @@ struct MomentGreeting {
     }
 
     private static func streakText(_ ctx: AppContext) -> String {
-        // Streaks deserve celebration that scales with achievement
         switch ctx.sessionStreak {
+        case .days(let n) where n >= 100:
+            return [
+                String(localized: "\(n) days. You should write a book about discipline", comment: ""),
+                String(localized: "\(n)-day streak. We're naming a feature after you", comment: ""),
+                String(localized: "\(n) days. Legend", comment: ""),
+            ].randomElement()!
         case .days(let n) where n >= 60:
             return [
                 String(localized: "\(n) days. At this point it's a lifestyle", comment: ""),
                 String(localized: "\(n)-day streak. Honestly, we're impressed", comment: ""),
+                String(localized: "\(n) days. Your willpower scares us", comment: ""),
             ].randomElement()!
         case .days(let n) where n >= 30:
             return [
                 String(localized: "\(n) days. Unstoppable 🔥", comment: ""),
                 String(localized: "\(n)-day streak. This is commitment", comment: ""),
+                String(localized: "\(n) days. Gym bros are jealous", comment: ""),
+                String(localized: "\(n) days of showing up. Not bad at all", comment: ""),
             ].randomElement()!
         case .days(let n) where n >= 14:
             return [
                 String(localized: "\(n)-day streak 🔥", comment: ""),
                 String(localized: "\(n) days straight. Not bad", comment: ""),
+                String(localized: "\(n) days. It's becoming a thing", comment: ""),
+                String(localized: "Two weeks running. Respect", comment: ""),
             ].randomElement()!
         case .days(let n) where n >= 7:
             return [
                 String(localized: "\(n) days in a row", comment: ""),
-                String(localized: "Week \(n / 7) of your streak", comment: ""),
+                String(localized: "A full week. High five", comment: ""),
+                String(localized: "\(n) days. Habit forming", comment: ""),
+                String(localized: "One week down. Keep it going", comment: ""),
             ].randomElement()!
         case .days(let n) where n >= 3:
-            return String(localized: "Day \(n). Keep going", comment: "")
+            return [
+                String(localized: "Day \(n). Keep going", comment: ""),
+                String(localized: "\(n) days. A streak is born", comment: ""),
+                String(localized: "Day \(n). Don't break the chain", comment: ""),
+            ].randomElement()!
         default: return ""
         }
     }
@@ -233,18 +275,26 @@ struct MomentGreeting {
     }
 
     private static func routineText(_ ctx: AppContext) -> String {
-        // The app noticing you — with personality
         switch ctx.routineMatch {
         case .exact: return [
             String(localized: "Right on schedule", comment: ""),
             String(localized: "Like clockwork", comment: ""),
             String(localized: "You're predictable. In a good way", comment: ""),
             String(localized: "Same time as always. Respect", comment: ""),
+            String(localized: "Your timing is impeccable", comment: ""),
+            String(localized: "Creature of habit. We approve", comment: ""),
+            String(localized: "The Swiss would be proud", comment: ""),
+            String(localized: "We set our clock by you", comment: ""),
+            String(localized: "Consistency is a superpower", comment: ""),
+            String(localized: "Right on cue", comment: ""),
         ].randomElement()!
         case .approximate: return [
             String(localized: "Around your usual time", comment: ""),
             String(localized: "Close enough to a routine", comment: ""),
             String(localized: "We won't tell your calendar", comment: ""),
+            String(localized: "Almost on schedule. Good enough", comment: ""),
+            String(localized: "Give or take a few minutes", comment: ""),
+            String(localized: "Fashionably on time", comment: ""),
         ].randomElement()!
         case .unusual: return [
             String(localized: "You're up late", comment: ""),
@@ -252,6 +302,11 @@ struct MomentGreeting {
             String(localized: "Plot twist", comment: ""),
             String(localized: "Off-script today", comment: ""),
             String(localized: "Well, this is unexpected", comment: ""),
+            String(localized: "Living dangerously", comment: ""),
+            String(localized: "The schedule has been thrown out", comment: ""),
+            String(localized: "Rebel", comment: ""),
+            String(localized: "Rules are for other people", comment: ""),
+            String(localized: "Chaotic good energy today", comment: ""),
         ].randomElement()!
         case .firstTime: return ""
         }
@@ -259,7 +314,7 @@ struct MomentGreeting {
 
     private static func toneText(_ ctx: AppContext) -> String {
         // The voice of the app. Brief, wry, never preachy.
-        // Think: Seinfeld observing your reading habits.
+        // 70+ variants so the user rarely sees the same one twice.
         let opts: [String]
         switch ctx.timeOfDay {
         case .night, .lateNight:
@@ -271,6 +326,15 @@ struct MomentGreeting {
                 String(localized: "Tomorrow's problems are tomorrow's", comment: ""),
                 String(localized: "Netflix can wait", comment: ""),
                 String(localized: "This is between us", comment: ""),
+                String(localized: "Shhh. Just reading", comment: ""),
+                String(localized: "The house is quiet. Perfect", comment: ""),
+                String(localized: "Your secret intellectual life", comment: ""),
+                String(localized: "No notifications. Just words", comment: ""),
+                String(localized: "Plot armor for insomnia", comment: ""),
+                String(localized: "Sleep is overrated anyway", comment: ""),
+                String(localized: "Night owl privilege", comment: ""),
+                String(localized: "The world is asleep. You're not", comment: ""),
+                String(localized: "3am reads hit different", comment: ""),
             ]
         case .dawn:
             opts = [
@@ -279,6 +343,15 @@ struct MomentGreeting {
                 String(localized: "Overachievers anonymous", comment: ""),
                 String(localized: "Coffee first. Then this", comment: ""),
                 String(localized: "You're up before your notifications", comment: ""),
+                String(localized: "The early bird gets the good articles", comment: ""),
+                String(localized: "Your alarm can't take credit for this", comment: ""),
+                String(localized: "Nobody else is awake. Their loss", comment: ""),
+                String(localized: "Pre-dawn intelligence briefing", comment: ""),
+                String(localized: "Before the inbox fills up", comment: ""),
+                String(localized: "You didn't hit snooze. Noted", comment: ""),
+                String(localized: "The birds are up. So are you", comment: ""),
+                String(localized: "First light, first reads", comment: ""),
+                String(localized: "Voluntarily awake. Impressive", comment: ""),
             ]
         case .morning:
             opts = [
@@ -288,6 +361,18 @@ struct MomentGreeting {
                 String(localized: "No Zoom required", comment: ""),
                 String(localized: "Still cheaper than therapy", comment: ""),
                 String(localized: "At least it's not email", comment: ""),
+                String(localized: "Your morning briefing. No suit required", comment: ""),
+                String(localized: "The news, minus the yelling", comment: ""),
+                String(localized: "More useful than your horoscope", comment: ""),
+                String(localized: "Better than whatever LinkedIn is doing", comment: ""),
+                String(localized: "Your brain's warm-up lap", comment: ""),
+                String(localized: "Free-range organic news", comment: ""),
+                String(localized: "Hand-picked by you, not an algorithm", comment: ""),
+                String(localized: "No one will quiz you on this", comment: ""),
+                String(localized: "Breakfast for your brain", comment: ""),
+                String(localized: "Smarter than scrolling Twitter", comment: ""),
+                String(localized: "The internet's greatest hits", comment: ""),
+                String(localized: "Everything important. Nothing urgent", comment: ""),
             ]
         case .afternoon:
             opts = [
@@ -298,6 +383,17 @@ struct MomentGreeting {
                 String(localized: "Technically research", comment: ""),
                 String(localized: "Just look busy", comment: ""),
                 String(localized: "Your boss doesn't need to know", comment: ""),
+                String(localized: "A break that makes you smarter", comment: ""),
+                String(localized: "Post-lunch enlightenment", comment: ""),
+                String(localized: "This counts as professional development", comment: ""),
+                String(localized: "The afternoon brain snack", comment: ""),
+                String(localized: "Socially acceptable procrastination", comment: ""),
+                String(localized: "Your 2pm meeting got cancelled. Lucky you", comment: ""),
+                String(localized: "Cheaper than a coffee run", comment: ""),
+                String(localized: "Side-quest: become interesting", comment: ""),
+                String(localized: "Impress someone at dinner tonight", comment: ""),
+                String(localized: "Mental health break disguised as productivity", comment: ""),
+                String(localized: "Ctrl+Z on your afternoon", comment: ""),
             ]
         case .evening:
             opts = [
@@ -307,6 +403,16 @@ struct MomentGreeting {
                 String(localized: "You've earned this", comment: ""),
                 String(localized: "Better than whatever's on TV", comment: ""),
                 String(localized: "The internet, but curated by you", comment: ""),
+                String(localized: "Pants optional", comment: ""),
+                String(localized: "Adulting is done for today", comment: ""),
+                String(localized: "Your evening decompression", comment: ""),
+                String(localized: "No deadlines here", comment: ""),
+                String(localized: "The reward for surviving today", comment: ""),
+                String(localized: "Sweatpants and good writing", comment: ""),
+                String(localized: "Wine optional. Reading mandatory", comment: ""),
+                String(localized: "The day's final boss: relaxation", comment: ""),
+                String(localized: "Tomorrow you is tomorrow's problem", comment: ""),
+                String(localized: "Inbox zero can wait. This can't", comment: ""),
             ]
         }
         return opts.randomElement()!
