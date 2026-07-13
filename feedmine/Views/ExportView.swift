@@ -168,7 +168,7 @@ struct ExportView: View {
     private func loadBookmarks() {
         Task {
             do {
-                bookmarkedArticles = try await loader.loadBookmarkedItems(listID: nil)
+                bookmarkedArticles = try await loader.loadBookmarkedItems(listID: 1)
             } catch {
                 bookmarkedArticles = []
             }

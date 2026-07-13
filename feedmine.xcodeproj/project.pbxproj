@@ -1975,6 +1975,21 @@
 		F6ED00E9450489D0B779FB9D /* el-salvador-sonsonate.opml in Resources */ = {isa = PBXBuildFile; fileRef = 48F96F901D6C221E599B8F80 /* el-salvador-sonsonate.opml */; };
 		F720E82B37F63E4CF3C1B3E1 /* bulgaria-silistra.opml in Resources */ = {isa = PBXBuildFile; fileRef = 223E65A99ED25E0AD99A304B /* bulgaria-silistra.opml */; };
 		F7849543D7C7A7076E8F8DEA /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126A0070B10B3C716D2C0C7 /* NetworkMonitor.swift */; };
+		D1888DD0AAA2489299DD9993 /* ContentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4E96D37E04D6BA9347A64 /* ContentFilter.swift */; };
+		127B1EB6C6FC430BAE30CD13 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF82F606137147C292988555 /* AppSettings.swift */; };
+		1D75A81FFDA842DE86F21BD6 /* BookmarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1390F375CB44ADB391E6FB /* BookmarkStore.swift */; };
+		E063314E21654994BF7C04D0 /* ExportEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D70ECB3644E728DF4FE20 /* ExportEngine.swift */; };
+		5D47F12055FE40A9ADD9AFFC /* ImportPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26328548DFBC4795922BEA44 /* ImportPipeline.swift */; };
+		B86725CFBB7C4C0AAA03E5AF /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8C38B8C104DEF874D46EA /* InputParser.swift */; };
+		7748ABCD63BD497493DCEF4D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED7BF54BB42CC99EF93CD /* Log.swift */; };
+		1D8AF777ED0E4B22A1CDC0C6 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C73D112D554729B60B1377 /* SearchEngine.swift */; };
+		126E4BE6F53149A3B1D49032 /* URLResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA9DEEA7954C77A6A65C39 /* URLResolver.swift */; };
+		948D27715D604F189CA8F89A /* WhatsNewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556797C0203451AAEF6A9B5 /* WhatsNewManager.swift */; };
+		83DD9E3B5C5F48B1A09E42F7 /* AddFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438AA905F37941C8A4841982 /* AddFeedView.swift */; };
+		C1D818120AD74FF68156BA09 /* ClipboardBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B6D7EAA3A34E6483266B67 /* ClipboardBanner.swift */; };
+		F009AC7BE94C471A8CE3B43F /* CollectionManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E807C3599B24EF5BE13D46C /* CollectionManagementView.swift */; };
+		85648475A44E4E46834B81A1 /* ContentFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79130EC237E74F3A8CB41ACC /* ContentFilterView.swift */; };
+		068CB2522EDF4F2C9F75F222 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB84E4C4A34E4DACB6BED1 /* ExportView.swift */; };
 		F7D3972294FF535567518F8C /* sudan-khartoum.opml in Resources */ = {isa = PBXBuildFile; fileRef = 26C8C9913CD4D8326FC69652 /* sudan-khartoum.opml */; };
 		F83D855975238E2E771D58F2 /* ethiopia-tigray.opml in Resources */ = {isa = PBXBuildFile; fileRef = B9DD5653C3AA2821BD75DC06 /* ethiopia-tigray.opml */; };
 		F88A88EF922A21B3A45E7C10 /* india-telangana.opml in Resources */ = {isa = PBXBuildFile; fileRef = 8E36D08744551B4ADCDB8E56 /* india-telangana.opml */; };
@@ -4036,6 +4051,21 @@
 		FD720003170BA14564E9E458 /* guatemala-sacatepequez.opml */ = {isa = PBXFileReference; path = "guatemala-sacatepequez.opml"; sourceTree = "<group>"; };
 		FD8C0012F229656D9B5E3B02 /* croatia.opml */ = {isa = PBXFileReference; path = croatia.opml; sourceTree = "<group>"; };
 		FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetchResult.swift; sourceTree = "<group>"; };
+		04F4E96D37E04D6BA9347A64 /* ContentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFilter.swift; sourceTree = "<group>"; };
+		BF82F606137147C292988555 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		FD1390F375CB44ADB391E6FB /* BookmarkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStore.swift; sourceTree = "<group>"; };
+		BD5D70ECB3644E728DF4FE20 /* ExportEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportEngine.swift; sourceTree = "<group>"; };
+		26328548DFBC4795922BEA44 /* ImportPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPipeline.swift; sourceTree = "<group>"; };
+		5FB8C38B8C104DEF874D46EA /* InputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParser.swift; sourceTree = "<group>"; };
+		334ED7BF54BB42CC99EF93CD /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		08C73D112D554729B60B1377 /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
+		C4DA9DEEA7954C77A6A65C39 /* URLResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResolver.swift; sourceTree = "<group>"; };
+		B556797C0203451AAEF6A9B5 /* WhatsNewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewManager.swift; sourceTree = "<group>"; };
+		438AA905F37941C8A4841982 /* AddFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedView.swift; sourceTree = "<group>"; };
+		99B6D7EAA3A34E6483266B67 /* ClipboardBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardBanner.swift; sourceTree = "<group>"; };
+		1E807C3599B24EF5BE13D46C /* CollectionManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionManagementView.swift; sourceTree = "<group>"; };
+		79130EC237E74F3A8CB41ACC /* ContentFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFilterView.swift; sourceTree = "<group>"; };
+		44FB84E4C4A34E4DACB6BED1 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		FDCC238B9CFC2DD8B16FB51C /* ethiopia-south-west.opml */ = {isa = PBXFileReference; path = "ethiopia-south-west.opml"; sourceTree = "<group>"; };
 		FDD5488627E9375DF38F6F39 /* china-taiwan.opml */ = {isa = PBXFileReference; path = "china-taiwan.opml"; sourceTree = "<group>"; };
 		FDED4AFE40122483E0B6C35F /* usa-nevada.opml */ = {isa = PBXFileReference; path = "usa-nevada.opml"; sourceTree = "<group>"; };
@@ -4975,6 +5005,11 @@
 				692AB2B91FC3121ED17356B7 /* WhatsNewCarousel.swift */,
 				732162D628F2F631A57A42CC /* BookmarkBoxesView.swift */,
 				F522D6CC485EC407C407466F /* BookmarkBoxPickerView.swift */,
+                438AA905F37941C8A4841982 /* AddFeedView.swift */,
+                99B6D7EAA3A34E6483266B67 /* ClipboardBanner.swift */,
+                1E807C3599B24EF5BE13D46C /* CollectionManagementView.swift */,
+                79130EC237E74F3A8CB41ACC /* ContentFilterView.swift */,
+                44FB84E4C4A34E4DACB6BED1 /* ExportView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -5842,6 +5877,15 @@
 				EB5037E0CE6FB2F30A9EE06D /* SourceRegistry.swift */,
 				041966E00C3974A5347DEE4A /* SourceScheduler.swift */,
 				C08ABDEC67E17B5A4BF8916C /* WeatherService.swift */,
+                BF82F606137147C292988555 /* AppSettings.swift */,
+                FD1390F375CB44ADB391E6FB /* BookmarkStore.swift */,
+                BD5D70ECB3644E728DF4FE20 /* ExportEngine.swift */,
+                26328548DFBC4795922BEA44 /* ImportPipeline.swift */,
+                5FB8C38B8C104DEF874D46EA /* InputParser.swift */,
+                334ED7BF54BB42CC99EF93CD /* Log.swift */,
+                08C73D112D554729B60B1377 /* SearchEngine.swift */,
+                C4DA9DEEA7954C77A6A65C39 /* URLResolver.swift */,
+                B556797C0203451AAEF6A9B5 /* WhatsNewManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -5998,6 +6042,7 @@
 				C15E7A90D2773F4370B149BA /* FeedSource.swift */,
 				4075C82BAA3F80E12152684C /* OPMLParseResult.swift */,
 				A3FEA8EAA0D345AA732D6557 /* Region.swift */,
+                04F4E96D37E04D6BA9347A64 /* ContentFilter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -9128,6 +9173,21 @@
 				EB498E6F3FBB5C54A7BA0212 /* feedmineApp.swift in Sources */,
 				D0FD14774E42838EC54547B3 /* BookmarkBoxesView.swift in Sources */,
 				689AC62DF39BE1D676B9546E /* BookmarkBoxPickerView.swift in Sources */,
+				D1888DD0AAA2489299DD9993 /* ContentFilter.swift in Sources */,
+				127B1EB6C6FC430BAE30CD13 /* AppSettings.swift in Sources */,
+				1D75A81FFDA842DE86F21BD6 /* BookmarkStore.swift in Sources */,
+				E063314E21654994BF7C04D0 /* ExportEngine.swift in Sources */,
+				5D47F12055FE40A9ADD9AFFC /* ImportPipeline.swift in Sources */,
+				B86725CFBB7C4C0AAA03E5AF /* InputParser.swift in Sources */,
+				7748ABCD63BD497493DCEF4D /* Log.swift in Sources */,
+				1D8AF777ED0E4B22A1CDC0C6 /* SearchEngine.swift in Sources */,
+				126E4BE6F53149A3B1D49032 /* URLResolver.swift in Sources */,
+				948D27715D604F189CA8F89A /* WhatsNewManager.swift in Sources */,
+				83DD9E3B5C5F48B1A09E42F7 /* AddFeedView.swift in Sources */,
+				C1D818120AD74FF68156BA09 /* ClipboardBanner.swift in Sources */,
+				F009AC7BE94C471A8CE3B43F /* CollectionManagementView.swift in Sources */,
+				85648475A44E4E46834B81A1 /* ContentFilterView.swift in Sources */,
+				068CB2522EDF4F2C9F75F222 /* ExportView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

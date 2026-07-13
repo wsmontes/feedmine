@@ -348,11 +348,11 @@ final class FeedStore {
         if let items = cached, !items.isEmpty {
             for item in items { loadedIDs.insert(item.id) }
             loadedIDsCount = loadedIDs.count
-            reservoir.seed(items: items)
+            // Pre-filter before seeding — same pattern as reloadFromSQLite.
+            let filteredItems = applyFilters(items)
+            reservoir.seed(items: filteredItems)
             markSurfaced(reservoir.visibleItems)
-            visibleItems = applyFilters(reservoir.visibleItems)
-            // Top up from reservoir if active filter (e.g. Podcasts) removed
-            // all seeded visible items — don't show empty screen.
+            visibleItems = reservoir.visibleItems  // already filtered
             if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
                 repeat {
                     reservoir.moveToVisible(count: Reservoir.pageSize)
@@ -467,7 +467,7 @@ final class FeedStore {
                 await prev?.value
                 guard !Task.isCancelled, let self else { return }
                 self.reservoir.trimBuffer(currentVisibleIndex: idx)
-                self.visibleItems = self.reservoir.visibleItems
+                self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
                 self.reservoirCount = self.reservoir.reservoirCount
             }
 
@@ -567,7 +567,7 @@ final class FeedStore {
         if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
         }
-        if let raw = d.string(forKey: "filterMood"),
+        if let raw = UserDefaults.standard.string(forKey: Keys.filterMood),
            let mood = FeedLoader.MoodFilter(rawValue: raw) {
             activeMood = mood
         }
@@ -1114,11 +1114,22 @@ final class FeedStore {
         }
         // Register all loaded IDs to prevent re-fetch duplicates
         for item in feedItems { loadedIDs.insert(item.id) }
-        reservoir.seed(items: feedItems)
+        // Pre-filter before seeding so the reservoir never holds items that
+        // would be filtered out. This prevents the reservoir from becoming a
+        // trove of disabled-source items that leak through on .append/.trim
+        // (even after Task 1-2 fixes, this avoids wasted memory and ensures
+        // consistent reservoirCount).
+        let filteredItems = applyFilters(feedItems)
+        reservoir.seed(items: filteredItems)
+        // markSurfaced runs on reservoir.visibleItems AFTER seed, so only
+        // items that actually appear on screen are recorded as surfaced.
         markSurfaced(reservoir.visibleItems)
-        visibleItems = applyFilters(reservoir.visibleItems)
-        // If the active filter (e.g. Podcasts) removed all seeded visible items,
+        visibleItems = reservoir.visibleItems  // already filtered — no double-filter needed
+        // If the active filter (e.g. Podcasts) removed all seeded items,
         // pull more from the reservoir so the screen isn't empty.
+        // (This loop is now a safety net — the reservoir is pre-filtered,
+        // but edge cases like very restrictive mood filters may still
+        // produce an empty first page.)
         if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
             repeat {
                 reservoir.moveToVisible(count: Reservoir.pageSize)
@@ -1160,10 +1171,11 @@ final class FeedStore {
 
     private func loadReadState() async {
         do {
+            let limit = Self.maxReadIDs
             let ids: [String] = try await db.read { db in
                 try String.fetchAll(db, sql: """
                     SELECT id FROM feed_item WHERE is_read = 1
-                    ORDER BY opened_at DESC LIMIT \(Self.maxReadIDs)
+                    ORDER BY opened_at DESC LIMIT \(limit)
                 """)
             }
             readItemIDs = Set(ids)
@@ -1174,7 +1186,7 @@ final class FeedStore {
                     UPDATE feed_item SET is_read = 0, opened_at = NULL
                     WHERE is_read = 1 AND id NOT IN (
                         SELECT id FROM feed_item WHERE is_read = 1
-                        ORDER BY opened_at DESC LIMIT \(Self.maxReadIDs)
+                        ORDER BY opened_at DESC LIMIT \(limit)
                     )
                 """)
             }
@@ -1229,6 +1241,30 @@ final class FeedStore {
             applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
             reservoirCount = reservoir.reservoirCount
         }
+    }
+
+    func toggleAllCountries() {
+        let wasAnyOn = registry.isAnyCountryEnabled
+        registry.toggleAllCountries()
+        if wasAnyOn {
+            // Disabling all countries — purge their items from the reservoir
+            // and all visible items. Unlike individual toggleRegion, this
+            // affects every country at once, so a full flush is appropriate.
+            let countryRegions = registry.sources
+                .filter { $0.isCountryFeed }
+                .map { $0.region }
+            for region in Set(countryRegions) {
+                reservoir.removeRegion(region)
+            }
+            applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
+        } else {
+            // Enabling all countries — flush and reload from SQLite so
+            // country content appears immediately.
+            resetWhatsNewBaseline()
+            refreshWhatsNew()
+            applyUpdate(.flush())
+        }
+        reservoirCount = reservoir.reservoirCount
     }
 
     /// Fetch a seed batch from a newly enabled region. Returns items to prepend.
@@ -1415,7 +1451,7 @@ final class FeedStore {
 
     func emergencyTrim() {
         reservoir.emergencyTrim()
-        visibleItems = reservoir.visibleItems
+        visibleItems = applyFilters(reservoir.visibleItems)
         reservoirCount = reservoir.reservoirCount
     }
 

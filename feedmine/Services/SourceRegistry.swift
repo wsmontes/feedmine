@@ -50,9 +50,9 @@ final class SourceRegistry {
 
     // MARK: - Key constructors
 
-    static func regionKey(_ path: String) -> String { "region:\(path)" }
-    static func categoryKey(_ name: String) -> String { "cat:\(name)" }
-    static func sourceKey(_ url: String) -> String { "url:\(url)" }
+    nonisolated static func regionKey(_ path: String) -> String { "region:\(path)" }
+    nonisolated static func categoryKey(_ name: String) -> String { "cat:\(name)" }
+    nonisolated static func sourceKey(_ url: String) -> String { "url:\(url)" }
 
     // MARK: - Feed resolution (O(1) — all Dict/Set lookups)
 
