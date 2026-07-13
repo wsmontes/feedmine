@@ -367,7 +367,7 @@ final class FeedStore {
                 guard !Task.isCancelled, let self else { return }
                 self.reservoir.moveToVisible(count: Reservoir.pageSize)
                 self.markSurfaced(self.reservoir.visibleItems)
-                self.visibleItems = self.reservoir.visibleItems
+                self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
                 self.reservoirCount = self.reservoir.reservoirCount
                 self.prefetchVisibleAndNext()
             }
