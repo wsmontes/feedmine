@@ -90,12 +90,30 @@ Organizado em ondas sequenciais. Cada onda desbloqueia a próxima.
 ## Estado das Ondas
 
 ```
-Onda 1 (bugs)     [ ] não iniciada
-Onda 2 (features) [ ] não iniciada
+Onda 1 (bugs)     [■■■■□] 80% — falta: testes filter system (requer Xcode)
+Onda 2 (features) [■■□□□] 40% — import channels completo, falta: dark mode, onboarding
 Onda 3 (arch)     [ ] não iniciada
 Onda 4 (polish)   [ ] não iniciada
 Onda 5 (ship)     [ ] não iniciada
 ```
+
+### Onda 1 — Detalhes
+
+| # | Item | Status |
+|---|------|--------|
+| 1.1 | shakeToRefresh batch UPDATE | ✅ commit 9e6a2cd |
+| 1.2 | Region filter no applyFilters | ✅ commit 9e6a2cd |
+| 1.3 | MoodFilter → Content Filter | ✅ commit 4341dfd (substituído por feature melhor) |
+| 1.4 | ImageCache sync removed | ✅ commit 9e6a2cd |
+| 1.5 | Testes filter system | 🔲 requer Xcode para rodar |
+
+### Onda 2 — Detalhes
+
+| # | Item | Status |
+|---|------|--------|
+| 2.1 | Import channels | ✅ completo (parser, resolver, UI, clipboard, collections, URL scheme). Falta apenas Share Extension (requer target Xcode). |
+| 2.2 | Dark mode | 🔲 não iniciado |
+| 2.3 | Onboarding | 🔲 não iniciado |
 
 ---
 
