@@ -23,6 +23,7 @@ struct FeedScreen: View {
     @State private var showSources = false
     @State private var showFilters = false
     @State private var showBookmarks = false
+    @State private var showAddFeed = false
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
@@ -161,6 +162,7 @@ struct FeedScreen: View {
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
         .sheet(isPresented: $showBookmarks) { BookmarkBoxesView() }
+        .sheet(isPresented: $showAddFeed) { AddFeedView() }
         .tint(engine.accent)
         .animation(.easeInOut(duration: 2.0), value: engine.period)
         .overlay { if nightMode { nightOverlay } }
@@ -208,6 +210,9 @@ struct FeedScreen: View {
                     }
                     filterButton
                     Menu {
+                        Button { showAddFeed = true } label: {
+                            Label("Add Feed", systemImage: "plus.circle")
+                        }
                         Button { showSources = true } label: {
                             Label("Sources", systemImage: "antenna.radiowaves.left.and.right")
                         }

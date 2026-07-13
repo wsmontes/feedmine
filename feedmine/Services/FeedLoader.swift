@@ -608,9 +608,39 @@ final class FeedLoader {
     }
 
     /// Import feed URLs (paste, share sheet, etc.) with full validation.
+    /// Pass `skipValidation: true` when URLs come from URLResolver (already probed).
     /// Returns ImportResult for UI feedback.
-    func importFeeds(urls: [String], category: String = "Imported") async -> ImportResult {
+    func importFeeds(urls: [String], category: String = "Imported", skipValidation: Bool = false) async -> ImportResult {
         let existingURLs = Set(store.registry.sources.map { OPMLParser.normalizeURL($0.url) })
+
+        if skipValidation {
+            // URLs already validated by URLResolver — skip probe, just dedup + register
+            var results: [ImportItemResult] = []
+            var newSources: [FeedSource] = []
+            for rawURL in urls {
+                let normalized = OPMLParser.normalizeURL(rawURL)
+                if existingURLs.contains(normalized) {
+                    results.append(ImportItemResult(url: rawURL, title: nil, status: .duplicate))
+                } else {
+                    let kind = ImportPipeline.detectMediaKind(url: normalized, title: nil)
+                    let source = FeedSource(
+                        title: ImportPipeline.titleFromURL(normalized),
+                        url: normalized, category: category, region: "imported", mediaKind: kind
+                    )
+                    newSources.append(source)
+                    results.append(ImportItemResult(url: normalized, title: source.title, status: .imported))
+                }
+            }
+            if !newSources.isEmpty {
+                store.registry.sources = OPMLParser.deduplicateSources(
+                    store.registry.sources + newSources
+                )
+                persistImportedSources()
+                await fetchAndReloadAfterImport(newSources)
+            }
+            return ImportResult(items: results)
+        }
+
         let (result, sources) = await importPipeline.ingest(
             urls: urls, category: category, existingURLs: existingURLs
         )
