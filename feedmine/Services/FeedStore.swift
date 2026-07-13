@@ -162,7 +162,7 @@ final class FeedStore {
 
     /// Queue items for eventual reservoir append. Flushes after a debounce
     /// interval or when the pending batch reaches a size threshold.
-    private func throttledReservoirAppend(_ items: [FeedItem]) {
+    func throttledReservoirAppend(_ items: [FeedItem]) {
         pendingReservoirItems.append(contentsOf: items)
         reservoirFlushTask?.cancel()
         // Flush immediately if large batch (user might be scrolling)
@@ -877,7 +877,7 @@ final class FeedStore {
     ///
     /// Returns the deduplicated new items for the reservoir / prefetch / search.
     @discardableResult
-    private func persistFetchedItems(_ items: [FeedItem], regionOverride: String? = nil) async -> [FeedItem] {
+    func persistFetchedItems(_ items: [FeedItem], regionOverride: String? = nil) async -> [FeedItem] {
         var seen = Set<String>()
         let actualNew = items.filter { item in
             guard !loadedIDs.contains(item.id) else { return false }
