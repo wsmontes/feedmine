@@ -348,11 +348,11 @@ final class FeedStore {
         if let items = cached, !items.isEmpty {
             for item in items { loadedIDs.insert(item.id) }
             loadedIDsCount = loadedIDs.count
-            reservoir.seed(items: items)
+            // Pre-filter before seeding — same pattern as reloadFromSQLite.
+            let filteredItems = applyFilters(items)
+            reservoir.seed(items: filteredItems)
             markSurfaced(reservoir.visibleItems)
-            visibleItems = applyFilters(reservoir.visibleItems)
-            // Top up from reservoir if active filter (e.g. Podcasts) removed
-            // all seeded visible items — don't show empty screen.
+            visibleItems = reservoir.visibleItems  // already filtered
             if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
                 repeat {
                     reservoir.moveToVisible(count: Reservoir.pageSize)
@@ -1114,11 +1114,22 @@ final class FeedStore {
         }
         // Register all loaded IDs to prevent re-fetch duplicates
         for item in feedItems { loadedIDs.insert(item.id) }
-        reservoir.seed(items: feedItems)
+        // Pre-filter before seeding so the reservoir never holds items that
+        // would be filtered out. This prevents the reservoir from becoming a
+        // trove of disabled-source items that leak through on .append/.trim
+        // (even after Task 1-2 fixes, this avoids wasted memory and ensures
+        // consistent reservoirCount).
+        let filteredItems = applyFilters(feedItems)
+        reservoir.seed(items: filteredItems)
+        // markSurfaced runs on reservoir.visibleItems AFTER seed, so only
+        // items that actually appear on screen are recorded as surfaced.
         markSurfaced(reservoir.visibleItems)
-        visibleItems = applyFilters(reservoir.visibleItems)
-        // If the active filter (e.g. Podcasts) removed all seeded visible items,
+        visibleItems = reservoir.visibleItems  // already filtered — no double-filter needed
+        // If the active filter (e.g. Podcasts) removed all seeded items,
         // pull more from the reservoir so the screen isn't empty.
+        // (This loop is now a safety net — the reservoir is pre-filtered,
+        // but edge cases like very restrictive mood filters may still
+        // produce an empty first page.)
         if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
             repeat {
                 reservoir.moveToVisible(count: Reservoir.pageSize)
