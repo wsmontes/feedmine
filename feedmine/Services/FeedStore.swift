@@ -85,7 +85,7 @@ final class FeedStore {
 
     /// Prefetch images for items if enabled (default: true).
     private func prefetchImagesIfEnabled(for items: [FeedItem]) {
-        guard UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true else { return }
+        guard Settings.prefetchImages else { return }
         let urls = items.compactMap { $0.bestImageURL ?? $0.imageURL }
         guard !urls.isEmpty else { return }
         Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
@@ -95,7 +95,7 @@ final class FeedStore {
     /// reservoir batch (user scrolls to soon). Called after seed/moveToVisible
     /// so images are cached before they hit the screen.
     private func prefetchVisibleAndNext() {
-        guard UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true else { return }
+        guard Settings.prefetchImages else { return }
         let visible = reservoir.visibleItems.compactMap { $0.bestImageURL ?? $0.imageURL }
         let upcoming = reservoir.upcomingItems(100).compactMap { $0.bestImageURL ?? $0.imageURL }
         let all = Array(Set(visible + upcoming))
@@ -540,42 +540,31 @@ final class FeedStore {
     private static let filterExpirySeconds: TimeInterval = 14400  // 4 hours
 
     private func persistFilters() {
-        let d = UserDefaults.standard
-        d.set(activeRegion, forKey: "filterRegion")
-        d.set(activeCategory, forKey: "filterCategory")
-        d.set(activeContentType.rawValue, forKey: "filterContentType")
-        d.set(activeMood.rawValue, forKey: "filterMood")
-        // Timestamp so we can expire stale filters on next launch
-        d.set(Date().timeIntervalSince1970, forKey: "filterSetAt")
+        Settings.filterRegion = activeRegion
+        Settings.filterCategory = activeCategory
+        Settings.filterContentType = activeContentType.rawValue
+        Settings.filterSetAt = Date().timeIntervalSince1970
     }
 
     private func restoreFilters() {
-        let d = UserDefaults.standard
-        let hasActiveFilters = d.string(forKey: "filterRegion") != nil
-            || d.string(forKey: "filterCategory") != nil
-            || (d.string(forKey: "filterContentType").flatMap(FeedLoader.ContentType.init(rawValue:)) ?? .all) != .all
-            || (d.string(forKey: "filterMood").flatMap(FeedLoader.MoodFilter.init(rawValue:)) ?? .all) != .all
+        let hasActiveFilters = Settings.filterRegion != nil
+            || Settings.filterCategory != nil
+            || (FeedLoader.ContentType(rawValue: Settings.filterContentType) ?? .all) != .all
 
-        // Expire stale filters — opt-in only (off by default).
-        // When enabled, filters auto-clear after 4h so the user never
-        // opens the app to an empty or confusing feed.
-        if hasActiveFilters && UserDefaults.standard.bool(forKey: "filterAutoExpire") {
-            let setAt = d.double(forKey: "filterSetAt")
-            let elapsed = Date().timeIntervalSince1970 - setAt
-            if setAt > 0 && elapsed > Self.filterExpirySeconds {
-                d.removeObject(forKey: "filterRegion")
-                d.removeObject(forKey: "filterCategory")
-                d.removeObject(forKey: "filterContentType")
-                d.removeObject(forKey: "filterMood")
-                d.removeObject(forKey: "filterSetAt")
+        if hasActiveFilters && Settings.filterAutoExpire {
+            let elapsed = Date().timeIntervalSince1970 - Settings.filterSetAt
+            if Settings.filterSetAt > 0 && elapsed > Self.filterExpirySeconds {
+                Settings.filterRegion = nil
+                Settings.filterCategory = nil
+                Settings.filterContentType = "All"
+                Settings.filterSetAt = 0
                 return
             }
         }
 
-        activeRegion = d.string(forKey: "filterRegion")
-        activeCategory = d.string(forKey: "filterCategory")
-        if let raw = d.string(forKey: "filterContentType"),
-           let type = FeedLoader.ContentType(rawValue: raw) {
+        activeRegion = Settings.filterRegion
+        activeCategory = Settings.filterCategory
+        if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
         }
         if let raw = d.string(forKey: "filterMood"),
@@ -936,7 +925,7 @@ final class FeedStore {
 
         // Diagnostic (opt-in via debug bar): surface non-English items so a
         // mis-languaged feed can be identified. See loop-focus-areas #5.
-        if UserDefaults.standard.bool(forKey: "showDebugBar") {
+        if Settings.showDebugBar {
             logNonEnglishItems(actualNew)
         }
 
