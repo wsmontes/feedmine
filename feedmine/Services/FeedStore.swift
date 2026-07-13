@@ -148,6 +148,9 @@ final class FeedStore {
     private var hasStarted = false             // guards one-time startup work
     private var progressiveFetchTask: Task<Void, Never>?
     private var backgroundRefreshTask: Task<Void, Never>?
+    private var regionToggleTask: Task<Void, Never>?
+    private var whatsNewBoosterTask: Task<Void, Never>?
+    private var filterDebounceTask: Task<Void, Never>?
 
     // MARK: - Throttled reservoir append
     // Accumulates items from progressive/background fetches and flushes them
@@ -544,14 +547,24 @@ final class FeedStore {
     }
 
     func setFilter(region: String?, category: String?, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
-        loadingState = .refreshing
+        // Update state immediately for UI responsiveness
         activeRegion = region
         activeCategory = category
         activeContentType = type
         activeMood = mood
         persistFilters()
-        refreshWhatsNew()
-        applyUpdate(.flush())
+
+        // Debounce the expensive flush+reload: if multiple filter changes
+        // arrive within 300ms (e.g. user tapping category then mood quickly),
+        // only the last one triggers the full reload pipeline.
+        filterDebounceTask?.cancel()
+        filterDebounceTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(300))
+            guard !Task.isCancelled, let self else { return }
+            self.loadingState = .refreshing
+            self.refreshWhatsNew()
+            self.applyUpdate(.flush())
+        }
     }
 
     func clearAllFilters() {
@@ -777,12 +790,15 @@ final class FeedStore {
     /// cold start. Runs alongside the DB seed — if the database has nothing,
     /// this fetches fresh content from the network immediately.
     func fetchWhatsNewBooster() {
-        Task { [weak self] in
+        whatsNewBoosterTask?.cancel()
+        whatsNewBoosterTask = Task { [weak self] in
             guard let self else { return }
             let sources = self.registry.enabledSources.shuffled().prefix(30)
             let result = await self.fetcher.fetchAll(Array(sources), maxConcurrent: 5)
+            guard !Task.isCancelled else { return }
             await Task.yield()
             let actualNew = await self.persistFetchedItems(result.items)
+            guard !Task.isCancelled else { return }
             if !actualNew.isEmpty {
                 self.throttledReservoirAppend(actualNew)
                 self.collectWhatsNewCandidates(actualNew)
@@ -1103,6 +1119,7 @@ final class FeedStore {
         guard !isSearching else { return }
         let region = activeRegion
         let category = activeCategory
+        let contentType = activeContentType
         // Always exclude read items — the feed should only show unseen content.
         // Read/opened items are tracked continuously and this information is
         // consumed by all feed-population paths (shake, filter, startup).
@@ -1114,6 +1131,16 @@ final class FeedStore {
                 request = request.filter(Column("region") == r)
             }
             if let c = category { request = request.filter(Column("category") == c) }
+            // Filter by content type at SQL level to avoid loading 200 items
+            // only to discard 95% in-memory (e.g. "Podcasts" filter with few
+            // podcast items in the DB).
+            switch contentType {
+            case .audio: request = request.filter(Column("audio_url") != nil)
+            case .video: request = request.filter(Column("source_url").like("%youtube%"))
+            case .text:  request = request.filter(Column("audio_url") == nil)
+                            .filter(!Column("source_url").like("%youtube%"))
+            case .all: break
+            }
             return try request
                 .order(Column("published_at").desc)
                 .limit(200)
@@ -1189,17 +1216,16 @@ final class FeedStore {
         }.map(\.url)
         registry.toggleRegion(region)
         if wasDisabled {
-            // Enabling: clear memory, seed fresh content, reload from SQLite
+            // Enabling: seed fresh content then reload.
+            // Keep current content on screen (optimistic) — don't clear until
+            // new content is ready, preventing empty-screen flashes.
+            regionToggleTask?.cancel()
             scheduler.prioritize(sourceURLs: sourceURLs)
             resetWhatsNewBaseline()
-            pipelineTask?.cancel()
-            progressiveFetchTask?.cancel()
-            trimDebounceTask?.cancel()
-            reservoir.clear()
-            visibleItems = []
-            reservoirCount = 0
-            Task {
-                let seedItems = await seedRegion(region)
+            regionToggleTask = Task { [weak self] in
+                guard let self else { return }
+                let seedItems = await self.seedRegion(region)
+                guard !Task.isCancelled else { return }
                 if !seedItems.isEmpty {
                     let name: String
                     if region == "global" {
@@ -1207,12 +1233,20 @@ final class FeedStore {
                     } else {
                         name = CountryStore.countryName(for: region.replacingOccurrences(of: "countries/", with: ""))
                     }
-                    lastToggleMessage = "\(name): \(seedItems.count) new articles"
+                    // Inform user about filter mismatch
+                    let visibleCount = self.applyFilters(seedItems).count
+                    if visibleCount == 0 && !seedItems.isEmpty {
+                        self.lastToggleMessage = "\(name): \(seedItems.count) articles (0 match current filter)"
+                    } else {
+                        self.lastToggleMessage = "\(name): \(seedItems.count) new articles"
+                    }
                 }
-                await reloadFromSQLite(prepend: seedItems)
+                guard !Task.isCancelled else { return }
+                await self.reloadFromSQLite(prepend: seedItems)
             }
         } else {
             // Disabling: remove from scheduler (incl. sub-regions), purge from reservoir
+            regionToggleTask?.cancel()
             scheduler.remove(sourceURLs: sourceURLs)
             reservoir.removeRegion(region)
             applyUpdate(.replace(applyFilters(reservoir.visibleItems)))

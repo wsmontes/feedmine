@@ -450,6 +450,10 @@ final class FeedLoader {
     func toggleAllCountries() {
         store.registry.toggleAllCountries()
         store.resetWhatsNewBaseline()
+        // Reload feed to reflect the mass enable/disable immediately.
+        // Re-apply current filters to flush+reload from SQLite.
+        store.setFilter(region: store.activeRegion, category: store.activeCategory,
+                        type: store.activeContentType, mood: store.activeMood)
         Task { await loadWhatsNew() }
     }
     func toggleGlobalFeeds() {
