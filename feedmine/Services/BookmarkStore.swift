@@ -30,7 +30,8 @@ final class BookmarkStore {
                 let count = try BookmarkItemRecord.filter(Column("list_id") == r.id!).fetchCount(db)
                 return BookmarkList(
                     id: r.id!, name: r.name, sortOrder: r.sortOrder,
-                    createdAt: r.createdAt, isDefault: r.isDefault,
+                    createdAt: Date(timeIntervalSince1970: TimeInterval(r.createdAt)),
+                    isDefault: r.isDefault,
                     searchQuery: r.searchQuery, searchRegion: r.searchRegion,
                     searchCategory: r.searchCategory, searchActive: r.searchActive,
                     itemCount: count
@@ -88,7 +89,7 @@ final class BookmarkStore {
         let targetListID = listID ?? defaultListID()
         let records: [FeedItemRecord] = try await db.read { db in
             try FeedItemRecord
-                .joining(required: FeedItemRecord.hasMany(BookmarkItemRecord.self)
+                .joining(required: FeedItemRecord.bookmarkItems
                     .filter(Column("list_id") == targetListID))
                 .order(Column("published_at").desc)
                 .fetchAll(db)

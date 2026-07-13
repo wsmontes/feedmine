@@ -157,15 +157,7 @@ enum ExportEngine {
 
     // MARK: - CSV
 
-    static func csv(sources: [FeedSource]) -> Data {
-        var lines: [String] = []
-        lines.append("title,url,category,region,type,enabled")
-        for source in sources.sorted(by: { $0.category < $1.category }) {
-            let enabled = SourceRegistry.sourceKey(source.url) // placeholder — caller passes enabled state
-            lines.append("\(csvEscape(source.title)),\(csvEscape(source.url)),\(csvEscape(source.category)),\(csvEscape(source.region)),\(source.mediaKind.rawValue),true")
-        }
-        return Data(lines.joined(separator: "\n").utf8)
-    }
+    // MARK: - CSV
 
     /// CSV with explicit enabled state
     static func csv(sources: [FeedSource], enabledURLs: Set<String>) -> Data {

@@ -150,6 +150,8 @@ struct ContentFilterView: View {
             }
         }
         .buttonStyle(.plain)
+        .accessibilityHint(filter.isEnabled ? "Double tap to disable this filter" : "Double tap to enable this filter")
+        .accessibilityAddTraits(filter.isEnabled ? .isSelected : [])
     }
 
     // MARK: - Custom Row

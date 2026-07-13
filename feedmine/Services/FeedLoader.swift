@@ -142,9 +142,13 @@ final class FeedLoader {
 
     private var _cachedFiltered: [FeedItem] = []
     private var _cacheKey: Int = -1
+    private var _lastItemsGeneration: Int = -1
 
     var filteredItems: [FeedItem] {
-        let key = items.count ^ (items.first?.id.hashValue ?? 0) ^ (items.last?.id.hashValue ?? 0) ^ searchQuery.hashValue
+        // Use items identity (ObjectIdentifier-like) + count + query for cache key.
+        // The previous XOR of first/last/count could false-hit when middle items changed.
+        let generation = items.count &+ (items.first?.id.hashValue ?? 0) &+ (items.last?.id.hashValue ?? 0) &+ items.dropFirst().first?.id.hashValue ?? 0
+        let key = generation ^ searchQuery.hashValue
         if key == _cacheKey { return _cachedFiltered }
         _cacheKey = key
         var result = items
@@ -368,11 +372,11 @@ final class FeedLoader {
             do {
                 self.store = try FeedStore()
             } catch {
-                // Fallback: attempt an in-memory database so the app doesn't crash
+                // Primary DB failed (disk full, corruption). Use in-memory fallback
+                // so the app launches (degraded: no persistence across sessions).
                 self.initError = error
-                self.store = (try? FeedStore()) ?? {
-                    fatalError("[FeedLoader] Unable to create even a fallback FeedStore: \(error)")
-                }()
+                Log.db.error("FeedStore init failed: \(error.localizedDescription). Using in-memory fallback.")
+                self.store = (try? FeedStore(inMemory: true)) ?? FeedStore.empty()
             }
         }
     }

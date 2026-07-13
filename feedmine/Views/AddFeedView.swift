@@ -5,6 +5,7 @@ struct AddFeedView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var engine = CircadianEngine.shared
     @State private var input = ""
+    @State private var parsedURLs: [ClassifiedURL] = []
     @State private var selectedCollection = "Imported"
     @State private var newCollectionName = ""
     @State private var showNewCollection = false
@@ -35,22 +36,21 @@ struct AddFeedView: View {
                         .autocorrectionDisabled()
 
                     if !input.isEmpty {
-                        let parsed = InputParser.parse(input)
                         HStack {
                             Image(systemName: "link")
                                 .foregroundStyle(.secondary)
                                 .font(.caption)
-                            Text("\(parsed.count) URL\(parsed.count == 1 ? "" : "s") detected")
+                            Text("\(parsedURLs.count) URL\(parsedURLs.count == 1 ? "" : "s") detected")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                             Spacer()
-                            if parsed.contains(where: { $0.kind == .youtube }) {
-                                Label("\(parsed.filter { $0.kind == .youtube }.count)", systemImage: "play.rectangle.fill")
+                            if parsedURLs.contains(where: { $0.kind == .youtube }) {
+                                Label("\(parsedURLs.filter { $0.kind == .youtube }.count)", systemImage: "play.rectangle.fill")
                                     .font(.caption2)
                                     .foregroundStyle(.red)
                             }
-                            if parsed.contains(where: { $0.kind == .github }) {
-                                Label("\(parsed.filter { $0.kind == .github }.count)", systemImage: "chevron.left.forwardslash.chevron.right")
+                            if parsedURLs.contains(where: { $0.kind == .github }) {
+                                Label("\(parsedURLs.filter { $0.kind == .github }.count)", systemImage: "chevron.left.forwardslash.chevron.right")
                                     .font(.caption2)
                                     .foregroundStyle(.purple)
                             }
@@ -192,6 +192,9 @@ struct AddFeedView: View {
                 Text("Found \(resolvedFeeds.count) feeds\(types.isEmpty ? "" : ": \(types)"). Add all to \"\(selectedCollection)\"?")
             }
             .onAppear { inputFocused = true }
+            .onChange(of: input) { _, newValue in
+                parsedURLs = newValue.isEmpty ? [] : InputParser.parse(newValue)
+            }
         }
         .presentationDetents([.medium, .large])
     }

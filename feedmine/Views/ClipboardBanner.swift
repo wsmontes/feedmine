@@ -54,6 +54,7 @@ struct ClipboardBanner: View {
                         .font(.caption2)
                         .foregroundStyle(.tertiary)
                 }
+                .accessibilityLabel("Dismiss")
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 10)

@@ -123,14 +123,15 @@ final class FeedStore {
     }
 
     /// Content filter engine: checks if an item's title+excerpt contains any
-    /// keyword from the user's active content filters. Uses localizedStandardContains
-    /// for diacritic-insensitive, case-insensitive matching.
+    /// keyword from the user's active content filters.
+    /// Uses String.contains on pre-lowercased text for performance (200 items ×
+    /// 50 keywords = 10K comparisons). Keywords are stored lowercased by ContentFilterStore.
     private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
         guard !filters.isEmpty else { return false }
         let text = (item.title + " " + item.excerpt).lowercased()
         for filter in filters {
             for keyword in filter.keywords {
-                if text.localizedStandardContains(keyword) {
+                if text.contains(keyword) {
                     ContentFilterStore.shared.recordHit(filter.id)
                     return true
                 }
@@ -228,8 +229,12 @@ final class FeedStore {
     }
 
     // MARK: - Init
-    init() throws {
-        self.db = try DatabaseQueue(path: Self.dbPath, configuration: Self.dbConfig)
+    init(inMemory: Bool = false) throws {
+        if inMemory {
+            self.db = try DatabaseQueue(configuration: Self.dbConfig)
+        } else {
+            self.db = try DatabaseQueue(path: Self.dbPath, configuration: Self.dbConfig)
+        }
         try Self.migrate(db)
         self.bookmarkStore = BookmarkStore(db: db)
         self.searchEngine = SearchEngine(db: db)
@@ -245,6 +250,11 @@ final class FeedStore {
             }
         }
         loadSourceHealth()
+    }
+
+    /// Last-resort fallback: creates an in-memory store that won't crash.
+    static func empty() -> FeedStore {
+        try! FeedStore(inMemory: true)
     }
 
     // MARK: - Source Health Persistence
@@ -1648,6 +1658,9 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
 
     static var databaseTableName: String { "feed_item" }
 
+    // GRDB Associations
+    static let bookmarkItems = hasMany(BookmarkItemRecord.self, using: ForeignKey(["item_id"], to: ["id"]))
+
     enum CodingKeys: String, CodingKey {
         case id
         case sourceURL = "source_url"
@@ -1708,7 +1721,7 @@ struct BookmarkListRecord: Codable, FetchableRecord, PersistableRecord {
     var id: Int64?
     var name: String
     var sortOrder: Int
-    var createdAt: Date
+    var createdAt: Int  // epoch seconds (matches SQL storage)
     var isDefault: Bool
     var searchQuery: String?
     var searchRegion: String?
@@ -1733,7 +1746,7 @@ struct BookmarkListRecord: Codable, FetchableRecord, PersistableRecord {
 struct BookmarkItemRecord: Codable, FetchableRecord, PersistableRecord {
     var listId: Int64
     var itemId: String
-    var addedAt: Date
+    var addedAt: Int  // epoch seconds
     var sortOrder: Int
 
     static var databaseTableName: String { "bookmark_item" }

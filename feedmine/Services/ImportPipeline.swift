@@ -351,7 +351,8 @@ actor ImportPipeline {
 private final class OPMLImportDelegate: NSObject, XMLParserDelegate, @unchecked Sendable {
     let fallbackCategory: String
     var sources: [FeedSource] = []
-    private var currentCategory: String?
+    private var categoryStack: [String] = []
+    private var isLeafNode = false
 
     init(fallbackCategory: String) {
         self.fallbackCategory = fallbackCategory
@@ -360,16 +361,25 @@ private final class OPMLImportDelegate: NSObject, XMLParserDelegate, @unchecked 
     func parser(_ parser: XMLParser, didStartElement element: String, namespaceURI: String?, qualifiedName: String?, attributes: [String: String] = [:]) {
         guard element == "outline" else { return }
         if let xmlUrl = attributes["xmlUrl"] ?? attributes["xmlurl"] {
+            // Leaf node (feed): use current category from stack, don't push
             let title = attributes["title"] ?? attributes["text"] ?? ""
-            let category = currentCategory ?? fallbackCategory
+            let category = categoryStack.last ?? fallbackCategory
             sources.append(FeedSource(title: title, url: xmlUrl, category: category, region: "imported"))
+            isLeafNode = true
         } else {
-            // Group node — use as category
-            currentCategory = attributes["text"] ?? attributes["title"]
+            // Group node: push category onto stack
+            let groupName = attributes["text"] ?? attributes["title"] ?? fallbackCategory
+            categoryStack.append(groupName)
+            isLeafNode = false
         }
     }
 
     func parser(_ parser: XMLParser, didEndElement element: String, namespaceURI: String?, qualifiedName: String?) {
-        // Don't reset category on </outline> — it's used by all children
+        guard element == "outline" else { return }
+        // Only pop when closing a group (non-leaf) outline
+        if !isLeafNode && !categoryStack.isEmpty {
+            categoryStack.removeLast()
+        }
+        isLeafNode = false
     }
 }
