@@ -149,6 +149,46 @@ final class FeedStore {
     private var progressiveFetchTask: Task<Void, Never>?
     private var backgroundRefreshTask: Task<Void, Never>?
 
+    // MARK: - Throttled reservoir append
+    // Accumulates items from progressive/background fetches and flushes them
+    // to the reservoir in a single interleave pass every few seconds, reducing
+    // 10+ interleave passes to 2-3 during startup.
+    private var pendingReservoirItems: [FeedItem] = []
+    private var reservoirFlushTask: Task<Void, Never>?
+    private static let reservoirFlushInterval: Duration = .seconds(3)
+
+    /// Queue items for eventual reservoir append. Flushes after a debounce
+    /// interval or when the pending batch reaches a size threshold.
+    private func throttledReservoirAppend(_ items: [FeedItem]) {
+        pendingReservoirItems.append(contentsOf: items)
+        reservoirFlushTask?.cancel()
+        // Flush immediately if large batch (user might be scrolling)
+        if pendingReservoirItems.count >= 100 {
+            flushPendingReservoir()
+            return
+        }
+        reservoirFlushTask = Task { [weak self] in
+            try? await Task.sleep(for: Self.reservoirFlushInterval)
+            guard !Task.isCancelled, let self else { return }
+            self.flushPendingReservoir()
+        }
+    }
+
+    private func flushPendingReservoir() {
+        guard !pendingReservoirItems.isEmpty else { return }
+        let batch = pendingReservoirItems
+        pendingReservoirItems = []
+        reservoir.append(batch)
+        // Update visible only if not searching and screen is empty
+        if !isSearching && visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
+            reservoir.moveToVisible(count: Reservoir.pageSize)
+            visibleItems = applyFilters(reservoir.visibleItems)
+            reservoirCount = reservoir.reservoirCount
+        } else {
+            reservoirCount = reservoir.reservoirCount
+        }
+    }
+
     // MARK: - Init
     init() throws {
         self.db = try DatabaseQueue(path: Self.dbPath, configuration: Self.dbConfig)
@@ -296,19 +336,17 @@ final class FeedStore {
             return
         }
 
-        // First batch: fill the visible feed quickly so the user sees content
-        // immediately. The scheduler picks ~17 top-scoring sources.
-        await fetchNextBatch()
-
-        // Background: process ALL remaining enabled sources so YouTube,
-        // podcasts, and other non-text sources don't wait hours for their
-        // turn in the scheduler lottery. Runs as a main-actor Task so
-        // FeedStore state access is safe; each await suspension point
-        // yields the actor for UI work.
-        if !registry.enabledSources.isEmpty {
-            progressiveFetchTask = Task { await progressiveFetch() }
-        }
+        // Unblock the UI immediately — the warm cache already provides content.
+        // First batch and progressive fetch run as background Tasks so the view
+        // finishes layout without waiting for network I/O.
         loadingState = .idle
+
+        progressiveFetchTask = Task {
+            // First batch: fill the visible feed quickly (scheduler picks ~17 sources).
+            await fetchNextBatch()
+            // Then process remaining enabled sources in the background.
+            await progressiveFetch()
+        }
 
         // Kick off What's New pipeline
         refreshWhatsNew()
@@ -743,9 +781,10 @@ final class FeedStore {
             guard let self else { return }
             let sources = self.registry.enabledSources.shuffled().prefix(30)
             let result = await self.fetcher.fetchAll(Array(sources), maxConcurrent: 5)
+            await Task.yield()
             let actualNew = await self.persistFetchedItems(result.items)
             if !actualNew.isEmpty {
-                self.reservoir.append(actualNew)
+                self.throttledReservoirAppend(actualNew)
                 self.collectWhatsNewCandidates(actualNew)
                 self.prefetchImagesIfEnabled(for: actualNew)
                 for source in sources {
@@ -879,8 +918,11 @@ final class FeedStore {
         defer { loadingState = .idle }
 
         let result = await fetcher.fetchAll(batch, maxConcurrent: 15)
+        // Yield to let pending UI work through after network I/O returns
+        await Task.yield()
+
         totalFetched += result.items.count
-        if result.failedSourceCount == 0 { fetchErrorCount = 0 }  // reset on clean batch
+        if result.failedSourceCount == 0 { fetchErrorCount = 0 }
         else { fetchErrorCount += result.failedSourceCount }
         lastFetchSucceeded = result.failedSourceCount == 0
         emptyFeedCount += result.emptySourceCount
@@ -898,6 +940,9 @@ final class FeedStore {
         let actualNew = await persistFetchedItems(result.items)
         guard !actualNew.isEmpty else { return }
 
+        // Yield again after heavy DB work before processing results
+        await Task.yield()
+
         // Feed the What's New reactive pipeline
         collectWhatsNewCandidates(actualNew)
 
@@ -909,10 +954,8 @@ final class FeedStore {
 
         // Cap items per source after bulk insert
         if !actualNew.isEmpty {
-            let sourceURLs = Set(actualNew.map(\.sourceURL))
-            for url in sourceURLs {
-                await capSourceItems(sourceURL: url)
-            }
+            let sourceURLs = Array(Set(actualNew.map(\.sourceURL)))
+            await capSourceItemsBatch(sourceURLs)
         }
 
         // Append to reservoir
@@ -964,6 +1007,8 @@ final class FeedStore {
             // from YouTube and other aggressive CDNs when processing 800+ sources.
             if chunkStart > 0 { try? await Task.sleep(for: .seconds(1)) }
             let result = await fetcher.fetchAll(chunk, maxConcurrent: 5)
+            guard !Task.isCancelled else { break }
+            await Task.yield()  // Let UI work run between chunks
             totalFetched += result.items.count
             fetchErrorCount += result.failedSourceCount
             emptyFeedCount += result.emptySourceCount
@@ -977,19 +1022,17 @@ final class FeedStore {
             }
             saveSourceHealthBatch(healthEntries)
             let actualNew = await persistFetchedItems(result.items)
-            reservoir.append(actualNew)
+            throttledReservoirAppend(actualNew)
             collectWhatsNewCandidates(actualNew)
             // Cap items per source so no single feed dominates (>50 items)
             if !actualNew.isEmpty {
-                let sourceURLs = Set(actualNew.map(\.sourceURL))
-                for url in sourceURLs { await capSourceItems(sourceURL: url) }
+                let sourceURLs = Array(Set(actualNew.map(\.sourceURL)))
+                await capSourceItemsBatch(sourceURLs)
             }
             prefetchImagesIfEnabled(for: actualNew)
             await matchPersistentSearches(actualNew)
-            if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
-                reservoir.moveToVisible(count: Reservoir.pageSize)
-                visibleItems = applyFilters(reservoir.visibleItems)
-                reservoirCount = reservoir.reservoirCount
+            if visibleItems.isEmpty {
+                flushPendingReservoir()
             }
         }
         print("[progressiveFetch] DONE — all \(allEnabled.count) sources processed")
@@ -1016,11 +1059,11 @@ final class FeedStore {
                 let result = await self.fetcher.fetchAll(batch, maxConcurrent: 2)
                 let actualNew = await self.persistFetchedItems(result.items)
                 if !actualNew.isEmpty {
-                    self.reservoir.append(actualNew)
+                    self.throttledReservoirAppend(actualNew)
                     self.collectWhatsNewCandidates(actualNew)
                     self.prefetchImagesIfEnabled(for: actualNew)
                     // Cap per source to prevent domination
-                    for url in Set(actualNew.map(\.sourceURL)) { await self.capSourceItems(sourceURL: url) }
+                    await self.capSourceItemsBatch(Array(Set(actualNew.map(\.sourceURL))))
                 }
                 // Record fetch health for each source
                 for source in batch {
@@ -1050,9 +1093,7 @@ final class FeedStore {
             }
             guard !offenders.isEmpty else { return }
             print("[capAllSources] Capping \(offenders.count) sources (>50 items)")
-            for url in offenders {
-                await capSourceItems(sourceURL: url)
-            }
+            await capSourceItemsBatch(offenders)
         } catch {
             print("[capAllSources] Error: \(error)")
         }
@@ -1272,36 +1313,49 @@ final class FeedStore {
     }
 
     /// Per-source cap: keep max 50 items per source within 30-day window.
+    /// Cap a single source at 50 items. Prefer `capSourceItemsBatch` for multiple sources.
     func capSourceItems(sourceURL: String) async {
+        await capSourceItemsBatch([sourceURL])
+    }
+
+    /// Batch cap: enforce 50-item-per-source limit for multiple sources in a
+    /// single transaction. Replaces the previous 3×N round-trip approach with
+    /// one read + one write, dramatically reducing SQLite churn on startup.
+    func capSourceItemsBatch(_ sourceURLs: [String]) async {
+        guard !sourceURLs.isEmpty else { return }
         do {
-            // Snapshot IDs before deletions so we know what existed
-            let before = Set(try await db.read { db in
-                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE source_url = ?", arguments: [sourceURL])
-            })
-            try await db.write { db in
-                let count = try Int.fetchOne(db, sql: """
-                    SELECT COUNT(*) FROM feed_item WHERE source_url = ?
-                """, arguments: [sourceURL]) ?? 0
-                guard count > 50 else { return }
-                try db.execute(sql: """
+            let removedIDs: [String] = try await db.write { db in
+                // Find all sources that exceed the cap and collect IDs to delete
+                let placeholders = sourceURLs.map { _ in "?" }.joined(separator: ",")
+                let args = StatementArguments(sourceURLs)
+
+                // Identify items to delete: for each overflowing source, keep
+                // the 50 newest by published_at, delete the rest (excluding
+                // bookmarks and read items).
+                let idsToDelete = try String.fetchAll(db, sql: """
                     DELETE FROM feed_item WHERE id IN (
-                        SELECT id FROM feed_item WHERE source_url = ?
-                        AND id NOT IN (SELECT item_id FROM bookmark_item)
-                        AND is_read = 0
-                        ORDER BY published_at ASC
-                        LIMIT ?
-                    )
-                """, arguments: [sourceURL, count - 50])
+                        SELECT fi.id FROM feed_item fi
+                        LEFT JOIN bookmark_item bi ON bi.item_id = fi.id
+                        WHERE fi.source_url IN (\(placeholders))
+                          AND bi.item_id IS NULL
+                          AND fi.is_read = 0
+                          AND fi.id NOT IN (
+                              SELECT id FROM feed_item fi2
+                              WHERE fi2.source_url = fi.source_url
+                              ORDER BY fi2.published_at DESC
+                              LIMIT 50
+                          )
+                    ) RETURNING id
+                """, arguments: args)
+                return idsToDelete
             }
-            // Sync loadedIDs: remove IDs that no longer exist in DB (#19)
-            let after = Set(try await db.read { db in
-                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE source_url = ?", arguments: [sourceURL])
-            })
-            let removed = before.subtracting(after)
-            for id in removed { loadedIDs.remove(id) }
-            if !removed.isEmpty { loadedIDsCount = loadedIDs.count }
+            // Sync loadedIDs
+            if !removedIDs.isEmpty {
+                for id in removedIDs { loadedIDs.remove(id) }
+                loadedIDsCount = loadedIDs.count
+            }
         } catch {
-            print("[FeedStore] Source cap error: \(error)")
+            print("[FeedStore] capSourceItemsBatch error: \(error)")
         }
     }
 
