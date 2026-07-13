@@ -77,9 +77,11 @@ Documentar:
 
 ---
 
-## 8. Extrair OPMLs do repositório para geração at build-time
+## 8. ~~Extrair OPMLs do repositório para geração at build-time~~
 
-Manter um formato canônico compacto (JSON de sources por país/categoria) e gerar OPMLs via script no build. Reduz 1.919 arquivos commitados e diffs enormes a cada atualização de conteúdo.
+**REMOVIDO** — O parse cache (`opml-parse-cache.plist`) já resolve a performance.
+OPMLs como source of truth direta é mais prático para um corpus que muda
+frequentemente. Custo de parse só acontece no primeiro launch após update.
 
 ---
 
