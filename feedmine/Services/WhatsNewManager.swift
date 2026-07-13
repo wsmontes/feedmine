@@ -8,8 +8,8 @@ final class WhatsNewManager {
     let db: DatabaseQueue
 
     // MARK: - State
-    var whatsNewPool: [FeedItem] = []
-    var whatsNewItems: [FeedItem] = []
+    private(set) var whatsNewPool: [FeedItem] = []
+    private(set) var whatsNewItems: [FeedItem] = []
     var whatsNewBoosterTask: Task<Void, Never>?
     var whatsNewBaselineDate: Date?
 

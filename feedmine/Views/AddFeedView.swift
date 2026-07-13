@@ -13,6 +13,7 @@ struct AddFeedView: View {
     @State private var result: ImportResult?
     @State private var resolvedCount = 0
     @State private var totalToResolve = 0
+    @State private var importTask: Task<Void, Never>?
     @FocusState private var inputFocused: Bool
 
     /// Available collections = existing categories + "Imported" default
@@ -153,7 +154,7 @@ struct AddFeedView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        Task { await importFeeds() }
+                        importTask = Task { await importFeeds() }
                     } label: {
                         if isResolving {
                             ProgressView()
@@ -192,6 +193,7 @@ struct AddFeedView: View {
                 Text("Found \(resolvedFeeds.count) feeds\(types.isEmpty ? "" : ": \(types)"). Add all to \"\(selectedCollection)\"?")
             }
             .onAppear { inputFocused = true }
+            .onDisappear { importTask?.cancel() }
             .onChange(of: input) { _, newValue in
                 parsedURLs = newValue.isEmpty ? [] : InputParser.parse(newValue)
             }

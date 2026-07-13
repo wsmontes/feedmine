@@ -27,22 +27,41 @@ struct FeedmineApp: App {
     /// - file:///.../*.opml → import OPML file
     private func handleIncomingURL(_ url: URL) {
         if url.scheme == "feedmine" {
-            // feedmine://import?url=https://example.com/feed.xml
             if url.host == "import",
                let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
                let feedURL = components.queryItems?.first(where: { $0.name == "url" })?.value {
-                Task { _ = await loader.importFeeds(urls: [feedURL]) }
+                Task {
+                    let result = await loader.importFeeds(urls: [feedURL])
+                    NotificationCenter.default.post(
+                        name: .feedImportCompleted,
+                        object: nil,
+                        userInfo: ["message": result.importedCount > 0
+                            ? "\(result.importedCount) feed imported"
+                            : "Could not import feed"]
+                    )
+                }
             }
         } else if url.isFileURL {
-            // Opened an OPML file from Files app or AirDrop
             if url.pathExtension.lowercased() == "opml" || url.pathExtension.lowercased() == "xml" {
                 Task {
-                    guard url.startAccessingSecurityScopedResource() else { return }
-                    defer { url.stopAccessingSecurityScopedResource() }
-                    if let data = try? Data(contentsOf: url) {
-                        let fileName = url.deletingPathExtension().lastPathComponent
-                        _ = await loader.importOPML(data: data, fileName: fileName)
+                    guard url.startAccessingSecurityScopedResource() else {
+                        NotificationCenter.default.post(name: .feedImportCompleted, object: nil,
+                            userInfo: ["message": "Could not access file"])
+                        return
                     }
+                    defer { url.stopAccessingSecurityScopedResource() }
+                    guard let data = try? Data(contentsOf: url) else {
+                        NotificationCenter.default.post(name: .feedImportCompleted, object: nil,
+                            userInfo: ["message": "Could not read file"])
+                        return
+                    }
+                    let fileName = url.deletingPathExtension().lastPathComponent
+                    let result = await loader.importOPML(data: data, fileName: fileName)
+                    NotificationCenter.default.post(
+                        name: .feedImportCompleted,
+                        object: nil,
+                        userInfo: ["message": "\(result.importedCount) feeds imported from \(fileName)"]
+                    )
                 }
             }
         }
