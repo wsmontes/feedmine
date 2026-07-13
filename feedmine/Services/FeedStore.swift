@@ -106,11 +106,13 @@ final class FeedStore {
     /// Single-pass to avoid intermediate array allocations.
     private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
         let category = activeCategory
+        let region = activeRegion
         let contentType = filterContentType
         let contentFilters = ContentFilterStore.shared.isEnabled
             ? ContentFilterStore.shared.activeFilters : []
         return items.filter { item in
             isItemEnabled(item)
+            && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
             && (category == nil || item.category == category)
             && contentType(item)
             && !contentFilterExcludes(item, filters: contentFilters)
@@ -1687,14 +1689,14 @@ final class FeedStore {
         let ids = reservoir.visibleItems.map(\.id)
         for id in ids { readItemIDs.insert(id) }
         reservoir.readItemIDs = readItemIDs
+        let now = Int(Date().timeIntervalSince1970)
+        let placeholders = Array(repeating: "?", count: ids.count).joined(separator: ",")
         Task {
             try await db.write { db in
-                for id in ids {
-                    try db.execute(sql: """
-                        UPDATE feed_item SET is_read = 1, opened_at = \(Int(Date().timeIntervalSince1970))
-                        WHERE id = ?
-                    """, arguments: [id])
-                }
+                try db.execute(sql: """
+                    UPDATE feed_item SET is_read = 1, opened_at = \(now)
+                    WHERE id IN (\(placeholders))
+                """, arguments: StatementArguments(ids))
             }
         }
         // Clear everything, then force-fetch NEW content. The SQLite reload

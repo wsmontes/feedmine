@@ -71,19 +71,6 @@ final class ImageCache {
         return FileManager.default.fileExists(atPath: fileURL.path)
     }
 
-    @available(*, deprecated, message: "Use diskImage(for:) instead")
-    func image(for url: URL) -> UIImage? {
-        let key = cacheKey(for: url)
-        if let img = memoryCache.object(forKey: key as NSString) { return img }
-        let fileURL = diskCacheURL.appendingPathComponent(key)
-        guard fileManager.fileExists(atPath: fileURL.path),
-              let data = try? Data(contentsOf: fileURL),
-              let img = UIImage(data: data) else { return nil }
-        let cost = Int(img.size.width * img.size.height * 4)
-        memoryCache.setObject(img, forKey: key as NSString, cost: cost)
-        return img
-    }
-
     func diskImage(for url: URL) async -> UIImage? {
         let key = cacheKey(for: url)
         if let img = memoryCache.object(forKey: key as NSString) { return img }
