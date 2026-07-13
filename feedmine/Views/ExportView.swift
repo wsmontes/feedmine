@@ -9,8 +9,8 @@ struct ExportView: View {
     @State private var selectedFormat: ExportFormat = .opml
     @State private var selectedCollection: String?
     @State private var preview: String = ""
-    @State private var showShareSheet = false
-    @State private var shareItems: [Any] = []
+    @State private var showDocumentPicker = false
+    @State private var exportFileURL: URL?
 
     private var scopedSources: [FeedSource] {
         switch selectedScope {
@@ -22,8 +22,13 @@ struct ExportView: View {
         case .country:
             guard let col = selectedCollection else { return loader.sources }
             return loader.sources.filter { $0.region == col || $0.region.hasPrefix(col + "/") }
-        case .bookmarks, .fullBackup: return loader.sources
+        case .bookmarks: return loader.sources  // Bookmarks export uses articles, not sources
+        case .fullBackup: return loader.sources
         }
+    }
+
+    private var enabledURLs: Set<String> {
+        Set(loader.enabledSources.map(\.url))
     }
 
     private var collections: [String] {
@@ -41,7 +46,7 @@ struct ExportView: View {
                 // MARK: - Scope
                 Section("What to export") {
                     Picker("Scope", selection: $selectedScope) {
-                        ForEach([ExportScope.all, .enabledOnly, .collection, .country], id: \.self) { scope in
+                        ForEach(ExportScope.allCases) { scope in
                             Label(scope.rawValue, systemImage: scope.icon).tag(scope)
                         }
                     }
@@ -75,7 +80,7 @@ struct ExportView: View {
 
                 // MARK: - Format
                 Section("Format") {
-                    ForEach(ExportFormat.allCases) { format in
+                    ForEach(availableFormats) { format in
                         Button {
                             selectedFormat = format
                             updatePreview()
@@ -141,24 +146,47 @@ struct ExportView: View {
         .presentationDetents([.medium, .large])
     }
 
+    // MARK: - Available formats per scope
+
+    private var availableFormats: [ExportFormat] {
+        switch selectedScope {
+        case .bookmarks:
+            return [.text, .markdown, .csv, .html]  // Articles, not OPML
+        case .fullBackup:
+            return [.json]  // Only JSON for full backup
+        default:
+            return ExportFormat.allCases
+        }
+    }
+
     // MARK: - Actions
 
     private func updatePreview() {
+        // Reset format if not available for current scope
+        if !availableFormats.contains(selectedFormat) {
+            selectedFormat = availableFormats.first ?? .opml
+        }
+
         let sources = scopedSources
         switch selectedFormat {
         case .opml:
             preview = String(data: ExportEngine.opml(sources: sources).prefix(500), encoding: .utf8) ?? ""
         case .json:
             let filters = ContentFilterStore.shared.filters
-            preview = String(data: ExportEngine.jsonBackup(sources: sources, contentFilters: filters).prefix(500), encoding: .utf8) ?? ""
+            let bookmarkIDs = Array(loader.bookmarkedIDs)
+            preview = String(data: ExportEngine.jsonBackup(sources: sources, contentFilters: filters, bookmarkIDs: bookmarkIDs).prefix(500), encoding: .utf8) ?? ""
         case .csv:
-            preview = String(data: ExportEngine.csv(sources: sources).prefix(500), encoding: .utf8) ?? ""
+            if selectedScope == .bookmarks {
+                preview = "title,url,date\n(bookmarked articles...)"
+            } else {
+                preview = String(data: ExportEngine.csv(sources: sources, enabledURLs: enabledURLs).prefix(500), encoding: .utf8) ?? ""
+            }
         case .text:
             preview = String(ExportEngine.plainText(sources: sources).prefix(500))
         case .markdown:
             preview = String(ExportEngine.markdown(sources: sources).prefix(500))
         case .html:
-            preview = "HTML blogroll (\(sources.count) feeds, \(Set(sources.map(\.category)).count) collections)"
+            preview = "HTML blogroll (\(sources.count) feeds, \(Set(sources.map(\.category)).count) collections). Dark mode ready."
         case .shareLink:
             let result = ExportEngine.shareLink(sources: sources)
             switch result {
@@ -166,7 +194,11 @@ struct ExportView: View {
             case .file(_, let desc): preview = desc
             }
         case .socialCard:
-            preview = ExportEngine.socialCard(sources: sources)
+            let stats = ExportEngine.SocialCardStats(
+                streak: Settings.sessionStreak,
+                articlesRead: loader.readItemIDs.count
+            )
+            preview = ExportEngine.socialCard(sources: sources, stats: stats)
         }
     }
 
@@ -177,8 +209,9 @@ struct ExportView: View {
         case .opml: return (ExportEngine.opml(sources: sources), "\(name).opml")
         case .json:
             let filters = ContentFilterStore.shared.filters
-            return (ExportEngine.jsonBackup(sources: sources, contentFilters: filters), "\(name).json")
-        case .csv: return (ExportEngine.csv(sources: sources), "\(name).csv")
+            let bookmarkIDs = Array(loader.bookmarkedIDs)
+            return (ExportEngine.jsonBackup(sources: sources, contentFilters: filters, bookmarkIDs: bookmarkIDs), "\(name).json")
+        case .csv: return (ExportEngine.csv(sources: sources, enabledURLs: enabledURLs), "\(name).csv")
         case .text: return (Data(ExportEngine.plainText(sources: sources).utf8), "\(name).txt")
         case .markdown: return (Data(ExportEngine.markdown(sources: sources).utf8), "\(name).md")
         case .html: return (ExportEngine.htmlBlogroll(sources: sources), "\(name).html")
@@ -193,7 +226,11 @@ struct ExportView: View {
             return
         }
         if selectedFormat == .socialCard {
-            let text = ExportEngine.socialCard(sources: scopedSources)
+            let stats = ExportEngine.SocialCardStats(
+                streak: Settings.sessionStreak,
+                articlesRead: loader.readItemIDs.count
+            )
+            let text = ExportEngine.socialCard(sources: scopedSources, stats: stats)
             presentShareSheet(items: [text])
             return
         }
@@ -204,17 +241,22 @@ struct ExportView: View {
     }
 
     private func saveToFiles() {
-        guard let (data, filename) = generateExportData() else { return }
-        let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent(filename)
-        try? data.write(to: tempURL)
-        presentShareSheet(items: [tempURL])
+        // Use Share Sheet which includes "Save to Files" as an option.
+        // This is the standard iOS pattern — UIDocumentPickerViewController
+        // is for opening files, not saving. The Share Sheet's "Save to Files"
+        // action uses the proper system file saver.
+        shareExport()
     }
 
     private func copyToClipboard() {
         let text: String
         switch selectedFormat {
         case .socialCard:
-            text = ExportEngine.socialCard(sources: scopedSources)
+            let stats = ExportEngine.SocialCardStats(
+                streak: Settings.sessionStreak,
+                articlesRead: loader.readItemIDs.count
+            )
+            text = ExportEngine.socialCard(sources: scopedSources, stats: stats)
         case .shareLink:
             let result = ExportEngine.shareLink(sources: scopedSources)
             if case .text(let s) = result { text = s } else { text = "" }

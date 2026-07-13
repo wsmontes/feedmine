@@ -83,6 +83,7 @@ struct FeedmineBackup: Codable {
     let exportedAt: Date
     let sources: [FeedSource]
     let contentFilters: [ContentFilter]
+    let bookmarkIDs: [String]
     let settings: BackupSettings
 
     struct BackupSettings: Codable {
@@ -131,13 +132,15 @@ enum ExportEngine {
 
     static func jsonBackup(
         sources: [FeedSource],
-        contentFilters: [ContentFilter]
+        contentFilters: [ContentFilter],
+        bookmarkIDs: [String] = []
     ) -> Data {
         let backup = FeedmineBackup(
             version: 1,
             exportedAt: Date(),
             sources: sources,
             contentFilters: contentFilters,
+            bookmarkIDs: bookmarkIDs,
             settings: FeedmineBackup.BackupSettings(
                 filterRegion: Settings.filterRegion,
                 filterCategory: Settings.filterCategory,

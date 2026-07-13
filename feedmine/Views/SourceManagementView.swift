@@ -171,13 +171,15 @@ struct SourceManagementView: View {
                             .foregroundStyle(.red)
                     }
 
-                    ShareLink(item: opmlString) {
-                        Label("Export as OPML", systemImage: "square.and.arrow.up")
+                    NavigationLink {
+                        ExportView()
+                    } label: {
+                        Label("Export Sources", systemImage: "square.and.arrow.up")
                     }
                 } header: {
                     Text("Import & Export")
                 } footer: {
-                    Text("Import an OPML file to add new sources, or export your current sources to share or back up.")
+                    Text("Import an OPML file or export in multiple formats (OPML, CSV, Markdown, HTML, JSON).")
                 }
             }
             .navigationTitle("Sources")
@@ -200,9 +202,6 @@ struct SourceManagementView: View {
         }
     }
 
-    private var opmlString: String {
-        OPMLParser.exportOPML(sources: loader.sources)
-    }
 
     private func testSources() async {
         isTesting = true
