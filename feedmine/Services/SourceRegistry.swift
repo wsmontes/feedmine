@@ -201,12 +201,12 @@ final class SourceRegistry {
     // MARK: - Persistence
 
     private func saveState() {
-        UserDefaults.standard.set(Array(disabled), forKey: "toggleDisabled")
-        UserDefaults.standard.set(Array(enabledOverrides), forKey: "toggleEnabledOverrides")
+        UserDefaults.standard.set(Array(disabled), forKey: Keys.toggleDisabled)
+        UserDefaults.standard.set(Array(enabledOverrides), forKey: Keys.toggleEnabledOverrides)
     }
 
     func loadState() {
-        if let arr = UserDefaults.standard.stringArray(forKey: "toggleDisabled") {
+        if let arr = UserDefaults.standard.stringArray(forKey: Keys.toggleDisabled) {
             disabled = Set(arr)
         }
         if let arr = UserDefaults.standard.stringArray(forKey: "toggleEnabledOverrides") {
@@ -283,13 +283,12 @@ final class SourceRegistry {
         loadState()
 
         // Countries off by default on first launch only.
-        let hasInitializedKey = "hasInitializedSourceDefaults"
-        if !UserDefaults.standard.bool(forKey: hasInitializedKey) {
+        if !Settings.hasInitializedSourceDefaults {
             for source in sources where source.isCountryFeed {
                 disabled.insert(Self.regionKey(source.region))
             }
             saveState()
-            UserDefaults.standard.set(true, forKey: hasInitializedKey)
+            Settings.hasInitializedSourceDefaults = true
         }
 
         recomputeActiveCounts()

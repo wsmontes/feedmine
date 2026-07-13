@@ -14,6 +14,9 @@ final class FeedStore {
     let fetcher = RSSFetcher()
     let prefetcher = ImagePrefetcher()
     let networkMonitor = NetworkMonitor()
+    let bookmarkStore: BookmarkStore
+    let searchEngine: SearchEngine
+    let whatsNewManager: WhatsNewManager
 
     // MARK: - Public state
     private(set) var visibleItems: [FeedItem] = []
@@ -82,7 +85,7 @@ final class FeedStore {
 
     /// Prefetch images for items if enabled (default: true).
     private func prefetchImagesIfEnabled(for items: [FeedItem]) {
-        guard UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true else { return }
+        guard Settings.prefetchImages else { return }
         let urls = items.compactMap { $0.bestImageURL ?? $0.imageURL }
         guard !urls.isEmpty else { return }
         Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
@@ -92,7 +95,7 @@ final class FeedStore {
     /// reservoir batch (user scrolls to soon). Called after seed/moveToVisible
     /// so images are cached before they hit the screen.
     private func prefetchVisibleAndNext() {
-        guard UserDefaults.standard.object(forKey: "prefetchImages") as? Bool ?? true else { return }
+        guard Settings.prefetchImages else { return }
         let visible = reservoir.visibleItems.compactMap { $0.bestImageURL ?? $0.imageURL }
         let upcoming = reservoir.upcomingItems(100).compactMap { $0.bestImageURL ?? $0.imageURL }
         let all = Array(Set(visible + upcoming))
@@ -106,14 +109,34 @@ final class FeedStore {
     /// Single-pass to avoid intermediate array allocations.
     private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
         let category = activeCategory
-        let mood = activeMood
+        let region = activeRegion
         let contentType = filterContentType
+        let contentFilters = ContentFilterStore.shared.isEnabled
+            ? ContentFilterStore.shared.activeFilters : []
         return items.filter { item in
             isItemEnabled(item)
+            && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
             && (category == nil || item.category == category)
             && contentType(item)
-            && (mood == .all || mood.matches(item.title))
+            && !contentFilterExcludes(item, filters: contentFilters)
         }
+    }
+
+    /// Content filter engine: checks if an item's title+excerpt contains any
+    /// keyword from the user's active content filters. Uses localizedStandardContains
+    /// for diacritic-insensitive, case-insensitive matching.
+    private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
+        guard !filters.isEmpty else { return false }
+        let text = (item.title + " " + item.excerpt).lowercased()
+        for filter in filters {
+            for keyword in filter.keywords {
+                if text.localizedStandardContains(keyword) {
+                    ContentFilterStore.shared.recordHit(filter.id)
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     private var filterContentType: (FeedItem) -> Bool {
@@ -135,24 +158,82 @@ final class FeedStore {
     private(set) var loadedIDsCount: Int = 0
     private var loadedIDs: Set<String> = []  // Bloom filter for dedup
     private static let lastWhatsNewSeenAtKey = "last_whats_new_seen_at"
-    private var whatsNewBaselineDate: Date?    // persisted across sessions; advanced on dismiss
 
-    // MARK: - What's New reactive pipeline
-    /// Candidates accumulate as new items enter the database. The carousel
-    /// shows the first N when the pool reaches the threshold. Advancing
-    /// removes shown items so the next batch surfaces.
-    private var whatsNewPool: [FeedItem] = []
-    private let whatsNewThreshold = 10
-    private(set) var whatsNewItems: [FeedItem] = []
-    private var _defaultListID: Int64?
+    /// Computed forwarding for What's New items from the manager.
+    var whatsNewItems: [FeedItem] { whatsNewManager.whatsNewItems }
+
     private var hasStarted = false             // guards one-time startup work
     private var progressiveFetchTask: Task<Void, Never>?
     private var backgroundRefreshTask: Task<Void, Never>?
+    private var regionToggleTask: Task<Void, Never>?
+    private var filterDebounceTask: Task<Void, Never>?
+
+    // MARK: - Throttled reservoir append
+    // Accumulates items from progressive/background fetches and flushes them
+    // to the reservoir in a single interleave pass every few seconds, reducing
+    // 10+ interleave passes to 2-3 during startup.
+    private var pendingReservoirItems: [FeedItem] = []
+    private var reservoirFlushTask: Task<Void, Never>?
+    private static let reservoirFlushInterval: Duration = .seconds(3)
+
+    /// Queue items for eventual reservoir append. Flushes after a debounce
+    /// interval or when the pending batch reaches a size threshold.
+    func throttledReservoirAppend(_ items: [FeedItem]) {
+        pendingReservoirItems.append(contentsOf: items)
+        reservoirFlushTask?.cancel()
+        // Flush immediately if large batch (user might be scrolling)
+        if pendingReservoirItems.count >= 100 {
+            flushPendingReservoir()
+            return
+        }
+        reservoirFlushTask = Task { [weak self] in
+            try? await Task.sleep(for: Self.reservoirFlushInterval)
+            guard !Task.isCancelled, let self else { return }
+            self.flushPendingReservoir()
+        }
+    }
+
+    private func flushPendingReservoir() {
+        guard !pendingReservoirItems.isEmpty else { return }
+        let batch = pendingReservoirItems
+        pendingReservoirItems = []
+
+        // Compute interleave off the main actor — this is the expensive part
+        // (O(n × sources) with multiple spread passes). Only the final
+        // assignment to reservoir arrays needs MainActor.
+        let readIDs = reservoir.readItemIDs
+        let surfacedTs = reservoir.surfacedTimestamps
+        let regionMap = reservoir.sourceRegionMap
+        let visibleIDs = Set(reservoir.visibleItems.map(\.id))
+        let trulyNew = batch.filter { !visibleIDs.contains($0.id) }
+        guard !trulyNew.isEmpty else { return }
+
+        Task.detached(priority: .userInitiated) { [weak self] in
+            // Pure computation — no actor isolation needed
+            let interleaved = Reservoir.interleaveOffMain(
+                trulyNew, readItemIDs: readIDs,
+                surfacedTimestamps: surfacedTs, sourceRegionMap: regionMap
+            )
+            // Hop back to MainActor for the mutation
+            await MainActor.run { [weak self] in
+                guard let self else { return }
+                self.reservoir.appendPreInterleaved(interleaved)
+                if !self.isSearching && self.visibleItems.isEmpty && !self.reservoir.reservoir.isEmpty {
+                    self.reservoir.moveToVisible(count: Reservoir.pageSize)
+                    self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
+                }
+                self.reservoirCount = self.reservoir.reservoirCount
+            }
+        }
+    }
 
     // MARK: - Init
     init() throws {
         self.db = try DatabaseQueue(path: Self.dbPath, configuration: Self.dbConfig)
         try Self.migrate(db)
+        self.bookmarkStore = BookmarkStore(db: db)
+        self.searchEngine = SearchEngine(db: db)
+        self.whatsNewManager = WhatsNewManager(db: db)
         // Create default "Favorites" list if not exists
         try? db.write { db in
             let count = try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM bookmark_list WHERE is_default = 1") ?? 0
@@ -179,7 +260,7 @@ final class FeedStore {
                 )
             }
         } catch {
-            print("[FeedStore] loadSourceHealth failed: \(error)")
+            Log.db.error("loadSourceHealth failed: \(error.localizedDescription)")
         }
     }
 
@@ -215,7 +296,7 @@ final class FeedStore {
                 }
             }
         } catch {
-            print("[FeedStore] saveSourceHealthBatch error: \(error)")
+            Log.db.error("saveSourceHealthBatch error: \(error.localizedDescription)")
         }
     }
 
@@ -286,9 +367,9 @@ final class FeedStore {
         // Snapshot baseline for "What's New" — persisted so items don't vanish
         // just because the app restarted. Falls back to now on first launch.
         if let persisted = UserDefaults.standard.object(forKey: Self.lastWhatsNewSeenAtKey) as? Date {
-            whatsNewBaselineDate = persisted
+            whatsNewManager.whatsNewBaselineDate = persisted
         } else {
-            whatsNewBaselineDate = Date()
+            whatsNewManager.whatsNewBaselineDate = Date()
         }
 
         guard !registry.enabledSources.isEmpty else {
@@ -296,19 +377,17 @@ final class FeedStore {
             return
         }
 
-        // First batch: fill the visible feed quickly so the user sees content
-        // immediately. The scheduler picks ~17 top-scoring sources.
-        await fetchNextBatch()
-
-        // Background: process ALL remaining enabled sources so YouTube,
-        // podcasts, and other non-text sources don't wait hours for their
-        // turn in the scheduler lottery. Runs as a main-actor Task so
-        // FeedStore state access is safe; each await suspension point
-        // yields the actor for UI work.
-        if !registry.enabledSources.isEmpty {
-            progressiveFetchTask = Task { await progressiveFetch() }
-        }
+        // Unblock the UI immediately — the warm cache already provides content.
+        // First batch and progressive fetch run as background Tasks so the view
+        // finishes layout without waiting for network I/O.
         loadingState = .idle
+
+        progressiveFetchTask = Task {
+            // First batch: fill the visible feed quickly (scheduler picks ~17 sources).
+            await fetchNextBatch()
+            // Then process remaining enabled sources in the background.
+            await progressiveFetch()
+        }
 
         // Kick off What's New pipeline
         refreshWhatsNew()
@@ -367,7 +446,7 @@ final class FeedStore {
                 guard !Task.isCancelled, let self else { return }
                 self.reservoir.moveToVisible(count: Reservoir.pageSize)
                 self.markSurfaced(self.reservoir.visibleItems)
-                self.visibleItems = self.reservoir.visibleItems
+                self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
                 self.reservoirCount = self.reservoir.reservoirCount
                 self.prefetchVisibleAndNext()
             }
@@ -461,42 +540,31 @@ final class FeedStore {
     private static let filterExpirySeconds: TimeInterval = 14400  // 4 hours
 
     private func persistFilters() {
-        let d = UserDefaults.standard
-        d.set(activeRegion, forKey: "filterRegion")
-        d.set(activeCategory, forKey: "filterCategory")
-        d.set(activeContentType.rawValue, forKey: "filterContentType")
-        d.set(activeMood.rawValue, forKey: "filterMood")
-        // Timestamp so we can expire stale filters on next launch
-        d.set(Date().timeIntervalSince1970, forKey: "filterSetAt")
+        Settings.filterRegion = activeRegion
+        Settings.filterCategory = activeCategory
+        Settings.filterContentType = activeContentType.rawValue
+        Settings.filterSetAt = Date().timeIntervalSince1970
     }
 
     private func restoreFilters() {
-        let d = UserDefaults.standard
-        let hasActiveFilters = d.string(forKey: "filterRegion") != nil
-            || d.string(forKey: "filterCategory") != nil
-            || (d.string(forKey: "filterContentType").flatMap(FeedLoader.ContentType.init(rawValue:)) ?? .all) != .all
-            || (d.string(forKey: "filterMood").flatMap(FeedLoader.MoodFilter.init(rawValue:)) ?? .all) != .all
+        let hasActiveFilters = Settings.filterRegion != nil
+            || Settings.filterCategory != nil
+            || (FeedLoader.ContentType(rawValue: Settings.filterContentType) ?? .all) != .all
 
-        // Expire stale filters — opt-in only (off by default).
-        // When enabled, filters auto-clear after 4h so the user never
-        // opens the app to an empty or confusing feed.
-        if hasActiveFilters && UserDefaults.standard.bool(forKey: "filterAutoExpire") {
-            let setAt = d.double(forKey: "filterSetAt")
-            let elapsed = Date().timeIntervalSince1970 - setAt
-            if setAt > 0 && elapsed > Self.filterExpirySeconds {
-                d.removeObject(forKey: "filterRegion")
-                d.removeObject(forKey: "filterCategory")
-                d.removeObject(forKey: "filterContentType")
-                d.removeObject(forKey: "filterMood")
-                d.removeObject(forKey: "filterSetAt")
+        if hasActiveFilters && Settings.filterAutoExpire {
+            let elapsed = Date().timeIntervalSince1970 - Settings.filterSetAt
+            if Settings.filterSetAt > 0 && elapsed > Self.filterExpirySeconds {
+                Settings.filterRegion = nil
+                Settings.filterCategory = nil
+                Settings.filterContentType = "All"
+                Settings.filterSetAt = 0
                 return
             }
         }
 
-        activeRegion = d.string(forKey: "filterRegion")
-        activeCategory = d.string(forKey: "filterCategory")
-        if let raw = d.string(forKey: "filterContentType"),
-           let type = FeedLoader.ContentType(rawValue: raw) {
+        activeRegion = Settings.filterRegion
+        activeCategory = Settings.filterCategory
+        if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
         }
         if let raw = d.string(forKey: "filterMood"),
@@ -506,14 +574,24 @@ final class FeedStore {
     }
 
     func setFilter(region: String?, category: String?, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
-        loadingState = .refreshing
+        // Update state immediately for UI responsiveness
         activeRegion = region
         activeCategory = category
         activeContentType = type
         activeMood = mood
         persistFilters()
-        refreshWhatsNew()
-        applyUpdate(.flush())
+
+        // Debounce the expensive flush+reload: if multiple filter changes
+        // arrive within 300ms (e.g. user tapping category then mood quickly),
+        // only the last one triggers the full reload pipeline.
+        filterDebounceTask?.cancel()
+        filterDebounceTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(300))
+            guard !Task.isCancelled, let self else { return }
+            self.loadingState = .refreshing
+            self.refreshWhatsNew()
+            self.applyUpdate(.flush())
+        }
     }
 
     func clearAllFilters() {
@@ -538,28 +616,10 @@ final class FeedStore {
             return
         }
         Task {
-            guard let pattern = FTS5Pattern(matchingAllTokensIn: q) else {
-                searchResults = []
-                applyUpdate(.replace([]))
-                return
-            }
-            let region = activeRegion
-            let category = activeCategory
-            // disabledRegions filtering now handled in-memory by isItemEnabled
-            let results: [FeedItemRecord] = try await db.read { db in
-                var request = FeedItemRecord
-                    .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
-                    .matching(pattern)
-                if let r = region { request = request.filter(Column("region") == r) }
-                if let c = category { request = request.filter(Column("category") == c) }
-                return try request
-                    .order(Column("published_at").desc)
-                    .limit(100)
-                    .fetchAll(db)
-            }
+            let results = await searchEngine.search(query, region: activeRegion, category: activeCategory)
             guard isSearching else { return }
-            searchResults = results.map { $0.toFeedItem() }
-            applyUpdate(.replace(searchResults.filter(isItemEnabled).filter(filterContentType)))
+            searchResults = results
+            applyUpdate(.replace(applyFilters(searchResults)))
         }
     }
 
@@ -629,11 +689,7 @@ final class FeedStore {
     }
 
     func clearAllBookmarks() {
-        Task {
-            try await db.write { db in
-                try db.execute(sql: "DELETE FROM bookmark_item")
-            }
-        }
+        bookmarkStore.clearAllBookmarks()
     }
 
     // MARK: - Source health
@@ -695,117 +751,77 @@ final class FeedStore {
     func collectWhatsNewCandidates(_ newItems: [FeedItem]) {
         let visibleIDs = Set(reservoir.visibleItems.map(\.id))
         let readIDs = readItemIDs
-        let weekAgo = Date().addingTimeInterval(-604800)  // 7 days
-        let candidates = newItems.filter { item in
-            item.publishedAt > weekAgo
-            && isItemEnabled(item)
-            && filterContentType(item)
-            && (activeMood == .all || activeMood.matches(item.title))
-            && !visibleIDs.contains(item.id)
-            && !readIDs.contains(item.id)
-        }
-        guard !candidates.isEmpty else { return }
-        // Merge into pool: one per source, newest first
-        var pool = (candidates + whatsNewPool).sorted { $0.publishedAt > $1.publishedAt }
-        var seen = Set<String>()
-        pool = pool.filter { seen.insert($0.sourceURL).inserted }
-        whatsNewPool = pool
-        // Promote when threshold reached
-        promoteWhatsNewIfReady()
+        whatsNewManager.collectWhatsNewCandidates(
+            newItems,
+            visibleIDs: visibleIDs,
+            readIDs: readIDs,
+            isItemEnabled: { [self] in isItemEnabled($0) },
+            filterContentType: filterContentType,
+            contentFilterExcludes: { [self] in contentFilterExcludes($0, filters: ContentFilterStore.shared.activeFilters) },
+            markSurfaced: { [self] in markSurfaced($0) }
+        )
     }
 
     /// Promote candidates to the visible carousel when the pool is full.
     private func promoteWhatsNewIfReady() {
-        guard whatsNewItems.isEmpty, whatsNewPool.count >= whatsNewThreshold else { return }
-        whatsNewItems = Array(whatsNewPool.prefix(whatsNewThreshold))
-        whatsNewPool.removeFirst(min(whatsNewThreshold, whatsNewPool.count))
-        // Carousel items are visible on screen — mark as surfaced
-        markSurfaced(whatsNewItems)
+        whatsNewManager.promoteWhatsNewIfReady(markSurfaced: { [self] in markSurfaced($0) })
     }
 
     /// Advance the carousel: return shown (unclicked) items to the pool so
     /// they remain available for future selections, then promote next batch.
     func advanceWhatsNew() {
-        // Return unclicked items to the pool — they were only previewed, not consumed
-        if !whatsNewItems.isEmpty {
-            whatsNewPool = (whatsNewItems + whatsNewPool)
-                .sorted { $0.publishedAt > $1.publishedAt }
-        }
-        whatsNewItems = []
-        promoteWhatsNewIfReady()
+        whatsNewManager.advanceWhatsNew(markSurfaced: { [self] in markSurfaced($0) })
     }
 
     /// Kick off an aggressive fetch to fill the What's New pool quickly at
     /// cold start. Runs alongside the DB seed — if the database has nothing,
     /// this fetches fresh content from the network immediately.
     func fetchWhatsNewBooster() {
-        Task { [weak self] in
-            guard let self else { return }
-            let sources = self.registry.enabledSources.shuffled().prefix(30)
-            let result = await self.fetcher.fetchAll(Array(sources), maxConcurrent: 5)
-            let actualNew = await self.persistFetchedItems(result.items)
-            if !actualNew.isEmpty {
-                self.reservoir.append(actualNew)
-                self.collectWhatsNewCandidates(actualNew)
-                self.prefetchImagesIfEnabled(for: actualNew)
-                for source in sources {
-                    let ok = result.sourceStatuses[source.url] != .failed
-                    self.scheduler.recordFetch(sourceURL: source.url, success: ok)
-                }
-            }
-        }
+        whatsNewManager.fetchWhatsNewBooster(
+            enabledSources: registry.enabledSources,
+            fetcher: fetcher,
+            persistFetchedItems: { [self] in await persistFetchedItems($0) },
+            throttledReservoirAppend: { [self] in throttledReservoirAppend($0) },
+            collectCandidates: { [self] in collectWhatsNewCandidates($0) },
+            prefetchImages: { [self] in prefetchImagesIfEnabled(for: $0) },
+            recordFetch: { [self] in scheduler.recordFetch(sourceURL: $0, success: $1) }
+        )
     }
 
     /// Refresh What's New: clear the pool, re-seed from DB, and trigger
     /// a booster fetch. Called on any user-triggered update (startup, shake,
     /// filter change) so the carousel always reflects the current context.
     func refreshWhatsNew() {
-        whatsNewItems = []
-        whatsNewPool = []
-        Task { await seedWhatsNewFromDB() }
-        fetchWhatsNewBooster()
+        whatsNewManager.refreshWhatsNew(
+            seedFromDB: { [self] in await seedWhatsNewFromDB() },
+            booster: { [self] in fetchWhatsNewBooster() }
+        )
     }
 
     /// Seed the pool from existing SQLite content — runs once at startup
     /// so the carousel isn't empty while waiting for the first fetch batch.
     private func seedWhatsNewFromDB() async {
-        guard whatsNewPool.isEmpty else { return }
-        let surfacedIDs = surfacedItemIDs
-        let readIDs = readItemIDs
-        do {
-            let records: [FeedItemRecord] = try await db.read { db in
-                try FeedItemRecord
-                    .filter(Column("published_at") > Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970))
-                    .filter(Column("is_read") == 0)
-                    .order(Column("published_at").desc)
-                    .limit(500)
-                    .fetchAll(db)
-            }
-            let items = records.map { $0.toFeedItem() }
-                .filter(isItemEnabled).filter(filterContentType)
-                .filter { !surfacedIDs.contains($0.id) && !readIDs.contains($0.id) }
-                .filter { activeMood == .all || activeMood.matches($0.title) }
-            var seen = Set<String>()
-            whatsNewPool = items.filter { seen.insert($0.sourceURL).inserted }
-            promoteWhatsNewIfReady()
-        } catch {}
+        await whatsNewManager.seedWhatsNewFromDB(
+            surfacedIDs: surfacedItemIDs,
+            readIDs: readItemIDs,
+            isItemEnabled: { [self] in isItemEnabled($0) },
+            filterContentType: filterContentType,
+            contentFilterExcludes: { [self] in contentFilterExcludes($0, filters: ContentFilterStore.shared.activeFilters) },
+            markSurfaced: { [self] in markSurfaced($0) }
+        )
     }
 
     /// Advance the baseline to now and persist it — so items already shown
     /// in the carousel aren't treated as "new" again next session.
     func advanceWhatsNewBaseline() {
-        let now = Date()
-        whatsNewBaselineDate = now
-        UserDefaults.standard.set(now, forKey: Self.lastWhatsNewSeenAtKey)
+        whatsNewManager.advanceWhatsNewBaseline()
     }
 
     /// Reset the What's New baseline to now so newly enabled content appears.
     /// Items fetched after this point (e.g. seedRegion) will be "new";
     /// weeks-old DB content won't be.
     func resetWhatsNewBaseline() {
-        let now = Date()
-        whatsNewBaselineDate = now
-        UserDefaults.standard.set(now, forKey: Self.lastWhatsNewSeenAtKey)
+        whatsNewManager.resetWhatsNewBaseline()
     }
 
     // MARK: - Private: fetch
@@ -822,7 +838,7 @@ final class FeedStore {
     ///
     /// Returns the deduplicated new items for the reservoir / prefetch / search.
     @discardableResult
-    private func persistFetchedItems(_ items: [FeedItem], regionOverride: String? = nil) async -> [FeedItem] {
+    func persistFetchedItems(_ items: [FeedItem], regionOverride: String? = nil) async -> [FeedItem] {
         var seen = Set<String>()
         let actualNew = items.filter { item in
             guard !loadedIDs.contains(item.id) else { return false }
@@ -855,7 +871,7 @@ final class FeedStore {
             loadedIDsCount = loadedIDs.count
             return succeeded
         } catch {
-            print("[FeedStore] persist error: \(error)")
+            Log.db.error("persist error: \(error.localizedDescription)")
             return []
         }
     }
@@ -879,8 +895,11 @@ final class FeedStore {
         defer { loadingState = .idle }
 
         let result = await fetcher.fetchAll(batch, maxConcurrent: 15)
+        // Yield to let pending UI work through after network I/O returns
+        await Task.yield()
+
         totalFetched += result.items.count
-        if result.failedSourceCount == 0 { fetchErrorCount = 0 }  // reset on clean batch
+        if result.failedSourceCount == 0 { fetchErrorCount = 0 }
         else { fetchErrorCount += result.failedSourceCount }
         lastFetchSucceeded = result.failedSourceCount == 0
         emptyFeedCount += result.emptySourceCount
@@ -898,21 +917,22 @@ final class FeedStore {
         let actualNew = await persistFetchedItems(result.items)
         guard !actualNew.isEmpty else { return }
 
+        // Yield again after heavy DB work before processing results
+        await Task.yield()
+
         // Feed the What's New reactive pipeline
         collectWhatsNewCandidates(actualNew)
 
         // Diagnostic (opt-in via debug bar): surface non-English items so a
         // mis-languaged feed can be identified. See loop-focus-areas #5.
-        if UserDefaults.standard.bool(forKey: "showDebugBar") {
+        if Settings.showDebugBar {
             logNonEnglishItems(actualNew)
         }
 
         // Cap items per source after bulk insert
         if !actualNew.isEmpty {
-            let sourceURLs = Set(actualNew.map(\.sourceURL))
-            for url in sourceURLs {
-                await capSourceItems(sourceURL: url)
-            }
+            let sourceURLs = Array(Set(actualNew.map(\.sourceURL)))
+            await capSourceItemsBatch(sourceURLs)
         }
 
         // Append to reservoir
@@ -944,7 +964,7 @@ final class FeedStore {
             recognizer.processString(text)
             guard let lang = recognizer.dominantLanguage, lang != .english else { continue }
             let region = registry.regionFor(sourceURL: item.sourceURL)
-            print("[LangCheck] \(lang.rawValue) source=\"\(item.sourceTitle)\" region=\(region) url=\(item.url)")
+            Log.feed.debug("[LangCheck] \(lang.rawValue) source=\"\(item.sourceTitle)\" region=\(region) url=\(item.url)")
         }
     }
 
@@ -956,7 +976,7 @@ final class FeedStore {
         let allEnabled = registry.enabledSources.shuffled()
         let budget = min(allEnabled.count, 200)  // per-session cap
         let chunkSize = 20
-        print("[progressiveFetch] Starting: \(budget)/\(allEnabled.count) sources")
+        Log.feed.info("progressiveFetch starting: \(budget)/\(allEnabled.count) sources")
         for chunkStart in stride(from: 0, to: budget, by: chunkSize) {
             let end = min(chunkStart + chunkSize, budget)
             let chunk = Array(allEnabled[chunkStart..<end])
@@ -964,6 +984,8 @@ final class FeedStore {
             // from YouTube and other aggressive CDNs when processing 800+ sources.
             if chunkStart > 0 { try? await Task.sleep(for: .seconds(1)) }
             let result = await fetcher.fetchAll(chunk, maxConcurrent: 5)
+            guard !Task.isCancelled else { break }
+            await Task.yield()  // Let UI work run between chunks
             totalFetched += result.items.count
             fetchErrorCount += result.failedSourceCount
             emptyFeedCount += result.emptySourceCount
@@ -977,22 +999,20 @@ final class FeedStore {
             }
             saveSourceHealthBatch(healthEntries)
             let actualNew = await persistFetchedItems(result.items)
-            reservoir.append(actualNew)
+            throttledReservoirAppend(actualNew)
             collectWhatsNewCandidates(actualNew)
             // Cap items per source so no single feed dominates (>50 items)
             if !actualNew.isEmpty {
-                let sourceURLs = Set(actualNew.map(\.sourceURL))
-                for url in sourceURLs { await capSourceItems(sourceURL: url) }
+                let sourceURLs = Array(Set(actualNew.map(\.sourceURL)))
+                await capSourceItemsBatch(sourceURLs)
             }
             prefetchImagesIfEnabled(for: actualNew)
             await matchPersistentSearches(actualNew)
-            if visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
-                reservoir.moveToVisible(count: Reservoir.pageSize)
-                visibleItems = applyFilters(reservoir.visibleItems)
-                reservoirCount = reservoir.reservoirCount
+            if visibleItems.isEmpty {
+                flushPendingReservoir()
             }
         }
-        print("[progressiveFetch] DONE — all \(allEnabled.count) sources processed")
+        Log.feed.info("progressiveFetch DONE — all \(allEnabled.count) sources processed")
         lastRefreshDate = .now
         await capAllSources()
     }
@@ -1016,11 +1036,11 @@ final class FeedStore {
                 let result = await self.fetcher.fetchAll(batch, maxConcurrent: 2)
                 let actualNew = await self.persistFetchedItems(result.items)
                 if !actualNew.isEmpty {
-                    self.reservoir.append(actualNew)
+                    self.throttledReservoirAppend(actualNew)
                     self.collectWhatsNewCandidates(actualNew)
                     self.prefetchImagesIfEnabled(for: actualNew)
                     // Cap per source to prevent domination
-                    for url in Set(actualNew.map(\.sourceURL)) { await self.capSourceItems(sourceURL: url) }
+                    await self.capSourceItemsBatch(Array(Set(actualNew.map(\.sourceURL))))
                 }
                 // Record fetch health for each source
                 for source in batch {
@@ -1049,12 +1069,10 @@ final class FeedStore {
                 """)
             }
             guard !offenders.isEmpty else { return }
-            print("[capAllSources] Capping \(offenders.count) sources (>50 items)")
-            for url in offenders {
-                await capSourceItems(sourceURL: url)
-            }
+            Log.db.info("capAllSources: capping \(offenders.count) sources (>50 items)")
+            await capSourceItemsBatch(offenders)
         } catch {
-            print("[capAllSources] Error: \(error)")
+            Log.db.error("capAllSources error: \(error.localizedDescription)")
         }
     }
 
@@ -1062,6 +1080,7 @@ final class FeedStore {
         guard !isSearching else { return }
         let region = activeRegion
         let category = activeCategory
+        let contentType = activeContentType
         // Always exclude read items — the feed should only show unseen content.
         // Read/opened items are tracked continuously and this information is
         // consumed by all feed-population paths (shake, filter, startup).
@@ -1073,6 +1092,16 @@ final class FeedStore {
                 request = request.filter(Column("region") == r)
             }
             if let c = category { request = request.filter(Column("category") == c) }
+            // Filter by content type at SQL level to avoid loading 200 items
+            // only to discard 95% in-memory (e.g. "Podcasts" filter with few
+            // podcast items in the DB).
+            switch contentType {
+            case .audio: request = request.filter(Column("audio_url") != nil)
+            case .video: request = request.filter(Column("source_url").like("%youtube%"))
+            case .text:  request = request.filter(Column("audio_url") == nil)
+                            .filter(!Column("source_url").like("%youtube%"))
+            case .all: break
+            }
             return try request
                 .order(Column("published_at").desc)
                 .limit(200)
@@ -1127,14 +1156,30 @@ final class FeedStore {
         return selected
     }
 
+    private static let maxReadIDs = 5000
+
     private func loadReadState() async {
         do {
             let ids: [String] = try await db.read { db in
-                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE is_read = 1")
+                try String.fetchAll(db, sql: """
+                    SELECT id FROM feed_item WHERE is_read = 1
+                    ORDER BY opened_at DESC LIMIT \(Self.maxReadIDs)
+                """)
             }
             readItemIDs = Set(ids)
+
+            // Purge old read rows beyond the cap
+            try await db.write { db in
+                try db.execute(sql: """
+                    UPDATE feed_item SET is_read = 0, opened_at = NULL
+                    WHERE is_read = 1 AND id NOT IN (
+                        SELECT id FROM feed_item WHERE is_read = 1
+                        ORDER BY opened_at DESC LIMIT \(Self.maxReadIDs)
+                    )
+                """)
+            }
         } catch {
-            print("[FeedStore] loadReadState error: \(error)")
+            Log.db.error("loadReadState error: \(error.localizedDescription)")
         }
     }
 
@@ -1148,17 +1193,16 @@ final class FeedStore {
         }.map(\.url)
         registry.toggleRegion(region)
         if wasDisabled {
-            // Enabling: clear memory, seed fresh content, reload from SQLite
+            // Enabling: seed fresh content then reload.
+            // Keep current content on screen (optimistic) — don't clear until
+            // new content is ready, preventing empty-screen flashes.
+            regionToggleTask?.cancel()
             scheduler.prioritize(sourceURLs: sourceURLs)
             resetWhatsNewBaseline()
-            pipelineTask?.cancel()
-            progressiveFetchTask?.cancel()
-            trimDebounceTask?.cancel()
-            reservoir.clear()
-            visibleItems = []
-            reservoirCount = 0
-            Task {
-                let seedItems = await seedRegion(region)
+            regionToggleTask = Task { [weak self] in
+                guard let self else { return }
+                let seedItems = await self.seedRegion(region)
+                guard !Task.isCancelled else { return }
                 if !seedItems.isEmpty {
                     let name: String
                     if region == "global" {
@@ -1166,12 +1210,20 @@ final class FeedStore {
                     } else {
                         name = CountryStore.countryName(for: region.replacingOccurrences(of: "countries/", with: ""))
                     }
-                    lastToggleMessage = "\(name): \(seedItems.count) new articles"
+                    // Inform user about filter mismatch
+                    let visibleCount = self.applyFilters(seedItems).count
+                    if visibleCount == 0 && !seedItems.isEmpty {
+                        self.lastToggleMessage = "\(name): \(seedItems.count) articles (0 match current filter)"
+                    } else {
+                        self.lastToggleMessage = "\(name): \(seedItems.count) new articles"
+                    }
                 }
-                await reloadFromSQLite(prepend: seedItems)
+                guard !Task.isCancelled else { return }
+                await self.reloadFromSQLite(prepend: seedItems)
             }
         } else {
             // Disabling: remove from scheduler (incl. sub-regions), purge from reservoir
+            regionToggleTask?.cancel()
             scheduler.remove(sourceURLs: sourceURLs)
             reservoir.removeRegion(region)
             applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
@@ -1204,48 +1256,7 @@ final class FeedStore {
     // MARK: - Persistent search
 
     private func matchPersistentSearches(_ items: [FeedItem]) async {
-        // Get all active persistent searches
-        let searches: [BookmarkListRecord] = (try? await db.read { db in
-            try BookmarkListRecord
-                .filter(Column("search_active") == 1)
-                .fetchAll(db)
-        }) ?? []
-        guard !searches.isEmpty else { return }
-
-        for search in searches {
-            guard let query = search.searchQuery else { continue }
-            guard let pattern = FTS5Pattern(matchingAllTokensIn: query) else { continue }
-            // Pre-filter by region/category in memory, then run ONE FTS query
-            // for all candidate ids at once. The previous code issued a separate
-            // FTS read (and write) per item, i.e. O(searches × items) round-trips
-            // on every fetched batch.
-            let candidateIDs = items.filter { item in
-                if let region = search.searchRegion,
-                   region != registry.regionFor(sourceURL: item.sourceURL) { return false }
-                if let cat = search.searchCategory, cat != item.category { return false }
-                return true
-            }.map(\.id)
-            guard !candidateIDs.isEmpty else { continue }
-
-            let matchedIDs: [String] = (try? await db.read { db in
-                try FeedItemRecord
-                    .filter(candidateIDs.contains(Column("id")))
-                    .matching(pattern)
-                    .fetchAll(db)
-                    .map(\.id)
-            }) ?? []
-            guard !matchedIDs.isEmpty else { continue }
-
-            let now = Int(Date().timeIntervalSince1970)
-            try? await db.write { db in
-                for id in matchedIDs {
-                    try db.execute(sql: """
-                        INSERT OR IGNORE INTO bookmark_item (list_id, item_id, added_at)
-                        VALUES (?, ?, ?)
-                    """, arguments: [search.id!, id, now])
-                }
-            }
-        }
+        await bookmarkStore.matchPersistentSearches(items, regionResolver: { [self] in registry.regionFor(sourceURL: $0) })
     }
 
     // MARK: - Maintenance
@@ -1267,41 +1278,54 @@ final class FeedStore {
                 """, arguments: [cutoff])
             }
         } catch {
-            print("[FeedStore] Expurgo error: \(error)")
+            Log.db.warning("Expurgo error: \(error.localizedDescription)")
         }
     }
 
     /// Per-source cap: keep max 50 items per source within 30-day window.
+    /// Cap a single source at 50 items. Prefer `capSourceItemsBatch` for multiple sources.
     func capSourceItems(sourceURL: String) async {
+        await capSourceItemsBatch([sourceURL])
+    }
+
+    /// Batch cap: enforce 50-item-per-source limit for multiple sources in a
+    /// single transaction. Replaces the previous 3×N round-trip approach with
+    /// one read + one write, dramatically reducing SQLite churn on startup.
+    func capSourceItemsBatch(_ sourceURLs: [String]) async {
+        guard !sourceURLs.isEmpty else { return }
         do {
-            // Snapshot IDs before deletions so we know what existed
-            let before = Set(try await db.read { db in
-                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE source_url = ?", arguments: [sourceURL])
-            })
-            try await db.write { db in
-                let count = try Int.fetchOne(db, sql: """
-                    SELECT COUNT(*) FROM feed_item WHERE source_url = ?
-                """, arguments: [sourceURL]) ?? 0
-                guard count > 50 else { return }
-                try db.execute(sql: """
+            let removedIDs: [String] = try await db.write { db in
+                // Find all sources that exceed the cap and collect IDs to delete
+                let placeholders = sourceURLs.map { _ in "?" }.joined(separator: ",")
+                let args = StatementArguments(sourceURLs)
+
+                // Identify items to delete: for each overflowing source, keep
+                // the 50 newest by published_at, delete the rest (excluding
+                // bookmarks and read items).
+                let idsToDelete = try String.fetchAll(db, sql: """
                     DELETE FROM feed_item WHERE id IN (
-                        SELECT id FROM feed_item WHERE source_url = ?
-                        AND id NOT IN (SELECT item_id FROM bookmark_item)
-                        AND is_read = 0
-                        ORDER BY published_at ASC
-                        LIMIT ?
-                    )
-                """, arguments: [sourceURL, count - 50])
+                        SELECT fi.id FROM feed_item fi
+                        LEFT JOIN bookmark_item bi ON bi.item_id = fi.id
+                        WHERE fi.source_url IN (\(placeholders))
+                          AND bi.item_id IS NULL
+                          AND fi.is_read = 0
+                          AND fi.id NOT IN (
+                              SELECT id FROM feed_item fi2
+                              WHERE fi2.source_url = fi.source_url
+                              ORDER BY fi2.published_at DESC
+                              LIMIT 50
+                          )
+                    ) RETURNING id
+                """, arguments: args)
+                return idsToDelete
             }
-            // Sync loadedIDs: remove IDs that no longer exist in DB (#19)
-            let after = Set(try await db.read { db in
-                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE source_url = ?", arguments: [sourceURL])
-            })
-            let removed = before.subtracting(after)
-            for id in removed { loadedIDs.remove(id) }
-            if !removed.isEmpty { loadedIDsCount = loadedIDs.count }
+            // Sync loadedIDs
+            if !removedIDs.isEmpty {
+                for id in removedIDs { loadedIDs.remove(id) }
+                loadedIDsCount = loadedIDs.count
+            }
         } catch {
-            print("[FeedStore] Source cap error: \(error)")
+            Log.db.error("capSourceItemsBatch error: \(error.localizedDescription)")
         }
     }
 
@@ -1323,231 +1347,68 @@ final class FeedStore {
             }
             try await db.vacuum()
             UserDefaults.standard.set(now, forKey: lastKey)
-            print("[FeedStore] Heavy maintenance complete")
+            Log.db.info("Heavy maintenance complete")
         } catch {
-            print("[FeedStore] Maintenance error: \(error)")
+            Log.db.error("Maintenance error: \(error.localizedDescription)")
         }
     }
 
     // MARK: - Bookmark CRUD
 
     func allBookmarkLists() async throws -> [BookmarkList] {
-        try await db.read { db in
-            let records = try BookmarkListRecord.order(Column("sort_order")).fetchAll(db)
-            return try records.map { r in
-                let count = try BookmarkItemRecord.filter(Column("list_id") == r.id!).fetchCount(db)
-                return BookmarkList(
-                    id: r.id!, name: r.name, sortOrder: r.sortOrder,
-                    createdAt: r.createdAt, isDefault: r.isDefault,
-                    searchQuery: r.searchQuery, searchRegion: r.searchRegion,
-                    searchCategory: r.searchCategory, searchActive: r.searchActive,
-                    itemCount: count
-                )
-            }
-        }
+        try await bookmarkStore.allBookmarkLists()
     }
 
     func createBookmarkList(name: String, searchQuery: String? = nil,
                             region: String? = nil, category: String? = nil) async throws -> Int64 {
-        try await db.write { db in
-            try db.execute(sql: """
-                INSERT INTO bookmark_list (name, sort_order, created_at, is_default,
-                    search_query, search_region, search_category, search_active)
-                VALUES (?, 0, ?, 0, ?, ?, ?, ?)
-            """, arguments: [
-                name,
-                Int(Date().timeIntervalSince1970),
-                searchQuery,
-                region,
-                category,
-                searchQuery != nil
-            ])
-            return db.lastInsertedRowID
-        }
+        try await bookmarkStore.createBookmarkList(name: name, searchQuery: searchQuery, region: region, category: category)
     }
 
     func toggleBookmark(itemID: String, listID: Int64? = nil) async throws {
-        let targetListID = listID ?? defaultListID()
-        try await db.write { db in
-            let existing = try BookmarkItemRecord
-                .filter(Column("list_id") == targetListID && Column("item_id") == itemID)
-                .fetchCount(db)
-            if existing > 0 {
-                try db.execute(sql: "DELETE FROM bookmark_item WHERE list_id = ? AND item_id = ?",
-                              arguments: [targetListID, itemID])
-            } else {
-                try db.execute(sql: """
-                    INSERT INTO bookmark_item (list_id, item_id, added_at) VALUES (?, ?, ?)
-                """, arguments: [targetListID, itemID, Int(Date().timeIntervalSince1970)])
-            }
-        }
+        try await bookmarkStore.toggleBookmark(itemID: itemID, listID: listID)
     }
 
     func isBookmarked(itemID: String, listID: Int64? = nil) async throws -> Bool {
-        let targetListID = listID ?? defaultListID()
-        return try await db.read { db in
-            try BookmarkItemRecord
-                .filter(Column("list_id") == targetListID && Column("item_id") == itemID)
-                .fetchCount(db) > 0
-        }
+        try await bookmarkStore.isBookmarked(itemID: itemID, listID: listID)
     }
 
     func bookmarkedItems(listID: Int64? = nil) async throws -> [FeedItem] {
-        let targetListID = listID ?? defaultListID()
-        let records: [FeedItemRecord] = try await db.read { db in
-            try FeedItemRecord
-                .joining(required: FeedItemRecord.hasMany(BookmarkItemRecord.self)
-                    .filter(Column("list_id") == targetListID))
-                .order(Column("published_at").desc)
-                .fetchAll(db)
-        }
-        return records.map { $0.toFeedItem() }
+        try await bookmarkStore.bookmarkedItems(listID: listID)
     }
 
     func renameBookmarkList(_ id: Int64, name: String) async throws {
-        try await db.write { db in
-            try db.execute(sql: "UPDATE bookmark_list SET name = ? WHERE id = ?", arguments: [name, id])
-        }
+        try await bookmarkStore.renameBookmarkList(id, name: name)
     }
 
     func reorderBookmarkList(_ id: Int64, sortOrder: Int) async throws {
-        try await db.write { db in
-            try db.execute(sql: "UPDATE bookmark_list SET sort_order = ? WHERE id = ?",
-                          arguments: [sortOrder, id])
-        }
+        try await bookmarkStore.reorderBookmarkList(id, sortOrder: sortOrder)
     }
 
     func deleteBookmarkList(_ id: Int64) async throws {
-        try await db.write { db in
-            let isDefault = try Bool.fetchOne(db, sql: "SELECT is_default FROM bookmark_list WHERE id = ?", arguments: [id]) ?? false
-            guard !isDefault else { return }
-            try db.execute(sql: "DELETE FROM bookmark_list WHERE id = ?", arguments: [id])
-        }
+        try await bookmarkStore.deleteBookmarkList(id)
     }
 
     /// Toggle search_active on a persistent search bookmark list.
     /// When activated, retroactively adds matching existing items to the list.
     func toggleSearchActive(listID: Int64) async throws {
-        let wasActive: Bool = try await db.read { db in
-            try Bool.fetchOne(db, sql: "SELECT search_active FROM bookmark_list WHERE id = ?", arguments: [listID]) ?? false
-        }
-        let newState = !wasActive
-        try await db.write { db in
-            try db.execute(sql: "UPDATE bookmark_list SET search_active = ? WHERE id = ?",
-                          arguments: [newState, listID])
-        }
-        // If activating, retroactively match existing items in SQLite
-        if newState {
-            try await retroMatchSearch(listID: listID)
-        }
-    }
-
-    /// Retroactively add all existing items in SQLite that match a persistent search.
-    private func retroMatchSearch(listID: Int64) async throws {
-        let search: BookmarkListRecord? = try await db.read { db in
-            try BookmarkListRecord.fetchOne(db, key: listID)
-        }
-        guard let search, let query = search.searchQuery,
-              let pattern = FTS5Pattern(matchingAllTokensIn: query) else { return }
-
-        let records: [FeedItemRecord] = try await db.read { db in
-            var request = FeedItemRecord
-                .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
-                .matching(pattern)
-            if let region = search.searchRegion {
-                request = request.filter(Column("region") == region)
-            }
-            if let cat = search.searchCategory {
-                request = request.filter(Column("category") == cat)
-            }
-            return try request.fetchAll(db)
-        }
-
-        guard !records.isEmpty else { return }
-        let now = Int(Date().timeIntervalSince1970)
-        try await db.write { db in
-            for record in records {
-                try db.execute(sql: """
-                    INSERT OR IGNORE INTO bookmark_item (list_id, item_id, added_at)
-                    VALUES (?, ?, ?)
-                """, arguments: [listID, record.id, now])
-            }
-        }
+        try await bookmarkStore.toggleSearchActive(listID: listID)
     }
 
     // MARK: - Persistent Search (Active)
 
     func activeSearches() async throws -> [ActiveSearch] {
-        let records: [BookmarkListRecord] = try await db.read { db in
-            try BookmarkListRecord
-                .filter(Column("search_active") == 1)
-                .fetchAll(db)
-        }
-        return records.map { r in
-            ActiveSearch(
-                id: r.id!, name: r.name,
-                searchQuery: r.searchQuery ?? "",
-                region: r.searchRegion, category: r.searchCategory
-            )
-        }
+        try await bookmarkStore.activeSearches()
     }
 
     /// Build composite feed from multiple active searches with tiered scoring.
     func compositeSearchFeed() async throws -> [FeedItem] {
-        let searches = try await activeSearches()
-        guard !searches.isEmpty else { return [] }
-
-        var scored: [(FeedItem, Int)] = []
-        for search in searches {
-            guard let pattern = FTS5Pattern(matchingAllTokensIn: search.searchQuery) else { continue }
-            let records: [FeedItemRecord] = try await db.read { db in
-                var request = FeedItemRecord
-                    .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
-                    .matching(pattern)
-                if let r = search.region {
-                    request = request.filter(Column("region") == r)
-                }
-                if let c = search.category {
-                    request = request.filter(Column("category") == c)
-                }
-                return try request.limit(50).fetchAll(db)
-            }
-            for record in records {
-                let item = record.toFeedItem()
-                let score = search.matches(item, itemRegion: registry.regionFor(sourceURL: item.sourceURL))
-                scored.append((item, score + 1))
-            }
-        }
-
-        // Deduplicate and sum scores
-        var bestScore: [String: (FeedItem, Int)] = [:]
-        for (item, score) in scored {
-            if let existing = bestScore[item.id] {
-                bestScore[item.id] = (item, existing.1 + score)
-            } else {
-                bestScore[item.id] = (item, score)
-            }
-        }
-
-        // Sort: score DESC. Must be a strict weak ordering — returning true for
-        // equal scores (the old `return true`) violates sorted(by:)'s contract
-        // and can crash or yield a garbage order. `a.1 > b.1` returns false on
-        // ties, and sorted(by:) is stable, so equal scores keep their order.
-        let sorted = bestScore.values.sorted { a, b in
-            a.1 > b.1
-        }
-        return sorted.map { $0.0 }
+        try await bookmarkStore.compositeSearchFeed(regionResolver: { [self] in registry.regionFor(sourceURL: $0) })
     }
 
     // MARK: - Private helpers
 
     private func defaultListID() -> Int64 {
-        if let cached = _defaultListID { return cached }
-        let id: Int64 = (try? db.read { db in
-            try Int64.fetchOne(db, sql: "SELECT id FROM bookmark_list WHERE is_default = 1 LIMIT 1")
-        }) ?? 1
-        _defaultListID = id
-        return id
+        bookmarkStore.defaultListID()
     }
 
     // MARK: - Emergency
@@ -1565,14 +1426,14 @@ final class FeedStore {
         let ids = reservoir.visibleItems.map(\.id)
         for id in ids { readItemIDs.insert(id) }
         reservoir.readItemIDs = readItemIDs
+        let now = Int(Date().timeIntervalSince1970)
+        let placeholders = Array(repeating: "?", count: ids.count).joined(separator: ",")
         Task {
             try await db.write { db in
-                for id in ids {
-                    try db.execute(sql: """
-                        UPDATE feed_item SET is_read = 1, opened_at = \(Int(Date().timeIntervalSince1970))
-                        WHERE id = ?
-                    """, arguments: [id])
-                }
+                try db.execute(sql: """
+                    UPDATE feed_item SET is_read = 1, opened_at = \(now)
+                    WHERE id IN (\(placeholders))
+                """, arguments: StatementArguments(ids))
             }
         }
         // Clear everything, then force-fetch NEW content. The SQLite reload

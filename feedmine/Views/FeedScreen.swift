@@ -23,6 +23,9 @@ struct FeedScreen: View {
     @State private var showSources = false
     @State private var showFilters = false
     @State private var showBookmarks = false
+    @State private var showAddFeed = false
+    @State private var showCollections = false
+    @State private var showExport = false
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
@@ -76,6 +79,13 @@ struct FeedScreen: View {
                 Spacer()
                 MiniPlayerBar()
                     .background(.ultraThinMaterial)
+            }
+
+            // Clipboard banner (below header)
+            VStack {
+                Spacer().frame(height: 90)
+                ClipboardBanner().autoCheck()
+                Spacer()
             }
 
             // Toast + Onboarding overlays
@@ -143,6 +153,12 @@ struct FeedScreen: View {
                 loader.clearToggleMessage()
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: .feedImportCompleted)) { notification in
+            if let msg = notification.userInfo?["message"] as? String {
+                toastMessage = msg; toastIcon = "plus.circle.fill"
+                withAnimation { showToast = true }
+            }
+        }
         .onChange(of: player.lastPlaybackError) { _, error in
             if let error {
                 toastMessage = error; toastIcon = "exclamationmark.triangle"
@@ -161,6 +177,9 @@ struct FeedScreen: View {
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
         .sheet(isPresented: $showBookmarks) { BookmarkBoxesView() }
+        .sheet(isPresented: $showAddFeed) { AddFeedView() }
+        .sheet(isPresented: $showCollections) { CollectionManagementView() }
+        .sheet(isPresented: $showExport) { ExportView() }
         .tint(engine.accent)
         .animation(.easeInOut(duration: 2.0), value: engine.period)
         .overlay { if nightMode { nightOverlay } }
@@ -208,6 +227,15 @@ struct FeedScreen: View {
                     }
                     filterButton
                     Menu {
+                        Button { showAddFeed = true } label: {
+                            Label("Add Feed", systemImage: "plus.circle")
+                        }
+                        Button { showExport = true } label: {
+                            Label("Export", systemImage: "square.and.arrow.up")
+                        }
+                        Button { showCollections = true } label: {
+                            Label("Collections", systemImage: "folder.fill")
+                        }
                         Button { showSources = true } label: {
                             Label("Sources", systemImage: "antenna.radiowaves.left.and.right")
                         }

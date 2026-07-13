@@ -130,6 +130,20 @@ struct SettingsSheetView: View {
                         .tint(.orange)
                     Toggle("Auto-clear Filters", systemImage: "clock.arrow.2.circlepath", isOn: $filterAutoExpire)
                         .tint(.blue)
+                    NavigationLink {
+                        ContentFilterView()
+                    } label: {
+                        HStack {
+                            Label("Content Filters", systemImage: "eye.slash.fill")
+                            Spacer()
+                            let count = ContentFilterStore.shared.filters.filter(\.isEnabled).count
+                            if count > 0 {
+                                Text("\(count) active")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
                 } header: {
                     Text("Reading")
                 } footer: {

@@ -71,18 +71,6 @@ final class ImageCache {
         return FileManager.default.fileExists(atPath: fileURL.path)
     }
 
-    func image(for url: URL) -> UIImage? {
-        let key = cacheKey(for: url)
-        if let img = memoryCache.object(forKey: key as NSString) { return img }
-        let fileURL = diskCacheURL.appendingPathComponent(key)
-        guard fileManager.fileExists(atPath: fileURL.path),
-              let data = try? Data(contentsOf: fileURL),
-              let img = UIImage(data: data) else { return nil }
-        let cost = Int(img.size.width * img.size.height * 4)
-        memoryCache.setObject(img, forKey: key as NSString, cost: cost)
-        return img
-    }
-
     func diskImage(for url: URL) async -> UIImage? {
         let key = cacheKey(for: url)
         if let img = memoryCache.object(forKey: key as NSString) { return img }
@@ -112,14 +100,17 @@ final class ImageCache {
         }
     }
 
-    /// Store raw image data with automatic downsampling before both memory
-    /// AND disk cache. Returns the downsampled UIImage so callers can use
-    /// it directly instead of decoding again.
+    /// Store raw image data with automatic downsampling. The CPU-intensive
+    /// downsample runs off the main actor; only the NSCache write hops back.
     @discardableResult
-    func setImage(data: Data, for url: URL, maxDimension: CGFloat = downsampleMaxDimension) -> UIImage? {
+    func setImage(data: Data, for url: URL, maxDimension: CGFloat = downsampleMaxDimension) async -> UIImage? {
         let key = cacheKey(for: url)
 
-        guard let downsampled = Self.downsample(data: data, to: maxDimension) else { return nil }
+        // Downsample off the main actor — this is the expensive part
+        guard let downsampled = await Task.detached(priority: .utility) {
+            Self.downsample(data: data, to: maxDimension)
+        }.value else { return nil }
+
         let cost = Int(downsampled.size.width * downsampled.size.height * 4)
         memoryCache.setObject(downsampled, forKey: key as NSString, cost: cost)
 
@@ -157,28 +148,12 @@ final class ImageCache {
     // MARK: - Private
 
     private nonisolated func cacheKey(for url: URL) -> String {
-        let full = url.absoluteString
-        let sanitized = full
-            .replacingOccurrences(of: "/", with: "_")
-            .replacingOccurrences(of: ":", with: "_")
-            .replacingOccurrences(of: "?", with: "_")
-            .replacingOccurrences(of: "=", with: "_")
-            .replacingOccurrences(of: "&", with: "_")
-        if sanitized.utf8.count <= 200 { return sanitized }
-        return String(sanitized.prefix(160)) + "_" + Self.stableHash(full)
+        "img_\(Self.stableHash(url.absoluteString))"
     }
 
     /// Duplicated key logic for the static hasCachedImageData path.
     private nonisolated static func cacheKeyForURL(_ url: URL) -> String {
-        let full = url.absoluteString
-        let sanitized = full
-            .replacingOccurrences(of: "/", with: "_")
-            .replacingOccurrences(of: ":", with: "_")
-            .replacingOccurrences(of: "?", with: "_")
-            .replacingOccurrences(of: "=", with: "_")
-            .replacingOccurrences(of: "&", with: "_")
-        if sanitized.utf8.count <= 200 { return sanitized }
-        return String(sanitized.prefix(160)) + "_" + Self.stableHash(full)
+        "img_\(stableHash(url.absoluteString))"
     }
 
     /// FNV-1a 64-bit — deterministic across launches, unlike String.hashValue.
@@ -326,7 +301,7 @@ struct CachedAsyncImage: View {
             do {
                 let (data, _) = try await Self.session.data(from: url)
                 guard Self.isValidImageData(data) else { break }
-                if let downsampled = ImageCache.shared.setImage(data: data, for: url) {
+                if let downsampled = await ImageCache.shared.setImage(data: data, for: url) {
                     loadedImage = downsampled
                     onResult?(true)
                     return

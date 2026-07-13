@@ -72,7 +72,7 @@ struct OPMLParser {
         } catch {
             // Surface a persistently failing cache write (full disk, bad
             // permissions) instead of silently re-parsing on every launch.
-            print("[OPMLParser] Failed to write parse cache: \(error)")
+            Log.feed.error("Failed to write parse cache: \(error)")
         }
     }
 
@@ -188,7 +188,7 @@ struct OPMLParser {
             )
             return (index, sources, invalids, false)
         } catch {
-            print("[OPMLParser] Failed to parse \(fileURL.lastPathComponent): \(error)")
+            Log.feed.error("Failed to parse \(fileURL.lastPathComponent): \(error)")
             return (index, [], 0, true)
         }
     }

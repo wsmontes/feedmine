@@ -277,7 +277,7 @@ final class FeedLoader {
             let items = try await store.bookmarkedItems(listID: defaultID)
             bookmarkItemIDs = Set(items.map(\.id))
         } catch {
-            print("[FeedLoader] refreshBookmarkState error: \(error)")
+            Log.feed.error("refreshBookmarkState error: \(error)")
         }
     }
 
@@ -356,16 +356,32 @@ final class FeedLoader {
 
     // MARK: - Init
 
+    /// Non-nil if the default FeedStore failed to initialize.
+    private(set) var initError: Error?
+
     /// Creates a FeedLoader. Pass a custom FeedStore for testing; uses SQLite-backed
-    /// store by default.
+    /// store by default. If store creation fails, captures the error for UI display.
     init(store: FeedStore? = nil) {
-        self.store = store ?? (try! FeedStore())
+        if let store {
+            self.store = store
+        } else {
+            do {
+                self.store = try FeedStore()
+            } catch {
+                // Fallback: attempt an in-memory database so the app doesn't crash
+                self.initError = error
+                self.store = (try? FeedStore()) ?? {
+                    fatalError("[FeedLoader] Unable to create even a fallback FeedStore: \(error)")
+                }()
+            }
+        }
     }
 
     // MARK: - Actions (delegate to store)
 
     func start() async {
         await store.start()
+        restoreImportedSources()
         await loadWhatsNew()
         await refreshBookmarkLists()
         await refreshBookmarkState()
@@ -450,6 +466,10 @@ final class FeedLoader {
     func toggleAllCountries() {
         store.registry.toggleAllCountries()
         store.resetWhatsNewBaseline()
+        // Reload feed to reflect the mass enable/disable immediately.
+        // Re-apply current filters to flush+reload from SQLite.
+        store.setFilter(region: store.activeRegion, category: store.activeCategory,
+                        type: store.activeContentType, mood: store.activeMood)
         Task { await loadWhatsNew() }
     }
     func toggleGlobalFeeds() {
@@ -573,13 +593,121 @@ final class FeedLoader {
 
     // MARK: - Source helpers
 
+    // MARK: - Import Pipeline
+
+    private let importPipeline = ImportPipeline()
+
+    /// Legacy addSources — still works but prefer importFeeds for new code.
     func addSources(_ newSources: [FeedSource]) {
         store.registry.sources = OPMLParser.deduplicateSources(
             store.registry.sources + newSources
         )
-        // Persist imported sources so they survive app restart.
-        // Saved to a simple JSON file in the app's documents directory.
         persistImportedSources()
+        // Trigger fetch for new sources + reload feed
+        Task { await fetchAndReloadAfterImport(newSources) }
+    }
+
+    /// Replace the entire source list (used by collection management: rename, delete, move).
+    func replaceAllSources(_ sources: [FeedSource]) {
+        store.registry.sources = sources
+        persistImportedSources()
+    }
+
+    /// Import feed URLs (paste, share sheet, etc.) with full validation.
+    /// Pass `skipValidation: true` when URLs come from URLResolver (already probed).
+    /// Returns ImportResult for UI feedback.
+    func importFeeds(urls: [String], category: String = "Imported", skipValidation: Bool = false) async -> ImportResult {
+        let existingURLs = Set(store.registry.sources.map { OPMLParser.normalizeURL($0.url) })
+
+        if skipValidation {
+            // URLs already validated by URLResolver — skip probe, just dedup + register
+            var results: [ImportItemResult] = []
+            var newSources: [FeedSource] = []
+            for rawURL in urls {
+                let normalized = OPMLParser.normalizeURL(rawURL)
+                if existingURLs.contains(normalized) {
+                    results.append(ImportItemResult(url: rawURL, title: nil, status: .duplicate))
+                } else {
+                    let kind = ImportPipeline.detectMediaKind(url: normalized, title: nil)
+                    let source = FeedSource(
+                        title: ImportPipeline.titleFromURL(normalized),
+                        url: normalized, category: category, region: "imported", mediaKind: kind
+                    )
+                    newSources.append(source)
+                    results.append(ImportItemResult(url: normalized, title: source.title, status: .imported))
+                }
+            }
+            if !newSources.isEmpty {
+                store.registry.sources = OPMLParser.deduplicateSources(
+                    store.registry.sources + newSources
+                )
+                persistImportedSources()
+                await fetchAndReloadAfterImport(newSources)
+            }
+            return ImportResult(items: results)
+        }
+
+        let (result, sources) = await importPipeline.ingest(
+            urls: urls, category: category, existingURLs: existingURLs
+        )
+        if !sources.isEmpty {
+            store.registry.sources = OPMLParser.deduplicateSources(
+                store.registry.sources + sources
+            )
+            persistImportedSources()
+            await fetchAndReloadAfterImport(sources)
+        }
+        return result
+    }
+
+    /// Import from OPML file data (file picker, AirDrop).
+    func importOPML(data: Data, fileName: String, validate: Bool = false) async -> ImportResult {
+        let existingURLs = Set(store.registry.sources.map { OPMLParser.normalizeURL($0.url) })
+        let (result, sources) = await importPipeline.ingest(
+            opmlData: data, fileName: fileName, existingURLs: existingURLs, validate: validate
+        )
+        if !sources.isEmpty {
+            store.registry.sources = OPMLParser.deduplicateSources(
+                store.registry.sources + sources
+            )
+            persistImportedSources()
+            await fetchAndReloadAfterImport(sources)
+        }
+        return result
+    }
+
+    /// Import from a remote OPML URL.
+    func importOPML(url: URL, validate: Bool = false) async -> ImportResult? {
+        let existingURLs = Set(store.registry.sources.map { OPMLParser.normalizeURL($0.url) })
+        guard let (result, sources) = await importPipeline.ingest(
+            opmlURL: url, existingURLs: existingURLs, validate: validate
+        ) else { return nil }
+        if !sources.isEmpty {
+            store.registry.sources = OPMLParser.deduplicateSources(
+                store.registry.sources + sources
+            )
+            persistImportedSources()
+            await fetchAndReloadAfterImport(sources)
+        }
+        return result
+    }
+
+    /// After importing new sources: fetch their content immediately and reload the feed.
+    private func fetchAndReloadAfterImport(_ sources: [FeedSource]) async {
+        let batch = Array(sources.prefix(20))  // Cap first fetch to 20 sources
+        let result = await store.fetcher.fetchAll(batch, maxConcurrent: 5)
+        let actualNew = await store.persistFetchedItems(result.items)
+        if !actualNew.isEmpty {
+            store.throttledReservoirAppend(actualNew)
+            store.collectWhatsNewCandidates(actualNew)
+        }
+        // Force reload to show new content
+        store.setFilter(
+            region: store.activeRegion,
+            category: store.activeCategory,
+            type: store.activeContentType,
+            mood: store.activeMood
+        )
     }
 
     private func persistImportedSources() {
@@ -591,7 +719,26 @@ final class FeedLoader {
             let data = try JSONEncoder().encode(imported)
             try data.write(to: url)
         } catch {
-            print("[FeedLoader] Failed to persist imported sources: \(error)")
+            Log.import_.error("Failed to persist imported sources: \(error)")
+        }
+    }
+
+    /// Restore previously imported sources from disk on app launch.
+    /// Merges them into the registry without duplicating bundled sources.
+    private func restoreImportedSources() {
+        let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("imported_sources.json")
+        guard FileManager.default.fileExists(atPath: fileURL.path) else { return }
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let imported = try JSONDecoder().decode([FeedSource].self, from: data)
+            guard !imported.isEmpty else { return }
+            store.registry.sources = OPMLParser.deduplicateSources(
+                store.registry.sources + imported
+            )
+            Log.import_.info("Restored \(imported.count) imported sources")
+        } catch {
+            Log.import_.error("Failed to restore imported sources: \(error)")
         }
     }
 
