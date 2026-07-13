@@ -106,14 +106,32 @@ final class FeedStore {
     /// Single-pass to avoid intermediate array allocations.
     private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
         let category = activeCategory
-        let mood = activeMood
         let contentType = filterContentType
+        let contentFilters = ContentFilterStore.shared.isEnabled
+            ? ContentFilterStore.shared.activeFilters : []
         return items.filter { item in
             isItemEnabled(item)
             && (category == nil || item.category == category)
             && contentType(item)
-            && (mood == .all || mood.matches(item.title))
+            && !contentFilterExcludes(item, filters: contentFilters)
         }
+    }
+
+    /// Content filter engine: checks if an item's title+excerpt contains any
+    /// keyword from the user's active content filters. Uses localizedStandardContains
+    /// for diacritic-insensitive, case-insensitive matching.
+    private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
+        guard !filters.isEmpty else { return false }
+        let text = (item.title + " " + item.excerpt).lowercased()
+        for filter in filters {
+            for keyword in filter.keywords {
+                if text.localizedStandardContains(keyword) {
+                    ContentFilterStore.shared.recordHit(filter.id)
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     private var filterContentType: (FeedItem) -> Bool {
@@ -751,7 +769,7 @@ final class FeedStore {
             item.publishedAt > weekAgo
             && isItemEnabled(item)
             && filterContentType(item)
-            && (activeMood == .all || activeMood.matches(item.title))
+            && !contentFilterExcludes(item, filters: ContentFilterStore.shared.activeFilters)
             && !visibleIDs.contains(item.id)
             && !readIDs.contains(item.id)
         }
@@ -839,7 +857,7 @@ final class FeedStore {
             let items = records.map { $0.toFeedItem() }
                 .filter(isItemEnabled).filter(filterContentType)
                 .filter { !surfacedIDs.contains($0.id) && !readIDs.contains($0.id) }
-                .filter { activeMood == .all || activeMood.matches($0.title) }
+                .filter { !contentFilterExcludes($0, filters: ContentFilterStore.shared.activeFilters) }
             var seen = Set<String>()
             whatsNewPool = items.filter { seen.insert($0.sourceURL).inserted }
             promoteWhatsNewIfReady()
