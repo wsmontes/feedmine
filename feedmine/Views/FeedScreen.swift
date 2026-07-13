@@ -25,6 +25,7 @@ struct FeedScreen: View {
     @State private var showBookmarks = false
     @State private var showAddFeed = false
     @State private var showCollections = false
+    @State private var showExport = false
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
@@ -178,6 +179,7 @@ struct FeedScreen: View {
         .sheet(isPresented: $showBookmarks) { BookmarkBoxesView() }
         .sheet(isPresented: $showAddFeed) { AddFeedView() }
         .sheet(isPresented: $showCollections) { CollectionManagementView() }
+        .sheet(isPresented: $showExport) { ExportView() }
         .tint(engine.accent)
         .animation(.easeInOut(duration: 2.0), value: engine.period)
         .overlay { if nightMode { nightOverlay } }
@@ -227,6 +229,9 @@ struct FeedScreen: View {
                     Menu {
                         Button { showAddFeed = true } label: {
                             Label("Add Feed", systemImage: "plus.circle")
+                        }
+                        Button { showExport = true } label: {
+                            Label("Export", systemImage: "square.and.arrow.up")
                         }
                         Button { showCollections = true } label: {
                             Label("Collections", systemImage: "folder.fill")
