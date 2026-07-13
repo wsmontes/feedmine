@@ -29,7 +29,7 @@ final class Reservoir {
         Array(reservoir.prefix(count))
     }
 
-    private var surfacedTimestamps: [String: Date] = [:]
+    private(set) var surfacedTimestamps: [String: Date] = [:]
     /// Items the user has explicitly marked as read (readItemIDs from FeedStore).
     /// Read items deprecate harder than surfaced items — pushed to the stale bucket.
     var readItemIDs: Set<String> = []
@@ -414,5 +414,133 @@ final class Reservoir {
             let cutoff = now.addingTimeInterval(-Self.surfacedCooldown)
             surfacedTimestamps = surfacedTimestamps.filter { $0.value > cutoff }
         }
+    }
+
+    // MARK: - Off-Main-Actor Interleave
+
+    /// Append items that have already been interleaved off the main actor.
+    /// Skips the interleave step — just dedup and cap.
+    func appendPreInterleaved(_ items: [FeedItem]) {
+        let visibleIDs = Set(visibleItems.map(\.id))
+        let trulyNew = items.filter { !visibleIDs.contains($0.id) }
+        guard !trulyNew.isEmpty else { return }
+        reservoir.append(contentsOf: trulyNew)
+        dedupReservoir()
+        capReservoir()
+    }
+
+    /// Pure interleave computation — no instance state, safe to call from any thread.
+    /// Takes snapshots of the mutable state it needs (readItemIDs, surfacedTimestamps, sourceRegionMap).
+    nonisolated static func interleaveOffMain(
+        _ items: [FeedItem],
+        readItemIDs: Set<String>,
+        surfacedTimestamps: [String: Date],
+        sourceRegionMap: [String: String]
+    ) -> [FeedItem] {
+        guard items.count > 1 else { return items }
+        var bySource: [String: [FeedItem]] = [:]
+        for item in items {
+            bySource[item.sourceURL, default: []].append(item)
+        }
+        guard bySource.count > 1 else {
+            return interleaveByTypeCategoryStatic(items)
+        }
+        let surfacedCutoff = Date().addingTimeInterval(-1800)
+        let staleNewsCutoff = Date().addingTimeInterval(-86400)
+        let staleEvergreenCutoff = Date().addingTimeInterval(-604800)
+        for key in bySource.keys {
+            let bucket = bySource[key]!
+            let readIDs = bucket.filter { readItemIDs.contains($0.id) }.map(\.id)
+            let surfacedIDs = Set(bucket.filter { item in
+                guard let ts = surfacedTimestamps[item.id] else { return false }
+                return ts > surfacedCutoff
+            }.map(\.id))
+            let staleIDs = Set(bucket.filter { item in
+                if surfacedIDs.contains(item.id) || readIDs.contains(item.id) { return false }
+                let cutoff = item.isTimeless ? staleEvergreenCutoff : staleNewsCutoff
+                return item.publishedAt < cutoff
+            }.map(\.id) + readIDs)
+            let recent = interleaveByTypeCategoryStatic(bucket.filter { !surfacedIDs.contains($0.id) && !staleIDs.contains($0.id) }.shuffled())
+            let stale = interleaveByTypeCategoryStatic(bucket.filter { staleIDs.contains($0.id) }.shuffled())
+            let surfaced = interleaveByTypeCategoryStatic(bucket.filter { surfacedIDs.contains($0.id) }.shuffled())
+            bySource[key] = recent + stale + surfaced
+        }
+        // Weighted slots
+        let minCount = max(1, bySource.values.map(\.count).min() ?? 1)
+        let weights: [String: Int] = bySource.mapValues { min(5, max(1, $0.count / minCount)) }
+        var slots: [String] = []
+        for (sourceURL, srcItems) in bySource where !srcItems.isEmpty {
+            let w = weights[sourceURL] ?? 1
+            for _ in 0..<w { slots.append(sourceURL) }
+        }
+        slots.shuffle()
+        // Round-robin
+        var result: [FeedItem] = []
+        result.reserveCapacity(items.count)
+        var indices: [String: Int] = Dictionary(uniqueKeysWithValues: bySource.keys.map { ($0, 0) })
+        var added = true
+        while added {
+            added = false
+            for sourceURL in slots {
+                guard let list = bySource[sourceURL], indices[sourceURL]! < list.count else { continue }
+                result.append(list[indices[sourceURL]!])
+                indices[sourceURL]! += 1
+                added = true
+            }
+        }
+        return spreadConsecutiveStatic(result)
+    }
+
+    private nonisolated static func interleaveByTypeCategoryStatic(_ items: [FeedItem]) -> [FeedItem] {
+        guard items.count > 1 else { return items }
+        var buckets: [String: [FeedItem]] = [:]
+        for item in items {
+            let type = item.isPodcast ? "audio" : (item.isYouTube ? "video" : "text")
+            buckets["\(type):\(item.category)", default: []].append(item)
+        }
+        guard buckets.count > 1 else { return items.shuffled() }
+        for key in buckets.keys { buckets[key] = buckets[key]?.shuffled() }
+        var result: [FeedItem] = []
+        var indices = Dictionary(uniqueKeysWithValues: buckets.keys.map { ($0, 0) })
+        let keys = buckets.keys.shuffled()
+        var added = true
+        while added {
+            added = false
+            for key in keys {
+                guard let list = buckets[key], indices[key]! < list.count else { continue }
+                result.append(list[indices[key]!])
+                indices[key]! += 1
+                added = true
+            }
+        }
+        return result
+    }
+
+    private nonisolated static func spreadConsecutiveStatic(_ items: [FeedItem]) -> [FeedItem] {
+        guard items.count > 2 else { return items }
+        var result = items
+        var lookAhead = 2
+        for i in 0..<(result.count - 1) {
+            let a = result[i], b = result[i + 1]
+            let clash = a.sourceURL == b.sourceURL
+                || a.category == b.category
+                || (a.isYouTube && b.isYouTube)
+                || (a.isPodcast && b.isPodcast)
+            guard clash else { continue }
+            lookAhead = max(lookAhead, i + 2)
+            while lookAhead < result.count {
+                let c = result[lookAhead]
+                if a.sourceURL != c.sourceURL && b.sourceURL != c.sourceURL
+                    && a.category != c.category
+                    && !(a.isYouTube && c.isYouTube) && !(a.isPodcast && c.isPodcast)
+                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast) {
+                    result.swapAt(i + 1, lookAhead)
+                    break
+                }
+                lookAhead += 1
+            }
+            if lookAhead >= result.count { break }
+        }
+        return result
     }
 }

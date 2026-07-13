@@ -197,14 +197,33 @@ final class FeedStore {
         guard !pendingReservoirItems.isEmpty else { return }
         let batch = pendingReservoirItems
         pendingReservoirItems = []
-        reservoir.append(batch)
-        // Update visible only if not searching and screen is empty
-        if !isSearching && visibleItems.isEmpty && !reservoir.reservoir.isEmpty {
-            reservoir.moveToVisible(count: Reservoir.pageSize)
-            visibleItems = applyFilters(reservoir.visibleItems)
-            reservoirCount = reservoir.reservoirCount
-        } else {
-            reservoirCount = reservoir.reservoirCount
+
+        // Compute interleave off the main actor — this is the expensive part
+        // (O(n × sources) with multiple spread passes). Only the final
+        // assignment to reservoir arrays needs MainActor.
+        let readIDs = reservoir.readItemIDs
+        let surfacedTs = reservoir.surfacedTimestamps
+        let regionMap = reservoir.sourceRegionMap
+        let visibleIDs = Set(reservoir.visibleItems.map(\.id))
+        let trulyNew = batch.filter { !visibleIDs.contains($0.id) }
+        guard !trulyNew.isEmpty else { return }
+
+        Task.detached(priority: .userInitiated) { [weak self] in
+            // Pure computation — no actor isolation needed
+            let interleaved = Reservoir.interleaveOffMain(
+                trulyNew, readItemIDs: readIDs,
+                surfacedTimestamps: surfacedTs, sourceRegionMap: regionMap
+            )
+            // Hop back to MainActor for the mutation
+            await MainActor.run { [weak self] in
+                guard let self else { return }
+                self.reservoir.appendPreInterleaved(interleaved)
+                if !self.isSearching && self.visibleItems.isEmpty && !self.reservoir.reservoir.isEmpty {
+                    self.reservoir.moveToVisible(count: Reservoir.pageSize)
+                    self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
+                }
+                self.reservoirCount = self.reservoir.reservoirCount
+            }
         }
     }
 
