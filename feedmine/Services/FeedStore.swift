@@ -610,7 +610,7 @@ final class FeedStore {
             }
             guard isSearching else { return }
             searchResults = results.map { $0.toFeedItem() }
-            applyUpdate(.replace(searchResults.filter(isItemEnabled).filter(filterContentType)))
+            applyUpdate(.replace(applyFilters(searchResults)))
         }
     }
 
