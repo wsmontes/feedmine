@@ -73,7 +73,9 @@ actor ImportPipeline {
         var results: [ImportItemResult] = []
         var newSources: [FeedSource] = []
 
-        for rawURL in urls {
+        // Separate dedup/invalid URLs (no network needed) from probe candidates
+        var toProbe: [(index: Int, normalized: String, rawURL: String)] = []
+        for (i, rawURL) in urls.enumerated() {
             let normalized = OPMLParser.normalizeURL(rawURL)
 
             // Dedup check
@@ -88,8 +90,37 @@ actor ImportPipeline {
                 continue
             }
 
-            // Probe: fetch and parse to validate it's a real feed
-            let probe = await probeFeed(url: normalized)
+            toProbe.append((i, normalized, rawURL))
+        }
+
+        // Probe feeds concurrently (max 5 at a time)
+        let probeResults: [(rawURL: String, normalized: String, probe: ProbeResult)] = await withTaskGroup(of: (String, String, ProbeResult).self) { group in
+            var collected: [(String, String, ProbeResult)] = []
+            var running = 0
+
+            for item in toProbe {
+                if running >= 5 {
+                    if let result = await group.next() {
+                        collected.append(result)
+                        running -= 1
+                    }
+                }
+                let normalized = item.normalized
+                let rawURL = item.rawURL
+                group.addTask {
+                    let probe = await self.probeFeed(url: normalized)
+                    return (rawURL, normalized, probe)
+                }
+                running += 1
+            }
+
+            for await result in group {
+                collected.append(result)
+            }
+            return collected
+        }
+
+        for (rawURL, normalized, probe) in probeResults {
             switch probe {
             case .success(let title):
                 let kind = Self.detectMediaKind(url: normalized, title: title)

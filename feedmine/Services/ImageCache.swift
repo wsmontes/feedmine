@@ -71,6 +71,7 @@ final class ImageCache {
         return FileManager.default.fileExists(atPath: fileURL.path)
     }
 
+    @available(*, deprecated, message: "Use diskImage(for:) instead")
     func image(for url: URL) -> UIImage? {
         let key = cacheKey(for: url)
         if let img = memoryCache.object(forKey: key as NSString) { return img }
@@ -160,28 +161,12 @@ final class ImageCache {
     // MARK: - Private
 
     private nonisolated func cacheKey(for url: URL) -> String {
-        let full = url.absoluteString
-        let sanitized = full
-            .replacingOccurrences(of: "/", with: "_")
-            .replacingOccurrences(of: ":", with: "_")
-            .replacingOccurrences(of: "?", with: "_")
-            .replacingOccurrences(of: "=", with: "_")
-            .replacingOccurrences(of: "&", with: "_")
-        if sanitized.utf8.count <= 200 { return sanitized }
-        return String(sanitized.prefix(160)) + "_" + Self.stableHash(full)
+        "img_\(Self.stableHash(url.absoluteString))"
     }
 
     /// Duplicated key logic for the static hasCachedImageData path.
     private nonisolated static func cacheKeyForURL(_ url: URL) -> String {
-        let full = url.absoluteString
-        let sanitized = full
-            .replacingOccurrences(of: "/", with: "_")
-            .replacingOccurrences(of: ":", with: "_")
-            .replacingOccurrences(of: "?", with: "_")
-            .replacingOccurrences(of: "=", with: "_")
-            .replacingOccurrences(of: "&", with: "_")
-        if sanitized.utf8.count <= 200 { return sanitized }
-        return String(sanitized.prefix(160)) + "_" + Self.stableHash(full)
+        "img_\(stableHash(url.absoluteString))"
     }
 
     /// FNV-1a 64-bit — deterministic across launches, unlike String.hashValue.

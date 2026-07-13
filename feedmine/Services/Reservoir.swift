@@ -9,6 +9,7 @@ import Foundation
 
 /// In-memory buffer with fairness interleave and source/region diversity.
 /// Extracted from FeedLoader. Does NOT touch SQLite — only holds FeedItem arrays.
+@MainActor
 final class Reservoir {
     static let maxBuffer = 300
     static let pageSize = 20

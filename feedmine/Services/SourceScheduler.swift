@@ -3,6 +3,7 @@ import Foundation
 /// Selects which feed sources to fetch next based on reservoir entropy.
 /// Uses √n fairness between regions, LRU ordering within regions,
 /// and soft cooldown instead of hard timeouts.
+@MainActor
 final class SourceScheduler {
     private(set) var lastFetchedAt: [String: Date] = [:]
     private(set) var consecutiveFailures: [String: Int] = [:]
@@ -119,7 +120,8 @@ final class SourceScheduler {
                 }
 
                 let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost
-                if score > 0 { scored.append((source, score)) }
+                let finalScore = max(score, 0.01)
+                if finalScore > 0 { scored.append((source, finalScore)) }
             }
         }
 
@@ -230,68 +232,5 @@ final class SourceScheduler {
             result[key] = idealVal - actualVal
         }
         return result
-    }
-
-    private func bestSource(
-        regions: [String],
-        sourcesByRegion: [String: [FeedSource]],
-        regionDeficits: [String: Double],
-        categoryDeficits: [String: Double],
-        selectedURLs: Set<String>,
-        activeContentType: String?
-    ) -> FeedSource? {
-        var best: FeedSource?
-        var bestScore = -Double.infinity
-
-        for region in regions {
-            guard let sources = sourcesByRegion[region] else { continue }
-            for source in sources {
-                guard !selectedURLs.contains(source.url) else { continue }
-                // Check failure backoff
-                let failures = consecutiveFailures[source.url] ?? 0
-                if failures >= 3 {
-                    let backoff = pow(2.0, Double(failures - 2)) * 60
-                    if let last = lastFetchedAt[source.url],
-                       Date().timeIntervalSince(last) < backoff {
-                        continue // in backoff
-                    }
-                }
-                // Deficits are (ideal - actual) and turn negative when a region
-                // or category is over-represented. Clamp to 0: an
-                // over-represented dimension should mean "no need" (score 0),
-                // not a negative factor — otherwise two negative deficits
-                // multiply into a positive score and the scheduler prefers the
-                // very sources it already has too many of.
-                let regionDeficit = max(0, regionDeficits[region] ?? 0)
-                let catDeficit = max(0, categoryDeficits[source.category] ?? 0)
-                // Content type boost: prefer sources matching active content filter.
-                // Uses source.mediaKind (tagged at OPML parse time) so podcasts,
-                // video, and text sources are correctly differentiated.
-                let contentTypeBoost: Double
-                switch activeContentType {
-                case "video":  contentTypeBoost = source.mediaKind == .video ? 3.0 : 1.0
-                case "audio":  contentTypeBoost = source.mediaKind == .audio ? 3.0 : 1.0
-                case "text":   contentTypeBoost = source.mediaKind == .video ? 0.3 : (source.mediaKind == .audio ? 0.3 : 1.0)
-                // Default (mixed) feed: give YouTube and podcasts a modest baseline
-                // lift. These are rare (~1.7% and ~1% of all feeds), so with equal
-                // weight they almost never get picked. 2× surfaces them regularly;
-                // supply + region/category deficits keep the mix from being flooded.
-                default:       contentTypeBoost = source.isYouTube ? 2.0 : (source.mediaKind == .audio ? 2.0 : 1.0)
-                }
-                // Soft cooldown: applies 0→1 weight over 30 min
-                let timeFactor: Double
-                if let last = lastFetchedAt[source.url] {
-                    timeFactor = min(1.0, Date().timeIntervalSince(last) / 1800)
-                } else {
-                    timeFactor = 1.0 // never fetched → full priority
-                }
-                let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost
-                if score > bestScore {
-                    bestScore = score
-                    best = source
-                }
-            }
-        }
-        return best
     }
 }

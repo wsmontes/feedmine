@@ -222,7 +222,7 @@ final class FeedStore {
                 )
             }
         } catch {
-            print("[FeedStore] loadSourceHealth failed: \(error)")
+            Log.db.error("loadSourceHealth failed: \(error.localizedDescription)")
         }
     }
 
@@ -258,7 +258,7 @@ final class FeedStore {
                 }
             }
         } catch {
-            print("[FeedStore] saveSourceHealthBatch error: \(error)")
+            Log.db.error("saveSourceHealthBatch error: \(error.localizedDescription)")
         }
     }
 
@@ -910,7 +910,7 @@ final class FeedStore {
             loadedIDsCount = loadedIDs.count
             return succeeded
         } catch {
-            print("[FeedStore] persist error: \(error)")
+            Log.db.error("persist error: \(error.localizedDescription)")
             return []
         }
     }
@@ -1015,7 +1015,7 @@ final class FeedStore {
         let allEnabled = registry.enabledSources.shuffled()
         let budget = min(allEnabled.count, 200)  // per-session cap
         let chunkSize = 20
-        print("[progressiveFetch] Starting: \(budget)/\(allEnabled.count) sources")
+        Log.feed.info("progressiveFetch starting: \(budget)/\(allEnabled.count) sources")
         for chunkStart in stride(from: 0, to: budget, by: chunkSize) {
             let end = min(chunkStart + chunkSize, budget)
             let chunk = Array(allEnabled[chunkStart..<end])
@@ -1051,7 +1051,7 @@ final class FeedStore {
                 flushPendingReservoir()
             }
         }
-        print("[progressiveFetch] DONE — all \(allEnabled.count) sources processed")
+        Log.feed.info("progressiveFetch DONE — all \(allEnabled.count) sources processed")
         lastRefreshDate = .now
         await capAllSources()
     }
@@ -1108,10 +1108,10 @@ final class FeedStore {
                 """)
             }
             guard !offenders.isEmpty else { return }
-            print("[capAllSources] Capping \(offenders.count) sources (>50 items)")
+            Log.db.info("capAllSources: capping \(offenders.count) sources (>50 items)")
             await capSourceItemsBatch(offenders)
         } catch {
-            print("[capAllSources] Error: \(error)")
+            Log.db.error("capAllSources error: \(error.localizedDescription)")
         }
     }
 
@@ -1195,14 +1195,30 @@ final class FeedStore {
         return selected
     }
 
+    private static let maxReadIDs = 5000
+
     private func loadReadState() async {
         do {
             let ids: [String] = try await db.read { db in
-                try String.fetchAll(db, sql: "SELECT id FROM feed_item WHERE is_read = 1")
+                try String.fetchAll(db, sql: """
+                    SELECT id FROM feed_item WHERE is_read = 1
+                    ORDER BY opened_at DESC LIMIT \(Self.maxReadIDs)
+                """)
             }
             readItemIDs = Set(ids)
+
+            // Purge old read rows beyond the cap
+            try await db.write { db in
+                try db.execute(sql: """
+                    UPDATE feed_item SET is_read = 0, opened_at = NULL
+                    WHERE is_read = 1 AND id NOT IN (
+                        SELECT id FROM feed_item WHERE is_read = 1
+                        ORDER BY opened_at DESC LIMIT \(Self.maxReadIDs)
+                    )
+                """)
+            }
         } catch {
-            print("[FeedStore] loadReadState error: \(error)")
+            Log.db.error("loadReadState error: \(error.localizedDescription)")
         }
     }
 
@@ -1342,7 +1358,7 @@ final class FeedStore {
                 """, arguments: [cutoff])
             }
         } catch {
-            print("[FeedStore] Expurgo error: \(error)")
+            Log.db.warning("Expurgo error: \(error.localizedDescription)")
         }
     }
 
@@ -1389,7 +1405,7 @@ final class FeedStore {
                 loadedIDsCount = loadedIDs.count
             }
         } catch {
-            print("[FeedStore] capSourceItemsBatch error: \(error)")
+            Log.db.error("capSourceItemsBatch error: \(error.localizedDescription)")
         }
     }
 
@@ -1411,9 +1427,9 @@ final class FeedStore {
             }
             try await db.vacuum()
             UserDefaults.standard.set(now, forKey: lastKey)
-            print("[FeedStore] Heavy maintenance complete")
+            Log.db.info("Heavy maintenance complete")
         } catch {
-            print("[FeedStore] Maintenance error: \(error)")
+            Log.db.error("Maintenance error: \(error.localizedDescription)")
         }
     }
 

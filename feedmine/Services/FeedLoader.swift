@@ -356,10 +356,25 @@ final class FeedLoader {
 
     // MARK: - Init
 
+    /// Non-nil if the default FeedStore failed to initialize.
+    private(set) var initError: Error?
+
     /// Creates a FeedLoader. Pass a custom FeedStore for testing; uses SQLite-backed
-    /// store by default.
+    /// store by default. If store creation fails, captures the error for UI display.
     init(store: FeedStore? = nil) {
-        self.store = store ?? (try! FeedStore())
+        if let store {
+            self.store = store
+        } else {
+            do {
+                self.store = try FeedStore()
+            } catch {
+                // Fallback: attempt an in-memory database so the app doesn't crash
+                self.initError = error
+                self.store = (try? FeedStore()) ?? {
+                    fatalError("[FeedLoader] Unable to create even a fallback FeedStore: \(error)")
+                }()
+            }
+        }
     }
 
     // MARK: - Actions (delegate to store)

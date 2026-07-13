@@ -257,7 +257,9 @@ final class CircadianEngine {
     var cardRadius: CGFloat { period.cardRadius }
     var bodyLineHeight: CGFloat { period.lineHeight }
 
-    /// Re-evaluate period from system clock
+    private var transitionTask: Task<Void, Never>?
+
+    /// Re-evaluate period from system clock and schedule a re-refresh at the next hour boundary.
     func refresh() {
         let hour = Calendar.current.component(.hour, from: Date())
         guard hour != lastHour else { return }
@@ -266,6 +268,19 @@ final class CircadianEngine {
         if newPeriod != period {
             withAnimation(.easeInOut(duration: 2.0)) {
                 period = newPeriod
+            }
+        }
+
+        // Schedule re-refresh at next hour boundary
+        transitionTask?.cancel()
+        let now = Date()
+        let calendar = Calendar.current
+        if let nextHour = calendar.nextDate(after: now, matching: DateComponents(minute: 0, second: 0), matchingPolicy: .nextTime) {
+            let delay = nextHour.timeIntervalSince(now)
+            transitionTask = Task { [weak self] in
+                try? await Task.sleep(for: .seconds(delay))
+                guard !Task.isCancelled else { return }
+                self?.refresh()
             }
         }
     }
