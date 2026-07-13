@@ -5,9 +5,9 @@
     "condition": "special",
     "templates": [
       "{special}! {count}",
-      "{greeting}. {special} — {count}",
+      "{greeting}. {special}",
       "{special} · {count}",
-      "{special}. {tone}"
+      "{special} — {tone}"
     ]
   },
   {
@@ -15,21 +15,21 @@
     "priority": 1,
     "condition": "night",
     "templates": [
+      "{greeting}. {tone}",
       "{greeting}. {count} · {tone}",
-      "{greeting}. {tone}. {count}",
-      "{greeting}. {session} · {tone}",
-      "{greeting}. {count}"
+      "{greeting}. {routine}",
+      "{greeting}. {session}"
     ]
   },
   {
-    "name": "session",
+    "name": "routine_exact",
     "priority": 2,
-    "condition": "session",
+    "condition": "routine",
     "templates": [
-      "{greeting}. {session} · {count}",
-      "{session}. {pace} · {tone}",
-      "{greeting}. {session}. {tone}",
-      "{routine} · {session}. {count}"
+      "{greeting}. {routine}",
+      "{routine}. {count}",
+      "{greeting}. {routine} · {count}",
+      "{routine} · {streak}"
     ]
   },
   {
@@ -37,36 +37,44 @@
     "priority": 3,
     "condition": "streak",
     "templates": [
+      "{greeting}. {streak}",
+      "{streak} · {count}",
       "{greeting}. {streak} · {count}",
-      "{streak}! {count} · {tone}",
-      "{greeting}. {streak}. {tone}",
-      "{routine} · {streak}. {count}"
+      "{streak}. {tone}"
+    ]
+  },
+  {
+    "name": "session",
+    "priority": 4,
+    "condition": "session",
+    "templates": [
+      "{greeting}. {session}",
+      "{session} · {tone}",
+      "{session} · {count}"
     ]
   },
   {
     "name": "podcast",
-    "priority": 4,
+    "priority": 5,
     "condition": "podcast",
     "templates": [
-      "{greeting}. {podcast} + {count}",
+      "{greeting}. {podcast}",
       "🎧 {podcast} · {count}",
-      "{greeting}. {podcast} · {tone}",
-      "{weekday}. {podcast} + {count}"
+      "{podcast} · {tone}"
     ]
   },
   {
-    "name": "opening",
-    "priority": 5,
+    "name": "standard",
+    "priority": 6,
     "condition": null,
     "templates": [
+      "{greeting}. {count}",
       "{greeting}. {count} · {tone}",
-      "{greeting}! {count} · {tone}",
+      "{greeting}. {tone}",
+      "{weekday}. {count}",
+      "{weekday} · {tone}",
       "{greeting}. {count} · {sources}",
-      "{greeting}. {routine} · {count}",
-      "{weekday}. {count} · {tone}",
-      "{greeting}. {count}. {tone}",
-      "{weekday} · {count}. {tone}",
-      "{greeting}. {content} · {count}"
+      "{greeting}. {content}"
     ]
   },
   {
@@ -76,7 +84,6 @@
     "templates": [
       "{greeting}. {count}",
       "{greeting}. {tone}",
-      "{greeting}. {count} · {tone}",
       "{greeting}"
     ]
   }

@@ -46,19 +46,42 @@ struct MomentGreeting {
         return s
     }
 
-    // MARK: - Compact Slot Fillers
+    // MARK: - Slot Fillers
+    // Design principles:
+    // - Slots about the USER are interesting (streak, routine, time)
+    // - Slots about the APP are boring (source count, content mix)
+    // - Humor: subtle, self-aware, never try-hard
+    // - Less is more: a great 6-word greeting beats a mediocre 15-word one
 
     private static func weekdayName() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"
         let day = formatter.string(from: Date())
-        // Make weekday work as a greeting fragment: "Happy Monday" / "It's Friday"
-        let greetings = [
-            String(localized: "Happy \(day)", comment: "Weekday greeting"),
-            String(localized: "It's \(day)", comment: "Weekday greeting"),
-            String(localized: "\(day) vibes", comment: "Weekday greeting"),
-        ]
-        return greetings.randomElement()!
+        let cal = Calendar.current
+        let hour = cal.component(.hour, from: Date())
+
+        // Friday and Monday get special treatment. Others stay simple.
+        if cal.component(.weekday, from: Date()) == 6 { // Friday
+            return [
+                String(localized: "It's Friday", comment: ""),
+                String(localized: "Finally Friday", comment: ""),
+                String(localized: "Friday already", comment: ""),
+            ].randomElement()!
+        }
+        if cal.component(.weekday, from: Date()) == 2 { // Monday
+            return [
+                String(localized: "Monday", comment: ""),
+                String(localized: "New week", comment: ""),
+                String(localized: "Fresh start", comment: ""),
+            ].randomElement()!
+        }
+        // Weekends
+        if cal.isDateInWeekend(Date()) {
+            return hour < 11
+                ? String(localized: "Slow \(day)", comment: "Weekend morning")
+                : String(localized: "\(day)", comment: "Weekend")
+        }
+        return day
     }
 
     private static func specialDayText(_ ctx: AppContext) -> String {
@@ -68,121 +91,154 @@ struct MomentGreeting {
 
     private static func countText(_ loader: FeedLoader?) -> String {
         guard let loader, !loader.items.isEmpty else { return "" }
-        let count = loader.items.count
-        let variants: [String] = [
-            String(localized: "\(count) stories", comment: "Article count"),
-            String(localized: "\(count) things to read", comment: "Article count"),
-            String(localized: "\(count) articles waiting", comment: "Article count"),
-            String(localized: "\(count) fresh reads", comment: "Article count"),
-        ]
-        return variants.randomElement()!
+        let n = loader.items.count
+        // Use the number but make it conversational, not transactional
+        if n > 100 {
+            return [
+                String(localized: "\(n) stories — take your pick", comment: ""),
+                String(localized: "A lot happened. \(n) stories", comment: ""),
+                String(localized: "\(n) stories. No pressure", comment: ""),
+            ].randomElement()!
+        }
+        if n > 40 {
+            return [
+                String(localized: "\(n) stories", comment: ""),
+                String(localized: "\(n) new reads", comment: ""),
+                String(localized: "\(n) things worth reading", comment: ""),
+            ].randomElement()!
+        }
+        if n > 10 {
+            return [
+                String(localized: "\(n) stories", comment: ""),
+                String(localized: "\(n) good reads", comment: ""),
+            ].randomElement()!
+        }
+        // Small counts — be honest
+        return String(localized: "\(n) stories today", comment: "")
     }
 
     private static func sourcesText(_ loader: FeedLoader?) -> String {
-        guard let loader, loader.sourceCount > 0 else { return "" }
-        // Capitalized — works as standalone or after separator
-        return String(localized: "\(loader.sourceCount) sources", comment: "Source count")
+        // Source count is only interesting as a social proof flex
+        // at high numbers, or as context when low
+        guard let loader else { return "" }
+        let n = loader.sourceCount
+        if n > 500 { return String(localized: "\(n) sources, zero algorithms", comment: "") }
+        if n > 100 { return String(localized: "\(n) sources", comment: "") }
+        return ""  // Low counts aren't interesting
     }
 
     private static func contentText(_ loader: FeedLoader?) -> String {
+        // Only mention content mix when it's genuinely noteworthy
         guard let loader, !loader.items.isEmpty else { return "" }
         let videoCount = loader.items.filter(\.isYouTube).count
         let podCount = loader.items.filter(\.isPodcast).count
-        if videoCount > 0 && podCount > 0 {
-            return String(localized: "\(videoCount) videos + \(podCount) podcasts", comment: "Content mix")
-        } else if videoCount > 3 {
-            return String(localized: "\(videoCount) videos today", comment: "Content type")
-        } else if podCount > 3 {
-            return String(localized: "\(podCount) new episodes", comment: "Content type")
+        if videoCount > 5 && podCount > 5 {
+            return String(localized: "Videos, podcasts, and articles", comment: "")
         }
-        return ""  // Only show if there's meaningful variety
+        return ""  // Don't enumerate small numbers
     }
 
     private static func podcastText(_ loader: FeedLoader?) -> String {
-        guard let loader, loader.podcastItemCount > 3 else { return "" }
-        return String(localized: "\(loader.podcastItemCount) episodes ready", comment: "Podcast count")
+        guard let loader, loader.podcastItemCount > 5 else { return "" }
+        let n = loader.podcastItemCount
+        return [
+            String(localized: "\(n) episodes queued up", comment: ""),
+            String(localized: "\(n) podcasts to listen", comment: ""),
+        ].randomElement()!
     }
 
     private static func streakText(_ ctx: AppContext) -> String {
+        // Streaks are genuinely rewarding — celebrate them
         switch ctx.sessionStreak {
+        case .days(let n) where n >= 30:
+            return String(localized: "\(n) days. Unstoppable 🔥", comment: "")
+        case .days(let n) where n >= 14:
+            return String(localized: "\(n)-day streak 🔥", comment: "")
         case .days(let n) where n >= 7:
-            return String(localized: "\(n)-day streak 🔥", comment: "Long streak")
+            return String(localized: "\(n) days in a row", comment: "")
         case .days(let n) where n >= 3:
-            return String(localized: "\(n) days in a row", comment: "Reading streak")
+            return String(localized: "Day \(n)", comment: "Streak count")
         default: return ""
         }
     }
 
     private static func sessionText(_ ctx: AppContext) -> String {
-        guard ctx.sessionMinutes > 10 else { return "" }
+        // Only show if meaningfully deep — never judge the user's pace
+        guard ctx.sessionMinutes > 20 else { return "" }
         let min = ctx.sessionMinutes
-        if min > 30 {
-            return String(localized: "\(min) min deep dive", comment: "Long session")
+        if min > 60 {
+            return String(localized: "\(min) minutes in. Impressed", comment: "")
         }
-        return String(localized: "\(min) min so far", comment: "Session time")
+        return String(localized: "\(min) min today", comment: "")
     }
 
     private static func paceText(_ ctx: AppContext) -> String {
-        switch ctx.readingPace {
-        case .skimming: return String(localized: "Quick reads mode", comment: "Pace")
-        case .steady: return ""
-        case .deep: return String(localized: "Deep reading", comment: "Pace")
-        case .marathon: return ""
-        }
+        // Removed — judging the user's reading speed is weird
+        return ""
     }
 
     private static func bookmarksText(_ loader: FeedLoader?) -> String {
-        guard let loader, loader.bookmarkedIDs.count > 2 else { return "" }
-        return String(localized: "\(loader.bookmarkedIDs.count) saved for later", comment: "Bookmark count")
+        // Only interesting at high counts (backlog awareness)
+        guard let loader, loader.bookmarkedIDs.count > 10 else { return "" }
+        let n = loader.bookmarkedIDs.count
+        return String(localized: "\(n) bookmarks waiting", comment: "")
     }
 
     private static func routineText(_ ctx: AppContext) -> String {
+        // The best slot — shows the app notices you
         switch ctx.routineMatch {
         case .exact: return [
-            String(localized: "Right on time", comment: "Routine"),
-            String(localized: "Like clockwork", comment: "Routine"),
+            String(localized: "Right on time", comment: ""),
+            String(localized: "Like clockwork", comment: ""),
+            String(localized: "The usual hour", comment: ""),
         ].randomElement()!
         case .approximate: return [
-            String(localized: "Your usual time", comment: "Routine"),
-            String(localized: "The usual rhythm", comment: "Routine"),
+            String(localized: "Around your usual time", comment: ""),
+            String(localized: "Close to schedule", comment: ""),
         ].randomElement()!
-        case .unusual: return String(localized: "Different time today", comment: "Routine")
+        case .unusual: return [
+            String(localized: "You're up late", comment: ""),
+            String(localized: "Different time today", comment: ""),
+            String(localized: "Off the beaten path", comment: ""),
+        ].randomElement()!
         case .firstTime: return ""
         }
     }
 
     private static func toneText(_ ctx: AppContext) -> String {
+        // The voice of the app — brief, never preachy, slightly wry
         let opts: [String]
         switch ctx.timeOfDay {
         case .night, .lateNight:
             opts = [
-                String(localized: "No rush", comment: "Tone"),
-                String(localized: "Take your time", comment: "Tone"),
-                String(localized: "The world can wait", comment: "Tone"),
+                String(localized: "No rush", comment: ""),
+                String(localized: "The world can wait", comment: ""),
+                String(localized: "Just you and the words", comment: ""),
+                String(localized: "Can't sleep?", comment: ""),
             ]
         case .dawn:
             opts = [
-                String(localized: "Before the noise starts", comment: "Tone"),
-                String(localized: "The quiet hour", comment: "Tone"),
-                String(localized: "Early bird reads", comment: "Tone"),
+                String(localized: "Before the world wakes up", comment: ""),
+                String(localized: "The quiet hour", comment: ""),
+                String(localized: "You and the dawn", comment: ""),
             ]
         case .morning:
             opts = [
-                String(localized: "Here's what matters", comment: "Tone"),
-                String(localized: "Catch up time", comment: "Tone"),
-                String(localized: "The morning brief", comment: "Tone"),
+                String(localized: "Here's what happened", comment: ""),
+                String(localized: "The world moved", comment: ""),
+                String(localized: "While you slept", comment: ""),
             ]
         case .afternoon:
             opts = [
-                String(localized: "Just interesting things", comment: "Tone"),
-                String(localized: "No algorithm, no ads", comment: "Tone"),
-                String(localized: "Quick hits, big ideas", comment: "Tone"),
+                String(localized: "No algorithms here", comment: ""),
+                String(localized: "Just good writing", comment: ""),
+                String(localized: "The afternoon scroll", comment: ""),
             ]
         case .evening:
             opts = [
-                String(localized: "Stay a while", comment: "Tone"),
-                String(localized: "The slow read", comment: "Tone"),
-                String(localized: "Evening unwind", comment: "Tone"),
+                String(localized: "Wind down", comment: ""),
+                String(localized: "The long read hour", comment: ""),
+                String(localized: "Nowhere to be", comment: ""),
             ]
         }
         return opts.randomElement()!
@@ -222,6 +278,7 @@ struct MomentGreeting {
                 case "session": if slots["session"]?.isEmpty ?? true { continue }
                 case "podcast": if slots["podcast"]?.isEmpty ?? true { continue }
                 case "streak": if slots["streak"]?.isEmpty ?? true { continue }
+                case "routine": if slots["routine"]?.isEmpty ?? true { continue }
                 default: break
                 }
             }
