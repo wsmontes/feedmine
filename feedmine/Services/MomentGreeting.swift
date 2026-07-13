@@ -54,34 +54,57 @@ struct MomentGreeting {
     // - Less is more: a great 6-word greeting beats a mediocre 15-word one
 
     private static func weekdayName() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE"
-        let day = formatter.string(from: Date())
         let cal = Calendar.current
+        let weekday = cal.component(.weekday, from: Date())
         let hour = cal.component(.hour, from: Date())
 
-        // Friday and Monday get special treatment. Others stay simple.
-        if cal.component(.weekday, from: Date()) == 6 { // Friday
+        switch weekday {
+        case 2: // Monday
+            return [
+                String(localized: "Monday. We meet again", comment: ""),
+                String(localized: "New week, new you. Just kidding", comment: ""),
+                String(localized: "Monday", comment: ""),
+                String(localized: "Another Monday, another chance", comment: ""),
+            ].randomElement()!
+        case 3: // Tuesday
+            return [
+                String(localized: "Tuesday", comment: ""),
+                String(localized: "Tuesday. The forgotten weekday", comment: ""),
+            ].randomElement()!
+        case 4: // Wednesday
+            return [
+                String(localized: "Midweek", comment: ""),
+                String(localized: "Wednesday. Halfway there", comment: ""),
+                String(localized: "Hump day", comment: ""),
+            ].randomElement()!
+        case 5: // Thursday
+            return [
+                String(localized: "Thursday. Almost", comment: ""),
+                String(localized: "Thursday", comment: ""),
+            ].randomElement()!
+        case 6: // Friday
             return [
                 String(localized: "It's Friday", comment: ""),
-                String(localized: "Finally Friday", comment: ""),
-                String(localized: "Friday already", comment: ""),
+                String(localized: "Friday. Finally", comment: ""),
+                String(localized: "TGIF", comment: ""),
             ].randomElement()!
-        }
-        if cal.component(.weekday, from: Date()) == 2 { // Monday
-            return [
-                String(localized: "Monday", comment: ""),
-                String(localized: "New week", comment: ""),
-                String(localized: "Fresh start", comment: ""),
-            ].randomElement()!
-        }
-        // Weekends
-        if cal.isDateInWeekend(Date()) {
+        case 7: // Saturday
             return hour < 11
-                ? String(localized: "Slow \(day)", comment: "Weekend morning")
-                : String(localized: "\(day)", comment: "Weekend")
+                ? String(localized: "Slow Saturday", comment: "")
+                : [
+                    String(localized: "Saturday", comment: ""),
+                    String(localized: "Weekend mode", comment: ""),
+                ].randomElement()!
+        case 1: // Sunday
+            return hour < 11
+                ? String(localized: "Lazy Sunday", comment: "")
+                : [
+                    String(localized: "Sunday", comment: ""),
+                    String(localized: "Sunday scaries? Not here", comment: ""),
+                ].randomElement()!
+        default:
+            return ""
         }
-        return day
     }
 
     private static func specialDayText(_ ctx: AppContext) -> String {
@@ -92,28 +115,39 @@ struct MomentGreeting {
     private static func countText(_ loader: FeedLoader?) -> String {
         guard let loader, !loader.items.isEmpty else { return "" }
         let n = loader.items.count
-        // Use the number but make it conversational, not transactional
-        if n > 100 {
+        if n > 200 {
             return [
-                String(localized: "\(n) stories — take your pick", comment: ""),
-                String(localized: "A lot happened. \(n) stories", comment: ""),
-                String(localized: "\(n) stories. No pressure", comment: ""),
+                String(localized: "\(n) stories. You're gonna need a bigger boat", comment: ""),
+                String(localized: "\(n) stories. The internet was busy", comment: ""),
+                String(localized: "\(n) stories. Nobody said you had to read them all", comment: ""),
             ].randomElement()!
         }
-        if n > 40 {
+        if n > 80 {
+            return [
+                String(localized: "\(n) stories — take your pick", comment: ""),
+                String(localized: "\(n) stories. Plenty to choose from", comment: ""),
+                String(localized: "\(n) stories. The world didn't stop", comment: ""),
+            ].randomElement()!
+        }
+        if n > 30 {
             return [
                 String(localized: "\(n) stories", comment: ""),
-                String(localized: "\(n) new reads", comment: ""),
-                String(localized: "\(n) things worth reading", comment: ""),
+                String(localized: "\(n) good reads", comment: ""),
+                String(localized: "\(n) things worth your time", comment: ""),
             ].randomElement()!
         }
         if n > 10 {
             return [
                 String(localized: "\(n) stories", comment: ""),
-                String(localized: "\(n) good reads", comment: ""),
+                String(localized: "\(n) new reads", comment: ""),
             ].randomElement()!
         }
-        // Small counts — be honest
+        if n <= 3 {
+            return [
+                String(localized: "Just \(n). Quality over quantity", comment: ""),
+                String(localized: "\(n) stories. Slow news day", comment: ""),
+            ].randomElement()!
+        }
         return String(localized: "\(n) stories today", comment: "")
     }
 
@@ -148,16 +182,30 @@ struct MomentGreeting {
     }
 
     private static func streakText(_ ctx: AppContext) -> String {
-        // Streaks are genuinely rewarding — celebrate them
+        // Streaks deserve celebration that scales with achievement
         switch ctx.sessionStreak {
+        case .days(let n) where n >= 60:
+            return [
+                String(localized: "\(n) days. At this point it's a lifestyle", comment: ""),
+                String(localized: "\(n)-day streak. Honestly, we're impressed", comment: ""),
+            ].randomElement()!
         case .days(let n) where n >= 30:
-            return String(localized: "\(n) days. Unstoppable 🔥", comment: "")
+            return [
+                String(localized: "\(n) days. Unstoppable 🔥", comment: ""),
+                String(localized: "\(n)-day streak. This is commitment", comment: ""),
+            ].randomElement()!
         case .days(let n) where n >= 14:
-            return String(localized: "\(n)-day streak 🔥", comment: "")
+            return [
+                String(localized: "\(n)-day streak 🔥", comment: ""),
+                String(localized: "\(n) days straight. Not bad", comment: ""),
+            ].randomElement()!
         case .days(let n) where n >= 7:
-            return String(localized: "\(n) days in a row", comment: "")
+            return [
+                String(localized: "\(n) days in a row", comment: ""),
+                String(localized: "Week \(n / 7) of your streak", comment: ""),
+            ].randomElement()!
         case .days(let n) where n >= 3:
-            return String(localized: "Day \(n)", comment: "Streak count")
+            return String(localized: "Day \(n). Keep going", comment: "")
         default: return ""
         }
     }
@@ -185,60 +233,80 @@ struct MomentGreeting {
     }
 
     private static func routineText(_ ctx: AppContext) -> String {
-        // The best slot — shows the app notices you
+        // The app noticing you — with personality
         switch ctx.routineMatch {
         case .exact: return [
-            String(localized: "Right on time", comment: ""),
+            String(localized: "Right on schedule", comment: ""),
             String(localized: "Like clockwork", comment: ""),
-            String(localized: "The usual hour", comment: ""),
+            String(localized: "You're predictable. In a good way", comment: ""),
+            String(localized: "Same time as always. Respect", comment: ""),
         ].randomElement()!
         case .approximate: return [
             String(localized: "Around your usual time", comment: ""),
-            String(localized: "Close to schedule", comment: ""),
+            String(localized: "Close enough to a routine", comment: ""),
+            String(localized: "We won't tell your calendar", comment: ""),
         ].randomElement()!
         case .unusual: return [
             String(localized: "You're up late", comment: ""),
-            String(localized: "Different time today", comment: ""),
-            String(localized: "Off the beaten path", comment: ""),
+            String(localized: "This is new", comment: ""),
+            String(localized: "Plot twist", comment: ""),
+            String(localized: "Off-script today", comment: ""),
+            String(localized: "Well, this is unexpected", comment: ""),
         ].randomElement()!
         case .firstTime: return ""
         }
     }
 
     private static func toneText(_ ctx: AppContext) -> String {
-        // The voice of the app — brief, never preachy, slightly wry
+        // The voice of the app. Brief, wry, never preachy.
+        // Think: Seinfeld observing your reading habits.
         let opts: [String]
         switch ctx.timeOfDay {
         case .night, .lateNight:
             opts = [
                 String(localized: "No rush", comment: ""),
                 String(localized: "The world can wait", comment: ""),
-                String(localized: "Just you and the words", comment: ""),
                 String(localized: "Can't sleep?", comment: ""),
+                String(localized: "We don't judge", comment: ""),
+                String(localized: "Tomorrow's problems are tomorrow's", comment: ""),
+                String(localized: "Netflix can wait", comment: ""),
+                String(localized: "This is between us", comment: ""),
             ]
         case .dawn:
             opts = [
                 String(localized: "Before the world wakes up", comment: ""),
                 String(localized: "The quiet hour", comment: ""),
-                String(localized: "You and the dawn", comment: ""),
+                String(localized: "Overachievers anonymous", comment: ""),
+                String(localized: "Coffee first. Then this", comment: ""),
+                String(localized: "You're up before your notifications", comment: ""),
             ]
         case .morning:
             opts = [
-                String(localized: "Here's what happened", comment: ""),
-                String(localized: "The world moved", comment: ""),
-                String(localized: "While you slept", comment: ""),
+                String(localized: "Here's what happened while you slept", comment: ""),
+                String(localized: "The world didn't wait for you", comment: ""),
+                String(localized: "Better than a meeting", comment: ""),
+                String(localized: "No Zoom required", comment: ""),
+                String(localized: "Still cheaper than therapy", comment: ""),
+                String(localized: "At least it's not email", comment: ""),
             ]
         case .afternoon:
             opts = [
                 String(localized: "No algorithms here", comment: ""),
-                String(localized: "Just good writing", comment: ""),
-                String(localized: "The afternoon scroll", comment: ""),
+                String(localized: "Procrastination with purpose", comment: ""),
+                String(localized: "Your 3pm escape plan", comment: ""),
+                String(localized: "Better than doomscrolling", comment: ""),
+                String(localized: "Technically research", comment: ""),
+                String(localized: "Just look busy", comment: ""),
+                String(localized: "Your boss doesn't need to know", comment: ""),
             ]
         case .evening:
             opts = [
-                String(localized: "Wind down", comment: ""),
-                String(localized: "The long read hour", comment: ""),
                 String(localized: "Nowhere to be", comment: ""),
+                String(localized: "The long read hour", comment: ""),
+                String(localized: "Couch mode activated", comment: ""),
+                String(localized: "You've earned this", comment: ""),
+                String(localized: "Better than whatever's on TV", comment: ""),
+                String(localized: "The internet, but curated by you", comment: ""),
             ]
         }
         return opts.randomElement()!
