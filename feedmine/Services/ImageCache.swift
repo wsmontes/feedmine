@@ -107,9 +107,10 @@ final class ImageCache {
         let key = cacheKey(for: url)
 
         // Downsample off the main actor — this is the expensive part
-        guard let downsampled = await Task.detached(priority: .utility) {
+        let task = Task.detached(priority: .utility) {
             Self.downsample(data: data, to: maxDimension)
-        }.value else { return nil }
+        }
+        guard let downsampled = await task.value else { return nil }
 
         let cost = Int(downsampled.size.width * downsampled.size.height * 4)
         memoryCache.setObject(downsampled, forKey: key as NSString, cost: cost)

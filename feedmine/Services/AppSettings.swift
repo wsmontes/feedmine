@@ -54,7 +54,7 @@ enum Keys {
 // Convenience for non-view code. Reads/writes UserDefaults with type safety.
 
 enum Settings {
-    private static let d = UserDefaults.standard
+    private static nonisolated(unsafe) let d = UserDefaults.standard
 
     // MARK: Filters
     static var filterRegion: String? {

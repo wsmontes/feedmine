@@ -1,6 +1,8 @@
 import Foundation
+import Observation
 
 @MainActor
+@Observable
 final class SessionTracker {
     static let shared = SessionTracker()
     private var sessionStart: Date?

@@ -145,7 +145,7 @@ struct ContentFilterView: View {
                 }
 
                 Image(systemName: filter.isEnabled ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(filter.isEnabled ? engine.accent : .quaternary)
+                    .foregroundStyle(filter.isEnabled ? engine.accent : Color.secondary.opacity(0.3))
                     .font(.title3)
             }
         }

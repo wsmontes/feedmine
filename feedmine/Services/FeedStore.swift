@@ -567,7 +567,7 @@ final class FeedStore {
         if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
         }
-        if let raw = d.string(forKey: "filterMood"),
+        if let raw = UserDefaults.standard.string(forKey: Keys.filterMood),
            let mood = FeedLoader.MoodFilter(rawValue: raw) {
             activeMood = mood
         }
@@ -1171,10 +1171,11 @@ final class FeedStore {
 
     private func loadReadState() async {
         do {
+            let limit = Self.maxReadIDs
             let ids: [String] = try await db.read { db in
                 try String.fetchAll(db, sql: """
                     SELECT id FROM feed_item WHERE is_read = 1
-                    ORDER BY opened_at DESC LIMIT \(Self.maxReadIDs)
+                    ORDER BY opened_at DESC LIMIT \(limit)
                 """)
             }
             readItemIDs = Set(ids)
@@ -1185,7 +1186,7 @@ final class FeedStore {
                     UPDATE feed_item SET is_read = 0, opened_at = NULL
                     WHERE is_read = 1 AND id NOT IN (
                         SELECT id FROM feed_item WHERE is_read = 1
-                        ORDER BY opened_at DESC LIMIT \(Self.maxReadIDs)
+                        ORDER BY opened_at DESC LIMIT \(limit)
                     )
                 """)
             }
