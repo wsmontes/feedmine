@@ -4,11 +4,10 @@
     "priority": 0,
     "condition": "special",
     "templates": [
-      "{special}. {count} · {tone}",
-      "{greeting}. {special}. {count} · {tone}",
-      "{special} · {count} · {tone}",
       "{special}! {count}",
-      "{special}. {count} · {sources}"
+      "{greeting}. {special} — {count}",
+      "{special} · {count}",
+      "{special}. {tone}"
     ]
   },
   {
@@ -16,43 +15,32 @@
     "priority": 1,
     "condition": "night",
     "templates": [
-      "{greeting}. {count}. {tone}",
       "{greeting}. {count} · {tone}",
-      "{greeting}. {routine} · {count}",
-      "{season} · {greeting}. {count}, {tone}",
-      "{greeting}. {session}"
+      "{greeting}. {tone}. {count}",
+      "{greeting}. {session} · {tone}",
+      "{greeting}. {count}"
     ]
   },
   {
-    "name": "opening",
+    "name": "session",
     "priority": 2,
-    "condition": null,
-    "templates": [
-      "{greeting}. {count}, {sources}",
-      "{weekday}. {count} · {sources}",
-      "{greeting}! {count} · {tone}",
-      "{weekday}. {count} · {tone}",
-      "{greeting}. {routine} · {count}",
-      "{season} · {count}, {tone}",
-      "{greeting}. {streak}. {count}",
-      "{weekday}. {sources}, {count}",
-      "{greeting}! {content}. {tone}",
-      "{weekday}. {count}. {tone}"
-    ]
-  },
-  {
-    "name": "reading",
-    "priority": 3,
     "condition": "session",
     "templates": [
+      "{greeting}. {session} · {count}",
       "{session}. {pace} · {tone}",
-      "{pace}. {count} · {tone}",
-      "{session}. {streak}",
-      "{bookmarks}. {count} · {tone}",
-      "{session}. {count} · {tone}",
-      "{routine}. {pace} · {count}",
-      "{count}. {tone}",
-      "{session} · {count}"
+      "{greeting}. {session}. {tone}",
+      "{routine} · {session}. {count}"
+    ]
+  },
+  {
+    "name": "streak",
+    "priority": 3,
+    "condition": "streak",
+    "templates": [
+      "{greeting}. {streak} · {count}",
+      "{streak}! {count} · {tone}",
+      "{greeting}. {streak}. {tone}",
+      "{routine} · {streak}. {count}"
     ]
   },
   {
@@ -60,49 +48,36 @@
     "priority": 4,
     "condition": "podcast",
     "templates": [
-      "{greeting}. {podcast} · {count}",
-      "{podcast}. {sources} · {count}",
-      "{podcast} + {count}",
-      "{weekday}. {podcast} · {count}",
-      "{podcast} · {count} · {tone}",
-      "🎧 {podcast} + 📖 {count}"
+      "{greeting}. {podcast} + {count}",
+      "🎧 {podcast} · {count}",
+      "{greeting}. {podcast} · {tone}",
+      "{weekday}. {podcast} + {count}"
     ]
   },
   {
-    "name": "streak",
+    "name": "opening",
     "priority": 5,
-    "condition": "streak",
-    "templates": [
-      "{streak}! {count} · {tone}",
-      "{routine}. {streak}",
-      "{greeting}. {streak}. {count}",
-      "{streak}. {weekday} · {count}",
-      "{streak}. {tone}"
-    ]
-  },
-  {
-    "name": "voice",
-    "priority": 6,
     "condition": null,
     "templates": [
-      "{greeting}! {content} · {tone}",
-      "{count}. {sources}. {tone}",
-      "{weekday}. {tone} · {count}",
+      "{greeting}. {count} · {tone}",
+      "{greeting}! {count} · {tone}",
+      "{greeting}. {count} · {sources}",
+      "{greeting}. {routine} · {count}",
+      "{weekday}. {count} · {tone}",
       "{greeting}. {count}. {tone}",
-      "{greeting}! {count} · {sources}",
-      "{count} · {tone}"
+      "{weekday} · {count}. {tone}",
+      "{greeting}. {content} · {count}"
     ]
   },
   {
     "name": "fallback",
-    "priority": 7,
+    "priority": 9,
     "condition": null,
     "templates": [
       "{greeting}. {count}",
-      "{greeting}. {count} · {tone}",
-      "{greeting}. {weekday}. {count}",
       "{greeting}. {tone}",
-      "{greeting}. {season}. {count}"
+      "{greeting}. {count} · {tone}",
+      "{greeting}"
     ]
   }
 ]

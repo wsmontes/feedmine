@@ -51,7 +51,14 @@ struct MomentGreeting {
     private static func weekdayName() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"
-        return formatter.string(from: Date())
+        let day = formatter.string(from: Date())
+        // Make weekday work as a greeting fragment: "Happy Monday" / "It's Friday"
+        let greetings = [
+            String(localized: "Happy \(day)", comment: "Weekday greeting"),
+            String(localized: "It's \(day)", comment: "Weekday greeting"),
+            String(localized: "\(day) vibes", comment: "Weekday greeting"),
+        ]
+        return greetings.randomElement()!
     }
 
     private static func specialDayText(_ ctx: AppContext) -> String {
@@ -62,12 +69,19 @@ struct MomentGreeting {
     private static func countText(_ loader: FeedLoader?) -> String {
         guard let loader, !loader.items.isEmpty else { return "" }
         let count = loader.items.count
-        return String(localized: "\(count) stories", comment: "Article count")
+        let variants: [String] = [
+            String(localized: "\(count) stories", comment: "Article count"),
+            String(localized: "\(count) things to read", comment: "Article count"),
+            String(localized: "\(count) articles waiting", comment: "Article count"),
+            String(localized: "\(count) fresh reads", comment: "Article count"),
+        ]
+        return variants.randomElement()!
     }
 
     private static func sourcesText(_ loader: FeedLoader?) -> String {
         guard let loader, loader.sourceCount > 0 else { return "" }
-        return String(localized: "from \(loader.sourceCount) sources", comment: "Source count")
+        // Capitalized — works as standalone or after separator
+        return String(localized: "\(loader.sourceCount) sources", comment: "Source count")
     }
 
     private static func contentText(_ loader: FeedLoader?) -> String {
@@ -75,64 +89,103 @@ struct MomentGreeting {
         let videoCount = loader.items.filter(\.isYouTube).count
         let podCount = loader.items.filter(\.isPodcast).count
         if videoCount > 0 && podCount > 0 {
-            return String(localized: "\(videoCount) videos, \(podCount) podcasts", comment: "Content mix")
-        } else if videoCount > 0 {
-            return String(localized: "\(videoCount) videos", comment: "Content type")
-        } else if podCount > 0 {
-            return String(localized: "\(podCount) episodes", comment: "Content type")
+            return String(localized: "\(videoCount) videos + \(podCount) podcasts", comment: "Content mix")
+        } else if videoCount > 3 {
+            return String(localized: "\(videoCount) videos today", comment: "Content type")
+        } else if podCount > 3 {
+            return String(localized: "\(podCount) new episodes", comment: "Content type")
         }
-        return ""
+        return ""  // Only show if there's meaningful variety
     }
 
     private static func podcastText(_ loader: FeedLoader?) -> String {
-        guard let loader, loader.podcastItemCount > 0 else { return "" }
-        return String(localized: "\(loader.podcastItemCount) podcast episodes", comment: "Podcast count")
+        guard let loader, loader.podcastItemCount > 3 else { return "" }
+        return String(localized: "\(loader.podcastItemCount) episodes ready", comment: "Podcast count")
     }
 
     private static func streakText(_ ctx: AppContext) -> String {
         switch ctx.sessionStreak {
+        case .days(let n) where n >= 7:
+            return String(localized: "\(n)-day streak 🔥", comment: "Long streak")
         case .days(let n) where n >= 3:
-            return String(localized: "\(n)-day streak 🔥", comment: "Reading streak")
+            return String(localized: "\(n) days in a row", comment: "Reading streak")
         default: return ""
         }
     }
 
     private static func sessionText(_ ctx: AppContext) -> String {
-        guard ctx.sessionMinutes > 5 else { return "" }
-        return String(localized: "\(ctx.sessionMinutes) min reading", comment: "Session time")
+        guard ctx.sessionMinutes > 10 else { return "" }
+        let min = ctx.sessionMinutes
+        if min > 30 {
+            return String(localized: "\(min) min deep dive", comment: "Long session")
+        }
+        return String(localized: "\(min) min so far", comment: "Session time")
     }
 
     private static func paceText(_ ctx: AppContext) -> String {
         switch ctx.readingPace {
-        case .skimming: return String(localized: "Quick reads", comment: "Pace")
+        case .skimming: return String(localized: "Quick reads mode", comment: "Pace")
         case .steady: return ""
-        case .deep: return String(localized: "Reading deeply", comment: "Pace")
+        case .deep: return String(localized: "Deep reading", comment: "Pace")
         case .marathon: return ""
         }
     }
 
     private static func bookmarksText(_ loader: FeedLoader?) -> String {
-        guard let loader, !loader.bookmarkedIDs.isEmpty else { return "" }
-        return String(localized: "\(loader.bookmarkedIDs.count) bookmarked", comment: "Bookmark count")
+        guard let loader, loader.bookmarkedIDs.count > 2 else { return "" }
+        return String(localized: "\(loader.bookmarkedIDs.count) saved for later", comment: "Bookmark count")
     }
 
     private static func routineText(_ ctx: AppContext) -> String {
         switch ctx.routineMatch {
-        case .exact: return String(localized: "Right on time", comment: "Routine")
-        case .approximate: return String(localized: "Around your usual time", comment: "Routine")
-        case .unusual: return String(localized: "Mixing it up", comment: "Routine")
+        case .exact: return [
+            String(localized: "Right on time", comment: "Routine"),
+            String(localized: "Like clockwork", comment: "Routine"),
+        ].randomElement()!
+        case .approximate: return [
+            String(localized: "Your usual time", comment: "Routine"),
+            String(localized: "The usual rhythm", comment: "Routine"),
+        ].randomElement()!
+        case .unusual: return String(localized: "Different time today", comment: "Routine")
         case .firstTime: return ""
         }
     }
 
     private static func toneText(_ ctx: AppContext) -> String {
+        let opts: [String]
         switch ctx.timeOfDay {
-        case .night, .lateNight: return String(localized: "No rush", comment: "Tone")
-        case .dawn: return String(localized: "Before the noise starts", comment: "Tone")
-        case .morning: return String(localized: "Here's what matters", comment: "Tone")
-        case .afternoon: return String(localized: "Just interesting things", comment: "Tone")
-        case .evening: return String(localized: "Stay a while", comment: "Tone")
+        case .night, .lateNight:
+            opts = [
+                String(localized: "No rush", comment: "Tone"),
+                String(localized: "Take your time", comment: "Tone"),
+                String(localized: "The world can wait", comment: "Tone"),
+            ]
+        case .dawn:
+            opts = [
+                String(localized: "Before the noise starts", comment: "Tone"),
+                String(localized: "The quiet hour", comment: "Tone"),
+                String(localized: "Early bird reads", comment: "Tone"),
+            ]
+        case .morning:
+            opts = [
+                String(localized: "Here's what matters", comment: "Tone"),
+                String(localized: "Catch up time", comment: "Tone"),
+                String(localized: "The morning brief", comment: "Tone"),
+            ]
+        case .afternoon:
+            opts = [
+                String(localized: "Just interesting things", comment: "Tone"),
+                String(localized: "No algorithm, no ads", comment: "Tone"),
+                String(localized: "Quick hits, big ideas", comment: "Tone"),
+            ]
+        case .evening:
+            opts = [
+                String(localized: "Stay a while", comment: "Tone"),
+                String(localized: "The slow read", comment: "Tone"),
+                String(localized: "Evening unwind", comment: "Tone"),
+            ]
         }
+        return opts.randomElement()!
     }
 
     // MARK: - Template Loading
@@ -216,10 +269,23 @@ struct MomentGreeting {
     }
 
     private static func cleanUnfilledSlots(_ text: String) -> String {
-        text.replacingOccurrences(of: #"\{[a-z]+\}"#, with: "", options: .regularExpression)
-            .replacingOccurrences(of: "  ", with: " ")
-            .replacingOccurrences(of: " ·", with: "")
-            .replacingOccurrences(of: "· ", with: "")
-            .replacingOccurrences(of: " ,", with: ",")
+        var result = text
+        // Remove unfilled slot placeholders
+        result = result.replacingOccurrences(of: #"\{[a-z]+\}"#, with: "", options: .regularExpression)
+        // Clean orphaned punctuation left behind
+        result = result.replacingOccurrences(of: ". .", with: ".")
+        result = result.replacingOccurrences(of: "! .", with: "!")
+        result = result.replacingOccurrences(of: "· ·", with: "·")
+        result = result.replacingOccurrences(of: " · .", with: ".")
+        result = result.replacingOccurrences(of: ". ·", with: ".")
+        result = result.replacingOccurrences(of: " ·.", with: ".")
+        result = result.replacingOccurrences(of: " + .", with: ".")
+        result = result.replacingOccurrences(of: ", ,", with: ",")
+        result = result.replacingOccurrences(of: " ,", with: ",")
+        result = result.replacingOccurrences(of: "  ", with: " ")
+        // Trim trailing separators
+        while result.hasSuffix(" ·") || result.hasSuffix(" ·") { result = String(result.dropLast(2)) }
+        while result.hasSuffix(",") { result = String(result.dropLast()) }
+        return result.trimmingCharacters(in: .whitespaces)
     }
 }
