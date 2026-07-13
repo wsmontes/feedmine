@@ -467,7 +467,7 @@ final class FeedStore {
                 await prev?.value
                 guard !Task.isCancelled, let self else { return }
                 self.reservoir.trimBuffer(currentVisibleIndex: idx)
-                self.visibleItems = self.reservoir.visibleItems
+                self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
                 self.reservoirCount = self.reservoir.reservoirCount
             }
 
@@ -1415,7 +1415,7 @@ final class FeedStore {
 
     func emergencyTrim() {
         reservoir.emergencyTrim()
-        visibleItems = reservoir.visibleItems
+        visibleItems = applyFilters(reservoir.visibleItems)
         reservoirCount = reservoir.reservoirCount
     }
 
