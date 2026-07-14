@@ -164,11 +164,13 @@ actor ImportPipeline {
             // Skip validation — trust the OPML file (faster bulk import)
             var results: [ImportItemResult] = []
             var newSources: [FeedSource] = []
+            var seen = existingURLs  // track to catch duplicates within this OPML
             for source in parsedSources {
                 let normalized = OPMLParser.normalizeURL(source.url)
-                if existingURLs.contains(normalized) {
+                if seen.contains(normalized) {
                     results.append(ImportItemResult(url: source.url, title: source.title, status: .duplicate))
                 } else {
+                    seen.insert(normalized)
                     let kind = Self.detectMediaKind(url: source.url, title: source.title)
                     let corrected = FeedSource(
                         title: source.title,
@@ -185,8 +187,17 @@ actor ImportPipeline {
         }
 
         // With validation: probe each feed
-        let urls = parsedSources.map(\.url)
-        let titleMap = Dictionary(uniqueKeysWithValues: parsedSources.map { ($0.url, $0) })
+        // Deduplicate sources by normalized URL (keep first occurrence, which has first group's category)
+        var dedupedSources: [FeedSource] = []
+        var seenURLs = Set<String>()
+        for source in parsedSources {
+            let normalized = OPMLParser.normalizeURL(source.url)
+            if seenURLs.insert(normalized).inserted {
+                dedupedSources.append(source)
+            }
+        }
+        let urls = dedupedSources.map(\.url)
+        let titleMap = Dictionary(uniqueKeysWithValues: dedupedSources.map { ($0.url, $0) })
         let (result, sources) = await ingest(
             urls: urls,
             category: fileName.capitalized,
@@ -352,7 +363,7 @@ private final class OPMLImportDelegate: NSObject, XMLParserDelegate, @unchecked 
     let fallbackCategory: String
     var sources: [FeedSource] = []
     private var categoryStack: [String] = []
-    private var isLeafNode = false
+    private var outlinePushStack: [Bool] = []
 
     init(fallbackCategory: String) {
         self.fallbackCategory = fallbackCategory
@@ -365,21 +376,30 @@ private final class OPMLImportDelegate: NSObject, XMLParserDelegate, @unchecked 
             let title = attributes["title"] ?? attributes["text"] ?? ""
             let category = categoryStack.last ?? fallbackCategory
             sources.append(FeedSource(title: title, url: xmlUrl, category: category, region: "imported"))
-            isLeafNode = true
+            outlinePushStack.append(false)
         } else {
             // Group node: push category onto stack
             let groupName = attributes["text"] ?? attributes["title"] ?? fallbackCategory
             categoryStack.append(groupName)
-            isLeafNode = false
+            outlinePushStack.append(true)
         }
     }
 
     func parser(_ parser: XMLParser, didEndElement element: String, namespaceURI: String?, qualifiedName: String?) {
         guard element == "outline" else { return }
-        // Only pop when closing a group (non-leaf) outline
-        if !isLeafNode && !categoryStack.isEmpty {
+        let didPushCategory = outlinePushStack.popLast() ?? false
+        if didPushCategory, !categoryStack.isEmpty {
             categoryStack.removeLast()
         }
-        isLeafNode = false
+    }
+
+    func parserDidEndDocument(_ parser: XMLParser) {
+        categoryStack.removeAll()
+        outlinePushStack.removeAll()
+    }
+
+    func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
+        categoryStack.removeAll()
+        outlinePushStack.removeAll()
     }
 }
