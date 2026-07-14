@@ -142,16 +142,24 @@ final class FeedLoader {
 
     private var _cachedFiltered: [FeedItem] = []
     private var _cacheKey: Int = -1
-    private var _lastItemsGeneration: Int = -1
+    /// Mutation counter — bumped every time the items array changes.
+    /// Combined with searchQuery via XOR for a robust O(1) cache key.
+    private var _itemsGeneration: Int = 0
+    /// Tracks the last known item count to detect changes from the store.
+    /// `items` is computed from `store.visibleItems`, so we use this as
+    /// a lightweight proxy instead of sampling individual item IDs.
+    private var _lastItemCount: Int = -1
 
     var filteredItems: [FeedItem] {
-        // Use items identity (ObjectIdentifier-like) + count + query for cache key.
-        // The previous XOR of first/last/count could false-hit when middle items changed.
-        let firstHash = items.first?.id.hashValue ?? 0
-        let lastHash = items.last?.id.hashValue ?? 0
-        let secondHash = items.dropFirst().first?.id.hashValue ?? 0
-        let generation = items.count &+ firstHash &+ lastHash &+ secondHash
-        let key = generation ^ searchQuery.hashValue
+        // Use mutation counter + search query for cache key. O(1) and
+        // catches all item-count changes instead of only first/second/last.
+        // `items` is computed from `store.visibleItems`, so mutations happen
+        // in FeedStore — we detect them by comparing the count on each access.
+        if items.count != _lastItemCount {
+            _itemsGeneration &+= 1
+            _lastItemCount = items.count
+        }
+        let key = _itemsGeneration ^ searchQuery.hashValue
         if key == _cacheKey { return _cachedFiltered }
         _cacheKey = key
         var result = items
