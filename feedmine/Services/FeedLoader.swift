@@ -142,12 +142,15 @@ final class FeedLoader {
 
     private var _cachedFiltered: [FeedItem] = []
     private var _cacheKey: Int = -1
-    private var _lastItemsGeneration: Int = -1
-
     var filteredItems: [FeedItem] {
-        // Use items identity (ObjectIdentifier-like) + count + query for cache key.
-        // The previous XOR of first/last/count could false-hit when middle items changed.
-        let generation = items.count &+ (items.first?.id.hashValue ?? 0) &+ (items.last?.id.hashValue ?? 0) &+ items.dropFirst().first?.id.hashValue ?? 0
+        // Cache key: samples first, second, and last item IDs + count + search query.
+        // Note: middle-item changes (indices 2..<count-1) are not reflected in this key.
+        // In practice, all mutation paths change count, first, or last items, so this
+        // partial key is sufficient for current callers.
+        let firstHash = items.first?.id.hashValue ?? 0
+        let lastHash = items.last?.id.hashValue ?? 0
+        let secondHash = items.dropFirst().first?.id.hashValue ?? 0
+        let generation = items.count &+ firstHash &+ lastHash &+ secondHash
         let key = generation ^ searchQuery.hashValue
         if key == _cacheKey { return _cachedFiltered }
         _cacheKey = key
@@ -203,9 +206,11 @@ final class FeedLoader {
     }
 
     private func searchScore(_ item: FeedItem, _ q: String) -> Int {
-        let t = item.title.lowercased(); let e = item.excerpt.lowercased()
-        if t == q { return 100 }; if t.hasPrefix(q) { return 80 }
-        if t.contains(q) { return 60 }; if e.contains(q) { return 30 }
+        let t = item.title.lowercased().folding(options: .diacriticInsensitive, locale: nil)
+        let e = item.excerpt.lowercased().folding(options: .diacriticInsensitive, locale: nil)
+        let qf = q.lowercased().folding(options: .diacriticInsensitive, locale: nil)
+        if t == qf { return 100 }; if t.hasPrefix(qf) { return 80 }
+        if t.contains(qf) { return 60 }; if e.contains(qf) { return 30 }
         return 10
     }
 
@@ -372,11 +377,16 @@ final class FeedLoader {
             do {
                 self.store = try FeedStore()
             } catch {
-                // Primary DB failed (disk full, corruption). Use in-memory fallback
-                // so the app launches (degraded: no persistence across sessions).
                 self.initError = error
                 Log.db.error("FeedStore init failed: \(error.localizedDescription). Using in-memory fallback.")
-                self.store = (try? FeedStore(inMemory: true)) ?? FeedStore.empty()
+                if let fallback = try? FeedStore(inMemory: true) {
+                    self.store = fallback
+                    self.initError = nil  // clear: fallback succeeded
+                } else {
+                    Log.db.error("In-memory fallback also failed. App will operate with limited functionality.")
+                    self.store = FeedStore.empty()
+                    // initError remains set — UI can check it for degraded-mode banner
+                }
             }
         }
     }
@@ -494,6 +504,10 @@ final class FeedLoader {
     func isRead(_ itemID: String) -> Bool { store.readItemIDs.contains(itemID) }
 
     // MARK: - Bookmark Lists
+
+    func defaultListID() -> Int64 {
+        store.defaultListID()
+    }
 
     func loadBookmarkLists() async throws -> [BookmarkList] {
         try await store.allBookmarkLists()

@@ -124,14 +124,17 @@ final class FeedStore {
 
     /// Content filter engine: checks if an item's title+excerpt contains any
     /// keyword from the user's active content filters.
-    /// Uses String.contains on pre-lowercased text for performance (200 items ×
-    /// 50 keywords = 10K comparisons). Keywords are stored lowercased by ContentFilterStore.
+    /// Uses diacritic-insensitive comparison on pre-lowercased text for performance
+    /// (200 items x 50 keywords = 10K comparisons). The .folding step ensures that
+    /// e.g. French "senat" matches "senat" (and vice versa).
     private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
         guard !filters.isEmpty else { return false }
-        let text = (item.title + " " + item.excerpt).lowercased()
+        let text = (item.title + " " + item.excerpt)
+            .lowercased()
+            .folding(options: .diacriticInsensitive, locale: nil)
         for filter in filters {
             for keyword in filter.keywords {
-                if text.contains(keyword) {
+                if text.contains(keyword.lowercased().folding(options: .diacriticInsensitive, locale: nil)) {
                     ContentFilterStore.shared.recordHit(filter.id)
                     return true
                 }
@@ -240,19 +243,25 @@ final class FeedStore {
         self.searchEngine = SearchEngine(db: db)
         self.whatsNewManager = WhatsNewManager(db: db)
         // Create default "Favorites" list if not exists
-        try? db.write { db in
-            let count = try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM bookmark_list WHERE is_default = 1") ?? 0
-            if count == 0 {
-                try db.execute(sql: """
-                    INSERT INTO bookmark_list (name, sort_order, created_at, is_default)
-                    VALUES ('Favorites', 0, \(Int(Date().timeIntervalSince1970)), 1)
-                """)
+        do {
+            try db.write { db in
+                let count = try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM bookmark_list WHERE is_default = 1") ?? 0
+                if count == 0 {
+                    try db.execute(sql: """
+                        INSERT INTO bookmark_list (name, sort_order, created_at, is_default)
+                        VALUES ('Favorites', 0, \(Int(Date().timeIntervalSince1970)), 1)
+                    """)
+                }
             }
+        } catch {
+            Log.db.error("Failed to create default Favorites list: \(error.localizedDescription)")
         }
         loadSourceHealth()
     }
 
-    /// Last-resort fallback: creates an in-memory store that won't crash.
+    /// Last-resort fallback: creates an in-memory store. Uses try! as a final
+    /// safeguard — if even an in-memory store fails, SQLite is fundamentally
+    /// broken and the app cannot continue.
     static func empty() -> FeedStore {
         try! FeedStore(inMemory: true)
     }
@@ -1453,7 +1462,7 @@ final class FeedStore {
 
     // MARK: - Private helpers
 
-    private func defaultListID() -> Int64 {
+    func defaultListID() -> Int64 {
         bookmarkStore.defaultListID()
     }
 
@@ -1606,6 +1615,21 @@ final class FeedStore {
                     try db.execute(sql: "INSERT OR REPLACE INTO source_toggle (key, state) VALUES (?, 1)", arguments: [key])
                 }
             }
+        }
+        // v6: Convert any TEXT dates in bookmark columns to INTEGER epoch seconds,
+        // matching the v2 migration for feed_item columns. Older builds (commit
+        // 8cc2551 era) could write TEXT values via GRDB's default Date encoding.
+        migrator.registerMigration("v6_bookmark_epoch_dates") { db in
+            try db.execute(sql: """
+                UPDATE bookmark_list
+                SET created_at = CAST(strftime('%s', created_at) AS INTEGER)
+                WHERE typeof(created_at) = 'text'
+            """)
+            try db.execute(sql: """
+                UPDATE bookmark_item
+                SET added_at = CAST(strftime('%s', added_at) AS INTEGER)
+                WHERE typeof(added_at) = 'text'
+            """)
         }
         try migrator.migrate(db)
     }
