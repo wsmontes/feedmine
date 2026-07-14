@@ -301,10 +301,15 @@ struct ExportView: View {
         case .shareLink:
             let result = ExportEngine.shareLink(sources: scopedSources)
             if case .text(let s) = result { text = s } else { text = "" }
-        case .text:
-            text = ExportEngine.plainText(sources: scopedSources)
-        case .markdown:
-            text = ExportEngine.markdown(sources: scopedSources)
+        case .text, .markdown:
+            // For bookmarks scope, export article content; for sources, export source list
+            if selectedScope == .bookmarks, let (data, _) = generateExportData() {
+                text = String(data: data, encoding: .utf8) ?? ""
+            } else {
+                text = selectedFormat == .text
+                    ? ExportEngine.plainText(sources: scopedSources)
+                    : ExportEngine.markdown(sources: scopedSources)
+            }
         default:
             if let (data, _) = generateExportData() {
                 text = String(data: data, encoding: .utf8) ?? ""

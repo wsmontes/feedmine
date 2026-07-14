@@ -124,17 +124,14 @@ final class FeedStore {
 
     /// Content filter engine: checks if an item's title+excerpt contains any
     /// keyword from the user's active content filters.
-    /// Uses diacritic-insensitive comparison on pre-lowercased text for performance
-    /// (200 items x 50 keywords = 10K comparisons). The .folding step ensures that
-    /// e.g. French "senat" matches "senat" (and vice versa).
+    /// Uses String.contains on pre-lowercased text for performance (200 items x
+    /// 50 keywords = 10K comparisons). Keywords are stored lowercased by ContentFilterStore.
     private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
         guard !filters.isEmpty else { return false }
-        let text = (item.title + " " + item.excerpt)
-            .lowercased()
-            .folding(options: .diacriticInsensitive, locale: nil)
+        let text = (item.title + " " + item.excerpt).lowercased()
         for filter in filters {
             for keyword in filter.keywords {
-                if text.contains(keyword.lowercased().folding(options: .diacriticInsensitive, locale: nil)) {
+                if text.contains(keyword) {
                     ContentFilterStore.shared.recordHit(filter.id)
                     return true
                 }
@@ -243,25 +240,23 @@ final class FeedStore {
         self.searchEngine = SearchEngine(db: db)
         self.whatsNewManager = WhatsNewManager(db: db)
         // Create default "Favorites" list if not exists
-        do {
-            try db.write { db in
-                let count = try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM bookmark_list WHERE is_default = 1") ?? 0
-                if count == 0 {
-                    try db.execute(sql: """
-                        INSERT INTO bookmark_list (name, sort_order, created_at, is_default)
-                        VALUES ('Favorites', 0, \(Int(Date().timeIntervalSince1970)), 1)
-                    """)
-                }
+        try? db.write { db in
+            let count = try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM bookmark_list WHERE is_default = 1") ?? 0
+            if count == 0 {
+                try db.execute(sql: """
+                    INSERT INTO bookmark_list (name, sort_order, created_at, is_default)
+                    VALUES ('Favorites', 0, \(Int(Date().timeIntervalSince1970)), 1)
+                """)
             }
-        } catch {
-            Log.db.error("Failed to create default Favorites list: \(error.localizedDescription)")
         }
         loadSourceHealth()
     }
 
-    /// Last-resort fallback: creates an in-memory store. Uses try! as a final
-    /// safeguard — if even an in-memory store fails, SQLite is fundamentally
-    /// broken and the app cannot continue.
+    /// Last-resort fallback: creates an in-memory store. Uses try! because if
+    /// even an in-memory SQLite database cannot be created, the device is in a
+    /// state where no app using SQLite can run (out of memory, broken OS
+    /// libraries). This is the one acceptable crash point — the app literally
+    /// cannot function without a database.
     static func empty() -> FeedStore {
         try! FeedStore(inMemory: true)
     }
@@ -1462,7 +1457,7 @@ final class FeedStore {
 
     // MARK: - Private helpers
 
-    func defaultListID() -> Int64 {
+    private func defaultListID() -> Int64 {
         bookmarkStore.defaultListID()
     }
 
