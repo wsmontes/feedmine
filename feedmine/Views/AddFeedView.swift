@@ -14,6 +14,7 @@ struct AddFeedView: View {
     @State private var resolvedCount = 0
     @State private var totalToResolve = 0
     @State private var importTask: Task<Void, Never>?
+    @State private var parseDebounceTask: Task<Void, Never>?
     @FocusState private var inputFocused: Bool
 
     /// Available collections = existing categories + "Imported" default
@@ -154,6 +155,7 @@ struct AddFeedView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
+                        importTask?.cancel()
                         importTask = Task { await importFeeds() }
                     } label: {
                         if isResolving {
@@ -193,9 +195,22 @@ struct AddFeedView: View {
                 Text("Found \(resolvedFeeds.count) feeds\(types.isEmpty ? "" : ": \(types)"). Add all to \"\(selectedCollection)\"?")
             }
             .onAppear { inputFocused = true }
-            .onDisappear { importTask?.cancel() }
+            .onDisappear {
+                importTask?.cancel()
+                parseDebounceTask?.cancel()
+            }
             .onChange(of: input) { _, newValue in
-                parsedURLs = newValue.isEmpty ? [] : InputParser.parse(newValue)
+                parseDebounceTask?.cancel()
+                guard !newValue.isEmpty else {
+                    parsedURLs = []
+                    return
+                }
+                let captured = newValue
+                parseDebounceTask = Task {
+                    try? await Task.sleep(for: .milliseconds(150))
+                    guard !Task.isCancelled else { return }
+                    parsedURLs = InputParser.parse(captured)
+                }
             }
         }
         .presentationDetents([.medium, .large])
@@ -220,15 +235,13 @@ struct AddFeedView: View {
 
     private func importFeeds() async {
         isResolving = true
+        defer { isResolving = false }
         result = nil
         resolvedFeeds = []
 
         // 1. Parse input
         let classified = InputParser.parse(input)
-        guard !classified.isEmpty else {
-            isResolving = false
-            return
-        }
+        guard !classified.isEmpty else { return }
 
         // 2. Separate OPMLs from regular URLs
         pendingOPMLs = classified.filter { $0.kind == .opml }
@@ -237,6 +250,7 @@ struct AddFeedView: View {
         // 3. Resolve regular URLs to feed URLs
         let resolver = URLResolver()
         let resolved = await resolver.resolveAll(feedURLs)
+        guard !Task.isCancelled else { return }
 
         // 4. Collect resolved feeds (deduplicate by channel for YouTube)
         var feeds: [ResolvedFeed] = []
@@ -251,7 +265,7 @@ struct AddFeedView: View {
             }
         }
         resolvedFeeds = feeds
-        isResolving = false
+        guard !Task.isCancelled else { return }
 
         // 5. If >5 feeds, show confirmation. Otherwise import directly.
         let totalCount = feeds.count + pendingOPMLs.count
@@ -265,6 +279,7 @@ struct AddFeedView: View {
     /// Perform the actual import after preview/confirmation.
     private func confirmImport() async {
         isResolving = true
+        defer { isResolving = false }
         let feedURLs = resolvedFeeds.map(\.feedURL)
 
         // Import resolved feeds
@@ -273,36 +288,38 @@ struct AddFeedView: View {
             category: selectedCollection,
             skipValidation: true
         )
+        guard !Task.isCancelled else { return }
 
         // Import OPMLs
-        var opmlImported = 0
+        var opmlErrors = 0
+        var opmlItems: [ImportItemResult] = []
         for opml in pendingOPMLs {
             if let opmlResult = await loader.importOPML(url: opml.url, validate: false) {
-                opmlImported += opmlResult.importedCount
+                opmlItems += opmlResult.items
+            } else {
+                opmlErrors += 1
             }
         }
+        guard !Task.isCancelled else { return }
 
         // Combine results
-        if opmlImported > 0 {
-            let extraItems = (0..<opmlImported).map { _ in
-                ImportItemResult(url: "opml", title: nil, status: .imported)
-            }
-            result = ImportResult(items: importResult.items + extraItems)
-        } else {
-            result = importResult
-        }
+        let allItems = importResult.items + opmlItems
+        result = ImportResult(items: allItems)
 
-        isResolving = false
         input = ""
         resolvedFeeds = []
         pendingOPMLs = []
 
         // Post toast notification for FeedScreen
         if let r = result, r.importedCount > 0 {
+            var message = "\(r.importedCount) feed\(r.importedCount == 1 ? "" : "s") added to \(selectedCollection)"
+            if opmlErrors > 0 {
+                message += ", \(opmlErrors) OPML\(opmlErrors == 1 ? "" : "s") failed"
+            }
             NotificationCenter.default.post(
                 name: .feedImportCompleted,
                 object: nil,
-                userInfo: ["message": "\(r.importedCount) feed\(r.importedCount == 1 ? "" : "s") added to \(selectedCollection)"]
+                userInfo: ["message": message]
             )
         }
     }
