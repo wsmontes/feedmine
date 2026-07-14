@@ -168,6 +168,7 @@ actor ImportPipeline {
             for source in parsedSources {
                 let normalized = OPMLParser.normalizeURL(source.url)
                 if seen.contains(normalized) {
+                    Log.import_.info("Dropped duplicate URL in OPML: \(normalized)")
                     results.append(ImportItemResult(url: source.url, title: source.title, status: .duplicate))
                 } else {
                     seen.insert(normalized)

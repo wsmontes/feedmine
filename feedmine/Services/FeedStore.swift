@@ -124,8 +124,9 @@ final class FeedStore {
 
     /// Content filter engine: checks if an item's title+excerpt contains any
     /// keyword from the user's active content filters.
-    /// Uses String.contains on pre-lowercased text for performance (200 items x
-    /// 50 keywords = 10K comparisons). Keywords are stored lowercased by ContentFilterStore.
+    /// Uses localizedStandardContains on pre-folded text for locale-aware matching
+    /// (200 items x 50 keywords = 10K comparisons). Text is lowercased+folded once
+    /// per item; keywords are pre-folded in ContentFilterStore.activeFilters.
     private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
         guard !filters.isEmpty else { return false }
         let text = (item.title + " " + item.excerpt)
