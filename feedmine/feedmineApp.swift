@@ -25,18 +25,20 @@ struct FeedmineApp: App {
     /// Handle incoming URLs:
     /// - feedmine://import?url=https://... → import a feed
     /// - file:///.../*.opml → import OPML file
+    @MainActor
     private func handleIncomingURL(_ url: URL) {
         if url.scheme == "feedmine" {
             if url.host == "import",
                let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-               let feedURL = components.queryItems?.first(where: { $0.name == "url" })?.value {
+               let feedURL = components.queryItems?.first(where: { $0.name == "url" })?.value,
+               !feedURL.isEmpty {
                 Task {
                     let result = await loader.importFeeds(urls: [feedURL])
                     NotificationCenter.default.post(
                         name: .feedImportCompleted,
                         object: nil,
                         userInfo: ["message": result.importedCount > 0
-                            ? "\(result.importedCount) feed imported"
+                            ? "\(result.importedCount) feed\(result.importedCount == 1 ? "" : "s") imported"
                             : "Could not import feed"]
                     )
                 }
@@ -60,7 +62,9 @@ struct FeedmineApp: App {
                     NotificationCenter.default.post(
                         name: .feedImportCompleted,
                         object: nil,
-                        userInfo: ["message": "\(result.importedCount) feeds imported from \(fileName)"]
+                        userInfo: ["message": result.importedCount > 0
+                            ? "\(result.importedCount) feed\(result.importedCount == 1 ? "" : "s") imported from \(fileName)"
+                            : "Could not import feeds from \(fileName)"]
                     )
                 }
             }

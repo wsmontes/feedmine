@@ -33,3 +33,7 @@ email_outreach/
 *.zip
 .superpowers/
 .superpowers/
+.build-device/
+# Build artifacts
+build/
+.build-device/

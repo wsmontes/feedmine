@@ -6,7 +6,7 @@ struct OPMLParser {
     /// Bump when the parse LOGIC or FeedSource shape changes (region derivation,
     /// mediaKind classification, dedup/normalize) so caches produced by the old
     /// logic are ignored even within the same app build.
-    private static let cacheFormatVersion = 2
+    private static let cacheFormatVersion = 3  // multi-source pipeline: 444 OPMLs, 14K+ feeds
 
     /// Codable envelope persisted to Caches/.
     private struct CachedParse: Codable {
