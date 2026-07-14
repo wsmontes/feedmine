@@ -155,7 +155,7 @@ final class ContentFilterStore {
 
     /// Returns only enabled filters with their lowercased keywords ready for matching.
     var activeFilters: [(id: UUID, keywords: [String])] {
-        filters.filter(\.isEnabled).map { ($0.id, $0.keywords) }
+        filters.filter(\.isEnabled).map { ($0.id, $0.keywords.map { $0.folding(options: .diacriticInsensitive, locale: nil) }) }
     }
 
     // MARK: - Persistence

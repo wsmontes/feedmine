@@ -128,10 +128,12 @@ final class FeedStore {
     /// 50 keywords = 10K comparisons). Keywords are stored lowercased by ContentFilterStore.
     private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
         guard !filters.isEmpty else { return false }
-        let text = (item.title + " " + item.excerpt).lowercased()
+        let text = (item.title + " " + item.excerpt)
+            .lowercased()
+            .folding(options: .diacriticInsensitive, locale: nil)
         for filter in filters {
             for keyword in filter.keywords {
-                if text.contains(keyword) {
+                if text.localizedStandardContains(keyword) {
                     ContentFilterStore.shared.recordHit(filter.id)
                     return true
                 }
