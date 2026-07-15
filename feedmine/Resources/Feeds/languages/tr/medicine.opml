@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (Turkish)">
+      <outline title="Medimagazin" xmlUrl="https://www.medimagazin.com.tr/rss" type="rss"/>
+      <outline title="Tıp Dünyası" xmlUrl="https://www.tipdunyasi.com/feed/" type="rss"/>
+      <outline title="Sağlık Haberleri" xmlUrl="https://www.saglikhaberleri.com/feed/" type="rss"/>
+      <outline title="Pharma Türkiye" xmlUrl="https://www.pharmaturkiye.com/feed/" type="rss"/>
+      <outline title="Türk Kardiyoloji Derneği" xmlUrl="https://tkd.org.tr/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

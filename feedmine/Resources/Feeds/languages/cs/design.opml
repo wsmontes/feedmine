@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Design Feeds — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Design Feeds (Czech)">
+      <outline title="DesignMagazin.cz" xmlUrl="https://www.designmagazin.cz/feed/" type="rss"/>
+      <outline title="CzechDesign" xmlUrl="https://www.czechdesign.cz/feed/" type="rss"/>
+      <outline title="Design Cabinet" xmlUrl="https://www.designcabinet.cz/feed/" type="rss"/>
+      <outline title="Earch.cz - Architektura a design" xmlUrl="https://www.earch.cz/feed/" type="rss"/>
+      <outline title="Grafika.cz" xmlUrl="https://www.grafika.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

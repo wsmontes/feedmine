@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:22:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Slovak)">
+      <outline title="Travel.sk" xmlUrl="https://www.travel.sk/rss/" type="rss"/>
+      <outline title="Cestovanie.sk" xmlUrl="https://www.cestovanie.sk/feed/" type="rss"/>
+      <outline title="Dromedár.sk" xmlUrl="https://www.dromedar.sk/rss/" type="rss"/>
+      <outline title="SvetCestovania.sk" xmlUrl="https://www.svetcestovania.sk/feed/" type="rss"/>
+      <outline title="Aktuality.sk - Cestovanie" xmlUrl="https://www.aktuality.sk/rss/cestovanie/" type="rss"/>
+    </outline>
+  </body>
+</opml>

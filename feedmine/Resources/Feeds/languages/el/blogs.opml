@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:09Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Greek)">
+      <outline title="Προσωπικό Blog του Νίκου" xmlUrl="https://nikosblog.gr/feed/" type="rss"/>
+      <outline title="Ημερολόγιο Καταστρώματος" xmlUrl="https://imerologiokatastromatos.gr/feed/" type="rss"/>
+      <outline title="Σκέψεις ενός Απλού Ανθρώπου" xmlUrl="https://skepseis.gr/feed/" type="rss"/>
+      <outline title="Ταξίδια και Αναμνήσεις" xmlUrl="https://taxidiakainanamniseis.gr/feed/" type="rss"/>
+      <outline title="Μαγειρικές Ιστορίες" xmlUrl="https://mageirikesistories.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

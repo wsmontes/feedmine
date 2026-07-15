@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>International Relations, Geopolitics — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:17Z</dateCreated>
+  </head>
+  <body>
+    <outline text="International Relations, Geopolitics (Slovak)">
+      <outline title="Medzinárodné vzťahy - Aktuality" xmlUrl="https://www.aktuality.sk/rss/medzinarodne/" type="rss"/>
+      <outline title="SME - Svet" xmlUrl="https://www.sme.sk/rss/svet" type="rss"/>
+      <outline title="Denník N - Svet" xmlUrl="https://dennikn.sk/rss/svet/" type="rss"/>
+      <outline title="EurActiv.sk" xmlUrl="https://euractiv.sk/rss/" type="rss"/>
+      <outline title="Globálne otázky" xmlUrl="https://globalneotazky.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

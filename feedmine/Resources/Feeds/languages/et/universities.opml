@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:52:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Estonian)">
+      <outline title="Tartu Ülikooli uudised" xmlUrl="https://www.ut.ee/et/uudised/rss" type="rss"/>
+      <outline title="Tallinna Tehnikaülikooli uudised" xmlUrl="https://www.ttu.ee/uudised/rss" type="rss"/>
+      <outline title="Tallinna Ülikooli uudised" xmlUrl="https://www.tlu.ee/et/uudised/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

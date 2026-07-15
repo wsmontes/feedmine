@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Czech)">
+      <outline title="Ekolist.cz" xmlUrl="https://ekolist.cz/rss/xml/zpravodajstvi" type="rss"/>
+      <outline title="Příroda.cz" xmlUrl="https://www.priroda.cz/rss.xml" type="rss"/>
+      <outline title="Hnutí DUHA" xmlUrl="https://www.hnutiduha.cz/rss.xml" type="rss"/>
+      <outline title="Veronica" xmlUrl="https://www.veronica.cz/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Spanish)">
+      <outline title="Muy Interesante" xmlUrl="https://www.muyinteresante.es/feed" type="rss"/>
+      <outline title="National Geographic España" xmlUrl="https://www.nationalgeographic.com.es/rss/ciencia" type="rss"/>
+      <outline title="Xataka Ciencia" xmlUrl="https://www.xatakaciencia.com/feed" type="rss"/>
+      <outline title="ABC Ciencia" xmlUrl="https://www.abc.es/ciencia/feed/" type="rss"/>
+      <outline title="El País - Ciencia" xmlUrl="https://elpais.com/ciencia/feed.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

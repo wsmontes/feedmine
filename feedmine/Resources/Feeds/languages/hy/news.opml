@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Armenian</title>
+    <language>hy</language>
+    <dateCreated>2026-07-15T19:17:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Armenian)">
+      <outline title="Ազատություն ռադիոկայան" xmlUrl="https://www.azatutyun.am/rss/hy/" type="rss"/>
+      <outline title="PanARMENIAN.Net" xmlUrl="https://www.panarmenian.net/rss/hy/" type="rss"/>
+      <outline title="Armenpress" xmlUrl="https://armenpress.am/arm/rss.xml" type="rss"/>
+      <outline title="Hetq Online" xmlUrl="https://hetq.am/hy/rss" type="rss"/>
+      <outline title="News.am" xmlUrl="https://news.am/arm/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

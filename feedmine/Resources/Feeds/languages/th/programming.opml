@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming — Thai</title>
+    <language>th</language>
+    <dateCreated>2026-07-15T19:10:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Programming (Thai)">
+      <outline title="Devahoy" xmlUrl="https://devahoy.com/feed.xml" type="rss"/>
+      <outline title="BorntoDev" xmlUrl="https://www.borntodev.com/feed/" type="rss"/>
+      <outline title="Thai Programmer" xmlUrl="https://www.thaiprogrammer.com/feed/" type="rss"/>
+      <outline title="Blognone" xmlUrl="https://www.blognone.com/feed" type="rss"/>
+      <outline title="CodeMobiles" xmlUrl="https://www.codemobiles.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theatre — Lithuanian</title>
+    <language>lt</language>
+    <dateCreated>2026-07-15T19:18:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theatre (Lithuanian)">
+      <outline title="Teatras.lt" xmlUrl="https://www.teatras.lt/rss" type="rss"/>
+      <outline title="Lietuvos nacionalinis dramos teatras" xmlUrl="https://www.teatras.lt/rss" type="rss"/>
+      <outline title="Menų faktūra" xmlUrl="https://www.menufaktura.lt/rss" type="rss"/>
+      <outline title="7md.lt - Teatras" xmlUrl="https://www.7md.lt/rss/teatras" type="rss"/>
+    </outline>
+  </body>
+</opml>

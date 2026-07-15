@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Mechanics, Engineering — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Mechanics, Engineering (Turkish)">
+      <outline title="Mühendis ve Makina" xmlUrl="https://www.muhendisvenakina.org/feed/" type="rss"/>
+      <outline title="Makina Mühendisleri Odası" xmlUrl="https://www.mmo.org.tr/rss" type="rss"/>
+      <outline title="Teknoloji Haberleri" xmlUrl="https://www.teknoloji.com/feed/" type="rss"/>
+      <outline title="Makinaegitim" xmlUrl="https://www.makinaegitim.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

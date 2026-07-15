@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theatre — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theatre (French)">
+      <outline title="Théâtre Online" xmlUrl="https://www.theatreonline.com/feed/" type="rss"/>
+      <outline title="Scène Web" xmlUrl="https://www.sceneweb.fr/feed/" type="rss"/>
+      <outline title="Les Théâtres" xmlUrl="https://www.lestheatres.com/feed/" type="rss"/>
+      <outline title="Théâtrales" xmlUrl="https://www.theatrales.fr/feed/" type="rss"/>
+      <outline title="WebThéâtre" xmlUrl="https://www.webtheatre.fr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

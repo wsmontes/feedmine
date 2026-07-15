@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gossip, Celebrities — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:51:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Gossip, Celebrities (Estonian)">
+      <outline title="Kroonika" xmlUrl="https://kroonika.delfi.ee/rss" type="rss"/>
+      <outline title="Elu24 - Postimees" xmlUrl="https://elu24.postimees.ee/rss" type="rss"/>
+      <outline title="Õhtuleht - Meedia" xmlUrl="https://www.ohtuleht.ee/rss/meedia" type="rss"/>
+    </outline>
+  </body>
+</opml>

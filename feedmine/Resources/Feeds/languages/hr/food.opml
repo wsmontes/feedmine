@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:58:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (Croatian)">
+      <outline title="Coolinarika" xmlUrl="https://www.coolinarika.hr/feed/" type="rss"/>
+      <outline title="Dobro jesti" xmlUrl="https://dobro-jesti.hr/feed/" type="rss"/>
+      <outline title="Gurman.hr" xmlUrl="https://gurman.hr/feed/" type="rss"/>
+      <outline title="Recepti.hr" xmlUrl="https://recepti.hr/feed/" type="rss"/>
+      <outline title="Hrvatska kuhinja" xmlUrl="https://hrvatska-kuhinja.hr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

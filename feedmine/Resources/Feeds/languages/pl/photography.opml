@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photography — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:27Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Photography (Polish)">
+      <outline title="Fotopolis" xmlUrl="https://www.fotopolis.pl/feed" type="rss"/>
+      <outline title="SwiatObrazu.pl" xmlUrl="https://swiatobrazu.pl/feed" type="rss"/>
+      <outline title="Foto-Kurier" xmlUrl="https://www.foto-kurier.pl/feed" type="rss"/>
+      <outline title="Okiem Fotografa" xmlUrl="https://okiemfotografa.pl/feed" type="rss"/>
+      <outline title="Fotoblogia" xmlUrl="https://fotoblogia.pl/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

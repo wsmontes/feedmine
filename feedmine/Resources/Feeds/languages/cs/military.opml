@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Military — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:07:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Military (Czech)">
+      <outline title="Armádní noviny" xmlUrl="https://www.armadninoviny.cz/feed/" type="rss"/>
+      <outline title="CZDEFENCE" xmlUrl="https://www.czdefence.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

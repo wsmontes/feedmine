@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Trails, Routes — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:52Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Trails, Routes (Italian)">
+      <outline title="Sentieri - CAI" xmlUrl="https://www.cai.it/feed/?post_type=escursioni" type="rss"/>
+      <outline title="Trekking - Montagna.TV" xmlUrl="https://www.montagna.tv/feed/?tag=trekking" type="rss"/>
+      <outline title="Sentieri - Outdoor" xmlUrl="https://www.outdoorblog.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

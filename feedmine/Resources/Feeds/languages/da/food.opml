@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:23:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (Danish)">
+      <outline title="Madens Verden" xmlUrl="https://madensverden.dk/feed/" type="rss"/>
+      <outline title="Alletiders Kogebog" xmlUrl="https://alletiderskogebog.dk/feed/" type="rss"/>
+      <outline title="Gastro" xmlUrl="https://gastro.dk/feed/" type="rss"/>
+      <outline title="Mad og Bolig" xmlUrl="https://madogbolig.dk/feed/" type="rss"/>
+      <outline title="Spis Bedre" xmlUrl="https://spisbedre.dk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

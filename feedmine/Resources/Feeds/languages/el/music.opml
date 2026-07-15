@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:13:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Greek)">
+      <outline title="Avopolis Music Network" xmlUrl="https://www.avopolis.gr/feed" type="rss"/>
+      <outline title="Rocking.gr" xmlUrl="https://rocking.gr/feed" type="rss"/>
+      <outline title="MusicHeaven" xmlUrl="https://www.musicheaven.gr/feed" type="rss"/>
+      <outline title="Hit-Channel" xmlUrl="https://www.hit-channel.com/feed" type="rss"/>
+      <outline title="Onalert.gr" xmlUrl="https://www.onalert.gr/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

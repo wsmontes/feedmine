@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fiction, Audio Drama — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:41Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fiction, Audio Drama (German)">
+      <outline title="ARD Hörspiele" xmlUrl="https://www.ardaudiothek.de/hoerspiel/feed" type="rss"/>
+      <outline title="WDR Hörspiele" xmlUrl="https://www1.wdr.de/radio/hoerspiel/hoerspiel-podcast-100.podcast" type="rss"/>
+      <outline title="SWR2 Hörspiel" xmlUrl="https://www.swr.de/swr2/hoerspiel/swr2-hoerspiel-podcast-100.podcast" type="rss"/>
+      <outline title="HR2 Hörspiel" xmlUrl="https://www.hr2.de/podcast/hoerspiel/index.html" type="rss"/>
+      <outline title="NDR Hörspiele" xmlUrl="https://www.ndr.de/ndr2/podcast/hoerspiel/ndr2-hoerspiel-podcast-100.podcast" type="rss"/>
+    </outline>
+  </body>
+</opml>

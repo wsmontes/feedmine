@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:08:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Czech)">
+      <outline title="Fotbal.cz" xmlUrl="https://www.fotbal.cz/rss/" type="rss"/>
+      <outline title="iSport Fotbal" xmlUrl="https://isport.blesk.cz/rss/fotbal.xml" type="rss"/>
+      <outline title="EuroFotbal" xmlUrl="https://www.eurofotbal.cz/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

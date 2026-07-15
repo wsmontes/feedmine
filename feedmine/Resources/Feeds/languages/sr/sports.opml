@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Serbian</title>
+    <language>sr</language>
+    <dateCreated>2026-07-15T18:47:12Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Serbian)">
+      <outline title="B92 Sport" xmlUrl="https://www.b92.net/sport/vesti.xml" type="rss"/>
+      <outline title="Sportklub" xmlUrl="https://sportklub.rs/rss/" type="rss"/>
+      <outline title="Mozzart Sport" xmlUrl="https://www.mozzartsport.com/rss" type="rss"/>
+      <outline title="RTS Sport" xmlUrl="https://www.rts.rs/page/sport/sr/rss.html" type="rss"/>
+      <outline title="N1 Sport" xmlUrl="https://rs.n1info.com/sport/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

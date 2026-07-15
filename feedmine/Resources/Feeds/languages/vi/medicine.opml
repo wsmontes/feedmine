@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:39Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (Vietnamese)">
+      <outline title="Báo Sức khỏe &amp; Đời sống" xmlUrl="https://suckhoedoisong.vn/rss/y-hoc.rss" type="rss"/>
+      <outline title="Báo Y học thực hành" xmlUrl="https://yhocvietnam.com/feed/" type="rss"/>
+      <outline title="Tạp chí Y học Việt Nam" xmlUrl="https://tapchiyhocvietnam.vn/feed/" type="rss"/>
+      <outline title="Báo Dược &amp; Mỹ phẩm" xmlUrl="https://duocmypham.vn/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

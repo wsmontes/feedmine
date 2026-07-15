@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Norwegian</title>
+    <language>no</language>
+    <dateCreated>2026-07-15T19:11:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Norwegian)">
+      <outline title="Juridika" xmlUrl="https://www.juridika.no/feed" type="rss"/>
+      <outline title="Advokatbladet" xmlUrl="https://www.advokatbladet.no/feed/" type="rss"/>
+      <outline title="Rett24" xmlUrl="https://rett24.no/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

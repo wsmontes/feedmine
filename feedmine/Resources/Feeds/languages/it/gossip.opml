@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gossip, Celebrities — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:44:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Gossip, Celebrities (Italian)">
+      <outline title="Gossip.it" xmlUrl="https://www.gossip.it/feed/" type="rss"/>
+      <outline title="Fanpage Gossip" xmlUrl="https://www.fanpage.it/feed/gossip/" type="rss"/>
+      <outline title="Oggi Gossip" xmlUrl="https://www.oggi.it/gossip/feed/" type="rss"/>
+      <outline title="Novella 2000" xmlUrl="https://www.novella2000.it/feed/" type="rss"/>
+      <outline title="Spetteguless" xmlUrl="https://www.spetteguless.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

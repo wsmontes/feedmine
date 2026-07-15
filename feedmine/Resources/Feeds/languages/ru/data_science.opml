@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Data Science, ML, Analytics — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:35Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Data Science, ML, Analytics (Russian)">
+      <outline title="Habr — Data Science" xmlUrl="https://habr.com/ru/hub/data_science/rss/" type="rss"/>
+      <outline title="Хабр — Машинное обучение" xmlUrl="https://habr.com/ru/hub/machine_learning/rss/" type="rss"/>
+      <outline title="OpenDataScience — Блог" xmlUrl="https://ods.ai/feed" type="rss"/>
+      <outline title="NTA — Блог" xmlUrl="https://www.nta.ru/blog/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

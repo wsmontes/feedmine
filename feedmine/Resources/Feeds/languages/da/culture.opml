@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:22:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Danish)">
+      <outline title="Kulturmonitor" xmlUrl="https://kulturmonitor.dk/feed/" type="rss"/>
+      <outline title="Information - Kultur" xmlUrl="https://www.information.dk/feed/kultur" type="rss"/>
+      <outline title="Politiken - Kultur" xmlUrl="https://politiken.dk/kultur/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

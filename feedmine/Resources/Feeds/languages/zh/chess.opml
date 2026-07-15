@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Chess Feeds — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Chess Feeds (Chinese)">
+      <outline title="中国象棋协会" xmlUrl="https://www.xiangqi.com/rss.xml" type="rss"/>
+      <outline title="国际象棋-新浪体育" xmlUrl="https://sports.sina.com.cn/rss/chess.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

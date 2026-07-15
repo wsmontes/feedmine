@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Whisky — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:27:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Whisky (Russian)">
+      <outline title="Виски.ру" xmlUrl="https://whisky.ru/feed" type="rss"/>
+      <outline title="Блог о виски" xmlUrl="https://whisky-blog.ru/feed" type="rss"/>
+      <outline title="Виски Онлайн" xmlUrl="https://whisky-online.ru/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

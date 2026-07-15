@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Design Feeds — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:35Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Design Feeds (Russian)">
+      <outline title="Designer — Сообщество" xmlUrl="https://designer.ru/rss" type="rss"/>
+      <outline title="Типографика — Блог" xmlUrl="https://typographica.pro/feed" type="rss"/>
+      <outline title="Design Pub — Блог" xmlUrl="https://designpub.ru/feed" type="rss"/>
+      <outline title="Бюро — Журнал" xmlUrl="https://bureau.ru/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

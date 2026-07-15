@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Luxury Fashion, Haute Couture — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Luxury Fashion, Haute Couture (Russian)">
+      <outline title="Vogue Россия" xmlUrl="https://www.vogue.ru/rss/" type="rss"/>
+      <outline title="Harper's Bazaar Россия" xmlUrl="https://harpersbazaar.ru/rss/" type="rss"/>
+      <outline title="FashionTime" xmlUrl="https://fashiontime.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

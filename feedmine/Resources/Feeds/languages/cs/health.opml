@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:07:06Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Czech)">
+      <outline title="Zdraví.Euro.cz" xmlUrl="https://zdravi.euro.cz/feed/" type="rss"/>
+      <outline title="Medical Tribune CZ" xmlUrl="https://www.tribune.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Russian)">
+      <outline title="Кинопоиск — Новости" xmlUrl="https://www.kinopoisk.ru/rss/news.xml" type="rss"/>
+      <outline title="Фильмы на Film.ru" xmlUrl="https://www.film.ru/rss/all.xml" type="rss"/>
+      <outline title="Кино Mail.ru" xmlUrl="https://kino.mail.ru/rss/news/" type="rss"/>
+      <outline title="World Art — Кино" xmlUrl="https://www.worldart.ru/rss/cinema.xml" type="rss"/>
+      <outline title="ПрофиСинема" xmlUrl="https://www.proficinema.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

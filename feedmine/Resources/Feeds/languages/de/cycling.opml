@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cycling — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Cycling (German)">
+      <outline title="Radfahren.de" xmlUrl="https://www.radfahren.de/feed/" type="rss"/>
+      <outline title="Bike Citizens" xmlUrl="https://blog.bikecitizens.net/feed/" type="rss"/>
+      <outline title="Tour Magazin" xmlUrl="https://www.tour-magazin.de/feed/" type="rss"/>
+      <outline title="Radblogger" xmlUrl="https://radblogger.net/feed/" type="rss"/>
+      <outline title="ADFC Blog" xmlUrl="https://www.adfc.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

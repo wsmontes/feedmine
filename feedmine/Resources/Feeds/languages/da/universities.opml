@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:24:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Danish)">
+      <outline title="Københavns Universitet - Nyheder" xmlUrl="https://nyheder.ku.dk/feed/" type="rss"/>
+      <outline title="Aarhus Universitet - Nyhedsfeed" xmlUrl="https://nyheder.au.dk/feed/" type="rss"/>
+      <outline title="Syddansk Universitet - Nyheder" xmlUrl="https://www.sdu.dk/da/nyheder/rss" type="rss"/>
+      <outline title="Aalborg Universitet - Nyhedsfeed" xmlUrl="https://www.aau.dk/nyheder/rss" type="rss"/>
+      <outline title="Danmarks Tekniske Universitet - Nyheder" xmlUrl="https://www.dtu.dk/nyhedsfeed" type="rss"/>
+    </outline>
+  </body>
+</opml>

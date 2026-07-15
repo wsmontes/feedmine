@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Hungarian)">
+      <outline title="Index - Podcast" xmlUrl="https://index.hu/ podcast/" type="rss"/>
+      <outline title="24.hu - Podcast" xmlUrl="https://24.hu/podcast/feed/" type="rss"/>
+      <outline title="Telex - Podcast" xmlUrl="https://telex.hu/podcast/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

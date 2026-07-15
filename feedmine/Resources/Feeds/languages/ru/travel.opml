@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:27:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Russian)">
+      <outline title="Тонкости туризма" xmlUrl="https://tonkosti.ru/rss" type="rss"/>
+      <outline title="Турпром" xmlUrl="https://www.tourprom.ru/rss/" type="rss"/>
+      <outline title="Вотпуск.ру" xmlUrl="https://www.votpusk.ru/rss/news.asp" type="rss"/>
+      <outline title="Travel.ru" xmlUrl="https://www.travel.ru/rss/" type="rss"/>
+      <outline title="100 дорог" xmlUrl="https://100dorog.ru/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

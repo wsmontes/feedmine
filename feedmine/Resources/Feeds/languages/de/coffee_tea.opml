@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Coffee — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Coffee (German)">
+      <outline title="Kaffee-Netz" xmlUrl="https://www.kaffee-netz.de/feed/" type="rss"/>
+      <outline title="Tee Blog" xmlUrl="https://tee-blog.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

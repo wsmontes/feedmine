@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:52:08Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Estonian)">
+      <outline title="Delfi Reisijuht" xmlUrl="https://www.delfi.ee/rss/reisijuht" type="rss"/>
+      <outline title="Reis - Postimees" xmlUrl="https://reis.postimees.ee/rss" type="rss"/>
+      <outline title="Reisiblogid - Trip.ee" xmlUrl="https://www.trip.ee/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

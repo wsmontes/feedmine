@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Board Games, RPGs — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:00:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Board Games, RPGs (Hungarian)">
+      <outline title="Társasjátékok" xmlUrl="https://tarsasjatekok.com/feed/" type="rss"/>
+      <outline title="Szerepjáték" xmlUrl="https://szerepjatek.hu/feed/" type="rss"/>
+      <outline title="Gémklub" xmlUrl="https://gemklub.hu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

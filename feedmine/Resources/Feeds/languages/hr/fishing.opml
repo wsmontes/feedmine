@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fishing — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:58:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fishing (Croatian)">
+      <outline title="Ribolov.hr" xmlUrl="https://ribolov.hr/feed/" type="rss"/>
+      <outline title="Ribički portal" xmlUrl="https://ribicki-portal.hr/feed/" type="rss"/>
+      <outline title="Morski ribolov" xmlUrl="https://morski-ribolov.hr/feed/" type="rss"/>
+      <outline title="Slatkovodni ribolov" xmlUrl="https://slatkovodni-ribolov.hr/feed/" type="rss"/>
+      <outline title="Ribičke priče" xmlUrl="https://ribickeprice.hr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

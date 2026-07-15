@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (French)">
+      <outline title="Dalloz Actualité" xmlUrl="https://www.dalloz-actualite.fr/rss.xml" type="rss"/>
+      <outline title="Village de la Justice" xmlUrl="https://www.village-justice.com/feed.rss" type="rss"/>
+      <outline title="Légavox" xmlUrl="https://www.legavox.fr/blog/feed.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

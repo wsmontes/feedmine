@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (German)">
+      <outline title="kicker" xmlUrl="https://www.kicker.de/rss/news" type="rss"/>
+      <outline title="11 Freunde" xmlUrl="https://www.11freunde.de/feed" type="rss"/>
+      <outline title="Sport1 Fußball" xmlUrl="https://www.sport1.de/rss/fussball.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

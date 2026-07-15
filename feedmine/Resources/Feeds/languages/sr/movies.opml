@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Serbian</title>
+    <language>sr</language>
+    <dateCreated>2026-07-15T18:46:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Serbian)">
+      <outline title="FCS Filmovi" xmlUrl="https://www.fcs.rs/feed/" type="rss"/>
+      <outline title="B92 Film" xmlUrl="https://www.b92.net/rss/feed.php?id=film" type="rss"/>
+      <outline title="N1 Film i TV" xmlUrl="https://n1info.rs/rss/film-tv" type="rss"/>
+    </outline>
+  </body>
+</opml>

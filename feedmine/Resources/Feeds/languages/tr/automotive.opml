@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:37:47Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (Turkish)">
+      <outline title="DonanımHaber Otomobil" xmlUrl="https://www.donanimhaber.com/otomobil/rss.xml" type="rss"/>
+      <outline title="Motor1 Türkiye" xmlUrl="https://tr.motor1.com/rss/" type="rss"/>
+      <outline title="Arabam.com Blog" xmlUrl="https://www.arabam.com/blog/feed/" type="rss"/>
+      <outline title="Otohaber" xmlUrl="https://www.otohaber.com.tr/rss" type="rss"/>
+      <outline title="Sürüş Keyfi" xmlUrl="https://www.suruskeyfi.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

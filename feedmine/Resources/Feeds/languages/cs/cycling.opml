@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cycling — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Cycling (Czech)">
+      <outline title="Cyklonovinky" xmlUrl="https://www.cyklonovinky.cz/feed/" type="rss"/>
+      <outline title="RoadCycling.cz" xmlUrl="https://www.roadcycling.cz/feed/" type="rss"/>
+      <outline title="BikePort.cz" xmlUrl="https://www.bikeport.cz/feed/" type="rss"/>
+      <outline title="NaKole.cz" xmlUrl="https://www.nakole.cz/feed/" type="rss"/>
+      <outline title="MTBS.cz" xmlUrl="https://www.mtbs.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

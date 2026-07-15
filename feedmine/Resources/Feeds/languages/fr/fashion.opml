@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (French)">
+      <outline title="Vogue France" xmlUrl="https://www.vogue.fr/feed" type="rss"/>
+      <outline title="Elle France" xmlUrl="https://www.elle.fr/Mode/RSS" type="rss"/>
+      <outline title="Marie Claire France" xmlUrl="https://www.marieclaire.fr/mode/rss.xml" type="rss"/>
+      <outline title="Grazia France" xmlUrl="https://www.grazia.fr/mode/rss" type="rss"/>
+      <outline title="L'Officiel" xmlUrl="https://www.lofficiel.com/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

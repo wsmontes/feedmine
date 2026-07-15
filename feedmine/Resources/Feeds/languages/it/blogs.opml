@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Italian)">
+      <outline title="Blog di Beppe Grillo" xmlUrl="https://www.beppegrillo.it/feed/" type="rss"/>
+      <outline title="Michele Nardelli" xmlUrl="https://www.michelenardelli.it/feed/" type="rss"/>
+      <outline title="Il Blog di Sabino" xmlUrl="https://www.sabinopacione.com/feed/" type="rss"/>
+      <outline title="Pensieri Cannibali" xmlUrl="https://www.pensiericannibali.it/feed/" type="rss"/>
+      <outline title="Blog di Luigi" xmlUrl="https://www.luigiblogger.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

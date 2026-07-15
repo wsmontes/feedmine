@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fishing — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fishing (Polish)">
+      <outline title="Wędkarski Świat" xmlUrl="https://wedkarskiswiat.pl/feed/" type="rss"/>
+      <outline title="Wędkarstwo - Poradnik" xmlUrl="https://wedkarstwoporadnik.pl/feed/" type="rss"/>
+      <outline title="Wędkuj z nami" xmlUrl="https://wedkujznami.pl/feed/" type="rss"/>
+      <outline title="Wędkarski Blog" xmlUrl="https://wedkarskiblog.pl/feed/" type="rss"/>
+      <outline title="Wędkarstwo - Forum" xmlUrl="https://wedkarskie.forum.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (French)">
+      <outline title="01net" xmlUrl="https://www.01net.com/rss/actualites/" type="rss"/>
+      <outline title="Frandroid" xmlUrl="https://www.frandroid.com/feed" type="rss"/>
+      <outline title="Les Numériques" xmlUrl="https://www.lesnumeriques.com/rss/" type="rss"/>
+      <outline title="Clubic" xmlUrl="https://www.clubic.com/feed/" type="rss"/>
+      <outline title="ZDNet France" xmlUrl="https://www.zdnet.fr/feeds/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

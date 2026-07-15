@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (Italian)">
+      <outline title="Quattroruote" xmlUrl="https://www.quattroruote.it/feed/" type="rss"/>
+      <outline title="AlVolante" xmlUrl="https://www.alvolante.it/feed/" type="rss"/>
+      <outline title="Motor1 Italia" xmlUrl="https://it.motor1.com/rss/news/" type="rss"/>
+      <outline title="Auto.it" xmlUrl="https://www.auto.it/feed/" type="rss"/>
+      <outline title="FormulaPassion" xmlUrl="https://www.formulapassion.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

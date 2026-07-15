@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Museums — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:57:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Museums (Chinese)">
+      <outline title="故宫博物院" xmlUrl="https://www.dpm.org.cn/feed.xml" type="rss"/>
+      <outline title="中国国家博物馆" xmlUrl="https://www.chnmuseum.cn/feed" type="rss"/>
+      <outline title="上海博物馆" xmlUrl="https://www.shanghaimuseum.net/feed" type="rss"/>
+      <outline title="南京博物院" xmlUrl="https://www.njmuseum.com/feed" type="rss"/>
+      <outline title="陕西历史博物馆" xmlUrl="https://www.sxhm.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

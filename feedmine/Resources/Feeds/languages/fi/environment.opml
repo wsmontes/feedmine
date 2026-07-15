@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:29Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Finnish)">
+      <outline title="Suomen luonnonsuojeluliiton RSS" xmlUrl="https://www.sll.fi/feed/" type="rss"/>
+      <outline title="Yle - Luonto" xmlUrl="https://feeds.yle.fi/uutiset/v1/majorTopic/YLE_LUONTO.rss" type="rss"/>
+      <outline title="Luonnonvarakeskus - RSS" xmlUrl="https://www.luke.fi/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

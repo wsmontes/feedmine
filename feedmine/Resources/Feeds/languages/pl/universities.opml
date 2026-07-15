@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Polish)">
+      <outline title="Forum Akademickie" xmlUrl="https://forumakademickie.pl/feed/" type="rss"/>
+      <outline title="Uniwersytet Warszawski" xmlUrl="https://www.uw.edu.pl/feed/" type="rss"/>
+      <outline title="Politechnika Warszawska" xmlUrl="https://www.pw.edu.pl/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

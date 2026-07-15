@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:36:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Dutch)">
+      <outline title="OOR" xmlUrl="https://oor.nl/feed/" type="rss"/>
+      <outline title="3voor12" xmlUrl="https://3voor12.vpro.nl/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

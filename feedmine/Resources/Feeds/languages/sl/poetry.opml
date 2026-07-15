@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Poetry — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Poetry (Slovenian)">
+      <outline title="Pesem.si" xmlUrl="https://www.pesem.si/rss/" type="rss"/>
+      <outline title="Literatura.si" xmlUrl="https://www.literatura.si/rss/" type="rss"/>
+      <outline title="Slovenske poezije" xmlUrl="https://slovenskepoezije.si/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

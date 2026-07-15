@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Data Science, ML, Analytics — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:53Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Data Science, ML, Analytics (French)">
+      <outline title="Data French" xmlUrl="https://datafrench.com/feed/" type="rss"/>
+      <outline title="Machine Learning France" xmlUrl="https://machinelearningfrance.com/feed/" type="rss"/>
+      <outline title="Stat4decision" xmlUrl="https://www.stat4decision.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Military — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Military (Turkish)">
+      <outline title="Savunma ve Havacılık" xmlUrl="https://www.savunmavehavacilik.com/feed/" type="rss"/>
+      <outline title="Defence Turkey" xmlUrl="https://www.defenceturkey.com/feed" type="rss"/>
+      <outline title="MSB (Milli Savunma Bakanlığı)" xmlUrl="https://www.msb.gov.tr/rss" type="rss"/>
+      <outline title="TSK (Türk Silahlı Kuvvetleri)" xmlUrl="https://www.tsk.tr/rss" type="rss"/>
+      <outline title="Savunma Sanayii Başkanlığı" xmlUrl="https://www.ssb.gov.tr/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

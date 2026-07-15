@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Hungarian)">
+      <outline title="Travelo.hu RSS" xmlUrl="https://travelo.hu/rss/" type="rss"/>
+      <outline title="Világjáró RSS" xmlUrl="https://vilagjaro.hu/feed/" type="rss"/>
+      <outline title="Utazómajom RSS" xmlUrl="https://utazomajom.hu/feed/" type="rss"/>
+      <outline title="Szállás.hu Blog RSS" xmlUrl="https://blog.szallas.hu/feed/" type="rss"/>
+      <outline title="Útipont RSS" xmlUrl="https://utipont.hu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

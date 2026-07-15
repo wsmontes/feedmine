@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Slovenian)">
+      <outline title="Siol.net - Potovanja" xmlUrl="https://siol.net/potovanja/rss" type="rss"/>
+      <outline title="RTV Slovenija - Potovanja" xmlUrl="https://www.rtvslo.si/potovanja/rss" type="rss"/>
+      <outline title="24ur.com - Potovanja" xmlUrl="https://www.24ur.com/rss/potovanja.xml" type="rss"/>
+      <outline title="Delo - Potovanja" xmlUrl="https://www.delo.si/rss/potovanja/" type="rss"/>
+    </outline>
+  </body>
+</opml>

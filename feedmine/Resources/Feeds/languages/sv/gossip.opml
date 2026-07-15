@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gossip, Celebrities — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:14Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Gossip, Celebrities (Swedish)">
+      <outline title="Svensk Damtidning" xmlUrl="https://www.svenskdam.se/feed/" type="rss"/>
+      <outline title="Aftonbladet - Kändis" xmlUrl="https://www.aftonbladet.se/rss/tagg/kandis" type="rss"/>
+      <outline title="Expressen - Kändis" xmlUrl="https://www.expressen.se/rss/kandis/" type="rss"/>
+    </outline>
+  </body>
+</opml>

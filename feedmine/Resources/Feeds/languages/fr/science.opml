@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (French)">
+      <outline title="Futura-Sciences" xmlUrl="https://www.futura-sciences.com/rss/actualites.xml" type="rss"/>
+      <outline title="Pour la Science" xmlUrl="https://www.pourlascience.fr/feed/" type="rss"/>
+      <outline title="Sciences et Avenir" xmlUrl="https://www.sciencesetavenir.fr/rss/actualites.xml" type="rss"/>
+      <outline title="Le Monde - Sciences" xmlUrl="https://www.lemonde.fr/sciences/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

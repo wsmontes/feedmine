@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Norwegian</title>
+    <language>no</language>
+    <dateCreated>2026-07-15T19:11:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Norwegian)">
+      <outline title="Dagens Medisin" xmlUrl="https://www.dagensmedisin.no/rss" type="rss"/>
+      <outline title="Helsenett" xmlUrl="https://www.helsenett.no/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

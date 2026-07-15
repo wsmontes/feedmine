@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Czech)">
+      <outline title="Bloguje.cz" xmlUrl="https://bloguje.cz/rss/" type="rss"/>
+      <outline title="Český blogovací servis" xmlUrl="https://www.ceskyblog.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (French)">
+      <outline title="Le Monde - Université" xmlUrl="https://www.lemonde.fr/universite/rss_full.xml" type="rss"/>
+      <outline title="EducPros" xmlUrl="https://www.letudiant.fr/educpros/rss.xml" type="rss"/>
+      <outline title="Campus France" xmlUrl="https://www.campusfrance.org/fr/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

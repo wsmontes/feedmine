@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:57:14Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Chinese)">
+      <outline title="历史研究" xmlUrl="https://www.lsyj.cass.cn/rss/rss.xml" type="rss"/>
+      <outline title="澎湃新闻·私家历史" xmlUrl="https://www.thepaper.cn/rss/history.xml" type="rss"/>
+      <outline title="历史学人" xmlUrl="https://www.historypeople.cn/rss/feed.xml" type="rss"/>
+      <outline title="中国历史研究院" xmlUrl="https://www.historychina.net/rss/rss.xml" type="rss"/>
+      <outline title="网易历史" xmlUrl="https://history.163.com/rss/history.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

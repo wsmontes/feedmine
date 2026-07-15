@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:36:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Dutch)">
+      <outline title="NOS Nieuws" xmlUrl="https://feeds.nos.nl/nosnieuwsalgemeen" type="rss"/>
+      <outline title="NU.nl" xmlUrl="https://www.nu.nl/rss" type="rss"/>
+      <outline title="Trouw" xmlUrl="https://www.trouw.nl/nieuws/rss.xml" type="rss"/>
+      <outline title="AD" xmlUrl="https://www.ad.nl/rss.xml" type="rss"/>
+      <outline title="De Volkskrant" xmlUrl="https://www.volkskrant.nl/nieuws/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

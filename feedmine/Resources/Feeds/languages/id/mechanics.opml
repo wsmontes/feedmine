@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Mechanics, Engineering — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Mechanics, Engineering (Indonesian)">
+      <outline title="Otomotif Kompas" xmlUrl="https://otomotif.kompas.com/rss" type="rss"/>
+      <outline title="DetikOto" xmlUrl="https://www.detik.com/oto/rss" type="rss"/>
+      <outline title="GridOto" xmlUrl="https://www.gridoto.com/rss" type="rss"/>
+      <outline title="Oto.id" xmlUrl="https://www.oto.id/feed" type="rss"/>
+      <outline title="Motorplus" xmlUrl="https://www.motorplus-online.com/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

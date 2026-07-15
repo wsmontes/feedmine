@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:05Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (German)">
+      <outline title="Ärzteblatt" xmlUrl="https://www.aerzteblatt.de/rss/aktuell.asp" type="rss"/>
+      <outline title="Deutsches Ärzteblatt" xmlUrl="https://www.aerzteblatt.de/rss/politik.asp" type="rss"/>
+      <outline title="Pharmazeutische Zeitung" xmlUrl="https://www.pharmazeutische-zeitung.de/rss/aktuelles.xml" type="rss"/>
+      <outline title="Medscape Deutschland" xmlUrl="https://www.medscape.com/feeds/de/all" type="rss"/>
+    </outline>
+  </body>
+</opml>

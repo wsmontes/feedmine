@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gossip, Celebrities — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:22:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Gossip, Celebrities (Spanish)">
+      <outline title="El Mundo - Gente" xmlUrl="https://www.elmundo.es/loc/feed.rss" type="rss"/>
+      <outline title="ABC Gente" xmlUrl="https://www.abc.es/gente/feed.rss" type="rss"/>
+      <outline title="Hola!" xmlUrl="https://www.hola.com/rss/" type="rss"/>
+      <outline title="Diez Minutos" xmlUrl="https://www.diezminutos.es/rss/" type="rss"/>
+      <outline title="Vanitatis - El Confidencial" xmlUrl="https://www.vanitatis.elconfidencial.com/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

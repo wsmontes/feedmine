@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:08:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Czech)">
+      <outline title="Sport.cz" xmlUrl="https://www.sport.cz/rss/" type="rss"/>
+      <outline title="iSport" xmlUrl="https://isport.blesk.cz/rss/" type="rss"/>
+      <outline title="Český sport" xmlUrl="https://www.ceskysport.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

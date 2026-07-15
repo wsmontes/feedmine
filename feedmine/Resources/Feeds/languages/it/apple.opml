@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Apple — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Apple (Italian)">
+      <outline title="Macitynet" xmlUrl="https://www.macitynet.it/feed/" type="rss"/>
+      <outline title="iSpazio" xmlUrl="https://www.ispazio.net/feed/" type="rss"/>
+      <outline title="iPhoneItalia" xmlUrl="https://www.iphoneitalia.com/feed/" type="rss"/>
+      <outline title="AppleMania" xmlUrl="https://www.applemania.it/feed/" type="rss"/>
+      <outline title="The Apple Lounge" xmlUrl="https://www.theapplelounge.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

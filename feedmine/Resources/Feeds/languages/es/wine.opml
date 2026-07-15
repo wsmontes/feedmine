@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wine — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Wine (Spanish)">
+      <outline title="Verema" xmlUrl="https://www.verema.com/feed" type="rss"/>
+      <outline title="El Mundo del Vino" xmlUrl="https://www.elmundodelvino.com/feed/" type="rss"/>
+      <outline title="Vinetur" xmlUrl="https://www.vinetur.com/feed/" type="rss"/>
+      <outline title="La Semana Vitivinícola" xmlUrl="https://www.lasemanavitivinicola.com/feed/" type="rss"/>
+      <outline title="Vino y Gastronomía" xmlUrl="https://www.vinoygastronomia.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

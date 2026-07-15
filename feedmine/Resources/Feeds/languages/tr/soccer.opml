@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Turkish)">
+      <outline title="Fanatik - Futbol" xmlUrl="https://www.fanatik.com.tr/rss/futbol.xml" type="rss"/>
+      <outline title="Sporx - Futbol" xmlUrl="https://www.sporx.com/rss/futbol.xml" type="rss"/>
+      <outline title="NTV Spor - Futbol" xmlUrl="https://www.ntvspor.net/rss/futbol" type="rss"/>
+      <outline title="BeIN Sports Türkiye - Futbol" xmlUrl="https://beinsports.com.tr/rss/futbol" type="rss"/>
+      <outline title="TRT Spor - Futbol" xmlUrl="https://www.trtspor.com.tr/rss/futbol.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

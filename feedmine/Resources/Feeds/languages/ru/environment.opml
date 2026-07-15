@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Russian)">
+      <outline title="Экология России" xmlUrl="https://ecoportal.info/feed/" type="rss"/>
+      <outline title="Greenpeace Россия" xmlUrl="https://greenpeace.ru/feed/" type="rss"/>
+      <outline title="ЭкоГрад" xmlUrl="https://ecograd.ru/feed/" type="rss"/>
+      <outline title="Всемирный фонд дикой природы (WWF) Россия" xmlUrl="https://wwf.ru/feed/" type="rss"/>
+      <outline title="Эко-журнал" xmlUrl="https://ecojournal.ru/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Military — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Military (Russian)">
+      <outline title="Военное обозрение" xmlUrl="https://topwar.ru/rss.xml" type="rss"/>
+      <outline title="Армейский вестник" xmlUrl="https://army-news.ru/feed/" type="rss"/>
+      <outline title="Naked Science - Военное" xmlUrl="https://naked-science.ru/feed/military" type="rss"/>
+    </outline>
+  </body>
+</opml>

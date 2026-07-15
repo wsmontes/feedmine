@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Puzzles, Crosswords, Sudoku — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:27Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Puzzles, Crosswords, Sudoku (Polish)">
+      <outline title="Łamigłówki" xmlUrl="https://lamiglowki.pl/feed" type="rss"/>
+      <outline title="Krzyżówki online" xmlUrl="https://krzyzowki-online.pl/feed" type="rss"/>
+      <outline title="Sudoku.pl" xmlUrl="https://sudoku.pl/feed" type="rss"/>
+      <outline title="Rozrywka" xmlUrl="https://rozrywka.pl/feed" type="rss"/>
+      <outline title="Puzzle Factory" xmlUrl="https://puzzlefactory.pl/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

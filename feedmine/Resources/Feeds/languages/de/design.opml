@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Design Feeds — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Design Feeds (German)">
+      <outline title="Designmadein.de" xmlUrl="https://www.designmadein.de/feed/" type="rss"/>
+      <outline title="Typografie.info" xmlUrl="https://www.typografie.info/feed/" type="rss"/>
+      <outline title="Page - Das Magazin" xmlUrl="https://page-online.de/feed/" type="rss"/>
+      <outline title="Design Tagebuch" xmlUrl="https://www.designtagebuch.de/feed/" type="rss"/>
+      <outline title="Form Magazine" xmlUrl="https://www.form.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

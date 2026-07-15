@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Swedish)">
+      <outline title="Kulturnytt i P1" xmlUrl="https://api.sr.se/api/rss/program/4786" type="rss"/>
+      <outline title="Gaffa" xmlUrl="https://gaffa.se/feed/" type="rss"/>
+      <outline title="Popmani" xmlUrl="https://popmani.se/feed/" type="rss"/>
+      <outline title="HYMN" xmlUrl="https://hymn.se/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

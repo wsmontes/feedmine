@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cat Lovers — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:37:47Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Cat Lovers (Turkish)">
+      <outline title="Kedici Blog" xmlUrl="https://www.kedici.com/feed/" type="rss"/>
+      <outline title="Kedi Rehberi" xmlUrl="https://www.kedirehberi.com/feed/" type="rss"/>
+      <outline title="Patiliyo" xmlUrl="https://www.patiliyo.com/feed/" type="rss"/>
+      <outline title="Kedim ve Ben" xmlUrl="https://www.kedimveben.com/feed/" type="rss"/>
+      <outline title="Miyavlıyor" xmlUrl="https://www.miyavliyor.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

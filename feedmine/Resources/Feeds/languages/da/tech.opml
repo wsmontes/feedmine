@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:24:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Danish)">
+      <outline title="Version2" xmlUrl="https://www.version2.dk/rss/nyheder" type="rss"/>
+      <outline title="Computerworld" xmlUrl="https://www.computerworld.dk/rss/nyheder" type="rss"/>
+      <outline title="TechRadar Danmark" xmlUrl="https://www.techradar.com/dk/rss" type="rss"/>
+      <outline title="DR Viden - Teknologi" xmlUrl="https://www.dr.dk/nyheder/service/feeds/viden/teknologi" type="rss"/>
+      <outline title="Ingeniøren" xmlUrl="https://ing.dk/rss/nyheder" type="rss"/>
+    </outline>
+  </body>
+</opml>

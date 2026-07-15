@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:58:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Chinese)">
+      <outline title="腾讯体育-足球" xmlUrl="https://soccer.qq.com/rss/soccer.xml" type="rss"/>
+      <outline title="新浪体育-足球" xmlUrl="https://sports.sina.com.cn/rss/global/football.xml" type="rss"/>
+      <outline title="虎扑足球" xmlUrl="https://bbs.hupu.com/rss/soccer" type="rss"/>
+    </outline>
+  </body>
+</opml>

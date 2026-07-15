@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Vietnamese)">
+      <outline title="Moveek - Tin tức phim ảnh" xmlUrl="https://moveek.com/feed" type="rss"/>
+      <outline title="VnExpress - Giải trí - Phim" xmlUrl="https://vnexpress.net/rss/giai-tri/phim.rss" type="rss"/>
+      <outline title="Zing News - Phim" xmlUrl="https://zingnews.vn/phim.rss" type="rss"/>
+      <outline title="Báo Mới - Phim" xmlUrl="https://baomoi.com/phim.rss" type="rss"/>
+      <outline title="DienAnh.Net" xmlUrl="https://www.dienanh.net/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

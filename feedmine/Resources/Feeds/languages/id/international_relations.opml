@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>International Relations, Geopolitics — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:40:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="International Relations, Geopolitics (Indonesian)">
+      <outline title="Kompas Internasional" xmlUrl="https://internasional.kompas.com/feed/" type="rss"/>
+      <outline title="Detik Internasional" xmlUrl="https://www.detik.com/tag/internasional/feed/" type="rss"/>
+      <outline title="CSIS Indonesia" xmlUrl="https://www.csis.or.id/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

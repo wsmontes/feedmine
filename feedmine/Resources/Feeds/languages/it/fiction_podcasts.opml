@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fiction, Audio Drama — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:44:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fiction, Audio Drama (Italian)">
+      <outline title="Audible Italia - Podcast Originali" xmlUrl="https://www.audible.it/podcast/feed.xml" type="rss"/>
+      <outline title="RaiPlay Sound - Audiodrammi" xmlUrl="https://www.raiplaysound.it/feed/audiodrammi.xml" type="rss"/>
+      <outline title="Storielibere.fm" xmlUrl="https://storielibere.fm/feed/podcast/" type="rss"/>
+      <outline title="Friction - Podcast di Narrativa" xmlUrl="https://www.frictionpodcast.it/feed.xml" type="rss"/>
+      <outline title="Il Terzo Anello - Audiodrammi" xmlUrl="https://www.ilterzoanello.com/feed/podcast/" type="rss"/>
+    </outline>
+  </body>
+</opml>

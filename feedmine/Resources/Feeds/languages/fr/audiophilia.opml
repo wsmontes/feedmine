@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Audiophilia, Vinyl Records — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Audiophilia, Vinyl Records (French)">
+      <outline title="Audiofanzine" xmlUrl="https://fr.audiofanzine.com/rss/news.xml" type="rss"/>
+      <outline title="Hi-Fi &amp; Home Cinéma" xmlUrl="https://www.homecinema-fr.com/wordpress/feed/" type="rss"/>
+      <outline title="Vintage Vinyl Records" xmlUrl="https://www.vintagevinylrecords.fr/feed/" type="rss"/>
+      <outline title="Son-Vidéo.com" xmlUrl="https://www.son-video.com/blog/feed" type="rss"/>
+      <outline title="Le Vinyle Club" xmlUrl="https://levinyleclub.fr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theatre — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:59:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theatre (Croatian)">
+      <outline title="Hrvatsko narodno kazalište Zagreb" xmlUrl="https://www.hnk.hr/rss/" type="rss"/>
+      <outline title="Kazalište.hr" xmlUrl="https://www.kazaliste.hr/rss/" type="rss"/>
+      <outline title="Teatar.hr" xmlUrl="https://teatar.hr/feed/" type="rss"/>
+      <outline title="Kazalište Marina Držića" xmlUrl="https://www.hnkd.hr/rss/" type="rss"/>
+      <outline title="Gavella" xmlUrl="https://www.gavella.hr/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

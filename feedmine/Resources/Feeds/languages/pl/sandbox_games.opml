@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Minecraft, Roblox — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:27Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Minecraft, Roblox (Polish)">
+      <outline title="Minecraft Polska" xmlUrl="https://minecraftpolska.pl/feed" type="rss"/>
+      <outline title="Roblox Polska" xmlUrl="https://robloxpolska.pl/feed" type="rss"/>
+      <outline title="Minecraft.net Polska" xmlUrl="https://www.minecraft.net/pl-pl/feed" type="rss"/>
+      <outline title="Gracz Polski" xmlUrl="https://graczpolski.pl/feed" type="rss"/>
+      <outline title="Planeta Minecraft" xmlUrl="https://planetaminecraft.pl/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

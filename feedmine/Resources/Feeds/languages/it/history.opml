@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:44:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Italian)">
+      <outline title="Storia in Rete" xmlUrl="https://www.storiainrete.com/feed/" type="rss"/>
+      <outline title="Focus Storia" xmlUrl="https://www.focus.it/temi/storia/feed" type="rss"/>
+      <outline title="Treccani Storia" xmlUrl="https://www.treccani.it/feed/storia/" type="rss"/>
+      <outline title="Historiæ" xmlUrl="https://historiae.wordpress.com/feed/" type="rss"/>
+      <outline title="Il Post Storia" xmlUrl="https://www.ilpost.it/categorie/storia/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

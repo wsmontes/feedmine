@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:05Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Polish)">
+      <outline title="Polska Płyta / Polska Muzyka" xmlUrl="https://polskaplyta.pl/feed/" type="rss"/>
+      <outline title="Screenagers" xmlUrl="https://screenagers.pl/feed/" type="rss"/>
+      <outline title="Rock Magazyn" xmlUrl="https://rockmagazyn.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

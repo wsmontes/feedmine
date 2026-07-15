@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hobbies — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:17Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Hobbies (Slovak)">
+      <outline title="Záhradkár.sk" xmlUrl="https://www.zahradkar.sk/rss/" type="rss"/>
+      <outline title="Rybolov.sk" xmlUrl="https://www.rybolov.sk/rss/" type="rss"/>
+      <outline title="Modelár.sk" xmlUrl="https://modelar.sk/feed/" type="rss"/>
+      <outline title="Fotografovanie.sk" xmlUrl="https://fotografovanie.sk/feed/" type="rss"/>
+      <outline title="Hubár.sk" xmlUrl="https://hubar.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

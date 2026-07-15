@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Arabic</title>
+    <language>ar</language>
+    <dateCreated>2026-07-15T18:24:59Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Arabic)">
+      <outline title="أخبار التكنولوجيا - الجزيرة" xmlUrl="https://www.aljazeera.net/rss/تكنولوجيا" type="rss"/>
+      <outline title="تيك فويس" xmlUrl="https://techvoice.com/feed/" type="rss"/>
+      <outline title="عالم التقنية" xmlUrl="https://www.tech-wd.com/feed" type="rss"/>
+      <outline title="البوابة العربية للأخبار التقنية" xmlUrl="https://www.aitnews.com/feed" type="rss"/>
+      <outline title="سكاي نيوز عربية - تكنولوجيا" xmlUrl="https://www.skynewsarabia.com/rss/تكنولوجيا" type="rss"/>
+    </outline>
+  </body>
+</opml>

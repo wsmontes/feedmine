@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:02:24Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Polish)">
+      <outline title="M jak Mama" xmlUrl="https://mjakmama.pl/feed/" type="rss"/>
+      <outline title="Masz Wiedzieć" xmlUrl="https://maszwiedziec.pl/feed/" type="rss"/>
+      <outline title="Blog Kasi" xmlUrl="https://blogkasi.pl/feed/" type="rss"/>
+      <outline title="Okiem Młodego" xmlUrl="https://okiemmlodego.pl/feed/" type="rss"/>
+      <outline title="Książki i Podróże" xmlUrl="https://ksiazkiipodroze.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:57:14Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Chinese)">
+      <outline title="艺术中国" xmlUrl="http://art.china.cn/rss/art.xml" type="rss"/>
+      <outline title="雅昌艺术网" xmlUrl="https://www.artron.net/rss/artron.xml" type="rss"/>
+      <outline title="99艺术网" xmlUrl="https://www.99ys.com/rss/99ys.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

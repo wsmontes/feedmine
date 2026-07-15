@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Mechanics, Engineering — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Mechanics, Engineering (Polish)">
+      <outline title="Mechanik Online" xmlUrl="https://mechanik.media.pl/rss.xml" type="rss"/>
+      <outline title="Inżynieria i Mechanika" xmlUrl="https://inzynieriamechanika.pl/feed/" type="rss"/>
+      <outline title="Automatyka i Mechanika" xmlUrl="https://automatykamechanika.pl/feed/" type="rss"/>
+      <outline title="Mechanika i Budowa Maszyn - PWN" xmlUrl="https://pwn.pl/mechanika/feed/" type="rss"/>
+      <outline title="Portal Mechanika" xmlUrl="https://portalmechanika.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

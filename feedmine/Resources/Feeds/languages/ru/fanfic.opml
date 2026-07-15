@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fanfiction, Fandom Communities — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fanfiction, Fandom Communities (Russian)">
+      <outline title="Фанфикшн" xmlUrl="https://fanfics.me/feed" type="rss"/>
+      <outline title="Книга Фанфиков" xmlUrl="https://ficbook.net/feed" type="rss"/>
+      <outline title="Фикбук" xmlUrl="https://ficbook.net/feed" type="rss"/>
+      <outline title="Фандомная жизнь" xmlUrl="https://fandom.life/feed" type="rss"/>
+      <outline title="FanFiction.net Русский" xmlUrl="https://fanfiction.net/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

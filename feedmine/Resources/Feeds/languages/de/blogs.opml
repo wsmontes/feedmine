@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:27:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (German)">
+      <outline title="Riesenmaschine" xmlUrl="https://www.riesenmaschine.de/feed/" type="rss"/>
+      <outline title="Fefes Blog" xmlUrl="https://blog.fefe.de/rss.xml" type="rss"/>
+      <outline title="netzpolitik.org" xmlUrl="https://netzpolitik.org/feed/" type="rss"/>
+      <outline title="Spreeblick" xmlUrl="https://www.spreeblick.com/feed/" type="rss"/>
+      <outline title="Krautreporter" xmlUrl="https://krautreporter.de/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

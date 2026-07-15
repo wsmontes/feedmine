@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:57:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Chinese)">
+      <outline title="时光网" xmlUrl="https://www.mtime.com/rss/now.rss" type="rss"/>
+      <outline title="豆瓣电影" xmlUrl="https://www.douban.com/feed/subject/movie" type="rss"/>
+      <outline title="电影网" xmlUrl="https://www.1905.com/rss/default.xml" type="rss"/>
+      <outline title="香港电影" xmlUrl="https://www.hkmovie6.com/feed" type="rss"/>
+      <outline title="中国电影票房" xmlUrl="https://www.boju.com/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

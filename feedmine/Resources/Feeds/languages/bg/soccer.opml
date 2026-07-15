@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:43:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Bulgarian)">
+      <outline title="Sportal.bg - Футбол" xmlUrl="https://www.sportal.bg/rss/football.xml" type="rss"/>
+      <outline title="Gong.bg - Футбол" xmlUrl="https://www.gong.bg/rss/football" type="rss"/>
+      <outline title="Topsport.bg - Футбол" xmlUrl="https://topsport.bg/rss/football" type="rss"/>
+      <outline title="Actualno.com - Футбол" xmlUrl="https://www.actualno.com/rss/football" type="rss"/>
+    </outline>
+  </body>
+</opml>

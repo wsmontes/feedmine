@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube Feeds — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube Feeds (Spanish)">
+      <outline title="YouTube España en Blog" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBR8-60-B28hp2BmDPdntcQ" type="rss"/>
+      <outline title="Tendencias YouTube España" xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOeiKm4sgNOknGvNjby9efdf" type="rss"/>
+      <outline title="YouTube Creators España" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkRfArvrzheW2E7b6SVT7bQ" type="rss"/>
+      <outline title="Viral YouTube España" xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOe9T3e8s5F3XGv5l6v5h5y5" type="rss"/>
+      <outline title="YouTube Música España" xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOdPq3H4w9n4c5d5e5f5g5h5" type="rss"/>
+    </outline>
+  </body>
+</opml>

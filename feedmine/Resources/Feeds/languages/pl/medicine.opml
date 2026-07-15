@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (Polish)">
+      <outline title="Medycyna Praktyczna" xmlUrl="https://www.mp.pl/rss.xml" type="rss"/>
+      <outline title="Puls Medycyny" xmlUrl="https://pulsmedycyny.pl/rss.xml" type="rss"/>
+      <outline title="Gazeta Lekarska" xmlUrl="https://gazetalekarska.pl/feed/" type="rss"/>
+      <outline title="Medonet" xmlUrl="https://www.medonet.pl/rss.xml" type="rss"/>
+      <outline title="Pharmindex - Farmacja" xmlUrl="https://pharmindex.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:05Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (German)">
+      <outline title="Legal Tribune Online" xmlUrl="https://www.lto.de/feed.rss" type="rss"/>
+      <outline title="Beck aktuell" xmlUrl="https://rss.beck.de/beck-aktuell" type="rss"/>
+      <outline title="Anwalt.de - Rechtstipps" xmlUrl="https://www.anwalt.de/rechtstipps/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

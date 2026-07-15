@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cat Lovers — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Cat Lovers (French)">
+      <outline title="Le Blog du Chat" xmlUrl="https://www.leblogduchat.com/feed/" type="rss"/>
+      <outline title="Chats et Compagnie" xmlUrl="https://www.chatsetcompagnie.fr/feed/" type="rss"/>
+      <outline title="Miaou Magazine" xmlUrl="https://www.miaoumaga.fr/feed/" type="rss"/>
+      <outline title="Les Chats de l'Ombre" xmlUrl="https://www.chatsdelombre.com/feed/" type="rss"/>
+      <outline title="Planète Chat" xmlUrl="https://www.planete-chat.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

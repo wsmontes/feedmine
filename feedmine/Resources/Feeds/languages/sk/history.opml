@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:17Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Slovak)">
+      <outline title="Historická revue" xmlUrl="https://historickarevue.sk/feed/" type="rss"/>
+      <outline title="HistoryWeb.sk" xmlUrl="https://historyweb.sk/feed/" type="rss"/>
+      <outline title="Dejiny.sk" xmlUrl="https://dejiny.sk/feed/" type="rss"/>
+      <outline title="Historický ústav SAV" xmlUrl="https://www.historia.sav.sk/rss/" type="rss"/>
+      <outline title="Slovenské dejiny" xmlUrl="https://slovenskedejiny.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

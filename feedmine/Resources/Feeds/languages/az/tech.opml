@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Azerbaijani</title>
+    <language>az</language>
+    <dateCreated>2026-07-15T19:19:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Azerbaijani)">
+      <outline title="Texno.az" xmlUrl="https://texno.az/rss.xml" type="rss"/>
+      <outline title="IT.az" xmlUrl="https://it.az/rss.xml" type="rss"/>
+      <outline title="Tech.az" xmlUrl="https://tech.az/rss.xml" type="rss"/>
+      <outline title="Mobil.az" xmlUrl="https://mobil.az/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

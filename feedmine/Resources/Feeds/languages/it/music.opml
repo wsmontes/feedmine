@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Italian)">
+      <outline title="Rockol.it" xmlUrl="https://www.rockol.it/rss/feed.xml" type="rss"/>
+      <outline title="SentireAscoltare" xmlUrl="https://www.sentireascoltare.com/feed" type="rss"/>
+      <outline title="Musica361" xmlUrl="https://www.musica361.it/feed" type="rss"/>
+      <outline title="All Music Italia" xmlUrl="https://www.allmusicitalia.it/feed" type="rss"/>
+      <outline title="IndieForBunnies" xmlUrl="https://www.indieforbunnies.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

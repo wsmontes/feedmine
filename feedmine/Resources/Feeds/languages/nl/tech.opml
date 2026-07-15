@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Dutch)">
+      <outline title="Tweakers" xmlUrl="https://feeds.tweakers.net/nieuws" type="rss"/>
+      <outline title="NU.nl Tech" xmlUrl="https://www.nu.nl/rss/tech" type="rss"/>
+      <outline title="Bright" xmlUrl="https://www.bright.nl/feed.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

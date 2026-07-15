@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>General English Feeds — Armenian</title>
+    <language>hy</language>
+    <dateCreated>2026-07-15T19:16:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="General English Feeds (Armenian)">
+      <outline title="BBC News - Home" xmlUrl="https://feeds.bbci.co.uk/news/rss.xml" type="rss"/>
+      <outline title="CNN.com - RSS Channel - App International Edition" xmlUrl="http://rss.cnn.com/rss/edition.rss" type="rss"/>
+      <outline title="The Guardian" xmlUrl="https://www.theguardian.com/world/rss" type="rss"/>
+      <outline title="Reuters: Top News" xmlUrl="https://www.reutersagency.com/feed/" type="rss"/>
+      <outline title="NPR Topics: News" xmlUrl="https://feeds.npr.org/1001/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

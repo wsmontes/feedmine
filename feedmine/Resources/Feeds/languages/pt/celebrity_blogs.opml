@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Famous People — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:25:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Famous People (Portuguese)">
+      <outline title="Famosos e Figuras" xmlUrl="https://www.famososefiguras.com/feed/" type="rss"/>
+      <outline title="UOL Celebridades" xmlUrl="https://celebridades.uol.com.br/feed/" type="rss"/>
+      <outline title="Quem Acontece" xmlUrl="https://revistaquem.globo.com/feed/" type="rss"/>
+      <outline title="OFuxico" xmlUrl="https://www.ofuxico.com.br/feed/" type="rss"/>
+      <outline title="Purepeople" xmlUrl="https://www.purepeople.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:43:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Bulgarian)">
+      <outline title="TechNews.bg" xmlUrl="https://technews.bg/rss" type="rss"/>
+      <outline title="Digital.bg" xmlUrl="https://digital.bg/rss" type="rss"/>
+      <outline title="PCWorld.bg" xmlUrl="https://www.pcworld.bg/rss" type="rss"/>
+      <outline title="Mobile.bg" xmlUrl="https://www.mobile.bg/rss" type="rss"/>
+      <outline title="IT.dir.bg" xmlUrl="https://it.dir.bg/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Arabic</title>
+    <language>ar</language>
+    <dateCreated>2026-07-15T18:24:47Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Arabic)">
+      <outline title="الجزيرة علوم" xmlUrl="https://www.aljazeera.com/xml/rss/science.xml" type="rss"/>
+      <outline title="مجلة العلوم" xmlUrl="https://www.oloommagazine.com/rss" type="rss"/>
+      <outline title="ناسا بالعربي" xmlUrl="https://nasainarabic.net/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

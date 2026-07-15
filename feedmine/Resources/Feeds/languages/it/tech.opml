@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:52Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Italian)">
+      <outline title="Wired Italia" xmlUrl="https://www.wired.it/feed/" type="rss"/>
+      <outline title="Tech - La Repubblica" xmlUrl="https://www.repubblica.it/rss/tecnologia/" type="rss"/>
+      <outline title="HDblog" xmlUrl="https://www.hdblog.it/feed/" type="rss"/>
+      <outline title="Tom's Hardware Italia" xmlUrl="https://www.tomshw.it/feed/" type="rss"/>
+      <outline title="Webnews" xmlUrl="https://www.webnews.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

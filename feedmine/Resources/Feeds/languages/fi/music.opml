@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:15:08Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Finnish)">
+      <outline title="Soundi" xmlUrl="https://www.soundi.fi/feed/" type="rss"/>
+      <outline title="Rumba" xmlUrl="https://www.rumba.fi/feed/" type="rss"/>
+      <outline title="YleX" xmlUrl="https://yle.fi/aihe/feed/ylex" type="rss"/>
+    </outline>
+  </body>
+</opml>

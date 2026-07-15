@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Motorcycling — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Motorcycling (Russian)">
+      <outline title="Мотоциклы — Motor.ru" xmlUrl="https://motor.ru/rss/moto.xml" type="rss"/>
+      <outline title="Мото-новости на Авто.ру" xmlUrl="https://mag.auto.ru/rss/moto/" type="rss"/>
+      <outline title="Мото Мир" xmlUrl="https://www.motomir.info/feed/" type="rss"/>
+      <outline title="BikePost.ru" xmlUrl="https://bikepost.ru/rss/" type="rss"/>
+      <outline title="MotoNews.ru" xmlUrl="https://monews.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

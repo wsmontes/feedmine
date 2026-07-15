@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:05Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Polish)">
+      <outline title="Onet Wiadomości" xmlUrl="https://wiadomosci.onet.pl/.feed" type="rss"/>
+      <outline title="Gazeta Wyborcza" xmlUrl="https://wyborcza.pl/0,0.rss" type="rss"/>
+      <outline title="RMF FM" xmlUrl="https://www.rmf24.pl/rss/feed.xml" type="rss"/>
+      <outline title="TVN24" xmlUrl="https://tvn24.pl/najwazniejsze.xml" type="rss"/>
+      <outline title="Polsat News" xmlUrl="https://www.polsatnews.pl/rss/feed.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

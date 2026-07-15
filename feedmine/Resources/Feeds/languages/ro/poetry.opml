@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Poetry — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:35:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Poetry (Romanian)">
+      <outline title="Poezie Romaneasca" xmlUrl="https://www.poezie.ro/feed/" type="rss"/>
+      <outline title="Versuri si Poezii" xmlUrl="https://versurisipoezii.ro/feed/" type="rss"/>
+      <outline title="Poezii Celebre" xmlUrl="https://poeziicelebre.ro/feed/" type="rss"/>
+      <outline title="Poezii Online" xmlUrl="https://poezii-online.ro/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

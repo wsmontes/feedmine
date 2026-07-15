@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:27:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Russian)">
+      <outline title="МГУ - Новости" xmlUrl="https://www.msu.ru/rss/news.xml" type="rss"/>
+      <outline title="СПбГУ - Новости" xmlUrl="https://spbu.ru/rss/news" type="rss"/>
+      <outline title="НИУ ВШЭ - Новости" xmlUrl="https://www.hse.ru/rss/news" type="rss"/>
+      <outline title="МФТИ - Новости" xmlUrl="https://mipt.ru/rss/news" type="rss"/>
+      <outline title="Томский госуниверситет - Новости" xmlUrl="https://www.tsu.ru/rss/news" type="rss"/>
+    </outline>
+  </body>
+</opml>

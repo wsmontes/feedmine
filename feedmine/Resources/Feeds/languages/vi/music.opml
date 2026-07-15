@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Vietnamese)">
+      <outline title="Nhạc Xưa - Blog âm nhạc" xmlUrl="https://nhacxua.vn/feed" type="rss"/>
+      <outline title="VnExpress - Giải trí - Nhạc" xmlUrl="https://vnexpress.net/rss/giai-tri/nhac.rss" type="rss"/>
+      <outline title="Zing News - Nhạc" xmlUrl="https://zingnews.vn/nhac.rss" type="rss"/>
+      <outline title="Báo Mới - Nhạc" xmlUrl="https://baomoi.com/nhac.rss" type="rss"/>
+      <outline title="Hòa Âm Ánh Sáng" xmlUrl="https://hoaamanhsang.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

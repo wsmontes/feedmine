@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:34:12Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Romanian)">
+      <outline title="EcoMagazin" xmlUrl="https://www.ecomagazin.ro/feed/" type="rss"/>
+      <outline title="Green Report" xmlUrl="https://www.green-report.ro/feed/" type="rss"/>
+      <outline title="Asociația Parcul Natural Văcărești" xmlUrl="https://www.parcnaturalvacaresti.ro/feed/" type="rss"/>
+      <outline title="EcoTrend" xmlUrl="https://ecotrend.ro/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

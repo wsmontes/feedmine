@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (German)">
+      <outline title="Sport1" xmlUrl="https://www.sport1.de/rss/sport1.xml" type="rss"/>
+      <outline title="Kicker Sport" xmlUrl="https://www.kicker.de/rss/sport" type="rss"/>
+      <outline title="Sportschau" xmlUrl="https://www.sportschau.de/rss/sportschau" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:37:47Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Turkish)">
+      <outline title="Blogcu" xmlUrl="https://www.blogcu.com/feed/rss" type="rss"/>
+      <outline title="Mürekkep Haber" xmlUrl="https://www.murekkephaber.com/feed/" type="rss"/>
+      <outline title="KisiselBlog" xmlUrl="https://www.kisiselblog.com/feed/" type="rss"/>
+      <outline title="Blog Türkiye" xmlUrl="https://www.blogturkiye.com/feed/" type="rss"/>
+      <outline title="Yazılım ve Teknoloji Blogu" xmlUrl="https://www.yazilimveteknoloji.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

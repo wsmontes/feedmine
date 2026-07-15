@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube News — Filipino</title>
+    <language>tl</language>
+    <dateCreated>2026-07-15T19:06:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube News (Filipino)">
+      <outline title="ABS-CBN News YouTube Feed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpUEq5N3Fqj5hG5z8lZf6eA" type="rss"/>
+      <outline title="GMA News YouTube Feed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0QH-e1hL9C7nJ6gW7b6h1A" type="rss"/>
+      <outline title="Rappler YouTube Feed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1f1v1u1z1x1y1z1x1y1z1x1y" type="rss"/>
+    </outline>
+  </body>
+</opml>

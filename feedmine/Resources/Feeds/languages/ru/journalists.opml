@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Reference Journalists — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Reference Journalists (Russian)">
+      <outline title="Meduza" xmlUrl="https://meduza.io/rss/all" type="rss"/>
+      <outline title="The Insider" xmlUrl="https://theins.ru/feed" type="rss"/>
+      <outline title="Republic" xmlUrl="https://republic.ru/export/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

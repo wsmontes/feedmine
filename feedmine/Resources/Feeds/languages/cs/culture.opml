@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Czech)">
+      <outline title="Český rozhlas - Kultura" xmlUrl="https://www.rozhlas.cz/kultura/feed/" type="rss"/>
+      <outline title="Aktuálně.cz - Kultura" xmlUrl="https://magazin.aktualne.cz/kultura/rss/" type="rss"/>
+      <outline title="iDNES.cz - Kultura" xmlUrl="https://www.idnes.cz/kultura/rss" type="rss"/>
+      <outline title="Novinky.cz - Kultura" xmlUrl="https://www.novinky.cz/kultura/rss" type="rss"/>
+      <outline title="Artikl" xmlUrl="https://www.artikl.org/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

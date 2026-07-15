@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Whisky — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:27:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Whisky (Portuguese)">
+      <outline title="Whisky Brasil" xmlUrl="https://whiskybrasil.com.br/feed/" type="rss"/>
+      <outline title="Mundo do Whisky" xmlUrl="https://www.mundodowhisky.com.br/feed/" type="rss"/>
+      <outline title="Whisky &amp; Destilados" xmlUrl="https://whiskyedestilados.com.br/feed/" type="rss"/>
+      <outline title="O Whisky" xmlUrl="https://owhisky.com.br/feed/" type="rss"/>
+      <outline title="Whisky em Foco" xmlUrl="https://whiskyemfoco.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

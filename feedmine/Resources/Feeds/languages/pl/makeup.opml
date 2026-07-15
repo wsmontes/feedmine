@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Makeup, Beauty — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Makeup, Beauty (Polish)">
+      <outline title="Makeup.pl" xmlUrl="https://makeup.pl/feed/" type="rss"/>
+      <outline title="Wizaż.pl" xmlUrl="https://wizaz.pl/feed/" type="rss"/>
+      <outline title="Kosmetyki i Uroda - Onet" xmlUrl="https://uroda.onet.pl/rss.xml" type="rss"/>
+      <outline title="Blog o Makijażu" xmlUrl="https://blogomakijazu.pl/feed/" type="rss"/>
+      <outline title="Glamour Polska - Uroda" xmlUrl="https://www.glamour.pl/uroda/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

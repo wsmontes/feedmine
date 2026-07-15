@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Museums — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:13:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Museums (Greek)">
+      <outline title="Μουσείο Μπενάκη" xmlUrl="https://www.benaki.org/index.php?option=com_benakifeeds&amp;view=feed&amp;id=1&amp;format=feed" type="rss"/>
+      <outline title="Εθνικό Αρχαιολογικό Μουσείο" xmlUrl="https://www.namuseum.gr/feed/" type="rss"/>
+      <outline title="Μουσείο Ακρόπολης" xmlUrl="https://www.theacropolismuseum.gr/el/rss.xml" type="rss"/>
+      <outline title="Μουσείο Κυκλαδικής Τέχνης" xmlUrl="https://cycladic.gr/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

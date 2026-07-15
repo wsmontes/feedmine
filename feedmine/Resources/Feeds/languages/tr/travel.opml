@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Turkish)">
+      <outline title="Gezi Notları" xmlUrl="https://www.gezinotlari.com/rss.xml" type="rss"/>
+      <outline title="Travel + Leisure Türkiye" xmlUrl="https://www.travelandleisure.com.tr/rss.xml" type="rss"/>
+      <outline title="Gezimanya" xmlUrl="https://www.gezimanya.com/rss.xml" type="rss"/>
+      <outline title="Yolculuk Dergisi" xmlUrl="https://www.yolculukdergisi.com/rss.xml" type="rss"/>
+      <outline title="Tatil Seyahat" xmlUrl="https://www.tatilseyahat.com/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

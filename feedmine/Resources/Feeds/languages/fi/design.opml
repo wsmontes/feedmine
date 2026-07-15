@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Design Feeds — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Design Feeds (Finnish)">
+      <outline title="Muotoilu.info" xmlUrl="https://www.muotoilu.info/feed/" type="rss"/>
+      <outline title="Design Stories" xmlUrl="https://www.designstories.fi/feed/" type="rss"/>
+      <outline title="Arkkitehtuurin ja muotoilun tiedotus" xmlUrl="https://www.arkkitehtuurinmuotoilu.fi/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

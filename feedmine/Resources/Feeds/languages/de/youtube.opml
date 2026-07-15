@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube Feeds — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube Feeds (German)">
+      <outline title="YouTube Deutschland Blog" xmlUrl="https://blog.youtube/de/feed/" type="rss"/>
+      <outline title="RSS-Bridge: YouTube-Kanal von Gronkh" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=Youtube&amp;channel=UCYJ61XIKV1s3GJ1R5l3E2wQ&amp;format=Atom" type="rss"/>
+      <outline title="RSS-Bridge: YouTube-Kanal von LeFloid" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=Youtube&amp;channel=UCG1hB1W1W1W1W1W1W1W1W1W1&amp;format=Atom" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Home Decor, Interior Design — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Home Decor, Interior Design (Russian)">
+      <outline title="InMyRoom" xmlUrl="https://inmyroom.ru/feed" type="rss"/>
+      <outline title="Houzz Россия" xmlUrl="https://www.houzz.ru/rss" type="rss"/>
+      <outline title="Дизайн интерьера" xmlUrl="https://design-interior.ru/feed/" type="rss"/>
+      <outline title="Roomble" xmlUrl="https://roomble.com/rss/" type="rss"/>
+      <outline title="Дом и интерьер" xmlUrl="https://dom-interier.ru/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

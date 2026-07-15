@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fiction, Audio Drama — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:58:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fiction, Audio Drama (Croatian)">
+      <outline title="Audio drama podcast" xmlUrl="https://audiodrama.podbean.com/feed.xml" type="rss"/>
+      <outline title="Priče iz naftalina" xmlUrl="https://priceiznaftalina.podbean.com/feed.xml" type="rss"/>
+      <outline title="Radio drama Hrvatska" xmlUrl="https://radiodramahrvatska.podbean.com/feed.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

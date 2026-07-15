@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (German)">
+      <outline title="Golem.de" xmlUrl="https://www.golem.de/rss.php" type="rss"/>
+      <outline title="Heise Online" xmlUrl="https://www.heise.de/rss/heise.rdf" type="rss"/>
+      <outline title="t3n" xmlUrl="https://t3n.de/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

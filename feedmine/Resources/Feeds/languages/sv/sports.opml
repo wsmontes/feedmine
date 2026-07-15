@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:49:08Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Swedish)">
+      <outline title="Sportbladet" xmlUrl="https://www.aftonbladet.se/sportbladet/rss.xml" type="rss"/>
+      <outline title="SVT Sport" xmlUrl="https://www.svt.se/sport/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

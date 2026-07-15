@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (German)">
+      <outline title="Kulturradio" xmlUrl="https://www.kulturradio.de/feed.rss" type="rss"/>
+      <outline title="Deutschlandfunk Kultur" xmlUrl="https://www.deutschlandfunkkultur.de/index.rss" type="rss"/>
+      <outline title="Kulturzeit" xmlUrl="https://www.3sat.de/kultur/kulturzeit/index.rss" type="rss"/>
+      <outline title="Der Spiegel Kultur" xmlUrl="https://www.spiegel.de/kultur/index.rss" type="rss"/>
+      <outline title="Die Zeit Kultur" xmlUrl="https://www.zeit.de/kultur/index.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

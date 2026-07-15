@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Programming (Dutch)">
+      <outline title="Dev.nl" xmlUrl="https://dev.nl/feed/" type="rss"/>
+      <outline title="Fronteers" xmlUrl="https://fronteers.nl/feed/" type="rss"/>
+      <outline title="PHP Freaks" xmlUrl="https://www.phpfreaks.nl/feed/" type="rss"/>
+      <outline title="Programmeer Blog" xmlUrl="https://programmeer.blog/feed/" type="rss"/>
+      <outline title="CodeKriebels" xmlUrl="https://codekriebels.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

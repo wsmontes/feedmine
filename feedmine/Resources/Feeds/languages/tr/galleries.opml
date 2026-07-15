@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:38:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Turkish)">
+      <outline title="Sanat Duvarı" xmlUrl="https://sanatduvari.com/feed/" type="rss"/>
+      <outline title="Artfulliving" xmlUrl="https://www.artfulliving.com.tr/rss" type="rss"/>
+      <outline title="Lebriz" xmlUrl="https://lebriz.com/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

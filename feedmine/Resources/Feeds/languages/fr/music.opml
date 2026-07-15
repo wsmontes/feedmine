@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (French)">
+      <outline title="Les Inrockuptibles - Musique" xmlUrl="https://www.lesinrocks.com/musique/feed/" type="rss"/>
+      <outline title="Magic RPM" xmlUrl="https://www.magicrpm.com/feed/" type="rss"/>
+      <outline title="Tsugi" xmlUrl="https://www.tsugi.fr/feed/" type="rss"/>
+      <outline title="Mowno" xmlUrl="https://www.mowno.com/feed/" type="rss"/>
+      <outline title="France Musique - Actualités" xmlUrl="https://www.radiofrance.fr/francemusique/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

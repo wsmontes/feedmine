@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Slovak)">
+      <outline title="Hudba.sk" xmlUrl="https://hudba.sk/rss" type="rss"/>
+      <outline title="Rádio_FM" xmlUrl="https://radiofm.sk/rss/" type="rss"/>
+      <outline title="MusicPress.sk" xmlUrl="https://musicpress.sk/feed/" type="rss"/>
+      <outline title="Headliner.sk" xmlUrl="https://headliner.sk/feed/" type="rss"/>
+      <outline title="Hudobný svet" xmlUrl="https://hudobnysvet.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

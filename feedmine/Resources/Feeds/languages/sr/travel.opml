@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Serbian</title>
+    <language>sr</language>
+    <dateCreated>2026-07-15T18:47:12Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Serbian)">
+      <outline title="Putovanja sa Jelenom" xmlUrl="https://putovanjasajelenom.com/feed/" type="rss"/>
+      <outline title="Travel magazin" xmlUrl="https://travelmagazin.rs/feed/" type="rss"/>
+      <outline title="Lonely Planet Srbija" xmlUrl="https://www.lonelyplanet.rs/feed/" type="rss"/>
+      <outline title="Adventure Serbia" xmlUrl="https://adventureserbia.rs/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Literary Criticism, Book Reviews — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:39Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Literary Criticism, Book Reviews (Portuguese)">
+      <outline title="Rascunho" xmlUrl="https://rascunho.com.br/feed/" type="rss"/>
+      <outline title="Quatro Cinco Um" xmlUrl="https://www.quatrocincoum.com.br/feed/" type="rss"/>
+      <outline title="Revista Caju" xmlUrl="https://revistacaju.com.br/feed/" type="rss"/>
+      <outline title="Bula Revista" xmlUrl="https://www.bularevista.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wine — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:27:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Wine (Russian)">
+      <outline title="Виноград" xmlUrl="https://vinograd.info/rss" type="rss"/>
+      <outline title="Drinks.ua - Вино" xmlUrl="https://drinks.ua/rss/wine" type="rss"/>
+      <outline title="Вино и люди" xmlUrl="https://winepeople.ru/feed" type="rss"/>
+      <outline title="Просто вино" xmlUrl="https://prosto-vino.ru/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:40Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Classical Music (French)">
+      <outline title="France Musique" xmlUrl="https://www.radiofrance.fr/francemusique/rss" type="rss"/>
+      <outline title="ResMusica" xmlUrl="https://www.resmusica.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

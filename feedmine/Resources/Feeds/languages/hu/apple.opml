@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Apple — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:00:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Apple (Hungarian)">
+      <outline title="AlmaVonal" xmlUrl="https://almavonal.hu/feed/" type="rss"/>
+      <outline title="iPhoneHungary" xmlUrl="https://iphonehungary.hu/feed/" type="rss"/>
+      <outline title="AppleBlog" xmlUrl="https://appleblog.hu/feed/" type="rss"/>
+      <outline title="iAlma" xmlUrl="https://ialma.hu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

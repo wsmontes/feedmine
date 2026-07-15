@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Astronomy — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Astronomy (Italian)">
+      <outline title="Media INAF" xmlUrl="https://www.media.inaf.it/feed/" type="rss"/>
+      <outline title="AstroSpace" xmlUrl="https://www.astrospace.it/feed/" type="rss"/>
+      <outline title="Coelum Astronomia" xmlUrl="https://www.coelum.com/feed/" type="rss"/>
+      <outline title="Astronomia.com" xmlUrl="https://www.astronomia.com/feed/" type="rss"/>
+      <outline title="Virtual Telescope" xmlUrl="https://www.virtualtelescope.eu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

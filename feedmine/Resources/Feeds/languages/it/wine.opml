@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wine — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:46:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Wine (Italian)">
+      <outline title="Wine News Italia" xmlUrl="https://www.winenews.it/feed/" type="rss"/>
+      <outline title="Gambero Rosso Vino" xmlUrl="https://www.gamberorosso.it/vino/feed/" type="rss"/>
+      <outline title="Il Sommelier" xmlUrl="https://www.ilsommelier.eu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

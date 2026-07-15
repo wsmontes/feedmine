@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — Norwegian</title>
+    <language>no</language>
+    <dateCreated>2026-07-15T19:11:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (Norwegian)">
+      <outline title="Tidsskrift for Den norske legeforening" xmlUrl="https://tidsskriftet.no/feed" type="rss"/>
+      <outline title="Dagens Medisin" xmlUrl="https://www.dagensmedisin.no/feed" type="rss"/>
+      <outline title="Legenytt" xmlUrl="https://legenytt.no/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

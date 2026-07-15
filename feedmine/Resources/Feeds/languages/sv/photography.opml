@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photography — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:59Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Photography (Swedish)">
+      <outline title="Fotosidan" xmlUrl="https://www.fotosidan.se/rss.xml" type="rss"/>
+      <outline title="Kamerabloggen" xmlUrl="https://www.kamerabloggen.se/feed/" type="rss"/>
+      <outline title="Fotografisk Tidskrift" xmlUrl="https://fotografisktidskrift.se/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

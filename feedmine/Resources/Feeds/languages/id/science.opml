@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:41Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Indonesian)">
+      <outline title="Sains Kompas" xmlUrl="https://sains.kompas.com/rss" type="rss"/>
+      <outline title="Tekno Tempo" xmlUrl="https://tekno.tempo.co/rss" type="rss"/>
+      <outline title="Sains.me" xmlUrl="https://sains.me/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Deaf, Blind — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Deaf, Blind (German)">
+      <outline title="Taubenschlag" xmlUrl="https://www.taubenschlag.de/feed/" type="rss"/>
+      <outline title="Blindensein" xmlUrl="https://blindensein.de/feed/" type="rss"/>
+      <outline title="Deaf News" xmlUrl="https://www.deafnews.de/feed/" type="rss"/>
+      <outline title="Behindertenverband" xmlUrl="https://www.behindertenverband.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

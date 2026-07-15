@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Turkish)">
+      <outline title="Fanatik - Spor" xmlUrl="https://www.fanatik.com.tr/rss/spor.xml" type="rss"/>
+      <outline title="Sporx - Ana Sayfa" xmlUrl="https://www.sporx.com/rss/anasayfa.xml" type="rss"/>
+      <outline title="NTV Spor" xmlUrl="https://www.ntvspor.net/rss" type="rss"/>
+      <outline title="TRT Spor" xmlUrl="https://www.trtspor.com.tr/rss/anasayfa.xml" type="rss"/>
+      <outline title="Sözcü - Spor" xmlUrl="https://www.sozcu.com.tr/rss/spor.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

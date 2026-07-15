@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nerd — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:51:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nerd (Estonian)">
+      <outline title="Tehnika - Geenius" xmlUrl="https://geenius.ee/rss/tehnika" type="rss"/>
+      <outline title="Mängud - Postimees" xmlUrl="https://tehnika.postimees.ee/rss/mangud" type="rss"/>
+    </outline>
+  </body>
+</opml>

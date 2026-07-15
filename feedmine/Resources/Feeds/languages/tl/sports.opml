@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Filipino</title>
+    <language>tl</language>
+    <dateCreated>2026-07-15T19:05:54Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Filipino)">
+      <outline title="ABS-CBN Sports" xmlUrl="https://sports.abs-cbn.com/feed" type="rss"/>
+      <outline title="Sports Gateway PH" xmlUrl="https://sportsgateway.ph/feed/" type="rss"/>
+      <outline title="Bandalera Sports" xmlUrl="https://bandalerasports.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

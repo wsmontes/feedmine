@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:37Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Chinese)">
+      <outline title="豆瓣文化" xmlUrl="https://www.douban.com/feed/group/30303/discussions" type="rss"/>
+      <outline title="单向街书店" xmlUrl="https://www.owspace.com/feed" type="rss"/>
+      <outline title="理想国" xmlUrl="https://www.ilixiangguo.com/feed" type="rss"/>
+      <outline title="文化纵横" xmlUrl="https://www.21bcr.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

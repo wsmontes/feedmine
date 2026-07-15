@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Azerbaijani</title>
+    <language>az</language>
+    <dateCreated>2026-07-15T19:19:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Azerbaijani)">
+      <outline title="Qol.az" xmlUrl="https://qol.az/rss.xml" type="rss"/>
+      <outline title="Futbolpress.az" xmlUrl="https://futbolpress.az/rss.xml" type="rss"/>
+      <outline title="Sportal.az" xmlUrl="https://sportal.az/rss.xml" type="rss"/>
+      <outline title="Football.az" xmlUrl="https://football.az/rss.xml" type="rss"/>
+      <outline title="Azerisport.com" xmlUrl="https://www.azerisport.com/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

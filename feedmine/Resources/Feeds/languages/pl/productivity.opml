@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Productivity, GTD — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:27Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Productivity, GTD (Polish)">
+      <outline title="Produktywny.pl" xmlUrl="https://produktywny.pl/feed" type="rss"/>
+      <outline title="Lifehacker Polska" xmlUrl="https://lifehacker.pl/feed" type="rss"/>
+      <outline title="SzybkiStart" xmlUrl="https://szybkistart.pl/feed" type="rss"/>
+      <outline title="GTD Polska" xmlUrl="https://gtdpolska.pl/feed" type="rss"/>
+      <outline title="Marcin Żukowski" xmlUrl="https://marcinzukowski.pl/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

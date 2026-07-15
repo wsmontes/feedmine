@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:41Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (German)">
+      <outline title="Vogue Germany" xmlUrl="https://www.vogue.de/feed/rss" type="rss"/>
+      <outline title="Elle Deutschland" xmlUrl="https://www.elle.de/feed" type="rss"/>
+      <outline title="GQ Germany" xmlUrl="https://www.gq-magazin.de/feed" type="rss"/>
+      <outline title="Instyle Germany" xmlUrl="https://www.instyle.de/feed" type="rss"/>
+      <outline title="Harpers Bazaar Germany" xmlUrl="https://www.harpersbazaar.de/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

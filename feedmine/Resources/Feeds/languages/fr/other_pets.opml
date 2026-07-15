@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Other Pets — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Other Pets (French)">
+      <outline title="30 Millions d'Amis" xmlUrl="https://www.30millionsdamis.fr/feed/" type="rss"/>
+      <outline title="Wamiz" xmlUrl="https://wamiz.com/feed/" type="rss"/>
+      <outline title="Animaux-Online" xmlUrl="https://www.animaux-online.com/feed/" type="rss"/>
+      <outline title="Le Blog du Chien" xmlUrl="https://www.leblogduchien.com/feed/" type="rss"/>
+      <outline title="Le Blog du Chat" xmlUrl="https://www.leblogduchat.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

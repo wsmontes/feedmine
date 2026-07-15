@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Architecture — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Architecture (Italian)">
+      <outline title="Domus" xmlUrl="https://www.domusweb.it/it/feed.rss" type="rss"/>
+      <outline title="ArchDaily Italia" xmlUrl="https://www.archdaily.it/feed.xml" type="rss"/>
+      <outline title="Edilportale" xmlUrl="https://www.edilportale.com/feed/" type="rss"/>
+      <outline title="ArchitetturaEcosostenibile" xmlUrl="https://www.architetturaecosostenibile.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Naval, Maritime — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Naval, Maritime (Swedish)">
+      <outline title="Sjöfartstidningen" xmlUrl="https://www.sjofartstidningen.se/feed/" type="rss"/>
+      <outline title="Marinen" xmlUrl="https://www.forsvarsmakten.se/sv/var-verksamhet/marinen/feed/" type="rss"/>
+      <outline title="Sjöhistoriska museet" xmlUrl="https://www.sjohistoriska.se/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

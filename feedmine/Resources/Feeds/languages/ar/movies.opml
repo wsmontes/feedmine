@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Arabic</title>
+    <language>ar</language>
+    <dateCreated>2026-07-15T18:24:40Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Arabic)">
+      <outline title="سينماتك" xmlUrl="https://www.cinematik.net/feed" type="rss"/>
+      <outline title="فيلم" xmlUrl="https://www.film.com.sa/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

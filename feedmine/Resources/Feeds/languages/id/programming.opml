@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:41Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Programming (Indonesian)">
+      <outline title="Codepolitan" xmlUrl="https://www.codepolitan.com/feed/" type="rss"/>
+      <outline title="Petani Kode" xmlUrl="https://www.petanikode.com/feed/" type="rss"/>
+      <outline title="Sekolah Koding" xmlUrl="https://sekolahkoding.com/feed/" type="rss"/>
+      <outline title="Kotakode" xmlUrl="https://www.kotakode.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

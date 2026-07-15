@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:24:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Danish)">
+      <outline title="Politiken Rejser" xmlUrl="https://politiken.dk/rejser/rss.xml" type="rss"/>
+      <outline title="Berlingske Rejser" xmlUrl="https://www.berlingske.dk/rejser/rss" type="rss"/>
+      <outline title="DR Rejser" xmlUrl="https://www.dr.dk/nyheder/service/feeds/rejser" type="rss"/>
+      <outline title="Rejseliv.dk" xmlUrl="https://www.rejseliv.dk/feed/" type="rss"/>
+      <outline title="TV 2 Rejser" xmlUrl="https://rejser.tv2.dk/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

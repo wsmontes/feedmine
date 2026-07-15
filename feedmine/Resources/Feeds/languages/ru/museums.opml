@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Museums — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Museums (Russian)">
+      <outline title="Музеи России — Новости" xmlUrl="https://www.museum.ru/rss/museum_news.asp" type="rss"/>
+      <outline title="The Art Newspaper Russia" xmlUrl="https://www.theartnewspaper.ru/rss/" type="rss"/>
+      <outline title="Артгид" xmlUrl="https://artguide.com/feed" type="rss"/>
+      <outline title="Музей современного искусства «Гараж»" xmlUrl="https://garagemca.org/ru/rss" type="rss"/>
+      <outline title="Государственный Эрмитаж" xmlUrl="https://www.hermitagemuseum.org/rss/ru/news/" type="rss"/>
+    </outline>
+  </body>
+</opml>

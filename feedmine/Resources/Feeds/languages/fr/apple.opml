@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Apple — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Apple (French)">
+      <outline title="MacGeneration" xmlUrl="https://www.macg.co/rss" type="rss"/>
+      <outline title="iPhonote" xmlUrl="https://iphonote.com/feed/" type="rss"/>
+      <outline title="Consomac" xmlUrl="https://consomac.fr/rss.xml" type="rss"/>
+      <outline title="Planet iPhone" xmlUrl="https://www.planetiphone.fr/feed/" type="rss"/>
+      <outline title="Apple Actualités" xmlUrl="https://apple-actualites.fr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

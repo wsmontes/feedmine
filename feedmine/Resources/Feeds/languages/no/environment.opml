@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Norwegian</title>
+    <language>no</language>
+    <dateCreated>2026-07-15T19:10:52Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Norwegian)">
+      <outline title="Norsk institutt for naturforskning (NINA)" xmlUrl="https://www.nina.no/Om-NINA/Nyheter/RSS-feed" type="rss"/>
+      <outline title="WWF Verdens naturfond" xmlUrl="https://www.wwf.no/feed" type="rss"/>
+      <outline title="Miljødirektoratet" xmlUrl="https://www.miljodirektoratet.no/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

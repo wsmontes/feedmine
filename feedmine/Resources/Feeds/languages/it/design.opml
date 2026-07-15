@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Design Feeds — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:44:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Design Feeds (Italian)">
+      <outline title="DesignMag" xmlUrl="https://www.designmag.it/feed/" type="rss"/>
+      <outline title="Domus" xmlUrl="https://www.domusweb.it/it/feed.rss" type="rss"/>
+      <outline title="Il Sole 24 Ore Design" xmlUrl="https://www.ilsole24ore.com/rss/design.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

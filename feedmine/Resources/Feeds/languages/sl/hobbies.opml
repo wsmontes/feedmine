@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hobbies — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Hobbies (Slovenian)">
+      <outline title="MojMikro - Hobiji" xmlUrl="https://www.mojmikro.si/rss/hobiji/" type="rss"/>
+      <outline title="Siol.net - Hobiji" xmlUrl="https://siol.net/hobiji/rss" type="rss"/>
+      <outline title="Delo - Prosti čas" xmlUrl="https://www.delo.si/prosti-cas/rss" type="rss"/>
+      <outline title="RTV SLO - Prosti čas" xmlUrl="https://www.rtvslo.si/prosti-cas/rss" type="rss"/>
+      <outline title="Žurnal24 - Hobiji" xmlUrl="https://www.zurnal24.si/rss/hobiji" type="rss"/>
+    </outline>
+  </body>
+</opml>

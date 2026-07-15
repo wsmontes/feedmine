@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Museums — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:15:08Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Museums (Finnish)">
+      <outline title="Museoliitto" xmlUrl="https://www.museoliitto.fi/feed" type="rss"/>
+      <outline title="Kansallismuseo" xmlUrl="https://www.kansallismuseo.fi/fi/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

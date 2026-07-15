@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (French)">
+      <outline title="L'Équipe" xmlUrl="https://www.lequipe.fr/rss/actu_rss.xml" type="rss"/>
+      <outline title="Eurosport France" xmlUrl="https://www.eurosport.fr/rss.xml" type="rss"/>
+      <outline title="Sports.fr" xmlUrl="https://www.sports.fr/feed/" type="rss"/>
+      <outline title="RMC Sport" xmlUrl="https://rmcsport.bfmtv.com/feed/" type="rss"/>
+      <outline title="Le Sport Français" xmlUrl="https://www.lesportfrancais.fr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

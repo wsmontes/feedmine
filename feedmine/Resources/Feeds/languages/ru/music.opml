@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Russian)">
+      <outline title="Музыка — Медиа — Яндекс.Музыка" xmlUrl="https://music.yandex.ru/artist/0/rss" type="rss"/>
+      <outline title="Афиша Daily — Музыка" xmlUrl="https://daily.afisha.ru/rss/music/" type="rss"/>
+      <outline title="Colta.ru — Музыка" xmlUrl="https://www.colta.ru/rss/music" type="rss"/>
+      <outline title="InterMedia — Музыка" xmlUrl="https://www.intermedia.ru/rss/music" type="rss"/>
+      <outline title="Республика — Музыка" xmlUrl="https://republic.ru/rss/music" type="rss"/>
+    </outline>
+  </body>
+</opml>

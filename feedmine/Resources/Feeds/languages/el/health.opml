@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Greek)">
+      <outline title="iatronet" xmlUrl="https://www.iatronet.gr/feed/" type="rss"/>
+      <outline title="Healthmag" xmlUrl="https://www.healthmag.gr/feed/" type="rss"/>
+      <outline title="Onmed" xmlUrl="https://www.onmed.gr/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

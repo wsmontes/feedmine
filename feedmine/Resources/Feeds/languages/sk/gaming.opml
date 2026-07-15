@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Videogames — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:17Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Videogames (Slovak)">
+      <outline title="Hry.sk" xmlUrl="https://www.hry.sk/rss/" type="rss"/>
+      <outline title="Gamesite.sk" xmlUrl="https://gamesite.sk/feed/" type="rss"/>
+      <outline title="Herná zóna" xmlUrl="https://hernazona.sk/feed/" type="rss"/>
+      <outline title="Sector.sk" xmlUrl="https://www.sector.sk/rss/" type="rss"/>
+      <outline title="Playzone.sk" xmlUrl="https://playzone.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

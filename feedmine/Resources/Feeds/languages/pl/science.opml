@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:27Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Polish)">
+      <outline title="Nauka w Polsce" xmlUrl="https://naukawpolsce.pl/feed" type="rss"/>
+      <outline title="Kopalnia Wiedzy" xmlUrl="https://kopalniawiedzy.pl/feed" type="rss"/>
+      <outline title="Focus" xmlUrl="https://www.focus.pl/feed" type="rss"/>
+      <outline title="Crazy Nauka" xmlUrl="https://crazy-nauka.pl/feed" type="rss"/>
+      <outline title="Polskie Towarzystwo Fizyczne" xmlUrl="https://www.ptf.net.pl/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

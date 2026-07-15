@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Turkish)">
+      <outline title="Hukuki Haber" xmlUrl="https://www.hukukihaber.net/rss" type="rss"/>
+      <outline title="Lexpera Blog" xmlUrl="https://blog.lexpera.com/feed/" type="rss"/>
+      <outline title="Hukuk ve Adalet" xmlUrl="https://www.hukukveadalet.com/feed" type="rss"/>
+      <outline title="Anayasa Mahkemesi" xmlUrl="https://www.anayasa.gov.tr/tr/rss/" type="rss"/>
+      <outline title="Yargıtay" xmlUrl="https://www.yargitay.gov.tr/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

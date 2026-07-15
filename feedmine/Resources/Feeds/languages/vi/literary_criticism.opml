@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Literary Criticism, Book Reviews — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:39Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Literary Criticism, Book Reviews (Vietnamese)">
+      <outline title="Tạp chí Văn nghệ" xmlUrl="https://vannghequandoi.com.vn/rss/van-hoc.rss" type="rss"/>
+      <outline title="Báo Văn nghệ" xmlUrl="https://baovannghe.com.vn/rss/van-hoc.rss" type="rss"/>
+      <outline title="Tạp chí Sông Hương" xmlUrl="https://tapchisonghuong.com.vn/rss/van-hoc.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

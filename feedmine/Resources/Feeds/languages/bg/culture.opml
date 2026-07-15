@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:42:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Bulgarian)">
+      <outline title="Либерален преглед" xmlUrl="https://www.librev.com/index.php?option=com_ninjarsssyndicator&amp;feed_id=1&amp;format=raw" type="rss"/>
+      <outline title="Култура" xmlUrl="https://kultura.bg/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

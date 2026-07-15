@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:02:24Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (Polish)">
+      <outline title="Auto Świat" xmlUrl="https://www.auto-swiat.pl/feed" type="rss"/>
+      <outline title="Moto.pl" xmlUrl="https://moto.pl/feed" type="rss"/>
+      <outline title="Autokult" xmlUrl="https://autokult.pl/feed" type="rss"/>
+      <outline title="AutoCentrum" xmlUrl="https://www.autocentrum.pl/feed/" type="rss"/>
+      <outline title="MotoFakty" xmlUrl="https://motofakty.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

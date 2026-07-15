@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hobbies — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Hobbies (Hungarian)">
+      <outline title="Hobbi Magazin" xmlUrl="https://hobbimagazin.hu/feed" type="rss"/>
+      <outline title="Kreatív Hobby" xmlUrl="https://kreativhobby.hu/feed" type="rss"/>
+      <outline title="Fotóművészet" xmlUrl="https://fotomuveszet.hu/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

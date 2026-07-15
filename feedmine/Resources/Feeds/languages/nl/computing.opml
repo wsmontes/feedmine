@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Computing — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:35:43Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Computing (Dutch)">
+      <outline title="Tweakers" xmlUrl="https://feeds.feedburner.com/tweakers/mixed" type="rss"/>
+      <outline title="Computer Idee" xmlUrl="https://www.computeridee.nl/feed/" type="rss"/>
+      <outline title="Techzine" xmlUrl="https://www.techzine.nl/feed/" type="rss"/>
+      <outline title="Linux Magazine Nederland" xmlUrl="https://www.linuxmag.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

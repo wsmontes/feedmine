@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Whisky — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Whisky (Spanish)">
+      <outline title="El Whisky" xmlUrl="https://www.elwhisky.com/feed/" type="rss"/>
+      <outline title="Whisky Magazine España" xmlUrl="https://www.whiskymagazine.es/feed/" type="rss"/>
+      <outline title="La Cata del Whisky" xmlUrl="https://lacatadelwhisky.com/feed/" type="rss"/>
+      <outline title="Whisky en Español" xmlUrl="https://whiskyenespanol.com/feed/" type="rss"/>
+      <outline title="Mundo Whisky" xmlUrl="https://mundowhisky.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

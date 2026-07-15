@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Motorcycling — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Motorcycling (Italian)">
+      <outline title="Moto.it" xmlUrl="https://www.moto.it/rss/feed.xml" type="rss"/>
+      <outline title="Motociclismo.it" xmlUrl="https://www.motociclismo.it/feed" type="rss"/>
+      <outline title="InSella.it" xmlUrl="https://www.insella.it/feed" type="rss"/>
+      <outline title="MotoBlog" xmlUrl="https://www.motoblog.it/feed" type="rss"/>
+      <outline title="Dueruote" xmlUrl="https://www.dueruote.it/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

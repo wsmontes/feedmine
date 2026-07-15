@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Chess Feeds — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Chess Feeds (German)">
+      <outline title="Schach Nachrichten" xmlUrl="https://www.schach-nachrichten.de/feed/" type="rss"/>
+      <outline title="Schachfeld" xmlUrl="https://www.schachfeld.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

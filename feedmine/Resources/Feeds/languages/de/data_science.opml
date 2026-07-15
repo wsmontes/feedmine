@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Data Science, ML, Analytics — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Data Science, ML, Analytics (German)">
+      <outline title="Data Science Blog" xmlUrl="https://data-science-blog.de/feed/" type="rss"/>
+      <outline title="Machine Learning Blog" xmlUrl="https://machine-learning-blog.de/feed/" type="rss"/>
+      <outline title="Data Mining Blog" xmlUrl="https://www.data-mining-blog.com/feed/" type="rss"/>
+      <outline title="Statistik und Data Science" xmlUrl="https://www.statistik-und-datascience.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Metallurgy, Metals — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Metallurgy, Metals (Russian)">
+      <outline title="Металлоснабжение и сбыт" xmlUrl="https://metalinfo.ru/rss/" type="rss"/>
+      <outline title="Металлургия.рф" xmlUrl="https://metallurgy.rf/feed/" type="rss"/>
+      <outline title="Русская металлургия" xmlUrl="https://rusmet.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

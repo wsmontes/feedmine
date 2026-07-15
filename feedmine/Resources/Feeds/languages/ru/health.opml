@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Russian)">
+      <outline title="Здоровье Mail.ru" xmlUrl="https://health.mail.ru/rss/" type="rss"/>
+      <outline title="MedPortal.ru" xmlUrl="https://medportal.ru/rss/" type="rss"/>
+      <outline title="РБК Стиль - Здоровье" xmlUrl="https://style.rbc.ru/health/feed/" type="rss"/>
+      <outline title="ТАСС - Здоровье" xmlUrl="https://tass.ru/rss/v2/zdorove.xml" type="rss"/>
+      <outline title="Здоровье и медицина" xmlUrl="https://www.medikforum.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

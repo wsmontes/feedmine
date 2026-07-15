@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Puzzles, Crosswords, Sudoku — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Puzzles, Crosswords, Sudoku (Dutch)">
+      <outline title="Puzzelclub" xmlUrl="https://www.puzzelclub.nl/feed/" type="rss"/>
+      <outline title="Denksport" xmlUrl="https://www.denksport.nl/feed/" type="rss"/>
+      <outline title="Puzzelsite" xmlUrl="https://www.puzzelsite.nl/feed/" type="rss"/>
+      <outline title="Puzzelwoordenboek" xmlUrl="https://www.puzzelwoordenboek.nl/feed/" type="rss"/>
+      <outline title="Sudoku.nl" xmlUrl="https://www.sudoku.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

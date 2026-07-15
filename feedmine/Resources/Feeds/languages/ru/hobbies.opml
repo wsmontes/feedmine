@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hobbies — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Hobbies (Russian)">
+      <outline title="Хобби и рукоделие" xmlUrl="https://hobbyhobby.ru/feed/" type="rss"/>
+      <outline title="Ярмарка Мастеров" xmlUrl="https://www.livemaster.ru/rss/news" type="rss"/>
+      <outline title="Клуб рукоделия" xmlUrl="https://klubok-rukodelie.ru/feed/" type="rss"/>
+      <outline title="Сделай сам" xmlUrl="https://sdelay-sam.ru/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

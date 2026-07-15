@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Architecture — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:09Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Architecture (Greek)">
+      <outline title="Archisearch.gr" xmlUrl="https://www.archisearch.gr/feed/" type="rss"/>
+      <outline title="KTIZOMAI" xmlUrl="https://ktizomai.gr/feed/" type="rss"/>
+      <outline title="Architecture in Greece" xmlUrl="https://architectureingreece.gr/feed/" type="rss"/>
+      <outline title="Greek Architects" xmlUrl="https://www.greekarchitects.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

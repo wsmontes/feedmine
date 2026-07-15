@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:58:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Chinese)">
+      <outline title="腾讯体育" xmlUrl="https://sports.qq.com/rss/sports.xml" type="rss"/>
+      <outline title="新浪体育" xmlUrl="https://sports.sina.com.cn/rss/all.xml" type="rss"/>
+      <outline title="网易体育" xmlUrl="https://sports.163.com/rss/sports.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

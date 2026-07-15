@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Literary Criticism, Book Reviews — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Literary Criticism, Book Reviews (Indonesian)">
+      <outline title="Bentara Budaya" xmlUrl="https://bentarabudaya.com/feed" type="rss"/>
+      <outline title="Goodreads Indonesia" xmlUrl="https://www.goodreads.com/blog/indonesian_feed.rss" type="rss"/>
+      <outline title="Tempo.co - Sastra" xmlUrl="https://www.tempo.co/tag/sastra/rss" type="rss"/>
+      <outline title="Kompas.com - Buku" xmlUrl="https://www.kompas.com/tag/buku/rss" type="rss"/>
+      <outline title="Harian Jogja - Sastra" xmlUrl="https://www.harianjogja.com/rss/sastra.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

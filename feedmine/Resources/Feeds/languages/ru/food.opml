@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (Russian)">
+      <outline title="Гастрономъ" xmlUrl="https://gastronom.ru/feed" type="rss"/>
+      <outline title="Еда на ура" xmlUrl="https://eda-na-ura.ru/feed/" type="rss"/>
+      <outline title="Поварёнок" xmlUrl="https://povarenok.ru/feed/" type="rss"/>
+      <outline title="Рецепты на все случаи" xmlUrl="https://recepty-vse.ru/feed/" type="rss"/>
+      <outline title="Кулинарный блог" xmlUrl="https://kulinarniy-blog.ru/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

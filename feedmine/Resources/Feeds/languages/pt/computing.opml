@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Computing — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:25:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Computing (Portuguese)">
+      <outline title="BR-Linux" xmlUrl="https://br-linux.org/feed/" type="rss"/>
+      <outline title="InfoQ Brasil" xmlUrl="https://www.infoq.com/br/feed/" type="rss"/>
+      <outline title="Canaltech" xmlUrl="https://canaltech.com.br/feed/" type="rss"/>
+      <outline title="TecMundo" xmlUrl="https://www.tecmundo.com.br/feed/" type="rss"/>
+      <outline title="iMasters" xmlUrl="https://imasters.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

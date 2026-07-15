@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Programming (Spanish)">
+      <outline title="Genbeta Dev" xmlUrl="https://www.genbeta.com/dev/feed" type="rss"/>
+      <outline title="Programación en Español" xmlUrl="https://programacion-es.dev/feed.xml" type="rss"/>
+      <outline title="MuyLinux" xmlUrl="https://www.muylinux.com/feed" type="rss"/>
+      <outline title="Código Facilito" xmlUrl="https://codigofacilito.com/feed" type="rss"/>
+      <outline title="Parzibyte" xmlUrl="https://parzibyte.me/blog/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

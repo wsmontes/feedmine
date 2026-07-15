@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:42:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Bulgarian)">
+      <outline title="Кино - Dnevnik.bg" xmlUrl="https://www.dnevnik.bg/rss/?rubrics=3" type="rss"/>
+      <outline title="Кино - Webcafe.bg" xmlUrl="https://www.webcafe.bg/rss/kinoteatralni" type="rss"/>
+    </outline>
+  </body>
+</opml>

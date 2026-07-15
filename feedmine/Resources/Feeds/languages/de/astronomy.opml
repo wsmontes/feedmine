@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Astronomy — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:27:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Astronomy (German)">
+      <outline title="Sterne und Weltraum" xmlUrl="https://www.sterne-und-weltraum.de/rss/aktuell.xml" type="rss"/>
+      <outline title="Astronomie.de" xmlUrl="https://www.astronomie.de/feed/" type="rss"/>
+      <outline title="Spektrum der Wissenschaft – Astronomie" xmlUrl="https://www.spektrum.de/rss/astronomie/" type="rss"/>
+      <outline title="Himmelslichter" xmlUrl="https://himmelslichter.de/feed/" type="rss"/>
+      <outline title="Vereinigung der Sternfreunde" xmlUrl="https://www.vdsastro.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

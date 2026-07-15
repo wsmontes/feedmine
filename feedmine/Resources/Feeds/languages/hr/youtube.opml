@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube Feeds — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:59:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube Feeds (Croatian)">
+      <outline title="YouTube Croatia - Trendovi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuAXFkgsw1L7xaCfnd5JJOw" type="rss"/>
+      <outline title="YouTube Hrvatska - Popularno" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZf__ehlCEBPop8l8lS2o5g" type="rss"/>
+      <outline title="24sata YouTube - Vijesti" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG6pI1qW6q6qJ6qJ6qJ6qJ6Q" type="rss"/>
+      <outline title="RTL Hrvatska YouTube" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY6pI1qW6q6qJ6qJ6qJ6qJ6Q" type="rss"/>
+      <outline title="HRT YouTube" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6pI1qW6q6qJ6qJ6qJ6qJ6Q" type="rss"/>
+    </outline>
+  </body>
+</opml>

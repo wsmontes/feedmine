@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Slovenian)">
+      <outline title="Kino! - Filmski portal" xmlUrl="https://www.kino.si/rss" type="rss"/>
+      <outline title="Mladina - Film" xmlUrl="https://www.mladina.si/rss/film/" type="rss"/>
+      <outline title="RTV Slovenija - Film" xmlUrl="https://www.rtvslo.si/kultura/film-in-tv/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

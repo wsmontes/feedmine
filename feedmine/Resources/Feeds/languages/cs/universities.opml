@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:08:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Czech)">
+      <outline title="Univerzita Karlova" xmlUrl="https://www.cuni.cz/feed/rss/" type="rss"/>
+      <outline title="Masarykova univerzita" xmlUrl="https://www.muni.cz/feed/rss/aktuality" type="rss"/>
+      <outline title="České vysoké učení technické v Praze" xmlUrl="https://www.cvut.cz/feed/rss" type="rss"/>
+      <outline title="Vysoká škola ekonomická v Praze" xmlUrl="https://www.vse.cz/feed/rss/" type="rss"/>
+      <outline title="Univerzita Palackého v Olomouci" xmlUrl="https://www.upol.cz/feed/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

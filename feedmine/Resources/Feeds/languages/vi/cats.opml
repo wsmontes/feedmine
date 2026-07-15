@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cat Lovers — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Cat Lovers (Vietnamese)">
+      <outline title="Mèo Cảnh - Tin tức mèo" xmlUrl="https://meocanh.net/feed/" type="rss"/>
+      <outline title="Pet Mart - Mèo" xmlUrl="https://petmart.vn/blogs/meo/feed/" type="rss"/>
+      <outline title="Bác Sĩ Mèo - Sức khỏe mèo" xmlUrl="https://bacsimeo.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

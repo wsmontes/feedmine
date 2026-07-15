@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Slovenian)">
+      <outline title="Univerza v Ljubljani - Novice" xmlUrl="https://www.uni-lj.si/novice/rss" type="rss"/>
+      <outline title="Univerza v Mariboru - Novice" xmlUrl="https://www.um.si/novice/rss" type="rss"/>
+      <outline title="Univerza na Primorskem - Novice" xmlUrl="https://www.upr.si/novice/rss" type="rss"/>
+      <outline title="Univerza v Novi Gorici - Novice" xmlUrl="https://www.ung.si/sl/novice/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — Norwegian</title>
+    <language>no</language>
+    <dateCreated>2026-07-15T19:10:52Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (Norwegian)">
+      <outline title="Godt.no - Mat og drikke" xmlUrl="https://www.godt.no/feed/" type="rss"/>
+      <outline title="Matprat" xmlUrl="https://www.matprat.no/feed/" type="rss"/>
+      <outline title="Det Norske Måltid" xmlUrl="https://dnnm.no/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

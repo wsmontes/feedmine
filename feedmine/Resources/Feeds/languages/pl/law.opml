@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Polish)">
+      <outline title="Prawo.pl" xmlUrl="https://www.prawo.pl/rss.xml" type="rss"/>
+      <outline title="Lex.pl - Wiadomości prawne" xmlUrl="https://www.lex.pl/rss/wiadomosci.xml" type="rss"/>
+      <outline title="Gazeta Prawna" xmlUrl="https://www.gazetaprawna.pl/rss.xml" type="rss"/>
+      <outline title="Rzeczpospolita - Prawo" xmlUrl="https://www.rp.pl/rss/prawo.xml" type="rss"/>
+      <outline title="Kancelarie RP - Blog" xmlUrl="https://kancelarierp.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

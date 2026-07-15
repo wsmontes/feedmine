@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Finnish)">
+      <outline title="Historia" xmlUrl="https://historia.net/feed" type="rss"/>
+      <outline title="Suomen historian aikakauskirja" xmlUrl="https://www.historiantutkimus.fi/feed/" type="rss"/>
+      <outline title="Kansallismuseo" xmlUrl="https://www.kansallismuseo.fi/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

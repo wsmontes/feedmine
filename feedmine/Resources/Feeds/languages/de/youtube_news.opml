@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube News — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube News (German)">
+      <outline title="YouTube News (offiziell)" xmlUrl="https://blog.youtube/de/feed/" type="rss"/>
+      <outline title="RSS-Bridge: YouTube-Kanal von Spiegel TV" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=Youtube&amp;channel=UC3wM1m3g6v9kX0eN0k0k0k0&amp;format=Atom" type="rss"/>
+    </outline>
+  </body>
+</opml>

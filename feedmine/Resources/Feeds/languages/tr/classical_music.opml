@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:38:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Classical Music (Turkish)">
+      <outline title="Andante Klasik Müzik Dergisi" xmlUrl="https://www.andante.com.tr/rss" type="rss"/>
+      <outline title="Klasik Müzik Günlüğü" xmlUrl="https://klasikmuzikgunlugu.com/feed/" type="rss"/>
+      <outline title="Müzik Gazetesi - Klasik Müzik" xmlUrl="https://www.muzikgazetesi.com/category/klasik-muzik/feed/" type="rss"/>
+      <outline title="Klasik Müzik ve Opera" xmlUrl="https://klasikmuzikveopera.com/feed/" type="rss"/>
+      <outline title="Borusan Sanat" xmlUrl="https://www.borusansanat.com/tr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

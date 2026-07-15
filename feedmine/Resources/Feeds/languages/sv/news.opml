@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Swedish)">
+      <outline title="SVT Nyheter" xmlUrl="https://www.svt.se/nyheter/rss.xml" type="rss"/>
+      <outline title="DN" xmlUrl="https://www.dn.se/rss/" type="rss"/>
+      <outline title="Svenska Dagbladet" xmlUrl="https://www.svd.se/feed/rss.xml" type="rss"/>
+      <outline title="Omni" xmlUrl="https://omni.se/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

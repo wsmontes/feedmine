@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:49:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Swedish)">
+      <outline title="Lunds universitet - Nyheter" xmlUrl="https://www.lu.se/rss/nyheter" type="rss"/>
+      <outline title="Uppsala universitet - Nyheter" xmlUrl="https://www.uu.se/rss/nyheter" type="rss"/>
+      <outline title="Stockholms universitet - Nyheter" xmlUrl="https://www.su.se/rss/nyheter" type="rss"/>
+      <outline title="Göteborgs universitet - Nyheter" xmlUrl="https://www.gu.se/rss/nyheter" type="rss"/>
+      <outline title="Karolinska Institutet - Nyheter" xmlUrl="https://ki.se/rss/nyheter" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:35:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Romanian)">
+      <outline title="Science.ro" xmlUrl="https://www.science.ro/feed/" type="rss"/>
+      <outline title="Descopera" xmlUrl="https://www.descopera.ro/feed/" type="rss"/>
+      <outline title="Stiinta Tehnica" xmlUrl="https://stiintatehnica.ro/feed/" type="rss"/>
+      <outline title="Academia Romana" xmlUrl="https://acad.ro/feed/" type="rss"/>
+      <outline title="Natura si Stiinta" xmlUrl="https://naturasistiinta.ro/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

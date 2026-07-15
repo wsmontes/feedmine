@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Finnish)">
+      <outline title="Terveyskirjasto" xmlUrl="https://www.terveyskirjasto.fi/rss/terveyskirjasto.rss" type="rss"/>
+      <outline title="Käypä hoito" xmlUrl="https://www.kaypahoito.fi/rss/ajankohtaista.rss" type="rss"/>
+      <outline title="Terveyden ja hyvinvoinnin laitos" xmlUrl="https://thl.fi/fi/-/rss/uutiset" type="rss"/>
+    </outline>
+  </body>
+</opml>

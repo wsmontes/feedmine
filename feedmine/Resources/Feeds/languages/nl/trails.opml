@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Trails, Routes — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Trails, Routes (Dutch)">
+      <outline title="Wandelroutes" xmlUrl="https://www.wandelroutes.nl/feed/" type="rss"/>
+      <outline title="Fietsroutes" xmlUrl="https://www.fietsroutes.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

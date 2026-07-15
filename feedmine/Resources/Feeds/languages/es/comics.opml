@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Quadrinhos — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:21:37Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Quadrinhos (Spanish)">
+      <outline title="Zona Negativa" xmlUrl="https://www.zonanegativa.com/feed/" type="rss"/>
+      <outline title="La Cárcel de Papel" xmlUrl="https://www.lacarceldepapel.com/feed/" type="rss"/>
+      <outline title="Cómic (RTVE)" xmlUrl="https://www.rtve.es/noticias/comic/rss.xml" type="rss"/>
+      <outline title="Entrecomics" xmlUrl="https://www.entrecomics.com/feed/" type="rss"/>
+      <outline title="Guias de cómics (Mundo Cómics)" xmlUrl="https://mundocomics.es/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

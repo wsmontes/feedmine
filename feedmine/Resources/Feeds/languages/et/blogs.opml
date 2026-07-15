@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:50:56Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Estonian)">
+      <outline title="Andres Nõlvak" xmlUrl="https://andresnylvak.wordpress.com/feed/" type="rss"/>
+      <outline title="Margus Muts" xmlUrl="https://margusmuts.com/feed/" type="rss"/>
+      <outline title="Pille Runnel" xmlUrl="https://pillerunnel.ee/feed/" type="rss"/>
+      <outline title="Kalle Vister" xmlUrl="https://kallevister.ee/feed/" type="rss"/>
+      <outline title="Mihkel Kärmas" xmlUrl="https://mihkelkarmas.ee/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

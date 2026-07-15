@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:40:12Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (Indonesian)">
+      <outline title="Otomotif Kompas" xmlUrl="https://otomotif.kompas.com/rss" type="rss"/>
+      <outline title="GridOto" xmlUrl="https://www.gridoto.com/rss.xml" type="rss"/>
+      <outline title="AutonetMagz" xmlUrl="https://www.autonetmagz.com/feed/" type="rss"/>
+      <outline title="OtoDriver" xmlUrl="https://www.otodriver.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

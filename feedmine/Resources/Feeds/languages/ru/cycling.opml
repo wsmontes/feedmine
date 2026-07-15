@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cycling — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:35Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Cycling (Russian)">
+      <outline title="Velomania — Новости" xmlUrl="https://velomania.ru/rss" type="rss"/>
+      <outline title="Вело — Трек" xmlUrl="https://velotrek.ru/feed" type="rss"/>
+      <outline title="Велодрайв — Блог" xmlUrl="https://velodrive.ru/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

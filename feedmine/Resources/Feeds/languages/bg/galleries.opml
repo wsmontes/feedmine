@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:42:37Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Bulgarian)">
+      <outline title="Галерия" xmlUrl="https://galeria.bg/rss.xml" type="rss"/>
+      <outline title="Art.bg" xmlUrl="https://art.bg/rss" type="rss"/>
+      <outline title="Български галерии" xmlUrl="https://bulgariangalleries.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

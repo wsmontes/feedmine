@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:35:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Romanian)">
+      <outline title="Podcast Romania" xmlUrl="https://podcastromania.ro/feed/podcast/" type="rss"/>
+      <outline title="Radio Romania Actualitati" xmlUrl="https://www.romania-actualitati.ro/rss/podcast.xml" type="rss"/>
+      <outline title="Asculta Podcast" xmlUrl="https://ascultapodcast.ro/feed/" type="rss"/>
+      <outline title="Podcast FM" xmlUrl="https://podcastfm.ro/feed/" type="rss"/>
+      <outline title="InfoPodcast" xmlUrl="https://www.infopodcast.ro/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Farming, Agriculture — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Farming, Agriculture (Russian)">
+      <outline title="Фермер.ру" xmlUrl="https://fermer.ru/feed" type="rss"/>
+      <outline title="Агроинфо" xmlUrl="https://agroinfo.com/feed/" type="rss"/>
+      <outline title="Сельская жизнь" xmlUrl="https://selo.life/feed/" type="rss"/>
+      <outline title="АгроXXI" xmlUrl="https://agroxxi.ru/feed/" type="rss"/>
+      <outline title="Дача и участок" xmlUrl="https://dacha-uchastok.ru/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

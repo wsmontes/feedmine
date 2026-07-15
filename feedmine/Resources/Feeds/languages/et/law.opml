@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:51:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Estonian)">
+      <outline title="Õigusabi.ee" xmlUrl="https://www.oigusabi.ee/feed" type="rss"/>
+      <outline title="Riigi Teataja" xmlUrl="https://www.riigiteataja.ee/feed/" type="rss"/>
+      <outline title="Advokaadibüroo Triniti" xmlUrl="https://www.triniti.ee/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

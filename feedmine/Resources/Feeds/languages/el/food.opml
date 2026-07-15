@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:34Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (Greek)">
+      <outline title="Gastronomos" xmlUrl="https://www.gastronomos.gr/feed/" type="rss"/>
+      <outline title="Olive Magazine Greece" xmlUrl="https://www.olivemagazine.gr/feed/" type="rss"/>
+      <outline title="Cook Eat Love" xmlUrl="https://www.cookeatlove.gr/feed/" type="rss"/>
+      <outline title="Akispetretzikis" xmlUrl="https://www.akispetretzikis.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

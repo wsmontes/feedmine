@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Poetry — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:27:06Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Poetry (Russian)">
+      <outline title="Стихи.ру" xmlUrl="https://stihi.ru/rss/litnews.xml" type="rss"/>
+      <outline title="Полка" xmlUrl="https://polka.academy/rss" type="rss"/>
+      <outline title="Журнал «Новый мир»" xmlUrl="https://nm1925.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

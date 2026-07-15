@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Serbian</title>
+    <language>sr</language>
+    <dateCreated>2026-07-15T18:46:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Serbian)">
+      <outline title="RTS Kultura" xmlUrl="https://www.rts.rs/rss/kultura.xml" type="rss"/>
+      <outline title="B92 Kultura" xmlUrl="https://www.b92.net/rss/kultura.xml" type="rss"/>
+      <outline title="N1 Kultura" xmlUrl="https://rs.n1info.com/rss/kultura/" type="rss"/>
+    </outline>
+  </body>
+</opml>

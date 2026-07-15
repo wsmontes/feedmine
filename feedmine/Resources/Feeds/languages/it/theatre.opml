@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theatre — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:52Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theatre (Italian)">
+      <outline title="Teatro - Corriere della Sera" xmlUrl="https://www.corriere.it/rss/teatro.xml" type="rss"/>
+      <outline title="Teatro.it" xmlUrl="https://www.teatro.it/feed/" type="rss"/>
+      <outline title="Hystrio" xmlUrl="https://www.hystrio.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

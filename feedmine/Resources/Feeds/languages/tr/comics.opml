@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Quadrinhos — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:38:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Quadrinhos (Turkish)">
+      <outline title="Çizgi Roman Haberleri" xmlUrl="https://www.cizgiromanhaberleri.com/feed/" type="rss"/>
+      <outline title="Çizgi Roman Kütüphanesi" xmlUrl="https://cizgiromankutuphanesi.com/feed/" type="rss"/>
+      <outline title="Manga ve Çizgi Roman" xmlUrl="https://mangavecizgiroman.com/feed/" type="rss"/>
+      <outline title="Çizgi Roman Dükkanı" xmlUrl="https://www.cizgiromandukkani.com/blog/feed/" type="rss"/>
+      <outline title="Turkuvaz Çizgi Roman" xmlUrl="https://turkuvazcizgiroman.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

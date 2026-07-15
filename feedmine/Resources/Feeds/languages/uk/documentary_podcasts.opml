@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Documentary — Ukrainian</title>
+    <language>uk</language>
+    <dateCreated>2026-07-15T18:54:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Documentary (Ukrainian)">
+      <outline title="Документальні подкасти (UA)" xmlUrl="https://podcasts.ua/documentary/feed.xml" type="rss"/>
+      <outline title="Радіо Свобода: Документальні програми" xmlUrl="https://www.radiosvoboda.org/rss/doc/" type="rss"/>
+      <outline title="Українське радіо: Документалістика" xmlUrl="https://ukr.radio/rss/dokumentalistyka.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

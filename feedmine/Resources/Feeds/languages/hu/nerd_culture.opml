@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nerd — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nerd (Hungarian)">
+      <outline title="GameStar" xmlUrl="https://gamestar.hu/feed" type="rss"/>
+      <outline title="SG.hu" xmlUrl="https://sg.hu/rss" type="rss"/>
+      <outline title="PC Guru" xmlUrl="https://pcguru.hu/feed" type="rss"/>
+      <outline title="Geekz" xmlUrl="https://geekz.hu/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

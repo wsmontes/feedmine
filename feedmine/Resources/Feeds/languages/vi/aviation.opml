@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Aviation — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Aviation (Vietnamese)">
+      <outline title="Vietnam Aviation - Hàng không" xmlUrl="https://vietnamaviation.vn/feed/" type="rss"/>
+      <outline title="Báo Giao Thông - Hàng không" xmlUrl="https://baogiaothong.vn/rss/hang-khong.rss" type="rss"/>
+      <outline title="Hàng không Việt Nam" xmlUrl="https://hangkhongvietnam.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

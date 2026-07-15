@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Thai</title>
+    <language>th</language>
+    <dateCreated>2026-07-15T19:09:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Thai)">
+      <outline title="Greenpeace Thailand" xmlUrl="https://www.greenpeace.org/thailand/feed/" type="rss"/>
+      <outline title="WWF Thailand" xmlUrl="https://www.wwf.or.th/feed/" type="rss"/>
+      <outline title="สถาบันวิจัยและพัฒนาทรัพยากรทางทะเล ชายฝั่งทะเล และป่าชายเลน" xmlUrl="https://www.dmcr.go.th/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

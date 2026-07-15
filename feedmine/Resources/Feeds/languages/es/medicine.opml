@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:22:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (Spanish)">
+      <outline title="Diario Médico" xmlUrl="https://www.diariomedico.com/feed" type="rss"/>
+      <outline title="El Médico Interactivo" xmlUrl="https://www.elmedicointeractivo.com/feed/" type="rss"/>
+      <outline title="Redacción Médica" xmlUrl="https://www.redaccionmedica.com/feed" type="rss"/>
+      <outline title="Medicina y Salud Pública" xmlUrl="https://www.medicinaysaludpublica.com/feed/" type="rss"/>
+      <outline title="Farmacia Profesional" xmlUrl="https://www.farmaciaprofesional.es/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

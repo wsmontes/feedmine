@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Moms, Dads — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Moms, Dads (French)">
+      <outline title="Magic Maman" xmlUrl="https://www.magicmaman.com/rss/actualites.xml" type="rss"/>
+      <outline title="Parents" xmlUrl="https://www.parents.fr/feed" type="rss"/>
+      <outline title="Maman pour la vie" xmlUrl="https://www.mamanpourlavie.com/rss/actualites.xml" type="rss"/>
+      <outline title="Famille Éducative" xmlUrl="https://www.familleeducative.fr/feed/" type="rss"/>
+      <outline title="Papa Positive" xmlUrl="https://www.papapositive.fr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

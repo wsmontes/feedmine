@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Geology, Geography — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Geology, Geography (Hungarian)">
+      <outline title="Magyarhoni Földtani Társulat" xmlUrl="https://www.mfgt.hu/feed/" type="rss"/>
+      <outline title="Földrajzi Közlemények" xmlUrl="https://www.foldrajzitarsasag.hu/feed/" type="rss"/>
+      <outline title="Geológia blog" xmlUrl="https://geologiablog.hu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

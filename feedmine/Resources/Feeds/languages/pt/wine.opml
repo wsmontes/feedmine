@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wine — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:27:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Wine (Portuguese)">
+      <outline title="Revista Adega" xmlUrl="https://revistaadega.com.br/feed/" type="rss"/>
+      <outline title="Vinhos e Dicas" xmlUrl="https://vinhosedicas.com.br/feed/" type="rss"/>
+      <outline title="Mundo do Vinho" xmlUrl="https://www.mundodovinho.com.br/feed/" type="rss"/>
+      <outline title="Vinho Brasil" xmlUrl="https://vinhobrasil.com.br/feed/" type="rss"/>
+      <outline title="Essência do Vinho" xmlUrl="https://essenciadovinho.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Chinese)">
+      <outline title="阮一峰的网络日志" xmlUrl="https://www.ruanyifeng.com/blog/atom.xml" type="rss"/>
+      <outline title="酷壳" xmlUrl="https://coolshell.cn/feed" type="rss"/>
+      <outline title="中文独立博客列表" xmlUrl="https://feeds.feedburner.com/indieblogs" type="rss"/>
+      <outline title="王建硕" xmlUrl="https://home.wangjianshuo.com/feed" type="rss"/>
+      <outline title="槽边往事" xmlUrl="https://www.biti.org/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Lithuanian</title>
+    <language>lt</language>
+    <dateCreated>2026-07-15T19:18:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Lithuanian)">
+      <outline title="Technologijos.lt" xmlUrl="https://www.technologijos.lt/rss" type="rss"/>
+      <outline title="IT Pro Lietuva" xmlUrl="https://www.itpro.lt/rss" type="rss"/>
+      <outline title="15min.lt - Technologijos" xmlUrl="https://www.15min.lt/rss/technologijos" type="rss"/>
+      <outline title="Delfi.lt - Technologijos" xmlUrl="https://www.delfi.lt/rss/feeds/technologijos.xml" type="rss"/>
+      <outline title="Lrytas.lt - Technologijos" xmlUrl="https://www.lrytas.lt/technologijos/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

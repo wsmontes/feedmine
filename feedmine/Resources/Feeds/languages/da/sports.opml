@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:24:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Danish)">
+      <outline title="DR Sporten" xmlUrl="https://www.dr.dk/nyheder/service/feeds/sporten" type="rss"/>
+      <outline title="TV 2 Sport" xmlUrl="https://sport.tv2.dk/rss" type="rss"/>
+      <outline title="Tipsbladet - Sport" xmlUrl="https://www.tipsbladet.dk/rss/nyheder" type="rss"/>
+      <outline title="Bold.dk" xmlUrl="https://www.bold.dk/feed/rss" type="rss"/>
+      <outline title="Politiken Sport" xmlUrl="https://politiken.dk/sport/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

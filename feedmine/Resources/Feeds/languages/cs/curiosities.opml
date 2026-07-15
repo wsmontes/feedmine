@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Curiosities, Trivia — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Curiosities, Trivia (Czech)">
+      <outline title="Zajímavosti - Novinky.cz" xmlUrl="https://www.novinky.cz/zajimavosti/rss" type="rss"/>
+      <outline title="National Geographic Česko" xmlUrl="https://www.nationalgeographic.cz/feed/" type="rss"/>
+      <outline title="Tajemno" xmlUrl="https://www.tajemno.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

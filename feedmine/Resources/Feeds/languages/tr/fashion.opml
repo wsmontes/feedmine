@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:38:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (Turkish)">
+      <outline title="Vogue Türkiye" xmlUrl="https://vogue.com.tr/feed/" type="rss"/>
+      <outline title="Elle Türkiye" xmlUrl="https://elle.com.tr/feed/" type="rss"/>
+      <outline title="Moda Haberleri" xmlUrl="https://www.modahaberleri.com/feed/" type="rss"/>
+      <outline title="İnstyle Türkiye" xmlUrl="https://www.instyle.com.tr/feed/" type="rss"/>
+      <outline title="Moda Garaj" xmlUrl="https://www.modagaraj.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

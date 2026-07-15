@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Classical Music (German)">
+      <outline title="Klassik Radio Blog" xmlUrl="https://www.klassikradio.de/feed/" type="rss"/>
+      <outline title="BR-Klassik" xmlUrl="https://www.br-klassik.de/feed/" type="rss"/>
+      <outline title="Klassik.com" xmlUrl="https://www.klassik.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

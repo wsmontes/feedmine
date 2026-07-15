@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photography — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Photography (Spanish)">
+      <outline title="Xataka Foto" xmlUrl="https://www.xatakafoto.com/feed" type="rss"/>
+      <outline title="Oscar en Fotos" xmlUrl="https://oscarenfotos.com/feed/" type="rss"/>
+      <outline title="Blog del Fotógrafo" xmlUrl="https://www.blogdelfotografo.com/feed/" type="rss"/>
+      <outline title="Foto DNG" xmlUrl="https://fotodng.com/feed/" type="rss"/>
+      <outline title="Capturando Luz" xmlUrl="https://capturandoluz.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

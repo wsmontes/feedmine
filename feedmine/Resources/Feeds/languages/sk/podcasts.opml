@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:59Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Slovak)">
+      <outline title="Podmaz.sk" xmlUrl="https://www.podmaz.sk/feed/podcast/" type="rss"/>
+      <outline title="Zmýšľanie nahlas" xmlUrl="https://zmyslanie-nahlas.sk/feed/podcast/" type="rss"/>
+      <outline title="Čo sa deje?" xmlUrl="https://cosadeje.sk/feed/podcast/" type="rss"/>
+      <outline title="Slovensko v kontexte" xmlUrl="https://slovenskovkontexte.sk/feed/podcast/" type="rss"/>
+    </outline>
+  </body>
+</opml>

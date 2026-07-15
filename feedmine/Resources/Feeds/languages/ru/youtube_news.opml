@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube News — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:27:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube News (Russian)">
+      <outline title="YouTube Russia News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwL9DLZ1sX7B8C9bX5X7X7Q" type="rss"/>
+      <outline title="Новости YouTube" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvqRdlKsE5Q8mfN2w0s3K4g" type="rss"/>
+    </outline>
+  </body>
+</opml>

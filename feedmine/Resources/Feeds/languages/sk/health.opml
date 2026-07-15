@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:17Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Slovak)">
+      <outline title="Zdravie.sk" xmlUrl="https://www.zdravie.sk/rss/" type="rss"/>
+      <outline title="Lekár.sk" xmlUrl="https://www.lekar.sk/feed/" type="rss"/>
+      <outline title="MediWeb.sk" xmlUrl="https://www.mediweb.sk/rss/" type="rss"/>
+      <outline title="Zdravotnícke noviny" xmlUrl="https://www.zdravotnickenoviny.sk/rss/" type="rss"/>
+      <outline title="Pacientske organizácie" xmlUrl="https://pacientskeorganizacie.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:02:52Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Polish)">
+      <outline title="Kultura - Polskie Radio" xmlUrl="https://www.polskieradio.pl/8/Kultura/feed.xml" type="rss"/>
+      <outline title="Dwutygodnik" xmlUrl="https://www.dwutygodnik.com/feed/" type="rss"/>
+      <outline title="Culture.pl" xmlUrl="https://culture.pl/pl/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

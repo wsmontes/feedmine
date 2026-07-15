@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theatre — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theatre (Dutch)">
+      <outline title="Theaterkrant" xmlUrl="https://www.theaterkrant.nl/feed/" type="rss"/>
+      <outline title="Theater Nieuws" xmlUrl="https://www.theaternieuws.nl/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

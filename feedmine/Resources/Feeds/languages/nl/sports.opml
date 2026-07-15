@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Dutch)">
+      <outline title="NOS Sport" xmlUrl="https://feeds.nos.nl/nossport" type="rss"/>
+      <outline title="AD Sport" xmlUrl="https://www.ad.nl/rss/sport" type="rss"/>
+      <outline title="NU.nl Sport" xmlUrl="https://www.nu.nl/rss/sport" type="rss"/>
+    </outline>
+  </body>
+</opml>

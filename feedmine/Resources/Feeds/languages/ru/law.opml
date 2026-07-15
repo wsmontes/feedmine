@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Russian)">
+      <outline title="Право.ru" xmlUrl="https://pravo.ru/rss/" type="rss"/>
+      <outline title="Закон.ру" xmlUrl="https://zakon.ru/rss" type="rss"/>
+      <outline title="Гарант" xmlUrl="https://www.garant.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

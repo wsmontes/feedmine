@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Other Pets — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Other Pets (Italian)">
+      <outline title="Animali in Casa" xmlUrl="https://www.animaliincasa.it/feed" type="rss"/>
+      <outline title="Petpassion" xmlUrl="https://www.petpassion.it/feed" type="rss"/>
+      <outline title="Amici di Casa" xmlUrl="https://www.amicidicasa.it/feed" type="rss"/>
+      <outline title="ZooAntropologia" xmlUrl="https://www.zooantropologia.it/feed" type="rss"/>
+      <outline title="Il mio Animale" xmlUrl="https://www.ilmioanimale.it/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

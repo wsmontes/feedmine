@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:42:37Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Bulgarian)">
+      <outline title="Puls.bg" xmlUrl="https://puls.bg/rss" type="rss"/>
+      <outline title="Zdrave.bg" xmlUrl="https://zdrave.bg/rss" type="rss"/>
+      <outline title="BgMedic" xmlUrl="https://bgmedic.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

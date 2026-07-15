@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Documentary — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:35Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Documentary (Russian)">
+      <outline title="Радио Свобода — Подкасты" xmlUrl="https://www.svoboda.org/rss/podcast" type="rss"/>
+      <outline title="Теория всего — Подкаст" xmlUrl="https://theoryofeverything.ru/feed" type="rss"/>
+      <outline title="Зачем я это увидел? — Подкаст" xmlUrl="https://zachemyaetouvidell.ru/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

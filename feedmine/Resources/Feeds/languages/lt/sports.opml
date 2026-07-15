@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Lithuanian</title>
+    <language>lt</language>
+    <dateCreated>2026-07-15T19:18:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Lithuanian)">
+      <outline title="Sportas.lt" xmlUrl="https://www.sportas.lt/rss" type="rss"/>
+      <outline title="Lrytas.lt - Sportas" xmlUrl="https://www.lrytas.lt/sportas/rss" type="rss"/>
+      <outline title="15min.lt - Sportas" xmlUrl="https://www.15min.lt/rss/sportas" type="rss"/>
+      <outline title="Delfi.lt - Sportas" xmlUrl="https://www.delfi.lt/rss/feeds/sportas.xml" type="rss"/>
+      <outline title="Lietuvos sporto federacijų sąjunga" xmlUrl="https://www.lsfs.lt/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

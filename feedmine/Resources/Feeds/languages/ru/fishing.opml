@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fishing — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fishing (Russian)">
+      <outline title="Рыбалка в России" xmlUrl="https://rybalka-v-rossii.ru/feed/" type="rss"/>
+      <outline title="Клёвое место" xmlUrl="https://klevoe-mesto.ru/feed/" type="rss"/>
+      <outline title="Рыболовный журнал" xmlUrl="https://rybolovnyj-zhurnal.ru/feed/" type="rss"/>
+      <outline title="Рыбак" xmlUrl="https://rybak.ru/feed/" type="rss"/>
+      <outline title="Охота и рыбалка" xmlUrl="https://ohota-rybalka.ru/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

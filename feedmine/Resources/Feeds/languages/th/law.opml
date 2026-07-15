@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Thai</title>
+    <language>th</language>
+    <dateCreated>2026-07-15T19:09:47Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Thai)">
+      <outline title="สำนักงานศาลรัฐธรรมนูญ" xmlUrl="https://www.constitutionalcourt.or.th/occ_web/rss.xml" type="rss"/>
+      <outline title="สำนักงานคณะกรรมการกฤษฎีกา" xmlUrl="https://www.krisdika.go.th/rss/rss-law.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

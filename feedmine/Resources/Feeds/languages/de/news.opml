@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (German)">
+      <outline title="Tagesschau" xmlUrl="https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml" type="rss"/>
+      <outline title="Spiegel Online" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" type="rss"/>
+      <outline title="FAZ" xmlUrl="https://www.faz.net/rss/aktuell/" type="rss"/>
+      <outline title="Zeit Online" xmlUrl="https://www.zeit.de/index.xml" type="rss"/>
+      <outline title="Süddeutsche Zeitung" xmlUrl="https://www.sueddeutsche.de/rss/news" type="rss"/>
+    </outline>
+  </body>
+</opml>

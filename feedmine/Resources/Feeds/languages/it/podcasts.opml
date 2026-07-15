@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:36Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Italian)">
+      <outline title="Podcast Italiani" xmlUrl="https://www.podcastitaliani.it/feed/podcast/" type="rss"/>
+      <outline title="Daily Cogito" xmlUrl="https://dailycogito.com/feed/podcast/" type="rss"/>
+      <outline title="Storielibere" xmlUrl="https://www.storielibere.it/feed/podcast/" type="rss"/>
+    </outline>
+  </body>
+</opml>

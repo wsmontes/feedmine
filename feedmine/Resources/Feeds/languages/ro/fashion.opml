@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:34:12Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (Romanian)">
+      <outline title="Elle România" xmlUrl="https://www.elle.ro/feed/" type="rss"/>
+      <outline title="Vogue România" xmlUrl="https://www.vogue.ro/feed/" type="rss"/>
+      <outline title="Harper's Bazaar România" xmlUrl="https://www.harpersbazaar.ro/feed/" type="rss"/>
+      <outline title="Stylz.ro" xmlUrl="https://www.stylz.ro/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

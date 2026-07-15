@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:41Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (German)">
+      <outline title="Chefkoch.de" xmlUrl="https://www.chefkoch.de/feed" type="rss"/>
+      <outline title="Lecker.de" xmlUrl="https://www.lecker.de/feed" type="rss"/>
+      <outline title="Essen &amp; Trinken" xmlUrl="https://www.essen-und-trinken.de/feed" type="rss"/>
+      <outline title="Kochbar.de" xmlUrl="https://www.kochbar.de/feed" type="rss"/>
+      <outline title="Foodblogger" xmlUrl="https://www.foodblogger.de/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Turkish)">
+      <outline title="Beyazperde Film Haberleri" xmlUrl="https://www.beyazperde.com/haberler/rss.xml" type="rss"/>
+      <outline title="Film Haberleri - NTV" xmlUrl="https://www.ntv.com.tr/sanat/film.rss" type="rss"/>
+      <outline title="Sinema Haberleri - Hürriyet" xmlUrl="https://www.hurriyet.com.tr/rss/kultur-sanat/sinema" type="rss"/>
+    </outline>
+  </body>
+</opml>

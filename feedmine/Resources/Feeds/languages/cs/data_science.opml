@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Data Science, ML, Analytics — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Data Science, ML, Analytics (Czech)">
+      <outline title="DataScience.cz" xmlUrl="https://www.datascience.cz/feed/" type="rss"/>
+      <outline title="Analytický blog - Pavel Kříž" xmlUrl="https://www.pavelkriz.cz/feed/" type="rss"/>
+      <outline title="Data Studio - Petr Šimánek" xmlUrl="https://www.datastudio.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

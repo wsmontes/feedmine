@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Reference Journalists — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Reference Journalists (Indonesian)">
+      <outline title="Kompas.com - Referensi Jurnalis" xmlUrl="https://www.kompas.com/rss" type="rss"/>
+      <outline title="Tempo.co" xmlUrl="https://www.tempo.co/rss" type="rss"/>
+      <outline title="Detik.com" xmlUrl="https://www.detik.com/rss" type="rss"/>
+      <outline title="Republika Online" xmlUrl="https://www.republika.co.id/rss" type="rss"/>
+      <outline title="Media Indonesia" xmlUrl="https://www.mediaindonesia.com/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

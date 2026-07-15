@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:22:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Spanish)">
+      <outline title="Confilegal" xmlUrl="https://confilegal.com/feed/" type="rss"/>
+      <outline title="Iberley" xmlUrl="https://www.iberley.es/feed" type="rss"/>
+      <outline title="LegalToday" xmlUrl="https://www.legaltoday.com/feed" type="rss"/>
+      <outline title="El Derecho" xmlUrl="https://www.elderecho.com/feed" type="rss"/>
+      <outline title="Noticias Jurídicas" xmlUrl="https://noticias.juridicas.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

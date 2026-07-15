@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Classical Music (Finnish)">
+      <outline title="Yle Klassinen" xmlUrl="https://feeds.yle.fi/klassinen/rss/klassinen.xml" type="rss"/>
+      <outline title="Helsingin Sanomat - Klassinen musiikki" xmlUrl="https://www.hs.fi/rss/taide-ja-kulttuuri-klassinen-musiikki.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

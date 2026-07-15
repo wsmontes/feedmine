@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:09Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (Greek)">
+      <outline title="Autoblog.gr" xmlUrl="https://www.autoblog.gr/feed/" type="rss"/>
+      <outline title="Drive.gr" xmlUrl="https://www.drive.gr/feed/" type="rss"/>
+      <outline title="Car and Motor" xmlUrl="https://www.carandmotor.gr/feed/" type="rss"/>
+      <outline title="4troxoi.gr" xmlUrl="https://www.4troxoi.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

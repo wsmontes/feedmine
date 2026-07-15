@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Military — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:39Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Military (Vietnamese)">
+      <outline title="Báo Quân đội nhân dân" xmlUrl="https://www.qdnd.vn/rss/tin-tuc.rss" type="rss"/>
+      <outline title="Báo Điện tử Biên phòng" xmlUrl="https://bienphong.com.vn/rss/quan-su.rss" type="rss"/>
+      <outline title="Tạp chí Quốc phòng Toàn dân" xmlUrl="https://quocphongtoandan.vn/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

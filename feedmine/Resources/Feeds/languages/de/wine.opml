@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wine — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Wine (German)">
+      <outline title="Wein-Plus Magazin" xmlUrl="https://www.wein-plus.eu/de/feed.rss" type="rss"/>
+      <outline title="Vinum Magazin" xmlUrl="https://www.vinum.eu/feed/" type="rss"/>
+      <outline title="Weinblog.de" xmlUrl="https://weinblog.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

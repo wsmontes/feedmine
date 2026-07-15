@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:49:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Slovenian)">
+      <outline title="Siol.net - Blogi" xmlUrl="https://siol.net/blogi/rss" type="rss"/>
+      <outline title="RTV Slovenija - Blogi" xmlUrl="https://www.rtvslo.si/blogi/rss" type="rss"/>
+      <outline title="Blog.si" xmlUrl="http://blog.si/rss" type="rss"/>
+      <outline title="Mladina - Blogi" xmlUrl="https://www.mladina.si/blogi/rss" type="rss"/>
+      <outline title="Delo - Blogi" xmlUrl="https://www.delo.si/blogi/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

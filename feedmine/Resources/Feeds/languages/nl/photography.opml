@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photography — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Photography (Dutch)">
+      <outline title="Fotografieblog.nl" xmlUrl="https://www.fotografieblog.nl/feed/" type="rss"/>
+      <outline title="Pixel Magazine" xmlUrl="https://pixelmagazine.nl/feed/" type="rss"/>
+      <outline title="Digifoto Pro" xmlUrl="https://www.digifotopro.nl/feed/" type="rss"/>
+      <outline title="Photofacts" xmlUrl="https://www.photofacts.nl/feed/" type="rss"/>
+      <outline title="Fotografie.nl" xmlUrl="https://www.fotografie.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

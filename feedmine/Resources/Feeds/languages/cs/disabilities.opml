@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Deaf, Blind — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Deaf, Blind (Czech)">
+      <outline title="Neslyšící.cz" xmlUrl="https://www.neslysici.cz/feed/" type="rss"/>
+      <outline title="Okamžik" xmlUrl="https://www.okamzik.cz/feed/" type="rss"/>
+      <outline title="Tyflonet" xmlUrl="https://www.tyflonet.cz/feed/" type="rss"/>
+      <outline title="Hluchota.cz" xmlUrl="https://www.hluchota.cz/feed/" type="rss"/>
+      <outline title="Pomocné tlapky" xmlUrl="https://www.pomocnetlapky.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

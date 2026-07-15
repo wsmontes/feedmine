@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fiction, Audio Drama — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fiction, Audio Drama (Portuguese)">
+      <outline title="Rádio Novelo" xmlUrl="https://radionovelo.com.br/feed/podcast/" type="rss"/>
+      <outline title="Ficção Científica - Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:321291199/sounds.rss" type="rss"/>
+      <outline title="Contos de Terror" xmlUrl="https://contosdeterror.com.br/feed/podcast/" type="rss"/>
+      <outline title="A Marca da Ficção" xmlUrl="https://amarcadeficcao.podbean.com/feed.xml" type="rss"/>
+      <outline title="Podcast do Castelo" xmlUrl="https://podcastdocastelo.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

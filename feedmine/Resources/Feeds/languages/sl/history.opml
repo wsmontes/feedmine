@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Slovenian)">
+      <outline title="Zgodovina.si" xmlUrl="https://www.zgodovina.si/feed/" type="rss"/>
+      <outline title="Delo - Zgodovina" xmlUrl="https://www.delo.si/kultura/zgodovina/rss" type="rss"/>
+      <outline title="RTV SLO - Zgodovina" xmlUrl="https://www.rtvslo.si/kultura/zgodovina/rss" type="rss"/>
+      <outline title="Siol.net - Zgodovina" xmlUrl="https://siol.net/kultura/zgodovina/rss" type="rss"/>
+      <outline title="Muzej novejše zgodovine Slovenije" xmlUrl="https://www.muzej-nz.si/si/rss/novice/" type="rss"/>
+    </outline>
+  </body>
+</opml>

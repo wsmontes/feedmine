@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Family, Relationships — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:41Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Family, Relationships (German)">
+      <outline title="Eltern.de" xmlUrl="https://www.eltern.de/feed.rss" type="rss"/>
+      <outline title="Familie.de" xmlUrl="https://www.familie.de/feed/" type="rss"/>
+      <outline title="Leben &amp; erziehen" xmlUrl="https://www.leben-und-erziehen.de/feed" type="rss"/>
+      <outline title="Urbia.de" xmlUrl="https://www.urbia.de/feed" type="rss"/>
+      <outline title="Netmoms" xmlUrl="https://www.netmoms.de/feed.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

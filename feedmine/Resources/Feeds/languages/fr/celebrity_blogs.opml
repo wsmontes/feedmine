@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Famous People — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:40Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Famous People (French)">
+      <outline title="Pure People" xmlUrl="https://www.purepeople.com/rss/people.xml" type="rss"/>
+      <outline title="Voici" xmlUrl="https://www.voici.fr/rss/people.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Persian</title>
+    <language>fa</language>
+    <dateCreated>2026-07-15T18:53:36Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Persian)">
+      <outline title="دانش‌یار | مجله علمی" xmlUrl="https://daneshyar.ir/feed" type="rss"/>
+      <outline title="بیگ بنگ | وبلاگ علمی" xmlUrl="https://bigbang.ir/feed" type="rss"/>
+      <outline title="پارسی‌ساینس | مجله علمی فارسی" xmlUrl="https://parsiscience.ir/feed" type="rss"/>
+      <outline title="ساینس‌فا | اخبار علمی" xmlUrl="https://sciencefa.ir/feed" type="rss"/>
+      <outline title="فیزیکدان | وبلاگ فیزیک" xmlUrl="https://physicdan.ir/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

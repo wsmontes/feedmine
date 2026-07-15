@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Other Pets — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:13:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Other Pets (Greek)">
+      <outline title="PetCity.gr" xmlUrl="https://www.petcity.gr/feed/" type="rss"/>
+      <outline title="Zoosos.gr" xmlUrl="https://zoosos.gr/feed/" type="rss"/>
+      <outline title="PetFriends.gr" xmlUrl="https://www.petfriends.gr/feed/" type="rss"/>
+      <outline title="AnimalLife.gr" xmlUrl="https://www.animallife.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

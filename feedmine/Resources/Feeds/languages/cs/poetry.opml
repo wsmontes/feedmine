@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Poetry — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:07:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Poetry (Czech)">
+      <outline title="Poezie – iLiteratura.cz" xmlUrl="https://www.iliteratura.cz/rss/poezie.xml" type="rss"/>
+      <outline title="Poezie – Česká poezie" xmlUrl="https://www.ceskapoezie.cz/rss/" type="rss"/>
+      <outline title="Poezie – Host" xmlUrl="https://www.hostbrno.cz/rss/poezie.xml" type="rss"/>
+      <outline title="Poezie – Paseka" xmlUrl="https://www.paseka.cz/rss/poezie.xml" type="rss"/>
+      <outline title="Poezie – Revolver Revue" xmlUrl="https://www.revolverrevue.cz/rss/poezie.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

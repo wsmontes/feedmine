@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Farming, Agriculture — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Farming, Agriculture (Portuguese)">
+      <outline title="Revista Globo Rural" xmlUrl="https://revistagloborural.globo.com/rss/globorural" type="rss"/>
+      <outline title="Canal Rural" xmlUrl="https://www.canalrural.com.br/feed/" type="rss"/>
+      <outline title="AgroLink" xmlUrl="https://www.agrolink.com.br/feed/" type="rss"/>
+      <outline title="Notícias Agrícolas" xmlUrl="https://www.noticiasagricolas.com.br/feed" type="rss"/>
+      <outline title="Embrapa" xmlUrl="https://www.embrapa.br/rss/ultimas-noticias" type="rss"/>
+    </outline>
+  </body>
+</opml>

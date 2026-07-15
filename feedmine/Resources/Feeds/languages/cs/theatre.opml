@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theatre — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:08:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theatre (Czech)">
+      <outline title="Divadelní noviny" xmlUrl="https://www.divadelni-noviny.cz/feed/" type="rss"/>
+      <outline title="Dilia" xmlUrl="https://www.dilia.cz/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

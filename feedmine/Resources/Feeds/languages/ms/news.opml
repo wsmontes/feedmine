@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Malay</title>
+    <language>ms</language>
+    <dateCreated>2026-07-15T19:08:52Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Malay)">
+      <outline title="Berita Harian" xmlUrl="https://www.bharian.com.my/rss.xml" type="rss"/>
+      <outline title="Harian Metro" xmlUrl="https://www.hmetro.com.my/rss.xml" type="rss"/>
+      <outline title="Sinar Harian" xmlUrl="https://www.sinarharian.com.my/rss.xml" type="rss"/>
+      <outline title="Utusan Malaysia" xmlUrl="https://www.utusan.com.my/rss.xml" type="rss"/>
+      <outline title="Malaysiakini" xmlUrl="https://www.malaysiakini.com/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

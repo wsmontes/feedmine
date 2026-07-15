@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Board Games, RPGs — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:21:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Board Games, RPGs (Spanish)">
+      <outline title="Jugando en Pareja" xmlUrl="https://jugandoenpareja.com/feed/" type="rss"/>
+      <outline title="La BSK" xmlUrl="https://labsk.net/feed/" type="rss"/>
+      <outline title="Rol y Juegos de Mesa" xmlUrl="https://rolyjuegosdemesa.com/feed/" type="rss"/>
+      <outline title="Juegos de Mesa y Rol" xmlUrl="https://juegosdemesayrol.com/feed/" type="rss"/>
+      <outline title="El Club del Juego" xmlUrl="https://elclubdeljuego.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

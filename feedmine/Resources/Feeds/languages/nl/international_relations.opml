@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>International Relations, Geopolitics — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:36:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="International Relations, Geopolitics (Dutch)">
+      <outline title="Clingendael Spectator" xmlUrl="https://spectator.clingendael.org/rss" type="rss"/>
+      <outline title="NRC Buitenland" xmlUrl="https://www.nrc.nl/rss/buitenland/" type="rss"/>
+      <outline title="De Correspondent Buitenland" xmlUrl="https://decorrespondent.nl/rss/buitenland" type="rss"/>
+      <outline title="Volkskrant Buitenland" xmlUrl="https://www.volkskrant.nl/rss/buitenland/" type="rss"/>
+      <outline title="Trouw Buitenland" xmlUrl="https://www.trouw.nl/rss/buitenland/" type="rss"/>
+    </outline>
+  </body>
+</opml>

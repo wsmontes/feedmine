@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Ukrainian</title>
+    <language>uk</language>
+    <dateCreated>2026-07-15T18:55:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Ukrainian)">
+      <outline title="Наука.UA" xmlUrl="https://nauka.ua/feed/" type="rss"/>
+      <outline title="Всеукраїнська наукова спільнота" xmlUrl="https://science-community.org/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

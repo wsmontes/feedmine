@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Chess Feeds — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:35:43Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Chess Feeds (Dutch)">
+      <outline title="Schaaksite.nl" xmlUrl="https://www.schaaksite.nl/feed/" type="rss"/>
+      <outline title="Chess.com Nederlands" xmlUrl="https://www.chess.com/nl/feed" type="rss"/>
+      <outline title="Nederlandse Schaakbond" xmlUrl="https://schaakbond.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

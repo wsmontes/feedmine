@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Thai</title>
+    <language>th</language>
+    <dateCreated>2026-07-15T19:10:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Thai)">
+      <outline title="สยามกีฬา" xmlUrl="https://www.siamsport.co.th/rss/all.xml" type="rss"/>
+      <outline title="กีฬา - ไทยรัฐ" xmlUrl="https://www.thairath.co.th/sport/feed" type="rss"/>
+      <outline title="ข่าวกีฬา - เดลินิวส์" xmlUrl="https://www.dailynews.co.th/sports/feed" type="rss"/>
+      <outline title="กีฬา - มติชน" xmlUrl="https://www.matichon.co.th/sport/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

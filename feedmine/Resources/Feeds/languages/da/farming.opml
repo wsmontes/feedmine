@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Farming, Agriculture — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:23:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Farming, Agriculture (Danish)">
+      <outline title="Landbrugsavisen" xmlUrl="https://landbrugsavisen.dk/rss" type="rss"/>
+      <outline title="Økologisk Landbrug" xmlUrl="https://okologisklandbrug.dk/feed/" type="rss"/>
+      <outline title="Landbrug &amp; Fødevarer" xmlUrl="https://lf.dk/feed/" type="rss"/>
+      <outline title="Maskinbladet" xmlUrl="https://maskinbladet.dk/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

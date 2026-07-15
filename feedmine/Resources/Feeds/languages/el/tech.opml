@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:13:35Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Greek)">
+      <outline title="Techgear.gr" xmlUrl="https://www.techgear.gr/feed/" type="rss"/>
+      <outline title="Insomnia.gr - Τεχνολογία" xmlUrl="https://www.insomnia.gr/rss/forums/1-νέα-τεχνολογίας/" type="rss"/>
+      <outline title="Pestaola.gr" xmlUrl="https://www.pestaola.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

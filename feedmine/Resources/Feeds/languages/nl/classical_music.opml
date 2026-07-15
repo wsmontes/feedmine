@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:35:43Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Classical Music (Dutch)">
+      <outline title="Klassieke Muziek - NPO Radio 4" xmlUrl="https://www.nporadio4.nl/feed/" type="rss"/>
+      <outline title="Muziekweb.nl" xmlUrl="https://www.muziekweb.nl/feed/" type="rss"/>
+      <outline title="Opera Magazine" xmlUrl="https://www.operamagazine.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

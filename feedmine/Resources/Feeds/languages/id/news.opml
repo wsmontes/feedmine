@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:27Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Indonesian)">
+      <outline title="Kompas.com" xmlUrl="https://www.kompas.com/feed" type="rss"/>
+      <outline title="Detik.com" xmlUrl="https://www.detik.com/rss" type="rss"/>
+      <outline title="Tempo.co" xmlUrl="https://www.tempo.co/feed" type="rss"/>
+      <outline title="CNN Indonesia" xmlUrl="https://www.cnnindonesia.com/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

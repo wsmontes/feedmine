@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:59:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Croatian)">
+      <outline title="Hrvatska turistička zajednica" xmlUrl="https://www.htz.hr/rss/" type="rss"/>
+      <outline title="Putoholičari" xmlUrl="https://putoholicari.com/feed/" type="rss"/>
+      <outline title="Lonely Planet Hrvatska" xmlUrl="https://www.lonelyplanet.com/croatia/feed" type="rss"/>
+      <outline title="Croatia.hr" xmlUrl="https://www.croatia.hr/hr/rss" type="rss"/>
+      <outline title="Lider Media - Turizam" xmlUrl="https://lider.media/rss/turizam" type="rss"/>
+    </outline>
+  </body>
+</opml>

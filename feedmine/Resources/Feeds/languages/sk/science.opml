@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:59Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Slovak)">
+      <outline title="Veda na dosah" xmlUrl="https://vedanadosah.sk/rss/" type="rss"/>
+      <outline title="SME Veda" xmlUrl="https://veda.sme.sk/rss/" type="rss"/>
+      <outline title="Quark" xmlUrl="https://www.quark.sk/rss/" type="rss"/>
+      <outline title="Akademický bulletin" xmlUrl="https://www.akademickybulletin.sk/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

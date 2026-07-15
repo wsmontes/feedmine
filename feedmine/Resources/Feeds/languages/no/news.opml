@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Norwegian</title>
+    <language>no</language>
+    <dateCreated>2026-07-15T19:11:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Norwegian)">
+      <outline title="NRK Nyheter" xmlUrl="https://www.nrk.no/nyheter/feed" type="rss"/>
+      <outline title="VG" xmlUrl="https://www.vg.no/feed" type="rss"/>
+      <outline title="Dagbladet" xmlUrl="https://www.dagbladet.no/feed" type="rss"/>
+      <outline title="Aftenposten" xmlUrl="https://www.aftenposten.no/feed" type="rss"/>
+      <outline title="Nettavisen" xmlUrl="https://www.nettavisen.no/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

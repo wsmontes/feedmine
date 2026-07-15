@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Moms, Dads — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:05Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Moms, Dads (Polish)">
+      <outline title="Mjakmama" xmlUrl="https://mjakmama24.pl/feed/" type="rss"/>
+      <outline title="Dziecko" xmlUrl="https://dziecko.trojmiasto.pl/rss.xml" type="rss"/>
+      <outline title="Strefa Rodzica" xmlUrl="https://strefarodzica.pl/feed/" type="rss"/>
+      <outline title="Mamaginekolog" xmlUrl="https://mamaginekolog.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

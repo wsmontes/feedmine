@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Slovenian)">
+      <outline title="Mladina - Glasba" xmlUrl="https://www.mladina.si/rss/glasba/" type="rss"/>
+      <outline title="RTV Slovenija - Glasba" xmlUrl="https://www.rtvslo.si/kultura/glasba/rss" type="rss"/>
+      <outline title="SIGIC - Glasbena produkcija" xmlUrl="https://www.sigic.si/rss/novice" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Poetry — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:52:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Poetry (Estonian)">
+      <outline title="Luulekogu" xmlUrl="https://luulekogu.ee/feed/" type="rss"/>
+      <outline title="Sirp - Luule" xmlUrl="https://www.sirp.ee/category/luule/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Lithuanian</title>
+    <language>lt</language>
+    <dateCreated>2026-07-15T19:18:41Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Lithuanian)">
+      <outline title="15min Muzika" xmlUrl="https://www.15min.lt/rss/muzika.xml" type="rss"/>
+      <outline title="LRT Muzika" xmlUrl="https://www.lrt.lt/feeds/muzika" type="rss"/>
+      <outline title="Muzikos barai" xmlUrl="https://www.muzikosbarai.lt/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

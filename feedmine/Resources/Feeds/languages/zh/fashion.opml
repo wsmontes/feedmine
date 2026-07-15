@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (Chinese)">
+      <outline title="VOGUE中国" xmlUrl="https://www.vogue.com.cn/rss/" type="rss"/>
+      <outline title="ELLE中国" xmlUrl="https://www.ellechina.com/rss/" type="rss"/>
+      <outline title="时尚芭莎" xmlUrl="https://www.bazaar.com.cn/rss/" type="rss"/>
+      <outline title="GQ中国" xmlUrl="https://www.gq.com.cn/rss/" type="rss"/>
+      <outline title="海报时尚" xmlUrl="https://www.haibao.com/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

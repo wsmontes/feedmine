@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Other Pets — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Other Pets (Turkish)">
+      <outline title="Pet Haberleri - NTV" xmlUrl="https://www.ntv.com.tr/saglik/pet.rss" type="rss"/>
+      <outline title="Pet Blog - Patiliyo" xmlUrl="https://www.patiliyo.com/feed/" type="rss"/>
+      <outline title="Hayvan Hakları Haberleri" xmlUrl="https://www.hayvanhaklari.org/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

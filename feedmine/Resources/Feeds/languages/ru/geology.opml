@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Geology, Geography — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Geology, Geography (Russian)">
+      <outline title="Геологический портал GeoKniga" xmlUrl="https://www.geokniga.org/feed" type="rss"/>
+      <outline title="ВСЕГЕИ" xmlUrl="https://www.vsegei.ru/ru/rss/" type="rss"/>
+      <outline title="География.Ру" xmlUrl="https://geography.ru/rss" type="rss"/>
+      <outline title="Научная Россия - Геология" xmlUrl="https://scientificrussia.ru/rss/tag/geologiya" type="rss"/>
+    </outline>
+  </body>
+</opml>

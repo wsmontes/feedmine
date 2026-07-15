@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (Portuguese)">
+      <outline title="Vogue Brasil" xmlUrl="https://vogue.globo.com/rss/vogue" type="rss"/>
+      <outline title="Elle Brasil" xmlUrl="https://elle.com.br/feed" type="rss"/>
+      <outline title="FFW" xmlUrl="https://ffw.uol.com.br/feed/" type="rss"/>
+      <outline title="Chic" xmlUrl="https://chic.uol.com.br/feed/" type="rss"/>
+      <outline title="Blog da Fashionistando" xmlUrl="https://fashionistando.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

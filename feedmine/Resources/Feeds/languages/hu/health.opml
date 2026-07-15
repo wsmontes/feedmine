@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Hungarian)">
+      <outline title="HáziPatika" xmlUrl="https://www.hazipatika.com/feed" type="rss"/>
+      <outline title="WebBeteg" xmlUrl="https://www.webbeteg.hu/feed" type="rss"/>
+      <outline title="EgészségKalauz" xmlUrl="https://www.egeszsegkalauz.hu/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

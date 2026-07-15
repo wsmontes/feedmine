@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Luxury Fashion, Haute Couture — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Luxury Fashion, Haute Couture (Turkish)">
+      <outline title="Vogue Türkiye" xmlUrl="https://vogue.com.tr/feed" type="rss"/>
+      <outline title="Elle Türkiye" xmlUrl="https://elle.com.tr/feed" type="rss"/>
+      <outline title="Harper's Bazaar Türkiye" xmlUrl="https://harpersbazaar.com.tr/feed" type="rss"/>
+      <outline title="Instyle Türkiye" xmlUrl="https://instyle.com.tr/feed" type="rss"/>
+      <outline title="L'Officiel Türkiye" xmlUrl="https://lofficiel.com.tr/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

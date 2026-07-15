@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Entrepreneurship, Startups — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Entrepreneurship, Startups (French)">
+      <outline title="FrenchWeb" xmlUrl="https://www.frenchweb.fr/feed" type="rss"/>
+      <outline title="Maddyness" xmlUrl="https://www.maddyness.com/feed/" type="rss"/>
+      <outline title="Les Echos Start" xmlUrl="https://start.lesechos.fr/rss" type="rss"/>
+      <outline title="La Tribune - Start-up" xmlUrl="https://www.latribune.fr/start-up/rss.xml" type="rss"/>
+      <outline title="Entrepreneur (France)" xmlUrl="https://www.entrepreneur.com/fr/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

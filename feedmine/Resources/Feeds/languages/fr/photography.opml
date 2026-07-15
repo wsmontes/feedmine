@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photography — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Photography (French)">
+      <outline title="Phototrend" xmlUrl="https://phototrend.fr/feed/" type="rss"/>
+      <outline title="Les Numériques - Photo" xmlUrl="https://www.lesnumeriques.com/photo/rss.xml" type="rss"/>
+      <outline title="Chasseur d'Images" xmlUrl="https://www.chasseurdimages.com/feed/" type="rss"/>
+      <outline title="Apprendre la Photo" xmlUrl="https://apprendre-la-photo.fr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

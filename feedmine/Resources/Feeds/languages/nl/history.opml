@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:36:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Dutch)">
+      <outline title="Historisch Nieuwsblad" xmlUrl="https://www.historischnieuwsblad.nl/feed/" type="rss"/>
+      <outline title="IsGeschiedenis" xmlUrl="https://www.isgeschiedenis.nl/feed/" type="rss"/>
+      <outline title="Historiek" xmlUrl="https://historiek.net/feed/" type="rss"/>
+      <outline title="Kennislink Geschiedenis" xmlUrl="https://www.kennislink.nl/rss/geschiedenis" type="rss"/>
+    </outline>
+  </body>
+</opml>

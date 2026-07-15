@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Literary Criticism, Book Reviews — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Literary Criticism, Book Reviews (Russian)">
+      <outline title="Горький" xmlUrl="https://gorky.media/rss/" type="rss"/>
+      <outline title="Полка" xmlUrl="https://polka.academy/rss.xml" type="rss"/>
+      <outline title="Лиterraтура" xmlUrl="https://literratura.org/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

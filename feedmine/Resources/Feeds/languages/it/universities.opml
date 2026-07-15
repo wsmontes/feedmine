@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:46:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Italian)">
+      <outline title="Università degli Studi di Milano" xmlUrl="https://www.unimi.it/it/feed" type="rss"/>
+      <outline title="Alma Mater Studiorum Università di Bologna" xmlUrl="https://www.unibo.it/it/feed/rss/notizie" type="rss"/>
+      <outline title="Sapienza Università di Roma" xmlUrl="https://www.uniroma1.it/it/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

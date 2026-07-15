@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming — Ukrainian</title>
+    <language>uk</language>
+    <dateCreated>2026-07-15T18:55:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Programming (Ukrainian)">
+      <outline title="DOU.UA" xmlUrl="https://dou.ua/feed/" type="rss"/>
+      <outline title="Хабрахабр українською" xmlUrl="https://habr.com/ua/rss/interesting/" type="rss"/>
+      <outline title="ITC.UA" xmlUrl="https://itc.ua/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

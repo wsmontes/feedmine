@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Other Pets — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Other Pets (Russian)">
+      <outline title="Зоопортал — Другие животные" xmlUrl="https://zooportal.ru/rss/" type="rss"/>
+      <outline title="Питомцы — Animal.ru" xmlUrl="https://www.animal.ru/rss/" type="rss"/>
+      <outline title="Мир животных — Pets-mf.ru" xmlUrl="https://pets-mf.ru/feed/" type="rss"/>
+      <outline title="Хомячки, крысы, кролики — Raticat.ru" xmlUrl="https://raticat.ru/feed/" type="rss"/>
+      <outline title="Аквариумистика — Aqa.ru" xmlUrl="https://aqa.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

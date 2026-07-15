@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Programming (German)">
+      <outline title="heise developer" xmlUrl="https://www.heise.de/developer/rss/news-atom.xml" type="rss"/>
+      <outline title="t3n – Programmierung" xmlUrl="https://t3n.de/tag/programmierung/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

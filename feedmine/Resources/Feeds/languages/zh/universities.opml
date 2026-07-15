@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:58:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Chinese)">
+      <outline title="清华大学新闻" xmlUrl="https://www.tsinghua.edu.cn/rss.xml" type="rss"/>
+      <outline title="北京大学新闻网" xmlUrl="https://news.pku.edu.cn/rss.xml" type="rss"/>
+      <outline title="浙江大学新闻网" xmlUrl="https://www.zju.edu.cn/rss.xml" type="rss"/>
+      <outline title="复旦大学新闻" xmlUrl="https://www.fudan.edu.cn/rss.xml" type="rss"/>
+      <outline title="上海交通大学新闻" xmlUrl="https://www.sjtu.edu.cn/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

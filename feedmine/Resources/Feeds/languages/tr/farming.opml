@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Farming, Agriculture — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:38:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Farming, Agriculture (Turkish)">
+      <outline title="Tarım Haberleri" xmlUrl="https://www.tarimhaberleri.com/rss" type="rss"/>
+      <outline title="Tarım Dünyası" xmlUrl="https://www.tarimdunyasi.com/feed/" type="rss"/>
+      <outline title="Ziraat Mühendisleri Odası" xmlUrl="https://www.zmo.org.tr/rss" type="rss"/>
+      <outline title="Tarım ve Köy" xmlUrl="https://www.tarimvekoy.com/feed/" type="rss"/>
+      <outline title="Ekolojik Tarım" xmlUrl="https://www.ekolojikarim.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

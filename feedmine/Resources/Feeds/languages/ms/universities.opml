@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Malay</title>
+    <language>ms</language>
+    <dateCreated>2026-07-15T19:09:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Malay)">
+      <outline title="Universiti Malaya - Berita" xmlUrl="https://www.um.edu.my/berita?format=feed&amp;type=rss" type="rss"/>
+      <outline title="Universiti Kebangsaan Malaysia - Berita" xmlUrl="https://www.ukm.my/portal/feed/" type="rss"/>
+      <outline title="Universiti Sains Malaysia - RSS" xmlUrl="https://www.usm.my/berita?format=feed" type="rss"/>
+      <outline title="Universiti Putra Malaysia - Berita" xmlUrl="https://www.upm.edu.my/berita?format=feed" type="rss"/>
+      <outline title="Universiti Teknologi Malaysia - Berita" xmlUrl="https://www.utm.my/berita/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

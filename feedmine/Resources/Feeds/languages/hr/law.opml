@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:59:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Croatian)">
+      <outline title="IUS-INFO" xmlUrl="https://www.iusinfo.hr/feed" type="rss"/>
+      <outline title="Law.hr" xmlUrl="https://www.law.hr/feed" type="rss"/>
+      <outline title="Poslovni dnevnik - Pravo" xmlUrl="https://www.poslovni.hr/tag/pravo/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

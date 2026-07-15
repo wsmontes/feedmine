@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Hungarian)">
+      <outline title="Recorder" xmlUrl="https://recorder.blog.hu/rss" type="rss"/>
+      <outline title="Lángoló Gitárok" xmlUrl="https://langologitarok.blog.hu/rss" type="rss"/>
+      <outline title="Fonogram" xmlUrl="https://fonogram.hu/feed" type="rss"/>
+      <outline title="Zene.hu" xmlUrl="https://zene.hu/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Turkish)">
+      <outline title="Müzik Haberleri - NTV" xmlUrl="https://www.ntv.com.tr/sanat/muzik.rss" type="rss"/>
+      <outline title="Müzik Haberleri - Hürriyet" xmlUrl="https://www.hurriyet.com.tr/rss/kultur-sanat/muzik" type="rss"/>
+      <outline title="Radyo Eksen Blog" xmlUrl="https://www.radyoeksen.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

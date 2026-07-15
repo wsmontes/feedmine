@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Board Games, RPGs — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Board Games, RPGs (French)">
+      <outline title="Tric Trac" xmlUrl="https://www.trictrac.net/rss.xml" type="rss"/>
+      <outline title="Le Désordre" xmlUrl="https://ledesordre.fr/feed/" type="rss"/>
+      <outline title="Jeux de Société - Blog" xmlUrl="https://www.jeux-de-societe.com/feed/" type="rss"/>
+      <outline title="La Boîte à Jeux" xmlUrl="https://www.laboiteajeux.net/feed/" type="rss"/>
+      <outline title="Le Coin des Jeux" xmlUrl="https://lecoindesjeux.fr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

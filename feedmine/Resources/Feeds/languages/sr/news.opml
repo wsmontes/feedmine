@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Serbian</title>
+    <language>sr</language>
+    <dateCreated>2026-07-15T18:46:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Serbian)">
+      <outline title="B92 Vesti" xmlUrl="https://www.b92.net/rss/feed.php?id=vesti" type="rss"/>
+      <outline title="N1 Info" xmlUrl="https://n1info.rs/rss/vesti" type="rss"/>
+      <outline title="RTS Vesti" xmlUrl="https://www.rts.rs/rss/vesti.xml" type="rss"/>
+      <outline title="Danas" xmlUrl="https://www.danas.rs/feed/" type="rss"/>
+      <outline title="Politika" xmlUrl="https://www.politika.rs/rss/vesti.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

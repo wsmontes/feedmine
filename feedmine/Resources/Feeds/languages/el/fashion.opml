@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:34Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (Greek)">
+      <outline title="Vogue Greece" xmlUrl="https://www.vogue.gr/feed/" type="rss"/>
+      <outline title="Harper's Bazaar Greece" xmlUrl="https://www.harpersbazaar.gr/feed/" type="rss"/>
+      <outline title="Elle Greece" xmlUrl="https://www.elle.gr/feed/" type="rss"/>
+      <outline title="Cosmopolitan Greece" xmlUrl="https://www.cosmopolitan.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

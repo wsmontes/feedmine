@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:02:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Classical Music (Polish)">
+      <outline title="Muzyka klasyczna - Polskie Radio" xmlUrl="https://www.polskieradio.pl/8/Muzyka/Feed" type="rss"/>
+      <outline title="Ruch Muzyczny" xmlUrl="https://ruchmuzyczny.pl/feed/" type="rss"/>
+      <outline title="Filharmonia Narodowa" xmlUrl="https://filharmonia.pl/rss.xml" type="rss"/>
+      <outline title="Kultura Classical" xmlUrl="https://kulturaclassical.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

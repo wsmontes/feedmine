@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Literary Criticism, Book Reviews — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Literary Criticism, Book Reviews (Swedish)">
+      <outline title="Svenska Dagbladet Kultur" xmlUrl="https://www.svd.se/feed/kultur.rss" type="rss"/>
+      <outline title="Dagens Nyheter Kultur" xmlUrl="https://www.dn.se/rss/kultur/" type="rss"/>
+      <outline title="Göteborgs-Posten Kultur" xmlUrl="https://www.gp.se/rss/kultur" type="rss"/>
+      <outline title="Aftonbladet Kultur" xmlUrl="https://www.aftonbladet.se/rss/kultur" type="rss"/>
+      <outline title="Sydsvenskan Kultur" xmlUrl="https://www.sydsvenskan.se/rss/kultur" type="rss"/>
+    </outline>
+  </body>
+</opml>

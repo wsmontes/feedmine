@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:21:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Spanish)">
+      <outline title="Blogs El País" xmlUrl="https://blogs.elpais.com/feed/" type="rss"/>
+      <outline title="Blogs 20 Minutos" xmlUrl="https://blogs.20minutos.es/feed/" type="rss"/>
+      <outline title="Blogs ABC" xmlUrl="https://abcblogs.abc.es/feed/" type="rss"/>
+      <outline title="Hipertextual" xmlUrl="https://hipertextual.com/feed" type="rss"/>
+      <outline title="Microsiervos" xmlUrl="https://www.microsiervos.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

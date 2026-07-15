@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Puzzles, Crosswords, Sudoku — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Puzzles, Crosswords, Sudoku (Spanish)">
+      <outline title="Crucigramas Diarios" xmlUrl="https://crucigramasdiarios.com/feed/" type="rss"/>
+      <outline title="Sudoku Online" xmlUrl="https://sudokuonline.es/feed/" type="rss"/>
+      <outline title="Pasatiempos y Juegos" xmlUrl="https://www.pasatiemposyjuegos.com/feed/" type="rss"/>
+      <outline title="El País - Crucigramas" xmlUrl="https://elpais.com/tag/crucigramas/a/feed.xml" type="rss"/>
+      <outline title="Adivinanzas y Acertijos" xmlUrl="https://adivinanzas-y-acertijos.blogspot.com/feeds/posts/default" type="rss"/>
+    </outline>
+  </body>
+</opml>

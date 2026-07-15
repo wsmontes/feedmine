@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Polish)">
+      <outline title="Sztuka Publiczna" xmlUrl="https://sztukapubliczna.pl/feed/" type="rss"/>
+      <outline title="Magazyn Sztuki" xmlUrl="https://magazynsztuki.pl/feed/" type="rss"/>
+      <outline title="Artinfo.pl" xmlUrl="https://artinfo.pl/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

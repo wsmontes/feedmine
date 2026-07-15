@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Woodworking, Carpentry — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:02:05Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Woodworking, Carpentry (Hungarian)">
+      <outline title="Faipari Hírek" xmlUrl="https://faiparihirek.hu/feed/" type="rss"/>
+      <outline title="Asztalos Blog" xmlUrl="https://asztalos.blog.hu/feed" type="rss"/>
+      <outline title="Barkácsolj Velünk" xmlUrl="https://barkacsoljvelunk.hu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

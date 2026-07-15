@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Audiophilia, Vinyl Records — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:21:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Audiophilia, Vinyl Records (Spanish)">
+      <outline title="Alta Fidelidad" xmlUrl="https://www.altafidelidad.org/feed/" type="rss"/>
+      <outline title="Vinilo y CD" xmlUrl="https://viniloycd.com/feed/" type="rss"/>
+      <outline title="Discos de Vinilo" xmlUrl="https://www.discosdevinilo.com/feed/" type="rss"/>
+      <outline title="El Blog de Audio" xmlUrl="https://elblogdeaudio.com/feed/" type="rss"/>
+      <outline title="Vinyl Records Blog" xmlUrl="https://vinylrecordsblog.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

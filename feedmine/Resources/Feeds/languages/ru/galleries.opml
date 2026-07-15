@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Russian)">
+      <outline title="Артгид" xmlUrl="https://artguide.com/feed" type="rss"/>
+      <outline title="The Art Newspaper Russia" xmlUrl="https://www.theartnewspaper.ru/rss/" type="rss"/>
+      <outline title="Культура.РФ" xmlUrl="https://www.culture.ru/rss/news" type="rss"/>
+      <outline title="Around Art" xmlUrl="https://aroundart.ru/feed/" type="rss"/>
+      <outline title="Артхив" xmlUrl="https://artchive.ru/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

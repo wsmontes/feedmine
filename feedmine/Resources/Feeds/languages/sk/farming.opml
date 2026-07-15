@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Farming, Agriculture — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:20:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Farming, Agriculture (Slovak)">
+      <outline title="Agroporadenstvo.sk" xmlUrl="https://www.agroporadenstvo.sk/rss/" type="rss"/>
+      <outline title="Poľnohospodár.sk" xmlUrl="https://polnohospodar.sk/feed/" type="rss"/>
+      <outline title="Farmárske noviny" xmlUrl="https://www.farmarskenoviny.sk/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

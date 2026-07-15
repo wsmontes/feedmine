@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Military — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:39Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Military (Portuguese)">
+      <outline title="Forças Terrestres" xmlUrl="https://www.forte.jor.br/feed/" type="rss"/>
+      <outline title="Defesa Aérea &amp; Naval" xmlUrl="https://www.defesaaereanaval.com.br/feed/" type="rss"/>
+      <outline title="Tecnologia &amp; Defesa" xmlUrl="https://www.tecnologiadefesa.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

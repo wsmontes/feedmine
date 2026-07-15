@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Museums — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:23:44Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Museums (Danish)">
+      <outline title="Nationalmuseet" xmlUrl="https://natmus.dk/feed/" type="rss"/>
+      <outline title="Museum for Varde og Omegn" xmlUrl="https://www.museetforvardeogomegn.dk/feed/" type="rss"/>
+      <outline title="Kunsthal Aarhus" xmlUrl="https://kunsthalaarhus.dk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

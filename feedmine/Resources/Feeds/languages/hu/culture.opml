@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:00:40Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Hungarian)">
+      <outline title="Kultúrpart" xmlUrl="https://kulturpart.hu/feed" type="rss"/>
+      <outline title="Fidelio" xmlUrl="https://fidelio.hu/feed" type="rss"/>
+      <outline title="Magyar Narancs - Kultúra" xmlUrl="https://magyarnarancs.hu/feed/kultura" type="rss"/>
+    </outline>
+  </body>
+</opml>

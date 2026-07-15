@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Arabic</title>
+    <language>ar</language>
+    <dateCreated>2026-07-15T18:24:59Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Arabic)">
+      <outline title="سكاي نيوز عربية - رياضة" xmlUrl="https://www.skynewsarabia.com/rss/رياضة" type="rss"/>
+      <outline title="العربية - رياضة" xmlUrl="https://www.alarabiya.net/rss/رياضة" type="rss"/>
+      <outline title="الجزيرة - رياضة" xmlUrl="https://www.aljazeera.net/rss/رياضة" type="rss"/>
+      <outline title="روسيا اليوم - رياضة" xmlUrl="https://arabic.rt.com/rss/رياضة/" type="rss"/>
+      <outline title="بي إن سبورتس" xmlUrl="https://www.beinsports.com/ar/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

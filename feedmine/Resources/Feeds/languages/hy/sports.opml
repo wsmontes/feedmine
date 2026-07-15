@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Armenian</title>
+    <language>hy</language>
+    <dateCreated>2026-07-15T19:17:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Armenian)">
+      <outline title="Sport.news.am" xmlUrl="https://sport.news.am/feed" type="rss"/>
+      <outline title="ArmSport.am" xmlUrl="https://armsport.am/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

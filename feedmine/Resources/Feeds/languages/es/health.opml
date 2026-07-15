@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:22:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Spanish)">
+      <outline title="Salud - El País" xmlUrl="https://elpais.com/salud/feed.rss" type="rss"/>
+      <outline title="Salud - ABC" xmlUrl="https://www.abc.es/salud/feed.rss" type="rss"/>
+      <outline title="Salud - El Mundo" xmlUrl="https://www.elmundo.es/salud/feed.rss" type="rss"/>
+      <outline title="Cuídate Plus" xmlUrl="https://www.cuidateplus.com/rss/" type="rss"/>
+      <outline title="Webconsultas" xmlUrl="https://www.webconsultas.com/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

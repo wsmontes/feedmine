@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Spanish)">
+      <outline title="Universidad de Buenos Aires" xmlUrl="https://www.uba.ar/feed/" type="rss"/>
+      <outline title="Universidad Nacional Autónoma de México" xmlUrl="https://www.unam.mx/feed" type="rss"/>
+      <outline title="Universidad de Salamanca" xmlUrl="https://www.usal.es/feed" type="rss"/>
+      <outline title="Universidad de Barcelona" xmlUrl="https://www.ub.edu/web/ub/es/rss/noticias/" type="rss"/>
+      <outline title="Universidad Politécnica de Madrid" xmlUrl="https://www.upm.es/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

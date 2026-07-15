@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Ukrainian</title>
+    <language>uk</language>
+    <dateCreated>2026-07-15T18:54:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Ukrainian)">
+      <outline title="Юридична газета" xmlUrl="https://yur-gazeta.com/rss.xml" type="rss"/>
+      <outline title="Закон і Бізнес" xmlUrl="https://zib.com.ua/rss.xml" type="rss"/>
+      <outline title="ЛІГА:Закон" xmlUrl="https://news.liga.net/law/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

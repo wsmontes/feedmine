@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>International Relations, Geopolitics — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="International Relations, Geopolitics (Finnish)">
+      <outline title="Ulkopolitiikka" xmlUrl="https://ulkopolitiikka.fi/feed/" type="rss"/>
+      <outline title="FIIA" xmlUrl="https://www.fiia.fi/feed" type="rss"/>
+      <outline title="Yle Uutiset Ulkomaat" xmlUrl="https://yle.fi/uutiset/rss/ulkomaat.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube News — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube News (Dutch)">
+      <outline title="YouTube Nieuws (Google Blog)" xmlUrl="https://youtube.googleblog.com/nl/feeds/posts/default" type="rss"/>
+      <outline title="Dutch YouTubers Nieuws" xmlUrl="https://www.dutchyoutubers.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

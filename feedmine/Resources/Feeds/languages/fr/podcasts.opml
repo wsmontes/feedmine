@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (French)">
+      <outline title="France Culture - Podcasts" xmlUrl="https://www.franceculture.fr/podcast/rss" type="rss"/>
+      <outline title="Radio France - Podcasts" xmlUrl="https://radiofrance.fr/podcast/rss" type="rss"/>
+      <outline title="Le Monde - Podcasts" xmlUrl="https://www.lemonde.fr/podcasts/rss.xml" type="rss"/>
+      <outline title="Binge Audio" xmlUrl="https://www.binge.audio/feed/podcast/" type="rss"/>
+    </outline>
+  </body>
+</opml>

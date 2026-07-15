@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Trails, Routes — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Trails, Routes (French)">
+      <outline title="Trail Running France" xmlUrl="https://www.trailrunningfrance.com/feed/" type="rss"/>
+      <outline title="Esprit Trail" xmlUrl="https://www.esprit-trail.com/feed/" type="rss"/>
+      <outline title="Trail Session" xmlUrl="https://www.trailsession.com/feed/" type="rss"/>
+      <outline title="Le Trail" xmlUrl="https://www.letrail.fr/feed/" type="rss"/>
+      <outline title="Rando et Trail" xmlUrl="https://www.randoettrail.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Motorcycling — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Motorcycling (Hungarian)">
+      <outline title="Motorrevü" xmlUrl="https://motorrevu.hu/feed" type="rss"/>
+      <outline title="MotorSport.hu" xmlUrl="https://motorsport.hu/feed" type="rss"/>
+      <outline title="Motorosok.hu" xmlUrl="https://motorosok.hu/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:51:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Estonian)">
+      <outline title="Ajalugu - Postimees" xmlUrl="https://ajalugu.postimees.ee/rss" type="rss"/>
+      <outline title="Ajalugu - Delfi" xmlUrl="https://ajalugu.delfi.ee/rss" type="rss"/>
+      <outline title="Tuna - Ajalookultuuri ajakiri" xmlUrl="https://tuna.ee/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

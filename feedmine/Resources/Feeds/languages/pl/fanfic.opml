@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fanfiction, Fandom Communities — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fanfiction, Fandom Communities (Polish)">
+      <outline title="FanFiction.net Polska" xmlUrl="https://www.fanfiction.net/polish/rss/recent.xml" type="rss"/>
+      <outline title="Archive of Our Own - Polish" xmlUrl="https://archiveofourown.org/tags/Polski/works.rss" type="rss"/>
+      <outline title="Fandom Polska" xmlUrl="https://fandompolska.pl/feed/" type="rss"/>
+      <outline title="Wattpad - Polish" xmlUrl="https://www.wattpad.com/community/pl/rss" type="rss"/>
+      <outline title="Fanfiki.pl" xmlUrl="https://fanfiki.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

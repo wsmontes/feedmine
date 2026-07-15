@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Portuguese)">
+      <outline title="((o))eco" xmlUrl="https://oeco.org.br/feed/" type="rss"/>
+      <outline title="EcoDebate" xmlUrl="https://www.ecodebate.com.br/feed/" type="rss"/>
+      <outline title="Ambiente Brasil" xmlUrl="https://www.ambientebrasil.com.br/feed/" type="rss"/>
+      <outline title="Planeta Sustentável" xmlUrl="https://planetasustentavel.abril.com.br/feed/" type="rss"/>
+      <outline title="Observatório do Clima" xmlUrl="https://www.oc.eco.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

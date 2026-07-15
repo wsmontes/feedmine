@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Museums — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Museums (Italian)">
+      <outline title="Musei Italiani" xmlUrl="https://www.museiitaliani.it/feed" type="rss"/>
+      <outline title="Finestre sull'Arte" xmlUrl="https://www.finestresullarte.info/feed" type="rss"/>
+      <outline title="Arte.it" xmlUrl="https://www.arte.it/feed" type="rss"/>
+      <outline title="Museo Oggi" xmlUrl="https://www.museooggi.com/feed" type="rss"/>
+      <outline title="Patrimonio Culturale" xmlUrl="https://www.patrimonioculturale.net/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

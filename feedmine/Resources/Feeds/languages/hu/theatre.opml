@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theatre — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theatre (Hungarian)">
+      <outline title="Színház.hu RSS" xmlUrl="https://szinhaz.hu/feed" type="rss"/>
+      <outline title="Kulturpart RSS" xmlUrl="https://kulturpart.hu/rss" type="rss"/>
+      <outline title="Fidelio.hu - Színház RSS" xmlUrl="https://fidelio.hu/rss/szinhaz" type="rss"/>
+      <outline title="Színházi Kritikusok RSS" xmlUrl="https://szinhazikritikusok.hu/feed/" type="rss"/>
+      <outline title="7óra7 RSS" xmlUrl="https://7ora7.hu/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

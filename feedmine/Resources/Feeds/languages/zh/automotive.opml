@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (Chinese)">
+      <outline title="汽车之家" xmlUrl="https://www.autohome.com.cn/rss" type="rss"/>
+      <outline title="易车网" xmlUrl="https://www.yiche.com/rss" type="rss"/>
+      <outline title="爱卡汽车" xmlUrl="https://www.xcar.com.cn/rss" type="rss"/>
+      <outline title="太平洋汽车" xmlUrl="https://www.pcauto.com.cn/rss" type="rss"/>
+      <outline title="新车评" xmlUrl="https://www.xincheping.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

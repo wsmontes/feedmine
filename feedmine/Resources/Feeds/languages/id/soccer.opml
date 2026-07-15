@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:53Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Indonesian)">
+      <outline title="Bola.net - Berita Sepak Bola" xmlUrl="https://www.bola.net/feed/" type="rss"/>
+      <outline title="Goal.com Indonesia" xmlUrl="https://www.goal.com/id/feeds/news?format=rss" type="rss"/>
+      <outline title="Okezone Bola" xmlUrl="https://bola.okezone.com/feed" type="rss"/>
+      <outline title="Liputan6 Bola" xmlUrl="https://www.liputan6.com/bola/rss" type="rss"/>
+      <outline title="Kompas Bola" xmlUrl="https://bola.kompas.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

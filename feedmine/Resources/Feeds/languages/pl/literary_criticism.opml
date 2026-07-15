@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Literary Criticism, Book Reviews — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Literary Criticism, Book Reviews (Polish)">
+      <outline title="Dwutygodnik - Literatura" xmlUrl="https://www.dwutygodnik.com/rss/literatura.xml" type="rss"/>
+      <outline title="Krytycznym Okiem" xmlUrl="https://krytycznymokiem.pl/feed/" type="rss"/>
+      <outline title="Booklips.pl" xmlUrl="https://booklips.pl/feed/" type="rss"/>
+      <outline title="Krytyka Polityczna - Kultura" xmlUrl="https://krytykapolityczna.pl/kultura/feed/" type="rss"/>
+      <outline title="Lubimyczytać.pl - Blog" xmlUrl="https://lubimyczytac.pl/blog/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Serbian</title>
+    <language>sr</language>
+    <dateCreated>2026-07-15T18:47:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Serbian)">
+      <outline title="Универзитет у Београду" xmlUrl="https://www.bg.ac.rs/sr/vesti/rss.xml" type="rss"/>
+      <outline title="Универзитет у Новом Саду" xmlUrl="https://www.uns.ac.rs/sr/vesti/rss.xml" type="rss"/>
+      <outline title="Универзитет у Нишу" xmlUrl="https://www.ni.ac.rs/vesti/rss.xml" type="rss"/>
+      <outline title="Универзитет у Крагујевцу" xmlUrl="https://www.kg.ac.rs/vesti/rss.xml" type="rss"/>
+      <outline title="Универзитет у Приштини (са привременим седиштем у Косовској Митровици)" xmlUrl="https://www.pr.ac.rs/vesti/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

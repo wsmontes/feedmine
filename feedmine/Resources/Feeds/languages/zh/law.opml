@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:57:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Chinese)">
+      <outline title="中国法院网" xmlUrl="https://www.chinacourt.org/rss/law.xml" type="rss"/>
+      <outline title="法律博客" xmlUrl="https://blog.chinacourt.org/feed/" type="rss"/>
+      <outline title="法制网" xmlUrl="https://www.legaldaily.com.cn/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

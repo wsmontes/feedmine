@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Slovenian)">
+      <outline title="Nogomania" xmlUrl="https://www.nogomania.com/RSS.aspx" type="rss"/>
+      <outline title="RTV Slovenija - Nogomet" xmlUrl="https://www.rtvslo.si/sport/nogomet/rss" type="rss"/>
+      <outline title="Siol.net - Nogomet" xmlUrl="https://siol.net/sport/nogomet/rss" type="rss"/>
+      <outline title="24ur.com - Nogomet" xmlUrl="https://www.24ur.com/rss/sport/nogomet.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

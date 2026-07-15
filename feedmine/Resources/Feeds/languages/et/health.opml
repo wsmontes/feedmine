@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:51:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Estonian)">
+      <outline title="Tervis - Postimees" xmlUrl="https://tervis.postimees.ee/rss" type="rss"/>
+      <outline title="Tervis - Delfi" xmlUrl="https://tervis.delfi.ee/rss" type="rss"/>
+      <outline title="Õhtuleht - Tervis" xmlUrl="https://www.ohtuleht.ee/rss/tervis" type="rss"/>
+    </outline>
+  </body>
+</opml>

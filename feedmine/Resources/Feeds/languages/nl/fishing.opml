@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fishing — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:36:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fishing (Dutch)">
+      <outline title="Hengelsport Nieuws" xmlUrl="https://hengelsportnieuws.nl/feed/" type="rss"/>
+      <outline title="Visserij Nieuws" xmlUrl="https://visserijnieuws.nl/feed/" type="rss"/>
+      <outline title="Hengelsport Magazine" xmlUrl="https://hengelsportmagazine.nl/feed/" type="rss"/>
+      <outline title="VIS TV" xmlUrl="https://vistv.nl/feed/" type="rss"/>
+      <outline title="Karpervissen Nederland" xmlUrl="https://karpervissennederland.nl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

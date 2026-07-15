@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:36:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Dutch)">
+      <outline title="Filmtotaal" xmlUrl="https://www.filmtotaal.nl/feed" type="rss"/>
+      <outline title="MovieMeter" xmlUrl="https://www.moviemeter.nl/rss/nieuws" type="rss"/>
+    </outline>
+  </body>
+</opml>

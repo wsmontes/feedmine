@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:27:06Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Russian)">
+      <outline title="Запуск завтра" xmlUrl="https://zapuskzavtra.ru/feed/podcast/" type="rss"/>
+      <outline title="Радио-Т" xmlUrl="https://radio-t.com/podcast.rss" type="rss"/>
+      <outline title="Как делают игры" xmlUrl="https://feeds.simplecast.com/7l2GqB_R" type="rss"/>
+      <outline title="Книжный базар" xmlUrl="https://knizhnyibazar.libsyn.com/rss" type="rss"/>
+      <outline title="Толкователи" xmlUrl="https://tolkovateli.libsyn.com/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

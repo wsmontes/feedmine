@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube Feeds — Filipino</title>
+    <language>tl</language>
+    <dateCreated>2026-07-15T19:06:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube Feeds (Filipino)">
+      <outline title="YouTube Trending Feed (Philippines)" xmlUrl="https://www.youtube.com/feeds/trending?gl=PH" type="rss"/>
+      <outline title="YouTube Gaming Feed (Philippines)" xmlUrl="https://www.youtube.com/feeds/trending?gl=PH&amp;category=Gaming" type="rss"/>
+      <outline title="YouTube Music Feed (Philippines)" xmlUrl="https://www.youtube.com/feeds/trending?gl=PH&amp;category=Music" type="rss"/>
+    </outline>
+  </body>
+</opml>

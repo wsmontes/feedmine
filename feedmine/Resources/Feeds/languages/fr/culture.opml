@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:53Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (French)">
+      <outline title="France Culture" xmlUrl="https://www.franceculture.fr/rss.xml" type="rss"/>
+      <outline title="Les Inrockuptibles" xmlUrl="https://www.lesinrocks.com/feed/" type="rss"/>
+      <outline title="Télérama" xmlUrl="https://www.telerama.fr/rss/" type="rss"/>
+      <outline title="Le Monde - Culture" xmlUrl="https://www.lemonde.fr/culture/rss_full.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

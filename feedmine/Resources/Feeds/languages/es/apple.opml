@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Apple — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:21:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Apple (Spanish)">
+      <outline title="AppleWeblog" xmlUrl="https://appleweblog.com/feed" type="rss"/>
+      <outline title="Applesfera" xmlUrl="https://www.applesfera.com/rss2.xml" type="rss"/>
+      <outline title="iPhoneA2" xmlUrl="https://www.iphonea2.com/feed" type="rss"/>
+      <outline title="ManzanaTech" xmlUrl="https://manzanatech.es/feed/" type="rss"/>
+      <outline title="Appleismo" xmlUrl="https://appleismo.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

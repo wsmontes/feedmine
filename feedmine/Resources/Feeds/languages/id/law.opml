@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Indonesian)">
+      <outline title="Hukumonline" xmlUrl="https://www.hukumonline.com/rss/berita" type="rss"/>
+      <outline title="Kompas.com - Hukum" xmlUrl="https://www.kompas.com/tag/hukum/rss" type="rss"/>
+      <outline title="Tempo.co - Hukum" xmlUrl="https://www.tempo.co/tag/hukum/rss" type="rss"/>
+      <outline title="Detik.com - Hukum" xmlUrl="https://www.detik.com/tag/hukum/rss" type="rss"/>
+      <outline title="Liputan6.com - Hukum" xmlUrl="https://www.liputan6.com/tag/hukum/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

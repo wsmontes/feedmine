@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:51:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (Estonian)">
+      <outline title="Med24" xmlUrl="https://www.med24.ee/feed/" type="rss"/>
+      <outline title="Eesti Arst" xmlUrl="https://www.eestiarst.ee/feed/" type="rss"/>
+      <outline title="Tervise Arengu Instituut" xmlUrl="https://www.tai.ee/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

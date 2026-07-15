@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Ukrainian</title>
+    <language>uk</language>
+    <dateCreated>2026-07-15T18:55:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Ukrainian)">
+      <outline title="ITC.ua" xmlUrl="https://itc.ua/feed/" type="rss"/>
+      <outline title="AIN.UA" xmlUrl="https://ain.ua/feed/" type="rss"/>
+      <outline title="Українська правда. Техно" xmlUrl="https://www.pravda.com.ua/rss/view_technology/" type="rss"/>
+    </outline>
+  </body>
+</opml>

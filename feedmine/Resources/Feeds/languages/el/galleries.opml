@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Greek)">
+      <outline title="Εικαστικό Βήμα" xmlUrl="https://www.eikastikovima.gr/feed/" type="rss"/>
+      <outline title="CultureNow" xmlUrl="https://www.culturenow.gr/feed/" type="rss"/>
+      <outline title="Art Magazine" xmlUrl="https://www.artmag.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

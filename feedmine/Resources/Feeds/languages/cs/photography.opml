@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photography — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:07:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Photography (Czech)">
+      <outline title="Fotografovani.cz" xmlUrl="https://www.fotografovani.cz/rss/clanky.xml" type="rss"/>
+      <outline title="FotoAparát.cz" xmlUrl="https://www.fotoaparat.cz/rss/" type="rss"/>
+      <outline title="MegaPixel" xmlUrl="https://www.megapixel.cz/rss/clanky.xml" type="rss"/>
+      <outline title="DigiNeff" xmlUrl="https://www.digineff.cz/rss/" type="rss"/>
+      <outline title="Fotografie – Idnes.cz" xmlUrl="https://www.idnes.cz/technet/fotografie.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

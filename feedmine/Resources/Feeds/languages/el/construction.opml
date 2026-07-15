@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Construction, Building — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Construction, Building (Greek)">
+      <outline title="Building Green" xmlUrl="https://buildinggreen.gr/feed/" type="rss"/>
+      <outline title="Construction and Architecture" xmlUrl="https://www.constructionandarchitecture.gr/feed/" type="rss"/>
+      <outline title="Ktirio" xmlUrl="https://www.ktirio.gr/feed/" type="rss"/>
+      <outline title="Archisearch" xmlUrl="https://www.archisearch.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Whisky — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Whisky (Dutch)">
+      <outline title="Whisky.blog" xmlUrl="https://whisky.blog/feed/" type="rss"/>
+      <outline title="Whisky.nl - Nieuws" xmlUrl="https://www.whisky.nl/rss/nieuws.xml" type="rss"/>
+      <outline title="The Nose - Whiskyblog" xmlUrl="https://www.the-nose.nl/feed/" type="rss"/>
+      <outline title="Whiskybase Blog" xmlUrl="https://blog.whiskybase.com/feed/" type="rss"/>
+      <outline title="Malt Maniacs" xmlUrl="https://www.maltmaniacs.org/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Aviation — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:31:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Aviation (French)">
+      <outline title="Aerobuzz" xmlUrl="https://www.aerobuzz.fr/feed/" type="rss"/>
+      <outline title="Aviation Civile" xmlUrl="https://www.aviation-civile.com/feed/" type="rss"/>
+      <outline title="Air Journal" xmlUrl="https://www.air-journal.fr/feed/" type="rss"/>
+      <outline title="AéroWeb" xmlUrl="https://www.aeroweb-fr.net/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

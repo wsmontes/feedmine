@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Apple — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Apple (Chinese)">
+      <outline title="威锋网" xmlUrl="https://www.feng.com/rss.xml" type="rss"/>
+      <outline title="MacX.cn" xmlUrl="https://www.macx.cn/rss.xml" type="rss"/>
+      <outline title="Apple中文网" xmlUrl="https://www.apple.cn/feed" type="rss"/>
+      <outline title="果粉网" xmlUrl="https://www.guofeng.com/feed" type="rss"/>
+      <outline title="爱思助手" xmlUrl="https://www.i4.cn/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

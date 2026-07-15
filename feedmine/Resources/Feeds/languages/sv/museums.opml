@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Museums — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Museums (Swedish)">
+      <outline title="Sveriges Museer" xmlUrl="https://www.sverigesmuseer.se/feed/" type="rss"/>
+      <outline title="Historiska Museet" xmlUrl="https://historiska.se/feed/" type="rss"/>
+      <outline title="Nationalmuseum" xmlUrl="https://www.nationalmuseum.se/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

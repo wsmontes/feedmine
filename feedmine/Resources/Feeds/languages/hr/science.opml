@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:59:23Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Croatian)">
+      <outline title="Znanost.hr" xmlUrl="https://znanost.hr/feed/" type="rss"/>
+      <outline title="Bug.hr - Znanost" xmlUrl="https://www.bug.hr/znanost/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

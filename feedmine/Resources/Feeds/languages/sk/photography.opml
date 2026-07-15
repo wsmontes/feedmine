@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photography — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:59Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Photography (Slovak)">
+      <outline title="FotoVideo" xmlUrl="https://www.fotovideo.sk/rss.xml" type="rss"/>
+      <outline title="DigiNeff" xmlUrl="https://www.digineff.sk/feed/" type="rss"/>
+      <outline title="Fotonews" xmlUrl="https://www.fotonews.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

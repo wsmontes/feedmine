@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Luxury Fashion, Haute Couture — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Luxury Fashion, Haute Couture (French)">
+      <outline title="Vogue France" xmlUrl="https://www.vogue.fr/feed/rss" type="rss"/>
+      <outline title="Elle France" xmlUrl="https://www.elle.fr/feed/rss.xml" type="rss"/>
+      <outline title="Fashion Network" xmlUrl="https://fr.fashionnetwork.com/rss/news.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

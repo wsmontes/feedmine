@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (French)">
+      <outline title="Première" xmlUrl="https://www.premiere.fr/rss/feed" type="rss"/>
+      <outline title="AlloCiné" xmlUrl="https://www.allocine.fr/rss/news.xml" type="rss"/>
+      <outline title="Les Inrockuptibles - Cinéma" xmlUrl="https://www.lesinrocks.com/cinema/feed/" type="rss"/>
+      <outline title="Écran Large" xmlUrl="https://www.ecranlarge.com/feed" type="rss"/>
+      <outline title="Le Monde - Cinéma" xmlUrl="https://www.lemonde.fr/cinema/rss_full.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

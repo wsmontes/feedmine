@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (French)">
+      <outline title="Voyageurs du Monde" xmlUrl="https://www.voyageursdumonde.fr/feed/" type="rss"/>
+      <outline title="Routard" xmlUrl="https://www.routard.com/feed/" type="rss"/>
+      <outline title="Petit Futé" xmlUrl="https://www.petitfute.com/feed/" type="rss"/>
+      <outline title="Le Blog de Voyage" xmlUrl="https://www.leblogdevoyage.com/feed/" type="rss"/>
+      <outline title="Voyage et Voyages" xmlUrl="https://www.voyageetvoyages.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

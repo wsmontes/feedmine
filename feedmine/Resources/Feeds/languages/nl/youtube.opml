@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube Feeds — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube Feeds (Dutch)">
+      <outline title="YouTube Nederland Blog" xmlUrl="https://nl.youtube.com/feed/trending" type="rss"/>
+      <outline title="YouTube Creators Blog (NL)" xmlUrl="https://youtube-creators.googleblog.com/nl/feeds/posts/default" type="rss"/>
+    </outline>
+  </body>
+</opml>

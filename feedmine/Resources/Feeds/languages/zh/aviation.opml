@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Aviation — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Aviation (Chinese)">
+      <outline title="民航资源网" xmlUrl="https://www.carnoc.com/rss" type="rss"/>
+      <outline title="航空之家" xmlUrl="https://www.aviationhome.com/feed" type="rss"/>
+      <outline title="中国航空新闻网" xmlUrl="https://www.cannews.com.cn/rss" type="rss"/>
+      <outline title="飞友网" xmlUrl="https://www.flyertea.com/rss" type="rss"/>
+      <outline title="网易航空" xmlUrl="https://www.163.com/air/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

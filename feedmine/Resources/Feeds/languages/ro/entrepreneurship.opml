@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Entrepreneurship, Startups — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:34:12Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Entrepreneurship, Startups (Romanian)">
+      <outline title="Start-Up.ro" xmlUrl="https://www.start-up.ro/feed/" type="rss"/>
+      <outline title="BusinessCover" xmlUrl="https://www.businesscover.ro/feed/" type="rss"/>
+      <outline title="Antreprenoriat Social" xmlUrl="https://antreprenoriatsocial.com/feed/" type="rss"/>
+      <outline title="Wall-Street.ro - Antreprenoriat" xmlUrl="https://www.wall-street.ro/rss/antreprenoriat.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

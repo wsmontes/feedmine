@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nerd — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:13:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nerd (Greek)">
+      <outline title="Unboxholics" xmlUrl="https://unboxholics.com/feed" type="rss"/>
+      <outline title="GameOver.gr" xmlUrl="https://www.gameover.gr/feed/" type="rss"/>
+      <outline title="Techgear.gr" xmlUrl="https://www.techgear.gr/feed/" type="rss"/>
+      <outline title="IGN Greece" xmlUrl="https://gr.ign.com/feed.xml" type="rss"/>
+      <outline title="Pixel Lab" xmlUrl="https://pixellab.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

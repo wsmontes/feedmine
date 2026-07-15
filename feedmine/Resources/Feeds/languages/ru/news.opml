@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Russian)">
+      <outline title="Lenta.ru — Главное" xmlUrl="https://lenta.ru/rss" type="rss"/>
+      <outline title="РИА Новости" xmlUrl="https://ria.ru/export/rss2/archive/index.xml" type="rss"/>
+      <outline title="ТАСС" xmlUrl="https://tass.ru/rss/v2.xml" type="rss"/>
+      <outline title="BBC News Русская служба" xmlUrl="https://www.bbc.com/russian/index.xml" type="rss"/>
+      <outline title="Meduza" xmlUrl="https://meduza.io/rss/all" type="rss"/>
+    </outline>
+  </body>
+</opml>

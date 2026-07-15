@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Moms, Dads — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Moms, Dads (Russian)">
+      <outline title="Дети Mail.ru" xmlUrl="https://deti.mail.ru/rss/" type="rss"/>
+      <outline title="Letidor" xmlUrl="https://letidor.ru/rss/" type="rss"/>
+      <outline title="Мамсила" xmlUrl="https://mamsila.ru/feed/" type="rss"/>
+      <outline title="BabyBlog.ru — Блоги мам" xmlUrl="https://www.babyblog.ru/feed/" type="rss"/>
+      <outline title="Нэнси — Родительство" xmlUrl="https://n-e-n-s-y.ru/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Family, Relationships — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:29Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Family, Relationships (Finnish)">
+      <outline title="Vauva.fi RSS" xmlUrl="https://www.vauva.fi/feed" type="rss"/>
+      <outline title="Meillä kotona - RSS" xmlUrl="https://www.meillakotona.fi/feed" type="rss"/>
+      <outline title="Perhe - Yle" xmlUrl="https://feeds.yle.fi/uutiset/v1/majorTopic/PERHE.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

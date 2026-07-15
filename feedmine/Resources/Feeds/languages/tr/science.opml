@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:39Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Turkish)">
+      <outline title="Bilim ve Teknik" xmlUrl="https://bilimteknik.tubitak.gov.tr/feed" type="rss"/>
+      <outline title="Bilim Dünyası" xmlUrl="https://bilimdunyasi.com/feed/" type="rss"/>
+      <outline title="Evrim Ağacı" xmlUrl="https://evrimagaci.org/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

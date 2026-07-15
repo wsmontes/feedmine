@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Museums — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:05Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Museums (Polish)">
+      <outline title="Muzeum Narodowe w Krakowie" xmlUrl="https://mnk.pl/rss/aktualnosci.xml" type="rss"/>
+      <outline title="Muzeum Powstania Warszawskiego" xmlUrl="https://www.1944.pl/rss/aktualnosci.xml" type="rss"/>
+      <outline title="Zamek Królewski na Wawelu" xmlUrl="https://wawel.krakow.pl/rss/aktualnosci.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

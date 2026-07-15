@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:34:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Romanian)">
+      <outline title="HotNews" xmlUrl="https://www.hotnews.ro/rss" type="rss"/>
+      <outline title="Digi24" xmlUrl="https://www.digi24.ro/rss" type="rss"/>
+      <outline title="Mediafax" xmlUrl="https://www.mediafax.ro/rss" type="rss"/>
+      <outline title="Știrile ProTV" xmlUrl="https://stirileprotv.ro/rss" type="rss"/>
+      <outline title="Adevărul" xmlUrl="https://adevarul.ro/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

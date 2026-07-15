@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Videogames — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Videogames (Finnish)">
+      <outline title="Pelaaja" xmlUrl="https://pelaaja.fi/rss" type="rss"/>
+      <outline title="V2.fi" xmlUrl="https://www.v2.fi/rss/uutiset.xml" type="rss"/>
+      <outline title="Gamereactor Suomi" xmlUrl="https://www.gamereactor.fi/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Famous People — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Famous People (Chinese)">
+      <outline title="新浪博客-名人博客" xmlUrl="https://blog.sina.com.cn/rss/名人博客.xml" type="rss"/>
+      <outline title="知乎-名人专栏" xmlUrl="https://www.zhihu.com/rss/columns/名人专栏" type="rss"/>
+      <outline title="搜狐-名人博客" xmlUrl="https://blog.sohu.com/rss/名人博客.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

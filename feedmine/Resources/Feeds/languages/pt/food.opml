@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:07Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (Portuguese)">
+      <outline title="Panelinha" xmlUrl="https://www.panelinha.com.br/feed" type="rss"/>
+      <outline title="Tudo Gostoso" xmlUrl="https://www.tudogostoso.com.br/feed/" type="rss"/>
+      <outline title="Receitas de Minuto" xmlUrl="https://receitasdeminuto.com/feed/" type="rss"/>
+      <outline title="Comida e Receitas" xmlUrl="https://comidaereceitas.com.br/feed/" type="rss"/>
+      <outline title="Gshow - Receitas" xmlUrl="https://gshow.globo.com/rss/receitas" type="rss"/>
+    </outline>
+  </body>
+</opml>

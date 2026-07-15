@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:13:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Greek)">
+      <outline title="Καθημερινή" xmlUrl="https://www.kathimerini.gr/feed/" type="rss"/>
+      <outline title="Η Ναυτεμπορική" xmlUrl="https://www.naftemporiki.gr/feed" type="rss"/>
+      <outline title="Πρώτο Θέμα" xmlUrl="https://www.protothema.gr/rss/" type="rss"/>
+      <outline title="Το Βήμα" xmlUrl="https://www.tovima.gr/feed/" type="rss"/>
+      <outline title="in.gr" xmlUrl="https://www.in.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

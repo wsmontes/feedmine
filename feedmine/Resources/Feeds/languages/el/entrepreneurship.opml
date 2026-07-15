@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Entrepreneurship, Startups — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:34Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Entrepreneurship, Startups (Greek)">
+      <outline title="Startupper" xmlUrl="https://www.startupper.gr/feed/" type="rss"/>
+      <outline title="Entrepreneur Greece" xmlUrl="https://www.entrepreneur.com/gr/feed" type="rss"/>
+      <outline title="New Money" xmlUrl="https://www.newmoney.gr/feed/" type="rss"/>
+      <outline title="Business Daily" xmlUrl="https://www.businessdaily.gr/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

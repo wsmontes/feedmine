@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Dogs — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Dogs (Czech)">
+      <outline title="Psi.cz" xmlUrl="https://www.psi.cz/feed/" type="rss"/>
+      <outline title="Pejsek.com" xmlUrl="https://www.pejsek.com/feed/" type="rss"/>
+      <outline title="Kynologický klub ČR" xmlUrl="https://www.kynologickyklub.cz/feed/" type="rss"/>
+      <outline title="Psí koutek" xmlUrl="https://www.psikoutek.cz/feed/" type="rss"/>
+      <outline title="Canis.cz" xmlUrl="https://www.canis.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

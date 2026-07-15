@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Arcade Games, Pinball — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:02:24Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Arcade Games, Pinball (Polish)">
+      <outline title="Arcadepolis" xmlUrl="https://arcadepolis.pl/feed/" type="rss"/>
+      <outline title="Pinball News Polska" xmlUrl="https://pinballnews.pl/feed/" type="rss"/>
+      <outline title="RetroGraj" xmlUrl="https://retrograj.pl/tag/arcade/feed/" type="rss"/>
+      <outline title="Gry-Online Arcade" xmlUrl="https://www.gry-online.pl/feed/tag/arcade" type="rss"/>
+    </outline>
+  </body>
+</opml>

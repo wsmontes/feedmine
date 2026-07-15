@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Filipino</title>
+    <language>tl</language>
+    <dateCreated>2026-07-15T19:05:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Filipino)">
+      <outline title="Rappler" xmlUrl="https://www.rappler.com/feed/" type="rss"/>
+      <outline title="ABS-CBN News" xmlUrl="https://news.abs-cbn.com/feed" type="rss"/>
+      <outline title="GMA News Online" xmlUrl="https://www.gmanetwork.com/news/rss/news/" type="rss"/>
+      <outline title="Inquirer.net" xmlUrl="https://www.inquirer.net/fullfeed" type="rss"/>
+      <outline title="Philstar Global" xmlUrl="https://www.philstar.com/rss/headlines" type="rss"/>
+    </outline>
+  </body>
+</opml>

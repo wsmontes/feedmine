@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:42:37Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Bulgarian)">
+      <outline title="History.bg" xmlUrl="https://history.bg/rss" type="rss"/>
+      <outline title="Българска история" xmlUrl="https://bulgarianhistory.org/feed/" type="rss"/>
+      <outline title="Исторически преглед" xmlUrl="https://historicalreview.bg/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

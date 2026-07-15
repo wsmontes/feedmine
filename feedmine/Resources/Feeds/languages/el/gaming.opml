@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Videogames — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Videogames (Greek)">
+      <outline title="GameOver" xmlUrl="https://www.gameover.gr/feed/" type="rss"/>
+      <outline title="IGN Greece" xmlUrl="https://gr.ign.com/feed.xml" type="rss"/>
+      <outline title="Freegr" xmlUrl="https://www.freegr.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

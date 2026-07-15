@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:23:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Danish)">
+      <outline title="AdvokatWatch" xmlUrl="https://www.advokatwatch.dk/rss/nyheder" type="rss"/>
+      <outline title="Kammeradvokaten" xmlUrl="https://kammeradvokaten.dk/feed/" type="rss"/>
+      <outline title="Djøfbladet" xmlUrl="https://www.djoefbladet.dk/rss/nyheder" type="rss"/>
+      <outline title="Ret&amp;Råd" xmlUrl="https://retograad.dk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

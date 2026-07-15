@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Reference Journalists — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Reference Journalists (Turkish)">
+      <outline title="T24 Bağımsız Gazetecilik" xmlUrl="https://t24.com.tr/rss" type="rss"/>
+      <outline title="Medyascope" xmlUrl="https://medyascope.tv/feed/" type="rss"/>
+      <outline title="Gazete Duvar" xmlUrl="https://www.gazeteduvar.com.tr/rss" type="rss"/>
+      <outline title="Journo" xmlUrl="https://journo.com.tr/feed" type="rss"/>
+      <outline title="P24 Bağımsız Gazetecilik Platformu" xmlUrl="https://p24.org.tr/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

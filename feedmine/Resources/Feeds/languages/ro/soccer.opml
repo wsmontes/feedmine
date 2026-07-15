@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:35:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Romanian)">
+      <outline title="Gazeta Sporturilor - Fotbal" xmlUrl="https://www.gsp.ro/rss/fotbal.xml" type="rss"/>
+      <outline title="ProSport - Fotbal" xmlUrl="https://www.prosport.ro/rss/fotbal.xml" type="rss"/>
+      <outline title="Digi Sport - Fotbal" xmlUrl="https://www.digisport.ro/rss/fotbal" type="rss"/>
+      <outline title="Fanatik - Fotbal" xmlUrl="https://www.fanatik.ro/rss/fotbal.xml" type="rss"/>
+      <outline title="Sport.ro - Fotbal" xmlUrl="https://www.sport.ro/rss/fotbal.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

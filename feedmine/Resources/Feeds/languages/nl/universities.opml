@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Dutch)">
+      <outline title="Universiteit van Nederland" xmlUrl="https://www.universiteitvannederland.nl/feed/" type="rss"/>
+      <outline title="Universiteit Leiden - Nieuws" xmlUrl="https://www.universiteitleiden.nl/nieuws/rss.xml" type="rss"/>
+      <outline title="Universiteit Utrecht - Nieuws" xmlUrl="https://www.uu.nl/nieuws/rss.xml" type="rss"/>
+      <outline title="Universiteit van Amsterdam - Nieuws" xmlUrl="https://www.uva.nl/shared-content/nieuws/rss.xml" type="rss"/>
+      <outline title="TU Delft - Nieuws" xmlUrl="https://www.tudelft.nl/nieuws/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

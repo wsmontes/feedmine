@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Luxury Fashion, Haute Couture — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Luxury Fashion, Haute Couture (Polish)">
+      <outline title="Vogue Polska" xmlUrl="https://www.vogue.pl/feed" type="rss"/>
+      <outline title="Elle Polska" xmlUrl="https://www.elle.pl/rss.xml" type="rss"/>
+      <outline title="Harper's Bazaar Polska" xmlUrl="https://www.harpersbazaar.pl/feed/" type="rss"/>
+      <outline title="Moda i Styl - Gazeta Wyborcza" xmlUrl="https://wyborcza.pl/modaistyl/feed.xml" type="rss"/>
+      <outline title="Luxury Blog Polska" xmlUrl="https://luxuryblog.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

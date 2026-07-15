@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Apple — Norwegian</title>
+    <language>no</language>
+    <dateCreated>2026-07-15T19:10:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Apple (Norwegian)">
+      <outline title="MacRumors: Nyheter" xmlUrl="https://www.macrumors.com/feed/no/" type="rss"/>
+      <outline title="Apple-nyheter fra Tek.no" xmlUrl="https://www.tek.no/rss/apple" type="rss"/>
+      <outline title="iPhoned.no" xmlUrl="https://www.iphoned.no/feed/" type="rss"/>
+      <outline title="Apple-nyheter fra DinSide" xmlUrl="https://www.dinside.no/rss/apple" type="rss"/>
+    </outline>
+  </body>
+</opml>

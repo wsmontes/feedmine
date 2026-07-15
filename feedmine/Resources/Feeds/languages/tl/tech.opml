@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Filipino</title>
+    <language>tl</language>
+    <dateCreated>2026-07-15T19:05:54Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Filipino)">
+      <outline title="TechPinas" xmlUrl="https://www.techpinas.com/feeds/posts/default" type="rss"/>
+      <outline title="YugaTech" xmlUrl="https://www.yugatech.com/feed/" type="rss"/>
+      <outline title="Unbox.ph" xmlUrl="https://www.unbox.ph/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

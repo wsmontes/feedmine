@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:34Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Greek)">
+      <outline title="Green Agenda" xmlUrl="https://greenagenda.gr/feed/" type="rss"/>
+      <outline title="EcoNews" xmlUrl="https://www.econews.gr/feed/" type="rss"/>
+      <outline title="Greenpeace Greece" xmlUrl="https://www.greenpeace.org/greece/feed/" type="rss"/>
+      <outline title="WWF Greece" xmlUrl="https://www.wwf.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

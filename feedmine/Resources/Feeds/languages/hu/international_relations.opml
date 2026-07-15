@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>International Relations, Geopolitics — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="International Relations, Geopolitics (Hungarian)">
+      <outline title="Külügyi Szemle" xmlUrl="https://kulugyiszemle.hu/feed" type="rss"/>
+      <outline title="HVG Világ" xmlUrl="https://hvg.hu/vilag/feed" type="rss"/>
+      <outline title="Magyar Nemzet Külföld" xmlUrl="https://magyarnemzet.hu/kulfold/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

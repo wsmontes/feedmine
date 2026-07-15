@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Hobbies — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:22:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Hobbies (Spanish)">
+      <outline title="Bricolaje - Hogarmania" xmlUrl="https://www.hogarmania.com/bricolaje/feed/" type="rss"/>
+      <outline title="Manualidades - El taller" xmlUrl="https://www.eltaller.es/feed/" type="rss"/>
+      <outline title="Aficiones - Muy Interesante" xmlUrl="https://www.muyinteresante.es/rss/feed/estilo-de-vida" type="rss"/>
+      <outline title="Jardinería - Hogarmania" xmlUrl="https://www.hogarmania.com/jardineria/feed/" type="rss"/>
+      <outline title="Cocina - Directo al Paladar" xmlUrl="https://www.directoalpaladar.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

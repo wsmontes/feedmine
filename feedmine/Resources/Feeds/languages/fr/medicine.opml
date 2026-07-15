@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (French)">
+      <outline title="Le Quotidien du Médecin" xmlUrl="https://www.lequotidiendumedecin.fr/rss.xml" type="rss"/>
+      <outline title="Vidal" xmlUrl="https://www.vidal.fr/actualites/rss.xml" type="rss"/>
+      <outline title="Medscape France" xmlUrl="https://francais.medscape.com/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

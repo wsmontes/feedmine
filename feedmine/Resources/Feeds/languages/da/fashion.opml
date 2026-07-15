@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:23:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (Danish)">
+      <outline title="Eurowoman" xmlUrl="https://eurowoman.dk/feed/" type="rss"/>
+      <outline title="Costume" xmlUrl="https://costume.dk/feed/" type="rss"/>
+      <outline title="Mode og Stil" xmlUrl="https://modeogstil.dk/feed/" type="rss"/>
+      <outline title="Fashion Forum" xmlUrl="https://fashionforum.dk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

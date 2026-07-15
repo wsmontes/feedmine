@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Moms, Dads — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Moms, Dads (Hungarian)">
+      <outline title="Szülők Lapja" xmlUrl="https://szuloklapja.hu/feed" type="rss"/>
+      <outline title="Családinet" xmlUrl="https://csaladinet.hu/rss" type="rss"/>
+      <outline title="Mamami" xmlUrl="https://mamami.hu/feed" type="rss"/>
+      <outline title="Apukakönyv" xmlUrl="https://apukakonyv.hu/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

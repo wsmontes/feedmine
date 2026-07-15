@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:37Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Polish)">
+      <outline title="Sport - WP SportoweFakty" xmlUrl="https://sportowefakty.wp.pl/rss.xml" type="rss"/>
+      <outline title="Sport - TVN24" xmlUrl="https://tvn24.pl/sport/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

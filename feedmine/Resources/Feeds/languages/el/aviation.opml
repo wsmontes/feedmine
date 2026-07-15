@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Aviation — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:12:09Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Aviation (Greek)">
+      <outline title="Aeronews" xmlUrl="https://www.aeronews.gr/feed/" type="rss"/>
+      <outline title="Greek Aviation" xmlUrl="https://greekaviation.gr/feed/" type="rss"/>
+      <outline title="Aviation24.gr" xmlUrl="https://aviation24.gr/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

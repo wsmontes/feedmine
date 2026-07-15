@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nerd — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nerd (Russian)">
+      <outline title="GeekTimes" xmlUrl="https://geektimes.ru/rss/" type="rss"/>
+      <outline title="DTF — Игры, Кино, Технологии" xmlUrl="https://dtf.ru/rss" type="rss"/>
+      <outline title="Habr — Гик-культура" xmlUrl="https://habr.com/ru/rss/hubs/geek-culture/" type="rss"/>
+      <outline title="Мир фантастики" xmlUrl="https://www.mirf.ru/feed/" type="rss"/>
+      <outline title="Канобу" xmlUrl="https://kanobu.ru/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Hungarian)">
+      <outline title="Index - Tudomány" xmlUrl="https://index.hu/tudomany/rss/" type="rss"/>
+      <outline title="Origo - Tudomány" xmlUrl="https://www.origo.hu/tudomany/rss" type="rss"/>
+      <outline title="Qubit" xmlUrl="https://qubit.hu/feed" type="rss"/>
+      <outline title="National Geographic Magyarország" xmlUrl="https://ng.hu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

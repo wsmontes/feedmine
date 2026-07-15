@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gossip, Celebrities — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:36:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Gossip, Celebrities (Dutch)">
+      <outline title="RTL Boulevard" xmlUrl="https://www.rtlboulevard.nl/rss" type="rss"/>
+      <outline title="Privé" xmlUrl="https://www.prive.nl/rss" type="rss"/>
+      <outline title="Story" xmlUrl="https://www.story.nl/rss" type="rss"/>
+      <outline title="NU.nl Sterren" xmlUrl="https://www.nu.nl/sterren/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

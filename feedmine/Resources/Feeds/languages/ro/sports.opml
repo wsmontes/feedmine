@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:35:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Romanian)">
+      <outline title="Gazeta Sporturilor" xmlUrl="https://www.gsp.ro/rss/" type="rss"/>
+      <outline title="ProSport" xmlUrl="https://www.prosport.ro/rss/" type="rss"/>
+      <outline title="Digi Sport" xmlUrl="https://www.digisport.ro/rss/" type="rss"/>
+      <outline title="Fanatik" xmlUrl="https://www.fanatik.ro/rss/" type="rss"/>
+      <outline title="Sport.ro" xmlUrl="https://www.sport.ro/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Geology, Geography — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:17Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Geology, Geography (Slovak)">
+      <outline title="Geologický ústav Dionýza Štúra" xmlUrl="https://www.geology.sk/rss/" type="rss"/>
+      <outline title="Geoveda.sk" xmlUrl="https://geoveda.sk/feed/" type="rss"/>
+      <outline title="Mineraly.sk" xmlUrl="https://www.mineraly.sk/rss/" type="rss"/>
+      <outline title="Geografický časopis" xmlUrl="https://geograficky-casopis.sk/feed/" type="rss"/>
+      <outline title="Environmentálne centrum" xmlUrl="https://environmentalnecentrum.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

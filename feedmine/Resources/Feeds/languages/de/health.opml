@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (German)">
+      <outline title="Apotheken Umschau - Gesundheit" xmlUrl="https://www.apotheken-umschau.de/rss/gesundheit.xml" type="rss"/>
+      <outline title="NetDoktor - News" xmlUrl="https://www.netdoktor.de/rss/news/" type="rss"/>
+    </outline>
+  </body>
+</opml>

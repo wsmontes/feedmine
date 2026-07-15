@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Slovenian)">
+      <outline title="Kvarkadabra" xmlUrl="https://kvarkadabra.net/feed/" type="rss"/>
+      <outline title="Znanost.si" xmlUrl="https://znanost.si/feed/" type="rss"/>
+      <outline title="Mladinska knjiga Znanost" xmlUrl="https://www.mladinska.com/znanost/rss" type="rss"/>
+      <outline title="RTV SLO Znanost" xmlUrl="https://www.rtvslo.si/znanost/rss.xml" type="rss"/>
+      <outline title="Slo-Tech Znanost" xmlUrl="https://www.slo-tech.com/znanost/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

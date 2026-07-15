@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Estonian</title>
+    <language>et</language>
+    <dateCreated>2026-07-15T18:52:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Estonian)">
+      <outline title="Eesti Podcastid" xmlUrl="https://eestipodcastid.ee/feed/" type="rss"/>
+      <outline title="Kuku Raadio Podcastid" xmlUrl="https://www.kuku.ee/podcastid/feed/" type="rss"/>
+      <outline title="Äripäeva Podcastid" xmlUrl="https://www.aripaev.ee/podcastid/feed/" type="rss"/>
+      <outline title="Tasku" xmlUrl="https://tasku.ee/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

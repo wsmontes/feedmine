@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theme Parks, Rollercoasters — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:29Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theme Parks, Rollercoasters (Spanish)">
+      <outline title="Parques de Atracciones" xmlUrl="https://parquesdeatracciones.com/feed/" type="rss"/>
+      <outline title="Roller Coaster DataBase" xmlUrl="https://rcdb.com/rss/es/" type="rss"/>
+      <outline title="Mundo Parques" xmlUrl="https://mundoparques.com/feed/" type="rss"/>
+      <outline title="Theme Park World" xmlUrl="https://themeparkworld.es/feed/" type="rss"/>
+      <outline title="Coaster World" xmlUrl="https://coasterworld.es/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

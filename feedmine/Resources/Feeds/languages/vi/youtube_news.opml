@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>YouTube News — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:31:11Z</dateCreated>
+  </head>
+  <body>
+    <outline text="YouTube News (Vietnamese)">
+      <outline title="VTV24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2gxL1s5hE1sF5f5f5f5f5g" type="rss"/>
+      <outline title="VNExpress" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjG2e4n5y5s5a5b5c5d5e5f" type="rss"/>
+      <outline title="Tuổi Trẻ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkL5o5s5t5u5v5w5x5y5z5" type="rss"/>
+      <outline title="Thanh Niên" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm5n5o5p5q5r5s5t5u5v5w" type="rss"/>
+      <outline title="Dân Trí" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp5q5r5s5t5u5v5w5x5y5z" type="rss"/>
+    </outline>
+  </body>
+</opml>

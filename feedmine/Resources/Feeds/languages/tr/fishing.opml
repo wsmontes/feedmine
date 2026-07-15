@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fishing — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:38:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fishing (Turkish)">
+      <outline title="Balık Avı" xmlUrl="https://www.balikavi.com/feed/" type="rss"/>
+      <outline title="Amatör Balıkçı" xmlUrl="https://www.amatorbalikci.com/feed/" type="rss"/>
+      <outline title="Deniz Haber" xmlUrl="https://www.denizhaber.com/rss" type="rss"/>
+      <outline title="Balık Tutma" xmlUrl="https://www.baliktutma.com/feed/" type="rss"/>
+      <outline title="Sürdürülebilir Balıkçılık" xmlUrl="https://www.surdurulebilirbalikcilik.org/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

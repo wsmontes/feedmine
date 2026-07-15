@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Humor — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:25:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Humor (Portuguese)">
+      <outline title="Humor Brasil" xmlUrl="https://www.humorbrasil.com.br/feed/" type="rss"/>
+      <outline title="O Melhor do Humor" xmlUrl="https://www.omelhordohumor.com.br/feed/" type="rss"/>
+      <outline title="Rindo à Toa" xmlUrl="https://www.rindoatoad.com.br/feed/" type="rss"/>
+      <outline title="Humor na Rede" xmlUrl="https://www.humornarede.com.br/feed/" type="rss"/>
+      <outline title="Piadas Online" xmlUrl="https://www.piadosonline.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

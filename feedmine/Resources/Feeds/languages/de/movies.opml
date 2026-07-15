@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (German)">
+      <outline title="Filmstarts" xmlUrl="https://www.filmstarts.de/rss.xml" type="rss"/>
+      <outline title="Kino.de" xmlUrl="https://www.kino.de/rss/feed.xml" type="rss"/>
+      <outline title="Moviepilot" xmlUrl="https://www.moviepilot.de/feed" type="rss"/>
+      <outline title="Spiegel Kultur - Kino" xmlUrl="https://www.spiegel.de/kultur/kino/index.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

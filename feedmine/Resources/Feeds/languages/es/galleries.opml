@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:22:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Spanish)">
+      <outline title="Arte y Galerías - El País" xmlUrl="https://elpais.com/arte/feed.rss" type="rss"/>
+      <outline title="Galerías de Arte - ABC Cultural" xmlUrl="https://www.abc.es/cultura/arte/feed.rss" type="rss"/>
+      <outline title="Arte - RTVE" xmlUrl="https://www.rtve.es/noticias/arte/feed.rss" type="rss"/>
+      <outline title="Galerías - Masdearte" xmlUrl="https://masdearte.com/feed/" type="rss"/>
+      <outline title="Arte y Cultura - El Mundo" xmlUrl="https://www.elmundo.es/cultura/arte/feed.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

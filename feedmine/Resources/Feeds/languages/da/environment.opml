@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology — Danish</title>
+    <language>da</language>
+    <dateCreated>2026-07-15T19:23:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nature, Ecology (Danish)">
+      <outline title="Danmarks Naturfredningsforening" xmlUrl="https://www.dn.dk/feed/" type="rss"/>
+      <outline title="Verdens Skove" xmlUrl="https://www.verdensskove.org/feed/" type="rss"/>
+      <outline title="Natur og Miljø" xmlUrl="https://natur-og-miljoe.dk/feed/" type="rss"/>
+      <outline title="Miljøstyrelsen" xmlUrl="https://mst.dk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

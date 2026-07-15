@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Videogames — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Videogames (French)">
+      <outline title="Jeuxvideo.com" xmlUrl="https://www.jeuxvideo.com/rss/rss.xml" type="rss"/>
+      <outline title="Gamekult" xmlUrl="https://www.gamekult.com/feed/actualites.xml" type="rss"/>
+      <outline title="Factor News" xmlUrl="https://www.factornews.com/rss/actualites.xml" type="rss"/>
+      <outline title="Millenium" xmlUrl="https://www.millenium.org/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

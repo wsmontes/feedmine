@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Turkish)">
+      <outline title="Webtekno" xmlUrl="https://www.webtekno.com/rss.xml" type="rss"/>
+      <outline title="ShiftDelete.Net" xmlUrl="https://shiftdelete.net/rss.xml" type="rss"/>
+      <outline title="DonanımHaber" xmlUrl="https://www.donanimhaber.com/rss.xml" type="rss"/>
+      <outline title="Teknolojioku" xmlUrl="https://www.teknolojioku.com/rss.xml" type="rss"/>
+      <outline title="CHIP Online Türkiye" xmlUrl="https://www.chip.com.tr/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

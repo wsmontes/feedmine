@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Lithuanian</title>
+    <language>lt</language>
+    <dateCreated>2026-07-15T19:18:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Lithuanian)">
+      <outline title="Kelionės.lt" xmlUrl="https://www.keliones.lt/rss" type="rss"/>
+      <outline title="15min.lt - Kelionės" xmlUrl="https://www.15min.lt/rss/keliones" type="rss"/>
+      <outline title="Delfi.lt - Kelionės" xmlUrl="https://www.delfi.lt/rss/feeds/keliones.xml" type="rss"/>
+      <outline title="Lrytas.lt - Kelionės" xmlUrl="https://www.lrytas.lt/keliones/rss" type="rss"/>
+      <outline title="Pasaulis kišenėje" xmlUrl="https://www.pasauliskiseneje.lt/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

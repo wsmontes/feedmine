@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:39Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Vietnamese)">
+      <outline title="Báo Pháp luật Việt Nam" xmlUrl="https://baophapluat.vn/rss/phap-luat.rss" type="rss"/>
+      <outline title="Báo Pháp luật TP.HCM" xmlUrl="https://plo.vn/rss/phap-luat.rss" type="rss"/>
+      <outline title="Dân trí - Pháp luật" xmlUrl="https://dantri.com.vn/phap-luat.rss" type="rss"/>
+      <outline title="VnExpress - Pháp luật" xmlUrl="https://vnexpress.net/rss/phap-luat.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

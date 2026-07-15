@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:35:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Programming (Romanian)">
+      <outline title="InfoQ Romania" xmlUrl="https://www.infoq.com/ro/feed/" type="rss"/>
+      <outline title="Programare.NET" xmlUrl="https://programare.net/feed/" type="rss"/>
+      <outline title="DevTalks Romania" xmlUrl="https://www.devtalks.ro/feed/" type="rss"/>
+      <outline title="RoDeveloper" xmlUrl="https://rodeveloper.ro/feed/" type="rss"/>
+      <outline title="Adevarul IT" xmlUrl="https://adevarul.ro/feed/it/" type="rss"/>
+    </outline>
+  </body>
+</opml>

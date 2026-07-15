@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Amharic</title>
+    <language>am</language>
+    <dateCreated>2026-07-15T19:24:43Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Amharic)">
+      <outline title="VOA Amharic" xmlUrl="https://www.voaamharic.com/api/zuwqyqiwuw" type="rss"/>
+      <outline title="BBC News አማርኛ" xmlUrl="https://www.bbc.com/amharic/index.xml" type="rss"/>
+      <outline title="DW Amharic" xmlUrl="https://rss.dw.com/amharic/rss.xml" type="rss"/>
+      <outline title="አዲስ አድማስ" xmlUrl="https://www.addisadmassnews.com/rss.xml" type="rss"/>
+      <outline title="ሪፖርተር" xmlUrl="https://www.ethiopianreporter.com/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

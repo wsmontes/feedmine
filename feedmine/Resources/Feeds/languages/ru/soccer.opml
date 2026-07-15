@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:27:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Russian)">
+      <outline title="Чемпионат.com - Футбол" xmlUrl="https://www.championat.com/rss/news/football.xml" type="rss"/>
+      <outline title="Sports.ru - Футбол" xmlUrl="https://www.sports.ru/rss/football.xml" type="rss"/>
+      <outline title="Евроспорт - Футбол" xmlUrl="https://www.eurosport.ru/football/rss.xml" type="rss"/>
+      <outline title="Football.ua - Новости" xmlUrl="https://football.ua/rss/news.xml" type="rss"/>
+      <outline title="Бомбардир - Футбол" xmlUrl="https://bombardir.ru/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

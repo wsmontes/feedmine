@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Entrepreneurship, Startups — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:29Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Entrepreneurship, Startups (Finnish)">
+      <outline title="Yrittajat.fi RSS" xmlUrl="https://www.yrittajat.fi/feed" type="rss"/>
+      <outline title="Kauppalehti - Yrittäjyys" xmlUrl="https://www.kauppalehti.fi/rss/yrittajyys" type="rss"/>
+      <outline title="Startup Life - RSS" xmlUrl="https://startuplife.fi/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

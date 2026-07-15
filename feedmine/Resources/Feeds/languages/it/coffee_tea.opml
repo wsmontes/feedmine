@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Coffee — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Coffee (Italian)">
+      <outline title="Caffè News" xmlUrl="https://www.caffenews.it/feed/" type="rss"/>
+      <outline title="Tea Time Magazine" xmlUrl="https://www.teatimemagazine.it/feed/" type="rss"/>
+      <outline title="Espresso Italiano" xmlUrl="https://www.espressoitaliano.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

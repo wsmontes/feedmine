@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Architecture — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:27:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Architecture (German)">
+      <outline title="BauNetz" xmlUrl="https://www.baunetz.de/rss/aktuell.xml" type="rss"/>
+      <outline title="Detail" xmlUrl="https://www.detail.de/rss/aktuell.xml" type="rss"/>
+      <outline title="Deutsches Architektenblatt" xmlUrl="https://www.dabonline.de/feed/" type="rss"/>
+      <outline title="Architektur &amp; Wohnen" xmlUrl="https://www.awmagazin.de/feed" type="rss"/>
+      <outline title="Stylepark" xmlUrl="https://www.stylepark.com/de/rss/news" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>DIY — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="DIY (Czech)">
+      <outline title="Diyář" xmlUrl="https://www.diyar.cz/feed/" type="rss"/>
+      <outline title="Kutilův svět" xmlUrl="https://www.kutiluvsvet.cz/feed/" type="rss"/>
+      <outline title="Udělej si sám" xmlUrl="https://www.udelejsisam.cz/feed/" type="rss"/>
+      <outline title="Návody na tvoření" xmlUrl="https://www.navodynatvoreni.cz/feed/" type="rss"/>
+      <outline title="Bastlení" xmlUrl="https://www.bastleni.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Mechanics, Engineering — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:05Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Mechanics, Engineering (German)">
+      <outline title="Konstruktionspraxis" xmlUrl="https://www.konstruktionspraxis.vogel.de/rss/" type="rss"/>
+      <outline title="Maschinenmarkt" xmlUrl="https://www.maschinenmarkt.vogel.de/rss/" type="rss"/>
+      <outline title="Ingenieur.de - Maschinenbau" xmlUrl="https://www.ingenieur.de/themen/maschinenbau/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

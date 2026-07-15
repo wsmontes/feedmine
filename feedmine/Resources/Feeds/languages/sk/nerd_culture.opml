@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nerd — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nerd (Slovak)">
+      <outline title="Sector.sk" xmlUrl="https://www.sector.sk/rss" type="rss"/>
+      <outline title="Hry.sk" xmlUrl="https://www.hry.sk/rss" type="rss"/>
+      <outline title="Gamesite.sk" xmlUrl="https://gamesite.sk/feed/" type="rss"/>
+      <outline title="Komiksové novinky" xmlUrl="https://komiksovenovinky.sk/feed/" type="rss"/>
+      <outline title="Sci-fi a fantasy" xmlUrl="https://scifi-fantasy.sk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

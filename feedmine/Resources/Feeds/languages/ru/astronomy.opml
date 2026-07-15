@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Astronomy — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:25:08Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Astronomy (Russian)">
+      <outline title="Astronet" xmlUrl="http://www.astronet.ru/db/rss/apod.xml" type="rss"/>
+      <outline title="Космос и астрономия" xmlUrl="https://kosmos.izmuroma.ru/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:58Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Indonesian)">
+      <outline title="Universitas Indonesia" xmlUrl="https://www.ui.ac.id/feed/" type="rss"/>
+      <outline title="Institut Teknologi Bandung" xmlUrl="https://www.itb.ac.id/rss/berita" type="rss"/>
+      <outline title="Universitas Gadjah Mada" xmlUrl="https://ugm.ac.id/id/feed/" type="rss"/>
+      <outline title="Universitas Brawijaya" xmlUrl="https://ub.ac.id/rss/" type="rss"/>
+      <outline title="Universitas Airlangga" xmlUrl="https://news.unair.ac.id/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

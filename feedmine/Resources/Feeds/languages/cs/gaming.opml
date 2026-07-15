@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Videogames — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:07:06Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Videogames (Czech)">
+      <outline title="Games.cz" xmlUrl="https://www.games.cz/rss/clanky.xml" type="rss"/>
+      <outline title="Hrej.cz" xmlUrl="https://hrej.cz/rss/" type="rss"/>
+      <outline title="Vortex.cz" xmlUrl="https://www.vortex.cz/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

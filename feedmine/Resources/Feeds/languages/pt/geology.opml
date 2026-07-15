@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Geology, Geography — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Geology, Geography (Portuguese)">
+      <outline title="Geologia no Brasil" xmlUrl="https://geologianobrasil.com/feed/" type="rss"/>
+      <outline title="Sociedade Brasileira de Geologia" xmlUrl="https://sbgeo.org.br/feed/" type="rss"/>
+      <outline title="Geologia USP" xmlUrl="https://www.geologia.usp.br/feed/" type="rss"/>
+      <outline title="Revista Brasileira de Geografia" xmlUrl="https://www.revistas.usp.br/rbg/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

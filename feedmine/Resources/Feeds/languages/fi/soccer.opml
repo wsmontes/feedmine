@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:15:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Finnish)">
+      <outline title="Suomen Palloliitto" xmlUrl="https://www.palloliitto.fi/rss/uutiset" type="rss"/>
+      <outline title="Veikkausliiga" xmlUrl="https://www.veikkausliiga.com/rss/uutiset" type="rss"/>
+      <outline title="Yle Urheilu - Jalkapallo" xmlUrl="https://feeds.yle.fi/uutiset/v1/major/0/urheilu/jalkapallo.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

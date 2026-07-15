@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:58:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Chinese)">
+      <outline title="果壳网" xmlUrl="https://www.guokr.com/rss/" type="rss"/>
+      <outline title="科学网" xmlUrl="https://news.sciencenet.cn/xml/news.xml" type="rss"/>
+      <outline title="环球科学" xmlUrl="https://www.huanqiukexue.com/feed/" type="rss"/>
+      <outline title="中科院之声" xmlUrl="https://www.cas.cn/feed/" type="rss"/>
+      <outline title="科普中国" xmlUrl="https://www.kepuchina.cn/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

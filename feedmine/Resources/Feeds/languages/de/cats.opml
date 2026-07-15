@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cat Lovers — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:27:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Cat Lovers (German)">
+      <outline title="Katzenworld" xmlUrl="https://www.katzenworld.de/feed/" type="rss"/>
+      <outline title="Mietz und Mietz" xmlUrl="https://mietzundmietz.de/feed/" type="rss"/>
+      <outline title="Katzenkram" xmlUrl="https://www.katzenkram.net/feed/" type="rss"/>
+      <outline title="Samtpfoten" xmlUrl="https://www.samtpfoten.com/feed/" type="rss"/>
+      <outline title="Katzenseele" xmlUrl="https://katzenseele.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

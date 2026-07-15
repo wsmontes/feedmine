@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:13:52Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Finnish)">
+      <outline title="Suosituimmat blogit" xmlUrl="https://www.blogit.fi/feed/" type="rss"/>
+      <outline title="Blogilista" xmlUrl="https://www.blogilista.fi/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

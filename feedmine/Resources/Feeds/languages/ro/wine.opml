@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wine — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:35:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Wine (Romanian)">
+      <outline title="Vinul.ro" xmlUrl="https://www.vinul.ro/feed/" type="rss"/>
+      <outline title="Revista Vinul" xmlUrl="https://revistavinul.ro/feed/" type="rss"/>
+      <outline title="Cramele României" xmlUrl="https://cramele-romaniei.ro/feed/" type="rss"/>
+      <outline title="Wine Lovers România" xmlUrl="https://winelovers.ro/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

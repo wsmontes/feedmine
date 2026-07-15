@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nerd — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:39:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Nerd (Turkish)">
+      <outline title="Webtekno - Teknoloji Haberleri" xmlUrl="https://www.webtekno.com/rss" type="rss"/>
+      <outline title="ShiftDelete.Net - Teknoloji Blogu" xmlUrl="https://shiftdelete.net/feed" type="rss"/>
+      <outline title="DonanımHaber - Oyun ve Teknoloji" xmlUrl="https://www.donanimhaber.com/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theme Parks, Rollercoasters — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:33:28Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Theme Parks, Rollercoasters (French)">
+      <outline title="Parcs Attractions" xmlUrl="https://www.parcs-attractions.fr/feed/" type="rss"/>
+      <outline title="Coaster France" xmlUrl="https://www.coasterfrance.com/feed/" type="rss"/>
+      <outline title="Parcplaza" xmlUrl="https://www.parcplaza.net/feed/" type="rss"/>
+      <outline title="Theme Park France" xmlUrl="https://www.themeparkfrance.com/feed/" type="rss"/>
+      <outline title="Roller Coaster DataBase" xmlUrl="https://rcdb.com/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

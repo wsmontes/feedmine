@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Travel — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:35:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Travel (Romanian)">
+      <outline title="Traveler Mag Romania" xmlUrl="https://www.traveler.ro/feed/" type="rss"/>
+      <outline title="Calatorim" xmlUrl="https://www.calatorim.ro/feed/" type="rss"/>
+      <outline title="Descopera - Travel" xmlUrl="https://www.descopera.ro/rss/calatorii.xml" type="rss"/>
+      <outline title="Eva Travel" xmlUrl="https://www.eva.ro/rss/calatorii.xml" type="rss"/>
+      <outline title="Stirile ProTV - Travel" xmlUrl="https://stirileprotv.ro/rss/calatorii.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

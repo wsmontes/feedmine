@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:38:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Turkish)">
+      <outline title="Tarih - NTV" xmlUrl="https://www.ntv.com.tr/rss/tarih" type="rss"/>
+      <outline title="Tarih - Hürriyet" xmlUrl="https://www.hurriyet.com.tr/rss/tarih" type="rss"/>
+      <outline title="Arkeofili" xmlUrl="https://arkeofili.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

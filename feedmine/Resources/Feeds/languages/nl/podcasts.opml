@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Dutch</title>
+    <language>nl</language>
+    <dateCreated>2026-07-15T18:37:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Dutch)">
+      <outline title="De Kennis van Nu Podcast" xmlUrl="https://www.nporadio1.nl/podcasts/de-kennis-van-nu/feed.xml" type="rss"/>
+      <outline title="Echt Gebeurd" xmlUrl="https://www.echtgebeurd.nl/feed/podcast/" type="rss"/>
+      <outline title="De Correspondent Podcast" xmlUrl="https://decorrespondent.nl/podcast.rss" type="rss"/>
+      <outline title="NRC Vandaag" xmlUrl="https://www.nrc.nl/podcast/nrc-vandaag/rss/" type="rss"/>
+      <outline title="Boeken FM" xmlUrl="https://boekenfm.nl/feed/podcast/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:47:48Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Swedish)">
+      <outline title="SVT Kultur" xmlUrl="https://www.svt.se/kultur/rss.xml" type="rss"/>
+      <outline title="DN Kultur" xmlUrl="https://www.dn.se/kultur/rss/" type="rss"/>
+      <outline title="Svenska Dagbladet Kultur" xmlUrl="https://www.svd.se/kultur/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

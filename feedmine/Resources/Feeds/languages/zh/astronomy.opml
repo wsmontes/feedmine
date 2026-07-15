@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Astronomy — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:56:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Astronomy (Chinese)">
+      <outline title="牧夫天文论坛" xmlUrl="https://www.astronomy.com.cn/bbs/feed" type="rss"/>
+      <outline title="星空天文网" xmlUrl="https://www.xkyn.com/feed" type="rss"/>
+      <outline title="中国国家天文" xmlUrl="https://www.astron.ac.cn/rss" type="rss"/>
+      <outline title="天文爱好者" xmlUrl="https://www.astronomyfan.cn/feed" type="rss"/>
+      <outline title="NASA中文" xmlUrl="https://www.nasa.gov/rss/zh" type="rss"/>
+    </outline>
+  </body>
+</opml>

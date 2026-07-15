@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fiction, Audio Drama — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:06:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fiction, Audio Drama (Czech)">
+      <outline title="Český rozhlas - Četba" xmlUrl="https://www.rozhlas.cz/rss/ctenarskydenik" type="rss"/>
+      <outline title="Podcasty Českého rozhlasu - Beletrie" xmlUrl="https://www.rozhlas.cz/rss/podcasty/beletrie" type="rss"/>
+      <outline title="Kafkárna" xmlUrl="https://kafkarna.cz/feed/podcast/" type="rss"/>
+    </outline>
+  </body>
+</opml>

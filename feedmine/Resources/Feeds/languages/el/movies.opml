@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Greek</title>
+    <language>el</language>
+    <dateCreated>2026-07-15T19:13:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Greek)">
+      <outline title="FreeCinema" xmlUrl="https://www.freecinema.gr/feed/" type="rss"/>
+      <outline title="CinemaNews" xmlUrl="https://www.cinemanews.gr/feed" type="rss"/>
+      <outline title="Unboxholics" xmlUrl="https://unboxholics.com/feed/cinema" type="rss"/>
+      <outline title="MyFilm.gr" xmlUrl="https://www.myfilm.gr/feed/" type="rss"/>
+      <outline title="Flix.gr" xmlUrl="https://flix.gr/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

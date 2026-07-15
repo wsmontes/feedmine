@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:15:43Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Finnish)">
+      <outline title="Helsingin yliopiston uutiset" xmlUrl="https://www.helsinki.fi/fi/uutiset/rss.xml" type="rss"/>
+      <outline title="Aalto-yliopiston uutiset" xmlUrl="https://www.aalto.fi/fi/uutiset/rss.xml" type="rss"/>
+      <outline title="Tampereen yliopiston uutiset" xmlUrl="https://www.tuni.fi/fi/uutiset/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

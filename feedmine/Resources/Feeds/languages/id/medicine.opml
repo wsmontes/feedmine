@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:19Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (Indonesian)">
+      <outline title="Mediakom - Kemenkes" xmlUrl="https://mediakom.kemkes.go.id/feed" type="rss"/>
+      <outline title="Kompas.com - Kesehatan" xmlUrl="https://www.kompas.com/tag/kesehatan/rss" type="rss"/>
+      <outline title="Tempo.co - Kesehatan" xmlUrl="https://www.tempo.co/tag/kesehatan/rss" type="rss"/>
+      <outline title="Detik.com - Kesehatan" xmlUrl="https://www.detik.com/tag/kesehatan/rss" type="rss"/>
+      <outline title="Liputan6.com - Kesehatan" xmlUrl="https://www.liputan6.com/tag/kesehatan/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fishing — Filipino</title>
+    <language>tl</language>
+    <dateCreated>2026-07-15T19:05:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fishing (Filipino)">
+      <outline title="Philippine Fishing" xmlUrl="https://philippinefishing.com/feed/" type="rss"/>
+      <outline title="Fishing in the Philippines" xmlUrl="https://fishinginthephilippines.com/feed/" type="rss"/>
+      <outline title="BFAR - Bureau of Fisheries" xmlUrl="https://www.bfar.da.gov.ph/feed/" type="rss"/>
+      <outline title="Reel Philippines" xmlUrl="https://reelphilippines.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

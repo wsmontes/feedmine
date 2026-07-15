@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Vietnamese)">
+      <outline title="Blog Của Tôi - Blog cá nhân" xmlUrl="https://blogcuatoi.com/feed/" type="rss"/>
+      <outline title="Spiderum - Blog" xmlUrl="https://spiderum.com/rss" type="rss"/>
+      <outline title="VnBlogs - Top blog Việt" xmlUrl="https://vnblogs.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

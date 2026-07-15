@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech Feeds — Indonesian</title>
+    <language>id</language>
+    <dateCreated>2026-07-15T18:41:53Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Feeds (Indonesian)">
+      <outline title="Detik Inet" xmlUrl="https://inet.detik.com/feed" type="rss"/>
+      <outline title="Kompas Tekno" xmlUrl="https://tekno.kompas.com/feed/" type="rss"/>
+      <outline title="Liputan6 Tekno" xmlUrl="https://www.liputan6.com/tekno/rss" type="rss"/>
+      <outline title="Tech in Asia Indonesia" xmlUrl="https://id.techinasia.com/feed" type="rss"/>
+      <outline title="DailySocial.id" xmlUrl="https://dailysocial.id/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

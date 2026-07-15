@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:15:21Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Finnish)">
+      <outline title="Tiede.fi" xmlUrl="https://www.tiede.fi/feed/" type="rss"/>
+      <outline title="Yle Tiede" xmlUrl="https://feeds.yle.fi/uutiset/v1/major/feed/tiede.xml" type="rss"/>
+      <outline title="Tekniikan Maailma" xmlUrl="https://tekniikanmaailma.fi/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

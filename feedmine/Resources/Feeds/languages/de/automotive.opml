@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:27:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (German)">
+      <outline title="Auto Bild" xmlUrl="https://www.autobild.de/rss/news.xml" type="rss"/>
+      <outline title="Auto Motor und Sport" xmlUrl="https://www.auto-motor-und-sport.de/feed/" type="rss"/>
+      <outline title="Motorrad Online" xmlUrl="https://www.motorradonline.de/feed/" type="rss"/>
+      <outline title="Gute Fahrt" xmlUrl="https://www.gute-fahrt.de/feed/" type="rss"/>
+      <outline title="Elektroauto-News" xmlUrl="https://www.elektroauto-news.net/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

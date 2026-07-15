@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fashion, Style — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:44:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fashion, Style (Italian)">
+      <outline title="Vogue Italia" xmlUrl="https://www.vogue.it/feed/" type="rss"/>
+      <outline title="Elle Italia" xmlUrl="https://www.elle.com/it/feed/" type="rss"/>
+      <outline title="Vanity Fair Italia - Moda" xmlUrl="https://www.vanityfair.it/moda/feed" type="rss"/>
+      <outline title="Grazia Italia" xmlUrl="https://www.grazia.it/feed" type="rss"/>
+      <outline title="Style Piccoli" xmlUrl="https://www.stylepiccoli.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Turkish</title>
+    <language>tr</language>
+    <dateCreated>2026-07-15T18:38:50Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Turkish)">
+      <outline title="Sağlık Haberleri - Hürriyet" xmlUrl="https://www.hurriyet.com.tr/rss/saglik" type="rss"/>
+      <outline title="Sağlık - Milliyet" xmlUrl="https://www.milliyet.com.tr/rss/saglik" type="rss"/>
+      <outline title="Sağlık - NTV" xmlUrl="https://www.ntv.com.tr/rss/saglik" type="rss"/>
+    </outline>
+  </body>
+</opml>

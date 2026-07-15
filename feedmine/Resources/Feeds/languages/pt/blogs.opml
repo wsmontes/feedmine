@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:25:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Portuguese)">
+      <outline title="Blog do Irmão" xmlUrl="https://blogdoirmao.com/feed/" type="rss"/>
+      <outline title="Manual do Usuário" xmlUrl="https://www.manualdousuario.net/feed/" type="rss"/>
+      <outline title="Meio Bit" xmlUrl="https://meiobit.com/feed/" type="rss"/>
+      <outline title="Fabricando Ideias" xmlUrl="https://fabricandoideias.com/feed/" type="rss"/>
+      <outline title="Blog da Lola" xmlUrl="https://blogdalola.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:30:02Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (Vietnamese)">
+      <outline title="AutoPro - Tin tức ô tô" xmlUrl="https://autopro.com.vn/rss/oto-xe-may.rss" type="rss"/>
+      <outline title="VnExpress - Ô tô" xmlUrl="https://vnexpress.net/rss/oto-xe-may.rss" type="rss"/>
+      <outline title="Xe Giao Thông" xmlUrl="https://xegiaothong.vn/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

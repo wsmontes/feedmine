@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Movies — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:45:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Movies (Italian)">
+      <outline title="ComingSoon.it" xmlUrl="https://www.comingsoon.it/rss/feed.xml" type="rss"/>
+      <outline title="BadTaste.it" xmlUrl="https://www.badtaste.it/feed" type="rss"/>
+      <outline title="Cinematografo" xmlUrl="https://www.cinematografo.it/feed" type="rss"/>
+      <outline title="Film.it" xmlUrl="https://www.film.it/rss/feed.xml" type="rss"/>
+      <outline title="Movieplayer.it" xmlUrl="https://www.movieplayer.it/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

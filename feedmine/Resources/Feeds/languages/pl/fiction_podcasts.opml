@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fiction, Audio Drama — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Fiction, Audio Drama (Polish)">
+      <outline title="Polskie Radio - Słuchowiska" xmlUrl="https://www.polskieradio.pl/7/1570/Artykul/rss" type="rss"/>
+      <outline title="Audycje Fabularne - Podcasty" xmlUrl="https://audycjefabularne.pl/feed/" type="rss"/>
+      <outline title="Opowiadania - Podcast" xmlUrl="https://opowiadaniapodcast.pl/feed/" type="rss"/>
+      <outline title="Radio Fabularne" xmlUrl="https://radiofabularne.pl/feed/" type="rss"/>
+      <outline title="Słuchowisko.pl" xmlUrl="https://sluchowisko.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

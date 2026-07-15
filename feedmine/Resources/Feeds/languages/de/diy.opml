@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>DIY — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:28:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="DIY (German)">
+      <outline title="DIY Blog" xmlUrl="https://www.diy-blog.de/feed/" type="rss"/>
+      <outline title="Selbst.de" xmlUrl="https://www.selbst.de/feed/" type="rss"/>
+      <outline title="Bastelblog" xmlUrl="https://bastelblog.de/feed/" type="rss"/>
+      <outline title="Kreativlabor" xmlUrl="https://kreativlabor.de/feed/" type="rss"/>
+      <outline title="Handmade Kultur" xmlUrl="https://handmadekultur.de/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

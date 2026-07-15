@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Slovenian</title>
+    <language>sl</language>
+    <dateCreated>2026-07-15T18:50:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Slovenian)">
+      <outline title="Podcast Slovenija" xmlUrl="https://podcast.si/feed/podcast/" type="rss"/>
+      <outline title="RTV 365 Podcasti" xmlUrl="https://www.rtvslo.si/podcasts/rss.xml" type="rss"/>
+      <outline title="Val 202 Podcasti" xmlUrl="https://val202.rtvslo.si/podcasts/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

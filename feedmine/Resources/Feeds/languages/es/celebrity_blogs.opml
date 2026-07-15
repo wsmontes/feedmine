@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Famous People — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:21:37Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Famous People (Spanish)">
+      <outline title="Vanitatis (El Confidencial)" xmlUrl="https://www.elconfidencial.com/rss/vanitatis/" type="rss"/>
+      <outline title="¡Hola! España" xmlUrl="https://www.hola.com/rss/actualidad/" type="rss"/>
+      <outline title="Diez Minutos" xmlUrl="https://www.diezminutos.es/rss.xml" type="rss"/>
+      <outline title="Lecturas" xmlUrl="https://www.lecturas.com/rss" type="rss"/>
+      <outline title="Semana España" xmlUrl="https://www.semana.es/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:22:13Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Slovak)">
+      <outline title="Šport.sk" xmlUrl="https://www.sport.sk/rss/vsetky.xml" type="rss"/>
+      <outline title="Sport7.sk" xmlUrl="https://www.sport7.sk/rss/" type="rss"/>
+      <outline title="Aktuality.sk - Šport" xmlUrl="https://www.aktuality.sk/rss/sport/" type="rss"/>
+      <outline title="Sme.sk - Šport" xmlUrl="https://www.sme.sk/rss/sport/" type="rss"/>
+      <outline title="Teraz.sk - Šport" xmlUrl="https://www.teraz.sk/rss/sport/" type="rss"/>
+    </outline>
+  </body>
+</opml>

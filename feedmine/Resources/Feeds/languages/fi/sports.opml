@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:15:33Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Finnish)">
+      <outline title="Yle Urheilu" xmlUrl="https://feeds.yle.fi/uutiset/v1/major/0/urheilu.rss" type="rss"/>
+      <outline title="MTV Urheilu" xmlUrl="https://www.mtvuutiset.fi/rss/urheilu.xml" type="rss"/>
+      <outline title="Iltalehti Urheilu" xmlUrl="https://www.iltalehti.fi/rss/urheilu.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

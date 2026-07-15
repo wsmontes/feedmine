@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Chinese</title>
+    <language>zh</language>
+    <dateCreated>2026-07-15T18:57:46Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Chinese)">
+      <outline title="新华社" xmlUrl="https://www.xinhuanet.com/rss/news.xml" type="rss"/>
+      <outline title="环球网" xmlUrl="https://www.huanqiu.com/rss.xml" type="rss"/>
+      <outline title="新浪新闻" xmlUrl="https://news.sina.com.cn/rss/" type="rss"/>
+      <outline title="腾讯新闻" xmlUrl="https://news.qq.com/rss/" type="rss"/>
+      <outline title="网易新闻" xmlUrl="https://news.163.com/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

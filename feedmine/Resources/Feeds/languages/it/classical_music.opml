@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Classical Music (Italian)">
+      <outline title="Classica - Il giornale della musica classica" xmlUrl="https://www.classicagiornale.it/feed/" type="rss"/>
+      <outline title="Radio 3 - Musica" xmlUrl="https://www.raiplayradio.it/portale/feed/?programma=Radio3&amp;podcast=musica" type="rss"/>
+      <outline title="Musicantica" xmlUrl="https://www.musicantica.it/feed/" type="rss"/>
+      <outline title="OperaClick" xmlUrl="https://www.operaclick.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

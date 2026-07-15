@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:21:17Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Slovak)">
+      <outline title="Galerie mesta Bratislavy" xmlUrl="https://www.gmb.sk/rss/" type="rss"/>
+      <outline title="Slovenská národná galéria" xmlUrl="https://www.sng.sk/rss/" type="rss"/>
+      <outline title="Artalk.sk" xmlUrl="https://artalk.sk/feed/" type="rss"/>
+      <outline title="Galéria Jána Koniarka" xmlUrl="https://www.gjk.sk/rss/" type="rss"/>
+      <outline title="Medium: Galéria" xmlUrl="https://medium.com/feed/tag/gal%C3%A9ria" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — German</title>
+    <language>de</language>
+    <dateCreated>2026-07-15T18:29:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (German)">
+      <outline title="Hochschulbildungsreport" xmlUrl="https://hochschulbildungsreport.de/feed/" type="rss"/>
+      <outline title="Deutsches Zentrum für Hochschul- und Wissenschaftsforschung" xmlUrl="https://www.dzhw.eu/aktuelles/feeds/aktuelles.rss" type="rss"/>
+      <outline title="Studis Online" xmlUrl="https://www.studis-online.de/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

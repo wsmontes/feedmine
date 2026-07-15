@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Law, Legal News (Swedish)">
+      <outline title="Dagens Juridik" xmlUrl="https://www.dagensjuridik.se/feed/" type="rss"/>
+      <outline title="Juridikens Värld" xmlUrl="https://www.juridikensvarld.se/feed/" type="rss"/>
+      <outline title="Svenska Juristtidningen" xmlUrl="https://svjt.se/feed/" type="rss"/>
+      <outline title="Advokaten" xmlUrl="https://www.advokaten.se/rss" type="rss"/>
+      <outline title="Infotorg Juridik" xmlUrl="https://www.infotorgjuridik.se/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

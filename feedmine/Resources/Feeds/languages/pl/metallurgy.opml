@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Metallurgy, Metals — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:03:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Metallurgy, Metals (Polish)">
+      <outline title="Hutnik - Wiadomości Hutnicze" xmlUrl="https://hutnik.com.pl/rss.xml" type="rss"/>
+      <outline title="Metalurgia i Odlewnictwo" xmlUrl="https://metalurgiaodlewnictwo.pl/feed/" type="rss"/>
+      <outline title="Przegląd Odlewnictwa" xmlUrl="https://przegladodlewnictwa.pl/feed/" type="rss"/>
+      <outline title="Stal i Metale" xmlUrl="https://stalimetale.pl/feed/" type="rss"/>
+      <outline title="Inżynieria Materiałowa" xmlUrl="https://inzynieriamaterialowa.pl/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

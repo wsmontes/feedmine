@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Romanian</title>
+    <language>ro</language>
+    <dateCreated>2026-07-15T18:34:26Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Romanian)">
+      <outline title="Sanatatea.com" xmlUrl="https://www.sanatatea.com/feed/" type="rss"/>
+      <outline title="Doctorul Zilei" xmlUrl="https://www.doctorulzilei.ro/feed/" type="rss"/>
+      <outline title="CSID - Ce se întâmplă Doctore?" xmlUrl="https://www.csid.ro/feed" type="rss"/>
+      <outline title="Sfatul Medicului" xmlUrl="https://www.sfatulmedicului.ro/feed" type="rss"/>
+      <outline title="Regina Maria" xmlUrl="https://www.reginamaria.ro/blog/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

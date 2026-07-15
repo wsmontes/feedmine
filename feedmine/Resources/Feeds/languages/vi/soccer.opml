@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds — Vietnamese</title>
+    <language>vi</language>
+    <dateCreated>2026-07-15T18:31:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Football / Soccer Feeds (Vietnamese)">
+      <outline title="Bóng Đá Số" xmlUrl="https://bongdaso.vn/rss/home.rss" type="rss"/>
+      <outline title="VnExpress - Bóng đá" xmlUrl="https://vnexpress.net/rss/bong-da.rss" type="rss"/>
+      <outline title="Thể Thao 247 - Bóng đá" xmlUrl="https://thethao247.vn/rss/bong-da.rss" type="rss"/>
+      <outline title="Goal Việt Nam" xmlUrl="https://www.goal.com/feeds/vi/news" type="rss"/>
+      <outline title="Bóng Đá Plus" xmlUrl="https://bongdaplus.vn/rss/home.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

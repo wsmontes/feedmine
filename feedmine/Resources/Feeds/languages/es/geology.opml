@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Geology, Geography — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:22:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Geology, Geography (Spanish)">
+      <outline title="Geología - National Geographic España" xmlUrl="https://www.nationalgeographic.com.es/ciencia/geologia/feed.rss" type="rss"/>
+      <outline title="Geología - Instituto Geológico y Minero de España" xmlUrl="https://www.igme.es/noticias/rss/" type="rss"/>
+      <outline title="Geografía e Historia - El País" xmlUrl="https://elpais.com/geografia-e-historia/feed.rss" type="rss"/>
+      <outline title="Tierra y Geología - Muy Interesante" xmlUrl="https://www.muyinteresante.es/rss/feed/ciencia" type="rss"/>
+      <outline title="Geología - ABC Ciencia" xmlUrl="https://www.abc.es/ciencia/geologia/feed.rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

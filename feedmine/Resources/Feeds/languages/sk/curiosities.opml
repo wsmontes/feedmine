@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Curiosities, Trivia — Slovak</title>
+    <language>sk</language>
+    <dateCreated>2026-07-15T19:20:43Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Curiosities, Trivia (Slovak)">
+      <outline title="Zaujímavosti - SME" xmlUrl="https://zaujimavosti.sme.sk/rss" type="rss"/>
+      <outline title="Zaujímavosti - Pravda" xmlUrl="https://zaujimavosti.pravda.sk/rss" type="rss"/>
+      <outline title="Zaujímavosti - Aktuality" xmlUrl="https://www.aktuality.sk/rss/zaujimavosti/" type="rss"/>
+    </outline>
+  </body>
+</opml>

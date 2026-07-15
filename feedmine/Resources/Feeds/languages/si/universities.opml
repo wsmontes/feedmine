@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities — Sinhala</title>
+    <language>si</language>
+    <dateCreated>2026-07-15T19:20:24Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Universities (Sinhala)">
+      <outline title="University of Colombo - RSS Feed" xmlUrl="https://www.cmb.ac.lk/feed/" type="rss"/>
+      <outline title="University of Peradeniya News" xmlUrl="https://www.pdn.ac.lk/news/feed/" type="rss"/>
+      <outline title="University of Sri Jayewardenepura" xmlUrl="https://www.sjp.ac.lk/feed/" type="rss"/>
+      <outline title="Open University of Sri Lanka" xmlUrl="https://www.ou.ac.lk/feed/" type="rss"/>
+      <outline title="University of Moratuwa" xmlUrl="https://www.mrt.ac.lk/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:43:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Bulgarian)">
+      <outline title="Подкастът на БНР" xmlUrl="https://bnr.bg/podcasts/rss" type="rss"/>
+      <outline title="Подкастът на Дарик" xmlUrl="https://darikradio.bg/podcasts/rss/" type="rss"/>
+      <outline title="Моето предаване" xmlUrl="https://moetopredavane.com/feed/podcast/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:21:37Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Classical Music (Spanish)">
+      <outline title="Música clásica (RTVE)" xmlUrl="https://www.rtve.es/noticias/musica-clasica/rss.xml" type="rss"/>
+      <outline title="Scherzo" xmlUrl="https://scherzo.es/feed/" type="rss"/>
+      <outline title="Melómano Digital" xmlUrl="https://www.melomanodigital.com/feed/" type="rss"/>
+      <outline title="Codalario" xmlUrl="https://www.codalario.com/rss" type="rss"/>
+      <outline title="Platea Magazine" xmlUrl="https://www.plateamagazine.com/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

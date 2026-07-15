@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gossip, Celebrities — French</title>
+    <language>fr</language>
+    <dateCreated>2026-07-15T18:32:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Gossip, Celebrities (French)">
+      <outline title="Purepeople" xmlUrl="https://www.purepeople.com/rss.xml" type="rss"/>
+      <outline title="Voici" xmlUrl="https://www.voici.fr/rss.xml" type="rss"/>
+      <outline title="Closer" xmlUrl="https://www.closermag.fr/rss.xml" type="rss"/>
+      <outline title="Public" xmlUrl="https://www.public.fr/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

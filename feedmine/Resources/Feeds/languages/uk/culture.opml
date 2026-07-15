@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Culture Feeds — Ukrainian</title>
+    <language>uk</language>
+    <dateCreated>2026-07-15T18:54:20Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Culture Feeds (Ukrainian)">
+      <outline title="ЛітАкцент" xmlUrl="https://litakcent.com/feed/" type="rss"/>
+      <outline title="Читомо" xmlUrl="https://chytomo.com/feed/" type="rss"/>
+      <outline title="Культура і мистецтво (Укрінформ)" xmlUrl="https://www.ukrinform.ua/rss-block-ukr/kultura.html" type="rss"/>
+      <outline title="Збруч" xmlUrl="https://zbruc.eu/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

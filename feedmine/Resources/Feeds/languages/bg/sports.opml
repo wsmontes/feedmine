@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Bulgarian</title>
+    <language>bg</language>
+    <dateCreated>2026-07-15T18:43:15Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Bulgarian)">
+      <outline title="Sportal.bg" xmlUrl="https://www.sportal.bg/rss/sport.xml" type="rss"/>
+      <outline title="Gong.bg" xmlUrl="https://www.gong.bg/rss/sport" type="rss"/>
+      <outline title="Topsport.bg" xmlUrl="https://topsport.bg/rss/sport" type="rss"/>
+      <outline title="Actualno.com - Спорт" xmlUrl="https://www.actualno.com/rss/sport" type="rss"/>
+      <outline title="Dnevnik.bg - Спорт" xmlUrl="https://www.dnevnik.bg/rss/sport" type="rss"/>
+    </outline>
+  </body>
+</opml>

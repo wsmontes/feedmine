@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Construction, Building — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:57Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Construction, Building (Italian)">
+      <outline title="Edilportale - News" xmlUrl="https://www.edilportale.com/news/feed" type="rss"/>
+      <outline title="Ingenio" xmlUrl="https://www.ingenio-web.it/feed/" type="rss"/>
+      <outline title="Casa e Cantiere" xmlUrl="https://www.casaecantiere.it/feed/" type="rss"/>
+      <outline title="Costruire" xmlUrl="https://www.costruire.it/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

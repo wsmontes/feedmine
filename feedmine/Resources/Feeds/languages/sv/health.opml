@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:48:14Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Swedish)">
+      <outline title="1177 Vårdguiden" xmlUrl="https://www.1177.se/rss/nyheter/" type="rss"/>
+      <outline title="Läkartidningen" xmlUrl="https://lakartidningen.se/feed/" type="rss"/>
+      <outline title="Svenska Dagbladet - Hälsa" xmlUrl="https://www.svd.se/feed/articles.rss?tag=hälsa" type="rss"/>
+    </outline>
+  </body>
+</opml>

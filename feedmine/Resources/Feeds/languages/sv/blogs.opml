@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Personal Blogs — Swedish</title>
+    <language>sv</language>
+    <dateCreated>2026-07-15T18:47:30Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Personal Blogs (Swedish)">
+      <outline title="Klimatbloggen" xmlUrl="https://klimatbloggen.wordpress.com/feed/" type="rss"/>
+      <outline title="Matblogg" xmlUrl="https://www.matblogg.se/feed/" type="rss"/>
+      <outline title="Fotoblogg" xmlUrl="https://www.fotoblogg.se/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

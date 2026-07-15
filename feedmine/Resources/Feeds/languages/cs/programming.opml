@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:07:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Programming (Czech)">
+      <outline title="Programování – Root.cz" xmlUrl="https://www.root.cz/rss/programovani/" type="rss"/>
+      <outline title="Programování – Interval.cz" xmlUrl="https://interval.cz/rss/programovani.xml" type="rss"/>
+      <outline title="Programování – Zdroják.cz" xmlUrl="https://www.zdrojak.cz/rss/" type="rss"/>
+      <outline title="Programování – AbcLinuxu" xmlUrl="https://www.abclinuxu.cz/rss/programovani.xml" type="rss"/>
+      <outline title="Programování – ITnetwork" xmlUrl="https://www.itnetwork.cz/rss/programovani.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

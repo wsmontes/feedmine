@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Surfing Feeds — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:27:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Surfing Feeds (Portuguese)">
+      <outline title="Surf Total" xmlUrl="https://www.surftotal.com/feed/" type="rss"/>
+      <outline title="Hardcore Surf" xmlUrl="https://hardcoresurf.com.br/feed/" type="rss"/>
+      <outline title="Surfivor" xmlUrl="https://surfivor.com.br/feed/" type="rss"/>
+      <outline title="Banzai Surf" xmlUrl="https://banzaisurf.com.br/feed/" type="rss"/>
+      <outline title="WaveSurf" xmlUrl="https://wavesurf.com.br/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

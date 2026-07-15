@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Medicine, Pharma — Finnish</title>
+    <language>fi</language>
+    <dateCreated>2026-07-15T19:14:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Medicine, Pharma (Finnish)">
+      <outline title="Suomen Lääkärilehti" xmlUrl="https://www.laakarilehti.fi/rss.xml" type="rss"/>
+      <outline title="Duodecim" xmlUrl="https://www.duodecimlehti.fi/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

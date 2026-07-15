@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>History Feeds — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:16Z</dateCreated>
+  </head>
+  <body>
+    <outline text="History Feeds (Russian)">
+      <outline title="История.РФ" xmlUrl="https://histrf.ru/rss" type="rss"/>
+      <outline title="Дилетант" xmlUrl="https://diletant.media/rss/" type="rss"/>
+      <outline title="Warhead" xmlUrl="https://warhead.su/feed" type="rss"/>
+      <outline title="Родина" xmlUrl="https://rg.ru/tema/rodina/rss" type="rss"/>
+      <outline title="Научная Россия - История" xmlUrl="https://scientificrussia.ru/rss/tag/istoriya" type="rss"/>
+    </outline>
+  </body>
+</opml>

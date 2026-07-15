@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Retro Technology — Polish</title>
+    <language>pl</language>
+    <dateCreated>2026-07-15T19:04:27Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Retro Technology (Polish)">
+      <outline title="Retrokomputery" xmlUrl="https://retrokomputery.pl/feed" type="rss"/>
+      <outline title="Old Computers" xmlUrl="https://oldcomputers.pl/feed" type="rss"/>
+      <outline title="RetroGaming" xmlUrl="https://retrogaming.pl/feed" type="rss"/>
+      <outline title="Vintage Computer" xmlUrl="https://vintagecomputer.pl/feed" type="rss"/>
+      <outline title="Atari Polska" xmlUrl="https://ataripolska.pl/feed" type="rss"/>
+    </outline>
+  </body>
+</opml>

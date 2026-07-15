@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Music — Serbian</title>
+    <language>sr</language>
+    <dateCreated>2026-07-15T18:46:49Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Music (Serbian)">
+      <outline title="B92 Muzika" xmlUrl="https://www.b92.net/rss/feed.php?id=muzika" type="rss"/>
+      <outline title="RTS Muzika" xmlUrl="https://www.rts.rs/rss/muzika.xml" type="rss"/>
+      <outline title="N1 Muzika" xmlUrl="https://n1info.rs/rss/muzika" type="rss"/>
+    </outline>
+  </body>
+</opml>

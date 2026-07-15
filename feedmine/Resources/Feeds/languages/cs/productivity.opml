@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Productivity, GTD — Czech</title>
+    <language>cs</language>
+    <dateCreated>2026-07-15T19:07:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Productivity, GTD (Czech)">
+      <outline title="Produktivita – Měšec.cz" xmlUrl="https://www.mesec.cz/rss/produktivita/" type="rss"/>
+      <outline title="GTD – Czech GTD" xmlUrl="https://www.gtd.cz/rss/" type="rss"/>
+      <outline title="Produktivita – Jaknaweb.cz" xmlUrl="https://www.jaknaweb.cz/rss/produktivita.xml" type="rss"/>
+      <outline title="Produktivita – BusinessVize" xmlUrl="https://www.businessvize.cz/rss/produktivita.xml" type="rss"/>
+      <outline title="Produktivita – Živě.cz" xmlUrl="https://www.zive.cz/rss/produktivita.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

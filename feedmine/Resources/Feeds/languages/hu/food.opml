@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:00:51Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (Hungarian)">
+      <outline title="Street Kitchen" xmlUrl="https://streetkitchen.hu/feed/" type="rss"/>
+      <outline title="Nosalty" xmlUrl="https://nosalty.hu/feed/" type="rss"/>
+      <outline title="Étel és Ital" xmlUrl="https://eteleital.hu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

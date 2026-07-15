@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Food — Thai</title>
+    <language>th</language>
+    <dateCreated>2026-07-15T19:09:32Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Food (Thai)">
+      <outline title="ครัวบ้านพิม" xmlUrl="https://www.kruabaanpim.com/feed/" type="rss"/>
+      <outline title="Wongnai" xmlUrl="https://www.wongnai.com/feed" type="rss"/>
+      <outline title="กินอยู่ 360 องศา" xmlUrl="https://www.gin-yoo.com/feed/" type="rss"/>
+      <outline title="Chef's Table Thailand" xmlUrl="https://www.chefstablethailand.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Trails, Routes — Croatian</title>
+    <language>hr</language>
+    <dateCreated>2026-07-15T18:59:38Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Trails, Routes (Croatian)">
+      <outline title="Hrvatski planinarski savez" xmlUrl="https://www.hps.hr/rss/" type="rss"/>
+      <outline title="Planinarenje.hr" xmlUrl="https://www.planinarenje.hr/rss/" type="rss"/>
+      <outline title="Putaš" xmlUrl="https://putas.hr/feed/" type="rss"/>
+      <outline title="Hrvatski vrhovi" xmlUrl="https://hrvatskivrhovi.com/feed/" type="rss"/>
+      <outline title="Lika Destination" xmlUrl="https://www.lika.hr/rss/" type="rss"/>
+    </outline>
+  </body>
+</opml>

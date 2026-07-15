@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>News Feeds — Khmer</title>
+    <language>km</language>
+    <dateCreated>2026-07-15T18:55:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="News Feeds (Khmer)">
+      <outline title="VOD Khmer News" xmlUrl="https://vodkhmer.news/feed/" type="rss"/>
+      <outline title="RFA Khmer" xmlUrl="https://www.rfa.org/khmer/RSS" type="rss"/>
+      <outline title="The Cambodia Daily Khmer" xmlUrl="https://www.cambodiadailykhmer.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health — Portuguese</title>
+    <language>pt</language>
+    <dateCreated>2026-07-15T18:26:25Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Health (Portuguese)">
+      <outline title="Minha Vida" xmlUrl="https://www.minhavida.com.br/feed/" type="rss"/>
+      <outline title="Drauzio Varella" xmlUrl="https://drauziovarella.uol.com.br/feed/" type="rss"/>
+      <outline title="Saúde em Dia" xmlUrl="https://saudeemdia.com.br/feed/" type="rss"/>
+      <outline title="Veja Saúde" xmlUrl="https://veja.abril.com.br/saude/feed/" type="rss"/>
+      <outline title="UOL VivaBem" xmlUrl="https://www.uol.com.br/vivabem/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

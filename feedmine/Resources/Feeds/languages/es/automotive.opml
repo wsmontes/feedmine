@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:21:18Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Automotive (Spanish)">
+      <outline title="Motorpasion" xmlUrl="https://www.motorpasion.com/rss2.xml" type="rss"/>
+      <outline title="Diario Motor" xmlUrl="https://www.diariomotor.com/feed/" type="rss"/>
+      <outline title="Autobild España" xmlUrl="https://www.autobild.es/rss" type="rss"/>
+      <outline title="Car and Driver España" xmlUrl="https://www.caranddriver.com/es/rss" type="rss"/>
+      <outline title="Top Gear España" xmlUrl="https://www.topgear.es/rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

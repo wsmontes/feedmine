@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Naval, Maritime — Russian</title>
+    <language>ru</language>
+    <dateCreated>2026-07-15T19:26:55Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Naval, Maritime (Russian)">
+      <outline title="Flot.com — Новости" xmlUrl="https://flot.com/rss/news.xml" type="rss"/>
+      <outline title="Морской бюллетень" xmlUrl="https://www.morvesti.ru/rss/" type="rss"/>
+      <outline title="Корабел.ру" xmlUrl="https://www.korabel.ru/rss/all.xml" type="rss"/>
+      <outline title="Морской флот — PortNews" xmlUrl="https://portnews.ru/rss/" type="rss"/>
+      <outline title="Военное обозрение — Флот" xmlUrl="https://topwar.ru/rss/navy/" type="rss"/>
+    </outline>
+  </body>
+</opml>

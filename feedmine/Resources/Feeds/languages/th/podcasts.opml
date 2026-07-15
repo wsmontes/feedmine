@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Thai</title>
+    <language>th</language>
+    <dateCreated>2026-07-15T19:10:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Thai)">
+      <outline title="The Standard Podcast" xmlUrl="https://thestandard.co/feed/podcast/" type="rss"/>
+      <outline title="Mission To The Moon" xmlUrl="https://missiontothemoon.co/feed/podcast/" type="rss"/>
+      <outline title="8 Minutes Podcast" xmlUrl="https://8minutespodcast.com/feed/" type="rss"/>
+      <outline title="Day Podcast" xmlUrl="https://daypodcast.com/feed/" type="rss"/>
+      <outline title="The Library Podcast" xmlUrl="https://thelibrarypodcast.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

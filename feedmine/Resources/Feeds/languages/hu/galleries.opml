@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries — Hungarian</title>
+    <language>hu</language>
+    <dateCreated>2026-07-15T19:01:04Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Art Galleries (Hungarian)">
+      <outline title="Artmagazin" xmlUrl="https://artmagazin.hu/feed/" type="rss"/>
+      <outline title="Kortárs Online" xmlUrl="https://www.kortarsonline.hu/feed/" type="rss"/>
+      <outline title="Balkon" xmlUrl="https://balkon.hu/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

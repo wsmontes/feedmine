@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Audiophilia, Vinyl Records — Italian</title>
+    <language>it</language>
+    <dateCreated>2026-07-15T18:43:42Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Audiophilia, Vinyl Records (Italian)">
+      <outline title="AudioReview" xmlUrl="https://www.audioreview.it/feed/" type="rss"/>
+      <outline title="Vinilemania" xmlUrl="https://www.vinilemania.it/feed/" type="rss"/>
+      <outline title="Hi-Fi &amp; Records" xmlUrl="https://www.hifiandrecords.it/feed/" type="rss"/>
+      <outline title="Suono Stereo" xmlUrl="https://www.suonostereo.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>

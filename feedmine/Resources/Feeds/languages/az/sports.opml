@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Sports — Azerbaijani</title>
+    <language>az</language>
+    <dateCreated>2026-07-15T19:19:45Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Sports (Azerbaijani)">
+      <outline title="Sportal.az" xmlUrl="https://sportal.az/rss.xml" type="rss"/>
+      <outline title="Azerisport.com" xmlUrl="https://www.azerisport.com/rss.xml" type="rss"/>
+      <outline title="İdman.az" xmlUrl="https://idman.az/rss.xml" type="rss"/>
+      <outline title="Sportinfo.az" xmlUrl="https://sportinfo.az/rss.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

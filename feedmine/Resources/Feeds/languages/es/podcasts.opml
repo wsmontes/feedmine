@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Podcast Feeds — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:23:10Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Podcast Feeds (Spanish)">
+      <outline title="Radio Ambulante" xmlUrl="https://feeds.simplecast.com/54nAGcIl" type="rss"/>
+      <outline title="El Podcast de Kike García" xmlUrl="https://www.ivoox.com/feed_fg_f121681_filtro_1.xml" type="rss"/>
+      <outline title="La ContraCrónica" xmlUrl="https://www.ivoox.com/feed_fg_f124242_filtro_1.xml" type="rss"/>
+      <outline title="TED en Español" xmlUrl="https://feeds.simplecast.com/lZ2s3m7M" type="rss"/>
+      <outline title="Días Extraños" xmlUrl="https://www.ivoox.com/feed_fg_f116605_filtro_1.xml" type="rss"/>
+    </outline>
+  </body>
+</opml>

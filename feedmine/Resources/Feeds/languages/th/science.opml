@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Science Feeds — Thai</title>
+    <language>th</language>
+    <dateCreated>2026-07-15T19:10:03Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Science Feeds (Thai)">
+      <outline title="National Geographic Thailand" xmlUrl="https://ngthai.com/feed/" type="rss"/>
+      <outline title="BBC News ไทย - วิทยาศาสตร์" xmlUrl="https://www.bbc.com/thai/topics/crr7mz0mqv7t/feed" type="rss"/>
+      <outline title="Thai PBS Sci &amp; Tech" xmlUrl="https://www.thaipbs.or.th/rss/science" type="rss"/>
+      <outline title="SciMath" xmlUrl="https://www.scimath.org/feed" type="rss"/>
+      <outline title="วิกิพีเดีย บทความคัดสรร" xmlUrl="https://th.wikipedia.org/w/api.php?action=featuredfeed&amp;feed=featured&amp;feedformat=rss" type="rss"/>
+    </outline>
+  </body>
+</opml>

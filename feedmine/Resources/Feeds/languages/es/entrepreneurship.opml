@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Entrepreneurship, Startups — Spanish</title>
+    <language>es</language>
+    <dateCreated>2026-07-15T18:22:01Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Entrepreneurship, Startups (Spanish)">
+      <outline title="Emprendedores News" xmlUrl="https://www.emprendedores.es/feed/" type="rss"/>
+      <outline title="Startupxplore Blog" xmlUrl="https://startupxplore.com/es/blog/feed.xml" type="rss"/>
+      <outline title="El Blog de José Facchin" xmlUrl="https://josefacchin.com/feed/" type="rss"/>
+    </outline>
+  </body>
+</opml>
