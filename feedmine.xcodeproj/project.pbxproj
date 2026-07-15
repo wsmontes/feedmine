@@ -1836,6 +1836,7 @@
 		E3EFE92FE6F12CF33A9A70AE /* TaxonomyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67F5CE0A43DBFEF71662A3C /* TaxonomyNode.swift */; };
 		6D61FF410ADD454FA5949A82 /* TaxonomyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CEB88A3A442F7BD2D6512 /* TaxonomyStore.swift */; };
 		5ED23D3DB1594F3E9035E8EC /* TaxonomyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BAD72F48914C44A12235AD /* TaxonomyStoreTests.swift */; };
+		03EA895F0B5B434E8D79E772 /* ReservoirTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5A92F3921415AADD94160 /* ReservoirTests.swift */; };
 		E4126AD6458DCDF9103D559E /* nigeria-ondo.opml in Resources */ = {isa = PBXBuildFile; fileRef = 2BA4BAC4CCF8254D19039A63 /* nigeria-ondo.opml */; };
 		E4243CB6B48A198D6BA1C2C1 /* india-chhattisgarh.opml in Resources */ = {isa = PBXBuildFile; fileRef = F57820F4F9144B77290419CE /* india-chhattisgarh.opml */; };
 		E48AF2CA05058FC18D7B34B8 /* puerto-rico-arecibo.opml in Resources */ = {isa = PBXBuildFile; fileRef = 8702246DAF4FA56289A3E8A9 /* puerto-rico-arecibo.opml */; };
@@ -3461,6 +3462,7 @@
 		B67F5CE0A43DBFEF71662A3C /* TaxonomyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyNode.swift; sourceTree = "<group>"; };
 		D70CEB88A3A442F7BD2D6512 /* TaxonomyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyStore.swift; sourceTree = "<group>"; };
 		E6BAD72F48914C44A12235AD /* TaxonomyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyStoreTests.swift; sourceTree = "<group>"; };
+		2BB5A92F3921415AADD94160 /* ReservoirTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservoirTests.swift; sourceTree = "<group>"; };
 		B6978B40F6EA989D68469C76 /* egypt-asyut.opml */ = {isa = PBXFileReference; path = "egypt-asyut.opml"; sourceTree = "<group>"; };
 		B6AE4727629A1EE94BDBA6DF /* sudan-north-darfur.opml */ = {isa = PBXFileReference; path = "sudan-north-darfur.opml"; sourceTree = "<group>"; };
 		B6EC26A92B6C2241280ED7DE /* austria-oberoesterreich.opml */ = {isa = PBXFileReference; path = "austria-oberoesterreich.opml"; sourceTree = "<group>"; };
@@ -7063,6 +7065,7 @@
 			isa = PBXGroup;
 			children = (
 				E6BAD72F48914C44A12235AD /* TaxonomyStoreTests.swift */,
+				2BB5A92F3921415AADD94160 /* ReservoirTests.swift */,
 				42893699C6C442FEB7486DAF /* feedmineTests.xctest */,
 			);
 			path = feedmineTests;
@@ -9252,6 +9255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED23D3DB1594F3E9035E8EC /* TaxonomyStoreTests.swift in Sources */,
+				03EA895F0B5B434E8D79E772 /* ReservoirTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

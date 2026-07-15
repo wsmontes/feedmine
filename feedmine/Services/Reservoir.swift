@@ -18,7 +18,7 @@ final class Reservoir {
     static let reservoirLowWatermark = 30
     static let safetyZoneRadius = 50
     static let maxReservoirSize = 500
-    static let surfacedCooldown: TimeInterval = 1800
+    nonisolated static let surfacedCooldown: TimeInterval = 1800
 
     private(set) var visibleItems: [FeedItem] = []
     private(set) var reservoir: [FeedItem] = []
@@ -177,21 +177,59 @@ final class Reservoir {
     // MARK: - Interleave
 
     private func interleave(_ items: [FeedItem]) -> [FeedItem] {
+        // Instance path: full diversity with country spreading on MainActor.
+        // Pass sourceRegionMap so slots are spread by country.
+        return Self.interleaveImpl(
+            items,
+            readItemIDs: readItemIDs,
+            surfacedTimestamps: surfacedTimestamps,
+            sourceRegionMap: sourceRegionMap,
+            useCountrySpreading: true
+        )
+    }
+
+    /// Pure interleave computation — no instance state, safe to call from any thread.
+    /// Takes snapshots of the mutable state it needs.
+    nonisolated static func interleaveOffMain(
+        _ items: [FeedItem],
+        readItemIDs: Set<String>,
+        surfacedTimestamps: [String: Date],
+        sourceRegionMap: [String: String]
+    ) -> [FeedItem] {
+        // Off-main path: full diversity with country spreading.
+        // sourceRegionMap is now actually used (was accepted but ignored).
+        return interleaveImpl(
+            items,
+            readItemIDs: readItemIDs,
+            surfacedTimestamps: surfacedTimestamps,
+            sourceRegionMap: sourceRegionMap,
+            useCountrySpreading: true
+        )
+    }
+
+    /// Single shared interleave implementation. Both on-main and off-main
+    /// paths use this, guaranteeing identical ordering behavior.
+    private nonisolated static func interleaveImpl(
+        _ items: [FeedItem],
+        readItemIDs: Set<String>,
+        surfacedTimestamps: [String: Date],
+        sourceRegionMap: [String: String],
+        useCountrySpreading: Bool
+    ) -> [FeedItem] {
         guard items.count > 1 else { return items }
         var bySource: [String: [FeedItem]] = [:]
         for item in items {
             bySource[item.sourceURL, default: []].append(item)
         }
         guard bySource.count > 1 else {
-            return interleaveByTypeCategory(items)
+            return interleaveByTypeCategoryImpl(items)
         }
         // Within each source: surfaced → stale → recent, each spread by type+category
-        let surfacedCutoff = Date().addingTimeInterval(-Self.surfacedCooldown)
+        let surfacedCutoff = Date().addingTimeInterval(-surfacedCooldown)
         let staleNewsCutoff = Date().addingTimeInterval(-86400)
         let staleEvergreenCutoff = Date().addingTimeInterval(-604800)
         for key in bySource.keys {
             let bucket = bySource[key]!
-            // Read items: always stale regardless of timestamp
             let readIDs = bucket.filter { readItemIDs.contains($0.id) }.map(\.id)
             let surfacedIDs = Set(bucket.filter { item in
                 guard let ts = surfacedTimestamps[item.id] else { return false }
@@ -202,12 +240,12 @@ final class Reservoir {
                 let cutoff = item.isTimeless ? staleEvergreenCutoff : staleNewsCutoff
                 return item.publishedAt < cutoff
             }.map(\.id) + readIDs)
-            let recent = interleaveByTypeCategory(bucket.filter { !surfacedIDs.contains($0.id) && !staleIDs.contains($0.id) }.shuffled())
-            let stale = interleaveByTypeCategory(bucket.filter { staleIDs.contains($0.id) }.shuffled())
-            let surfaced = interleaveByTypeCategory(bucket.filter { surfacedIDs.contains($0.id) }.shuffled())
+            let recent = interleaveByTypeCategoryImpl(bucket.filter { !surfacedIDs.contains($0.id) && !staleIDs.contains($0.id) }.shuffled())
+            let stale = interleaveByTypeCategoryImpl(bucket.filter { staleIDs.contains($0.id) }.shuffled())
+            let surfaced = interleaveByTypeCategoryImpl(bucket.filter { surfacedIDs.contains($0.id) }.shuffled())
             bySource[key] = recent + stale + surfaced
         }
-        // Weighted slots → spread → round-robin
+        // Weighted slots
         let minCount = max(1, bySource.values.map(\.count).min() ?? 1)
         let weights: [String: Int] = bySource.mapValues { min(5, max(1, $0.count / minCount)) }
         var slots: [String] = []
@@ -215,8 +253,12 @@ final class Reservoir {
             let w = weights[sourceURL] ?? 1
             for _ in 0..<w { slots.append(sourceURL) }
         }
-        slots = spreadSlots(slots)
-        slots = spreadSlotsByCountry(slots)
+        // Spread slots to avoid consecutive same-source and same-country
+        slots = spreadSlotsImpl(slots)
+        if useCountrySpreading {
+            slots = spreadSlotsByCountryImpl(slots, sourceRegionMap: sourceRegionMap)
+        }
+        // Round-robin
         var result: [FeedItem] = []
         result.reserveCapacity(items.count)
         var indices: [String: Int] = Dictionary(uniqueKeysWithValues: bySource.keys.map { ($0, 0) })
@@ -230,44 +272,10 @@ final class Reservoir {
                 added = true
             }
         }
-        return spreadConsecutive(result)
+        return spreadConsecutiveImpl(result)
     }
 
-    /// Post-processing pass: scan for back-to-back items that share an
-    /// attribute (source, type, category) and swap with a later item that
-    /// breaks the run. O(n) single pass — maintains a look-ahead pointer
-    /// instead of scanning from i+2 each time.
-    private func spreadConsecutive(_ items: [FeedItem]) -> [FeedItem] {
-        guard items.count > 2 else { return items }
-        var result = items
-        var lookAhead = 2
-        for i in 0..<(result.count - 1) {
-            let a = result[i], b = result[i + 1]
-            let clash = a.sourceURL == b.sourceURL
-                || a.category == b.category
-                || (a.isYouTube && b.isYouTube)
-                || (a.isPodcast && b.isPodcast)
-                || (!a.isYouTube && !a.isPodcast && !b.isYouTube && !b.isPodcast)
-            guard clash else { continue }
-            // Advance look-ahead pointer (never rewinds)
-            lookAhead = max(lookAhead, i + 2)
-            while lookAhead < result.count {
-                let c = result[lookAhead]
-                if a.sourceURL != c.sourceURL && b.sourceURL != c.sourceURL
-                    && a.category != c.category
-                    && !(a.isYouTube && c.isYouTube) && !(a.isPodcast && c.isPodcast)
-                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast) {
-                    result.swapAt(i + 1, lookAhead)
-                    break
-                }
-                lookAhead += 1
-            }
-            if lookAhead >= result.count { break }
-        }
-        return result
-    }
-
-    private func interleaveByTypeCategory(_ items: [FeedItem]) -> [FeedItem] {
+    private nonisolated static func interleaveByTypeCategoryImpl(_ items: [FeedItem]) -> [FeedItem] {
         guard items.count > 1 else { return items }
         var buckets: [String: [FeedItem]] = [:]
         for item in items {
@@ -278,8 +286,8 @@ final class Reservoir {
         for key in buckets.keys { buckets[key] = buckets[key]?.shuffled() }
         var result: [FeedItem] = []
         result.reserveCapacity(items.count)
+        var indices = Dictionary(uniqueKeysWithValues: buckets.keys.map { ($0, 0) })
         let keys = buckets.keys.shuffled()
-        var indices = Dictionary(uniqueKeysWithValues: keys.map { ($0, 0) })
         var added = true
         while added {
             added = false
@@ -293,7 +301,7 @@ final class Reservoir {
         return result
     }
 
-    private func spreadSlots(_ slots: [String]) -> [String] {
+    private nonisolated static func spreadSlotsImpl(_ slots: [String]) -> [String] {
         var groups: [String: [String]] = [:]
         for slot in slots { groups[slot, default: []].append(slot) }
         guard groups.count > 1 else { return slots }
@@ -315,7 +323,7 @@ final class Reservoir {
         return result
     }
 
-    private func spreadSlotsByCountry(_ slots: [String]) -> [String] {
+    private nonisolated static func spreadSlotsByCountryImpl(_ slots: [String], sourceRegionMap: [String: String]) -> [String] {
         guard slots.count > 2 else { return slots }
         var result = slots
         var pass = 0
@@ -337,6 +345,38 @@ final class Reservoir {
                 }
                 if let j = swapIdx { result.swapAt(i + 1, j); swapped = true }
             }
+        }
+        return result
+    }
+
+    /// Post-processing pass: scan for back-to-back items that share an
+    /// attribute (source, type, category) and swap with a later item that
+    /// breaks the run. O(n) single pass — maintains a look-ahead pointer.
+    private nonisolated static func spreadConsecutiveImpl(_ items: [FeedItem]) -> [FeedItem] {
+        guard items.count > 2 else { return items }
+        var result = items
+        var lookAhead = 2
+        for i in 0..<(result.count - 1) {
+            let a = result[i], b = result[i + 1]
+            let clash = a.sourceURL == b.sourceURL
+                || a.category == b.category
+                || (a.isYouTube && b.isYouTube)
+                || (a.isPodcast && b.isPodcast)
+                || (!a.isYouTube && !a.isPodcast && !b.isYouTube && !b.isPodcast)
+            guard clash else { continue }
+            lookAhead = max(lookAhead, i + 2)
+            while lookAhead < result.count {
+                let c = result[lookAhead]
+                if a.sourceURL != c.sourceURL && b.sourceURL != c.sourceURL
+                    && a.category != c.category
+                    && !(a.isYouTube && c.isYouTube) && !(a.isPodcast && c.isPodcast)
+                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast) {
+                    result.swapAt(i + 1, lookAhead)
+                    break
+                }
+                lookAhead += 1
+            }
+            if lookAhead >= result.count { break }
         }
         return result
     }
@@ -429,118 +469,4 @@ final class Reservoir {
         capReservoir()
     }
 
-    /// Pure interleave computation — no instance state, safe to call from any thread.
-    /// Takes snapshots of the mutable state it needs (readItemIDs, surfacedTimestamps, sourceRegionMap).
-    nonisolated static func interleaveOffMain(
-        _ items: [FeedItem],
-        readItemIDs: Set<String>,
-        surfacedTimestamps: [String: Date],
-        sourceRegionMap: [String: String]
-    ) -> [FeedItem] {
-        guard items.count > 1 else { return items }
-        var bySource: [String: [FeedItem]] = [:]
-        for item in items {
-            bySource[item.sourceURL, default: []].append(item)
-        }
-        guard bySource.count > 1 else {
-            return interleaveByTypeCategoryStatic(items)
-        }
-        let surfacedCutoff = Date().addingTimeInterval(-1800)
-        let staleNewsCutoff = Date().addingTimeInterval(-86400)
-        let staleEvergreenCutoff = Date().addingTimeInterval(-604800)
-        for key in bySource.keys {
-            let bucket = bySource[key]!
-            let readIDs = bucket.filter { readItemIDs.contains($0.id) }.map(\.id)
-            let surfacedIDs = Set(bucket.filter { item in
-                guard let ts = surfacedTimestamps[item.id] else { return false }
-                return ts > surfacedCutoff
-            }.map(\.id))
-            let staleIDs = Set(bucket.filter { item in
-                if surfacedIDs.contains(item.id) || readIDs.contains(item.id) { return false }
-                let cutoff = item.isTimeless ? staleEvergreenCutoff : staleNewsCutoff
-                return item.publishedAt < cutoff
-            }.map(\.id) + readIDs)
-            let recent = interleaveByTypeCategoryStatic(bucket.filter { !surfacedIDs.contains($0.id) && !staleIDs.contains($0.id) }.shuffled())
-            let stale = interleaveByTypeCategoryStatic(bucket.filter { staleIDs.contains($0.id) }.shuffled())
-            let surfaced = interleaveByTypeCategoryStatic(bucket.filter { surfacedIDs.contains($0.id) }.shuffled())
-            bySource[key] = recent + stale + surfaced
-        }
-        // Weighted slots
-        let minCount = max(1, bySource.values.map(\.count).min() ?? 1)
-        let weights: [String: Int] = bySource.mapValues { min(5, max(1, $0.count / minCount)) }
-        var slots: [String] = []
-        for (sourceURL, srcItems) in bySource where !srcItems.isEmpty {
-            let w = weights[sourceURL] ?? 1
-            for _ in 0..<w { slots.append(sourceURL) }
-        }
-        slots.shuffle()
-        // Round-robin
-        var result: [FeedItem] = []
-        result.reserveCapacity(items.count)
-        var indices: [String: Int] = Dictionary(uniqueKeysWithValues: bySource.keys.map { ($0, 0) })
-        var added = true
-        while added {
-            added = false
-            for sourceURL in slots {
-                guard let list = bySource[sourceURL], indices[sourceURL]! < list.count else { continue }
-                result.append(list[indices[sourceURL]!])
-                indices[sourceURL]! += 1
-                added = true
-            }
-        }
-        return spreadConsecutiveStatic(result)
-    }
-
-    private nonisolated static func interleaveByTypeCategoryStatic(_ items: [FeedItem]) -> [FeedItem] {
-        guard items.count > 1 else { return items }
-        var buckets: [String: [FeedItem]] = [:]
-        for item in items {
-            let type = item.isPodcast ? "audio" : (item.isYouTube ? "video" : "text")
-            buckets["\(type):\(item.category)", default: []].append(item)
-        }
-        guard buckets.count > 1 else { return items.shuffled() }
-        for key in buckets.keys { buckets[key] = buckets[key]?.shuffled() }
-        var result: [FeedItem] = []
-        var indices = Dictionary(uniqueKeysWithValues: buckets.keys.map { ($0, 0) })
-        let keys = buckets.keys.shuffled()
-        var added = true
-        while added {
-            added = false
-            for key in keys {
-                guard let list = buckets[key], indices[key]! < list.count else { continue }
-                result.append(list[indices[key]!])
-                indices[key]! += 1
-                added = true
-            }
-        }
-        return result
-    }
-
-    private nonisolated static func spreadConsecutiveStatic(_ items: [FeedItem]) -> [FeedItem] {
-        guard items.count > 2 else { return items }
-        var result = items
-        var lookAhead = 2
-        for i in 0..<(result.count - 1) {
-            let a = result[i], b = result[i + 1]
-            let clash = a.sourceURL == b.sourceURL
-                || a.category == b.category
-                || (a.isYouTube && b.isYouTube)
-                || (a.isPodcast && b.isPodcast)
-            guard clash else { continue }
-            lookAhead = max(lookAhead, i + 2)
-            while lookAhead < result.count {
-                let c = result[lookAhead]
-                if a.sourceURL != c.sourceURL && b.sourceURL != c.sourceURL
-                    && a.category != c.category
-                    && !(a.isYouTube && c.isYouTube) && !(a.isPodcast && c.isPodcast)
-                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast) {
-                    result.swapAt(i + 1, lookAhead)
-                    break
-                }
-                lookAhead += 1
-            }
-            if lookAhead >= result.count { break }
-        }
-        return result
-    }
 }
