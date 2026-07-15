@@ -4,6 +4,12 @@ import XCTest
 @MainActor
 final class FeedStoreTests: XCTestCase {
 
+    override func tearDown() async throws {
+        // Reset TaxonomyStore singleton between tests to avoid state leakage
+        TaxonomyStore.shared.clearSelection()
+        try await super.tearDown()
+    }
+
     func testV7MigrationAddsLanguageColumn() throws {
         let store = try FeedStore(inMemory: true)
         try store.db.write { db in
@@ -17,5 +23,50 @@ final class FeedStoreTests: XCTestCase {
             let lang: String? = try String.fetchOne(db, sql: "SELECT language FROM feed_item WHERE id = 'test-id'")
             XCTAssertEqual(lang, "en")
         }
+    }
+
+    func testReloadFromSQLiteFiltersByTaxonomySourceURL() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        // Seed sources and taxonomy
+        let source = FeedSource(title: "Coffee Blog", url: "https://coffee.com/feed",
+                                category: "Coffee", region: "global")
+        store.registry.sources = [source]
+        await TaxonomyStore.shared.build(from: [source])
+
+        // Find the taxonomy node for our source
+        let nodeID = try XCTUnwrap(TaxonomyStore.shared.nodeID(for: "https://coffee.com/feed"))
+
+        // Insert test items before triggering reload:
+        // one item matching the taxonomy node, one that does not
+        let matchingItem = FeedItemRecord(
+            from: FeedItem(id: "match", sourceTitle: "S", sourceURL: "https://coffee.com/feed",
+                           category: "Coffee", title: "Match", excerpt: "E",
+                           url: "https://coffee.com/1", imageURL: nil, publishedAt: Date(),
+                           audioURL: nil, duration: nil, region: "global"),
+            region: "global"
+        )
+        let nonMatchingItem = FeedItemRecord(
+            from: FeedItem(id: "nomatch", sourceTitle: "S", sourceURL: "https://other.com/feed",
+                           category: "Other", title: "No Match", excerpt: "E",
+                           url: "https://other.com/1", imageURL: nil, publishedAt: Date(),
+                           audioURL: nil, duration: nil, region: "global"),
+            region: "global"
+        )
+        try await store.db.write { db in
+            try matchingItem.insert(db)
+            try nonMatchingItem.insert(db)
+        }
+
+        // Trigger reload via setFilter — this computes cachedTaxonomyFeedURLs
+        // internally and then flushes the pipeline after a 300ms debounce.
+        store.setFilter(region: nil, nodeIDs: [nodeID], type: .all, mood: .all)
+
+        // Wait for debounce (300ms) + reload pipeline to complete.
+        try await Task.sleep(for: .milliseconds(1000))
+
+        // Verify only matching item appears
+        XCTAssertEqual(store.visibleItems.count, 1)
+        XCTAssertEqual(store.visibleItems.first?.sourceURL, "https://coffee.com/feed")
     }
 }

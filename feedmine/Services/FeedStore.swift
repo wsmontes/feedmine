@@ -1123,6 +1123,10 @@ final class FeedStore {
         guard !isSearching else { return }
         let region = activeRegion
         let contentType = activeContentType
+        // Capture taxonomy feed URLs before entering the read closure (which may
+        // run off the main actor). When taxonomy is active we need ALL matching
+        // items, so the batched IN clause replaces the usual LIMIT 200.
+        let taxonomyURLs: Set<String>? = activeNodeIDs.isEmpty ? nil : cachedTaxonomyFeedURLs
         // Always exclude read items — the feed should only show unseen content.
         // Read/opened items are tracked continuously and this information is
         // consumed by all feed-population paths (shake, filter, startup).
@@ -1145,6 +1149,34 @@ final class FeedStore {
             case .forum: request = request.filter(Column("source_url").like("%reddit%"))
             case .all: break
             }
+
+            // Taxonomy filter — batched IN clause to stay within SQLite's
+            // 999-parameter limit. When taxonomy is active, load ALL matching
+            // items so the user sees the full curated feed rather than just
+            // the 200 most recent items (which may not overlap at all with
+            // the selected taxonomy nodes).
+            if let urls = taxonomyURLs, !urls.isEmpty {
+                let urlArray = Array(urls)
+                let batchSize = 999
+                var allItems: [FeedItemRecord] = []
+                for chunkStart in stride(from: 0, to: urlArray.count, by: batchSize) {
+                    let chunk = Array(urlArray[chunkStart..<min(chunkStart + batchSize, urlArray.count)])
+                    let placeholders = chunk.map { _ in "?" }.joined(separator: ",")
+                    let chunkRequest = request.filter(
+                        sql: "source_url IN (\(placeholders))",
+                        arguments: StatementArguments(chunk)
+                    )
+                    let batchItems = try chunkRequest
+                        .order(Column("published_at").desc)
+                        .fetchAll(db)
+                    allItems.append(contentsOf: batchItems)
+                }
+                // Sort merged batches by published_at desc so the most recent
+                // items appear first regardless of which batch they came from.
+                allItems.sort { $0.publishedAt > $1.publishedAt }
+                return allItems
+            }
+
             return try request
                 .order(Column("published_at").desc)
                 .limit(200)
