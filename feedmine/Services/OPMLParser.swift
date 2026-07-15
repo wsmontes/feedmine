@@ -356,7 +356,7 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
 
     private var categoryStack: [String] = []
     private var outlinePushStack: [Bool] = []  // tracks which opens pushed a category
-    private var languageStack: [String] = []
+    private var languageStack: [String?] = []
     private var fileLanguage: String?  // from <head><language>
 
     init(fallbackCategory: String, region: String = "global", mediaKind: MediaKind = .text,
@@ -380,8 +380,8 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
             let category = attributeDict["title"] ?? attributeDict["text"]
             if let cat = category, !cat.isEmpty {
                 categoryStack.append(cat)
-                // Push language: outline attr → parent → file-level → "unknown"
-                languageStack.append(language ?? languageStack.last ?? fileLanguage ?? "unknown")
+                // Push language: outline attr → parent → file-level (all nil-safe)
+                languageStack.append(language ?? languageStack.last ?? fileLanguage)
                 outlinePushStack.append(true)
             } else {
                 outlinePushStack.append(false)
