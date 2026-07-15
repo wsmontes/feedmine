@@ -39,6 +39,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8991BB5C276447F1BC5E406D"
+               BuildableName = "feedmineTests.xctest"
+               BlueprintName = "feedmineTests"
+               ReferencedContainer = "container:feedmine.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

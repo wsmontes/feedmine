@@ -1832,6 +1832,8 @@
 		E32864C28A4844FFA2CB51C6 /* slovenia-posavska.opml in Resources */ = {isa = PBXBuildFile; fileRef = 4D65A6AF7B74A54123284431 /* slovenia-posavska.opml */; };
 		E329993C44BCCC9D90D8E187 /* egypt-north-sinai.opml in Resources */ = {isa = PBXBuildFile; fileRef = 807B7D54B70713F3027E2B18 /* egypt-north-sinai.opml */; };
 		E3EFE92FE6F12CF33A9A70AE /* TaxonomyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67F5CE0A43DBFEF71662A3C /* TaxonomyNode.swift */; };
+		6D61FF410ADD454FA5949A82 /* TaxonomyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CEB88A3A442F7BD2D6512 /* TaxonomyStore.swift */; };
+		5ED23D3DB1594F3E9035E8EC /* TaxonomyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BAD72F48914C44A12235AD /* TaxonomyStoreTests.swift */; };
 		E4126AD6458DCDF9103D559E /* nigeria-ondo.opml in Resources */ = {isa = PBXBuildFile; fileRef = 2BA4BAC4CCF8254D19039A63 /* nigeria-ondo.opml */; };
 		E4243CB6B48A198D6BA1C2C1 /* india-chhattisgarh.opml in Resources */ = {isa = PBXBuildFile; fileRef = F57820F4F9144B77290419CE /* india-chhattisgarh.opml */; };
 		E48AF2CA05058FC18D7B34B8 /* puerto-rico-arecibo.opml in Resources */ = {isa = PBXBuildFile; fileRef = 8702246DAF4FA56289A3E8A9 /* puerto-rico-arecibo.opml */; };
@@ -3455,6 +3457,8 @@
 		B6763780C739369B94EB25B6 /* finland-satakunta.opml */ = {isa = PBXFileReference; path = "finland-satakunta.opml"; sourceTree = "<group>"; };
 		B67EB1753B0B16100A3C95B0 /* ireland-kilkenny.opml */ = {isa = PBXFileReference; path = "ireland-kilkenny.opml"; sourceTree = "<group>"; };
 		B67F5CE0A43DBFEF71662A3C /* TaxonomyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyNode.swift; sourceTree = "<group>"; };
+		D70CEB88A3A442F7BD2D6512 /* TaxonomyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyStore.swift; sourceTree = "<group>"; };
+		E6BAD72F48914C44A12235AD /* TaxonomyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyStoreTests.swift; sourceTree = "<group>"; };
 		B6978B40F6EA989D68469C76 /* egypt-asyut.opml */ = {isa = PBXFileReference; path = "egypt-asyut.opml"; sourceTree = "<group>"; };
 		B6AE4727629A1EE94BDBA6DF /* sudan-north-darfur.opml */ = {isa = PBXFileReference; path = "sudan-north-darfur.opml"; sourceTree = "<group>"; };
 		B6EC26A92B6C2241280ED7DE /* austria-oberoesterreich.opml */ = {isa = PBXFileReference; path = "austria-oberoesterreich.opml"; sourceTree = "<group>"; };
@@ -3863,6 +3867,7 @@
 		E960937C204E2AABE1B9E454 /* malaysia-perlis.opml */ = {isa = PBXFileReference; path = "malaysia-perlis.opml"; sourceTree = "<group>"; };
 		E96E85AE79DEFF552E73EEA4 /* peru-cusco.opml */ = {isa = PBXFileReference; path = "peru-cusco.opml"; sourceTree = "<group>"; };
 		E9887174DAFF5C97D2E39933 /* feedmine.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = feedmine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42893699C6C442FEB7486DAF /* feedmineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = feedmineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E994AA69FBF5F3897C6852B8 /* mexico-estado-de-mexico.opml */ = {isa = PBXFileReference; path = "mexico-estado-de-mexico.opml"; sourceTree = "<group>"; };
 		E9B75EEA60ABFE02AB66FF3B /* BookmarksSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksSheetView.swift; sourceTree = "<group>"; };
 		E9CF24FCD0B6C944B1C956F0 /* TopStoriesCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesCarousel.swift; sourceTree = "<group>"; };
@@ -4103,6 +4108,13 @@
 			files = (
 				DBBC1286841062334CDB639C /* FeedKit in Frameworks */,
 				24A2848B614270CB1251AF0C /* GRDB in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E38D9810584F423CA0E955FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5302,6 +5314,7 @@
 			children = (
 				C9D10487C40978550CFC89E0 /* Feeds */,
 				FA8AD510866687C9EE3BBEBD /* feedmine */,
+				5A87C5102DCA489E8095B5EB /* feedmineTests */,
 				B8828CC272EF60AAE5EF759A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -5887,6 +5900,7 @@
                 334ED7BF54BB42CC99EF93CD /* Log.swift */,
                 08C73D112D554729B60B1377 /* SearchEngine.swift */,
                 C4DA9DEEA7954C77A6A65C39 /* URLResolver.swift */,
+                D70CEB88A3A442F7BD2D6512 /* TaxonomyStore.swift */,
                 B556797C0203451AAEF6A9B5 /* WhatsNewManager.swift */,
 			);
 			path = Services;
@@ -7039,6 +7053,15 @@
 		};
 /* End PBXGroup section */
 
+		5A87C5102DCA489E8095B5EB /* feedmineTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6BAD72F48914C44A12235AD /* TaxonomyStoreTests.swift */,
+				42893699C6C442FEB7486DAF /* feedmineTests.xctest */,
+			);
+			path = feedmineTests;
+			sourceTree = "<group>";
+		};
 /* Begin PBXNativeTarget section */
 		057DBDD4C964DDBA254C0BA5 /* feedmine */ = {
 			isa = PBXNativeTarget;
@@ -7060,6 +7083,25 @@
 			productName = feedmine;
 			productReference = E9887174DAFF5C97D2E39933 /* feedmine.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8991BB5C276447F1BC5E406D /* feedmineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D09E555B6EBF46C8A76A3DE9 /* Build configuration list for PBXNativeTarget "feedmineTests" */;
+			buildPhases = (
+				BBA022BA590E46DA9F1DB931 /* Sources */,
+				E38D9810584F423CA0E955FF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C195119E0DED4F3ABF02BC8F /* PBXTargetDependency */,
+			);
+			name = feedmineTests;
+			packageProductDependencies = (
+			);
+			productName = feedmineTests;
+			productReference = 42893699C6C442FEB7486DAF /* feedmineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -7133,6 +7175,7 @@
 			projectRoot = "";
 			targets = (
 				057DBDD4C964DDBA254C0BA5 /* feedmine */,
+				8991BB5C276447F1BC5E406D /* feedmineTests */,
 			);
 		};
 /* End PBXProject section */
@@ -9158,6 +9201,7 @@
 				7D50E979F88694C1588392D8 /* RSSFetcher.swift in Sources */,
 				64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */,
 				7B3DCB5F06E3266F670AA817 /* Region.swift in Sources */,
+				6D61FF410ADD454FA5949A82 /* TaxonomyStore.swift in Sources */,
 				E3EFE92FE6F12CF33A9A70AE /* TaxonomyNode.swift in Sources */,
 				68CB8603805A33A1D57030A4 /* RegionDetailScreen.swift in Sources */,
 				6CBFFC3867A630255B4A171B /* Reservoir.swift in Sources */,
@@ -9195,7 +9239,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BBA022BA590E46DA9F1DB931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED23D3DB1594F3E9035E8EC /* TaxonomyStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		94D68EF1609344AC9FC67BB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5754179AAAE8058A2FBE80BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 057DBDD4C964DDBA254C0BA5;
+			remoteInfo = feedmine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		C195119E0DED4F3ABF02BC8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = feedmine;
+			target = 057DBDD4C964DDBA254C0BA5 /* feedmine */;
+			targetProxy = 94D68EF1609344AC9FC67BB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		694243A09163BD7FDC2C9018 /* Release */ = {
@@ -9359,6 +9430,48 @@
 			};
 			name = Debug;
 		};
+		45570D681D6A433AADE2F732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 955573A4YH;
+				INFOPLIST_FILE = feedmineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.feedmine.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/feedmine.app/feedmine";
+			};
+			name = Debug;
+		};
+		E303A9E30AAB466F85F13EA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 955573A4YH;
+				INFOPLIST_FILE = feedmineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.feedmine.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/feedmine.app/feedmine";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -9376,6 +9489,15 @@
 			buildConfigurations = (
 				A86398EB19C72D03602A236B /* Debug */,
 				694243A09163BD7FDC2C9018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D09E555B6EBF46C8A76A3DE9 /* Build configuration list for PBXNativeTarget "feedmineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45570D681D6A433AADE2F732 /* Debug */,
+				E303A9E30AAB466F85F13EA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

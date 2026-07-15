@@ -14,7 +14,7 @@ enum NodeKind: String, Codable, Sendable, CaseIterable {
 /// The virtual root uses the sentinel ID `__root__`.
 /// `feedCount` is the total number of feeds in this subtree (all descendants).
 /// `childrenCount` is only direct children (nodes, not feeds).
-struct TaxonomyNode: Identifiable, Hashable, Sendable {
+struct TaxonomyNode: Identifiable, Hashable, Sendable, Codable {
     let id: String
     let name: String
     let parentId: String?
