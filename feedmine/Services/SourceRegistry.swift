@@ -28,11 +28,15 @@ enum NodeStatus: Equatable {
 @Observable
 final class SourceRegistry {
     var sources: [FeedSource] = [] {
-        // Keep the url→source and region caches in sync no matter who assigns
-        // `sources` — FeedLoader.addSources sets it directly, bypassing
-        // loadFromOPML. Without this, imported feeds are missing from
-        // sourceByURL and isSourceEnabled wrongly reports them as disabled.
-        didSet { rebuildCaches() }
+        didSet {
+            // Skip rebuild when sources haven't changed — prevents redundant
+            // 7,500-entry dictionary allocation during startup when
+            // loadFromOPML then restoreImportedSources both assign.
+            // Compare by count first (fast reject), then by URL set (O(n)).
+            guard sources.count != oldValue.count
+                    || Set(sources.map(\.url)) != Set(oldValue.map(\.url)) else { return }
+            rebuildCaches()
+        }
     }
     var disabled: Set<String> = []
     /// Feed URL keys explicitly turned ON despite a disabled parent group.
