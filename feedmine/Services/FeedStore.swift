@@ -387,6 +387,7 @@ final class FeedStore {
                 let availableLangs = Set(registry.sources.compactMap(\.language))
                 if availableLangs.contains(lang) {
                     activeLanguages = [lang]
+                    persistFilters()
                 }
             }
             Settings.hasInitializedLanguageDefault = true
@@ -664,7 +665,7 @@ final class FeedStore {
             guard !Task.isCancelled, let self else { return }
 
             // Kick off urgent fetch for taxonomy sources
-            let priorityURLs = TaxonomyStore.shared.feedURLs(inSubtreesOf: self.activeNodeIDs)
+            let priorityURLs = self.cachedTaxonomyFeedURLs
             if !priorityURLs.isEmpty {
                 self.urgentFetchTask = Task { [weak self] in
                     guard let self else { return }
@@ -686,6 +687,7 @@ final class FeedStore {
         activeNodeIDs = []
         activeContentType = .all
         activeMood = .all
+        activeLanguages = []
         persistFilters()
         // Content on screen is untouchable. Clear everything, reload fresh.
         refreshWhatsNew()
