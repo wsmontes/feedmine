@@ -4,9 +4,12 @@
     <title>North Jeolla Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Jeonbuk Ilbo" xmlUrl="https://www.jeonbuk.co.kr/rss/" type="rss" />
+    <outline text="News">
+      <outline title="Jeonbuk Ilbo" xmlUrl="https://www.jeonbuk.co.kr/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+  </body>
+</opml>

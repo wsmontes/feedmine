@@ -6,15 +6,11 @@
   <body>
     <outline text="Podcasts">
       <outline title="Podcast de Obra De Los Santos Angeles" xmlUrl="https://feeds.ivoox.com/feed_fg_f182922_filtro_1.xml" type="rss" category="Religion &amp; Spirituality" />
-      <outline title="Omega Stereo Panamá" xmlUrl="https://anchor.fm/s/395b4c38/podcast/rss" type="rss" category="News" />
-      <outline title="IGLESIA DE CRISTO PANAMA" xmlUrl="https://anchor.fm/s/59b68740/podcast/rss" type="rss" category="Christianity" />
-      <outline title="Panamá en Directo" xmlUrl="https://anchor.fm/s/9156fea0/podcast/rss" type="rss" category="News Commentary" />
       <outline title="Ida y Vuelta" xmlUrl="https://anchor.fm/s/197701a0/podcast/rss" type="rss" category="Sports" />
       <outline title="Cruising the UVC World" xmlUrl="https://feeds.simplecast.com/P2xokdMV" type="rss" category="Places &amp; Travel" />
       <outline title="ALEGRES Y SANTOS EN LA ESCUELA-Basílica Don Bosco Panamá" xmlUrl="https://anchor.fm/s/3a3e9c04/podcast/rss" type="rss" category="Christianity" />
       <outline title="Enrique Santos En Overtime" xmlUrl="https://www.spreaker.com/show/2830245/episodes/feed" type="rss" category="Leisure" />
       <outline title="hacarrasquilla" xmlUrl="https://anchor.fm/s/38390fd4/podcast/rss" type="rss" category="Social Sciences" />
-      <outline title="Radio Maria Panamá" xmlUrl="https://radiomaria.pa/feed/podcast/" type="rss" category="Religion &amp; Spirituality" />
       <outline title="Pauta en Radio" xmlUrl="https://anchor.fm/s/318b86d0/podcast/rss" type="rss" category="Business" />
       <outline title="Punto Final en Fox Deportes" xmlUrl="https://feeds.megaphone.fm/FOXM9957872495" type="rss" category="Sports News" />
       <outline title="El Guerrillero" xmlUrl="https://feeds.ivoox.com/feed_fg_f1105728_filtro_1.xml" type="rss" category="Government" />
@@ -27,7 +23,6 @@
       <outline title="Círculo de Espera - Toros de Tijuana" xmlUrl="https://anchor.fm/s/1cf57168/podcast/rss" type="rss" category="Baseball" />
       <outline title="TRAPODCASTRD Teleradio2" xmlUrl="https://teleradioamerica.com/app/podcast.xml" type="rss" category="Technology" />
       <outline title="¿Qué dicen los jóvenes?" xmlUrl="https://anchor.fm/s/31c21a4c/podcast/rss" type="rss" category="Education" />
-      <outline title="Noticias de Panamá" xmlUrl="https://www.spreaker.com/show/4661563/episodes/feed" type="rss" category="Daily News" />
       <outline title="Learn A Little" xmlUrl="https://feeds.megaphone.fm/learnalittle" type="rss" category="Education" />
       <outline title="Radio Maria Perú" xmlUrl="https://www.radiomariaperu.org/feed/podcast" type="rss" category="Religion &amp; Spirituality" />
       <outline title="Travelling Series, con Lorenzo Mejino" xmlUrl="https://anchor.fm/s/b2c4484/podcast/rss" type="rss" category="Places &amp; Travel" />
@@ -55,5 +50,7 @@
       <outline title="A Daily Dose of History: Events on this Day in History" xmlUrl="https://feeds.megaphone.fm/onthisdayinhistory" type="rss" category="History" />
       <outline title="AM Tampa Bay" xmlUrl="https://www.omnycontent.com/d/playlist/98a2599f-cd9b-4f2a-9be4-b22c00e585f2/20d93a93-852c-4b01-8c5e-b34601299814/3f330f25-caf4-40ef-9bec-b3460129981c/podcast.rss" type="rss" category="News" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

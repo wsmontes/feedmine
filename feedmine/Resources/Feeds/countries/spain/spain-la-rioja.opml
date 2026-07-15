@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>La Rioja Feeds</title></head>
+  <head>
+    <title>La Rioja Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="La Rioja" xmlUrl="https://www.larioja.com/feed/" type="rss" />
@@ -9,5 +11,7 @@
     <outline text="Education">
       <outline title="Universidad de La Rioja" xmlUrl="https://www.unirioja.es/feed/" type="rss" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

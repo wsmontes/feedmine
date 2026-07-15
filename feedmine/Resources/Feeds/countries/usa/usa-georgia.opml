@@ -17,11 +17,9 @@
       <outline title="Georgia Trend" xmlUrl="https://www.georgiatrend.com/feed/" type="rss" />
     </outline>
     <outline text="Technology">
-      <outline title="Hypepotamus" xmlUrl="https://hypepotamus.com/feed/" type="rss" />
-    </outline>
+      </outline>
     <outline text="Education">
       <outline title="UGA News" xmlUrl="https://news.uga.edu/feed/" type="rss" />
-      <outline title="Georgia State Univ" xmlUrl="https://news.gsu.edu/feed/" type="rss" />
       <outline title="Georgia Southern" xmlUrl="https://www.georgiasouthern.edu/rss" type="rss" />
     </outline>
     <outline text="Sports">
@@ -40,5 +38,7 @@
       <outline title="Glimpses of Grace" xmlUrl="https://anchor.fm/s/f7a5d488/podcast/rss" type="rss" category="Religion" />
       <outline title="GEORGIA PLUME USA" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:69456547/sounds.rss" type="rss" category="Music" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

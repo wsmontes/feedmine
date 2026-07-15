@@ -1,25 +1,23 @@
-# Task 4 Report: Update ALL_SOURCES with Phase 2 Sources
+# Task 4: Fix ImportPipeline data integrity
 
-## Changes Made
+**Status:** Complete
 
-**File modified:** `scripts/feed_discovery/tests/test_source_protocol.py`
+**Commit:**
+- `b5ed08c`
 
-- Added imports for `PodcastIndexSource`, `DeezerSource`, and `YouTubeAPISource`
-- Added `PodcastIndexSource()`, `DeezerSource()`, and `YouTubeAPISource()` to `ALL_SOURCES`
-- Updated `test_registry_can_discover_sources` to assert all 5 source names and `len(registry) == 5`
+**Changes made to `feedmine/Services/ImportPipeline.swift`:**
 
-## Test Results
+### 4a: Preserve duplicate URL categories (lines ~189-198)
 
-### Phase 2 source tests (44 passed, 4 skipped)
+Replaced `Dictionary(parsedSources.map { ($0.url, $0) }, uniquingKeysWith: { first, _ in first })` with explicit deduplication: iterates `parsedSources`, normalizes each URL via `OPMLParser.normalizeURL`, and only keeps the first occurrence via a `Set<String>` of seen URLs. The `titleMap` is now built with `Dictionary(uniqueKeysWithValues:)` (safe since keys are guaranteed unique), and `urls` is derived from `dedupedSources` so `ingest()` receives deduplicated URLs too.
+
+### 4b: Guard OPMLImportDelegate stacks against XMLParser error recovery
+
+Added `parserDidEndDocument(_:)` and `parser(_:parseErrorOccurred:)` methods to `OPMLImportDelegate` that clear both `categoryStack` and `outlinePushStack`, preventing desync when XMLParser skips `didEndElement` calls after a fatal parse error.
+
+**Build:**
 ```
-44 passed, 4 skipped in 1.47s
+xcodebuild -project feedmine.xcodeproj -scheme feedmine \
+  -destination 'platform=iOS Simulator,name=iPhone 14 Plus' build
 ```
-The 4 skips are live API integration tests (`test_search_returns_candidates`, `test_probe_returns_probe_result`) that correctly skip when API keys are not set.
-
-### Full regression suite (160 passed, 4 skipped, 1 failed)
-```
-1 failed, 160 passed, 4 skipped in 6.27s
-```
-The single failure is **pre-existing** (confirmed by testing on unmodified code): `test_ddg_text_source.py::test_search_returns_candidates` fails with `ModuleNotFoundError: No module named 'ddgs'` — a missing dependency unrelated to this task.
-
-No regressions introduced by the Phase 2 source additions.
+**BUILD SUCCEEDED**

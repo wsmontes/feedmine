@@ -1,0 +1,131 @@
+{
+  "country": "taiwan",
+  "internet_penetration": 0.65,
+  "dominant_platforms": [
+    "whatsapp",
+    "youtube",
+    "instagram",
+    "telegram",
+    "wechat"
+  ],
+  "languages": [
+    "en",
+    "hi",
+    "zh",
+    "ja",
+    "ko",
+    "id",
+    "th",
+    "vi"
+  ],
+  "sources": {
+    "podcast_index": {
+      "priority": 2,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "deezer": {
+      "priority": 4,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_api": {
+      "priority": 1,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "ddg_text": {
+      "priority": 3,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "itunes": {
+      "priority": 5,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "listen_notes": {
+      "priority": 8,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "spotify": {
+      "priority": 6,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "feedly": {
+      "priority": 7,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    }
+  },
+  "local_directories": [],
+  "media_domains": [
+    "timesofindia.indiatimes.com",
+    "thehindu.com",
+    "hindustantimes.com",
+    "indianexpress.com",
+    "ndtv.com",
+    "scroll.in",
+    "thewire.in",
+    "theprint.in",
+    "newslaundry.com",
+    "firstpost.com",
+    "livemint.com",
+    "thequint.com",
+    "scmp.com",
+    "sixthtone.com",
+    "caixinglobal.com",
+    "asahi.com",
+    "mainichi.jp",
+    "japantimes.co.jp",
+    "nikkei.com",
+    "yomiuri.co.jp",
+    "koreaherald.com",
+    "koreatimes.co.kr",
+    "yonhapnews.co.kr",
+    "chosun.com",
+    "hani.co.kr",
+    "kompas.com",
+    "detik.com",
+    "tempo.co",
+    "jakartapost.com",
+    "republika.co.id",
+    "antaranews.com",
+    "bangkokpost.com",
+    "nationthailand.com",
+    "thaipbs.or.th",
+    "vnexpress.net",
+    "tuoitre.vn",
+    "thanhnien.vn"
+  ],
+  "disabled_sources": [],
+  "source_performance": {},
+  "generated_at": "2026-07-12T23:40:57.943613+00:00",
+  "generation_version": 2
+}

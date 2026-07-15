@@ -1,17 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><opml version="1.0"><head><title>Programming</title></head><body><outline text="Programming">
-<outline title="Coding Horror" xmlUrl="https://feeds.feedburner.com/codinghorror" type="rss"/>
-<outline title="Joel on Software" xmlUrl="https://www.joelonsoftware.com/feed/" type="rss"/>
-<outline title="Martin Fowler" xmlUrl="https://martinfowler.com/feed.atom" type="rss"/>
-<outline title="Scott Hanselman" xmlUrl="http://feeds.hanselman.com/ScottHanselman" type="rss"/>
-<outline title="Dan Abramov" xmlUrl="https://overreacted.io/rss.xml" type="rss"/>
-<outline title="HackerNoon" xmlUrl="https://medium.com/feed/hackernoon" type="rss"/>
-<outline title="Better Programming" xmlUrl="https://medium.com/feed/better-programming" type="rss"/>
-<outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss"/>
-<outline title="The GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss"/>
-<outline title="Engineering at Meta" xmlUrl="https://engineering.fb.com/feed/" type="rss"/>
-<outline title="Spotify Engineering" xmlUrl="https://labs.spotify.com/feed/" type="rss"/>
-<outline title="Airbnb Engineering" xmlUrl="https://medium.com/feed/airbnb-engineering" type="rss"/>
-<outline title="Slack Engineering" xmlUrl="https://slack.engineering/feed" type="rss"/>
-<outline title="InfoQ" xmlUrl="https://feed.infoq.com" type="rss"/>
-<outline title="Stack Abuse" xmlUrl="https://stackabuse.com/rss/" type="rss"/>
-</outline></body></opml>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming</title>
+  </head>
+  <body>
+    <outline text="Programming">
+      <outline title="Coding Horror" xmlUrl="https://feeds.feedburner.com/codinghorror" type="rss" />
+      <outline title="Joel on Software" xmlUrl="https://www.joelonsoftware.com/feed/" type="rss" />
+      <outline title="Martin Fowler" xmlUrl="https://martinfowler.com/feed.atom" type="rss" />
+      <outline title="Scott Hanselman" xmlUrl="http://feeds.hanselman.com/ScottHanselman" type="rss" />
+      <outline title="Dan Abramov" xmlUrl="https://overreacted.io/rss.xml" type="rss" />
+      <outline title="HackerNoon" xmlUrl="https://medium.com/feed/hackernoon" type="rss" />
+      <outline title="Better Programming" xmlUrl="https://medium.com/feed/better-programming" type="rss" />
+      <outline title="Stack Overflow Blog" xmlUrl="https://stackoverflow.blog/feed/" type="rss" />
+      <outline title="The GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="Engineering at Meta" xmlUrl="https://engineering.fb.com/feed/" type="rss" />
+      <outline title="Airbnb Engineering" xmlUrl="https://medium.com/feed/airbnb-engineering" type="rss" />
+      <outline title="Slack Engineering" xmlUrl="https://slack.engineering/feed" type="rss" />
+      <outline title="InfoQ" xmlUrl="https://feed.infoq.com" type="rss" />
+      <outline title="Stack Abuse" xmlUrl="https://stackabuse.com/rss/" type="rss" />
+    </outline>
+  </body>
+</opml>

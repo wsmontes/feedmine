@@ -4,21 +4,24 @@
     <title>Nevada Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Las Vegas Review-Journal" xmlUrl="https://www.reviewjournal.com/feed/" type="rss" />
-        <outline title="Las Vegas Sun" xmlUrl="https://lasvegassun.com/rss" type="rss" />
-        <outline title="Nevada Independent" xmlUrl="https://thenevadaindependent.com/feed/" type="rss" />
-        <outline title="Nevada Current" xmlUrl="https://www.nevadacurrent.com/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Las Vegas Review-Journal" xmlUrl="https://www.reviewjournal.com/feed/" type="rss" />
+      <outline title="Las Vegas Sun" xmlUrl="https://lasvegassun.com/rss" type="rss" />
+      <outline title="Nevada Independent" xmlUrl="https://thenevadaindependent.com/feed/" type="rss" />
+      <outline title="Nevada Current" xmlUrl="https://www.nevadacurrent.com/feed/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Business">
+      <outline title="Vegas Inc" xmlUrl="https://vegasinc.lasvegassun.com/rss" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="Sports">
+      <outline title="Golden Knights" xmlUrl="https://www.nhl.com/goldenknights/rss/news" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Eater Vegas" xmlUrl="https://vegas.eater.com/rss/index.xml" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Business">
-        <outline title="Vegas Inc" xmlUrl="https://vegasinc.lasvegassun.com/rss" type="rss" />
-      </outline>
-      <outline text="Education" />
-      <outline text="Sports">
-        <outline title="Golden Knights" xmlUrl="https://www.nhl.com/goldenknights/rss/news" type="rss" />
-      </outline>
-      <outline text="Culture">
-        <outline title="Eater Vegas" xmlUrl="https://vegas.eater.com/rss/index.xml" type="rss" />
-      </outline></body>
-    </opml>
+  </body>
+</opml>

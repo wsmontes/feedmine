@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Classical Music — Orchestras, Composers &amp; Performance</title>
+  </head>
+  <body>
+    <outline text="Classical Music News &amp; Reviews">
+      <outline title="Limelight Magazine" xmlUrl="https://limelightmagazine.com.au/feed/" type="rss" />
+      <outline title="Slipped Disc" xmlUrl="https://slippedisc.com/feed/" type="rss" />
+      <outline title="I Care If You Listen" xmlUrl="https://icareifyoulisten.com/feed/" type="rss" />
+    </outline>
+    <outline text="Major Orchestras">
+      <outline title="London Symphony Orchestra" xmlUrl="https://lso.co.uk/rss" type="rss" />
+    </outline>
+    <outline text="Opera Companies">
+      <outline title="Royal Opera House" xmlUrl="https://www.roh.org.uk/rss" type="rss" />
+    </outline>
+    <outline text="Chamber Music &amp; Ensembles">
+      </outline>
+    <outline text="Classical Music Blogs &amp; Sites">
+      <outline title="The Listeners' Club" xmlUrl="https://thelistenersclub.com/feed/" type="rss" />
+      <outline title="Alex Ross — The Rest Is Noise" xmlUrl="https://www.therestisnoise.com/feed/" type="rss" />
+      <outline title="An Overgrown Path" xmlUrl="https://www.overgrownpath.com/feeds/posts/default" type="rss" />
+      <outline title="5:4 — Classical Music Blog" xmlUrl="https://5against4.com/feed/" type="rss" />
+      <outline title="Musicology Now" xmlUrl="https://musicologynow.org/feed/" type="rss" />
+    </outline>
+    <outline text="Composers &amp; Contemporary Classical">
+      <outline title="Nico Muhly" xmlUrl="https://nicomuhly.com/rss" type="rss" />
+      <outline title="New Music USA" xmlUrl="https://newmusicusa.org/rss" type="rss" />
+      <outline title="Bang on a Can" xmlUrl="https://bangonacan.org/rss/" type="rss" />
+    </outline>
+    <outline text="Classical Labels &amp; Recordings">
+      <outline title="Naxos Blog" xmlUrl="https://blog.naxos.com/feed/" type="rss" />
+      <outline title="Hyperion Records" xmlUrl="https://www.hyperion-records.co.uk/rss" type="rss" />
+      <outline title="Harmonia Mundi Blog" xmlUrl="https://www.harmoniamundi.com/rss/" type="rss" />
+      <outline title="ECM Records" xmlUrl="https://ecmrecords.com/rss/" type="rss" />
+    </outline>
+    <outline text="Classical Podcasts">
+      <outline title="Classical Classroom" xmlUrl="https://feeds.libsyn.com/classicalclassroom" type="rss" />
+    </outline>
+    <outline text="YouTube — Classical Music">
+      </outline>
+    <outline text="More Orchestras &amp; Ensembles">
+      <outline title="San Francisco Symphony" xmlUrl="https://www.sfsymphony.org/rss" type="rss" />
+      <outline title="Israel Philharmonic" xmlUrl="https://www.ipo.co.il/en/rss/" type="rss" />
+    </outline>
+    <outline text="Music Theory &amp; Education">
+      <outline title="Classical Guitar Magazine" xmlUrl="https://classicalguitarmagazine.com/feed/" type="rss" />
+      <outline title="Music Theory Online" xmlUrl="https://mtosmt.org/rss" type="rss" />
+    </outline>
+    <outline text="Early &amp; Baroque Music">
+      <outline title="Early Music America" xmlUrl="https://www.earlymusicamerica.org/rss" type="rss" />
+      <outline title="Early Music Vancouver" xmlUrl="https://www.earlymusic.bc.ca/rss/" type="rss" />
+      <outline title="Boston Early Music Festival" xmlUrl="https://bemf.org/rss/" type="rss" />
+      <outline title="Academy of Ancient Music" xmlUrl="https://www.aam.co.uk/rss/" type="rss" />
+      <outline title="The English Concert" xmlUrl="https://englishconcert.co.uk/rss/" type="rss" />
+    </outline>
+    <outline text="Brazilian Classical Music">
+      <outline title="Concerto Magazine (BR)" xmlUrl="https://www.concerto.com.br/rss" type="rss" />
+      <outline title="Theatro Municipal SP" xmlUrl="https://theatromunicipal.org.br/rss/" type="rss" />
+    </outline>
+    <outline text="More Classical Podcasts">
+      </outline>
+    <outline text="More YouTube — Classical">
+      </outline>
+  </body>
+</opml>

@@ -70,9 +70,16 @@ def test_profiler_updates_success_metrics():
 
 
 def test_bootstrap_includes_active_sources_only():
-    """Bootstrap should exclude disabled sources."""
+    """Bootstrap should track disabled sources separately without removing them from sources.
+
+    Disabled sources stay in profile.sources (so they can be re-enabled later)
+    but are also listed in profile.disabled_sources (so the pipeline skips them).
+    """
     profiler = CountryProfiler()
     profile = profiler.bootstrap_sync("testland")
+    # Verify that all sources have a SourceConfig
     for name, cfg in profile.sources.items():
-        if name in profile.disabled_sources:
-            pytest.fail(f"{name} is both in sources and disabled_sources")
+        assert cfg.priority > 0, f"{name} has invalid priority"
+    # Disabled sources should be a subset of known sources
+    for name in profile.disabled_sources:
+        assert name in profile.sources, f"{name} is disabled but not in sources"

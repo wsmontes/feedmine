@@ -1,0 +1,239 @@
+{
+  "country": "testland",
+  "internet_penetration": 0.0,
+  "dominant_platforms": [],
+  "languages": [],
+  "sources": {
+    "podcast_index": {
+      "priority": 33,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "itunes_charts": {
+      "priority": 2,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "deezer": {
+      "priority": 43,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_api": {
+      "priority": 38,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_trending": {
+      "priority": 68,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "ddg_text": {
+      "priority": 48,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "itunes": {
+      "priority": 5,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_top_subscribed": {
+      "priority": 73,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "listen_notes": {
+      "priority": 6,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "spotify": {
+      "priority": 7,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "feedly": {
+      "priority": 8,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_awards": {
+      "priority": 78,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_kaggle": {
+      "priority": 12,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_socialblade": {
+      "priority": 88,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_diamond": {
+      "priority": 14,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    }
+  },
+  "local_directories": [],
+  "media_domains": [],
+  "disabled_sources": [
+    "ddg_text",
+    "deezer",
+    "podcast_index",
+    "youtube_api",
+    "youtube_awards",
+    "youtube_top_subscribed",
+    "youtube_trending"
+  ],
+  "source_performance": {
+    "podcast_index": {
+      "total_calls": 5,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 5,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-12T23:06:38.559130+00:00"
+    },
+    "youtube_api": {
+      "total_calls": 5,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 5,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-12T23:06:38.559164+00:00"
+    },
+    "deezer": {
+      "total_calls": 5,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 5,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-12T23:06:38.559171+00:00"
+    },
+    "ddg_text": {
+      "total_calls": 5,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 5,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-12T23:06:38.559177+00:00"
+    },
+    "itunes": {
+      "total_calls": 24,
+      "total_results": 1176,
+      "success_count": 24,
+      "failure_count": 0,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-14T21:22:32.250025+00:00"
+    },
+    "youtube_trending": {
+      "total_calls": 5,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 5,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-14T19:25:50.640962+00:00"
+    },
+    "youtube_top_subscribed": {
+      "total_calls": 5,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 5,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-14T19:25:50.640976+00:00"
+    },
+    "youtube_awards": {
+      "total_calls": 5,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 5,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-14T19:25:50.640981+00:00"
+    },
+    "youtube_kaggle": {
+      "total_calls": 6,
+      "total_results": 300,
+      "success_count": 6,
+      "failure_count": 0,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-14T21:22:32.250027+00:00"
+    },
+    "youtube_socialblade": {
+      "total_calls": 4,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 4,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-14T21:22:32.250028+00:00"
+    },
+    "itunes_charts": {
+      "total_calls": 2,
+      "total_results": 0,
+      "success_count": 0,
+      "failure_count": 2,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-14T21:22:32.250019+00:00"
+    },
+    "youtube_diamond": {
+      "total_calls": 2,
+      "total_results": 100,
+      "success_count": 2,
+      "failure_count": 0,
+      "total_latency_ms": 0.0,
+      "last_probe": "2026-07-14T21:22:32.250032+00:00"
+    }
+  },
+  "generated_at": "2026-07-14T21:22:32.179356+00:00",
+  "generation_version": 1
+}

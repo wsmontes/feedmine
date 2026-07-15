@@ -17,7 +17,6 @@
       <outline title="NIT Srinagar" xmlUrl="https://www.nitsri.ac.in/rss" type="rss" />
     </outline>
     <outline text="Podcasts">
-      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
       <outline title="The New Indian Podcast" xmlUrl="https://anchor.fm/s/d7a1e014/podcast/rss" type="rss" category="News Commentary" />
       <outline title="Semi Political Banter" xmlUrl="https://anchor.fm/s/e830fdc/podcast/rss" type="rss" category="News" />
       <outline title="Going South" xmlUrl="https://anchor.fm/s/fd9a6ca0/podcast/rss" type="rss" category="Politics" />
@@ -37,7 +36,6 @@
       <outline title="Tangentially Speaking with Christopher Ryan" xmlUrl="https://api.substack.com/feed/podcast/814293.rss" type="rss" category="Arts" />
       <outline title="On the Media" xmlUrl="https://feeds.simplecast.com/o4jAFXaw" type="rss" category="Politics" />
       <outline title="Love, Listen &amp; Learn" xmlUrl="https://anchor.fm/s/20e74184/podcast/rss" type="rss" category="Self-Improvement" />
-      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
       <outline title="Bridging the Social Distance" xmlUrl="https://api.substack.com/feed/podcast/35644.rss" type="rss" category="Society &amp; Culture" />
       <outline title="Socialism Conference" xmlUrl="https://feeds.captivate.fm/socialism-conference/" type="rss" category="Society &amp; Culture" />
       <outline title="Haymarket Books Live" xmlUrl="https://feeds.captivate.fm/haymarket-books-live/" type="rss" category="Society &amp; Culture" />
@@ -51,7 +49,6 @@
       <outline title="The BIG Show with Glenn, Angel and Tim" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/1b3229b1-0ab7-45fc-9a86-a59300672728/1ae712eb-416e-4741-8d31-a80300a0c90c/podcast.rss" type="rss" category="Comedy" />
       <outline title="Jesus 24/7" xmlUrl="https://anchor.fm/s/6de87020/podcast/rss" type="rss" category="Christianity" />
       <outline title="Radio Sada e Hurriyat Jammu and Kashmir" xmlUrl="https://anchor.fm/s/e434b400/podcast/rss" type="rss" category="Politics" />
-      <outline title="Global News Podcast" xmlUrl="https://podcasts.files.bbci.co.uk/p02nq0gn.rss" type="rss" category="Daily News" />
       <outline title="In The News" xmlUrl="https://feeds.acast.com/public/shows/b2fb5f0b-0ce7-4e5c-b6e0-9b1febd06aea" type="rss" category="News" />
       <outline title="What's New" xmlUrl="https://feeds.megaphone.fm/CNE9949763468" type="rss" category="Technology" />
       <outline title="Srijan Foundation Talks" xmlUrl="https://raw.githubusercontent.com/sanskrit-coders/rss-feeds/auto-built-feeds/en/SrijanFoundationTalks.rss" type="rss" category="Society &amp; Culture" />
@@ -65,56 +62,7 @@
       <outline title="Carnegie Council Podcasts" xmlUrl="https://rss.libsyn.com/shows/148595/destinations/952415.xml" type="rss" category="News Commentary" />
     </outline>
     <outline text="YouTube">
-      <outline title="Bhanvi Bhardwaj" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSo5owXNNgq-ePXIrlD9hmw" type="rss" />
-      <outline title="Gulistan News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk7rHVFVs1Uf_dDOPKc2l0Q" type="rss" />
-      <outline title="Realestate Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqW6yuN61eWPYLr100tmKgg" type="rss" />
-      <outline title="Jammu and Kashmir India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDWxQq-QSBVu3rf4UJFVSdg" type="rss" />
-      <outline title="Jammu Kashmir Now" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6QyJBzqB9z7CteW41otUxw" type="rss" />
-      <outline title="Enoxx News (Jammu &amp; Kashmir)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCit3FtQ5dApbxcSaUfvDxxg" type="rss" />
-      <outline title="jammu kashmir India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1oaxLC2hXCCNLNBFWS0nvQ" type="rss" />
-      <outline title="Kashmir Backpacker" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsjL3XxOVEnOlfQHWw72UWg" type="rss" />
-      <outline title="Jammu &amp; Kashmir Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGZQ6XS3X6PIrZFBX2c_d_w" type="rss" />
-      <outline title="Explore Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUWYlcmO_ZTIvCPELCaa6AA" type="rss" />
-      <outline title="Daily Srinagar News TV (Jammu Kashmir)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd6x2x37yr3es4fQgrIEtfQ" type="rss" />
-      <outline title="Newspoint Live" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1CcQIR09HsBE8S555TpPdA" type="rss" />
-      <outline title="Jammu Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBRhlETDBIrYaQu4FJINUZw" type="rss" />
-      <outline title="Jammu Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6tgS2WcjyVhdk4Yl_DwCRg" type="rss" />
-      <outline title="Voice of Jammu &amp; Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMH2r4VY4T4f-5s2daqOkOw" type="rss" />
-      <outline title="Excelsior News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT4ZAqOV3-2s5pKnBEhh4fw" type="rss" />
-      <outline title="JK Media" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRXuOk2U792ckMIa8guVB3Q" type="rss" />
-      <outline title="Jammu &amp; Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3DM6HVgSAh_76uQghyMOIg" type="rss" />
-      <outline title="EXPLORE JAMMU &amp; KASHMIR " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY8R2GKXEHy7uv64jLLFxwg" type="rss" />
-      <outline title="Jammu Kashmir Study Center" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCStWtCrA_hCARvfQeVsn5Eg" type="rss" />
-      <outline title="Jammu Kashmir Press" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgcMhzEt3hrBXwpvEXQru6A" type="rss" />
-      <outline title="NBBUI Jammu and Kashmir India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN9AT0JM2K5t1hox0Lfr9UA" type="rss" />
-      <outline title="DISCOVER JAMMU KASHMIR" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_9zIzZ8773AV9VhczAT7wg" type="rss" />
-      <outline title="India News Jammu and Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe0iZFcxpM03Fz1Wg0PvwLQ" type="rss" />
-      <outline title="Jammu Kashmir India YouTube channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFWEUOGbPXmUBEHiYC7tQwg" type="rss" />
-      <outline title="JUST LISTEN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdVdyGFHgkQkPGpZHnC9NjA" type="rss" />
-      <outline title="Kashmir Ahead" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCphJqceKqdz5fDsIguPUhlQ" type="rss" />
-      <outline title="Beautiful Jammu &amp; Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0oFxUvn_Ujm2VJ_z9YfnWA" type="rss" />
-      <outline title="JKCA (Jammu &amp; Kashmir Cricket Association)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCA68X75tRUpfr0eKl8jGftA" type="rss" />
-      <outline title="Munsif TV Jammu &amp; Kashmir News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkm5kTuXngS5ui-CFLO8uuA" type="rss" />
-      <outline title="JK News19" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRX5CL_XTJft5NF-B4zm0wg" type="rss" />
-      <outline title="Incredible Jammu and Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4bUJOtjjbfBjFhrQAqALBg" type="rss" />
-      <outline title="DD Kashir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOqU-HfQxoyImaCW2tCDxJA" type="rss" />
-      <outline title="Jobs Adda Institute (Ashiq Lone)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKRyh7mxqglcEgjfASANN8w" type="rss" />
-      <outline title="JAMMU JAMMU KASHMIR" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr1KST1j-nVaZuDx21-pX7w" type="rss" />
-      <outline title="J&amp;K Bank" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzg-lL7fl3sIIeGXyOd7_Cw" type="rss" />
       <outline title="Khabar Jammu kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCANgiB4Gz4izL5Rf-7x798g" type="rss" />
-      <outline title="News18 J&amp;K" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRcye_z41WXpW5JalQm8wJw" type="rss" />
-      <outline title="Dogri culture update #Jammu Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEy7QaxQs3H7Zz7grj4NSpw" type="rss" />
-      <outline title="KASHMIR WEATHER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTUu-dG7V9h8K3iWLIk_ehA" type="rss" />
-      <outline title="News18 Urdu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9IQhNgS43lmUdU-KdGyb0A" type="rss" />
-      <outline title="AK RAJPUT J&amp;K" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCusQA3O5vRYIVt0kxqNKImA" type="rss" />
-      <outline title="Kashmir Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCE9bA1FDEkotdo7Wzn2K5Og" type="rss" />
-      <outline title="Amar Ujala Jammu and Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_AZKdr83xCLaf1dJQB--gQ" type="rss" />
-      <outline title="News Now" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgg-eLaCQoWbYKWoZKLkbZw" type="rss" />
-      <outline title="BJP Jammu &amp; Kashmir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkMHS7PituzdkOkxEBtuJ-w" type="rss" />
-      <outline title="JK Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHZIJIDd1ArhqzK9itV0buw" type="rss" />
-      <outline title="Jkupdate" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvP6cno2or7kfDG3tE1eVgw" type="rss" />
-      <outline title="KASHMIR TRAVEL LINKS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCysoQ3j685hsAbOGH6MxPjQ" type="rss" />
-      <outline title="JammuKashmir Festival" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8iCvxfxGcS8OszEqf8kfZA" type="rss" />
     </outline>
   </body>
 </opml>

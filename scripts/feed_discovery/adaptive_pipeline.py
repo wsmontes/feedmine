@@ -207,12 +207,39 @@ def _get_source_instance(name: str):
         elif name == "youtube_api":
             from .sources.youtube_api import YouTubeAPISource
             inst = YouTubeAPISource()
+        elif name == "reddit":
+            from .sources.reddit import RedditSource
+            inst = RedditSource()
+        elif name == "google_news":
+            from .sources.google_news import GoogleNewsSource
+            inst = GoogleNewsSource()
+        elif name == "itunes_charts":
+            from .sources.itunes_charts import ITunesChartsSource
+            inst = ITunesChartsSource()
+        elif name == "youtube_trending":
+            from .sources.youtube_trending import YouTubeTrendingSource
+            inst = YouTubeTrendingSource()
         elif name == "ddg_text":
             from .sources.ddg_text import DDGTextSource
             inst = DDGTextSource()
         elif name == "itunes":
             from .sources.podcasts import ITunesSource
             inst = ITunesSource()
+        elif name == "youtube_top_subscribed":
+            from .sources.youtube_top_subscribed import YouTubeTopSubscribedSource
+            inst = YouTubeTopSubscribedSource()
+        elif name == "youtube_awards":
+            from .sources.youtube_awards import YouTubeAwardsSource
+            inst = YouTubeAwardsSource()
+        elif name == "youtube_kaggle":
+            from .sources.youtube_kaggle import YouTubeKaggleSource
+            inst = YouTubeKaggleSource()
+        elif name == "youtube_socialblade":
+            from .sources.youtube_socialblade import YouTubeSocialBladeSource
+            inst = YouTubeSocialBladeSource()
+        elif name == "youtube_diamond":
+            from .sources.youtube_diamond import YouTubeDiamondSource
+            inst = YouTubeDiamondSource()
         else:
             return None
         _source_cache[name] = inst

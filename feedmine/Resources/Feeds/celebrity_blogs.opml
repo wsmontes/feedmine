@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Famous People — Blogs, Podcasts &amp; Channels</title>
+  </head>
+  <body>
+    <outline text="Authors &amp; Writers">
+      <outline title="Neil Gaiman's Journal" xmlUrl="https://journal.neilgaiman.com/feeds/posts/default" type="rss" />
+      <outline title="George R.R. Martin — Not A Blog" xmlUrl="https://georgerrmartin.com/notablog/feed/" type="rss" />
+      <outline title="John Scalzi — Whatever" xmlUrl="https://whatever.scalzi.com/feed/" type="rss" />
+      <outline title="Chuck Wendig — Terribleminds" xmlUrl="http://terribleminds.com/ramble/feed/" type="rss" />
+      <outline title="Patrick Rothfuss" xmlUrl="https://blog.patrickrothfuss.com/feed/" type="rss" />
+      <outline title="Paulo Coelho" xmlUrl="https://paulocoelhoblog.com/feed/" type="rss" />
+      <outline title="Margaret Atwood (MaddAddam)" xmlUrl="https://margaretatwood.ca/feed/" type="rss" />
+      <outline title="Salman Rushdie" xmlUrl="https://www.salmanrushdie.com/feed/" type="rss" />
+      <outline title="Stephen Fry" xmlUrl="https://stephenfry.com/feed/" type="rss" />
+      <outline title="Maggie Stiefvater" xmlUrl="https://maggiestiefvater.com/feed/" type="rss" />
+      <outline title="Chimamanda Ngozi Adichie" xmlUrl="https://www.chimamanda.com/feed/" type="rss" />
+      <outline title="Cory Doctorow (Pluralistic)" xmlUrl="https://pluralistic.net/feed/" type="rss" />
+      <outline title="Mark Manson" xmlUrl="https://markmanson.net/feed/" type="rss" />
+      <outline title="James Clear" xmlUrl="https://jamesclear.com/feed" type="rss" />
+    </outline>
+    <outline text="Scientists &amp; Thinkers">
+      <outline title="Sean Carroll — Preposterous Universe" xmlUrl="https://www.preposterousuniverse.com/blog/feed/" type="rss" />
+      <outline title="Sabine Hossenfelder — Backreaction" xmlUrl="http://backreaction.blogspot.com/feeds/posts/default" type="rss" />
+      <outline title="Stephen Wolfram — Writings" xmlUrl="https://writings.stephenwolfram.com/feed/" type="rss" />
+      <outline title="Scott Aaronson" xmlUrl="https://scottaaronson.blog/feed/" type="rss" />
+      <outline title="Steven Pinker" xmlUrl="https://stevenpinker.com/feed" type="rss" />
+    </outline>
+    <outline text="Tech &amp; Business Leaders">
+      <outline title="Mark Cuban — Blog Maverick" xmlUrl="https://blogmaverick.com/feed/" type="rss" />
+      <outline title="Tim Ferriss" xmlUrl="https://tim.blog/feed/" type="rss" />
+      <outline title="Seth Godin" xmlUrl="https://sethgodin.com/feed/" type="rss" />
+      <outline title="Fred Wilson — AVC" xmlUrl="https://avc.com/feed/" type="rss" />
+      <outline title="Jeff Atwood — Coding Horror" xmlUrl="https://blog.codinghorror.com/rss/" type="rss" />
+      <outline title="Joel Spolsky" xmlUrl="https://www.joelonsoftware.com/feed/" type="rss" />
+      <outline title="Derek Sivers" xmlUrl="https://sivers.org/en.atom" type="rss" />
+      <outline title="Kevin Kelly — The Technium" xmlUrl="https://kk.org/thetechnium/feed/" type="rss" />
+      <outline title="Gary Vaynerchuk" xmlUrl="https://www.garyvaynerchuk.com/feed/" type="rss" />
+      <outline title="Scott Galloway — No Mercy / No Malice" xmlUrl="https://www.profgalloway.com/feed/" type="rss" />
+      <outline title="Patrick Collison" xmlUrl="https://patrickcollison.com/rss" type="rss" />
+      <outline title="Ryan Holiday" xmlUrl="https://ryanholiday.net/feed/" type="rss" />
+      <outline title="Shane Parrish — Farnam Street" xmlUrl="https://fs.blog/feed/" type="rss" />
+    </outline>
+    <outline text="Celebrity Podcasts (with RSS)">
+      </outline>
+    <outline text="YouTube — Celebrity Channels">
+      </outline>
+    <outline text="Athletes &amp; Sports Stars">
+      <outline title="Lewis Howes — School of Greatness" xmlUrl="https://lewishowes.com/feed/" type="rss" />
+      <outline title="David Goggins" xmlUrl="https://davidgoggins.com/feed/" type="rss" />
+    </outline>
+    <outline text="Musicians &amp; Artists">
+      <outline title="Questlove" xmlUrl="https://www.questlove.com/feed/" type="rss" />
+      <outline title="Amanda Palmer" xmlUrl="https://blog.amandapalmer.net/feed/" type="rss" />
+      <outline title="Patti Smith" xmlUrl="https://www.pattismith.net/feed/" type="rss" />
+    </outline>
+    <outline text="Politicians &amp; World Leaders">
+      <outline title="Barack Obama" xmlUrl="https://barackobama.medium.com/feed" type="rss" />
+    </outline>
+    <outline text="More Famous Blogs &amp; Newsletters">
+      <outline title="Brain Pickings (Maria Popova)" xmlUrl="https://www.themarginalian.org/feed/" type="rss" />
+      <outline title="Wait But Why (Tim Urban)" xmlUrl="https://waitbutwhy.com/feed" type="rss" />
+      <outline title="Austin Kleon" xmlUrl="https://austinkleon.com/feed/" type="rss" />
+      <outline title="Brainfood (Shane Parrish)" xmlUrl="https://fs.blog/brain-food/rss/" type="rss" />
+      <outline title="Benedict Evans" xmlUrl="https://www.ben-evans.com/benedictevans?format=RSS" type="rss" />
+      <outline title="Stratechery (Ben Thompson)" xmlUrl="https://stratechery.com/feed/" type="rss" />
+      <outline title="Matt Mullenweg — Photo Blog" xmlUrl="https://ma.tt/feed/" type="rss" />
+      <outline title="Cal Newport — Study Hacks" xmlUrl="https://calnewport.com/feed/" type="rss" />
+      <outline title="Nassim Nicholas Taleb" xmlUrl="https://medium.com/feed/@nntaleb" type="rss" />
+    </outline>
+  </body>
+</opml>

@@ -5,11 +5,6 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="VOV - Chương trình Thời sự" xmlUrl="https://anchor.fm/s/86ec8d4/podcast/rss" type="rss" category="News" />
-      <outline title="VietnamPlus's Podcast" xmlUrl="https://rss.buzzsprout.com/833146.rss" type="rss" category="News Commentary" />
-      <outline title="VOV - Sự kiện Bàn luận" xmlUrl="https://anchor.fm/s/8535a2c/podcast/rss" type="rss" category="News" />
-      <outline title="VOV - Tin nhanh 24h" xmlUrl="https://anchor.fm/s/86f0c04/podcast/rss" type="rss" category="News" />
-      <outline title="VOV - Nội chính" xmlUrl="https://anchor.fm/s/87b8d30/podcast/rss" type="rss" category="News" />
       <outline title="Bài giảng Phật Giáo TT. Thích Chân Quang" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:403968051/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
       <outline title="GIÁ HEO HƠI" xmlUrl="https://anchor.fm/s/5a9f4d18/podcast/rss" type="rss" category="Daily News" />
       <outline title="Saigon Times Podcasts" xmlUrl="https://anchor.fm/s/43d92590/podcast/rss" type="rss" category="News" />
@@ -18,16 +13,11 @@
       <outline title="Deer Park Dharmacast" xmlUrl="https://deerpark.libsyn.com/rss" type="rss" category="Buddhism" />
       <outline title="Dịch vụ seo &amp; thiết kế website LP Tech" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:139503540/sounds.rss" type="rss" category="Technology" />
       <outline title="Inward Empire" xmlUrl="https://inwardempirepodcast.podomatic.com/rss2.xml" type="rss" category="History" />
-      <outline title="Radio TGP Hà Nội" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:681248687/sounds.rss" type="rss" category="News" />
       <outline title="Les petits aventuriers au Vietnam" xmlUrl="https://anchor.fm/s/f578a64/podcast/rss" type="rss" category="Kids &amp; Family" />
-      <outline title="Vietnam Insider" xmlUrl="https://anchor.fm/s/56018c94/podcast/rss" type="rss" category="News" />
       <outline title="Fluent Fiction - Vietnamese" xmlUrl="https://www.spreaker.com/show/5818696/episodes/feed" type="rss" category="Language Learning" />
-      <outline title="Confused Heap of Facts" xmlUrl="https://mobdiv.box.com/shared/static/xunc1fw7ae2toad7gnum2svzk2p3s1dg.xml" type="rss" category="Education" />
       <outline title="Cửu Bình – 9 Bài Bình Luận Về Đảng Cộng Sản" xmlUrl="http://rss.castbox.fm/everest/54887d2c29fd423f9aea13e052a10414.xml" type="rss" category="Daily News" />
       <outline title="Nam Phong Dialogues" xmlUrl="https://app.talkshoe.com/rss-nam-phong-dialogues.xml" type="rss" category="Society &amp; Culture" />
       <outline title="World History: True Stories of the 20th Century" xmlUrl="https://anchor.fm/s/10fda9c50/podcast/rss" type="rss" category="History" />
-      <outline title="The Vietnam Weekly Podcast" xmlUrl="https://api.substack.com/feed/podcast/15092.rss" type="rss" category="News" />
-      <outline title="Vietnam Innovators" xmlUrl="https://anchor.fm/s/1029d909c/podcast/rss" type="rss" category="Business" />
       <outline title="Trạm Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:584948205/sounds.rss" type="rss" category="Society &amp; Culture" />
       <outline title="Hoàng Nam Group" xmlUrl="https://anchor.fm/s/70c6576c/podcast/rss" type="rss" category="Business News" />
       <outline title="Mekong Energy Insights" xmlUrl="https://feeds.podcastle.ai/2c3b7ada-2e73-48f2-8bd6-c791020325f9.rss" type="rss" category="Business" />
@@ -40,7 +30,6 @@
       <outline title="The Principles of War - Lessons from Military History on Strategy, Tactics, Doctrine and Leadership." xmlUrl="https://rss.libsyn.com/shows/117957/destinations/678906.xml" type="rss" category="History" />
       <outline title="Excellence in Global Offshore Wind (ExGOW) with Philip Bassil" xmlUrl="https://api.riverside.fm/hosting/uUjTGPbS.rss" type="rss" category="Business" />
       <outline title="Saigoneer Audio Archive" xmlUrl="https://anchor.fm/s/f82160a8/podcast/rss" type="rss" category="Society &amp; Culture" />
-      <outline title="VTV News" xmlUrl="https://anchor.fm/s/5042ad38/podcast/rss" type="rss" category="News" />
       <outline title="Today in True Crime" xmlUrl="https://feeds.megaphone.fm/SPOT1519758992" type="rss" category="True Crime" />
       <outline title="FC Review Cong Tam" xmlUrl="https://feeds.simplecast.com/xVn2Huwa" type="rss" category="Sports" />
       <outline title="Agrifood Brief" xmlUrl="https://feeds.transistor.fm/agrifood-brief" type="rss" category="Politics" />
@@ -54,56 +43,8 @@
       <outline title="BlueDot Narrated" xmlUrl="https://rss.buzzsprout.com/2334908.rss" type="rss" category="Technology" />
     </outline>
     <outline text="YouTube">
-      <outline title="Thuan Phuong Group" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCh8pY-3k56NNmZNUW0JRnfw" type="rss" />
-      <outline title="Mambo Home" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCc5Uiouu88QinwlfBhIqH7A" type="rss" />
-      <outline title="HUẾ VIỆT NAM NGÀY NAY" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPbk6xanAillwAFzmr5kd5A" type="rss" />
-      <outline title="VIỆT NAM TRAVEL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHo18P2tkn7ULqYJrTufOGQ" type="rss" />
-      <outline title="EBC Vietnam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWGDdPXaJZFHbAR5sw5G1sg" type="rss" />
-      <outline title="Hello Binh Thuan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0j0pPV6xJ3-5R__8CK2fmg" type="rss" />
-      <outline title="VietNam farmstay - Farmstay Việt Nam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL0iu-mvwCr6VMfrKxSaT3g" type="rss" />
-      <outline title="RayStarsMov" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC07Az5HF41HaOVK3sUQuPuQ" type="rss" />
-      <outline title="Small family in Vietnam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW9orfDhAfgUizDgf8Xdn0A" type="rss" />
-      <outline title="Vòng quanh Việt Nam I Around Vietnam " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjMNOunM5far2mycKYfIIkw" type="rss" />
-      <outline title="Việt Phương Thoa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg2Pq_61OYOUjbq8fTA1t3A" type="rss" />
-      <outline title="Việt Nam Xanh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-BHJy9T2g89B_BcLuVWWyQ" type="rss" />
       <outline title="Phan Thiet Pho" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ1yvOJcuE1kpZ8nudGhd4g" type="rss" />
-      <outline title="Organic Pomelo Farm - Binh Thuan Vn" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCabEk8Zi2fBg9hCf3h-h9dw" type="rss" />
-      <outline title="AIMS Việt Nam - Đầu tư định cư" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFWwaE3Too-qefepwlYYeoA" type="rss" />
-      <outline title="Việt Nam Trong Tôi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRFMFZU1s1FAoyFTLcwav2w" type="rss" />
-      <outline title="Hoa Hậu Biển Đảo Việt Nam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvEFENalOOVcWEkLFazdgWw" type="rss" />
-      <outline title="🗺️Thời_Tiết_123🌀" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuR4CpNUEl8XXCaDGR5aiiA" type="rss" />
-      <outline title="Vietnam Drone" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdhbl_hlkLZsRj37xUescdw" type="rss" />
-      <outline title="Vietlife channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5omq723yYUfgV0fLjjJwLw" type="rss" />
-      <outline title="Amazing Ninh Thuận" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV_cIqr9ePn-PsT0rIH44lA" type="rss" />
-      <outline title="Hey! Đi thôi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8IC4rEVEHwPxpBaOAHav_Q" type="rss" />
-      <outline title="ĐỘC LẠ VIỆT NAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSVUw-eq8DkEh0rN4aOIm9w" type="rss" />
-      <outline title="Việt Nam Eco farm" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChXNz-NdzCuwpN925M6lyug" type="rss" />
-      <outline title="Hello VietNam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDKISYLnsrzSGRsM_I3wngg" type="rss" />
-      <outline title="Sunrise" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCthkT1PALH3ZtAWGUNyueQw" type="rss" />
-      <outline title="THECI VIETNAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpsDjmbEzVFvHh-ZTjuLSnw" type="rss" />
-      <outline title="Vietnam Discovery" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0PewfhMxyqAQ4cwYo8s4SA" type="rss" />
-      <outline title="Yakult Việt Nam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCH8rxDxaR7MhuZAlF4CC91Q" type="rss" />
-      <outline title="THẨM MỸ VIỆN MAILISA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdD1ndobMByluRexjIgD-8g" type="rss" />
       <outline title="VSIP Vietnam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz0Idd8G7GMrPiHyMi1G1Ww" type="rss" />
-      <outline title="LuxProp Vietnam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPSBHbsQHqglneBz31pCVng" type="rss" />
-      <outline title="Gà Lang Thang" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuUsr9cEw_adsIUShDsyHvw" type="rss" />
-      <outline title="SAO VÀNG VIỆT NAM VOLLEYBALL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0F0t9fpHtWJvO1O3T4fBug" type="rss" />
-      <outline title="Xuyên Việt &amp; Những Trải Nghiệm" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOjBK5KiCdsoa9IUNw9QPkQ" type="rss" />
-      <outline title="Học sinh Bình Thuận Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtEnCKxvWl-PKF7mjKRqTlg" type="rss" />
-      <outline title="The Long Ride" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5uBESnspRQfqJpIV5L_RFg" type="rss" />
-      <outline title="2 NGÀY 1 ĐÊM VIETNAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChGncdgzOKmp5XQTnQa2h4w" type="rss" />
-      <outline title="BYD Auto Vietnam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCi_xKIRULaExdNpIH-LitNA" type="rss" />
-      <outline title="Lagi’s Nest Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX1AD8-1_rFnCOng2POmI-w" type="rss" />
-      <outline title="Bee Explore " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR-B_RhzTv19OKqlz0-vkGA" type="rss" />
-      <outline title="Trực Nguyễn Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDIfqf30M-8SC8VdIbXXoEw" type="rss" />
-      <outline title="A'fruit Premium Dragon Fruit Products" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCc3WdSZI-vhhhodi6HYzn-w" type="rss" />
-      <outline title="Jennifer Pham Tour Guide" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq9zA7R-oXlYvHXr3CzXT9g" type="rss" />
-      <outline title="Vietnam Defence" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC985gF3Ffxg3oBPQ9i6wScg" type="rss" />
-      <outline title="Phong Homestay" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGro0UvDzpDo7_LzyyjnRHA" type="rss" />
-      <outline title=" 베트남 여행 THU TOURS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAWY_dH3J-wolvDSrwNnuOA" type="rss" />
-      <outline title="Hoa Lửa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0uCcRSPby-K1co21suAuCg" type="rss" />
-      <outline title="Tysu Chu du" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC61fR1X1xW1bEt_jtOQwXcQ" type="rss" />
-      <outline title="Countryside’s Vietnam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChmJ1Tof9UReNlI6wAjchDw" type="rss" />
     </outline>
   </body>
 </opml>

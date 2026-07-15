@@ -5,19 +5,20 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="Nunatsiaq News" xmlUrl="https://nunatsiaq.com/feed/" type="rss" />
       <outline title="Nunavut News" xmlUrl="https://www.nunavutnews.com/feed/" type="rss" />
     </outline>
     <outline text="Culture">
       <outline title="Nunavut Arts and Crafts Association" xmlUrl="https://www.nacaarts.org/feed/" type="rss" />
     </outline>
-<outline text="Business">
+    <outline text="Business">
       <outline title="Nunavut Economic Developers Association" xmlUrl="https://www.nunavuteda.com/feed/" type="rss" />
     </outline>
     <outline text="Cities">
-<outline text="Rankin Inlet">
+      <outline text="Rankin Inlet">
         <outline title="Hamlet of Rankin Inlet" xmlUrl="https://www.rankininlet.ca/feed/" type="rss" />
       </outline>
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

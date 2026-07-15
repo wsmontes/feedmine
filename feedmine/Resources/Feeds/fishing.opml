@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Fishing — Fly, Bass, Saltwater &amp; More</title>
+  </head>
+  <body>
+    <outline text="Fishing News &amp; Magazines">
+      <outline title="Field &amp; Stream — Fishing" xmlUrl="https://www.fieldandstream.com/rss/fishing/" type="rss" />
+      <outline title="In-Fisherman" xmlUrl="https://www.in-fisherman.com/rss/" type="rss" />
+      <outline title="Sport Fishing Magazine" xmlUrl="https://www.sportfishingmag.com/rss/" type="rss" />
+      <outline title="Salt Water Sportsman" xmlUrl="https://www.saltwatersportsman.com/rss/" type="rss" />
+      <outline title="Fly Fisherman Magazine" xmlUrl="https://www.flyfisherman.com/rss/" type="rss" />
+      <outline title="Trout &amp; Salmon (UK)" xmlUrl="https://www.troutandsalmon.com/rss" type="rss" />
+      <outline title="Fishing World (AUS)" xmlUrl="https://www.fishingworld.com.au/rss" type="rss" />
+      <outline title="Big Bass" xmlUrl="https://bigbass.com/feed/" type="rss" />
+    </outline>
+    <outline text="Fly Fishing">
+      <outline title="Orvis Fly Fishing Blog" xmlUrl="https://news.orvis.com/rss" type="rss" />
+      <outline title="Gink &amp; Gasoline" xmlUrl="https://www.ginkandgasoline.com/feed/" type="rss" />
+      <outline title="MidCurrent" xmlUrl="https://midcurrent.com/feed/" type="rss" />
+      <outline title="Fly Fishing Blog" xmlUrl="https://flyfishingblog.com/feed/" type="rss" />
+      <outline title="The Fiberglass Manifesto" xmlUrl="https://thefiberglassmanifesto.blogspot.com/feeds/posts/default" type="rss" />
+      <outline title="Trout Unlimited — Blog" xmlUrl="https://www.tu.org/rss/" type="rss" />
+      <outline title="Flylords Mag" xmlUrl="https://flylordsmag.com/feed/" type="rss" />
+      <outline title="Venturing Angler" xmlUrl="https://venturingangler.com/feed/" type="rss" />
+    </outline>
+    <outline text="Bass Fishing">
+      <outline title="Bassmaster" xmlUrl="https://www.bassmaster.com/rss" type="rss" />
+      <outline title="Wired2Fish" xmlUrl="https://www.wired2fish.com/rss/" type="rss" />
+      <outline title="BassFan" xmlUrl="https://www.bassfan.com/rss/" type="rss" />
+      <outline title="Major League Fishing" xmlUrl="https://majorleaguefishing.com/rss/" type="rss" />
+    </outline>
+    <outline text="Saltwater &amp; Offshore">
+      <outline title="Marlin Magazine" xmlUrl="https://www.marlinmag.com/rss/" type="rss" />
+      <outline title="Billfish Report" xmlUrl="https://billfishreport.com/feed/" type="rss" />
+    </outline>
+    <outline text="Ice Fishing &amp; Specialty">
+      <outline title="Catfish Edge" xmlUrl="https://catfishedge.com/feed/" type="rss" />
+      <outline title="Carp Fishing Blog" xmlUrl="https://carphunter.com/feed/" type="rss" />
+    </outline>
+    <outline text="Fishing Gear &amp; Tackle">
+      <outline title="Fishing Tackle Retailer" xmlUrl="https://www.fishingtackleretailer.com/rss" type="rss" />
+    </outline>
+    <outline text="Fishing Podcasts">
+      <outline title="Wet Fly Swing Fly Fishing" xmlUrl="https://feeds.libsyn.com/wetflyswing" type="rss" />
+      <outline title="Fish Untamed Podcast" xmlUrl="https://feeds.libsyn.com/fishuntamed" type="rss" />
+    </outline>
+    <outline text="Fishing Conservation">
+      <outline title="Trout Unlimited" xmlUrl="https://www.tu.org/rss/" type="rss" />
+      <outline title="Bonefish &amp; Tarpon Trust" xmlUrl="https://www.bonefishtarpontrust.org/rss/" type="rss" />
+      <outline title="Atlantic Salmon Federation" xmlUrl="https://www.asf.ca/rss" type="rss" />
+    </outline>
+    <outline text="YouTube — Fishing Channels">
+      </outline>
+    <outline text="Regional Fishing — US">
+      <outline title="Louisiana Sportsman" xmlUrl="https://www.louisianasportsman.com/rss/" type="rss" />
+      <outline title="Texas Fish &amp; Game" xmlUrl="https://fishgame.com/feed/" type="rss" />
+      <outline title="Northwest Fishing Reports" xmlUrl="https://www.northwestfishingreports.com/rss" type="rss" />
+      <outline title="Lake Ontario Fishing" xmlUrl="https://lakeontariofishing.com/feed/" type="rss" />
+    </outline>
+    <outline text="Regional Fishing — International">
+      <outline title="Fishing in Ireland" xmlUrl="https://fishinginireland.info/feed/" type="rss" />
+      <outline title="NZ Fishing News" xmlUrl="https://www.nzfishingnews.co.nz/rss" type="rss" />
+    </outline>
+    <outline text="More Fishing YouTube">
+      </outline>
+    <outline text="More Fishing Podcasts">
+      </outline>
+    <outline text="Kayak Fishing">
+      <outline title="Kayak Angler Magazine" xmlUrl="https://www.kayakanglermag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Fishing Recipes &amp; Cooking">
+      <outline title="Hunt Gather Cook" xmlUrl="https://honest-food.net/feed/" type="rss" />
+      <outline title="Fishing &amp; Cooking Blog" xmlUrl="https://fishandcook.com/feed/" type="rss" />
+      <outline title="Angler's Journal" xmlUrl="https://www.anglersjournal.com/rss/" type="rss" />
+      <outline title="Go Fishing UK" xmlUrl="https://gofishing.co.uk/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

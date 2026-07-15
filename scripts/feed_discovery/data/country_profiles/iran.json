@@ -1,0 +1,139 @@
+{
+  "country": "iran",
+  "internet_penetration": 0.68,
+  "dominant_platforms": [
+    "whatsapp",
+    "facebook",
+    "instagram",
+    "youtube",
+    "telegram"
+  ],
+  "languages": [
+    "ar",
+    "en",
+    "fa",
+    "tr",
+    "he",
+    "ku"
+  ],
+  "sources": {
+    "podcast_index": {
+      "priority": 2,
+      "enabled": true,
+      "params": {
+        "lang": "ar,fa,tr"
+      },
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "deezer": {
+      "priority": 1,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_api": {
+      "priority": 3,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "ddg_text": {
+      "priority": 4,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "itunes": {
+      "priority": 5,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "listen_notes": {
+      "priority": 7,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "spotify": {
+      "priority": 6,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "feedly": {
+      "priority": 8,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    }
+  },
+  "local_directories": [],
+  "media_domains": [
+    "arabnews.com",
+    "saudigazette.com.sa",
+    "alriyadh.com",
+    "gulfnews.com",
+    "khaleejtimes.com",
+    "thenational.ae",
+    "aljazeera.net",
+    "aljazeera.com",
+    "alaraby.co.uk",
+    "alahram.org.eg",
+    "egyptindependent.com",
+    "madamasr.com",
+    "dailynewsegypt.com",
+    "almasryalyoum.com",
+    "hurriyet.com.tr",
+    "sabah.com.tr",
+    "cumhuriyet.com.tr",
+    "dailysabah.com",
+    "ahvalnews.com",
+    "duvarenglish.com",
+    "tehrantimes.com",
+    "ifpnews.com",
+    "farsnews.ir",
+    "tasnimnews.com",
+    "irna.ir",
+    "timesofisrael.com",
+    "jpost.com",
+    "haaretz.com",
+    "ynetnews.com",
+    "globes.co.il",
+    "dailystar.com.lb",
+    "naharnet.com",
+    "jordantimes.com",
+    "rudaw.net",
+    "iraqinews.com",
+    "hespress.com",
+    "lematin.ma",
+    "moroccoworldnews.com",
+    "tunisienumerique.com",
+    "algeriepatriotique.com",
+    "alarabiya.net",
+    "skynewsarabia.com",
+    "bbc.com/arabic",
+    "middleeasteye.net",
+    "middleeastmonitor.com"
+  ],
+  "disabled_sources": [],
+  "source_performance": {},
+  "generated_at": "2026-07-12T23:40:28.318717+00:00",
+  "generation_version": 2
+}

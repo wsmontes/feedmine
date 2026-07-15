@@ -5,12 +5,8 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="VOV - Kinh tế Tài chính" xmlUrl="https://anchor.fm/s/84e912c/podcast/rss" type="rss" category="Business" />
       <outline title="VOV - Khoa học Công nghệ" xmlUrl="https://anchor.fm/s/89fc894/podcast/rss" type="rss" category="Technology" />
-      <outline title="VietnamPlus's Podcast" xmlUrl="https://rss.buzzsprout.com/833146.rss" type="rss" category="News Commentary" />
       <outline title="Truyền hình vệ tinh VOA Express - VOA" xmlUrl="https://www.voatiengviet.com/podcast/video.aspx/?zoneId=3405" type="rss" category="News" />
-      <outline title="VOV - Nội chính" xmlUrl="https://anchor.fm/s/87b8d30/podcast/rss" type="rss" category="News" />
-      <outline title="VOV - Tin nhanh 24h" xmlUrl="https://anchor.fm/s/86f0c04/podcast/rss" type="rss" category="News" />
       <outline title="GIÁ HEO HƠI" xmlUrl="https://anchor.fm/s/5a9f4d18/podcast/rss" type="rss" category="Daily News" />
       <outline title="Couchfish" xmlUrl="https://anchor.fm/s/f1e7d758/podcast/rss" type="rss" category="Places &amp; Travel" />
       <outline title="Bài giảng Phật Giáo TT. Thích Chân Quang" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:403968051/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
@@ -35,7 +31,6 @@
       <outline title="Dateline NBC" xmlUrl="https://podcastfeeds.nbcnews.com/HL4TzgYC" type="rss" category="True Crime" />
       <outline title="Saigoneer Audio Archive" xmlUrl="https://anchor.fm/s/f82160a8/podcast/rss" type="rss" category="Society &amp; Culture" />
       <outline title="Regeneration International" xmlUrl="https://www.spreaker.com/show/5187438/episodes/feed" type="rss" category="Education" />
-      <outline title="Radio TGP Hà Nội" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:681248687/sounds.rss" type="rss" category="News" />
       <outline title="The Bureau Asia Podcast" xmlUrl="https://anchor.fm/s/a6809c0/podcast/rss" type="rss" category="Places &amp; Travel" />
       <outline title="The Kubik Report" xmlUrl="https://feed.podbean.com/vkubik/feed.xml" type="rss" category="News Commentary" />
       <outline title="Southeast Asia Crossroads Podcast - CSEAS @ NIU" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:209170414/sounds.rss" type="rss" category="Education" />
@@ -51,5 +46,7 @@
       <outline title="Green Hell: A Vietnam War Podcast" xmlUrl="https://anchor.fm/s/fbea931c/podcast/rss" type="rss" category="History" />
       <outline title="The Vietnamese with Kenneth Nguyen" xmlUrl="https://feeds.redcircle.com/ea765854-819f-48a6-b479-0772f4fbe53b" type="rss" category="Society &amp; Culture" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

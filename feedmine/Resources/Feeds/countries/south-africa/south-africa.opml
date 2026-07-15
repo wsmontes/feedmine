@@ -1,1048 +1,542 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  
-  
   <head>
-    
-    
     <title>South Africa Feeds</title>
-    
-  
   </head>
-  
-  
   <body>
-    
-    
     <outline text="News">
-      
-      
-      <outline title="IOL" xmlUrl="https://www.iol.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Daily Maverick" xmlUrl="https://www.dailymaverick.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Mail &amp; Guardian" xmlUrl="https://www.mg.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="SABC News" xmlUrl="https://www.sabcnews.com/rss/" type="rss"/>
-      
-      
-      <outline title="Citizen" xmlUrl="https://www.citizen.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="The South African" xmlUrl="https://www.thesouthafrican.com/feed/" type="rss"/>
-      
-      
-      <outline title="Fin24" xmlUrl="https://www.fin24.com/rss/" type="rss"/>
-      
-    
+      <outline title="IOL" xmlUrl="https://www.iol.co.za/rss/" type="rss" />
+      <outline title="Daily Maverick" xmlUrl="https://www.dailymaverick.co.za/rss/" type="rss" />
+      <outline title="Mail &amp; Guardian" xmlUrl="https://www.mg.co.za/rss/" type="rss" />
+      <outline title="SABC News" xmlUrl="https://www.sabcnews.com/rss/" type="rss" />
+      <outline title="Citizen" xmlUrl="https://www.citizen.co.za/rss/" type="rss" />
+      <outline title="The South African" xmlUrl="https://www.thesouthafrican.com/feed/" type="rss" />
+      <outline title="Fin24" xmlUrl="https://www.fin24.com/rss/" type="rss" />
+      <outline title="Google News — SOUTH-AFRICA (en)" xmlUrl="https://news.google.com/rss?hl=en&amp;gl=ZA&amp;ceid=ZA:en" type="rss" />
     </outline>
-    
-    
     <outline text="Sports">
-      
-      
-      <outline title="Sport24" xmlUrl="https://www.sport24.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="SuperSport" xmlUrl="https://www.supersport.com/rss/" type="rss"/>
-      
-      
-      <outline title="KickOff" xmlUrl="https://www.kickoff.com/rss/" type="rss"/>
-      
-      
-      <outline title="Soccer Laduma" xmlUrl="https://www.soccerladuma.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Cricket SA" xmlUrl="https://www.cricket.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="The South African Sport" xmlUrl="https://www.thesouthafrican.com/sport/feed/" type="rss"/>
-      
-    
+      <outline title="Sport24" xmlUrl="https://www.sport24.co.za/rss/" type="rss" />
+      <outline title="SuperSport" xmlUrl="https://www.supersport.com/rss/" type="rss" />
+      <outline title="KickOff" xmlUrl="https://www.kickoff.com/rss/" type="rss" />
+      <outline title="Soccer Laduma" xmlUrl="https://www.soccerladuma.co.za/rss/" type="rss" />
+      <outline title="The South African Sport" xmlUrl="https://www.thesouthafrican.com/sport/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Technology">
-      
-      
-      <outline title="ITWeb" xmlUrl="https://www.itweb.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="TechCentral" xmlUrl="https://www.techcentral.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="htxt.africa" xmlUrl="https://www.htxt.co.za/feed/" type="rss"/>
-      
-      
-      <outline title="Stuff SA" xmlUrl="https://www.stuff.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Burn Media" xmlUrl="https://www.burnmedia.co.za/feed/" type="rss"/>
-      
-      
-      <outline title="Memeburn" xmlUrl="https://www.memeburn.com/rss/" type="rss"/>
-      
-      
-      <outline title="Bandwidth Blog" xmlUrl="https://www.bandwidthblog.com/feed/" type="rss"/>
-      
-      
-      <outline title="VentureBurn" xmlUrl="https://www.ventureburn.com/rss/" type="rss"/>
-      
-    
+      <outline title="ITWeb" xmlUrl="https://www.itweb.co.za/rss/" type="rss" />
+      <outline title="TechCentral" xmlUrl="https://www.techcentral.co.za/rss/" type="rss" />
+      <outline title="htxt.africa" xmlUrl="https://www.htxt.co.za/feed/" type="rss" />
+      <outline title="Stuff SA" xmlUrl="https://www.stuff.co.za/rss/" type="rss" />
+      <outline title="Burn Media" xmlUrl="https://www.burnmedia.co.za/feed/" type="rss" />
+      <outline title="Memeburn" xmlUrl="https://www.memeburn.com/rss/" type="rss" />
+      <outline title="Bandwidth Blog" xmlUrl="https://www.bandwidthblog.com/feed/" type="rss" />
+      <outline title="VentureBurn" xmlUrl="https://www.ventureburn.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Science">
-      
-      
-      <outline title="Science SABC" xmlUrl="https://www.sabcnews.com/science/rss/" type="rss"/>
-      
-      
-      <outline title="SciBraai" xmlUrl="https://www.scibraai.co.za/feed/" type="rss"/>
-      
-      
-      <outline title="SANSA" xmlUrl="https://www.sansa.org.za/rss/" type="rss"/>
-      
-    
+      <outline title="Science SABC" xmlUrl="https://www.sabcnews.com/science/rss/" type="rss" />
+      <outline title="SciBraai" xmlUrl="https://www.scibraai.co.za/feed/" type="rss" />
+      <outline title="SANSA" xmlUrl="https://www.sansa.org.za/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Culture">
-      
-      
-      <outline title="Art Times" xmlUrl="https://www.arttimes.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Between 10 and 5" xmlUrl="https://www.10and5.com/feed/" type="rss"/>
-      
-      
-      <outline title="Design Indaba" xmlUrl="https://www.designindaba.com/rss/" type="rss"/>
-      
-      
-      <outline title="Zeitz MOCAA" xmlUrl="https://www.zeitzmocaa.museum/rss/" type="rss"/>
-      
-    
+      <outline title="Art Times" xmlUrl="https://www.arttimes.co.za/rss/" type="rss" />
+      <outline title="Between 10 and 5" xmlUrl="https://www.10and5.com/feed/" type="rss" />
+      <outline title="Design Indaba" xmlUrl="https://www.designindaba.com/rss/" type="rss" />
+      <outline title="Zeitz MOCAA" xmlUrl="https://www.zeitzmocaa.museum/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Movies">
-      
-      
-      <outline title="Channel24" xmlUrl="https://www.channel24.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Nu Metro" xmlUrl="https://www.numetro.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Ster-Kinekor" xmlUrl="https://www.sterkinekor.com/rss/" type="rss"/>
-      
-      
-      <outline title="NFVF" xmlUrl="https://www.nfvf.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Durban Film Festival" xmlUrl="https://www.durbanfilmfest.com/rss/" type="rss"/>
-      
-      
-      <outline title="Fortress of Solitude" xmlUrl="https://www.fortressofsolitude.co.za/feed/" type="rss"/>
-      
-    
+      <outline title="Channel24" xmlUrl="https://www.channel24.co.za/rss/" type="rss" />
+      <outline title="Nu Metro" xmlUrl="https://www.numetro.co.za/rss/" type="rss" />
+      <outline title="Ster-Kinekor" xmlUrl="https://www.sterkinekor.com/rss/" type="rss" />
+      <outline title="NFVF" xmlUrl="https://www.nfvf.co.za/rss/" type="rss" />
+      <outline title="Durban Film Festival" xmlUrl="https://www.durbanfilmfest.com/rss/" type="rss" />
+      <outline title="Fortress of Solitude" xmlUrl="https://www.fortressofsolitude.co.za/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Music">
-      
-      
-      <outline title="Channel24 Music" xmlUrl="https://www.channel24.co.za/Music/rss/" type="rss"/>
-      
-      
-      <outline title="Texx and the City" xmlUrl="https://www.texxandthecity.com/feed/" type="rss"/>
-      
-      
-      <outline title="Slikour On Life" xmlUrl="https://www.slikouronlife.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="SA Music News" xmlUrl="https://www.samusicnews.co.za/feed/" type="rss"/>
-      
-      
-      <outline title="YFM" xmlUrl="https://www.yfm.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Kaya FM" xmlUrl="https://www.kayafm.co.za/rss/" type="rss"/>
-      
-    
+      <outline title="Channel24 Music" xmlUrl="https://www.channel24.co.za/Music/rss/" type="rss" />
+      <outline title="Texx and the City" xmlUrl="https://www.texxandthecity.com/feed/" type="rss" />
+      <outline title="Slikour On Life" xmlUrl="https://www.slikouronlife.co.za/rss/" type="rss" />
+      <outline title="SA Music News" xmlUrl="https://www.samusicnews.co.za/feed/" type="rss" />
+      <outline title="YFM" xmlUrl="https://www.yfm.co.za/rss/" type="rss" />
+      <outline title="Kaya FM" xmlUrl="https://www.kayafm.co.za/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Food">
-      
-      
-      <outline title="Food24" xmlUrl="https://www.food24.com/rss/" type="rss"/>
-      
-      
-      <outline title="Eat Out" xmlUrl="https://www.eatout.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Crush Magazine" xmlUrl="https://www.crushmag-online.com/feed/" type="rss"/>
-      
-      
-      <outline title="Woolworths Taste" xmlUrl="https://www.woolworths.co.za/taste/rss/" type="rss"/>
-      
-    
+      <outline title="Food24" xmlUrl="https://www.food24.com/rss/" type="rss" />
+      <outline title="Eat Out" xmlUrl="https://www.eatout.co.za/rss/" type="rss" />
+      <outline title="Crush Magazine" xmlUrl="https://www.crushmag-online.com/feed/" type="rss" />
+      <outline title="Woolworths Taste" xmlUrl="https://www.woolworths.co.za/taste/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Gaming">
-      
-      
-      <outline title="MWEB Gamezone" xmlUrl="https://www.mweb.co.za/games/rss/" type="rss"/>
-      
-      
-      <outline title="Critical Hit SA" xmlUrl="https://www.criticalhit.net/feed/" type="rss"/>
-      
-      
-      <outline title="Lazygamer" xmlUrl="https://www.lazygamer.net/feed/" type="rss"/>
-      
-      
-      <outline title="Fortress of Solitude" xmlUrl="https://www.fortressofsolitude.co.za/gaming/feed/" type="rss"/>
-      
-      
-      <outline title="Nintendo SA" xmlUrl="https://www.nintendo.co.za/rss/" type="rss"/>
-      
-    
+      <outline title="MWEB Gamezone" xmlUrl="https://www.mweb.co.za/games/rss/" type="rss" />
+      <outline title="Critical Hit SA" xmlUrl="https://www.criticalhit.net/feed/" type="rss" />
+      <outline title="Lazygamer" xmlUrl="https://www.lazygamer.net/feed/" type="rss" />
+      <outline title="Fortress of Solitude" xmlUrl="https://www.fortressofsolitude.co.za/gaming/feed/" type="rss" />
+      <outline title="Nintendo SA" xmlUrl="https://www.nintendo.co.za/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Travel">
-      
-      
-      <outline title="Getaway Magazine" xmlUrl="https://www.getaway.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Travelstart" xmlUrl="https://www.travelstart.co.za/blog/feed/" type="rss"/>
-      
-      
-      <outline title="SA Tourism" xmlUrl="https://www.southafrica.net/rss/" type="rss"/>
-      
-      
-      <outline title="Travel News SA" xmlUrl="https://www.travelnews.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Cape Town Tourism" xmlUrl="https://www.capetown.travel/rss/" type="rss"/>
-      
-      
-      <outline title="Kruger Park" xmlUrl="https://www.krugerpark.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Explore Sideways" xmlUrl="https://www.exploresideways.com/feed/" type="rss"/>
-      
-    
+      <outline title="Getaway Magazine" xmlUrl="https://www.getaway.co.za/rss/" type="rss" />
+      <outline title="Travelstart" xmlUrl="https://www.travelstart.co.za/blog/feed/" type="rss" />
+      <outline title="SA Tourism" xmlUrl="https://www.southafrica.net/rss/" type="rss" />
+      <outline title="Travel News SA" xmlUrl="https://www.travelnews.co.za/rss/" type="rss" />
+      <outline title="Cape Town Tourism" xmlUrl="https://www.capetown.travel/rss/" type="rss" />
+      <outline title="Kruger Park" xmlUrl="https://www.krugerpark.co.za/rss/" type="rss" />
+      <outline title="Explore Sideways" xmlUrl="https://www.exploresideways.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Blogs">
-      
-      
-      <outline title="Daily Maverick" xmlUrl="https://www.dailymaverick.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="2OceansVibe" xmlUrl="https://www.2oceansvibe.com/feed/" type="rss"/>
-      
-      
-      <outline title="Zululand Observer" xmlUrl="https://www.zululandobserver.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Roodepoort Record" xmlUrl="https://www.roodepoortrecord.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="SA People" xmlUrl="https://www.sapeople.com/feed/" type="rss"/>
-      
-      
-      <outline title="GroundUp" xmlUrl="https://www.groundup.org.za/rss/" type="rss"/>
-      
-    
+      <outline title="Daily Maverick" xmlUrl="https://www.dailymaverick.co.za/rss/" type="rss" />
+      <outline title="2OceansVibe" xmlUrl="https://www.2oceansvibe.com/feed/" type="rss" />
+      <outline title="Zululand Observer" xmlUrl="https://www.zululandobserver.co.za/rss/" type="rss" />
+      <outline title="Roodepoort Record" xmlUrl="https://www.roodepoortrecord.co.za/rss/" type="rss" />
+      <outline title="SA People" xmlUrl="https://www.sapeople.com/feed/" type="rss" />
+      <outline title="GroundUp" xmlUrl="https://www.groundup.org.za/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Design">
-      
-      
-      <outline title="Design Indaba" xmlUrl="https://www.designindaba.com/rss/" type="rss"/>
-      
-      
-      <outline title="Between 10 and 5" xmlUrl="https://www.10and5.com/feed/" type="rss"/>
-      
-      
-      <outline title="House and Leisure" xmlUrl="https://www.houseandleisure.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="VISI Magazine" xmlUrl="https://www.visi.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="SA Decor" xmlUrl="https://www.sadecor.co.za/feed/" type="rss"/>
-      
-      
-      <outline title="Creative Week SA" xmlUrl="https://www.creativeweek.co.za/feed/" type="rss"/>
-      
-      
-      <outline title="Loeries" xmlUrl="https://www.loeries.com/rss/" type="rss"/>
-      
-    
+      <outline title="Design Indaba" xmlUrl="https://www.designindaba.com/rss/" type="rss" />
+      <outline title="Between 10 and 5" xmlUrl="https://www.10and5.com/feed/" type="rss" />
+      <outline title="House and Leisure" xmlUrl="https://www.houseandleisure.co.za/rss/" type="rss" />
+      <outline title="VISI Magazine" xmlUrl="https://www.visi.co.za/rss/" type="rss" />
+      <outline title="SA Decor" xmlUrl="https://www.sadecor.co.za/feed/" type="rss" />
+      <outline title="Creative Week SA" xmlUrl="https://www.creativeweek.co.za/feed/" type="rss" />
+      <outline title="Loeries" xmlUrl="https://www.loeries.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Environment">
-      
-      
-      <outline title="Greenpeace Africa" xmlUrl="https://www.greenpeace.org/africa/en/feed/" type="rss"/>
-      
-      
-      <outline title="Endangered Wildlife Trust" xmlUrl="https://www.ewt.org.za/rss/" type="rss"/>
-      
-      
-      <outline title="WESSA" xmlUrl="https://www.wessa.org.za/rss/" type="rss"/>
-      
-      
-      <outline title="Green Times" xmlUrl="https://www.thegreentimes.co.za/feed/" type="rss"/>
-      
-      
-      <outline title="Food and Trees Africa" xmlUrl="https://www.trees.org.za/feed/" type="rss"/>
-      
-    
+      <outline title="Greenpeace Africa" xmlUrl="https://www.greenpeace.org/africa/en/feed/" type="rss" />
+      <outline title="Endangered Wildlife Trust" xmlUrl="https://www.ewt.org.za/rss/" type="rss" />
+      <outline title="WESSA" xmlUrl="https://www.wessa.org.za/rss/" type="rss" />
+      <outline title="Green Times" xmlUrl="https://www.thegreentimes.co.za/feed/" type="rss" />
+      <outline title="Food and Trees Africa" xmlUrl="https://www.trees.org.za/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="DIY">
-      
-      
-      <outline title="Builders SA" xmlUrl="https://www.builders.co.za/blog/feed/" type="rss"/>
-      
-      
-      <outline title="Garden and Home" xmlUrl="https://www.gardenandhome.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Homeology" xmlUrl="https://www.homeology.co.za/feed/" type="rss"/>
-      
-    
+      <outline title="Builders SA" xmlUrl="https://www.builders.co.za/blog/feed/" type="rss" />
+      <outline title="Garden and Home" xmlUrl="https://www.gardenandhome.co.za/rss/" type="rss" />
+      <outline title="Homeology" xmlUrl="https://www.homeology.co.za/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="History">
-      
-      
-      <outline title="Iziko Museums" xmlUrl="https://www.iziko.org.za/rss/" type="rss"/>
-      
-      
-      <outline title="Robben Island" xmlUrl="https://www.robben-island.org.za/rss/" type="rss"/>
-      
-    
+      <outline title="Iziko Museums" xmlUrl="https://www.iziko.org.za/rss/" type="rss" />
+      <outline title="Robben Island" xmlUrl="https://www.robben-island.org.za/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Architecture">
-      
-      
-      <outline title="Architecture ZA" xmlUrl="https://www.architecturesa.com/rss/" type="rss"/>
-      
-      
-      <outline title="Leading Architecture" xmlUrl="https://www.leadingarchitecture.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="House and Leisure" xmlUrl="https://www.houseandleisure.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="SA Building Review" xmlUrl="https://www.sabuildingreview.co.za/rss/" type="rss"/>
-      
-    
+      <outline title="Architecture ZA" xmlUrl="https://www.architecturesa.com/rss/" type="rss" />
+      <outline title="Leading Architecture" xmlUrl="https://www.leadingarchitecture.co.za/rss/" type="rss" />
+      <outline title="House and Leisure" xmlUrl="https://www.houseandleisure.co.za/rss/" type="rss" />
+      <outline title="SA Building Review" xmlUrl="https://www.sabuildingreview.co.za/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Programming">
-      
-      
-      <outline title="BSG Blog" xmlUrl="https://www.bsg.co.za/blog/feed/" type="rss"/>
-      
-      
-      <outline title="SovTech Blog" xmlUrl="https://www.sovtech.co.za/blog/feed/" type="rss"/>
-      
-    
+      <outline title="BSG Blog" xmlUrl="https://www.bsg.co.za/blog/feed/" type="rss" />
+      <outline title="SovTech Blog" xmlUrl="https://www.sovtech.co.za/blog/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Business">
-      
-      
-      <outline title="Fin24" xmlUrl="https://www.fin24.com/rss/" type="rss"/>
-      
-      
-      <outline title="Moneyweb" xmlUrl="https://www.moneyweb.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Bizcommunity" xmlUrl="https://www.bizcommunity.com/RSS/" type="rss"/>
-      
-      
-      <outline title="Venture Burn" xmlUrl="https://www.ventureburn.com/rss/" type="rss"/>
-      
-      
-      <outline title="SME South Africa" xmlUrl="https://www.smesouthafrica.co.za/feed/" type="rss"/>
-      
-    
+      <outline title="Fin24" xmlUrl="https://www.fin24.com/rss/" type="rss" />
+      <outline title="Moneyweb" xmlUrl="https://www.moneyweb.co.za/rss/" type="rss" />
+      <outline title="Bizcommunity" xmlUrl="https://www.bizcommunity.com/RSS/" type="rss" />
+      <outline title="Venture Burn" xmlUrl="https://www.ventureburn.com/rss/" type="rss" />
+      <outline title="SME South Africa" xmlUrl="https://www.smesouthafrica.co.za/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Podcasts">
-      
-      
-      <outline title="Sunday Times Politics Weekly" xmlUrl="https://feeds.simplecast.com/eTkSth_b" type="rss"/>
-      
-      
-      <outline title="True Crime South Africa" xmlUrl="https://rss.iono.fm/rss/chan/4652" type="rss"/>
-      
-      
-      <outline title="Trending News in South Africa" xmlUrl="https://www.spreaker.com/show/3163791/episodes/feed" type="rss"/>
-      
-      
-      <outline title="The Daily Friend Show" xmlUrl="https://rss.iono.fm/rss/chan/4377" type="rss"/>
-      
-      
-      <outline title="SMWX" xmlUrl="https://feed.podbean.com/smwx/feed.xml" type="rss"/>
-      
-      
-      <outline title="BizNews Radio" xmlUrl="https://iono.fm/rss/chan/4829" type="rss"/>
-      
-      
-      <outline title="History of South Africa podcast" xmlUrl="https://rss.iono.fm/rss/chan/6011" type="rss"/>
-      
-      
-      <outline title="South Africa Today Podcast" xmlUrl="https://anchor.fm/s/3f35d920/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Investec Focus Radio SA" xmlUrl="https://rss.iono.fm/rss/chan/4183" type="rss"/>
-      
-      
-      <outline title="The Story of South Africa: Empire, Apartheid, and Transformation — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-story-of-south-africa.xml" type="rss"/>
-      
-      
-      <outline title="This Is South Africa" xmlUrl="https://feed.podbean.com/thisissouthafrica/feed.xml" type="rss"/>
-      
-      
-      <outline title="Untold Story- Who Is South Africa?" xmlUrl="https://anchor.fm/s/4e15fb8c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcasts from the Edge" xmlUrl="https://feeds.simplecast.com/LxWU_kIQ" type="rss"/>
-      
-      
-      <outline title="The Property Pod" xmlUrl="https://rss.iono.fm/rss/chan/6203" type="rss"/>
-      
-      
-      <outline title="The Money Show" xmlUrl="https://www.omnycontent.com/d/playlist/5dcefa8e-00a9-4595-8ce1-a4ab0080f142/1ecba37a-6d83-4ee9-a295-a57100b7f2df/e3347658-6eee-44e2-bf81-a57100b92442/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Unexplained South Africa" xmlUrl="https://anchor.fm/s/54f95a34/podcast/rss" type="rss"/>
-      
-      
-      <outline title="South Africa Tech Marketers" xmlUrl="https://feed.podbean.com/southafricatechmarketers/feed.xml" type="rss"/>
-      
-      
-      <outline title="Waking Up in South Africa" xmlUrl="https://anchor.fm/s/4e2c2114/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cognition &amp; Co Podcast: Psychology in South Africa" xmlUrl="https://anchor.fm/s/1dd97548/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Moments in South African History" xmlUrl="https://anchor.fm/s/2bf79614/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The China in Africa Podcast" xmlUrl="https://feeds.libsyn.com/500353/rss" type="rss"/>
-      
-      
-      <outline title="The End of Apartheid - South Africa’s Human Spirit" xmlUrl="https://anchor.fm/s/1eef0394/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Petty Crime South Africa" xmlUrl="https://rss.iono.fm/rss/chan/8438" type="rss"/>
-      
-      
-      <outline title="SoccerBeat" xmlUrl="https://api.riverside.fm/hosting/nbRI5Ok1.rss" type="rss"/>
-      
-      
-      <outline title="Ghost Wrap" xmlUrl="https://feeds.castos.com/p454v" type="rss"/>
-      
-      
-      <outline title="The Psychedelic Society South Africa Podcast" xmlUrl="https://anchor.fm/s/53b292bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="True Crime Chronicles: South Africa" xmlUrl="https://anchor.fm/s/150b1a0c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Business Day Spotlight" xmlUrl="https://rss.iono.fm/rss/chan/3799" type="rss"/>
-      
-      
-      <outline title="Just Us Under a Tree" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:638711769/sounds.rss" type="rss"/>
-      
-      
-      <outline title="How to make a podcast in South Africa" xmlUrl="https://rss.iono.fm/rss/chan/8568" type="rss"/>
-      
-      
-      <outline title="History of South Africa podcast" xmlUrl="https://rss.iono.fm/rss/chan/6011?codec=mp3&amp;quality=high" type="rss"/>
-      
-      
-      <outline title="Unsolved Murders South Africa" xmlUrl="https://anchor.fm/s/1076e208c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="This Way Up South Africa" xmlUrl="https://feeds.alitu.com/10140046" type="rss"/>
-      
-      
-      <outline title="Why Did I Become A Doctor South Africa" xmlUrl="https://rss.buzzsprout.com/2389691.rss" type="rss"/>
-      
-      
-      <outline title="Education Matters in South Africa" xmlUrl="https://anchor.fm/s/30cd76f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Runner's World South Africa Podcast" xmlUrl="https://feeds.acast.com/public/shows/665d8bb4bce4730012043c1d" type="rss"/>
-      
-      
-      <outline title="Executive Communities Podcast" xmlUrl="https://rss.buzzsprout.com/1342456.rss" type="rss"/>
-      
-      
-      <outline title="Road Trip's Podcast - Travel, Touring and Holidays in South Africa using the Road Trip mobile app" xmlUrl="https://rss.buzzsprout.com/1860462.rss" type="rss"/>
-      
-      
-      <outline title="ScaleUp Podcast South Africa" xmlUrl="https://rss.iono.fm/rss/chan/9198" type="rss"/>
-      
-      
-      <outline title="The Good, The Bad &amp; The Rugby: South Africa" xmlUrl="https://feeds.megaphone.fm/good-bad-rugby-za" type="rss"/>
-      
-      
-      <outline title="Mixtape" xmlUrl="https://hearthis.at/djfumza-sevenjack-makaringe/podcast/" type="rss"/>
-      
-      
-      <outline title="Crime Central South Africa" xmlUrl="https://anchor.fm/s/e8019828/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Murder and Mayhem: South African True Crime" xmlUrl="https://feed.podbean.com/murderandmayhemsouthafricantruecrime/feed.xml" type="rss"/>
-      
-      
-      <outline title="Fire &amp; Fragrance South Africa Podcast" xmlUrl="https://anchor.fm/s/dadb6098/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ChooseDay With Chaz: Insightful Conversations on Life &amp; Society in South Africa" xmlUrl="https://anchor.fm/s/f13ed3c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Boots on the ground" xmlUrl="https://rss.iono.fm/rss/chan/5125" type="rss"/>
-      
-      
-      <outline title="Central News South Africa" xmlUrl="https://feed.podbean.com/Centralnews/feed.xml" type="rss"/>
-      
-      
-      <outline title="Christ Healing encouragement in South Africa" xmlUrl="https://feed.podbean.com/revdhutt/feed.xml" type="rss"/>
-      
-      
-      <outline title="True Crime South Africa – die Afrikaanse weergawe" xmlUrl="https://rss.iono.fm/rss/chan/7494" type="rss"/>
-      
-      
-      <outline title="Cornerstone Church Johannesburg" xmlUrl="https://anchor.fm/s/3a02ef10/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Johannesburg News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/johannesburg-news-today-2-min-news-the-daily-news-now.xml" type="rss"/>
-      
-      
-      <outline title="New in Town: Johannesburg" xmlUrl="https://anchor.fm/s/f182dd58/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Heritage Sunday Sermons" xmlUrl="https://www.heritagebaptist.co.za/feeds/sermons" type="rss"/>
-      
-      
-      <outline title="Heritage School of the Bible" xmlUrl="https://www.heritagebaptist.co.za/feeds/podcast/3" type="rss"/>
-      
-      
-      <outline title="Heritage Bible Hour" xmlUrl="https://www.heritagebaptist.co.za/feeds/podcast/5" type="rss"/>
-      
-      
-      <outline title="Faith Hill Church" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:208631341/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Heritage Young Adults" xmlUrl="https://www.heritagebaptist.co.za/feeds/podcast/4" type="rss"/>
-      
-      
-      <outline title="University of Johannesburg" xmlUrl="https://anchor.fm/s/fb425594/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cornerstone Church Johannesburg" xmlUrl="https://cornerstonechurch.co.za/category/itunes/feed/podcast/" type="rss"/>
-      
-      
-      <outline title="Rock Church Johannesburg's Podcast" xmlUrl="https://rockchurchjhb.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="Faith Hill Church Johannesburg South" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:617681151/sounds.rss" type="rss"/>
-      
-      
-      <outline title="DJ Lynnée Denise (Amsterdam, Johannesburg, London, Saturn)" xmlUrl="https://djlynneedenise.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="Johännesburg in Sicilia" xmlUrl="https://anchor.fm/s/3f326650/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Johannesburgo" xmlUrl="https://anchor.fm/s/44631548/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Like Dislike" xmlUrl="https://anchor.fm/s/4ed0ce8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="La Borne Bible Study: The Living Word" xmlUrl="https://anchor.fm/s/10e3b4ad4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="La Borne Church JHB Sermons" xmlUrl="https://anchor.fm/s/ffac0a44/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Progcast SA" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:84577440/sounds.rss" type="rss"/>
-      
-      
-      <outline title="The Run Cape Town Podcast" xmlUrl="https://feeds.transistor.fm/the-cape-town-marathon-podcast" type="rss"/>
-      
-      
-      <outline title="Inner City Voices" xmlUrl="https://rss.libsyn.com/shows/597325/destinations/5194630.xml" type="rss"/>
-      
-      
-      <outline title="Shofar Cape Town City" xmlUrl="https://sermons.logos.com/api/channels/6312770/feed" type="rss"/>
-      
-      
-      <outline title="CHS Cape Town Sermon Podcast" xmlUrl="https://anchor.fm/s/daf0fc3c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SIGNAL CHURCH CAPE TOWN" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:257409204/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Good Morning Cape Town with Lester Kiewit" xmlUrl="https://www.omnycontent.com/d/playlist/5dcefa8e-00a9-4595-8ce1-a4ab0080f142/96657c11-6f9c-4072-b934-aca600f4a5df/98da1b04-350b-4b47-bbb9-aca600f5f0a2/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Empower Church Cape Town" xmlUrl="https://feed.podbean.com/empowerchurchcapetown/feed.xml" type="rss"/>
-      
-      
-      <outline title="Victory Church Cape Town" xmlUrl="https://anchor.fm/s/9714770/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Cape Town Surgery podcast" xmlUrl="https://feed.podbean.com/capetownsurgerypodcast/feed.xml" type="rss"/>
-      
-      
-      <outline title="Bishop Napoleon Essien" xmlUrl="https://anchor.fm/s/b2554bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Freedom Cape Town" xmlUrl="https://freedomcapetown.co.za/feed/podcast/sunday-audio/" type="rss"/>
-      
-      
-      <outline title="A BETTER LIFE - with Pastor Johan De Beer" xmlUrl="https://rss.iono.fm/rss/chan/9302" type="rss"/>
-      
-      
-      <outline title="Sunrise Church Cape Town" xmlUrl="https://anchor.fm/s/e9e93d44/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Growing Up in the Upper Room - New Testament Bible in a year" xmlUrl="https://anchor.fm/s/ef4de744/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Shofar Cape Town South" xmlUrl="https://anchor.fm/s/10538dcbc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Anri about Modeling in Cape Town" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:596796330/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Kickstart | For the Youth" xmlUrl="https://rss.iono.fm/rss/chan/9479" type="rss"/>
-      
-      
-      <outline title="Hope Prison Ministry since 1991 - Origin at Pollsmoor - Cape Town - South Africa" xmlUrl="https://anchor.fm/s/1cd10e90/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cape Town" xmlUrl="https://anchor.fm/s/7140de38/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Create Content Cape Town" xmlUrl="https://anchor.fm/s/3e055cb0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RUCC Cape Town Church" xmlUrl="https://anchor.fm/s/e344780/podcast/rss" type="rss"/>
-      
-      
-      <outline title="UFWC Hill City Youth Cape Town" xmlUrl="https://anchor.fm/s/d84297d4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Table Cape Town - Weekly Sermons" xmlUrl="https://anchor.fm/s/10e6cd928/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cape Town Church of Christ - Sermons" xmlUrl="https://anchor.fm/s/982aa1f0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="CAPETOWN RED" xmlUrl="https://anchor.fm/s/728c704/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cape Town Routes Unlimited Podcast" xmlUrl="https://feeds.feedburner.com/ctru" type="rss"/>
-      
-      
-      <outline title="Pipo Buchlerwisk's podcast  - Cape Town" xmlUrl="https://www.spreaker.com/show/4307604/episodes/feed" type="rss"/>
-      
-      
-      <outline title="The People's Church | Cape Town" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:103341745/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Canna-Curious in Cape Town : a Potcast" xmlUrl="https://anchor.fm/s/2f06a6ec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Encounter Church Cape Town" xmlUrl="https://anchor.fm/s/1533547c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast – Zwei, die nach Cape Town reisen" xmlUrl="https://feeds.feedburner.com/ZweiDieNachCapeTownReisen" type="rss"/>
-      
-      
-      <outline title="Peter W. Guess - PodCast Radio - Cape Town" xmlUrl="https://anchor.fm/s/209445c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cape Town Vibes" xmlUrl="https://anchor.fm/s/668ed06c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="People Of Cape Town" xmlUrl="https://anchor.fm/s/1d4749c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mountainside Church Cape Town" xmlUrl="https://anchor.fm/s/10faf1044/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cape Town Positive" xmlUrl="https://cape-town-positive.podigee.io/feed/mp3" type="rss"/>
-      
-      
-      <outline title="Victory Church Cape Town" xmlUrl="https://podpoint.com/feed/8088" type="rss"/>
-      
-      
-      <outline title="Gospel Swag Apparel" xmlUrl="https://www.spreaker.com/show/2595872/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Who's Behind The Desk?" xmlUrl="https://anchor.fm/s/f36b1874/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Be Phat Motel Film Company - It's a shnit Show" xmlUrl="http://www.bephatmotel.com/its-a-shnit-show?format=rss" type="rss"/>
-      
-      
-      <outline title="Sermons from St John's Community" xmlUrl="https://anchor.fm/s/d27f07b0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Uphakantoni" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1019272018/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Exploring God's Word" xmlUrl="https://calvarychapelct.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="AlmaCast" xmlUrl="https://anchor.fm/s/de77e974/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rivers Church Durban North" xmlUrl="https://feeds.transistor.fm/rivers-church-durban-north" type="rss"/>
-      
-      
-      <outline title="Durban Deep" xmlUrl="https://hearthis.at/durbandeep/podcast/" type="rss"/>
-      
-      
-      <outline title="The Rock Church Durban Podcast" xmlUrl="https://anchor.fm/s/f4c6f788/podcast/rss" type="rss"/>
-      
-      
-      <outline title="CRC Durban | Ps Glenn Schroder" xmlUrl="https://anchor.fm/s/597f0770/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Durban Small Business Podcast" xmlUrl="https://anchor.fm/s/d9027504/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Vineyard Church Dbn" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:43638972/sounds.rss" type="rss"/>
-      
-      
-      <outline title="DFMI Business Lab Podcast" xmlUrl="https://anchor.fm/s/10a00a6f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sunday Sermons" xmlUrl="https://anchor.fm/s/101ebd050/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Faith Church Podcast" xmlUrl="https://feed.podbean.com/faithchurchorgza/feed.xml" type="rss"/>
-      
-      
-      <outline title="Covenant Waterfall Presbyterian Church" xmlUrl="https://feed.podbean.com/coppolaaj/feed.xml" type="rss"/>
-      
-      
-      <outline title="CityLife Church Durban Messages" xmlUrl="https://anchor.fm/s/7deb198c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Durban Christian Centre" xmlUrl="https://feed.podbean.com/durbanchristiancentre/feed.xml" type="rss"/>
-      
-      
-      <outline title="Lighthouse Church Durban" xmlUrl="https://anchor.fm/s/1e23a834/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Entrepreneurs’ Organization Durban Podcast" xmlUrl="https://pod.eodurban.co.za/feed.xml" type="rss"/>
-      
-      
-      <outline title="WINNER CHAPEL DURBAN" xmlUrl="https://anchor.fm/s/3937821c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Every Nation Durban" xmlUrl="https://feed.podcastmachine.com/podcasts/18806/mp3.rss" type="rss"/>
-      
-      
-      <outline title="Gosip'dUrban" xmlUrl="https://anchor.fm/s/9809ff4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Durban Experience" xmlUrl="https://www.spreaker.com/show/4283798/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Durban Rock Radio" xmlUrl="https://www.spreaker.com/show/495636/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Every Nation Durban podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:42561131/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Durbanville-Bergsig Gemeente" xmlUrl="https://anchor.fm/s/8522768c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Dirty Dick Durban &amp; Rubbin Ronald Rubbins Podcast" xmlUrl="https://anchor.fm/s/33b0a4a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Durban Christian Centre South" xmlUrl="https://feed.podbean.com/dccsouth/feed.xml" type="rss"/>
-      
-      
-      <outline title="PHM Durban SA" xmlUrl="https://anchor.fm/s/4965cb1c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Northway Church Durban" xmlUrl="https://anchor.fm/s/d42653c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Northplace Church Durban" xmlUrl="https://feed.podbean.com/npcdurban/feed.xml" type="rss"/>
-      
-      
-      <outline title="Trends in the Clinical Management of Food Allergy - Presented by Raquel Durban, MS, RD, LDN" xmlUrl="https://anchor.fm/s/e28a9354/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bible Study" xmlUrl="https://anchor.fm/s/101eae2d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Live from The Winston" xmlUrl="https://anchor.fm/s/4806804/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Melted Podcast" xmlUrl="https://anchor.fm/s/48175f0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Work Hard, Play Hard" xmlUrl="https://api.riverside.com/hosting/TvkqdmMT.rss" type="rss"/>
-      
-      
-      <outline title="Unstable Horsebones" xmlUrl="https://rss.buzzsprout.com/2429712.rss" type="rss"/>
-      
-      
-      <outline title="The Boys" xmlUrl="https://anchor.fm/s/435d305c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SAfm Market Update with Moneyweb" xmlUrl="http://rss.iono.fm/rss/chan/2247" type="rss"/>
-      
-      
-      <outline title="Ligpunt Pretoria" xmlUrl="https://feed.podbean.com/ligpunt/feed.xml" type="rss"/>
-      
-      
-      <outline title="Red Door Church Pretoria Sermons" xmlUrl="https://rss.buzzsprout.com/1751820.rss" type="rss"/>
-      
-      
-      <outline title="Shofar Pretoria Sermons" xmlUrl="https://anchor.fm/s/10ca839ac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Relationship Podcast by Shofar Pretoria" xmlUrl="https://anchor.fm/s/10cd06030/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Driving To Pretoria" xmlUrl="https://anchor.fm/s/56bae888/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BOUNCE UP - A Podcast on Mental Resilience" xmlUrl="https://anchor.fm/s/35ec98f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Central Baptist Church Sermons" xmlUrl="https://www.central.org.za/podcast" type="rss"/>
-      
-      
-      <outline title="LeadUP Podcast" xmlUrl="https://rss.buzzsprout.com/1802426.rss" type="rss"/>
-      
-      
-      <outline title="Kingdom Finances by Shofar Pretoria" xmlUrl="https://anchor.fm/s/10cd05e3c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="&quot;We have no power against the circumstances&quot;" xmlUrl="https://anchor.fm/s/426b2f3c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="AFM Word Of Life Pretoria" xmlUrl="https://anchor.fm/s/384ec4dc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PRETÓRIA" xmlUrl="https://anchor.fm/s/2464a1d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="EG Kerk Pretoria Oos's Podcast" xmlUrl="https://podpoint.com/feed/6894" type="rss"/>
-      
-      
-      <outline title="Harvester Reformational Church Pretoria" xmlUrl="https://anchor.fm/s/1af1ec5c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Escape From The Pretoria" xmlUrl="https://anchor.fm/s/59bfbb80/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Shofar Pretoria Archives -" xmlUrl="https://shofaronline.tv/congregation-cat/shofar-pretoria/feed/" type="rss"/>
-      
-      
-      <outline title="No Dams Given" xmlUrl="https://rss.libsyn.com/shows/129590/destinations/784632.xml" type="rss"/>
-      
-      
-      <outline title="RUCC Ministries Gqeberha Podcast" xmlUrl="https://anchor.fm/s/7e8f0984/podcast/rss" type="rss"/>
-      
-      
-      <outline title="CliffCentral" xmlUrl="https://www.cliffcentral.com/rss/" type="rss"/>
-      
-      
-      <outline title="702" xmlUrl="https://www.702.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="CapeTalk" xmlUrl="https://www.capetalk.co.za/rss/" type="rss"/>
-      
-      
-      <outline title="Kaya FM Podcast" xmlUrl="https://www.kayafm.co.za/podcast/rss/" type="rss"/>
-      
-      
-      <outline title="Solid Gold Podcasts" xmlUrl="https://www.solidgold.co.za/rss/" type="rss"/>
-      
-    
+      <outline title="Sunday Times Politics Weekly" xmlUrl="https://feeds.simplecast.com/eTkSth_b" type="rss" />
+      <outline title="True Crime South Africa" xmlUrl="https://rss.iono.fm/rss/chan/4652" type="rss" />
+      <outline title="Trending News in South Africa" xmlUrl="https://www.spreaker.com/show/3163791/episodes/feed" type="rss" />
+      <outline title="The Daily Friend Show" xmlUrl="https://rss.iono.fm/rss/chan/4377" type="rss" />
+      <outline title="SMWX" xmlUrl="https://feed.podbean.com/smwx/feed.xml" type="rss" />
+      <outline title="BizNews Radio" xmlUrl="https://iono.fm/rss/chan/4829" type="rss" />
+      <outline title="History of South Africa podcast" xmlUrl="https://rss.iono.fm/rss/chan/6011" type="rss" />
+      <outline title="South Africa Today Podcast" xmlUrl="https://anchor.fm/s/3f35d920/podcast/rss" type="rss" />
+      <outline title="Investec Focus Radio SA" xmlUrl="https://rss.iono.fm/rss/chan/4183" type="rss" />
+      <outline title="The Story of South Africa: Empire, Apartheid, and Transformation — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-story-of-south-africa.xml" type="rss" />
+      <outline title="This Is South Africa" xmlUrl="https://feed.podbean.com/thisissouthafrica/feed.xml" type="rss" />
+      <outline title="Untold Story- Who Is South Africa?" xmlUrl="https://anchor.fm/s/4e15fb8c/podcast/rss" type="rss" />
+      <outline title="Podcasts from the Edge" xmlUrl="https://feeds.simplecast.com/LxWU_kIQ" type="rss" />
+      <outline title="The Property Pod" xmlUrl="https://rss.iono.fm/rss/chan/6203" type="rss" />
+      <outline title="The Money Show" xmlUrl="https://www.omnycontent.com/d/playlist/5dcefa8e-00a9-4595-8ce1-a4ab0080f142/1ecba37a-6d83-4ee9-a295-a57100b7f2df/e3347658-6eee-44e2-bf81-a57100b92442/podcast.rss" type="rss" />
+      <outline title="Unexplained South Africa" xmlUrl="https://anchor.fm/s/54f95a34/podcast/rss" type="rss" />
+      <outline title="South Africa Tech Marketers" xmlUrl="https://feed.podbean.com/southafricatechmarketers/feed.xml" type="rss" />
+      <outline title="Waking Up in South Africa" xmlUrl="https://anchor.fm/s/4e2c2114/podcast/rss" type="rss" />
+      <outline title="Cognition &amp; Co Podcast: Psychology in South Africa" xmlUrl="https://anchor.fm/s/1dd97548/podcast/rss" type="rss" />
+      <outline title="Moments in South African History" xmlUrl="https://anchor.fm/s/2bf79614/podcast/rss" type="rss" />
+      <outline title="The China in Africa Podcast" xmlUrl="https://feeds.libsyn.com/500353/rss" type="rss" />
+      <outline title="The End of Apartheid - South Africa’s Human Spirit" xmlUrl="https://anchor.fm/s/1eef0394/podcast/rss" type="rss" />
+      <outline title="Petty Crime South Africa" xmlUrl="https://rss.iono.fm/rss/chan/8438" type="rss" />
+      <outline title="SoccerBeat" xmlUrl="https://api.riverside.fm/hosting/nbRI5Ok1.rss" type="rss" />
+      <outline title="Ghost Wrap" xmlUrl="https://feeds.castos.com/p454v" type="rss" />
+      <outline title="The Psychedelic Society South Africa Podcast" xmlUrl="https://anchor.fm/s/53b292bc/podcast/rss" type="rss" />
+      <outline title="True Crime Chronicles: South Africa" xmlUrl="https://anchor.fm/s/150b1a0c/podcast/rss" type="rss" />
+      <outline title="Business Day Spotlight" xmlUrl="https://rss.iono.fm/rss/chan/3799" type="rss" />
+      <outline title="Just Us Under a Tree" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:638711769/sounds.rss" type="rss" />
+      <outline title="How to make a podcast in South Africa" xmlUrl="https://rss.iono.fm/rss/chan/8568" type="rss" />
+      <outline title="History of South Africa podcast" xmlUrl="https://rss.iono.fm/rss/chan/6011?codec=mp3&amp;quality=high" type="rss" />
+      <outline title="Unsolved Murders South Africa" xmlUrl="https://anchor.fm/s/1076e208c/podcast/rss" type="rss" />
+      <outline title="This Way Up South Africa" xmlUrl="https://feeds.alitu.com/10140046" type="rss" />
+      <outline title="Why Did I Become A Doctor South Africa" xmlUrl="https://rss.buzzsprout.com/2389691.rss" type="rss" />
+      <outline title="Education Matters in South Africa" xmlUrl="https://anchor.fm/s/30cd76f4/podcast/rss" type="rss" />
+      <outline title="The Runner's World South Africa Podcast" xmlUrl="https://feeds.acast.com/public/shows/665d8bb4bce4730012043c1d" type="rss" />
+      <outline title="Executive Communities Podcast" xmlUrl="https://rss.buzzsprout.com/1342456.rss" type="rss" />
+      <outline title="Road Trip's Podcast - Travel, Touring and Holidays in South Africa using the Road Trip mobile app" xmlUrl="https://rss.buzzsprout.com/1860462.rss" type="rss" />
+      <outline title="ScaleUp Podcast South Africa" xmlUrl="https://rss.iono.fm/rss/chan/9198" type="rss" />
+      <outline title="The Good, The Bad &amp; The Rugby: South Africa" xmlUrl="https://feeds.megaphone.fm/good-bad-rugby-za" type="rss" />
+      <outline title="Mixtape" xmlUrl="https://hearthis.at/djfumza-sevenjack-makaringe/podcast/" type="rss" />
+      <outline title="Crime Central South Africa" xmlUrl="https://anchor.fm/s/e8019828/podcast/rss" type="rss" />
+      <outline title="Murder and Mayhem: South African True Crime" xmlUrl="https://feed.podbean.com/murderandmayhemsouthafricantruecrime/feed.xml" type="rss" />
+      <outline title="Fire &amp; Fragrance South Africa Podcast" xmlUrl="https://anchor.fm/s/dadb6098/podcast/rss" type="rss" />
+      <outline title="ChooseDay With Chaz: Insightful Conversations on Life &amp; Society in South Africa" xmlUrl="https://anchor.fm/s/f13ed3c4/podcast/rss" type="rss" />
+      <outline title="Boots on the ground" xmlUrl="https://rss.iono.fm/rss/chan/5125" type="rss" />
+      <outline title="Central News South Africa" xmlUrl="https://feed.podbean.com/Centralnews/feed.xml" type="rss" />
+      <outline title="Christ Healing encouragement in South Africa" xmlUrl="https://feed.podbean.com/revdhutt/feed.xml" type="rss" />
+      <outline title="True Crime South Africa – die Afrikaanse weergawe" xmlUrl="https://rss.iono.fm/rss/chan/7494" type="rss" />
+      <outline title="Cornerstone Church Johannesburg" xmlUrl="https://anchor.fm/s/3a02ef10/podcast/rss" type="rss" />
+      <outline title="Johannesburg News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/johannesburg-news-today-2-min-news-the-daily-news-now.xml" type="rss" />
+      <outline title="New in Town: Johannesburg" xmlUrl="https://anchor.fm/s/f182dd58/podcast/rss" type="rss" />
+      <outline title="Heritage Sunday Sermons" xmlUrl="https://www.heritagebaptist.co.za/feeds/sermons" type="rss" />
+      <outline title="Heritage School of the Bible" xmlUrl="https://www.heritagebaptist.co.za/feeds/podcast/3" type="rss" />
+      <outline title="Heritage Bible Hour" xmlUrl="https://www.heritagebaptist.co.za/feeds/podcast/5" type="rss" />
+      <outline title="Faith Hill Church" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:208631341/sounds.rss" type="rss" />
+      <outline title="Heritage Young Adults" xmlUrl="https://www.heritagebaptist.co.za/feeds/podcast/4" type="rss" />
+      <outline title="University of Johannesburg" xmlUrl="https://anchor.fm/s/fb425594/podcast/rss" type="rss" />
+      <outline title="Cornerstone Church Johannesburg" xmlUrl="https://cornerstonechurch.co.za/category/itunes/feed/podcast/" type="rss" />
+      <outline title="Rock Church Johannesburg's Podcast" xmlUrl="https://rockchurchjhb.podomatic.com/rss2.xml" type="rss" />
+      <outline title="Faith Hill Church Johannesburg South" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:617681151/sounds.rss" type="rss" />
+      <outline title="DJ Lynnée Denise (Amsterdam, Johannesburg, London, Saturn)" xmlUrl="https://djlynneedenise.podomatic.com/rss2.xml" type="rss" />
+      <outline title="Johännesburg in Sicilia" xmlUrl="https://anchor.fm/s/3f326650/podcast/rss" type="rss" />
+      <outline title="Johannesburgo" xmlUrl="https://anchor.fm/s/44631548/podcast/rss" type="rss" />
+      <outline title="Like Dislike" xmlUrl="https://anchor.fm/s/4ed0ce8/podcast/rss" type="rss" />
+      <outline title="La Borne Bible Study: The Living Word" xmlUrl="https://anchor.fm/s/10e3b4ad4/podcast/rss" type="rss" />
+      <outline title="La Borne Church JHB Sermons" xmlUrl="https://anchor.fm/s/ffac0a44/podcast/rss" type="rss" />
+      <outline title="Progcast SA" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:84577440/sounds.rss" type="rss" />
+      <outline title="The Run Cape Town Podcast" xmlUrl="https://feeds.transistor.fm/the-cape-town-marathon-podcast" type="rss" />
+      <outline title="Inner City Voices" xmlUrl="https://rss.libsyn.com/shows/597325/destinations/5194630.xml" type="rss" />
+      <outline title="Shofar Cape Town City" xmlUrl="https://sermons.logos.com/api/channels/6312770/feed" type="rss" />
+      <outline title="CHS Cape Town Sermon Podcast" xmlUrl="https://anchor.fm/s/daf0fc3c/podcast/rss" type="rss" />
+      <outline title="SIGNAL CHURCH CAPE TOWN" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:257409204/sounds.rss" type="rss" />
+      <outline title="Good Morning Cape Town with Lester Kiewit" xmlUrl="https://www.omnycontent.com/d/playlist/5dcefa8e-00a9-4595-8ce1-a4ab0080f142/96657c11-6f9c-4072-b934-aca600f4a5df/98da1b04-350b-4b47-bbb9-aca600f5f0a2/podcast.rss" type="rss" />
+      <outline title="Empower Church Cape Town" xmlUrl="https://feed.podbean.com/empowerchurchcapetown/feed.xml" type="rss" />
+      <outline title="Victory Church Cape Town" xmlUrl="https://anchor.fm/s/9714770/podcast/rss" type="rss" />
+      <outline title="The Cape Town Surgery podcast" xmlUrl="https://feed.podbean.com/capetownsurgerypodcast/feed.xml" type="rss" />
+      <outline title="Bishop Napoleon Essien" xmlUrl="https://anchor.fm/s/b2554bc/podcast/rss" type="rss" />
+      <outline title="Freedom Cape Town" xmlUrl="https://freedomcapetown.co.za/feed/podcast/sunday-audio/" type="rss" />
+      <outline title="A BETTER LIFE - with Pastor Johan De Beer" xmlUrl="https://rss.iono.fm/rss/chan/9302" type="rss" />
+      <outline title="Sunrise Church Cape Town" xmlUrl="https://anchor.fm/s/e9e93d44/podcast/rss" type="rss" />
+      <outline title="Growing Up in the Upper Room - New Testament Bible in a year" xmlUrl="https://anchor.fm/s/ef4de744/podcast/rss" type="rss" />
+      <outline title="Shofar Cape Town South" xmlUrl="https://anchor.fm/s/10538dcbc/podcast/rss" type="rss" />
+      <outline title="Anri about Modeling in Cape Town" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:596796330/sounds.rss" type="rss" />
+      <outline title="Kickstart | For the Youth" xmlUrl="https://rss.iono.fm/rss/chan/9479" type="rss" />
+      <outline title="Hope Prison Ministry since 1991 - Origin at Pollsmoor - Cape Town - South Africa" xmlUrl="https://anchor.fm/s/1cd10e90/podcast/rss" type="rss" />
+      <outline title="Cape Town" xmlUrl="https://anchor.fm/s/7140de38/podcast/rss" type="rss" />
+      <outline title="Create Content Cape Town" xmlUrl="https://anchor.fm/s/3e055cb0/podcast/rss" type="rss" />
+      <outline title="RUCC Cape Town Church" xmlUrl="https://anchor.fm/s/e344780/podcast/rss" type="rss" />
+      <outline title="UFWC Hill City Youth Cape Town" xmlUrl="https://anchor.fm/s/d84297d4/podcast/rss" type="rss" />
+      <outline title="The Table Cape Town - Weekly Sermons" xmlUrl="https://anchor.fm/s/10e6cd928/podcast/rss" type="rss" />
+      <outline title="Cape Town Church of Christ - Sermons" xmlUrl="https://anchor.fm/s/982aa1f0/podcast/rss" type="rss" />
+      <outline title="CAPETOWN RED" xmlUrl="https://anchor.fm/s/728c704/podcast/rss" type="rss" />
+      <outline title="Cape Town Routes Unlimited Podcast" xmlUrl="https://feeds.feedburner.com/ctru" type="rss" />
+      <outline title="Pipo Buchlerwisk's podcast  - Cape Town" xmlUrl="https://www.spreaker.com/show/4307604/episodes/feed" type="rss" />
+      <outline title="The People's Church | Cape Town" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:103341745/sounds.rss" type="rss" />
+      <outline title="Canna-Curious in Cape Town : a Potcast" xmlUrl="https://anchor.fm/s/2f06a6ec/podcast/rss" type="rss" />
+      <outline title="Encounter Church Cape Town" xmlUrl="https://anchor.fm/s/1533547c/podcast/rss" type="rss" />
+      <outline title="Podcast – Zwei, die nach Cape Town reisen" xmlUrl="https://feeds.feedburner.com/ZweiDieNachCapeTownReisen" type="rss" />
+      <outline title="Peter W. Guess - PodCast Radio - Cape Town" xmlUrl="https://anchor.fm/s/209445c4/podcast/rss" type="rss" />
+      <outline title="Cape Town Vibes" xmlUrl="https://anchor.fm/s/668ed06c/podcast/rss" type="rss" />
+      <outline title="People Of Cape Town" xmlUrl="https://anchor.fm/s/1d4749c0/podcast/rss" type="rss" />
+      <outline title="Mountainside Church Cape Town" xmlUrl="https://anchor.fm/s/10faf1044/podcast/rss" type="rss" />
+      <outline title="Cape Town Positive" xmlUrl="https://cape-town-positive.podigee.io/feed/mp3" type="rss" />
+      <outline title="Victory Church Cape Town" xmlUrl="https://podpoint.com/feed/8088" type="rss" />
+      <outline title="Gospel Swag Apparel" xmlUrl="https://www.spreaker.com/show/2595872/episodes/feed" type="rss" />
+      <outline title="Who's Behind The Desk?" xmlUrl="https://anchor.fm/s/f36b1874/podcast/rss" type="rss" />
+      <outline title="Be Phat Motel Film Company - It's a shnit Show" xmlUrl="http://www.bephatmotel.com/its-a-shnit-show?format=rss" type="rss" />
+      <outline title="Sermons from St John's Community" xmlUrl="https://anchor.fm/s/d27f07b0/podcast/rss" type="rss" />
+      <outline title="Uphakantoni" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1019272018/sounds.rss" type="rss" />
+      <outline title="Exploring God's Word" xmlUrl="https://calvarychapelct.podomatic.com/rss2.xml" type="rss" />
+      <outline title="AlmaCast" xmlUrl="https://anchor.fm/s/de77e974/podcast/rss" type="rss" />
+      <outline title="Rivers Church Durban North" xmlUrl="https://feeds.transistor.fm/rivers-church-durban-north" type="rss" />
+      <outline title="Durban Deep" xmlUrl="https://hearthis.at/durbandeep/podcast/" type="rss" />
+      <outline title="The Rock Church Durban Podcast" xmlUrl="https://anchor.fm/s/f4c6f788/podcast/rss" type="rss" />
+      <outline title="CRC Durban | Ps Glenn Schroder" xmlUrl="https://anchor.fm/s/597f0770/podcast/rss" type="rss" />
+      <outline title="Durban Small Business Podcast" xmlUrl="https://anchor.fm/s/d9027504/podcast/rss" type="rss" />
+      <outline title="Vineyard Church Dbn" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:43638972/sounds.rss" type="rss" />
+      <outline title="DFMI Business Lab Podcast" xmlUrl="https://anchor.fm/s/10a00a6f8/podcast/rss" type="rss" />
+      <outline title="Sunday Sermons" xmlUrl="https://anchor.fm/s/101ebd050/podcast/rss" type="rss" />
+      <outline title="Faith Church Podcast" xmlUrl="https://feed.podbean.com/faithchurchorgza/feed.xml" type="rss" />
+      <outline title="Covenant Waterfall Presbyterian Church" xmlUrl="https://feed.podbean.com/coppolaaj/feed.xml" type="rss" />
+      <outline title="CityLife Church Durban Messages" xmlUrl="https://anchor.fm/s/7deb198c/podcast/rss" type="rss" />
+      <outline title="Durban Christian Centre" xmlUrl="https://feed.podbean.com/durbanchristiancentre/feed.xml" type="rss" />
+      <outline title="Lighthouse Church Durban" xmlUrl="https://anchor.fm/s/1e23a834/podcast/rss" type="rss" />
+      <outline title="Entrepreneurs’ Organization Durban Podcast" xmlUrl="https://pod.eodurban.co.za/feed.xml" type="rss" />
+      <outline title="WINNER CHAPEL DURBAN" xmlUrl="https://anchor.fm/s/3937821c/podcast/rss" type="rss" />
+      <outline title="Every Nation Durban" xmlUrl="https://feed.podcastmachine.com/podcasts/18806/mp3.rss" type="rss" />
+      <outline title="Gosip'dUrban" xmlUrl="https://anchor.fm/s/9809ff4/podcast/rss" type="rss" />
+      <outline title="The Durban Experience" xmlUrl="https://www.spreaker.com/show/4283798/episodes/feed" type="rss" />
+      <outline title="Durban Rock Radio" xmlUrl="https://www.spreaker.com/show/495636/episodes/feed" type="rss" />
+      <outline title="Every Nation Durban podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:42561131/sounds.rss" type="rss" />
+      <outline title="Durbanville-Bergsig Gemeente" xmlUrl="https://anchor.fm/s/8522768c/podcast/rss" type="rss" />
+      <outline title="The Dirty Dick Durban &amp; Rubbin Ronald Rubbins Podcast" xmlUrl="https://anchor.fm/s/33b0a4a4/podcast/rss" type="rss" />
+      <outline title="Durban Christian Centre South" xmlUrl="https://feed.podbean.com/dccsouth/feed.xml" type="rss" />
+      <outline title="PHM Durban SA" xmlUrl="https://anchor.fm/s/4965cb1c/podcast/rss" type="rss" />
+      <outline title="Northway Church Durban" xmlUrl="https://anchor.fm/s/d42653c/podcast/rss" type="rss" />
+      <outline title="Northplace Church Durban" xmlUrl="https://feed.podbean.com/npcdurban/feed.xml" type="rss" />
+      <outline title="Trends in the Clinical Management of Food Allergy - Presented by Raquel Durban, MS, RD, LDN" xmlUrl="https://anchor.fm/s/e28a9354/podcast/rss" type="rss" />
+      <outline title="Bible Study" xmlUrl="https://anchor.fm/s/101eae2d0/podcast/rss" type="rss" />
+      <outline title="Live from The Winston" xmlUrl="https://anchor.fm/s/4806804/podcast/rss" type="rss" />
+      <outline title="Melted Podcast" xmlUrl="https://anchor.fm/s/48175f0/podcast/rss" type="rss" />
+      <outline title="Work Hard, Play Hard" xmlUrl="https://api.riverside.com/hosting/TvkqdmMT.rss" type="rss" />
+      <outline title="Unstable Horsebones" xmlUrl="https://rss.buzzsprout.com/2429712.rss" type="rss" />
+      <outline title="The Boys" xmlUrl="https://anchor.fm/s/435d305c/podcast/rss" type="rss" />
+      <outline title="SAfm Market Update with Moneyweb" xmlUrl="http://rss.iono.fm/rss/chan/2247" type="rss" />
+      <outline title="Ligpunt Pretoria" xmlUrl="https://feed.podbean.com/ligpunt/feed.xml" type="rss" />
+      <outline title="Red Door Church Pretoria Sermons" xmlUrl="https://rss.buzzsprout.com/1751820.rss" type="rss" />
+      <outline title="Shofar Pretoria Sermons" xmlUrl="https://anchor.fm/s/10ca839ac/podcast/rss" type="rss" />
+      <outline title="The Relationship Podcast by Shofar Pretoria" xmlUrl="https://anchor.fm/s/10cd06030/podcast/rss" type="rss" />
+      <outline title="Driving To Pretoria" xmlUrl="https://anchor.fm/s/56bae888/podcast/rss" type="rss" />
+      <outline title="BOUNCE UP - A Podcast on Mental Resilience" xmlUrl="https://anchor.fm/s/35ec98f4/podcast/rss" type="rss" />
+      <outline title="Central Baptist Church Sermons" xmlUrl="https://www.central.org.za/podcast" type="rss" />
+      <outline title="LeadUP Podcast" xmlUrl="https://rss.buzzsprout.com/1802426.rss" type="rss" />
+      <outline title="Kingdom Finances by Shofar Pretoria" xmlUrl="https://anchor.fm/s/10cd05e3c/podcast/rss" type="rss" />
+      <outline title="&quot;We have no power against the circumstances&quot;" xmlUrl="https://anchor.fm/s/426b2f3c/podcast/rss" type="rss" />
+      <outline title="AFM Word Of Life Pretoria" xmlUrl="https://anchor.fm/s/384ec4dc/podcast/rss" type="rss" />
+      <outline title="PRETÓRIA" xmlUrl="https://anchor.fm/s/2464a1d0/podcast/rss" type="rss" />
+      <outline title="EG Kerk Pretoria Oos's Podcast" xmlUrl="https://podpoint.com/feed/6894" type="rss" />
+      <outline title="Harvester Reformational Church Pretoria" xmlUrl="https://anchor.fm/s/1af1ec5c/podcast/rss" type="rss" />
+      <outline title="Escape From The Pretoria" xmlUrl="https://anchor.fm/s/59bfbb80/podcast/rss" type="rss" />
+      <outline title="Shofar Pretoria Archives -" xmlUrl="https://shofaronline.tv/congregation-cat/shofar-pretoria/feed/" type="rss" />
+      <outline title="No Dams Given" xmlUrl="https://rss.libsyn.com/shows/129590/destinations/784632.xml" type="rss" />
+      <outline title="RUCC Ministries Gqeberha Podcast" xmlUrl="https://anchor.fm/s/7e8f0984/podcast/rss" type="rss" />
+      <outline title="CliffCentral" xmlUrl="https://www.cliffcentral.com/rss/" type="rss" />
+      <outline title="702" xmlUrl="https://www.702.co.za/rss/" type="rss" />
+      <outline title="CapeTalk" xmlUrl="https://www.capetalk.co.za/rss/" type="rss" />
+      <outline title="Kaya FM Podcast" xmlUrl="https://www.kayafm.co.za/podcast/rss/" type="rss" />
+      <outline title="Solid Gold Podcasts" xmlUrl="https://www.solidgold.co.za/rss/" type="rss" />
+      <outline title="History of South Africa podcast" xmlUrl="https://iono.fm/rss/chan/6011" type="rss" category="History" />
+      <outline title="Work Permit South Africa Podcast" xmlUrl="https://rss.buzzsprout.com/2405583.rss" type="rss" category="Business" />
+      <outline title="Cut the Line Rugby Podcast - Rugby in South Africa" xmlUrl="https://feeds.buzzsprout.com/2315726.rss" type="rss" category="Sports" />
+      <outline title="Network - Women in Mining South Africa (WiMSA)" xmlUrl="https://iono.fm/rss/chan/6083" type="rss" category="Business" />
+      <outline title="Animation South Africa Podcast" xmlUrl="https://feed.podbean.com/animationsa/feed.xml" type="rss" category="Tv" />
+      <outline title="History of South Africa podcast" xmlUrl="https://iono.fm/rss/chan/6011?codec=mp3&amp;quality=high" type="rss" category="History" />
+      <outline title="Access Granted Podcast" xmlUrl="https://anchor.fm/s/10afd3f08/podcast/rss" type="rss" category="Technology" />
+      <outline title="How to make a podcast in South Africa" xmlUrl="https://iono.fm/rss/chan/8568" type="rss" category="Education" />
+      <outline title="People's Health Movement South Africa" xmlUrl="https://iono.fm/rss/chan/5653" type="rss" category="Society" />
+      <outline title="BizTweak South Africa Podcast" xmlUrl="https://media.rss.com/foundersunfilteredsa/feed.xml" type="rss" category="Business" />
+      <outline title="Narcotics Anonymous - South Africa Region" xmlUrl="https://iono.fm/rss/chan/6354" type="rss" category="Society" />
+      <outline title="On the CANSA Couch Podcast" xmlUrl="https://feed.podbean.com/cancerassociationza/feed.xml" type="rss" category="Health" />
+      <outline title="SME South Africa Podcast" xmlUrl="https://anchor.fm/s/10f85cc34/podcast/rss" type="rss" category="Business" />
+      <outline title="Sleep Health Centre South Africa" xmlUrl="https://rss.iono.fm/rss/chan/9990" type="rss" />
+      <outline title="EduThink South Africa" xmlUrl="https://iono.fm/rss/chan/6197" type="rss" category="Education" />
+      <outline title="A Few Wild Olives Podcast: South Africa 2025" xmlUrl="https://anchor.fm/s/1064ede44/podcast/rss" type="rss" category="Religion" />
+      <outline title="Podcast Archives - Get Collagen Supplements South Africa" xmlUrl="https://getcollagen.co.za/category/podcast/feed" type="rss" />
+      <outline title="Rewind Podcast" xmlUrl="https://media.rss.com/lkrewind/feed.xml" type="rss" category="Religion" />
+      <outline title="NESTLÉ KIT KAT Take a Comedy Break Podcast" xmlUrl="https://media.rss.com/nestle-take-a-comedy-break-podcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Zest South Africa Podcast" xmlUrl="https://anchor.fm/s/67a2e7b8/podcast/rss" type="rss" category="News" />
+      <outline title="Podcast South-Africa" xmlUrl="https://anchor.fm/s/53168584/podcast/rss" type="rss" category="Society" />
+      <outline title="Children at Heart – Unicef South Africa Podcast" xmlUrl="https://iono.fm/rss/chan/5111" type="rss" category="Kids" />
+      <outline title="Sessional Meetings and Podcasts" xmlUrl="https://iono.fm/rss/chan/1250" type="rss" category="Health" />
+      <outline title="Fitness Mag Podcast" xmlUrl="https://feeds.feedburner.com/fitnessmagazinepodcast" type="rss" category="Health" />
+      <outline title="Provincial Grand Lodge South Africa Northern's Podcast" xmlUrl="https://rss.buzzsprout.com/2402857.rss" type="rss" category="History" />
+      <outline title="AJ Mouton Radio South Africa Podcasts" xmlUrl="https://mouton10105.podomatic.com/rss2.xml" type="rss" category="Music" />
+      <outline title="ScaleUp Podcast South Africa" xmlUrl="https://iono.fm/rss/chan/9198" type="rss" category="Business" />
+      <outline title="Vets &amp; Pets Podcast" xmlUrl="https://anchor.fm/s/f0c6d694/podcast/rss" type="rss" category="Education" />
+      <outline title="Script Happens - A WGSA Podcast" xmlUrl="https://feeds.redcircle.com/662a385a-4cbd-4075-891b-2bfd18822bef" type="rss" category="Arts" />
+      <outline title="BASA Podcast" xmlUrl="https://iono.fm/rss/chan/5793" type="rss" category="Arts" />
+      <outline title="National Lottery South Africa Podcast" xmlUrl="https://anchor.fm/s/fb40d408/podcast/rss" type="rss" category="Leisure" />
+      <outline title="National Lottery South Africa Podcast" xmlUrl="https://media.rss.com/national-lottery-south-africa-podcast/feed.xml" type="rss" category="Leisure" />
+      <outline title="HASA Podcast" xmlUrl="https://feed.podbean.com/markpeachv/feed.xml" type="rss" category="Health" />
+      <outline title="Beyond the Audit: A Mazars in South Africa podcast exploring finance trends, strategy &amp; compliance." xmlUrl="https://media.rss.com/mazars-in-south-africa/feed.xml" type="rss" category="Business" />
+      <outline title="Phezulu Podcast" xmlUrl="https://www.spreaker.com/show/5827084/episodes/feed" type="rss" category="Society" />
+      <outline title="The Something Podcast - South Africa" xmlUrl="https://anchor.fm/s/7d742fc/podcast/rss" type="rss" category="Society" />
+      <outline title="Accenture South Africa's Podcast" xmlUrl="https://feeds.buzzsprout.com/2076943.rss" type="rss" category="Technology" />
+      <outline title="The Early Grade Reading Research Study Podcast" xmlUrl="https://anchor.fm/s/ac4c7924/podcast/rss" type="rss" category="Education" />
+      <outline title="I'd Like To Thank Myself" xmlUrl="https://feeds.transistor.fm/id-like-to-thank-myself" type="rss" category="Arts" />
+      <outline title="Arroe Collins Like It's Live" xmlUrl="https://www.spreaker.com/show/4113802/episodes/feed" type="rss" category="News" />
+      <outline title="Seriously Mysterious - Missing Persons, Unsolved Murders &amp; Historical True Crime" xmlUrl="https://www.spreaker.com/show/4532075/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Life Hacks DIY &amp; More - Transform Your Everyday With Simple Tricks and DIY Magic!" xmlUrl="https://www.spreaker.com/show/5995484/episodes/feed" type="rss" category="Education" />
+      <outline title="Reddit Stories" xmlUrl="https://www.spreaker.com/show/6370551/episodes/feed" type="rss" category="Leisure" />
+      <outline title="The Kyle Peterson Show" xmlUrl="https://www.spreaker.com/show/6573404/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Reality After Show" xmlUrl="https://www.spreaker.com/show/5448874/episodes/feed" type="rss" category="Tv" />
+      <outline title="3-Bit Gamer Show" xmlUrl="https://www.spreaker.com/show/2255796/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Come explore the paranormal files as we delve into the unexplained. The paranormal podcast." xmlUrl="https://www.spreaker.com/show/5547977/episodes/feed" type="rss" category="Society" />
+      <outline title="Minding Your Business Podcast" xmlUrl="https://www.spreaker.com/show/6367325/episodes/feed" type="rss" category="Business" />
+      <outline title="95.3 Gorilla" xmlUrl="https://wznfpodcast.mainevibe.com/feed.xml" type="rss" category="Music" />
+      <outline title="Gamefully Unemployed" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:395741505/sounds.rss" type="rss" category="Tv" />
+      <outline title="Cog-Dog Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:236473103/sounds.rss" type="rss" category="Education" />
+      <outline title="Managing Tech Millions" xmlUrl="https://feeds.redcircle.com/8f2225e0-c4ac-469c-9e36-07f3677a22a7" type="rss" category="Business" />
+      <outline title="Vocal Booth Radio Listen Again" xmlUrl="https://vocalboothradio.com/feed/mp3" type="rss" category="Music" />
+      <outline title="Daily Shower Thoughts" xmlUrl="https://feeds.megaphone.fm/dailyshowerthoughts" type="rss" category="Comedy" />
+      <outline title="BIG Life Devotional | Daily Devotional for Women" xmlUrl="https://biglifehq.com/feed/podcast" type="rss" category="Religion" />
+      <outline title="Fun Content" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1469" type="rss" category="News" />
+      <outline title="94WIP Morning Show with Joe DeCamara and Jon Ritchie" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/philadelphia_wipfm-94wip_morning_show_with_joe_decamara_and_jon_ritchie" type="rss" category="Sports" />
+      <outline title="Based Camp | Simone &amp; Malcolm Collins" xmlUrl="https://api.substack.com/feed/podcast/1643534/s/64409.rss" type="rss" category="Society" />
+      <outline title="Bonjour France Podcast" xmlUrl="https://www.spreaker.com/show/6773527/episodes/feed" type="rss" category="Society" />
+      <outline title="Milena's Diary" xmlUrl="https://feeds.megaphone.fm/hmstalksltd9487207744" type="rss" category="Society" />
+      <outline title="North Point Baptist Church Sermons" xmlUrl="https://www.spreaker.com/show/6124300/episodes/feed" type="rss" category="Religion" />
+      <outline title="York County's Morning Show" xmlUrl="https://www.spreaker.com/show/6243862/episodes/feed" type="rss" category="Society" />
+      <outline title="Brian Thomas" xmlUrl="https://www.spreaker.com/show/2459972/episodes/feed" type="rss" category="News" />
+      <outline title="Wave 94" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:16676106/sounds.rss" type="rss" category="Religion" />
+      <outline title="Cleveland Browns News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/cleveland-browns-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Cork News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/fort-smith-daily-news-now.xml" type="rss" category="News" />
+      <outline title="The Missing Persons Report" xmlUrl="https://www.spreaker.com/show/6763610/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Rabbi Kraz's Shiurim" xmlUrl="https://anchor.fm/s/d89491c4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Toronto Today with Greg Brady" xmlUrl="https://feeds.megaphone.fm/coru2066336057" type="rss" category="News" />
+      <outline title="The Drake Toll Show" xmlUrl="https://feeds.megaphone.fm/wwo4349656783" type="rss" category="News" />
+      <outline title="Going Ultra - Presented by Henshin Inspection" xmlUrl="https://media.rss.com/mjmgu/feed.xml" type="rss" category="Tv" />
+      <outline title="JPost Headlines" xmlUrl="https://www.spreaker.com/show/6677418/episodes/feed" type="rss" category="News" />
+      <outline title="Audio Mises Wire" xmlUrl="https://cdn.mises.org/itunes/en_127226.xml" type="rss" category="News" />
+      <outline title="Outsource to Profits Podcast" xmlUrl="https://feed.podbean.com/getlevrg/feed.xml" type="rss" category="Business" />
+      <outline title="24 Oras Podcast" xmlUrl="https://feeds.acast.com/public/shows/685d292847311de1b6e0e89a" type="rss" category="News" />
+      <outline title="Excess Returns" xmlUrl="https://anchor.fm/s/9a1dfac/podcast/rss" type="rss" category="Business" />
+      <outline title="Red Sox Digest Podcast" xmlUrl="https://www.spreaker.com/show/6691213/episodes/feed" type="rss" category="News" />
+      <outline title="The Tony Kornheiser Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/the-tony-kornheiser-show" type="rss" category="Sports" />
+      <outline title="Radio Miraya" xmlUrl="https://audioboom.com/channels/3891441.rss" type="rss" category="Technology" />
+      <outline title="Pivot: SHIFT Ahead Mastermind" xmlUrl="https://media.rss.com/pivot-shift-ahead-mastermind/feed.xml" type="rss" category="Business" />
+      <outline title="Los Angeles Rams News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/los-angeles-rams-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Pursuit Of Purpose" xmlUrl="https://feed.podbean.com/popmartinsr/feed.xml" type="rss" category="Business" />
+      <outline title="Get Up" xmlUrl="https://feeds.megaphone.fm/esp2870920494" type="rss" category="Sports" />
+      <outline title="Courtney and KISS in the morning" xmlUrl="https://www.spreaker.com/show/2497425/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Computer Talk with TAB" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/f8c743d7682ab4bac553696e6093d3e7" type="rss" category="Business" />
+      <outline title="Tennessee Titans News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/tennessee-titans-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Wrestle Radio Australia" xmlUrl="https://wrestleradioaustralia.libsyn.com/rss" type="rss" category="Sports" />
+      <outline title="Hope Expression Podcast" xmlUrl="https://www.spreaker.com/show/5891904/episodes/feed" type="rss" category="Religion" />
+      <outline title="Spurs Chat: Discussing all Things Tottenham Hotspur: Hosted by Chris Cowlin: The Daily Tottenham/Spurs Podcast" xmlUrl="https://feeds.acast.com/public/shows/639c5ea1bcab760012015b61" type="rss" category="Sports" />
+      <outline title="Federalist Radio Hour" xmlUrl="https://feeds.feedburner.com/ricochetaudionetwork/federalistradiohour" type="rss" category="News" />
+      <outline title="The Irish Passport" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298752213/sounds.rss" type="rss" category="Society" />
+      <outline title="The Lunduke Journal of Technology" xmlUrl="https://api.substack.com/feed/podcast/462466.rss" type="rss" category="Technology" />
+      <outline title="Boston Bruins News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/boston-bruins-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Warden's Watch" xmlUrl="https://feeds.megaphone.fm/wpcm3659727000" type="rss" category="Sports" />
+      <outline title="Experience in Golf Clubhouse Design" xmlUrl="https://feeds.libsyn.com/475266/rss" type="rss" category="Arts" />
+      <outline title="Betting Weekly Studios" xmlUrl="https://feeds.megaphone.fm/rerre3101069934" type="rss" category="Sports" />
+      <outline title="The Long Run with Luke Timmerman" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:317770704/sounds.rss" type="rss" category="Science" />
+      <outline title="Belfast News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/bridgeport-daily-news-now.xml" type="rss" category="News" />
+      <outline title="AM Quincy" xmlUrl="https://feeds.feedburner.com/qatv_amquincypodcast" type="rss" category="Government" />
+      <outline title="Autoblog News" xmlUrl="https://feeds.feedburner.com/podcast/autoblog" type="rss" category="Games" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast" type="rss" category="News" />
+      <outline title="The Flex Podcast with Anna Martin Fitness" xmlUrl="https://media.rss.com/the-flex-podcast-with-anna-martin-fitness/feed.xml" type="rss" category="Health" />
+      <outline title="Church and State" xmlUrl="https://feed.podbean.com/churchandstate/feed.xml" type="rss" category="News" />
+      <outline title="Bite-Sized Dental Marketing" xmlUrl="https://media.rss.com/bsdm/feed.xml" type="rss" category="Business" />
+      <outline title="DD Fantasy Football Radio" xmlUrl="https://feeds.megaphone.fm/blu7133453702" type="rss" category="Sports" />
+      <outline title="Cybercrime Magazine Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286242900/sounds.rss" type="rss" category="Technology" />
+      <outline title="Lawrence News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/lawrence-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Sasquatch Experience" xmlUrl="https://www.spreaker.com/show/4208641/episodes/feed" type="rss" category="Science" />
+      <outline title="Ciliberto and Friends" xmlUrl="https://www.spreaker.com/show/5983689/episodes/feed" type="rss" category="Music" />
+      <outline title="The Automated Daily" xmlUrl="https://theautomateddaily.com/feed.xml" type="rss" category="Technology" />
+      <outline title="The Automated Daily - Space News Edition" xmlUrl="https://theautomateddaily.com/space/feed.xml" type="rss" category="Science" />
+      <outline title="Word Balloon Comics Podcast" xmlUrl="https://www.spreaker.com/show/3143082/episodes/feed" type="rss" category="Tv" />
+      <outline title="Daily Morning Class" xmlUrl="https://media.rss.com/rabbiyedid/feed.xml" type="rss" category="Religion" />
+      <outline title="Reality with The King" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a1735c70-f70f-4045-805b-b302010c5b8c/5db0a3af-13d8-4a16-974c-b302010c5bb4/podcast.rss" type="rss" category="Tv" />
+      <outline title="The Dentalpreneur Podcast w/ Dr. Mark Costes" xmlUrl="https://markcostes.libsyn.com/rss" type="rss" category="Business" />
+      <outline title="The Kapeel Gupta Career Podshow" xmlUrl="https://rss.buzzsprout.com/2012553.rss" type="rss" category="Business" />
+      <outline title="What in the World" xmlUrl="https://podcasts.files.bbci.co.uk/w13xtvrv.rss" type="rss" category="News" />
+      <outline title="The Buddy System with Chris &amp; Matty" xmlUrl="https://feeds.megaphone.fm/mduyh3921896096?1?1" type="rss" category="Comedy" />
+      <outline title="Fore Love of Golf" xmlUrl="https://feeds.megaphone.fm/rogxo2747915340" type="rss" category="Sports" />
+      <outline title="Dr. John Campbell" xmlUrl="https://feeds.megaphone.fm/vg9554039150" type="rss" category="Education" />
+      <outline title="Paranormal UK Radio Network" xmlUrl="https://www.spreaker.com/show/4541473/episodes/feed" type="rss" category="Society" />
+      <outline title="This Day in History" xmlUrl="https://feeds.redcircle.com/9339ef5f-2c20-4a38-b60d-eb4ac27759c3" type="rss" category="History" />
+      <outline title="Football Social Daily" xmlUrl="https://feeds.megaphone.fm/comg9297908545" type="rss" category="Sports" />
+      <outline title="Edmonton News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-stockton-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Park Avenue Synagogue Podcast" xmlUrl="https://feed.podbean.com/parkavenuepodcast/feed.xml" type="rss" category="Religion" />
+      <outline title="PreMarket Prep" xmlUrl="https://anchor.fm/s/fd33c360/podcast/rss" type="rss" category="Business" />
+      <outline title="StribSports Daily Delivery" xmlUrl="https://feeds.megaphone.fm/stribsportsdailydelivery" type="rss" category="Sports" />
+      <outline title="Legacy Nashville Podcast" xmlUrl="https://media.rss.com/legacy-nashville-podcast/feed.xml" type="rss" category="Religion" />
+      <outline title="&quot;There I was...&quot; An Aviation Podcast" xmlUrl="https://feeds.megaphone.fm/aopa1855704656" type="rss" category="Leisure" />
+      <outline title="Marketer of the Day with Robert Plank: Business Growth &amp; Entrepreneur Stories" xmlUrl="https://www.robertplank.com/feed/podcast" type="rss" category="Business" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="News" />
+      <outline title="In The Money Media Network" xmlUrl="https://feeds.captivate.fm/in-the-money-media-network" type="rss" category="Sports" />
+      <outline title="This Paranormal Life" xmlUrl="https://feeds.megaphone.fm/nsr2334813337" type="rss" category="Comedy" />
+      <outline title="Let's Address This with Qasim Rashid Podcast" xmlUrl="https://api.substack.com/feed/podcast/2550223.rss" type="rss" category="News" />
+      <outline title="Flashscore News" xmlUrl="https://feeds.captivate.fm/flashscore-news" type="rss" category="News" />
+      <outline title="JACC Global" xmlUrl="https://feeds.libsyn.com/75161" type="rss" category="Health" />
+      <outline title="Health News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/health-and-fitness-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Health" />
+      <outline title="Food Freedom" xmlUrl="https://anchor.fm/s/d625f518/podcast/rss" type="rss" category="Health" />
+      <outline title="See Ball Get Ball with David Pollack" xmlUrl="https://media.rss.com/see-ball-get-ball-david-pollack/feed.xml" type="rss" category="Sports" />
+      <outline title="Blurt Vibes" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1398" type="rss" category="News" />
+      <outline title="Twisted Podcast" xmlUrl="https://twistedpodcast.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Billianon" xmlUrl="https://podcast.billianon.com/@billianon/feed.xml" type="rss" category="Education" />
+      <outline title="Global Research Unlocked" xmlUrl="https://feed.podbean.com/bofaglobalresearch/feed.xml" type="rss" category="Business" />
+      <outline title="Fresh Pinball Podcast" xmlUrl="https://media.rss.com/freshpinballpodcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Georgia Tech Yellow Jackets Football Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/georgia-tech-yellow-jackets-football-today-2-min-news.xml" type="rss" category="News" />
+      <outline title="Magical Transformations" xmlUrl="https://feeds.captivate.fm/magicaltrasformations" type="rss" category="Health" />
+      <outline title="The Nielson Show" xmlUrl="https://feeds.libsyn.com/481581/rss" type="rss" category="Sports" />
+      <outline title="The Bridge" xmlUrl="https://www.spreaker.com/show/3099883/episodes/feed" type="rss" category="Sports" />
+      <outline title="Politics Unpacked" xmlUrl="https://feeds.acast.com/public/shows/92a301e1-443b-435f-b4e2-2e2dd1e37fc5" type="rss" category="News" />
+      <outline title="*“Yesterday, I Went to Mars ♡”*" xmlUrl="https://anchor.fm/s/fcce555c/podcast/rss" type="rss" category="Society" />
+      <outline title="SYSTEMIZE YOUR LIFE + BUSINESS | Schedules, Routines, Productivity, Time Management, Operating System" xmlUrl="https://feed.podbean.com/systemizeyourlife/feed.xml" type="rss" category="Kids" />
+      <outline title="San Francisco 49ers News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/san-francisco-49ers-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Chiney Today" xmlUrl="https://feeds.megaphone.fm/esp1950629932" type="rss" category="Sports" />
+      <outline title="Top Entrepreneurs Podcast | Enterprise Podcast Network" xmlUrl="https://feeds.feedburner.com/entrepreneurpodcastnetwork" type="rss" category="Business" />
+      <outline title="Restoration Home with Jennifer Pepito" xmlUrl="https://feed.podbean.com/restorationhome/feed.xml" type="rss" category="Kids" />
+      <outline title="Keys to Success" xmlUrl="https://www.spreaker.com/show/6414073/episodes/feed" type="rss" category="Society" />
+      <outline title="Athletics Weekly Podcast" xmlUrl="https://feeds.acast.com/public/shows/6697e5223fac6c42420fe0e8" type="rss" category="Sports" />
+      <outline title="Mully &amp; Haugh Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/chicago_wscram_mully___haugh_show" type="rss" category="Sports" />
+      <outline title="Grow My Salon Business Podcast" xmlUrl="https://feeds.transistor.fm/grow-my-salon-business-podcast" type="rss" category="Arts" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="News" />
+      <outline title="Mornings With Gary Byron Podcast" xmlUrl="https://feeds.transistor.fm/mornings-with-gary-byron-podcast" type="rss" category="News" />
+      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed" type="rss" category="News" />
+      <outline title="Arkansas Razorbacks Basketball News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/arkansas-razorbacks-basketball-news-today-2-min-news-the-dai.xml" type="rss" category="News" />
+      <outline title="Galway Bay fm - Sports" xmlUrl="https://galwaybayfmsports.podbean.com/feed.xml" type="rss" category="Sports" />
+      <outline title="Harmonizing Success" xmlUrl="https://www.spreaker.com/show/6418590/episodes/feed" type="rss" category="Business" />
+      <outline title="World Today" xmlUrl="https://aezfm.meldingcloud.com/rss/program/46" type="rss" category="News" />
+      <outline title="Montreal Canadiens News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/montreal-canadiens-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Giggly Squad" xmlUrl="https://feeds.acast.com/public/shows/780a3042-864b-40fa-ae09-4557aec621c3" type="rss" category="Comedy" />
     </outline>
-    
-    
     <outline text="Photography">
-      
-      
-      <outline title="Fuji SA" xmlUrl="https://www.fujifilm.co.za/rss/" type="rss"/>
-      
-    
+      <outline title="Fuji SA" xmlUrl="https://www.fujifilm.co.za/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Apple">
-      
-      
-      <outline title="iStore Blog" xmlUrl="https://www.istore.co.za/blog/feed/" type="rss"/>
-      
-    
+      <outline title="iStore Blog" xmlUrl="https://www.istore.co.za/blog/feed/" type="rss" />
     </outline>
-    
-
     <outline text="Health">
-      
-      
-      <outline title="Department of Health" xmlUrl="https://www.health.gov.za/feed/" type="rss"/>
-      
-    
+      <outline title="Department of Health" xmlUrl="https://www.health.gov.za/feed/" type="rss" />
     </outline>
-    
-
     <outline text="YouTube">
-      <outline title="StarPlus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-LPIU24bQXVljUXivKEeRQ" type="rss"/>
-      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
-      <outline title="Celine Dept" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1a2ZCw7tugRZYRMnecNj3A" type="rss"/>
-      <outline title="Infobellsмовою гінді" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1ciY6kR3yj3kaKZ6R7ewAg" type="rss"/>
-      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
-      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
-      <outline title="Влад A4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2tsySbe9TNrI-xh2lximHA" type="rss"/>
-      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
-      <outline title="SonyMusicIndiaVEVO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3MLnJtqc_phABBriLRhtgQ" type="rss"/>
-      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
-      <outline title="ARY Digital HD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4JCksJF76g_MdzPVBJoC3Q" type="rss"/>
-      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
-      <outline title="Anaya Kandhal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4wEPe5mrHGAUjjTfXH_C-Q" type="rss"/>
-      <outline title="कलर्स टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
-      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
-      <outline title="Dangal TV Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5AA82B9K5K5Sdx2JpuuuSA" type="rss"/>
-      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
-      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
-      <outline title="ISSEI / いっせい" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6QZ_ss3i_8qLV_RczPZBkw" type="rss"/>
-      <outline title="JioHotstar Kids" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6msOR4-Wf-NMAP24YwobpQ" type="rss"/>
-      <outline title="Billion Surprise Toys" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6sqpmfBwngFZQPPzFjDGTw" type="rss"/>
-      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
-      <outline title="Ben Azelart" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8tCJ55XS8ClDQmfDZogYPQ" type="rss"/>
-      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
-      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
-      <outline title="@shemaroo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9w7VG_ZZwjXCskGZByMBvw" type="rss"/>
-      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9zs_bkRRTJa2kRsakFaFmw" type="rss"/>
-      <outline title="Karla Bustillos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAQB-fgOrLlUm149S3oArOg" type="rss"/>
-      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
-      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
-      <outline title="Topper Guild" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB58HbhbM93ygXfnCJ1K2kA" type="rss"/>
-      <outline title="चुचु टिभी नर्सरी राइम्स एन्ड किड्स सङ्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnZ16ahKA2DZ_T5W0FPUXg" type="rss"/>
-      <outline title="Alan Chikin Chow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCMeCQ4wtdwQuoH7TNThL1A" type="rss"/>
-      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDGmojLIoWpXok597xYo8cg" type="rss"/>
-      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDpenlfHFtjdGpqi8slPybg" type="rss"/>
-      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
-      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss"/>
-      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
-      <outline title="Saregama Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGzzga499Hr2AB1btQ3XtoQ" type="rss"/>
-      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
-      <outline title="PANDA BOI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJbJuOSf-ec7jsPzvQBVC3w" type="rss"/>
-      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
-      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
-      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
-      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
-      <outline title="केएल ब्रो बिजु रित्भिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5nlHWXVLeOsSjKH2fhmsg" type="rss"/>
-      <outline title="बाङतान टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkAepWjdylmXSltofFvsYQ" type="rss"/>
-      <outline title="WWE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
-      <outline title="@zhong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOKv-bQOCCfZp5vftTZ4MKg" type="rss"/>
-      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
-      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
-      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
-      <outline title="shfa2 - شفا" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ7x25F6YXY9DvGeHFxLhRQ" type="rss"/>
-      <outline title="योलो एभेन्तुरास" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ8TuCvcDMepleXFyOQfyOQ" type="rss"/>
-      <outline title="ABP NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRWFSbif-RFENbBrSiez1DA" type="rss"/>
-      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
-      <outline title="Masha and the Bear" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSgiKiHFAV640il9waFg9cw" type="rss"/>
-      <outline title="อลัน เฉิน สโตกส์ และ เฉิน สโตกส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUdKQXtKb1me2Gt1nz6tzdg" type="rss"/>
-      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
-      <outline title="MR. INDIAN HACKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWWeRmpeFuYY1FdAru58Afw" type="rss"/>
-      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
-      <outline title="ToRung" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXbYlU08sOTBktOtjVsvR6w" type="rss"/>
-      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss"/>
-      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
-      <outline title="Shakira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYLNGLIzMhRTi6ZOLjAPSmw" type="rss"/>
-      <outline title="JuegaGerman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYiGq8XF7YQD00x7wAd62Zg" type="rss"/>
-      <outline title="Alejo Igoa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZs0WwC0Dn_noiQE2BHSTKg" type="rss"/>
-      <outline title="Toys and Colors" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBTm46K3l59CIty88Q_jog" type="rss"/>
-      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
-      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
-      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
-      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
-      <outline title="IShowSpeed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd09ztChTkJ9dlY6RLawSog" type="rss"/>
-      <outline title="Alfredo Larin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd5ApCORQsMOZZz5E9oVeFA" type="rss"/>
-      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss"/>
-      <outline title="Sierra &amp; Rhia FAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe6n0z9UbsxYCS8P83f84tw" type="rss"/>
-      <outline title="@HarPalGeoOfficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe9JSDmyqNgA_l2BzGHq1Ug" type="rss"/>
-      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
-      <outline title="Маша и Медведь[b]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfbugOkS8PkqhDfvehIDRBw" type="rss"/>
-      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
-      <outline title="Real fools shorts official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgKEvLp8DXCTMq4QY6wW7bw" type="rss"/>
-      <outline title="Bispo Bruno Leonardo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgi6Wim7jdoW6luCXci83uw" type="rss"/>
-      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
-      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
-      <outline title="Get Movies" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClZkHt2kNIgyrTTPnSQV3SA" type="rss"/>
-      <outline title="Techno Gamerz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl_vAxZpvbO-PFXdDu7EdHw" type="rss"/>
-      <outline title="Bad Bunny" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmBA_wu8xGg1OfOkfW13Q0Q" type="rss"/>
-      <outline title="आचार्य प्रशान्त - Acharya Prashant" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmRZ4Xrzx1PKsg2UieOT6rA" type="rss"/>
-      <outline title="BETER BÖCÜK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnYP-Vc_kPNk--9h6MNI4rA" type="rss"/>
-      <outline title="Fede Vigevani" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoQm-PeHC-cbJclKJYJ8LzA" type="rss"/>
-      <outline title="Ishtar Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCopY0NAzASqmD6eVaRj2TFQ" type="rss"/>
-      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
-      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
-      <outline title="T-Series Bollywood Classics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq-Fj5jknLsUf-MWSy4_brA" type="rss"/>
-      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
-      <outline title="Mikecrack" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ5zFEED1hWs0KNQCQuYdQ" type="rss"/>
-      <outline title="Jess No Limit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrcUbwWMAshF6M6UJcwOK7g" type="rss"/>
-      <outline title="जामजाम इलेक्ट्रोनिक ट्रेडिङ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrnQFuUabBHaw-BRhPo8xEA" type="rss"/>
-      <outline title="ABS-CBN Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCstEtN0pgOmCf02EdXsGChw" type="rss"/>
-      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
-      <outline title="IndiaTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCttspZesZIDEwwpVIgoZtWQ" type="rss"/>
-      <outline title="योर क्रिस्टियानो" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtxD0x6AuNNqdXO9Wp5GHew" type="rss"/>
-      <outline title="Juan de Dios Pantoja" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu9rnHLRV0gvyn2Skm7wsRQ" type="rss"/>
-      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
-      <outline title="shfa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwHE1kM1CPJd_pI9FQ0-4dg" type="rss"/>
-      <outline title="LUCCAS NETO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxk7r8lH6fWkMuWeQn9Gi6g" type="rss"/>
-      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
-      <outline title="קים דונג ג'וןויו באק האפ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8gf4PK1Qth50lLHdvTCcA" type="rss"/>
+      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss" />
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss" />
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
+      <outline title="Philip DeFranco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+    </outline>
+    <outline text="Podcast">
+      <outline title="Djy Jaivane" xmlUrl="https://hearthis.at/djy-jaivane/podcast/" type="rss" category="Music" />
+      <outline title="The Diary Of A CEO with Steven Bartlett" xmlUrl="https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn" type="rss" category="Business" />
+      <outline title="Podcast and Chill with MacG" xmlUrl="https://feeds.simplecast.com/wIPcyCls" type="rss" category="Comedy" />
+      <outline title="Global News Podcast" xmlUrl="https://podcasts.files.bbci.co.uk/p02nq0gn.rss" type="rss" category="Daily News" />
+      <outline title="The Mel Robbins Podcast" xmlUrl="https://feeds.simplecast.com/UCwaTX1J" type="rss" category="Self-Improvement" />
+      <outline title="Crime Junkie" xmlUrl="https://feeds.simplecast.com/qm_9xx0g" type="rss" category="True Crime" />
+      <outline title="The Rest Is History" xmlUrl="https://feeds.megaphone.fm/GLT4787413333" type="rss" category="History" />
+      <outline title="Rotten Mango" xmlUrl="https://feeds.simplecast.com/6Qp23t6h" type="rss" category="True Crime" />
+      <outline title="Because We Said So" xmlUrl="https://anchor.fm/s/10205564c/podcast/rss" type="rss" category="Relationships" />
+      <outline title="On Purpose with Jay Shetty" xmlUrl="https://feeds.megaphone.fm/on-purpose" type="rss" category="Mental Health" />
+      <outline title="Knight SA - MidTempo Sessions Uploads" xmlUrl="https://hearthis.at/knightsa89/podcast/" type="rss" category="Music" />
+      <outline title="ShxtsNGigs" xmlUrl="https://feeds.acast.com/public/shows/6477204262b0900011c3fb37" type="rss" category="Comedy" />
+      <outline title="The Joe Rogan Experience" xmlUrl="https://feeds.megaphone.fm/GLT1412515089" type="rss" category="Comedy" />
+      <outline title="Joel Osteen Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/752ba8f1-0e9f-43cc-81d8-b45f00f9a408/6f1d99f7-4f58-4689-b4f7-b45f00f9a4e3/podcast.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="What Now? with Trevor Noah" xmlUrl="https://feeds.simplecast.com/LNIsL2kT" type="rss" category="Society &amp; Culture" />
+      <outline title="MrBallen Podcast: Strange, Dark &amp; Mysterious Stories" xmlUrl="https://feeds.simplecast.com/dloY8UYJ" type="rss" category="True Crime" />
+      <outline title="Stixx 100% Production Mix" xmlUrl="https://hearthis.at/cw9f0zgx/podcast.xml" type="rss" category="Music" />
+      <outline title="Modern Wisdom" xmlUrl="https://feeds.megaphone.fm/SIXMSB5088139739" type="rss" category="Society &amp; Culture" />
+      <outline title="Huberman Lab" xmlUrl="https://feeds.megaphone.fm/hubermanlab" type="rss" category="Health &amp; Fitness" />
+      <outline title="Morbid" xmlUrl="https://feeds.simplecast.com/ohmVlJZQ" type="rss" category="True Crime" />
+      <outline title="No Such Thing As A Fish" xmlUrl="https://audioboom.com/channels/2399216.rss" type="rss" category="Comedy" />
+      <outline title="Short History Of..." xmlUrl="https://feeds.megaphone.fm/NSR8236478683" type="rss" category="History" />
+      <outline title="48 Hours" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/496099a4061493caac75b71a6c26b8fb" type="rss" category="True Crime" />
+      <outline title="MoneywebNOW" xmlUrl="https://rss.iono.fm/rss/chan/5240" type="rss" category="Business News" />
+      <outline title="The Gareth Cliff Daily Briefing" xmlUrl="https://rss.iono.fm/rss/chan/10008" type="rss" category="News" />
+      <outline title="Dateline NBC" xmlUrl="https://podcastfeeds.nbcnews.com/HL4TzgYC" type="rss" category="True Crime" />
+      <outline title="The Daily" xmlUrl="https://feeds.simplecast.com/Sl5CSM3S" type="rss" category="Daily News" />
+      <outline title="Elevation with Steven Furtick" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/cbb40a38-726f-4243-a86e-b0ed01477640/ff9164b2-aa64-410d-9ee1-b0ed0147765c/podcast.rss" type="rss" category="Christianity" />
+      <outline title="Artwork Sounds" xmlUrl="https://hearthis.at/artwork-sounds/podcast.xml" type="rss" category="Arts" />
+      <outline title="RedHanded" xmlUrl="https://audioboom.com/channels/5166531.rss" type="rss" category="True Crime" />
+      <outline title="Casefile True Crime" xmlUrl="https://feeds.acast.com/public/shows/679acff465f74095106abfaa" type="rss" category="True Crime" />
+      <outline title="We call her Emma | Tortoise Investigates" xmlUrl="https://feeds.acast.com/public/shows/739cfc71-b7ce-45b1-9285-f3a84a2502b2" type="rss" category="Documentary" />
+      <outline title="Aspire with Emma Grede" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/emma-grede" type="rss" category="Entrepreneurship" />
+      <outline title="Serialously with Annie Elise" xmlUrl="https://audioboom.com/channels/5100770.rss" type="rss" category="True Crime" />
+      <outline title="The Rest Is Politics: US" xmlUrl="https://feeds.megaphone.fm/GLT5336643697" type="rss" category="Politics" />
+      <outline title="The Gareth Cliff Show" xmlUrl="http://rss.iono.fm/rss/chan/1940" type="rss" category="Society &amp; Culture" />
+      <outline title="The Corder Report" xmlUrl="https://feed.podbean.com/dancorderinthemorning/feed.xml" type="rss" category="Daily News" />
+      <outline title="The Rugby Pod" xmlUrl="https://feeds.megaphone.fm/ringer-the-rugby-pod" type="rss" category="Rugby" />
+      <outline title="Stuff You Should Know" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a91018a4-ea4f-4130-bf55-ae270180c327/44710ecc-10bb-48d1-93c7-ae270180c33e/podcast.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="True Crime with Kendall Rae" xmlUrl="https://audioboom.com/channels/5074524.rss" type="rss" category="True Crime" />
+      <outline title="Timothy Keller Sermons Podcast by Gospel in Life" xmlUrl="https://podcast.gospelinlife.com/feed.xml" type="rss" category="Christianity" />
+      <outline title="The Psychology of your 20s" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/bc44988a-a82a-4291-ab8b-afdd01187fa8/39e2f432-53df-43b8-a7b9-afdd01187fc4/podcast.rss" type="rss" category="Mental Health" />
+      <outline title="The Shawn Ryan Show" xmlUrl="https://rss.pdrl.fm/ac69ac/feeds.megaphone.fm/WWO7410387571" type="rss" category="Philosophy" />
+      <outline title="Founders" xmlUrl="https://feeds.megaphone.fm/DSLLC6297708582" type="rss" category="Entrepreneurship" />
+      <outline title="A Bit of Optimism" xmlUrl="https://rss2.flightcast.com/mbqbwjr8ssv2vt5jgwcv3w20.xml" type="rss" category="Careers" />
+    </outline>
+    <outline text="Social">
+      <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
     </outline>
   </body>
-  
-
 </opml>

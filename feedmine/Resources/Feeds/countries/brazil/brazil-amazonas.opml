@@ -20,7 +20,6 @@
     <outline text="Education">
       </outline>
     <outline text="Environment">
-      <outline title="Amazônia Real" xmlUrl="https://amazoniareal.com.br/feed/" type="rss" />
       <outline title="Projeto Saúde e Alegria" xmlUrl="https://www.saudeealegria.org.br/feed/" type="rss" />
       <outline title="Fundação Amazonas Sustentável" xmlUrl="https://www.fas-amazonas.org/feed/" type="rss" />
     </outline>
@@ -60,7 +59,6 @@
       <outline title="ZZZ - The podcast that helps you sleep" xmlUrl="https://feeds.transistor.fm/zzz" type="rss" category="Self-Improvement" />
       <outline title="RÁDIO CAFÉ" xmlUrl="https://api.substack.com/feed/podcast/1071928.rss" type="rss" category="Politics" />
       <outline title="Life In Sport Podcast" xmlUrl="https://feeds.acast.com/public/shows/633647ad559a970014e32b35" type="rss" category="Sports" />
-      <outline title="Inteligência Ltda." xmlUrl="https://anchor.fm/s/6cf4d5a0/podcast/rss" type="rss" category="Comedy Interviews" />
       <outline title="Bubbles Podcast" xmlUrl="https://anchor.fm/s/362d9c50/podcast/rss" type="rss" category="Society &amp; Culture" />
       <outline title="Coffee Break Spanish" xmlUrl="https://feeds.acast.com/public/shows/985e7c00-8945-4e0d-a4da-b93049180ce1" type="rss" category="Language Learning" />
       <outline title="davidcayley.com" xmlUrl="https://www.davidcayley.com/podcasts/?format=rss" type="rss" category="Society &amp; Culture" />
@@ -84,6 +82,8 @@
       <outline title="The English club class with Genilton Furtado" xmlUrl="https://anchor.fm/s/1d7fde84/podcast/rss" type="rss" category="Language Learning" />
       <outline title="AI Polyglot Spanish | Natural Listening Espanol" xmlUrl="https://podcast.aipolyglot.jp/aipolyglot-en_es/feed.xml" type="rss" category="Language Learning" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
   <outline text="Podcasts">
     <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />

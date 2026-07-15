@@ -5,7 +5,6 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="WA Today" xmlUrl="https://www.watoday.com.au/rss/feed.xml" type="rss" />
       <outline title="The West Australian" xmlUrl="https://thewest.com.au/feed/" type="rss" />
       <outline title="PerthNow" xmlUrl="https://www.perthnow.com.au/feed/" type="rss" />
     </outline>
@@ -27,25 +26,20 @@
       <outline title="Buddhist Society of Western Australia" xmlUrl="https://feed.podbean.com/podcast.bswa.org/feed.xml" type="rss" category="Religion" />
       <outline title="WA Police Confidential (Formerly Operation Podcast)" xmlUrl="https://rss.buzzsprout.com/2593358.rss" type="rss" category="News" />
       <outline title="Deeper Dhamma Buddhist Society of Western Australia" xmlUrl="https://deeperdhamma.podbean.com/feed.xml" type="rss" category="Religion" />
-      <outline title="Cold Case Western Australia" xmlUrl="https://rss.buzzsprout.com/2264476.rss" type="rss" category="Government" />
       <outline title="Persons of Interest" xmlUrl="https://rss.buzzsprout.com/2313969.rss" type="rss" category="Government" />
       <outline title="Western Australia Country Hour" xmlUrl="https://www.abc.net.au/feeds/9024856/podcast.xml" type="rss" category="Business" />
       <outline title="Western Australia by nature" xmlUrl="https://feeds.buzzsprout.com/1305931.rss" type="rss" category="Government" />
-      <outline title="CurtinFM 100.1 in Perth, Western Australia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:750429835/sounds.rss" type="rss" category="Leisure" />
       <outline title="Wild: Stories from Western Australia's past" xmlUrl="https://rss.buzzsprout.com/1578322.rss" type="rss" category="History" />
       <outline title="Chatting with the Corruption and Crime Commission of Western Australia" xmlUrl="https://www.omnycontent.com/d/playlist/ad231410-8be4-423a-9ebf-add700363fba/2a9158ca-0cbf-4457-954c-ade4005fe632/c11a5717-35b4-4587-aff5-ade40060bae7/podcast.rss" type="rss" category="Government" />
       <outline title="Tourism Western Australia Podcast" xmlUrl="https://feeds2.feedburner.com/tourismwesternaustraliapodcast" type="rss" category="Society" />
       <outline title="Calvary Chapel Secret Harbour" xmlUrl="https://anchor.fm/s/100d3c5b0/podcast/rss" type="rss" category="Religion" />
-      <outline title="Elevate Church - Perth, Western Australia" xmlUrl="https://www.elevatechurch.me/connect/listen/audio-podcast" type="rss" category="Religion" />
       <outline title="Firearms Reform - Official WA Police Force Podcast" xmlUrl="https://rss.buzzsprout.com/2511949.rss" type="rss" category="Education" />
-      <outline title="City Report with Dean Bark - Perth, Western Australia Local News" xmlUrl="https://yourpod.news/rss/news/perth,%20western%20australia/city-report-dean-bark" type="rss" category="News" />
       <outline title="Jimmerish FM: Intimate Conversations from Western Australia" xmlUrl="https://feeds.feedburner.com/jimmerishfm" type="rss" category="Arts" />
       <outline title="Goldfields Stories of Western Australia" xmlUrl="https://anchor.fm/s/b240e2c/podcast/rss" type="rss" category="Society" />
       <outline title="The Zen Group of Western Australia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:297662247/sounds.rss" type="rss" category="Religion" />
       <outline title="The Rocks Beneath Our Feet" xmlUrl="https://rss.buzzsprout.com/1848705.rss" type="rss" category="Arts" />
       <outline title="Corona Life In western Australia" xmlUrl="https://anchor.fm/s/19ce56a8/podcast/rss" type="rss" category="Society" />
       <outline title="Elevate Church - Perth, Western Australia" xmlUrl="https://www.spreaker.com/show/3211849/episodes/feed" type="rss" category="Society" />
-      <outline title="Dreambuilders Church Podcast - Malaga, Western Australia" xmlUrl="https://media.dreambuilderschurch.net/malaga/rss/dbcmalaga.xml" type="rss" category="Religion" />
       <outline title="Climate podcasts from the University of Western Australia" xmlUrl="https://feeds.feedburner.com/uwaclimatecasts" type="rss" category="Science" />
       <outline title="Allan Boyd Talks to Experts About Things" xmlUrl="https://rss.buzzsprout.com/2605984.rss" type="rss" category="News" />
       <outline title="Country Counsel" xmlUrl="https://rss.buzzsprout.com/2369864.rss" type="rss" category="Arts" />
@@ -55,11 +49,11 @@
       <outline title="WorkSafe WA Podcasts" xmlUrl="https://feed.podbean.com/safetycomms/feed.xml" type="rss" category="Government" />
       <outline title="Black Swan Events in Western Australia" xmlUrl="https://feed.podbean.com/vote1westernaustraliaparty/feed.xml" type="rss" category="Society" />
       <outline title="Epic Drives Western Australia [YouTube]" xmlUrl="https://anchor.fm/s/709782c/podcast/rss" type="rss" category="Sports" />
-      <outline title="Dreambuilders Church Podcast - Perth, Western Australia" xmlUrl="https://media.dreambuilderschurch.net/perth/rss/dbcpodcast.xml" type="rss" category="Religion" />
       <outline title="Welcome Perth Western Australia" xmlUrl="https://anchor.fm/s/2bbe91fc/podcast/rss" type="rss" category="Comedy" />
-      <outline title="The First War for Western Civilization" xmlUrl="https://celebrategreece.com.s3.amazonaws.com/itunestfwftwapplication.xml" type="rss" category="Society" />
       <outline title="Two Centuries of Chinese Heritage in Western Australia" xmlUrl="https://feeds.acast.com/public/shows/674dd2aa603b9bf59ade1dfb" type="rss" category="History" />
       <outline title="NORTHSHORE Church, Northern Suburbs, Perth, Western Australia - podcast" xmlUrl="https://feeds.feedburner.com/northshorepodcast" type="rss" category="Religion" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

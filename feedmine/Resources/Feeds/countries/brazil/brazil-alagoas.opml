@@ -4,40 +4,42 @@
     <title>Alagoas Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Gazeta de Alagoas" xmlUrl="https://www.gazetadealagoas.com.br/feed/" type="rss" />
-        <outline title="TNH1" xmlUrl="https://www.tnh1.com.br/feed/" type="rss" />
-        <outline title="Governo de Alagoas" xmlUrl="https://www.alagoas.al.gov.br/feed/" type="rss" />
-        <outline title="Prefeitura de Maceió" xmlUrl="https://www.maceio.al.gov.br/feed/" type="rss" />
-        <outline title="Blog do Ricardo Mota" xmlUrl="https://www.ricardomota.com.br/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Gazeta de Alagoas" xmlUrl="https://www.gazetadealagoas.com.br/feed/" type="rss" />
+      <outline title="TNH1" xmlUrl="https://www.tnh1.com.br/feed/" type="rss" />
+      <outline title="Governo de Alagoas" xmlUrl="https://www.alagoas.al.gov.br/feed/" type="rss" />
+      <outline title="Prefeitura de Maceió" xmlUrl="https://www.maceio.al.gov.br/feed/" type="rss" />
+      <outline title="Blog do Ricardo Mota" xmlUrl="https://www.ricardomota.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="CSA" xmlUrl="https://www.csaoficial.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Cultura AL" xmlUrl="https://www.cultura.al.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
       </outline>
-      <outline text="Sports">
-        <outline title="CSA" xmlUrl="https://www.csaoficial.com.br/feed/" type="rss" />
+    <outline text="Business">
+      <outline title="FIEAL" xmlUrl="https://www.fiea.org.br/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Alagoas 24h" xmlUrl="https://www.alagoas24horas.com.br/feed/" type="rss" />
+      <outline title="Maceió 40 Graus" xmlUrl="https://maceio40graus.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Culture">
-        <outline title="Cultura AL" xmlUrl="https://www.cultura.al.gov.br/feed/" type="rss" />
-      </outline>
-      <outline text="Education">
-      </outline>
-      <outline text="Business">
-        <outline title="FIEAL" xmlUrl="https://www.fiea.org.br/feed/" type="rss" />
-      </outline>
-      <outline text="Blogs">
-        <outline title="Alagoas 24h" xmlUrl="https://www.alagoas24horas.com.br/feed/" type="rss" />
-        <outline title="Maceió 40 Graus" xmlUrl="https://maceio40graus.com.br/feed/" type="rss" />
-      </outline></body>
-      <outline text="Podcasts">
-        <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
-        <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
-      </outline>
-      <outline text="YouTube">
-        <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
-        <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
-      </outline>
-      <outline text="Cities">
-        <outline text="Maragogi">
-          <outline title="Maragogi News" xmlUrl="https://www.maragoginews.com.br/feed/" type="rss" />
-        </outline>
-      </outline>
-
-    </opml>
+  </body>
+  <outline text="Podcasts">
+    <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+    <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+    <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Maragogi">
+      <outline title="Maragogi News" xmlUrl="https://www.maragoginews.com.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

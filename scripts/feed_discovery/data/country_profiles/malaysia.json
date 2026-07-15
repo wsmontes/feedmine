@@ -1,0 +1,131 @@
+{
+  "country": "malaysia",
+  "internet_penetration": 0.67,
+  "dominant_platforms": [
+    "facebook",
+    "youtube",
+    "instagram",
+    "tiktok",
+    "line"
+  ],
+  "languages": [
+    "en",
+    "id",
+    "th",
+    "vi",
+    "ms",
+    "tl",
+    "my",
+    "km"
+  ],
+  "sources": {
+    "podcast_index": {
+      "priority": 2,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "deezer": {
+      "priority": 3,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_api": {
+      "priority": 1,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "ddg_text": {
+      "priority": 4,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "itunes": {
+      "priority": 5,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "listen_notes": {
+      "priority": 7,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "spotify": {
+      "priority": 6,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "feedly": {
+      "priority": 8,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    }
+  },
+  "local_directories": [],
+  "media_domains": [
+    "kompas.com",
+    "detik.com",
+    "tempo.co",
+    "jakartapost.com",
+    "republika.co.id",
+    "antaranews.com",
+    "cnnindonesia.com",
+    "bangkokpost.com",
+    "nationthailand.com",
+    "thaipbs.or.th",
+    "khaosodenglish.com",
+    "prachatai.com",
+    "vnexpress.net",
+    "tuoitre.vn",
+    "thanhnien.vn",
+    "vietnamnews.vn",
+    "saigoneer.com",
+    "thestar.com.my",
+    "malaysiakini.com",
+    "freemalaysiatoday.com",
+    "nst.com.my",
+    "malaymail.com",
+    "theedgemarkets.com",
+    "inquirer.net",
+    "philstar.com",
+    "rappler.com",
+    "abs-cbn.com",
+    "gmanetwork.com",
+    "mb.com.ph",
+    "straitstimes.com",
+    "channelnewsasia.com",
+    "todayonline.com",
+    "phnompenhpost.com",
+    "cambodiadaily.com",
+    "irrawaddy.com",
+    "mmtimes.com",
+    "frontiermyanmar.net"
+  ],
+  "disabled_sources": [],
+  "source_performance": {},
+  "generated_at": "2026-07-12T23:40:51.252026+00:00",
+  "generation_version": 2
+}

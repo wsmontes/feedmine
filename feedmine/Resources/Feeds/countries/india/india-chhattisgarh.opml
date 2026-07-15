@@ -12,9 +12,6 @@
     </outline>
     <outline text="Education" />
     <outline text="Podcasts">
-      <outline title="News at 7" xmlUrl="https://www.spreaker.com/show/6571256/episodes/feed" type="rss" category="Daily News" />
-      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="Daily News" />
-      <outline title="The Morning Brief" xmlUrl="https://www.omnycontent.com/d/playlist/60b2e926-e5f8-4b90-a465-aef901163001/95fd7c59-790d-496e-bbde-aef901167fe4/8ae54763-9925-40ca-8c3d-aef901167ffb/podcast.rss" type="rss" category="Business News" />
       <outline title="The Sound Kitchen" xmlUrl="https://apis.rfi.fr/products/get_product/rfi_getpodcast_by_nid?token_application=975d23b8-7a07-11e8-9f62-005056a90194&amp;program.entrepriseId=WB84944-RFI-EN-20110415" type="rss" category="Society &amp; Culture" />
       <outline title="News Of Our Demise" xmlUrl="https://redwingsuperior.squarespace.com/real-fake-news-podcast/?format=rss" type="rss" category="Comedy" />
       <outline title="Irregular Warfare Podcast" xmlUrl="https://feed.podbean.com/IrregularWarfare/feed.xml" type="rss" category="Government" />
@@ -32,7 +29,6 @@
       <outline title="The #AskAbhijit Show" xmlUrl="https://anchor.fm/s/fd893660/podcast/rss" type="rss" category="Society &amp; Culture" />
       <outline title="Sojourner Truth Radio" xmlUrl="http://feeds.feedburner.com/Sojournertruthradio" type="rss" category="News" />
       <outline title="Keeping It 101: A Killjoy's Introduction to Religion Podcast" xmlUrl="https://rss.buzzsprout.com/810974.rss" type="rss" category="Education" />
-      <outline title="Latest Climate News" xmlUrl="https://feed.podbean.com/atouchofspace/feed.xml" type="rss" category="Earth Sciences" />
       <outline title="Thai Boxing Canada Podcast" xmlUrl="https://feeds.podcastai.com/HcDsegw0i708r8Kwthvm9R.xml" type="rss" category="Sports" />
       <outline title="The Generations Radio Program" xmlUrl="https://rss.buzzsprout.com/2520780.rss" type="rss" category="Education" />
       <outline title="Generations Radio" xmlUrl="https://www.sermonaudio.com/rss_source.asp?sourceid=generations" type="rss" category="Christianity" />
@@ -41,7 +37,6 @@
       <outline title="Kevin Swanson on SermonAudio" xmlUrl="https://www.sermonaudio.com/rss_search.rss?speakeronly=true&amp;keyword=Kevin+Swanson" type="rss" category="Religion &amp; Spirituality" />
       <outline title="Discipleship for Dads with Kevin, Todd, Bill and Daniel" xmlUrl="https://rss.buzzsprout.com/2591389.rss" type="rss" category="Parenting" />
       <outline title="The Outdoor Journal Podcast" xmlUrl="https://anchor.fm/s/f73d7ec4/podcast/rss" type="rss" category="Health &amp; Fitness" />
-      <outline title="IJNet: Audio Edition" xmlUrl="https://podcasts.ad-auris.com/podcast/rss/ijnet/feed" type="rss" category="News" />
       <outline title="Electric Leftovers" xmlUrl="https://anchor.fm/s/3c5a7e2c/podcast/rss" type="rss" category="Video Games" />
       <outline title="The World and Everything In It" xmlUrl="https://feeds.blubrry.com/feeds/the_world_and_everything_in_it.xml" type="rss" category="News" />
       <outline title="The Jeselnik &amp; Rosenthal Vanity Project" xmlUrl="https://www.omnycontent.com/d/playlist/885ace83-027a-47ad-ad67-aca7002f1df8/d07cfb12-42fa-4a5e-b579-aca8005d018b/011c9cdc-63a0-4eaa-b377-aca8005d019e/podcast.rss" type="rss" category="Arts" />
@@ -61,56 +56,9 @@
       <outline title="Midnight Ledger" xmlUrl="https://feed.podbean.com/rajatshankar/feed.xml" type="rss" category="True Crime" />
     </outline>
     <outline text="YouTube">
-      <outline title="IBC24" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBc13XYipnBIBE3Ff8QaaGg" type="rss" />
-      <outline title="INDIA-AAJKAL | इंडिया-आजकल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqmTjDJVkpDXjR7K9nNN0ag" type="rss" />
-      <outline title="Chief Electoral Officer Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF9by8IIUIw5QE2r7DFnhPQ" type="rss" />
-      <outline title="Chhattisgarh Agricon Samiti" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpokMIpIxfBdqVAVs7NO27w" type="rss" />
-      <outline title="Invest Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzD5eFt1OEYQYZJ6ejiaGTg" type="rss" />
-      <outline title="Cg Chhattisgarh India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSKr6UVYHZ0KYzR3EEyIn9A" type="rss" />
-      <outline title="SUN AGRO Bhilai, Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiiulszSr_7mojd87y8TKhQ" type="rss" />
-      <outline title="Mor Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoiPN2A_vzmMM5l645IoIQQ" type="rss" />
-      <outline title="NDTV MP Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj3NtH5ZNhmzo91MCDrUu9w" type="rss" />
-      <outline title="Inkhabar Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrwxr4_Um8AiH5tPsaTsQEA" type="rss" />
-      <outline title="DD Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIznNk4-hmJZY3OMcYTarDQ" type="rss" />
-      <outline title="Chhattisgarh Rider" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuRkQ6iuZucAHFsYWZcLYdQ" type="rss" />
-      <outline title="NACHA NRI Chhattisgarh Global community" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCH8Si799mCV_h_eHbWyDwSA" type="rss" />
-      <outline title="News18 MP Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBwc2cbPpvxNCNEI2-8YrqQ" type="rss" />
-      <outline title="Chhattisgarh IAS Academy " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3aGBe-fbRbwHyFlrp_Q0Yg" type="rss" />
-      <outline title="The Chhattisgarh 07" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGYs-8Lstpw8xew2QGk6crQ" type="rss" />
-      <outline title="Zee Madhya Pradesh Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ79XyTiFbb28NvhmFPZOiw" type="rss" />
-      <outline title="chhattisgarh india " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChWrCQNM7t2PYlsSGMyHTgw" type="rss" />
-      <outline title="Saregama Chhattisgarhi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkQXxEAF-Sxb2r5ca040fng" type="rss" />
-      <outline title="Pragya News 24 Chhattisgarh (India)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbj6ZOC1pnAd8YQMCra4nKA" type="rss" />
-      <outline title="Patrika Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAA3T1-NerKHAled7yuXs7w" type="rss" />
-      <outline title="News India Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXm8fkNH07F8AOHy3L8fauw" type="rss" />
-      <outline title="Raipur City - Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR-b1-1hS1uJr0wlfA5liSA" type="rss" />
       <outline title="CGPSC e - pathshala " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEF3SNy6Sgt-wZSfZ-RbFng" type="rss" />
-      <outline title="World Travel Chhattisgarh India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8HfEYHkVC9ymouB38qi7Eg" type="rss" />
       <outline title="Chhattisgarh Village Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfKQdgBtn_HXzQFQX2hAS5w" type="rss" />
-      <outline title="Chhattisgarh Dj India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqCefQP5IyxkilMjm-GWvyw" type="rss" />
-      <outline title="Bansal News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL_3_9PhDyZXu1oexm8gtFQ" type="rss" />
-      <outline title="India Meteorological Department" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_qxTReoq07UVARm87CuyQw" type="rss" />
-      <outline title="Dainik Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtYs6Bp-Z3NLvJYqBKSXsbg" type="rss" />
-      <outline title="Basketball Federation of India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAaCJZv-gFr-3chb7x998Rw" type="rss" />
-      <outline title="Kalinga University" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEla_iZ-XBgqO0EtBKGltrA" type="rss" />
-      <outline title="High Court of Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW8643pYsVLZMN4CbcSeTHw" type="rss" />
-      <outline title="Tales of Chhattisgarh " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdcfHrVIOtOhQDot_cSgxlA" type="rss" />
-      <outline title="Dekhbo Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8v5HocTvxjud1kFTwqyqA" type="rss" />
-      <outline title="Coke Studio India " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXuO_AmrcE16fDoNiq9JZZg" type="rss" />
-      <outline title="CHHATTISGARH AIR NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGreW59nBlDBKKelF1JI3Vg" type="rss" />
-      <outline title="Chhattisgarh Tourism" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSg37B5JTTUth5ITjQCTmYw" type="rss" />
       <outline title="VIP NEWS - Chhattisgarh (CG)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_dKqbqevUf9Eb2-OchlZvg" type="rss" />
-      <outline title="Nomadic Indian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgilhqoyZrXV2EBlaaAtVaw" type="rss" />
-      <outline title="The Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAejmjnYv74dEBdXfyFLl3g" type="rss" />
-      <outline title="News 24 MP &amp; Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsJO8p6lnyjZkuLO2k0qFXA" type="rss" />
-      <outline title="I am from Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxc-jzu_uMb_y0vugef0iYQ" type="rss" />
-      <outline title="India News Madhya Pradesh Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVqsdXjbRSoDexnHvT0PffA" type="rss" />
-      <outline title="DD NEWS CHHATTISGARH" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvSqemYyT2Rp0fvsn5ui4tA" type="rss" />
-      <outline title="Chhattisgarh School is Here" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6kxlOeJgDQ-wY-5j-Jc88Q" type="rss" />
-      <outline title="chhattisgarh india" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3B92xArt4-xHO9Gutib4GQ" type="rss" />
-      <outline title="CMO Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNgQXeaaxnF-cCQFC4iMr9w" type="rss" />
-      <outline title="Gajab Chhattisgarh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbYGgj621n-bJXNrjqK5v8A" type="rss" />
-      <outline title="CHHATTISGARH TRAVELLER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChdMX_2AiWHxZ2URknApUMA" type="rss" />
     </outline>
   </body>
 </opml>

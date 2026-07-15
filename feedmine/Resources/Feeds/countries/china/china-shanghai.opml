@@ -5,26 +5,21 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="Shanghai Daily" xmlUrl="https://www.shine.cn/rss/" type="rss" />
-      <outline title="Sixth Tone" xmlUrl="https://www.sixthtone.com/rss" type="rss" />
-    </outline>
+      </outline>
     <outline text="Politics">
       <outline title="Shanghai English Gov" xmlUrl="http://english.shanghai.gov.cn/rss" type="rss" />
-      <outline title="Pudong Gov" xmlUrl="http://www.pudong.gov.cn/rss" type="rss" />
     </outline>
     <outline text="Business">
 </outline>
     <outline text="Technology">
 </outline>
     <outline text="Education">
-      <outline title="Fudan Univ" xmlUrl="https://www.fudan.edu.cn/rss" type="rss" />
-    </outline>
+      </outline>
     <outline text="Culture">
       <outline title="Time Out Shanghai" xmlUrl="https://www.timeoutshanghai.com/rss/" type="rss" />
     </outline>
     <outline text="Podcasts">
       <outline title="Learn Chinese with Hehe 和呵呵学中文 (HSK3-4）" xmlUrl="https://anchor.fm/s/108b6bbfc/podcast/rss" type="rss" category="Language Learning" />
-      <outline title="魔都英语新闻丨ShanghaiLive" xmlUrl="http://www.ximalaya.com/album/44080601.xml" type="rss" category="Daily News" />
       <outline title="功夫中文/Kung Fu Chinese/コンフー中国語" xmlUrl="https://anchor.fm/s/fe1d9c38/podcast/rss" type="rss" category="Language Learning" />
       <outline title="探戈故事在中国" xmlUrl="https://feed.xyzfm.space/bllrfvrp9fg7" type="rss" category="Arts" />
       <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
@@ -44,84 +39,27 @@
       <outline title="The 029 Podcast" xmlUrl="https://anchor.fm/s/f9ecc3c8/podcast/rss" type="rss" category="Arts" />
       <outline title="Learn Mandarin Chinese  - Chinese Audio Lessons" xmlUrl="https://www.melnyks.com/feed/podcast/" type="rss" category="Language Learning" />
       <outline title="Citeline Podcasts" xmlUrl="https://feeds.megaphone.fm/RSUSA4020802658" type="rss" category="Business" />
-      <outline title="美文阅读 More to Read" xmlUrl="https://aezfm.meldingcloud.com/rss/program/4" type="rss" category="Arts" />
       <outline title="Sott Radio Network" xmlUrl="http://www.sott.net/xml/sott_talk_radio" type="rss" category="News" />
-      <outline title="The Beijing Hour" xmlUrl="https://aezfm.meldingcloud.com/rss/program/5" type="rss" category="News" />
       <outline title="Made in China" xmlUrl="https://rss.buzzsprout.com/1869386.rss" type="rss" category="Business News" />
       <outline title="FULLER sermons" xmlUrl="https://rss.libsyn.com/shows/89326/destinations/440960.xml" type="rss" category="Christianity" />
       <outline title="Yang &amp; Yang: Der China-Podcast" xmlUrl="https://anchor.fm/s/21d538a8/podcast/rss" type="rss" category="Society &amp; Culture" />
       <outline title="SpiritWars" xmlUrl="https://www.spreaker.com/show/1928006/episodes/feed" type="rss" category="Religion &amp; Spirituality" />
       <outline title="Lung Cancer Considered" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:608921562/sounds.rss" type="rss" category="Science" />
-      <outline title="Expats On Air" xmlUrl="https://feed.podbean.com/expatsonair/feed.xml" type="rss" category="Society &amp; Culture" />
       <outline title="Ktown Social Club" xmlUrl="https://anchor.fm/s/f45f8bc0/podcast/rss" type="rss" category="News" />
-      <outline title="New Books Network" xmlUrl="https://feeds.megaphone.fm/LIT4543917034" type="rss" category="News" />
       <outline title="RushMandarin" xmlUrl="https://anchor.fm/s/108656d24/podcast/rss" type="rss" category="Language Learning" />
       <outline title="Chinesisch für unterwegs" xmlUrl="https://anchor.fm/s/48c65924/podcast/rss" type="rss" category="Language Learning" />
       <outline title="New Books in Chinese Studies" xmlUrl="https://feeds.megaphone.fm/LIT1170601646" type="rss" category="Books" />
-      <outline title="Takeaway Chinese" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/54" type="rss" category="Education" />
       <outline title="Ear to Asia" xmlUrl="https://media.rss.com/ear-to-asia/feed.xml" type="rss" category="Society &amp; Culture" />
-      <outline title="Mandarin Blueprint" xmlUrl="https://www.mandarinblueprint.com/feed/podcast/" type="rss" category="Language Learning" />
       <outline title="Drum Tower from The Economist" xmlUrl="https://access.acast.com/rss/633ebf6dfc7f5a0012acdc97" type="rss" category="News" />
       <outline title="The China Show" xmlUrl="https://rss.art19.com/the-china-show" type="rss" category="News" />
       <outline title="Economist Podcasts" xmlUrl="https://access.acast.com/rss/ec380acc-fe13-46a0-991f-a1e508d126f8" type="rss" category="News" />
       <outline title="Cults, Culture &amp; Coercion with Dr. Steve Hassan" xmlUrl="https://feeds.megaphone.fm/PDR2548929483" type="rss" category="Society &amp; Culture" />
-      <outline title="You Can Learn Chinese" xmlUrl="https://anchor.fm/s/f047cea8/podcast/rss" type="rss" category="Language Learning" />
-      <outline title="Chinalogue - Der China Podcast" xmlUrl="https://anchor.fm/s/a5effee8/podcast/rss" type="rss" category="Business" />
       <outline title="Guided Mandarin" xmlUrl="https://anchor.fm/s/e5130354/podcast/rss" type="rss" category="Language Learning" />
       <outline title="Startup Hunter" xmlUrl="https://anchor.fm/s/85d6abc/podcast/rss" type="rss" category="Business" />
       <outline title="Teatime With Jesse" xmlUrl="https://feeds.megaphone.fm/teatimewithjesse" type="rss" category="Comedy Interviews" />
     </outline>
     <outline text="YouTube">
-      <outline title="Reports on China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj-MTr4T4rC4iI671LNqmkA" type="rss" />
-      <outline title="china_traveling1" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-64CAD1W_85YekJEbNwMwQ" type="rss" />
-      <outline title="REC Shanghai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsDwaS8kuVzXnS9I3q4Uokg" type="rss" />
-      <outline title="China Uncle Mikey" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXM7C1JQtmUoN6tiZL_S-kg" type="rss" />
-      <outline title="China Street View" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjfciUxB1yhhP_OlZ3CD44g" type="rss" />
-      <outline title="The Shanghai Museum" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCXpFhmZPXOTguIXxUn7blg" type="rss" />
-      <outline title="Pika in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3Yo6Xxv7Te9c_6r8yp-nHQ" type="rss" />
-      <outline title="中国上海东方卫视官方频道 China Dragon TV Official———欢迎订阅关注！" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9lKJdXQ6QWf_adFhXBKm7A" type="rss" />
-      <outline title="CHINA8旅やす" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4zmdf1i_D3SVwHnFh3bQMg" type="rss" />
-      <outline title="Explore China 探索中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfASUBfPeJeOiAEB_icSZIQ" type="rss" />
-      <outline title="CCTV中国中央电视台" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcLK3j-XWdGBnt5bR9NJHaQ" type="rss" />
-      <outline title="FIA F4 CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGT-_lmIxs94mWZe3x-tJ7Q" type="rss" />
-      <outline title="游说" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSi3GqJDY1qDth57zTUqvhQ" type="rss" />
-      <outline title="上海外国语大学 Shanghai International Studies University" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLJHquxszX7KdIk7Y_re7zQ" type="rss" />
-      <outline title="SMG上海电视台官方频道 SMG Shanghai TV Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCahKjkez9olNwcpc5pZwzvg" type="rss" />
-      <outline title="China Shanghai Trade Fair 上海贸易展览会" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1QL-6WCHFLtB4zvNotsSmA" type="rss" />
-      <outline title="Living in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzDE2LGSmJnw53WrZ7mM_Aw" type="rss" />
-      <outline title="Shanghai Spotlight聚焦上海" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqnDZtFO6qsiYU1iJw9zp6g" type="rss" />
-      <outline title="SOHO China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-LJyMSTLEQZIqbmzBlDhIQ" type="rss" />
-      <outline title="Street food in Shanghai China中国上海生活的街边小吃" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCobAnyvbwfVJ4xmBlUZS9Qg" type="rss" />
-      <outline title="China Walking Tour 漫游中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf2ZGQmDpLSkTo9hgo56FpA" type="rss" />
-      <outline title="Mimi in Shanghai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtW2tViLWNX-o1Pm0JnzexQ" type="rss" />
-      <outline title="Kevin in Shanghai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_HW6aVLpyvPIhc7w8YA8Ag" type="rss" />
-      <outline title="China City Walk" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa44cTAw7oUVOyYa-umur1Q" type="rss" />
       <outline title="China Focus 上海:世界的聚焦点" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCor9PRbs6UFm2OF4JJnZVPw" type="rss" />
-      <outline title="China  travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyAVmA7qdNkYQINmYniEroA" type="rss" />
-      <outline title="Free Tours China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYbbIvsAH8XcsJFZTyqsg6w" type="rss" />
-      <outline title="Casting in Shanghai, China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCc3X016LC5iLuwUxZOgOvNA" type="rss" />
-      <outline title="聚焦中国-Focus On China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5nzAQKP7-vYfjb0-X9bbAQ" type="rss" />
-      <outline title="中国上海情報ch" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDcrNuujWuVFa0DiNhfMRvw" type="rss" />
-      <outline title="グンちゃんの中国歩き" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9oUJiJ99Yf63vHFqLG_0Cw" type="rss" />
-      <outline title="Harvey in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBocAY5hJQ5-EQh1QFoLS1Q" type="rss" />
-      <outline title="Chinese Journey" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjYkQPkyU-dyW5dq50yXxUA" type="rss" />
-      <outline title="Blondie in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISrVZmDM4x-Rq9mmNUw7Zw" type="rss" />
-      <outline title="Redwolf® Asia x Blackwolf Shanghai" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIxD3oqnWvZJrVcP3BIvciQ" type="rss" />
-      <outline title="中国东方卫视官方频道China DragonTV Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ06BguWKS5GJsEue7u79PQ" type="rss" />
-      <outline title="Study abroad in China中国留学行" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9udThBlvs2ELWladKd3xgQ" type="rss" />
-      <outline title="Downtown China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWTA4tlGiATjONCaRRcAJww" type="rss" />
-      <outline title="Angela And friends The Shanghai China 中国人 " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcWXfXA5jZbzocUw6jGxJVg" type="rss" />
-      <outline title="상하이 예나 - Shanghai Yena" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX_Nk4nwu0AWm3yZrMwHI7Q" type="rss" />
-      <outline title="Discover China 探索中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDfIZNwLVZkgGcZJImGiEQA" type="rss" />
-      <outline title="Lou &amp; Aimee in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ-IEa69m6ewUlQ48vKLTqQ" type="rss" />
-      <outline title="CHINA 4K HDR" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxhJ0PFO-pID3o5S4ZjWnNw" type="rss" />
-      <outline title="Max Ma in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgUZtN7KwzWMkWMFov0yOZA" type="rss" />
-      <outline title="舌尖上的中國官方頻道 A Bite of China Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq9R_DkXJbDC9omoIPnMk9g" type="rss" />
-      <outline title="SNH48 China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClwRU9iNX7UbzyuVzvZTSkA" type="rss" />
-      <outline title="China before China何以中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqU30TO3w-Ug8-i3nfXYDMw" type="rss" />
-      <outline title="China Shanghai Business Expo 上海商务博览会" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvuV8kVxSfCUonAXuxV7cnw" type="rss" />
-      <outline title="China Today 中国头条" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLsRmY79KkOHBv8RjHg9nRg" type="rss" />
-      <outline title="Teach English In China, part of Impact Teaching" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjT4vt2bte24Edu0FLGNokA" type="rss" />
     </outline>
   </body>
 </opml>

@@ -1,950 +1,540 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  
-  
   <head>
-    
-    
     <title>Thailand Feeds</title>
-    
-  
   </head>
-  
-  
   <body>
-    
-    
     <outline text="News">
-      
-      
-      <outline title="Bangkok Post" xmlUrl="https://www.bangkokpost.com/rss/" type="rss"/>
-      
-      
-      <outline title="The Nation" xmlUrl="https://www.nationthailand.com/rss/" type="rss"/>
-      
-      
-      <outline title="Khaosod English" xmlUrl="https://www.khaosodenglish.com/feed/" type="rss"/>
-      
-      
-      <outline title="Daily News TH" xmlUrl="https://www.dailynews.co.th/rss/" type="rss"/>
-      
-      
-      <outline title="Matichon" xmlUrl="https://www.matichon.co.th/rss/" type="rss"/>
-      
-      
-      <outline title="Komchadluek" xmlUrl="https://www.komchadluek.net/rss/" type="rss"/>
-      
-      
-      <outline title="Post Today" xmlUrl="https://www.posttoday.com/rss/" type="rss"/>
-      
-    
+      <outline title="Bangkok Post" xmlUrl="https://www.bangkokpost.com/rss/" type="rss" />
+      <outline title="The Nation" xmlUrl="https://www.nationthailand.com/rss/" type="rss" />
+      <outline title="Khaosod English" xmlUrl="https://www.khaosodenglish.com/feed/" type="rss" />
+      <outline title="Daily News TH" xmlUrl="https://www.dailynews.co.th/rss/" type="rss" />
+      <outline title="Matichon" xmlUrl="https://www.matichon.co.th/rss/" type="rss" />
+      <outline title="Komchadluek" xmlUrl="https://www.komchadluek.net/rss/" type="rss" />
+      <outline title="Post Today" xmlUrl="https://www.posttoday.com/rss/" type="rss" />
+      <outline title="Google News — THAILAND (en)" xmlUrl="https://news.google.com/rss?hl=en&amp;gl=TH&amp;ceid=TH:en" type="rss" />
     </outline>
-    
-    
     <outline text="Sports">
-      
-      
-      <outline title="Bangkok Post Sports" xmlUrl="https://www.bangkokpost.com/sports/rss/" type="rss"/>
-      
-      
-      <outline title="Smmsport" xmlUrl="https://www.smmsport.com/rss/" type="rss"/>
-      
-      
-      <outline title="Matichon Sport" xmlUrl="https://www.matichon.co.th/sport/rss/" type="rss"/>
-      
-      
-      <outline title="Daily News Sport" xmlUrl="https://www.dailynews.co.th/sport/rss/" type="rss"/>
-      
-      
-      <outline title="Thai League" xmlUrl="https://www.thaileague.co.th/rss/" type="rss"/>
-      
-      
-      <outline title="Muangthong United" xmlUrl="https://www.mtutd.tv/rss/" type="rss"/>
-      
-    
+      <outline title="Bangkok Post Sports" xmlUrl="https://www.bangkokpost.com/sports/rss/" type="rss" />
+      <outline title="Smmsport" xmlUrl="https://www.smmsport.com/rss/" type="rss" />
+      <outline title="Matichon Sport" xmlUrl="https://www.matichon.co.th/sport/rss/" type="rss" />
+      <outline title="Daily News Sport" xmlUrl="https://www.dailynews.co.th/sport/rss/" type="rss" />
+      <outline title="Thai League" xmlUrl="https://www.thaileague.co.th/rss/" type="rss" />
+      <outline title="Muangthong United" xmlUrl="https://www.mtutd.tv/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Technology">
-      
-      
-      <outline title="Droidsans" xmlUrl="https://www.droidsans.com/rss/" type="rss"/>
-      
-      
-      <outline title="Mxphone" xmlUrl="https://www.mxphone.net/feed/" type="rss"/>
-      
-      
-      <outline title="Beartai" xmlUrl="https://www.beartai.com/rss/" type="rss"/>
-      
-      
-      <outline title="Siamphone" xmlUrl="https://www.siamphone.com/rss/" type="rss"/>
-      
-      
-      <outline title="Sanook Tech" xmlUrl="https://www.sanook.com/hitech/rss/" type="rss"/>
-      
-      
-      <outline title="Techmob" xmlUrl="https://www.techmob.com/feed/" type="rss"/>
-      
-    
+      <outline title="Droidsans" xmlUrl="https://www.droidsans.com/rss/" type="rss" />
+      <outline title="Mxphone" xmlUrl="https://www.mxphone.net/feed/" type="rss" />
+      <outline title="Beartai" xmlUrl="https://www.beartai.com/rss/" type="rss" />
+      <outline title="Siamphone" xmlUrl="https://www.siamphone.com/rss/" type="rss" />
+      <outline title="Sanook Tech" xmlUrl="https://www.sanook.com/hitech/rss/" type="rss" />
+      <outline title="Techmob" xmlUrl="https://www.techmob.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Science">
-      
-      
-      <outline title="Matichon Science" xmlUrl="https://www.matichon.co.th/science/rss/" type="rss"/>
-      
-      
-      <outline title="Chulalongkorn University" xmlUrl="https://www.chula.ac.th/rss/" type="rss"/>
-      
-      
-      <outline title="KMUTT" xmlUrl="https://www.kmutt.ac.th/rss/" type="rss"/>
-      
-    
+      <outline title="Matichon Science" xmlUrl="https://www.matichon.co.th/science/rss/" type="rss" />
+      <outline title="Chulalongkorn University" xmlUrl="https://www.chula.ac.th/rss/" type="rss" />
+      <outline title="KMUTT" xmlUrl="https://www.kmutt.ac.th/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Culture">
-      
-      
-      <outline title="Matichon Culture" xmlUrl="https://www.matichon.co.th/culture/rss/" type="rss"/>
-      
-      
-      <outline title="TCDC" xmlUrl="https://www.tcdc.or.th/rss/" type="rss"/>
-      
-      
-      <outline title="A Day Magazine TH" xmlUrl="https://www.adaymag.com/rss/" type="rss"/>
-      
-      
-      <outline title="Creative Thailand" xmlUrl="https://www.creativethailand.org/rss/" type="rss"/>
-      
-    
+      <outline title="Matichon Culture" xmlUrl="https://www.matichon.co.th/culture/rss/" type="rss" />
+      <outline title="TCDC" xmlUrl="https://www.tcdc.or.th/rss/" type="rss" />
+      <outline title="A Day Magazine TH" xmlUrl="https://www.adaymag.com/rss/" type="rss" />
+      <outline title="Creative Thailand" xmlUrl="https://www.creativethailand.org/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Movies">
-      
-      
-      <outline title="Major Cineplex" xmlUrl="https://www.majorcineplex.com/rss/" type="rss"/>
-      
-      
-      <outline title="Mthai Movie" xmlUrl="https://www.mthai.com/movie/rss/" type="rss"/>
-      
-      
-      <outline title="Bangkok Film Festival" xmlUrl="https://www.bangkokfilmfestival.com/rss/" type="rss"/>
-      
-      
-      <outline title="Bioscope Magazine" xmlUrl="https://www.bioscopemagazine.com/feed/" type="rss"/>
-      
-      
-      <outline title="World Film Festival Bangkok" xmlUrl="https://www.worldfilmbangkok.com/rss/" type="rss"/>
-      
-    
+      <outline title="Major Cineplex" xmlUrl="https://www.majorcineplex.com/rss/" type="rss" />
+      <outline title="Mthai Movie" xmlUrl="https://www.mthai.com/movie/rss/" type="rss" />
+      <outline title="Bangkok Film Festival" xmlUrl="https://www.bangkokfilmfestival.com/rss/" type="rss" />
+      <outline title="Bioscope Magazine" xmlUrl="https://www.bioscopemagazine.com/feed/" type="rss" />
+      <outline title="World Film Festival Bangkok" xmlUrl="https://www.worldfilmbangkok.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Music">
-      
-      
-      <outline title="Komchadluek Music" xmlUrl="https://www.komchadluek.net/music/rss/" type="rss"/>
-      
-      
-      <outline title="Mthai Music" xmlUrl="https://www.mthai.com/music/rss/" type="rss"/>
-      
-      
-      <outline title="Fat Radio" xmlUrl="https://www.fatradio.com/rss/" type="rss"/>
-      
-      
-      <outline title="Chill FM" xmlUrl="https://www.chillfm.com/rss/" type="rss"/>
-      
-      
-      <outline title="Wonderfruit" xmlUrl="https://www.wonderfruitfestival.com/rss/" type="rss"/>
-      
-    
+      <outline title="Komchadluek Music" xmlUrl="https://www.komchadluek.net/music/rss/" type="rss" />
+      <outline title="Mthai Music" xmlUrl="https://www.mthai.com/music/rss/" type="rss" />
+      <outline title="Fat Radio" xmlUrl="https://www.fatradio.com/rss/" type="rss" />
+      <outline title="Chill FM" xmlUrl="https://www.chillfm.com/rss/" type="rss" />
+      <outline title="Wonderfruit" xmlUrl="https://www.wonderfruitfestival.com/rss/" type="rss" />
     </outline>
-    
-
     <outline text="Gaming">
-      
-      
-      <outline title="Game Monday" xmlUrl="https://www.gamemonday.com/rss/" type="rss"/>
-      
-      
-      <outline title="Droidsans Gaming" xmlUrl="https://www.droidsans.com/game/rss/" type="rss"/>
-      
-      
-      <outline title="Compgamer" xmlUrl="https://www.compgamer.com/feed/" type="rss"/>
-      
-      
-      <outline title="True Gaming" xmlUrl="https://www.truegaming.net/rss/" type="rss"/>
-      
-    
+      <outline title="Game Monday" xmlUrl="https://www.gamemonday.com/rss/" type="rss" />
+      <outline title="Droidsans Gaming" xmlUrl="https://www.droidsans.com/game/rss/" type="rss" />
+      <outline title="Compgamer" xmlUrl="https://www.compgamer.com/feed/" type="rss" />
+      <outline title="True Gaming" xmlUrl="https://www.truegaming.net/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Travel">
-      
-      
-      <outline title="Bangkok Post Travel" xmlUrl="https://www.bangkokpost.com/travel/rss/" type="rss"/>
-      
-      
-      <outline title="Chill Pai Nai" xmlUrl="https://www.chillpainai.com/rss/" type="rss"/>
-      
-      
-      <outline title="Painaidii" xmlUrl="https://www.painaidii.com/rss/" type="rss"/>
-      
-      
-      <outline title="TripTH" xmlUrl="https://www.tripth.com/feed/" type="rss"/>
-      
-    
+      <outline title="Bangkok Post Travel" xmlUrl="https://www.bangkokpost.com/travel/rss/" type="rss" />
+      <outline title="Chill Pai Nai" xmlUrl="https://www.chillpainai.com/rss/" type="rss" />
+      <outline title="Painaidii" xmlUrl="https://www.painaidii.com/rss/" type="rss" />
+      <outline title="TripTH" xmlUrl="https://www.tripth.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Blogs">
-      
-      
-      <outline title="Mango Zero" xmlUrl="https://www.mangozero.com/feed/" type="rss"/>
-      
-      
-      <outline title="Sudsapda" xmlUrl="https://www.sudsapda.com/feed/" type="rss"/>
-      
-    
+      <outline title="Mango Zero" xmlUrl="https://www.mangozero.com/feed/" type="rss" />
+      <outline title="Sudsapda" xmlUrl="https://www.sudsapda.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Design">
-      
-      
-      <outline title="TCDC" xmlUrl="https://www.tcdc.or.th/rss/" type="rss"/>
-      
-      
-      <outline title="Creative Thailand" xmlUrl="https://www.creativethailand.org/rss/" type="rss"/>
-      
-      
-      <outline title="Art4d" xmlUrl="https://www.art4d.com/feed/" type="rss"/>
-      
-      
-      <outline title="Baan Lae Suan" xmlUrl="https://www.baanlaesuan.com/rss/" type="rss"/>
-      
-    
+      <outline title="TCDC" xmlUrl="https://www.tcdc.or.th/rss/" type="rss" />
+      <outline title="Creative Thailand" xmlUrl="https://www.creativethailand.org/rss/" type="rss" />
+      <outline title="Art4d" xmlUrl="https://www.art4d.com/feed/" type="rss" />
+      <outline title="Baan Lae Suan" xmlUrl="https://www.baanlaesuan.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Environment">
-      
-      
-      <outline title="Greenpeace SEA" xmlUrl="https://www.greenpeace.org/southeastasia/feed/" type="rss"/>
-      
-      
-      <outline title="WWF Thailand" xmlUrl="https://www.wwf.or.th/rss/" type="rss"/>
-      
-      
-      <outline title="Seub Nakhasathien" xmlUrl="https://www.seub.or.th/rss/" type="rss"/>
-      
-      
-      <outline title="Eco Thailand" xmlUrl="https://www.ecothailand.org/feed/" type="rss"/>
-      
-      
-      <outline title="DNP Thailand" xmlUrl="https://www.dnp.go.th/rss/" type="rss"/>
-      
-    
+      <outline title="Greenpeace SEA" xmlUrl="https://www.greenpeace.org/southeastasia/feed/" type="rss" />
+      <outline title="WWF Thailand" xmlUrl="https://www.wwf.or.th/rss/" type="rss" />
+      <outline title="Seub Nakhasathien" xmlUrl="https://www.seub.or.th/rss/" type="rss" />
+      <outline title="Eco Thailand" xmlUrl="https://www.ecothailand.org/feed/" type="rss" />
+      <outline title="DNP Thailand" xmlUrl="https://www.dnp.go.th/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="DIY">
-      
-      
-      <outline title="Handmade Thailand" xmlUrl="https://www.handmadethailand.com/feed/" type="rss"/>
-      
-    
+      <outline title="Handmade Thailand" xmlUrl="https://www.handmadethailand.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="History">
-      
-      
-      <outline title="Silpa-Mag" xmlUrl="https://www.matichon.co.th/art/rss/" type="rss"/>
-      
-      
-      <outline title="Ancient City" xmlUrl="https://www.ancientcitygroup.net/rss/" type="rss"/>
-      
-      
-      <outline title="Thai Heritage" xmlUrl="https://www.thaiheritage.net/rss/" type="rss"/>
-      
-      
-      <outline title="ThaiHistory" xmlUrl="https://www.thaihistory.com/feed/" type="rss"/>
-      
-    
+      <outline title="Silpa-Mag" xmlUrl="https://www.matichon.co.th/art/rss/" type="rss" />
+      <outline title="Ancient City" xmlUrl="https://www.ancientcitygroup.net/rss/" type="rss" />
+      <outline title="Thai Heritage" xmlUrl="https://www.thaiheritage.net/rss/" type="rss" />
+      <outline title="ThaiHistory" xmlUrl="https://www.thaihistory.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Architecture">
-      
-      
-      <outline title="Art4d Magazine" xmlUrl="https://www.art4d.com/feed/" type="rss"/>
-      
-      
-      <outline title="TCDC Architecture" xmlUrl="https://www.tcdc.or.th/architecture/rss/" type="rss"/>
-      
-    
+      <outline title="Art4d Magazine" xmlUrl="https://www.art4d.com/feed/" type="rss" />
+      <outline title="TCDC Architecture" xmlUrl="https://www.tcdc.or.th/architecture/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Programming">
-      
-      
-      <outline title="Zilingo Tech" xmlUrl="https://www.zilingo.com/tech/feed/" type="rss"/>
-      
-    
+      <outline title="Zilingo Tech" xmlUrl="https://www.zilingo.com/tech/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Business">
-      
-      
-      <outline title="Krungthep Turakij" xmlUrl="https://www.bangkokbiznews.com/rss/" type="rss"/>
-      
-      
-      <outline title="Thansettakij" xmlUrl="https://www.thansettakij.com/rss/" type="rss"/>
-      
-      
-      <outline title="The Nation Business" xmlUrl="https://www.nationthailand.com/business/rss/" type="rss"/>
-      
-      
-      <outline title="Brand Buffet" xmlUrl="https://www.brandbuffet.in.th/feed/" type="rss"/>
-      
-      
-      <outline title="Marketeer" xmlUrl="https://www.marketeer.co.th/rss/" type="rss"/>
-      
-      
-      <outline title="Startup Thailand" xmlUrl="https://www.startupthailand.org/feed/" type="rss"/>
-      
-    
+      <outline title="Krungthep Turakij" xmlUrl="https://www.bangkokbiznews.com/rss/" type="rss" />
+      <outline title="Thansettakij" xmlUrl="https://www.thansettakij.com/rss/" type="rss" />
+      <outline title="The Nation Business" xmlUrl="https://www.nationthailand.com/business/rss/" type="rss" />
+      <outline title="Brand Buffet" xmlUrl="https://www.brandbuffet.in.th/feed/" type="rss" />
+      <outline title="Marketeer" xmlUrl="https://www.marketeer.co.th/rss/" type="rss" />
+      <outline title="Startup Thailand" xmlUrl="https://www.startupthailand.org/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Podcasts">
-      
-      
-      <outline title="Good Morning Thailand" xmlUrl="https://anchor.fm/s/707bb658/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Deeper Dive Thailand" xmlUrl="https://anchor.fm/s/c8700ad0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="All About Thailand" xmlUrl="https://anchor.fm/s/3efa0fa8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Thai Examiner - Thailand's news for foreigners" xmlUrl="https://media.rss.com/thaiexaminer/feed.xml" type="rss"/>
-      
-      
-      <outline title="Made it in Thailand" xmlUrl="https://feeds.transistor.fm/made-it-in-thailand" type="rss"/>
-      
-      
-      <outline title="Thailand Explained" xmlUrl="https://anchor.fm/s/106095900/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast by GS1 Thailand" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:938739079/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Thailand" xmlUrl="https://anchor.fm/s/4e8fe5b4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Atomy Thailand Bangna Happiness Center Line: @atomybee 0878152531 ศูนย์การเรียนรู้ อะโทมี่ บางนา แฮปปี้เนส" xmlUrl="https://anchor.fm/s/1e487f10/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sabaai Sabaai！Thailand （タイ語を学ぼう）" xmlUrl="https://feed.sonicbowl.cloud/rss/131ec1e2-e0ad-4d12-a25d-6d547946a2f7/" type="rss"/>
-      
-      
-      <outline title="Siam Smoke Sessions - Thailand's #1 Cannabis Podcast" xmlUrl="https://anchor.fm/s/c98c8ad8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Long Take Thailand" xmlUrl="https://anchor.fm/s/13796234/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GQ Thailand" xmlUrl="https://anchor.fm/s/2a6d4f50/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Thailand Story" xmlUrl="https://anchor.fm/s/351e9008/podcast/rss" type="rss"/>
-      
-      
-      <outline title="อิสลามอินไทยแลนด์ IslamInThailand" xmlUrl="https://anchor.fm/s/b50270a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="早安泰國 Thailand Morning" xmlUrl="https://thailandmorning.com/podcast.xml" type="rss"/>
-      
-      
-      <outline title="MUSLIM CORNER THAILAND" xmlUrl="https://anchor.fm/s/fb6494c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="CBRE Thailand Podcast" xmlUrl="https://anchor.fm/s/4bc606ec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bank of Thailand" xmlUrl="https://anchor.fm/s/59df9950/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GAMA THAILAND PODCAST" xmlUrl="https://anchor.fm/s/bdd636f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Fruiting Body Podcast (Thailand)" xmlUrl="https://feeds.transistor.fm/fruiting-body-podcast" type="rss"/>
-      
-      
-      <outline title="TechStar Thailand Podcast" xmlUrl="https://anchor.fm/s/23897efc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Story of Thailand: The Nation That Never Fell to Colonizers — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-story-of-thailand.xml" type="rss"/>
-      
-      
-      <outline title="9Natree Thailand" xmlUrl="https://thai.9natree.com/feed.xml" type="rss"/>
-      
-      
-      <outline title="LINE Developers Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:81366571/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Soul Thai: Moving &amp; Living in Thailand" xmlUrl="https://www.spreaker.com/show/6732520/episodes/feed" type="rss"/>
-      
-      
-      <outline title="GIT Thailand" xmlUrl="https://anchor.fm/s/611eaa94/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Talk อะ Rights Podcast" xmlUrl="https://anchor.fm/s/f6a8a2f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Auswandern Thailand Podcast" xmlUrl="https://fsconsultings.com/feed/podcast/podcast/" type="rss"/>
-      
-      
-      <outline title="TALK ABOUT MOVIE-RADIO(Podcast) Official Thailand(เสียงไทย)" xmlUrl="https://anchor.fm/s/4ad7a010/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Unseen Layer" xmlUrl="https://feeds.redcircle.com/e34364c0-a958-4f64-b637-869a07117cec" type="rss"/>
-      
-      
-      <outline title="หนังสือดีมีให้ฟัง" xmlUrl="https://anchor.fm/s/50f60428/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Thailand Legend" xmlUrl="https://anchor.fm/s/33c135a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="THAC Thailand Arbitration Center" xmlUrl="https://anchor.fm/s/3caac558/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BRAVE Southeast Asia Tech: Singapore, Indonesia, Vietnam, Philippines, Thailand &amp; Malaysia Startups, Founders &amp; Venture Capital VC (English)" xmlUrl="https://feed.pod.co/bravedynamics" type="rss"/>
-      
-      
-      <outline title="The ONE Podcast ประเทศไทย" xmlUrl="https://rss.buzzsprout.com/2504544.rss" type="rss"/>
-      
-      
-      <outline title="ความสัมพันธ์ 101" xmlUrl="https://anchor.fm/s/2b4627d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="旅遊泰文趴趴走 II：Traveling in Thailand with the Thai language II" xmlUrl="https://feeds.soundon.fm/podcasts/b39b5883-3d68-4b45-a376-aee799e2a89b.xml" type="rss"/>
-      
-      
-      <outline title="Conversations with Deloitte Thailand" xmlUrl="https://feeds.transistor.fm/conversations-with-deloitte-thailand" type="rss"/>
-      
-      
-      <outline title="VisualtellingTH" xmlUrl="https://anchor.fm/s/46358e78/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nonny G AT Town TV Thailand podcast" xmlUrl="https://anchor.fm/s/2d6cb8bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Canton Focus" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:940150765/sounds.rss" type="rss"/>
-      
-      
-      <outline title="PALO IT Talk" xmlUrl="https://anchor.fm/s/f8476d48/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast - Thailand Urlaub" xmlUrl="https://feeds.feedburner.com/thaifm" type="rss"/>
-      
-      
-      <outline title="BitcoinAndTheAltsThailand" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:936045841/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Behind The Crypto" xmlUrl="https://anchor.fm/s/109a2b87c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Tag med til Thailand" xmlUrl="https://www.spreaker.com/show/4246184/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Keep Me Busy" xmlUrl="https://anchor.fm/s/113646a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="จ้อจีน" xmlUrl="https://anchor.fm/s/114162c8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Infinity Books" xmlUrl="https://anchor.fm/s/11379054/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Infinity Podcast" xmlUrl="https://anchor.fm/s/10d73718/podcast/rss" type="rss"/>
-      
-      
-      <outline title="เรื่องมันร้อน" xmlUrl="https://anchor.fm/s/11418460/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Minimalist's Diary" xmlUrl="https://anchor.fm/s/10f0a734/podcast/rss" type="rss"/>
-      
-      
-      <outline title="What's up Chiang Mai?" xmlUrl="https://anchor.fm/s/1287f5e8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="StartYup" xmlUrl="https://anchor.fm/s/11527bbc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ครูหิ่งห้อยกับห้องเรียนสีฟ้า" xmlUrl="https://anchor.fm/s/11416afc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Infinity Podcast" xmlUrl="https://anchor.fm/s/1142fc28/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Democracy X Innovations" xmlUrl="https://anchor.fm/s/12879698/podcast/rss" type="rss"/>
-      
-      
-      <outline title="เล่าเรื่องประเทศไทย ตอน...รัฐประหารในประเทศไทย" xmlUrl="https://anchor.fm/s/3708f7c8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="VitaminSci" xmlUrl="https://anchor.fm/s/11362250/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Startupwit" xmlUrl="https://anchor.fm/s/113549e8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gap Year" xmlUrl="https://anchor.fm/s/113e752c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="สุขภาพตา โดย ราชวิทยาลัยจักษุแพทย์แห่งประเทศไทย All About Eye by RCOPT" xmlUrl="https://anchor.fm/s/506b9900/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Countdown" xmlUrl="https://anchor.fm/s/113dd248/podcast/rss" type="rss"/>
-      
-      
-      <outline title="บริษัทเดลต้า อิเลคทรอนิกส์ ประเทศไทย" xmlUrl="https://anchor.fm/s/1b8e89b8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Bangkok Podcast" xmlUrl="https://rss.libsyn.com/shows/23671/destinations/34166.xml" type="rss"/>
-      
-      
-      <outline title="Bangkok Post’s Mind the Gap Podcast" xmlUrl="https://anchor.fm/s/ffaa9538/podcast/rss" type="rss"/>
-      
-      
-      <outline title="A Bed in Bangkok" xmlUrl="https://feed.podbean.com/abedinbangkok/feed.xml" type="rss"/>
-      
-      
-      <outline title="Bangkok 2050 : Récits brûlants" xmlUrl="https://feeds.acast.com/public/shows/6a16a6be8ff41815a8c5f368" type="rss"/>
-      
-      
-      <outline title="Grace City Bangkok" xmlUrl="https://anchor.fm/s/bb27fdec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Pod Thai - Grumpy Expats In Bangkok" xmlUrl="https://anchor.fm/s/f713f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="One Night in Bangkok" xmlUrl="https://anchor.fm/s/eaf7ffb8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Every Day with God Podcast" xmlUrl="https://anchor.fm/s/49d80100/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Alliance On Air" xmlUrl="https://feeds.captivate.fm/allianceonair/" type="rss"/>
-      
-      
-      <outline title="นอกBangKOK" xmlUrl="https://feeds.megaphone.fm/SHC3426655736" type="rss"/>
-      
-      
-      <outline title="BU Podcast Local Insight เรื่องเล่าชีวิตใหม่ของเด็กต่างถิ่น" xmlUrl="https://anchor.fm/s/10ddfd58c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BU Podcast Dive to Lock in" xmlUrl="https://anchor.fm/s/10c0713c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BU Podcast Local Vibes Global Dreams" xmlUrl="https://anchor.fm/s/10f6ee294/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Poet in Bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:184676458/sounds.rss" type="rss"/>
-      
-      
-      <outline title="BACC Library Podcast" xmlUrl="https://anchor.fm/s/3a47d9a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Living Well Podcast" xmlUrl="https://anchor.fm/s/232a6fd4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="dj_hiro.bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:22490998/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Bangkok Dollars - Remun Sohvalla Podcast" xmlUrl="https://anchor.fm/s/55bb9b1c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sag Du mal...! 
-Leben in Bangkok und Berlin" xmlUrl="https://anchor.fm/s/55c1e79c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SCP Bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:173001240/sounds.rss" type="rss"/>
-      
-      
-      <outline title="A to Z Bangkok" xmlUrl="https://anchor.fm/s/b4b12eac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bangkok Aviation Center (BAC) PODCAST" xmlUrl="https://anchor.fm/s/11416bc4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="FromBangkokToBogota" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:32034202/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Bangkok Hospital Rayong" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:777193111/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Bangkok" xmlUrl="https://anchor.fm/s/6a93bcb8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="A Travel Guide To Bangkok By Yurisan" xmlUrl="https://anchor.fm/s/443f098c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="LighthouseCentreBangkok" xmlUrl="https://anchor.fm/s/1ea691e0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sawadee Bangkok" xmlUrl="https://lovefm.co.jp/podcasts/xml/142/25.xml" type="rss"/>
-      
-      
-      <outline title="Bangkok trip" xmlUrl="https://anchor.fm/s/491beb64/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Neuma Church Bangkok" xmlUrl="https://feeds.castos.com/w75m" type="rss"/>
-      
-      
-      <outline title="Bangkok Talk" xmlUrl="https://bkktalk.net/feed/podcast/bkktalk/" type="rss"/>
-      
-      
-      <outline title="DrDonna Robinson - MedConsult Clinic Bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1014560509/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Entrepreneur in Bangkok" xmlUrl="https://anchor.fm/s/e9b7a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cq Leadership Consulting Bangkok" xmlUrl="https://anchor.fm/s/3a746c30/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bangkok Signal" xmlUrl="https://www.spreaker.com/show/6991707/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Lonely Gay Bangkok: Coco &amp; friends" xmlUrl="https://anchor.fm/s/8b9989c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BangkokTHNOTES" xmlUrl="https://anchor.fm/s/247d0c34/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bangkok or Bust" xmlUrl="https://anchor.fm/s/3bd5ecac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bangkok Offstage" xmlUrl="https://feed.podbean.com/bangkokoffstage/feed.xml" type="rss"/>
-      
-      
-      <outline title="Things to do in Bangkok" xmlUrl="https://anchor.fm/s/5013040c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="One Night in Bangkok Travel Podcast" xmlUrl="https://rss.buzzsprout.com/1438942.rss" type="rss"/>
-      
-      
-      <outline title="Escaping Bangkok" xmlUrl="https://feeds.acast.com/public/shows/633ecabfab9d9300125424f4" type="rss"/>
-      
-      
-      <outline title="An American In Bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:22044094/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Sakura in Bangkok" xmlUrl="https://anchor.fm/s/10ff0e2a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bangkok to America (with Life of Cuddlez)" xmlUrl="https://feeds.podcastle.ai/3559a9ed-5e8c-4f04-a356-17fa34777feb.rss" type="rss"/>
-      
-      
-      <outline title="Bangkok Second Trip" xmlUrl="https://anchor.fm/s/f937768/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bangkok Travel Guide" xmlUrl="https://anchor.fm/s/6a8f26e4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bangkok’s Felix Bakery Is Ready" xmlUrl="https://www.spreaker.com/show/5293786/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Learn Thai Through Travel" xmlUrl="https://anchor.fm/s/fc89a8e4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Culinary Institute of America" xmlUrl="https://feed.podbean.com/cia/feed.xml" type="rss"/>
-      
-      
-      <outline title="Let's Talk BL" xmlUrl="https://anchor.fm/s/5d6c47f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Tennis Asia Podcast" xmlUrl="https://anchor.fm/s/f4fea9bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lu &amp; Jarch" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/29b19364-eea7-478c-aeaf-b2f300420298/ffd51c95-27e2-49b2-b6bb-b2f3004207f5/podcast.rss" type="rss"/>
-      
-      
-      <outline title="A Thai Football Podcast" xmlUrl="https://feed.podbean.com/dalefarrington/feed.xml" type="rss"/>
-      
-      
-      <outline title="Have You Ever Heard Of..." xmlUrl="https://feed.podbean.com/haveyoueverheardof/feed.xml" type="rss"/>
-      
-      
-      <outline title="Ocean Worldwide Phuket Real Estate" xmlUrl="https://api.autocontentapi.com/podcast/rss/EDC5B35C-2A7E-49B4-B2A9-89354A839D17" type="rss"/>
-      
-      
-      <outline title="Great Shot Podcast [Tennis Podcast]" xmlUrl="https://feeds.simplecast.com/4S6rb2HE" type="rss"/>
-      
-      
-      <outline title="NetWorth" xmlUrl="http://cast.rocks/hosting/14482/feeds/5BCN0.xml" type="rss"/>
-      
-      
-      <outline title="Mindfulness Dhamma to End Suffering" xmlUrl="https://rss.libsyn.com/shows/52136/destinations/186644.xml" type="rss"/>
-      
-      
-      <outline title="Chip &amp; Charge" xmlUrl="https://meinsportpodcast.de/tennis/chip-charge/feed/" type="rss"/>
-      
-      
-      <outline title="Match Point #9: A Tennis Bets Podcast" xmlUrl="https://feeds.simplecast.com/BUHgGR7M" type="rss"/>
-      
-      
-      <outline title="Tennis Unfiltered" xmlUrl="https://feeds.megaphone.fm/COMG1086494290" type="rss"/>
-      
-      
-      <outline title="Treasures Thailand" xmlUrl="https://anchor.fm/s/f38ce5f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Thai Boxing Canada Podcast" xmlUrl="https://feeds.podcastai.com/HcDsegw0i708r8Kwthvm9R.xml" type="rss"/>
-      
-      
-      <outline title="Ground Pass: A Tennis Podcast" xmlUrl="https://feeds.acast.com/public/shows/651ccfef9b495d0012f9d190" type="rss"/>
-      
-      
-      <outline title="The Muay Thai Podcast" xmlUrl="https://rss.libsyn.com/shows/185987/destinations/1279364.xml" type="rss"/>
-      
-      
-      <outline title="GNN Daily News – Daily News Podcast" xmlUrl="https://www.spreaker.com/show/6884229/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Talking Snooker" xmlUrl="https://feeds.megaphone.fm/COMG6870903907" type="rss"/>
-      
-      
-      <outline title="The Portraitists" xmlUrl="https://anchor.fm/s/f048a3f0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Tooth &amp; Claw: True Stories of Animal Attacks" xmlUrl="https://feeds.megaphone.fm/QCD9705695442" type="rss"/>
-      
-      
-      <outline title="Totally Weird And Twisted" xmlUrl="https://feed.podbean.com/twatdidyousay/feed.xml" type="rss"/>
-      
-      
-      <outline title="WTF is Up in Southeast Asia + Hong Kong" xmlUrl="https://anchor.fm/s/a3a1f4e8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Puu Muay Thai Podcast" xmlUrl="https://rss.buzzsprout.com/607621.rss" type="rss"/>
-      
-      
-      <outline title="The Mini-Break [Tennis Podcast]" xmlUrl="https://feeds.simplecast.com/OiyRsoHN" type="rss"/>
-      
-      
-      <outline title="Arsenio's High Performance Coaching" xmlUrl="https://rss.buzzsprout.com/165390.rss" type="rss"/>
-      
-      
-      <outline title="On On! Hash House Harriers Talk and History" xmlUrl="https://anchor.fm/s/55c72248/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed/" type="rss"/>
-      
-      
-      <outline title="Ingress Insights: An Ingress Podcast" xmlUrl="https://anchor.fm/s/e8e3c5b8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Morning Rumble" xmlUrl="https://www.omnycontent.com/d/playlist/d5d8b1d2-6c31-48c0-8625-a959004fd8f1/3f5bbe4c-6eb0-447b-b28e-a9a601861edd/a742a335-701f-4ba2-bbbb-a9a601861ee6/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Denton and Sasquatch Show" xmlUrl="https://dentonandsasshow.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="The Daily Mojo with Brad Staggs" xmlUrl="https://www.spreaker.com/show/3085897/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Stuff They Don't Want You To Know" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/2e824128-fbd5-4c9e-9a57-ae2f0056b0c4/66d98a23-900c-44b0-a40b-ae2f0056b0db/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Good Morning Maldives!" xmlUrl="https://anchor.fm/s/10068a7d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Outrageous Outspoken" xmlUrl="https://anchor.fm/s/104df8090/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Fortean News Podcast" xmlUrl="https://feed.podbean.com/forteannews/feed.xml" type="rss"/>
-      
-      
-      <outline title="Monday Night Sports Talk with Patrick Reusse and Joe Soucheray" xmlUrl="https://rss.art19.com/monday-night-sports-talk-with-patrick-reusse-and-joe-soucheray" type="rss"/>
-      
-      
-      <outline title="Newsflash24 - der Podcast powered by Podcast Pioniere" xmlUrl="https://newsflash24.audiotakes.de/newsflash24-der-podcast-powered-by-podcast-pioniere.rss" type="rss"/>
-      
-      
-      <outline title="Shaun Attwoods True Crime Podcast" xmlUrl="https://audioboom.com/channels/5065119.rss" type="rss"/>
-      
-      
-      <outline title="NewsRamp Events and Conferences Podcast" xmlUrl="https://feeds.newsramp.net/podcast/events.rss" type="rss"/>
-      
-      
-      <outline title="philosophical minds" xmlUrl="https://rss.libsyn.com/shows/126739/destinations/758595.xml" type="rss"/>
-      
-      
-      <outline title="It's all about Education" xmlUrl="https://anchor.fm/s/5160e964/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bitcoin Chiang Mai Podcast" xmlUrl="https://anchor.fm/s/10aac8ec8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="เชียงใหม่ #อร่อยแน่แม่จ๋า" xmlUrl="https://anchor.fm/s/45a66ab8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="เชียงใหม่อะไรกันครับ" xmlUrl="https://anchor.fm/s/4b79daec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The original Chiang Mai is Blue" xmlUrl="https://feeds.acast.com/public/shows/64a7c474aba5c4001156a7cd" type="rss"/>
-      
-      
-      <outline title="Chiang-mai Chatter" xmlUrl="https://www.spreaker.com/show/6067618/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Northern Lights - The Chiang Mai Journal Podcast" xmlUrl="https://feed.podbean.com/chiangmaijournal/feed.xml" type="rss"/>
-      
-      
-      <outline title="Chiang Mai Ultra" xmlUrl="https://www.spreaker.com/show/4137728/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Innovate Asia" xmlUrl="https://api.substack.com/feed/podcast/5024752/s/237535.rss" type="rss"/>
-      
-      
-      <outline title="Equipping the Saints" xmlUrl="https://refugechiangmai.com/feed/?post_type=wpfc_sermon" type="rss"/>
-      
-      
-      <outline title="Innovate Thailand" xmlUrl="https://api.substack.com/feed/podcast/5024752/s/237534.rss" type="rss"/>
-      
-      
-      <outline title="Phuket Christian Centre คริสเตียนสัมพันธ์ภูเก็ต - Podcasts" xmlUrl="http://phuketchristiancentre.org/podcasts/podcast/feed.xml" type="rss"/>
-      
-      
-      <outline title="Phuket" xmlUrl="https://media.rss.com/phuket-0/feed.xml" type="rss"/>
-      
-      
-      <outline title="Phuket Tourism News" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1221131506/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Phuket Property Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:951344101/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Storytime by KIS Phuket" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:954578128/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Ocean Worldwide - Agence immobilière à Phuket" xmlUrl="https://anchor.fm/s/10082039c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Once on This Island (Phuket)" xmlUrl="https://anchor.fm/s/49756b8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Maikhao Phuket Thailand" xmlUrl="https://anchor.fm/s/611d0838/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Alan WallaceLive from Phuket!" xmlUrl="https://feeds.feedburner.com/AlanWallacePhuket" type="rss"/>
-      
-      
-      <outline title="Persyaratan Lain Untuk Masuk Phuket" xmlUrl="https://anchor.fm/s/629c1d5c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Phuket Insider" xmlUrl="https://anchor.fm/s/1e26956c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Tea Talk Podcast" xmlUrl="https://anchor.fm/s/3721127c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Inter Property Podcast" xmlUrl="https://media.rss.com/inter-property/feed.xml" type="rss"/>
-      
-      
-      <outline title="Salmon Podcast" xmlUrl="https://www.salmonpodcast.com/feed/" type="rss"/>
-      
-      
-      <outline title="Mission To The Moon" xmlUrl="https://www.missiontothemoon.co/feed/podcast/" type="rss"/>
-      
-      
-      <outline title="The Cloud Podcast" xmlUrl="https://www.readthecloud.co/podcast/rss/" type="rss"/>
-      
-      
-      <outline title="ThaiPodcast" xmlUrl="https://www.thaipodcast.com/feed/" type="rss"/>
-      
-    
+      <outline title="Good Morning Thailand" xmlUrl="https://anchor.fm/s/707bb658/podcast/rss" type="rss" />
+      <outline title="Deeper Dive Thailand" xmlUrl="https://anchor.fm/s/c8700ad0/podcast/rss" type="rss" />
+      <outline title="All About Thailand" xmlUrl="https://anchor.fm/s/3efa0fa8/podcast/rss" type="rss" />
+      <outline title="Thai Examiner - Thailand's news for foreigners" xmlUrl="https://media.rss.com/thaiexaminer/feed.xml" type="rss" />
+      <outline title="Made it in Thailand" xmlUrl="https://feeds.transistor.fm/made-it-in-thailand" type="rss" />
+      <outline title="Thailand Explained" xmlUrl="https://anchor.fm/s/106095900/podcast/rss" type="rss" />
+      <outline title="Podcast by GS1 Thailand" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:938739079/sounds.rss" type="rss" />
+      <outline title="Thailand" xmlUrl="https://anchor.fm/s/4e8fe5b4/podcast/rss" type="rss" />
+      <outline title="Atomy Thailand Bangna Happiness Center Line: @atomybee 0878152531 ศูนย์การเรียนรู้ อะโทมี่ บางนา แฮปปี้เนส" xmlUrl="https://anchor.fm/s/1e487f10/podcast/rss" type="rss" />
+      <outline title="Sabaai Sabaai！Thailand （タイ語を学ぼう）" xmlUrl="https://feed.sonicbowl.cloud/rss/131ec1e2-e0ad-4d12-a25d-6d547946a2f7/" type="rss" />
+      <outline title="Siam Smoke Sessions - Thailand's #1 Cannabis Podcast" xmlUrl="https://anchor.fm/s/c98c8ad8/podcast/rss" type="rss" />
+      <outline title="Long Take Thailand" xmlUrl="https://anchor.fm/s/13796234/podcast/rss" type="rss" />
+      <outline title="GQ Thailand" xmlUrl="https://anchor.fm/s/2a6d4f50/podcast/rss" type="rss" />
+      <outline title="Thailand Story" xmlUrl="https://anchor.fm/s/351e9008/podcast/rss" type="rss" />
+      <outline title="อิสลามอินไทยแลนด์ IslamInThailand" xmlUrl="https://anchor.fm/s/b50270a0/podcast/rss" type="rss" />
+      <outline title="早安泰國 Thailand Morning" xmlUrl="https://thailandmorning.com/podcast.xml" type="rss" />
+      <outline title="MUSLIM CORNER THAILAND" xmlUrl="https://anchor.fm/s/fb6494c4/podcast/rss" type="rss" />
+      <outline title="CBRE Thailand Podcast" xmlUrl="https://anchor.fm/s/4bc606ec/podcast/rss" type="rss" />
+      <outline title="Bank of Thailand" xmlUrl="https://anchor.fm/s/59df9950/podcast/rss" type="rss" />
+      <outline title="GAMA THAILAND PODCAST" xmlUrl="https://anchor.fm/s/bdd636f8/podcast/rss" type="rss" />
+      <outline title="Fruiting Body Podcast (Thailand)" xmlUrl="https://feeds.transistor.fm/fruiting-body-podcast" type="rss" />
+      <outline title="TechStar Thailand Podcast" xmlUrl="https://anchor.fm/s/23897efc/podcast/rss" type="rss" />
+      <outline title="The Story of Thailand: The Nation That Never Fell to Colonizers — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-story-of-thailand.xml" type="rss" />
+      <outline title="9Natree Thailand" xmlUrl="https://thai.9natree.com/feed.xml" type="rss" />
+      <outline title="LINE Developers Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:81366571/sounds.rss" type="rss" />
+      <outline title="Soul Thai: Moving &amp; Living in Thailand" xmlUrl="https://www.spreaker.com/show/6732520/episodes/feed" type="rss" />
+      <outline title="GIT Thailand" xmlUrl="https://anchor.fm/s/611eaa94/podcast/rss" type="rss" />
+      <outline title="Talk อะ Rights Podcast" xmlUrl="https://anchor.fm/s/f6a8a2f4/podcast/rss" type="rss" />
+      <outline title="Auswandern Thailand Podcast" xmlUrl="https://fsconsultings.com/feed/podcast/podcast/" type="rss" />
+      <outline title="TALK ABOUT MOVIE-RADIO(Podcast) Official Thailand(เสียงไทย)" xmlUrl="https://anchor.fm/s/4ad7a010/podcast/rss" type="rss" />
+      <outline title="The Unseen Layer" xmlUrl="https://feeds.redcircle.com/e34364c0-a958-4f64-b637-869a07117cec" type="rss" />
+      <outline title="หนังสือดีมีให้ฟัง" xmlUrl="https://anchor.fm/s/50f60428/podcast/rss" type="rss" />
+      <outline title="Thailand Legend" xmlUrl="https://anchor.fm/s/33c135a8/podcast/rss" type="rss" />
+      <outline title="THAC Thailand Arbitration Center" xmlUrl="https://anchor.fm/s/3caac558/podcast/rss" type="rss" />
+      <outline title="BRAVE Southeast Asia Tech: Singapore, Indonesia, Vietnam, Philippines, Thailand &amp; Malaysia Startups, Founders &amp; Venture Capital VC (English)" xmlUrl="https://feed.pod.co/bravedynamics" type="rss" />
+      <outline title="The ONE Podcast ประเทศไทย" xmlUrl="https://rss.buzzsprout.com/2504544.rss" type="rss" />
+      <outline title="ความสัมพันธ์ 101" xmlUrl="https://anchor.fm/s/2b4627d0/podcast/rss" type="rss" />
+      <outline title="旅遊泰文趴趴走 II：Traveling in Thailand with the Thai language II" xmlUrl="https://feeds.soundon.fm/podcasts/b39b5883-3d68-4b45-a376-aee799e2a89b.xml" type="rss" />
+      <outline title="Conversations with Deloitte Thailand" xmlUrl="https://feeds.transistor.fm/conversations-with-deloitte-thailand" type="rss" />
+      <outline title="VisualtellingTH" xmlUrl="https://anchor.fm/s/46358e78/podcast/rss" type="rss" />
+      <outline title="Nonny G AT Town TV Thailand podcast" xmlUrl="https://anchor.fm/s/2d6cb8bc/podcast/rss" type="rss" />
+      <outline title="Canton Focus" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:940150765/sounds.rss" type="rss" />
+      <outline title="PALO IT Talk" xmlUrl="https://anchor.fm/s/f8476d48/podcast/rss" type="rss" />
+      <outline title="Podcast - Thailand Urlaub" xmlUrl="https://feeds.feedburner.com/thaifm" type="rss" />
+      <outline title="BitcoinAndTheAltsThailand" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:936045841/sounds.rss" type="rss" />
+      <outline title="Behind The Crypto" xmlUrl="https://anchor.fm/s/109a2b87c/podcast/rss" type="rss" />
+      <outline title="Tag med til Thailand" xmlUrl="https://www.spreaker.com/show/4246184/episodes/feed" type="rss" />
+      <outline title="Keep Me Busy" xmlUrl="https://anchor.fm/s/113646a4/podcast/rss" type="rss" />
+      <outline title="จ้อจีน" xmlUrl="https://anchor.fm/s/114162c8/podcast/rss" type="rss" />
+      <outline title="Infinity Books" xmlUrl="https://anchor.fm/s/11379054/podcast/rss" type="rss" />
+      <outline title="Infinity Podcast" xmlUrl="https://anchor.fm/s/10d73718/podcast/rss" type="rss" />
+      <outline title="เรื่องมันร้อน" xmlUrl="https://anchor.fm/s/11418460/podcast/rss" type="rss" />
+      <outline title="The Minimalist's Diary" xmlUrl="https://anchor.fm/s/10f0a734/podcast/rss" type="rss" />
+      <outline title="What's up Chiang Mai?" xmlUrl="https://anchor.fm/s/1287f5e8/podcast/rss" type="rss" />
+      <outline title="StartYup" xmlUrl="https://anchor.fm/s/11527bbc/podcast/rss" type="rss" />
+      <outline title="ครูหิ่งห้อยกับห้องเรียนสีฟ้า" xmlUrl="https://anchor.fm/s/11416afc/podcast/rss" type="rss" />
+      <outline title="Infinity Podcast" xmlUrl="https://anchor.fm/s/1142fc28/podcast/rss" type="rss" />
+      <outline title="Democracy X Innovations" xmlUrl="https://anchor.fm/s/12879698/podcast/rss" type="rss" />
+      <outline title="เล่าเรื่องประเทศไทย ตอน...รัฐประหารในประเทศไทย" xmlUrl="https://anchor.fm/s/3708f7c8/podcast/rss" type="rss" />
+      <outline title="VitaminSci" xmlUrl="https://anchor.fm/s/11362250/podcast/rss" type="rss" />
+      <outline title="Startupwit" xmlUrl="https://anchor.fm/s/113549e8/podcast/rss" type="rss" />
+      <outline title="Gap Year" xmlUrl="https://anchor.fm/s/113e752c/podcast/rss" type="rss" />
+      <outline title="สุขภาพตา โดย ราชวิทยาลัยจักษุแพทย์แห่งประเทศไทย All About Eye by RCOPT" xmlUrl="https://anchor.fm/s/506b9900/podcast/rss" type="rss" />
+      <outline title="Countdown" xmlUrl="https://anchor.fm/s/113dd248/podcast/rss" type="rss" />
+      <outline title="บริษัทเดลต้า อิเลคทรอนิกส์ ประเทศไทย" xmlUrl="https://anchor.fm/s/1b8e89b8/podcast/rss" type="rss" />
+      <outline title="The Bangkok Podcast" xmlUrl="https://rss.libsyn.com/shows/23671/destinations/34166.xml" type="rss" />
+      <outline title="Bangkok Post’s Mind the Gap Podcast" xmlUrl="https://anchor.fm/s/ffaa9538/podcast/rss" type="rss" />
+      <outline title="A Bed in Bangkok" xmlUrl="https://feed.podbean.com/abedinbangkok/feed.xml" type="rss" />
+      <outline title="Bangkok 2050 : Récits brûlants" xmlUrl="https://feeds.acast.com/public/shows/6a16a6be8ff41815a8c5f368" type="rss" />
+      <outline title="Grace City Bangkok" xmlUrl="https://anchor.fm/s/bb27fdec/podcast/rss" type="rss" />
+      <outline title="Pod Thai - Grumpy Expats In Bangkok" xmlUrl="https://anchor.fm/s/f713f4/podcast/rss" type="rss" />
+      <outline title="One Night in Bangkok" xmlUrl="https://anchor.fm/s/eaf7ffb8/podcast/rss" type="rss" />
+      <outline title="Every Day with God Podcast" xmlUrl="https://anchor.fm/s/49d80100/podcast/rss" type="rss" />
+      <outline title="Alliance On Air" xmlUrl="https://feeds.captivate.fm/allianceonair/" type="rss" />
+      <outline title="นอกBangKOK" xmlUrl="https://feeds.megaphone.fm/SHC3426655736" type="rss" />
+      <outline title="BU Podcast Local Insight เรื่องเล่าชีวิตใหม่ของเด็กต่างถิ่น" xmlUrl="https://anchor.fm/s/10ddfd58c/podcast/rss" type="rss" />
+      <outline title="BU Podcast Dive to Lock in" xmlUrl="https://anchor.fm/s/10c0713c4/podcast/rss" type="rss" />
+      <outline title="BU Podcast Local Vibes Global Dreams" xmlUrl="https://anchor.fm/s/10f6ee294/podcast/rss" type="rss" />
+      <outline title="Poet in Bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:184676458/sounds.rss" type="rss" />
+      <outline title="BACC Library Podcast" xmlUrl="https://anchor.fm/s/3a47d9a4/podcast/rss" type="rss" />
+      <outline title="Living Well Podcast" xmlUrl="https://anchor.fm/s/232a6fd4/podcast/rss" type="rss" />
+      <outline title="dj_hiro.bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:22490998/sounds.rss" type="rss" />
+      <outline title="Bangkok Dollars - Remun Sohvalla Podcast" xmlUrl="https://anchor.fm/s/55bb9b1c/podcast/rss" type="rss" />
+      <outline title="Sag Du mal...!  Leben in Bangkok und Berlin" xmlUrl="https://anchor.fm/s/55c1e79c/podcast/rss" type="rss" />
+      <outline title="SCP Bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:173001240/sounds.rss" type="rss" />
+      <outline title="A to Z Bangkok" xmlUrl="https://anchor.fm/s/b4b12eac/podcast/rss" type="rss" />
+      <outline title="Bangkok Aviation Center (BAC) PODCAST" xmlUrl="https://anchor.fm/s/11416bc4/podcast/rss" type="rss" />
+      <outline title="FromBangkokToBogota" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:32034202/sounds.rss" type="rss" />
+      <outline title="Bangkok Hospital Rayong" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:777193111/sounds.rss" type="rss" />
+      <outline title="Bangkok" xmlUrl="https://anchor.fm/s/6a93bcb8/podcast/rss" type="rss" />
+      <outline title="A Travel Guide To Bangkok By Yurisan" xmlUrl="https://anchor.fm/s/443f098c/podcast/rss" type="rss" />
+      <outline title="LighthouseCentreBangkok" xmlUrl="https://anchor.fm/s/1ea691e0/podcast/rss" type="rss" />
+      <outline title="Sawadee Bangkok" xmlUrl="https://lovefm.co.jp/podcasts/xml/142/25.xml" type="rss" />
+      <outline title="Bangkok trip" xmlUrl="https://anchor.fm/s/491beb64/podcast/rss" type="rss" />
+      <outline title="Neuma Church Bangkok" xmlUrl="https://feeds.castos.com/w75m" type="rss" />
+      <outline title="Bangkok Talk" xmlUrl="https://bkktalk.net/feed/podcast/bkktalk/" type="rss" />
+      <outline title="DrDonna Robinson - MedConsult Clinic Bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1014560509/sounds.rss" type="rss" />
+      <outline title="Entrepreneur in Bangkok" xmlUrl="https://anchor.fm/s/e9b7a4/podcast/rss" type="rss" />
+      <outline title="Cq Leadership Consulting Bangkok" xmlUrl="https://anchor.fm/s/3a746c30/podcast/rss" type="rss" />
+      <outline title="Bangkok Signal" xmlUrl="https://www.spreaker.com/show/6991707/episodes/feed" type="rss" />
+      <outline title="Lonely Gay Bangkok: Coco &amp; friends" xmlUrl="https://anchor.fm/s/8b9989c4/podcast/rss" type="rss" />
+      <outline title="BangkokTHNOTES" xmlUrl="https://anchor.fm/s/247d0c34/podcast/rss" type="rss" />
+      <outline title="Bangkok or Bust" xmlUrl="https://anchor.fm/s/3bd5ecac/podcast/rss" type="rss" />
+      <outline title="Bangkok Offstage" xmlUrl="https://feed.podbean.com/bangkokoffstage/feed.xml" type="rss" />
+      <outline title="Things to do in Bangkok" xmlUrl="https://anchor.fm/s/5013040c/podcast/rss" type="rss" />
+      <outline title="One Night in Bangkok Travel Podcast" xmlUrl="https://rss.buzzsprout.com/1438942.rss" type="rss" />
+      <outline title="Escaping Bangkok" xmlUrl="https://feeds.acast.com/public/shows/633ecabfab9d9300125424f4" type="rss" />
+      <outline title="An American In Bangkok" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:22044094/sounds.rss" type="rss" />
+      <outline title="Sakura in Bangkok" xmlUrl="https://anchor.fm/s/10ff0e2a8/podcast/rss" type="rss" />
+      <outline title="Bangkok to America (with Life of Cuddlez)" xmlUrl="https://feeds.podcastle.ai/3559a9ed-5e8c-4f04-a356-17fa34777feb.rss" type="rss" />
+      <outline title="Bangkok Second Trip" xmlUrl="https://anchor.fm/s/f937768/podcast/rss" type="rss" />
+      <outline title="Bangkok Travel Guide" xmlUrl="https://anchor.fm/s/6a8f26e4/podcast/rss" type="rss" />
+      <outline title="Bangkok’s Felix Bakery Is Ready" xmlUrl="https://www.spreaker.com/show/5293786/episodes/feed" type="rss" />
+      <outline title="Learn Thai Through Travel" xmlUrl="https://anchor.fm/s/fc89a8e4/podcast/rss" type="rss" />
+      <outline title="The Culinary Institute of America" xmlUrl="https://feed.podbean.com/cia/feed.xml" type="rss" />
+      <outline title="Let's Talk BL" xmlUrl="https://anchor.fm/s/5d6c47f8/podcast/rss" type="rss" />
+      <outline title="Tennis Asia Podcast" xmlUrl="https://anchor.fm/s/f4fea9bc/podcast/rss" type="rss" />
+      <outline title="Lu &amp; Jarch" xmlUrl="https://www.omnycontent.com/d/playlist/566281f8-200e-4c9f-8378-a4870055423b/29b19364-eea7-478c-aeaf-b2f300420298/ffd51c95-27e2-49b2-b6bb-b2f3004207f5/podcast.rss" type="rss" />
+      <outline title="A Thai Football Podcast" xmlUrl="https://feed.podbean.com/dalefarrington/feed.xml" type="rss" />
+      <outline title="Have You Ever Heard Of..." xmlUrl="https://feed.podbean.com/haveyoueverheardof/feed.xml" type="rss" />
+      <outline title="Ocean Worldwide Phuket Real Estate" xmlUrl="https://api.autocontentapi.com/podcast/rss/EDC5B35C-2A7E-49B4-B2A9-89354A839D17" type="rss" />
+      <outline title="Great Shot Podcast [Tennis Podcast]" xmlUrl="https://feeds.simplecast.com/4S6rb2HE" type="rss" />
+      <outline title="NetWorth" xmlUrl="http://cast.rocks/hosting/14482/feeds/5BCN0.xml" type="rss" />
+      <outline title="Mindfulness Dhamma to End Suffering" xmlUrl="https://rss.libsyn.com/shows/52136/destinations/186644.xml" type="rss" />
+      <outline title="Chip &amp; Charge" xmlUrl="https://meinsportpodcast.de/tennis/chip-charge/feed/" type="rss" />
+      <outline title="Match Point #9: A Tennis Bets Podcast" xmlUrl="https://feeds.simplecast.com/BUHgGR7M" type="rss" />
+      <outline title="Tennis Unfiltered" xmlUrl="https://feeds.megaphone.fm/COMG1086494290" type="rss" />
+      <outline title="Treasures Thailand" xmlUrl="https://anchor.fm/s/f38ce5f8/podcast/rss" type="rss" />
+      <outline title="Thai Boxing Canada Podcast" xmlUrl="https://feeds.podcastai.com/HcDsegw0i708r8Kwthvm9R.xml" type="rss" />
+      <outline title="Ground Pass: A Tennis Podcast" xmlUrl="https://feeds.acast.com/public/shows/651ccfef9b495d0012f9d190" type="rss" />
+      <outline title="The Muay Thai Podcast" xmlUrl="https://rss.libsyn.com/shows/185987/destinations/1279364.xml" type="rss" />
+      <outline title="GNN Daily News – Daily News Podcast" xmlUrl="https://www.spreaker.com/show/6884229/episodes/feed" type="rss" />
+      <outline title="Talking Snooker" xmlUrl="https://feeds.megaphone.fm/COMG6870903907" type="rss" />
+      <outline title="The Portraitists" xmlUrl="https://anchor.fm/s/f048a3f0/podcast/rss" type="rss" />
+      <outline title="Tooth &amp; Claw: True Stories of Animal Attacks" xmlUrl="https://feeds.megaphone.fm/QCD9705695442" type="rss" />
+      <outline title="Totally Weird And Twisted" xmlUrl="https://feed.podbean.com/twatdidyousay/feed.xml" type="rss" />
+      <outline title="WTF is Up in Southeast Asia + Hong Kong" xmlUrl="https://anchor.fm/s/a3a1f4e8/podcast/rss" type="rss" />
+      <outline title="Puu Muay Thai Podcast" xmlUrl="https://rss.buzzsprout.com/607621.rss" type="rss" />
+      <outline title="The Mini-Break [Tennis Podcast]" xmlUrl="https://feeds.simplecast.com/OiyRsoHN" type="rss" />
+      <outline title="Arsenio's High Performance Coaching" xmlUrl="https://rss.buzzsprout.com/165390.rss" type="rss" />
+      <outline title="On On! Hash House Harriers Talk and History" xmlUrl="https://anchor.fm/s/55c72248/podcast/rss" type="rss" />
+      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed/" type="rss" />
+      <outline title="Ingress Insights: An Ingress Podcast" xmlUrl="https://anchor.fm/s/e8e3c5b8/podcast/rss" type="rss" />
+      <outline title="The Morning Rumble" xmlUrl="https://www.omnycontent.com/d/playlist/d5d8b1d2-6c31-48c0-8625-a959004fd8f1/3f5bbe4c-6eb0-447b-b28e-a9a601861edd/a742a335-701f-4ba2-bbbb-a9a601861ee6/podcast.rss" type="rss" />
+      <outline title="Denton and Sasquatch Show" xmlUrl="https://dentonandsasshow.podomatic.com/rss2.xml" type="rss" />
+      <outline title="The Daily Mojo with Brad Staggs" xmlUrl="https://www.spreaker.com/show/3085897/episodes/feed" type="rss" />
+      <outline title="Stuff They Don't Want You To Know" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/2e824128-fbd5-4c9e-9a57-ae2f0056b0c4/66d98a23-900c-44b0-a40b-ae2f0056b0db/podcast.rss" type="rss" />
+      <outline title="Good Morning Maldives!" xmlUrl="https://anchor.fm/s/10068a7d0/podcast/rss" type="rss" />
+      <outline title="Outrageous Outspoken" xmlUrl="https://anchor.fm/s/104df8090/podcast/rss" type="rss" />
+      <outline title="Fortean News Podcast" xmlUrl="https://feed.podbean.com/forteannews/feed.xml" type="rss" />
+      <outline title="Monday Night Sports Talk with Patrick Reusse and Joe Soucheray" xmlUrl="https://rss.art19.com/monday-night-sports-talk-with-patrick-reusse-and-joe-soucheray" type="rss" />
+      <outline title="Newsflash24 - der Podcast powered by Podcast Pioniere" xmlUrl="https://newsflash24.audiotakes.de/newsflash24-der-podcast-powered-by-podcast-pioniere.rss" type="rss" />
+      <outline title="Shaun Attwoods True Crime Podcast" xmlUrl="https://audioboom.com/channels/5065119.rss" type="rss" />
+      <outline title="NewsRamp Events and Conferences Podcast" xmlUrl="https://feeds.newsramp.net/podcast/events.rss" type="rss" />
+      <outline title="philosophical minds" xmlUrl="https://rss.libsyn.com/shows/126739/destinations/758595.xml" type="rss" />
+      <outline title="It's all about Education" xmlUrl="https://anchor.fm/s/5160e964/podcast/rss" type="rss" />
+      <outline title="Bitcoin Chiang Mai Podcast" xmlUrl="https://anchor.fm/s/10aac8ec8/podcast/rss" type="rss" />
+      <outline title="เชียงใหม่ #อร่อยแน่แม่จ๋า" xmlUrl="https://anchor.fm/s/45a66ab8/podcast/rss" type="rss" />
+      <outline title="เชียงใหม่อะไรกันครับ" xmlUrl="https://anchor.fm/s/4b79daec/podcast/rss" type="rss" />
+      <outline title="The original Chiang Mai is Blue" xmlUrl="https://feeds.acast.com/public/shows/64a7c474aba5c4001156a7cd" type="rss" />
+      <outline title="Chiang-mai Chatter" xmlUrl="https://www.spreaker.com/show/6067618/episodes/feed" type="rss" />
+      <outline title="Northern Lights - The Chiang Mai Journal Podcast" xmlUrl="https://feed.podbean.com/chiangmaijournal/feed.xml" type="rss" />
+      <outline title="Chiang Mai Ultra" xmlUrl="https://www.spreaker.com/show/4137728/episodes/feed" type="rss" />
+      <outline title="Innovate Asia" xmlUrl="https://api.substack.com/feed/podcast/5024752/s/237535.rss" type="rss" />
+      <outline title="Equipping the Saints" xmlUrl="https://refugechiangmai.com/feed/?post_type=wpfc_sermon" type="rss" />
+      <outline title="Innovate Thailand" xmlUrl="https://api.substack.com/feed/podcast/5024752/s/237534.rss" type="rss" />
+      <outline title="Phuket Christian Centre คริสเตียนสัมพันธ์ภูเก็ต - Podcasts" xmlUrl="http://phuketchristiancentre.org/podcasts/podcast/feed.xml" type="rss" />
+      <outline title="Phuket" xmlUrl="https://media.rss.com/phuket-0/feed.xml" type="rss" />
+      <outline title="Phuket Tourism News" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1221131506/sounds.rss" type="rss" />
+      <outline title="Phuket Property Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:951344101/sounds.rss" type="rss" />
+      <outline title="Storytime by KIS Phuket" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:954578128/sounds.rss" type="rss" />
+      <outline title="Ocean Worldwide - Agence immobilière à Phuket" xmlUrl="https://anchor.fm/s/10082039c/podcast/rss" type="rss" />
+      <outline title="Once on This Island (Phuket)" xmlUrl="https://anchor.fm/s/49756b8/podcast/rss" type="rss" />
+      <outline title="Maikhao Phuket Thailand" xmlUrl="https://anchor.fm/s/611d0838/podcast/rss" type="rss" />
+      <outline title="Alan Wallace Live from Phuket!" xmlUrl="https://feeds.feedburner.com/AlanWallacePhuket" type="rss" />
+      <outline title="Persyaratan Lain Untuk Masuk Phuket" xmlUrl="https://anchor.fm/s/629c1d5c/podcast/rss" type="rss" />
+      <outline title="Phuket Insider" xmlUrl="https://anchor.fm/s/1e26956c/podcast/rss" type="rss" />
+      <outline title="Tea Talk Podcast" xmlUrl="https://anchor.fm/s/3721127c/podcast/rss" type="rss" />
+      <outline title="Inter Property Podcast" xmlUrl="https://media.rss.com/inter-property/feed.xml" type="rss" />
+      <outline title="Salmon Podcast" xmlUrl="https://www.salmonpodcast.com/feed/" type="rss" />
+      <outline title="Mission To The Moon" xmlUrl="https://www.missiontothemoon.co/feed/podcast/" type="rss" />
+      <outline title="The Cloud Podcast" xmlUrl="https://www.readthecloud.co/podcast/rss/" type="rss" />
+      <outline title="ThaiPodcast" xmlUrl="https://www.thaipodcast.com/feed/" type="rss" />
+      <outline title="Auswandern Thailand Podcast" xmlUrl="https://fsconsultings.com/feed/podcast/auswandern-thailand-podcast" type="rss" category="Education" />
+      <outline title="Elliott Wave Thailand PODCAST" xmlUrl="https://anchor.fm/s/4bf069b4/podcast/rss" type="rss" category="Education" />
+      <outline title="Easylish Thailand Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:832726456/sounds.rss" type="rss" category="Education" />
+      <outline title="A/E/C Technology Podcast by VR Digital" xmlUrl="https://anchor.fm/s/106b98dfc/podcast/rss" type="rss" category="Business" />
+      <outline title="Abel Thailand's podcast" xmlUrl="https://www.spreaker.com/show/6560765/episodes/feed" type="rss" category="Society" />
+      <outline title="RCCG Thailand Podcast" xmlUrl="https://anchor.fm/s/2ab93564/podcast/rss" type="rss" category="Religion" />
+      <outline title="True Crime Thailand Podcast" xmlUrl="https://anchor.fm/s/46484068/podcast/rss" type="rss" category="True Crime" />
+      <outline title="NEXUS Podcast" xmlUrl="https://anchor.fm/s/5b24ffa8/podcast/rss" type="rss" category="News" />
+      <outline title="Pun's Labyrinth Podcast (Thailand)" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:973631590/sounds.rss" type="rss" category="Fiction" />
+      <outline title="Netpoleon Thailand Podcast" xmlUrl="https://anchor.fm/s/34242d98/podcast/rss" type="rss" category="Technology" />
+      <outline title="Overwatch Thailand (Podcast)" xmlUrl="https://anchor.fm/s/1336d70c/podcast/rss" type="rss" category="Leisure" />
+      <outline title="KETO THAILAND PODCAST" xmlUrl="https://feed.podbean.com/ketothailand/feed.xml" type="rss" category="Health" />
+      <outline title="The Mentor Thailand's Podcast" xmlUrl="https://mentorthailand.podbean.com/feed.xml" type="rss" category="Business" />
+      <outline title="Let's Talk Thailand's Podcast" xmlUrl="https://letstalkth.podomatic.com/rss2.xml" type="rss" category="Society" />
+      <outline title="Stories Thailand Podcast" xmlUrl="https://www.spreaker.com/show/7156958/episodes/feed" type="rss" category="Society" />
+      <outline title="First Plus Podcast" xmlUrl="https://anchor.fm/s/1099ec8ac/podcast/rss" type="rss" category="Business" />
+      <outline title="First Plus Podcast" xmlUrl="https://media.rss.com/first-plus-podcast-ep1-fed/feed.xml" type="rss" category="Business" />
+      <outline title="New York Yankees Thailand Fans Podcast" xmlUrl="https://anchor.fm/s/10629d824/podcast/rss" type="rss" category="Sports" />
+      <outline title="Slot Thailand:" xmlUrl="https://feeds.hubhopper.com/9e97740df075c7b0cd2e76e0a42e27ee.rss" type="rss" category="Leisure" />
+      <outline title="The Cube Podcast" xmlUrl="https://anchor.fm/s/757a7e50/podcast/rss" type="rss" category="Science" />
+      <outline title="Gaming Industry Thailand: Podcast" xmlUrl="https://feeds.hubhopper.com/5a1001c8e17d584660da625c3ca592e6.rss" type="rss" category="Leisure" />
+      <outline title="Gaming Industry Thailand: Podcast" xmlUrl="https://www.podserve.fm/series/rss/8624/gaming-industry-thailand-podcast.rss" type="rss" category="Leisure" />
+      <outline title="Martini Tonight 【Masayuki Suzuki's Thailand Fan Podcast】" xmlUrl="https://anchor.fm/s/7264d9e0/podcast/rss" type="rss" category="Music" />
+      <outline title="Thailand teilt Podcast" xmlUrl="https://rss.castbox.fm/everest/f3f1cf3233ae4097aa79ea57fe63924e.xml" type="rss" category="Education" />
+      <outline title="All Thailand Experiences Podcasts" xmlUrl="https://anchor.fm/s/51a87310/podcast/rss" type="rss" category="Society" />
+      <outline title="F4 Thailand Podcast" xmlUrl="https://anchor.fm/s/78d8cf0c/podcast/rss" type="rss" category="Tv" />
+      <outline title="Sawasdee - der Thailand Podcast mit Sven Meyer und Andy Janz" xmlUrl="https://sawasdee.podigee.io/feed/mp3" type="rss" category="Society" />
+      <outline title="LDC Church Thailand Podcast" xmlUrl="https://anchor.fm/s/6e1cd374/podcast/rss" type="rss" category="Religion" />
+      <outline title="Transgender Thailand Podcast" xmlUrl="https://feed.podbean.com/transgenderthailand/feed.xml" type="rss" category="Arts" />
+      <outline title="Thailand Holiday Group Podcast" xmlUrl="https://feed.podbean.com/thailandholidaygroup/feed.xml" type="rss" category="Leisure" />
+      <outline title="BGDT Podcast" xmlUrl="https://anchor.fm/s/4b2bc9c4/podcast/rss" type="rss" category="Leisure" />
+      <outline title="Equip Christlike Servants Podcast" xmlUrl="https://anchor.fm/s/23b0cc50/podcast/rss" type="rss" category="Education" />
+      <outline title="Faye’s recommendation podcast - Thailand" xmlUrl="https://anchor.fm/s/52520024/podcast/rss" type="rss" category="Society" />
+      <outline title="Toysperience Podcast Thailand" xmlUrl="https://anchor.fm/s/42ce097c/podcast/rss" type="rss" category="Leisure" />
+      <outline title="White Ribbon Podcast : Ep.1 What was happened in Thailand about the protest (English or Thailish)" xmlUrl="https://anchor.fm/s/15fa1e54/podcast/rss" type="rss" category="News" />
+      <outline title="I'd Like To Thank Myself" xmlUrl="https://feeds.transistor.fm/id-like-to-thank-myself" type="rss" category="Arts" />
+      <outline title="Arroe Collins Like It's Live" xmlUrl="https://www.spreaker.com/show/4113802/episodes/feed" type="rss" category="News" />
+      <outline title="Seriously Mysterious - Missing Persons, Unsolved Murders &amp; Historical True Crime" xmlUrl="https://www.spreaker.com/show/4532075/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Life Hacks DIY &amp; More - Transform Your Everyday With Simple Tricks and DIY Magic!" xmlUrl="https://www.spreaker.com/show/5995484/episodes/feed" type="rss" category="Education" />
+      <outline title="Reddit Stories" xmlUrl="https://www.spreaker.com/show/6370551/episodes/feed" type="rss" category="Leisure" />
+      <outline title="The Kyle Peterson Show" xmlUrl="https://www.spreaker.com/show/6573404/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Reality After Show" xmlUrl="https://www.spreaker.com/show/5448874/episodes/feed" type="rss" category="Tv" />
+      <outline title="3-Bit Gamer Show" xmlUrl="https://www.spreaker.com/show/2255796/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Come explore the paranormal files as we delve into the unexplained. The paranormal podcast." xmlUrl="https://www.spreaker.com/show/5547977/episodes/feed" type="rss" category="Society" />
+      <outline title="Minding Your Business Podcast" xmlUrl="https://www.spreaker.com/show/6367325/episodes/feed" type="rss" category="Business" />
+      <outline title="95.3 Gorilla" xmlUrl="https://wznfpodcast.mainevibe.com/feed.xml" type="rss" category="Music" />
+      <outline title="Gamefully Unemployed" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:395741505/sounds.rss" type="rss" category="Tv" />
+      <outline title="Cog-Dog Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:236473103/sounds.rss" type="rss" category="Education" />
+      <outline title="Managing Tech Millions" xmlUrl="https://feeds.redcircle.com/8f2225e0-c4ac-469c-9e36-07f3677a22a7" type="rss" category="Business" />
+      <outline title="Vocal Booth Radio Listen Again" xmlUrl="https://vocalboothradio.com/feed/mp3" type="rss" category="Music" />
+      <outline title="Daily Shower Thoughts" xmlUrl="https://feeds.megaphone.fm/dailyshowerthoughts" type="rss" category="Comedy" />
+      <outline title="BIG Life Devotional | Daily Devotional for Women" xmlUrl="https://biglifehq.com/feed/podcast" type="rss" category="Religion" />
+      <outline title="Fun Content" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1469" type="rss" category="News" />
+      <outline title="94WIP Morning Show with Joe DeCamara and Jon Ritchie" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/philadelphia_wipfm-94wip_morning_show_with_joe_decamara_and_jon_ritchie" type="rss" category="Sports" />
+      <outline title="Based Camp | Simone &amp; Malcolm Collins" xmlUrl="https://api.substack.com/feed/podcast/1643534/s/64409.rss" type="rss" category="Society" />
+      <outline title="Bonjour France Podcast" xmlUrl="https://www.spreaker.com/show/6773527/episodes/feed" type="rss" category="Society" />
+      <outline title="Milena's Diary" xmlUrl="https://feeds.megaphone.fm/hmstalksltd9487207744" type="rss" category="Society" />
+      <outline title="North Point Baptist Church Sermons" xmlUrl="https://www.spreaker.com/show/6124300/episodes/feed" type="rss" category="Religion" />
+      <outline title="York County's Morning Show" xmlUrl="https://www.spreaker.com/show/6243862/episodes/feed" type="rss" category="Society" />
+      <outline title="Brian Thomas" xmlUrl="https://www.spreaker.com/show/2459972/episodes/feed" type="rss" category="News" />
+      <outline title="Wave 94" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:16676106/sounds.rss" type="rss" category="Religion" />
+      <outline title="Cleveland Browns News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/cleveland-browns-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Cork News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/fort-smith-daily-news-now.xml" type="rss" category="News" />
+      <outline title="The Missing Persons Report" xmlUrl="https://www.spreaker.com/show/6763610/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Rabbi Kraz's Shiurim" xmlUrl="https://anchor.fm/s/d89491c4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Toronto Today with Greg Brady" xmlUrl="https://feeds.megaphone.fm/coru2066336057" type="rss" category="News" />
+      <outline title="The Drake Toll Show" xmlUrl="https://feeds.megaphone.fm/wwo4349656783" type="rss" category="News" />
+      <outline title="Going Ultra - Presented by Henshin Inspection" xmlUrl="https://media.rss.com/mjmgu/feed.xml" type="rss" category="Tv" />
+      <outline title="JPost Headlines" xmlUrl="https://www.spreaker.com/show/6677418/episodes/feed" type="rss" category="News" />
+      <outline title="Audio Mises Wire" xmlUrl="https://cdn.mises.org/itunes/en_127226.xml" type="rss" category="News" />
+      <outline title="Outsource to Profits Podcast" xmlUrl="https://feed.podbean.com/getlevrg/feed.xml" type="rss" category="Business" />
+      <outline title="24 Oras Podcast" xmlUrl="https://feeds.acast.com/public/shows/685d292847311de1b6e0e89a" type="rss" category="News" />
+      <outline title="Excess Returns" xmlUrl="https://anchor.fm/s/9a1dfac/podcast/rss" type="rss" category="Business" />
+      <outline title="Red Sox Digest Podcast" xmlUrl="https://www.spreaker.com/show/6691213/episodes/feed" type="rss" category="News" />
+      <outline title="The Tony Kornheiser Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/the-tony-kornheiser-show" type="rss" category="Sports" />
+      <outline title="Radio Miraya" xmlUrl="https://audioboom.com/channels/3891441.rss" type="rss" category="Technology" />
+      <outline title="Pivot: SHIFT Ahead Mastermind" xmlUrl="https://media.rss.com/pivot-shift-ahead-mastermind/feed.xml" type="rss" category="Business" />
+      <outline title="Los Angeles Rams News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/los-angeles-rams-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Pursuit Of Purpose" xmlUrl="https://feed.podbean.com/popmartinsr/feed.xml" type="rss" category="Business" />
+      <outline title="Get Up" xmlUrl="https://feeds.megaphone.fm/esp2870920494" type="rss" category="Sports" />
+      <outline title="Courtney and KISS in the morning" xmlUrl="https://www.spreaker.com/show/2497425/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Computer Talk with TAB" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/f8c743d7682ab4bac553696e6093d3e7" type="rss" category="Business" />
+      <outline title="Tennessee Titans News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/tennessee-titans-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Wrestle Radio Australia" xmlUrl="https://wrestleradioaustralia.libsyn.com/rss" type="rss" category="Sports" />
+      <outline title="Hope Expression Podcast" xmlUrl="https://www.spreaker.com/show/5891904/episodes/feed" type="rss" category="Religion" />
+      <outline title="Spurs Chat: Discussing all Things Tottenham Hotspur: Hosted by Chris Cowlin: The Daily Tottenham/Spurs Podcast" xmlUrl="https://feeds.acast.com/public/shows/639c5ea1bcab760012015b61" type="rss" category="Sports" />
+      <outline title="Federalist Radio Hour" xmlUrl="https://feeds.feedburner.com/ricochetaudionetwork/federalistradiohour" type="rss" category="News" />
+      <outline title="The Irish Passport" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298752213/sounds.rss" type="rss" category="Society" />
+      <outline title="The Lunduke Journal of Technology" xmlUrl="https://api.substack.com/feed/podcast/462466.rss" type="rss" category="Technology" />
+      <outline title="Boston Bruins News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/boston-bruins-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Warden's Watch" xmlUrl="https://feeds.megaphone.fm/wpcm3659727000" type="rss" category="Sports" />
+      <outline title="Experience in Golf Clubhouse Design" xmlUrl="https://feeds.libsyn.com/475266/rss" type="rss" category="Arts" />
+      <outline title="Betting Weekly Studios" xmlUrl="https://feeds.megaphone.fm/rerre3101069934" type="rss" category="Sports" />
+      <outline title="The Long Run with Luke Timmerman" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:317770704/sounds.rss" type="rss" category="Science" />
+      <outline title="Belfast News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/bridgeport-daily-news-now.xml" type="rss" category="News" />
+      <outline title="AM Quincy" xmlUrl="https://feeds.feedburner.com/qatv_amquincypodcast" type="rss" category="Government" />
+      <outline title="Autoblog News" xmlUrl="https://feeds.feedburner.com/podcast/autoblog" type="rss" category="Games" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast" type="rss" category="News" />
+      <outline title="The Flex Podcast with Anna Martin Fitness" xmlUrl="https://media.rss.com/the-flex-podcast-with-anna-martin-fitness/feed.xml" type="rss" category="Health" />
+      <outline title="Church and State" xmlUrl="https://feed.podbean.com/churchandstate/feed.xml" type="rss" category="News" />
+      <outline title="Bite-Sized Dental Marketing" xmlUrl="https://media.rss.com/bsdm/feed.xml" type="rss" category="Business" />
+      <outline title="DD Fantasy Football Radio" xmlUrl="https://feeds.megaphone.fm/blu7133453702" type="rss" category="Sports" />
+      <outline title="Cybercrime Magazine Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286242900/sounds.rss" type="rss" category="Technology" />
+      <outline title="Lawrence News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/lawrence-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Sasquatch Experience" xmlUrl="https://www.spreaker.com/show/4208641/episodes/feed" type="rss" category="Science" />
+      <outline title="Ciliberto and Friends" xmlUrl="https://www.spreaker.com/show/5983689/episodes/feed" type="rss" category="Music" />
+      <outline title="The Automated Daily" xmlUrl="https://theautomateddaily.com/feed.xml" type="rss" category="Technology" />
+      <outline title="The Automated Daily - Space News Edition" xmlUrl="https://theautomateddaily.com/space/feed.xml" type="rss" category="Science" />
+      <outline title="Word Balloon Comics Podcast" xmlUrl="https://www.spreaker.com/show/3143082/episodes/feed" type="rss" category="Tv" />
+      <outline title="Daily Morning Class" xmlUrl="https://media.rss.com/rabbiyedid/feed.xml" type="rss" category="Religion" />
+      <outline title="Reality with The King" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a1735c70-f70f-4045-805b-b302010c5b8c/5db0a3af-13d8-4a16-974c-b302010c5bb4/podcast.rss" type="rss" category="Tv" />
+      <outline title="The Dentalpreneur Podcast w/ Dr. Mark Costes" xmlUrl="https://markcostes.libsyn.com/rss" type="rss" category="Business" />
+      <outline title="The Kapeel Gupta Career Podshow" xmlUrl="https://rss.buzzsprout.com/2012553.rss" type="rss" category="Business" />
+      <outline title="What in the World" xmlUrl="https://podcasts.files.bbci.co.uk/w13xtvrv.rss" type="rss" category="News" />
+      <outline title="The Buddy System with Chris &amp; Matty" xmlUrl="https://feeds.megaphone.fm/mduyh3921896096?1?1" type="rss" category="Comedy" />
+      <outline title="Fore Love of Golf" xmlUrl="https://feeds.megaphone.fm/rogxo2747915340" type="rss" category="Sports" />
+      <outline title="Dr. John Campbell" xmlUrl="https://feeds.megaphone.fm/vg9554039150" type="rss" category="Education" />
+      <outline title="Paranormal UK Radio Network" xmlUrl="https://www.spreaker.com/show/4541473/episodes/feed" type="rss" category="Society" />
+      <outline title="This Day in History" xmlUrl="https://feeds.redcircle.com/9339ef5f-2c20-4a38-b60d-eb4ac27759c3" type="rss" category="History" />
+      <outline title="Football Social Daily" xmlUrl="https://feeds.megaphone.fm/comg9297908545" type="rss" category="Sports" />
+      <outline title="Edmonton News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-stockton-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Park Avenue Synagogue Podcast" xmlUrl="https://feed.podbean.com/parkavenuepodcast/feed.xml" type="rss" category="Religion" />
+      <outline title="PreMarket Prep" xmlUrl="https://anchor.fm/s/fd33c360/podcast/rss" type="rss" category="Business" />
+      <outline title="StribSports Daily Delivery" xmlUrl="https://feeds.megaphone.fm/stribsportsdailydelivery" type="rss" category="Sports" />
+      <outline title="Legacy Nashville Podcast" xmlUrl="https://media.rss.com/legacy-nashville-podcast/feed.xml" type="rss" category="Religion" />
+      <outline title="&quot;There I was...&quot; An Aviation Podcast" xmlUrl="https://feeds.megaphone.fm/aopa1855704656" type="rss" category="Leisure" />
+      <outline title="Marketer of the Day with Robert Plank: Business Growth &amp; Entrepreneur Stories" xmlUrl="https://www.robertplank.com/feed/podcast" type="rss" category="Business" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="News" />
+      <outline title="In The Money Media Network" xmlUrl="https://feeds.captivate.fm/in-the-money-media-network" type="rss" category="Sports" />
+      <outline title="This Paranormal Life" xmlUrl="https://feeds.megaphone.fm/nsr2334813337" type="rss" category="Comedy" />
+      <outline title="Let's Address This with Qasim Rashid Podcast" xmlUrl="https://api.substack.com/feed/podcast/2550223.rss" type="rss" category="News" />
+      <outline title="Flashscore News" xmlUrl="https://feeds.captivate.fm/flashscore-news" type="rss" category="News" />
+      <outline title="JACC Global" xmlUrl="https://feeds.libsyn.com/75161" type="rss" category="Health" />
+      <outline title="Health News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/health-and-fitness-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Health" />
+      <outline title="Food Freedom" xmlUrl="https://anchor.fm/s/d625f518/podcast/rss" type="rss" category="Health" />
+      <outline title="See Ball Get Ball with David Pollack" xmlUrl="https://media.rss.com/see-ball-get-ball-david-pollack/feed.xml" type="rss" category="Sports" />
+      <outline title="Blurt Vibes" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1398" type="rss" category="News" />
+      <outline title="Twisted Podcast" xmlUrl="https://twistedpodcast.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Billianon" xmlUrl="https://podcast.billianon.com/@billianon/feed.xml" type="rss" category="Education" />
+      <outline title="Global Research Unlocked" xmlUrl="https://feed.podbean.com/bofaglobalresearch/feed.xml" type="rss" category="Business" />
+      <outline title="Fresh Pinball Podcast" xmlUrl="https://media.rss.com/freshpinballpodcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Georgia Tech Yellow Jackets Football Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/georgia-tech-yellow-jackets-football-today-2-min-news.xml" type="rss" category="News" />
+      <outline title="Magical Transformations" xmlUrl="https://feeds.captivate.fm/magicaltrasformations" type="rss" category="Health" />
+      <outline title="The Nielson Show" xmlUrl="https://feeds.libsyn.com/481581/rss" type="rss" category="Sports" />
+      <outline title="The Bridge" xmlUrl="https://www.spreaker.com/show/3099883/episodes/feed" type="rss" category="Sports" />
+      <outline title="Politics Unpacked" xmlUrl="https://feeds.acast.com/public/shows/92a301e1-443b-435f-b4e2-2e2dd1e37fc5" type="rss" category="News" />
+      <outline title="*“Yesterday, I Went to Mars ♡”*" xmlUrl="https://anchor.fm/s/fcce555c/podcast/rss" type="rss" category="Society" />
+      <outline title="SYSTEMIZE YOUR LIFE + BUSINESS | Schedules, Routines, Productivity, Time Management, Operating System" xmlUrl="https://feed.podbean.com/systemizeyourlife/feed.xml" type="rss" category="Kids" />
+      <outline title="San Francisco 49ers News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/san-francisco-49ers-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Chiney Today" xmlUrl="https://feeds.megaphone.fm/esp1950629932" type="rss" category="Sports" />
+      <outline title="Top Entrepreneurs Podcast | Enterprise Podcast Network" xmlUrl="https://feeds.feedburner.com/entrepreneurpodcastnetwork" type="rss" category="Business" />
+      <outline title="Restoration Home with Jennifer Pepito" xmlUrl="https://feed.podbean.com/restorationhome/feed.xml" type="rss" category="Kids" />
+      <outline title="Keys to Success" xmlUrl="https://www.spreaker.com/show/6414073/episodes/feed" type="rss" category="Society" />
+      <outline title="Athletics Weekly Podcast" xmlUrl="https://feeds.acast.com/public/shows/6697e5223fac6c42420fe0e8" type="rss" category="Sports" />
+      <outline title="Mully &amp; Haugh Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/chicago_wscram_mully___haugh_show" type="rss" category="Sports" />
+      <outline title="Grow My Salon Business Podcast" xmlUrl="https://feeds.transistor.fm/grow-my-salon-business-podcast" type="rss" category="Arts" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="News" />
+      <outline title="Mornings With Gary Byron Podcast" xmlUrl="https://feeds.transistor.fm/mornings-with-gary-byron-podcast" type="rss" category="News" />
+      <outline title="Arkansas Razorbacks Basketball News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/arkansas-razorbacks-basketball-news-today-2-min-news-the-dai.xml" type="rss" category="News" />
+      <outline title="Galway Bay fm - Sports" xmlUrl="https://galwaybayfmsports.podbean.com/feed.xml" type="rss" category="Sports" />
+      <outline title="Harmonizing Success" xmlUrl="https://www.spreaker.com/show/6418590/episodes/feed" type="rss" category="Business" />
+      <outline title="World Today" xmlUrl="https://aezfm.meldingcloud.com/rss/program/46" type="rss" category="News" />
+      <outline title="Montreal Canadiens News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/montreal-canadiens-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Giggly Squad" xmlUrl="https://feeds.acast.com/public/shows/780a3042-864b-40fa-ae09-4557aec621c3" type="rss" category="Comedy" />
     </outline>
-    
-    
     <outline text="Photography">
-      
-      
-      <outline title="Canon Thailand" xmlUrl="https://www.canon.co.th/rss/" type="rss"/>
-      
-      
-      <outline title="ZoomCamera" xmlUrl="https://www.zoomcamera.net/feed/" type="rss"/>
-      
-      
-      <outline title="Thailand Photo" xmlUrl="https://www.thailandphoto.org/feed/" type="rss"/>
-      
-    
+      <outline title="Canon Thailand" xmlUrl="https://www.canon.co.th/rss/" type="rss" />
+      <outline title="ZoomCamera" xmlUrl="https://www.zoomcamera.net/feed/" type="rss" />
+      <outline title="Thailand Photo" xmlUrl="https://www.thailandphoto.org/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Apple">
-      
-      
-      <outline title="Mac Thai" xmlUrl="https://www.macthai.com/feed/" type="rss"/>
-      
-    
+      <outline title="Mac Thai" xmlUrl="https://www.macthai.com/feed/" type="rss" />
     </outline>
-    
-
     <outline text="YouTube">
-      <outline title="เดอะโซล พับลิชชิ่ง" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
-      <outline title="เวิร์คพอยท์ เอ็นเทอร์เทนเมนท์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3ZkCd7XtUREnjjt3cyY_gg" type="rss"/>
-      <outline title="เรื่องเล่าเช้านี้" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5wKpLWxAZBZrunls3mzwEw" type="rss"/>
-      <outline title="นัยรัตน์ ธนไวทย์โกเศส" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5zGJZpxeZPFcds5gFcDE7Q" type="rss"/>
-      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
-      <outline title="อนาสตาเซีย ราดซินสกายา" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC65k85L-snOe2AaDxhLHVtQ" type="rss"/>
-      <outline title="สถานีโทรทัศน์ช่อง 8 (CH8)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6x41swVZP3rEmy-ODxLMFA" type="rss"/>
-      <outline title="เจมส์ สตีเฟน &quot;จิมมี&quot; ดอนัลด์สัน" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
-      <outline title="Alan Chikin Chow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCMeCQ4wtdwQuoH7TNThL1A" type="rss"/>
-      <outline title="ซี เอนเตอร์เทนเมนต์ เอ็นเตอร์ไพรส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
-      <outline title="จีเอ็มเอ็ม แกรมมี่" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFWsjsN53Sqvg2pWhSFmWBQ" type="rss"/>
-      <outline title="BIBO TOY STUDIO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGcDOoUjxL2TNpC2HxmQRNw" type="rss"/>
-      <outline title="กร คุณาธิปอภิสิริ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI3m7jub7M3QwutCW5FhTLw" type="rss"/>
-      <outline title="เดอะ พลิ้งฟร็อก คอมปะนี" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIu-nhU37Tiqj-KjppUJ7Hg" type="rss"/>
-      <outline title="อาร์ สยาม" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLcCpNY-zaL3vEERD5rh5Ew" type="rss"/>
-      <outline title="ทีเคโอ กรุป โฮลดิงส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
-      <outline title="ยูทูบเบอร์และครีเอเตอร์ดิจิทัล" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNf-0CFebisYHzgizkFvFMg" type="rss"/>
-      <outline title="2 de Fevereiro de 2024" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP9MW9ATjUwwulqEYTbp-Mw" type="rss"/>
-      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
-      <outline title="ครอบครัวเจไจ๋แปน" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQMblUlfCEYZomqHa5ZEGLw" type="rss"/>
-      <outline title="แบล็กพิงก์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQi67q4kGdmnJaRzX81uK5g" type="rss"/>
-      <outline title="จีรภัทร์ สุกางโฮง" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR72PUHFxKZ_rwsPsruY5KQ" type="rss"/>
-      <outline title="แบงกิ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTHA9ZB9vGvERvgBh-fsHQA" type="rss"/>
-      <outline title="อลัน เฉิน สโตกส์ และ เฉิน สโตกส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUdKQXtKb1me2Gt1nz6tzdg" type="rss"/>
-      <outline title="วิโนธ จันดาร์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
-      <outline title="โหนกระแส" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXm0bpjlfB0AF-ZdPhT0K1A" type="rss"/>
-      <outline title="มูนบั๊ก เอ็นเตอร์เทนเมนท์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
-      <outline title="ณัฐธิชา นามวงษ์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdLGCJcIGu5ExzYN6CXtkIw" type="rss"/>
-      <outline title="กุลชาน กุมาร์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
-      <outline title="เนติเจน เนติรัตนไพบูลย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiHQ5AywCFKF6q-C5dIguVQ" type="rss"/>
-      <outline title="กามิกาเซ่" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjqZeIIXmNj3WS7auJjJFpg" type="rss"/>
-      <outline title="คัลเวอร์ แม็กซ์ เอนเตอร์เทนเมนต์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
-      <outline title="สุภาส จันทรา" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
-      <outline title="ไทยรัฐ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrFDdD-EE05N7gjwZho2wqw" type="rss"/>
-      <outline title="สถานีโทรทัศน์ช่อง 8 (CH8)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtBu8Wb2BUoduUXJS9Uss7Q" type="rss"/>
-      <outline title="องค์การกระจายเสียงและแพร่ภาพสาธารณะแห่งประเทศไทย" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvF4DIEWOnx9eiU0b7ghjIA" type="rss"/>
-      <outline title="เอวา เดียนา คิดิซิยูก" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCx790OVgpTC1UVBQIqu3gnQ" type="rss"/>
-      <outline title="Goldmines" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
-      <outline title="קים דונג ג'וןויו באק האפ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8gf4PK1Qth50lLHdvTCcA" type="rss"/>
+      <outline title="วิโนธ จันดาร์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+      <outline title="Goldmines" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
+      <outline title="Philip DeFranco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="MrBeast Gaming" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIPPMRA040LQr5QPyJEbmXA" type="rss" />
+      <outline title="HEARTROCKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4plRabXFGdAE6HP-tBQKdQ" type="rss" />
+      <outline title="Bay Riffer" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbOo-f3InU38IZV5tREzsNg" type="rss" />
+      <outline title="GMMTV RECORDS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_mceLIVkQun_Xcu1KBmfdw" type="rss" />
+      <outline title="LOVEiS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrNFXmtWRFgbMHYJpjS3_0g" type="rss" />
+      <outline title="Ch3Thailand" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC48h7Dst_hX82HxOf3xJw_w" type="rss" />
+      <outline title="YimYam TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcRu53iblqjNvJFFDLHikdA" type="rss" />
+      <outline title="GamGam Family" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjc2gNJGPYNIT8c8KiYIdcw" type="rss" />
+      <outline title="Grammy Big" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC150NxpFj0WLC38uhX8F-Rw" type="rss" />
+      <outline title="Like Nastya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+    </outline>
+    <outline text="Podcast">
+      <outline title="Mission To The Moon" xmlUrl="https://feed.podbean.com/missiontothemoonmm/feed.xml" type="rss" category="Self-Improvement" />
+      <outline title="People You May Know" xmlUrl="https://anchor.fm/s/3b752b88/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="คำนี้ดี" xmlUrl="https://anchor.fm/s/1104dcc34/podcast/rss" type="rss" category="Language Learning" />
+      <outline title="The Secret Sauce" xmlUrl="https://anchor.fm/s/1104e5104/podcast/rss" type="rss" category="Entrepreneurship" />
+      <outline title="หลวงปู่ปราโมทย์ ปาโมชฺโช วัดสวนสันติธรรม" xmlUrl="https://rss.libsyn.com/shows/50148/destinations/175305.xml" type="rss" category="Buddhism" />
+      <outline title="Morning Wealth" xmlUrl="https://anchor.fm/s/3f79955c/podcast/rss" type="rss" category="Investing" />
+      <outline title="8 Minute History" xmlUrl="https://anchor.fm/s/4e29cd60/podcast/rss" type="rss" category="History" />
+      <outline title="5 Minutes Good Time" xmlUrl="https://feed.podbean.com/fiveminutespodcast/feed.xml" type="rss" category="Self-Improvement" />
+      <outline title="THE MONEY COACH" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:260874515/sounds.rss" type="rss" category="Business" />
+      <outline title="Myth Universe" xmlUrl="https://feeds.megaphone.fm/mythuniverse" type="rss" category="History" />
+      <outline title="Untitled Case" xmlUrl="https://feeds.megaphone.fm/SHC6749074342" type="rss" category="True Crime" />
+      <outline title="File Not Found" xmlUrl="https://feed.podbean.com/filenotfoundpodcast/feed.xml" type="rss" category="True Crime" />
+      <outline title="พี่อ้อยพี่ฉอด พอดแคสต์" xmlUrl="https://feed.podbean.com/www.paoypchodpodcast.com/feed.xml" type="rss" category="Relationships" />
+      <outline title="คืนเผาผี Ghost Night" xmlUrl="https://anchor.fm/s/10226a1bc/podcast/rss" type="rss" category="Fiction" />
+      <outline title="Mission To The Moon Podcast" xmlUrl="https://feed.podbean.com/missiontothemoonpodcast/feed.xml" type="rss" category="Self-Improvement" />
+      <outline title="Global News Podcast" xmlUrl="https://podcasts.files.bbci.co.uk/p02nq0gn.rss" type="rss" category="Daily News" />
+      <outline title="6 Minute English" xmlUrl="https://podcasts.files.bbci.co.uk/p02pc9tn.rss" type="rss" category="Language Learning" />
+      <outline title="แปดบรรทัดครึ่ง" xmlUrl="https://feed.podbean.com/eighthalf/feed.xml" type="rss" category="Business" />
+      <outline title="ชวนดูดะ" xmlUrl="https://anchor.fm/s/f9b61364/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Mistery มิศวง" xmlUrl="https://anchor.fm/s/4b44e83c/podcast/rss" type="rss" category="True Crime" />
+      <outline title="ลงทุนแมน" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:915879652/sounds.rss" type="rss" category="Business" />
+      <outline title="Finnomena Podcast" xmlUrl="https://feed.podbean.com/finnomena/feed.xml" type="rss" category="Investing" />
+      <outline title="วันนี้เป็นยังไงบ้าง" xmlUrl="https://feed.podbean.com/howareyoutoday/feed.xml" type="rss" category="How To" />
+      <outline title="Salmon Podcast" xmlUrl="https://feeds.megaphone.fm/SHC6150463298" type="rss" category="Society &amp; Culture" />
+      <outline title="All Ears English Podcast" xmlUrl="https://feeds.megaphone.fm/allearsenglish" type="rss" category="Language Learning" />
+      <outline title="Mission To The Moon #สรุปหนังสือ" xmlUrl="https://feed.podbean.com/mmremaster/feed.xml" type="rss" category="Books" />
+      <outline title="คุยให้คิด" xmlUrl="https://podcast.thaipbs.or.th/program-rss.php?id=122" type="rss" category="TV &amp; Film" />
+      <outline title="The Library" xmlUrl="https://anchor.fm/s/799b683c/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Geek Forever’s Podcast" xmlUrl="https://feed.podbean.com/tharadhol/feed.xml" type="rss" category="Entrepreneurship" />
+      <outline title="เกลา นิสัยอันตราย PODCAST" xmlUrl="https://anchor.fm/s/23e4b68c/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Open Relationship" xmlUrl="https://anchor.fm/s/c62340bc/podcast/rss" type="rss" category="Relationships" />
+      <outline title="Learning Easy English" xmlUrl="https://podcasts.files.bbci.co.uk/p0hsrwv5.rss" type="rss" category="Language Learning" />
+      <outline title="TOP TO TOE" xmlUrl="https://anchor.fm/s/9bac2470/podcast/rss" type="rss" category="Science" />
+      <outline title="Nopadol’s Story" xmlUrl="https://feed.podbean.com/nopadolstory/feed.xml" type="rss" category="Management" />
+      <outline title="Midnight Diary" xmlUrl="https://anchor.fm/s/f6547878/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="TED Talks Daily" xmlUrl="https://feeds.acast.com/public/shows/67587e77c705e441797aff96" type="rss" category="Society &amp; Culture" />
+      <outline title="Luangpor Paisal Visalo‘s Podcast (ธรรมะ จาก หลวงพ่อไพศาล วิสาโล)" xmlUrl="https://feed.podbean.com/watpasukato/feed.xml" type="rss" category="Buddhism" />
+      <outline title="NHKラジオニュース" xmlUrl="https://www.nhk.or.jp/s-media/news/podcast/list/v1/all.xml" type="rss" category="News" />
+      <outline title="Shortcut ปรัชญา" xmlUrl="https://anchor.fm/s/f40f9890/podcast/rss" type="rss" category="Philosophy" />
+      <outline title="The Daily" xmlUrl="https://feeds.simplecast.com/Sl5CSM3S" type="rss" category="Daily News" />
+      <outline title="Learning English Conversations" xmlUrl="https://podcasts.files.bbci.co.uk/p02pc9zn.rss" type="rss" category="Language Learning" />
+      <outline title="Luke's ENGLISH Podcast - Learn British English with Luke Thompson" xmlUrl="https://feeds.acast.com/public/shows/62b0ada25c7ea10012f541cb" type="rss" category="Language Learning" />
+      <outline title="Readery" xmlUrl="https://anchor.fm/s/f09c9e60/podcast/rss" type="rss" category="Books" />
+      <outline title="The Money Case" xmlUrl="https://anchor.fm/s/ab15dbf4/podcast/rss" type="rss" category="How To" />
+      <outline title="The Diary Of A CEO with Steven Bartlett" xmlUrl="https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn" type="rss" category="Business" />
+      <outline title="R U OK" xmlUrl="https://anchor.fm/s/f0c5a904/podcast/rss" type="rss" category="Mental Health" />
+      <outline title="หูยาวเล่าเรื่อง" xmlUrl="https://podcast.thaipbs.or.th/program-rss.php?id=161" type="rss" category="TV &amp; Film" />
+      <outline title="The Mel Robbins Podcast" xmlUrl="https://feeds.simplecast.com/UCwaTX1J" type="rss" category="Self-Improvement" />
+      <outline title="English At Work" xmlUrl="https://anchor.fm/s/4e2a1540/podcast/rss" type="rss" category="Language Learning" />
+    </outline>
+    <outline text="Social">
+      <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
     </outline>
   </body>
-  
-
 </opml>

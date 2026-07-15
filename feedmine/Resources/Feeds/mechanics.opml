@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Mechanics, Engineering &amp; Repair Feeds</title>
+  </head>
+  <body>
+    <outline text="Auto Repair &amp; DIY Mechanics">
+      <outline title="Humble Mechanic" xmlUrl="https://humblemechanic.com/feed/" type="rss" />
+      <outline title="Auto Service World" xmlUrl="https://www.autoserviceworld.com/feed/" type="rss" />
+      <outline title="TechShop Magazine" xmlUrl="https://www.techshopmag.com/feed/" type="rss" />
+      <outline title="Tomorrow's Technician" xmlUrl="https://www.tomorrowstechnician.com/feed/" type="rss" />
+      <outline title="Engine Builder Magazine" xmlUrl="https://www.enginebuildermag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Machining &amp; Metalworking">
+      <outline title="Practical Machinist" xmlUrl="https://www.practicalmachinist.com/rss/" type="rss" />
+      <outline title="Canadian Metalworking" xmlUrl="https://www.canadianmetalworking.com/feed/" type="rss" />
+      <outline title="CNC Cookbook" xmlUrl="https://www.cnccookbook.com/feed/" type="rss" />
+      <outline title="MachinistBlog" xmlUrl="https://www.machinistblog.com/feed/" type="rss" />
+    </outline>
+    <outline text="Welding">
+      <outline title="American Welding Society" xmlUrl="https://www.aws.org/rss/" type="rss" />
+    </outline>
+    <outline text="Popular Mechanics &amp; How-To">
+      <outline title="Popular Mechanics" xmlUrl="https://www.popularmechanics.com/rss/all.xml" type="rss" />
+      <outline title="Hackaday" xmlUrl="https://hackaday.com/feed/" type="rss" />
+      <outline title="Make: Magazine" xmlUrl="https://makezine.com/feed/" type="rss" />
+      <outline title="Garage Journal" xmlUrl="https://www.garagejournal.com/feed/" type="rss" />
+    </outline>
+    <outline text="Tools &amp; Equipment">
+      <outline title="ToolGuyd" xmlUrl="https://toolguyd.com/feed/" type="rss" />
+      <outline title="Pro Tool Reviews" xmlUrl="https://www.protoolreviews.com/feed/" type="rss" />
+      <outline title="Tools in Action" xmlUrl="https://toolsinaction.com/feed/" type="rss" />
+      <outline title="Home Fixated" xmlUrl="https://homefixated.com/feed/" type="rss" />
+    </outline>
+    <outline text="Engineering Publications">
+      <outline title="Engineering.com" xmlUrl="https://www.engineering.com/rss" type="rss" />
+      <outline title="SAE International" xmlUrl="https://www.sae.org/rss" type="rss" />
+      <outline title="Interesting Engineering" xmlUrl="https://interestingengineering.com/feed" type="rss" />
+      <outline title="Design World" xmlUrl="https://www.designworldonline.com/feed/" type="rss" />
+      <outline title="Power Transmission Engineering" xmlUrl="https://www.powertransmission.com/rss" type="rss" />
+    </outline>
+    <outline text="3D Printing &amp; CNC Fabrication">
+      <outline title="3DPrint.com" xmlUrl="https://3dprint.com/feed/" type="rss" />
+      <outline title="3D Printing Industry" xmlUrl="https://3dprintingindustry.com/feed/" type="rss" />
+      <outline title="CNC Kitchen" xmlUrl="https://www.cnckitchen.com/blog?format=RSS" type="rss" />
+    </outline>
+    <outline text="Restoration &amp; Rebuilds">
+      </outline>
+    <outline text="Aviation Mechanics">
+      <outline title="AVweb" xmlUrl="https://www.avweb.com/rss/" type="rss" />
+      <outline title="AOPA — Aircraft Maintenance" xmlUrl="https://www.aopa.org/rss" type="rss" />
+      <outline title="Kitplanes Magazine" xmlUrl="https://www.kitplanes.com/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts — Mechanics &amp; Making">
+      </outline>
+    <outline text="YouTube — Mechanics &amp; Fabrication">
+      <outline title="AvE (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChWv6Pn_zP0rI6lgGt3MyfA" type="rss" />
+      <outline title="Real Engineering (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR1IuLEqb6UEA_zQ81kwXfg" type="rss" />
+      <outline title="Practical Engineering (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMOqf8ab-42UUQIdVoKwjlQ" type="rss" />
+      <outline title="Stuff Made Here (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj1VqrHhDte54oLgPG4xpuQ" type="rss" />
+    </outline>
+  </body>
+</opml>

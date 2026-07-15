@@ -4,9 +4,12 @@
     <title>Rheinland-Pfalz Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="Uni Mainz" xmlUrl="https://www.uni-mainz.de/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="Uni Mainz" xmlUrl="https://www.uni-mainz.de/rss" type="rss" />
+    </outline>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

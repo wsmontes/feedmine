@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Poetry — Journals, Blogs &amp; Communities</title>
+  </head>
+  <body>
+    <outline text="Poetry Magazines &amp; Journals">
+      <outline title="Poetry Daily" xmlUrl="https://poems.com/feed/" type="rss" />
+      <outline title="The Poetry Society (UK)" xmlUrl="https://poetrysociety.org.uk/rss/" type="rss" />
+      <outline title="The Kenyon Review — Poetry" xmlUrl="https://kenyonreview.org/category/poetry/feed/" type="rss" />
+      <outline title="Poetry London" xmlUrl="https://poetrylondon.co.uk/feed/" type="rss" />
+    </outline>
+    <outline text="Poetry Blogs &amp; Communities">
+      <outline title="Button Poetry" xmlUrl="https://buttonpoetry.com/feed/" type="rss" />
+      <outline title="Write Out Loud" xmlUrl="https://www.writeoutloud.net/rss" type="rss" />
+      <outline title="Poetry Daily Blog" xmlUrl="https://poems.com/feed/" type="rss" />
+      <outline title="The Poetry Department" xmlUrl="https://thepoetrydepartment.com/feed/" type="rss" />
+      <outline title="Via Negativa" xmlUrl="https://www.vianegativa.us/feed/" type="rss" />
+      <outline title="32 Poems Blog" xmlUrl="https://32poems.com/rss" type="rss" />
+      <outline title="Poetry Blog" xmlUrl="https://poetryblog.org/feed/" type="rss" />
+      <outline title="Poet Laureate Blog" xmlUrl="https://www.loc.gov/rss/poetry/" type="rss" />
+    </outline>
+    <outline text="Spoken Word &amp; Slam Poetry">
+      <outline title="The Poetry Archive" xmlUrl="https://poetryarchive.org/rss/" type="rss" />
+    </outline>
+    <outline text="Haiku &amp; Short Form Poetry">
+      <outline title="The Haiku Foundation" xmlUrl="https://www.thehaikufoundation.org/rss/" type="rss" />
+      <outline title="Tinywords" xmlUrl="https://tinywords.com/feed/" type="rss" />
+    </outline>
+    <outline text="Brazilian Poesia">
+      <outline title="Mallarmargens" xmlUrl="https://mallarmargens.com/feed/" type="rss" />
+      <outline title="Zunái (Revista de Poesia)" xmlUrl="https://zunai.com.br/rss/" type="rss" />
+    </outline>
+    <outline text="Poetry Podcasts">
+      </outline>
+    <outline text="YouTube — Poetry &amp; Spoken Word">
+      </outline>
+    <outline text="More Poetry Journals &amp; Reviews">
+      <outline title="The Common — Poetry" xmlUrl="https://www.thecommononline.org/rss/poetry/" type="rss" />
+      <outline title="Guernica — Poetry" xmlUrl="https://www.guernicamag.com/rss/poetry/" type="rss" />
+      <outline title="Fence Magazine" xmlUrl="https://www.fenceportal.org/feed/" type="rss" />
+      <outline title="Poetry Wales" xmlUrl="https://poetrywales.co.uk/feed/" type="rss" />
+      <outline title="The Poetry School" xmlUrl="https://poetryschool.com/rss/" type="rss" />
+      <outline title="Magma Poetry" xmlUrl="https://magmapoetry.com/rss/" type="rss" />
+    </outline>
+    <outline text="Poet Blogs &amp; Personal Sites">
+      <outline title="Brain Pickings — Poetry" xmlUrl="https://www.themarginalian.org/tag/poetry/feed/" type="rss" />
+      <outline title="The Poetry Shed" xmlUrl="https://abegailmorley.wordpress.com/feed/" type="rss" />
+      <outline title="Poethead" xmlUrl="https://poethead.wordpress.com/feed/" type="rss" />
+      <outline title="Poetry and Process" xmlUrl="https://poetryandprocess.com/feed/" type="rss" />
+      <outline title="The Friday Poem" xmlUrl="https://thefridaypoem.com/feed/" type="rss" />
+      <outline title="Rust and Moth" xmlUrl="https://rustandmoth.com/feed/" type="rss" />
+    </outline>
+    <outline text="Poetry in Translation">
+      <outline title="Poetry Translation Centre" xmlUrl="https://www.poetrytranslation.org/rss" type="rss" />
+      <outline title="Modern Poetry in Translation" xmlUrl="https://modernpoetryintranslation.com/feed/" type="rss" />
+      <outline title="Words Without Borders" xmlUrl="https://wordswithoutborders.org/feed/" type="rss" />
+    </outline>
+    <outline text="Young Poets &amp; Education">
+      <outline title="Young Poets Network" xmlUrl="https://www.youngpoetsnetwork.org.uk/rss" type="rss" />
+      <outline title="The Poetry School — Courses" xmlUrl="https://poetryschool.com/rss/courses/" type="rss" />
+      <outline title="Poetry Class" xmlUrl="https://poetryclass.poetrysociety.org.uk/rss/" type="rss" />
+      <outline title="TeachLivingPoets" xmlUrl="https://teachlivingpoets.com/feed/" type="rss" />
+    </outline>
+    <outline text="More Poetry YouTube &amp; Podcasts">
+      <outline title="Poet as Radio" xmlUrl="https://feeds.libsyn.com/poetasradio" type="rss" />
+    </outline>
+  </body>
+</opml>

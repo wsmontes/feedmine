@@ -7,8 +7,10 @@
     <outline text="News">
       <outline title="Regione FVG" xmlUrl="https://www.regione.fvg.it/feed/" type="rss" />
     </outline>
-<outline text="Education">
+    <outline text="Education">
       <outline title="Università di Trieste" xmlUrl="https://www.units.it/feed/" type="rss" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

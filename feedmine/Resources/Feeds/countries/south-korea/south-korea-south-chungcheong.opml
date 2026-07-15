@@ -4,9 +4,12 @@
     <title>South Chungcheong Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Chungnam Ilbo" xmlUrl="https://www.chungnamilbo.com/rss/" type="rss" />
+    <outline text="News">
+      <outline title="Chungnam Ilbo" xmlUrl="https://www.chungnamilbo.com/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+  </body>
+</opml>

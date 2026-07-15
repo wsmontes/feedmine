@@ -10,12 +10,10 @@
     </outline>
     <outline text="Sports">
       <outline title="Ontario Hockey League" xmlUrl="https://ontariohockeyleague.com/feed/" type="rss" />
-      <outline title="Maple Leafs Hot Stove" xmlUrl="https://mapleleafshotstove.com/feed/" type="rss" />
       <outline title="Blue Jays Nation" xmlUrl="https://bluejaysnation.com/feed/" type="rss" />
       <outline title="Raptors Republic" xmlUrl="https://www.raptorsrepublic.com/feed/" type="rss" />
     </outline>
     <outline text="Culture">
-      <outline title="CBC Arts" xmlUrl="https://www.cbc.ca/webfeed/rss/rss-arts" type="rss" />
       <outline title="TIFF" xmlUrl="https://www.tiff.net/feed/" type="rss" />
       <outline title="Stratford Festival" xmlUrl="https://www.stratfordfestival.ca/feed/" type="rss" />
     </outline>
@@ -24,7 +22,6 @@
       <outline title="Western University" xmlUrl="https://news.westernu.ca/feed/" type="rss" />
     </outline>
     <outline text="Technology">
-      <outline title="MaRS Discovery District" xmlUrl="https://www.marsdd.com/feed/" type="rss" />
       <outline title="Vector Institute" xmlUrl="https://vectorinstitute.ai/feed/" type="rss" />
       <outline title="TechAlliance" xmlUrl="https://www.techalliance.ca/feed/" type="rss" />
     </outline>
@@ -32,18 +29,15 @@
       <outline title="Ontario Chamber of Commerce" xmlUrl="https://occ.ca/feed/" type="rss" />
     </outline>
     <outline text="Podcasts">
-      <outline title="The Agenda with Steve Paikin" xmlUrl="https://www.tvo.org/podcast/the-agenda-with-steve-paikin/feed/" type="rss" />
       <outline title="ON Politics" xmlUrl="https://www.tvo.org/podcast/onpolitics/feed/" type="rss" />
       <outline title="River of God Church Ontario Canada" xmlUrl="https://podpoint.com/feed/7620" type="rss" category="Religion" />
       <outline title="Fast and Reliable Ontario Bad Credit Car Loans – Get Approved Today!" xmlUrl="https://feeds.hubhopper.com/f493c2028f17fe98522175999136f76e.rss" type="rss" category="Society" />
-      <outline title="Wider Lens" xmlUrl="https://feeds.simplecast.com/cta1smk4" type="rss" category="Tv" />
       <outline title="Rockway Mennonite Church - Sermon Audio" xmlUrl="https://rockwaymc.ca/feed/?post_type=wpfc_sermon" type="rss" category="Religion" />
       <outline title="Rev Dr DANIEL ASIAN ICPC.OGBC@GMAIL.COM PRESIDENT OFGBC ONTARIO CANADA 🇨🇦+ 16137002477CALL FOR PRAYERS" xmlUrl="https://anchor.fm/s/3358e110/podcast/rss" type="rss" category="Religion" />
       <outline title="Village Community Church. Podcast (Ajax, Ontario. Canada)" xmlUrl="https://anchor.fm/s/510825f4/podcast/rss" type="rss" category="Religion" />
       <outline title="The Gate Alliance Church" xmlUrl="https://anchor.fm/s/9fdadd20/podcast/rss" type="rss" category="Religion" />
       <outline title="Getting to Know Ontario, Canada" xmlUrl="https://anchor.fm/s/1124e4144/podcast/rss" type="rss" category="Education" />
       <outline title="Health Care in Ontario, Canada" xmlUrl="https://anchor.fm/s/1124324bc/podcast/rss" type="rss" category="Education" />
-      <outline title="The StudyRealEstate Podcast for Ontario, Canada" xmlUrl="https://feed.podbean.com/studyrealestate/feed.xml" type="rss" category="Business" />
       <outline title="Majid Al-Pakistani Min Scarborough, Ontario, CANADA" xmlUrl="https://anchor.fm/s/7ceae1c/podcast/rss" type="rss" category="Kids" />
       <outline title="Meir Gluzberg - Conversations about the Real Estate Industry in Ontario, Canada." xmlUrl="https://anchor.fm/s/463fdbf8/podcast/rss" type="rss" category="Business" />
       <outline title="Ontario-Canada Common Law" xmlUrl="https://app.talkshoe.com/rss-ontariocanada-common-law.xml" type="rss" />
@@ -54,8 +48,7 @@
     </outline>
     <outline text="Cities">
       <outline text="Ottawa">
-        <outline title="Ottawa Citizen" xmlUrl="https://ottawacitizen.com/feed/" type="rss" />
-      </outline>
+        </outline>
       <outline text="Mississauga">
         <outline title="City of Mississauga" xmlUrl="https://www.mississauga.ca/feed/" type="rss" />
       </outline>
@@ -63,8 +56,7 @@
         <outline title="Hamilton Spectator" xmlUrl="https://www.thespec.com/feed/" type="rss" />
       </outline>
       <outline text="Kitchener-Waterloo">
-        <outline title="Waterloo Region Record" xmlUrl="https://www.therecord.com/feed/" type="rss" />
-      </outline>
+        </outline>
       <outline text="London">
         <outline title="London Free Press" xmlUrl="https://lfpress.com/feed/" type="rss" />
       </outline>
@@ -73,5 +65,7 @@
         <outline title="City of Windsor" xmlUrl="https://www.citywindsor.ca/feed/" type="rss" />
       </outline>
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

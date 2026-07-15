@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Geology, Geography &amp; Earth Sciences</title>
+  </head>
+  <body>
+    <outline text="Geology News &amp; Research">
+      <outline title="EGU Blogs (European Geosciences)" xmlUrl="https://blogs.egu.eu/rss/" type="rss" />
+      <outline title="AGU (American Geophysical Union)" xmlUrl="https://eos.org/rss" type="rss" />
+      <outline title="EarthSky" xmlUrl="https://earthsky.org/feed/" type="rss" />
+      <outline title="Geology Page" xmlUrl="https://www.geologypage.com/feed/" type="rss" />
+      <outline title="Live Science — Planet Earth" xmlUrl="https://www.livescience.com/planet-earth/feed" type="rss" />
+    </outline>
+    <outline text="Volcanoes &amp; Earthquakes">
+      <outline title="Earthquake Report" xmlUrl="https://earthquake-report.com/feed/" type="rss" />
+      <outline title="VolcanoCafe" xmlUrl="https://www.volcanocafe.org/feed/" type="rss" />
+    </outline>
+    <outline text="Mineralogy &amp; Gemstones">
+      </outline>
+    <outline text="Geography &amp; Cartography">
+      <outline title="Geographical Magazine (UK)" xmlUrl="https://geographical.co.uk/rss" type="rss" />
+      <outline title="GIS Geography" xmlUrl="https://gisgeography.com/feed/" type="rss" />
+      <outline title="Google Maps Blog" xmlUrl="https://blog.google/products/maps/rss/" type="rss" />
+      <outline title="OpenStreetMap Blog" xmlUrl="https://blog.openstreetmap.org/feed/" type="rss" />
+      <outline title="Atlas Obscura" xmlUrl="https://www.atlasobscura.com/feeds/latest" type="rss" />
+      <outline title="WorldMapper" xmlUrl="https://worldmapper.org/rss/" type="rss" />
+    </outline>
+    <outline text="Paleontology &amp; Fossils">
+      <outline title="FossilEra Blog" xmlUrl="https://www.fossilera.com/blog/rss" type="rss" />
+      <outline title="Letters from Gondwana" xmlUrl="https://paleonerdish.wordpress.com/feed/" type="rss" />
+      <outline title="Equatorial Minnesota (Dinosaurs)" xmlUrl="https://equatorialminnesota.blogspot.com/feeds/posts/default" type="rss" />
+    </outline>
+    <outline text="Climate &amp; Weather">
+      <outline title="NOAA Climate.gov" xmlUrl="https://www.climate.gov/rss" type="rss" />
+      <outline title="NASA Climate" xmlUrl="https://climate.nasa.gov/rss/" type="rss" />
+      <outline title="Climate Central" xmlUrl="https://www.climatecentral.org/rss" type="rss" />
+    </outline>
+    <outline text="Geology Podcasts">
+      <outline title="Palaeocast" xmlUrl="https://feeds.libsyn.com/palaeocast" type="rss" />
+    </outline>
+    <outline text="YouTube — Geology &amp; Geography">
+      </outline>
+    <outline text="More Geology &amp; Geography Sites">
+      <outline title="Geoawesomeness" xmlUrl="https://geoawesomeness.com/feed/" type="rss" />
+      <outline title="GIS Lounge" xmlUrl="https://www.gislounge.com/feed/" type="rss" />
+      <outline title="Rock and Gem Magazine" xmlUrl="https://www.rockngem.com/feed/" type="rss" />
+      <outline title="Geology Science" xmlUrl="https://geologyscience.com/feed/" type="rss" />
+      <outline title="GeoExPro" xmlUrl="https://geoexpro.com/feed/" type="rss" />
+      <outline title="Exploration &amp; Mining Geology" xmlUrl="https://www.explorationgeology.com/feed/" type="rss" />
+      <outline title="Planet Geography" xmlUrl="https://www.planetgeography.com/feed/" type="rss" />
+    </outline>
+    <outline text="More Geography YouTube">
+      </outline>
+  </body>
+</opml>

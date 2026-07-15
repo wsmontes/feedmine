@@ -1,8 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?><opml version="1.0"><head><title>Environment</title></head><body><outline text="Environment">
-<outline title="Guardian Environment" xmlUrl="https://www.theguardian.com/us/environment/rss" type="rss"/>
-<outline title="NPR Environment" xmlUrl="https://feeds.npr.org/1025/rss.xml" type="rss"/>
-<outline title="The Conversation" xmlUrl="https://theconversation.com/au/environment/articles.atom" type="rss"/>
-<outline title="Vox Energy" xmlUrl="https://www.vox.com/rss/energy-and-environment/index.xml" type="rss"/>
-<outline title="Good Good Good" xmlUrl="https://www.goodgoodgood.co/articles/rss.xml" type="rss"/>
-<outline title="Conservation International" xmlUrl="http://feeds.feedburner.com/ConservationInternationalBlog" type="rss"/>
-</outline></body></opml>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Nature, Ecology &amp; Environment</title>
+  </head>
+  <body>
+    <outline text="Environment &amp; Climate News">
+      <outline title="Guardian Environment" xmlUrl="https://www.theguardian.com/us/environment/rss" type="rss" />
+      <outline title="NPR Environment" xmlUrl="https://feeds.npr.org/1025/rss.xml" type="rss" />
+      <outline title="The Conversation — Environment" xmlUrl="https://theconversation.com/au/environment/articles.atom" type="rss" />
+      <outline title="Vox — Energy &amp; Environment" xmlUrl="https://www.vox.com/rss/energy-and-environment/index.xml" type="rss" />
+      <outline title="Good Good Good" xmlUrl="https://www.goodgoodgood.co/articles/rss.xml" type="rss" />
+      <outline title="Grist" xmlUrl="https://grist.org/feed/" type="rss" />
+      <outline title="Inside Climate News" xmlUrl="https://insideclimatenews.org/feed/" type="rss" />
+      <outline title="Mongabay" xmlUrl="https://news.mongabay.com/feed/" type="rss" />
+      <outline title="Carbon Brief" xmlUrl="https://www.carbonbrief.org/feed/" type="rss" />
+      <outline title="Climate Home News" xmlUrl="https://www.climatechangenews.com/feed/" type="rss" />
+      <outline title="The Ecologist" xmlUrl="https://theecologist.org/rss" type="rss" />
+    </outline>
+    <outline text="Nature &amp; Wildlife">
+      <outline title="BBC Earth" xmlUrl="https://www.bbcearth.com/rss" type="rss" />
+      <outline title="The Wildlife Society" xmlUrl="https://wildlife.org/rss/" type="rss" />
+      <outline title="BirdLife International" xmlUrl="https://www.birdlife.org/rss" type="rss" />
+      <outline title="Defenders of Wildlife" xmlUrl="https://defenders.org/rss" type="rss" />
+      <outline title="Wildlife Conservation Society" xmlUrl="https://newsroom.wcs.org/rss" type="rss" />
+    </outline>
+    <outline text="Conservation">
+      <outline title="Conservation International" xmlUrl="http://feeds.feedburner.com/ConservationInternationalBlog" type="rss" />
+      <outline title="Rainforest Alliance" xmlUrl="https://www.rainforest-alliance.org/rss" type="rss" />
+      <outline title="The Rewilding Institute" xmlUrl="https://rewilding.org/feed/" type="rss" />
+      <outline title="Plantlife Blog" xmlUrl="https://www.plantlife.org.uk/rss/" type="rss" />
+      <outline title="The Wildlife Trusts" xmlUrl="https://www.wildlifetrusts.org/rss" type="rss" />
+    </outline>
+    <outline text="Natural History &amp; Science">
+      <outline title="Earth Touch News" xmlUrl="https://www.earthtouchnews.com/rss/" type="rss" />
+      <outline title="Cool Green Science (TNC)" xmlUrl="https://blog.nature.org/science/rss/" type="rss" />
+    </outline>
+    <outline text="Sustainability &amp; Green Living">
+      <outline title="Inhabitat" xmlUrl="https://inhabitat.com/feed/" type="rss" />
+      <outline title="Earth911" xmlUrl="https://earth911.com/feed/" type="rss" />
+      <outline title="Sierra Club Blog" xmlUrl="https://www.sierraclub.org/rss" type="rss" />
+      <outline title="Greenpeace News" xmlUrl="https://www.greenpeace.org/international/rss/" type="rss" />
+      <outline title="350.org Blog" xmlUrl="https://350.org/rss/" type="rss" />
+    </outline>
+    <outline text="Brazilian Nature &amp; Ecology">
+      <outline title="((o))eco — Jornalismo Ambiental" xmlUrl="https://www.oeco.org.br/feed/" type="rss" />
+      <outline title="Amazônia Real" xmlUrl="https://amazoniareal.com.br/feed/" type="rss" />
+      <outline title="SOS Mata Atlântica" xmlUrl="https://www.sosma.org.br/rss/" type="rss" />
+    </outline>
+    <outline text="Nature Podcasts">
+      </outline>
+    <outline text="YouTube — Nature &amp; Ecology">
+      </outline>
+  </body>
+</opml>

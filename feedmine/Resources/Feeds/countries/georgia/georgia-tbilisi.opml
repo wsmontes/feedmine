@@ -5,8 +5,9 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="Tbilisi Podcast" xmlUrl="https://feeds.captivate.fm/tbilisipodcast" type="rss" category="Society" />
       <outline title="პოდკასტების სერია პროექტების მართვის შესახებ" xmlUrl="https://anchor.fm/s/751c8f70/podcast/rss" type="rss" category="Business" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

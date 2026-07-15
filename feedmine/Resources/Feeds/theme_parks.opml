@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Theme Parks, Rollercoasters &amp; Amusement Parks</title>
+  </head>
+  <body>
+    <outline text="Theme Park News &amp; Industry">
+      <outline title="Blooloop" xmlUrl="https://blooloop.com/feed/" type="rss" />
+      <outline title="Theme Park Tribune" xmlUrl="https://www.themeparktribune.com/feed/" type="rss" />
+      <outline title="Coaster101" xmlUrl="https://www.coaster101.com/feed/" type="rss" />
+      <outline title="Attractions Magazine" xmlUrl="https://attractionsmagazine.com/feed/" type="rss" />
+      <outline title="Park World Magazine" xmlUrl="https://www.parkworld-online.com/rss/" type="rss" />
+      <outline title="InterPark Magazine" xmlUrl="https://www.interpark.co.uk/rss/" type="rss" />
+    </outline>
+    <outline text="Disney Parks &amp; World">
+      <outline title="Disney Parks Blog" xmlUrl="https://disneyparks.disney.go.com/blog/rss/" type="rss" />
+      <outline title="WDW News Today" xmlUrl="https://wdwnt.com/feed/" type="rss" />
+      <outline title="Disney Food Blog" xmlUrl="https://www.disneyfoodblog.com/feed/" type="rss" />
+      <outline title="AllEars.net" xmlUrl="https://allears.net/feed/" type="rss" />
+      <outline title="MickeyBlog" xmlUrl="https://mickeyblog.com/feed/" type="rss" />
+      <outline title="Disney Tourist Blog" xmlUrl="https://www.disneytouristblog.com/feed/" type="rss" />
+      <outline title="Inside the Magic" xmlUrl="https://insidethemagic.net/feed/" type="rss" />
+    </outline>
+    <outline text="Universal Studios &amp; Orlando">
+      <outline title="Universal Orlando Blog" xmlUrl="https://blog.universalorlando.com/rss/" type="rss" />
+      <outline title="Orlando Informer" xmlUrl="https://orlandoinformer.com/feed/" type="rss" />
+      <outline title="Orlando ParkStop" xmlUrl="https://orlandoparkstop.com/feed/" type="rss" />
+      <outline title="Theme Park University" xmlUrl="https://themeparkuniversity.com/feed/" type="rss" />
+    </outline>
+    <outline text="Roller Coasters &amp; Thrill Rides">
+      <outline title="CoasterHub" xmlUrl="https://coasterhub.com/feed/" type="rss" />
+      <outline title="Roller Coaster Philosophy" xmlUrl="https://rollercoasterphilosophy.com/feed/" type="rss" />
+      <outline title="CoasterForce" xmlUrl="https://coasterforce.com/rss" type="rss" />
+      <outline title="European Coaster Club" xmlUrl="https://www.coasterclub.org/rss" type="rss" />
+      <outline title="Coaster Nation" xmlUrl="https://www.coasternation.com/feed/" type="rss" />
+      <outline title="Coaster Kings" xmlUrl="https://www.thecoasterkings.com/feed/" type="rss" />
+    </outline>
+    <outline text="Water &amp; Adventure Parks">
+      <outline title="Splash Magazine" xmlUrl="https://www.splashmagazine.com/rss/" type="rss" />
+    </outline>
+    <outline text="Legoland &amp; Family Parks">
+      </outline>
+    <outline text="Theme Park Podcasts">
+      <outline title="CoasterRadio" xmlUrl="https://feeds.libsyn.com/coasterradio" type="rss" />
+      <outline title="WDW Radio" xmlUrl="https://feeds.libsyn.com/wdwradio" type="rss" />
+      <outline title="The Season Pass" xmlUrl="https://feeds.libsyn.com/seasonpasspodcast" type="rss" />
+    </outline>
+    <outline text="YouTube — Theme Parks &amp; Coasters">
+      </outline>
+  </body>
+</opml>

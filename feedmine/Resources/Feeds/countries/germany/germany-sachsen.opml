@@ -6,7 +6,6 @@
   <body>
     <outline text="News">
       <outline title="Sächsische Zeitung" xmlUrl="https://www.saechsische.de/rss" type="rss" />
-      <outline title="Leipziger Volkszeitung" xmlUrl="https://www.lvz.de/rss" type="rss" />
     </outline>
     <outline text="Politics" />
     <outline text="Education" />
@@ -15,7 +14,6 @@
     </outline>
     <outline text="Podcasts">
       <outline title="West-östlicher Alman" xmlUrl="https://alman.podigee.io/feed/mp3" type="rss" category="Society &amp; Culture" />
-      <outline title="2 Blokes On 2 Bikes" xmlUrl="https://anchor.fm/s/f3c02580/podcast/rss" type="rss" category="Automotive" />
       <outline title="Slothful Slumber" xmlUrl="https://anchor.fm/s/105836214/podcast/rss" type="rss" category="Mental Health" />
       <outline title="Er Sie &amp; Ich" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:221399707/sounds.rss" type="rss" category="Comedy" />
       <outline title="The Gist" xmlUrl="https://feeds.simplecast.com/PVS_9LQC" type="rss" category="Daily News" />
@@ -28,20 +26,17 @@
       <outline title="Der Fitnessanleitung Podcast" xmlUrl="https://anchor.fm/s/2af11164/podcast/rss" type="rss" category="Fitness" />
       <outline title="Show-Lokal Vogtland" xmlUrl="http://www.show-lokal.de/podcasts/RSS_feed_itunes.xml" type="rss" category="TV &amp; Film" />
       <outline title="Mensch, Meike!" xmlUrl="https://mbk.podcasterin.de/menschmeike.rss" type="rss" category="Comedy" />
-      <outline title="Radio Deutschland Eins - Das Talkradio" xmlUrl="http://live.radio-deutschland-eins.com/podcast/feed901.xml" type="rss" category="Politics" />
       <outline title="GT-Talk der GT und Langstrecken Podcast" xmlUrl="https://meinsportpodcast.de/motorsport/gt-talk-der-podcast-zur-gt-und-langstrecke/feed/" type="rss" category="Sports" />
       <outline title="Geld für die Welt" xmlUrl="https://anchor.fm/s/ffa40650/podcast/rss" type="rss" category="Politics" />
       <outline title="Feuer&amp;Flamme Mindset" xmlUrl="https://q2myzo.podcaster.de/feuerundflamme.rss" type="rss" category="Self-Improvement" />
       <outline title="Bei uns doch nicht! | Podcast von chronik.LE" xmlUrl="https://anchor.fm/s/5adb0d94/podcast/rss" type="rss" category="Politics" />
       <outline title="Sachsen-Anhalt Podcast" xmlUrl="https://anchor.fm/s/3bc6d50/podcast/rss" type="rss" category="Entertainment News" />
-      <outline title="freie-radios.net - aktuelle Beitraege" xmlUrl="https://www.freie-radios.net/portal/podcast.php?rss" type="rss" category="News" />
       <outline title="RADIOREISE mit Alexander Tauscher - macht Reiselust!" xmlUrl="https://anchor.fm/s/6a6b048/podcast/rss" type="rss" category="Places &amp; Travel" />
       <outline title="Mit Sicherheit Motorsport. Der Podcast des DMSB" xmlUrl="https://rss.buzzsprout.com/2140902.rss" type="rss" category="Sports" />
       <outline title="Caren Miosga" xmlUrl="https://www.ndr.de/podcast/carenmiosga146.xml" type="rss" category="Politics" />
       <outline title="Übermorgen.funk – Der Zukunftspodcast" xmlUrl="https://anchor.fm/s/e6d748f8/podcast/rss" type="rss" category="News Commentary" />
       <outline title="Sitzfleisch" xmlUrl="https://sitzfleisch.podigee.io/feed/mp3" type="rss" category="Wilderness" />
       <outline title="TRAIL MAGAZIN Podcast" xmlUrl="https://anchor.fm/s/10f7c5014/podcast/rss" type="rss" category="Running" />
-      <outline title="Sportschau Tourfunk" xmlUrl="https://www.sportschau.de/podcasts/tourfunk/index~podcast.xml" type="rss" category="Sports" />
       <outline title="Basta Berlin- der alternativlose Podcast" xmlUrl="https://letscast.fm/podcasts/basta-berlin-der-alternativlose-podcast-c1dd84bb/feed" type="rss" category="Entertainment News" />
       <outline title="Lost &amp; Found" xmlUrl="https://anchor.fm/s/fc42037c/podcast/rss" type="rss" category="Religion &amp; Spirituality" />
       <outline title="Center for West European Studies &amp; EU Jean Monnet Center" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:284898816/sounds.rss" type="rss" category="Education" />
@@ -63,5 +58,7 @@
       <outline title="Ist das eine Blase?" xmlUrl="https://feeds.simplecast.com/WGGp_jbi" type="rss" category="Business" />
       <outline title="Servus. Grüezi. Hallo." xmlUrl="https://feeds.simplecast.com/br4J_MDH" type="rss" category="News" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

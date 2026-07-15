@@ -1,1021 +1,540 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  
-  
   <head>
-    
-    
     <title>Nigeria Feeds</title>
-    
-  
   </head>
-  
-  
   <body>
-    
-    
     <outline text="News">
-      
-      
-      <outline title="Vanguard" xmlUrl="https://www.vanguardngr.com/feed/" type="rss"/>
-      
-      
-      <outline title="This Day" xmlUrl="https://www.thisdaylive.com/feed/" type="rss"/>
-      
-      
-      <outline title="Premium Times" xmlUrl="https://www.premiumtimesng.com/feed/" type="rss"/>
-      
-      
-      <outline title="Channels TV" xmlUrl="https://www.channelstv.com/feed/" type="rss"/>
-      
-      
-      <outline title="Daily Post" xmlUrl="https://www.dailypost.ng/feed/" type="rss"/>
-      
-      
-      <outline title="The Cable" xmlUrl="https://www.thecable.ng/feed/" type="rss"/>
-      
-      
-      <outline title="Sahara Reporters" xmlUrl="https://www.saharareporters.com/rss/" type="rss"/>
-      
-      
-      <outline title="Leadership" xmlUrl="https://www.leadership.ng/feed/" type="rss"/>
-      
-      
-      <outline title="Nigerian Tribune" xmlUrl="https://www.tribuneonlineng.com/feed/" type="rss"/>
-      
-      
-      <outline title="The Sun Nigeria" xmlUrl="https://www.sunnewsonline.com/feed/" type="rss"/>
-      
-      
-      <outline title="Blueprint" xmlUrl="https://www.blueprint.ng/feed/" type="rss"/>
-      
-    
+      <outline title="Vanguard" xmlUrl="https://www.vanguardngr.com/feed/" type="rss" />
+      <outline title="This Day" xmlUrl="https://www.thisdaylive.com/feed/" type="rss" />
+      <outline title="Premium Times" xmlUrl="https://www.premiumtimesng.com/feed/" type="rss" />
+      <outline title="Channels TV" xmlUrl="https://www.channelstv.com/feed/" type="rss" />
+      <outline title="Daily Post" xmlUrl="https://www.dailypost.ng/feed/" type="rss" />
+      <outline title="The Cable" xmlUrl="https://www.thecable.ng/feed/" type="rss" />
+      <outline title="Sahara Reporters" xmlUrl="https://www.saharareporters.com/rss/" type="rss" />
+      <outline title="Leadership" xmlUrl="https://www.leadership.ng/feed/" type="rss" />
+      <outline title="Nigerian Tribune" xmlUrl="https://www.tribuneonlineng.com/feed/" type="rss" />
+      <outline title="The Sun Nigeria" xmlUrl="https://www.sunnewsonline.com/feed/" type="rss" />
+      <outline title="Blueprint" xmlUrl="https://www.blueprint.ng/feed/" type="rss" />
+      <outline title="Google News — NIGERIA (en)" xmlUrl="https://news.google.com/rss?hl=en&amp;gl=NG&amp;ceid=NG:en" type="rss" />
     </outline>
-    
-    
     <outline text="Sports">
-      
-      
-      <outline title="Complete Sports" xmlUrl="https://www.completesports.com/feed/" type="rss"/>
-      
-      
-      <outline title="Soccernet NG" xmlUrl="https://www.soccernet.ng/feed/" type="rss"/>
-      
-      
-      <outline title="Vanguard Sport" xmlUrl="https://www.vanguardngr.com/category/sports/feed/" type="rss"/>
-      
-      
-      <outline title="Guardian Sport" xmlUrl="https://www.guardian.ng/category/sport/feed/" type="rss"/>
-      
-      
-      <outline title="ESPN Africa" xmlUrl="https://www.espn.com/espn/story/_/id/africa/rss/" type="rss"/>
-      
-      
-      <outline title="Owngoal Nigeria" xmlUrl="https://www.owngoalnigeria.com/feed/" type="rss"/>
-      
-      
-      <outline title="NFF" xmlUrl="https://www.thenff.com/feed/" type="rss"/>
-      
-      
-      <outline title="Brila FM" xmlUrl="https://www.brila.net/feed/" type="rss"/>
-      
-    
+      <outline title="Complete Sports" xmlUrl="https://www.completesports.com/feed/" type="rss" />
+      <outline title="Soccernet NG" xmlUrl="https://www.soccernet.ng/feed/" type="rss" />
+      <outline title="Vanguard Sport" xmlUrl="https://www.vanguardngr.com/category/sports/feed/" type="rss" />
+      <outline title="Guardian Sport" xmlUrl="https://www.guardian.ng/category/sport/feed/" type="rss" />
+      <outline title="ESPN Africa" xmlUrl="https://www.espn.com/espn/story/_/id/africa/rss/" type="rss" />
+      <outline title="Owngoal Nigeria" xmlUrl="https://www.owngoalnigeria.com/feed/" type="rss" />
+      <outline title="NFF" xmlUrl="https://www.thenff.com/feed/" type="rss" />
+      <outline title="Brila FM" xmlUrl="https://www.brila.net/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Technology">
-      
-      
-      <outline title="Techpoint Africa" xmlUrl="https://www.techpoint.africa/feed/" type="rss"/>
-      
-      
-      <outline title="TechCabal" xmlUrl="https://www.techcabal.com/feed/" type="rss"/>
-      
-      
-      <outline title="Nairametrics" xmlUrl="https://www.nairametrics.com/feed/" type="rss"/>
-      
-      
-      <outline title="CFA Tech" xmlUrl="https://www.cfatech.ng/feed/" type="rss"/>
-      
-      
-      <outline title="IT Pulse NG" xmlUrl="https://www.itpulse.com.ng/feed/" type="rss"/>
-      
-      
-      <outline title="Nigerian Tech" xmlUrl="https://www.nigeriantech.com.ng/feed/" type="rss"/>
-      
-      
-      <outline title="GadgetStripe" xmlUrl="https://www.gadgetstripe.com/feed/" type="rss"/>
-      
-      
-      <outline title="Innovation Village" xmlUrl="https://www.innovation-village.com/feed/" type="rss"/>
-      
-    
+      <outline title="Techpoint Africa" xmlUrl="https://www.techpoint.africa/feed/" type="rss" />
+      <outline title="TechCabal" xmlUrl="https://www.techcabal.com/feed/" type="rss" />
+      <outline title="Nairametrics" xmlUrl="https://www.nairametrics.com/feed/" type="rss" />
+      <outline title="CFA Tech" xmlUrl="https://www.cfatech.ng/feed/" type="rss" />
+      <outline title="IT Pulse NG" xmlUrl="https://www.itpulse.com.ng/feed/" type="rss" />
+      <outline title="Nigerian Tech" xmlUrl="https://www.nigeriantech.com.ng/feed/" type="rss" />
+      <outline title="GadgetStripe" xmlUrl="https://www.gadgetstripe.com/feed/" type="rss" />
+      <outline title="Innovation Village" xmlUrl="https://www.innovation-village.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Science">
-      
-      
-      <outline title="Guardian Science" xmlUrl="https://www.guardian.ng/category/technology/science/feed/" type="rss"/>
-      
-      
-      <outline title="OAU" xmlUrl="https://www.oauife.edu.ng/rss/" type="rss"/>
-      
-      
-      <outline title="UNN" xmlUrl="https://www.unn.edu.ng/rss/" type="rss"/>
-      
-      
-      <outline title="NASRDA" xmlUrl="https://www.nasrda.gov.ng/rss/" type="rss"/>
-      
-    
+      <outline title="Guardian Science" xmlUrl="https://www.guardian.ng/category/technology/science/feed/" type="rss" />
+      <outline title="UNN" xmlUrl="https://www.unn.edu.ng/rss/" type="rss" />
+      <outline title="NASRDA" xmlUrl="https://www.nasrda.gov.ng/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Culture">
-      
-      
-      <outline title="BellaNaija" xmlUrl="https://www.bellanaija.com/feed/" type="rss"/>
-      
-      
-      <outline title="The Culture NG" xmlUrl="https://www.theculturenewspaper.com/feed/" type="rss"/>
-      
-      
-      <outline title="Terra Kulture" xmlUrl="https://www.terrakulture.com/feed/" type="rss"/>
-      
-      
-      <outline title="African Artists" xmlUrl="https://www.africanartists.org/feed/" type="rss"/>
-      
-    
+      <outline title="BellaNaija" xmlUrl="https://www.bellanaija.com/feed/" type="rss" />
+      <outline title="The Culture NG" xmlUrl="https://www.theculturenewspaper.com/feed/" type="rss" />
+      <outline title="Terra Kulture" xmlUrl="https://www.terrakulture.com/feed/" type="rss" />
+      <outline title="African Artists" xmlUrl="https://www.africanartists.org/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Movies">
-      
-      
-      <outline title="Nollywood Reinvented" xmlUrl="https://www.nollywoodreinvented.com/feed/" type="rss"/>
-      
-      
-      <outline title="BellaNaija Movies" xmlUrl="https://www.bellanaija.com/movies/feed/" type="rss"/>
-      
-      
-      <outline title="Genesis Cinemas" xmlUrl="https://www.genesiscinemas.com/rss/" type="rss"/>
-      
-      
-      <outline title="Silverbird Cinemas" xmlUrl="https://www.silverbirdcinemas.com/rss/" type="rss"/>
-      
-      
-      <outline title="Nollywood Insider" xmlUrl="https://www.nollywoodinsider.com/feed/" type="rss"/>
-      
-    
+      <outline title="Nollywood Reinvented" xmlUrl="https://www.nollywoodreinvented.com/feed/" type="rss" />
+      <outline title="BellaNaija Movies" xmlUrl="https://www.bellanaija.com/movies/feed/" type="rss" />
+      <outline title="Genesis Cinemas" xmlUrl="https://www.genesiscinemas.com/rss/" type="rss" />
+      <outline title="Silverbird Cinemas" xmlUrl="https://www.silverbirdcinemas.com/rss/" type="rss" />
+      <outline title="Nollywood Insider" xmlUrl="https://www.nollywoodinsider.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Music">
-      
-      
-      <outline title="TooXclusive" xmlUrl="https://www.tooxclusive.com/feed/" type="rss"/>
-      
-      
-      <outline title="NotJustOk" xmlUrl="https://www.notjustok.com/feed/" type="rss"/>
-      
-      
-      <outline title="Nigerian Sounds" xmlUrl="https://www.nigeriansounds.com/feed/" type="rss"/>
-      
-      
-      <outline title="The Native" xmlUrl="https://www.thenativemag.com/feed/" type="rss"/>
-      
-      
-      <outline title="BellaNaija Music" xmlUrl="https://www.bellanaija.com/music/feed/" type="rss"/>
-      
-      
-      <outline title="Mp3bullet" xmlUrl="https://www.mp3bullet.ng/feed/" type="rss"/>
-      
-      
-      <outline title="NaijaMusic" xmlUrl="https://www.naijamusic.com.ng/feed/" type="rss"/>
-      
-      
-      <outline title="Soundcity TV" xmlUrl="https://www.soundcity.tv/feed/" type="rss"/>
-      
-    
+      <outline title="TooXclusive" xmlUrl="https://www.tooxclusive.com/feed/" type="rss" />
+      <outline title="NotJustOk" xmlUrl="https://www.notjustok.com/feed/" type="rss" />
+      <outline title="Nigerian Sounds" xmlUrl="https://www.nigeriansounds.com/feed/" type="rss" />
+      <outline title="The Native" xmlUrl="https://www.thenativemag.com/feed/" type="rss" />
+      <outline title="BellaNaija Music" xmlUrl="https://www.bellanaija.com/music/feed/" type="rss" />
+      <outline title="Mp3bullet" xmlUrl="https://www.mp3bullet.ng/feed/" type="rss" />
+      <outline title="NaijaMusic" xmlUrl="https://www.naijamusic.com.ng/feed/" type="rss" />
+      <outline title="Soundcity TV" xmlUrl="https://www.soundcity.tv/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Food">
-      
-      
-      <outline title="9ja Foodie" xmlUrl="https://www.9jafoodie.com/feed/" type="rss"/>
-      
-      
-      <outline title="Dobbys Signature" xmlUrl="https://www.dobbyssignature.com/feed/" type="rss"/>
-      
-      
-      <outline title="Sisi Jemimah" xmlUrl="https://www.sisijemimah.com/feed/" type="rss"/>
-      
-      
-      <outline title="My Diaspora Kitchen" xmlUrl="https://www.mydiasporakitchen.com/feed/" type="rss"/>
-      
-      
-      <outline title="Chef Lola's Kitchen" xmlUrl="https://www.cheflolaskitchen.com/feed/" type="rss"/>
-      
-      
-      <outline title="Eat Well Abi" xmlUrl="https://www.eatwellabi.com/feed/" type="rss"/>
-      
-      
-      <outline title="All Nigerian Recipes" xmlUrl="https://www.allnigerianrecipes.com/feed/" type="rss"/>
-      
-      
-      <outline title="Nigerian Food TV" xmlUrl="https://www.nigerianfoodtv.com/feed/" type="rss"/>
-      
-      
-      <outline title="Yummy Medley" xmlUrl="https://www.yummymedley.com/feed/" type="rss"/>
-      
-      
-      <outline title="African Food Network" xmlUrl="https://www.afrifoodnetwork.com/feed/" type="rss"/>
-      
-      
-      <outline title="K's Cuisine" xmlUrl="https://www.kscuisine.com/feed/" type="rss"/>
-      
-    
+      <outline title="9ja Foodie" xmlUrl="https://www.9jafoodie.com/feed/" type="rss" />
+      <outline title="Dobbys Signature" xmlUrl="https://www.dobbyssignature.com/feed/" type="rss" />
+      <outline title="Sisi Jemimah" xmlUrl="https://www.sisijemimah.com/feed/" type="rss" />
+      <outline title="My Diaspora Kitchen" xmlUrl="https://www.mydiasporakitchen.com/feed/" type="rss" />
+      <outline title="Chef Lola's Kitchen" xmlUrl="https://www.cheflolaskitchen.com/feed/" type="rss" />
+      <outline title="Eat Well Abi" xmlUrl="https://www.eatwellabi.com/feed/" type="rss" />
+      <outline title="All Nigerian Recipes" xmlUrl="https://www.allnigerianrecipes.com/feed/" type="rss" />
+      <outline title="Nigerian Food TV" xmlUrl="https://www.nigerianfoodtv.com/feed/" type="rss" />
+      <outline title="Yummy Medley" xmlUrl="https://www.yummymedley.com/feed/" type="rss" />
+      <outline title="African Food Network" xmlUrl="https://www.afrifoodnetwork.com/feed/" type="rss" />
+      <outline title="K's Cuisine" xmlUrl="https://www.kscuisine.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Gaming">
-      
-      
-      <outline title="Anime Nigeria" xmlUrl="https://www.animenigeria.com/feed/" type="rss"/>
-      
-    
+      <outline title="Anime Nigeria" xmlUrl="https://www.animenigeria.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Travel">
-      
-      
-      <outline title="Wakanow Blog" xmlUrl="https://www.wakanow.com/blog/feed/" type="rss"/>
-      
-      
-      <outline title="Nigeria Travel Guide" xmlUrl="https://www.nigeriatravelguide.com/feed/" type="rss"/>
-      
-      
-      <outline title="Abuja Travel" xmlUrl="https://www.abujatravel.com/feed/" type="rss"/>
-      
-      
-      <outline title="Nigerian Tourism" xmlUrl="https://www.nigeriantourism.com/feed/" type="rss"/>
-      
-      
-      <outline title="Fly Nigeria" xmlUrl="https://www.flynigeria.com/rss/" type="rss"/>
-      
-    
+      <outline title="Wakanow Blog" xmlUrl="https://www.wakanow.com/blog/feed/" type="rss" />
+      <outline title="Nigeria Travel Guide" xmlUrl="https://www.nigeriatravelguide.com/feed/" type="rss" />
+      <outline title="Abuja Travel" xmlUrl="https://www.abujatravel.com/feed/" type="rss" />
+      <outline title="Nigerian Tourism" xmlUrl="https://www.nigeriantourism.com/feed/" type="rss" />
+      <outline title="Fly Nigeria" xmlUrl="https://www.flynigeria.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Blogs">
-      
-      
-      <outline title="BellaNaija" xmlUrl="https://www.bellanaija.com/feed/" type="rss"/>
-      
-      
-      <outline title="Linda Ikeji Blog" xmlUrl="https://www.lindaikejisblog.com/feed/" type="rss"/>
-      
-      
-      <outline title="YNaija" xmlUrl="https://www.ynaija.com/feed/" type="rss"/>
-      
-      
-      <outline title="The Republic" xmlUrl="https://www.therepublic.com.ng/feed/" type="rss"/>
-      
-      
-      <outline title="Agusto" xmlUrl="https://www.agusto.com/feed/" type="rss"/>
-      
-    
+      <outline title="BellaNaija" xmlUrl="https://www.bellanaija.com/feed/" type="rss" />
+      <outline title="Linda Ikeji Blog" xmlUrl="https://www.lindaikejisblog.com/feed/" type="rss" />
+      <outline title="YNaija" xmlUrl="https://www.ynaija.com/feed/" type="rss" />
+      <outline title="The Republic" xmlUrl="https://www.therepublic.com.ng/feed/" type="rss" />
+      <outline title="Agusto" xmlUrl="https://www.agusto.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Design">
-      
-      
-      <outline title="Design Week Lagos" xmlUrl="https://www.designweeklagos.com/rss/" type="rss"/>
-      
-    
+      <outline title="Design Week Lagos" xmlUrl="https://www.designweeklagos.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Environment">
-      
-      
-      <outline title="Greenpeace Africa" xmlUrl="https://www.greenpeace.org/africa/en/feed/" type="rss"/>
-      
-      
-      <outline title="Guardian Environment" xmlUrl="https://www.guardian.ng/category/environment/feed/" type="rss"/>
-      
-      
-      <outline title="NESREA" xmlUrl="https://www.nesrea.gov.ng/rss/" type="rss"/>
-      
-      
-      <outline title="Nigerian Conservation" xmlUrl="https://www.ncfnigeria.org/feed/" type="rss"/>
-      
-      
-      <outline title="EnviroNews Nigeria" xmlUrl="https://www.environewsnigeria.com/feed/" type="rss"/>
-      
-    
+      <outline title="Greenpeace Africa" xmlUrl="https://www.greenpeace.org/africa/en/feed/" type="rss" />
+      <outline title="Guardian Environment" xmlUrl="https://www.guardian.ng/category/environment/feed/" type="rss" />
+      <outline title="NESREA" xmlUrl="https://www.nesrea.gov.ng/rss/" type="rss" />
+      <outline title="Nigerian Conservation" xmlUrl="https://www.ncfnigeria.org/feed/" type="rss" />
+      <outline title="EnviroNews Nigeria" xmlUrl="https://www.environewsnigeria.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="DIY">
-      
-      
-      <outline title="HubMart NG" xmlUrl="https://www.hubmart.com/blog/feed/" type="rss"/>
-      
-    
+      <outline title="HubMart NG" xmlUrl="https://www.hubmart.com/blog/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="History">
-      
-      
-      <outline title="Old Naija" xmlUrl="https://www.oldnaija.com/feed/" type="rss"/>
-      
-      
-      <outline title="Slavery Museum" xmlUrl="https://www.slaverymuseum.com/rss/" type="rss"/>
-      
-    
+      <outline title="Old Naija" xmlUrl="https://www.oldnaija.com/feed/" type="rss" />
+      <outline title="Slavery Museum" xmlUrl="https://www.slaverymuseum.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Architecture">
-      
-      
-      <outline title="African Architecture" xmlUrl="https://www.africanarchitecture.com/feed/" type="rss"/>
-      
-    
+      <outline title="African Architecture" xmlUrl="https://www.africanarchitecture.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Programming">
-      
-      
-      <outline title="DevCenter NG" xmlUrl="https://www.devcenter.co/feed/" type="rss"/>
-      
-      
-      <outline title="Flutterwave Blog" xmlUrl="https://www.flutterwave.com/blog/feed/" type="rss"/>
-      
-    
+      <outline title="DevCenter NG" xmlUrl="https://www.devcenter.co/feed/" type="rss" />
+      <outline title="Flutterwave Blog" xmlUrl="https://www.flutterwave.com/blog/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Business">
-      
-      
-      <outline title="Nairametrics" xmlUrl="https://www.nairametrics.com/feed/" type="rss"/>
-      
-      
-      <outline title="Business Day NG" xmlUrl="https://www.businessday.ng/feed/" type="rss"/>
-      
-      
-      <outline title="This Day Business" xmlUrl="https://www.thisdaylive.com/business/feed/" type="rss"/>
-      
-      
-      <outline title="Guardian Business" xmlUrl="https://www.guardian.ng/business/feed/" type="rss"/>
-      
-      
-      <outline title="Vanguard Business" xmlUrl="https://www.vanguardngr.com/category/business/feed/" type="rss"/>
-      
-      
-      <outline title="Techpoint" xmlUrl="https://www.techpoint.africa/feed/" type="rss"/>
-      
-    
+      <outline title="Nairametrics" xmlUrl="https://www.nairametrics.com/feed/" type="rss" />
+      <outline title="Business Day NG" xmlUrl="https://www.businessday.ng/feed/" type="rss" />
+      <outline title="This Day Business" xmlUrl="https://www.thisdaylive.com/business/feed/" type="rss" />
+      <outline title="Guardian Business" xmlUrl="https://www.guardian.ng/business/feed/" type="rss" />
+      <outline title="Vanguard Business" xmlUrl="https://www.vanguardngr.com/category/business/feed/" type="rss" />
+      <outline title="Techpoint" xmlUrl="https://www.techpoint.africa/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Podcasts">
-      
-      
-      <outline title="Nigeria Daily" xmlUrl="https://feeds.transistor.fm/nigeria-daily" type="rss"/>
-      
-      
-      <outline title="Nigeria Politics Weekly" xmlUrl="https://anchor.fm/s/23654eec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Let's Talk Nigeria" xmlUrl="https://anchor.fm/s/5ce62a60/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nigeria Daily" xmlUrl="https://rss.buzzsprout.com/1822052.rss" type="rss"/>
-      
-      
-      <outline title="How Nigeria Works(...but doesn't)" xmlUrl="http://rss.castbox.fm/everest/456df2101a0044a8a8640c222141cd93.xml" type="rss"/>
-      
-      
-      <outline title="All things Nigeria" xmlUrl="https://anchor.fm/s/fb509604/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Made in Nigeria" xmlUrl="https://anchor.fm/s/1f0844d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="All About Nigeria" xmlUrl="https://anchor.fm/s/d269d84/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Nigerian Hustle" xmlUrl="https://rss.buzzsprout.com/2058894.rss" type="rss"/>
-      
-      
-      <outline title="Working in Nigeria" xmlUrl="https://www.spreaker.com/show/4430514/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Nigeria Today" xmlUrl="https://anchor.fm/s/1bf38674/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rorshok Nigeria Update" xmlUrl="https://feeds.captivate.fm/rorshok-nigeria-update/" type="rss"/>
-      
-      
-      <outline title="Afrobeat In Nigeria" xmlUrl="https://anchor.fm/s/33cffe6c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="It Happened in Nigeria" xmlUrl="https://anchor.fm/s/f8942584/podcast/rss" type="rss"/>
-      
-      
-      <outline title="NIGERIA ENTERTAINMENT GIST (HOW UNA SEE AM?)" xmlUrl="https://anchor.fm/s/2b79662c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The StoryTeller Nigeria" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:451507956/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Good Morning Nigeria" xmlUrl="https://anchor.fm/s/5529543c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="OUT OF THE BOX PODCAST" xmlUrl="https://anchor.fm/s/1940a60/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nigeria Football Weekly" xmlUrl="https://anchor.fm/s/468fe314/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Let's Talk Nigeria Show With Nefe" xmlUrl="https://anchor.fm/s/31f900fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="StoriesFromNigeria Podcast" xmlUrl="https://api.substack.com/feed/podcast/1338230.rss" type="rss"/>
-      
-      
-      <outline title="Which Way Forward Nigeria 365 With Prof. Fadairo" xmlUrl="https://anchor.fm/s/52fad8c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nigeria" xmlUrl="https://anchor.fm/s/1cafc1f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="NIGERIA UNTOLD" xmlUrl="https://www.spreaker.com/show/1966906/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Business in Nigeria" xmlUrl="https://anchor.fm/s/e0704578/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Business Opportunities in Nigeria Series" xmlUrl="https://anchor.fm/s/b20e01c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Good Morning RadioFm" xmlUrl="https://anchor.fm/s/e4f1920/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Rant 🔥" xmlUrl="https://anchor.fm/s/12e12b68/podcast/rss" type="rss"/>
-      
-      
-      <outline title="F O R M A T I O N: The Making of Nigeria" xmlUrl="https://anchor.fm/s/1131d5ec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nigeria Business Now | A Firmus Advisory Podcast" xmlUrl="https://anchor.fm/s/b13a7260/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Music 4 Change" xmlUrl="https://anchor.fm/s/6027d9d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="NIGERIA" xmlUrl="https://anchor.fm/s/4a8af1fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Money Talks with CFA Society Nigeria" xmlUrl="https://anchor.fm/s/f0e0e480/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Abeg Vex Expert Talk Show (Pidgin 🇳🇬 English): Relatable Nigeria Culture Discussions (Gisting)" xmlUrl="https://feeds.megaphone.fm/CSN6629641210" type="rss"/>
-      
-      
-      <outline title="Afrobeats Dancehall &amp; Hip Hop Mixes" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:197958241/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Nigeria...How was your week" xmlUrl="https://anchor.fm/s/41bf6134/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Entrepreneurs Showcase" xmlUrl="https://api.wokpa.app/api/podcasts/19/feed" type="rss"/>
-      
-      
-      <outline title="Rhema Nigeria Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:244590093/sounds.rss" type="rss"/>
-      
-      
-      <outline title="HERSTORY NIGERIA PODCAST" xmlUrl="https://rss.buzzsprout.com/2561222.rss" type="rss"/>
-      
-      
-      <outline title="&quot;Nigeria's History in Our Time&quot; with Ojo, Aderemi" xmlUrl="https://anchor.fm/s/1d92f028/podcast/rss" type="rss"/>
-      
-      
-      <outline title="How Far, Nigeria?" xmlUrl="https://anchor.fm/s/16873000/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Make in Nigeria Podcast" xmlUrl="https://anchor.fm/s/34105f48/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Step Up Nigeria Podcast" xmlUrl="https://stepupnigeria.org/feed/podcast/" type="rss"/>
-      
-      
-      <outline title="Surviving Nigeria Podcast" xmlUrl="https://anchor.fm/s/33216334/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nigeria News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/nigeria-news-today-2-min-news-the-daily-news-now.xml" type="rss"/>
-      
-      
-      <outline title="The History of Nigeria: Kingdoms, Colonies, and Africa's Giant — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-nigeria.xml" type="rss"/>
-      
-      
-      <outline title="=Kalmomin Rai&quot;,&quot;Bishara&quot;,&quot;Waƙoƙin Bishara&quot;-Harsunan da ake Magana a Nigeria Inda Kiristoci 'yan tsiraru ne (Lamba 200-223) //&quot; &quot;Words of Life&quot;,&quot;Good News&quot;,&quot;Gospel Songs&quot;-in Nigeria, These People Have Ethnic or Islam as their Major Religion(No.200-223)=" xmlUrl="https://tjliu25.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="Value Nigeria with Ajibola" xmlUrl="https://anchor.fm/s/4eb974c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Introduction To Geology Of Nigeria" xmlUrl="https://anchor.fm/s/205bb358/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Big Hard Facts With Maryann Okon" xmlUrl="https://atunwadigital-rss.streamguys1.com/content/nigeriainfo/bighardfacts.xml" type="rss"/>
-      
-      
-      <outline title="ALICE IN LAGOS PODCAST" xmlUrl="https://anchor.fm/s/e189deec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lagos talks 913" xmlUrl="https://anchor.fm/s/5ab53f74/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Theology in Lagos" xmlUrl="https://anchor.fm/s/14a1f090/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Tribe Lagos" xmlUrl="https://anchor.fm/s/8ef718c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Unit Economics" xmlUrl="https://anchor.fm/s/34933a1c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="From Lagos With Love" xmlUrl="https://anchor.fm/s/30e1d2ac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Gospel in Lagos" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:263692633/sounds.rss" type="rss"/>
-      
-      
-      <outline title="RCCG The Oasis Lagos" xmlUrl="https://anchor.fm/s/e5b62890/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Cathedral Lagos Podcast" xmlUrl="https://anchor.fm/s/faf437ec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="THE GLA LAGOS PODCAST" xmlUrl="https://anchor.fm/s/100e51f18/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rethinking Lagos Radio Show" xmlUrl="https://anchor.fm/s/3ef1ad2c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="LagosMeetsLondon©" xmlUrl="https://anchor.fm/s/f84779c8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Lagos Real Estate Insider" xmlUrl="https://anchor.fm/s/de0affd0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Brook Church Lagos" xmlUrl="https://anchor.fm/s/8a090ad0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Life of a Nigerian Bisexual Woman surviving in Lagos" xmlUrl="https://anchor.fm/s/276f6838/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lagos Arrangement" xmlUrl="https://anchor.fm/s/ebd920ec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Tactical &amp; Practical" xmlUrl="https://feeds.megaphone.fm/CGCEO8275496849" type="rss"/>
-      
-      
-      <outline title="Buck Around: The Bull Riding Podcast" xmlUrl="https://feeds.megaphone.fm/CGCEO8521077308" type="rss"/>
-      
-      
-      <outline title="The Zoe Household" xmlUrl="https://anchor.fm/s/aebf4038/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Feeling Stuck At A 9-5 Job In Lagos" xmlUrl="https://anchor.fm/s/4311e110/podcast/rss" type="rss"/>
-      
-      
-      <outline title="An hour in L.A.G.O.S🧏🏿‍♂️" xmlUrl="https://anchor.fm/s/800347a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sounds of Lagos." xmlUrl="https://anchor.fm/s/104d3180/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Radio Jusmen" xmlUrl="https://anchor.fm/s/f6f0acc0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Coolio Kids Podcast" xmlUrl="https://anchor.fm/s/eced7654/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Life issues and how to deal with it" xmlUrl="https://www.spreaker.com/show/4784791/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Creative Control" xmlUrl="https://feeds.megaphone.fm/creativecontrol" type="rss"/>
-      
-      
-      <outline title="El Cassette Invertido" xmlUrl="https://anchor.fm/s/6a506670/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RHOLagos After Party" xmlUrl="https://rss.libsyn.com/shows/415769/destinations/3450485.xml" type="rss"/>
-      
-      
-      <outline title="Dear Lagos Podcast" xmlUrl="https://anchor.fm/s/c17ef60/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GracePlace Lagos" xmlUrl="https://media.rss.com/graceplacelagos/feed.xml" type="rss"/>
-      
-      
-      <outline title="Last Man in Lagos" xmlUrl="https://anchor.fm/s/221f84f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Santiago Lagos" xmlUrl="https://anchor.fm/s/36ebf72c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Open Lagos" xmlUrl="https://anchor.fm/s/4dfe2598/podcast/rss" type="rss"/>
-      
-      
-      <outline title="#LondonToLagos" xmlUrl="https://anchor.fm/s/350fc550/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Yewande in Lagos" xmlUrl="https://anchor.fm/s/385f4320/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Global Harvest Church, Island Lagos" xmlUrl="https://anchor.fm/s/1064ef8d4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="VANESSA LAGOS - VIVE EN CONSCIENCIA HOLÍSTICA" xmlUrl="https://anchor.fm/s/441f2af4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Arco Lagos Iglesia Cristiana" xmlUrl="https://anchor.fm/s/fc54e1f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Yeshua's Hill Global - Lagos" xmlUrl="https://anchor.fm/s/fad011a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lost in Lagos Podcast" xmlUrl="https://api.wokpa.app/api/podcasts/258/feed" type="rss"/>
-      
-      
-      <outline title="Mevam Lagos" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:105728688/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Lagos Real" xmlUrl="https://anchor.fm/s/33defb24/podcast/rss" type="rss"/>
-      
-      
-      <outline title="FBCKosofe Lagos" xmlUrl="https://anchor.fm/s/231c6fd8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lagos big girls on a budget" xmlUrl="https://anchor.fm/s/5cad5d5c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Tacsfon Lagos Zone" xmlUrl="https://anchor.fm/s/613104a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Love Lagos" xmlUrl="https://anchor.fm/s/1418d9a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="FASCIOLIASIS_LAGOS MANOVACIA_G2" xmlUrl="https://anchor.fm/s/5c4a1300/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Everything Lagos (EL)" xmlUrl="https://anchor.fm/s/8ed9ad1c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Camino a Los Lagos" xmlUrl="https://anchor.fm/s/8f426424/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Abuja Literary And Arts Festival 2020" xmlUrl="https://anchor.fm/s/31910704/podcast/rss" type="rss"/>
-      
-      
-      <outline title="KingsWord Abuja" xmlUrl="https://anchor.fm/s/2cc09aa0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="MFM Ministries IHQ Wuye, Abuja" xmlUrl="https://anchor.fm/s/f850ecec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Foursquare Garki Abuja" xmlUrl="https://anchor.fm/s/2029fc64/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Family Worship Centre Podcasts" xmlUrl="https://anchor.fm/s/4e7799c8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Trinity Baptist Church, Abuja" xmlUrl="https://anchor.fm/s/69811ff0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The One City Abuja Podcast" xmlUrl="https://anchor.fm/s/ddc92efc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RCCG LSC Abuja" xmlUrl="https://anchor.fm/s/10c308c90/podcast/rss" type="rss"/>
-      
-      
-      <outline title="His Image House Ministry Abuja" xmlUrl="https://anchor.fm/s/4ea73930/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PPAfan Abuja" xmlUrl="https://anchor.fm/s/100a5d1a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RCCG, The King's Palace, Abuja" xmlUrl="https://anchor.fm/s/38e38748/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Trekking Abuja" xmlUrl="https://anchor.fm/s/564da2b4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="THE ABUJA BIBLE BANQUET PODCAST" xmlUrl="https://anchor.fm/s/dcea9a84/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Temple Of Glory, Abuja." xmlUrl="https://anchor.fm/s/16cb11bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Ambassador Word Church Abuja" xmlUrl="https://anchor.fm/s/4e5c85c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RCCG The Life Centre - Abuja" xmlUrl="https://anchor.fm/s/b05e4718/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Baptizing Church Abuja" xmlUrl="https://anchor.fm/s/30619a74/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gracelife Family Church Abuja" xmlUrl="https://theempowermentchannel.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="PM Magic" xmlUrl="https://anchor.fm/s/4d9da8d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ADPodcast" xmlUrl="https://anchor.fm/s/2c551b18/podcast/rss" type="rss"/>
-      
-      
-      <outline title="LFC Byazhin podcast" xmlUrl="https://anchor.fm/s/4cbaa468/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Concept Of Discipleship" xmlUrl="https://anchor.fm/s/1399afbc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Coffee, Life and Whatever" xmlUrl="https://anchor.fm/s/3dd2b260/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Heart Dive with Kanoe Gibson" xmlUrl="https://app.fusebox.fm/data/show/NyDwmk0xJ3/feed" type="rss"/>
-      
-      
-      <outline title="LOS MITOTES" xmlUrl="https://anchor.fm/s/bc0d8de4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gotas de Claridad" xmlUrl="https://app.kajabi.com/podcasts/2148052651/feed" type="rss"/>
-      
-      
-      <outline title="Tuck Everlasting" xmlUrl="https://anchor.fm/s/1ed90af8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="プロマネの沼.fm" xmlUrl="https://anchor.fm/s/37d39a64/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Kano Mama Podcast" xmlUrl="https://anchor.fm/s/32ff2404/podcast/rss" type="rss"/>
-      
-      
-      <outline title="overthinking... with Kano" xmlUrl="https://anchor.fm/s/10225ec18/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kano Talk Show - by Kano Suryoyo e.V." xmlUrl="https://anchor.fm/s/101e3ade4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kano" xmlUrl="https://anchor.fm/s/12fcd50c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kanō Hangout" xmlUrl="https://anchor.fm/s/50c466fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Magasinet - Kano, Kajak og SUP" xmlUrl="https://rss.buzzsprout.com/2286149.rss" type="rss"/>
-      
-      
-      <outline title="Anything &amp; Everything with Kano &amp; Spencer" xmlUrl="https://anchor.fm/s/28e09b74/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Impacto Social por Célia Kano" xmlUrl="https://media.rss.com/impacto-social-por-celia-kano/feed.xml" type="rss"/>
-      
-      
-      <outline title="Kano" xmlUrl="https://anchor.fm/s/2cadd910/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kano Mixes" xmlUrl="https://feeds.redcircle.com/47467c2a-1168-4a5f-8c16-6c2a8242b356" type="rss"/>
-      
-      
-      <outline title="Things You Don’t Need to Know About Japan" xmlUrl="https://media.rss.com/kanoppe/feed.xml" type="rss"/>
-      
-      
-      <outline title="HALQA RADIO KANO" xmlUrl="https://anchor.fm/s/404ddfd8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Always Reflecting with Kano" xmlUrl="https://anchor.fm/s/112b9ac7c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Pendidikan Agama Kristen" xmlUrl="https://anchor.fm/s/696fd4fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ALIVELYhood Podcast" xmlUrl="https://anchor.fm/s/3410af5c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="La Serie Más Vistae Netfix" xmlUrl="https://anchor.fm/s/97f1ecc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Zone podcast Santiago" xmlUrl="https://anchor.fm/s/47b16970/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Covid- Real Talk" xmlUrl="https://anchor.fm/s/26c6ca98/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Concatenando" xmlUrl="https://feeds.simplecast.com/DRWqL_a0" type="rss"/>
-      
-      
-      <outline title="The Four Boys Club" xmlUrl="https://anchor.fm/s/d92986f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BreathingPod" xmlUrl="https://anchor.fm/s/51b9f90/podcast/rss" type="rss"/>
-      
-      
-      <outline title="くらしと技術" xmlUrl="https://rss.listen.style/p/kurashitech/rss" type="rss"/>
-      
-      
-      <outline title="Athletic Supporters" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:122558859/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Nccfkanomedia" xmlUrl="https://anchor.fm/s/1cf1450c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="connecting podcast" xmlUrl="https://anchor.fm/s/4fadef18/podcast/rss" type="rss"/>
-      
-      
-      <outline title="KAKYOKU-CAFE online" xmlUrl="https://anchor.fm/s/45a55f88/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Heart Talk" xmlUrl="https://anchor.fm/s/10d991f34/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RCN Ibadan" xmlUrl="https://anchor.fm/s/f7fc4250/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Evangelical Church Winning All (ECWA) Chapel Ibadan" xmlUrl="https://anchor.fm/s/1e88a61c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SplashFMIbadan" xmlUrl="https://anchor.fm/s/50fa3e94/podcast/rss" type="rss"/>
-      
-      
-      <outline title="We Are Men" xmlUrl="https://anchor.fm/s/5d842eb8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="LBC Sermons" xmlUrl="https://anchor.fm/s/250bd360/podcast/rss" type="rss"/>
-      
-      
-      <outline title="KingsWord International Church, Port Harcourt" xmlUrl="https://anchor.fm/s/7ccc124/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Winners Chapel Port Harcourt" xmlUrl="https://feeds.redcircle.com/401ec11d-0d97-4068-ad5f-e55bdf1998c5" type="rss"/>
-      
-      
-      <outline title="A-MEDIA PHC" xmlUrl="https://anchor.fm/s/2aead4e8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Portharcourt city - uncensored" xmlUrl="https://anchor.fm/s/429cc2a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="I Said What I Said" xmlUrl="https://www.isaidwhatisaidpodcast.com/feed/" type="rss"/>
-      
-      
-      <outline title="So Nigerian" xmlUrl="https://www.sonigerian.com/feed/podcast/" type="rss"/>
-      
-      
-      <outline title="Afro Podcast" xmlUrl="https://www.afropodcast.com/feed/" type="rss"/>
-      
-      
-      <outline title="TechCabal Podcast" xmlUrl="https://www.techcabal.com/podcast/feed/" type="rss"/>
-      
-    
+      <outline title="Nigeria Daily" xmlUrl="https://feeds.transistor.fm/nigeria-daily" type="rss" />
+      <outline title="Nigeria Politics Weekly" xmlUrl="https://anchor.fm/s/23654eec/podcast/rss" type="rss" />
+      <outline title="Let's Talk Nigeria" xmlUrl="https://anchor.fm/s/5ce62a60/podcast/rss" type="rss" />
+      <outline title="Nigeria Daily" xmlUrl="https://rss.buzzsprout.com/1822052.rss" type="rss" />
+      <outline title="How Nigeria Works(...but doesn't)" xmlUrl="http://rss.castbox.fm/everest/456df2101a0044a8a8640c222141cd93.xml" type="rss" />
+      <outline title="All things Nigeria" xmlUrl="https://anchor.fm/s/fb509604/podcast/rss" type="rss" />
+      <outline title="Made in Nigeria" xmlUrl="https://anchor.fm/s/1f0844d0/podcast/rss" type="rss" />
+      <outline title="All About Nigeria" xmlUrl="https://anchor.fm/s/d269d84/podcast/rss" type="rss" />
+      <outline title="The Nigerian Hustle" xmlUrl="https://rss.buzzsprout.com/2058894.rss" type="rss" />
+      <outline title="Working in Nigeria" xmlUrl="https://www.spreaker.com/show/4430514/episodes/feed" type="rss" />
+      <outline title="Nigeria Today" xmlUrl="https://anchor.fm/s/1bf38674/podcast/rss" type="rss" />
+      <outline title="Rorshok Nigeria Update" xmlUrl="https://feeds.captivate.fm/rorshok-nigeria-update/" type="rss" />
+      <outline title="Afrobeat In Nigeria" xmlUrl="https://anchor.fm/s/33cffe6c/podcast/rss" type="rss" />
+      <outline title="It Happened in Nigeria" xmlUrl="https://anchor.fm/s/f8942584/podcast/rss" type="rss" />
+      <outline title="NIGERIA ENTERTAINMENT GIST (HOW UNA SEE AM?)" xmlUrl="https://anchor.fm/s/2b79662c/podcast/rss" type="rss" />
+      <outline title="The StoryTeller Nigeria" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:451507956/sounds.rss" type="rss" />
+      <outline title="Good Morning Nigeria" xmlUrl="https://anchor.fm/s/5529543c/podcast/rss" type="rss" />
+      <outline title="OUT OF THE BOX PODCAST" xmlUrl="https://anchor.fm/s/1940a60/podcast/rss" type="rss" />
+      <outline title="Nigeria Football Weekly" xmlUrl="https://anchor.fm/s/468fe314/podcast/rss" type="rss" />
+      <outline title="Let's Talk Nigeria Show With Nefe" xmlUrl="https://anchor.fm/s/31f900fc/podcast/rss" type="rss" />
+      <outline title="StoriesFromNigeria Podcast" xmlUrl="https://api.substack.com/feed/podcast/1338230.rss" type="rss" />
+      <outline title="Which Way Forward Nigeria 365 With Prof. Fadairo" xmlUrl="https://anchor.fm/s/52fad8c0/podcast/rss" type="rss" />
+      <outline title="Nigeria" xmlUrl="https://anchor.fm/s/1cafc1f4/podcast/rss" type="rss" />
+      <outline title="NIGERIA UNTOLD" xmlUrl="https://www.spreaker.com/show/1966906/episodes/feed" type="rss" />
+      <outline title="Business in Nigeria" xmlUrl="https://anchor.fm/s/e0704578/podcast/rss" type="rss" />
+      <outline title="Business Opportunities in Nigeria Series" xmlUrl="https://anchor.fm/s/b20e01c/podcast/rss" type="rss" />
+      <outline title="Good Morning RadioFm" xmlUrl="https://anchor.fm/s/e4f1920/podcast/rss" type="rss" />
+      <outline title="The Rant 🔥" xmlUrl="https://anchor.fm/s/12e12b68/podcast/rss" type="rss" />
+      <outline title="F O R M A T I O N: The Making of Nigeria" xmlUrl="https://anchor.fm/s/1131d5ec/podcast/rss" type="rss" />
+      <outline title="Nigeria Business Now | A Firmus Advisory Podcast" xmlUrl="https://anchor.fm/s/b13a7260/podcast/rss" type="rss" />
+      <outline title="Music 4 Change" xmlUrl="https://anchor.fm/s/6027d9d0/podcast/rss" type="rss" />
+      <outline title="NIGERIA" xmlUrl="https://anchor.fm/s/4a8af1fc/podcast/rss" type="rss" />
+      <outline title="Money Talks with CFA Society Nigeria" xmlUrl="https://anchor.fm/s/f0e0e480/podcast/rss" type="rss" />
+      <outline title="Abeg Vex Expert Talk Show (Pidgin 🇳🇬 English): Relatable Nigeria Culture Discussions (Gisting)" xmlUrl="https://feeds.megaphone.fm/CSN6629641210" type="rss" />
+      <outline title="Afrobeats Dancehall &amp; Hip Hop Mixes" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:197958241/sounds.rss" type="rss" />
+      <outline title="Nigeria...How was your week" xmlUrl="https://anchor.fm/s/41bf6134/podcast/rss" type="rss" />
+      <outline title="Entrepreneurs Showcase" xmlUrl="https://api.wokpa.app/api/podcasts/19/feed" type="rss" />
+      <outline title="Rhema Nigeria Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:244590093/sounds.rss" type="rss" />
+      <outline title="HERSTORY NIGERIA PODCAST" xmlUrl="https://rss.buzzsprout.com/2561222.rss" type="rss" />
+      <outline title="&quot;Nigeria's History in Our Time&quot; with Ojo, Aderemi" xmlUrl="https://anchor.fm/s/1d92f028/podcast/rss" type="rss" />
+      <outline title="How Far, Nigeria?" xmlUrl="https://anchor.fm/s/16873000/podcast/rss" type="rss" />
+      <outline title="The Make in Nigeria Podcast" xmlUrl="https://anchor.fm/s/34105f48/podcast/rss" type="rss" />
+      <outline title="Step Up Nigeria Podcast" xmlUrl="https://stepupnigeria.org/feed/podcast/" type="rss" />
+      <outline title="Surviving Nigeria Podcast" xmlUrl="https://anchor.fm/s/33216334/podcast/rss" type="rss" />
+      <outline title="Nigeria News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/nigeria-news-today-2-min-news-the-daily-news-now.xml" type="rss" />
+      <outline title="The History of Nigeria: Kingdoms, Colonies, and Africa's Giant — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-history-of-nigeria.xml" type="rss" />
+      <outline title="=Kalmomin Rai&quot;,&quot;Bishara&quot;,&quot;Waƙoƙin Bishara&quot;-Harsunan da ake Magana a Nigeria Inda Kiristoci 'yan tsiraru ne (Lamba 200-223) //&quot; &quot;Words of Life&quot;,&quot;Good News&quot;,&quot;Gospel Songs&quot;-in Nigeria, These People Have Ethnic or Islam as their Major Religion(No.200-223)=" xmlUrl="https://tjliu25.podomatic.com/rss2.xml" type="rss" />
+      <outline title="Value Nigeria with Ajibola" xmlUrl="https://anchor.fm/s/4eb974c4/podcast/rss" type="rss" />
+      <outline title="Introduction To Geology Of Nigeria" xmlUrl="https://anchor.fm/s/205bb358/podcast/rss" type="rss" />
+      <outline title="Big Hard Facts With Maryann Okon" xmlUrl="https://atunwadigital-rss.streamguys1.com/content/nigeriainfo/bighardfacts.xml" type="rss" />
+      <outline title="ALICE IN LAGOS PODCAST" xmlUrl="https://anchor.fm/s/e189deec/podcast/rss" type="rss" />
+      <outline title="Lagos talks 913" xmlUrl="https://anchor.fm/s/5ab53f74/podcast/rss" type="rss" />
+      <outline title="Theology in Lagos" xmlUrl="https://anchor.fm/s/14a1f090/podcast/rss" type="rss" />
+      <outline title="The Tribe Lagos" xmlUrl="https://anchor.fm/s/8ef718c/podcast/rss" type="rss" />
+      <outline title="Unit Economics" xmlUrl="https://anchor.fm/s/34933a1c/podcast/rss" type="rss" />
+      <outline title="From Lagos With Love" xmlUrl="https://anchor.fm/s/30e1d2ac/podcast/rss" type="rss" />
+      <outline title="The Gospel in Lagos" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:263692633/sounds.rss" type="rss" />
+      <outline title="RCCG The Oasis Lagos" xmlUrl="https://anchor.fm/s/e5b62890/podcast/rss" type="rss" />
+      <outline title="The Cathedral Lagos Podcast" xmlUrl="https://anchor.fm/s/faf437ec/podcast/rss" type="rss" />
+      <outline title="THE GLA LAGOS PODCAST" xmlUrl="https://anchor.fm/s/100e51f18/podcast/rss" type="rss" />
+      <outline title="Rethinking Lagos Radio Show" xmlUrl="https://anchor.fm/s/3ef1ad2c/podcast/rss" type="rss" />
+      <outline title="LagosMeetsLondon©" xmlUrl="https://anchor.fm/s/f84779c8/podcast/rss" type="rss" />
+      <outline title="The Lagos Real Estate Insider" xmlUrl="https://anchor.fm/s/de0affd0/podcast/rss" type="rss" />
+      <outline title="The Brook Church Lagos" xmlUrl="https://anchor.fm/s/8a090ad0/podcast/rss" type="rss" />
+      <outline title="Life of a Nigerian Bisexual Woman surviving in Lagos" xmlUrl="https://anchor.fm/s/276f6838/podcast/rss" type="rss" />
+      <outline title="Lagos Arrangement" xmlUrl="https://anchor.fm/s/ebd920ec/podcast/rss" type="rss" />
+      <outline title="Tactical &amp; Practical" xmlUrl="https://feeds.megaphone.fm/CGCEO8275496849" type="rss" />
+      <outline title="Buck Around: The Bull Riding Podcast" xmlUrl="https://feeds.megaphone.fm/CGCEO8521077308" type="rss" />
+      <outline title="The Zoe Household" xmlUrl="https://anchor.fm/s/aebf4038/podcast/rss" type="rss" />
+      <outline title="Feeling Stuck At A 9-5 Job In Lagos" xmlUrl="https://anchor.fm/s/4311e110/podcast/rss" type="rss" />
+      <outline title="An hour in L.A.G.O.S🧏🏿‍♂️" xmlUrl="https://anchor.fm/s/800347a8/podcast/rss" type="rss" />
+      <outline title="Sounds of Lagos." xmlUrl="https://anchor.fm/s/104d3180/podcast/rss" type="rss" />
+      <outline title="Radio Jusmen" xmlUrl="https://anchor.fm/s/f6f0acc0/podcast/rss" type="rss" />
+      <outline title="The Coolio Kids Podcast" xmlUrl="https://anchor.fm/s/eced7654/podcast/rss" type="rss" />
+      <outline title="Life issues and how to deal with it" xmlUrl="https://www.spreaker.com/show/4784791/episodes/feed" type="rss" />
+      <outline title="Creative Control" xmlUrl="https://feeds.megaphone.fm/creativecontrol" type="rss" />
+      <outline title="El Cassette Invertido" xmlUrl="https://anchor.fm/s/6a506670/podcast/rss" type="rss" />
+      <outline title="RHOLagos After Party" xmlUrl="https://rss.libsyn.com/shows/415769/destinations/3450485.xml" type="rss" />
+      <outline title="Dear Lagos Podcast" xmlUrl="https://anchor.fm/s/c17ef60/podcast/rss" type="rss" />
+      <outline title="GracePlace Lagos" xmlUrl="https://media.rss.com/graceplacelagos/feed.xml" type="rss" />
+      <outline title="Last Man in Lagos" xmlUrl="https://anchor.fm/s/221f84f8/podcast/rss" type="rss" />
+      <outline title="Santiago Lagos" xmlUrl="https://anchor.fm/s/36ebf72c/podcast/rss" type="rss" />
+      <outline title="Open Lagos" xmlUrl="https://anchor.fm/s/4dfe2598/podcast/rss" type="rss" />
+      <outline title="#LondonToLagos" xmlUrl="https://anchor.fm/s/350fc550/podcast/rss" type="rss" />
+      <outline title="Yewande in Lagos" xmlUrl="https://anchor.fm/s/385f4320/podcast/rss" type="rss" />
+      <outline title="Global Harvest Church, Island Lagos" xmlUrl="https://anchor.fm/s/1064ef8d4/podcast/rss" type="rss" />
+      <outline title="VANESSA LAGOS - VIVE EN CONSCIENCIA HOLÍSTICA" xmlUrl="https://anchor.fm/s/441f2af4/podcast/rss" type="rss" />
+      <outline title="Arco Lagos Iglesia Cristiana" xmlUrl="https://anchor.fm/s/fc54e1f4/podcast/rss" type="rss" />
+      <outline title="Yeshua's Hill Global - Lagos" xmlUrl="https://anchor.fm/s/fad011a0/podcast/rss" type="rss" />
+      <outline title="Lost in Lagos Podcast" xmlUrl="https://api.wokpa.app/api/podcasts/258/feed" type="rss" />
+      <outline title="Mevam Lagos" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:105728688/sounds.rss" type="rss" />
+      <outline title="Lagos Real" xmlUrl="https://anchor.fm/s/33defb24/podcast/rss" type="rss" />
+      <outline title="FBCKosofe Lagos" xmlUrl="https://anchor.fm/s/231c6fd8/podcast/rss" type="rss" />
+      <outline title="Lagos big girls on a budget" xmlUrl="https://anchor.fm/s/5cad5d5c/podcast/rss" type="rss" />
+      <outline title="Tacsfon Lagos Zone" xmlUrl="https://anchor.fm/s/613104a0/podcast/rss" type="rss" />
+      <outline title="Love Lagos" xmlUrl="https://anchor.fm/s/1418d9a4/podcast/rss" type="rss" />
+      <outline title="FASCIOLIASIS_LAGOS MANOVACIA_G2" xmlUrl="https://anchor.fm/s/5c4a1300/podcast/rss" type="rss" />
+      <outline title="Everything Lagos (EL)" xmlUrl="https://anchor.fm/s/8ed9ad1c/podcast/rss" type="rss" />
+      <outline title="Camino a Los Lagos" xmlUrl="https://anchor.fm/s/8f426424/podcast/rss" type="rss" />
+      <outline title="Abuja Literary And Arts Festival 2020" xmlUrl="https://anchor.fm/s/31910704/podcast/rss" type="rss" />
+      <outline title="KingsWord Abuja" xmlUrl="https://anchor.fm/s/2cc09aa0/podcast/rss" type="rss" />
+      <outline title="MFM Ministries IHQ Wuye, Abuja" xmlUrl="https://anchor.fm/s/f850ecec/podcast/rss" type="rss" />
+      <outline title="Foursquare Garki Abuja" xmlUrl="https://anchor.fm/s/2029fc64/podcast/rss" type="rss" />
+      <outline title="Family Worship Centre Podcasts" xmlUrl="https://anchor.fm/s/4e7799c8/podcast/rss" type="rss" />
+      <outline title="Trinity Baptist Church, Abuja" xmlUrl="https://anchor.fm/s/69811ff0/podcast/rss" type="rss" />
+      <outline title="The One City Abuja Podcast" xmlUrl="https://anchor.fm/s/ddc92efc/podcast/rss" type="rss" />
+      <outline title="RCCG LSC Abuja" xmlUrl="https://anchor.fm/s/10c308c90/podcast/rss" type="rss" />
+      <outline title="His Image House Ministry Abuja" xmlUrl="https://anchor.fm/s/4ea73930/podcast/rss" type="rss" />
+      <outline title="PPAfan Abuja" xmlUrl="https://anchor.fm/s/100a5d1a0/podcast/rss" type="rss" />
+      <outline title="RCCG, The King's Palace, Abuja" xmlUrl="https://anchor.fm/s/38e38748/podcast/rss" type="rss" />
+      <outline title="Trekking Abuja" xmlUrl="https://anchor.fm/s/564da2b4/podcast/rss" type="rss" />
+      <outline title="THE ABUJA BIBLE BANQUET PODCAST" xmlUrl="https://anchor.fm/s/dcea9a84/podcast/rss" type="rss" />
+      <outline title="Temple Of Glory, Abuja." xmlUrl="https://anchor.fm/s/16cb11bc/podcast/rss" type="rss" />
+      <outline title="Ambassador Word Church Abuja" xmlUrl="https://anchor.fm/s/4e5c85c/podcast/rss" type="rss" />
+      <outline title="RCCG The Life Centre - Abuja" xmlUrl="https://anchor.fm/s/b05e4718/podcast/rss" type="rss" />
+      <outline title="The Baptizing Church Abuja" xmlUrl="https://anchor.fm/s/30619a74/podcast/rss" type="rss" />
+      <outline title="Gracelife Family Church Abuja" xmlUrl="https://theempowermentchannel.podomatic.com/rss2.xml" type="rss" />
+      <outline title="PM Magic" xmlUrl="https://anchor.fm/s/4d9da8d0/podcast/rss" type="rss" />
+      <outline title="ADPodcast" xmlUrl="https://anchor.fm/s/2c551b18/podcast/rss" type="rss" />
+      <outline title="LFC Byazhin podcast" xmlUrl="https://anchor.fm/s/4cbaa468/podcast/rss" type="rss" />
+      <outline title="Concept Of Discipleship" xmlUrl="https://anchor.fm/s/1399afbc/podcast/rss" type="rss" />
+      <outline title="Coffee, Life and Whatever" xmlUrl="https://anchor.fm/s/3dd2b260/podcast/rss" type="rss" />
+      <outline title="Heart Dive with Kanoe Gibson" xmlUrl="https://app.fusebox.fm/data/show/NyDwmk0xJ3/feed" type="rss" />
+      <outline title="LOS MITOTES" xmlUrl="https://anchor.fm/s/bc0d8de4/podcast/rss" type="rss" />
+      <outline title="Gotas de Claridad" xmlUrl="https://app.kajabi.com/podcasts/2148052651/feed" type="rss" />
+      <outline title="Tuck Everlasting" xmlUrl="https://anchor.fm/s/1ed90af8/podcast/rss" type="rss" />
+      <outline title="プロマネの沼.fm" xmlUrl="https://anchor.fm/s/37d39a64/podcast/rss" type="rss" />
+      <outline title="The Kano Mama Podcast" xmlUrl="https://anchor.fm/s/32ff2404/podcast/rss" type="rss" />
+      <outline title="overthinking... with Kano" xmlUrl="https://anchor.fm/s/10225ec18/podcast/rss" type="rss" />
+      <outline title="Kano Talk Show - by Kano Suryoyo e.V." xmlUrl="https://anchor.fm/s/101e3ade4/podcast/rss" type="rss" />
+      <outline title="Kano" xmlUrl="https://anchor.fm/s/12fcd50c/podcast/rss" type="rss" />
+      <outline title="Kanō Hangout" xmlUrl="https://anchor.fm/s/50c466fc/podcast/rss" type="rss" />
+      <outline title="Magasinet - Kano, Kajak og SUP" xmlUrl="https://rss.buzzsprout.com/2286149.rss" type="rss" />
+      <outline title="Anything &amp; Everything with Kano &amp; Spencer" xmlUrl="https://anchor.fm/s/28e09b74/podcast/rss" type="rss" />
+      <outline title="Impacto Social por Célia Kano" xmlUrl="https://media.rss.com/impacto-social-por-celia-kano/feed.xml" type="rss" />
+      <outline title="Kano" xmlUrl="https://anchor.fm/s/2cadd910/podcast/rss" type="rss" />
+      <outline title="Kano Mixes" xmlUrl="https://feeds.redcircle.com/47467c2a-1168-4a5f-8c16-6c2a8242b356" type="rss" />
+      <outline title="Things You Don’t Need to Know About Japan" xmlUrl="https://media.rss.com/kanoppe/feed.xml" type="rss" />
+      <outline title="HALQA RADIO KANO" xmlUrl="https://anchor.fm/s/404ddfd8/podcast/rss" type="rss" />
+      <outline title="Always Reflecting with Kano" xmlUrl="https://anchor.fm/s/112b9ac7c/podcast/rss" type="rss" />
+      <outline title="Pendidikan Agama Kristen" xmlUrl="https://anchor.fm/s/696fd4fc/podcast/rss" type="rss" />
+      <outline title="ALIVELYhood Podcast" xmlUrl="https://anchor.fm/s/3410af5c/podcast/rss" type="rss" />
+      <outline title="La Serie Más Vistae Netfix" xmlUrl="https://anchor.fm/s/97f1ecc/podcast/rss" type="rss" />
+      <outline title="Zone podcast Santiago" xmlUrl="https://anchor.fm/s/47b16970/podcast/rss" type="rss" />
+      <outline title="Covid- Real Talk" xmlUrl="https://anchor.fm/s/26c6ca98/podcast/rss" type="rss" />
+      <outline title="Concatenando" xmlUrl="https://feeds.simplecast.com/DRWqL_a0" type="rss" />
+      <outline title="The Four Boys Club" xmlUrl="https://anchor.fm/s/d92986f8/podcast/rss" type="rss" />
+      <outline title="BreathingPod" xmlUrl="https://anchor.fm/s/51b9f90/podcast/rss" type="rss" />
+      <outline title="くらしと技術" xmlUrl="https://rss.listen.style/p/kurashitech/rss" type="rss" />
+      <outline title="Athletic Supporters" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:122558859/sounds.rss" type="rss" />
+      <outline title="Nccfkanomedia" xmlUrl="https://anchor.fm/s/1cf1450c/podcast/rss" type="rss" />
+      <outline title="connecting podcast" xmlUrl="https://anchor.fm/s/4fadef18/podcast/rss" type="rss" />
+      <outline title="KAKYOKU-CAFE online" xmlUrl="https://anchor.fm/s/45a55f88/podcast/rss" type="rss" />
+      <outline title="Heart Talk" xmlUrl="https://anchor.fm/s/10d991f34/podcast/rss" type="rss" />
+      <outline title="RCN Ibadan" xmlUrl="https://anchor.fm/s/f7fc4250/podcast/rss" type="rss" />
+      <outline title="Evangelical Church Winning All (ECWA) Chapel Ibadan" xmlUrl="https://anchor.fm/s/1e88a61c/podcast/rss" type="rss" />
+      <outline title="SplashFMIbadan" xmlUrl="https://anchor.fm/s/50fa3e94/podcast/rss" type="rss" />
+      <outline title="We Are Men" xmlUrl="https://anchor.fm/s/5d842eb8/podcast/rss" type="rss" />
+      <outline title="LBC Sermons" xmlUrl="https://anchor.fm/s/250bd360/podcast/rss" type="rss" />
+      <outline title="KingsWord International Church, Port Harcourt" xmlUrl="https://anchor.fm/s/7ccc124/podcast/rss" type="rss" />
+      <outline title="Winners Chapel Port Harcourt" xmlUrl="https://feeds.redcircle.com/401ec11d-0d97-4068-ad5f-e55bdf1998c5" type="rss" />
+      <outline title="A-MEDIA PHC" xmlUrl="https://anchor.fm/s/2aead4e8/podcast/rss" type="rss" />
+      <outline title="Portharcourt city - uncensored" xmlUrl="https://anchor.fm/s/429cc2a4/podcast/rss" type="rss" />
+      <outline title="I Said What I Said" xmlUrl="https://www.isaidwhatisaidpodcast.com/feed/" type="rss" />
+      <outline title="So Nigerian" xmlUrl="https://www.sonigerian.com/feed/podcast/" type="rss" />
+      <outline title="Afro Podcast" xmlUrl="https://www.afropodcast.com/feed/" type="rss" />
+      <outline title="TechCabal Podcast" xmlUrl="https://www.techcabal.com/podcast/feed/" type="rss" />
+      <outline title="FirstBank Fintech Podcast" xmlUrl="https://www.spreaker.com/show/5206588/episodes/feed" type="rss" category="Technology" />
+      <outline title="Andersen Nigeria's Podcast" xmlUrl="https://rss.buzzsprout.com/1960333.rss" type="rss" category="Business" />
+      <outline title="My Africa" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:135826993/sounds.rss" type="rss" category="Society" />
+      <outline title="HEAR THEIR VOICES, an ICON Podcast" xmlUrl="https://feeds.buzzsprout.com/961513.rss" type="rss" category="News" />
+      <outline title="Larry Banks Nigeria :OTO LORO's podcast" xmlUrl="https://www.spreaker.com/show/6470349/episodes/feed" type="rss" category="Society" />
+      <outline title="Nutrify Podcast" xmlUrl="https://anchor.fm/s/a48f5e4/podcast/rss" type="rss" category="Health" />
+      <outline title="The YIO Podcast (Our Stories and Advocacy Journey)" xmlUrl="https://anchor.fm/s/55aa6f04/podcast/rss" type="rss" category="Health" />
+      <outline title="20Questions Podcast by Bush House Nigeria" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:393597381/sounds.rss" type="rss" category="Tv" />
+      <outline title="The Most Powerful Spiritual Herbalist In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2460776.rss" type="rss" category="Religion" />
+      <outline title="The Most Powerful Herbalist Spiritual Man In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2460771.rss" type="rss" category="Health" />
+      <outline title="PSHAN Podcast" xmlUrl="https://feeds.buzzsprout.com/2183054.rss" type="rss" category="Health" />
+      <outline title="The Morning Gear — Nigeria's Self Improvement and Mindset Podcast for GenZ" xmlUrl="https://anchor.fm/s/107ea9130/podcast/rss" type="rss" category="Education" />
+      <outline title="Kidnapping Issues In Nigeria Is Too Much" xmlUrl="https://www.spreaker.com/show/7103184/episodes/feed" type="rss" category="News" />
+      <outline title="PSHAN Podcast" xmlUrl="https://anchor.fm/s/e08a91e4/podcast/rss" type="rss" category="Business" />
+      <outline title="UNDP Nigeria Podcast" xmlUrl="https://anchor.fm/s/e02a11fc/podcast/rss" type="rss" category="Business" />
+      <outline title="Act4Food Act4Change Podcast" xmlUrl="https://media.rss.com/act4food-act4changenigeria/feed.xml" type="rss" category="Arts" />
+      <outline title="LARRY BANKS NIGERIA German Gate Podcast" xmlUrl="https://www.spreaker.com/show/5358138/episodes/feed" type="rss" category="Society" />
+      <outline title="GBV Podcast Nigeria" xmlUrl="https://media.rss.com/gbvpodcast/feed.xml" type="rss" category="Education" />
+      <outline title="Cowries &amp; Kobos Podcast: Following Nigeria's Financial and Economic Journey" xmlUrl="https://feeds.redcircle.com/6fd36d20-e36e-4024-9483-4f2cdac48a93" type="rss" category="Business" />
+      <outline title="Clorets This Close Podcast" xmlUrl="https://anchor.fm/s/60bcfe48/podcast/rss" type="rss" category="Comedy" />
+      <outline title="The Brown Space Podcast" xmlUrl="https://media.rss.com/thebrownspacepodcast/feed.xml" type="rss" category="Society" />
+      <outline title="Budapest; New York; Ukraine; Nigeria etc." xmlUrl="https://podcasts.ceu.edu/taxonomy/term/1601/feed" type="rss" />
+      <outline title="Made In Nigeria Tech Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:276203224/sounds.rss" type="rss" category="Technology" />
+      <outline title="Audacity2Lead: The Courage and Necessary Insights You Need to Step Out and Lead with More Influence | Dayo Samuel, Nigeria Podcast Network" xmlUrl="https://feeds.feedburner.com/theaudacity2lead" type="rss" category="Education" />
+      <outline title="The Best Powerful Spiritual Herbalist Man In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2456645.rss" type="rss" category="Health" />
+      <outline title="The Best Powerful Herbalist Man And Native Doctor In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2456652.rss" type="rss" category="Health" />
+      <outline title="The Most Powerful Spiritual Herbalist Man In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2457792.rss" type="rss" category="Health" />
+      <outline title="The Best Powerful Spiritual Herbalist Man In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2457803.rss" type="rss" category="Health" />
+      <outline title="The Best Powerful Spiritual Herbalist In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2459964.rss" type="rss" category="Religion" />
+      <outline title="The Best Powerful Spiritual Herbalist And Native Doctor In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2459982.rss" type="rss" category="Health" />
+      <outline title="The Most Powerful Spiritual Herbalist In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2459997.rss" type="rss" category="Health" />
+      <outline title="KPMG Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2454540.rss" type="rss" />
+      <outline title="The Most Powerful Herbalist Spiritual Man In Nigeria's Podcast" xmlUrl="https://feeds.buzzsprout.com/2460877.rss" type="rss" category="Health" />
+      <outline title="Nigeria Unfiltered Podcast" xmlUrl="https://feeds.buzzsprout.com/2418381.rss" type="rss" category="News" />
+      <outline title="I'd Like To Thank Myself" xmlUrl="https://feeds.transistor.fm/id-like-to-thank-myself" type="rss" category="Arts" />
+      <outline title="Arroe Collins Like It's Live" xmlUrl="https://www.spreaker.com/show/4113802/episodes/feed" type="rss" category="News" />
+      <outline title="Seriously Mysterious - Missing Persons, Unsolved Murders &amp; Historical True Crime" xmlUrl="https://www.spreaker.com/show/4532075/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Life Hacks DIY &amp; More - Transform Your Everyday With Simple Tricks and DIY Magic!" xmlUrl="https://www.spreaker.com/show/5995484/episodes/feed" type="rss" category="Education" />
+      <outline title="Reddit Stories" xmlUrl="https://www.spreaker.com/show/6370551/episodes/feed" type="rss" category="Leisure" />
+      <outline title="The Kyle Peterson Show" xmlUrl="https://www.spreaker.com/show/6573404/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Reality After Show" xmlUrl="https://www.spreaker.com/show/5448874/episodes/feed" type="rss" category="Tv" />
+      <outline title="3-Bit Gamer Show" xmlUrl="https://www.spreaker.com/show/2255796/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Come explore the paranormal files as we delve into the unexplained. The paranormal podcast." xmlUrl="https://www.spreaker.com/show/5547977/episodes/feed" type="rss" category="Society" />
+      <outline title="Minding Your Business Podcast" xmlUrl="https://www.spreaker.com/show/6367325/episodes/feed" type="rss" category="Business" />
+      <outline title="95.3 Gorilla" xmlUrl="https://wznfpodcast.mainevibe.com/feed.xml" type="rss" category="Music" />
+      <outline title="Gamefully Unemployed" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:395741505/sounds.rss" type="rss" category="Tv" />
+      <outline title="Cog-Dog Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:236473103/sounds.rss" type="rss" category="Education" />
+      <outline title="Managing Tech Millions" xmlUrl="https://feeds.redcircle.com/8f2225e0-c4ac-469c-9e36-07f3677a22a7" type="rss" category="Business" />
+      <outline title="Vocal Booth Radio Listen Again" xmlUrl="https://vocalboothradio.com/feed/mp3" type="rss" category="Music" />
+      <outline title="Daily Shower Thoughts" xmlUrl="https://feeds.megaphone.fm/dailyshowerthoughts" type="rss" category="Comedy" />
+      <outline title="BIG Life Devotional | Daily Devotional for Women" xmlUrl="https://biglifehq.com/feed/podcast" type="rss" category="Religion" />
+      <outline title="Fun Content" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1469" type="rss" category="News" />
+      <outline title="94WIP Morning Show with Joe DeCamara and Jon Ritchie" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/philadelphia_wipfm-94wip_morning_show_with_joe_decamara_and_jon_ritchie" type="rss" category="Sports" />
+      <outline title="Based Camp | Simone &amp; Malcolm Collins" xmlUrl="https://api.substack.com/feed/podcast/1643534/s/64409.rss" type="rss" category="Society" />
+      <outline title="Bonjour France Podcast" xmlUrl="https://www.spreaker.com/show/6773527/episodes/feed" type="rss" category="Society" />
+      <outline title="Milena's Diary" xmlUrl="https://feeds.megaphone.fm/hmstalksltd9487207744" type="rss" category="Society" />
+      <outline title="North Point Baptist Church Sermons" xmlUrl="https://www.spreaker.com/show/6124300/episodes/feed" type="rss" category="Religion" />
+      <outline title="York County's Morning Show" xmlUrl="https://www.spreaker.com/show/6243862/episodes/feed" type="rss" category="Society" />
+      <outline title="Brian Thomas" xmlUrl="https://www.spreaker.com/show/2459972/episodes/feed" type="rss" category="News" />
+      <outline title="Wave 94" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:16676106/sounds.rss" type="rss" category="Religion" />
+      <outline title="Cleveland Browns News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/cleveland-browns-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Cork News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/fort-smith-daily-news-now.xml" type="rss" category="News" />
+      <outline title="The Missing Persons Report" xmlUrl="https://www.spreaker.com/show/6763610/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Rabbi Kraz's Shiurim" xmlUrl="https://anchor.fm/s/d89491c4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Toronto Today with Greg Brady" xmlUrl="https://feeds.megaphone.fm/coru2066336057" type="rss" category="News" />
+      <outline title="The Drake Toll Show" xmlUrl="https://feeds.megaphone.fm/wwo4349656783" type="rss" category="News" />
+      <outline title="Going Ultra - Presented by Henshin Inspection" xmlUrl="https://media.rss.com/mjmgu/feed.xml" type="rss" category="Tv" />
+      <outline title="JPost Headlines" xmlUrl="https://www.spreaker.com/show/6677418/episodes/feed" type="rss" category="News" />
+      <outline title="Audio Mises Wire" xmlUrl="https://cdn.mises.org/itunes/en_127226.xml" type="rss" category="News" />
+      <outline title="Outsource to Profits Podcast" xmlUrl="https://feed.podbean.com/getlevrg/feed.xml" type="rss" category="Business" />
+      <outline title="24 Oras Podcast" xmlUrl="https://feeds.acast.com/public/shows/685d292847311de1b6e0e89a" type="rss" category="News" />
+      <outline title="Excess Returns" xmlUrl="https://anchor.fm/s/9a1dfac/podcast/rss" type="rss" category="Business" />
+      <outline title="Red Sox Digest Podcast" xmlUrl="https://www.spreaker.com/show/6691213/episodes/feed" type="rss" category="News" />
+      <outline title="The Tony Kornheiser Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/the-tony-kornheiser-show" type="rss" category="Sports" />
+      <outline title="Radio Miraya" xmlUrl="https://audioboom.com/channels/3891441.rss" type="rss" category="Technology" />
+      <outline title="Pivot: SHIFT Ahead Mastermind" xmlUrl="https://media.rss.com/pivot-shift-ahead-mastermind/feed.xml" type="rss" category="Business" />
+      <outline title="Los Angeles Rams News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/los-angeles-rams-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Get Up" xmlUrl="https://feeds.megaphone.fm/esp2870920494" type="rss" category="Sports" />
+      <outline title="Courtney and KISS in the morning" xmlUrl="https://www.spreaker.com/show/2497425/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Computer Talk with TAB" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/f8c743d7682ab4bac553696e6093d3e7" type="rss" category="Business" />
+      <outline title="Tennessee Titans News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/tennessee-titans-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Wrestle Radio Australia" xmlUrl="https://wrestleradioaustralia.libsyn.com/rss" type="rss" category="Sports" />
+      <outline title="Hope Expression Podcast" xmlUrl="https://www.spreaker.com/show/5891904/episodes/feed" type="rss" category="Religion" />
+      <outline title="Spurs Chat: Discussing all Things Tottenham Hotspur: Hosted by Chris Cowlin: The Daily Tottenham/Spurs Podcast" xmlUrl="https://feeds.acast.com/public/shows/639c5ea1bcab760012015b61" type="rss" category="Sports" />
+      <outline title="Federalist Radio Hour" xmlUrl="https://feeds.feedburner.com/ricochetaudionetwork/federalistradiohour" type="rss" category="News" />
+      <outline title="The Irish Passport" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298752213/sounds.rss" type="rss" category="Society" />
+      <outline title="The Lunduke Journal of Technology" xmlUrl="https://api.substack.com/feed/podcast/462466.rss" type="rss" category="Technology" />
+      <outline title="Boston Bruins News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/boston-bruins-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Warden's Watch" xmlUrl="https://feeds.megaphone.fm/wpcm3659727000" type="rss" category="Sports" />
+      <outline title="Experience in Golf Clubhouse Design" xmlUrl="https://feeds.libsyn.com/475266/rss" type="rss" category="Arts" />
+      <outline title="Betting Weekly Studios" xmlUrl="https://feeds.megaphone.fm/rerre3101069934" type="rss" category="Sports" />
+      <outline title="The Long Run with Luke Timmerman" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:317770704/sounds.rss" type="rss" category="Science" />
+      <outline title="Belfast News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/bridgeport-daily-news-now.xml" type="rss" category="News" />
+      <outline title="AM Quincy" xmlUrl="https://feeds.feedburner.com/qatv_amquincypodcast" type="rss" category="Government" />
+      <outline title="Autoblog News" xmlUrl="https://feeds.feedburner.com/podcast/autoblog" type="rss" category="Games" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast" type="rss" category="News" />
+      <outline title="Filterbuy.com Audio Blogs Podcast" xmlUrl="https://www.spreaker.com/show/6267470/episodes/feed" type="rss" category="Education" />
+      <outline title="The Flex Podcast with Anna Martin Fitness" xmlUrl="https://media.rss.com/the-flex-podcast-with-anna-martin-fitness/feed.xml" type="rss" category="Health" />
+      <outline title="Church and State" xmlUrl="https://feed.podbean.com/churchandstate/feed.xml" type="rss" category="News" />
+      <outline title="Bite-Sized Dental Marketing" xmlUrl="https://media.rss.com/bsdm/feed.xml" type="rss" category="Business" />
+      <outline title="DD Fantasy Football Radio" xmlUrl="https://feeds.megaphone.fm/blu7133453702" type="rss" category="Sports" />
+      <outline title="Cybercrime Magazine Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286242900/sounds.rss" type="rss" category="Technology" />
+      <outline title="Lawrence News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/lawrence-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Sasquatch Experience" xmlUrl="https://www.spreaker.com/show/4208641/episodes/feed" type="rss" category="Science" />
+      <outline title="Ciliberto and Friends" xmlUrl="https://www.spreaker.com/show/5983689/episodes/feed" type="rss" category="Music" />
+      <outline title="The Automated Daily" xmlUrl="https://theautomateddaily.com/feed.xml" type="rss" category="Technology" />
+      <outline title="The Automated Daily - Space News Edition" xmlUrl="https://theautomateddaily.com/space/feed.xml" type="rss" category="Science" />
+      <outline title="Word Balloon Comics Podcast" xmlUrl="https://www.spreaker.com/show/3143082/episodes/feed" type="rss" category="Tv" />
+      <outline title="Daily Morning Class" xmlUrl="https://media.rss.com/rabbiyedid/feed.xml" type="rss" category="Religion" />
+      <outline title="Reality with The King" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a1735c70-f70f-4045-805b-b302010c5b8c/5db0a3af-13d8-4a16-974c-b302010c5bb4/podcast.rss" type="rss" category="Tv" />
+      <outline title="The Dentalpreneur Podcast w/ Dr. Mark Costes" xmlUrl="https://markcostes.libsyn.com/rss" type="rss" category="Business" />
+      <outline title="The Kapeel Gupta Career Podshow" xmlUrl="https://rss.buzzsprout.com/2012553.rss" type="rss" category="Business" />
+      <outline title="What in the World" xmlUrl="https://podcasts.files.bbci.co.uk/w13xtvrv.rss" type="rss" category="News" />
+      <outline title="The Buddy System with Chris &amp; Matty" xmlUrl="https://feeds.megaphone.fm/mduyh3921896096?1?1" type="rss" category="Comedy" />
+      <outline title="Fore Love of Golf" xmlUrl="https://feeds.megaphone.fm/rogxo2747915340" type="rss" category="Sports" />
+      <outline title="Dr. John Campbell" xmlUrl="https://feeds.megaphone.fm/vg9554039150" type="rss" category="Education" />
+      <outline title="Paranormal UK Radio Network" xmlUrl="https://www.spreaker.com/show/4541473/episodes/feed" type="rss" category="Society" />
+      <outline title="This Day in History" xmlUrl="https://feeds.redcircle.com/9339ef5f-2c20-4a38-b60d-eb4ac27759c3" type="rss" category="History" />
+      <outline title="Football Social Daily" xmlUrl="https://feeds.megaphone.fm/comg9297908545" type="rss" category="Sports" />
+      <outline title="Edmonton News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-stockton-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Park Avenue Synagogue Podcast" xmlUrl="https://feed.podbean.com/parkavenuepodcast/feed.xml" type="rss" category="Religion" />
+      <outline title="PreMarket Prep" xmlUrl="https://anchor.fm/s/fd33c360/podcast/rss" type="rss" category="Business" />
+      <outline title="StribSports Daily Delivery" xmlUrl="https://feeds.megaphone.fm/stribsportsdailydelivery" type="rss" category="Sports" />
+      <outline title="Legacy Nashville Podcast" xmlUrl="https://media.rss.com/legacy-nashville-podcast/feed.xml" type="rss" category="Religion" />
+      <outline title="&quot;There I was...&quot; An Aviation Podcast" xmlUrl="https://feeds.megaphone.fm/aopa1855704656" type="rss" category="Leisure" />
+      <outline title="Marketer of the Day with Robert Plank: Business Growth &amp; Entrepreneur Stories" xmlUrl="https://www.robertplank.com/feed/podcast" type="rss" category="Business" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="News" />
+      <outline title="In The Money Media Network" xmlUrl="https://feeds.captivate.fm/in-the-money-media-network" type="rss" category="Sports" />
+      <outline title="This Paranormal Life" xmlUrl="https://feeds.megaphone.fm/nsr2334813337" type="rss" category="Comedy" />
+      <outline title="Let's Address This with Qasim Rashid Podcast" xmlUrl="https://api.substack.com/feed/podcast/2550223.rss" type="rss" category="News" />
+      <outline title="Flashscore News" xmlUrl="https://feeds.captivate.fm/flashscore-news" type="rss" category="News" />
+      <outline title="JACC Global" xmlUrl="https://feeds.libsyn.com/75161" type="rss" category="Health" />
+      <outline title="Health News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/health-and-fitness-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Health" />
+      <outline title="Food Freedom" xmlUrl="https://anchor.fm/s/d625f518/podcast/rss" type="rss" category="Health" />
+      <outline title="See Ball Get Ball with David Pollack" xmlUrl="https://media.rss.com/see-ball-get-ball-david-pollack/feed.xml" type="rss" category="Sports" />
+      <outline title="Blurt Vibes" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1398" type="rss" category="News" />
+      <outline title="Twisted Podcast" xmlUrl="https://twistedpodcast.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Billianon" xmlUrl="https://podcast.billianon.com/@billianon/feed.xml" type="rss" category="Education" />
+      <outline title="Global Research Unlocked" xmlUrl="https://feed.podbean.com/bofaglobalresearch/feed.xml" type="rss" category="Business" />
+      <outline title="Fresh Pinball Podcast" xmlUrl="https://media.rss.com/freshpinballpodcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Georgia Tech Yellow Jackets Football Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/georgia-tech-yellow-jackets-football-today-2-min-news.xml" type="rss" category="News" />
+      <outline title="Magical Transformations" xmlUrl="https://feeds.captivate.fm/magicaltrasformations" type="rss" category="Health" />
+      <outline title="The Nielson Show" xmlUrl="https://feeds.libsyn.com/481581/rss" type="rss" category="Sports" />
+      <outline title="The Bridge" xmlUrl="https://www.spreaker.com/show/3099883/episodes/feed" type="rss" category="Sports" />
+      <outline title="Politics Unpacked" xmlUrl="https://feeds.acast.com/public/shows/92a301e1-443b-435f-b4e2-2e2dd1e37fc5" type="rss" category="News" />
+      <outline title="*“Yesterday, I Went to Mars ♡”*" xmlUrl="https://anchor.fm/s/fcce555c/podcast/rss" type="rss" category="Society" />
+      <outline title="SYSTEMIZE YOUR LIFE + BUSINESS | Schedules, Routines, Productivity, Time Management, Operating System" xmlUrl="https://feed.podbean.com/systemizeyourlife/feed.xml" type="rss" category="Kids" />
+      <outline title="San Francisco 49ers News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/san-francisco-49ers-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Chiney Today" xmlUrl="https://feeds.megaphone.fm/esp1950629932" type="rss" category="Sports" />
+      <outline title="Top Entrepreneurs Podcast | Enterprise Podcast Network" xmlUrl="https://feeds.feedburner.com/entrepreneurpodcastnetwork" type="rss" category="Business" />
+      <outline title="Restoration Home with Jennifer Pepito" xmlUrl="https://feed.podbean.com/restorationhome/feed.xml" type="rss" category="Kids" />
+      <outline title="Keys to Success" xmlUrl="https://www.spreaker.com/show/6414073/episodes/feed" type="rss" category="Society" />
+      <outline title="Athletics Weekly Podcast" xmlUrl="https://feeds.acast.com/public/shows/6697e5223fac6c42420fe0e8" type="rss" category="Sports" />
+      <outline title="Mully &amp; Haugh Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/chicago_wscram_mully___haugh_show" type="rss" category="Sports" />
+      <outline title="Grow My Salon Business Podcast" xmlUrl="https://feeds.transistor.fm/grow-my-salon-business-podcast" type="rss" category="Arts" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="News" />
+      <outline title="Mornings With Gary Byron Podcast" xmlUrl="https://feeds.transistor.fm/mornings-with-gary-byron-podcast" type="rss" category="News" />
+      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed" type="rss" category="News" />
+      <outline title="Arkansas Razorbacks Basketball News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/arkansas-razorbacks-basketball-news-today-2-min-news-the-dai.xml" type="rss" category="News" />
+      <outline title="Galway Bay fm - Sports" xmlUrl="https://galwaybayfmsports.podbean.com/feed.xml" type="rss" category="Sports" />
+      <outline title="Harmonizing Success" xmlUrl="https://www.spreaker.com/show/6418590/episodes/feed" type="rss" category="Business" />
+      <outline title="World Today" xmlUrl="https://aezfm.meldingcloud.com/rss/program/46" type="rss" category="News" />
+      <outline title="Montreal Canadiens News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/montreal-canadiens-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Giggly Squad" xmlUrl="https://feeds.acast.com/public/shows/780a3042-864b-40fa-ae09-4557aec621c3" type="rss" category="Comedy" />
     </outline>
-    
-    
     <outline text="Photography">
-      
-      
-      <outline title="Photo Nigeria" xmlUrl="https://www.photonigeria.com/feed/" type="rss"/>
-      
-      
-      <outline title="Kongi" xmlUrl="https://www.kongi.com/feed/" type="rss"/>
-      
-    
+      <outline title="Photo Nigeria" xmlUrl="https://www.photonigeria.com/feed/" type="rss" />
+      <outline title="Kongi" xmlUrl="https://www.kongi.com/feed/" type="rss" />
     </outline>
-    
-
     <outline text="YouTube">
-      <outline title="StarPlus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-LPIU24bQXVljUXivKEeRQ" type="rss"/>
-      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
-      <outline title="Celine Dept" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1a2ZCw7tugRZYRMnecNj3A" type="rss"/>
-      <outline title="Infobellsмовою гінді" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1ciY6kR3yj3kaKZ6R7ewAg" type="rss"/>
-      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
-      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
-      <outline title="Влад A4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2tsySbe9TNrI-xh2lximHA" type="rss"/>
-      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
-      <outline title="SonyMusicIndiaVEVO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3MLnJtqc_phABBriLRhtgQ" type="rss"/>
-      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
-      <outline title="ARY Digital HD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4JCksJF76g_MdzPVBJoC3Q" type="rss"/>
-      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
-      <outline title="Anaya Kandhal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4wEPe5mrHGAUjjTfXH_C-Q" type="rss"/>
-      <outline title="कलर्स टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
-      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
-      <outline title="Dangal TV Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5AA82B9K5K5Sdx2JpuuuSA" type="rss"/>
-      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
-      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
-      <outline title="ISSEI / いっせい" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6QZ_ss3i_8qLV_RczPZBkw" type="rss"/>
-      <outline title="JioHotstar Kids" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6msOR4-Wf-NMAP24YwobpQ" type="rss"/>
-      <outline title="Billion Surprise Toys" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6sqpmfBwngFZQPPzFjDGTw" type="rss"/>
-      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
-      <outline title="Ben Azelart" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8tCJ55XS8ClDQmfDZogYPQ" type="rss"/>
-      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
-      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
-      <outline title="@shemaroo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9w7VG_ZZwjXCskGZByMBvw" type="rss"/>
-      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9zs_bkRRTJa2kRsakFaFmw" type="rss"/>
-      <outline title="Karla Bustillos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAQB-fgOrLlUm149S3oArOg" type="rss"/>
-      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
-      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
-      <outline title="Topper Guild" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB58HbhbM93ygXfnCJ1K2kA" type="rss"/>
-      <outline title="चुचु टिभी नर्सरी राइम्स एन्ड किड्स सङ्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnZ16ahKA2DZ_T5W0FPUXg" type="rss"/>
-      <outline title="Alan Chikin Chow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCMeCQ4wtdwQuoH7TNThL1A" type="rss"/>
-      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDGmojLIoWpXok597xYo8cg" type="rss"/>
-      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDpenlfHFtjdGpqi8slPybg" type="rss"/>
-      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
-      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss"/>
-      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
-      <outline title="Saregama Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGzzga499Hr2AB1btQ3XtoQ" type="rss"/>
-      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
-      <outline title="PANDA BOI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJbJuOSf-ec7jsPzvQBVC3w" type="rss"/>
-      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
-      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
-      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
-      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
-      <outline title="केएल ब्रो बिजु रित्भिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5nlHWXVLeOsSjKH2fhmsg" type="rss"/>
-      <outline title="बाङतान टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkAepWjdylmXSltofFvsYQ" type="rss"/>
-      <outline title="WWE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
-      <outline title="@zhong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOKv-bQOCCfZp5vftTZ4MKg" type="rss"/>
-      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
-      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
-      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
-      <outline title="shfa2 - شفا" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ7x25F6YXY9DvGeHFxLhRQ" type="rss"/>
-      <outline title="योलो एभेन्तुरास" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ8TuCvcDMepleXFyOQfyOQ" type="rss"/>
-      <outline title="ABP NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRWFSbif-RFENbBrSiez1DA" type="rss"/>
-      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
-      <outline title="Masha and the Bear" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSgiKiHFAV640il9waFg9cw" type="rss"/>
-      <outline title="อลัน เฉิน สโตกส์ และ เฉิน สโตกส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUdKQXtKb1me2Gt1nz6tzdg" type="rss"/>
-      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
-      <outline title="MR. INDIAN HACKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWWeRmpeFuYY1FdAru58Afw" type="rss"/>
-      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
-      <outline title="ToRung" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXbYlU08sOTBktOtjVsvR6w" type="rss"/>
-      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss"/>
-      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
-      <outline title="Shakira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYLNGLIzMhRTi6ZOLjAPSmw" type="rss"/>
-      <outline title="JuegaGerman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYiGq8XF7YQD00x7wAd62Zg" type="rss"/>
-      <outline title="Alejo Igoa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZs0WwC0Dn_noiQE2BHSTKg" type="rss"/>
-      <outline title="Toys and Colors" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBTm46K3l59CIty88Q_jog" type="rss"/>
-      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
-      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
-      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
-      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
-      <outline title="IShowSpeed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd09ztChTkJ9dlY6RLawSog" type="rss"/>
-      <outline title="Alfredo Larin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd5ApCORQsMOZZz5E9oVeFA" type="rss"/>
-      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss"/>
-      <outline title="Sierra &amp; Rhia FAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe6n0z9UbsxYCS8P83f84tw" type="rss"/>
-      <outline title="@HarPalGeoOfficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe9JSDmyqNgA_l2BzGHq1Ug" type="rss"/>
-      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
-      <outline title="Маша и Медведь[b]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfbugOkS8PkqhDfvehIDRBw" type="rss"/>
-      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
-      <outline title="Real fools shorts official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgKEvLp8DXCTMq4QY6wW7bw" type="rss"/>
-      <outline title="Bispo Bruno Leonardo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgi6Wim7jdoW6luCXci83uw" type="rss"/>
-      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
-      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
-      <outline title="Get Movies" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClZkHt2kNIgyrTTPnSQV3SA" type="rss"/>
-      <outline title="Techno Gamerz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl_vAxZpvbO-PFXdDu7EdHw" type="rss"/>
-      <outline title="Bad Bunny" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmBA_wu8xGg1OfOkfW13Q0Q" type="rss"/>
-      <outline title="आचार्य प्रशान्त - Acharya Prashant" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmRZ4Xrzx1PKsg2UieOT6rA" type="rss"/>
-      <outline title="BETER BÖCÜK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnYP-Vc_kPNk--9h6MNI4rA" type="rss"/>
-      <outline title="Fede Vigevani" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoQm-PeHC-cbJclKJYJ8LzA" type="rss"/>
-      <outline title="Ishtar Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCopY0NAzASqmD6eVaRj2TFQ" type="rss"/>
-      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
-      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
-      <outline title="T-Series Bollywood Classics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq-Fj5jknLsUf-MWSy4_brA" type="rss"/>
-      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
-      <outline title="Mikecrack" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ5zFEED1hWs0KNQCQuYdQ" type="rss"/>
-      <outline title="Jess No Limit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrcUbwWMAshF6M6UJcwOK7g" type="rss"/>
-      <outline title="जामजाम इलेक्ट्रोनिक ट्रेडिङ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrnQFuUabBHaw-BRhPo8xEA" type="rss"/>
-      <outline title="ABS-CBN Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCstEtN0pgOmCf02EdXsGChw" type="rss"/>
-      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
-      <outline title="IndiaTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCttspZesZIDEwwpVIgoZtWQ" type="rss"/>
-      <outline title="योर क्रिस्टियानो" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtxD0x6AuNNqdXO9Wp5GHew" type="rss"/>
-      <outline title="Juan de Dios Pantoja" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu9rnHLRV0gvyn2Skm7wsRQ" type="rss"/>
-      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
-      <outline title="shfa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwHE1kM1CPJd_pI9FQ0-4dg" type="rss"/>
-      <outline title="LUCCAS NETO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxk7r8lH6fWkMuWeQn9Gi6g" type="rss"/>
-      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
-      <outline title="קים דונג ג'וןויו באק האפ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8gf4PK1Qth50lLHdvTCcA" type="rss"/>
+      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss" />
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss" />
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
+      <outline title="Philip DeFranco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="MrBeast Gaming" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIPPMRA040LQr5QPyJEbmXA" type="rss" />
+      <outline title="Premier League" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG5qGWdu8nIRZqJ_GgDwQ-w" type="rss" />
+      <outline title="DC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiifkYAs_bq1pt_zbNAzYGg" type="rss" />
+      <outline title="Techy Plays" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNDzLI-hyihpAx3zKtwhGZw" type="rss" />
+      <outline title="NDL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9K44RtwiROAwCpALm1wdyQ" type="rss" />
+      <outline title="Ryguyrocky" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHRTfR2r0Ss3UjFyw7gSA-A" type="rss" />
+      <outline title="Harry Potter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChPRO1CB_Hvd0TvKRU62iSQ" type="rss" />
+      <outline title="Mavin Records" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2g8yvxi_X5GxyEor9L1KNA" type="rss" />
+      <outline title="Jackson react" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwkP6gUaS9O9-naapJhtuNg" type="rss" />
+    </outline>
+    <outline text="Podcast">
+      <outline title="DJ Selex" xmlUrl="https://feeds.soundon.fm/podcasts/c1a556ba-20a8-41a7-b793-1d6b6075e11a.xml" type="rss" category="Music" />
+      <outline title="I Said What I Said" xmlUrl="https://feeds.acast.com/public/shows/62e95c1847c51300128261c0" type="rss" category="Society &amp; Culture" />
+      <outline title="Afrobeat Banger" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:17025963/sounds.rss" type="rss" category="Music" />
+      <outline title="Joel Osteen Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/752ba8f1-0e9f-43cc-81d8-b45f00f9a408/6f1d99f7-4f58-4689-b4f7-b45f00f9a4e3/podcast.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="The Diary Of A CEO with Steven Bartlett" xmlUrl="https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn" type="rss" category="Business" />
+      <outline title="Pastor Dolapo Lawal" xmlUrl="https://anchor.fm/s/e9160dfc/podcast/rss" type="rss" category="Christianity" />
+      <outline title="JIM ROHN" xmlUrl="https://anchor.fm/s/6543d7e8/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Apostle Joshua selman Messages" xmlUrl="https://www.spreaker.com/show/6508845/episodes/feed" type="rss" category="Christianity" />
+      <outline title="ShxtsNGigs" xmlUrl="https://feeds.acast.com/public/shows/6477204262b0900011c3fb37" type="rss" category="Comedy" />
+      <outline title="The HonestBunch Podcast" xmlUrl="https://api.afripods.com/feed/cea28aa5-616a-4408-9f16-aeb6985485fd" type="rss" category="Society &amp; Culture" />
+      <outline title="The Mel Robbins Podcast" xmlUrl="https://feeds.simplecast.com/UCwaTX1J" type="rss" category="Self-Improvement" />
+      <outline title="Celebration Church International" xmlUrl="https://sermons-api.essantra.joincci.org/rss.xml" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Coffee Break French" xmlUrl="https://feeds.acast.com/public/shows/47990e88-454b-4e3b-bf78-75a172c33184" type="rss" category="Language Learning" />
+      <outline title="Abdur-Rahman as-Sudais" xmlUrl="https://rss.qurancentral.com/abdur-rahman-as-sudais.rss" type="rss" category="Islam" />
+      <outline title="Dj Shinski New Mixes" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:162851034/sounds.rss" type="rss" category="Music" />
+      <outline title="MentalityWithEbuka" xmlUrl="https://rss.buzzsprout.com/2535135.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Bible in a Year (with Fr. Mike Schmitz)" xmlUrl="https://feeds.fireside.fm/bibleinayear/rss" type="rss" category="Christianity" />
+      <outline title="Loose Talk" xmlUrl="https://feeds.transistor.fm/loose-talk" type="rss" category="Society &amp; Culture" />
+      <outline title="On Purpose with Jay Shetty" xmlUrl="https://feeds.megaphone.fm/on-purpose" type="rss" category="Mental Health" />
+      <outline title="Abdullahi Abba Zaria" xmlUrl="https://rss.qurancentral.com/abdullahi-abba-zaria.rss" type="rss" category="Islam" />
+      <outline title="Rotten Mango" xmlUrl="https://feeds.simplecast.com/6Qp23t6h" type="rss" category="True Crime" />
+      <outline title="The How Far Podcast" xmlUrl="https://feeds.acast.com/public/shows/5fbf35c5d58f1a358e7224c3" type="rss" category="Society &amp; Culture" />
+      <outline title="Afropolitan" xmlUrl="https://rss2.flightcast.com/voqdqnxumrkb9t3bih0xuow0.xml" type="rss" category="Entrepreneurship" />
+      <outline title="Tea With Tay Podcast" xmlUrl="https://feeds.acast.com/public/shows/62e25976555dfd001285fe2f" type="rss" category="Comedy" />
+      <outline title="Noreen Muhammad Siddique" xmlUrl="https://rss.qurancentral.com/noreen-muhammad-siddique-al-duri-via-abu-amr.rss" type="rss" category="Islam" />
+      <outline title="Global News Podcast" xmlUrl="https://podcasts.files.bbci.co.uk/p02nq0gn.rss" type="rss" category="Daily News" />
+      <outline title="InnerFrench" xmlUrl="https://podcast.innerfrench.com/feed.xml" type="rss" category="Language Learning" />
+      <outline title="Saud Al-Shuraim" xmlUrl="https://rss.qurancentral.com/saud-al-shuraim.rss" type="rss" category="Islam" />
+      <outline title="Koinonia Global messages with Apostle Joshua Selman" xmlUrl="https://anchor.fm/s/1065bfa84/podcast/rss" type="rss" category="Christianity" />
+      <outline title="Juice WRLD death conspiracy theory" xmlUrl="https://anchor.fm/s/11c7af40/podcast/rss" type="rss" category="Music History" />
+      <outline title="Aspire with Emma Grede" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/emma-grede" type="rss" category="Entrepreneurship" />
+      <outline title="Ray William Johnson: True Story Podcast" xmlUrl="https://anchor.fm/s/10074e310/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Jim Rohn Motivation Daily" xmlUrl="https://feeds.megaphone.fm/jimrohn" type="rss" category="Self-Improvement" />
+      <outline title="ESPN FC" xmlUrl="https://feeds.megaphone.fm/ESP9520742908" type="rss" category="Soccer" />
+      <outline title="The Uncut Podcast" xmlUrl="https://feeds.acast.com/public/shows/656313037b09770012be1732" type="rss" category="Comedy" />
+      <outline title="Latest music" xmlUrl="https://media.podeo.co/rss/MjU5NDA" type="rss" category="Music Commentary" />
+      <outline title="KOINONIA CONNECT with Apostle Joshua Selman" xmlUrl="https://feed.podbean.com/btmasawi/feed.xml" type="rss" category="Christianity" />
+      <outline title="Toni Told Me with Toni Tone" xmlUrl="https://feeds.acast.com/public/shows/676979ee40480c1d957b705d" type="rss" category="Society &amp; Culture" />
+      <outline title="The Psychology of your 20s" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/bc44988a-a82a-4291-ab8b-afdd01187fa8/39e2f432-53df-43b8-a7b9-afdd01187fc4/podcast.rss" type="rss" category="Mental Health" />
+      <outline title="Mufti Menk" xmlUrl="https://rss.muslimcentral.com/mufti-menk.rss" type="rss" category="Islam" />
+      <outline title="To My Sisters" xmlUrl="https://feeds.acast.com/public/shows/6488beb624d31e0011fb380e" type="rss" category="Relationships" />
+      <outline title="Jim Rohn Motivation" xmlUrl="https://rss.pdrl.fm/54f3b1/feeds.libsyn.com/620190/rss/?redirect=false" type="rss" category="Education" />
+      <outline title="TED Talks Daily" xmlUrl="https://feeds.acast.com/public/shows/67587e77c705e441797aff96" type="rss" category="Society &amp; Culture" />
+      <outline title="The Athletic FC Podcast" xmlUrl="https://feeds.acast.com/public/shows/6818be7d1d28d62313ac8ef3" type="rss" category="Sports" />
+      <outline title="Build with Leila Hormozi" xmlUrl="https://rss2.flightcast.com/tqy28xwphexirbmvwo2x9b9s.xml" type="rss" category="Entrepreneurship" />
+      <outline title="The Holy Quran, Sheikh Maher Al-Muaiqly | القران الكريم ماهر المعيقلي" xmlUrl="https://www.spreaker.com/show/6273166/episodes/feed" type="rss" category="History" />
+      <outline title="The Mindset Mentor" xmlUrl="https://feeds.simplecast.com/rpKQEwel" type="rss" category="Health &amp; Fitness" />
+    </outline>
+    <outline text="Social">
+      <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
     </outline>
   </body>
-  
-
 </opml>

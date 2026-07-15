@@ -8,8 +8,7 @@
       <outline title="WBUR Boston" xmlUrl="https://www.wbur.org/feed/" type="rss" />
     </outline>
     <outline text="Politics">
-      <outline title="MA Legislature" xmlUrl="https://malegislature.gov/rss" type="rss" />
-    </outline>
+      </outline>
     <outline text="Business">
       <outline title="Boston Biz Journal" xmlUrl="https://feeds.bizjournals.com/boston" type="rss" />
       <outline title="Worcester Biz Journal" xmlUrl="https://www.wbjournal.com/rss" type="rss" />
@@ -34,9 +33,10 @@
       <outline title="Streetsblog MASS" xmlUrl="https://mass.streetsblog.org/feed/" type="rss" />
     </outline>
     <outline text="Podcasts">
-      <outline title="Catalisadores" xmlUrl="https://feeds.simplecast.com/cpeqif1u" type="rss" category="Religion" />
       <outline title="Resurrection Center of Springfield, Massachusetts in USA" xmlUrl="https://anchor.fm/s/d22eb08/podcast/rss" type="rss" category="Religion" />
       <outline title="Resurrection Center of Springfield, Massachusetts in USA" xmlUrl="https://www.spreaker.com/show/3673338/episodes/feed" type="rss" category="Religion" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

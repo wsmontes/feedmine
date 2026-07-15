@@ -10,9 +10,10 @@
     <outline text="Politics" />
     <outline text="Podcasts">
       <outline title="The Canadian Threshold" xmlUrl="https://anchor.fm/s/e6b9a5dc/podcast/rss" type="rss" category="Leisure" />
-      <outline title="Abroad in Japan" xmlUrl="https://feeds.acast.com/public/shows/4d1eb966-6f07-4562-b9f1-9fd512f9631e" type="rss" category="Places &amp; Travel" />
       <outline title="Reality Church" xmlUrl="https://www.realityolympia.com/reality-sermon-podcast?format=rss" type="rss" category="Christianity" />
       <outline title="Logos International Church" xmlUrl="https://feed.podbean.com/kobecast/feed.xml" type="rss" category="Christianity" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

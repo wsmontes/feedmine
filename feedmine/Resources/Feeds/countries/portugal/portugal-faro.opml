@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Faro Feeds</title></head>
+  <head>
+    <title>Faro Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="Faro" xmlUrl="https://www.cm-faro.pt/feed/" type="rss" />
     </outline>
-  </body></opml>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

@@ -5,11 +5,8 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="Ridiculous Crime" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/0b4bcc39-7ba2-453f-aaac-ae510011dd80/3a4c50f5-ff69-4807-aa26-ae510011dd8e/podcast.rss" type="rss" category="History" />
       <outline title="Change.org Türkiye" xmlUrl="https://anchor.fm/s/3a6fa074/podcast/rss" type="rss" category="Non-Profit" />
       <outline title="Citizens of the World: A Stoic Podcast for Curious Travelers" xmlUrl="https://rss.buzzsprout.com/694066.rss" type="rss" category="Self-Improvement" />
-      <outline title="Sağlık Gündemi" xmlUrl="https://www.spreaker.com/show/4725938/episodes/feed" type="rss" category="Health &amp; Fitness" />
-      <outline title="Turkey Book Talk" xmlUrl="https://feed.podbean.com/turkeybooktalk/feed.xml" type="rss" category="News" />
       <outline title="Bradley &amp; Dawn" xmlUrl="https://rss.art19.com/bradley-and-dawn" type="rss" category="Society &amp; Culture" />
       <outline title="The Intelligent Community" xmlUrl="https://intelligentcommunityforum.libsyn.com/rss" type="rss" category="Technology" />
       <outline title="Teatime with Miss Liz" xmlUrl="https://anchor.fm/s/1d652a94/podcast/rss" type="rss" category="Education" />
@@ -52,5 +49,7 @@
       <outline title="The DaliTalks Podcast" xmlUrl="https://anchor.fm/s/1d9b6f28/podcast/rss" type="rss" category="Self-Improvement" />
       <outline title="We Don't Play" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:484832487/sounds.rss" type="rss" category="Comedy" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

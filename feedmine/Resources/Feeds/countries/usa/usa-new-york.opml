@@ -41,7 +41,6 @@
       <outline title="Buffalo Sabres" xmlUrl="https://www.nhl.com/sabres/rss/news" type="rss" />
     </outline>
     <outline text="Culture">
-      <outline title="The New Yorker" xmlUrl="https://www.newyorker.com/feed/everything" type="rss" />
       <outline title="Eater NY" xmlUrl="https://ny.eater.com/rss/index.xml" type="rss" />
       <outline title="Broadway World" xmlUrl="https://www.broadwayworld.com/rss" type="rss" />
     </outline>
@@ -57,12 +56,13 @@
       <outline title="Brownstoner" xmlUrl="https://www.brownstoner.com/rss" type="rss" />
     </outline>
     <outline text="Podcasts">
-      <outline title="New Ice City: A Podcast About The New York Rangers" xmlUrl="https://www.omnycontent.com/d/playlist/a858b0a5-e5e6-4a14-9717-a70b010facc1/640481f5-72e2-4f2e-a46a-ac450151d6d7/376f8ae7-a47a-4427-b9b4-ac4501540a61/podcast.rss" type="rss" category="Sports" />
       <outline title="CityLight NYC Church Podcast" xmlUrl="https://rss2.flightcast.com/tl61vtm5ckn0xfotyyexht2h.xml" type="rss" category="Religion" />
       <outline title="+91–7414097597 Voodoo death spells london,new york,canada,america,uk,usa," xmlUrl="https://media.rss.com/91-7414097597-voodoo-death-spells-london-new-york-canada-america-uk-usa/feed.xml" type="rss" category="Arts" />
       <outline title="+91–7414097597 How to punish enemy london,new york,canada,america,uk,usa" xmlUrl="https://media.rss.com/91-7414097597-how-to-punish-enemy-london-new-york-canada-america-uk-usa/feed.xml" type="rss" category="Arts" />
       <outline title="New York Podcast" xmlUrl="https://anchor.fm/s/f4c80574/podcast/rss" type="rss" category="Society" />
       <outline title="Bruce &amp; Ed Live from New York (Video) bredtv.com - a fun friendly new york city usa gay couple" xmlUrl="https://feeds.feedburner.com/bruceandedlivefromnewyork" type="rss" category="Society" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

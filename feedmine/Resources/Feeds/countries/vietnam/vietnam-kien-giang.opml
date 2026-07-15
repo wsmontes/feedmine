@@ -5,10 +5,7 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="VOV - Chương trình Thời sự" xmlUrl="https://anchor.fm/s/86ec8d4/podcast/rss" type="rss" category="News" />
-      <outline title="VOV - Nội chính" xmlUrl="https://anchor.fm/s/87b8d30/podcast/rss" type="rss" category="News" />
       <outline title="Chuyện Xưa KHÔNG CŨ" xmlUrl="https://anchor.fm/s/4e2abe00/podcast/rss" type="rss" category="Society &amp; Culture" />
-      <outline title="VOV - Sự kiện Bàn luận" xmlUrl="https://anchor.fm/s/8535a2c/podcast/rss" type="rss" category="News" />
       <outline title="GIÁ HEO HƠI" xmlUrl="https://anchor.fm/s/5a9f4d18/podcast/rss" type="rss" category="Daily News" />
       <outline title="The LunaticRadio.com Show" xmlUrl="https://feeds.feedburner.com/lunaticradio/TxHN" type="rss" category="Comedy" />
       <outline title="Quay Thử Miền Nam" xmlUrl="https://anchor.fm/s/f99834e8/podcast/rss" type="rss" category="Business News" />
@@ -31,7 +28,6 @@
       <outline title="Trạm Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:584948205/sounds.rss" type="rss" category="Society &amp; Culture" />
       <outline title="Animalia" xmlUrl="https://anchor.fm/s/174c47dc/podcast/rss" type="rss" category="Earth Sciences" />
       <outline title="TùngNT" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:159009481/sounds.rss" type="rss" category="Music" />
-      <outline title="The Vietnam Weekly Podcast" xmlUrl="https://api.substack.com/feed/podcast/15092.rss" type="rss" category="News" />
       <outline title="Eyes on Asia" xmlUrl="https://feeds.acast.com/public/shows/659d85daff04980015ef8960" type="rss" category="News Commentary" />
       <outline title="AgTech Digest" xmlUrl="https://feeds.captivate.fm/agtech-digest/" type="rss" category="Nature" />
       <outline title="Not by the Playbook" xmlUrl="https://podcasts.files.bbci.co.uk/p016tmfz.rss" type="rss" category="Sports" />
@@ -47,5 +43,7 @@
       <outline title="Luyện nghe tiếng Ý ^^" xmlUrl="https://anchor.fm/s/66adb1e4/podcast/rss" type="rss" category="News" />
       <outline title="Audiobook" xmlUrl="https://anchor.fm/s/c03d7a0/podcast/rss" type="rss" category="Technology" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

@@ -67,6 +67,7 @@ final class FeedLoader {
         case text = "Articles"
         case video = "Videos"
         case audio = "Podcasts"
+        case forum = "Forums"
         var id: String { rawValue }
         var icon: String {
             switch self {
@@ -74,14 +75,16 @@ final class FeedLoader {
             case .text: return "doc.text.fill"
             case .video: return "play.rectangle.fill"
             case .audio: return "headphones"
+            case .forum: return "bubble.left.and.bubble.right.fill"
             }
         }
         func matches(_ item: FeedItem) -> Bool {
             switch self {
             case .all: return true
-            case .text: return !item.isYouTube && !item.isPodcast
+            case .text: return !item.isYouTube && !item.isPodcast && !item.isForum
             case .video: return item.isYouTube
             case .audio: return item.isPodcast
+            case .forum: return item.isForum
             }
         }
     }

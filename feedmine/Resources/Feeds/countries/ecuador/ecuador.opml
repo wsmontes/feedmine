@@ -1,23 +1,24 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Ecuador Feeds</title></head>
+  <head>
+    <title>Ecuador Feeds</title>
+  </head>
   <body>
     <outline text="News">
       <outline title="El Universo" xmlUrl="https://www.eluniverso.com/arc/outboundfeeds/rss/category/noticias/?website=el-universo&amp;sort=first_publish_date:desc&amp;outputType=xml" type="rss" />
       <outline title="El País" xmlUrl="https://elpais.com/rss/feed.html" type="rss" />
+      <outline title="Google News — ECUADOR (en)" xmlUrl="https://news.google.com/rss?hl=en&amp;gl=EC&amp;ceid=EC:en" type="rss" />
     </outline>
     <outline text="Sports">
       <outline title="AS USA" xmlUrl="https://us.as.com/rss/" type="rss" />
       <outline title="Marca" xmlUrl="https://www.marca.com/rss/" type="rss" />
       <outline title="Olé" xmlUrl="https://www.ole.com.ar/rss/" type="rss" />
-      <outline title="FIFA" xmlUrl="https://www.fifa.com/rss" type="rss" />
       <outline title="ESPN FC" xmlUrl="https://www.espn.com/espn/rss/soccer/news" type="rss" />
       <outline title="Sky Sports" xmlUrl="https://www.skysports.com/rss/12040" type="rss" />
     </outline>
     <outline text="Technology">
       <outline title="FayerWayer" xmlUrl="https://www.fayerwayer.com/feed/" type="rss" />
       <outline title="Hipertextual" xmlUrl="https://hipertextual.com/feed/" type="rss" />
-      <outline title="Unocero" xmlUrl="https://www.unocero.com/feed/" type="rss" />
       <outline title="Teknófilo" xmlUrl="https://teknofilo.com/feed/" type="rss" />
       <outline title="Código Espagueti" xmlUrl="https://codigoespagueti.com/feed/" type="rss" />
       <outline title="Muy Computer" xmlUrl="https://www.muycomputer.com/feed/" type="rss" />
@@ -139,11 +140,13 @@
       <outline title="The Architect's Newspaper" xmlUrl="https://www.archpaper.com/feed" type="rss" />
       <outline title="Contemporist" xmlUrl="https://www.contemporist.com/feed/" type="rss" />
     </outline>
-        <outline text="Health"><outline title="Health" xmlUrl="https://www.ecuador.gov/health/feed/" type="rss" /></outline>
-    <outline text="Education"><outline title="Education" xmlUrl="https://www.ecuador.gov/edu/feed/" type="rss" /></outline>
+    <outline text="Health">
+      </outline>
+    <outline text="Education">
+      </outline>
     <outline text="Podcasts">
       <outline title="Ecuador Insider Podcast: &#10;&#10;Lifestyle - Culture - Community - Spirituality - Nature" xmlUrl="https://anchor.fm/s/ef2122b8/podcast/rss" type="rss" />
-      <outline title='Mujeres en la "Historia del Ecuador"' xmlUrl="https://anchor.fm/s/58807e80/podcast/rss" type="rss" />
+      <outline title="Mujeres en la &quot;Historia del Ecuador&quot;" xmlUrl="https://anchor.fm/s/58807e80/podcast/rss" type="rss" />
       <outline title="Ecuador" xmlUrl="https://anchor.fm/s/592d0290/podcast/rss" type="rss" />
       <outline title="Ecuador 360° , Latitud Cero" xmlUrl="https://anchor.fm/s/ce51684/podcast/rss" type="rss" />
       <outline title="Trips &amp; Travel Ecuador: Your Local Guide Podcast" xmlUrl="https://anchor.fm/s/4af88e24/podcast/rss" type="rss" />
@@ -249,7 +252,7 @@
       <outline title="La Gran Travesía" xmlUrl="https://feeds.ivoox.com/feed_fg_f1489260_filtro_1.xml" type="rss" />
       <outline title="Errarte Podcast: El arte de errar." xmlUrl="https://www.spreaker.com/show/4419059/episodes/feed" type="rss" />
       <outline title="Iglesia Betania De La Reforma Cuenca Ecuador" xmlUrl="https://anchor.fm/s/188d48d0/podcast/rss" type="rss" />
-      <outline title='La Gran Travesía "Oldies"' xmlUrl="https://feeds.ivoox.com/feed_fg_f11472498_filtro_1.xml" type="rss" />
+      <outline title="La Gran Travesía &quot;Oldies&quot;" xmlUrl="https://feeds.ivoox.com/feed_fg_f11472498_filtro_1.xml" type="rss" />
       <outline title="Fm de la Cuenca" xmlUrl="https://anchor.fm/s/26853f4c/podcast/rss" type="rss" />
       <outline title="Cuenca Music Fest #Dj Session" xmlUrl="https://feeds.ivoox.com/feed_fg_f1895386_filtro_1.xml" type="rss" />
       <outline title="Pueblos Vivos Cuenca" xmlUrl="https://feeds.ivoox.com/feed_fg_f11221366_filtro_1.xml" type="rss" />
@@ -291,6 +294,246 @@
       <outline title="Los Juanes de Ambato" xmlUrl="https://anchor.fm/s/53cf7738/podcast/rss" type="rss" />
       <outline title="Ambato city" xmlUrl="https://anchor.fm/s/2f62792c/podcast/rss" type="rss" />
       <outline title="PROTAGONISTAS EN LA BARCA" xmlUrl="https://anchor.fm/s/fb30c194/podcast/rss" type="rss" />
+      <outline title="Podcast - Forbes Ecuador" xmlUrl="https://media.rss.com/forbesecuador/feed.xml" type="rss" category="News" />
+      <outline title="El podcast de the shagi gamer" xmlUrl="https://www.spreaker.com/show/4657621/episodes/feed" type="rss" category="Society" />
+      <outline title="Podcast Programas Especiales Radio Ciudadana" xmlUrl="https://www.ivoox.com/feed_fg_f1165963_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast de Radio 92.9 Fiesta FM (La Farra" xmlUrl="https://www.ivoox.com/feed_fg_f1085113_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast RADIO TURISMO ECUADOR" xmlUrl="https://www.ivoox.com/feed_fg_f128762_filtro_1.xml" type="rss" category="Society" />
+      <outline title="Podcast SÍNTESIS - PROGRAMAS RADIO CIUDADANA" xmlUrl="https://www.ivoox.com/_fg_f1249679_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast de Loja Habla Ecuador" xmlUrl="https://www.ivoox.com/podcast-podcast-loja-habla-ecuador_fg_f178596_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast Cancillería Ecuador" xmlUrl="https://www.ivoox.com/podcast-podcast-cancilleria-ecuador_fg_f134864_filtro_1.xml" type="rss" category="News" />
+      <outline title="Ecuador a Bocados" xmlUrl="https://anchor.fm/s/5e965b00/podcast/rss" type="rss" category="Arts" />
+      <outline title="Morfo Podcast" xmlUrl="https://anchor.fm/s/506f9938/podcast/rss" type="rss" category="Arts" />
+      <outline title="1er Podcast ( La Historia de Ecuador)" xmlUrl="https://anchor.fm/s/6a92d8fc/podcast/rss" type="rss" category="History" />
+      <outline title="Techo podcast: día de la familia" xmlUrl="https://anchor.fm/s/5ac6df90/podcast/rss" type="rss" category="Business" />
+      <outline title="A-típicos Ecuador" xmlUrl="https://anchor.fm/s/568db8f4/podcast/rss" type="rss" category="Education" />
+      <outline title="Toku Time Podcast" xmlUrl="https://www.spreaker.com/show/4448200/episodes/feed" type="rss" category="Fiction" />
+      <outline title="Agenda de Investigación Urbana Aplicada en el Ecuador" xmlUrl="https://anchor.fm/s/3811e864/podcast/rss" type="rss" category="Government" />
+      <outline title="MUNDO ECUADOR EL PODCAST" xmlUrl="https://www.ivoox.com/feed_fg_f1965559_filtro_1.xml" type="rss" category="Tv" />
+      <outline title="Teleeducación rural en Ecuador - Especial Podcast" xmlUrl="https://feeds.ivoox.com/feed_fg_f1923807_filtro_1.xml" type="rss" category="Government" />
+      <outline title="Podcast de Salesianos Ecuador" xmlUrl="https://feeds.ivoox.com/feed_fg_f1180312_filtro_1.xml" type="rss" category="Religion" />
+      <outline title="AWR Ecuador - La Biblia Habla" xmlUrl="https://feeds.feedburner.com/spaeq_lbh" type="rss" category="Religion" />
+      <outline title="Podcast Defensa Ecuador" xmlUrl="https://feeds.ivoox.com/feed_fg_f1176904_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast PRODUCCIONES RADIO CIUDADANA" xmlUrl="https://feeds.ivoox.com/feed_fg_f1176149_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast de Parlamento-Andino Ecuador" xmlUrl="https://www.ivoox.com/feed_fg_f1133082_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast Conciencia ciudadana" xmlUrl="https://www.ivoox.com/feed_fg_f1030963_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast de Fian Ecuador Comunicador Titi" xmlUrl="https://www.ivoox.com/feed_fg_f1178996_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast de FENATEI ECUADOR" xmlUrl="https://www.ivoox.com/_fg_f1143307_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast de Cncine Ecuador" xmlUrl="https://www.ivoox.com/_fg_f1214262_filtro_1.xml" type="rss" category="Tv" />
+      <outline title="Podcast de Ecoturismo Ecuador" xmlUrl="https://us.ivoox.com/es/espodcast-podcast-ecoturismo-ecuador_fg_f1175138_filtro_1.xml" type="rss" category="History" />
+      <outline title="Podcast  SOS Estudiantil - Ecuador" xmlUrl="https://www.ivoox.com/_fg_f1117630_filtro_1.xml" type="rss" category="Government" />
+      <outline title="Podcast de Asambleístas Ecuador" xmlUrl="https://www.ivoox.com/_fg_f1150465_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast de Habla Ecuador" xmlUrl="https://www.ivoox.com/podcast-podcast-habla-ecuador_fg_f1131138_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast Habla Ecuador" xmlUrl="https://www.ivoox.com/_fg_f151442_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast Canal Amazónico" xmlUrl="https://www.ivoox.com/podcast-podcast-canal-amazonico_fg_f167287_filtro_1.xml" type="rss" category="Government" />
+      <outline title="Podcast Droga" xmlUrl="https://www.ivoox.com/_fg_f1125069_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast ROCK ECUADOR" xmlUrl="https://www.ivoox.com/_fg_f147242_filtro_1.xml" type="rss" category="Music" />
+      <outline title="Podcast de Política Ecuador" xmlUrl="https://www.ivoox.com/podcast-podcast-politica-ecuador_fg_f178569_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast Ministerio de Ambiente Ecuador" xmlUrl="https://us.ivoox.com/es/espodcast-podcast-ministerio-ambiente-ecuador_fg_f173080_filtro_1.xml" type="rss" category="Science" />
+      <outline title="Podcast Radio Católica Nacional del Ecuador" xmlUrl="https://www.ivoox.com/en/podcast-radio-catolica-nacional-del-ecuador_fg_f154923_filtro_1.xml" type="rss" category="Religion" />
+      <outline title="Podcast Radio Nuevo Tiempo" xmlUrl="https://www.ivoox.com/_fg_f159521_filtro_1.xml" type="rss" category="News" />
+      <outline title="Podcast SANTIAGO DJ CUENCA - ECUADOR" xmlUrl="https://www.ivoox.com/_fg_f161863_filtro_1.xml" type="rss" category="Music" />
+      <outline title="JERARQUÍA DE LAS NORMAS JURÍDICAS EN LA CONSTITUCIÓN DEL ECUADOR (Podcast) - www.poderato.com/caritodarling" xmlUrl="https://www.poderato.com/caritodarling/_feed/1" type="rss" category="News" />
+      <outline title="CONSTITUCIÓN DEL ECUADOR 2008 FRENTE A LA CONSTITUCIÓN DE 1946. (Podcast) - www.poderato.com/saritacalderon" xmlUrl="https://www.poderato.com/saritacalderon/_feed/1" type="rss" category="Government" />
+      <outline title="#yosoy132 Ecuador (Podcast) - www.poderato.com/yosoy132ecuador" xmlUrl="https://www.poderato.com/yosoy132ecuador/_feed/1" type="rss" category="News" />
+      <outline title="I'd Like To Thank Myself" xmlUrl="https://feeds.transistor.fm/id-like-to-thank-myself" type="rss" category="Arts" />
+      <outline title="Arroe Collins Like It's Live" xmlUrl="https://www.spreaker.com/show/4113802/episodes/feed" type="rss" category="News" />
+      <outline title="Seriously Mysterious - Missing Persons, Unsolved Murders &amp; Historical True Crime" xmlUrl="https://www.spreaker.com/show/4532075/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Life Hacks DIY &amp; More - Transform Your Everyday With Simple Tricks and DIY Magic!" xmlUrl="https://www.spreaker.com/show/5995484/episodes/feed" type="rss" category="Education" />
+      <outline title="Reddit Stories" xmlUrl="https://www.spreaker.com/show/6370551/episodes/feed" type="rss" category="Leisure" />
+      <outline title="The Kyle Peterson Show" xmlUrl="https://www.spreaker.com/show/6573404/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Reality After Show" xmlUrl="https://www.spreaker.com/show/5448874/episodes/feed" type="rss" category="Tv" />
+      <outline title="3-Bit Gamer Show" xmlUrl="https://www.spreaker.com/show/2255796/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Come explore the paranormal files as we delve into the unexplained. The paranormal podcast." xmlUrl="https://www.spreaker.com/show/5547977/episodes/feed" type="rss" category="Society" />
+      <outline title="Minding Your Business Podcast" xmlUrl="https://www.spreaker.com/show/6367325/episodes/feed" type="rss" category="Business" />
+      <outline title="95.3 Gorilla" xmlUrl="https://wznfpodcast.mainevibe.com/feed.xml" type="rss" category="Music" />
+      <outline title="Gamefully Unemployed" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:395741505/sounds.rss" type="rss" category="Tv" />
+      <outline title="Cog-Dog Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:236473103/sounds.rss" type="rss" category="Education" />
+      <outline title="Managing Tech Millions" xmlUrl="https://feeds.redcircle.com/8f2225e0-c4ac-469c-9e36-07f3677a22a7" type="rss" category="Business" />
+      <outline title="Vocal Booth Radio Listen Again" xmlUrl="https://vocalboothradio.com/feed/mp3" type="rss" category="Music" />
+      <outline title="Daily Shower Thoughts" xmlUrl="https://feeds.megaphone.fm/dailyshowerthoughts" type="rss" category="Comedy" />
+      <outline title="BIG Life Devotional | Daily Devotional for Women" xmlUrl="https://biglifehq.com/feed/podcast" type="rss" category="Religion" />
+      <outline title="Fun Content" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1469" type="rss" category="News" />
+      <outline title="94WIP Morning Show with Joe DeCamara and Jon Ritchie" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/philadelphia_wipfm-94wip_morning_show_with_joe_decamara_and_jon_ritchie" type="rss" category="Sports" />
+      <outline title="Based Camp | Simone &amp; Malcolm Collins" xmlUrl="https://api.substack.com/feed/podcast/1643534/s/64409.rss" type="rss" category="Society" />
+      <outline title="Bonjour France Podcast" xmlUrl="https://www.spreaker.com/show/6773527/episodes/feed" type="rss" category="Society" />
+      <outline title="Milena's Diary" xmlUrl="https://feeds.megaphone.fm/hmstalksltd9487207744" type="rss" category="Society" />
+      <outline title="North Point Baptist Church Sermons" xmlUrl="https://www.spreaker.com/show/6124300/episodes/feed" type="rss" category="Religion" />
+      <outline title="York County's Morning Show" xmlUrl="https://www.spreaker.com/show/6243862/episodes/feed" type="rss" category="Society" />
+      <outline title="Brian Thomas" xmlUrl="https://www.spreaker.com/show/2459972/episodes/feed" type="rss" category="News" />
+      <outline title="Wave 94" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:16676106/sounds.rss" type="rss" category="Religion" />
+      <outline title="Cleveland Browns News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/cleveland-browns-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Cork News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/fort-smith-daily-news-now.xml" type="rss" category="News" />
+      <outline title="The Missing Persons Report" xmlUrl="https://www.spreaker.com/show/6763610/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Rabbi Kraz's Shiurim" xmlUrl="https://anchor.fm/s/d89491c4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Toronto Today with Greg Brady" xmlUrl="https://feeds.megaphone.fm/coru2066336057" type="rss" category="News" />
+      <outline title="The Drake Toll Show" xmlUrl="https://feeds.megaphone.fm/wwo4349656783" type="rss" category="News" />
+      <outline title="Going Ultra - Presented by Henshin Inspection" xmlUrl="https://media.rss.com/mjmgu/feed.xml" type="rss" category="Tv" />
+      <outline title="JPost Headlines" xmlUrl="https://www.spreaker.com/show/6677418/episodes/feed" type="rss" category="News" />
+      <outline title="Audio Mises Wire" xmlUrl="https://cdn.mises.org/itunes/en_127226.xml" type="rss" category="News" />
+      <outline title="Outsource to Profits Podcast" xmlUrl="https://feed.podbean.com/getlevrg/feed.xml" type="rss" category="Business" />
+      <outline title="24 Oras Podcast" xmlUrl="https://feeds.acast.com/public/shows/685d292847311de1b6e0e89a" type="rss" category="News" />
+      <outline title="Excess Returns" xmlUrl="https://anchor.fm/s/9a1dfac/podcast/rss" type="rss" category="Business" />
+      <outline title="Red Sox Digest Podcast" xmlUrl="https://www.spreaker.com/show/6691213/episodes/feed" type="rss" category="News" />
+      <outline title="The Tony Kornheiser Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/the-tony-kornheiser-show" type="rss" category="Sports" />
+      <outline title="Radio Miraya" xmlUrl="https://audioboom.com/channels/3891441.rss" type="rss" category="Technology" />
+      <outline title="Pivot: SHIFT Ahead Mastermind" xmlUrl="https://media.rss.com/pivot-shift-ahead-mastermind/feed.xml" type="rss" category="Business" />
+      <outline title="Los Angeles Rams News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/los-angeles-rams-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Pursuit Of Purpose" xmlUrl="https://feed.podbean.com/popmartinsr/feed.xml" type="rss" category="Business" />
+      <outline title="Get Up" xmlUrl="https://feeds.megaphone.fm/esp2870920494" type="rss" category="Sports" />
+      <outline title="Courtney and KISS in the morning" xmlUrl="https://www.spreaker.com/show/2497425/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Computer Talk with TAB" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/f8c743d7682ab4bac553696e6093d3e7" type="rss" category="Business" />
+      <outline title="Tennessee Titans News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/tennessee-titans-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Wrestle Radio Australia" xmlUrl="https://wrestleradioaustralia.libsyn.com/rss" type="rss" category="Sports" />
+      <outline title="Hope Expression Podcast" xmlUrl="https://www.spreaker.com/show/5891904/episodes/feed" type="rss" category="Religion" />
+      <outline title="Spurs Chat: Discussing all Things Tottenham Hotspur: Hosted by Chris Cowlin: The Daily Tottenham/Spurs Podcast" xmlUrl="https://feeds.acast.com/public/shows/639c5ea1bcab760012015b61" type="rss" category="Sports" />
+      <outline title="Federalist Radio Hour" xmlUrl="https://feeds.feedburner.com/ricochetaudionetwork/federalistradiohour" type="rss" category="News" />
+      <outline title="The Irish Passport" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298752213/sounds.rss" type="rss" category="Society" />
+      <outline title="The Lunduke Journal of Technology" xmlUrl="https://api.substack.com/feed/podcast/462466.rss" type="rss" category="Technology" />
+      <outline title="Boston Bruins News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/boston-bruins-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Warden's Watch" xmlUrl="https://feeds.megaphone.fm/wpcm3659727000" type="rss" category="Sports" />
+      <outline title="Experience in Golf Clubhouse Design" xmlUrl="https://feeds.libsyn.com/475266/rss" type="rss" category="Arts" />
+      <outline title="Betting Weekly Studios" xmlUrl="https://feeds.megaphone.fm/rerre3101069934" type="rss" category="Sports" />
+      <outline title="The Long Run with Luke Timmerman" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:317770704/sounds.rss" type="rss" category="Science" />
+      <outline title="Belfast News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/bridgeport-daily-news-now.xml" type="rss" category="News" />
+      <outline title="AM Quincy" xmlUrl="https://feeds.feedburner.com/qatv_amquincypodcast" type="rss" category="Government" />
+      <outline title="Autoblog News" xmlUrl="https://feeds.feedburner.com/podcast/autoblog" type="rss" category="Games" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast" type="rss" category="News" />
+      <outline title="Bite-Sized Dental Marketing" xmlUrl="https://media.rss.com/bsdm/feed.xml" type="rss" category="Business" />
+      <outline title="DD Fantasy Football Radio" xmlUrl="https://feeds.megaphone.fm/blu7133453702" type="rss" category="Sports" />
+      <outline title="Cybercrime Magazine Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286242900/sounds.rss" type="rss" category="Technology" />
+      <outline title="Lawrence News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/lawrence-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Sasquatch Experience" xmlUrl="https://www.spreaker.com/show/4208641/episodes/feed" type="rss" category="Science" />
+      <outline title="Ciliberto and Friends" xmlUrl="https://www.spreaker.com/show/5983689/episodes/feed" type="rss" category="Music" />
+      <outline title="The Automated Daily" xmlUrl="https://theautomateddaily.com/feed.xml" type="rss" category="Technology" />
+      <outline title="The Automated Daily - Space News Edition" xmlUrl="https://theautomateddaily.com/space/feed.xml" type="rss" category="Science" />
+      <outline title="Word Balloon Comics Podcast" xmlUrl="https://www.spreaker.com/show/3143082/episodes/feed" type="rss" category="Tv" />
+      <outline title="Daily Morning Class" xmlUrl="https://media.rss.com/rabbiyedid/feed.xml" type="rss" category="Religion" />
+      <outline title="Reality with The King" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a1735c70-f70f-4045-805b-b302010c5b8c/5db0a3af-13d8-4a16-974c-b302010c5bb4/podcast.rss" type="rss" category="Tv" />
+      <outline title="The Dentalpreneur Podcast w/ Dr. Mark Costes" xmlUrl="https://markcostes.libsyn.com/rss" type="rss" category="Business" />
+      <outline title="The Kapeel Gupta Career Podshow" xmlUrl="https://rss.buzzsprout.com/2012553.rss" type="rss" category="Business" />
+      <outline title="What in the World" xmlUrl="https://podcasts.files.bbci.co.uk/w13xtvrv.rss" type="rss" category="News" />
+      <outline title="The Buddy System with Chris &amp; Matty" xmlUrl="https://feeds.megaphone.fm/mduyh3921896096?1?1" type="rss" category="Comedy" />
+      <outline title="Fore Love of Golf" xmlUrl="https://feeds.megaphone.fm/rogxo2747915340" type="rss" category="Sports" />
+      <outline title="Dr. John Campbell" xmlUrl="https://feeds.megaphone.fm/vg9554039150" type="rss" category="Education" />
+      <outline title="Paranormal UK Radio Network" xmlUrl="https://www.spreaker.com/show/4541473/episodes/feed" type="rss" category="Society" />
+      <outline title="This Day in History" xmlUrl="https://feeds.redcircle.com/9339ef5f-2c20-4a38-b60d-eb4ac27759c3" type="rss" category="History" />
+      <outline title="Football Social Daily" xmlUrl="https://feeds.megaphone.fm/comg9297908545" type="rss" category="Sports" />
+      <outline title="Edmonton News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-stockton-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Park Avenue Synagogue Podcast" xmlUrl="https://feed.podbean.com/parkavenuepodcast/feed.xml" type="rss" category="Religion" />
+      <outline title="PreMarket Prep" xmlUrl="https://anchor.fm/s/fd33c360/podcast/rss" type="rss" category="Business" />
+      <outline title="StribSports Daily Delivery" xmlUrl="https://feeds.megaphone.fm/stribsportsdailydelivery" type="rss" category="Sports" />
+      <outline title="Legacy Nashville Podcast" xmlUrl="https://media.rss.com/legacy-nashville-podcast/feed.xml" type="rss" category="Religion" />
+      <outline title="&quot;There I was...&quot; An Aviation Podcast" xmlUrl="https://feeds.megaphone.fm/aopa1855704656" type="rss" category="Leisure" />
+      <outline title="Marketer of the Day with Robert Plank: Business Growth &amp; Entrepreneur Stories" xmlUrl="https://www.robertplank.com/feed/podcast" type="rss" category="Business" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="News" />
+      <outline title="In The Money Media Network" xmlUrl="https://feeds.captivate.fm/in-the-money-media-network" type="rss" category="Sports" />
+      <outline title="This Paranormal Life" xmlUrl="https://feeds.megaphone.fm/nsr2334813337" type="rss" category="Comedy" />
+      <outline title="Let's Address This with Qasim Rashid Podcast" xmlUrl="https://api.substack.com/feed/podcast/2550223.rss" type="rss" category="News" />
+      <outline title="Flashscore News" xmlUrl="https://feeds.captivate.fm/flashscore-news" type="rss" category="News" />
+      <outline title="JACC Global" xmlUrl="https://feeds.libsyn.com/75161" type="rss" category="Health" />
+      <outline title="Health News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/health-and-fitness-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Health" />
+      <outline title="Food Freedom" xmlUrl="https://anchor.fm/s/d625f518/podcast/rss" type="rss" category="Health" />
+      <outline title="See Ball Get Ball with David Pollack" xmlUrl="https://media.rss.com/see-ball-get-ball-david-pollack/feed.xml" type="rss" category="Sports" />
+      <outline title="Blurt Vibes" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1398" type="rss" category="News" />
+      <outline title="Twisted Podcast" xmlUrl="https://twistedpodcast.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Billianon" xmlUrl="https://podcast.billianon.com/@billianon/feed.xml" type="rss" category="Education" />
+      <outline title="Global Research Unlocked" xmlUrl="https://feed.podbean.com/bofaglobalresearch/feed.xml" type="rss" category="Business" />
+      <outline title="Fresh Pinball Podcast" xmlUrl="https://media.rss.com/freshpinballpodcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Georgia Tech Yellow Jackets Football Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/georgia-tech-yellow-jackets-football-today-2-min-news.xml" type="rss" category="News" />
+      <outline title="Magical Transformations" xmlUrl="https://feeds.captivate.fm/magicaltrasformations" type="rss" category="Health" />
+      <outline title="The Nielson Show" xmlUrl="https://feeds.libsyn.com/481581/rss" type="rss" category="Sports" />
+      <outline title="The Bridge" xmlUrl="https://www.spreaker.com/show/3099883/episodes/feed" type="rss" category="Sports" />
+      <outline title="Politics Unpacked" xmlUrl="https://feeds.acast.com/public/shows/92a301e1-443b-435f-b4e2-2e2dd1e37fc5" type="rss" category="News" />
+      <outline title="*“Yesterday, I Went to Mars ♡”*" xmlUrl="https://anchor.fm/s/fcce555c/podcast/rss" type="rss" category="Society" />
+      <outline title="SYSTEMIZE YOUR LIFE + BUSINESS | Schedules, Routines, Productivity, Time Management, Operating System" xmlUrl="https://feed.podbean.com/systemizeyourlife/feed.xml" type="rss" category="Kids" />
+      <outline title="San Francisco 49ers News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/san-francisco-49ers-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Chiney Today" xmlUrl="https://feeds.megaphone.fm/esp1950629932" type="rss" category="Sports" />
+      <outline title="Top Entrepreneurs Podcast | Enterprise Podcast Network" xmlUrl="https://feeds.feedburner.com/entrepreneurpodcastnetwork" type="rss" category="Business" />
+      <outline title="Restoration Home with Jennifer Pepito" xmlUrl="https://feed.podbean.com/restorationhome/feed.xml" type="rss" category="Kids" />
+      <outline title="Keys to Success" xmlUrl="https://www.spreaker.com/show/6414073/episodes/feed" type="rss" category="Society" />
+      <outline title="Athletics Weekly Podcast" xmlUrl="https://feeds.acast.com/public/shows/6697e5223fac6c42420fe0e8" type="rss" category="Sports" />
+      <outline title="Mully &amp; Haugh Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/chicago_wscram_mully___haugh_show" type="rss" category="Sports" />
+      <outline title="Grow My Salon Business Podcast" xmlUrl="https://feeds.transistor.fm/grow-my-salon-business-podcast" type="rss" category="Arts" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="News" />
+      <outline title="Mornings With Gary Byron Podcast" xmlUrl="https://feeds.transistor.fm/mornings-with-gary-byron-podcast" type="rss" category="News" />
+      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed" type="rss" category="News" />
+      <outline title="VINCE" xmlUrl="https://feeds.megaphone.fm/wwo4092921469" type="rss" category="News" />
+      <outline title="Arkansas Razorbacks Basketball News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/arkansas-razorbacks-basketball-news-today-2-min-news-the-dai.xml" type="rss" category="News" />
+      <outline title="Galway Bay fm - Sports" xmlUrl="https://galwaybayfmsports.podbean.com/feed.xml" type="rss" category="Sports" />
+      <outline title="Harmonizing Success" xmlUrl="https://www.spreaker.com/show/6418590/episodes/feed" type="rss" category="Business" />
+      <outline title="World Today" xmlUrl="https://aezfm.meldingcloud.com/rss/program/46" type="rss" category="News" />
+      <outline title="Montreal Canadiens News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/montreal-canadiens-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Giggly Squad" xmlUrl="https://feeds.acast.com/public/shows/780a3042-864b-40fa-ae09-4557aec621c3" type="rss" category="Comedy" />
+      <outline title="Hidden Money Podcast" xmlUrl="https://feeds.transistor.fm/hidden-money-podcast" type="rss" category="Business" />
+      <outline title="NomadTreneur" xmlUrl="https://www.spreaker.com/show/5936988/episodes/feed" type="rss" category="Society" />
     </outline>
+    <outline text="YouTube">
+      <outline title="Philip DeFranco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="Chicos en Acción pro Oficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4IIIbXWcBJbc2q0ozzIL_g" type="rss" />
+      <outline title="Barby Mini Crafts💄💋" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkGz12-dxKj1DH0KSsfRlsQ" type="rss" />
+      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+      <outline title="Like Nastya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="Goldmines" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+    </outline>
+    <outline text="Podcast">
+      <outline title="Dante Gebel Live" xmlUrl="https://anchor.fm/s/13394a00/podcast/rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Seminario Fenix | Brian Tracy" xmlUrl="https://feeds.simplecast.com/RR_j2pGA" type="rss" category="Self-Improvement" />
+      <outline title="La Cotorrisa" xmlUrl="https://feeds.simplecast.com/xE9e0As4" type="rss" category="Comedy" />
+      <outline title="365 con Dios" xmlUrl="https://feeds.simplecast.com/YhB6WdXx" type="rss" category="Christianity" />
+      <outline title="Hablando Huevadas" xmlUrl="https://feeds.megaphone.fm/SONORO9863891605" type="rss" category="Comedy" />
+      <outline title="Se Regalan Dudas" xmlUrl="https://feeds.acast.com/public/shows/617c0d208afe370012ddf145" type="rss" category="Relationships" />
+      <outline title="Despertando" xmlUrl="https://feeds.acast.com/public/shows/617c0236cc46710013b35aea" type="rss" category="Society &amp; Culture" />
+      <outline title="Relatos de la Noche" xmlUrl="https://www.omnycontent.com/d/playlist/fb589704-0e24-4d6c-ac3c-b31a007240af/5f4a7db8-432b-47e0-b660-b32301294e59/2ae1d699-9ba8-455b-898a-b32301294e7d/podcast.rss" type="rss" category="Drama" />
+      <outline title="LA DOSIS DIARIA ROKA" xmlUrl="https://anchor.fm/s/107a010ec/podcast/rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Durmiendo" xmlUrl="https://feeds.acast.com/public/shows/617c55401963060013cd08cb" type="rss" category="Health &amp; Fitness" />
+      <outline title="Estoicismo Filosofia" xmlUrl="https://www.spreaker.com/show/6146778/episodes/feed" type="rss" category="Self-Improvement" />
+      <outline title="El Podcast de Marco Antonio Regil" xmlUrl="https://feeds.simplecast.com/bMFpBb9o" type="rss" category="Self-Improvement" />
+      <outline title="Dr. Mario Alonso Puig" xmlUrl="https://anchor.fm/s/565c58b8/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="BBVA Aprendemos juntos" xmlUrl="https://rss.libsyn.com/shows/109232/destinations/631374.xml" type="rss" category="Education" />
+      <outline title="ROCA PROJECT" xmlUrl="https://anchor.fm/s/ff4c5068/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Radio Ambulante" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/b3c9b6e7-72ba-45c4-aff9-b1e7012d213b/092b66a8-4329-4183-bb12-b1e7012d216f/podcast.rss" type="rss" category="Documentary" />
+      <outline title="Historia en Podcast" xmlUrl="https://feeds.megaphone.fm/ADSMOVILESPAASL6591275552" type="rss" category="History" />
+      <outline title="Psicologia Al Desnudo | @psi.mammoliti" xmlUrl="https://anchor.fm/s/28fef6f0/podcast/rss" type="rss" category="Mental Health" />
+      <outline title="Libros para Emprendedores" xmlUrl="https://feeds.simplecast.com/_YgKbLu6" type="rss" category="Entrepreneurship" />
+      <outline title="Entiende Tu Mente" xmlUrl="https://feeds.acast.com/public/shows/69779e4cf4b515342e3b249c" type="rss" category="Health &amp; Fitness" />
+      <outline title="Cracks Podcast con Oso Trava" xmlUrl="https://rss.buzzsprout.com/1682368.rss" type="rss" category="Business" />
+      <outline title="Chisme Corporativo" xmlUrl="https://feeds.megaphone.fm/chismecorporativopodcast" type="rss" category="Business" />
+      <outline title="El hilo" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/b9075595-43ce-4bdd-9a4c-b1ea01352a3d/e4eb1040-260e-4556-a9c7-b1ea01352a67/podcast.rss" type="rss" category="Politics" />
+      <outline title="Tu Desarrollo Personal" xmlUrl="https://feeds.simplecast.com/Ylj2dvqz" type="rss" category="Self-Improvement" />
+      <outline title="¿Qué Haría Jesús?" xmlUrl="https://feeds.simplecast.com/LnlzKthb" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Leyendas Legendarias" xmlUrl="https://feeds.simplecast.com/TjkG2gz_" type="rss" category="Comedy" />
+      <outline title="Conversaciones con el Reflejo" xmlUrl="https://feeds.megaphone.fm/GENUINAPERSONASAPIDECV9613543587" type="rss" category="Personal Journals" />
+      <outline title="Inglés desde cero" xmlUrl="https://feeds.simplecast.com/tbkduP0r" type="rss" category="Language Learning" />
+      <outline title="Huberman Lab" xmlUrl="https://feeds.megaphone.fm/hubermanlab" type="rss" category="Health &amp; Fitness" />
+      <outline title="Curiosidades de la Historia National Geographic" xmlUrl="https://feeds.ivoox.com/feed_fg_f1715166_filtro_1.xml" type="rss" category="History" />
+      <outline title="Chisme Mitológico" xmlUrl="https://feeds.megaphone.fm/CONTENTCREATORSHUBSL7241292789" type="rss" category="History" />
+      <outline title="CRIMINALISTA NOCTURNO" xmlUrl="https://anchor.fm/s/110d765fc/podcast/rss" type="rss" category="True Crime" />
+      <outline title="La Bitácora Podcast con Leandro Torcianti" xmlUrl="https://anchor.fm/s/101beb638/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Las Alucines" xmlUrl="https://anchor.fm/s/f8444e10/podcast/rss" type="rss" category="Comedy" />
+      <outline title="LA MAGIA DEL CAOS con Aislinn Derbez" xmlUrl="https://feeds.acast.com/public/shows/690257c5e5f14b41312aa586" type="rss" category="Self-Improvement" />
+      <outline title="EresInteligente Podcast" xmlUrl="https://feeds.acast.com/public/shows/654034dbbfecf80012be2746" type="rss" category="Mental Health" />
+      <outline title="The Daily" xmlUrl="https://feeds.simplecast.com/Sl5CSM3S" type="rss" category="Daily News" />
+      <outline title="Relatos de la Historia" xmlUrl="https://feeds.ivoox.com/feed_fg_f12597222_filtro_1.xml" type="rss" category="History" />
+      <outline title="Autoestima para tu vida" xmlUrl="https://anchor.fm/s/3c3de4b0/podcast/rss" type="rss" category="Mental Health" />
+      <outline title="Coffee Break German" xmlUrl="https://feeds.acast.com/public/shows/0c3c53a1-180f-435a-9453-cec3883b4ada" type="rss" category="Language Learning" />
+      <outline title="El arte de agradecer" xmlUrl="https://anchor.fm/s/106028490/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Jefillysh: Ciencia Simplificada" xmlUrl="https://anchor.fm/s/e54a64ac/podcast/rss" type="rss" category="Science" />
+      <outline title="Ojalá lo hubiera sabido antes" xmlUrl="https://anchor.fm/s/111238ce8/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Global News Podcast" xmlUrl="https://podcasts.files.bbci.co.uk/p02nq0gn.rss" type="rss" category="Daily News" />
+      <outline title="Motivación Diaria por Motiversity" xmlUrl="https://feeds.acast.com/public/shows/636d53236c5fb6001185cf5b" type="rss" category="Health &amp; Fitness" />
+      <outline title="Meditación para dormir" xmlUrl="https://feeds.acast.com/public/shows/66cb711b8ffe447a759ce29a" type="rss" category="Mental Health" />
+      <outline title="Clapcast from Claptone" xmlUrl="https://portal-api.thisisdistorted.com/xml/clapcast" type="rss" category="Music" />
+      <outline title="Bloomberg Daybreak América Latina" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/4c09b2fa-26a9-4a92-84a3-b09300da29a4/c412ede7-0fec-476a-bfed-b09300da29d3/podcast.rss" type="rss" category="Business" />
+      <outline title="Relatos Forenses Podcast" xmlUrl="https://feeds.megaphone.fm/SNV2876771226" type="rss" category="Documentary" />
+      <outline title="HABLEMOS DE LO QUE NO EXISTE" xmlUrl="https://anchor.fm/s/fd85cdb8/podcast/rss" type="rss" category="Fiction" />
+    </outline>
+    <outline text="Social">
+      <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
+    </outline>
+    <outline text="Reddit">
+      </outline>
   </body>
 </opml>

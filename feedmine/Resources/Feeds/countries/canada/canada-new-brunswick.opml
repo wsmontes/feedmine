@@ -17,8 +17,10 @@
       <outline title="Beaverbrook Art Gallery" xmlUrl="https://www.beaverbrookartgallery.org/feed/" type="rss" />
       <outline title="Harvest Music Festival" xmlUrl="https://www.harvestmusicfest.ca/feed/" type="rss" />
     </outline>
-<outline text="Business">
+    <outline text="Business">
       <outline title="Atlantic Chamber of Commerce" xmlUrl="https://www.atlanticchamber.ca/feed/" type="rss" />
     </outline>
-</body>
+    <outline text="YouTube">
+      </outline>
+  </body>
 </opml>

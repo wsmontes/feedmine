@@ -6,8 +6,7 @@
   <body>
     <outline text="News" />
     <outline text="Politics">
-      <outline title="City of Milwaukee" xmlUrl="https://city.milwaukee.gov/rss" type="rss" />
-    </outline>
+      </outline>
     <outline text="Business">
       <outline title="Milwaukee Biz Journal" xmlUrl="https://feeds.bizjournals.com/milwaukee" type="rss" />
     </outline>
@@ -25,5 +24,7 @@
       <outline title="This is Normal: A podcast about youth mental health" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:402773712/sounds.rss" type="rss" category="Health" />
       <outline title="The R&amp;B Show" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:305556876/sounds.rss" type="rss" category="Sports" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

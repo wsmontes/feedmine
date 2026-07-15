@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Universities &amp; Higher Education Feeds</title>
+  </head>
+  <body>
+    <outline text="Higher Education News">
+      <outline title="Campus Technology" xmlUrl="https://campustechnology.com/rss" type="rss" />
+    </outline>
+    <outline text="US Universities — Ivy League">
+      <outline title="Harvard Gazette" xmlUrl="https://news.harvard.edu/gazette/feed/" type="rss" />
+      <outline title="Cornell Chronicle" xmlUrl="https://news.cornell.edu/rss" type="rss" />
+    </outline>
+    <outline text="US Universities — Top Research">
+      <outline title="MIT News" xmlUrl="https://news.mit.edu/rss" type="rss" />
+      <outline title="UC Berkeley News" xmlUrl="https://news.berkeley.edu/feed/" type="rss" />
+      <outline title="Caltech News" xmlUrl="https://www.caltech.edu/about/news/rss" type="rss" />
+      <outline title="Johns Hopkins Hub" xmlUrl="https://hub.jhu.edu/feed/" type="rss" />
+      <outline title="Duke Today" xmlUrl="https://today.duke.edu/rss" type="rss" />
+      <outline title="Michigan News" xmlUrl="https://news.umich.edu/feed/" type="rss" />
+      <outline title="UCLA Newsroom" xmlUrl="https://newsroom.ucla.edu/rss" type="rss" />
+      <outline title="NYU News" xmlUrl="https://www.nyu.edu/about/news-publications/news.rss" type="rss" />
+      <outline title="UT Austin News" xmlUrl="https://news.utexas.edu/feed/" type="rss" />
+      <outline title="University of Washington News" xmlUrl="https://www.washington.edu/news/feed/" type="rss" />
+      <outline title="UC San Diego News" xmlUrl="https://ucsdnews.ucsd.edu/rss" type="rss" />
+      <outline title="Purdue University News" xmlUrl="https://www.purdue.edu/newsroom/rss" type="rss" />
+    </outline>
+    <outline text="UK Universities">
+      <outline title="Cambridge University News" xmlUrl="https://www.cam.ac.uk/rss" type="rss" />
+      <outline title="University of Manchester" xmlUrl="https://www.manchester.ac.uk/rss" type="rss" />
+      <outline title="University of Glasgow" xmlUrl="https://www.gla.ac.uk/rss/" type="rss" />
+      <outline title="University of Warwick" xmlUrl="https://warwick.ac.uk/rss" type="rss" />
+    </outline>
+    <outline text="Canadian Universities">
+      <outline title="UBC News" xmlUrl="https://news.ubc.ca/feed/" type="rss" />
+      <outline title="McMaster University" xmlUrl="https://dailynews.mcmaster.ca/feed/" type="rss" />
+    </outline>
+    <outline text="Australian &amp; NZ Universities">
+      <outline title="University of Sydney" xmlUrl="https://www.sydney.edu.au/rss" type="rss" />
+    </outline>
+    <outline text="Student Newspapers">
+      <outline title="The Stanford Daily" xmlUrl="https://www.stanforddaily.com/feed/" type="rss" />
+      <outline title="The Michigan Daily" xmlUrl="https://www.michigandaily.com/feed/" type="rss" />
+      <outline title="The Chicago Maroon" xmlUrl="https://chicagomaroon.com/feed/" type="rss" />
+    </outline>
+    <outline text="Academic Research &amp; Publishing">
+      <outline title="Nature — News" xmlUrl="https://www.nature.com/nature.rss" type="rss" />
+      <outline title="The Scholarly Kitchen" xmlUrl="https://scholarlykitchen.sspnet.org/feed/" type="rss" />
+      <outline title="JSTOR Daily" xmlUrl="https://daily.jstor.org/feed/" type="rss" />
+      <outline title="LSE Impact Blog" xmlUrl="https://blogs.lse.ac.uk/impactofsocialsciences/feed/" type="rss" />
+      <outline title="Retraction Watch" xmlUrl="https://retractionwatch.com/feed/" type="rss" />
+      <outline title="arXiv Blog" xmlUrl="https://blog.arxiv.org/feed/" type="rss" />
+      <outline title="PLOS Blogs" xmlUrl="https://theplosblog.plos.org/feed/" type="rss" />
+    </outline>
+    <outline text="University Press Blogs">
+      <outline title="Oxford University Press Blog" xmlUrl="https://blog.oup.com/feed/" type="rss" />
+      <outline title="Cambridge University Press" xmlUrl="https://www.cambridgeblog.org/feed/" type="rss" />
+      <outline title="Yale University Press Blog" xmlUrl="https://yalebooks.yale.edu/feed/" type="rss" />
+      <outline title="UC Press Blog" xmlUrl="https://www.ucpress.edu/blog/feed/" type="rss" />
+    </outline>
+    <outline text="MOOCs &amp; Online Learning">
+      <outline title="Coursera Blog" xmlUrl="https://blog.coursera.org/feed/" type="rss" />
+      <outline title="Open Culture" xmlUrl="https://www.openculture.com/feed" type="rss" />
+      <outline title="Open Education Database" xmlUrl="https://oedb.org/feed/" type="rss" />
+    </outline>
+    <outline text="Higher Ed Podcasts">
+      <outline title="Academics Mean Business" xmlUrl="https://feeds.libsyn.com/academicsmeanbusiness" type="rss" />
+    </outline>
+    <outline text="YouTube — University Channels">
+      </outline>
+  </body>
+</opml>

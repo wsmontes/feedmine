@@ -4,9 +4,12 @@
     <title>Daegu Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics">
-        <outline title="Daegu Metro Gov" xmlUrl="https://www.daegu.go.kr/rss" type="rss" />
+    <outline text="News" />
+    <outline text="Politics">
+      <outline title="Daegu Metro Gov" xmlUrl="https://www.daegu.go.kr/rss" type="rss" />
+    </outline>
+    <outline text="Education" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Education" /></body>
-    </opml>
+  </body>
+</opml>

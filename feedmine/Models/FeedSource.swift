@@ -4,6 +4,7 @@ enum MediaKind: String, Codable, Sendable {
     case text
     case video
     case audio
+    case forum
 }
 
 struct FeedSource: Codable, Identifiable, Sendable {

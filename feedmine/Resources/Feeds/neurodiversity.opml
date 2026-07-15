@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Autism, Down Syndrome &amp; Neurodiversity</title>
+  </head>
+  <body>
+    <outline text="Autism Community">
+      <outline title="Autism Speaks Blog" xmlUrl="https://www.autismspeaks.org/rss" type="rss" />
+      <outline title="Autistic Self Advocacy Network (ASAN)" xmlUrl="https://autisticadvocacy.org/feed/" type="rss" />
+      <outline title="Thinking Person's Guide to Autism" xmlUrl="https://thinkingautismguide.com/feed/" type="rss" />
+      <outline title="Autism Awareness Blog" xmlUrl="https://autismawareness.com/feed/" type="rss" />
+      <outline title="The Art of Autism" xmlUrl="https://the-art-of-autism.com/feed/" type="rss" />
+      <outline title="NeuroClastic" xmlUrl="https://neuroclastic.com/feed/" type="rss" />
+      <outline title="Autism Science Foundation" xmlUrl="https://autismsciencefoundation.org/rss/" type="rss" />
+      <outline title="Spectrum News (Autism Research)" xmlUrl="https://www.spectrumnews.org/rss/" type="rss" />
+    </outline>
+    <outline text="Down Syndrome">
+      <outline title="Down Syndrome International" xmlUrl="https://www.ds-int.org/rss" type="rss" />
+      <outline title="Global Down Syndrome Foundation" xmlUrl="https://www.globaldownsyndrome.org/rss/" type="rss" />
+      <outline title="Down Syndrome Association (UK)" xmlUrl="https://www.downs-syndrome.org.uk/rss/" type="rss" />
+      <outline title="Cedars Story (DS Blog)" xmlUrl="https://cedarsstory.com/feed/" type="rss" />
+      <outline title="Ruby's Rainbow (DS College)" xmlUrl="https://rubysrainbow.org/rss/" type="rss" />
+    </outline>
+    <outline text="ADHD">
+      <outline title="CHADD (ADHD)" xmlUrl="https://chadd.org/rss/" type="rss" />
+      <outline title="ADDitude Magazine" xmlUrl="https://www.additudemag.com/feed/" type="rss" />
+      <outline title="ADHD Awareness Blog" xmlUrl="https://adhdawarenessmonth.org/rss/" type="rss" />
+      <outline title="How to ADHD (Jessica McCabe Blog)" xmlUrl="https://howtoadhd.com/feed/" type="rss" />
+    </outline>
+    <outline text="Neurodiversity &amp; Inclusive Neuro">
+      <outline title="Embrace Autism" xmlUrl="https://embrace-autism.com/feed/" type="rss" />
+    </outline>
+    <outline text="Parenting &amp; Support">
+      <outline title="Different Dream Blog" xmlUrl="https://differentdream.com/feed/" type="rss" />
+      <outline title="Finding Cooper's Voice" xmlUrl="https://www.findingcoopersvoice.com/feed/" type="rss" />
+      <outline title="The Mom Kind" xmlUrl="https://www.themomkind.com/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      </outline>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head><title>Puzzles, Crosswords, Sudoku &amp; Brain Games</title></head>
+  <body>
+    <outline text="Crosswords">
+      <outline title="NYT Crossword Blog" xmlUrl="https://www.nytimes.com/rss/crosswords" type="rss"/>
+      <outline title="Rex Parker Does the NYT Crossword" xmlUrl="https://rexwordpuzzle.blogspot.com/feeds/posts/default" type="rss"/>
+      <outline title="Crossword Fiend" xmlUrl="https://crosswordfiend.com/feed/" type="rss"/>
+      <outline title="Diary of a Crossword Fiend" xmlUrl="https://crosswordfiend.com/feed/" type="rss"/>
+      <outline title="Cruciverb (Crossword Constructors)" xmlUrl="https://www.cruciverb.com/rss" type="rss"/>
+      <outline title="Crossword Unclued" xmlUrl="https://crosswordunclued.com/feeds/posts/default" type="rss"/>
+      <outline title="The Guardian — Crosswords" xmlUrl="https://www.theguardian.com/crosswords/rss" type="rss"/>
+      <outline title="Matt Gaffney's Weekly Crossword" xmlUrl="https://mattgaffney.com/rss/" type="rss"/>
+      <outline title="BEQ (Brendan Emmett Quigley) Crosswords" xmlUrl="https://www.brendanemmettquigley.com/feed/" type="rss"/>
+    </outline>
+    <outline text="Sudoku &amp; Number Puzzles">
+      <outline title="Sudoku Blog" xmlUrl="https://sudokublog.com/feed/" type="rss"/>
+      <outline title="Cracking the Cryptic Blog" xmlUrl="https://crackingthecryptic.com/feed/" type="rss"/>
+      <outline title="Sudoku of the Day" xmlUrl="https://www.sudokuoftheday.com/rss/" type="rss"/>
+      <outline title="Conceptis Puzzles Blog" xmlUrl="https://www.conceptispuzzles.com/rss/" type="rss"/>
+      <outline title="Killer Sudoku Blog" xmlUrl="https://killersudokuonline.com/rss/" type="rss"/>
+    </outline>
+    <outline text="Puzzle Magazines &amp; Sites">
+      <outline title="PuzzleNation Blog" xmlUrl="https://puzzlenation.com/feed/" type="rss"/>
+      <outline title="Games Magazine Blog" xmlUrl="https://www.gamesmagazine-online.com/rss/" type="rss"/>
+      <outline title="BrainDen Puzzle Blog" xmlUrl="https://brainden.com/feed/" type="rss"/>
+      <outline title="Brilliant Puzzles Blog" xmlUrl="https://puzzleblog.com/feed/" type="rss"/>
+      <outline title="Puzzle Prime Blog" xmlUrl="https://www.puzzleprime.com/feed/" type="rss"/>
+      <outline title="Puzzling Stack Exchange" xmlUrl="https://puzzling.stackexchange.com/rss" type="rss"/>
+    </outline>
+    <outline text="Jigsaw &amp; Physical Puzzles">
+      <outline title="Jigsaw Junkies" xmlUrl="https://jigsawjunkies.com/feed/" type="rss"/>
+      <outline title="The Jigsaw Puzzle Blog" xmlUrl="https://thejigsawpuzzleblog.com/feed/" type="rss"/>
+      <outline title="Pieces &amp; Puzzles Blog" xmlUrl="https://piecesandpuzzles.com/feed/" type="rss"/>
+      <outline title="Ravensburger Blog" xmlUrl="https://www.ravensburger.com/rss" type="rss"/>
+    </outline>
+    <outline text="Logic &amp; Brain Teasers">
+      <outline title="Brilliant Blog (Math &amp; Logic)" xmlUrl="https://brilliant.org/blog/feed/" type="rss"/>
+      <outline title="Futility Closet" xmlUrl="https://www.futilitycloset.com/feed/" type="rss"/>
+      <outline title="Math Puzzles" xmlUrl="https://mathpuzzlesblog.com/feed/" type="rss"/>
+      <outline title="GCHQ Puzzles (UK)" xmlUrl="https://www.gchq.gov.uk/rss/puzzles" type="rss"/>
+      <outline title "Mind Your Decisions (Presh Talwalkar)" xmlUrl="https://mindyourdecisions.com/blog/feed/" type="rss"/>
+    </outline>
+    <outline text="Word Games">
+      <outline title="Scrabble Blog" xmlUrl="https://scrabbleblog.com/feed/" type="rss"/>
+      <outline title="Wordle Blog" xmlUrl="https://wordleblog.com/feed/" type="rss"/>
+      <outline title="Board Game Geek — Word Games" xmlUrl="https://boardgamegeek.com/rss/wordgames" type="rss"/>
+      <outline title="BananaGram Blog" xmlUrl="https://bananagrams.com/blogs/news.atom" type="rss"/>
+    </outline>
+    <outline text="Escape Rooms &amp; Immersive Puzzles">
+      <outline title="Escape Room Authority" xmlUrl="https://escaperoomauthority.com/feed/" type="rss"/>
+      <outline title="Room Escape Artist" xmlUrl="https://roomescapeartist.com/feed/" type="rss"/>
+      <outline title="The Logic Escapes Me" xmlUrl="https://thelogicescapesme.com/feed/" type="rss"/>
+      <outline title="Escape Room Tips" xmlUrl="https://escaperoomtips.com/feed/" type="rss"/>
+    </outline>
+    <outline text="Puzzle Podcasts">
+      <outline title="Fill Me In (Crossword)" xmlUrl="https://feeds.libsyn.com/fillmein" type="rss"/>
+      <outline title="Puzzle Podcast" xmlUrl="https://feeds.libsyn.com/puzzlepodcast" type="rss"/>
+      <outline title="Math Mutation" xmlUrl="https://feeds.libsyn.com/mathmutation" type="rss"/>
+      <outline title="The Puzzle Solving Podcast" xmlUrl="https://feeds.libsyn.com/puzzlesolving" type="rss"/>
+    </outline>
+    <outline text="YouTube — Puzzles &amp; Games">
+      <outline title="Cracking The Cryptic (Sudoku, YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCC-UOdK8-mIjxBQm_ot1T-Q" type="rss"/>
+      <outline title="Chris Ramsay (Puzzles, YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UC955PmN-yJk1HuxyxV8r_tQ" type="rss"/>
+      <outline title="Mr Puzzle (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCmg1cGbgn1eG_W86wEZE0cg" type="rss"/>
+      <outline title="Puzzle Man (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCro1tDCdNnCu4ogE4jF4Pmg" type="rss"/>
+      <outline title="Karen Puzzles (Jigsaws, YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCkp5q2KdHPF7p31P7M5hQ7w" type="rss"/>
+      <outline title="Vintage Puzzles (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCh7W1Sj3nTBgzz3i6Te5oFA" type="rss"/>
+      <outline title="ThePuzzleGuy (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCrlkAQHjKX3j1IQuLwH0Zmg" type="rss"/>
+    </outline>
+  </body>
+</opml>

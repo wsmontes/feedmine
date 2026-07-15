@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive &amp; Motorsports Feeds</title>
+  </head>
+  <body>
+    <outline text="Formula 1">
+      <outline title="BBC Sport — F1" xmlUrl="http://feeds.bbci.co.uk/sport/formula1/rss.xml" type="rss" />
+      <outline title="Sky Sports — F1" xmlUrl="https://www.skysports.com/rss/12040" type="rss" />
+      <outline title="RaceFans" xmlUrl="https://www.racefans.net/feed/" type="rss" />
+      <outline title="The Race — F1" xmlUrl="https://www.the-race.com/category/formula-1/feed/" type="rss" />
+      <outline title="Crash.net — F1" xmlUrl="https://www.crash.net/rss/f1" type="rss" />
+      <outline title="ESPN — F1" xmlUrl="https://www.espn.com/espn/rss/f1/news" type="rss" />
+      <outline title="F1i.com" xmlUrl="https://f1i.com/feed" type="rss" />
+      <outline title="Grand Prix 247" xmlUrl="https://www.grandprix247.com/feed/" type="rss" />
+    </outline>
+    <outline text="MotoGP &amp; Motorcycles">
+      <outline title="Crash.net — MotoGP" xmlUrl="https://www.crash.net/rss/motogp" type="rss" />
+      <outline title="Bike EXIF" xmlUrl="https://www.bikeexif.com/feed" type="rss" />
+      <outline title="RideApart" xmlUrl="https://www.rideapart.com/rss/" type="rss" />
+      <outline title="Asphalt &amp; Rubber" xmlUrl="https://www.asphaltandrubber.com/feed/" type="rss" />
+      <outline title="Pipeburn" xmlUrl="https://www.pipeburn.com/feed/" type="rss" />
+    </outline>
+    <outline text="NASCAR">
+      </outline>
+    <outline text="IndyCar">
+      <outline title="IndyCar — Official" xmlUrl="https://www.indycar.com/rss" type="rss" />
+      <outline title="Racer.com — IndyCar" xmlUrl="https://racer.com/category/indycar/feed/" type="rss" />
+    </outline>
+    <outline text="WRC / Rally">
+      <outline title="DirtFish" xmlUrl="https://dirtfish.com/feed/" type="rss" />
+    </outline>
+    <outline text="Endurance &amp; WEC">
+      <outline title="Sportscar365" xmlUrl="https://sportscar365.com/feed/" type="rss" />
+      <outline title="Daily Sportscar" xmlUrl="https://www.dailysportscar.com/feed/" type="rss" />
+    </outline>
+    <outline text="General Motorsports">
+      <outline title="Autosport" xmlUrl="https://www.autosport.com/rss/" type="rss" />
+      <outline title="Motorsport.com" xmlUrl="https://www.motorsport.com/rss/" type="rss" />
+      <outline title="The Race" xmlUrl="https://www.the-race.com/feed/" type="rss" />
+      <outline title="Racer.com" xmlUrl="https://racer.com/feed/" type="rss" />
+      <outline title="Motorsport Week" xmlUrl="https://www.motorsportweek.com/feed/" type="rss" />
+      <outline title="Speedcafe (AUS)" xmlUrl="https://www.speedcafe.com/feed/" type="rss" />
+      <outline title="The Checkered Flag" xmlUrl="https://www.thecheckeredflag.co.uk/feed/" type="rss" />
+      <outline title="Autoweek — Racing" xmlUrl="https://www.autoweek.com/rss/racing/" type="rss" />
+      <outline title="Beyond the Flag" xmlUrl="https://beyondtheflag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Car News &amp; Reviews">
+      <outline title="Motor Trend" xmlUrl="https://www.motortrend.com/feed/" type="rss" />
+      <outline title="Jalopnik" xmlUrl="https://jalopnik.com/rss" type="rss" />
+      <outline title="The Drive" xmlUrl="https://www.thedrive.com/feed/" type="rss" />
+      <outline title="Autocar" xmlUrl="https://www.autocar.co.uk/rss" type="rss" />
+      <outline title="Carscoops" xmlUrl="https://www.carscoops.com/feed/" type="rss" />
+      <outline title="Motor1.com" xmlUrl="https://www.motor1.com/rss/" type="rss" />
+    </outline>
+    <outline text="Classic &amp; Vintage Cars">
+      <outline title="Bring a Trailer" xmlUrl="https://bringatrailer.com/feed/" type="rss" />
+      <outline title="Silodrome" xmlUrl="https://silodrome.com/feed/" type="rss" />
+    </outline>
+    <outline text="EV &amp; Future Mobility">
+      <outline title="Electrek" xmlUrl="https://electrek.co/feed/" type="rss" />
+      <outline title="InsideEVs" xmlUrl="https://insideevs.com/rss/" type="rss" />
+      <outline title="CleanTechnica" xmlUrl="https://cleantechnica.com/feed/" type="rss" />
+      <outline title="EV Obsession" xmlUrl="https://evobsession.com/feed/" type="rss" />
+    </outline>
+    <outline text="Tuning &amp; Modified Cars">
+      <outline title="StanceWorks" xmlUrl="https://stanceworks.com/feed/" type="rss" />
+      <outline title="Mighty Car Mods Blog" xmlUrl="https://www.mightycarmods.com/blogs/news.atom" type="rss" />
+    </outline>
+    <outline text="Automotive Podcasts">
+      </outline>
+    <outline text="YouTube — Automotive Channels">
+      </outline>
+  </body>
+</opml>

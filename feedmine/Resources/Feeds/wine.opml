@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Wine — Tasting, Regions, Collecting &amp; Culture</title>
+  </head>
+  <body>
+    <outline text="Wine News &amp; Reviews">
+      <outline title="Jancis Robinson" xmlUrl="https://www.jancisrobinson.com/rss" type="rss" />
+      <outline title="Wine Folly" xmlUrl="https://winefolly.com/feed/" type="rss" />
+      <outline title="Robert Parker / Wine Advocate" xmlUrl="https://www.robertparker.com/rss" type="rss" />
+      <outline title="Wine-Searcher Blog" xmlUrl="https://www.wine-searcher.com/rss" type="rss" />
+      <outline title="The Drinks Business — Wine" xmlUrl="https://www.thedrinksbusiness.com/rss/wine/" type="rss" />
+    </outline>
+    <outline text="Wine Regions — France &amp; Italy">
+      <outline title="Burgundy Report" xmlUrl="https://www.burgundy-report.com/rss/" type="rss" />
+      <outline title="Kerin O'Keefe (Italian Wine)" xmlUrl="https://www.kerinokeefe.com/rss" type="rss" />
+      <outline title="Chianti Classico News" xmlUrl="https://www.chianticlassico.com/rss/" type="rss" />
+    </outline>
+    <outline text="Wine Regions — New World">
+      <outline title="Wine Australia" xmlUrl="https://www.wineaustralia.com/rss" type="rss" />
+      <outline title="Wines of Chile" xmlUrl="https://www.winesofchile.org/rss/" type="rss" />
+      <outline title="South Africa Wine" xmlUrl="https://www.wosa.co.za/rss/" type="rss" />
+    </outline>
+    <outline text="Natural &amp; Biodynamic Wine">
+      </outline>
+    <outline text="Wine Blogs &amp; Education">
+      <outline title="Wine Folly Blog" xmlUrl="https://winefolly.com/feed/" type="rss" />
+      <outline title="The Wine Cellar Insider" xmlUrl="https://www.thewinecellarinsider.com/rss/" type="rss" />
+      <outline title="GuildSomm Blog" xmlUrl="https://www.guildsomm.com/rss" type="rss" />
+    </outline>
+    <outline text="Wine Podcasts">
+      <outline title="Wine for Normal People" xmlUrl="https://feeds.libsyn.com/winefornormalpeople" type="rss" />
+      <outline title="GuildSomm Podcast" xmlUrl="https://feeds.libsyn.com/guildsomm" type="rss" />
+      <outline title="Understanding Wine (Austin Beeman)" xmlUrl="https://feeds.libsyn.com/understandingwine" type="rss" />
+    </outline>
+    <outline text="YouTube — Wine">
+      </outline>
+    <outline text="More Wine Sites">
+      <outline title="Wine Anorak (Jamie Goode)" xmlUrl="https://www.wineanorak.com/rss" type="rss" />
+      <outline title="The Wine Doctor" xmlUrl="https://www.thewinedoctor.com/rss" type="rss" />
+      <outline title="Tim Atkin MW" xmlUrl="https://www.timatkin.com/rss" type="rss" />
+      <outline title="Burghound" xmlUrl="https://www.burghound.com/rss" type="rss" />
+      <outline title="Wine &amp; Spirits Magazine" xmlUrl="https://www.wineandspiritsmagazine.com/rss/" type="rss" />
+      <outline title="The World of Fine Wine" xmlUrl="https://worldoffinewine.com/rss" type="rss" />
+      <outline title="Noble Rot Magazine" xmlUrl="https://noblerot.com/rss" type="rss" />
+      <outline title="The Real Review (Huon Hooke)" xmlUrl="https://www.therealreview.com/rss/" type="rss" />
+      <outline title="Wine Companion (AUS)" xmlUrl="https://www.winecompanion.com.au/rss" type="rss" />
+      <outline title="Palate Press" xmlUrl="https://palatepress.com/feed/" type="rss" />
+      <outline title="Vinography" xmlUrl="https://www.vinography.com/feed/" type="rss" />
+      <outline title="Bigger Than Your Head" xmlUrl="https://biggerthanyourhead.net/feed/" type="rss" />
+      <outline title="The Winegetter" xmlUrl="https://thewinegetter.com/feed/" type="rss" />
+      <outline title="SpitBucket" xmlUrl="https://spitbucket.net/feed/" type="rss" />
+      <outline title="Do Bianchi (Italian Wine)" xmlUrl="https://dobianchi.com/feed/" type="rss" />
+      <outline title="Hawk Wakawaka Wine Reviews" xmlUrl="https://wakawakawinereviews.com/feed/" type="rss" />
+      <outline title="1 Wine Dude" xmlUrl="https://www.1winedude.com/feed/" type="rss" />
+      <outline title="Wine Curmudgeon" xmlUrl="https://www.winecurmudgeon.com/feed/" type="rss" />
+      <outline title="Somm Journal" xmlUrl="https://www.sommjournal.com/rss" type="rss" />
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Football / Soccer Feeds</title>
+  </head>
+  <body>
+    <outline text="Global Football News">
+      <outline title="ESPN FC" xmlUrl="https://www.espn.com/espn/rss/soccer/news" type="rss" />
+      <outline title="BBC Sport — Football" xmlUrl="http://feeds.bbci.co.uk/sport/football/rss.xml" type="rss" />
+      <outline title="The Guardian — Football" xmlUrl="https://www.theguardian.com/football/rss" type="rss" />
+      <outline title="Sky Sports — Football" xmlUrl="https://www.skysports.com/rss/12040" type="rss" />
+      <outline title="World Soccer Magazine" xmlUrl="https://www.worldsoccer.com/feed/" type="rss" />
+      <outline title="Talksport" xmlUrl="https://talksport.com/rss/football/" type="rss" />
+      <outline title="The Athletic — Football" xmlUrl="https://theathletic.com/feed/football/" type="rss" />
+    </outline>
+    <outline text="Premier League">
+      </outline>
+    <outline text="La Liga &amp; European Leagues">
+      <outline title="Marca (Spain)" xmlUrl="https://www.marca.com/rss" type="rss" />
+      <outline title="AS (Spain)" xmlUrl="https://as.com/rss" type="rss" />
+      <outline title="Mundo Deportivo" xmlUrl="https://www.mundodeportivo.com/rss" type="rss" />
+      <outline title="Football Italia" xmlUrl="https://football-italia.net/feed/" type="rss" />
+      <outline title="Gazzetta dello Sport" xmlUrl="https://www.gazzetta.it/rss" type="rss" />
+      <outline title="Kicker (Germany)" xmlUrl="https://www.kicker.de/rss" type="rss" />
+    </outline>
+    <outline text="Champions League &amp; UEFA">
+      <outline title="UEFA Champions League" xmlUrl="https://www.uefa.com/uefachampionsleague/rss/" type="rss" />
+      <outline title="UEFA Europa League" xmlUrl="https://www.uefa.com/uefaeuropaleague/rss/" type="rss" />
+    </outline>
+    <outline text="International Football">
+      <outline title="CONMEBOL" xmlUrl="https://www.conmebol.com/rss/" type="rss" />
+      <outline title="UEFA Euro" xmlUrl="https://www.uefa.com/uefaeuro/rss/" type="rss" />
+      <outline title="AFC (Asian Football)" xmlUrl="https://www.the-afc.com/rss/" type="rss" />
+    </outline>
+    <outline text="Brazilian Football (Futebol Brasileiro)">
+      <outline title="ESPN Brasil" xmlUrl="https://www.espn.com.br/rss" type="rss" />
+      <outline title="Trivela" xmlUrl="https://trivela.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Major Clubs — Official News">
+      <outline title="Real Madrid — News" xmlUrl="https://www.realmadrid.com/en/rss" type="rss" />
+      <outline title="Bayern Munich — News" xmlUrl="https://fcbayern.com/en/rss" type="rss" />
+      <outline title="AC Milan — News" xmlUrl="https://www.acmilan.com/en/rss" type="rss" />
+      <outline title="Flamengo — News" xmlUrl="https://www.flamengo.com.br/rss" type="rss" />
+      <outline title="São Paulo FC — News" xmlUrl="https://www.saopaulofc.net/rss" type="rss" />
+      <outline title="River Plate" xmlUrl="https://www.cariverplate.com.ar/rss/" type="rss" />
+    </outline>
+    <outline text="Football Analysis &amp; Stats">
+      <outline title="Zonal Marking" xmlUrl="https://zonalmarking.net/feed/" type="rss" />
+      <outline title="Total Football Analysis" xmlUrl="https://totalfootballanalysis.com/feed/" type="rss" />
+      <outline title="Football Critic" xmlUrl="https://www.footballcritic.com/rss" type="rss" />
+    </outline>
+    <outline text="Football Podcasts">
+      <outline title="The Spanish Football Podcast" xmlUrl="https://feeds.libsyn.com/thespanishfootballpodcast" type="rss" />
+    </outline>
+    <outline text="YouTube — Football Channels">
+      </outline>
+    <outline text="More European Clubs">
+      <outline title="RB Leipzig" xmlUrl="https://rbleipzig.com/en/rss/" type="rss" />
+    </outline>
+    <outline text="More Brazilian Clubs">
+      <outline title="Palmeiras" xmlUrl="https://www.palmeiras.com.br/rss/" type="rss" />
+      <outline title="Cruzeiro" xmlUrl="https://www.cruzeiro.com.br/rss/" type="rss" />
+      <outline title="Atlético Mineiro" xmlUrl="https://www.atletico.com.br/rss/" type="rss" />
+    </outline>
+  </body>
+</opml>

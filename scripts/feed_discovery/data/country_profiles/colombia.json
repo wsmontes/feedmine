@@ -1,0 +1,141 @@
+{
+  "country": "colombia",
+  "internet_penetration": 0.72,
+  "dominant_platforms": [
+    "whatsapp",
+    "instagram",
+    "youtube",
+    "deezer",
+    "facebook"
+  ],
+  "languages": [
+    "es",
+    "pt"
+  ],
+  "sources": {
+    "podcast_index": {
+      "priority": 2,
+      "enabled": true,
+      "params": {
+        "lang": "es,pt"
+      },
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "deezer": {
+      "priority": 1,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_api": {
+      "priority": 3,
+      "enabled": true,
+      "params": {
+        "relevanceLanguage": "es,pt"
+      },
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "ddg_text": {
+      "priority": 5,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "itunes": {
+      "priority": 4,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "listen_notes": {
+      "priority": 7,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "spotify": {
+      "priority": 6,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "feedly": {
+      "priority": 8,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    }
+  },
+  "local_directories": [],
+  "media_domains": [
+    "globo.com",
+    "uol.com.br",
+    "folha.uol.com.br",
+    "estadao.com.br",
+    "g1.globo.com",
+    "r7.com",
+    "terra.com.br",
+    "ig.com.br",
+    "correiobraziliense.com.br",
+    "otempo.com.br",
+    "eluniversal.com.mx",
+    "jornada.com.mx",
+    "milenio.com",
+    "reforma.com",
+    "excelsior.com.mx",
+    "proceso.com.mx",
+    "elfinanciero.com.mx",
+    "animalpolitico.com",
+    "clarin.com",
+    "lanacion.com.ar",
+    "infobae.com",
+    "pagina12.com.ar",
+    "perfil.com",
+    "ambito.com",
+    "eltiempo.com",
+    "elespectador.com",
+    "semana.com",
+    "elpais.com.co",
+    "lafm.com.co",
+    "rcnradio.com",
+    "latercera.com",
+    "emol.com",
+    "biobiochile.cl",
+    "elmostrador.cl",
+    "cooperativa.cl",
+    "elcomercio.pe",
+    "larepublica.pe",
+    "gestion.pe",
+    "rpp.pe",
+    "andina.pe",
+    "elpais.com.uy",
+    "abc.com.py",
+    "eldeber.com.bo",
+    "eluniverso.com",
+    "nacion.com",
+    "prensalibre.com",
+    "laprensa.hn",
+    "elnuevodiario.com.ni",
+    "elsalvador.com"
+  ],
+  "disabled_sources": [],
+  "source_performance": {},
+  "generated_at": "2026-07-12T23:40:38.666287+00:00",
+  "generation_version": 2
+}

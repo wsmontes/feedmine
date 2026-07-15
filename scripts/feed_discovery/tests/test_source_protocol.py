@@ -5,6 +5,13 @@ from scripts.feed_discovery.sources.ddg_text import DDGTextSource
 from scripts.feed_discovery.sources.podcast_index import PodcastIndexSource
 from scripts.feed_discovery.sources.deezer import DeezerSource
 from scripts.feed_discovery.sources.youtube_api import YouTubeAPISource
+from scripts.feed_discovery.sources.youtube_trending import YouTubeTrendingSource
+from scripts.feed_discovery.sources.youtube_top_subscribed import YouTubeTopSubscribedSource
+from scripts.feed_discovery.sources.youtube_awards import YouTubeAwardsSource
+from scripts.feed_discovery.sources.youtube_kaggle import YouTubeKaggleSource
+from scripts.feed_discovery.sources.youtube_socialblade import YouTubeSocialBladeSource
+from scripts.feed_discovery.sources.youtube_diamond import YouTubeDiamondSource
+from scripts.feed_discovery.sources.itunes_charts import ITunesChartsSource
 
 
 ALL_SOURCES = [
@@ -13,6 +20,13 @@ ALL_SOURCES = [
     PodcastIndexSource(),
     DeezerSource(),
     YouTubeAPISource(),
+    YouTubeTrendingSource(),
+    YouTubeTopSubscribedSource(),
+    YouTubeAwardsSource(),
+    YouTubeKaggleSource(),
+    YouTubeSocialBladeSource(),
+    YouTubeDiamondSource(),
+    ITunesChartsSource(),
 ]
 
 
@@ -58,4 +72,11 @@ def test_registry_can_discover_sources():
     assert "podcast_index" in registry
     assert "deezer" in registry
     assert "youtube_api" in registry
-    assert len(registry) == 5
+    assert "youtube_trending" in registry
+    assert "youtube_top_subscribed" in registry
+    assert "youtube_awards" in registry
+    assert "youtube_kaggle" in registry
+    assert "youtube_socialblade" in registry
+    assert "youtube_diamond" in registry
+    assert "itunes_charts" in registry
+    assert len(registry) == 12

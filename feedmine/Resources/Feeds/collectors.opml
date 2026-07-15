@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Collectors — Coins, Stamps, Cards, Antiques &amp; Memorabilia</title>
+  </head>
+  <body>
+    <outline text="Coin Collecting (Numismática)">
+      <outline title="CoinNews.net" xmlUrl="https://www.coinnews.net/feed/" type="rss" />
+      <outline title="PCGS Blog" xmlUrl="https://www.pcgs.com/rss" type="rss" />
+      <outline title="CoinWeek" xmlUrl="https://coinweek.com/feed/" type="rss" />
+      <outline title="Numismatic News" xmlUrl="https://www.numismaticnews.net/rss" type="rss" />
+      <outline title="The Numismatist (ANA)" xmlUrl="https://www.money.org/rss" type="rss" />
+    </outline>
+    <outline text="Stamp Collecting (Filatelia)">
+      <outline title="Linn's Stamp News" xmlUrl="https://www.linns.com/rss" type="rss" />
+      <outline title="The Postal Museum" xmlUrl="https://www.postalmuseum.org/rss/" type="rss" />
+    </outline>
+    <outline text="Trading Cards &amp; Sports Cards">
+      <outline title="PSA Blog" xmlUrl="https://www.psacard.com/rss" type="rss" />
+      <outline title="Sports Card Investor Blog" xmlUrl="https://www.sportscardinvestor.com/rss/" type="rss" />
+      <outline title="Cardboard Connection" xmlUrl="https://www.cardboardconnection.com/rss" type="rss" />
+      <outline title="Panini America Blog" xmlUrl="https://blog.paniniamerica.net/feed/" type="rss" />
+      <outline title="Upper Deck Blog" xmlUrl="https://www.upperdeckblog.com/feed/" type="rss" />
+    </outline>
+    <outline text="Comic Book Collecting">
+      <outline title="ComicBookInvest Blog" xmlUrl="https://comicbookinvest.com/feed/" type="rss" />
+      <outline title="Rare Comics Blog" xmlUrl="https://rarecomics.wordpress.com/feed/" type="rss" />
+      <outline title="Key Collector Comics" xmlUrl="https://keycollectorcomics.com/rss/" type="rss" />
+    </outline>
+    <outline text="Antiques &amp; Vintage">
+      <outline title="Antique Trader" xmlUrl="https://www.antiquetrader.com/rss" type="rss" />
+      <outline title="Antiques and the Arts" xmlUrl="https://www.antiquesandthearts.com/rss/" type="rss" />
+      <outline title="Antique Collecting Magazine" xmlUrl="https://antique-collecting.co.uk/rss/" type="rss" />
+      <outline title="Kovels Blog" xmlUrl="https://www.kovels.com/rss" type="rss" />
+    </outline>
+    <outline text="Toys &amp; Action Figures">
+      <outline title="LEGO News &amp; Collecting" xmlUrl="https://www.brothers-brick.com/feed/" type="rss" />
+      <outline title="Hot Toys Collectors" xmlUrl="https://www.sideshow.com/rss" type="rss" />
+    </outline>
+    <outline text="Collectors Podcasts">
+      </outline>
+    <outline text="YouTube — Collectors">
+      </outline>
+    <outline text="Watch Collecting (Relojoaria)">
+      <outline title="Fratello Watches" xmlUrl="https://www.fratellowatches.com/feed/" type="rss" />
+      <outline title="Monochrome Watches" xmlUrl="https://monochrome-watches.com/feed/" type="rss" />
+      <outline title="Worn &amp; Wound" xmlUrl="https://wornandwound.com/feed/" type="rss" />
+      <outline title="aBlogtoWatch" xmlUrl="https://www.ablogtowatch.com/feed/" type="rss" />
+      <outline title="Time+Tide Watches" xmlUrl="https://timeandtidewatches.com/feed/" type="rss" />
+      <outline title="Revolution Watch" xmlUrl="https://revolutionwatch.com/feed/" type="rss" />
+    </outline>
+    <outline text="Pokemon &amp; TCG Collecting">
+      <outline title="PokéBeach" xmlUrl="https://www.pokebeach.com/feed" type="rss" />
+      <outline title="PokéJungle" xmlUrl="https://pokejungle.net/feed/" type="rss" />
+    </outline>
+    <outline text="Vinyl &amp; Music Collecting">
+      <outline title="Turntable Lab Blog" xmlUrl="https://www.turntablelab.com/blogs/news.atom" type="rss" />
+    </outline>
+    <outline text="More Collectors YouTube">
+      </outline>
+    <outline text="More Collecting Sites">
+      <outline title="eBay Collector Blog" xmlUrl="https://www.ebay.com/collectors/rss" type="rss" />
+      <outline title="Christie's — Collectibles" xmlUrl="https://www.christies.com/rss/collectibles" type="rss" />
+      <outline title="Collectibles Insurance Blog" xmlUrl="https://collectinsure.com/rss/" type="rss" />
+      <outline title="The Collectors Circle" xmlUrl="https://thecollectorscircle.com/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

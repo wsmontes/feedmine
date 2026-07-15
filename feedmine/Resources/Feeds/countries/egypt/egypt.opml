@@ -12,6 +12,7 @@
       <outline title="Veto Gate" xmlUrl="https://www.vetogate.com/rss/" type="rss" />
       <outline title="Masrawy" xmlUrl="https://www.masrawy.com/rss/" type="rss" />
       <outline title="MENA" xmlUrl="https://www.mena.org.eg/rss/" type="rss" />
+      <outline title="Google News — EGYPT (en)" xmlUrl="https://news.google.com/rss?hl=en&amp;gl=EG&amp;ceid=EG:en" type="rss" />
     </outline>
     <outline text="Sports">
       <outline title="Kora Plus" xmlUrl="https://www.koraplus.com/rss/" type="rss" />
@@ -77,7 +78,6 @@
     </outline>
     <outline text="DIY">
       <outline title="Handmade Egypt" xmlUrl="https://www.handmadeegypt.com/feed/" type="rss" />
-      <outline title="Egyptian Crafts" xmlUrl="https://www.egyptiancrafts.com/feed/" type="rss" />
       <outline title="Sakr Home" xmlUrl="https://www.sakrhome.com/blog/feed/" type="rss" />
       <outline title="Beitak" xmlUrl="https://www.beitak.com/feed/" type="rss" />
       <outline title="Egy Decor" xmlUrl="https://www.egydecor.com/feed/" type="rss" />
@@ -154,7 +154,7 @@
       <outline title="هوا مصر" xmlUrl="https://apis.france24.com/products/get_product/f24_getpodcast_by_nid?token_application=33d60288-7e20-11e9-884b-005056a9c687&amp;program.entrepriseId=WB990437-F24-AR-20140903" type="rss" />
       <outline title="برنامج MBC مصر في إسبوع - عمرو خالد" xmlUrl="https://anchor.fm/s/f5d0ff70/podcast/rss" type="rss" />
       <outline title="الحملة الفرنسية على مصر – الدكتور محمد موسى الشريف" xmlUrl="https://feeds.feedburner.com/wordpress/IWPd" type="rss" />
-      <outline title='"اللغة الرئيسية المستخدمة في مصر (حسب ترتيب السكان: من رقم 1 إلى رقم 13) - "كلمات الحياة" ، "الأخبار السارة" ، "الأناشيد الإنجيلية' xmlUrl="https://tjliu6.podomatic.com/rss2.xml" type="rss" />
+      <outline title="&quot;اللغة الرئيسية المستخدمة في مصر (حسب ترتيب السكان: من رقم 1 إلى رقم 13) - &quot;كلمات الحياة&quot; ، &quot;الأخبار السارة&quot; ، &quot;الأناشيد الإنجيلية" xmlUrl="https://tjliu6.podomatic.com/rss2.xml" type="rss" />
       <outline title="Cairo in Exile&#10;القاهرة/مصر في المنفى" xmlUrl="https://anchor.fm/s/1522c760/podcast/rss" type="rss" />
       <outline title="محطة كاسا مصر" xmlUrl="https://feeds.feedburner.com/CasaEgyptStation" type="rss" />
       <outline title="Mada Masr" xmlUrl="https://anchor.fm/s/65e2af94/podcast/rss" type="rss" />
@@ -269,13 +269,166 @@
       <outline title="CADA DIA UM ASSUNTO" xmlUrl="https://anchor.fm/s/26d3bfc8/podcast/rss" type="rss" />
       <outline title="El Mentalista de los Negocios" xmlUrl="https://www.spreaker.com/show/6926825/episodes/feed" type="rss" />
       <outline title="Luxor Lu ^ Mystery Mart" xmlUrl="https://anchor.fm/s/15c39e60/podcast/rss" type="rss" />
-      <outline title='" Zahira Pajares" Entrevista En Annie Luxor .' xmlUrl="https://anchor.fm/s/4eddad6c/podcast/rss" type="rss" />
+      <outline title="&quot; Zahira Pajares&quot; Entrevista En Annie Luxor ." xmlUrl="https://anchor.fm/s/4eddad6c/podcast/rss" type="rss" />
       <outline title="The Tangent: Off Air" xmlUrl="https://anchor.fm/s/9e1a38/podcast/rss" type="rss" />
       <outline title="Knihkupectví LUXOR" xmlUrl="https://rss.buzzsprout.com/1716078.rss" type="rss" />
       <outline title="Kerning Cultures" xmlUrl="https://www.kerningcultures.com/feed/" type="rss" />
       <outline title="Finjan" xmlUrl="https://www.finjanpodcast.com/feed/" type="rss" />
       <outline title="El-Podcasters" xmlUrl="https://www.elpodcasters.com/feed/" type="rss" />
       <outline title="Arab Cast" xmlUrl="https://www.arabcast.org/rss/" type="rss" />
+      <outline title="IDSC Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1020771040/sounds.rss" type="rss" category="Government" />
+      <outline title="Seif and Salma Podcast" xmlUrl="https://feeds.buzzsprout.com/2420294.rss" type="rss" category="Kids" />
+      <outline title="Time Out Podcast Egypt - تايم آوت بودكاست" xmlUrl="https://media.rss.com/timeoutpodcastegypt/feed.xml" type="rss" category="Sports" />
+      <outline title="ARCE Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:826219381/sounds.rss" type="rss" category="History" />
+      <outline title="FUE Podcast" xmlUrl="https://media.rss.com/fue-podcast/feed.xml" type="rss" category="Education" />
+      <outline title="Egypt Real Estate Podcast" xmlUrl="https://anchor.fm/s/9fed3efc/podcast/rss" type="rss" category="Business" />
+      <outline title="Egypt Tours Excursions Podcast" xmlUrl="https://feed.podbean.com/egypttoursexcursions/feed.xml" type="rss" category="Business" />
+      <outline title="Antoine Gigal podcasts" xmlUrl="https://anchor.fm/s/f5ffc8/podcast/rss" type="rss" category="Society" />
+      <outline title="in egypt to day's Podcast" xmlUrl="https://inegyptt.podomatic.com/rss2.xml" type="rss" category="News" />
+      <outline title="Egypt مواطن من's Podcast" xmlUrl="https://feeds.buzzsprout.com/2356201.rss" type="rss" category="Comedy" />
+      <outline title="Egypt Ali's Podcast" xmlUrl="https://rss.buzzsprout.com/2596610.rss" type="rss" />
+      <outline title="The Exit From Egypt Podcast" xmlUrl="https://anchor.fm/s/f28d6f88/podcast/rss" type="rss" category="Religion" />
+      <outline title="Pardon My Growth Podcast 🧘🏾‍♂️🪷" xmlUrl="https://anchor.fm/s/f1b5146c/podcast/rss" type="rss" category="Education" />
+      <outline title="Beyond Pyramids: Egypt Revealed Podcast" xmlUrl="https://media.rss.com/beyond-pyramids-egypt-revealed-podcast/feed.xml" type="rss" category="Society" />
+      <outline title="Redrock International, Egypt's Podcast" xmlUrl="https://rss.buzzsprout.com/2061577.rss" type="rss" category="Business" />
+      <outline title="Little Egypt Podcast" xmlUrl="https://anchor.fm/s/4a11b418/podcast/rss" type="rss" category="Society" />
+      <outline title="Egypt" xmlUrl="https://podcasts.ceu.edu/taxonomy/term/1323/feed" type="rss" />
+      <outline title="Unbroke Girl Podcast" xmlUrl="https://anchor.fm/s/1368d194/podcast/rss" type="rss" category="Society" />
+      <outline title="Girl Code: The Podcast" xmlUrl="https://anchor.fm/s/3a992174/podcast/rss" type="rss" category="Education" />
+      <outline title="ancient Egypt the podcast" xmlUrl="https://anchor.fm/s/22990abc/podcast/rss" type="rss" category="History" />
+      <outline title="ancient Egypt the podcast" xmlUrl="https://anchor.fm/s/2235fdb4/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Egypt Online Tour Podcast" xmlUrl="https://egyptonlinetour.podbean.com/feed.xml" type="rss" category="Society" />
+      <outline title="Egypt Tours Excursions Podcast" xmlUrl="https://egypttoursexcursions.podbean.com/feed.xml" type="rss" category="Business" />
+      <outline title="I'd Like To Thank Myself" xmlUrl="https://feeds.transistor.fm/id-like-to-thank-myself" type="rss" category="Arts" />
+      <outline title="Arroe Collins Like It's Live" xmlUrl="https://www.spreaker.com/show/4113802/episodes/feed" type="rss" category="News" />
+      <outline title="Seriously Mysterious - Missing Persons, Unsolved Murders &amp; Historical True Crime" xmlUrl="https://www.spreaker.com/show/4532075/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Life Hacks DIY &amp; More - Transform Your Everyday With Simple Tricks and DIY Magic!" xmlUrl="https://www.spreaker.com/show/5995484/episodes/feed" type="rss" category="Education" />
+      <outline title="Reddit Stories" xmlUrl="https://www.spreaker.com/show/6370551/episodes/feed" type="rss" category="Leisure" />
+      <outline title="The Kyle Peterson Show" xmlUrl="https://www.spreaker.com/show/6573404/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Reality After Show" xmlUrl="https://www.spreaker.com/show/5448874/episodes/feed" type="rss" category="Tv" />
+      <outline title="3-Bit Gamer Show" xmlUrl="https://www.spreaker.com/show/2255796/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Come explore the paranormal files as we delve into the unexplained. The paranormal podcast." xmlUrl="https://www.spreaker.com/show/5547977/episodes/feed" type="rss" category="Society" />
+      <outline title="Minding Your Business Podcast" xmlUrl="https://www.spreaker.com/show/6367325/episodes/feed" type="rss" category="Business" />
+      <outline title="95.3 Gorilla" xmlUrl="https://wznfpodcast.mainevibe.com/feed.xml" type="rss" category="Music" />
+      <outline title="Gamefully Unemployed" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:395741505/sounds.rss" type="rss" category="Tv" />
+      <outline title="Cog-Dog Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:236473103/sounds.rss" type="rss" category="Education" />
+      <outline title="Managing Tech Millions" xmlUrl="https://feeds.redcircle.com/8f2225e0-c4ac-469c-9e36-07f3677a22a7" type="rss" category="Business" />
+      <outline title="Vocal Booth Radio Listen Again" xmlUrl="https://vocalboothradio.com/feed/mp3" type="rss" category="Music" />
+      <outline title="Daily Shower Thoughts" xmlUrl="https://feeds.megaphone.fm/dailyshowerthoughts" type="rss" category="Comedy" />
+      <outline title="BIG Life Devotional | Daily Devotional for Women" xmlUrl="https://biglifehq.com/feed/podcast" type="rss" category="Religion" />
+      <outline title="Fun Content" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1469" type="rss" category="News" />
+      <outline title="94WIP Morning Show with Joe DeCamara and Jon Ritchie" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/philadelphia_wipfm-94wip_morning_show_with_joe_decamara_and_jon_ritchie" type="rss" category="Sports" />
+      <outline title="Based Camp | Simone &amp; Malcolm Collins" xmlUrl="https://api.substack.com/feed/podcast/1643534/s/64409.rss" type="rss" category="Society" />
+      <outline title="Bonjour France Podcast" xmlUrl="https://www.spreaker.com/show/6773527/episodes/feed" type="rss" category="Society" />
+      <outline title="Milena's Diary" xmlUrl="https://feeds.megaphone.fm/hmstalksltd9487207744" type="rss" category="Society" />
+      <outline title="North Point Baptist Church Sermons" xmlUrl="https://www.spreaker.com/show/6124300/episodes/feed" type="rss" category="Religion" />
+      <outline title="York County's Morning Show" xmlUrl="https://www.spreaker.com/show/6243862/episodes/feed" type="rss" category="Society" />
+      <outline title="Brian Thomas" xmlUrl="https://www.spreaker.com/show/2459972/episodes/feed" type="rss" category="News" />
+      <outline title="Wave 94" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:16676106/sounds.rss" type="rss" category="Religion" />
+      <outline title="Cleveland Browns News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/cleveland-browns-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Cork News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/fort-smith-daily-news-now.xml" type="rss" category="News" />
+      <outline title="The Missing Persons Report" xmlUrl="https://www.spreaker.com/show/6763610/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Rabbi Kraz's Shiurim" xmlUrl="https://anchor.fm/s/d89491c4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Toronto Today with Greg Brady" xmlUrl="https://feeds.megaphone.fm/coru2066336057" type="rss" category="News" />
+      <outline title="The Drake Toll Show" xmlUrl="https://feeds.megaphone.fm/wwo4349656783" type="rss" category="News" />
+      <outline title="Going Ultra - Presented by Henshin Inspection" xmlUrl="https://media.rss.com/mjmgu/feed.xml" type="rss" category="Tv" />
+      <outline title="JPost Headlines" xmlUrl="https://www.spreaker.com/show/6677418/episodes/feed" type="rss" category="News" />
+      <outline title="Audio Mises Wire" xmlUrl="https://cdn.mises.org/itunes/en_127226.xml" type="rss" category="News" />
+      <outline title="Outsource to Profits Podcast" xmlUrl="https://feed.podbean.com/getlevrg/feed.xml" type="rss" category="Business" />
+      <outline title="24 Oras Podcast" xmlUrl="https://feeds.acast.com/public/shows/685d292847311de1b6e0e89a" type="rss" category="News" />
+      <outline title="Excess Returns" xmlUrl="https://anchor.fm/s/9a1dfac/podcast/rss" type="rss" category="Business" />
+      <outline title="Red Sox Digest Podcast" xmlUrl="https://www.spreaker.com/show/6691213/episodes/feed" type="rss" category="News" />
+      <outline title="The Tony Kornheiser Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/the-tony-kornheiser-show" type="rss" category="Sports" />
+      <outline title="Radio Miraya" xmlUrl="https://audioboom.com/channels/3891441.rss" type="rss" category="Technology" />
+      <outline title="Pivot: SHIFT Ahead Mastermind" xmlUrl="https://media.rss.com/pivot-shift-ahead-mastermind/feed.xml" type="rss" category="Business" />
+      <outline title="Los Angeles Rams News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/los-angeles-rams-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Pursuit Of Purpose" xmlUrl="https://feed.podbean.com/popmartinsr/feed.xml" type="rss" category="Business" />
+      <outline title="Get Up" xmlUrl="https://feeds.megaphone.fm/esp2870920494" type="rss" category="Sports" />
+      <outline title="Courtney and KISS in the morning" xmlUrl="https://www.spreaker.com/show/2497425/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Computer Talk with TAB" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/f8c743d7682ab4bac553696e6093d3e7" type="rss" category="Business" />
+      <outline title="Tennessee Titans News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/tennessee-titans-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Wrestle Radio Australia" xmlUrl="https://wrestleradioaustralia.libsyn.com/rss" type="rss" category="Sports" />
+      <outline title="Hope Expression Podcast" xmlUrl="https://www.spreaker.com/show/5891904/episodes/feed" type="rss" category="Religion" />
+      <outline title="Spurs Chat: Discussing all Things Tottenham Hotspur: Hosted by Chris Cowlin: The Daily Tottenham/Spurs Podcast" xmlUrl="https://feeds.acast.com/public/shows/639c5ea1bcab760012015b61" type="rss" category="Sports" />
+      <outline title="Federalist Radio Hour" xmlUrl="https://feeds.feedburner.com/ricochetaudionetwork/federalistradiohour" type="rss" category="News" />
+      <outline title="The Irish Passport" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298752213/sounds.rss" type="rss" category="Society" />
+      <outline title="The Lunduke Journal of Technology" xmlUrl="https://api.substack.com/feed/podcast/462466.rss" type="rss" category="Technology" />
+      <outline title="Boston Bruins News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/boston-bruins-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Warden's Watch" xmlUrl="https://feeds.megaphone.fm/wpcm3659727000" type="rss" category="Sports" />
+      <outline title="Experience in Golf Clubhouse Design" xmlUrl="https://feeds.libsyn.com/475266/rss" type="rss" category="Arts" />
+      <outline title="Betting Weekly Studios" xmlUrl="https://feeds.megaphone.fm/rerre3101069934" type="rss" category="Sports" />
+      <outline title="The Long Run with Luke Timmerman" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:317770704/sounds.rss" type="rss" category="Science" />
+      <outline title="Belfast News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/bridgeport-daily-news-now.xml" type="rss" category="News" />
+      <outline title="AM Quincy" xmlUrl="https://feeds.feedburner.com/qatv_amquincypodcast" type="rss" category="Government" />
+      <outline title="Autoblog News" xmlUrl="https://feeds.feedburner.com/podcast/autoblog" type="rss" category="Games" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast" type="rss" category="News" />
+      <outline title="The Flex Podcast with Anna Martin Fitness" xmlUrl="https://media.rss.com/the-flex-podcast-with-anna-martin-fitness/feed.xml" type="rss" category="Health" />
+      <outline title="Church and State" xmlUrl="https://feed.podbean.com/churchandstate/feed.xml" type="rss" category="News" />
+      <outline title="Bite-Sized Dental Marketing" xmlUrl="https://media.rss.com/bsdm/feed.xml" type="rss" category="Business" />
+      <outline title="DD Fantasy Football Radio" xmlUrl="https://feeds.megaphone.fm/blu7133453702" type="rss" category="Sports" />
+      <outline title="Cybercrime Magazine Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286242900/sounds.rss" type="rss" category="Technology" />
+      <outline title="Lawrence News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/lawrence-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Sasquatch Experience" xmlUrl="https://www.spreaker.com/show/4208641/episodes/feed" type="rss" category="Science" />
+      <outline title="Ciliberto and Friends" xmlUrl="https://www.spreaker.com/show/5983689/episodes/feed" type="rss" category="Music" />
+      <outline title="The Automated Daily" xmlUrl="https://theautomateddaily.com/feed.xml" type="rss" category="Technology" />
+      <outline title="The Automated Daily - Space News Edition" xmlUrl="https://theautomateddaily.com/space/feed.xml" type="rss" category="Science" />
+      <outline title="Word Balloon Comics Podcast" xmlUrl="https://www.spreaker.com/show/3143082/episodes/feed" type="rss" category="Tv" />
+      <outline title="Daily Morning Class" xmlUrl="https://media.rss.com/rabbiyedid/feed.xml" type="rss" category="Religion" />
+      <outline title="Reality with The King" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a1735c70-f70f-4045-805b-b302010c5b8c/5db0a3af-13d8-4a16-974c-b302010c5bb4/podcast.rss" type="rss" category="Tv" />
+      <outline title="The Dentalpreneur Podcast w/ Dr. Mark Costes" xmlUrl="https://markcostes.libsyn.com/rss" type="rss" category="Business" />
+      <outline title="The Kapeel Gupta Career Podshow" xmlUrl="https://rss.buzzsprout.com/2012553.rss" type="rss" category="Business" />
+      <outline title="What in the World" xmlUrl="https://podcasts.files.bbci.co.uk/w13xtvrv.rss" type="rss" category="News" />
+      <outline title="The Buddy System with Chris &amp; Matty" xmlUrl="https://feeds.megaphone.fm/mduyh3921896096?1?1" type="rss" category="Comedy" />
+      <outline title="Fore Love of Golf" xmlUrl="https://feeds.megaphone.fm/rogxo2747915340" type="rss" category="Sports" />
+      <outline title="Dr. John Campbell" xmlUrl="https://feeds.megaphone.fm/vg9554039150" type="rss" category="Education" />
+      <outline title="Paranormal UK Radio Network" xmlUrl="https://www.spreaker.com/show/4541473/episodes/feed" type="rss" category="Society" />
+      <outline title="This Day in History" xmlUrl="https://feeds.redcircle.com/9339ef5f-2c20-4a38-b60d-eb4ac27759c3" type="rss" category="History" />
+      <outline title="Football Social Daily" xmlUrl="https://feeds.megaphone.fm/comg9297908545" type="rss" category="Sports" />
+      <outline title="Edmonton News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-stockton-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Park Avenue Synagogue Podcast" xmlUrl="https://feed.podbean.com/parkavenuepodcast/feed.xml" type="rss" category="Religion" />
+      <outline title="PreMarket Prep" xmlUrl="https://anchor.fm/s/fd33c360/podcast/rss" type="rss" category="Business" />
+      <outline title="StribSports Daily Delivery" xmlUrl="https://feeds.megaphone.fm/stribsportsdailydelivery" type="rss" category="Sports" />
+      <outline title="Legacy Nashville Podcast" xmlUrl="https://media.rss.com/legacy-nashville-podcast/feed.xml" type="rss" category="Religion" />
+      <outline title="&quot;There I was...&quot; An Aviation Podcast" xmlUrl="https://feeds.megaphone.fm/aopa1855704656" type="rss" category="Leisure" />
+      <outline title="Marketer of the Day with Robert Plank: Business Growth &amp; Entrepreneur Stories" xmlUrl="https://www.robertplank.com/feed/podcast" type="rss" category="Business" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="News" />
+      <outline title="In The Money Media Network" xmlUrl="https://feeds.captivate.fm/in-the-money-media-network" type="rss" category="Sports" />
+      <outline title="This Paranormal Life" xmlUrl="https://feeds.megaphone.fm/nsr2334813337" type="rss" category="Comedy" />
+      <outline title="Let's Address This with Qasim Rashid Podcast" xmlUrl="https://api.substack.com/feed/podcast/2550223.rss" type="rss" category="News" />
+      <outline title="Flashscore News" xmlUrl="https://feeds.captivate.fm/flashscore-news" type="rss" category="News" />
+      <outline title="JACC Global" xmlUrl="https://feeds.libsyn.com/75161" type="rss" category="Health" />
+      <outline title="Health News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/health-and-fitness-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Health" />
+      <outline title="Food Freedom" xmlUrl="https://anchor.fm/s/d625f518/podcast/rss" type="rss" category="Health" />
+      <outline title="See Ball Get Ball with David Pollack" xmlUrl="https://media.rss.com/see-ball-get-ball-david-pollack/feed.xml" type="rss" category="Sports" />
+      <outline title="Blurt Vibes" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1398" type="rss" category="News" />
+      <outline title="Twisted Podcast" xmlUrl="https://twistedpodcast.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Billianon" xmlUrl="https://podcast.billianon.com/@billianon/feed.xml" type="rss" category="Education" />
+      <outline title="Global Research Unlocked" xmlUrl="https://feed.podbean.com/bofaglobalresearch/feed.xml" type="rss" category="Business" />
+      <outline title="Fresh Pinball Podcast" xmlUrl="https://media.rss.com/freshpinballpodcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Georgia Tech Yellow Jackets Football Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/georgia-tech-yellow-jackets-football-today-2-min-news.xml" type="rss" category="News" />
+      <outline title="Magical Transformations" xmlUrl="https://feeds.captivate.fm/magicaltrasformations" type="rss" category="Health" />
+      <outline title="The Nielson Show" xmlUrl="https://feeds.libsyn.com/481581/rss" type="rss" category="Sports" />
+      <outline title="The Bridge" xmlUrl="https://www.spreaker.com/show/3099883/episodes/feed" type="rss" category="Sports" />
+      <outline title="Politics Unpacked" xmlUrl="https://feeds.acast.com/public/shows/92a301e1-443b-435f-b4e2-2e2dd1e37fc5" type="rss" category="News" />
+      <outline title="*“Yesterday, I Went to Mars ♡”*" xmlUrl="https://anchor.fm/s/fcce555c/podcast/rss" type="rss" category="Society" />
+      <outline title="SYSTEMIZE YOUR LIFE + BUSINESS | Schedules, Routines, Productivity, Time Management, Operating System" xmlUrl="https://feed.podbean.com/systemizeyourlife/feed.xml" type="rss" category="Kids" />
+      <outline title="San Francisco 49ers News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/san-francisco-49ers-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Chiney Today" xmlUrl="https://feeds.megaphone.fm/esp1950629932" type="rss" category="Sports" />
+      <outline title="Top Entrepreneurs Podcast | Enterprise Podcast Network" xmlUrl="https://feeds.feedburner.com/entrepreneurpodcastnetwork" type="rss" category="Business" />
+      <outline title="Restoration Home with Jennifer Pepito" xmlUrl="https://feed.podbean.com/restorationhome/feed.xml" type="rss" category="Kids" />
+      <outline title="Keys to Success" xmlUrl="https://www.spreaker.com/show/6414073/episodes/feed" type="rss" category="Society" />
+      <outline title="Athletics Weekly Podcast" xmlUrl="https://feeds.acast.com/public/shows/6697e5223fac6c42420fe0e8" type="rss" category="Sports" />
+      <outline title="Mully &amp; Haugh Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/chicago_wscram_mully___haugh_show" type="rss" category="Sports" />
+      <outline title="Grow My Salon Business Podcast" xmlUrl="https://feeds.transistor.fm/grow-my-salon-business-podcast" type="rss" category="Arts" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="News" />
+      <outline title="Mornings With Gary Byron Podcast" xmlUrl="https://feeds.transistor.fm/mornings-with-gary-byron-podcast" type="rss" category="News" />
+      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed" type="rss" category="News" />
+      <outline title="Arkansas Razorbacks Basketball News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/arkansas-razorbacks-basketball-news-today-2-min-news-the-dai.xml" type="rss" category="News" />
+      <outline title="Galway Bay fm - Sports" xmlUrl="https://galwaybayfmsports.podbean.com/feed.xml" type="rss" category="Sports" />
+      <outline title="Harmonizing Success" xmlUrl="https://www.spreaker.com/show/6418590/episodes/feed" type="rss" category="Business" />
+      <outline title="World Today" xmlUrl="https://aezfm.meldingcloud.com/rss/program/46" type="rss" category="News" />
+      <outline title="Montreal Canadiens News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/montreal-canadiens-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Giggly Squad" xmlUrl="https://feeds.acast.com/public/shows/780a3042-864b-40fa-ae09-4557aec621c3" type="rss" category="Comedy" />
     </outline>
     <outline text="Photography">
       <outline title="Photo Egypt" xmlUrl="https://www.photoegypt.com/feed/" type="rss" />
@@ -283,5 +436,69 @@
     <outline text="Apple">
       <outline title="Tradeline Egypt" xmlUrl="https://www.tradeline-egypt.com/blog/feed/" type="rss" />
     </outline>
-</body>
+    <outline text="YouTube">
+      <outline title="Philip DeFranco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="MrBeast Gaming" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIPPMRA040LQr5QPyJEbmXA" type="rss" />
+      <outline title="Harry Potter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChPRO1CB_Hvd0TvKRU62iSQ" type="rss" />
+      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+      <outline title="Like Nastya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="Goldmines" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+    </outline>
+    <outline text="Podcast">
+      <outline title="El Daheeh - الدحيح" xmlUrl="https://feeds.simplecast.com/97g_Tzxn" type="rss" category="Education" />
+      <outline title="الشيخ أمجد سمير" xmlUrl="https://anchor.fm/s/105b13b94/podcast/rss" type="rss" category="Islam" />
+      <outline title="أ. ياسر الحزيمي" xmlUrl="https://www.spreaker.com/show/6877787/episodes/feed" type="rss" category="Education" />
+      <outline title="بودكاست عقلية" xmlUrl="https://feeds.simplecast.com/VUPddiSw" type="rss" category="Self-Improvement" />
+      <outline title="اشتري مني" xmlUrl="https://media.podeo.co/rss/MjE2NjM" type="rss" category="Comedy" />
+      <outline title="وعي" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1073536591/sounds.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="مشاري العفاسي  - Mishary Alafasi |" xmlUrl="https://www.mp3quran.net/podcast/afs.txt" type="rss" category="Islam" />
+      <outline title="الطريق إلى النجاح - د. إبراهيم الفقي" xmlUrl="https://www.spreaker.com/show/5807591/episodes/feed" type="rss" category="Self-Improvement" />
+      <outline title="فاهم" xmlUrl="https://feeds.simplecast.com/flyig0Ev" type="rss" category="Islam" />
+      <outline title="كبرني بودكاست" xmlUrl="https://feeds.simplecast.com/WR5_SB7R" type="rss" category="Comedy" />
+      <outline title="السيرة النبوية -احمد عامر" xmlUrl="https://anchor.fm/s/b9963fd4/podcast/rss" type="rss" category="History" />
+      <outline title="فنجان مع عبدالرحمن أبومالح" xmlUrl="https://files.hosting.thmanyah.com/podcasts/89/1713955813943-768/rss-feed.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Kefaya Ba2a | كفاية بقى" xmlUrl="https://feeds.simplecast.com/vm1cDwLQ" type="rss" category="Comedy" />
+      <outline title="قناة الشيخ سمير مصطفي" xmlUrl="https://storage.googleapis.com/cvsender/cv/podcast_feed.xml" type="rss" category="Islam" />
+      <outline title="6 Minute English" xmlUrl="https://podcasts.files.bbci.co.uk/p02pc9tn.rss" type="rss" category="Language Learning" />
+      <outline title="كلام من لهب" xmlUrl="https://rss.buzzsprout.com/2227238.rss" type="rss" category="Comedy Interviews" />
+      <outline title="مُلخص كتاب" xmlUrl="https://feeds.simplecast.com/0KaqgeVz" type="rss" category="Books" />
+      <outline title="#ABtalks" xmlUrl="https://feeds.megaphone.fm/ab-podcasts" type="rss" category="Society &amp; Culture" />
+      <outline title="ع المخدة مع مروان يونس" xmlUrl="https://feeds.simplecast.com/Bm1SSUL6" type="rss" category="Arts" />
+      <outline title="El Mal El Halal -  المال الحلال" xmlUrl="https://feed.podbean.com/ElMaalElHalal/feed.xml" type="rss" category="Business" />
+      <outline title="DUPAMICAFFEINE | دوباميكافين" xmlUrl="https://feeds.acast.com/public/shows/66b69b4dbda5e2df147feba2" type="rss" category="Books" />
+      <outline title="Mishary Al-Afasy - مشاري العفاسي" xmlUrl="https://storage.googleapis.com/cvsender/rss/rss_3.rss" type="rss" category="Islam" />
+      <outline title="كنوز السيرة للشيخ عثمان الخميس" xmlUrl="https://feeds.simplecast.com/wvmOJpdI" type="rss" category="Books" />
+      <outline title="موسوعة الكتب الصوتية" xmlUrl="https://feeds.simplecast.com/h6juYMNL" type="rss" category="Books" />
+      <outline title="ياسر الدوسري | Yasser Al Dosari" xmlUrl="https://storage.googleapis.com/cvsender/rss/rss_1.rss" type="rss" category="Islam" />
+      <outline title="Juha | جحا" xmlUrl="https://feeds.simplecast.com/o4TBU4a3" type="rss" category="Comedy Fiction" />
+      <outline title="الشيخ ماهر المعيقلي" xmlUrl="https://feeds.feedburner.com/wordpress/Czbt" type="rss" category="Islam" />
+      <outline title="alquranalkareem القران الكريم" xmlUrl="https://anchor.fm/s/dab7c9a8/podcast/rss" type="rss" category="Islam" />
+      <outline title="مع كامل احترامي - Ma3 Kamel A7terami" xmlUrl="https://feeds.acast.com/public/shows/65b911017c4d650017dc0768" type="rss" category="Comedy Interviews" />
+      <outline title="الحكاية أبسط من كده" xmlUrl="https://media.podeo.co/rss/MjI3MTI" type="rss" category="Relationships" />
+      <outline title="Listening Time: English Practice" xmlUrl="https://feeds.simplecast.com/obaHfEr1" type="rss" category="Language Learning" />
+      <outline title="بدون ورق" xmlUrl="https://feeds.simplecast.com/_rXD2gwQ" type="rss" category="Society &amp; Culture" />
+      <outline title="مرتدة" xmlUrl="https://files.hosting.thmanyah.com/podcasts/82/1713788770433-974/rss-feed.rss" type="rss" category="Soccer" />
+      <outline title="قرآن كريم مجود بصوت الشيخ عبد الباسط عبد الصمد صدقة جارية" xmlUrl="https://anchor.fm/s/20790854/podcast/rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="الشيخ ياسر الدوسري" xmlUrl="https://feeds.feedburner.com/wordpress/JsHi" type="rss" category="Islam" />
+      <outline title="Asweyaa - Mustafa Hosny - أسوياء - قصص حياة الصحابة - مصطفى حسني" xmlUrl="https://anchor.fm/s/fb80e14c/podcast/rss" type="rss" category="Islam" />
+      <outline title="Noor - ElSira ElNabwyah - Mustafa Hosny - نور - السيرة النبوية - مصطفى حسني" xmlUrl="https://anchor.fm/s/ef0fe82c/podcast/rss" type="rss" category="Islam" />
+      <outline title="احمد عامر: السيرة النبوية" xmlUrl="https://www.spreaker.com/show/6273175/episodes/feed" type="rss" category="History" />
+      <outline title="G.Talks - The Podcast for Dreamers" xmlUrl="https://feeds.simplecast.com/P_WLLgQ6" type="rss" category="Entrepreneurship" />
+      <outline title="كلام وعي" xmlUrl="https://media.podeo.co/rss/MTc3NDg" type="rss" category="Self-Improvement" />
+      <outline title="معالج نفسك" xmlUrl="https://rss.buzzsprout.com/2268258.rss" type="rss" category="Mental Health" />
+      <outline title="ملوك السعاده" xmlUrl="https://www.spreaker.com/show/4496643/episodes/feed" type="rss" category="Music" />
+      <outline title="كلام بالعقل مع د.باسم سليمان" xmlUrl="https://media.podeo.co/rss/MjE2NjQ" type="rss" category="Mental Health" />
+      <outline title="روائع المسلسلات الإذاعية" xmlUrl="https://feeds.simplecast.com/_WdSsSAO" type="rss" category="Performing Arts" />
+      <outline title="سوالف طريق - ابو طلال الحمراني" xmlUrl="https://media.podeo.co/rss/MTU2NzI" type="rss" category="True Crime" />
+      <outline title="قصص الأنبياء" xmlUrl="https://feeds.simplecast.com/_1G3PqYA" type="rss" category="Islam" />
+      <outline title="الخبير مع المدير" xmlUrl="https://anchor.fm/s/1050b2538/podcast/rss" type="rss" category="Business" />
+      <outline title="بزنس بالعربي (Business بالعربى )" xmlUrl="https://rss.buzzsprout.com/758528.rss" type="rss" category="Careers" />
+      <outline title="Learning English Conversations" xmlUrl="https://podcasts.files.bbci.co.uk/p02pc9zn.rss" type="rss" category="Language Learning" />
+    </outline>
+    <outline text="Social">
+      <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
+    </outline>
+  </body>
 </opml>

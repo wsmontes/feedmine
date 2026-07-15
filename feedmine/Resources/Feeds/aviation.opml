@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head><title>Aviation — Airlines, General Aviation &amp; Flight</title></head>
+  <body>
+    <outline text="Aviation News &amp; Industry">
+      <outline title="FlightGlobal" xmlUrl="https://www.flightglobal.com/rss" type="rss"/>
+      <outline title="Aviation Week" xmlUrl="https://aviationweek.com/rss" type="rss"/>
+      <outline title="Simple Flying" xmlUrl="https://simpleflying.com/feed/" type="rss"/>
+      <outline title="Airways Magazine" xmlUrl="https://airwaysmag.com/feed/" type="rss"/>
+      <outline title="AINonline" xmlUrl="https://www.ainonline.com/rss" type="rss"/>
+      <outline title="AeroTime Hub" xmlUrl="https://www.aerotime.aero/feed" type="rss"/>
+      <outline title="The Points Guy — Aviation" xmlUrl="https://thepointsguy.com/airline/feed/" type="rss"/>
+      <outline title="Live and Let's Fly" xmlUrl="https://liveandletsfly.com/feed/" type="rss"/>
+    </outline>
+    <outline text="Airlines &amp; Commercial Aviation">
+      <outline title="Airline Reporter" xmlUrl="https://www.airlinereporter.com/feed/" type="rss"/>
+      <outline title="One Mile at a Time (Boarding Area)" xmlUrl="https://onemileatatime.com/feed/" type="rss"/>
+      <outline title="View from the Wing" xmlUrl="https://viewfromthewing.com/feed/" type="rss"/>
+      <outline title="Paddle Your Own Kanoo" xmlUrl="https://www.paddleyourownkanoo.com/feed/" type="rss"/>
+      <outline title="The Cranky Flier" xmlUrl="https://crankyflier.com/feed/" type="rss"/>
+      <outline title "Gary Leff's Blog" xmlUrl="https://viewfromthewing.com/feed/" type="rss"/>
+      <outline title="Runway Girl Network" xmlUrl="https://runwaygirlnetwork.com/feed/" type="rss"/>
+    </outline>
+    <outline text="General Aviation &amp; Private Flying">
+      <outline title="AOPA News" xmlUrl="https://www.aopa.org/rss" type="rss"/>
+      <outline title="Flying Magazine" xmlUrl="https://www.flyingmag.com/rss/" type="rss"/>
+      <outline title="Plane &amp; Pilot" xmlUrl="https://www.planeandpilotmag.com/rss/" type="rss"/>
+      <outline title="AVweb" xmlUrl="https://www.avweb.com/rss/" type="rss"/>
+      <outline title="EAA (Experimental Aircraft)" xmlUrl="https://www.eaa.org/rss" type="rss"/>
+      <outline title="Pilot Magazine (UK)" xmlUrl="https://www.pilotweb.aero/rss" type="rss"/>
+      <outline title="Kitplanes Magazine" xmlUrl="https://www.kitplanes.com/feed/" type="rss"/>
+    </outline>
+    <outline text="Flight Training &amp; Safety">
+      <outline title="Boldmethod" xmlUrl="https://www.boldmethod.com/feed/" type="rss"/>
+      <outline title="Angle of Attack" xmlUrl="https://www.angleofattack.com/feed/" type="rss"/>
+      <outline title="Flight Training (AOPA)" xmlUrl="https://www.aopa.org/rss/flight-training" type="rss"/>
+      <outline title="Air Facts Journal" xmlUrl="https://airfactsjournal.com/feed/" type="rss"/>
+      <outline title="Flight Safety Foundation" xmlUrl="https://flightsafety.org/rss/" type="rss"/>
+    </outline>
+    <outline text="Aircraft &amp; Manufacturers">
+      <outline title="Boeing Newsroom" xmlUrl="https://www.boeing.com/rss" type="rss"/>
+      <outline title="Airbus News" xmlUrl="https://www.airbus.com/en/rss" type="rss"/>
+      <outline title="Embraer Newsroom" xmlUrl="https://www.embraercommercialaviation.com/rss/" type="rss"/>
+      <outline title="Airplane Geeks Blog" xmlUrl="https://www.airplanegeeks.com/feed/" type="rss"/>
+    </outline>
+    <outline text="Airports &amp; ATC">
+      <outline title="International Airport Review" xmlUrl="https://www.internationalairportreview.com/rss/" type="rss"/>
+      <outline title="Airport Technology" xmlUrl="https://www.airport-technology.com/feed/" type="rss"/>
+      <outline title="NATS Blog (UK ATC)" xmlUrl="https://nats.aero/blog/feed/" type="rss"/>
+    </outline>
+    <outline text="Aviation Podcasts">
+      <outline title="Airplane Geeks Podcast" xmlUrl="https://feeds.libsyn.com/airplanegeeks" type="rss"/>
+      <outline title="Aviation Week Podcast" xmlUrl="https://feeds.libsyn.com/aviationweek" type="rss"/>
+      <outline title="The Fighter Pilot Podcast" xmlUrl="https://feeds.libsyn.com/thefighterpilot" type="rss"/>
+      <outline title="Pilot to Pilot" xmlUrl="https://feeds.libsyn.com/pilottopilot" type="rss"/>
+      <outline title="AvTalk (FlightRadar24)" xmlUrl="https://feeds.libsyn.com/avtalk" type="rss"/>
+      <outline title="Uncontrolled Airspace" xmlUrl="https://feeds.libsyn.com/uncontrolledairspace" type="rss"/>
+      <outline title="The Finer Points of Flying" xmlUrl="https://feeds.libsyn.com/thefinerpoints" type="rss"/>
+      <outline title="Stuck Mic AvCast" xmlUrl="https://feeds.libsyn.com/stuckmicavcast" type="rss"/>
+    </outline>
+    <outline text="YouTube — Aviation">
+      <outline title="Mentour Pilot (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCSpVHeDGr9UbREhRca0q-wA" type="rss"/>
+      <outline title="Captain Joe (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UC88tlMjjHXvYFCu2S0G2jMg" type="rss"/>
+      <outline title="74 Gear (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCkglL4II4wBUOMkG4NbyTJg" type="rss"/>
+      <outline title="Sam Chui (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCUha0IQM0Ttv9Tx3UQyI3_g" type="rss"/>
+      <outline title="FlightRadar24 (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCc_53Qv7uD3gBAPSVlQ22Cg" type="rss"/>
+      <outline title="Air Safety Institute (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCeIm_srdHk3UUWR0SPzT2KQ" type="rss"/>
+      <outline title="VASAviation (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCNNPDNDKOS4U6CwBh8U2H4Q" type="rss"/>
+      <outline title="B737.org.uk (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCYJAC_TwuE5jz4gK3HgcB3A" type="rss"/>
+      <outline title="Stefan Drury (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCchHcqHrJJ-3m2gW8r4Pmtg" type="rss"/>
+      <outline title="LewDix Aviation (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCvGZRqDNCk4MT4WnGRyJghA" type="rss"/>
+    </outline>
+  </body>
+</opml>

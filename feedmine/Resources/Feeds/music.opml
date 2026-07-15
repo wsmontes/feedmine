@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0"><head><title>Music</title></head><body><outline text="Music">
-<outline title="Pitchfork" xmlUrl="http://pitchfork.com/rss/news" type="rss"/>
-<outline title="Consequence" xmlUrl="http://consequenceofsound.net/feed" type="rss"/>
-<outline title="Metal Injection" xmlUrl="http://feeds.feedburner.com/metalinjection" type="rss"/>
-<outline title="Music Business Worldwide" xmlUrl="https://www.musicbusinessworldwide.com/feed/" type="rss"/>
-</outline></body></opml>
+<opml version="1.0">
+  <head>
+    <title>Music — Rock, Jazz, Electronic, Hip-Hop, Metal &amp; More</title>
+  </head>
+  <body>
+    <outline text="Music News &amp; Industry">
+      <outline title="Pitchfork" xmlUrl="https://pitchfork.com/rss/news" type="rss" />
+      <outline title="Consequence of Sound" xmlUrl="https://consequence.net/feed/" type="rss" />
+      <outline title="Music Business Worldwide" xmlUrl="https://www.musicbusinessworldwide.com/feed/" type="rss" />
+      <outline title="Billboard" xmlUrl="https://www.billboard.com/feed/" type="rss" />
+      <outline title="Rolling Stone" xmlUrl="https://www.rollingstone.com/rss" type="rss" />
+      <outline title="NME" xmlUrl="https://www.nme.com/feed" type="rss" />
+      <outline title="Stereogum" xmlUrl="https://www.stereogum.com/feed" type="rss" />
+      <outline title="Spin Magazine" xmlUrl="https://www.spin.com/feed/" type="rss" />
+      <outline title="The Fader" xmlUrl="https://www.thefader.com/feed/" type="rss" />
+      <outline title="BrooklynVegan" xmlUrl="https://www.brooklynvegan.com/feed/" type="rss" />
+    </outline>
+    <outline text="Rock &amp; Alternative">
+      <outline title="Alternative Press" xmlUrl="https://www.altpress.com/feed/" type="rss" />
+      <outline title="Louder Sound" xmlUrl="https://www.loudersound.com/feed" type="rss" />
+      <outline title="Ultimate Classic Rock" xmlUrl="https://ultimateclassicrock.com/feed/" type="rss" />
+    </outline>
+    <outline text="Jazz &amp; Blues">
+      <outline title="JazzTimes" xmlUrl="https://jazztimes.com/feed/" type="rss" />
+      <outline title="Blues Rock Review" xmlUrl="https://bluesrockreview.com/feed/" type="rss" />
+      <outline title="Living Blues Magazine" xmlUrl="https://livingblues.com/feed/" type="rss" />
+    </outline>
+    <outline text="Electronic &amp; Dance">
+      <outline title="DJ Mag" xmlUrl="https://djmag.com/rss" type="rss" />
+      <outline title="XLR8R" xmlUrl="https://xlr8r.com/feed/" type="rss" />
+      <outline title="FACT Magazine" xmlUrl="https://www.factmag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Hip-Hop &amp; R&amp;B">
+      <outline title="The Source" xmlUrl="https://thesource.com/feed/" type="rss" />
+      <outline title="Soul Bounce" xmlUrl="https://soulbounce.com/feed/" type="rss" />
+      <outline title="YouKnowIGotSoul" xmlUrl="https://youknowigotsoul.com/feed" type="rss" />
+    </outline>
+    <outline text="Metal">
+      <outline title="Metal Injection" xmlUrl="http://feeds.feedburner.com/metalinjection" type="rss" />
+      <outline title="Decibel Magazine" xmlUrl="https://www.decibelmagazine.com/feed/" type="rss" />
+      <outline title="Metalsucks" xmlUrl="https://www.metalsucks.net/feed/" type="rss" />
+      <outline title="BraveWords" xmlUrl="https://bravewords.com/rss" type="rss" />
+    </outline>
+    <outline text="Country &amp; Folk">
+      <outline title="The Boot" xmlUrl="https://theboot.com/feed/" type="rss" />
+      <outline title="Saving Country Music" xmlUrl="https://www.savingcountrymusic.com/feed/" type="rss" />
+      <outline title="Country Music News Blog" xmlUrl="https://countrymusicnewsblog.com/feed/" type="rss" />
+      <outline title="No Depression" xmlUrl="https://www.nodepression.com/rss" type="rss" />
+      <outline title="Folk Radio UK" xmlUrl="https://www.folkradio.co.uk/feed/" type="rss" />
+    </outline>
+    <outline text="Brazilian Music">
+      <outline title="Música Brasileira Blog" xmlUrl="https://musicabrasileira.org/feed/" type="rss" />
+      <outline title="Música Instantânea" xmlUrl="https://musicainstantanea.com.br/feed/" type="rss" />
+      <outline title="Tenho Mais Discos Que Amigos" xmlUrl="https://www.tenhomaisdiscosqueamigos.com/feed/" type="rss" />
+      <outline title="Scream &amp; Yell" xmlUrl="https://screamyell.com.br/site/feed/" type="rss" />
+    </outline>
+    <outline text="Music Podcasts">
+      <outline title="Switched on Pop" xmlUrl="https://feeds.megaphone.fm/switchedonpop" type="rss" />
+      <outline title="Tape Notes" xmlUrl="https://feeds.libsyn.com/tapenotes" type="rss" />
+      <outline title="Hanging Out with Audiophiles" xmlUrl="https://feeds.libsyn.com/hangingoutwithaudiophiles" type="rss" />
+    </outline>
+    <outline text="YouTube — Music Channels">
+      </outline>
+    <outline text="Indie &amp; Experimental">
+      <outline title="The Quietus" xmlUrl="https://thequietus.com/feed" type="rss" />
+      <outline title="Line of Best Fit" xmlUrl="https://www.thelineofbestfit.com/feed" type="rss" />
+      <outline title="Gorilla vs. Bear" xmlUrl="https://www.gorillavsbear.net/feed/" type="rss" />
+      <outline title="Under the Radar" xmlUrl="https://www.undertheradarmag.com/rss" type="rss" />
+    </outline>
+    <outline text="World &amp; Latin Music">
+      <outline title="Sounds and Colours" xmlUrl="https://soundsandcolours.com/feed/" type="rss" />
+    </outline>
+    <outline text="Music Production &amp; Gear">
+      <outline title="MusicTech" xmlUrl="https://musictech.com/feed/" type="rss" />
+      <outline title="Attack Magazine" xmlUrl="https://www.attackmagazine.com/feed/" type="rss" />
+      <outline title="Producer Hive" xmlUrl="https://producerhive.com/feed/" type="rss" />
+    </outline>
+    <outline text="Vinyl &amp; Physical Music">
+      <outline title="Turntable Lab" xmlUrl="https://www.turntablelab.com/blogs/news.atom" type="rss" />
+    </outline>
+    <outline text="More Music YouTube">
+      </outline>
+  </body>
+</opml>

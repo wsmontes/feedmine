@@ -1,12 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?><opml version="1.0"><head><title>Gaming</title></head><body><outline text="Gaming">
-<outline title="Kotaku" xmlUrl="https://kotaku.com/rss" type="rss"/>
-<outline title="Polygon" xmlUrl="https://www.polygon.com/rss/index.xml" type="rss"/>
-<outline title="IGN" xmlUrl="http://feeds.ign.com/ign/all" type="rss"/>
-<outline title="Eurogamer" xmlUrl="https://www.eurogamer.net/?format=rss" type="rss"/>
-<outline title="GameSpot" xmlUrl="https://www.gamespot.com/feeds/mashup/" type="rss"/>
-<outline title="Rock Paper Shotgun" xmlUrl="http://feeds.feedburner.com/RockPaperShotgun" type="rss"/>
-<outline title="TouchArcade" xmlUrl="https://toucharcade.com/community/forums/-/index.rss" type="rss"/>
-<outline title="PlayStation.Blog" xmlUrl="http://feeds.feedburner.com/psblog" type="rss"/>
-<outline title="Steam News" xmlUrl="https://store.steampowered.com/feeds/news.xml" type="rss"/>
-<outline title="Indie Games Plus" xmlUrl="https://indiegamesplus.com/feed" type="rss"/>
-</outline></body></opml>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Videogames — News, Reviews &amp; Culture</title>
+  </head>
+  <body>
+    <outline text="Gaming News &amp; Reviews">
+      <outline title="Kotaku" xmlUrl="https://kotaku.com/rss" type="rss" />
+      <outline title="Polygon" xmlUrl="https://www.polygon.com/rss/index.xml" type="rss" />
+      <outline title="Eurogamer" xmlUrl="https://www.eurogamer.net/?format=rss" type="rss" />
+      <outline title="GameSpot" xmlUrl="https://www.gamespot.com/feeds/mashup/" type="rss" />
+      <outline title="Rock Paper Shotgun" xmlUrl="https://www.rockpapershotgun.com/feed" type="rss" />
+      <outline title="PC Gamer" xmlUrl="https://www.pcgamer.com/rss/" type="rss" />
+      <outline title="GamesRadar+" xmlUrl="https://www.gamesradar.com/rss/" type="rss" />
+      <outline title="Gematsu" xmlUrl="https://www.gematsu.com/feed" type="rss" />
+      <outline title="Destructoid" xmlUrl="https://www.destructoid.com/rss/" type="rss" />
+      <outline title="Niche Gamer" xmlUrl="https://nichegamer.com/feed/" type="rss" />
+      <outline title="Siliconera" xmlUrl="https://www.siliconera.com/feed/" type="rss" />
+      <outline title="DualShockers" xmlUrl="https://www.dualshockers.com/feed/" type="rss" />
+    </outline>
+    <outline text="PlayStation &amp; Xbox">
+      <outline title="PlayStation.Blog" xmlUrl="https://blog.playstation.com/feed/" type="rss" />
+      <outline title="Xbox Wire" xmlUrl="https://news.xbox.com/en-us/feed/" type="rss" />
+      <outline title="Push Square (PS)" xmlUrl="https://www.pushsquare.com/rss" type="rss" />
+      <outline title="Pure Xbox" xmlUrl="https://www.purexbox.com/rss" type="rss" />
+    </outline>
+    <outline text="Nintendo &amp; PC Gaming">
+      <outline title="Nintendo Life" xmlUrl="https://www.nintendolife.com/rss" type="rss" />
+      <outline title="Nintendo Everything" xmlUrl="https://nintendoeverything.com/feed/" type="rss" />
+      <outline title="TouchArcade (Mobile)" xmlUrl="https://toucharcade.com/feed/" type="rss" />
+      <outline title="Steam News" xmlUrl="https://store.steampowered.com/feeds/news.xml" type="rss" />
+    </outline>
+    <outline text="Indie Games">
+      <outline title="itch.io Blog" xmlUrl="https://itch.io/blog.rss" type="rss" />
+      <outline title="Indie Game Website" xmlUrl="https://www.indiegamewebsite.com/rss/" type="rss" />
+      <outline title="Game Developer (Gamasutra)" xmlUrl="https://www.gamedeveloper.com/rss" type="rss" />
+      <outline title="Indie Retro News" xmlUrl="https://www.indieretronews.com/feeds/posts/default" type="rss" />
+    </outline>
+    <outline text="Esports &amp; Competitive Gaming">
+      <outline title="Esports Insider" xmlUrl="https://esportsinsider.com/feed/" type="rss" />
+      <outline title="Dot Esports" xmlUrl="https://dotesports.com/rss" type="rss" />
+    </outline>
+    <outline text="Brazilian Games">
+      <outline title="GameVicio" xmlUrl="https://www.gamevicio.com/rss/" type="rss" />
+      <outline title="Meu PlayStation" xmlUrl="https://www.meups.com.br/feed/" type="rss" />
+      <outline title="GameFM" xmlUrl="https://gamefm.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Gaming Podcasts">
+      </outline>
+    <outline text="YouTube — Gaming">
+      </outline>
+    <outline text="More Gaming Sites">
+      <outline title="Game Informer" xmlUrl="https://www.gameinformer.com/rss" type="rss" />
+      <outline title="Nintendo Wire" xmlUrl="https://nintendowire.com/feed/" type="rss" />
+      <outline title="Retro Gamer Magazine" xmlUrl="https://www.retrogamer.net/rss/" type="rss" />
+      <outline title="GodisaGeek" xmlUrl="https://www.godisageek.com/feed/" type="rss" />
+      <outline title="MMORPG.com" xmlUrl="https://www.mmorpg.com/rss" type="rss" />
+      <outline title="The Xbox Hub" xmlUrl="https://www.thexboxhub.com/feed/" type="rss" />
+      <outline title="Pocket Tactics (Mobile)" xmlUrl="https://www.pockettactics.com/rss" type="rss" />
+    </outline>
+    <outline text="More Gaming YouTube">
+      </outline>
+  </body>
+</opml>

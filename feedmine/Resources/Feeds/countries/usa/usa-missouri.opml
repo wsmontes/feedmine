@@ -4,25 +4,28 @@
     <title>Missouri Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="St. Louis Post-Dispatch" xmlUrl="https://www.stltoday.com/rss" type="rss" />
-        <outline title="Kansas City Star" xmlUrl="https://www.kansascity.com/rss" type="rss" />
-        <outline title="The Pitch KC" xmlUrl="https://www.thepitchkc.com/feed/" type="rss" />
+    <outline text="News">
+      <outline title="St. Louis Post-Dispatch" xmlUrl="https://www.stltoday.com/rss" type="rss" />
+      <outline title="Kansas City Star" xmlUrl="https://www.kansascity.com/rss" type="rss" />
+      <outline title="The Pitch KC" xmlUrl="https://www.thepitchkc.com/feed/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="City of St. Louis" xmlUrl="https://www.stlouis-mo.gov/rss" type="rss" />
+      <outline title="MO Independent" xmlUrl="https://missouriindependent.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="St. Louis Biz Journal" xmlUrl="https://feeds.bizjournals.com/stlouis" type="rss" />
+      <outline title="Kansas City Biz Journal" xmlUrl="https://feeds.bizjournals.com/kansascity" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="WashU STL" xmlUrl="https://source.wustl.edu/feed/" type="rss" />
+      <outline title="Mizzou News" xmlUrl="https://showme.missouri.edu/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Blues" xmlUrl="https://www.nhl.com/blues/rss/news" type="rss" />
+    </outline>
+    <outline text="Culture" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics">
-        <outline title="City of St. Louis" xmlUrl="https://www.stlouis-mo.gov/rss" type="rss" />
-        <outline title="MO Independent" xmlUrl="https://missouriindependent.com/feed/" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="St. Louis Biz Journal" xmlUrl="https://feeds.bizjournals.com/stlouis" type="rss" />
-        <outline title="Kansas City Biz Journal" xmlUrl="https://feeds.bizjournals.com/kansascity" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="WashU STL" xmlUrl="https://source.wustl.edu/feed/" type="rss" />
-        <outline title="Mizzou News" xmlUrl="https://showme.missouri.edu/feed/" type="rss" />
-      </outline>
-      <outline text="Sports">
-        <outline title="Blues" xmlUrl="https://www.nhl.com/blues/rss/news" type="rss" />
-      </outline>
-      <outline text="Culture" /></body>
-    </opml>
+  </body>
+</opml>

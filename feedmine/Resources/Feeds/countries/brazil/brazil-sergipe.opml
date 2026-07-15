@@ -4,23 +4,25 @@
     <title>Sergipe Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Infonet" xmlUrl="https://infonet.com.br/feed/" type="rss" />
-        <outline title="Portal A8" xmlUrl="https://www.a8se.com/feed/" type="rss" />
-        <outline title="Governo de Sergipe" xmlUrl="https://www.se.gov.br/feed/" type="rss" />
-        <outline title="Prefeitura de Aracaju" xmlUrl="https://www.aracaju.se.gov.br/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Infonet" xmlUrl="https://infonet.com.br/feed/" type="rss" />
+      <outline title="Governo de Sergipe" xmlUrl="https://www.se.gov.br/feed/" type="rss" />
+      <outline title="Prefeitura de Aracaju" xmlUrl="https://www.aracaju.se.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Federação Sergipana" xmlUrl="https://www.fsf-se.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
       </outline>
-      <outline text="Sports">
-        <outline title="Federação Sergipana" xmlUrl="https://www.fsf-se.com.br/feed/" type="rss" />
+    <outline text="Education">
       </outline>
-      <outline text="Culture">
+    <outline text="Business">
+      <outline title="Fecomércio SE" xmlUrl="https://www.fecomercio-se.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs">
+      <outline title="Blog do Cláudio Nunes" xmlUrl="https://claudionunes.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Education">
-      </outline>
-      <outline text="Business">
-        <outline title="Fecomércio SE" xmlUrl="https://www.fecomercio-se.com.br/feed/" type="rss" />
-      </outline>
-      <outline text="Blogs">
-        <outline title="Blog do Cláudio Nunes" xmlUrl="https://claudionunes.com.br/feed/" type="rss" />
-      </outline></body>
-    </opml>
+  </body>
+</opml>

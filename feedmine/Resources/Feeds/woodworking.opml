@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Woodworking, Carpentry &amp; Furniture Making</title>
+  </head>
+  <body>
+    <outline text="Woodworking Magazines &amp; News">
+      <outline title="Fine Woodworking" xmlUrl="https://www.finewoodworking.com/feed/" type="rss" />
+      <outline title="Popular Woodworking" xmlUrl="https://www.popularwoodworking.com/feed/" type="rss" />
+      <outline title="Woodworker's Journal" xmlUrl="https://www.woodworkersjournal.com/feed/" type="rss" />
+      <outline title="Canadian Woodworking" xmlUrl="https://www.canadianwoodworking.com/rss" type="rss" />
+      <outline title="Furniture &amp; Cabinetmaking" xmlUrl="https://www.furnitureandcabinetmaking.com/rss" type="rss" />
+    </outline>
+    <outline text="Woodworking Educators &amp; Experts">
+      <outline title="Paul Sellers" xmlUrl="https://paulsellers.com/feed/" type="rss" />
+      <outline title="The Wood Whisperer (Marc Spagnuolo)" xmlUrl="https://www.thewoodwhisperer.com/feed/" type="rss" />
+      <outline title="Renaissance Woodworker" xmlUrl="https://www.renaissancewoodworker.com/feed/" type="rss" />
+      <outline title="The English Woodworker" xmlUrl="https://www.theenglishwoodworker.com/feed/" type="rss" />
+      <outline title="Wood and Shop (Joshua Farnsworth)" xmlUrl="https://woodandshop.com/feed/" type="rss" />
+      <outline title="Popular Woodworking — Megan Fitzpatrick" xmlUrl="https://www.popularwoodworking.com/author/megan-fitzpatrick/feed/" type="rss" />
+      <outline title="Lost Art Press Blog" xmlUrl="https://blog.lostartpress.com/feed/" type="rss" />
+    </outline>
+    <outline text="Woodturning &amp; Lathe Work">
+      <outline title="American Woodturner" xmlUrl="https://www.woodturner.org/rss" type="rss" />
+      <outline title="Woodturning Blog" xmlUrl="https://woodturningblog.com/feed/" type="rss" />
+    </outline>
+    <outline text="Hand Tools &amp; Traditional">
+      <outline title="Hand Tool School" xmlUrl="https://handtoolschool.net/feed/" type="rss" />
+      <outline title="Woodworking Masterclasses" xmlUrl="https://woodworkingmasterclasses.com/rss/" type="rss" />
+    </outline>
+    <outline text="Carpentry &amp; Construction Wood">
+      <outline title="This Is Carpentry" xmlUrl="https://www.thisiscarpentry.com/feed/" type="rss" />
+    </outline>
+    <outline text="Woodworking Podcasts">
+      <outline title="Shop Talk Live (Fine Woodworking)" xmlUrl="https://feeds.libsyn.com/shoptalklive" type="rss" />
+      <outline title="Against the Grain" xmlUrl="https://feeds.libsyn.com/againstthegrain" type="rss" />
+    </outline>
+    <outline text="YouTube — Woodworking">
+      </outline>
+    <outline text="More Woodworking Resources">
+      <outline title="Lumberjocks" xmlUrl="https://www.lumberjocks.com/rss" type="rss" />
+      <outline title="The Wood Database" xmlUrl="https://www.wood-database.com/feed/" type="rss" />
+      <outline title="Woodwork Institute" xmlUrl="https://woodworkinstitute.com/rss/" type="rss" />
+      <outline title="Epic Woodworking" xmlUrl="https://www.epicwoodworking.com/feed/" type="rss" />
+    </outline>
+    <outline text="Woodworking YouTube">
+      </outline>
+  </body>
+</opml>

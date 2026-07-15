@@ -5,12 +5,6 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="Correio Braziliense" xmlUrl="https://www.correiobraziliense.com.br/feed/" type="rss" />
-      <outline title="Metrópoles" xmlUrl="https://www.metropoles.com/feed/" type="rss" />
-      <outline title="Jornal de Brasília" xmlUrl="https://jornaldebrasilia.com.br/feed/" type="rss" />
-      <outline title="Brasil 247" xmlUrl="https://www.brasil247.com/feed/" type="rss" />
-      <outline title="Agência Brasil" xmlUrl="https://agenciabrasil.ebc.com.br/feed/" type="rss" />
-      <outline title="Poder360" xmlUrl="https://www.poder360.com.br/feed/" type="rss" />
       <outline title="Blog do Noblat" xmlUrl="https://www.metropoles.com/blog-do-noblat/feed/" type="rss" />
     </outline>
     <outline text="Sports">
@@ -20,8 +14,7 @@
       <outline title="Cultura DF" xmlUrl="https://www.cultura.df.gov.br/feed/" type="rss" />
     </outline>
     <outline text="Education">
-      <outline title="IFB" xmlUrl="https://www.ifb.edu.br/feed/" type="rss" />
-    </outline>
+      </outline>
     <outline text="Business">
       <outline title="Fecomércio DF" xmlUrl="https://www.fecomerciodf.com.br/feed/" type="rss" />
     </outline>
@@ -29,56 +22,10 @@
       <outline title="Blog da Cidade" xmlUrl="https://blogdacidade.com.br/feed/" type="rss" />
     </outline>
     <outline text="YouTube">
-      <outline title="Andarilho Fantasma " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVSj3Ry1YNZxy8C-hiMOpng" type="rss" />
-      <outline title="CBFA TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWsECyG4_UWQNwPFs82kzHA" type="rss" />
-      <outline title="Recanto News DF" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCo09jlxUlh40z4dw4BSFM_w" type="rss" />
-      <outline title="Our Real Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMKM2MBaU7Xwx2E0QuWKG6g" type="rss" />
-      <outline title="Rádio CBN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbiGwU0-W1XCDUrt3BTVrag" type="rss" />
-      <outline title="brasilpoint" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTvlU1d4vn1xCk3TD4rrdpg" type="rss" />
-      <outline title="In Memória Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRBdFxwYuRAUK2tWMHNf9mA" type="rss" />
-      <outline title="NOVABRASIL FM - Brasília " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeFyUgr1c7cGRq7AqSHNO0g" type="rss" />
-      <outline title="Lucas Mário " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp2xuHZCdzvP76fn_0qq9pA" type="rss" />
-      <outline title="HELINHO OLIVEIRA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGIr6ZExNAmLOWCxCc3b4rA" type="rss" />
-      <outline title="Radio Maria Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoX-rEfA140B2ouk10BGcGQ" type="rss" />
-      <outline title="recifense mapping " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1VD7AU1tSG0K61bFXkHYLA" type="rss" />
-      <outline title="SOS Brasília" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbVZxOr64gbB9vGAGH7QDlA" type="rss" />
-      <outline title="Brazil Is A Disgrace" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7jwJ2hzeCYzuV5IkKI0CXA" type="rss" />
-      <outline title="Brasilia4mapper" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnLLum3n6yZPC-7hBzf5YmA" type="rss" />
-      <outline title="PRF Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCC8hr_mloGmG7tnogjfuPoA" type="rss" />
-      <outline title="Record Brasília" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8pnT0p13P35faL4s2KGlGw" type="rss" />
       <outline title="João Arnolfo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChEwvzHacMtC2cnlVA_ThLg" type="rss" />
-      <outline title="Brasil Urgente" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG-fFAxQjZgJmn0w7Brj5xQ" type="rss" />
-      <outline title="Brasil Imagens Aéreas" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt5WX7wDwBqJBbXxrh_79GA" type="rss" />
-      <outline title="Verisure Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZuHBDi9LUfQw6qzyPp0X_w" type="rss" />
-      <outline title="Cardio DF — Cardiologia e saúde cardiovascular em Brasília (DF)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC07ssbQK-E2hiKkhaVAP7BQ" type="rss" />
-      <outline title="Brazilians" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-OtIzaCI3ToUXOKcTuJk8A" type="rss" />
-      <outline title="Luciano Brito" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa51R55PfjtsBPxG9MAKo8Q" type="rss" />
-      <outline title="Ever Metal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9VHO2Yk6KZ1ZZIBo4DITdg" type="rss" />
-      <outline title="Brazilian Piper" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnSPJ5-FiAfoiuXtiFkssGw" type="rss" />
-      <outline title="CBDE Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbb9X72GbhnleUZXPvhBrsw" type="rss" />
-      <outline title="GENEX Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4WQ4sENnhiGZgHL86N3VNg" type="rss" />
-      <outline title="XTN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuNhD0AbHx7bwVtJqsQ3-FA" type="rss" />
       <outline title="Leonardo Gabriel Pavan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7dsKBbGnK3LUe3v5NROhTg" type="rss" />
-      <outline title="tourist attractions" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXc0ZpQc5drlUgczHtuFTkg" type="rss" />
-      <outline title="Luxury Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdyh0lUM_AeHp09sBgLUv3w" type="rss" />
       <outline title="k997 com – Site Oficial no Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYzdPzeQ0MFLWp-5bYvoIhw" type="rss" />
-      <outline title="Tiago Barbosa Teixeira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEgiJm3vnt7T0myL1-X-nfw" type="rss" />
-      <outline title="CFA Society Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCys6baORfl3zQuhpUWKAMaA" type="rss" />
-      <outline title="DJ DF KIT - Topic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGffo9zsCf-O2tlfRRfNA_Q" type="rss" />
-      <outline title="Paki Brazilian traveler" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMyQnYsK_4wlPUSJocEKong" type="rss" />
-      <outline title="Eddie Brazil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPnZAerxd99gHrtmHavOI8w" type="rss" />
-      <outline title="Programa Água Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9qS9od0bEHklIpdpYtDrEQ" type="rss" />
-      <outline title="DF Educate" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEHn3JTxSo7wCSeZXPlXV3Q" type="rss" />
-      <outline title="Zendokai Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5sDQGI30OgeXHKUOVtamhA" type="rss" />
-      <outline title="MISS GRAND BRASIL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7vp5vTP9a5SqL3klhjS-1w" type="rss" />
-      <outline title="ArquivoNB " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoX9-lU6DFday3leUqTQZXA" type="rss" />
-      <outline title="Chaos In Brazil | O Caos na Política Brasileira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8BqiM3YRIybvohuKQwC-QA" type="rss" />
-      <outline title="Bora Alii Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWnaqTIhUxRTT4LShl4ejVg" type="rss" />
       <outline title="Brazil &amp; United States " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7ADda2f7bWn7mbyk_kzW6w" type="rss" />
-      <outline title="Fala Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwVmZjJwkCUCOes5_eAIebg" type="rss" />
-      <outline title="Estação Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChndtPLn2TTjrBPY5kIpZ0A" type="rss" />
-      <outline title="Canal Vôlei Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCas3I6sh_-cf6O2fI1FO9vQ" type="rss" />
-      <outline title="Universal Woman Brasil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiP-7Dfwx_zEN_mLPu2DTpw" type="rss" />
     </outline>
   </body>
 </opml>

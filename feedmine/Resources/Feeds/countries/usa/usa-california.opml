@@ -16,7 +16,6 @@
     </outline>
     <outline text="Politics">
       <outline title="CA Governor News" xmlUrl="https://www.gov.ca.gov/rss/" type="rss" />
-      <outline title="LA Mayor News" xmlUrl="https://mayor.lacity.gov/rss" type="rss" />
       <outline title="SF Mayor News" xmlUrl="https://sfmayor.org/rss" type="rss" />
     </outline>
     <outline text="Business">
@@ -24,7 +23,6 @@
       <outline title="Sacramento Business Journal" xmlUrl="https://feeds.bizjournals.com/sacramento" type="rss" />
       <outline title="Orange County Business Journal" xmlUrl="https://www.ocbj.com/feed/" type="rss" />
       <outline title="TechCrunch SF" xmlUrl="https://techcrunch.com/tag/san-francisco/feed/" type="rss" />
-      <outline title="VentureBeat SF" xmlUrl="https://venturebeat.com/feed/" type="rss" />
     </outline>
     <outline text="Technology">
       <outline title="UC Berkeley News" xmlUrl="https://news.berkeley.edu/feed/" type="rss" />
@@ -100,5 +98,7 @@
       <outline title="GCI Fairfield Church (Fairfield, California USA)" xmlUrl="https://anchor.fm/s/1c00c6a4/podcast/rss" type="rss" category="Religion" />
       <outline title="CALIFORNIA (USA) -  &quot;ДАВАЙТЕ ВЫЗДОРАВЛИВАТЬ!&quot;" xmlUrl="https://podster.fm/rss.xml?pid=37055" type="rss" category="Health" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

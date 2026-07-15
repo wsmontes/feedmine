@@ -1,1285 +1,647 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  
-  
   <head>
-    
-    
     <title>Portugal Feeds</title>
-    
-  
   </head>
-  
-  
   <body>
-    
-    
     <outline text="News">
-      
-      
-      <outline title="Observador" xmlUrl="https://observador.pt/rss/" type="rss"/>
-      
-      
-      <outline title="SIC Notícias" xmlUrl="https://sicnoticias.pt/rss" type="rss"/>
-      
-      
-      <outline title="RTP Notícias" xmlUrl="https://www.rtp.pt/noticias/rss" type="rss"/>
-      
-      
-      <outline title="ECO" xmlUrl="https://eco.sapo.pt/rss" type="rss"/>
-      
-      
-      <outline title="Visão" xmlUrl="https://visao.pt/rss" type="rss"/>
-      
-      
-      <outline title="Sol" xmlUrl="https://sol.sapo.pt/rss" type="rss"/>
-      
-      
-      <outline title="iOnline" xmlUrl="https://ionline.sapo.pt/rss" type="rss"/>
-      
-      
-      <outline title="Notícias ao Minuto" xmlUrl="https://www.noticiasaominuto.com/rss" type="rss"/>
-      
-    
+      <outline title="Observador" xmlUrl="https://observador.pt/rss/" type="rss" />
+      <outline title="ECO" xmlUrl="https://eco.sapo.pt/rss" type="rss" />
+      <outline title="Visão" xmlUrl="https://visao.pt/rss" type="rss" />
+      <outline title="Sol" xmlUrl="https://sol.sapo.pt/rss" type="rss" />
+      <outline title="iOnline" xmlUrl="https://ionline.sapo.pt/rss" type="rss" />
+      <outline title="Notícias ao Minuto" xmlUrl="https://www.noticiasaominuto.com/rss" type="rss" />
+      <outline title="Google News — PORTUGAL (en)" xmlUrl="https://news.google.com/rss?hl=en&amp;gl=PT&amp;ceid=PT:en" type="rss" />
     </outline>
-    
-    
     <outline text="Sports">
-      
-      
-      <outline title="MaisFutebol" xmlUrl="https://maisfutebol.iol.pt/rss" type="rss"/>
-      
-      
-      <outline title="Bola na Rede" xmlUrl="https://www.bolanarede.pt/rss" type="rss"/>
-      
-      
-      <outline title="SAPO Desporto" xmlUrl="https://desporto.sapo.pt/rss" type="rss"/>
-      
-    
+      <outline title="MaisFutebol" xmlUrl="https://maisfutebol.iol.pt/rss" type="rss" />
+      <outline title="Bola na Rede" xmlUrl="https://www.bolanarede.pt/rss" type="rss" />
+      <outline title="SAPO Desporto" xmlUrl="https://desporto.sapo.pt/rss" type="rss" />
     </outline>
-    
-    
     <outline text="Technology">
-      
-      
-      <outline title="Pplware" xmlUrl="https://pplware.sapo.pt/feed/" type="rss"/>
-      
-      
-      <outline title="TecheNet" xmlUrl="https://www.techenet.com/feed/" type="rss"/>
-      
-      
-      <outline title="Android Geek" xmlUrl="https://androidgeek.pt/feed/" type="rss"/>
-      
-      
-      <outline title="SAPO Tek" xmlUrl="https://tek.sapo.pt/rss" type="rss"/>
-      
-      
-      <outline title="Observador Tech" xmlUrl="https://observador.pt/seccao/tecnologia/rss/" type="rss"/>
-      
-      
-      <outline title="Exame Informática" xmlUrl="https://visao.pt/exameinformatica/rss" type="rss"/>
-      
-      
-      <outline title="PC Guia" xmlUrl="https://www.pcguia.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Leak" xmlUrl="https://www.leak.pt/feed/" type="rss"/>
-      
-    
+      <outline title="Pplware" xmlUrl="https://pplware.sapo.pt/feed/" type="rss" />
+      <outline title="TecheNet" xmlUrl="https://www.techenet.com/feed/" type="rss" />
+      <outline title="Android Geek" xmlUrl="https://androidgeek.pt/feed/" type="rss" />
+      <outline title="SAPO Tek" xmlUrl="https://tek.sapo.pt/rss" type="rss" />
+      <outline title="Observador Tech" xmlUrl="https://observador.pt/seccao/tecnologia/rss/" type="rss" />
+      <outline title="Exame Informática" xmlUrl="https://visao.pt/exameinformatica/rss" type="rss" />
+      <outline title="PC Guia" xmlUrl="https://www.pcguia.pt/feed/" type="rss" />
+      <outline title="Leak" xmlUrl="https://www.leak.pt/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Science">
-      
-      
-      <outline title="Observador Ciência" xmlUrl="https://observador.pt/seccao/ciencia/rss/" type="rss"/>
-      
-      
-      <outline title="Ciência Viva" xmlUrl="https://www.cienciaviva.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Wilder" xmlUrl="https://www.wilder.pt/feed/" type="rss"/>
-      
-    
+      <outline title="Observador Ciência" xmlUrl="https://observador.pt/seccao/ciencia/rss/" type="rss" />
+      <outline title="Ciência Viva" xmlUrl="https://www.cienciaviva.pt/feed/" type="rss" />
+      <outline title="Wilder" xmlUrl="https://www.wilder.pt/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Culture">
-      
-      
-      <outline title="Comunidade Cultura e Arte" xmlUrl="https://comunidadeculturaearte.com/feed/" type="rss"/>
-      
-      
-      <outline title="Observador Cultura" xmlUrl="https://observador.pt/seccao/cultura/rss/" type="rss"/>
-      
-      
-      <outline title="Gerador" xmlUrl="https://gerador.eu/feed/" type="rss"/>
-      
-    
+      <outline title="Comunidade Cultura e Arte" xmlUrl="https://comunidadeculturaearte.com/feed/" type="rss" />
+      <outline title="Observador Cultura" xmlUrl="https://observador.pt/seccao/cultura/rss/" type="rss" />
+      <outline title="Gerador" xmlUrl="https://gerador.eu/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Movies">
-      
-      
-      <outline title="Cinemax" xmlUrl="https://cinemax.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Cinevisão" xmlUrl="https://cinevisao.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Cinema 7.ª Arte" xmlUrl="https://cinema7arte.com/feed/" type="rss"/>
-      
-      
-      <outline title="Take Cinema Magazine" xmlUrl="https://take.com.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Observador Cinema" xmlUrl="https://observador.pt/seccao/cinema/rss/" type="rss"/>
-      
-    
+      <outline title="Cinemax" xmlUrl="https://cinemax.pt/feed/" type="rss" />
+      <outline title="Cinevisão" xmlUrl="https://cinevisao.pt/feed/" type="rss" />
+      <outline title="Cinema 7.ª Arte" xmlUrl="https://cinema7arte.com/feed/" type="rss" />
+      <outline title="Take Cinema Magazine" xmlUrl="https://take.com.pt/feed/" type="rss" />
+      <outline title="Observador Cinema" xmlUrl="https://observador.pt/seccao/cinema/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Music">
-      
-      
-      <outline title="Blitz" xmlUrl="https://blitz.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Música em DX" xmlUrl="https://musicaemdx.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Rimas e Batidas" xmlUrl="https://rimasebatidas.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Altamont" xmlUrl="https://altamont.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Antena 3" xmlUrl="https://media.rtp.pt/antena3/feed/" type="rss"/>
-      
-    
+      <outline title="Música em DX" xmlUrl="https://musicaemdx.pt/feed/" type="rss" />
+      <outline title="Rimas e Batidas" xmlUrl="https://rimasebatidas.pt/feed/" type="rss" />
+      <outline title="Altamont" xmlUrl="https://altamont.pt/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Food">
-      
-      
-      <outline title="Teleculinária" xmlUrl="https://www.teleculinaria.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Petiscos" xmlUrl="https://www.petiscos.com/feed/" type="rss"/>
-      
-    
+      <outline title="Teleculinária" xmlUrl="https://www.teleculinaria.pt/feed/" type="rss" />
+      <outline title="Petiscos" xmlUrl="https://www.petiscos.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Gaming">
-      
-      
-      <outline title="Eurogamer Portugal" xmlUrl="https://www.eurogamer.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Geekinout" xmlUrl="https://geekinout.pt/feed/" type="rss"/>
-      
-      
-      <outline title="InforGames" xmlUrl="https://inforgames.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Gaming Portugal" xmlUrl="https://gamingportugal.com/feed/" type="rss"/>
-      
-    
+      <outline title="Eurogamer Portugal" xmlUrl="https://www.eurogamer.pt/feed/" type="rss" />
+      <outline title="Geekinout" xmlUrl="https://geekinout.pt/feed/" type="rss" />
+      <outline title="InforGames" xmlUrl="https://inforgames.pt/feed/" type="rss" />
+      <outline title="Gaming Portugal" xmlUrl="https://gamingportugal.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Travel">
-      
-      
-      <outline title="Alma de Viajante" xmlUrl="https://www.almadeviajante.com/feed/" type="rss"/>
-      
-      
-      <outline title="VagaMundos" xmlUrl="https://www.vagamundos.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Espírito Viajante" xmlUrl="https://www.espiritoviajante.com/feed/" type="rss"/>
-      
-      
-      <outline title="Viajar entre Viagens" xmlUrl="https://viajarentreviagens.pt/feed/" type="rss"/>
-      
-    
+      <outline title="Alma de Viajante" xmlUrl="https://www.almadeviajante.com/feed/" type="rss" />
+      <outline title="VagaMundos" xmlUrl="https://www.vagamundos.pt/feed/" type="rss" />
+      <outline title="Espírito Viajante" xmlUrl="https://www.espiritoviajante.com/feed/" type="rss" />
+      <outline title="Viajar entre Viagens" xmlUrl="https://viajarentreviagens.pt/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Blogs">
-      
-      
-      <outline title="Shifter" xmlUrl="https://shifter.pt/feed/" type="rss"/>
-      
-      
-      <outline title="NiT" xmlUrl="https://nit.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Mensagem de Lisboa" xmlUrl="https://amensagem.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Sete Margens" xmlUrl="https://setemargens.com/feed/" type="rss"/>
-      
-    
+      <outline title="Shifter" xmlUrl="https://shifter.pt/feed/" type="rss" />
+      <outline title="NiT" xmlUrl="https://nit.pt/feed/" type="rss" />
+      <outline title="Mensagem de Lisboa" xmlUrl="https://amensagem.pt/feed/" type="rss" />
+      <outline title="Sete Margens" xmlUrl="https://setemargens.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Design">
-      
-      
-      <outline title="Design Português" xmlUrl="https://designportugues.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Briefing" xmlUrl="https://www.briefing.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Marketeer" xmlUrl="https://marketeer.pt/feed/" type="rss"/>
-      
-    
+      <outline title="Design Português" xmlUrl="https://designportugues.pt/feed/" type="rss" />
+      <outline title="Briefing" xmlUrl="https://www.briefing.pt/feed/" type="rss" />
+      <outline title="Marketeer" xmlUrl="https://marketeer.pt/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Environment">
-      
-      
-      <outline title="Greenpeace Portugal" xmlUrl="https://www.greenpeace.org/portugal/feed/" type="rss"/>
-      
-      
-      <outline title="Quercus" xmlUrl="https://www.quercus.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Zero" xmlUrl="https://zero.ong/feed/" type="rss"/>
-      
-      
-      <outline title="LPN" xmlUrl="https://www.lpn.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Wilder" xmlUrl="https://www.wilder.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Ambiente Magazine" xmlUrl="https://www.ambientemagazine.com/feed/" type="rss"/>
-      
-    
+      <outline title="Greenpeace Portugal" xmlUrl="https://www.greenpeace.org/portugal/feed/" type="rss" />
+      <outline title="Quercus" xmlUrl="https://www.quercus.pt/feed/" type="rss" />
+      <outline title="Zero" xmlUrl="https://zero.ong/feed/" type="rss" />
+      <outline title="LPN" xmlUrl="https://www.lpn.pt/feed/" type="rss" />
+      <outline title="Wilder" xmlUrl="https://www.wilder.pt/feed/" type="rss" />
+      <outline title="Ambiente Magazine" xmlUrl="https://www.ambientemagazine.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="DIY">
-      
-      
-      <outline title="Artesanato Portugal" xmlUrl="https://artesanatoportugal.pt/feed/" type="rss"/>
-      
-    
+      <outline title="Artesanato Portugal" xmlUrl="https://artesanatoportugal.pt/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="History">
-      
-      
-      <outline title="História de Portugal" xmlUrl="https://historiadeportugal.info/feed/" type="rss"/>
-      
-      
-      <outline title="Viriatus" xmlUrl="https://viriatus.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Observador História" xmlUrl="https://observador.pt/seccao/historia/rss/" type="rss"/>
-      
-      
-      <outline title="Portugal Romano" xmlUrl="https://portugalromano.com/feed/" type="rss"/>
-      
-    
+      <outline title="História de Portugal" xmlUrl="https://historiadeportugal.info/feed/" type="rss" />
+      <outline title="Viriatus" xmlUrl="https://viriatus.pt/feed/" type="rss" />
+      <outline title="Observador História" xmlUrl="https://observador.pt/seccao/historia/rss/" type="rss" />
+      <outline title="Portugal Romano" xmlUrl="https://portugalromano.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Architecture">
-      
-      
-      <outline title="ArchDaily" xmlUrl="https://www.archdaily.com.br/br/feed" type="rss"/>
-      
-      
-      <outline title="Ordem dos Arquitectos" xmlUrl="https://www.ordemdosarquitectos.org/feed/" type="rss"/>
-      
-      
-      <outline title="Espaço de Arquitetura" xmlUrl="https://espacodearquitetura.com/feed/" type="rss"/>
-      
-    
+      <outline title="ArchDaily" xmlUrl="https://www.archdaily.com.br/br/feed" type="rss" />
+      <outline title="Ordem dos Arquitectos" xmlUrl="https://www.ordemdosarquitectos.org/feed/" type="rss" />
+      <outline title="Espaço de Arquitetura" xmlUrl="https://espacodearquitetura.com/feed/" type="rss" />
     </outline>
-    
-
     <outline text="Business">
-      
-      
-      <outline title="ECO" xmlUrl="https://eco.sapo.pt/rss" type="rss"/>
-      
-      
-      <outline title="Observador Economia" xmlUrl="https://observador.pt/seccao/economia/rss/" type="rss"/>
-      
-      
-      <outline title="SAPO Economia" xmlUrl="https://economia.sapo.pt/rss" type="rss"/>
-      
-      
-      <outline title="PME Magazine" xmlUrl="https://pmemagazine.pt/feed/" type="rss"/>
-      
-      
-      <outline title="Link to Leaders" xmlUrl="https://linktoleaders.com/feed/" type="rss"/>
-      
-      
-      <outline title="Executive Digest" xmlUrl="https://executivedigest.sapo.pt/feed/" type="rss"/>
-      
-    
+      <outline title="ECO" xmlUrl="https://eco.sapo.pt/rss" type="rss" />
+      <outline title="Observador Economia" xmlUrl="https://observador.pt/seccao/economia/rss/" type="rss" />
+      <outline title="SAPO Economia" xmlUrl="https://economia.sapo.pt/rss" type="rss" />
+      <outline title="PME Magazine" xmlUrl="https://pmemagazine.pt/feed/" type="rss" />
+      <outline title="Link to Leaders" xmlUrl="https://linktoleaders.com/feed/" type="rss" />
+      <outline title="Executive Digest" xmlUrl="https://executivedigest.sapo.pt/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Podcasts">
-      
-      
-      <outline title="O Meu Portugal Secreto" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/2fd2678b-db04-4a29-b23e-abfa018583f8/ed4fc2e2-7428-4deb-8d5d-abfa018632f9/podcast.rss" type="rss"/>
-      
-      
-      <outline title="History of Portugal" xmlUrl="https://feeds.acast.com/public/shows/615f75fa674a990013ec6ccc" type="rss"/>
-      
-      
-      <outline title="Histórias de Portugal" xmlUrl="https://anchor.fm/s/a867a3b0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Uma História de Portugal" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:658809786/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Portugal em Direto" xmlUrl="https://www.omnycontent.com/d/playlist/f175b1e3-ecc7-4dc5-8307-b3aa008ffd8a/06393a83-d9ba-4019-8a8d-b40300f6c5d3/45781e3b-fdd6-4c0e-aff8-b40300f6c5d9/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Portuguese from Portugal" xmlUrl="https://www.portuguesefromportugal.com/feeds/podcast/portuguese-from-portugal.xml" type="rss"/>
-      
-      
-      <outline title="ACP - Automóvel Club de Portugal" xmlUrl="https://feeds.castos.com/dzqnm" type="rss"/>
-      
-      
-      <outline title="The Heart &amp; Hustle of Portugal" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/c33f56ab-170f-44c2-a0d5-b20401023c96/a0f59ac6-1260-438c-a832-b204010e3347/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Portugal - The Simple Life" xmlUrl="https://rss.buzzsprout.com/923788.rss" type="rss"/>
-      
-      
-      <outline title="Crossfire" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/b92378c2-4a20-4d06-b7e9-b0ee00f77446/3994c709-7bab-4ccd-a39f-b0ee00f8b044/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Crime em Portugal" xmlUrl="https://anchor.fm/s/8299fd90/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Building The Future - AI Portugal Podcast" xmlUrl="https://anchor.fm/s/1de0d0e0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="1983: Portugal à Queima-Roupa" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/b49c178e-1ffb-4fe6-be1e-b31a00661012/acb1837e-b675-4e7c-bafe-b31a006614fd/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Portugal com História" xmlUrl="https://anchor.fm/s/539b5e80/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Portugal por Miúdos" xmlUrl="https://www.rtp.pt/play/itunes/2915" type="rss"/>
-      
-      
-      <outline title="Portugal Manual" xmlUrl="https://anchor.fm/s/7ebce430/podcast/rss" type="rss"/>
-      
-      
-      <outline title="As Origens Intelectuais da Revolução" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/58a8d946-9ba1-4f07-a172-b20400e4c0aa/50dd32c4-6ea2-4439-a10d-b20400e55c11/podcast.rss" type="rss"/>
-      
-      
-      <outline title="O Princípio da Incerteza - Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/0c332b87-d9a7-4c87-91d9-b17700ac6495/ec76c17d-c60a-4aa5-8dde-b17700ac64c8/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Contrapoder | CNN Portugal" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/e6a29981-0f54-46a8-8a46-ae940109168e/68a19809-a0fb-49e6-91a5-ae940109cf5a/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Ao Km: Descobrir Portugal a Caminhar" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/24836bfe-f0d7-4d0d-aba6-b04500f1628f/d8cae33f-ccd6-427a-a8e6-b04500f7eb99/podcast.rss" type="rss"/>
-      
-      
-      <outline title="FIRE Talks Portugal" xmlUrl="https://anchor.fm/s/3b808370/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Hillsong Portugal" xmlUrl="https://anchor.fm/s/415d9e4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Motogp Portugal Podcast" xmlUrl="https://anchor.fm/s/c36fe604/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Good Morning Portugal! podcast with Carl Munson" xmlUrl="https://www.spreaker.com/show/2903992/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Portugal em Obras" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/1a0695a1-9dc5-4fbd-a8b1-b44400888f84/f9919525-99d8-4bca-bffb-b44400889422/podcast.rss" type="rss"/>
-      
-      
-      <outline title="+365" xmlUrl="https://anchor.fm/s/fbcf8b30/podcast/rss" type="rss"/>
-      
-      
-      <outline title="A Mensagem do Pediatra" xmlUrl="https://rss.podplaystudio.com/3363.xml" type="rss"/>
-      
-      
-      <outline title="DAZN F1" xmlUrl="https://anchor.fm/s/10181fce8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Prata da Casa" xmlUrl="https://anchor.fm/s/1056d2710/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Ambição para Portugal" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/314f2af1-401e-4d37-801f-b4630112120e/f14c46df-c710-4e58-bd81-b46301121653/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Classe Mundial" xmlUrl="https://rss.podplaystudio.com/3409.xml" type="rss"/>
-      
-      
-      <outline title="XTB TALKS" xmlUrl="https://anchor.fm/s/de5cba78/podcast/rss" type="rss"/>
-      
-      
-      <outline title="VR Podcasts - Agricultar" xmlUrl="https://rss.buzzsprout.com/1933467.rss" type="rss"/>
-      
-      
-      <outline title="Filming in Portugal. See the big picture" xmlUrl="https://feeds.megaphone.fm/BRL6754861463" type="rss"/>
-      
-      
-      <outline title="DAIKIN NO AR" xmlUrl="https://anchor.fm/s/10acdc458/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Não És Pimba P'ra Mim" xmlUrl="https://rss.podplaystudio.com/3407.xml" type="rss"/>
-      
-      
-      <outline title="BdP Podcast. O Podcast do Banco de Portugal." xmlUrl="https://anchor.fm/s/f6654090/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Marketing por Idiotas - RFM" xmlUrl="http://feeds.feedburner.com/podcastpodcastmarketingporidiotas" type="rss"/>
-      
-      
-      <outline title="Camarim" xmlUrl="https://rss.podplaystudio.com/3416.xml" type="rss"/>
-      
-      
-      <outline title="O Kantante da Kika" xmlUrl="https://rss.podplaystudio.com/3411.xml" type="rss"/>
-      
-      
-      <outline title="Em Terra de Ninguém" xmlUrl="https://anchor.fm/s/100c4c31c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="(Re)naturalizar Portugal" xmlUrl="https://anchor.fm/s/f3c6b404/podcast/rss" type="rss"/>
-      
-      
-      <outline title="XTB Market Sessions" xmlUrl="https://anchor.fm/s/1133e5120/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Coach Talks" xmlUrl="https://rss.podplaystudio.com/3375.xml" type="rss"/>
-      
-      
-      <outline title="O Confronto entre Sebastião Bugalho e Pedro Adão e Silva" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/b10af0d3-a271-44f7-a76f-b2b800a4d385/eb0e2076-e418-4830-a3f1-b2b800a4db36/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Camões: 500 anos de História e de Lenda" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/2f6baa64-7087-4378-a0ed-b20400ea5e2d/6da8a8c2-6baa-420e-ac89-b20400f005ae/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Casa de Macau Portugal" xmlUrl="https://anchor.fm/s/f7a4de70/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mais do que Golfistas" xmlUrl="https://www.spreaker.com/show/7076905/episodes/feed" type="rss"/>
-      
-      
-      <outline title="A Última Fronteira" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/dad268bc-44b6-47d9-938b-b17600b2822e/61bed87b-0fad-4acc-a545-b17600df2ffa/podcast.rss" type="rss"/>
-      
-      
-      <outline title="GL Podcast" xmlUrl="https://anchor.fm/s/4c31e948/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Histórias de Lisboa" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/3719bff5-7d78-43bd-b3dd-b20b011a9313/76ca81d6-54ab-4048-b017-b20b011b1162/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Lisboa e os Lisboetas" xmlUrl="https://anchor.fm/s/c8a48fbc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Memórias de Lisboa" xmlUrl="https://feeds.feedburner.com/memorias-de-lisboa" type="rss"/>
-      
-      
-      <outline title="Não sujeito a receita médica | FMUL" xmlUrl="https://anchor.fm/s/3eeab01c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Legal Hackers Lisboa - Um podcast sobre Direito e Tecnologia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:535684500/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Sons de Lisboa" xmlUrl="https://anchor.fm/s/4dd4ac04/podcast/rss" type="rss"/>
-      
-      
-      <outline title="A Caça ao Estripador de Lisboa" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/72d5eab0-d6d0-408a-ac1f-b2400102dc20/57ccfe75-0fad-4b61-ad02-b2400102df29/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Ponte de encontro" xmlUrl="https://anchor.fm/s/10f4d95f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Ana Lisboa - Feminino Moderno" xmlUrl="https://anchor.fm/s/1ed07c58/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Ouvir A Cidade" xmlUrl="https://lisboaparapessoas.pt/feed/podcast/ouvir-cidade/" type="rss"/>
-      
-      
-      <outline title="Open House Lisboa" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:873509656/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Conhecimento em Rede - Podcast da Redescola IE-ULisboa" xmlUrl="https://anchor.fm/s/107197b04/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Zion Lisboa" xmlUrl="https://anchor.fm/s/7816ad00/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Ana Lisboa | Constelações na Prática." xmlUrl="https://anchor.fm/s/5f3e8ec4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Primeira Igreja Baptista de Lisboa" xmlUrl="https://anchor.fm/s/ac40aa7c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="A Sombra de Lisboa | Vampire: The Masquerade" xmlUrl="https://feeds.transistor.fm/a-sombra-de-lisboa-vampire-the-masquerade" type="rss"/>
-      
-      
-      <outline title="Geração T" xmlUrl="https://anchor.fm/s/112bd7668/podcast/rss" type="rss"/>
-      
-      
-      <outline title="O Futuro da Educação" xmlUrl="https://anchor.fm/s/21a9e220/podcast/rss" type="rss"/>
-      
-      
-      <outline title="2050 - 25 Anos do Terramoto de Lisboa" xmlUrl="https://rss.podplaystudio.com/3430.xml" type="rss"/>
-      
-      
-      <outline title="RLX - Rádio Lisboa" xmlUrl="https://anchor.fm/s/4a561720/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Vocal Hack Podcast" xmlUrl="https://api.riverside.com/hosting/OD5FzT6l.rss" type="rss"/>
-      
-      
-      <outline title="NOVA Talks" xmlUrl="https://feeds.megaphone.fm/BRL6151677610" type="rss"/>
-      
-      
-      <outline title="TSF - Lisboa na II Guerra Mundial - Podcast" xmlUrl="https://feeds.feedburner.com/lisboa-ii-guerra-mundial-podcast" type="rss"/>
-      
-      
-      <outline title="Ouve lá" xmlUrl="https://anchor.fm/s/160055bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="belas-artes ulisboa" xmlUrl="https://anchor.fm/s/8cce5fe0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="De Lisboa a Helsínquia" xmlUrl="https://www.rtp.pt/play/itunes/5080" type="rss"/>
-      
-      
-      <outline title="AS CANÇÕES DE LISBOA — UMA CARTOGRAFIA MUSICAL" xmlUrl="https://anchor.fm/s/10a7bd558/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Filipe Lisboa - Hipnose e Regulação Emocional" xmlUrl="https://anchor.fm/s/389c06fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Terceira Igreja Evangélica Baptista de Lisboa" xmlUrl="https://anchor.fm/s/114dd580/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Por Portas e Janelas" xmlUrl="https://feeds.transistor.fm/por-portas-e-janelas" type="rss"/>
-      
-      
-      <outline title="Renascença - Rock in Rio Lisboa- Palco Renascença" xmlUrl="https://www.omnycontent.com/d/playlist/58028bcf-e01f-4274-aca7-ad3300f67928/e84a2940-1c99-4727-8b52-b44200ba0ffa/95682445-00b1-4b00-84d9-b44200ba15b3/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Epistemologia" xmlUrl="https://anchor.fm/s/49dbf454/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Viagens &amp; Miúdos" xmlUrl="https://anchor.fm/s/ff9bc44/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lisboa Games Week - Podcast Oficial" xmlUrl="https://anchor.fm/s/57704ffc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Not Alone - #englishbyourselves - With Dan Lisboa" xmlUrl="https://anchor.fm/s/20c9442c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lisboa Brothers" xmlUrl="https://anchor.fm/s/5b06c81c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="TRANSFORMAÇÃO DIGITAL - Professor Alysson Lisboa" xmlUrl="https://anchor.fm/s/603f75f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Modus Vivendi - ADL Mensagens" xmlUrl="https://anchor.fm/s/f35966c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lisboa Coaching De Podcast" xmlUrl="https://anchor.fm/s/5ba9e010/podcast/rss" type="rss"/>
-      
-      
-      <outline title="André Lisbôa" xmlUrl="https://anchor.fm/s/4710a788/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Pelo Direito à Cidade – CDU Lisboa em podcast" xmlUrl="https://anchor.fm/s/676d8424/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RLX - Rádio Lisboa" xmlUrl="https://anchor.fm/s/454d55a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Vitória Lisboa" xmlUrl="https://anchor.fm/s/5dfc2350/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lidiane Lisboa" xmlUrl="https://anchor.fm/s/1dec373c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="melissa lisboa" xmlUrl="https://anchor.fm/s/575c83a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mailson Lisboa" xmlUrl="https://anchor.fm/s/20e4f7f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Igreja da Acção Bíblica da Grande Lisboa" xmlUrl="https://anchor.fm/s/f1241160/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Thales Lisboa" xmlUrl="https://anchor.fm/s/345d1aa4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Histórias do Porto" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/4219f69f-0feb-4c41-83af-b3de008ba4a7/95a5089c-88be-4e09-8760-b3de008ba8ec/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Porto Sem Filtro" xmlUrl="https://anchor.fm/s/108411028/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Super Porto" xmlUrl="https://anchor.fm/s/e7edb77c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Porto Canal" xmlUrl="https://anchor.fm/s/932a060/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mais Porto" xmlUrl="https://anchor.fm/s/107813424/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Porto no Ponto" xmlUrl="https://anchor.fm/s/faa87dfc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Canto do FC Porto" xmlUrl="https://feeds.ivoox.com/feed_fg_f12830582_filtro_1.xml" type="rss"/>
-      
-      
-      <outline title="Palavrão" xmlUrl="https://anchor.fm/s/10d4dac5c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Colapso Podcast" xmlUrl="https://anchor.fm/s/109a350d4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Taste Porto Bites and Insights Podcast" xmlUrl="https://anchor.fm/s/100463380/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Living la Vida in Porto" xmlUrl="https://anchor.fm/s/49944780/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Saúde: Conversas e Caminhos" xmlUrl="https://anchor.fm/s/ed426b28/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Amendobobo Podcast" xmlUrl="https://anchor.fm/s/926f6444/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Voice2Tech" xmlUrl="https://anchor.fm/s/73a8c0a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Porto de Alta Competição" xmlUrl="https://anchor.fm/s/f1841704/podcast/rss" type="rss"/>
-      
-      
-      <outline title="JPN Podcasts" xmlUrl="https://anchor.fm/s/5e7cfa84/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Inglês Raiz com Fúlvio Porto" xmlUrl="https://anchor.fm/s/4021df0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rádio Metropolitana Porto" xmlUrl="https://anchor.fm/s/f88f784/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lagoinha Porto" xmlUrl="https://anchor.fm/s/4bbddf6c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="DevOps Porto Meetups" xmlUrl="https://anchor.fm/s/79b76a8c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="CIC Talks" xmlUrl="https://anchor.fm/s/429cf698/podcast/rss" type="rss"/>
-      
-      
-      <outline title="10 Years Podcast" xmlUrl="https://anchor.fm/s/100331b38/podcast/rss" type="rss"/>
-      
-      
-      <outline title="É obra - Nos Bastidores da Cidade" xmlUrl="https://anchor.fm/s/1133dc480/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Porto Cast: Desbrave o futuro dos Portos" xmlUrl="https://anchor.fm/s/f4147004/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Porto Digital" xmlUrl="https://anchor.fm/s/5894b51c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Climate Talks by Porto Protocol" xmlUrl="https://anchor.fm/s/4349e038/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Porto Por Ponto." xmlUrl="https://anchor.fm/s/152e132c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Olha Só, Porto Alegre" xmlUrl="https://anchor.fm/s/8e97d98c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="De carona.com - Dorita Porto -meu Podcast para facilitar o seu dia-a -dia" xmlUrl="https://anchor.fm/s/2158cb88/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Prefeitura de Porto União | Podcast" xmlUrl="https://anchor.fm/s/e3de3cd8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Casa de Cinema de Porto Alegre" xmlUrl="https://anchor.fm/s/1fd138f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Judson Porto" xmlUrl="https://anchor.fm/s/17672fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nova Porto Velho Podcast" xmlUrl="https://anchor.fm/s/5b3734fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PORTA33 — ESCOLA DO PORTO SANTO" xmlUrl="http://rss.castbox.fm/everest/9ad11f7652364829926a762b34512bdb.xml" type="rss"/>
-      
-      
-      <outline title="Leandro Porto Gonçalves" xmlUrl="https://anchor.fm/s/5ddf20c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Psicóloga Anelise Porto Britto" xmlUrl="https://anchor.fm/s/415c99b4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Projeto Adoradores de Porto Seguro" xmlUrl="https://anchor.fm/s/5b0e3868/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Germán Porto-Aqui Y En China" xmlUrl="https://anchor.fm/s/1ebb538c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Ester Porto" xmlUrl="https://anchor.fm/s/4e9c9c00/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Avaliação Somativa 1 - Rodrigo Porto" xmlUrl="https://anchor.fm/s/1ffabb84/podcast/rss" type="rss"/>
-      
-      
-      <outline title="O TEMPO É PRESENTE - Porto Design Biennale" xmlUrl="https://feeds.transistor.fm/tempo-e-presente-porto-design-biennale" type="rss"/>
-      
-      
-      <outline title="CreativeMornings Porto" xmlUrl="https://anchor.fm/s/5b2ee1bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Maratona Internacional de Porto Alegre" xmlUrl="https://anchor.fm/s/38109234/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Igreja do Porto" xmlUrl="https://anchor.fm/s/fd87901c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Caminhos da Ditadura em Porto Alegre" xmlUrl="https://anchor.fm/s/10084b5d8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IEADPE - Porto" xmlUrl="https://anchor.fm/s/1d65f2f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Porto-Giese Language School" xmlUrl="https://anchor.fm/s/3884c4b0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Retratos de Porto Belo" xmlUrl="https://anchor.fm/s/3c44c348/podcast/rss" type="rss"/>
-      
-      
-      <outline title="MeLoDijoBraga El Podcast" xmlUrl="https://anchor.fm/s/8139b210/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Continuo Palpitando- com Ataide Braga" xmlUrl="https://anchor.fm/s/5b688b74/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Conversas com Pedal" xmlUrl="https://anchor.fm/s/f10db398/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Como se Costuma Dizer" xmlUrl="https://rss.podplaystudio.com/3354.xml" type="rss"/>
-      
-      
-      <outline title="Alta Velocidade" xmlUrl="https://ruimiguelbraga.pt/feed/podcast/alta-velocidade/" type="rss"/>
-      
-      
-      <outline title="HR Consultoria" xmlUrl="https://anchor.fm/s/4e0dc854/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Marcio Braga Podcast" xmlUrl="https://anchor.fm/s/738bc5e0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Psi Rebeca Braga" xmlUrl="https://anchor.fm/s/489264c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Força Braga - Tudo sobre o Sporting Clube de Braga" xmlUrl="https://anchor.fm/s/1059d055c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Augusto Braga" xmlUrl="https://anchor.fm/s/18e2e1b4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bianca Braga" xmlUrl="https://anchor.fm/s/41f8172c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BragaCast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:384327860/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Comunicador Ao Máximo por Alê Braga" xmlUrl="https://anchor.fm/s/36fc3fec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Renato Braga Podcast" xmlUrl="https://anchor.fm/s/d175e64/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Psicóloga Stella Braga" xmlUrl="https://anchor.fm/s/47053a24/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Juh Braga" xmlUrl="https://anchor.fm/s/4d1c2878/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Temas Gerais do Direito - por Gilson Braga" xmlUrl="https://anchor.fm/s/23d2fd70/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Alisson Braga" xmlUrl="https://anchor.fm/s/30077968/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Laira Braga" xmlUrl="https://anchor.fm/s/1d9cc044/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mateus Braga" xmlUrl="https://anchor.fm/s/310c33e4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="OFICIAL@PR.EBENEZIO BRAGA" xmlUrl="https://anchor.fm/s/1fab26dc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="João Vitor Braga" xmlUrl="https://anchor.fm/s/25485a4c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Braga Crônicas" xmlUrl="http://feeds.feedburner.com/BragaCronicas" type="rss"/>
-      
-      
-      <outline title="JESSICA BRAGA" xmlUrl="https://anchor.fm/s/38fdf164/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gleyce Braga" xmlUrl="https://anchor.fm/s/69b2db94/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gestão Simplificada- Isabella Braga" xmlUrl="https://anchor.fm/s/4c06669c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Braga em Dia - Noticias e Atualidade da Cidade" xmlUrl="https://anchor.fm/s/1059d3ba8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcasts Educacionais - Gabriel Braga" xmlUrl="https://anchor.fm/s/2183310c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Entre Braga e Nova Iorque" xmlUrl="https://anchor.fm/s/30ac55b4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Everton Braga" xmlUrl="https://anchor.fm/s/5d88bd84/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mensagens IB no Braga" xmlUrl="http://rss.castbox.fm/everest/cb9dba3d770f461b904fd5d8465da9b2.xml" type="rss"/>
-      
-      
-      <outline title="Podcast Geovana Braga" xmlUrl="https://anchor.fm/s/2bd49c90/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Diário Musical de Cairo Braga" xmlUrl="https://cairobraga.com/diariomusical/feed/" type="rss"/>
-      
-      
-      <outline title="Tropicalismo (Isa Braga)" xmlUrl="https://anchor.fm/s/3e8e1514/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Daniel Braga" xmlUrl="https://anchor.fm/s/24e653c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Braga Books" xmlUrl="https://anchor.fm/s/257a00d8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Franklin Braga Ultramare" xmlUrl="https://anchor.fm/s/5d312038/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Victor Braga" xmlUrl="https://anchor.fm/s/3004c0ec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PODCASTS by ICARO BRAGA" xmlUrl="https://anchor.fm/s/699045ac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Simone Braga Campanha" xmlUrl="https://anchor.fm/s/32744ca8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SubVersão | Davi Braga" xmlUrl="https://anchor.fm/s/10703590/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sindicato do concurso - Prof Raphael Braga" xmlUrl="https://anchor.fm/s/1e95d83c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rominho Braga" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:211315613/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Braga Podcast" xmlUrl="https://anchor.fm/s/4c238e48/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Grazi Braga" xmlUrl="https://anchor.fm/s/4486ba48/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Leciane Braga" xmlUrl="https://anchor.fm/s/40eeeeb4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Nuno Braga Podcast" xmlUrl="https://anchor.fm/s/391196b0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BragaCast" xmlUrl="https://anchor.fm/s/64f7aea4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Augusto Braga PodCast" xmlUrl="https://anchor.fm/s/fec08614/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cairo Braga's Music Journal" xmlUrl="https://en.cairobraga.com/musicjournal/feed/" type="rss"/>
-      
-      
-      <outline title="Practice Portuguese" xmlUrl="https://www.practiceportuguese.com/feed/podcast/" type="rss"/>
-      
-      
-      <outline title="Ilustres Ilustrados por Hugo van der Ding" xmlUrl="https://anchor.fm/s/101cebfb0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cartas de um Terapeuta" xmlUrl="https://anchor.fm/s/f39fc3a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rádio Universidade de Coimbra" xmlUrl="https://anchor.fm/s/39891a64/podcast/rss" type="rss"/>
-      
-      
-      <outline title="A Dona Pod" xmlUrl="https://anchor.fm/s/1035b6900/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Janela Europeia" xmlUrl="https://anchor.fm/s/4ed8851c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="CoimbraCast" xmlUrl="https://anchor.fm/s/10cc87f0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="AD Coimbra" xmlUrl="https://anchor.fm/s/eb013588/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Boletim Informativo do Somos Coimbra" xmlUrl="https://anchor.fm/s/3b77488c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Coronel Coimbra" xmlUrl="https://anchor.fm/s/5476af6c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Márcio Coimbra" xmlUrl="https://anchor.fm/s/19c978f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kelly Coimbra" xmlUrl="https://anchor.fm/s/eecde94/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Coimbra e Vanessa Candidatos a Prefeito e Vice pelo MDB." xmlUrl="https://anchor.fm/s/3ab3ecd4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Apeb Coimbra" xmlUrl="https://anchor.fm/s/3de7ab84/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Alexsandro Coimbra De Souza" xmlUrl="https://anchor.fm/s/6333be8c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Arriscar é Viver" xmlUrl="https://feed.podbean.com/arriscareviver/feed.xml" type="rss"/>
-      
-      
-      <outline title="Ao sabor do Evangelho" xmlUrl="https://anchor.fm/s/fb56e66c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Leonardo Coimbra em Acção!" xmlUrl="https://somosdaleonardocoimbrafilho.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="Deivid/ Biografia Daniel Coimbra" xmlUrl="https://anchor.fm/s/3cdaef08/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sentença-cast" xmlUrl="https://anchor.fm/s/50206c14/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Live invertida" xmlUrl="https://anchor.fm/s/3ab0f128/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Derivação parassintética" xmlUrl="https://anchor.fm/s/52f7c540/podcast/rss" type="rss"/>
-      
-      
-      <outline title="História Do Rádio" xmlUrl="https://anchor.fm/s/694a9444/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cop 26 e as questões climáticas do mundo" xmlUrl="https://anchor.fm/s/5950a790/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ELSA Talks" xmlUrl="https://anchor.fm/s/11c386cc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Todas as plantas têm nome" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:264016520/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Dona Marta" xmlUrl="https://anchor.fm/s/20047494/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Test drive! New! Live! Ask anything!" xmlUrl="https://www.spreaker.com/show/2795032/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Wild Card" xmlUrl="https://feeds.feedburner.com/wildcardruc" type="rss"/>
-      
-      
-      <outline title="AVA.cast" xmlUrl="https://anchor.fm/s/24ad1514/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BEDTRIPS" xmlUrl="https://anchor.fm/s/5ab95654/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Aula" xmlUrl="https://anchor.fm/s/5ab5bf30/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BESTCcast" xmlUrl="https://anchor.fm/s/68213230/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Talentos a evoluir" xmlUrl="https://anchor.fm/s/3423484c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Conversas de Poker" xmlUrl="https://rss.buzzsprout.com/280475.rss" type="rss"/>
-      
-      
-      <outline title="Variação Linguística" xmlUrl="https://anchor.fm/s/3c8268ec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Atuacão do governo no derramamento de petróleo do nordeste" xmlUrl="https://anchor.fm/s/2f860d60/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Minuto Poético" xmlUrl="https://anchor.fm/s/491f42dc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Andreia, Desculpa!" xmlUrl="https://anchor.fm/s/39f4f93c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Quinhentismo GRUPO ESCOLAR" xmlUrl="https://anchor.fm/s/3fc52db4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Contratos De Shopping Center" xmlUrl="https://anchor.fm/s/5de13d60/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast - Sistema Operacionais" xmlUrl="https://anchor.fm/s/5e01a960/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bookaholics In Action (BIA)" xmlUrl="https://anchor.fm/s/10473eeac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Flamingo Breeze" xmlUrl="https://feeds.feedburner.com/FlamingoBreeze" type="rss"/>
-      
-      
-      <outline title="PodChem" xmlUrl="https://anchor.fm/s/5017e5a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="NEDx" xmlUrl="https://anchor.fm/s/24fb5af8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast PET-SAÚDE Franca/Uni-FACEF" xmlUrl="https://anchor.fm/s/240b4c48/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Trabalhos Curso De Pedagogia" xmlUrl="https://anchor.fm/s/1e2989ac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Salvando o Semestre" xmlUrl="https://anchor.fm/s/f64feec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Faro" xmlUrl="http://fapi-top.prisasd.com/podcast/playser/el_faro/itunestfp/podcast.xml" type="rss"/>
-      
-      
-      <outline title="Acção Bíblica de Faro" xmlUrl="https://anchor.fm/s/100e07878/podcast/rss" type="rss"/>
-      
-      
-      <outline title="La Torre del Faro" xmlUrl="https://media.rss.com/torre-del-faro/feed.xml" type="rss"/>
-      
-      
-      <outline title="Faro em Foco" xmlUrl="https://anchor.fm/s/ff1a5194/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Traidor de Classe" xmlUrl="https://feeds.acast.com/public/shows/661e9bb0b00dfb00178f27ed" type="rss"/>
-      
-      
-      <outline title="Iglesia Biblica Bautista El Faro" xmlUrl="https://anchor.fm/s/13bcc3d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sou Bonita Podcast com Ingrid Faro" xmlUrl="https://anchor.fm/s/641177e0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Faro de Luz" xmlUrl="https://anchor.fm/s/35937378/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PodcastFaro" xmlUrl="https://feeds.ivoox.com/feed_fg_f1657132_filtro_1.xml" type="rss"/>
-      
-      
-      <outline title="Iglesia El Faro Lanús Este" xmlUrl="https://anchor.fm/s/2aa606d8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Faro Rock Conversaciones" xmlUrl="https://anchor.fm/s/5e0f17a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Iglesia Bautista El Faro - Predicación Espanol" xmlUrl="http://feeds.feedburner.com/IglesiaBautistaElFaro-PredicacinEspanol" type="rss"/>
-      
-      
-      <outline title="Argentina Faro" xmlUrl="https://anchor.fm/s/265821b0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast de Iglesia Bautista El Faro" xmlUrl="https://iglesiabautistaelfaro.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="Opferschutzverein El Faro" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:806529790/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Ministerio Faro a las Naciones Podcast" xmlUrl="https://faroalasnaciones.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="FARO DENTAL" xmlUrl="https://anchor.fm/s/6a0990d8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Faro Mérida" xmlUrl="https://anchor.fm/s/1111be13c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Radio El Faro" xmlUrl="https://anchor.fm/s/3d711fdc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Faro Mérida" xmlUrl="https://feeds.ivoox.com/feed_fg_f1692368_filtro_1.xml" type="rss"/>
-      
-      
-      <outline title="El Faro, con Teresa Coronel" xmlUrl="https://anchor.fm/s/4d0ad80c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Frecuencia Sonora FARO TLÁHUAC" xmlUrl="https://anchor.fm/s/2d1b41a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Iglesia Faro de Luz" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:712936912/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Faro de Ítaca" xmlUrl="https://anchor.fm/s/109f5ebb4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Faro Online" xmlUrl="https://anchor.fm/s/55c1f7a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cinema Faro" xmlUrl="https://anchor.fm/s/38ceb8b8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Faro" xmlUrl="https://anchor.fm/s/3bd959a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="¿Y si no resulta como pensabas? — Podcast Faro de Gracia" xmlUrl="https://anchor.fm/s/2f5e462c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="FARO INDIOS VERDES" xmlUrl="https://anchor.fm/s/5af05604/podcast/rss" type="rss"/>
-      
-      
-      <outline title="FaroCast" xmlUrl="https://anchor.fm/s/3d60b714/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Podcast de Ciberseguridad de Faro Protec" xmlUrl="https://feed.podbean.com/faroprotec/feed.xml" type="rss"/>
-      
-      
-      <outline title="Il Faro" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:545616783/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Pan de Vida - Iglesia El Faro La Ceiba" xmlUrl="https://anchor.fm/s/80e6a3f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="UPCI El Faro Pentecostal" xmlUrl="https://anchor.fm/s/6b5510e8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Faro Audio" xmlUrl="https://anchor.fm/s/786bc2a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Faroe Islands Podcast" xmlUrl="https://rss.libsyn.com/shows/23796/destinations/34710.xml" type="rss"/>
-      
-      
-      <outline title="Faro" xmlUrl="https://anchor.fm/s/f4c1849c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Corporate Kanax" xmlUrl="https://anchor.fm/s/2cec94d4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="My voice" xmlUrl="https://anchor.fm/s/5f389fa0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="My voice" xmlUrl="https://anchor.fm/s/5f069bb8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Faro de Redención" xmlUrl="https://elfaroderedencion.podbean.com/feed.xml" type="rss"/>
-      
-      
-      <outline title="Faro de Esperanza" xmlUrl="https://anchor.fm/s/809b8a90/podcast/rss" type="rss"/>
-      
-      
-      <outline title="«Questa volta non ce la farò» - La storia sospesa di Sara Pedri" xmlUrl="https://www.spreaker.com/show/5803395/episodes/feed" type="rss"/>
-      
-      
-      <outline title="El Faro Norte" xmlUrl="https://anchor.fm/s/4a22d090/podcast/rss" type="rss"/>
-      
-      
-      <outline title="El Faro" xmlUrl="https://anchor.fm/s/3cce8998/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Faro de Conciencia" xmlUrl="https://app.kajabi.com/podcasts/2147527972/feed" type="rss"/>
-      
-      
-      <outline title="El faro del Mediterráneo" xmlUrl="https://api.rtve.es/api/adapter/programas/173451/audios.rss" type="rss"/>
-      
-      
-      <outline title="Fumaça" xmlUrl="https://fumaca.pt/feed/" type="rss"/>
-      
-    
+      <outline title="O Meu Portugal Secreto" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/2fd2678b-db04-4a29-b23e-abfa018583f8/ed4fc2e2-7428-4deb-8d5d-abfa018632f9/podcast.rss" type="rss" />
+      <outline title="History of Portugal" xmlUrl="https://feeds.acast.com/public/shows/615f75fa674a990013ec6ccc" type="rss" />
+      <outline title="Histórias de Portugal" xmlUrl="https://anchor.fm/s/a867a3b0/podcast/rss" type="rss" />
+      <outline title="Uma História de Portugal" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:658809786/sounds.rss" type="rss" />
+      <outline title="Portugal em Direto" xmlUrl="https://www.omnycontent.com/d/playlist/f175b1e3-ecc7-4dc5-8307-b3aa008ffd8a/06393a83-d9ba-4019-8a8d-b40300f6c5d3/45781e3b-fdd6-4c0e-aff8-b40300f6c5d9/podcast.rss" type="rss" />
+      <outline title="Portuguese from Portugal" xmlUrl="https://www.portuguesefromportugal.com/feeds/podcast/portuguese-from-portugal.xml" type="rss" />
+      <outline title="ACP - Automóvel Club de Portugal" xmlUrl="https://feeds.castos.com/dzqnm" type="rss" />
+      <outline title="The Heart &amp; Hustle of Portugal" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/c33f56ab-170f-44c2-a0d5-b20401023c96/a0f59ac6-1260-438c-a832-b204010e3347/podcast.rss" type="rss" />
+      <outline title="Portugal - The Simple Life" xmlUrl="https://rss.buzzsprout.com/923788.rss" type="rss" />
+      <outline title="Crossfire" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/b92378c2-4a20-4d06-b7e9-b0ee00f77446/3994c709-7bab-4ccd-a39f-b0ee00f8b044/podcast.rss" type="rss" />
+      <outline title="Crime em Portugal" xmlUrl="https://anchor.fm/s/8299fd90/podcast/rss" type="rss" />
+      <outline title="Building The Future - AI Portugal Podcast" xmlUrl="https://anchor.fm/s/1de0d0e0/podcast/rss" type="rss" />
+      <outline title="1983: Portugal à Queima-Roupa" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/b49c178e-1ffb-4fe6-be1e-b31a00661012/acb1837e-b675-4e7c-bafe-b31a006614fd/podcast.rss" type="rss" />
+      <outline title="Portugal com História" xmlUrl="https://anchor.fm/s/539b5e80/podcast/rss" type="rss" />
+      <outline title="Portugal Manual" xmlUrl="https://anchor.fm/s/7ebce430/podcast/rss" type="rss" />
+      <outline title="As Origens Intelectuais da Revolução" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/58a8d946-9ba1-4f07-a172-b20400e4c0aa/50dd32c4-6ea2-4439-a10d-b20400e55c11/podcast.rss" type="rss" />
+      <outline title="O Princípio da Incerteza - Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/0c332b87-d9a7-4c87-91d9-b17700ac6495/ec76c17d-c60a-4aa5-8dde-b17700ac64c8/podcast.rss" type="rss" />
+      <outline title="Contrapoder | CNN Portugal" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/e6a29981-0f54-46a8-8a46-ae940109168e/68a19809-a0fb-49e6-91a5-ae940109cf5a/podcast.rss" type="rss" />
+      <outline title="Ao Km: Descobrir Portugal a Caminhar" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/24836bfe-f0d7-4d0d-aba6-b04500f1628f/d8cae33f-ccd6-427a-a8e6-b04500f7eb99/podcast.rss" type="rss" />
+      <outline title="FIRE Talks Portugal" xmlUrl="https://anchor.fm/s/3b808370/podcast/rss" type="rss" />
+      <outline title="Hillsong Portugal" xmlUrl="https://anchor.fm/s/415d9e4/podcast/rss" type="rss" />
+      <outline title="Motogp Portugal Podcast" xmlUrl="https://anchor.fm/s/c36fe604/podcast/rss" type="rss" />
+      <outline title="The Good Morning Portugal! podcast with Carl Munson" xmlUrl="https://www.spreaker.com/show/2903992/episodes/feed" type="rss" />
+      <outline title="Portugal em Obras" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/1a0695a1-9dc5-4fbd-a8b1-b44400888f84/f9919525-99d8-4bca-bffb-b44400889422/podcast.rss" type="rss" />
+      <outline title="+365" xmlUrl="https://anchor.fm/s/fbcf8b30/podcast/rss" type="rss" />
+      <outline title="A Mensagem do Pediatra" xmlUrl="https://rss.podplaystudio.com/3363.xml" type="rss" />
+      <outline title="DAZN F1" xmlUrl="https://anchor.fm/s/10181fce8/podcast/rss" type="rss" />
+      <outline title="Prata da Casa" xmlUrl="https://anchor.fm/s/1056d2710/podcast/rss" type="rss" />
+      <outline title="Ambição para Portugal" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/314f2af1-401e-4d37-801f-b4630112120e/f14c46df-c710-4e58-bd81-b46301121653/podcast.rss" type="rss" />
+      <outline title="Classe Mundial" xmlUrl="https://rss.podplaystudio.com/3409.xml" type="rss" />
+      <outline title="XTB TALKS" xmlUrl="https://anchor.fm/s/de5cba78/podcast/rss" type="rss" />
+      <outline title="VR Podcasts - Agricultar" xmlUrl="https://rss.buzzsprout.com/1933467.rss" type="rss" />
+      <outline title="Filming in Portugal. See the big picture" xmlUrl="https://feeds.megaphone.fm/BRL6754861463" type="rss" />
+      <outline title="DAIKIN NO AR" xmlUrl="https://anchor.fm/s/10acdc458/podcast/rss" type="rss" />
+      <outline title="Não És Pimba P'ra Mim" xmlUrl="https://rss.podplaystudio.com/3407.xml" type="rss" />
+      <outline title="BdP Podcast. O Podcast do Banco de Portugal." xmlUrl="https://anchor.fm/s/f6654090/podcast/rss" type="rss" />
+      <outline title="Podcast Marketing por Idiotas - RFM" xmlUrl="http://feeds.feedburner.com/podcastpodcastmarketingporidiotas" type="rss" />
+      <outline title="Camarim" xmlUrl="https://rss.podplaystudio.com/3416.xml" type="rss" />
+      <outline title="O Kantante da Kika" xmlUrl="https://rss.podplaystudio.com/3411.xml" type="rss" />
+      <outline title="Em Terra de Ninguém" xmlUrl="https://anchor.fm/s/100c4c31c/podcast/rss" type="rss" />
+      <outline title="(Re)naturalizar Portugal" xmlUrl="https://anchor.fm/s/f3c6b404/podcast/rss" type="rss" />
+      <outline title="XTB Market Sessions" xmlUrl="https://anchor.fm/s/1133e5120/podcast/rss" type="rss" />
+      <outline title="Coach Talks" xmlUrl="https://rss.podplaystudio.com/3375.xml" type="rss" />
+      <outline title="O Confronto entre Sebastião Bugalho e Pedro Adão e Silva" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/b10af0d3-a271-44f7-a76f-b2b800a4d385/eb0e2076-e418-4830-a3f1-b2b800a4db36/podcast.rss" type="rss" />
+      <outline title="Camões: 500 anos de História e de Lenda" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/2f6baa64-7087-4378-a0ed-b20400ea5e2d/6da8a8c2-6baa-420e-ac89-b20400f005ae/podcast.rss" type="rss" />
+      <outline title="Casa de Macau Portugal" xmlUrl="https://anchor.fm/s/f7a4de70/podcast/rss" type="rss" />
+      <outline title="Mais do que Golfistas" xmlUrl="https://www.spreaker.com/show/7076905/episodes/feed" type="rss" />
+      <outline title="A Última Fronteira" xmlUrl="https://www.omnycontent.com/d/playlist/a5afba10-ff2d-4550-adff-add50110b76b/dad268bc-44b6-47d9-938b-b17600b2822e/61bed87b-0fad-4acc-a545-b17600df2ffa/podcast.rss" type="rss" />
+      <outline title="GL Podcast" xmlUrl="https://anchor.fm/s/4c31e948/podcast/rss" type="rss" />
+      <outline title="Histórias de Lisboa" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/3719bff5-7d78-43bd-b3dd-b20b011a9313/76ca81d6-54ab-4048-b017-b20b011b1162/podcast.rss" type="rss" />
+      <outline title="Lisboa e os Lisboetas" xmlUrl="https://anchor.fm/s/c8a48fbc/podcast/rss" type="rss" />
+      <outline title="Memórias de Lisboa" xmlUrl="https://feeds.feedburner.com/memorias-de-lisboa" type="rss" />
+      <outline title="Não sujeito a receita médica | FMUL" xmlUrl="https://anchor.fm/s/3eeab01c/podcast/rss" type="rss" />
+      <outline title="Legal Hackers Lisboa - Um podcast sobre Direito e Tecnologia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:535684500/sounds.rss" type="rss" />
+      <outline title="Sons de Lisboa" xmlUrl="https://anchor.fm/s/4dd4ac04/podcast/rss" type="rss" />
+      <outline title="A Caça ao Estripador de Lisboa" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/72d5eab0-d6d0-408a-ac1f-b2400102dc20/57ccfe75-0fad-4b61-ad02-b2400102df29/podcast.rss" type="rss" />
+      <outline title="Ponte de encontro" xmlUrl="https://anchor.fm/s/10f4d95f8/podcast/rss" type="rss" />
+      <outline title="Ana Lisboa - Feminino Moderno" xmlUrl="https://anchor.fm/s/1ed07c58/podcast/rss" type="rss" />
+      <outline title="Ouvir A Cidade" xmlUrl="https://lisboaparapessoas.pt/feed/podcast/ouvir-cidade/" type="rss" />
+      <outline title="Open House Lisboa" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:873509656/sounds.rss" type="rss" />
+      <outline title="Conhecimento em Rede - Podcast da Redescola IE-ULisboa" xmlUrl="https://anchor.fm/s/107197b04/podcast/rss" type="rss" />
+      <outline title="Zion Lisboa" xmlUrl="https://anchor.fm/s/7816ad00/podcast/rss" type="rss" />
+      <outline title="Ana Lisboa | Constelações na Prática." xmlUrl="https://anchor.fm/s/5f3e8ec4/podcast/rss" type="rss" />
+      <outline title="Primeira Igreja Baptista de Lisboa" xmlUrl="https://anchor.fm/s/ac40aa7c/podcast/rss" type="rss" />
+      <outline title="A Sombra de Lisboa | Vampire: The Masquerade" xmlUrl="https://feeds.transistor.fm/a-sombra-de-lisboa-vampire-the-masquerade" type="rss" />
+      <outline title="Geração T" xmlUrl="https://anchor.fm/s/112bd7668/podcast/rss" type="rss" />
+      <outline title="O Futuro da Educação" xmlUrl="https://anchor.fm/s/21a9e220/podcast/rss" type="rss" />
+      <outline title="2050 - 25 Anos do Terramoto de Lisboa" xmlUrl="https://rss.podplaystudio.com/3430.xml" type="rss" />
+      <outline title="RLX - Rádio Lisboa" xmlUrl="https://anchor.fm/s/4a561720/podcast/rss" type="rss" />
+      <outline title="The Vocal Hack Podcast" xmlUrl="https://api.riverside.com/hosting/OD5FzT6l.rss" type="rss" />
+      <outline title="NOVA Talks" xmlUrl="https://feeds.megaphone.fm/BRL6151677610" type="rss" />
+      <outline title="TSF - Lisboa na II Guerra Mundial - Podcast" xmlUrl="https://feeds.feedburner.com/lisboa-ii-guerra-mundial-podcast" type="rss" />
+      <outline title="Ouve lá" xmlUrl="https://anchor.fm/s/160055bc/podcast/rss" type="rss" />
+      <outline title="belas-artes ulisboa" xmlUrl="https://anchor.fm/s/8cce5fe0/podcast/rss" type="rss" />
+      <outline title="AS CANÇÕES DE LISBOA — UMA CARTOGRAFIA MUSICAL" xmlUrl="https://anchor.fm/s/10a7bd558/podcast/rss" type="rss" />
+      <outline title="Filipe Lisboa - Hipnose e Regulação Emocional" xmlUrl="https://anchor.fm/s/389c06fc/podcast/rss" type="rss" />
+      <outline title="Terceira Igreja Evangélica Baptista de Lisboa" xmlUrl="https://anchor.fm/s/114dd580/podcast/rss" type="rss" />
+      <outline title="Por Portas e Janelas" xmlUrl="https://feeds.transistor.fm/por-portas-e-janelas" type="rss" />
+      <outline title="Renascença - Rock in Rio Lisboa- Palco Renascença" xmlUrl="https://www.omnycontent.com/d/playlist/58028bcf-e01f-4274-aca7-ad3300f67928/e84a2940-1c99-4727-8b52-b44200ba0ffa/95682445-00b1-4b00-84d9-b44200ba15b3/podcast.rss" type="rss" />
+      <outline title="Epistemologia" xmlUrl="https://anchor.fm/s/49dbf454/podcast/rss" type="rss" />
+      <outline title="Viagens &amp; Miúdos" xmlUrl="https://anchor.fm/s/ff9bc44/podcast/rss" type="rss" />
+      <outline title="Lisboa Games Week - Podcast Oficial" xmlUrl="https://anchor.fm/s/57704ffc/podcast/rss" type="rss" />
+      <outline title="Not Alone - #englishbyourselves - With Dan Lisboa" xmlUrl="https://anchor.fm/s/20c9442c/podcast/rss" type="rss" />
+      <outline title="Lisboa Brothers" xmlUrl="https://anchor.fm/s/5b06c81c/podcast/rss" type="rss" />
+      <outline title="TRANSFORMAÇÃO DIGITAL - Professor Alysson Lisboa" xmlUrl="https://anchor.fm/s/603f75f4/podcast/rss" type="rss" />
+      <outline title="Modus Vivendi - ADL Mensagens" xmlUrl="https://anchor.fm/s/f35966c4/podcast/rss" type="rss" />
+      <outline title="Lisboa Coaching De Podcast" xmlUrl="https://anchor.fm/s/5ba9e010/podcast/rss" type="rss" />
+      <outline title="André Lisbôa" xmlUrl="https://anchor.fm/s/4710a788/podcast/rss" type="rss" />
+      <outline title="Pelo Direito à Cidade – CDU Lisboa em podcast" xmlUrl="https://anchor.fm/s/676d8424/podcast/rss" type="rss" />
+      <outline title="RLX - Rádio Lisboa" xmlUrl="https://anchor.fm/s/454d55a4/podcast/rss" type="rss" />
+      <outline title="Vitória Lisboa" xmlUrl="https://anchor.fm/s/5dfc2350/podcast/rss" type="rss" />
+      <outline title="Lidiane Lisboa" xmlUrl="https://anchor.fm/s/1dec373c/podcast/rss" type="rss" />
+      <outline title="melissa lisboa" xmlUrl="https://anchor.fm/s/575c83a0/podcast/rss" type="rss" />
+      <outline title="Mailson Lisboa" xmlUrl="https://anchor.fm/s/20e4f7f8/podcast/rss" type="rss" />
+      <outline title="Igreja da Acção Bíblica da Grande Lisboa" xmlUrl="https://anchor.fm/s/f1241160/podcast/rss" type="rss" />
+      <outline title="Thales Lisboa" xmlUrl="https://anchor.fm/s/345d1aa4/podcast/rss" type="rss" />
+      <outline title="Histórias do Porto" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/4219f69f-0feb-4c41-83af-b3de008ba4a7/95a5089c-88be-4e09-8760-b3de008ba8ec/podcast.rss" type="rss" />
+      <outline title="Porto Sem Filtro" xmlUrl="https://anchor.fm/s/108411028/podcast/rss" type="rss" />
+      <outline title="Super Porto" xmlUrl="https://anchor.fm/s/e7edb77c/podcast/rss" type="rss" />
+      <outline title="Porto Canal" xmlUrl="https://anchor.fm/s/932a060/podcast/rss" type="rss" />
+      <outline title="Mais Porto" xmlUrl="https://anchor.fm/s/107813424/podcast/rss" type="rss" />
+      <outline title="Porto no Ponto" xmlUrl="https://anchor.fm/s/faa87dfc/podcast/rss" type="rss" />
+      <outline title="Canto do FC Porto" xmlUrl="https://feeds.ivoox.com/feed_fg_f12830582_filtro_1.xml" type="rss" />
+      <outline title="Palavrão" xmlUrl="https://anchor.fm/s/10d4dac5c/podcast/rss" type="rss" />
+      <outline title="Colapso Podcast" xmlUrl="https://anchor.fm/s/109a350d4/podcast/rss" type="rss" />
+      <outline title="Taste Porto Bites and Insights Podcast" xmlUrl="https://anchor.fm/s/100463380/podcast/rss" type="rss" />
+      <outline title="Living la Vida in Porto" xmlUrl="https://anchor.fm/s/49944780/podcast/rss" type="rss" />
+      <outline title="Saúde: Conversas e Caminhos" xmlUrl="https://anchor.fm/s/ed426b28/podcast/rss" type="rss" />
+      <outline title="Amendobobo Podcast" xmlUrl="https://anchor.fm/s/926f6444/podcast/rss" type="rss" />
+      <outline title="Voice2Tech" xmlUrl="https://anchor.fm/s/73a8c0a0/podcast/rss" type="rss" />
+      <outline title="Porto de Alta Competição" xmlUrl="https://anchor.fm/s/f1841704/podcast/rss" type="rss" />
+      <outline title="JPN Podcasts" xmlUrl="https://anchor.fm/s/5e7cfa84/podcast/rss" type="rss" />
+      <outline title="Inglês Raiz com Fúlvio Porto" xmlUrl="https://anchor.fm/s/4021df0/podcast/rss" type="rss" />
+      <outline title="Rádio Metropolitana Porto" xmlUrl="https://anchor.fm/s/f88f784/podcast/rss" type="rss" />
+      <outline title="Lagoinha Porto" xmlUrl="https://anchor.fm/s/4bbddf6c/podcast/rss" type="rss" />
+      <outline title="DevOps Porto Meetups" xmlUrl="https://anchor.fm/s/79b76a8c/podcast/rss" type="rss" />
+      <outline title="CIC Talks" xmlUrl="https://anchor.fm/s/429cf698/podcast/rss" type="rss" />
+      <outline title="10 Years Podcast" xmlUrl="https://anchor.fm/s/100331b38/podcast/rss" type="rss" />
+      <outline title="É obra - Nos Bastidores da Cidade" xmlUrl="https://anchor.fm/s/1133dc480/podcast/rss" type="rss" />
+      <outline title="Porto Cast: Desbrave o futuro dos Portos" xmlUrl="https://anchor.fm/s/f4147004/podcast/rss" type="rss" />
+      <outline title="Porto Digital" xmlUrl="https://anchor.fm/s/5894b51c/podcast/rss" type="rss" />
+      <outline title="Climate Talks by Porto Protocol" xmlUrl="https://anchor.fm/s/4349e038/podcast/rss" type="rss" />
+      <outline title="Porto Por Ponto." xmlUrl="https://anchor.fm/s/152e132c/podcast/rss" type="rss" />
+      <outline title="Olha Só, Porto Alegre" xmlUrl="https://anchor.fm/s/8e97d98c/podcast/rss" type="rss" />
+      <outline title="De carona.com - Dorita Porto -meu Podcast para facilitar o seu dia-a -dia" xmlUrl="https://anchor.fm/s/2158cb88/podcast/rss" type="rss" />
+      <outline title="Prefeitura de Porto União | Podcast" xmlUrl="https://anchor.fm/s/e3de3cd8/podcast/rss" type="rss" />
+      <outline title="Casa de Cinema de Porto Alegre" xmlUrl="https://anchor.fm/s/1fd138f4/podcast/rss" type="rss" />
+      <outline title="Judson Porto" xmlUrl="https://anchor.fm/s/17672fc/podcast/rss" type="rss" />
+      <outline title="Nova Porto Velho Podcast" xmlUrl="https://anchor.fm/s/5b3734fc/podcast/rss" type="rss" />
+      <outline title="PORTA33 — ESCOLA DO PORTO SANTO" xmlUrl="http://rss.castbox.fm/everest/9ad11f7652364829926a762b34512bdb.xml" type="rss" />
+      <outline title="Leandro Porto Gonçalves" xmlUrl="https://anchor.fm/s/5ddf20c0/podcast/rss" type="rss" />
+      <outline title="Psicóloga Anelise Porto Britto" xmlUrl="https://anchor.fm/s/415c99b4/podcast/rss" type="rss" />
+      <outline title="Projeto Adoradores de Porto Seguro" xmlUrl="https://anchor.fm/s/5b0e3868/podcast/rss" type="rss" />
+      <outline title="Germán Porto-Aqui Y En China" xmlUrl="https://anchor.fm/s/1ebb538c/podcast/rss" type="rss" />
+      <outline title="Ester Porto" xmlUrl="https://anchor.fm/s/4e9c9c00/podcast/rss" type="rss" />
+      <outline title="Avaliação Somativa 1 - Rodrigo Porto" xmlUrl="https://anchor.fm/s/1ffabb84/podcast/rss" type="rss" />
+      <outline title="O TEMPO É PRESENTE - Porto Design Biennale" xmlUrl="https://feeds.transistor.fm/tempo-e-presente-porto-design-biennale" type="rss" />
+      <outline title="CreativeMornings Porto" xmlUrl="https://anchor.fm/s/5b2ee1bc/podcast/rss" type="rss" />
+      <outline title="Maratona Internacional de Porto Alegre" xmlUrl="https://anchor.fm/s/38109234/podcast/rss" type="rss" />
+      <outline title="Igreja do Porto" xmlUrl="https://anchor.fm/s/fd87901c/podcast/rss" type="rss" />
+      <outline title="Caminhos da Ditadura em Porto Alegre" xmlUrl="https://anchor.fm/s/10084b5d8/podcast/rss" type="rss" />
+      <outline title="IEADPE - Porto" xmlUrl="https://anchor.fm/s/1d65f2f8/podcast/rss" type="rss" />
+      <outline title="Porto-Giese Language School" xmlUrl="https://anchor.fm/s/3884c4b0/podcast/rss" type="rss" />
+      <outline title="Retratos de Porto Belo" xmlUrl="https://anchor.fm/s/3c44c348/podcast/rss" type="rss" />
+      <outline title="MeLoDijoBraga El Podcast" xmlUrl="https://anchor.fm/s/8139b210/podcast/rss" type="rss" />
+      <outline title="Continuo Palpitando- com Ataide Braga" xmlUrl="https://anchor.fm/s/5b688b74/podcast/rss" type="rss" />
+      <outline title="Conversas com Pedal" xmlUrl="https://anchor.fm/s/f10db398/podcast/rss" type="rss" />
+      <outline title="Como se Costuma Dizer" xmlUrl="https://rss.podplaystudio.com/3354.xml" type="rss" />
+      <outline title="Alta Velocidade" xmlUrl="https://ruimiguelbraga.pt/feed/podcast/alta-velocidade/" type="rss" />
+      <outline title="HR Consultoria" xmlUrl="https://anchor.fm/s/4e0dc854/podcast/rss" type="rss" />
+      <outline title="Marcio Braga Podcast" xmlUrl="https://anchor.fm/s/738bc5e0/podcast/rss" type="rss" />
+      <outline title="Psi Rebeca Braga" xmlUrl="https://anchor.fm/s/489264c0/podcast/rss" type="rss" />
+      <outline title="Força Braga - Tudo sobre o Sporting Clube de Braga" xmlUrl="https://anchor.fm/s/1059d055c/podcast/rss" type="rss" />
+      <outline title="Augusto Braga" xmlUrl="https://anchor.fm/s/18e2e1b4/podcast/rss" type="rss" />
+      <outline title="Bianca Braga" xmlUrl="https://anchor.fm/s/41f8172c/podcast/rss" type="rss" />
+      <outline title="BragaCast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:384327860/sounds.rss" type="rss" />
+      <outline title="Comunicador Ao Máximo por Alê Braga" xmlUrl="https://anchor.fm/s/36fc3fec/podcast/rss" type="rss" />
+      <outline title="Renato Braga Podcast" xmlUrl="https://anchor.fm/s/d175e64/podcast/rss" type="rss" />
+      <outline title="Psicóloga Stella Braga" xmlUrl="https://anchor.fm/s/47053a24/podcast/rss" type="rss" />
+      <outline title="Juh Braga" xmlUrl="https://anchor.fm/s/4d1c2878/podcast/rss" type="rss" />
+      <outline title="Temas Gerais do Direito - por Gilson Braga" xmlUrl="https://anchor.fm/s/23d2fd70/podcast/rss" type="rss" />
+      <outline title="Alisson Braga" xmlUrl="https://anchor.fm/s/30077968/podcast/rss" type="rss" />
+      <outline title="Laira Braga" xmlUrl="https://anchor.fm/s/1d9cc044/podcast/rss" type="rss" />
+      <outline title="Mateus Braga" xmlUrl="https://anchor.fm/s/310c33e4/podcast/rss" type="rss" />
+      <outline title="OFICIAL@PR.EBENEZIO BRAGA" xmlUrl="https://anchor.fm/s/1fab26dc/podcast/rss" type="rss" />
+      <outline title="João Vitor Braga" xmlUrl="https://anchor.fm/s/25485a4c/podcast/rss" type="rss" />
+      <outline title="Braga Crônicas" xmlUrl="http://feeds.feedburner.com/BragaCronicas" type="rss" />
+      <outline title="JESSICA BRAGA" xmlUrl="https://anchor.fm/s/38fdf164/podcast/rss" type="rss" />
+      <outline title="Gleyce Braga" xmlUrl="https://anchor.fm/s/69b2db94/podcast/rss" type="rss" />
+      <outline title="Gestão Simplificada- Isabella Braga" xmlUrl="https://anchor.fm/s/4c06669c/podcast/rss" type="rss" />
+      <outline title="Braga em Dia - Noticias e Atualidade da Cidade" xmlUrl="https://anchor.fm/s/1059d3ba8/podcast/rss" type="rss" />
+      <outline title="Podcasts Educacionais - Gabriel Braga" xmlUrl="https://anchor.fm/s/2183310c/podcast/rss" type="rss" />
+      <outline title="Entre Braga e Nova Iorque" xmlUrl="https://anchor.fm/s/30ac55b4/podcast/rss" type="rss" />
+      <outline title="Everton Braga" xmlUrl="https://anchor.fm/s/5d88bd84/podcast/rss" type="rss" />
+      <outline title="Mensagens IB no Braga" xmlUrl="http://rss.castbox.fm/everest/cb9dba3d770f461b904fd5d8465da9b2.xml" type="rss" />
+      <outline title="Podcast Geovana Braga" xmlUrl="https://anchor.fm/s/2bd49c90/podcast/rss" type="rss" />
+      <outline title="Diário Musical de Cairo Braga" xmlUrl="https://cairobraga.com/diariomusical/feed/" type="rss" />
+      <outline title="Tropicalismo (Isa Braga)" xmlUrl="https://anchor.fm/s/3e8e1514/podcast/rss" type="rss" />
+      <outline title="Daniel Braga" xmlUrl="https://anchor.fm/s/24e653c4/podcast/rss" type="rss" />
+      <outline title="Braga Books" xmlUrl="https://anchor.fm/s/257a00d8/podcast/rss" type="rss" />
+      <outline title="Franklin Braga Ultramare" xmlUrl="https://anchor.fm/s/5d312038/podcast/rss" type="rss" />
+      <outline title="Victor Braga" xmlUrl="https://anchor.fm/s/3004c0ec/podcast/rss" type="rss" />
+      <outline title="PODCASTS by ICARO BRAGA" xmlUrl="https://anchor.fm/s/699045ac/podcast/rss" type="rss" />
+      <outline title="Simone Braga Campanha" xmlUrl="https://anchor.fm/s/32744ca8/podcast/rss" type="rss" />
+      <outline title="SubVersão | Davi Braga" xmlUrl="https://anchor.fm/s/10703590/podcast/rss" type="rss" />
+      <outline title="Sindicato do concurso - Prof Raphael Braga" xmlUrl="https://anchor.fm/s/1e95d83c/podcast/rss" type="rss" />
+      <outline title="Rominho Braga" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:211315613/sounds.rss" type="rss" />
+      <outline title="Braga Podcast" xmlUrl="https://anchor.fm/s/4c238e48/podcast/rss" type="rss" />
+      <outline title="Grazi Braga" xmlUrl="https://anchor.fm/s/4486ba48/podcast/rss" type="rss" />
+      <outline title="Leciane Braga" xmlUrl="https://anchor.fm/s/40eeeeb4/podcast/rss" type="rss" />
+      <outline title="The Nuno Braga Podcast" xmlUrl="https://anchor.fm/s/391196b0/podcast/rss" type="rss" />
+      <outline title="BragaCast" xmlUrl="https://anchor.fm/s/64f7aea4/podcast/rss" type="rss" />
+      <outline title="Augusto Braga PodCast" xmlUrl="https://anchor.fm/s/fec08614/podcast/rss" type="rss" />
+      <outline title="Cairo Braga's Music Journal" xmlUrl="https://en.cairobraga.com/musicjournal/feed/" type="rss" />
+      <outline title="Practice Portuguese" xmlUrl="https://www.practiceportuguese.com/feed/podcast/" type="rss" />
+      <outline title="Ilustres Ilustrados por Hugo van der Ding" xmlUrl="https://anchor.fm/s/101cebfb0/podcast/rss" type="rss" />
+      <outline title="Cartas de um Terapeuta" xmlUrl="https://anchor.fm/s/f39fc3a8/podcast/rss" type="rss" />
+      <outline title="Rádio Universidade de Coimbra" xmlUrl="https://anchor.fm/s/39891a64/podcast/rss" type="rss" />
+      <outline title="A Dona Pod" xmlUrl="https://anchor.fm/s/1035b6900/podcast/rss" type="rss" />
+      <outline title="Janela Europeia" xmlUrl="https://anchor.fm/s/4ed8851c/podcast/rss" type="rss" />
+      <outline title="CoimbraCast" xmlUrl="https://anchor.fm/s/10cc87f0/podcast/rss" type="rss" />
+      <outline title="AD Coimbra" xmlUrl="https://anchor.fm/s/eb013588/podcast/rss" type="rss" />
+      <outline title="Boletim Informativo do Somos Coimbra" xmlUrl="https://anchor.fm/s/3b77488c/podcast/rss" type="rss" />
+      <outline title="Coronel Coimbra" xmlUrl="https://anchor.fm/s/5476af6c/podcast/rss" type="rss" />
+      <outline title="Márcio Coimbra" xmlUrl="https://anchor.fm/s/19c978f4/podcast/rss" type="rss" />
+      <outline title="Kelly Coimbra" xmlUrl="https://anchor.fm/s/eecde94/podcast/rss" type="rss" />
+      <outline title="Coimbra e Vanessa Candidatos a Prefeito e Vice pelo MDB." xmlUrl="https://anchor.fm/s/3ab3ecd4/podcast/rss" type="rss" />
+      <outline title="Apeb Coimbra" xmlUrl="https://anchor.fm/s/3de7ab84/podcast/rss" type="rss" />
+      <outline title="Alexsandro Coimbra De Souza" xmlUrl="https://anchor.fm/s/6333be8c/podcast/rss" type="rss" />
+      <outline title="Arriscar é Viver" xmlUrl="https://feed.podbean.com/arriscareviver/feed.xml" type="rss" />
+      <outline title="Ao sabor do Evangelho" xmlUrl="https://anchor.fm/s/fb56e66c/podcast/rss" type="rss" />
+      <outline title="Leonardo Coimbra em Acção!" xmlUrl="https://somosdaleonardocoimbrafilho.podomatic.com/rss2.xml" type="rss" />
+      <outline title="Deivid/ Biografia Daniel Coimbra" xmlUrl="https://anchor.fm/s/3cdaef08/podcast/rss" type="rss" />
+      <outline title="Sentença-cast" xmlUrl="https://anchor.fm/s/50206c14/podcast/rss" type="rss" />
+      <outline title="Live invertida" xmlUrl="https://anchor.fm/s/3ab0f128/podcast/rss" type="rss" />
+      <outline title="Derivação parassintética" xmlUrl="https://anchor.fm/s/52f7c540/podcast/rss" type="rss" />
+      <outline title="História Do Rádio" xmlUrl="https://anchor.fm/s/694a9444/podcast/rss" type="rss" />
+      <outline title="Cop 26 e as questões climáticas do mundo" xmlUrl="https://anchor.fm/s/5950a790/podcast/rss" type="rss" />
+      <outline title="ELSA Talks" xmlUrl="https://anchor.fm/s/11c386cc/podcast/rss" type="rss" />
+      <outline title="Todas as plantas têm nome" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:264016520/sounds.rss" type="rss" />
+      <outline title="Dona Marta" xmlUrl="https://anchor.fm/s/20047494/podcast/rss" type="rss" />
+      <outline title="Test drive! New! Live! Ask anything!" xmlUrl="https://www.spreaker.com/show/2795032/episodes/feed" type="rss" />
+      <outline title="Wild Card" xmlUrl="https://feeds.feedburner.com/wildcardruc" type="rss" />
+      <outline title="AVA.cast" xmlUrl="https://anchor.fm/s/24ad1514/podcast/rss" type="rss" />
+      <outline title="BEDTRIPS" xmlUrl="https://anchor.fm/s/5ab95654/podcast/rss" type="rss" />
+      <outline title="Aula" xmlUrl="https://anchor.fm/s/5ab5bf30/podcast/rss" type="rss" />
+      <outline title="BESTCcast" xmlUrl="https://anchor.fm/s/68213230/podcast/rss" type="rss" />
+      <outline title="Talentos a evoluir" xmlUrl="https://anchor.fm/s/3423484c/podcast/rss" type="rss" />
+      <outline title="Conversas de Poker" xmlUrl="https://rss.buzzsprout.com/280475.rss" type="rss" />
+      <outline title="Variação Linguística" xmlUrl="https://anchor.fm/s/3c8268ec/podcast/rss" type="rss" />
+      <outline title="Atuacão do governo no derramamento de petróleo do nordeste" xmlUrl="https://anchor.fm/s/2f860d60/podcast/rss" type="rss" />
+      <outline title="Minuto Poético" xmlUrl="https://anchor.fm/s/491f42dc/podcast/rss" type="rss" />
+      <outline title="Andreia, Desculpa!" xmlUrl="https://anchor.fm/s/39f4f93c/podcast/rss" type="rss" />
+      <outline title="Quinhentismo GRUPO ESCOLAR" xmlUrl="https://anchor.fm/s/3fc52db4/podcast/rss" type="rss" />
+      <outline title="Contratos De Shopping Center" xmlUrl="https://anchor.fm/s/5de13d60/podcast/rss" type="rss" />
+      <outline title="Podcast - Sistema Operacionais" xmlUrl="https://anchor.fm/s/5e01a960/podcast/rss" type="rss" />
+      <outline title="Bookaholics In Action (BIA)" xmlUrl="https://anchor.fm/s/10473eeac/podcast/rss" type="rss" />
+      <outline title="Flamingo Breeze" xmlUrl="https://feeds.feedburner.com/FlamingoBreeze" type="rss" />
+      <outline title="PodChem" xmlUrl="https://anchor.fm/s/5017e5a8/podcast/rss" type="rss" />
+      <outline title="NEDx" xmlUrl="https://anchor.fm/s/24fb5af8/podcast/rss" type="rss" />
+      <outline title="Podcast PET-SAÚDE Franca/Uni-FACEF" xmlUrl="https://anchor.fm/s/240b4c48/podcast/rss" type="rss" />
+      <outline title="Trabalhos Curso De Pedagogia" xmlUrl="https://anchor.fm/s/1e2989ac/podcast/rss" type="rss" />
+      <outline title="Salvando o Semestre" xmlUrl="https://anchor.fm/s/f64feec/podcast/rss" type="rss" />
+      <outline title="El Faro" xmlUrl="http://fapi-top.prisasd.com/podcast/playser/el_faro/itunestfp/podcast.xml" type="rss" />
+      <outline title="Acção Bíblica de Faro" xmlUrl="https://anchor.fm/s/100e07878/podcast/rss" type="rss" />
+      <outline title="La Torre del Faro" xmlUrl="https://media.rss.com/torre-del-faro/feed.xml" type="rss" />
+      <outline title="Faro em Foco" xmlUrl="https://anchor.fm/s/ff1a5194/podcast/rss" type="rss" />
+      <outline title="Traidor de Classe" xmlUrl="https://feeds.acast.com/public/shows/661e9bb0b00dfb00178f27ed" type="rss" />
+      <outline title="Iglesia Biblica Bautista El Faro" xmlUrl="https://anchor.fm/s/13bcc3d0/podcast/rss" type="rss" />
+      <outline title="Sou Bonita Podcast com Ingrid Faro" xmlUrl="https://anchor.fm/s/641177e0/podcast/rss" type="rss" />
+      <outline title="Faro de Luz" xmlUrl="https://anchor.fm/s/35937378/podcast/rss" type="rss" />
+      <outline title="PodcastFaro" xmlUrl="https://feeds.ivoox.com/feed_fg_f1657132_filtro_1.xml" type="rss" />
+      <outline title="Iglesia El Faro Lanús Este" xmlUrl="https://anchor.fm/s/2aa606d8/podcast/rss" type="rss" />
+      <outline title="Faro Rock Conversaciones" xmlUrl="https://anchor.fm/s/5e0f17a8/podcast/rss" type="rss" />
+      <outline title="Iglesia Bautista El Faro - Predicación Espanol" xmlUrl="http://feeds.feedburner.com/IglesiaBautistaElFaro-PredicacinEspanol" type="rss" />
+      <outline title="Argentina Faro" xmlUrl="https://anchor.fm/s/265821b0/podcast/rss" type="rss" />
+      <outline title="Podcast de Iglesia Bautista El Faro" xmlUrl="https://iglesiabautistaelfaro.podomatic.com/rss2.xml" type="rss" />
+      <outline title="Opferschutzverein El Faro" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:806529790/sounds.rss" type="rss" />
+      <outline title="Ministerio Faro a las Naciones Podcast" xmlUrl="https://faroalasnaciones.podomatic.com/rss2.xml" type="rss" />
+      <outline title="FARO DENTAL" xmlUrl="https://anchor.fm/s/6a0990d8/podcast/rss" type="rss" />
+      <outline title="El Faro Mérida" xmlUrl="https://anchor.fm/s/1111be13c/podcast/rss" type="rss" />
+      <outline title="Radio El Faro" xmlUrl="https://anchor.fm/s/3d711fdc/podcast/rss" type="rss" />
+      <outline title="El Faro Mérida" xmlUrl="https://feeds.ivoox.com/feed_fg_f1692368_filtro_1.xml" type="rss" />
+      <outline title="El Faro, con Teresa Coronel" xmlUrl="https://anchor.fm/s/4d0ad80c/podcast/rss" type="rss" />
+      <outline title="Frecuencia Sonora FARO TLÁHUAC" xmlUrl="https://anchor.fm/s/2d1b41a8/podcast/rss" type="rss" />
+      <outline title="Iglesia Faro de Luz" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:712936912/sounds.rss" type="rss" />
+      <outline title="Faro de Ítaca" xmlUrl="https://anchor.fm/s/109f5ebb4/podcast/rss" type="rss" />
+      <outline title="El Faro Online" xmlUrl="https://anchor.fm/s/55c1f7a0/podcast/rss" type="rss" />
+      <outline title="Cinema Faro" xmlUrl="https://anchor.fm/s/38ceb8b8/podcast/rss" type="rss" />
+      <outline title="El Faro" xmlUrl="https://anchor.fm/s/3bd959a0/podcast/rss" type="rss" />
+      <outline title="¿Y si no resulta como pensabas? — Podcast Faro de Gracia" xmlUrl="https://anchor.fm/s/2f5e462c/podcast/rss" type="rss" />
+      <outline title="FARO INDIOS VERDES" xmlUrl="https://anchor.fm/s/5af05604/podcast/rss" type="rss" />
+      <outline title="FaroCast" xmlUrl="https://anchor.fm/s/3d60b714/podcast/rss" type="rss" />
+      <outline title="El Podcast de Ciberseguridad de Faro Protec" xmlUrl="https://feed.podbean.com/faroprotec/feed.xml" type="rss" />
+      <outline title="Il Faro" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:545616783/sounds.rss" type="rss" />
+      <outline title="Pan de Vida - Iglesia El Faro La Ceiba" xmlUrl="https://anchor.fm/s/80e6a3f4/podcast/rss" type="rss" />
+      <outline title="UPCI El Faro Pentecostal" xmlUrl="https://anchor.fm/s/6b5510e8/podcast/rss" type="rss" />
+      <outline title="El Faro Audio" xmlUrl="https://anchor.fm/s/786bc2a4/podcast/rss" type="rss" />
+      <outline title="The Faroe Islands Podcast" xmlUrl="https://rss.libsyn.com/shows/23796/destinations/34710.xml" type="rss" />
+      <outline title="Faro" xmlUrl="https://anchor.fm/s/f4c1849c/podcast/rss" type="rss" />
+      <outline title="Corporate Kanax" xmlUrl="https://anchor.fm/s/2cec94d4/podcast/rss" type="rss" />
+      <outline title="My voice" xmlUrl="https://anchor.fm/s/5f389fa0/podcast/rss" type="rss" />
+      <outline title="My voice" xmlUrl="https://anchor.fm/s/5f069bb8/podcast/rss" type="rss" />
+      <outline title="El Faro de Redención" xmlUrl="https://elfaroderedencion.podbean.com/feed.xml" type="rss" />
+      <outline title="Faro de Esperanza" xmlUrl="https://anchor.fm/s/809b8a90/podcast/rss" type="rss" />
+      <outline title="«Questa volta non ce la farò» - La storia sospesa di Sara Pedri" xmlUrl="https://www.spreaker.com/show/5803395/episodes/feed" type="rss" />
+      <outline title="El Faro Norte" xmlUrl="https://anchor.fm/s/4a22d090/podcast/rss" type="rss" />
+      <outline title="El Faro" xmlUrl="https://anchor.fm/s/3cce8998/podcast/rss" type="rss" />
+      <outline title="Faro de Conciencia" xmlUrl="https://app.kajabi.com/podcasts/2147527972/feed" type="rss" />
+      <outline title="El faro del Mediterráneo" xmlUrl="https://api.rtve.es/api/adapter/programas/173451/audios.rss" type="rss" />
+      <outline title="Fumaça" xmlUrl="https://fumaca.pt/feed/" type="rss" />
+      <outline title="Podcast Ubuntu Portugal" xmlUrl="https://podcastubuntuportugal.org/feed/podcast/index.xml" type="rss" category="Technology" />
+      <outline title="Purple Yellow Red and Blue – A Portugal The Man Podcast" xmlUrl="https://anchor.fm/s/7f7afc40/podcast/rss" type="rss" category="Music" />
+      <outline title="Podcast - NBA Portugal" xmlUrl="https://feeds.buzzsprout.com/844717.rss" type="rss" category="Sports" />
+      <outline title="PODCAST PORTUGAL" xmlUrl="https://www.podcastportugal.com/episodes?format=rss" type="rss" category="Society" />
+      <outline title="Podcast de Humanitude" xmlUrl="https://rss.buzzsprout.com/2137921.rss" type="rss" category="Education" />
+      <outline title="(RE)PORTUGAL | PODCASTS" xmlUrl="https://rss.buzzsprout.com/1756335.rss" type="rss" category="Society" />
+      <outline title="Ireland Portugal Business Network Podcast series" xmlUrl="https://media.rss.com/ipbn-podcast/feed.xml" type="rss" category="Business" />
+      <outline title="The History of Portugal Podcast" xmlUrl="https://anchor.fm/s/dff00ffc/podcast/rss" type="rss" category="History" />
+      <outline title="CTCP PODCAST" xmlUrl="https://www.ctcp.pt/podcast/rssctcp.xml" type="rss" category="Business" />
+      <outline title="The Resident Podcast" xmlUrl="https://www.spreaker.com/show/6801411/episodes/feed" type="rss" category="News" />
+      <outline title="VA Podcasts" xmlUrl="https://rss.buzzsprout.com/1966669.rss" type="rss" category="Education" />
+      <outline title="Portugal Football Summit Podcast" xmlUrl="https://anchor.fm/s/10f367be8/podcast/rss" type="rss" category="Sports" />
+      <outline title="Safety Leaders Podcast Portugal" xmlUrl="https://www.spreaker.com/show/6390584/episodes/feed" type="rss" category="Business" />
+      <outline title="DH Podcasts - @ Retail" xmlUrl="https://rss.buzzsprout.com/1938222.rss" type="rss" category="News" />
+      <outline title="El podcast de Angelita Portugal Sustaita" xmlUrl="https://www.spreaker.com/show/7042962/episodes/feed" type="rss" category="Society" />
+      <outline title="Sustentável Podcasts" xmlUrl="https://rss.buzzsprout.com/2116208.rss" type="rss" category="Education" />
+      <outline title="Portugalist - The Moving to Portugal Podcast" xmlUrl="https://rss.buzzsprout.com/1932056.rss" type="rss" category="Society" />
+      <outline title="El podcast de Miguel Portugal González" xmlUrl="https://www.spreaker.com/show/6785905/episodes/feed" type="rss" category="Society" />
+      <outline title="BdP Podcast. O Podcast do Banco de Portugal." xmlUrl="https://www.bportugal.pt/sites/default/files/documents/2024-02/podcastsfeed.xml" type="rss" category="News" />
+      <outline title="Branded Content Podcast" xmlUrl="https://www.spreaker.com/show/5901739/episodes/feed" type="rss" category="Business" />
+      <outline title="Moving Abroad With PK Podcast (Life of an Expat in Portugal)" xmlUrl="https://anchor.fm/s/df8ca0e8/podcast/rss" type="rss" category="Society" />
+      <outline title="DC PORTUGAL PODCAST" xmlUrl="https://anchor.fm/s/3cfa8f84/podcast/rss" type="rss" category="Tv" />
+      <outline title="Portugal entre Cafés" xmlUrl="https://www.ivoox.com/portugal-entre-cafes_fg_f11361335_filtro_1.xml" type="rss" category="Society" />
+      <outline title="SEPHORA Podcast" xmlUrl="https://anchor.fm/s/1fc9a648/podcast/rss" type="rss" category="Arts" />
+      <outline title="Blanca’s Living in Portugal Podcast" xmlUrl="https://anchor.fm/s/ae65758/podcast/rss" type="rss" category="Society" />
+      <outline title="After Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:809928811/sounds.rss" type="rss" category="Society" />
+      <outline title="Portugal Spain Podcast" xmlUrl="https://portugalspainboth.podbean.com/feed.xml" type="rss" category="Society" />
+      <outline title="Arsenal Portugal - Podcast" xmlUrl="https://anchor.fm/s/10fa0fcc/podcast/rss" type="rss" category="Sports" />
+      <outline title="O Podcast do Quality Engineering" xmlUrl="https://anchor.fm/s/5000c4f4/podcast/rss" type="rss" category="Technology" />
+      <outline title="Spiritual Portugal Podcast" xmlUrl="https://www.spreaker.com/show/3290414/episodes/feed" type="rss" category="Religion" />
+      <outline title="Portugal Street Philosophy Podcast" xmlUrl="https://anchor.fm/s/3885cc5c/podcast/rss" type="rss" category="Education" />
+      <outline title="Podcast da Plataforma" xmlUrl="https://anchor.fm/s/37b778d4/podcast/rss" type="rss" category="Society" />
+      <outline title="Portugal Wedding Photographers Podcast" xmlUrl="https://anchor.fm/s/4aa159ec/podcast/rss" type="rss" category="Arts" />
+      <outline title="Black Owned Portugal Podcast" xmlUrl="https://anchor.fm/s/42315bb8/podcast/rss" type="rss" category="Business" />
+      <outline title="Podcast Electrónica Portugal" xmlUrl="https://anchor.fm/s/21b4d4dc/podcast/rss" type="rss" category="Technology" />
+      <outline title="Podcast Electrónica Portugal" xmlUrl="https://rss.castbox.fm/everest/4844be84ba474a4386216608f48d00d3.xml" type="rss" category="Technology" />
+      <outline title="SEPHORA PORTUGAL - Podcasts Formação" xmlUrl="https://anchor.fm/s/3588856c/podcast/rss" type="rss" category="Education" />
+      <outline title="Podcast da IRE - Igreja Reformada Evangélica em Portugal" xmlUrl="https://anchor.fm/s/30b95e08/podcast/rss" type="rss" category="Religion" />
+      <outline title="PODCAST SEM NOME" xmlUrl="https://anchor.fm/s/30c235b4/podcast/rss" type="rss" category="Health" />
+      <outline title="Gaming Portugal Podcast" xmlUrl="https://anchor.fm/s/5d0112a8/podcast/rss" type="rss" category="Leisure" />
+      <outline title="I'd Like To Thank Myself" xmlUrl="https://feeds.transistor.fm/id-like-to-thank-myself" type="rss" category="Arts" />
+      <outline title="Arroe Collins Like It's Live" xmlUrl="https://www.spreaker.com/show/4113802/episodes/feed" type="rss" category="News" />
+      <outline title="Seriously Mysterious - Missing Persons, Unsolved Murders &amp; Historical True Crime" xmlUrl="https://www.spreaker.com/show/4532075/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Life Hacks DIY &amp; More - Transform Your Everyday With Simple Tricks and DIY Magic!" xmlUrl="https://www.spreaker.com/show/5995484/episodes/feed" type="rss" category="Education" />
+      <outline title="Reddit Stories" xmlUrl="https://www.spreaker.com/show/6370551/episodes/feed" type="rss" category="Leisure" />
+      <outline title="The Kyle Peterson Show" xmlUrl="https://www.spreaker.com/show/6573404/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Reality After Show" xmlUrl="https://www.spreaker.com/show/5448874/episodes/feed" type="rss" category="Tv" />
+      <outline title="3-Bit Gamer Show" xmlUrl="https://www.spreaker.com/show/2255796/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Come explore the paranormal files as we delve into the unexplained. The paranormal podcast." xmlUrl="https://www.spreaker.com/show/5547977/episodes/feed" type="rss" category="Society" />
+      <outline title="Minding Your Business Podcast" xmlUrl="https://www.spreaker.com/show/6367325/episodes/feed" type="rss" category="Business" />
+      <outline title="95.3 Gorilla" xmlUrl="https://wznfpodcast.mainevibe.com/feed.xml" type="rss" category="Music" />
+      <outline title="Gamefully Unemployed" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:395741505/sounds.rss" type="rss" category="Tv" />
+      <outline title="Cog-Dog Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:236473103/sounds.rss" type="rss" category="Education" />
+      <outline title="Managing Tech Millions" xmlUrl="https://feeds.redcircle.com/8f2225e0-c4ac-469c-9e36-07f3677a22a7" type="rss" category="Business" />
+      <outline title="Vocal Booth Radio Listen Again" xmlUrl="https://vocalboothradio.com/feed/mp3" type="rss" category="Music" />
+      <outline title="Daily Shower Thoughts" xmlUrl="https://feeds.megaphone.fm/dailyshowerthoughts" type="rss" category="Comedy" />
+      <outline title="BIG Life Devotional | Daily Devotional for Women" xmlUrl="https://biglifehq.com/feed/podcast" type="rss" category="Religion" />
+      <outline title="Fun Content" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1469" type="rss" category="News" />
+      <outline title="94WIP Morning Show with Joe DeCamara and Jon Ritchie" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/philadelphia_wipfm-94wip_morning_show_with_joe_decamara_and_jon_ritchie" type="rss" category="Sports" />
+      <outline title="Based Camp | Simone &amp; Malcolm Collins" xmlUrl="https://api.substack.com/feed/podcast/1643534/s/64409.rss" type="rss" category="Society" />
+      <outline title="Bonjour France Podcast" xmlUrl="https://www.spreaker.com/show/6773527/episodes/feed" type="rss" category="Society" />
+      <outline title="Milena's Diary" xmlUrl="https://feeds.megaphone.fm/hmstalksltd9487207744" type="rss" category="Society" />
+      <outline title="North Point Baptist Church Sermons" xmlUrl="https://www.spreaker.com/show/6124300/episodes/feed" type="rss" category="Religion" />
+      <outline title="York County's Morning Show" xmlUrl="https://www.spreaker.com/show/6243862/episodes/feed" type="rss" category="Society" />
+      <outline title="Brian Thomas" xmlUrl="https://www.spreaker.com/show/2459972/episodes/feed" type="rss" category="News" />
+      <outline title="Wave 94" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:16676106/sounds.rss" type="rss" category="Religion" />
+      <outline title="Cleveland Browns News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/cleveland-browns-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Cork News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/fort-smith-daily-news-now.xml" type="rss" category="News" />
+      <outline title="The Missing Persons Report" xmlUrl="https://www.spreaker.com/show/6763610/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Rabbi Kraz's Shiurim" xmlUrl="https://anchor.fm/s/d89491c4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Toronto Today with Greg Brady" xmlUrl="https://feeds.megaphone.fm/coru2066336057" type="rss" category="News" />
+      <outline title="The Drake Toll Show" xmlUrl="https://feeds.megaphone.fm/wwo4349656783" type="rss" category="News" />
+      <outline title="Going Ultra - Presented by Henshin Inspection" xmlUrl="https://media.rss.com/mjmgu/feed.xml" type="rss" category="Tv" />
+      <outline title="JPost Headlines" xmlUrl="https://www.spreaker.com/show/6677418/episodes/feed" type="rss" category="News" />
+      <outline title="Audio Mises Wire" xmlUrl="https://cdn.mises.org/itunes/en_127226.xml" type="rss" category="News" />
+      <outline title="Outsource to Profits Podcast" xmlUrl="https://feed.podbean.com/getlevrg/feed.xml" type="rss" category="Business" />
+      <outline title="24 Oras Podcast" xmlUrl="https://feeds.acast.com/public/shows/685d292847311de1b6e0e89a" type="rss" category="News" />
+      <outline title="Excess Returns" xmlUrl="https://anchor.fm/s/9a1dfac/podcast/rss" type="rss" category="Business" />
+      <outline title="Red Sox Digest Podcast" xmlUrl="https://www.spreaker.com/show/6691213/episodes/feed" type="rss" category="News" />
+      <outline title="The Tony Kornheiser Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/the-tony-kornheiser-show" type="rss" category="Sports" />
+      <outline title="Radio Miraya" xmlUrl="https://audioboom.com/channels/3891441.rss" type="rss" category="Technology" />
+      <outline title="Pivot: SHIFT Ahead Mastermind" xmlUrl="https://media.rss.com/pivot-shift-ahead-mastermind/feed.xml" type="rss" category="Business" />
+      <outline title="Los Angeles Rams News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/los-angeles-rams-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Pursuit Of Purpose" xmlUrl="https://feed.podbean.com/popmartinsr/feed.xml" type="rss" category="Business" />
+      <outline title="Get Up" xmlUrl="https://feeds.megaphone.fm/esp2870920494" type="rss" category="Sports" />
+      <outline title="Courtney and KISS in the morning" xmlUrl="https://www.spreaker.com/show/2497425/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Computer Talk with TAB" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/f8c743d7682ab4bac553696e6093d3e7" type="rss" category="Business" />
+      <outline title="Tennessee Titans News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/tennessee-titans-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Wrestle Radio Australia" xmlUrl="https://wrestleradioaustralia.libsyn.com/rss" type="rss" category="Sports" />
+      <outline title="Hope Expression Podcast" xmlUrl="https://www.spreaker.com/show/5891904/episodes/feed" type="rss" category="Religion" />
+      <outline title="Spurs Chat: Discussing all Things Tottenham Hotspur: Hosted by Chris Cowlin: The Daily Tottenham/Spurs Podcast" xmlUrl="https://feeds.acast.com/public/shows/639c5ea1bcab760012015b61" type="rss" category="Sports" />
+      <outline title="Federalist Radio Hour" xmlUrl="https://feeds.feedburner.com/ricochetaudionetwork/federalistradiohour" type="rss" category="News" />
+      <outline title="The Irish Passport" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298752213/sounds.rss" type="rss" category="Society" />
+      <outline title="The Lunduke Journal of Technology" xmlUrl="https://api.substack.com/feed/podcast/462466.rss" type="rss" category="Technology" />
+      <outline title="Boston Bruins News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/boston-bruins-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Warden's Watch" xmlUrl="https://feeds.megaphone.fm/wpcm3659727000" type="rss" category="Sports" />
+      <outline title="Experience in Golf Clubhouse Design" xmlUrl="https://feeds.libsyn.com/475266/rss" type="rss" category="Arts" />
+      <outline title="Betting Weekly Studios" xmlUrl="https://feeds.megaphone.fm/rerre3101069934" type="rss" category="Sports" />
+      <outline title="The Long Run with Luke Timmerman" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:317770704/sounds.rss" type="rss" category="Science" />
+      <outline title="Belfast News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/bridgeport-daily-news-now.xml" type="rss" category="News" />
+      <outline title="AM Quincy" xmlUrl="https://feeds.feedburner.com/qatv_amquincypodcast" type="rss" category="Government" />
+      <outline title="Autoblog News" xmlUrl="https://feeds.feedburner.com/podcast/autoblog" type="rss" category="Games" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast" type="rss" category="News" />
+      <outline title="DD Fantasy Football Radio" xmlUrl="https://feeds.megaphone.fm/blu7133453702" type="rss" category="Sports" />
+      <outline title="Cybercrime Magazine Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286242900/sounds.rss" type="rss" category="Technology" />
+      <outline title="Lawrence News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/lawrence-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Sasquatch Experience" xmlUrl="https://www.spreaker.com/show/4208641/episodes/feed" type="rss" category="Science" />
+      <outline title="Ciliberto and Friends" xmlUrl="https://www.spreaker.com/show/5983689/episodes/feed" type="rss" category="Music" />
+      <outline title="The Automated Daily" xmlUrl="https://theautomateddaily.com/feed.xml" type="rss" category="Technology" />
+      <outline title="The Automated Daily - Space News Edition" xmlUrl="https://theautomateddaily.com/space/feed.xml" type="rss" category="Science" />
+      <outline title="Word Balloon Comics Podcast" xmlUrl="https://www.spreaker.com/show/3143082/episodes/feed" type="rss" category="Tv" />
+      <outline title="Daily Morning Class" xmlUrl="https://media.rss.com/rabbiyedid/feed.xml" type="rss" category="Religion" />
+      <outline title="Reality with The King" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a1735c70-f70f-4045-805b-b302010c5b8c/5db0a3af-13d8-4a16-974c-b302010c5bb4/podcast.rss" type="rss" category="Tv" />
+      <outline title="The Dentalpreneur Podcast w/ Dr. Mark Costes" xmlUrl="https://markcostes.libsyn.com/rss" type="rss" category="Business" />
+      <outline title="The Kapeel Gupta Career Podshow" xmlUrl="https://rss.buzzsprout.com/2012553.rss" type="rss" category="Business" />
+      <outline title="What in the World" xmlUrl="https://podcasts.files.bbci.co.uk/w13xtvrv.rss" type="rss" category="News" />
+      <outline title="The Buddy System with Chris &amp; Matty" xmlUrl="https://feeds.megaphone.fm/mduyh3921896096?1?1" type="rss" category="Comedy" />
+      <outline title="Fore Love of Golf" xmlUrl="https://feeds.megaphone.fm/rogxo2747915340" type="rss" category="Sports" />
+      <outline title="Dr. John Campbell" xmlUrl="https://feeds.megaphone.fm/vg9554039150" type="rss" category="Education" />
+      <outline title="Paranormal UK Radio Network" xmlUrl="https://www.spreaker.com/show/4541473/episodes/feed" type="rss" category="Society" />
+      <outline title="This Day in History" xmlUrl="https://feeds.redcircle.com/9339ef5f-2c20-4a38-b60d-eb4ac27759c3" type="rss" category="History" />
+      <outline title="Football Social Daily" xmlUrl="https://feeds.megaphone.fm/comg9297908545" type="rss" category="Sports" />
+      <outline title="Edmonton News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-stockton-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Park Avenue Synagogue Podcast" xmlUrl="https://feed.podbean.com/parkavenuepodcast/feed.xml" type="rss" category="Religion" />
+      <outline title="PreMarket Prep" xmlUrl="https://anchor.fm/s/fd33c360/podcast/rss" type="rss" category="Business" />
+      <outline title="StribSports Daily Delivery" xmlUrl="https://feeds.megaphone.fm/stribsportsdailydelivery" type="rss" category="Sports" />
+      <outline title="Legacy Nashville Podcast" xmlUrl="https://media.rss.com/legacy-nashville-podcast/feed.xml" type="rss" category="Religion" />
+      <outline title="&quot;There I was...&quot; An Aviation Podcast" xmlUrl="https://feeds.megaphone.fm/aopa1855704656" type="rss" category="Leisure" />
+      <outline title="Marketer of the Day with Robert Plank: Business Growth &amp; Entrepreneur Stories" xmlUrl="https://www.robertplank.com/feed/podcast" type="rss" category="Business" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="News" />
+      <outline title="In The Money Media Network" xmlUrl="https://feeds.captivate.fm/in-the-money-media-network" type="rss" category="Sports" />
+      <outline title="This Paranormal Life" xmlUrl="https://feeds.megaphone.fm/nsr2334813337" type="rss" category="Comedy" />
+      <outline title="Let's Address This with Qasim Rashid Podcast" xmlUrl="https://api.substack.com/feed/podcast/2550223.rss" type="rss" category="News" />
+      <outline title="Flashscore News" xmlUrl="https://feeds.captivate.fm/flashscore-news" type="rss" category="News" />
+      <outline title="JACC Global" xmlUrl="https://feeds.libsyn.com/75161" type="rss" category="Health" />
+      <outline title="Health News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/health-and-fitness-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Health" />
+      <outline title="Food Freedom" xmlUrl="https://anchor.fm/s/d625f518/podcast/rss" type="rss" category="Health" />
+      <outline title="See Ball Get Ball with David Pollack" xmlUrl="https://media.rss.com/see-ball-get-ball-david-pollack/feed.xml" type="rss" category="Sports" />
+      <outline title="Blurt Vibes" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1398" type="rss" category="News" />
+      <outline title="Twisted Podcast" xmlUrl="https://twistedpodcast.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Billianon" xmlUrl="https://podcast.billianon.com/@billianon/feed.xml" type="rss" category="Education" />
+      <outline title="Global Research Unlocked" xmlUrl="https://feed.podbean.com/bofaglobalresearch/feed.xml" type="rss" category="Business" />
+      <outline title="Fresh Pinball Podcast" xmlUrl="https://media.rss.com/freshpinballpodcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Georgia Tech Yellow Jackets Football Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/georgia-tech-yellow-jackets-football-today-2-min-news.xml" type="rss" category="News" />
+      <outline title="Magical Transformations" xmlUrl="https://feeds.captivate.fm/magicaltrasformations" type="rss" category="Health" />
+      <outline title="The Nielson Show" xmlUrl="https://feeds.libsyn.com/481581/rss" type="rss" category="Sports" />
+      <outline title="The Bridge" xmlUrl="https://www.spreaker.com/show/3099883/episodes/feed" type="rss" category="Sports" />
+      <outline title="Politics Unpacked" xmlUrl="https://feeds.acast.com/public/shows/92a301e1-443b-435f-b4e2-2e2dd1e37fc5" type="rss" category="News" />
+      <outline title="*“Yesterday, I Went to Mars ♡”*" xmlUrl="https://anchor.fm/s/fcce555c/podcast/rss" type="rss" category="Society" />
+      <outline title="SYSTEMIZE YOUR LIFE + BUSINESS | Schedules, Routines, Productivity, Time Management, Operating System" xmlUrl="https://feed.podbean.com/systemizeyourlife/feed.xml" type="rss" category="Kids" />
+      <outline title="San Francisco 49ers News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/san-francisco-49ers-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Chiney Today" xmlUrl="https://feeds.megaphone.fm/esp1950629932" type="rss" category="Sports" />
+      <outline title="Top Entrepreneurs Podcast | Enterprise Podcast Network" xmlUrl="https://feeds.feedburner.com/entrepreneurpodcastnetwork" type="rss" category="Business" />
+      <outline title="Restoration Home with Jennifer Pepito" xmlUrl="https://feed.podbean.com/restorationhome/feed.xml" type="rss" category="Kids" />
+      <outline title="Keys to Success" xmlUrl="https://www.spreaker.com/show/6414073/episodes/feed" type="rss" category="Society" />
+      <outline title="Athletics Weekly Podcast" xmlUrl="https://feeds.acast.com/public/shows/6697e5223fac6c42420fe0e8" type="rss" category="Sports" />
+      <outline title="Mully &amp; Haugh Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/chicago_wscram_mully___haugh_show" type="rss" category="Sports" />
+      <outline title="Grow My Salon Business Podcast" xmlUrl="https://feeds.transistor.fm/grow-my-salon-business-podcast" type="rss" category="Arts" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="News" />
+      <outline title="Mornings With Gary Byron Podcast" xmlUrl="https://feeds.transistor.fm/mornings-with-gary-byron-podcast" type="rss" category="News" />
+      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed" type="rss" category="News" />
+      <outline title="VINCE" xmlUrl="https://feeds.megaphone.fm/wwo4092921469" type="rss" category="News" />
+      <outline title="Arkansas Razorbacks Basketball News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/arkansas-razorbacks-basketball-news-today-2-min-news-the-dai.xml" type="rss" category="News" />
+      <outline title="Galway Bay fm - Sports" xmlUrl="https://galwaybayfmsports.podbean.com/feed.xml" type="rss" category="Sports" />
+      <outline title="Harmonizing Success" xmlUrl="https://www.spreaker.com/show/6418590/episodes/feed" type="rss" category="Business" />
+      <outline title="World Today" xmlUrl="https://aezfm.meldingcloud.com/rss/program/46" type="rss" category="News" />
+      <outline title="Montreal Canadiens News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/montreal-canadiens-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Giggly Squad" xmlUrl="https://feeds.acast.com/public/shows/780a3042-864b-40fa-ae09-4557aec621c3" type="rss" category="Comedy" />
+      <outline title="Hidden Money Podcast" xmlUrl="https://feeds.transistor.fm/hidden-money-podcast" type="rss" category="Business" />
+      <outline title="NomadTreneur" xmlUrl="https://www.spreaker.com/show/5936988/episodes/feed" type="rss" category="Society" />
+      <outline title="Healing TRAUMA" xmlUrl="https://media.rss.com/hopehealing/feed.xml" type="rss" category="Education" />
     </outline>
-    
-    
     <outline text="Photography">
-      
-      
-      <outline title="Portugal em Foco" xmlUrl="https://portugalemfoco.pt/feed/" type="rss"/>
-      
-    
+      <outline title="Portugal em Foco" xmlUrl="https://portugalemfoco.pt/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Apple">
-      
-      
-      <outline title="Pplware Apple" xmlUrl="https://pplware.sapo.pt/category/apple/feed/" type="rss"/>
-      
-    
+      <outline title="Pplware Apple" xmlUrl="https://pplware.sapo.pt/category/apple/feed/" type="rss" />
     </outline>
-    
-
     <outline text="YouTube">
-      <outline title="Enaldinho" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2bYhAHyaqfWlPXWBVk4BcA" type="rss"/>
-      <outline title="Hybe Labels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
-      <outline title="whinderssonnunes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3KQ5GWANYF8lChqjZpXsQw" type="rss"/>
-      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
-      <outline title="Colors TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
-      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
-      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
-      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
-      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9zs_bkRRTJa2kRsakFaFmw" type="rss"/>
-      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
-      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
-      <outline title="Shemaroo Filmi Gaane" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF1JIbMUs6uqoZEY1Haw0GQ" type="rss"/>
-      <outline title="ซี เอนเตอร์เทนเมนต์ เอ็นเตอร์ไพรส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
-      <outline title="El Reino Infantil" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIvZt-Vuvk9MuCWxiSQyyuw" type="rss"/>
-      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
-      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
-      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
-      <outline title="Maria Clara &amp; JP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKe6w0exI94U-RzqAyoY1VA" type="rss"/>
-      <outline title="ทีเคโอ กรุป โฮลดิงส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
-      <outline title="GR6 EXPLODE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNUQK9mQoqi4yNXw2_Rj6SA" type="rss"/>
-      <outline title="2 de Fevereiro de 2024" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP9MW9ATjUwwulqEYTbp-Mw" type="rss"/>
-      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
-      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
-      <outline title="Felipe Neto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV306eHqgo0LvBf3Mh36AHg" type="rss"/>
-      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
-      <outline title="Bispo Bruno Leonardo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVNouUw3d3l5JYVCxhAQXKA" type="rss"/>
-      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
-      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYPvAwZP8pZhSMW8qs7cVCw" type="rss"/>
-      <outline title="Canal KondZilla" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ2HtmLHc33CczdI8PHs2NA" type="rss"/>
-      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZjUXkKr9GiSV43YSaZVO7Q" type="rss"/>
-      <outline title="LUCCAS NETO - LUCCAS TOON" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_gV70G_Y51LTa3qhu8KiEA" type="rss"/>
-      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
-      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
-      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
-      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
-      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
-      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
-      <outline title="กุลชาน กุมาร์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
-      <outline title="Você Sabia?" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj0O6W8yDuLg3iraAXKgCrQ" type="rss"/>
-      <outline title="คัลเวอร์ แม็กซ์ เอนเตอร์เทนเมนต์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
-      <outline title="Spider Slack" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtiddfzHXNevG-yYe5vc_4Q" type="rss"/>
-      <outline title="เอวา เดียนา คิดิซิยูก" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCx790OVgpTC1UVBQIqu3gnQ" type="rss"/>
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+      <outline title="Philip DeFranco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="PEACEMAKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC83sD4FTgJ4wn8cTCWjfu6g" type="rss" />
+      <outline title="Maya e Mary - Canções infantis" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5RY4i5NtY2ktLKlTmzly3A" type="rss" />
+      <outline title="Diabo Lilith" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUrcKNXtIXgMQUu4KrnLGRQ" type="rss" />
+      <outline title="DIÁRIO PRIVADO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMrk4u6llLzkTPToCk0Y1kA" type="rss" />
+      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+      <outline title="Like Nastya" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="Goldmines" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
+    </outline>
+    <outline text="Podcast">
+      <outline title="Renascença - Extremamente Desagradável" xmlUrl="https://www.omnycontent.com/d/playlist/58028bcf-e01f-4274-aca7-ad3300f67928/863f2472-d5a7-43df-ae4e-ad7c00b2c18b/516d596c-f0a8-4a56-a528-ad7c00b2c364/podcast.rss" type="rss" category="Comedy" />
+      <outline title="O Homem que Mordeu o Cão" xmlUrl="https://rss.podplaystudio.com/3240.xml" type="rss" category="Comedy" />
+      <outline title="isso não se diz" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1236693358/sounds.rss" type="rss" category="Comedy" />
+      <outline title="Programa Cujo Nome Estamos Legalmente Impedidos de Dizer" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/c2325e96-d6ad-4206-b72b-ad8e00e5f4fe/bbc8a8c5-8da7-46ef-843f-ad8e00e5f515/podcast.rss" type="rss" category="News" />
+      <outline title="O Candidato Perfeito" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/b4288faf-dcad-4b30-81c1-b47b010ffa74/12cca402-0a12-4106-bcb1-b47b010ffefb/podcast.rss" type="rss" category="Fiction" />
+      <outline title="Expresso da Manhã" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/064a2199-5efd-4493-91fd-ad8e00d05623/d386d7cf-461c-4185-8e79-ad8e00d05636/podcast.rss" type="rss" category="News" />
+      <outline title="Assim Vamos Ter de Falar de Outra Maneira" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/4d34c22e-22fd-41a7-86ad-b2a4012ae35e/ac56cf5b-e924-459d-867f-b2a4012aea10/podcast.rss" type="rss" category="Comedy" />
+      <outline title="É para o lado que eu durmo pior" xmlUrl="https://anchor.fm/s/113f66814/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Contas-Poupança" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/1dbff6ea-fa77-473e-9679-b07400b68571/cc5fa5ac-16f7-4448-9b71-b07400b685ca/podcast.rss" type="rss" category="Business" />
+      <outline title="FUSO" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:721739224/sounds.rss" type="rss" category="Comedy" />
+      <outline title="Eixo do Mal" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/d5bfd5a8-717c-4857-8245-ad8e00e59d02/7d7b813e-b9e1-461a-91a1-ad8e00e59d0b/podcast.rss" type="rss" category="News Commentary" />
+      <outline title="Renascença - Seja o que Deus Quiser" xmlUrl="https://www.omnycontent.com/d/playlist/58028bcf-e01f-4274-aca7-ad3300f67928/91df467c-d550-471f-a34c-b01c00a3567b/28920256-3060-40fb-b1ef-b01c00a358c3/podcast.rss" type="rss" category="Comedy" />
+      <outline title="Prova Oral" xmlUrl="https://www.omnycontent.com/d/playlist/f175b1e3-ecc7-4dc5-8307-b3aa008ffd8a/066fc33c-7966-4ec8-81bf-b40300f6c907/65e779b3-5cd1-4988-a18a-b40300f6c910/podcast.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Renascença - As pessoas têm que se acalmar, imediatamente!" xmlUrl="https://www.omnycontent.com/d/playlist/58028bcf-e01f-4274-aca7-ad3300f67928/72cc82cc-34d6-4d38-8e92-b37101218893/a5b861e2-ffe5-417d-a800-b371012190db/podcast.rss" type="rss" category="Comedy" />
+      <outline title="A História do Dia" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/608bb2e4-5b5f-49c9-9889-ae390106b3a2/e59accef-a2c2-4942-bd26-ae390108882b/podcast.rss" type="rss" category="News" />
+      <outline title="O que fazer quando tudo arde" xmlUrl="https://www.omnycontent.com/d/playlist/763f22a5-d3d9-4f9c-913e-b05701387d6e/dfe6dc2a-8b15-402c-88ac-b42e0108f094/e0eb9dd1-4fca-44d7-a361-b42e0108f51d/podcast.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Terapia de Segunda" xmlUrl="https://rss.podplaystudio.com/3429.xml" type="rss" category="Comedy" />
+      <outline title="watch.tm" xmlUrl="https://anchor.fm/s/df67421c/podcast/rss" type="rss" category="Comedy" />
+      <outline title="The Diary Of A CEO with Steven Bartlett" xmlUrl="https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn" type="rss" category="Business" />
+      <outline title="Bate Pé" xmlUrl="https://anchor.fm/s/109359cd8/podcast/rss" type="rss" category="Comedy" />
+      <outline title="O Princípio da Inquietação" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/cfd89ed8-3742-4819-8ab1-b43c00b0cc35/b1dd3abe-887f-4364-a954-b43c00b0d0b9/podcast.rss" type="rss" category="Philosophy" />
+      <outline title="Irritações" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/8cbc2157-2932-436e-b6b0-ad8e00e653c2/7f9ba56a-578a-4890-947a-ad8e00e653d0/podcast.rss" type="rss" category="News Commentary" />
+      <outline title="The Rest Is History" xmlUrl="https://feeds.megaphone.fm/GLT4787413333" type="rss" category="History" />
+      <outline title="Despolariza" xmlUrl="https://feeds.megaphone.fm/TMLDA5346540095" type="rss" category="Society &amp; Culture" />
+      <outline title="Voz de Cama" xmlUrl="https://www.omnycontent.com/d/playlist/f175b1e3-ecc7-4dc5-8307-b3aa008ffd8a/53688e50-b2b7-4eaa-8f95-b40300f6ca30/297c745e-77be-4ff2-adf8-b40300f6ca37/podcast.rss" type="rss" category="Health &amp; Fitness" />
+      <outline title="Consulta Aberta" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/7b1938f0-c9df-49cf-9e58-b16a00c4bdf6/bc4b3dd8-bd75-48d4-b8d1-b16a00c80dae/podcast.rss" type="rss" category="Health &amp; Fitness" />
+      <outline title="No Princípio era a Bola" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/5bd6b6d2-a88f-479f-8d21-b055012cf0f2/768dad18-6648-4539-b181-b055012ed7a5/podcast.rss" type="rss" category="Sports" />
+      <outline title="O Prazer é Todo Meu" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/2418c7ae-65b8-4623-abbb-b41700f15c4b/c790433b-ca9e-47b5-8da2-b41700f160d2/podcast.rss" type="rss" category="Sexuality" />
+      <outline title="O CEO é o limite" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/19542692-7b7e-4941-82fa-af7b01078cb8/de4b16ae-fa04-4fb8-bf19-af7b010abd6f/podcast.rss" type="rss" category="Business" />
+      <outline title="̶N̶ã̶o̶ fica bem falar de..." xmlUrl="https://anchor.fm/s/f3d088d0/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="O Nosso Olhar Para Ti" xmlUrl="https://rss.podplaystudio.com/3362.xml" type="rss" category="Mental Health" />
+      <outline title="Contra-Corrente" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/ecbc4619-6864-42dd-b202-aa7800eee13f/b8f098a0-cf1d-4f40-9ba3-aa7800eefdd3/podcast.rss" type="rss" category="News" />
+      <outline title="O Bom, o Mau e o Vilão" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/283c390d-550e-476e-92dd-aa7800f2a1d3/1a463122-6984-47e7-ada2-aa7800f2ce32/podcast.rss" type="rss" category="News" />
+      <outline title="Comissão Política" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/1bbe5b2d-4e35-4ff9-9159-ad8e00cdf638/8636b64a-890d-434d-b847-ad8e00cdf64b/podcast.rss" type="rss" category="Politics" />
+      <outline title="Economia dia a dia" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/2b40e5ee-c5d5-41f0-8d7a-afbd0132c937/6184058c-dc70-43b9-88a5-afbd0135a817/podcast.rss" type="rss" category="Business" />
+      <outline title="TSF - Visão de Jogo - Podcast" xmlUrl="https://feeds.feedburner.com/visao-de-jogo" type="rss" category="Sports" />
+      <outline title="Literacia Financeira para Todos" xmlUrl="https://anchor.fm/s/1129e4c48/podcast/rss" type="rss" category="Investing" />
+      <outline title="Falando de História" xmlUrl="https://anchor.fm/s/4070de0c/podcast/rss" type="rss" category="History" />
+      <outline title="Bitalk" xmlUrl="https://anchor.fm/s/df6b30c/podcast/rss" type="rss" category="Entrepreneurship" />
+      <outline title="Fundação (FFMS) - [IN]Pertinente" xmlUrl="https://rss.buzzsprout.com/1743237.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Portugalex" xmlUrl="https://www.omnycontent.com/d/playlist/f175b1e3-ecc7-4dc5-8307-b3aa008ffd8a/4a9dbeb6-76e5-43db-a73d-b40300f6c612/5448fc3c-ab42-4696-8f66-b40300f6c619/podcast.rss" type="rss" category="Comedy" />
+      <outline title="Os Ficheiros do Caso Carlos Castro" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/20982591-91a3-4938-9b73-b41d009c4824/425e273e-46f6-452b-a1ff-b41d009c4cac/podcast.rss" type="rss" category="True Crime" />
+      <outline title="Torto e Direito" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/43e3fbed-8c7d-4950-8001-b30800afd7b7/cbe39032-7f78-401e-b7ce-b30800afdd48/podcast.rss" type="rss" category="Politics" />
+      <outline title="Leste/Oeste de Nuno Rogeiro" xmlUrl="https://www.omnycontent.com/d/playlist/8c0a4104-a688-4e57-91fd-ad7b00d5dddd/c21f9593-318c-4f18-965a-ad8e00c1c070/e4249a83-8aee-4f34-90b1-ad8e00c1c087/podcast.rss" type="rss" category="News" />
+      <outline title="Vamos Viajar na Maionese" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:1528321284/sounds.rss" type="rss" category="Society &amp; Culture" />
+      <outline title="O Escândalo que Destruiu a Seleção" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/39e80699-7c37-487b-a4fc-b458011d5e54/a53c4eaf-31d6-4391-b523-b458011d6314/podcast.rss" type="rss" category="Soccer" />
+      <outline title="Aprender a Comer" xmlUrl="https://www.omnycontent.com/d/playlist/b04d3ae5-22c4-41b6-b20a-aa54000ba759/fd2a596a-a7ff-4c1b-9dba-aa7800f00d9c/a0a19ff9-0ec6-4848-b406-aa7800f029a5/podcast.rss" type="rss" category="Nutrition" />
+      <outline title="Mixórdia de Temáticas" xmlUrl="https://rss.podplaystudio.com/3266.xml" type="rss" category="Comedy" />
+      <outline title="O Amor é" xmlUrl="https://www.omnycontent.com/d/playlist/f175b1e3-ecc7-4dc5-8307-b3aa008ffd8a/cc7c59cb-4d8c-46a2-bda4-b40300f6c3b8/1751650a-39f3-4436-984c-b40300f6c3cb/podcast.rss" type="rss" category="News" />
+    </outline>
+    <outline text="Social">
+      <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
     </outline>
   </body>
-  
-
 </opml>

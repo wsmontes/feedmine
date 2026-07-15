@@ -4,14 +4,17 @@
     <title>Rhode Island Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Rhode Island Current" xmlUrl="https://rhodeislandcurrent.com/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Rhode Island Current" xmlUrl="https://rhodeislandcurrent.com/feed/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="URI News" xmlUrl="https://www.uri.edu/rss" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="The Public's Radio" xmlUrl="https://thepublicsradio.org/rss" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="URI News" xmlUrl="https://www.uri.edu/rss" type="rss" />
-      </outline>
-      <outline text="Culture">
-        <outline title="The Public's Radio" xmlUrl="https://thepublicsradio.org/rss" type="rss" />
-      </outline></body>
-    </opml>
+  </body>
+</opml>

@@ -5,66 +5,34 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="Houston Chronicle" xmlUrl="https://www.houstonchronicle.com/rss" type="rss" />
-      <outline title="Dallas Morning News" xmlUrl="https://www.dallasnews.com/rss" type="rss" />
-      <outline title="Austin American-Statesman" xmlUrl="https://www.statesman.com/rss" type="rss" />
-      <outline title="San Antonio Express-News" xmlUrl="https://www.expressnews.com/rss" type="rss" />
       <outline title="Fort Worth Star-Telegram" xmlUrl="https://www.star-telegram.com/rss" type="rss" />
       <outline title="Texas Tribune" xmlUrl="https://www.texastribune.org/feed/" type="rss" />
-      <outline title="El Paso Times" xmlUrl="https://www.elpasotimes.com/rss" type="rss" />
-      <outline title="Corpus Christi Caller-Times" xmlUrl="https://www.caller.com/rss" type="rss" />
-      <outline title="Lubbock Avalanche-Journal" xmlUrl="https://www.lubbockonline.com/rss" type="rss" />
-      <outline title="Amarillo Globe-News" xmlUrl="https://www.amarillo.com/rss" type="rss" />
-      <outline title="Waco Tribune-Herald" xmlUrl="https://www.wacotrib.com/rss" type="rss" />
-      <outline title="Abilene Reporter-News" xmlUrl="https://www.reporternews.com/rss" type="rss" />
-      <outline title="San Angelo Standard-Times" xmlUrl="https://www.gosanangelo.com/rss" type="rss" />
-      <outline title="Wichita Falls Times Record" xmlUrl="https://www.timesrecordnews.com/rss" type="rss" />
-      <outline title="Midland Reporter-Telegram" xmlUrl="https://www.mrt.com/rss" type="rss" />
       <outline title="Odessa American" xmlUrl="https://www.oaoa.com/rss" type="rss" />
       <outline title="Brownsville Herald" xmlUrl="https://www.brownsvilleherald.com/rss" type="rss" />
       <outline title="McAllen Monitor" xmlUrl="https://www.themonitor.com/rss" type="rss" />
-      <outline title="Laredo Morning Times" xmlUrl="https://www.lmtonline.com/rss" type="rss" />
-      <outline title="Beaumont Enterprise" xmlUrl="https://www.beaumontenterprise.com/rss" type="rss" />
       <outline title="Tyler Morning Telegraph" xmlUrl="https://tylerpaper.com/rss" type="rss" />
       <outline title="Longview News-Journal" xmlUrl="https://www.news-journal.com/rss" type="rss" />
-      <outline title="Galveston Daily News" xmlUrl="https://www.galvnews.com/rss" type="rss" />
-      <outline title="Texarkana Gazette" xmlUrl="https://www.texarkanagazette.com/rss" type="rss" />
       <outline title="Austin Chronicle" xmlUrl="https://www.austinchronicle.com/feed/" type="rss" />
       <outline title="Dallas Observer" xmlUrl="https://www.dallasobserver.com/feed/" type="rss" />
       <outline title="Houston Press" xmlUrl="https://www.houstonpress.com/feed/" type="rss" />
       <outline title="San Antonio Current" xmlUrl="https://www.sacurrent.com/feed/" type="rss" />
     </outline>
     <outline text="Politics">
-      <outline title="Governor Abbott News" xmlUrl="https://gov.texas.gov/rss" type="rss" />
-      <outline title="Texas Senate News" xmlUrl="https://senate.texas.gov/rss" type="rss" />
       <outline title="Texas House News" xmlUrl="https://house.texas.gov/rss" type="rss" />
-      <outline title="Texas Attorney General" xmlUrl="https://www.texasattorneygeneral.gov/rss" type="rss" />
-      <outline title="City of Houston News" xmlUrl="https://www.houstontx.gov/rss" type="rss" />
       <outline title="City of Dallas News" xmlUrl="https://www.dallascitynews.net/rss" type="rss" />
-      <outline title="City of Austin News" xmlUrl="https://www.austintexas.gov/rss" type="rss" />
       <outline title="City of San Antonio News" xmlUrl="https://www.sanantonio.gov/rss" type="rss" />
-      <outline title="City of Fort Worth News" xmlUrl="https://www.fortworthtexas.gov/rss" type="rss" />
-      <outline title="City of El Paso News" xmlUrl="https://www.elpasotexas.gov/rss" type="rss" />
     </outline>
     <outline text="Business">
       <outline title="Houston Business Journal" xmlUrl="https://feeds.bizjournals.com/houston" type="rss" />
       <outline title="Dallas Business Journal" xmlUrl="https://feeds.bizjournals.com/dallas" type="rss" />
       <outline title="Austin Business Journal" xmlUrl="https://feeds.bizjournals.com/austin" type="rss" />
-      <outline title="San Antonio Business Journal" xmlUrl="https://feeds.bizjournals.com/san-antonio" type="rss" />
       <outline title="Texas CEO Magazine" xmlUrl="https://texasceomagazine.com/feed/" type="rss" />
       <outline title="Texas Monthly Business" xmlUrl="https://www.texasmonthly.com/feed/" type="rss" />
       <outline title="Dallas Innovates" xmlUrl="https://dallasinnovates.com/feed/" type="rss" />
-      <outline title="Houston Chronicle Business" xmlUrl="https://www.houstonchronicle.com/business/rss" type="rss" />
-      <outline title="Rice Alliance" xmlUrl="https://alliance.rice.edu/rss" type="rss" />
     </outline>
     <outline text="Technology">
-      <outline title="UT Austin CS News" xmlUrl="https://www.cs.utexas.edu/rss" type="rss" />
-      <outline title="Capital Factory" xmlUrl="https://www.capitalfactory.com/feed/" type="rss" />
       <outline title="Austin Tech Alliance" xmlUrl="https://www.austintech.org/feed/" type="rss" />
       <outline title="Silicon Hills News" xmlUrl="https://www.siliconhillsnews.com/feed/" type="rss" />
-      <outline title="Dell Technologies News" xmlUrl="https://www.dell.com/rss" type="rss" />
-      <outline title="AT&amp;T Newsroom" xmlUrl="https://about.att.com/rss" type="rss" />
-      <outline title="Texas Instruments News" xmlUrl="https://news.ti.com/rss" type="rss" />
       <outline title="Houston Exponential" xmlUrl="https://www.houstonexponential.org/feed/" type="rss" />
       <outline title="Galvanize Austin" xmlUrl="https://www.galvanize.com/blog/feed/" type="rss" />
       <outline title="SXSW News" xmlUrl="https://www.sxsw.com/rss" type="rss" />
@@ -72,69 +40,37 @@
     <outline text="Education">
       <outline title="UT Austin News" xmlUrl="https://news.utexas.edu/feed/" type="rss" />
       <outline title="Texas AM News" xmlUrl="https://today.tamu.edu/feed/" type="rss" />
-      <outline title="Rice University News" xmlUrl="https://news.rice.edu/feed/" type="rss" />
-      <outline title="Baylor University News" xmlUrl="https://www.baylor.edu/rss" type="rss" />
       <outline title="University of Houston" xmlUrl="https://www.uh.edu/news-events/rss" type="rss" />
-      <outline title="SMU News" xmlUrl="https://www.smu.edu/rss" type="rss" />
-      <outline title="TCU News" xmlUrl="https://www.tcu.edu/rss" type="rss" />
-      <outline title="Texas Tech News" xmlUrl="https://www.depts.ttu.edu/rss" type="rss" />
       <outline title="UT Dallas News" xmlUrl="https://www.utdallas.edu/news/rss" type="rss" />
       <outline title="UT San Antonio News" xmlUrl="https://www.utsa.edu/today/rss" type="rss" />
-      <outline title="UNT News" xmlUrl="https://news.unt.edu/rss" type="rss" />
-      <outline title="UT Arlington News" xmlUrl="https://www.uta.edu/news/rss" type="rss" />
-      <outline title="Texas State News" xmlUrl="https://news.txstate.edu/rss" type="rss" />
-      <outline title="UTEP News" xmlUrl="https://www.utep.edu/rss" type="rss" />
-      <outline title="Sam Houston State" xmlUrl="https://www.shsu.edu/rss" type="rss" />
     </outline>
     <outline text="Sports">
-      <outline title="Dallas Cowboys" xmlUrl="https://www.dallascowboys.com/rss" type="rss" />
-      <outline title="Houston Texans" xmlUrl="https://www.houstontexans.com/rss" type="rss" />
-      <outline title="Texas Rangers" xmlUrl="https://www.mlb.com/rangers/feeds/news/rss" type="rss" />
-      <outline title="Houston Astros" xmlUrl="https://www.mlb.com/astros/feeds/news/rss" type="rss" />
-      <outline title="Dallas Mavericks" xmlUrl="https://www.mavs.com/rss" type="rss" />
-      <outline title="Houston Rockets" xmlUrl="https://www.nba.com/rockets/rss" type="rss" />
-      <outline title="San Antonio Spurs" xmlUrl="https://www.nba.com/spurs/rss" type="rss" />
       <outline title="Dallas Stars" xmlUrl="https://www.nhl.com/stars/rss/news" type="rss" />
-      <outline title="FC Dallas" xmlUrl="https://www.fcdallas.com/rss" type="rss" />
-      <outline title="Houston Dynamo" xmlUrl="https://www.houstondynamofc.com/rss" type="rss" />
-      <outline title="Austin FC" xmlUrl="https://www.austinfc.com/rss" type="rss" />
     </outline>
     <outline text="Culture">
       <outline title="Texas Monthly" xmlUrl="https://www.texasmonthly.com/feed/" type="rss" />
       <outline title="Glasstire" xmlUrl="https://glasstire.com/feed/" type="rss" />
       <outline title="KUT Austin" xmlUrl="https://www.kut.org/rss" type="rss" />
-      <outline title="KERA Dallas" xmlUrl="https://www.keranews.org/rss" type="rss" />
       <outline title="Houston Public Media" xmlUrl="https://www.houstonpublicmedia.org/rss" type="rss" />
-      <outline title="Texas Public Radio" xmlUrl="https://www.tpr.org/rss" type="rss" />
       <outline title="Eater Austin" xmlUrl="https://austin.eater.com/rss/index.xml" type="rss" />
       <outline title="Eater Houston" xmlUrl="https://houston.eater.com/rss/index.xml" type="rss" />
       <outline title="Eater Dallas" xmlUrl="https://dallas.eater.com/rss/index.xml" type="rss" />
       <outline title="KUTX Austin Music" xmlUrl="https://kutx.org/rss" type="rss" />
     </outline>
     <outline text="Environment">
-      <outline title="TCEQ News" xmlUrl="https://www.tceq.texas.gov/rss" type="rss" />
-      <outline title="Texas Parks Wildlife" xmlUrl="https://tpwd.texas.gov/rss" type="rss" />
       <outline title="Environment Texas" xmlUrl="https://environmenttexas.org/rss" type="rss" />
-      <outline title="Sierra Club Texas" xmlUrl="https://www.sierraclub.org/texas/rss" type="rss" />
-      <outline title="Houston Parks" xmlUrl="https://www.houstonparks.org/rss" type="rss" />
     </outline>
     <outline text="Blogs">
       <outline title="Texas Monthly Blog" xmlUrl="https://www.texasmonthly.com/feed/" type="rss" />
       <outline title="D Magazine" xmlUrl="https://www.dmagazine.com/rss/" type="rss" />
       <outline title="Austin Monthly" xmlUrl="https://www.austinmonthly.com/feed/" type="rss" />
-      <outline title="Houstonia" xmlUrl="https://www.houstoniamag.com/rss" type="rss" />
       <outline title="San Antonio Magazine" xmlUrl="https://www.sanantoniomag.com/feed/" type="rss" />
     </outline>
     <outline text="Podcasts">
-      <outline title="The Joe Rogan Experience" xmlUrl="https://feeds.megaphone.fm/GLT5291280423" type="rss" />
-      <outline title="This American Life" xmlUrl="https://www.thisamericanlife.org/feed" type="rss" />
-      <outline title="Stuff You Should Know" xmlUrl="https://feeds.megaphone.fm/stuffyoushouldknow" type="rss" />
       <outline title="Breakthrough Faith With Bishop Dr. Lawrence Mwamba Dallas Texas USA. 🇺🇸" xmlUrl="https://anchor.fm/s/1d6dc3c0/podcast/rss" type="rss" category="Religion" />
       <outline title="Talker Texas Ranger USA" xmlUrl="https://pinecast.com/feed/talker-texas-ranger-usa" type="rss" category="Comedy" />
     </outline>
     <outline text="YouTube">
-      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRijo3ddMTht_IHyNSNXpNQ" type="rss" />
-      <outline title="Unspeakable" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsK8j2q4qkxxFuyoAq3kViw" type="rss" />
       <outline title="Markiplier" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7_YxT-KID8kRbqZo7MyscQ" type="rss" />
     </outline>
   </body>

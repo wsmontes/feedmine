@@ -12,12 +12,10 @@
     </outline>
     <outline text="Education" />
     <outline text="Podcasts">
-      <outline title="Japan Top 10 (日本のトップ10) JPOP HITS!" xmlUrl="https://feeds.redcircle.com/4a94e1fd-8ac5-47b1-88fe-3854a6de240a" type="rss" category="Music" />
       <outline title="Real Life Japan 【Learn Japanese from Japan's hot topic】" xmlUrl="https://anchor.fm/s/e72be9d0/podcast/rss" type="rss" category="Language Learning" />
       <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
       <outline title="Japanese with Kei" xmlUrl="https://anchor.fm/s/52b301bc/podcast/rss" type="rss" category="Language Learning" />
       <outline title="Nihongo Toranomaki -Learn Japanese from Real conversation!!" xmlUrl="https://anchor.fm/s/72db771c/podcast/rss" type="rss" category="Language Learning" />
-      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
       <outline title="Friday Night History" xmlUrl="https://anchor.fm/s/3e3d3464/podcast/rss" type="rss" category="History" />
       <outline title="Beyond Huaxia: A College History of China and Japan" xmlUrl="https://feed.podbean.com/beyondhuaxia/feed.xml" type="rss" category="Education" />
       <outline title="J-CATS Japanese Contextual and Theological Studies" xmlUrl="https://anchor.fm/s/c72e39a8/podcast/rss" type="rss" category="Christianity" />
@@ -31,12 +29,13 @@
       <outline title="Debrief Sesh" xmlUrl="https://anchor.fm/s/105eb6184/podcast/rss" type="rss" category="Comedy" />
       <outline title="The Konnichiwa Podcast - Conversations in English and Japanese" xmlUrl="https://feed.podbean.com/konnichiwapodcast/feed.xml" type="rss" category="Language Learning" />
       <outline title="Life in 2 Languages" xmlUrl="https://anchor.fm/s/f62b4e94/podcast/rss" type="rss" category="Personal Journals" />
-      <outline title="Deep Dive from The Japan Times" xmlUrl="https://audioboom.com/channels/4970813.rss" type="rss" category="News" />
       <outline title="Weekly Dama News" xmlUrl="https://anchor.fm/s/7dc9bcec/podcast/rss" type="rss" category="Hobbies" />
       <outline title="Tokyo Fresh" xmlUrl="https://anchor.fm/s/108c98c0/podcast/rss" type="rss" category="Comedy" />
       <outline title="Jacob’s House" xmlUrl="https://anchor.fm/s/56d18980/podcast/rss" type="rss" category="Language Learning" />
       <outline title="Formosa English News" xmlUrl="https://feed.firstory.me/rss/user/ckbrc9xz33pse0918wxz4pc5w" type="rss" category="Daily News" />
       <outline title="News Bites" xmlUrl="https://anchor.fm/s/fb3f6028/podcast/rss" type="rss" category="Education" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

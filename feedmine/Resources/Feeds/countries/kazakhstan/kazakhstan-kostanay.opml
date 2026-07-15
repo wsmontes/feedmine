@@ -6,25 +6,17 @@
   <body>
     <outline text="Podcasts">
       <outline title="Davis Street Sessions" xmlUrl="https://feeds.feedburner.com/Davisstreetsessions" type="rss" category="Comedy" />
-      <outline title="The Sweeper - A World Football Podcast" xmlUrl="https://anchor.fm/s/109fa0cbc/podcast/rss" type="rss" category="Soccer" />
-      <outline title="Italian Wine Podcast" xmlUrl="https://feeds.megaphone.fm/MJS8122694951" type="rss" category="Society &amp; Culture" />
       <outline title="Finding Your Place" xmlUrl="https://anchor.fm/s/415b8010/podcast/rss" type="rss" category="Places &amp; Travel" />
       <outline title="Guys Being Doods" xmlUrl="https://rss.buzzsprout.com/1798132.rss" type="rss" category="Society &amp; Culture" />
       <outline title="Missing Pieces - NPE Life" xmlUrl="https://rss.buzzsprout.com/1981432.rss" type="rss" category="Personal Journals" />
-      <outline title="Cozy Chaos Podcast" xmlUrl="https://media.rss.com/cozy-chaos-podcast/feed.xml" type="rss" category="Improv" />
-      <outline title="Born Boldcast" xmlUrl="https://anchor.fm/s/100201b28/podcast/rss" type="rss" category="Places &amp; Travel" />
-      <outline title="The Astana Times" xmlUrl="https://anchor.fm/s/10078bb70/podcast/rss" type="rss" category="News" />
       <outline title="Energypreneurs" xmlUrl="https://rss.pdrl.fm/468495/feeds.libsyn.com/180665/rss/?redirect=false" type="rss" category="Entrepreneurship" />
-      <outline title="New Books in Russian and Eurasian Studies" xmlUrl="https://feeds.megaphone.fm/LIT6780696927" type="rss" category="Society &amp; Culture" />
       <outline title="New Books in Military History" xmlUrl="https://feeds.megaphone.fm/LIT5868539187" type="rss" category="Society &amp; Culture" />
       <outline title="New Books in Central Asian Studies" xmlUrl="https://feeds.megaphone.fm/LIT9438616575" type="rss" category="Society &amp; Culture" />
       <outline title="Education World Forum Conversations" xmlUrl="https://feed.podbean.com/EducationWorldForum/feed.xml" type="rss" category="Education" />
-      <outline title="Majlis" xmlUrl="https://www.rferl.org/podcast/?zoneId=19887&amp;daycount=3000" type="rss" category="News" />
       <outline title="CAPS Unlock Podcast" xmlUrl="https://api.substack.com/feed/podcast/2446111/s/165647.rss" type="rss" category="News" />
       <outline title="Decision Makers" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/568" type="rss" category="News" />
       <outline title="Pony Tales Podcast" xmlUrl="https://anchor.fm/s/49a6dbc0/podcast/rss" type="rss" category="Entrepreneurship" />
       <outline title="The Eastern Border" xmlUrl="https://feeds.acast.com/public/shows/cfd8aed5-6d63-4b2f-b325-46e4b5665583" type="rss" category="News" />
-      <outline title="Top Red Podcast - A Liverpool FC Podcast" xmlUrl="https://feed.podbean.com/topredpodcast/feed.xml" type="rss" category="Soccer" />
       <outline title="KingTCS2" xmlUrl="https://media.rss.com/retaketheweek/feed.xml" type="rss" category="Video Games" />
       <outline title="Crypto Currency Chat" xmlUrl="https://anchor.fm/s/20cb25d0/podcast/rss" type="rss" category="Technology" />
       <outline title="Stone Pages Archaeo News" xmlUrl="https://www.stonepages.com/news/podcast.xml" type="rss" category="Society &amp; Culture" />
@@ -51,5 +43,7 @@
       <outline title="The Russian Empire History Podcast" xmlUrl="https://anchor.fm/s/6357aa40/podcast/rss" type="rss" category="History" />
       <outline title="The Hegelian Friendship Simulator" xmlUrl="https://feeds.captivate.fm/hegelian-friendship-simulator/" type="rss" category="Comedy" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

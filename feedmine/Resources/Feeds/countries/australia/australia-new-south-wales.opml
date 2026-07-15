@@ -5,8 +5,7 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="Sydney Morning Herald" xmlUrl="https://www.smh.com.au/rss/feed.xml" type="rss" />
-    </outline>
+      </outline>
     <outline text="Culture">
       <outline title="Sydney Festival" xmlUrl="https://www.sydneyfestival.org.au/feed/" type="rss" />
     </outline>
@@ -15,7 +14,8 @@
     </outline>
     <outline text="Podcasts">
       <outline title="New South Wales Country Hour" xmlUrl="https://www.abc.net.au/feeds/9722320/podcast.xml" type="rss" category="Business" />
-      <outline title="Charles Sturt University Podcast Channel" xmlUrl="https://athene.csu.edu.au/~achan/podcast/ifeed.xml" type="rss" category="Education" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

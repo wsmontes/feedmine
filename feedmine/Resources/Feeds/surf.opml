@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Surfing Feeds</title>
+  </head>
+  <body>
+    <outline text="Surf News &amp; Magazines">
+      <outline title="Surfer Magazine" xmlUrl="https://www.surfer.com/feed/" type="rss" />
+      <outline title="Stab Magazine" xmlUrl="https://stabmag.com/feed/" type="rss" />
+      <outline title="Beach Grit" xmlUrl="https://beachgrit.com/feed/" type="rss" />
+      <outline title="SurferToday" xmlUrl="https://www.surfertoday.com/feed" type="rss" />
+      <outline title="Tracks Magazine (AUS)" xmlUrl="https://tracksmag.com.au/feed/" type="rss" />
+      <outline title="Surfing Life (AUS)" xmlUrl="https://www.surfinglife.com.au/feed/" type="rss" />
+      <outline title="Zigzag (South Africa)" xmlUrl="https://www.zigzag.co.za/feed/" type="rss" />
+      <outline title="Carve Magazine (UK)" xmlUrl="https://www.carvemag.com/feed/" type="rss" />
+      <outline title="Wavelength Magazine (UK)" xmlUrl="https://wavelengthmag.com/feed/" type="rss" />
+      <outline title="Drift Surfing" xmlUrl="https://www.driftsurfing.com/feed/" type="rss" />
+      <outline title="Eastern Surf Magazine" xmlUrl="https://www.easternsurf.com/feed/" type="rss" />
+      <outline title="Mpora — Surf" xmlUrl="https://mpora.com/surfing/feed/" type="rss" />
+    </outline>
+    <outline text="Surf Forecasting &amp; Conditions">
+      </outline>
+    <outline text="Professional Surfing / WSL">
+      <outline title="WSL — Athletes" xmlUrl="https://www.worldsurfleague.com/rss/athletes" type="rss" />
+      <outline title="Surfing Australia — Contests" xmlUrl="https://www.surfingaustralia.com/rss" type="rss" />
+    </outline>
+    <outline text="Big Wave Surfing">
+      </outline>
+    <outline text="Surfboard Shaping &amp; Design">
+      <outline title="Degree 33 Surfboards" xmlUrl="https://degree33surfboards.com/blogs/news.atom" type="rss" />
+      <outline title="Firewire Surfboards" xmlUrl="https://firewiresurfboards.com/blogs/news.atom" type="rss" />
+      <outline title="Channel Islands Surfboards" xmlUrl="https://cisurfboards.com/blogs/news.atom" type="rss" />
+      <outline title="Pyzel Surfboards" xmlUrl="https://pyzelsurfboards.com/blogs/news.atom" type="rss" />
+      <outline title="Lost Surfboards" xmlUrl="https://lostsurfboards.net/feed/" type="rss" />
+      <outline title="Haydenshapes" xmlUrl="https://www.haydenshapes.com/blogs/journal.atom" type="rss" />
+      <outline title="DHD Surfboards" xmlUrl="https://dhdsurf.com/blogs/news.atom" type="rss" />
+      <outline title="JS Industries" xmlUrl="https://jsindustries.com/blogs/news.atom" type="rss" />
+      <outline title="Aipa Surfboards" xmlUrl="https://aipasurf.com/blogs/news.atom" type="rss" />
+    </outline>
+    <outline text="Surf Travel">
+      <outline title="Surf Holidays Blog" xmlUrl="https://www.surfholidays.com/blog/feed/" type="rss" />
+      <outline title="Perfect Wave Travel" xmlUrl="https://www.perfectwavetravel.com/feed/" type="rss" />
+      <outline title="World Surfaris" xmlUrl="https://www.worldsurfaris.com/rss" type="rss" />
+    </outline>
+    <outline text="Surf Photography &amp; Film">
+      </outline>
+    <outline text="Surf Lifestyle &amp; Environment">
+      <outline title="Save the Waves" xmlUrl="https://www.savethewaves.org/rss/" type="rss" />
+      <outline title="Korduroy.tv" xmlUrl="https://korduroy.tv/feed/" type="rss" />
+      <outline title="Surf Girl Magazine" xmlUrl="https://surfgirlmag.com/feed/" type="rss" />
+      <outline title="Salt Water Magazine" xmlUrl="https://www.saltwatermagazine.com/feed/" type="rss" />
+    </outline>
+    <outline text="Regional Surf (US West Coast)">
+      <outline title="Surf San Diego" xmlUrl="https://www.surfsandiego.com/feed/" type="rss" />
+      <outline title="Orange County Register — Surf" xmlUrl="https://www.ocregister.com/tag/surfing/feed/" type="rss" />
+      <outline title="Swellmagnet (SoCal)" xmlUrl="https://swellmagnet.com/feed/" type="rss" />
+    </outline>
+    <outline text="Regional Surf (Hawaii)">
+      </outline>
+    <outline text="Regional Surf (Europe)">
+      <outline title="Surf Europe" xmlUrl="https://www.surfeurope.com/feed/" type="rss" />
+      <outline title="Surf UK" xmlUrl="https://www.surfuk.org/feed/" type="rss" />
+    </outline>
+    <outline text="Surf Podcasts">
+      <outline title="The Surf Mastery Podcast" xmlUrl="https://feeds.libsyn.com/surfmastery" type="rss" />
+    </outline>
+    <outline text="YouTube — Surf Channels">
+      </outline>
+  </body>
+</opml>

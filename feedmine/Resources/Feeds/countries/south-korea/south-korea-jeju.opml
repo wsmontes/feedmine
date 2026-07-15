@@ -4,13 +4,16 @@
     <title>Jeju Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Jeju News" xmlUrl="https://www.jejunews.com/rss/" type="rss" />
+    <outline text="News">
+      <outline title="Jeju News" xmlUrl="https://www.jejunews.com/rss/" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="Jeju Gov" xmlUrl="https://www.jeju.go.kr/rss" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Jeju Natl Univ" xmlUrl="https://www.jejunu.ac.kr/rss" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics">
-        <outline title="Jeju Gov" xmlUrl="https://www.jeju.go.kr/rss" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="Jeju Natl Univ" xmlUrl="https://www.jejunu.ac.kr/rss" type="rss" />
-      </outline></body>
-    </opml>
+  </body>
+</opml>

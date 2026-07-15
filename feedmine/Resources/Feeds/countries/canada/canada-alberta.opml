@@ -5,8 +5,6 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="Calgary Herald" xmlUrl="https://calgaryherald.com/feed/" type="rss" />
-      <outline title="Edmonton Journal" xmlUrl="https://edmontonjournal.com/feed/" type="rss" />
       <outline title="Global Edmonton" xmlUrl="https://globalnews.ca/edmonton/feed/" type="rss" />
       <outline title="Global Calgary" xmlUrl="https://globalnews.ca/calgary/feed/" type="rss" />
       <outline title="Lethbridge Herald" xmlUrl="https://lethbridgeherald.com/feed/" type="rss" />
@@ -42,5 +40,7 @@
       <outline title="County Voice - The Alberta Ag Podcast" xmlUrl="https://www.spreaker.com/show/4970666/episodes/feed" type="rss" category="News" />
       <outline title="Audio – Canada Waterfowl Hunting in Saskatchewan &amp; Alberta" xmlUrl="https://saskaltawaterfowloutfitters.com/type/audio/feed" type="rss" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

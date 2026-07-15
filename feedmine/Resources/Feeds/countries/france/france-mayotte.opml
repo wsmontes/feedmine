@@ -4,8 +4,11 @@
     <title>Mayotte Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="France Info Mayotte" xmlUrl="https://la1ere.francetvinfo.fr/mayotte/rss" type="rss" />
+    <outline text="News">
+      <outline title="France Info Mayotte" xmlUrl="https://la1ere.francetvinfo.fr/mayotte/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" /></body>
-    </opml>
+  </body>
+</opml>

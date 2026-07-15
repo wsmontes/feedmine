@@ -5,7 +5,6 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="The Age" xmlUrl="https://www.theage.com.au/rss/feed.xml" type="rss" />
       <outline title="Geelong Advertiser" xmlUrl="https://www.geelongadvertiser.com.au/feed/" type="rss" />
     </outline>
     <outline text="Sports">
@@ -21,8 +20,9 @@
       <outline title="Our Saviour's Lutheran Church, Knox, Victoria, Australia" xmlUrl="https://oslcknox.podomatic.com/rss2.xml" type="rss" category="Religion" />
       <outline title="Coarse angling in Victoria, Australia" xmlUrl="https://anchor.fm/s/f8cd2550/podcast/rss" type="rss" category="Education" />
       <outline title="Worksafe Victoria" xmlUrl="https://joy.org.au/worksafe/feed/podcast" type="rss" category="Society" />
-      <outline title="Inside The Ropes - Golf Victoria" xmlUrl="https://rss.whooshkaa.com/rss/podcast/id/1725" type="rss" />
       <outline title="Podcasts from St.Andrews Presbyterian Church Hamilton Victoria Australia" xmlUrl="https://feeds2.feedburner.com/blogspot/vcxo" type="rss" category="Religion" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

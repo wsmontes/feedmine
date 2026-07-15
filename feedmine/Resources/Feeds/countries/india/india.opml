@@ -1,1653 +1,499 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  
-  
-  
-  
   <head>
-    
-    
-    
-    
     <title>India National Feeds</title>
-    
-    
-  
-  
   </head>
-  
-  
-  
-  
   <body>
-    
-    
-      
-    
     <outline text="News">
-      
-      
-        
-      
-      <outline title="Times of India" xmlUrl="https://timesofindia.indiatimes.com/rssfeedstopstories.cms" type="rss"/>
-      
-      
-        
-      
-      <outline title="The Hindu" xmlUrl="https://www.thehindu.com/news/feeder/default.rss" type="rss"/>
-      
-      
-        
-      
-      <outline title="Indian Express" xmlUrl="https://indianexpress.com/feed/" type="rss"/>
-      
-      
-        
-      
-      <outline title="Hindustan Times" xmlUrl="https://www.hindustantimes.com/rss/topnews/rssfeed.xml" type="rss"/>
-      
-      
-        
-      
-      <outline title="NDTV" xmlUrl="https://feeds.feedburner.com/ndtvnews-top-stories" type="rss"/>
-      
-      
-        
-      
-      <outline title="India Today" xmlUrl="https://www.indiatoday.in/rss/1206578" type="rss"/>
-      
-      
-        
-      
-      <outline title="The Wire" xmlUrl="https://thewire.in/feed/" type="rss"/>
-      
-      
-        
-      
-      <outline title="The Quint" xmlUrl="https://www.thequint.com/feed" type="rss"/>
-      
-      
-        
-      
-      <outline title="BBC India" xmlUrl="https://feeds.bbci.co.uk/news/world/asia/india/rss.xml" type="rss"/>
-      
-      
-        
-      
-      <outline title="PTI News" xmlUrl="https://www.ptinews.com/feed" type="rss"/>
-      
-      
-        
-      
-      <outline title="The Print" xmlUrl="https://theprint.in/feed/" type="rss"/>
-      
-      
-      
-    
+      <outline title="Times of India" xmlUrl="https://timesofindia.indiatimes.com/rssfeedstopstories.cms" type="rss" />
+      <outline title="The Hindu" xmlUrl="https://www.thehindu.com/news/feeder/default.rss" type="rss" />
+      <outline title="Indian Express" xmlUrl="https://indianexpress.com/feed/" type="rss" />
+      <outline title="Hindustan Times" xmlUrl="https://www.hindustantimes.com/rss/topnews/rssfeed.xml" type="rss" />
+      <outline title="NDTV" xmlUrl="https://feeds.feedburner.com/ndtvnews-top-stories" type="rss" />
+      <outline title="India Today" xmlUrl="https://www.indiatoday.in/rss/1206578" type="rss" />
+      <outline title="The Wire" xmlUrl="https://thewire.in/feed/" type="rss" />
+      <outline title="The Quint" xmlUrl="https://www.thequint.com/feed" type="rss" />
+      <outline title="BBC India" xmlUrl="https://feeds.bbci.co.uk/news/world/asia/india/rss.xml" type="rss" />
+      <outline title="PTI News" xmlUrl="https://www.ptinews.com/feed" type="rss" />
+      <outline title="The Print" xmlUrl="https://theprint.in/feed/" type="rss" />
+      <outline title="Google News — INDIA (en)" xmlUrl="https://news.google.com/rss?hl=en&amp;gl=IN&amp;ceid=IN:en" type="rss" />
     </outline>
-    
-    
-      
-    
     <outline text="Business">
-      
-      
-        
-      
-      <outline title="Economic Times" xmlUrl="https://economictimes.indiatimes.com/rssfeedstopstories.cms" type="rss"/>
-      
-      
-        
-      
-      <outline title="Mint" xmlUrl="https://www.livemint.com/rss/news" type="rss"/>
-      
-      
-        
-      
-      <outline title="YourStory" xmlUrl="https://yourstory.com/feed" type="rss"/>
-      
-      
-        
-      
-      <outline title="Inc42" xmlUrl="https://inc42.com/feed/" type="rss"/>
-      
-      
-      
-    
+      <outline title="Economic Times" xmlUrl="https://economictimes.indiatimes.com/rssfeedstopstories.cms" type="rss" />
+      <outline title="Mint" xmlUrl="https://www.livemint.com/rss/news" type="rss" />
+      <outline title="YourStory" xmlUrl="https://yourstory.com/feed" type="rss" />
+      <outline title="Inc42" xmlUrl="https://inc42.com/feed/" type="rss" />
     </outline>
-    
-    
-      
-    
     <outline text="Technology">
-      
-      
-        
-      
-      <outline title="Gadgets 360" xmlUrl="https://feeds.feedburner.com/gadgets360-latest" type="rss"/>
-      
-      
-        
-      
-      <outline title="Inc42 Tech" xmlUrl="https://inc42.com/feed/" type="rss"/>
-      
-      
-        
-      
-      <outline title="Medianama" xmlUrl="https://www.medianama.com/feed/" type="rss"/>
-      
-      
-        
-      
-      <outline title="Trak.in" xmlUrl="https://trak.in/feed/" type="rss"/>
-      
-      
-      
-    
+      <outline title="Gadgets 360" xmlUrl="https://feeds.feedburner.com/gadgets360-latest" type="rss" />
+      <outline title="Inc42 Tech" xmlUrl="https://inc42.com/feed/" type="rss" />
+      <outline title="Medianama" xmlUrl="https://www.medianama.com/feed/" type="rss" />
+      <outline title="Trak.in" xmlUrl="https://trak.in/feed/" type="rss" />
     </outline>
-    
-    
-      
-    
     <outline text="Sports">
-      
-      
-        
-      
-      <outline title="ESPN Cricinfo" xmlUrl="https://www.espncricinfo.com/rss/content/story/feeds/0.xml" type="rss"/>
-      
-      
-      
-    
+      <outline title="ESPN Cricinfo" xmlUrl="https://www.espncricinfo.com/rss/content/story/feeds/0.xml" type="rss" />
     </outline>
-    
-    
-      
-    
     <outline text="Culture">
-      
-      
-        
-      
-      <outline title="Frontline" xmlUrl="https://frontline.thehindu.com/feeder/default.rss" type="rss"/>
-      
-      
-    
-      
+      <outline title="Frontline" xmlUrl="https://frontline.thehindu.com/feeder/default.rss" type="rss" />
       <outline text="Podcasts">
-        
-        
-      
-        
-        <outline title="In Focus by The Hindu" xmlUrl="https://feeds.megaphone.fm/THGU4956605070" type="rss"/>
-        
-        
-      
-        
-        <outline title="The History Of India" xmlUrl="https://anchor.fm/s/20b4df78/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="India Explained" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:294393291/sounds.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Investing in India" xmlUrl="https://feeds.simplecast.com/1ANGOSmm" type="rss"/>
-        
-        
-      
-        
-        <outline title="How India's Economy Works" xmlUrl="https://anchor.fm/s/fb4a3980/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Times Of India Podcast" xmlUrl="https://anchor.fm/s/57b0b7e0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Inside Forbes India" xmlUrl="https://anchor.fm/s/2ae5651c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Ideas of India" xmlUrl="https://rss.libsyn.com/shows/288629/destinations/2249435.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Behind The Bricks - India's first and only no filter real estate podcast channel🎙️" xmlUrl="https://anchor.fm/s/10326df00/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Musafir Stories - India Travel Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/64cf3a81-17df-40ec-990a-af4e00a92e51/f5b69943-5379-4176-a258-af4e00a92e72/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Indian Economy Explained" xmlUrl="https://www.omnycontent.com/d/playlist/55de720e-0867-4b8a-9e29-ac8400e69720/fcbb4e13-4a20-4e32-a43d-ad5700fdce33/811e647b-15bb-446e-adf1-ad57010061f2/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Interpreting India" xmlUrl="https://feeds.simplecast.com/PJlAlBwi" type="rss"/>
-        
-        
-      
-        
-        <outline title="Make India Competitive Again" xmlUrl="https://feeds.transistor.fm/make-india-great-again" type="rss"/>
-        
-        
-      
-        
-        <outline title="Namaskar India - Tales from Indian History and Mythology" xmlUrl="https://anchor.fm/s/1012c66c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Today in India - Morning News Brief" xmlUrl="https://anchor.fm/s/ff80e29c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="In Our Defence" xmlUrl="https://www.spreaker.com/show/5500863/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="NSE India Podcast Series | Shashakt Niveshak" xmlUrl="https://anchor.fm/s/f656d014/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Stories From India" xmlUrl="https://anchor.fm/s/e563890/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The History of India Podcast" xmlUrl="https://rss.libsyn.com/shows/72278/destinations/309639.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="India Classified" xmlUrl="https://www.omnycontent.com/d/playlist/8ce708b9-c3c2-4eaa-a27d-ac0f007c53c5/eb3b3ce9-9162-4511-9428-ac0f009ce5a8/da6db883-78c6-47e4-adc7-ac0f009ce5b1/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Echoes Of India: A History Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/e832d5d5-f1ba-41e9-9f30-af4d00b05e65/fffb4b33-5385-4548-9abc-af4d00b05e86/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Standard Chartered India - Money Insights" xmlUrl="https://rss.buzzsprout.com/1885786.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Maed in India" xmlUrl="https://www.omnycontent.com/d/playlist/5d315e00-1c8d-435b-9a31-af0f01302c17/ffc313b5-b60e-492b-9db0-af1a0027aaf9/21999f5d-eb98-4f19-82f9-af1a0027ab0c/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Seen and the Unseen - hosted by Amit Varma" xmlUrl="https://rss.libsyn.com/shows/91647/destinations/458496.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Deep Drive | Autocar India" xmlUrl="https://rss.buzzsprout.com/2342104.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Thriller Stories of India (Hindi Podcast) by Audio Pitara" xmlUrl="https://feeds.megaphone.fm/CPP5504904408" type="rss"/>
-        
-        
-      
-        
-        <outline title="Startup Spotlight India" xmlUrl="https://anchor.fm/s/108dca6a0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Indian Scams (Biggest Scams In India)" xmlUrl="https://feeds.megaphone.fm/CPP5416559731" type="rss"/>
-        
-        
-      
-        
-        <outline title="AIF &amp; PMS Experts India Podcast" xmlUrl="https://anchor.fm/s/66afc074/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="UnPolitics with Preeti" xmlUrl="https://www.spreaker.com/show/6699858/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="India Unwritten-Uncovering the consciousness of India." xmlUrl="https://anchor.fm/s/10f302540/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="SACC India - Startup Accelerator Chamber of Commerce" xmlUrl="https://anchor.fm/s/1fe6566c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Nothing But The Truth" xmlUrl="https://www.spreaker.com/show/5500841/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="Health Wealth" xmlUrl="https://www.spreaker.com/show/5918323/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Daily Brief" xmlUrl="https://feeds.simplecast.com/1H1JSMd0" type="rss"/>
-        
-        
-      
-        
-        <outline title="Forbes India - The Startup Fridays Podcast" xmlUrl="https://anchor.fm/s/58b89130/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="ANI Podcast with Smita Prakash" xmlUrl="https://anchor.fm/s/fa8ad6f8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="CFA Society India Podcast" xmlUrl="https://anchor.fm/s/e214d588/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="News at 7" xmlUrl="https://www.spreaker.com/show/6571256/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Morning Brief" xmlUrl="https://www.omnycontent.com/d/playlist/60b2e926-e5f8-4b90-a465-aef901163001/95fd7c59-790d-496e-bbde-aef901167fe4/8ae54763-9925-40ca-8c3d-aef901167ffb/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="evo India Podcast" xmlUrl="https://anchor.fm/s/c3f7fe4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="Stories from India and Around the World" xmlUrl="https://anchor.fm/s/40acbb70/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="DIVINE LOVE TABERNACLE, New Delhi, India" xmlUrl="https://anchor.fm/s/14906d5c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Lit Pickers" xmlUrl="https://www.omnycontent.com/d/playlist/5d315e00-1c8d-435b-9a31-af0f01302c17/cd2a02ec-f4a1-4ed7-aec3-af110055da7b/61da6ae3-d212-432a-8da3-af110055da97/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Veda Araichi Tamil Bible Study WR Today India" xmlUrl="https://anchor.fm/s/991ccd4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Climate Emergency" xmlUrl="https://www.omnycontent.com/d/playlist/55de720e-0867-4b8a-9e29-ac8400e69720/bee84628-6837-4503-a5bb-ac88008b2fc3/003fb528-4439-4376-b195-ac88008b2fcd/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Chakravyuh" xmlUrl="https://www.spreaker.com/show/6664770/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="New City Mumbai" xmlUrl="https://anchor.fm/s/36f603d4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="TiE Mumbai" xmlUrl="https://anchor.fm/s/23d68d28/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="vashikaran specialist in Mumbai +91-9358955697 Online Vashikaran Expert Pandit in Spain" xmlUrl="https://anchor.fm/s/112cc6c7c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="HISnearness Church, Navi Mumbai" xmlUrl="https://anchor.fm/s/108eeccb8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Melange" xmlUrl="https://anchor.fm/s/102727060/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Baatein with AIESEC in Navi Mumbai" xmlUrl="https://anchor.fm/s/3c5ace40/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Online love problem solution specialist Pandit in Mumbai +91-9358955697" xmlUrl="https://anchor.fm/s/112371ab4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="MumBai Mafia 4" xmlUrl="https://dishoom.podomatic.com/rss2.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Crime" xmlUrl="https://mumbaicrime.feeds.goldhawkproductions.com/" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Smart News" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD7044581279" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Spurs" xmlUrl="https://anchor.fm/s/10d474d8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Club Radio - DJ Mixes" xmlUrl="https://mumbaiclubradio.podomatic.com/rss2.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Local" xmlUrl="https://www.omnycontent.com/d/playlist/8ce708b9-c3c2-4eaa-a27d-ac0f007c53c5/cb74861a-5717-4a1c-a229-ac330068ff54/d7932a4e-a55f-4d93-8d68-ac330068ff62/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai" xmlUrl="https://anchor.fm/s/1fcb56b4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="OnLine Guru Ji baba ji_+91_9358955697_OnLine Vashikaran Specialist Pandit in Mumbai" xmlUrl="https://anchor.fm/s/111c10e64/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Recordings during lockdown by Carnatic music enthusiast from Powai, Mumbai, India" xmlUrl="https://anchor.fm/s/5f0c2cb8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Bhagavad Gita Series" xmlUrl="https://feed.podbean.com/harekrishna/feed.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Toastmasters of Mumbai" xmlUrl="https://anchor.fm/s/51c4caec/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Marine Lines with Raghu Karnad" xmlUrl="https://feeds.hubhopper.com/e8b1730af9da59fb96fcc3310adc16c5.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="sadiqrazvisdi" xmlUrl="https://anchor.fm/s/5b8bf7d0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Cricket Podcast" xmlUrl="https://www.mid-day.com/Resources/midday/rss/mid-days-mumbai-cricket-podcast.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="IIT COLLEGE - Mumbai" xmlUrl="https://anchor.fm/s/24836c3c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Varditale Mahanayak : Mumbai Heroes : True Stories of Police Officers" xmlUrl="https://feeds.megaphone.fm/CPP2479153414" type="rss"/>
-        
-        
-      
-        
-        <outline title="The United Way- A Manchester United podcast from Mumbai" xmlUrl="https://anchor.fm/s/46810a4c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Grace Covenant Church Mumbai" xmlUrl="https://anchor.fm/s/137e5820/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Jain OncoWorld Mumbai : Cancer And Hematology Care" xmlUrl="https://anchor.fm/s/24d63854/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Strikers" xmlUrl="https://feeds.hubhopper.com/f95528df6c4e330cddd3d03089089c6c.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="ELLE MUMBAI" xmlUrl="https://anchor.fm/s/27eeecc0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="MUMBAI MY LIFE" xmlUrl="https://anchor.fm/s/b354ca0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Janma Jayanti 2006(Mumbai)" xmlUrl="https://hearthis.at/set/122718-9266566/podcast/" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai's New Residential Launches" xmlUrl="https://anchor.fm/s/10c392490/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="DARK SHADOWS OF 1993 : UNRAVELLING MUMBAI SERIAL BOMBINGS" xmlUrl="https://feeds.hubhopper.com/0d6c1096f9b1292c05e7d3a51e2b81f2.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Unfound by KnowMumbai" xmlUrl="https://anchor.fm/s/27bc37e4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Meri Jaan" xmlUrl="https://feeds.hubhopper.com/e2c84eba02298432598c01b29d0f1ab3.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Webinar By ELLE, Mumbai Region" xmlUrl="https://anchor.fm/s/1fb9ac0c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Janma Jayanti 2019(Mumbai)" xmlUrl="https://hearthis.at/set/380895-9266566/podcast/" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Raj" xmlUrl="https://media.rss.com/mumbairaj/feed.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="EEEEEEEE3EEEEEEEEE Mumbai Mumby" xmlUrl="https://anchor.fm/s/45560064/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="MUMBAI CRIMES 2.0" xmlUrl="https://anchor.fm/s/51e71570/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai to Maine: A Culinary Adventure!" xmlUrl="https://anchor.fm/s/b7262afc/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Tales Of Mumbai" xmlUrl="https://anchor.fm/s/33420134/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Hinglish Podcast by a Mumbai based Girl From 90s" xmlUrl="https://anchor.fm/s/d2d5570/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Janma Jayanti 2001(Mumbai)" xmlUrl="https://hearthis.at/set/232250-9266566/podcast/" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Yatri" xmlUrl="https://anchor.fm/s/268509c8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Hafta" xmlUrl="https://anchor.fm/s/58582fc0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai College Files" xmlUrl="https://anchor.fm/s/12637d30/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Money Moves Daily - The Mumbai Market." xmlUrl="https://anchor.fm/s/108e61ce4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="कोकण टू मुंबई (प्रवास प्रेमाचा) भाग १ | Konkan To Mumbai ( Journey Of Love) Part 1" xmlUrl="https://anchor.fm/s/1f599088/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mumbai Hits With RJ Bapi" xmlUrl="https://anchor.fm/s/1ef0d1b0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Idea Pitch - Entry For Spoken Fest Mumbai, 2020" xmlUrl="https://anchor.fm/s/126da9e0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Delhi Public School Podcast" xmlUrl="https://anchor.fm/s/237f682c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="New City Delhi" xmlUrl="https://anchor.fm/s/1ca71b8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Sambandh" xmlUrl="https://feeds.simplecast.com/m_XqXcng" type="rss"/>
-        
-        
-      
-        
-        <outline title="The 39A Podcast" xmlUrl="https://anchor.fm/s/1008ce0dc/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="A Delhi Love" xmlUrl="https://www.omnycontent.com/d/playlist/8ce708b9-c3c2-4eaa-a27d-ac0f007c53c5/74d51dec-41ff-4a3d-80d8-b10f00ae51ec/8e32148d-1346-4cd3-ab23-b10f00afeab4/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Slaves And Sultans: The Sultanate of Delhi" xmlUrl="https://anchor.fm/s/5756a28c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Old Delhi Podcast" xmlUrl="https://feeds.hubhopper.com/fdcf4b678b9f3cbf873255be5fab30a4.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Golden Words" xmlUrl="https://anchor.fm/s/f140a94c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Golden Gleanings" xmlUrl="https://anchor.fm/s/f0ed5418/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Golden Bridge" xmlUrl="https://anchor.fm/s/e2c53900/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Delhi Sultanate and the Rise of Islamic Rule in India — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-delhi-sultanate-and-the-rise-of-islamic-rule-in-india.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Constitution at 70 - Mera Samvidhan" xmlUrl="https://feeds.hubhopper.com/48aae38cc6e8558acc94949732513918.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="भईया…. दिल्ली रहअ तारे (Bhaiya Delhi Raha Taare)" xmlUrl="https://feeds.megaphone.fm/CPP5287021351" type="rss"/>
-        
-        
-      
-        
-        <outline title="Indigenization Appreciation Hour with Saurav Jha" xmlUrl="https://anchor.fm/s/ff2b1a10/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Hisnearness Delhi" xmlUrl="https://anchor.fm/s/87a5959c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Delhi to Manali Tour Package" xmlUrl="https://anchor.fm/s/5323de50/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Delhi Capitals Podcast - Stories from IPL and Beyond" xmlUrl="https://feeds.hubhopper.com/6e29f066a2026e2f39ad70390e7d81c1.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Late-Night Call Girls in Mahipalpur Delhi – Delhi Escorts Service 9220592151" xmlUrl="https://feed.firstory.me/rss/user/cmr551skk07yh01wn8fpucqbj" type="rss"/>
-        
-        
-      
-        
-        <outline title="Late-Night Call Girls in Saket (Delhi) – Delhi Escorts Service 9220592151" xmlUrl="https://feed.firstory.me/rss/user/cmqv5d1rh12mw01yiediu33v7" type="rss"/>
-        
-        
-      
-        
-        <outline title="Call Girls In Delhi 9034835750 Delhi call girls Service" xmlUrl="https://feed.firstory.me/rss/user/cmqie19oj01t601yv842g8qbu" type="rss"/>
-        
-        
-      
-        
-        <outline title="StateOfDelhi - The Spirit of Delhi" xmlUrl="https://anchor.fm/s/3e4eb3b0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="SEO Service Delhi" xmlUrl="https://feeds.hubhopper.com/67823338bb148d8fe9bfd6efa7006ea1.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Advertolearn Digital Marketing Institute in Delhi" xmlUrl="https://anchor.fm/s/107ce0df8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Experience Delhi" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298907150/sounds.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Delhi NCR Vlogger Ka Kdk Launda Mukesh" xmlUrl="https://anchor.fm/s/41275948/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Sameer Delhi" xmlUrl="https://anchor.fm/s/2c331f18/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="BETHEL HOUSE OF PRAYER DELHI" xmlUrl="https://anchor.fm/s/5dee5298/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="LIBRARY KV JANAKPURI, DELHI" xmlUrl="https://anchor.fm/s/2cacf4f0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Apollo Hospitals Delhi" xmlUrl="https://media.rss.com/apollo-hospitals-delhi/feed.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Late-Night Call Girls in Delhi – Delhi Escorts Service 9220592151" xmlUrl="https://feed.firstory.me/rss/user/cmqv9ppgf0cel01yj8idi3dmo" type="rss"/>
-        
-        
-      
-        
-        <outline title="5 Affordable Yet Excellent Boarding Schools in Delhi NCR Parents Must Know in 2025" xmlUrl="https://feeds.hubhopper.com/1e9fa68bb2e608059eb64e570866fcdc.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Delhi Dose" xmlUrl="https://anchor.fm/s/3456d8b0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Delhi Live Podcast" xmlUrl="https://anchor.fm/s/13b12b74/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="1970 DELHI COLLEGE KI SUNHERI YAADEIN" xmlUrl="https://anchor.fm/s/6b7c980c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Magnetism And Astronomy Labs In Delhi And Sikkim" xmlUrl="https://anchor.fm/s/2b4a7560/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Delhi sultanate." xmlUrl="https://anchor.fm/s/41d26c34/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Podcast Of All Subject Is Done By Shreeti Kumari 👍, Class-8thF, School-Army Public School Delhi.C" xmlUrl="https://anchor.fm/s/5ea72124/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mindfulness- Delhi govt" xmlUrl="https://anchor.fm/s/2afbdcac/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Just High Delhi Guys" xmlUrl="https://anchor.fm/s/19f4a614/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Bible Chapel of Delhi Hills" xmlUrl="https://www.sermonaudio.com/rss_source.asp?sourceid=biblechapel" type="rss"/>
-        
-        
-      
-        
-        <outline title="Best Psychologist Delhi" xmlUrl="https://feeds.hubhopper.com/fea99e3e0b8e37de95d7342d7b85391c.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="TOP 15+ BEST PYTHON COURSES INSTITUTE DELHI" xmlUrl="https://anchor.fm/s/65e17200/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="THE EAST DELHI CLUB" xmlUrl="https://anchor.fm/s/4be4244c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Mint Delhi Decoded" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD1605914437" type="rss"/>
-        
-        
-      
-        
-        <outline title="Hello Delhi" xmlUrl="https://anchor.fm/s/1d2924f4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Tales from Delhi" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD8200852303" type="rss"/>
-        
-        
-      
-        
-        <outline title="Manish Sisodia (Dy. CM &amp; Education Minsiter, Delhi)" xmlUrl="https://anchor.fm/s/22b919c4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="A Collection Of Stories (Kannada) | Kannada Podcast | Srinidhi Bengaluru" xmlUrl="https://anchor.fm/s/22d31428/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Bengaluru Commute Podcast" xmlUrl="https://anchor.fm/s/fe1b66fc/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Voice of Bengaluru | RJ Sowjanya" xmlUrl="https://anchor.fm/s/10044e778/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Once Upon A Time In Bengaluru" xmlUrl="https://anchor.fm/s/34acb654/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Chat with Champions with AIESEC in Bengaluru" xmlUrl="https://anchor.fm/s/5a767fc8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Scale Up Podcasts with AIESEC in Bengaluru" xmlUrl="https://anchor.fm/s/6a7505d4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Bengaluru Philosophy" xmlUrl="https://anchor.fm/s/49203c78/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Taste of Bengaluru" xmlUrl="https://www.omnycontent.com/d/playlist/baa19804-d77c-4777-8145-b2a400874018/3b52890b-9575-4f1d-abdb-b2ac00ccc3af/8c65c7dd-7f49-461a-a8ec-b2ac00ccc3ba/podcast.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Bengaluru techie talks" xmlUrl="https://anchor.fm/s/5affc404/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Bengaluru Hudugi Kathegalu" xmlUrl="https://www.spreaker.com/show/6000382/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="Katthe Heltini" xmlUrl="https://anchor.fm/s/207a2af4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Hub Talks" xmlUrl="https://anchor.fm/s/21273500/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="YOUR VOICE MATTERS" xmlUrl="https://anchor.fm/s/fa23d444/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Book of Job" xmlUrl="https://anchor.fm/s/4c6cc798/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Hello Kolkata! - A Kolkata Calling Podcast" xmlUrl="https://media.rss.com/kolkatacallingpodcast/feed.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Dispatches from Kolkata" xmlUrl="https://www.kalw.org/podcast/sandip-roys-dispatches-from-kolkata/rss.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="OKolkata Radio" xmlUrl="https://www.okolkataradio.com/feed.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Kolkata Fatafat" xmlUrl="https://pinecast.com/feed/kolkata-fatafat" type="rss"/>
-        
-        
-      
-        
-        <outline title="love problem solution baba ji +91 8440828240 kolkata west bengal" xmlUrl="https://anchor.fm/s/109607ef8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Sharadiyo Kolkata" xmlUrl="https://anchor.fm/s/1098eece8/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Radio Quarantine Kolkata" xmlUrl="https://anchor.fm/s/27759f3c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Bong O Kolkata" xmlUrl="https://anchor.fm/s/325c2510/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Assembly of God Church Kolkata" xmlUrl="https://agkolkata.org/feed/podcast/" type="rss"/>
-        
-        
-      
-        
-        <outline title="KOLKATA STORY FACTORY" xmlUrl="https://anchor.fm/s/5c93a0b0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Kolkata (City Of Joy)" xmlUrl="https://anchor.fm/s/58634fcc/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Red Squad Kolkata FM" xmlUrl="https://anchor.fm/s/5bde9c74/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Kolkata Adda" xmlUrl="https://anchor.fm/s/1e01796c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Best Packed Meals in Kolkata" xmlUrl="https://anchor.fm/s/55467224/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Bulk SMS Kolkata – Marketing Talk" xmlUrl="https://feeds.ivoox.com/feed_fg_f13105801_filtro_1.xml" type="rss"/>
-        
-        
-      
-        
-        <outline title="Amader Kolkata" xmlUrl="https://anchor.fm/s/3820affc/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Kolkata Real Estate" xmlUrl="https://anchor.fm/s/6715fd80/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="10 Dark Secrets of Your City-Kolkata Edition | Mirchi" xmlUrl="https://feeds.simplecast.com/5vT6JV7i" type="rss"/>
-        
-        
-      
-        
-        <outline title="Kolkata Vocal" xmlUrl="https://anchor.fm/s/49527ee0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="At Marvel Interiors, you can get the best interior designer in Kolkata at a very affordable cost." xmlUrl="https://anchor.fm/s/6a9e0718/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Think to Share - Web Design Company in Kolkata" xmlUrl="https://anchor.fm/s/be85f34/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="The Voice of Kolkata" xmlUrl="https://anchor.fm/s/5bbccef0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Wedding Videographers in kolkata - Wingoff" xmlUrl="https://anchor.fm/s/234335a0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Famous Haunted Places In Kolkata" xmlUrl="https://anchor.fm/s/4d050f30/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Digital Marketing Kolkata" xmlUrl="https://feeds.hubhopper.com/d6d585d061c4cc946543f42ac5d0f45e.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Kolkata food Blog" xmlUrl="https://anchor.fm/s/1014e370/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Hafiz Abdulqadir ashrafi kolkata 9875551490" xmlUrl="https://anchor.fm/s/37f9be10/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Ek Cup Kolkata Original Productions" xmlUrl="https://feeds.hubhopper.com/a9f610ecada7efa73219a2d19f8d9f5e.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="love vashikaran specialist baba ji +91 8440828240 Kolkata West Bengal Howrah" xmlUrl="https://anchor.fm/s/109f599ac/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="TOP NEWS CAST" xmlUrl="https://anchor.fm/s/38858864/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Kolkatar Satkahon" xmlUrl="https://anchor.fm/s/235a6784/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="INTRODUCTION(COMING SOON)" xmlUrl="https://anchor.fm/s/1fbd1518/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="FM CHENNAI" xmlUrl="https://anchor.fm/s/3748abfc/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="MANODARPAN @ KV IIT CHENNAI" xmlUrl="https://anchor.fm/s/3a3af798/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Vivekananda Cultural Centre" xmlUrl="https://anchor.fm/s/343c3910/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Chennai Live" xmlUrl="https://anchor.fm/s/1b3339f0/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Madras Tamil" xmlUrl="https://anchor.fm/s/2972d9bc/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Naan Chennai Vaasi podcast" xmlUrl="https://anchor.fm/s/37c2df30/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Chennai Queer LitFest (QLF)" xmlUrl="https://anchor.fm/s/6af4140/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Let's Talk Chennai" xmlUrl="https://anchor.fm/s/3a3e7878/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="ISKCON CHENNAI SLOKA GROUP" xmlUrl="https://anchor.fm/s/2cdcf1b4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Cyclone &amp; Tamilnadu" xmlUrl="https://anchor.fm/s/3e44f974/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="TalkOverFlow" xmlUrl="https://anchor.fm/s/32fa9fc4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Seek Help Chennai" xmlUrl="https://anchor.fm/s/4e41a354/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Trinity Presbyterian Church, Chennai" xmlUrl="https://anchor.fm/s/d44acda4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Chennai Gallery Tamil" xmlUrl="https://anchor.fm/s/4aa6c954/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Chennai Ponnu" xmlUrl="https://anchor.fm/s/2de4a00c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Gentlemen From Chennai" xmlUrl="https://anchor.fm/s/52348b84/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Message from RTI, Chennai" xmlUrl="https://anchor.fm/s/6932e8e4/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Chennai International Centre" xmlUrl="https://anchor.fm/s/48a4a950/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Packing Credit Sowmya Chennai" xmlUrl="https://anchor.fm/s/1e25d474/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Shank from chennai" xmlUrl="https://anchor.fm/s/25df5dac/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Don Bosco Chennai (DBYC)" xmlUrl="https://www.spreaker.com/show/4506811/episodes/feed" type="rss"/>
-        
-        
-      
-        
-        <outline title="Chennai Radio Club" xmlUrl="http://chennairadioclub.seesaa.net/index_custom.rdf" type="rss"/>
-        
-        
-      
-        
-        <outline title="Best Digital Marketing Company in Chennai" xmlUrl="https://anchor.fm/s/693cee84/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Luxury Hotels and Resorts in Chennai" xmlUrl="https://feeds.hubhopper.com/7d04a490183ebf2657f862be7e969b65.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="chennai ku vanthachu by pod61" xmlUrl="https://anchor.fm/s/ff30370c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Preethi’s Polambalgal: Somewhere Between Chennai and Melbourne" xmlUrl="https://anchor.fm/s/1068fee84/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Glitzchennai" xmlUrl="https://anchor.fm/s/5ee72440/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="CHENNAIREAL" xmlUrl="https://anchor.fm/s/1c7d4620/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Out of the Box Talks" xmlUrl="https://feeds.redcircle.com/eab2f840-6b7e-4617-8099-bfa56672b40c" type="rss"/>
-        
-        
-      
-        
-        <outline title="Effective English" xmlUrl="https://feeds.hubhopper.com/e1343f97c6addd382e84b323488160cc.rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Vayadi" xmlUrl="https://anchor.fm/s/5962736c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Timepass Cassette" xmlUrl="https://anchor.fm/s/41bdb44c/podcast/rss" type="rss"/>
-        
-        
-      
-        
-        <outline title="Shorts &amp; Briefs" xmlUrl="https://anchor.fm/s/45a1c1c0/podcast/rss" type="rss"/>
-        
-        
-    
-      
+        <outline title="In Focus by The Hindu" xmlUrl="https://feeds.megaphone.fm/THGU4956605070" type="rss" />
+        <outline title="The History Of India" xmlUrl="https://anchor.fm/s/20b4df78/podcast/rss" type="rss" />
+        <outline title="India Explained" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:294393291/sounds.rss" type="rss" />
+        <outline title="Investing in India" xmlUrl="https://feeds.simplecast.com/1ANGOSmm" type="rss" />
+        <outline title="How India's Economy Works" xmlUrl="https://anchor.fm/s/fb4a3980/podcast/rss" type="rss" />
+        <outline title="The Times Of India Podcast" xmlUrl="https://anchor.fm/s/57b0b7e0/podcast/rss" type="rss" />
+        <outline title="Inside Forbes India" xmlUrl="https://anchor.fm/s/2ae5651c/podcast/rss" type="rss" />
+        <outline title="Ideas of India" xmlUrl="https://rss.libsyn.com/shows/288629/destinations/2249435.xml" type="rss" />
+        <outline title="Behind The Bricks - India's first and only no filter real estate podcast channel🎙️" xmlUrl="https://anchor.fm/s/10326df00/podcast/rss" type="rss" />
+        <outline title="The Musafir Stories - India Travel Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/64cf3a81-17df-40ec-990a-af4e00a92e51/f5b69943-5379-4176-a258-af4e00a92e72/podcast.rss" type="rss" />
+        <outline title="Indian Economy Explained" xmlUrl="https://www.omnycontent.com/d/playlist/55de720e-0867-4b8a-9e29-ac8400e69720/fcbb4e13-4a20-4e32-a43d-ad5700fdce33/811e647b-15bb-446e-adf1-ad57010061f2/podcast.rss" type="rss" />
+        <outline title="Interpreting India" xmlUrl="https://feeds.simplecast.com/PJlAlBwi" type="rss" />
+        <outline title="Make India Competitive Again" xmlUrl="https://feeds.transistor.fm/make-india-great-again" type="rss" />
+        <outline title="Namaskar India - Tales from Indian History and Mythology" xmlUrl="https://anchor.fm/s/1012c66c/podcast/rss" type="rss" />
+        <outline title="Today in India - Morning News Brief" xmlUrl="https://anchor.fm/s/ff80e29c/podcast/rss" type="rss" />
+        <outline title="In Our Defence" xmlUrl="https://www.spreaker.com/show/5500863/episodes/feed" type="rss" />
+        <outline title="NSE India Podcast Series | Shashakt Niveshak" xmlUrl="https://anchor.fm/s/f656d014/podcast/rss" type="rss" />
+        <outline title="Stories From India" xmlUrl="https://anchor.fm/s/e563890/podcast/rss" type="rss" />
+        <outline title="The History of India Podcast" xmlUrl="https://rss.libsyn.com/shows/72278/destinations/309639.xml" type="rss" />
+        <outline title="India Classified" xmlUrl="https://www.omnycontent.com/d/playlist/8ce708b9-c3c2-4eaa-a27d-ac0f007c53c5/eb3b3ce9-9162-4511-9428-ac0f009ce5a8/da6db883-78c6-47e4-adc7-ac0f009ce5b1/podcast.rss" type="rss" />
+        <outline title="Echoes Of India: A History Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/e832d5d5-f1ba-41e9-9f30-af4d00b05e65/fffb4b33-5385-4548-9abc-af4d00b05e86/podcast.rss" type="rss" />
+        <outline title="Standard Chartered India - Money Insights" xmlUrl="https://rss.buzzsprout.com/1885786.rss" type="rss" />
+        <outline title="Maed in India" xmlUrl="https://www.omnycontent.com/d/playlist/5d315e00-1c8d-435b-9a31-af0f01302c17/ffc313b5-b60e-492b-9db0-af1a0027aaf9/21999f5d-eb98-4f19-82f9-af1a0027ab0c/podcast.rss" type="rss" />
+        <outline title="The Seen and the Unseen - hosted by Amit Varma" xmlUrl="https://rss.libsyn.com/shows/91647/destinations/458496.xml" type="rss" />
+        <outline title="Deep Drive | Autocar India" xmlUrl="https://rss.buzzsprout.com/2342104.rss" type="rss" />
+        <outline title="Thriller Stories of India (Hindi Podcast) by Audio Pitara" xmlUrl="https://feeds.megaphone.fm/CPP5504904408" type="rss" />
+        <outline title="Startup Spotlight India" xmlUrl="https://anchor.fm/s/108dca6a0/podcast/rss" type="rss" />
+        <outline title="Indian Scams (Biggest Scams In India)" xmlUrl="https://feeds.megaphone.fm/CPP5416559731" type="rss" />
+        <outline title="AIF &amp; PMS Experts India Podcast" xmlUrl="https://anchor.fm/s/66afc074/podcast/rss" type="rss" />
+        <outline title="UnPolitics with Preeti" xmlUrl="https://www.spreaker.com/show/6699858/episodes/feed" type="rss" />
+        <outline title="India Unwritten-Uncovering the consciousness of India." xmlUrl="https://anchor.fm/s/10f302540/podcast/rss" type="rss" />
+        <outline title="SACC India - Startup Accelerator Chamber of Commerce" xmlUrl="https://anchor.fm/s/1fe6566c/podcast/rss" type="rss" />
+        <outline title="Nothing But The Truth" xmlUrl="https://www.spreaker.com/show/5500841/episodes/feed" type="rss" />
+        <outline title="Health Wealth" xmlUrl="https://www.spreaker.com/show/5918323/episodes/feed" type="rss" />
+        <outline title="The Daily Brief" xmlUrl="https://feeds.simplecast.com/1H1JSMd0" type="rss" />
+        <outline title="Forbes India - The Startup Fridays Podcast" xmlUrl="https://anchor.fm/s/58b89130/podcast/rss" type="rss" />
+        <outline title="ANI Podcast with Smita Prakash" xmlUrl="https://anchor.fm/s/fa8ad6f8/podcast/rss" type="rss" />
+        <outline title="CFA Society India Podcast" xmlUrl="https://anchor.fm/s/e214d588/podcast/rss" type="rss" />
+        <outline title="News at 7" xmlUrl="https://www.spreaker.com/show/6571256/episodes/feed" type="rss" />
+        <outline title="The Morning Brief" xmlUrl="https://www.omnycontent.com/d/playlist/60b2e926-e5f8-4b90-a465-aef901163001/95fd7c59-790d-496e-bbde-aef901167fe4/8ae54763-9925-40ca-8c3d-aef901167ffb/podcast.rss" type="rss" />
+        <outline title="evo India Podcast" xmlUrl="https://anchor.fm/s/c3f7fe4/podcast/rss" type="rss" />
+        <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" />
+        <outline title="Stories from India and Around the World" xmlUrl="https://anchor.fm/s/40acbb70/podcast/rss" type="rss" />
+        <outline title="DIVINE LOVE TABERNACLE, New Delhi, India" xmlUrl="https://anchor.fm/s/14906d5c/podcast/rss" type="rss" />
+        <outline title="The Lit Pickers" xmlUrl="https://www.omnycontent.com/d/playlist/5d315e00-1c8d-435b-9a31-af0f01302c17/cd2a02ec-f4a1-4ed7-aec3-af110055da7b/61da6ae3-d212-432a-8da3-af110055da97/podcast.rss" type="rss" />
+        <outline title="Veda Araichi Tamil Bible Study WR Today India" xmlUrl="https://anchor.fm/s/991ccd4/podcast/rss" type="rss" />
+        <outline title="Climate Emergency" xmlUrl="https://www.omnycontent.com/d/playlist/55de720e-0867-4b8a-9e29-ac8400e69720/bee84628-6837-4503-a5bb-ac88008b2fc3/003fb528-4439-4376-b195-ac88008b2fcd/podcast.rss" type="rss" />
+        <outline title="Chakravyuh" xmlUrl="https://www.spreaker.com/show/6664770/episodes/feed" type="rss" />
+        <outline title="New City Mumbai" xmlUrl="https://anchor.fm/s/36f603d4/podcast/rss" type="rss" />
+        <outline title="TiE Mumbai" xmlUrl="https://anchor.fm/s/23d68d28/podcast/rss" type="rss" />
+        <outline title="vashikaran specialist in Mumbai +91-9358955697 Online Vashikaran Expert Pandit in Spain" xmlUrl="https://anchor.fm/s/112cc6c7c/podcast/rss" type="rss" />
+        <outline title="HISnearness Church, Navi Mumbai" xmlUrl="https://anchor.fm/s/108eeccb8/podcast/rss" type="rss" />
+        <outline title="Mumbai Melange" xmlUrl="https://anchor.fm/s/102727060/podcast/rss" type="rss" />
+        <outline title="Baatein with AIESEC in Navi Mumbai" xmlUrl="https://anchor.fm/s/3c5ace40/podcast/rss" type="rss" />
+        <outline title="Online love problem solution specialist Pandit in Mumbai +91-9358955697" xmlUrl="https://anchor.fm/s/112371ab4/podcast/rss" type="rss" />
+        <outline title="MumBai Mafia 4" xmlUrl="https://dishoom.podomatic.com/rss2.xml" type="rss" />
+        <outline title="Mumbai Crime" xmlUrl="https://mumbaicrime.feeds.goldhawkproductions.com/" type="rss" />
+        <outline title="Mumbai Smart News" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD7044581279" type="rss" />
+        <outline title="Mumbai Spurs" xmlUrl="https://anchor.fm/s/10d474d8/podcast/rss" type="rss" />
+        <outline title="Mumbai Club Radio - DJ Mixes" xmlUrl="https://mumbaiclubradio.podomatic.com/rss2.xml" type="rss" />
+        <outline title="Mumbai Local" xmlUrl="https://www.omnycontent.com/d/playlist/8ce708b9-c3c2-4eaa-a27d-ac0f007c53c5/cb74861a-5717-4a1c-a229-ac330068ff54/d7932a4e-a55f-4d93-8d68-ac330068ff62/podcast.rss" type="rss" />
+        <outline title="Mumbai" xmlUrl="https://anchor.fm/s/1fcb56b4/podcast/rss" type="rss" />
+        <outline title="OnLine Guru Ji baba ji_+91_9358955697_OnLine Vashikaran Specialist Pandit in Mumbai" xmlUrl="https://anchor.fm/s/111c10e64/podcast/rss" type="rss" />
+        <outline title="Recordings during lockdown by Carnatic music enthusiast from Powai, Mumbai, India" xmlUrl="https://anchor.fm/s/5f0c2cb8/podcast/rss" type="rss" />
+        <outline title="Bhagavad Gita Series" xmlUrl="https://feed.podbean.com/harekrishna/feed.xml" type="rss" />
+        <outline title="Toastmasters of Mumbai" xmlUrl="https://anchor.fm/s/51c4caec/podcast/rss" type="rss" />
+        <outline title="Marine Lines with Raghu Karnad" xmlUrl="https://feeds.hubhopper.com/e8b1730af9da59fb96fcc3310adc16c5.rss" type="rss" />
+        <outline title="sadiqrazvisdi" xmlUrl="https://anchor.fm/s/5b8bf7d0/podcast/rss" type="rss" />
+        <outline title="Mumbai Cricket Podcast" xmlUrl="https://www.mid-day.com/Resources/midday/rss/mid-days-mumbai-cricket-podcast.xml" type="rss" />
+        <outline title="IIT COLLEGE - Mumbai" xmlUrl="https://anchor.fm/s/24836c3c/podcast/rss" type="rss" />
+        <outline title="Varditale Mahanayak : Mumbai Heroes : True Stories of Police Officers" xmlUrl="https://feeds.megaphone.fm/CPP2479153414" type="rss" />
+        <outline title="The United Way- A Manchester United podcast from Mumbai" xmlUrl="https://anchor.fm/s/46810a4c/podcast/rss" type="rss" />
+        <outline title="Grace Covenant Church Mumbai" xmlUrl="https://anchor.fm/s/137e5820/podcast/rss" type="rss" />
+        <outline title="Jain OncoWorld Mumbai : Cancer And Hematology Care" xmlUrl="https://anchor.fm/s/24d63854/podcast/rss" type="rss" />
+        <outline title="Mumbai Strikers" xmlUrl="https://feeds.hubhopper.com/f95528df6c4e330cddd3d03089089c6c.rss" type="rss" />
+        <outline title="ELLE MUMBAI" xmlUrl="https://anchor.fm/s/27eeecc0/podcast/rss" type="rss" />
+        <outline title="MUMBAI MY LIFE" xmlUrl="https://anchor.fm/s/b354ca0/podcast/rss" type="rss" />
+        <outline title="Janma Jayanti 2006(Mumbai)" xmlUrl="https://hearthis.at/set/122718-9266566/podcast/" type="rss" />
+        <outline title="Mumbai's New Residential Launches" xmlUrl="https://anchor.fm/s/10c392490/podcast/rss" type="rss" />
+        <outline title="DARK SHADOWS OF 1993 : UNRAVELLING MUMBAI SERIAL BOMBINGS" xmlUrl="https://feeds.hubhopper.com/0d6c1096f9b1292c05e7d3a51e2b81f2.rss" type="rss" />
+        <outline title="Unfound by KnowMumbai" xmlUrl="https://anchor.fm/s/27bc37e4/podcast/rss" type="rss" />
+        <outline title="Mumbai Meri Jaan" xmlUrl="https://feeds.hubhopper.com/e2c84eba02298432598c01b29d0f1ab3.rss" type="rss" />
+        <outline title="Webinar By ELLE, Mumbai Region" xmlUrl="https://anchor.fm/s/1fb9ac0c/podcast/rss" type="rss" />
+        <outline title="Janma Jayanti 2019(Mumbai)" xmlUrl="https://hearthis.at/set/380895-9266566/podcast/" type="rss" />
+        <outline title="Mumbai Raj" xmlUrl="https://media.rss.com/mumbairaj/feed.xml" type="rss" />
+        <outline title="EEEEEEEE3EEEEEEEEE Mumbai Mumby" xmlUrl="https://anchor.fm/s/45560064/podcast/rss" type="rss" />
+        <outline title="MUMBAI CRIMES 2.0" xmlUrl="https://anchor.fm/s/51e71570/podcast/rss" type="rss" />
+        <outline title="Mumbai to Maine: A Culinary Adventure!" xmlUrl="https://anchor.fm/s/b7262afc/podcast/rss" type="rss" />
+        <outline title="Tales Of Mumbai" xmlUrl="https://anchor.fm/s/33420134/podcast/rss" type="rss" />
+        <outline title="Hinglish Podcast by a Mumbai based Girl From 90s" xmlUrl="https://anchor.fm/s/d2d5570/podcast/rss" type="rss" />
+        <outline title="Janma Jayanti 2001(Mumbai)" xmlUrl="https://hearthis.at/set/232250-9266566/podcast/" type="rss" />
+        <outline title="Mumbai Yatri" xmlUrl="https://anchor.fm/s/268509c8/podcast/rss" type="rss" />
+        <outline title="Mumbai Hafta" xmlUrl="https://anchor.fm/s/58582fc0/podcast/rss" type="rss" />
+        <outline title="Mumbai College Files" xmlUrl="https://anchor.fm/s/12637d30/podcast/rss" type="rss" />
+        <outline title="Money Moves Daily - The Mumbai Market." xmlUrl="https://anchor.fm/s/108e61ce4/podcast/rss" type="rss" />
+        <outline title="कोकण टू मुंबई (प्रवास प्रेमाचा) भाग १ | Konkan To Mumbai ( Journey Of Love) Part 1" xmlUrl="https://anchor.fm/s/1f599088/podcast/rss" type="rss" />
+        <outline title="Mumbai Hits With RJ Bapi" xmlUrl="https://anchor.fm/s/1ef0d1b0/podcast/rss" type="rss" />
+        <outline title="Idea Pitch - Entry For Spoken Fest Mumbai, 2020" xmlUrl="https://anchor.fm/s/126da9e0/podcast/rss" type="rss" />
+        <outline title="The Delhi Public School Podcast" xmlUrl="https://anchor.fm/s/237f682c/podcast/rss" type="rss" />
+        <outline title="New City Delhi" xmlUrl="https://anchor.fm/s/1ca71b8/podcast/rss" type="rss" />
+        <outline title="Sambandh" xmlUrl="https://feeds.simplecast.com/m_XqXcng" type="rss" />
+        <outline title="The 39A Podcast" xmlUrl="https://anchor.fm/s/1008ce0dc/podcast/rss" type="rss" />
+        <outline title="A Delhi Love" xmlUrl="https://www.omnycontent.com/d/playlist/8ce708b9-c3c2-4eaa-a27d-ac0f007c53c5/74d51dec-41ff-4a3d-80d8-b10f00ae51ec/8e32148d-1346-4cd3-ab23-b10f00afeab4/podcast.rss" type="rss" />
+        <outline title="Slaves And Sultans: The Sultanate of Delhi" xmlUrl="https://anchor.fm/s/5756a28c/podcast/rss" type="rss" />
+        <outline title="Old Delhi Podcast" xmlUrl="https://feeds.hubhopper.com/fdcf4b678b9f3cbf873255be5fab30a4.rss" type="rss" />
+        <outline title="Golden Words" xmlUrl="https://anchor.fm/s/f140a94c/podcast/rss" type="rss" />
+        <outline title="Golden Gleanings" xmlUrl="https://anchor.fm/s/f0ed5418/podcast/rss" type="rss" />
+        <outline title="Golden Bridge" xmlUrl="https://anchor.fm/s/e2c53900/podcast/rss" type="rss" />
+        <outline title="The Delhi Sultanate and the Rise of Islamic Rule in India — Fexingo History" xmlUrl="https://feeds.fexingo.com/history/the-delhi-sultanate-and-the-rise-of-islamic-rule-in-india.xml" type="rss" />
+        <outline title="Constitution at 70 - Mera Samvidhan" xmlUrl="https://feeds.hubhopper.com/48aae38cc6e8558acc94949732513918.rss" type="rss" />
+        <outline title="भईया…. दिल्ली रहअ तारे (Bhaiya Delhi Raha Taare)" xmlUrl="https://feeds.megaphone.fm/CPP5287021351" type="rss" />
+        <outline title="Indigenization Appreciation Hour with Saurav Jha" xmlUrl="https://anchor.fm/s/ff2b1a10/podcast/rss" type="rss" />
+        <outline title="Hisnearness Delhi" xmlUrl="https://anchor.fm/s/87a5959c/podcast/rss" type="rss" />
+        <outline title="Delhi to Manali Tour Package" xmlUrl="https://anchor.fm/s/5323de50/podcast/rss" type="rss" />
+        <outline title="The Delhi Capitals Podcast - Stories from IPL and Beyond" xmlUrl="https://feeds.hubhopper.com/6e29f066a2026e2f39ad70390e7d81c1.rss" type="rss" />
+        <outline title="Late-Night Call Girls in Mahipalpur Delhi – Delhi Escorts Service 9220592151" xmlUrl="https://feed.firstory.me/rss/user/cmr551skk07yh01wn8fpucqbj" type="rss" />
+        <outline title="Late-Night Call Girls in Saket (Delhi) – Delhi Escorts Service 9220592151" xmlUrl="https://feed.firstory.me/rss/user/cmqv5d1rh12mw01yiediu33v7" type="rss" />
+        <outline title="Call Girls In Delhi 9034835750 Delhi call girls Service" xmlUrl="https://feed.firstory.me/rss/user/cmqie19oj01t601yv842g8qbu" type="rss" />
+        <outline title="StateOfDelhi - The Spirit of Delhi" xmlUrl="https://anchor.fm/s/3e4eb3b0/podcast/rss" type="rss" />
+        <outline title="SEO Service Delhi" xmlUrl="https://feeds.hubhopper.com/67823338bb148d8fe9bfd6efa7006ea1.rss" type="rss" />
+        <outline title="Advertolearn Digital Marketing Institute in Delhi" xmlUrl="https://anchor.fm/s/107ce0df8/podcast/rss" type="rss" />
+        <outline title="Experience Delhi" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298907150/sounds.rss" type="rss" />
+        <outline title="Delhi NCR Vlogger Ka Kdk Launda Mukesh" xmlUrl="https://anchor.fm/s/41275948/podcast/rss" type="rss" />
+        <outline title="Sameer Delhi" xmlUrl="https://anchor.fm/s/2c331f18/podcast/rss" type="rss" />
+        <outline title="BETHEL HOUSE OF PRAYER DELHI" xmlUrl="https://anchor.fm/s/5dee5298/podcast/rss" type="rss" />
+        <outline title="LIBRARY KV JANAKPURI, DELHI" xmlUrl="https://anchor.fm/s/2cacf4f0/podcast/rss" type="rss" />
+        <outline title="Apollo Hospitals Delhi" xmlUrl="https://media.rss.com/apollo-hospitals-delhi/feed.xml" type="rss" />
+        <outline title="Late-Night Call Girls in Delhi – Delhi Escorts Service 9220592151" xmlUrl="https://feed.firstory.me/rss/user/cmqv9ppgf0cel01yj8idi3dmo" type="rss" />
+        <outline title="5 Affordable Yet Excellent Boarding Schools in Delhi NCR Parents Must Know in 2025" xmlUrl="https://feeds.hubhopper.com/1e9fa68bb2e608059eb64e570866fcdc.rss" type="rss" />
+        <outline title="Delhi Dose" xmlUrl="https://anchor.fm/s/3456d8b0/podcast/rss" type="rss" />
+        <outline title="Delhi Live Podcast" xmlUrl="https://anchor.fm/s/13b12b74/podcast/rss" type="rss" />
+        <outline title="1970 DELHI COLLEGE KI SUNHERI YAADEIN" xmlUrl="https://anchor.fm/s/6b7c980c/podcast/rss" type="rss" />
+        <outline title="Magnetism And Astronomy Labs In Delhi And Sikkim" xmlUrl="https://anchor.fm/s/2b4a7560/podcast/rss" type="rss" />
+        <outline title="Delhi sultanate." xmlUrl="https://anchor.fm/s/41d26c34/podcast/rss" type="rss" />
+        <outline title="Podcast Of All Subject Is Done By Shreeti Kumari 👍, Class-8thF, School-Army Public School Delhi.C" xmlUrl="https://anchor.fm/s/5ea72124/podcast/rss" type="rss" />
+        <outline title="Mindfulness- Delhi govt" xmlUrl="https://anchor.fm/s/2afbdcac/podcast/rss" type="rss" />
+        <outline title="Just High Delhi Guys" xmlUrl="https://anchor.fm/s/19f4a614/podcast/rss" type="rss" />
+        <outline title="Bible Chapel of Delhi Hills" xmlUrl="https://www.sermonaudio.com/rss_source.asp?sourceid=biblechapel" type="rss" />
+        <outline title="Best Psychologist Delhi" xmlUrl="https://feeds.hubhopper.com/fea99e3e0b8e37de95d7342d7b85391c.rss" type="rss" />
+        <outline title="TOP 15+ BEST PYTHON COURSES INSTITUTE DELHI" xmlUrl="https://anchor.fm/s/65e17200/podcast/rss" type="rss" />
+        <outline title="THE EAST DELHI CLUB" xmlUrl="https://anchor.fm/s/4be4244c/podcast/rss" type="rss" />
+        <outline title="Mint Delhi Decoded" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD1605914437" type="rss" />
+        <outline title="Hello Delhi" xmlUrl="https://anchor.fm/s/1d2924f4/podcast/rss" type="rss" />
+        <outline title="Tales from Delhi" xmlUrl="https://feeds.megaphone.fm/HTMEDIALTD8200852303" type="rss" />
+        <outline title="Manish Sisodia (Dy. CM &amp; Education Minsiter, Delhi)" xmlUrl="https://anchor.fm/s/22b919c4/podcast/rss" type="rss" />
+        <outline title="A Collection Of Stories (Kannada) | Kannada Podcast | Srinidhi Bengaluru" xmlUrl="https://anchor.fm/s/22d31428/podcast/rss" type="rss" />
+        <outline title="The Bengaluru Commute Podcast" xmlUrl="https://anchor.fm/s/fe1b66fc/podcast/rss" type="rss" />
+        <outline title="Voice of Bengaluru | RJ Sowjanya" xmlUrl="https://anchor.fm/s/10044e778/podcast/rss" type="rss" />
+        <outline title="Once Upon A Time In Bengaluru" xmlUrl="https://anchor.fm/s/34acb654/podcast/rss" type="rss" />
+        <outline title="Chat with Champions with AIESEC in Bengaluru" xmlUrl="https://anchor.fm/s/5a767fc8/podcast/rss" type="rss" />
+        <outline title="Scale Up Podcasts with AIESEC in Bengaluru" xmlUrl="https://anchor.fm/s/6a7505d4/podcast/rss" type="rss" />
+        <outline title="The Bengaluru Philosophy" xmlUrl="https://anchor.fm/s/49203c78/podcast/rss" type="rss" />
+        <outline title="Taste of Bengaluru" xmlUrl="https://www.omnycontent.com/d/playlist/baa19804-d77c-4777-8145-b2a400874018/3b52890b-9575-4f1d-abdb-b2ac00ccc3af/8c65c7dd-7f49-461a-a8ec-b2ac00ccc3ba/podcast.rss" type="rss" />
+        <outline title="Bengaluru techie talks" xmlUrl="https://anchor.fm/s/5affc404/podcast/rss" type="rss" />
+        <outline title="Bengaluru Hudugi Kathegalu" xmlUrl="https://www.spreaker.com/show/6000382/episodes/feed" type="rss" />
+        <outline title="Katthe Heltini" xmlUrl="https://anchor.fm/s/207a2af4/podcast/rss" type="rss" />
+        <outline title="Hub Talks" xmlUrl="https://anchor.fm/s/21273500/podcast/rss" type="rss" />
+        <outline title="YOUR VOICE MATTERS" xmlUrl="https://anchor.fm/s/fa23d444/podcast/rss" type="rss" />
+        <outline title="The Book of Job" xmlUrl="https://anchor.fm/s/4c6cc798/podcast/rss" type="rss" />
+        <outline title="Hello Kolkata! - A Kolkata Calling Podcast" xmlUrl="https://media.rss.com/kolkatacallingpodcast/feed.xml" type="rss" />
+        <outline title="Dispatches from Kolkata" xmlUrl="https://www.kalw.org/podcast/sandip-roys-dispatches-from-kolkata/rss.xml" type="rss" />
+        <outline title="OKolkata Radio" xmlUrl="https://www.okolkataradio.com/feed.xml" type="rss" />
+        <outline title="Kolkata Fatafat" xmlUrl="https://pinecast.com/feed/kolkata-fatafat" type="rss" />
+        <outline title="love problem solution baba ji +91 8440828240 kolkata west bengal" xmlUrl="https://anchor.fm/s/109607ef8/podcast/rss" type="rss" />
+        <outline title="Sharadiyo Kolkata" xmlUrl="https://anchor.fm/s/1098eece8/podcast/rss" type="rss" />
+        <outline title="Radio Quarantine Kolkata" xmlUrl="https://anchor.fm/s/27759f3c/podcast/rss" type="rss" />
+        <outline title="Bong O Kolkata" xmlUrl="https://anchor.fm/s/325c2510/podcast/rss" type="rss" />
+        <outline title="The Assembly of God Church Kolkata" xmlUrl="https://agkolkata.org/feed/podcast/" type="rss" />
+        <outline title="KOLKATA STORY FACTORY" xmlUrl="https://anchor.fm/s/5c93a0b0/podcast/rss" type="rss" />
+        <outline title="Kolkata (City Of Joy)" xmlUrl="https://anchor.fm/s/58634fcc/podcast/rss" type="rss" />
+        <outline title="Red Squad Kolkata FM" xmlUrl="https://anchor.fm/s/5bde9c74/podcast/rss" type="rss" />
+        <outline title="Kolkata Adda" xmlUrl="https://anchor.fm/s/1e01796c/podcast/rss" type="rss" />
+        <outline title="Best Packed Meals in Kolkata" xmlUrl="https://anchor.fm/s/55467224/podcast/rss" type="rss" />
+        <outline title="Bulk SMS Kolkata – Marketing Talk" xmlUrl="https://feeds.ivoox.com/feed_fg_f13105801_filtro_1.xml" type="rss" />
+        <outline title="Amader Kolkata" xmlUrl="https://anchor.fm/s/3820affc/podcast/rss" type="rss" />
+        <outline title="Kolkata Real Estate" xmlUrl="https://anchor.fm/s/6715fd80/podcast/rss" type="rss" />
+        <outline title="10 Dark Secrets of Your City-Kolkata Edition | Mirchi" xmlUrl="https://feeds.simplecast.com/5vT6JV7i" type="rss" />
+        <outline title="Kolkata Vocal" xmlUrl="https://anchor.fm/s/49527ee0/podcast/rss" type="rss" />
+        <outline title="At Marvel Interiors, you can get the best interior designer in Kolkata at a very affordable cost." xmlUrl="https://anchor.fm/s/6a9e0718/podcast/rss" type="rss" />
+        <outline title="Think to Share - Web Design Company in Kolkata" xmlUrl="https://anchor.fm/s/be85f34/podcast/rss" type="rss" />
+        <outline title="The Voice of Kolkata" xmlUrl="https://anchor.fm/s/5bbccef0/podcast/rss" type="rss" />
+        <outline title="Wedding Videographers in kolkata - Wingoff" xmlUrl="https://anchor.fm/s/234335a0/podcast/rss" type="rss" />
+        <outline title="Famous Haunted Places In Kolkata" xmlUrl="https://anchor.fm/s/4d050f30/podcast/rss" type="rss" />
+        <outline title="Digital Marketing Kolkata" xmlUrl="https://feeds.hubhopper.com/d6d585d061c4cc946543f42ac5d0f45e.rss" type="rss" />
+        <outline title="Kolkata food Blog" xmlUrl="https://anchor.fm/s/1014e370/podcast/rss" type="rss" />
+        <outline title="Hafiz Abdulqadir ashrafi kolkata 9875551490" xmlUrl="https://anchor.fm/s/37f9be10/podcast/rss" type="rss" />
+        <outline title="Ek Cup Kolkata Original Productions" xmlUrl="https://feeds.hubhopper.com/a9f610ecada7efa73219a2d19f8d9f5e.rss" type="rss" />
+        <outline title="love vashikaran specialist baba ji +91 8440828240 Kolkata West Bengal Howrah" xmlUrl="https://anchor.fm/s/109f599ac/podcast/rss" type="rss" />
+        <outline title="TOP NEWS CAST" xmlUrl="https://anchor.fm/s/38858864/podcast/rss" type="rss" />
+        <outline title="Kolkatar Satkahon" xmlUrl="https://anchor.fm/s/235a6784/podcast/rss" type="rss" />
+        <outline title="INTRODUCTION(COMING SOON)" xmlUrl="https://anchor.fm/s/1fbd1518/podcast/rss" type="rss" />
+        <outline title="FM CHENNAI" xmlUrl="https://anchor.fm/s/3748abfc/podcast/rss" type="rss" />
+        <outline title="MANODARPAN @ KV IIT CHENNAI" xmlUrl="https://anchor.fm/s/3a3af798/podcast/rss" type="rss" />
+        <outline title="Vivekananda Cultural Centre" xmlUrl="https://anchor.fm/s/343c3910/podcast/rss" type="rss" />
+        <outline title="Chennai Live" xmlUrl="https://anchor.fm/s/1b3339f0/podcast/rss" type="rss" />
+        <outline title="Madras Tamil" xmlUrl="https://anchor.fm/s/2972d9bc/podcast/rss" type="rss" />
+        <outline title="Naan Chennai Vaasi podcast" xmlUrl="https://anchor.fm/s/37c2df30/podcast/rss" type="rss" />
+        <outline title="Chennai Queer LitFest (QLF)" xmlUrl="https://anchor.fm/s/6af4140/podcast/rss" type="rss" />
+        <outline title="Let's Talk Chennai" xmlUrl="https://anchor.fm/s/3a3e7878/podcast/rss" type="rss" />
+        <outline title="ISKCON CHENNAI SLOKA GROUP" xmlUrl="https://anchor.fm/s/2cdcf1b4/podcast/rss" type="rss" />
+        <outline title="Cyclone &amp; Tamilnadu" xmlUrl="https://anchor.fm/s/3e44f974/podcast/rss" type="rss" />
+        <outline title="TalkOverFlow" xmlUrl="https://anchor.fm/s/32fa9fc4/podcast/rss" type="rss" />
+        <outline title="Seek Help Chennai" xmlUrl="https://anchor.fm/s/4e41a354/podcast/rss" type="rss" />
+        <outline title="Trinity Presbyterian Church, Chennai" xmlUrl="https://anchor.fm/s/d44acda4/podcast/rss" type="rss" />
+        <outline title="Chennai Gallery Tamil" xmlUrl="https://anchor.fm/s/4aa6c954/podcast/rss" type="rss" />
+        <outline title="Chennai Ponnu" xmlUrl="https://anchor.fm/s/2de4a00c/podcast/rss" type="rss" />
+        <outline title="Gentlemen From Chennai" xmlUrl="https://anchor.fm/s/52348b84/podcast/rss" type="rss" />
+        <outline title="Message from RTI, Chennai" xmlUrl="https://anchor.fm/s/6932e8e4/podcast/rss" type="rss" />
+        <outline title="Chennai International Centre" xmlUrl="https://anchor.fm/s/48a4a950/podcast/rss" type="rss" />
+        <outline title="Packing Credit Sowmya Chennai" xmlUrl="https://anchor.fm/s/1e25d474/podcast/rss" type="rss" />
+        <outline title="Shank from chennai" xmlUrl="https://anchor.fm/s/25df5dac/podcast/rss" type="rss" />
+        <outline title="Don Bosco Chennai (DBYC)" xmlUrl="https://www.spreaker.com/show/4506811/episodes/feed" type="rss" />
+        <outline title="Chennai Radio Club" xmlUrl="http://chennairadioclub.seesaa.net/index_custom.rdf" type="rss" />
+        <outline title="Best Digital Marketing Company in Chennai" xmlUrl="https://anchor.fm/s/693cee84/podcast/rss" type="rss" />
+        <outline title="Luxury Hotels and Resorts in Chennai" xmlUrl="https://feeds.hubhopper.com/7d04a490183ebf2657f862be7e969b65.rss" type="rss" />
+        <outline title="chennai ku vanthachu by pod61" xmlUrl="https://anchor.fm/s/ff30370c/podcast/rss" type="rss" />
+        <outline title="Preethi’s Polambalgal: Somewhere Between Chennai and Melbourne" xmlUrl="https://anchor.fm/s/1068fee84/podcast/rss" type="rss" />
+        <outline title="Glitzchennai" xmlUrl="https://anchor.fm/s/5ee72440/podcast/rss" type="rss" />
+        <outline title="CHENNAIREAL" xmlUrl="https://anchor.fm/s/1c7d4620/podcast/rss" type="rss" />
+        <outline title="Out of the Box Talks" xmlUrl="https://feeds.redcircle.com/eab2f840-6b7e-4617-8099-bfa56672b40c" type="rss" />
+        <outline title="Effective English" xmlUrl="https://feeds.hubhopper.com/e1343f97c6addd382e84b323488160cc.rss" type="rss" />
+        <outline title="Vayadi" xmlUrl="https://anchor.fm/s/5962736c/podcast/rss" type="rss" />
+        <outline title="Timepass Cassette" xmlUrl="https://anchor.fm/s/41bdb44c/podcast/rss" type="rss" />
+        <outline title="Shorts &amp; Briefs" xmlUrl="https://anchor.fm/s/45a1c1c0/podcast/rss" type="rss" />
       </outline>
-      
-      
-      
-    
     </outline>
-    
-    
     <outline text="YouTube">
-      
-      
-      <outline title="StarPlus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-LPIU24bQXVljUXivKEeRQ" type="rss"/>
-      
-      
-      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
-      
-      
-      <outline title="Celine Dept" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1a2ZCw7tugRZYRMnecNj3A" type="rss"/>
-      
-      
-      <outline title="Infobellsмовою гінді" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1ciY6kR3yj3kaKZ6R7ewAg" type="rss"/>
-      
-      
-      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
-      
-      
-      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
-      
-      
-      <outline title="Влад A4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2tsySbe9TNrI-xh2lximHA" type="rss"/>
-      
-      
-      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
-      
-      
-      <outline title="SonyMusicIndiaVEVO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3MLnJtqc_phABBriLRhtgQ" type="rss"/>
-      
-      
-      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
-      
-      
-      <outline title="ARY Digital HD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4JCksJF76g_MdzPVBJoC3Q" type="rss"/>
-      
-      
-      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
-      
-      
-      <outline title="Anaya Kandhal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4wEPe5mrHGAUjjTfXH_C-Q" type="rss"/>
-      
-      
-      <outline title="कलर्स टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
-      
-      
-      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
-      
-      
-      <outline title="Dangal TV Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5AA82B9K5K5Sdx2JpuuuSA" type="rss"/>
-      
-      
-      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
-      
-      
-      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
-      
-      
-      <outline title="ISSEI / いっせい" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6QZ_ss3i_8qLV_RczPZBkw" type="rss"/>
-      
-      
-      <outline title="JioHotstar Kids" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6msOR4-Wf-NMAP24YwobpQ" type="rss"/>
-      
-      
-      <outline title="Billion Surprise Toys" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6sqpmfBwngFZQPPzFjDGTw" type="rss"/>
-      
-      
-      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
-      
-      
-      <outline title="Ben Azelart" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8tCJ55XS8ClDQmfDZogYPQ" type="rss"/>
-      
-      
-      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
-      
-      
-      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
-      
-      
-      <outline title="@shemaroo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9w7VG_ZZwjXCskGZByMBvw" type="rss"/>
-      
-      
-      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9zs_bkRRTJa2kRsakFaFmw" type="rss"/>
-      
-      
-      <outline title="Karla Bustillos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAQB-fgOrLlUm149S3oArOg" type="rss"/>
-      
-      
-      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
-      
-      
-      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
-      
-      
-      <outline title="Topper Guild" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB58HbhbM93ygXfnCJ1K2kA" type="rss"/>
-      
-      
-      <outline title="चुचु टिभी नर्सरी राइम्स एन्ड किड्स सङ्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnZ16ahKA2DZ_T5W0FPUXg" type="rss"/>
-      
-      
-      <outline title="Alan Chikin Chow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCMeCQ4wtdwQuoH7TNThL1A" type="rss"/>
-      
-      
-      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDGmojLIoWpXok597xYo8cg" type="rss"/>
-      
-      
-      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDpenlfHFtjdGpqi8slPybg" type="rss"/>
-      
-      
-      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
-      
-      
-      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss"/>
-      
-      
-      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
-      
-      
-      <outline title="Saregama Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGzzga499Hr2AB1btQ3XtoQ" type="rss"/>
-      
-      
-      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
-      
-      
-      <outline title="PANDA BOI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJbJuOSf-ec7jsPzvQBVC3w" type="rss"/>
-      
-      
-      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
-      
-      
-      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
-      
-      
-      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
-      
-      
-      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
-      
-      
-      <outline title="केएल ब्रो बिजु रित्भिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5nlHWXVLeOsSjKH2fhmsg" type="rss"/>
-      
-      
-      <outline title="बाङतान टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkAepWjdylmXSltofFvsYQ" type="rss"/>
-      
-      
-      <outline title="WWE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
-      
-      
-      <outline title="@zhong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOKv-bQOCCfZp5vftTZ4MKg" type="rss"/>
-      
-      
-      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
-      
-      
-      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
-      
-      
-      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
-      
-      
-      <outline title="shfa2 - شفا" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ7x25F6YXY9DvGeHFxLhRQ" type="rss"/>
-      
-      
-      <outline title="योलो एभेन्तुरास" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ8TuCvcDMepleXFyOQfyOQ" type="rss"/>
-      
-      
-      <outline title="ABP NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRWFSbif-RFENbBrSiez1DA" type="rss"/>
-      
-      
-      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
-      
-      
-      <outline title="Masha and the Bear" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSgiKiHFAV640il9waFg9cw" type="rss"/>
-      
-      
-      <outline title="อลัน เฉิน สโตกส์ และ เฉิน สโตกส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUdKQXtKb1me2Gt1nz6tzdg" type="rss"/>
-      
-      
-      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
-      
-      
-      <outline title="MR. INDIAN HACKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWWeRmpeFuYY1FdAru58Afw" type="rss"/>
-      
-      
-      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
-      
-      
-      <outline title="ToRung" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXbYlU08sOTBktOtjVsvR6w" type="rss"/>
-      
-      
-      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss"/>
-      
-      
-      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
-      
-      
-      <outline title="Shakira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYLNGLIzMhRTi6ZOLjAPSmw" type="rss"/>
-      
-      
-      <outline title="JuegaGerman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYiGq8XF7YQD00x7wAd62Zg" type="rss"/>
-      
-      
-      <outline title="Alejo Igoa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZs0WwC0Dn_noiQE2BHSTKg" type="rss"/>
-      
-      
-      <outline title="Toys and Colors" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBTm46K3l59CIty88Q_jog" type="rss"/>
-      
-      
-      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
-      
-      
-      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
-      
-      
-      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
-      
-      
-      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
-      
-      
-      <outline title="IShowSpeed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd09ztChTkJ9dlY6RLawSog" type="rss"/>
-      
-      
-      <outline title="Alfredo Larin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd5ApCORQsMOZZz5E9oVeFA" type="rss"/>
-      
-      
-      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss"/>
-      
-      
-      <outline title="Sierra &amp; Rhia FAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe6n0z9UbsxYCS8P83f84tw" type="rss"/>
-      
-      
-      <outline title="@HarPalGeoOfficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe9JSDmyqNgA_l2BzGHq1Ug" type="rss"/>
-      
-      
-      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
-      
-      
-      <outline title="Маша и Медведь[b]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfbugOkS8PkqhDfvehIDRBw" type="rss"/>
-      
-      
-      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
-      
-      
-      <outline title="Real fools shorts official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgKEvLp8DXCTMq4QY6wW7bw" type="rss"/>
-      
-      
-      <outline title="Bispo Bruno Leonardo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgi6Wim7jdoW6luCXci83uw" type="rss"/>
-      
-      
-      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
-      
-      
-      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
-      
-      
-      <outline title="Get Movies" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClZkHt2kNIgyrTTPnSQV3SA" type="rss"/>
-      
-      
-      <outline title="Techno Gamerz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl_vAxZpvbO-PFXdDu7EdHw" type="rss"/>
-      
-      
-      <outline title="Bad Bunny" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmBA_wu8xGg1OfOkfW13Q0Q" type="rss"/>
-      
-      
-      <outline title="आचार्य प्रशान्त - Acharya Prashant" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmRZ4Xrzx1PKsg2UieOT6rA" type="rss"/>
-      
-      
-      <outline title="BETER BÖCÜK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnYP-Vc_kPNk--9h6MNI4rA" type="rss"/>
-      
-      
-      <outline title="Fede Vigevani" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoQm-PeHC-cbJclKJYJ8LzA" type="rss"/>
-      
-      
-      <outline title="Ishtar Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCopY0NAzASqmD6eVaRj2TFQ" type="rss"/>
-      
-      
-      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
-      
-      
-      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
-      
-      
-      <outline title="T-Series Bollywood Classics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq-Fj5jknLsUf-MWSy4_brA" type="rss"/>
-      
-      
-      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
-      
-      
-      <outline title="Mikecrack" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ5zFEED1hWs0KNQCQuYdQ" type="rss"/>
-      
-      
-      <outline title="Jess No Limit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrcUbwWMAshF6M6UJcwOK7g" type="rss"/>
-      
-      
-      <outline title="जामजाम इलेक्ट्रोनिक ट्रेडिङ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrnQFuUabBHaw-BRhPo8xEA" type="rss"/>
-      
-      
-      <outline title="ABS-CBN Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCstEtN0pgOmCf02EdXsGChw" type="rss"/>
-      
-      
-      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
-      
-      
-      <outline title="IndiaTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCttspZesZIDEwwpVIgoZtWQ" type="rss"/>
-      
-      
-      <outline title="योर क्रिस्टियानो" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtxD0x6AuNNqdXO9Wp5GHew" type="rss"/>
-      
-      
-      <outline title="Juan de Dios Pantoja" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu9rnHLRV0gvyn2Skm7wsRQ" type="rss"/>
-      
-      
-      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
-      
-      
-      <outline title="shfa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwHE1kM1CPJd_pI9FQ0-4dg" type="rss"/>
-      
-      
-      <outline title="LUCCAS NETO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxk7r8lH6fWkMuWeQn9Gi6g" type="rss"/>
-      
-      
-      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
-      
-      
-      <outline title="קים דונג ג'וןויו באק האפ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8gf4PK1Qth50lLHdvTCcA" type="rss"/>
-      
-    
-      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4NALVCmcmL5ntpV0thoH6w" type="rss"/>
-      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEdvpU2pFRCVqU6yIPyTpMQ" type="rss"/>
-      <outline title="Shemaroo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF1JIbMUs6uqoZEY1Haw0GQ" type="rss"/>
-      <outline title="BillionSurpriseToys - English Kids Songs &amp; Cartoon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRx3mKNUdl8QE06nEug7p6Q" type="rss"/>
-      <outline title="Felipe Neto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV306eHqgo0LvBf3Mh36AHg" type="rss"/>
-      <outline title="Fernanfloo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV4xOVpbcV8SdueDCOxLXtQ" type="rss"/>
-      <outline title="Badatrash" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYWOjHweP2V-8kGKmmAmQJQ" type="rss"/>
-      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiGm_E4ZwYSHV3bcW1pnSeQ" type="rss"/>
+      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss" />
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss" />
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
+      <outline title="Philip DeFranco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="MrBeast Gaming" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIPPMRA040LQr5QPyJEbmXA" type="rss" />
+      <outline title="JioHotstar Kids" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJg19noZp7-BYIGvypu_cow" type="rss" />
+      <outline title="MR. INDIAN HACKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSiDGb0MnHFGjs4E2WKvShw" type="rss" />
     </outline>
-    
-  
+    <outline text="Podcast">
+      <outline title="The Stories of Mahabharata" xmlUrl="https://feeds.acast.com/public/shows/61a5495fd20fb600197c82fd" type="rss" category="Performing Arts" />
+      <outline title="Raj Shamani's Figuring Out" xmlUrl="https://anchor.fm/s/f5347ab0/podcast/rss" type="rss" category="Education" />
+      <outline title="The Desi Crime Podcast" xmlUrl="https://anchor.fm/s/f6585ee8/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Global News Podcast" xmlUrl="https://podcasts.files.bbci.co.uk/p02nq0gn.rss" type="rss" category="Daily News" />
+      <outline title="Finshots Daily" xmlUrl="https://anchor.fm/s/37a76020/podcast/rss" type="rss" category="Business" />
+      <outline title="Teen Taal" xmlUrl="https://www.spreaker.com/show/4688572/episodes/feed" type="rss" category="Comedy Interviews" />
+      <outline title="Chanakya Neeti (Sutra Sahit)" xmlUrl="https://feeds.megaphone.fm/CPP2332226300" type="rss" category="Books" />
+      <outline title="Daybreak" xmlUrl="https://feeds.transistor.fm/daybreak-3e66db67-ddb3-4cd3-9ba9-460bd586dcbb" type="rss" category="Business News" />
+      <outline title="The Diary Of A CEO with Steven Bartlett" xmlUrl="https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn" type="rss" category="Business" />
+      <outline title="Empire: World History" xmlUrl="https://feeds.megaphone.fm/empirepodcast" type="rss" category="History" />
+      <outline title="Rotten Mango" xmlUrl="https://feeds.simplecast.com/6Qp23t6h" type="rss" category="True Crime" />
+      <outline title="Huberman Lab" xmlUrl="https://feeds.megaphone.fm/hubermanlab" type="rss" category="Health &amp; Fitness" />
+      <outline title="Osho Hindi Podcast" xmlUrl="https://www.spreaker.com/show/6141318/episodes/feed" type="rss" category="Spirituality" />
+      <outline title="20 Minute Books" xmlUrl="https://www.20minutebooks.com/rss/" type="rss" category="Self-Improvement" />
+      <outline title="On Purpose with Jay Shetty" xmlUrl="https://feeds.megaphone.fm/on-purpose" type="rss" category="Mental Health" />
+      <outline title="TED Talks Daily" xmlUrl="https://feeds.acast.com/public/shows/67587e77c705e441797aff96" type="rss" category="Society &amp; Culture" />
+      <outline title="The Mel Robbins Podcast" xmlUrl="https://feeds.simplecast.com/UCwaTX1J" type="rss" category="Self-Improvement" />
+      <outline title="Acquired" xmlUrl="https://feeds.transistor.fm/acquired" type="rss" category="Technology" />
+      <outline title="FT News Briefing" xmlUrl="https://feeds.acast.com/public/shows/73fe3ede-5c5c-4850-96a8-30db8dbae8bf" type="rss" category="Daily News" />
+      <outline title="Think Fast Talk Smart: Communication Techniques" xmlUrl="https://feeds.transistor.fm/think-fast-talk-smart-communication-techniques" type="rss" category="Careers" />
+      <outline title="The Daily" xmlUrl="https://feeds.simplecast.com/Sl5CSM3S" type="rss" category="Daily News" />
+      <outline title="The Prakhar Gupta Xperience" xmlUrl="https://anchor.fm/s/f6473d5c/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Cyrus Says" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/9baef9c9-4ff2-4b4e-a3dd-af540094e334/270ddb3d-16c8-4190-81d4-af540094e347/podcast.rss" type="rss" category="Comedy" />
+      <outline title="The Rest Is History" xmlUrl="https://feeds.megaphone.fm/GLT4787413333" type="rss" category="History" />
+      <outline title="The Core Report" xmlUrl="https://anchor.fm/s/faf1e050/podcast/rss" type="rss" category="Business News" />
+      <outline title="Ashtavakra Mahagita" xmlUrl="https://anchor.fm/s/10c2a4074/podcast/rss" type="rss" category="Spirituality" />
+      <outline title="The Joe Rogan Experience" xmlUrl="https://feeds.megaphone.fm/GLT1412515089" type="rss" category="Comedy" />
+      <outline title="The Knowledge Project" xmlUrl="https://feeds.megaphone.fm/FSMI7575968096" type="rss" category="Business" />
+      <outline title="The Sadhguru Podcast - Of Mystics and Mistakes" xmlUrl="https://feeds.megaphone.fm/ISHAFOUNDATIONINC6546953794" type="rss" category="Spirituality" />
+      <outline title="Bharat Unscripted" xmlUrl="https://anchor.fm/s/109bdda30/podcast/rss" type="rss" category="History" />
+      <outline title="ThePrint" xmlUrl="https://feed.podbean.com/theprint/feed.xml" type="rss" category="Politics" />
+      <outline title="Desi Deep Dive | तर्क और तथ्य" xmlUrl="https://anchor.fm/s/10f357694/podcast/rss" type="rss" category="Science" />
+      <outline title="All-In with Chamath, Jason, Sacks &amp; Friedberg" xmlUrl="https://rss.libsyn.com/shows/254861/destinations/1928300.xml" type="rss" category="Technology" />
+      <outline title="Founders" xmlUrl="https://feeds.megaphone.fm/DSLLC6297708582" type="rss" category="Entrepreneurship" />
+      <outline title="Mind relaxing music for stress relief in hindi, Shree krishna mashup song lofi, Bhajan songs krishna" xmlUrl="https://media.rss.com/youtechmusic/feed.xml" type="rss" category="Music History" />
+      <outline title="The Ranveer Show हिंदी" xmlUrl="https://anchor.fm/s/f5d53400/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="PURI JAGANNADH" xmlUrl="https://anchor.fm/s/2abb69d8/podcast/rss" type="rss" category="Hobbies" />
+      <outline title="Hidden Brain" xmlUrl="https://feeds.simplecast.com/kwWc0lhf" type="rss" category="Social Sciences" />
+      <outline title="The Stories of the Ramayana" xmlUrl="https://feeds.acast.com/public/shows/683c836f62f4742d48413b92" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Moneycontrol Podcast" xmlUrl="https://audioboom.com/channels/4937727.rss" type="rss" category="Business" />
+      <outline title="The AI Daily Brief: Artificial Intelligence News and Analysis" xmlUrl="https://anchor.fm/s/f7cac464/podcast/rss" type="rss" category="Technology" />
+      <outline title="Economist Podcasts" xmlUrl="https://access.acast.com/rss/ec380acc-fe13-46a0-991f-a1e508d126f8" type="rss" category="News" />
+      <outline title="Akbar Birbal Stories" xmlUrl="https://www.spreaker.com/show/6676973/episodes/feed" type="rss" category="Stories for Kids" />
+      <outline title="दिनभर: पूरा दिन,पूरी ख़बर (Dinbhar)" xmlUrl="https://podcasts.files.bbci.co.uk/p09ds7zx.rss" type="rss" category="Health &amp; Fitness" />
+      <outline title="SRMN" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286774249/sounds.rss" type="rss" category="Music" />
+      <outline title="Fuel for the Soul with John Giftah | Biblical Teaching &amp; Faith Podcast" xmlUrl="https://www.spreaker.com/show/4939473/episodes/feed" type="rss" category="Christianity" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Spice Up Your Game: India's iGaming Podcast" xmlUrl="https://anchor.fm/s/100004e24/podcast/rss" type="rss" category="Leisure" />
+      <outline title="Cricket Unfiltered" xmlUrl="https://www.spreaker.com/show/6904535/episodes/feed" type="rss" category="Sports" />
+      <outline title="Sledging Room" xmlUrl="https://www.spreaker.com/show/5596752/episodes/feed" type="rss" category="Sports" />
+      <outline title="THE ONE'S CHANGING THE WORLD -PODCAST" xmlUrl="https://anchor.fm/s/1288c4f0/podcast/rss" type="rss" category="Technology" />
+      <outline title="Skift India Travel Podcast" xmlUrl="https://feeds.megaphone.fm/skift9939071838" type="rss" category="News" />
+      <outline title="Longevity India" xmlUrl="https://anchor.fm/s/cc623140/podcast/rss" type="rss" category="Health" />
+      <outline title="Inside Forbes India" xmlUrl="https://feeds.feedburner.com/forbesindia" type="rss" category="Business" />
+      <outline title="My First Job Podcast - Real Career Stories for India/Indian Freshers" xmlUrl="https://media.rss.com/myfirstjob/feed.xml" type="rss" category="Business" />
+      <outline title="The Tastes of India Podcast- Indian Recipe Podcast" xmlUrl="https://feeds.acast.com/public/shows/66aded9f1f6556b4b6255e68" type="rss" category="Arts" />
+      <outline title="Geeta's World" xmlUrl="https://www.spreaker.com/show/5500873/episodes/feed" type="rss" category="Government" />
+      <outline title="DAKSH Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/5d315e00-1c8d-435b-9a31-af0f01302c17/722c39fb-d91e-4d29-82b9-af16004eb5c1/d3fe88e6-fd05-4808-ab66-af16004eb61a/podcast.rss" type="rss" category="Government" />
+      <outline title="Tune India Radio: Daily Podcasts | Hindi &amp; Indian Radio Australia" xmlUrl="https://tuneindiaradio.com.au/category/radioclassicshow/feed" type="rss" category="Music" />
+      <outline title="Smile India - Hindi Shifa Maitra Ke Saath" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/bd19e6a8-dc78-4de2-9959-af4700c1d2ca/736e8466-2ad2-4d89-b7c5-af4700c1d2d4/podcast.rss" type="rss" category="News" />
+      <outline title="Live History India Podcast" xmlUrl="https://anchor.fm/s/190312b8/podcast/rss" type="rss" category="Society" />
+      <outline title="The Adi Podcast | Startups, Tech, AI, Venture Capital, Fundraising, India &amp; more!" xmlUrl="https://anchor.fm/s/f66fb19c/podcast/rss" type="rss" category="Business" />
+      <outline title="Podcast Historia de India - Diana Uribe" xmlUrl="https://www.ivoox.com/_fg_f172801_filtro_1.xml" type="rss" category="History" />
+      <outline title="Podcast Archives - Top Hindi &amp; Indian Radio Station in Australia | Tune India Radio" xmlUrl="https://tuneindiaradio.com.au/category/podcast/feed" type="rss" category="Music" />
+      <outline title="Propnation Podcasts" xmlUrl="https://anchor.fm/s/544760e0/podcast/rss" type="rss" category="Business" />
+      <outline title="Laravel India Podcast" xmlUrl="https://anchor.fm/s/3210084c/podcast/rss" type="rss" category="Technology" />
+      <outline title="Smile India - English With Shifa Maitra" xmlUrl="https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/e0755fce-9649-4ede-bbc7-af4700c1d297/125dfc96-4000-4cf2-ae18-af4700c1d2a5/podcast.rss" type="rss" category="News" />
+      <outline title="MyKitaab : Podcast on Book Publishing in India" xmlUrl="https://feeds.feedburner.com/mykitaabpodcastonbookpublishinginindia" type="rss" />
+      <outline title="The Discover India Podcast by Professor Pankaj Jain: Bhārat Darśan" xmlUrl="https://anchor.fm/s/9b45574/podcast/rss" type="rss" category="Society" />
+      <outline title="EY India Insights Podcast" xmlUrl="https://media.rss.com/eyindia/feed.xml" type="rss" category="Business" />
+      <outline title="The Modern India's Podcast" xmlUrl="https://rss.buzzsprout.com/1283366.rss" type="rss" category="Business" />
+      <outline title="The India Hicks Podcast" xmlUrl="https://indiahicks.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Wild Life Conservation: India Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:213824096/sounds.rss" type="rss" category="Science" />
+      <outline title="India Speak: The CPR Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud%3ausers%3a257366064/sounds.rss" type="rss" category="Education" />
+      <outline title="Return on India" xmlUrl="https://feeds.megaphone.fm/cls7428302372" type="rss" category="Business" />
+      <outline title="BTS In India Podcast" xmlUrl="https://anchor.fm/s/466feb18/podcast/rss" type="rss" category="Music" />
+      <outline title="SKD SKINNY FIT|INDIA’S FIRST EVER HINDI FITNESS PODCAST" xmlUrl="https://anchor.fm/s/29e3505c/podcast/rss" type="rss" category="Health" />
+      <outline title="A Tall Girl's Podcast" xmlUrl="https://www.spreaker.com/show/4937893/episodes/feed" type="rss" category="Education" />
+      <outline title="A Book A Day - A Literary Podcast from India" xmlUrl="https://anchor.fm/s/6b64490/podcast/rss" type="rss" category="Arts" />
+      <outline title="The Times of India podcast" xmlUrl="https://timesofindia.indiatimes.com/rsspodcast/82245011.cms" type="rss" category="News" />
+      <outline title="Wed FM India- India's First Wedding Podcast" xmlUrl="https://anchor.fm/s/668450ec/podcast/rss" type="rss" category="Society" />
+      <outline title="SPI Podcast" xmlUrl="https://anchor.fm/s/1f8ee2ec/podcast/rss" type="rss" category="Fiction" />
+      <outline title="Ithihasa India History Podcast" xmlUrl="https://anchor.fm/s/f9395e64/podcast/rss" type="rss" category="History" />
+      <outline title="Go-Beyond Podcast" xmlUrl="https://rss.buzzsprout.com/880225.rss" type="rss" category="Society" />
+      <outline title="I'd Like To Thank Myself" xmlUrl="https://feeds.transistor.fm/id-like-to-thank-myself" type="rss" category="Arts" />
+      <outline title="Arroe Collins Like It's Live" xmlUrl="https://www.spreaker.com/show/4113802/episodes/feed" type="rss" category="News" />
+      <outline title="Seriously Mysterious - Missing Persons, Unsolved Murders &amp; Historical True Crime" xmlUrl="https://www.spreaker.com/show/4532075/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Life Hacks DIY &amp; More - Transform Your Everyday With Simple Tricks and DIY Magic!" xmlUrl="https://www.spreaker.com/show/5995484/episodes/feed" type="rss" category="Education" />
+      <outline title="Reddit Stories" xmlUrl="https://www.spreaker.com/show/6370551/episodes/feed" type="rss" category="Leisure" />
+      <outline title="The Kyle Peterson Show" xmlUrl="https://www.spreaker.com/show/6573404/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Reality After Show" xmlUrl="https://www.spreaker.com/show/5448874/episodes/feed" type="rss" category="Tv" />
+      <outline title="3-Bit Gamer Show" xmlUrl="https://www.spreaker.com/show/2255796/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Come explore the paranormal files as we delve into the unexplained. The paranormal podcast." xmlUrl="https://www.spreaker.com/show/5547977/episodes/feed" type="rss" category="Society" />
+      <outline title="Minding Your Business Podcast" xmlUrl="https://www.spreaker.com/show/6367325/episodes/feed" type="rss" category="Business" />
+      <outline title="95.3 Gorilla" xmlUrl="https://wznfpodcast.mainevibe.com/feed.xml" type="rss" category="Music" />
+      <outline title="Gamefully Unemployed" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:395741505/sounds.rss" type="rss" category="Tv" />
+      <outline title="Cog-Dog Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:236473103/sounds.rss" type="rss" category="Education" />
+      <outline title="Managing Tech Millions" xmlUrl="https://feeds.redcircle.com/8f2225e0-c4ac-469c-9e36-07f3677a22a7" type="rss" category="Business" />
+      <outline title="Vocal Booth Radio Listen Again" xmlUrl="https://vocalboothradio.com/feed/mp3" type="rss" category="Music" />
+      <outline title="Daily Shower Thoughts" xmlUrl="https://feeds.megaphone.fm/dailyshowerthoughts" type="rss" category="Comedy" />
+      <outline title="BIG Life Devotional | Daily Devotional for Women" xmlUrl="https://biglifehq.com/feed/podcast" type="rss" category="Religion" />
+      <outline title="Fun Content" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1469" type="rss" category="News" />
+      <outline title="94WIP Morning Show with Joe DeCamara and Jon Ritchie" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/philadelphia_wipfm-94wip_morning_show_with_joe_decamara_and_jon_ritchie" type="rss" category="Sports" />
+      <outline title="Based Camp | Simone &amp; Malcolm Collins" xmlUrl="https://api.substack.com/feed/podcast/1643534/s/64409.rss" type="rss" category="Society" />
+      <outline title="Bonjour France Podcast" xmlUrl="https://www.spreaker.com/show/6773527/episodes/feed" type="rss" category="Society" />
+      <outline title="Milena's Diary" xmlUrl="https://feeds.megaphone.fm/hmstalksltd9487207744" type="rss" category="Society" />
+      <outline title="North Point Baptist Church Sermons" xmlUrl="https://www.spreaker.com/show/6124300/episodes/feed" type="rss" category="Religion" />
+      <outline title="York County's Morning Show" xmlUrl="https://www.spreaker.com/show/6243862/episodes/feed" type="rss" category="Society" />
+      <outline title="Brian Thomas" xmlUrl="https://www.spreaker.com/show/2459972/episodes/feed" type="rss" category="News" />
+      <outline title="Wave 94" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:16676106/sounds.rss" type="rss" category="Religion" />
+      <outline title="Cleveland Browns News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/cleveland-browns-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Cork News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/fort-smith-daily-news-now.xml" type="rss" category="News" />
+      <outline title="The Missing Persons Report" xmlUrl="https://www.spreaker.com/show/6763610/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Rabbi Kraz's Shiurim" xmlUrl="https://anchor.fm/s/d89491c4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Toronto Today with Greg Brady" xmlUrl="https://feeds.megaphone.fm/coru2066336057" type="rss" category="News" />
+      <outline title="The Drake Toll Show" xmlUrl="https://feeds.megaphone.fm/wwo4349656783" type="rss" category="News" />
+      <outline title="Going Ultra - Presented by Henshin Inspection" xmlUrl="https://media.rss.com/mjmgu/feed.xml" type="rss" category="Tv" />
+      <outline title="JPost Headlines" xmlUrl="https://www.spreaker.com/show/6677418/episodes/feed" type="rss" category="News" />
+      <outline title="Audio Mises Wire" xmlUrl="https://cdn.mises.org/itunes/en_127226.xml" type="rss" category="News" />
+      <outline title="Outsource to Profits Podcast" xmlUrl="https://feed.podbean.com/getlevrg/feed.xml" type="rss" category="Business" />
+      <outline title="24 Oras Podcast" xmlUrl="https://feeds.acast.com/public/shows/685d292847311de1b6e0e89a" type="rss" category="News" />
+      <outline title="Excess Returns" xmlUrl="https://anchor.fm/s/9a1dfac/podcast/rss" type="rss" category="Business" />
+      <outline title="Red Sox Digest Podcast" xmlUrl="https://www.spreaker.com/show/6691213/episodes/feed" type="rss" category="News" />
+      <outline title="The Tony Kornheiser Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/the-tony-kornheiser-show" type="rss" category="Sports" />
+      <outline title="Radio Miraya" xmlUrl="https://audioboom.com/channels/3891441.rss" type="rss" category="Technology" />
+      <outline title="Pivot: SHIFT Ahead Mastermind" xmlUrl="https://media.rss.com/pivot-shift-ahead-mastermind/feed.xml" type="rss" category="Business" />
+      <outline title="Los Angeles Rams News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/los-angeles-rams-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Get Up" xmlUrl="https://feeds.megaphone.fm/esp2870920494" type="rss" category="Sports" />
+      <outline title="Courtney and KISS in the morning" xmlUrl="https://www.spreaker.com/show/2497425/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Computer Talk with TAB" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/f8c743d7682ab4bac553696e6093d3e7" type="rss" category="Business" />
+      <outline title="Tennessee Titans News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/tennessee-titans-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Wrestle Radio Australia" xmlUrl="https://wrestleradioaustralia.libsyn.com/rss" type="rss" category="Sports" />
+      <outline title="Hope Expression Podcast" xmlUrl="https://www.spreaker.com/show/5891904/episodes/feed" type="rss" category="Religion" />
+      <outline title="Spurs Chat: Discussing all Things Tottenham Hotspur: Hosted by Chris Cowlin: The Daily Tottenham/Spurs Podcast" xmlUrl="https://feeds.acast.com/public/shows/639c5ea1bcab760012015b61" type="rss" category="Sports" />
+      <outline title="Federalist Radio Hour" xmlUrl="https://feeds.feedburner.com/ricochetaudionetwork/federalistradiohour" type="rss" category="News" />
+      <outline title="The Irish Passport" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298752213/sounds.rss" type="rss" category="Society" />
+      <outline title="The Lunduke Journal of Technology" xmlUrl="https://api.substack.com/feed/podcast/462466.rss" type="rss" category="Technology" />
+      <outline title="Boston Bruins News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/boston-bruins-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Warden's Watch" xmlUrl="https://feeds.megaphone.fm/wpcm3659727000" type="rss" category="Sports" />
+      <outline title="Experience in Golf Clubhouse Design" xmlUrl="https://feeds.libsyn.com/475266/rss" type="rss" category="Arts" />
+      <outline title="Betting Weekly Studios" xmlUrl="https://feeds.megaphone.fm/rerre3101069934" type="rss" category="Sports" />
+      <outline title="The Long Run with Luke Timmerman" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:317770704/sounds.rss" type="rss" category="Science" />
+      <outline title="Belfast News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/bridgeport-daily-news-now.xml" type="rss" category="News" />
+      <outline title="AM Quincy" xmlUrl="https://feeds.feedburner.com/qatv_amquincypodcast" type="rss" category="Government" />
+      <outline title="Autoblog News" xmlUrl="https://feeds.feedburner.com/podcast/autoblog" type="rss" category="Games" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast" type="rss" category="News" />
+      <outline title="Filterbuy.com Audio Blogs Podcast" xmlUrl="https://www.spreaker.com/show/6267470/episodes/feed" type="rss" category="Education" />
+      <outline title="The Flex Podcast with Anna Martin Fitness" xmlUrl="https://media.rss.com/the-flex-podcast-with-anna-martin-fitness/feed.xml" type="rss" category="Health" />
+      <outline title="Church and State" xmlUrl="https://feed.podbean.com/churchandstate/feed.xml" type="rss" category="News" />
+      <outline title="Bite-Sized Dental Marketing" xmlUrl="https://media.rss.com/bsdm/feed.xml" type="rss" category="Business" />
+      <outline title="DD Fantasy Football Radio" xmlUrl="https://feeds.megaphone.fm/blu7133453702" type="rss" category="Sports" />
+      <outline title="Cybercrime Magazine Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286242900/sounds.rss" type="rss" category="Technology" />
+      <outline title="Lawrence News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/lawrence-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Sasquatch Experience" xmlUrl="https://www.spreaker.com/show/4208641/episodes/feed" type="rss" category="Science" />
+      <outline title="Ciliberto and Friends" xmlUrl="https://www.spreaker.com/show/5983689/episodes/feed" type="rss" category="Music" />
+      <outline title="The Automated Daily" xmlUrl="https://theautomateddaily.com/feed.xml" type="rss" category="Technology" />
+      <outline title="The Automated Daily - Space News Edition" xmlUrl="https://theautomateddaily.com/space/feed.xml" type="rss" category="Science" />
+      <outline title="Word Balloon Comics Podcast" xmlUrl="https://www.spreaker.com/show/3143082/episodes/feed" type="rss" category="Tv" />
+      <outline title="Daily Morning Class" xmlUrl="https://media.rss.com/rabbiyedid/feed.xml" type="rss" category="Religion" />
+      <outline title="Reality with The King" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a1735c70-f70f-4045-805b-b302010c5b8c/5db0a3af-13d8-4a16-974c-b302010c5bb4/podcast.rss" type="rss" category="Tv" />
+      <outline title="The Dentalpreneur Podcast w/ Dr. Mark Costes" xmlUrl="https://markcostes.libsyn.com/rss" type="rss" category="Business" />
+      <outline title="The Kapeel Gupta Career Podshow" xmlUrl="https://rss.buzzsprout.com/2012553.rss" type="rss" category="Business" />
+      <outline title="What in the World" xmlUrl="https://podcasts.files.bbci.co.uk/w13xtvrv.rss" type="rss" category="News" />
+      <outline title="The Buddy System with Chris &amp; Matty" xmlUrl="https://feeds.megaphone.fm/mduyh3921896096?1?1" type="rss" category="Comedy" />
+      <outline title="Fore Love of Golf" xmlUrl="https://feeds.megaphone.fm/rogxo2747915340" type="rss" category="Sports" />
+      <outline title="Dr. John Campbell" xmlUrl="https://feeds.megaphone.fm/vg9554039150" type="rss" category="Education" />
+      <outline title="Paranormal UK Radio Network" xmlUrl="https://www.spreaker.com/show/4541473/episodes/feed" type="rss" category="Society" />
+      <outline title="This Day in History" xmlUrl="https://feeds.redcircle.com/9339ef5f-2c20-4a38-b60d-eb4ac27759c3" type="rss" category="History" />
+      <outline title="Football Social Daily" xmlUrl="https://feeds.megaphone.fm/comg9297908545" type="rss" category="Sports" />
+      <outline title="Edmonton News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-stockton-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Park Avenue Synagogue Podcast" xmlUrl="https://feed.podbean.com/parkavenuepodcast/feed.xml" type="rss" category="Religion" />
+      <outline title="PreMarket Prep" xmlUrl="https://anchor.fm/s/fd33c360/podcast/rss" type="rss" category="Business" />
+      <outline title="StribSports Daily Delivery" xmlUrl="https://feeds.megaphone.fm/stribsportsdailydelivery" type="rss" category="Sports" />
+      <outline title="Legacy Nashville Podcast" xmlUrl="https://media.rss.com/legacy-nashville-podcast/feed.xml" type="rss" category="Religion" />
+      <outline title="&quot;There I was...&quot; An Aviation Podcast" xmlUrl="https://feeds.megaphone.fm/aopa1855704656" type="rss" category="Leisure" />
+      <outline title="Marketer of the Day with Robert Plank: Business Growth &amp; Entrepreneur Stories" xmlUrl="https://www.robertplank.com/feed/podcast" type="rss" category="Business" />
+      <outline title="In The Money Media Network" xmlUrl="https://feeds.captivate.fm/in-the-money-media-network" type="rss" category="Sports" />
+      <outline title="This Paranormal Life" xmlUrl="https://feeds.megaphone.fm/nsr2334813337" type="rss" category="Comedy" />
+      <outline title="Let's Address This with Qasim Rashid Podcast" xmlUrl="https://api.substack.com/feed/podcast/2550223.rss" type="rss" category="News" />
+      <outline title="Flashscore News" xmlUrl="https://feeds.captivate.fm/flashscore-news" type="rss" category="News" />
+      <outline title="JACC Global" xmlUrl="https://feeds.libsyn.com/75161" type="rss" category="Health" />
+      <outline title="Health News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/health-and-fitness-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Health" />
+      <outline title="Food Freedom" xmlUrl="https://anchor.fm/s/d625f518/podcast/rss" type="rss" category="Health" />
+      <outline title="See Ball Get Ball with David Pollack" xmlUrl="https://media.rss.com/see-ball-get-ball-david-pollack/feed.xml" type="rss" category="Sports" />
+      <outline title="Blurt Vibes" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1398" type="rss" category="News" />
+      <outline title="Twisted Podcast" xmlUrl="https://twistedpodcast.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Billianon" xmlUrl="https://podcast.billianon.com/@billianon/feed.xml" type="rss" category="Education" />
+      <outline title="Global Research Unlocked" xmlUrl="https://feed.podbean.com/bofaglobalresearch/feed.xml" type="rss" category="Business" />
+      <outline title="Fresh Pinball Podcast" xmlUrl="https://media.rss.com/freshpinballpodcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Georgia Tech Yellow Jackets Football Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/georgia-tech-yellow-jackets-football-today-2-min-news.xml" type="rss" category="News" />
+      <outline title="Magical Transformations" xmlUrl="https://feeds.captivate.fm/magicaltrasformations" type="rss" category="Health" />
+      <outline title="The Nielson Show" xmlUrl="https://feeds.libsyn.com/481581/rss" type="rss" category="Sports" />
+      <outline title="The Bridge" xmlUrl="https://www.spreaker.com/show/3099883/episodes/feed" type="rss" category="Sports" />
+      <outline title="Politics Unpacked" xmlUrl="https://feeds.acast.com/public/shows/92a301e1-443b-435f-b4e2-2e2dd1e37fc5" type="rss" category="News" />
+      <outline title="*“Yesterday, I Went to Mars ♡”*" xmlUrl="https://anchor.fm/s/fcce555c/podcast/rss" type="rss" category="Society" />
+      <outline title="SYSTEMIZE YOUR LIFE + BUSINESS | Schedules, Routines, Productivity, Time Management, Operating System" xmlUrl="https://feed.podbean.com/systemizeyourlife/feed.xml" type="rss" category="Kids" />
+      <outline title="San Francisco 49ers News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/san-francisco-49ers-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Chiney Today" xmlUrl="https://feeds.megaphone.fm/esp1950629932" type="rss" category="Sports" />
+      <outline title="Top Entrepreneurs Podcast | Enterprise Podcast Network" xmlUrl="https://feeds.feedburner.com/entrepreneurpodcastnetwork" type="rss" category="Business" />
+      <outline title="Restoration Home with Jennifer Pepito" xmlUrl="https://feed.podbean.com/restorationhome/feed.xml" type="rss" category="Kids" />
+      <outline title="Keys to Success" xmlUrl="https://www.spreaker.com/show/6414073/episodes/feed" type="rss" category="Society" />
+      <outline title="Athletics Weekly Podcast" xmlUrl="https://feeds.acast.com/public/shows/6697e5223fac6c42420fe0e8" type="rss" category="Sports" />
+      <outline title="Mully &amp; Haugh Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/chicago_wscram_mully___haugh_show" type="rss" category="Sports" />
+      <outline title="Grow My Salon Business Podcast" xmlUrl="https://feeds.transistor.fm/grow-my-salon-business-podcast" type="rss" category="Arts" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="News" />
+      <outline title="Mornings With Gary Byron Podcast" xmlUrl="https://feeds.transistor.fm/mornings-with-gary-byron-podcast" type="rss" category="News" />
+      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed" type="rss" category="News" />
+      <outline title="Arkansas Razorbacks Basketball News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/arkansas-razorbacks-basketball-news-today-2-min-news-the-dai.xml" type="rss" category="News" />
+      <outline title="Galway Bay fm - Sports" xmlUrl="https://galwaybayfmsports.podbean.com/feed.xml" type="rss" category="Sports" />
+      <outline title="Harmonizing Success" xmlUrl="https://www.spreaker.com/show/6418590/episodes/feed" type="rss" category="Business" />
+      <outline title="World Today" xmlUrl="https://aezfm.meldingcloud.com/rss/program/46" type="rss" category="News" />
+      <outline title="Montreal Canadiens News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/montreal-canadiens-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Giggly Squad" xmlUrl="https://feeds.acast.com/public/shows/780a3042-864b-40fa-ae09-4557aec621c3" type="rss" category="Comedy" />
+    </outline>
+    <outline text="Social">
+      <outline title="r/india" xmlUrl="https://www.reddit.com/r/india/.rss" type="rss" />
+      <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
+    </outline>
   </body>
-  
-  
-    
-
 </opml>

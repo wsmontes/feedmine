@@ -205,6 +205,7 @@ enum ExportEngine {
                 case .video: badge = " `video`"
                 case .audio: badge = " `podcast`"
                 case .text: badge = ""
+                case .forum: badge = " `forum`"
                 }
                 lines.append("- [\(feed.title)](\(feed.url))\(badge)")
             }

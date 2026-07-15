@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Law, Legal News &amp; Jurisprudence</title>
+  </head>
+  <body>
+    <outline text="Legal News &amp; Publications">
+      <outline title="SCOTUSblog" xmlUrl="https://www.scotusblog.com/feed/" type="rss" />
+      <outline title="ABA Journal" xmlUrl="https://www.abajournal.com/rss" type="rss" />
+      <outline title="Harvard Law Review" xmlUrl="https://harvardlawreview.org/feed/" type="rss" />
+      <outline title="Stanford Law Review" xmlUrl="https://www.stanfordlawreview.org/rss/" type="rss" />
+      <outline title="Above the Law" xmlUrl="https://abovethelaw.com/feed/" type="rss" />
+      <outline title="Law &amp; Crime" xmlUrl="https://lawandcrime.com/feed/" type="rss" />
+      <outline title="The Lawyer (UK)" xmlUrl="https://www.thelawyer.com/rss" type="rss" />
+    </outline>
+    <outline text="Legal Tech &amp; Innovation">
+      <outline title="Artificial Lawyer" xmlUrl="https://www.artificiallawyer.com/feed/" type="rss" />
+      <outline title="LawSites (Bob Ambrogi)" xmlUrl="https://www.lawsitesblog.com/feed" type="rss" />
+      <outline title="Technically Legal Podcast" xmlUrl="https://feeds.libsyn.com/technicallylegal" type="rss" />
+    </outline>
+    <outline text="Criminal Law &amp; Justice">
+      <outline title="Innocence Project Blog" xmlUrl="https://innocenceproject.org/rss/" type="rss" />
+      <outline title="Simple Justice" xmlUrl="https://blog.simplejustice.us/feed/" type="rss" />
+    </outline>
+    <outline text="Constitutional &amp; Civil Rights">
+      <outline title="The Volokh Conspiracy" xmlUrl="https://reason.com/volokh/feed/" type="rss" />
+      <outline title="ACLU — News" xmlUrl="https://www.aclu.org/rss" type="rss" />
+      <outline title="Election Law Blog" xmlUrl="https://electionlawblog.org/feed/" type="rss" />
+      <outline title="The Constitution Society" xmlUrl="https://consoc.org.uk/feed/" type="rss" />
+    </outline>
+    <outline text="Intellectual Property">
+      <outline title="IP Watchdog" xmlUrl="https://www.ipwatchdog.com/feed/" type="rss" />
+      <outline title="The TTABlog" xmlUrl="https://thettablog.blogspot.com/feeds/posts/default" type="rss" />
+      <outline title="Copyright Alliance Blog" xmlUrl="https://copyrightalliance.org/feed/" type="rss" />
+      <outline title="EFF — Deeplinks" xmlUrl="https://www.eff.org/rss" type="rss" />
+      <outline title="Techdirt" xmlUrl="https://www.techdirt.com/feed/" type="rss" />
+    </outline>
+    <outline text="Brazilian Law">
+      <outline title="Consultor Jurídico (ConJur)" xmlUrl="https://www.conjur.com.br/rss" type="rss" />
+      <outline title="Âmbito Jurídico" xmlUrl="https://ambitojuridico.com.br/feed/" type="rss" />
+      <outline title="JusBrasil Notícias" xmlUrl="https://www.jusbrasil.com.br/rss" type="rss" />
+    </outline>
+    <outline text="Law Blogs &amp; Commentary">
+      <outline title="Popehat" xmlUrl="https://popehat.substack.com/feed" type="rss" />
+      <outline title="The Legal Geeks" xmlUrl="https://thelegalgeeks.com/feed/" type="rss" />
+      <outline title="Lowering the Bar" xmlUrl="https://loweringthebar.net/feed" type="rss" />
+      <outline title="Legal Cheek (UK)" xmlUrl="https://www.legalcheek.com/feed/" type="rss" />
+      <outline title="Josh Blackman's Blog" xmlUrl="https://joshblackman.com/blog/feed/" type="rss" />
+      <outline title="Dorf on Law" xmlUrl="https://www.dorfonlaw.org/feeds/posts/default" type="rss" />
+      <outline title="Balkinization" xmlUrl="https://balkin.blogspot.com/feeds/posts/default" type="rss" />
+      <outline title="Law &amp; Political Economy" xmlUrl="https://lpeproject.org/feed/" type="rss" />
+    </outline>
+    <outline text="International Law">
+      <outline title="Opinio Juris" xmlUrl="https://opiniojuris.org/feed/" type="rss" />
+      <outline title="EJIL: Talk!" xmlUrl="https://www.ejiltalk.org/feed/" type="rss" />
+      <outline title="Just Security" xmlUrl="https://www.justsecurity.org/feed/" type="rss" />
+      <outline title="International Law Observer" xmlUrl="https://internationallawobserver.eu/feed/" type="rss" />
+    </outline>
+    <outline text="Law Podcasts">
+      </outline>
+    <outline text="YouTube — Law">
+      </outline>
+    <outline text="Human Rights Law">
+      <outline title="Human Rights Watch" xmlUrl="https://www.hrw.org/rss" type="rss" />
+      <outline title="Amnesty International" xmlUrl="https://www.amnesty.org/en/rss/" type="rss" />
+      <outline title="The Intercept" xmlUrl="https://theintercept.com/feed/" type="rss" />
+    </outline>
+    <outline text="Corporate &amp; Business Law">
+      <outline title="CorpLaw Blog" xmlUrl="https://www.corplawblog.com/feed/" type="rss" />
+      <outline title="The Harvard Law School Forum" xmlUrl="https://corpgov.law.harvard.edu/feed/" type="rss" />
+      <outline title="Compliance Week" xmlUrl="https://www.complianceweek.com/rss" type="rss" />
+    </outline>
+    <outline text="Environmental Law">
+      <outline title="Climate Law Blog" xmlUrl="https://blogs.law.columbia.edu/climatechange/feed/" type="rss" />
+      <outline title="Earthjustice Blog" xmlUrl="https://earthjustice.org/rss" type="rss" />
+    </outline>
+    <outline text="More Law School Reviews &amp; Journals">
+      <outline title="Columbia Law Review" xmlUrl="https://columbialawreview.org/feed/" type="rss" />
+      <outline title="NYU Law Review" xmlUrl="https://www.nyulawreview.org/rss/" type="rss" />
+      <outline title="UCLA Law Review" xmlUrl="https://www.uclalawreview.org/feed/" type="rss" />
+      <outline title="Michigan Law Review" xmlUrl="https://michiganlawreview.org/feed/" type="rss" />
+      <outline title="Virginia Law Review" xmlUrl="https://www.virginialawreview.org/rss/" type="rss" />
+      <outline title="Duke Law Journal" xmlUrl="https://dlj.law.duke.edu/rss/" type="rss" />
+      <outline title="Texas Law Review" xmlUrl="https://texaslawreview.org/feed/" type="rss" />
+      <outline title="Georgetown Law Journal" xmlUrl="https://www.law.georgetown.edu/georgetown-law-journal/rss/" type="rss" />
+    </outline>
+    <outline text="More Law Podcasts &amp; YouTube">
+      </outline>
+  </body>
+</opml>

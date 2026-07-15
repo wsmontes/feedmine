@@ -4,15 +4,18 @@
     <title>Iowa Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Iowa Capital Dispatch" xmlUrl="https://iowacapitaldispatch.com/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Iowa Capital Dispatch" xmlUrl="https://iowacapitaldispatch.com/feed/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Business">
+      <outline title="Des Moines Biz Record" xmlUrl="https://www.businessrecord.com/rss" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Iowa State U" xmlUrl="https://www.news.iastate.edu/rss" type="rss" />
+    </outline>
+    <outline text="Culture" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Business">
-        <outline title="Des Moines Biz Record" xmlUrl="https://www.businessrecord.com/rss" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="Iowa State U" xmlUrl="https://www.news.iastate.edu/rss" type="rss" />
-      </outline>
-      <outline text="Culture" /></body>
-    </opml>
+  </body>
+</opml>

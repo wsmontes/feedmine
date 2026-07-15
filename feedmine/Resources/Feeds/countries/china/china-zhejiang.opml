@@ -5,82 +5,28 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="Hangzhou Daily" xmlUrl="https://www.hangzhou.com.cn/rss/" type="rss" />
       <outline title="Ningbo Daily" xmlUrl="https://www.nbd.com.cn/rss/" type="rss" />
     </outline>
     <outline text="Politics">
-      <outline title="Zhejiang Gov" xmlUrl="http://www.zj.gov.cn/rss" type="rss" />
-    </outline>
+      </outline>
     <outline text="Business" />
     <outline text="Technology">
       <outline title="Alibaba News" xmlUrl="https://www.alizila.com/feed/" type="rss" />
     </outline>
     <outline text="Education">
       <outline title="Zhejiang Univ" xmlUrl="https://www.zju.edu.cn/rss" type="rss" />
-      <outline title="Zhejiang Tech Univ" xmlUrl="https://www.zjut.edu.cn/rss" type="rss" />
     </outline>
     <outline text="Podcasts">
-      <outline title="Expats On Air" xmlUrl="https://feed.podbean.com/expatsonair/feed.xml" type="rss" category="Society &amp; Culture" />
-      <outline title="The Beijing Hour" xmlUrl="https://aezfm.meldingcloud.com/rss/program/5" type="rss" category="News" />
-      <outline title="New Books Network" xmlUrl="https://feeds.megaphone.fm/LIT4543917034" type="rss" category="News" />
       <outline title="Real Talk China" xmlUrl="https://rss.libsyn.com/shows/476334/destinations/4043304.xml" type="rss" category="Education" />
       <outline title="The China Show" xmlUrl="https://rss.art19.com/the-china-show" type="rss" category="News" />
       <outline title="Lung Cancer Considered" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:608921562/sounds.rss" type="rss" category="Science" />
-      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
-      <outline title="Global Business" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/430" type="rss" category="News" />
       <outline title="Princeton University Podcast" xmlUrl="http://www.kaltura.com/api_v3/getFeed.php?partnerId=1449362&amp;feedId=1_tm2zdtnp" type="rss" category="Podcasts" />
     </outline>
     <outline text="YouTube">
-      <outline title="China Uncut" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK-qS1TetgB2RUYl8X-7TyA" type="rss" />
-      <outline title="中国民主党" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9ZI4DsfKHbrZBosJKdv-2Q" type="rss" />
-      <outline title="中国纪录China-documentary" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqNd_vD4EedOAOV18gMiFdw" type="rss" />
-      <outline title="NextStepChinaTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3C1yH5XSd8UIL0AmBCjykA" type="rss" />
-      <outline title="真實中國" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVe2WPYGFRRlNnHeIo-2Qng" type="rss" />
-      <outline title="中国浙江卫视官方频道 Zhejiang STV Official Channel - 欢迎订阅 -" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC52EYUUSlzcYqHj-qsx0RHg" type="rss" />
-      <outline title="Rose &amp; Anzai Country Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsVKn32MwIVd9cPa6Yo1ztg" type="rss" />
-      <outline title="Jason 徐朱成" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8Qxh_RfJmZtjTJg3uKKr0w" type="rss" />
-      <outline title="中国浙江卫视官方频道 China ZJSTV Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCURHG8M-8dkGFKmjXYJTqBA" type="rss" />
-      <outline title="Visit Amazing China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5FVJxWGWdgtRTeT2BxVO7w" type="rss" />
-      <outline title="Real China Street" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCngKwbbU4Ks7SDckauVm7ZQ" type="rss" />
-      <outline title="なるほど中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOdwKUem71D3RZTsMaau4Pg" type="rss" />
-      <outline title="Look into China 探索中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGCp8rB--toPrVdNCJqa3uQ" type="rss" />
       <outline title="China Views" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt-DZYZ2p1aBxEcxVVqiEvQ" type="rss" />
-      <outline title="China National Tourist Office Sydney" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzCuc_hgG6XQhBNIhUWkCsw" type="rss" />
-      <outline title="Zhejiang STV Global Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB_Zk_cUcqA-1I9oeeBUBqA" type="rss" />
-      <outline title="ZheJiang Time-honored Brand Association" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkN65rKGnQJTSWQsIaafxUQ" type="rss" />
-      <outline title="Amazing China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjbjhkYUdMCHDH3Hd2zLf3w" type="rss" />
-      <outline title="中国乡村 China Village Walk" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgd6xMMS2ifscXcLp2CCMfg" type="rss" />
-      <outline title="摩旅中国 Motorcycle Travel in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0PEY3GRZWWY2oOTqkh4XMA" type="rss" />
       <outline title="《看中國》" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLJYH0o60tlyAdy3g5GNrKw" type="rss" />
-      <outline title="China Walking POV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbJQkIcAy0NxmZEqweSiRMw" type="rss" />
-      <outline title="Zhejiang University of Science and Technology" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7GiGWnMh7rnWQyTb5nFlJg" type="rss" />
-      <outline title="Outhere in China " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrafWGH89I0m7YuBO0HNmDg" type="rss" />
-      <outline title="浙江卫视音乐频道 ZJSTV Music Channel - 欢迎订阅 -" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp8cPvx_Od76EL66vvCnhRA" type="rss" />
-      <outline title="中国生活Life in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCp87PlDWRH1v76lRqOHxaoA" type="rss" />
-      <outline title="Ameson Year in China (AYC)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVW6crPwpqMkvz3pyHJanPQ" type="rss" />
-      <outline title="浙江卫视【奔跑吧】官方频道---欢迎订阅" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfj8FsoiPFHn1gZMJaeLEDg" type="rss" />
-      <outline title="China on camera 镜头下的中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCG93sO2_uyrh3RvU3-hmjDQ" type="rss" />
-      <outline title="Zhejiang University" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC__NrJouaoTYNrlxPquMKYg" type="rss" />
-      <outline title="Chinese flavor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAZsd5_IvzzWWPM-HEzKTPw" type="rss" />
-      <outline title="中国新闻社" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpbfXQsYBJTwq5lCkwGIeuQ" type="rss" />
-      <outline title="fly over China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXthNi45qoLd0rkhhNDeiUA" type="rss" />
-      <outline title="中国东方卫视官方频道China DragonTV Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ06BguWKS5GJsEue7u79PQ" type="rss" />
-      <outline title="IYUT WANG DI CHINA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDtTYH6o0oisk2sBajZE-ng" type="rss" />
-      <outline title="Wild China（大美中国）" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1vqvxmCM2JiWrkYFHcGb2w" type="rss" />
-      <outline title="This is China 这就是中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuKbHzLkhqWhjRx2HW4ckLg" type="rss" />
-      <outline title="中国最美乡村China's most beautiful village" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOyqZyhGNZ9p4pH426MUggw" type="rss" />
-      <outline title="China Street View" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjfciUxB1yhhP_OlZ3CD44g" type="rss" />
-      <outline title="中国好声音官方频道SING!CHINA Official Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTmSp0HNi-NVxFinOsp1O4g" type="rss" />
-      <outline title="欧美中文融媒体中心" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCh1L81W_PGYskun01mioGYw" type="rss" />
-      <outline title="中央民族乐团 China National Traditional Orchestra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgD_rOapNGXiCb3oNBbWtBQ" type="rss" />
       <outline title="中国在住Nomuchan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMEgTP4wItauNtdomzWUwAg" type="rss" />
-      <outline title="ZHEJIANG EXPO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCasJQHLCFb0VoHtrdV5oMmA" type="rss" />
       <outline title="240hrs in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGZVdrVYvXt0kDBsHgk_xHg" type="rss" />
-      <outline title="Aerial China航拍中國" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtHONHWW7OXJMFBbbufvdDw" type="rss" />
-      <outline title="中国风景 Chinese scenery" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCji0cOUVEAw3fycMv_5H_qA" type="rss" />
-      <outline title="Discover Zhejiang" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTO9YhSdQ4xHJpw2SpYgylw" type="rss" />
-      <outline title="miran " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGsCnqA-kpZzBOm6MpKSePw" type="rss" />
-      <outline title="Looking China 看中国 - Lens of World Youth Filmmakers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9opo9d_IzczRg_n23s4Qdw" type="rss" />
     </outline>
   </body>
 </opml>

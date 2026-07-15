@@ -4,20 +4,23 @@
     <title>Louisiana Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Lake Charles American Press" xmlUrl="https://www.americanpress.com/rss" type="rss" />
+    <outline text="News">
+      <outline title="Lake Charles American Press" xmlUrl="https://www.americanpress.com/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
+      <outline title="LA Illuminator" xmlUrl="https://lailluminator.com/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="NOLA CityBusiness" xmlUrl="https://neworleanscitybusiness.com/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="Tulane News" xmlUrl="https://news.tulane.edu/rss" type="rss" />
+    </outline>
+    <outline text="Sports" />
+    <outline text="Culture">
+      <outline title="Eater New Orleans" xmlUrl="https://nola.eater.com/rss/index.xml" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics">
-        <outline title="LA Illuminator" xmlUrl="https://lailluminator.com/feed/" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="NOLA CityBusiness" xmlUrl="https://neworleanscitybusiness.com/feed/" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="Tulane News" xmlUrl="https://news.tulane.edu/rss" type="rss" />
-      </outline>
-      <outline text="Sports" />
-      <outline text="Culture">
-        <outline title="Eater New Orleans" xmlUrl="https://nola.eater.com/rss/index.xml" type="rss" />
-      </outline></body>
-    </opml>
+  </body>
+</opml>

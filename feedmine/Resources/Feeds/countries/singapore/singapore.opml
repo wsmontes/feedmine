@@ -1,496 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  
-  
   <head>
-    
-    
     <title>Singapore Feeds</title>
-    
-  
   </head>
-  
-  
   <body>
-    
-    
     <outline text="News">
-      
-      
-      <outline title="CNA" xmlUrl="https://www.channelnewsasia.com/rss/" type="rss"/>
-      
-      
-      <outline title="Business Times" xmlUrl="https://www.businesstimes.com.sg/rss/" type="rss"/>
-      
-      
-      <outline title="Mothership" xmlUrl="https://www.mothership.sg/feed/" type="rss"/>
-      
-      
-      <outline title="Tamil Murasu" xmlUrl="https://www.tamilmurasu.com.sg/rss/" type="rss"/>
-      
-      
-      <outline title="The Independent SG" xmlUrl="https://www.theindependent.sg/feed/" type="rss"/>
-      
-      
-      <outline title="Rice Media" xmlUrl="https://www.ricemedia.co/feed/" type="rss"/>
-      
-      
-      <outline title="Wake Up SG" xmlUrl="https://www.wakeupsg.com/feed/" type="rss"/>
-      
-      
-      <outline title="MustShareNews" xmlUrl="https://www.mustsharenews.com/feed/" type="rss"/>
-      
-    
+      <outline title="CNA" xmlUrl="https://www.channelnewsasia.com/rss/" type="rss" />
+      <outline title="Business Times" xmlUrl="https://www.businesstimes.com.sg/rss/" type="rss" />
+      <outline title="Mothership" xmlUrl="https://www.mothership.sg/feed/" type="rss" />
+      <outline title="Tamil Murasu" xmlUrl="https://www.tamilmurasu.com.sg/rss/" type="rss" />
+      <outline title="The Independent SG" xmlUrl="https://www.theindependent.sg/feed/" type="rss" />
+      <outline title="Rice Media" xmlUrl="https://www.ricemedia.co/feed/" type="rss" />
+      <outline title="Wake Up SG" xmlUrl="https://www.wakeupsg.com/feed/" type="rss" />
+      <outline title="MustShareNews" xmlUrl="https://www.mustsharenews.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Sports">
-      
-      
-      <outline title="Football SG" xmlUrl="https://www.fas.org.sg/rss/" type="rss"/>
-      
-      
-      <outline title="One Championship" xmlUrl="https://www.onefc.com/rss/" type="rss"/>
-      
-      
-      <outline title="SINGSOC" xmlUrl="https://www.singaporeolympics.com/rss/" type="rss"/>
-      
-    
+      <outline title="Football SG" xmlUrl="https://www.fas.org.sg/rss/" type="rss" />
+      <outline title="One Championship" xmlUrl="https://www.onefc.com/rss/" type="rss" />
+      <outline title="SINGSOC" xmlUrl="https://www.singaporeolympics.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Technology">
-      
-      
-      <outline title="Vulcan Post" xmlUrl="https://www.vulcanpost.com/feed/" type="rss"/>
-      
-      
-      <outline title="Geek Culture" xmlUrl="https://www.geekculture.co/feed/" type="rss"/>
-      
-      
-      <outline title="Fintech SG" xmlUrl="https://www.fintechnews.sg/feed/" type="rss"/>
-      
-      
-      <outline title="SGFIN" xmlUrl="https://www.sgfin.tech/feed/" type="rss"/>
-      
-      
-      <outline title="OpenGov Asia" xmlUrl="https://www.opengovasia.com/feed/" type="rss"/>
-      
-    
+      <outline title="Vulcan Post" xmlUrl="https://www.vulcanpost.com/feed/" type="rss" />
+      <outline title="Geek Culture" xmlUrl="https://www.geekculture.co/feed/" type="rss" />
+      <outline title="Fintech SG" xmlUrl="https://www.fintechnews.sg/feed/" type="rss" />
+      <outline title="SGFIN" xmlUrl="https://www.sgfin.tech/feed/" type="rss" />
+      <outline title="OpenGov Asia" xmlUrl="https://www.opengovasia.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Science">
-      
-      
-      <outline title="NUS" xmlUrl="https://www.nus.edu.sg/rss/" type="rss"/>
-      
-      
-      <outline title="SMU" xmlUrl="https://www.smu.edu.sg/rss/" type="rss"/>
-      
-      
-      <outline title="SUTD" xmlUrl="https://www.sutd.edu.sg/rss/" type="rss"/>
-      
-      
-      <outline title="Science Centre SG" xmlUrl="https://www.science.edu.sg/rss/" type="rss"/>
-      
-      
-      <outline title="IMDA" xmlUrl="https://www.imda.gov.sg/rss/" type="rss"/>
-      
-    
+      <outline title="NUS" xmlUrl="https://www.nus.edu.sg/rss/" type="rss" />
+      <outline title="SMU" xmlUrl="https://www.smu.edu.sg/rss/" type="rss" />
+      <outline title="SUTD" xmlUrl="https://www.sutd.edu.sg/rss/" type="rss" />
+      <outline title="Science Centre SG" xmlUrl="https://www.science.edu.sg/rss/" type="rss" />
+      <outline title="IMDA" xmlUrl="https://www.imda.gov.sg/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Culture">
-      
-      
-      <outline title="Straits Times Arts" xmlUrl="https://www.straitstimes.com/life/arts/rss/" type="rss"/>
-      
-      
-      <outline title="Plural Art" xmlUrl="https://www.pluralartmag.com/feed/" type="rss"/>
-      
-    
+      <outline title="Straits Times Arts" xmlUrl="https://www.straitstimes.com/life/arts/rss/" type="rss" />
+      <outline title="Plural Art" xmlUrl="https://www.pluralartmag.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Movies">
-      
-      
-      <outline title="The Projector" xmlUrl="https://www.theprojector.sg/rss/" type="rss"/>
-      
-      
-      <outline title="Sinema" xmlUrl="https://www.sinema.sg/feed/" type="rss"/>
-      
-      
-      <outline title="SGIFF" xmlUrl="https://www.sgiff.com/rss/" type="rss"/>
-      
-      
-      <outline title="Asian Film Archive" xmlUrl="https://www.asianfilmarchive.org/rss/" type="rss"/>
-      
-    
+      <outline title="The Projector" xmlUrl="https://www.theprojector.sg/rss/" type="rss" />
+      <outline title="Sinema" xmlUrl="https://www.sinema.sg/feed/" type="rss" />
+      <outline title="SGIFF" xmlUrl="https://www.sgiff.com/rss/" type="rss" />
+      <outline title="Asian Film Archive" xmlUrl="https://www.asianfilmarchive.org/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Music">
-      
-      
-      <outline title="NUS Arts Music" xmlUrl="https://www.nusartsfestival.com/rss/" type="rss"/>
-      
-      
-      <outline title="Sofar SG" xmlUrl="https://www.sofarsounds.com/singapore/rss/" type="rss"/>
-      
-    
+      <outline title="NUS Arts Music" xmlUrl="https://www.nusartsfestival.com/rss/" type="rss" />
+      <outline title="Sofar SG" xmlUrl="https://www.sofarsounds.com/singapore/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Food">
-      
-      
-      <outline title="SethLui" xmlUrl="https://www.sethlui.com/feed/" type="rss"/>
-      
-      
-      <outline title="LadyIronChef" xmlUrl="https://www.ladyironchef.com/feed/" type="rss"/>
-      
-      
-      <outline title="I Eat I Shoot" xmlUrl="https://www.ieatishootipost.sg/feed/" type="rss"/>
-      
-      
-      <outline title="Rubbish Eat Rubbish Grow" xmlUrl="https://www.rubbisheatrubbishgrow.com/feed/" type="rss"/>
-      
-      
-      <outline title="Ate Too Much" xmlUrl="https://www.atetoomuch.com/feed/" type="rss"/>
-      
-      
-      <outline title="Michelin Guide SG" xmlUrl="https://www.guide.michelin.com/sg/rss/" type="rss"/>
-      
-    
+      <outline title="SethLui" xmlUrl="https://www.sethlui.com/feed/" type="rss" />
+      <outline title="LadyIronChef" xmlUrl="https://www.ladyironchef.com/feed/" type="rss" />
+      <outline title="I Eat I Shoot" xmlUrl="https://www.ieatishootipost.sg/feed/" type="rss" />
+      <outline title="Rubbish Eat Rubbish Grow" xmlUrl="https://www.rubbisheatrubbishgrow.com/feed/" type="rss" />
+      <outline title="Ate Too Much" xmlUrl="https://www.atetoomuch.com/feed/" type="rss" />
+      <outline title="Michelin Guide SG" xmlUrl="https://www.guide.michelin.com/sg/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Gaming">
-      
-      
-      <outline title="Geek Culture Games" xmlUrl="https://www.geekculture.co/gaming/feed/" type="rss"/>
-      
-      
-      <outline title="GameAxis" xmlUrl="https://www.gameaxis.com/feed/" type="rss"/>
-      
-      
-      <outline title="Asia Game Festival" xmlUrl="https://www.gamescom.asia/rss/" type="rss"/>
-      
-    
+      <outline title="Geek Culture Games" xmlUrl="https://www.geekculture.co/gaming/feed/" type="rss" />
+      <outline title="GameAxis" xmlUrl="https://www.gameaxis.com/feed/" type="rss" />
+      <outline title="Asia Game Festival" xmlUrl="https://www.gamescom.asia/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Travel">
-      
-      
-      <outline title="Straits Times Travel" xmlUrl="https://www.straitstimes.com/life/travel/rss/" type="rss"/>
-      
-      
-      <outline title="Little Day Out" xmlUrl="https://www.littledayout.com/feed/" type="rss"/>
-      
-      
-      <outline title="Travel Wander" xmlUrl="https://www.travelwander.com/feed/" type="rss"/>
-      
-      
-      <outline title="Pohtecktoes" xmlUrl="https://www.pohtecktoes.com/feed/" type="rss"/>
-      
-    
+      <outline title="Straits Times Travel" xmlUrl="https://www.straitstimes.com/life/travel/rss/" type="rss" />
+      <outline title="Little Day Out" xmlUrl="https://www.littledayout.com/feed/" type="rss" />
+      <outline title="Travel Wander" xmlUrl="https://www.travelwander.com/feed/" type="rss" />
+      <outline title="Pohtecktoes" xmlUrl="https://www.pohtecktoes.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Business">
-      
-      
-      <outline title="Business Times" xmlUrl="https://www.businesstimes.com.sg/rss/" type="rss"/>
-      
-      
-      <outline title="DollarsAndSense" xmlUrl="https://www.dollarsandsense.sg/feed/" type="rss"/>
-      
-    
+      <outline title="Business Times" xmlUrl="https://www.businesstimes.com.sg/rss/" type="rss" />
+      <outline title="DollarsAndSense" xmlUrl="https://www.dollarsandsense.sg/feed/" type="rss" />
     </outline>
-    
-
     <outline text="Photography">
-      
-      
-      <outline title="The Photographic Society" xmlUrl="https://www.pss.org.sg/rss/" type="rss"/>
-      
-      
-      <outline title="Canon SG" xmlUrl="https://www.canon.com.sg/rss/" type="rss"/>
-      
-      
-      <outline title="Objectifs" xmlUrl="https://www.objectifs.com.sg/rss/" type="rss"/>
-      
-    
+      <outline title="The Photographic Society" xmlUrl="https://www.pss.org.sg/rss/" type="rss" />
+      <outline title="Canon SG" xmlUrl="https://www.canon.com.sg/rss/" type="rss" />
+      <outline title="Objectifs" xmlUrl="https://www.objectifs.com.sg/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Podcasts">
-      
-      
-      <outline title="Daily Singapore" xmlUrl="https://rss.libsyn.com/shows/467526/destinations/3953829.xml" type="rss"/>
-      
-      
-      <outline title="The Lessons We Learnt" xmlUrl="https://anchor.fm/s/c77c3acc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Honeycombers Podcast" xmlUrl="https://feeds.captivate.fm/the-honeycombers-podcast/" type="rss"/>
-      
-      
-      <outline title="Chillax: A Singapore Podcast" xmlUrl="https://anchor.fm/s/56dce168/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The City SG Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:60650575/sounds.rss" type="rss"/>
-      
-      
-      <outline title="The Story of Singapore" xmlUrl="https://anchor.fm/s/66198640/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Retire By 50 Singapore Podcast" xmlUrl="https://anchor.fm/s/106f5af58/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Singapore Personal Finance Podcast" xmlUrl="https://anchor.fm/s/60bbcc08/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SUSS Podcast" xmlUrl="https://rss.buzzsprout.com/1216022.rss" type="rss"/>
-      
-      
-      <outline title="The Singapore Noodles Podcast" xmlUrl="https://api.substack.com/feed/podcast/48208.rss" type="rss"/>
-      
-      
-      <outline title="中场休息 | Intermission" xmlUrl="https://anchor.fm/s/6ae0de6c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Let's Talk, Singapore" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/b0286ec8-8ba9-44b8-8abc-adcd00425e57/84e58e18-45fd-409a-9f77-adcd0042dcdc/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Coconut Avenue (Singapore Properties by TFC)" xmlUrl="https://feeds.acast.com/public/shows/62fe63f93e3ac10013640b13" type="rss"/>
-      
-      
-      <outline title="The Padang Sessions" xmlUrl="https://feeds.captivate.fm/the-padang-sessions/" type="rss"/>
-      
-      
-      <outline title="Inconvenient Questions, Singapore" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:192181672/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Cornerstone Singapore Audio Podcast" xmlUrl="https://www.cscc.org.sg/feed/audio-podcast/" type="rss"/>
-      
-      
-      <outline title="Sleepless in Singapore" xmlUrl="https://feeds.fireside.fm/sleepless-sg/rss" type="rss"/>
-      
-      
-      <outline title="BiblioAsia Podcast" xmlUrl="https://feeds.captivate.fm/biblioasia/" type="rss"/>
-      
-      
-      <outline title="Can't Breathe" xmlUrl="https://anchor.fm/s/ee06d6c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Singapore Confidential" xmlUrl="https://anchor.fm/s/101691b60/podcast/rss" type="rss"/>
-      
-      
-      <outline title="透視新加坡 SeeThrough Singapore" xmlUrl="https://feeds.soundon.fm/podcasts/9891f888-3b76-485d-a978-f96de7f8c8a3.xml" type="rss"/>
-      
-      
-      <outline title="Office of Mufti Singapore" xmlUrl="https://anchor.fm/s/105cdd6a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Property Podcast" xmlUrl="https://anchor.fm/s/f4e483fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Singapore Property news and updates" xmlUrl="https://anchor.fm/s/79f49010/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IPS Podcast — Singapore Unpacked" xmlUrl="https://www.spreaker.com/show/6571171/episodes/feed" type="rss"/>
-      
-      
-      <outline title="Singapore's Real Estate, Explained." xmlUrl="https://anchor.fm/s/160edd44/podcast/rss" type="rss"/>
-      
-      
-      <outline title="TiE Talks" xmlUrl="https://anchor.fm/s/10f356d34/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Some Scuffs" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:405777798/sounds.rss" type="rss"/>
-      
-      
-      <outline title="AI for Good Bootcamp" xmlUrl="https://api.substack.com/feed/podcast/3518775.rss" type="rss"/>
-      
-      
-      <outline title="Singapore Startup Stories" xmlUrl="https://anchor.fm/s/4800286c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="美恩中英双语频道 | 美恩读书 | Reading with Alena from Singapore" xmlUrl="https://anchor.fm/s/a225a45c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Hear. Here. Singapore." xmlUrl="https://www.omnycontent.com/d/playlist/08ca6535-6e93-45cd-9011-ac5500d9f9f5/ac9ced0a-6253-44f8-9261-acdd00fc9f16/93ad8dcc-e42d-4930-9923-acdd00fdd087/podcast.rss" type="rss"/>
-      
-      
-      <outline title="BRAVE Southeast Asia Tech: Singapore, Indonesia, Vietnam, Philippines, Thailand &amp; Malaysia Startups, Founders &amp; Venture Capital VC (English)" xmlUrl="https://feed.pod.co/bravedynamics" type="rss"/>
-      
-      
-      <outline title="Singapore Property Wealth" xmlUrl="https://feeds.async.com/23580e48-6b11-4d01-b1fb-a6d31dea06f6.rss" type="rss"/>
-      
-      
-      <outline title="ParentEd" xmlUrl="https://feeds.captivate.fm/parented/" type="rss"/>
-      
-      
-      <outline title="M Singapore Property Mastery I This is M." xmlUrl="https://anchor.fm/s/1039d9028/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Radio Paranormal Singapore" xmlUrl="https://anchor.fm/s/59bd79c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nexcast" xmlUrl="https://rss.buzzsprout.com/2287904.rss" type="rss"/>
-      
-      
-      <outline title="Wesley Methodist Church Singapore (Sermon Podcasts)" xmlUrl="https://feed.podbean.com/wesleymcsg/feed.xml" type="rss"/>
-      
-      
-      <outline title="The Singapore Business Review Podcast Series" xmlUrl="https://feeds.transistor.fm/the-evolving-roles-of-accountants" type="rss"/>
-      
-      
-      <outline title="Void Deck" xmlUrl="https://media.rss.com/voiddeck/feed.xml" type="rss"/>
-      
-      
-      <outline title="Singapore Corporate Governance" xmlUrl="https://rss.buzzsprout.com/2135682.rss" type="rss"/>
-      
-      
-      <outline title="Singapore Fintech Festival" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/078da3e5-49cd-414b-a959-b0b6005ab35d/613cb4dc-c762-4132-a56d-b0b6005b4b23/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Solving Singapore" xmlUrl="https://anchor.fm/s/6c6a5114/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Singapore's War On Covid" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/a354a45e-e5f2-4ac5-b78e-aeae0088a259/f7c463de-7bca-40e3-b8b7-aeb3012a80a2/podcast.rss" type="rss"/>
-      
-      
-      <outline title="SGH Hospital of the Future" xmlUrl="https://anchor.fm/s/1025f5750/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ELIS Podcast" xmlUrl="https://feed.podbean.com/elismoe/feed.xml" type="rss"/>
-      
-      
-      <outline title="You and the Taxman" xmlUrl="https://anchor.fm/s/10b1734bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="TrueTalk | All About Finance in the Singapore Context" xmlUrl="https://rss.buzzsprout.com/2170070.rss" type="rss"/>
-      
-    
+      <outline title="Daily Singapore" xmlUrl="https://rss.libsyn.com/shows/467526/destinations/3953829.xml" type="rss" />
+      <outline title="The Lessons We Learnt" xmlUrl="https://anchor.fm/s/c77c3acc/podcast/rss" type="rss" />
+      <outline title="The Honeycombers Podcast" xmlUrl="https://feeds.captivate.fm/the-honeycombers-podcast/" type="rss" />
+      <outline title="Chillax: A Singapore Podcast" xmlUrl="https://anchor.fm/s/56dce168/podcast/rss" type="rss" />
+      <outline title="The City SG Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:60650575/sounds.rss" type="rss" />
+      <outline title="The Story of Singapore" xmlUrl="https://anchor.fm/s/66198640/podcast/rss" type="rss" />
+      <outline title="The Retire By 50 Singapore Podcast" xmlUrl="https://anchor.fm/s/106f5af58/podcast/rss" type="rss" />
+      <outline title="Singapore Personal Finance Podcast" xmlUrl="https://anchor.fm/s/60bbcc08/podcast/rss" type="rss" />
+      <outline title="SUSS Podcast" xmlUrl="https://rss.buzzsprout.com/1216022.rss" type="rss" />
+      <outline title="The Singapore Noodles Podcast" xmlUrl="https://api.substack.com/feed/podcast/48208.rss" type="rss" />
+      <outline title="中场休息 | Intermission" xmlUrl="https://anchor.fm/s/6ae0de6c/podcast/rss" type="rss" />
+      <outline title="Let's Talk, Singapore" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/b0286ec8-8ba9-44b8-8abc-adcd00425e57/84e58e18-45fd-409a-9f77-adcd0042dcdc/podcast.rss" type="rss" />
+      <outline title="Coconut Avenue (Singapore Properties by TFC)" xmlUrl="https://feeds.acast.com/public/shows/62fe63f93e3ac10013640b13" type="rss" />
+      <outline title="The Padang Sessions" xmlUrl="https://feeds.captivate.fm/the-padang-sessions/" type="rss" />
+      <outline title="Inconvenient Questions, Singapore" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:192181672/sounds.rss" type="rss" />
+      <outline title="Cornerstone Singapore Audio Podcast" xmlUrl="https://www.cscc.org.sg/feed/audio-podcast/" type="rss" />
+      <outline title="Sleepless in Singapore" xmlUrl="https://feeds.fireside.fm/sleepless-sg/rss" type="rss" />
+      <outline title="BiblioAsia Podcast" xmlUrl="https://feeds.captivate.fm/biblioasia/" type="rss" />
+      <outline title="Can't Breathe" xmlUrl="https://anchor.fm/s/ee06d6c/podcast/rss" type="rss" />
+      <outline title="Singapore Confidential" xmlUrl="https://anchor.fm/s/101691b60/podcast/rss" type="rss" />
+      <outline title="透視新加坡 SeeThrough Singapore" xmlUrl="https://feeds.soundon.fm/podcasts/9891f888-3b76-485d-a978-f96de7f8c8a3.xml" type="rss" />
+      <outline title="Office of Mufti Singapore" xmlUrl="https://anchor.fm/s/105cdd6a0/podcast/rss" type="rss" />
+      <outline title="The Property Podcast" xmlUrl="https://anchor.fm/s/f4e483fc/podcast/rss" type="rss" />
+      <outline title="Singapore Property news and updates" xmlUrl="https://anchor.fm/s/79f49010/podcast/rss" type="rss" />
+      <outline title="IPS Podcast — Singapore Unpacked" xmlUrl="https://www.spreaker.com/show/6571171/episodes/feed" type="rss" />
+      <outline title="Singapore's Real Estate, Explained." xmlUrl="https://anchor.fm/s/160edd44/podcast/rss" type="rss" />
+      <outline title="TiE Talks" xmlUrl="https://anchor.fm/s/10f356d34/podcast/rss" type="rss" />
+      <outline title="Some Scuffs" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:405777798/sounds.rss" type="rss" />
+      <outline title="AI for Good Bootcamp" xmlUrl="https://api.substack.com/feed/podcast/3518775.rss" type="rss" />
+      <outline title="Singapore Startup Stories" xmlUrl="https://anchor.fm/s/4800286c/podcast/rss" type="rss" />
+      <outline title="美恩中英双语频道 | 美恩读书 | Reading with Alena from Singapore" xmlUrl="https://anchor.fm/s/a225a45c/podcast/rss" type="rss" />
+      <outline title="Hear. Here. Singapore." xmlUrl="https://www.omnycontent.com/d/playlist/08ca6535-6e93-45cd-9011-ac5500d9f9f5/ac9ced0a-6253-44f8-9261-acdd00fc9f16/93ad8dcc-e42d-4930-9923-acdd00fdd087/podcast.rss" type="rss" />
+      <outline title="BRAVE Southeast Asia Tech: Singapore, Indonesia, Vietnam, Philippines, Thailand &amp; Malaysia Startups, Founders &amp; Venture Capital VC (English)" xmlUrl="https://feed.pod.co/bravedynamics" type="rss" />
+      <outline title="Singapore Property Wealth" xmlUrl="https://feeds.async.com/23580e48-6b11-4d01-b1fb-a6d31dea06f6.rss" type="rss" />
+      <outline title="ParentEd" xmlUrl="https://feeds.captivate.fm/parented/" type="rss" />
+      <outline title="M Singapore Property Mastery I This is M." xmlUrl="https://anchor.fm/s/1039d9028/podcast/rss" type="rss" />
+      <outline title="Radio Paranormal Singapore" xmlUrl="https://anchor.fm/s/59bd79c4/podcast/rss" type="rss" />
+      <outline title="Nexcast" xmlUrl="https://rss.buzzsprout.com/2287904.rss" type="rss" />
+      <outline title="Wesley Methodist Church Singapore (Sermon Podcasts)" xmlUrl="https://feed.podbean.com/wesleymcsg/feed.xml" type="rss" />
+      <outline title="Void Deck" xmlUrl="https://media.rss.com/voiddeck/feed.xml" type="rss" />
+      <outline title="Singapore Corporate Governance" xmlUrl="https://rss.buzzsprout.com/2135682.rss" type="rss" />
+      <outline title="Singapore Fintech Festival" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/078da3e5-49cd-414b-a959-b0b6005ab35d/613cb4dc-c762-4132-a56d-b0b6005b4b23/podcast.rss" type="rss" />
+      <outline title="Solving Singapore" xmlUrl="https://anchor.fm/s/6c6a5114/podcast/rss" type="rss" />
+      <outline title="Singapore's War On Covid" xmlUrl="https://www.omnycontent.com/d/playlist/d9486183-3dd4-4ad6-aebe-a4c1008455d5/a354a45e-e5f2-4ac5-b78e-aeae0088a259/f7c463de-7bca-40e3-b8b7-aeb3012a80a2/podcast.rss" type="rss" />
+      <outline title="SGH Hospital of the Future" xmlUrl="https://anchor.fm/s/1025f5750/podcast/rss" type="rss" />
+      <outline title="ELIS Podcast" xmlUrl="https://feed.podbean.com/elismoe/feed.xml" type="rss" />
+      <outline title="You and the Taxman" xmlUrl="https://anchor.fm/s/10b1734bc/podcast/rss" type="rss" />
+      <outline title="TrueTalk | All About Finance in the Singapore Context" xmlUrl="https://rss.buzzsprout.com/2170070.rss" type="rss" />
     </outline>
-    
-
     <outline text="YouTube">
-      <outline title="StarPlus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-LPIU24bQXVljUXivKEeRQ" type="rss"/>
-      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
-      <outline title="Celine Dept" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1a2ZCw7tugRZYRMnecNj3A" type="rss"/>
-      <outline title="Infobellsмовою гінді" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1ciY6kR3yj3kaKZ6R7ewAg" type="rss"/>
-      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
-      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
-      <outline title="Влад A4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2tsySbe9TNrI-xh2lximHA" type="rss"/>
-      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
-      <outline title="SonyMusicIndiaVEVO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3MLnJtqc_phABBriLRhtgQ" type="rss"/>
-      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
-      <outline title="ARY Digital HD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4JCksJF76g_MdzPVBJoC3Q" type="rss"/>
-      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
-      <outline title="Anaya Kandhal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4wEPe5mrHGAUjjTfXH_C-Q" type="rss"/>
-      <outline title="कलर्स टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
-      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
-      <outline title="Dangal TV Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5AA82B9K5K5Sdx2JpuuuSA" type="rss"/>
-      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
-      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
-      <outline title="ISSEI / いっせい" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6QZ_ss3i_8qLV_RczPZBkw" type="rss"/>
-      <outline title="JioHotstar Kids" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6msOR4-Wf-NMAP24YwobpQ" type="rss"/>
-      <outline title="Billion Surprise Toys" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6sqpmfBwngFZQPPzFjDGTw" type="rss"/>
-      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
-      <outline title="Ben Azelart" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8tCJ55XS8ClDQmfDZogYPQ" type="rss"/>
-      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
-      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
-      <outline title="@shemaroo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9w7VG_ZZwjXCskGZByMBvw" type="rss"/>
-      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9zs_bkRRTJa2kRsakFaFmw" type="rss"/>
-      <outline title="Karla Bustillos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAQB-fgOrLlUm149S3oArOg" type="rss"/>
-      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
-      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
-      <outline title="Topper Guild" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB58HbhbM93ygXfnCJ1K2kA" type="rss"/>
-      <outline title="चुचु टिभी नर्सरी राइम्स एन्ड किड्स सङ्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnZ16ahKA2DZ_T5W0FPUXg" type="rss"/>
-      <outline title="Alan Chikin Chow" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCMeCQ4wtdwQuoH7TNThL1A" type="rss"/>
-      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDGmojLIoWpXok597xYo8cg" type="rss"/>
-      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDpenlfHFtjdGpqi8slPybg" type="rss"/>
-      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
-      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss"/>
-      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
-      <outline title="Saregama Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGzzga499Hr2AB1btQ3XtoQ" type="rss"/>
-      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
-      <outline title="PANDA BOI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJbJuOSf-ec7jsPzvQBVC3w" type="rss"/>
-      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
-      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
-      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrWyyCRROi8NlQ6Xd9dx5Q" type="rss"/>
-      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
-      <outline title="केएल ब्रो बिजु रित्भिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCL5nlHWXVLeOsSjKH2fhmsg" type="rss"/>
-      <outline title="बाङतान टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkAepWjdylmXSltofFvsYQ" type="rss"/>
-      <outline title="WWE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNSnSemXKDc9UEZ7m31wY9Q" type="rss"/>
-      <outline title="@zhong" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOKv-bQOCCfZp5vftTZ4MKg" type="rss"/>
-      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
-      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
-      <outline title="เฟลิกซ์ อาร์วิด อุลฟ์ เชลล์แบรย์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
-      <outline title="shfa2 - شفا" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ7x25F6YXY9DvGeHFxLhRQ" type="rss"/>
-      <outline title="योलो एभेन्तुरास" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ8TuCvcDMepleXFyOQfyOQ" type="rss"/>
-      <outline title="ABP NEWS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRWFSbif-RFENbBrSiez1DA" type="rss"/>
-      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
-      <outline title="Masha and the Bear" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSgiKiHFAV640il9waFg9cw" type="rss"/>
-      <outline title="อลัน เฉิน สโตกส์ และ เฉิน สโตกส์" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUdKQXtKb1me2Gt1nz6tzdg" type="rss"/>
-      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
-      <outline title="MR. INDIAN HACKER" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWWeRmpeFuYY1FdAru58Afw" type="rss"/>
-      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss"/>
-      <outline title="ToRung" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXbYlU08sOTBktOtjVsvR6w" type="rss"/>
-      <outline title="Mark Rober" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg" type="rss"/>
-      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
-      <outline title="Shakira" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYLNGLIzMhRTi6ZOLjAPSmw" type="rss"/>
-      <outline title="JuegaGerman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYiGq8XF7YQD00x7wAd62Zg" type="rss"/>
-      <outline title="Alejo Igoa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZs0WwC0Dn_noiQE2BHSTKg" type="rss"/>
-      <outline title="Toys and Colors" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaBTm46K3l59CIty88Q_jog" type="rss"/>
-      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
-      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
-      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
-      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
-      <outline title="IShowSpeed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd09ztChTkJ9dlY6RLawSog" type="rss"/>
-      <outline title="Alfredo Larin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd5ApCORQsMOZZz5E9oVeFA" type="rss"/>
-      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss"/>
-      <outline title="Sierra &amp; Rhia FAM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe6n0z9UbsxYCS8P83f84tw" type="rss"/>
-      <outline title="@HarPalGeoOfficial" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe9JSDmyqNgA_l2BzGHq1Ug" type="rss"/>
-      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
-      <outline title="Маша и Медведь[b]" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfbugOkS8PkqhDfvehIDRBw" type="rss"/>
-      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
-      <outline title="Real fools shorts official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgKEvLp8DXCTMq4QY6wW7bw" type="rss"/>
-      <outline title="Bispo Bruno Leonardo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgi6Wim7jdoW6luCXci83uw" type="rss"/>
-      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChz5aEi3dfrDVC8-YJsMUDA" type="rss"/>
-      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
-      <outline title="Get Movies" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClZkHt2kNIgyrTTPnSQV3SA" type="rss"/>
-      <outline title="Techno Gamerz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl_vAxZpvbO-PFXdDu7EdHw" type="rss"/>
-      <outline title="Bad Bunny" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmBA_wu8xGg1OfOkfW13Q0Q" type="rss"/>
-      <outline title="आचार्य प्रशान्त - Acharya Prashant" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmRZ4Xrzx1PKsg2UieOT6rA" type="rss"/>
-      <outline title="BETER BÖCÜK" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnYP-Vc_kPNk--9h6MNI4rA" type="rss"/>
-      <outline title="Fede Vigevani" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoQm-PeHC-cbJclKJYJ8LzA" type="rss"/>
-      <outline title="Ishtar Music" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCopY0NAzASqmD6eVaRj2TFQ" type="rss"/>
-      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
-      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
-      <outline title="T-Series Bollywood Classics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq-Fj5jknLsUf-MWSy4_brA" type="rss"/>
-      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
-      <outline title="Mikecrack" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ5zFEED1hWs0KNQCQuYdQ" type="rss"/>
-      <outline title="Jess No Limit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrcUbwWMAshF6M6UJcwOK7g" type="rss"/>
-      <outline title="जामजाम इलेक्ट्रोनिक ट्रेडिङ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrnQFuUabBHaw-BRhPo8xEA" type="rss"/>
-      <outline title="ABS-CBN Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCstEtN0pgOmCf02EdXsGChw" type="rss"/>
-      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
-      <outline title="IndiaTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCttspZesZIDEwwpVIgoZtWQ" type="rss"/>
-      <outline title="योर क्रिस्टियानो" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtxD0x6AuNNqdXO9Wp5GHew" type="rss"/>
-      <outline title="Juan de Dios Pantoja" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu9rnHLRV0gvyn2Skm7wsRQ" type="rss"/>
-      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
-      <outline title="shfa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwHE1kM1CPJd_pI9FQ0-4dg" type="rss"/>
-      <outline title="LUCCAS NETO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxk7r8lH6fWkMuWeQn9Gi6g" type="rss"/>
-      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
-      <outline title="קים דונג ג'וןויו באק האפ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz8gf4PK1Qth50lLHdvTCcA" type="rss"/>
+      <outline title="HUM TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEeEQxm6qc_qaTE7qTV5aLQ" type="rss" />
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="MrBeast 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+      <outline title="BeatboxJCOP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdX5KXiCTPYWYZscfphgQ4g" type="rss" />
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
     </outline>
   </body>
-  
-
 </opml>

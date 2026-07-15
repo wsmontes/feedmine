@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>East Macedonia &amp; Thrace Feeds</title></head>
+  <head>
+    <title>East Macedonia &amp; Thrace Feeds</title>
+  </head>
   <body>
     <outline text="News">
-      <outline title="East Macedonia &amp; Thrace" xmlUrl="https://www.east-macedonia-thrace.gov.gr/feed/" type="rss" />
-    </outline>
-  </body></opml>
+      </outline>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

@@ -49,6 +49,26 @@ class CountryProfiler:
         except Exception:
             pass
         try:
+            from .sources.youtube_trending import YouTubeTrendingSource
+            self._source_instances["youtube_trending"] = YouTubeTrendingSource()
+        except Exception:
+            pass
+        try:
+            from .sources.reddit import RedditSource
+            self._source_instances["reddit"] = RedditSource()
+        except Exception:
+            pass
+        try:
+            from .sources.google_news import GoogleNewsSource
+            self._source_instances["google_news"] = GoogleNewsSource()
+        except Exception:
+            pass
+        try:
+            from .sources.itunes_charts import ITunesChartsSource
+            self._source_instances["itunes_charts"] = ITunesChartsSource()
+        except Exception:
+            pass
+        try:
             from .sources.ddg_text import DDGTextSource
             self._source_instances["ddg_text"] = DDGTextSource()
         except Exception:
@@ -56,6 +76,31 @@ class CountryProfiler:
         try:
             from .sources.podcasts import ITunesSource
             self._source_instances["itunes"] = ITunesSource()
+        except Exception:
+            pass
+        try:
+            from .sources.youtube_top_subscribed import YouTubeTopSubscribedSource
+            self._source_instances["youtube_top_subscribed"] = YouTubeTopSubscribedSource()
+        except Exception:
+            pass
+        try:
+            from .sources.youtube_awards import YouTubeAwardsSource
+            self._source_instances["youtube_awards"] = YouTubeAwardsSource()
+        except Exception:
+            pass
+        try:
+            from .sources.youtube_kaggle import YouTubeKaggleSource
+            self._source_instances["youtube_kaggle"] = YouTubeKaggleSource()
+        except Exception:
+            pass
+        try:
+            from .sources.youtube_socialblade import YouTubeSocialBladeSource
+            self._source_instances["youtube_socialblade"] = YouTubeSocialBladeSource()
+        except Exception:
+            pass
+        try:
+            from .sources.youtube_diamond import YouTubeDiamondSource
+            self._source_instances["youtube_diamond"] = YouTubeDiamondSource()
         except Exception:
             pass
 

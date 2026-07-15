@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Computing — AI, Web Dev, Cybersecurity &amp; More</title>
+  </head>
+  <body>
+    <outline text="AI &amp; Machine Learning">
+      <outline title="ArXiv — AI" xmlUrl="https://arxiv.org/rss/cs.AI" type="rss" />
+      <outline title="ArXiv — Machine Learning" xmlUrl="https://arxiv.org/rss/cs.LG" type="rss" />
+      <outline title="Towards Data Science" xmlUrl="https://towardsdatascience.com/feed" type="rss" />
+      <outline title="Hugging Face Blog" xmlUrl="https://huggingface.co/blog/feed.xml" type="rss" />
+      <outline title="Papers With Code Blog" xmlUrl="https://paperswithcode.com/feed" type="rss" />
+      <outline title="Analytics Vidhya" xmlUrl="https://www.analyticsvidhya.com/feed/" type="rss" />
+      <outline title="KDnuggets" xmlUrl="https://www.kdnuggets.com/feed" type="rss" />
+    </outline>
+    <outline text="Web &amp; App Development">
+      <outline title="Smashing Magazine" xmlUrl="https://www.smashingmagazine.com/feed/" type="rss" />
+      <outline title="CSS-Tricks" xmlUrl="https://css-tricks.com/feed/" type="rss" />
+      <outline title="A List Apart" xmlUrl="https://alistapart.com/main/feed/" type="rss" />
+      <outline title="Dev.to" xmlUrl="https://dev.to/feed" type="rss" />
+      <outline title="freeCodeCamp News" xmlUrl="https://www.freecodecamp.org/news/rss/" type="rss" />
+      <outline title="LogRocket Blog" xmlUrl="https://blog.logrocket.com/feed/" type="rss" />
+      <outline title="CodePen Blog" xmlUrl="https://blog.codepen.io/feed/" type="rss" />
+      <outline title="React Blog" xmlUrl="https://react.dev/rss.xml" type="rss" />
+      <outline title="Angular Blog" xmlUrl="https://blog.angular.io/feed" type="rss" />
+    </outline>
+    <outline text="Cybersecurity &amp; InfoSec">
+      <outline title="Krebs on Security" xmlUrl="https://krebsonsecurity.com/feed/" type="rss" />
+      <outline title="Schneier on Security" xmlUrl="https://www.schneier.com/feed/" type="rss" />
+      <outline title="The Hacker News" xmlUrl="https://thehackernews.com/feeds/posts/default" type="rss" />
+      <outline title="BleepingComputer" xmlUrl="https://www.bleepingcomputer.com/feed/" type="rss" />
+      <outline title="Dark Reading" xmlUrl="https://www.darkreading.com/rss" type="rss" />
+      <outline title="Troy Hunt's Blog" xmlUrl="https://www.troyhunt.com/rss/" type="rss" />
+    </outline>
+    <outline text="Cloud &amp; DevOps">
+      <outline title="AWS News Blog" xmlUrl="https://aws.amazon.com/blogs/aws/feed/" type="rss" />
+      <outline title="Google Cloud Blog" xmlUrl="https://cloud.google.com/blog/feed" type="rss" />
+      <outline title="Azure Blog" xmlUrl="https://azure.microsoft.com/en-us/blog/feed/" type="rss" />
+      <outline title="Docker Blog" xmlUrl="https://www.docker.com/blog/feed/" type="rss" />
+      <outline title="Kubernetes Blog" xmlUrl="https://kubernetes.io/feed.xml" type="rss" />
+      <outline title="DevOps.com" xmlUrl="https://devops.com/feed/" type="rss" />
+      <outline title="The New Stack" xmlUrl="https://thenewstack.io/feed/" type="rss" />
+      <outline title="Netflix Tech Blog" xmlUrl="https://netflixtechblog.com/feed" type="rss" />
+    </outline>
+    <outline text="Programming Languages">
+      <outline title="Python Software Foundation" xmlUrl="https://pyfound.blogspot.com/feeds/posts/default" type="rss" />
+      <outline title="Go Blog" xmlUrl="https://go.dev/blog/feed.atom" type="rss" />
+      <outline title="Rust Blog" xmlUrl="https://blog.rust-lang.org/feed.xml" type="rss" />
+      <outline title="Node.js Blog" xmlUrl="https://nodejs.org/en/feed/blog.xml" type="rss" />
+      <outline title="Kotlin Blog" xmlUrl="https://blog.jetbrains.com/kotlin/feed/" type="rss" />
+    </outline>
+    <outline text="Computer Science Theory">
+      <outline title="IEEE Spectrum" xmlUrl="https://spectrum.ieee.org/rss" type="rss" />
+      <outline title="Quanta Magazine — CS" xmlUrl="https://www.quantamagazine.org/computer-science/feed/" type="rss" />
+      <outline title="ArXiv — Distributed/Parallel" xmlUrl="https://arxiv.org/rss/cs.DC" type="rss" />
+    </outline>
+    <outline text="Hardware &amp; Systems">
+      <outline title="Tom's Hardware" xmlUrl="https://www.tomshardware.com/feeds/all" type="rss" />
+      <outline title="Ars Technica — Hardware" xmlUrl="https://feeds.arstechnica.com/arstechnica/gadgets" type="rss" />
+      <outline title="ServeTheHome" xmlUrl="https://www.servethehome.com/feed/" type="rss" />
+      <outline title="Phoronix (Linux HW)" xmlUrl="https://www.phoronix.com/rss.php" type="rss" />
+    </outline>
+    <outline text="Open Source">
+      <outline title="GitHub Blog" xmlUrl="https://github.blog/feed/" type="rss" />
+      <outline title="GitHub Changelog" xmlUrl="https://github.blog/changelog/feed/" type="rss" />
+      <outline title="Open Source Initiative" xmlUrl="https://opensource.org/rss" type="rss" />
+      <outline title="Mozilla Blog" xmlUrl="https://blog.mozilla.org/feed/" type="rss" />
+      <outline title="FOSS Force" xmlUrl="https://fossforce.com/feed/" type="rss" />
+    </outline>
+    <outline text="Tech Podcasts">
+      <outline title="Coding Blocks" xmlUrl="https://feeds.libsyn.com/codingblocks" type="rss" />
+      <outline title="Darknet Diaries" xmlUrl="https://feeds.megaphone.fm/darknetdiaries" type="rss" />
+    </outline>
+    <outline text="YouTube — Tech &amp; CS">
+      </outline>
+    <outline text="More CS &amp; Engineering Blogs">
+      <outline title="Stripe Engineering Blog" xmlUrl="https://stripe.com/blog/feed.rss" type="rss" />
+      <outline title="Airbnb Engineering" xmlUrl="https://medium.com/feed/airbnb-engineering" type="rss" />
+      <outline title="Meta Engineering Blog" xmlUrl="https://engineering.fb.com/feed/" type="rss" />
+      <outline title="Spotify Engineering" xmlUrl="https://engineering.atspotify.com/feed/" type="rss" />
+      <outline title="Slack Engineering" xmlUrl="https://slack.engineering/feed" type="rss" />
+      <outline title="Discord Blog" xmlUrl="https://discord.com/blog/feed.rss" type="rss" />
+      <outline title="Cloudflare Blog" xmlUrl="https://blog.cloudflare.com/rss/" type="rss" />
+    </outline>
+    <outline text="More YouTube — CS">
+      </outline>
+  </body>
+</opml>

@@ -4,58 +4,59 @@
     <title>Pernambuco Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Governo de Pernambuco" xmlUrl="https://www.pe.gov.br/feed/" type="rss" />
-        <outline title="CBN Recife" xmlUrl="https://cbnrecife.com.br/feed/" type="rss" />
-        <outline title="Carlos Britto (Petrolina)" xmlUrl="https://www.carlosbritto.com/feed/" type="rss" />
-        <outline title="Farol de Notícias (Serra Talhada)" xmlUrl="https://www.faroldenoticias.com.br/feed/" type="rss" />
-        <outline title="Nill Junior" xmlUrl="https://nilljunior.com.br/feed/" type="rss" />
-        <outline title="PE Notícias" xmlUrl="https://penoticias.com.br/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Governo de Pernambuco" xmlUrl="https://www.pe.gov.br/feed/" type="rss" />
+      <outline title="CBN Recife" xmlUrl="https://cbnrecife.com.br/feed/" type="rss" />
+      <outline title="Carlos Britto (Petrolina)" xmlUrl="https://www.carlosbritto.com/feed/" type="rss" />
+      <outline title="Farol de Notícias (Serra Talhada)" xmlUrl="https://www.faroldenoticias.com.br/feed/" type="rss" />
+      <outline title="Nill Junior" xmlUrl="https://nilljunior.com.br/feed/" type="rss" />
+      <outline title="PE Notícias" xmlUrl="https://penoticias.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Sport Recife" xmlUrl="https://www.sportrecife.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Cultura PE" xmlUrl="https://www.cultura.pe.gov.br/feed/" type="rss" />
+      <outline title="Frevo PE" xmlUrl="https://www.frevo.pe.gov.br/feed/" type="rss" />
+      <outline title="Marco Zero" xmlUrl="https://marcozero.org/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="UFRPE" xmlUrl="https://www.ufrpe.br/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
+      <outline title="Porto Digital" xmlUrl="https://www.portodigital.org/feed/" type="rss" />
+    </outline>
+    <outline text="Business">
+      <outline title="FIEPE" xmlUrl="https://www.fiepe.org.br/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
       </outline>
-      <outline text="Sports">
-        <outline title="Sport Recife" xmlUrl="https://www.sportrecife.com.br/feed/" type="rss" />
-        <outline title="Blog do Torcedor" xmlUrl="https://blogs.ne10.uol.com.br/torcedor/feed/" type="rss" />
+    <outline text="Blogs">
+      <outline title="Blog do Edmar Lyra" xmlUrl="https://www.edmarlyra.com/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Culture">
-        <outline title="Cultura PE" xmlUrl="https://www.cultura.pe.gov.br/feed/" type="rss" />
-        <outline title="Frevo PE" xmlUrl="https://www.frevo.pe.gov.br/feed/" type="rss" />
-        <outline title="Marco Zero" xmlUrl="https://marcozero.org/feed/" type="rss" />
-      </outline>
-      <outline text="Education">
-        <outline title="UFRPE" xmlUrl="https://www.ufrpe.br/feed/" type="rss" />
-      </outline>
-      <outline text="Technology">
-        <outline title="Porto Digital" xmlUrl="https://www.portodigital.org/feed/" type="rss" />
-      </outline>
-      <outline text="Business">
-        <outline title="FIEPE" xmlUrl="https://www.fiepe.org.br/feed/" type="rss" />
-      </outline>
-      <outline text="Food">
-      </outline>
-      <outline text="Blogs">
-        <outline title="Blog do Edmar Lyra" xmlUrl="https://www.edmarlyra.com/feed/" type="rss" />
-      </outline></body>
-      <outline text="Podcasts">
-        <outline title="Mamilos" xmlUrl="https://www.b9.com.br/mamilos/feed/" type="rss" />
-        <outline title="Rádio Novelo" xmlUrl="https://radionovelo.com.br/feed/" type="rss" />
-      </outline>
-      <outline text="YouTube">
-        <outline title="Porta dos Fundos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTyGeeus3hgsqUQr3hRqqwQ" type="rss" />
-        <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
-      </outline>
-      <outline text="Cities">
-        <outline text="Jaboatão dos Guararapes">
-          <outline title="Jaboatão News" xmlUrl="https://www.jabotaonews.com.br/feed/" type="rss" />
-          <outline title="Prefeitura Jaboatão" xmlUrl="https://www.jaboatao.pe.gov.br/feed/" type="rss" />
-        </outline>
-        <outline text="Olinda">
-          <outline title="Olinda News" xmlUrl="https://www.olindanews.com.br/feed/" type="rss" />
-          <outline title="Prefeitura Olinda" xmlUrl="https://www.olinda.pe.gov.br/feed/" type="rss" />
-        </outline>
-        <outline text="Caruaru">
-          <outline title="Blog de Caruaru" xmlUrl="https://blogdecaruaru.com.br/feed/" type="rss" />
-          <outline title="Prefeitura Caruaru" xmlUrl="https://www.caruaru.pe.gov.br/feed/" type="rss" />
-        </outline>
-      </outline>
-
-    </opml>
+  </body>
+  <outline text="Podcasts">
+    <outline title="Mamilos" xmlUrl="https://www.b9.com.br/mamilos/feed/" type="rss" />
+    <outline title="Rádio Novelo" xmlUrl="https://radionovelo.com.br/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Porta dos Fundos" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTyGeeus3hgsqUQr3hRqqwQ" type="rss" />
+    <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Jaboatão dos Guararapes">
+      <outline title="Jaboatão News" xmlUrl="https://www.jabotaonews.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Jaboatão" xmlUrl="https://www.jaboatao.pe.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Olinda">
+      <outline title="Olinda News" xmlUrl="https://www.olindanews.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Olinda" xmlUrl="https://www.olinda.pe.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Caruaru">
+      <outline title="Blog de Caruaru" xmlUrl="https://blogdecaruaru.com.br/feed/" type="rss" />
+      <outline title="Prefeitura Caruaru" xmlUrl="https://www.caruaru.pe.gov.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

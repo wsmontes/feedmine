@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Deaf, Blind &amp; Disability Communities</title>
+  </head>
+  <body>
+    <outline text="Disability News &amp; Advocacy">
+      <outline title="Disability Scoop" xmlUrl="https://www.disabilityscoop.com/rss/" type="rss" />
+      <outline title="Disability Visibility Project" xmlUrl="https://disabilityvisibilityproject.com/feed/" type="rss" />
+      <outline title="Rooted in Rights" xmlUrl="https://rootedinrights.org/feed/" type="rss" />
+      <outline title="American Association of People with Disabilities" xmlUrl="https://www.aapd.com/rss/" type="rss" />
+      <outline title="National Disability Institute" xmlUrl="https://www.nationaldisabilityinstitute.org/rss/" type="rss" />
+    </outline>
+    <outline text="Deaf Community &amp; Sign Language">
+      <outline title="National Association of the Deaf" xmlUrl="https://www.nad.org/rss/" type="rss" />
+      <outline title="Deaf News Today" xmlUrl="https://deafnewstoday.com/feed/" type="rss" />
+      <outline title="The Limping Chicken (Deaf Blog UK)" xmlUrl="https://limpingchicken.com/feed/" type="rss" />
+      <outline title="Hearing Like Me" xmlUrl="https://www.hearinglikeme.com/feed/" type="rss" />
+      <outline title="British Deaf Association" xmlUrl="https://bda.org.uk/rss/" type="rss" />
+    </outline>
+    <outline text="Blind &amp; Low Vision">
+      <outline title="The Blind Guide" xmlUrl="https://theblindguide.com/feed/" type="rss" />
+      <outline title="Lighthouse Guild" xmlUrl="https://www.lighthouseguild.org/rss/" type="rss" />
+      <outline title="Perkins School for the Blind Blog" xmlUrl="https://www.perkins.org/rss/" type="rss" />
+    </outline>
+    <outline text="Accessibility &amp; Assistive Tech">
+      <outline title="WebAIM Blog" xmlUrl="https://webaim.org/blog/feed/" type="rss" />
+      <outline title="Assistive Technology Blog" xmlUrl="https://assistivetechnologyblog.com/feed/" type="rss" />
+      <outline title="The Accessibility Guy" xmlUrl="https://theaccessibilityguy.com/feed/" type="rss" />
+      <outline title="AppleVis (Blind Apple Users)" xmlUrl="https://www.applevis.com/rss" type="rss" />
+    </outline>
+    <outline text="Chronic Illness &amp; Invisible Disabilities">
+      <outline title="But You Don't Look Sick" xmlUrl="https://butyoudontlooksick.com/feed/" type="rss" />
+      <outline title="Creaky Joints (Arthritis)" xmlUrl="https://creakyjoints.org/rss/" type="rss" />
+      <outline title="The Mighty — Chronic Illness" xmlUrl="https://themighty.com/topic/chronic-illness/rss/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      </outline>
+    <outline text="YouTube — Disability &amp; Accessibility">
+      </outline>
+  </body>
+</opml>

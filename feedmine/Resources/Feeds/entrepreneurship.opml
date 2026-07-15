@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Entrepreneurship, Startups &amp; Business</title>
+  </head>
+  <body>
+    <outline text="Startup &amp; Business News">
+      <outline title="TechCrunch" xmlUrl="https://techcrunch.com/feed/" type="rss" />
+      <outline title="Entrepreneur Magazine" xmlUrl="https://www.entrepreneur.com/rss" type="rss" />
+      <outline title="Inc.com" xmlUrl="https://www.inc.com/rss" type="rss" />
+      <outline title="Fast Company" xmlUrl="https://www.fastcompany.com/rss" type="rss" />
+      <outline title="Business Insider" xmlUrl="https://www.businessinsider.com/rss" type="rss" />
+      <outline title="The Economist — Business" xmlUrl="https://www.economist.com/business/rss.xml" type="rss" />
+    </outline>
+    <outline text="Venture Capital &amp; Funding">
+      <outline title="A VC (Fred Wilson)" xmlUrl="https://avc.com/feed/" type="rss" />
+      <outline title="StrictlyVC" xmlUrl="https://www.strictlyvc.com/feed/" type="rss" />
+      <outline title="Crunchbase News" xmlUrl="https://news.crunchbase.com/rss/" type="rss" />
+    </outline>
+    <outline text="SaaS &amp; Tech Startups">
+      <outline title="SaaStr" xmlUrl="https://www.saastr.com/feed/" type="rss" />
+      <outline title="Baremetrics Blog" xmlUrl="https://baremetrics.com/blog/feed" type="rss" />
+      <outline title="Product Hunt Blog" xmlUrl="https://blog.producthunt.com/feed/" type="rss" />
+      <outline title="Y Combinator Blog" xmlUrl="https://www.ycombinator.com/blog/rss/" type="rss" />
+      <outline title="Indie Hackers" xmlUrl="https://www.indiehackers.com/rss" type="rss" />
+    </outline>
+    <outline text="Entrepreneurship Thinkers">
+      <outline title="Seth Godin" xmlUrl="https://sethgodin.com/feed/" type="rss" />
+      <outline title="Tim Ferriss" xmlUrl="https://tim.blog/feed/" type="rss" />
+      <outline title="Ryan Holiday" xmlUrl="https://ryanholiday.net/feed/" type="rss" />
+      <outline title="James Clear" xmlUrl="https://jamesclear.com/feed" type="rss" />
+      <outline title="Derek Sivers" xmlUrl="https://sivers.org/en.atom" type="rss" />
+      <outline title="Paul Graham" xmlUrl="https://paulgraham.com/rss.html" type="rss" />
+      <outline title="Mark Manson" xmlUrl="https://markmanson.net/feed/" type="rss" />
+      <outline title="Cal Newport" xmlUrl="https://calnewport.com/feed/" type="rss" />
+      <outline title="Brain Food (Farnam Street)" xmlUrl="https://fs.blog/feed/" type="rss" />
+      <outline title="Scott Galloway" xmlUrl="https://www.profgalloway.com/feed/" type="rss" />
+    </outline>
+    <outline text="Small Business">
+      <outline title="Small Business Trends" xmlUrl="https://smallbiztrends.com/feed/" type="rss" />
+    </outline>
+    <outline text="Marketing &amp; Growth">
+      <outline title="Neil Patel" xmlUrl="https://neilpatel.com/feed/" type="rss" />
+      <outline title="Moz Blog" xmlUrl="https://moz.com/blog/feed" type="rss" />
+      <outline title="Social Media Examiner" xmlUrl="https://www.socialmediaexaminer.com/feed/" type="rss" />
+      <outline title="Content Marketing Institute" xmlUrl="https://contentmarketinginstitute.com/feed/" type="rss" />
+    </outline>
+    <outline text="Brazilian Empreendedorismo">
+      <outline title="Endeavor Brasil" xmlUrl="https://endeavor.org.br/rss/" type="rss" />
+    </outline>
+    <outline text="Entrepreneurship Podcasts">
+      <outline title="StartUp Podcast" xmlUrl="https://feeds.megaphone.fm/startup" type="rss" />
+    </outline>
+    <outline text="YouTube — Business &amp; Startups">
+      </outline>
+    <outline text="Leadership &amp; Management">
+      <outline title="Leadership Freak" xmlUrl="https://leadershipfreak.blog/feed/" type="rss" />
+      <outline title="Michael Hyatt Blog" xmlUrl="https://michaelhyatt.com/feed/" type="rss" />
+      <outline title="Skip Prichard" xmlUrl="https://www.skipprichard.com/feed/" type="rss" />
+    </outline>
+    <outline text="Productivity &amp; Business Tools">
+      <outline title="Zapier Blog" xmlUrl="https://zapier.com/blog/feed/" type="rss" />
+      <outline title="Asana Blog" xmlUrl="https://blog.asana.com/feed/" type="rss" />
+      <outline title="Evernote Blog" xmlUrl="https://evernote.com/blog/feed/" type="rss" />
+      <outline title="Monday.com Blog" xmlUrl="https://monday.com/blog/rss/" type="rss" />
+    </outline>
+    <outline text="Side Hustle &amp; Freelancing">
+      <outline title="Freelancers Union" xmlUrl="https://blog.freelancersunion.org/feed/" type="rss" />
+      <outline title="Side Hustle Nation" xmlUrl="https://www.sidehustlenation.com/feed/" type="rss" />
+      <outline title="Upwork Blog" xmlUrl="https://www.upwork.com/blog/feed" type="rss" />
+      <outline title="The Freelance Creative" xmlUrl="https://thefreelancecreative.com/feed/" type="rss" />
+    </outline>
+    <outline text="More Business YouTube">
+      </outline>
+    <outline text="More Startup &amp; Biz Blogs">
+      <outline title="StartupNation" xmlUrl="https://startupnation.com/feed/" type="rss" />
+      <outline title="Foundr Magazine" xmlUrl="https://foundr.com/rss" type="rss" />
+      <outline title="The Next Web" xmlUrl="https://thenextweb.com/feed/" type="rss" />
+      <outline title="WorkLife (Adam Grant)" xmlUrl="https://adamgrant.substack.com/feed" type="rss" />
+      <outline title="GrowthHackers" xmlUrl="https://growthhackers.com/rss" type="rss" />
+    </outline>
+    <outline text="More Biz Podcasts">
+      <outline title="The Indicator (NPR / Planet Money)" xmlUrl="https://feeds.npr.org/510325/podcast.xml" type="rss" />
+      <outline title="The Knowledge Project (Farnam Street)" xmlUrl="https://feeds.libsyn.com/theknowledgeproject" type="rss" />
+      <outline title="Manager Tools" xmlUrl="https://feeds.libsyn.com/managertools" type="rss" />
+      <outline title="Mixergy Podcast" xmlUrl="https://feeds.libsyn.com/mixergy" type="rss" />
+    </outline>
+  </body>
+</opml>

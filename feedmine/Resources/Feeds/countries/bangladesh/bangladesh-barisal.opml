@@ -11,8 +11,6 @@
       <outline title="Back Home" xmlUrl="https://feeds.castos.com/dq3x" type="rss" category="Music" />
       <outline title="L'Odyssée d'Asie" xmlUrl="https://anchor.fm/s/65b93218/podcast/rss" type="rss" category="Places &amp; Travel" />
       <outline title="Boys In The Cave" xmlUrl="https://rss.libsyn.com/shows/107352/destinations/581614.xml" type="rss" category="Islam" />
-      <outline title="The Thinking Muslim" xmlUrl="https://feeds.acast.com/public/shows/64fc8470defa1f0011d1a4d6" type="rss" category="Islam" />
-      <outline title="Srijan Foundation Talks" xmlUrl="https://raw.githubusercontent.com/sanskrit-coders/rss-feeds/auto-built-feeds/en/SrijanFoundationTalks.rss" type="rss" category="Society &amp; Culture" />
       <outline title="Worth Asking: Gender, Politics, and South Asia" xmlUrl="https://anchor.fm/s/f7e7bd94/podcast/rss" type="rss" category="Politics" />
       <outline title="Hoje na História - Opera Mundi" xmlUrl="https://feeds.transistor.fm/hoje-na-historia-opera-mundi" type="rss" category="History" />
       <outline title="Energypreneurs" xmlUrl="https://rss.pdrl.fm/468495/feeds.libsyn.com/180665/rss/?redirect=false" type="rss" category="Entrepreneurship" />
@@ -37,5 +35,7 @@
       <outline title="Ain't It Scary? with Sean &amp; Carrie" xmlUrl="https://feeds.megaphone.fm/aintitscary" type="rss" category="True Crime" />
       <outline title="Indie Radio - News, Podcasts, Talk &amp; Analysis" xmlUrl="https://api.substack.com/feed/podcast/512652.rss" type="rss" category="Daily News" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

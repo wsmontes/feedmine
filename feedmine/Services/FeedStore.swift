@@ -146,9 +146,10 @@ final class FeedStore {
     private var filterContentType: (FeedItem) -> Bool {
         switch activeContentType {
         case .all: return { _ in true }
-        case .text: return { !$0.isYouTube && !$0.isPodcast }
+        case .text: return { !$0.isYouTube && !$0.isPodcast && !$0.isForum }
         case .video: return { $0.isYouTube }
         case .audio: return { $0.isPodcast }
+        case .forum: return { $0.isForum }
         }
     }
     var isSearching = false
@@ -1117,6 +1118,8 @@ final class FeedStore {
             case .video: request = request.filter(Column("source_url").like("%youtube%"))
             case .text:  request = request.filter(Column("audio_url") == nil)
                             .filter(!Column("source_url").like("%youtube%"))
+                            .filter(!Column("source_url").like("%reddit%"))
+            case .forum: request = request.filter(Column("source_url").like("%reddit%"))
             case .all: break
             }
             return try request

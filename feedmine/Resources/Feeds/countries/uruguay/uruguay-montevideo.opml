@@ -5,10 +5,10 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="Salud en Sintonia" xmlUrl="https://anchor.fm/s/f32ef4c0/podcast/rss" type="rss" category="Health" />
       <outline title="ESCUELA BRASIL (MONTEVIDEO, URUGUAY)" xmlUrl="https://media.rss.com/escuela-brasil-montevideo/feed.xml" type="rss" category="History" />
-      <outline title="Bolsa de Valores de Montevideo (Uruguay)" xmlUrl="https://anchor.fm/s/760c3570/podcast/rss" type="rss" category="Business" />
       <outline title="Iglesia Bautista del cerrito.- Montevideo-Uruguay" xmlUrl="https://www.ivoox.com/feed_fg_f1126082_filtro_1.xml" type="rss" category="Religion" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

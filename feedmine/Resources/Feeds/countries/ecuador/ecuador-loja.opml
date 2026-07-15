@@ -5,8 +5,9 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="Podcast de Loja Habla Ecuador" xmlUrl="https://www.ivoox.com/podcast-podcast-loja-habla-ecuador_fg_f178596_filtro_1.xml" type="rss" category="News" />
       <outline title="ZONA ROCK Ecotel radio 107.7 fm ( Loja-Ecuador )" xmlUrl="https://www.ivoox.com/podcast-zona-rock-ecotel-radio-107-7-fm-loja-ecuador_fg_f169304_filtro_1.xml" type="rss" category="Music" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

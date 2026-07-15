@@ -18,6 +18,9 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
     /// True if this article links to a YouTube video
     var isYouTube: Bool { youTubeVideoID != nil }
 
+    /// True if this item comes from a forum source (Reddit)
+    var isForum: Bool { sourceURL.contains("reddit.com/r/") }
+
     /// Extracts the YouTube video ID from the URL, if any
     var youTubeVideoID: String? {
         // Fast reject before allocating URL/URLComponents: this is called per

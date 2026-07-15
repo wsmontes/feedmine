@@ -1,0 +1,768 @@
+{
+  "metadata": {
+    "source": "Wikipedia awards + YouTube Data API v3 resolution",
+    "total_channels": 25,
+    "channels_with_feed_url": 25,
+    "award_counts": {
+      "streamy": 25
+    },
+    "estimated_quota_used": 20200
+  },
+  "channels": [
+    {
+      "channel_id": "UC0QHWhjbe5fGJEPz3sVb6nw",
+      "channel_name": "Doctor Mike",
+      "channel_url": "https://www.youtube.com/channel/UC0QHWhjbe5fGJEPz3sVb6nw",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0QHWhjbe5fGJEPz3sVb6nw",
+      "country": "US",
+      "awards": [
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 9,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 12,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 13,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 8
+    },
+    {
+      "channel_id": "UClFSU9_bUb4Rc6OYfTt5SPw",
+      "channel_name": "Philip DeFranco",
+      "channel_url": "https://www.youtube.com/channel/UClFSU9_bUb4Rc6OYfTt5SPw",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw",
+      "country": "US",
+      "awards": [
+        {
+          "year": 3,
+          "award": "streamy",
+          "category": ""
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Kids and Family"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Lifestyle"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "Lifestyle"
+        },
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "News"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 3
+    },
+    {
+      "channel_id": "UCUjrDJokSX8JavRwy5iUOkA",
+      "channel_name": "Franco Escamilla",
+      "channel_url": "https://www.youtube.com/channel/UCUjrDJokSX8JavRwy5iUOkA",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCUjrDJokSX8JavRwy5iUOkA",
+      "country": "MX",
+      "awards": [
+        {
+          "year": 3,
+          "award": "streamy",
+          "category": ""
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Kids and Family"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Lifestyle"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "Lifestyle"
+        },
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "News"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 3
+    },
+    {
+      "channel_id": "UCHnyfMqiRRG1u-2MsSQLbXA",
+      "channel_name": "Veritasium",
+      "channel_url": "https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA",
+      "country": "US",
+      "awards": [
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Lifestyle"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "Lifestyle"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Kids and Family"
+        },
+        {
+          "year": 12,
+          "award": "streamy",
+          "category": "Kids and Family"
+        },
+        {
+          "year": 13,
+          "award": "streamy",
+          "category": "Kids and Family"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 6
+    },
+    {
+      "channel_id": "UCSUf5_EPEfl4zlBKZHkZdmw",
+      "channel_name": "Danny Gonzalez",
+      "channel_url": "https://www.youtube.com/channel/UCSUf5_EPEfl4zlBKZHkZdmw",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSUf5_EPEfl4zlBKZHkZdmw",
+      "country": "US",
+      "awards": [
+        {
+          "year": 9,
+          "award": "streamy",
+          "category": "Breakout Creator"
+        },
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "Comedy"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Comedy"
+        },
+        {
+          "year": 12,
+          "award": "streamy",
+          "category": "Comedy"
+        },
+        {
+          "year": 13,
+          "award": "streamy",
+          "category": "Comedy"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 9
+    },
+    {
+      "channel_id": "UCMu5gPmKp5av0QCAajKTMhw",
+      "channel_name": "ERB",
+      "channel_url": "https://www.youtube.com/channel/UCMu5gPmKp5av0QCAajKTMhw",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCMu5gPmKp5av0QCAajKTMhw",
+      "country": "US",
+      "awards": [
+        {
+          "year": 3,
+          "award": "streamy",
+          "category": "Web Series"
+        },
+        {
+          "year": 4,
+          "award": "streamy",
+          "category": "Web Series"
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Web Series"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Web Series"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 3
+    },
+    {
+      "channel_id": "UCi9cDo6239RAzPpBZO9y5SA",
+      "channel_name": "Lele Pons",
+      "channel_url": "https://www.youtube.com/channel/UCi9cDo6239RAzPpBZO9y5SA",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCi9cDo6239RAzPpBZO9y5SA",
+      "country": "US",
+      "awards": [
+        {
+          "year": 4,
+          "award": "streamy",
+          "category": "Comedy"
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "First Person"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "First Person"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "Live"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 4
+    },
+    {
+      "channel_id": "UCvVuqRzGVqRlmZYlTf99M_w",
+      "channel_name": "Tyler Oakley",
+      "channel_url": "https://www.youtube.com/channel/UCvVuqRzGVqRlmZYlTf99M_w",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCvVuqRzGVqRlmZYlTf99M_w",
+      "country": "",
+      "awards": [
+        {
+          "year": 4,
+          "award": "streamy",
+          "category": "First Person"
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "First Person"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "First Person"
+        },
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": ""
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 4
+    },
+    {
+      "channel_id": "UCuVHOs0H5hvAHGr8O4yIBNQ",
+      "channel_name": "Niki and Gabi",
+      "channel_url": "https://www.youtube.com/channel/UCuVHOs0H5hvAHGr8O4yIBNQ",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCuVHOs0H5hvAHGr8O4yIBNQ",
+      "country": "US",
+      "awards": [
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Fashion"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "Lifestyle"
+        },
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": "Food"
+        },
+        {
+          "year": 9,
+          "award": "streamy",
+          "category": "Song(s)"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 6
+    },
+    {
+      "channel_id": "UC78cxCAcp7JfQPgKxYdyGrg",
+      "channel_name": "emma chamberlain",
+      "channel_url": "https://www.youtube.com/channel/UC78cxCAcp7JfQPgKxYdyGrg",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC78cxCAcp7JfQPgKxYdyGrg",
+      "country": "US",
+      "awards": [
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": "Breakout Creator"
+        },
+        {
+          "year": 9,
+          "award": "streamy",
+          "category": "Podcast"
+        },
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "First Person"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "First Person"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 8
+    },
+    {
+      "channel_id": "UCGwu0nbY2wSkW8N-cghnLpA",
+      "channel_name": "JaidenAnimations",
+      "channel_url": "https://www.youtube.com/channel/UCGwu0nbY2wSkW8N-cghnLpA",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCGwu0nbY2wSkW8N-cghnLpA",
+      "country": "US",
+      "awards": [
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": "Animated"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Beauty"
+        },
+        {
+          "year": 12,
+          "award": "streamy",
+          "category": "Beauty"
+        },
+        {
+          "year": 13,
+          "award": "streamy",
+          "category": "Beauty"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 8
+    },
+    {
+      "channel_id": "UC70Dib4MvFfT1tU6MqeyHpQ",
+      "channel_name": "Preston",
+      "channel_url": "https://www.youtube.com/channel/UC70Dib4MvFfT1tU6MqeyHpQ",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC70Dib4MvFfT1tU6MqeyHpQ",
+      "country": "US",
+      "awards": [
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 9,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 8
+    },
+    {
+      "channel_id": "UCEw4oyJKvmYPoIpSa8cfr7A",
+      "channel_name": "playz",
+      "channel_url": "https://www.youtube.com/channel/UCEw4oyJKvmYPoIpSa8cfr7A",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCEw4oyJKvmYPoIpSa8cfr7A",
+      "country": "ES",
+      "awards": [
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 9,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 8
+    },
+    {
+      "channel_id": "UCbV60AGIHKz2xIGvbk0LLvg",
+      "channel_name": "Jay Shetty",
+      "channel_url": "https://www.youtube.com/channel/UCbV60AGIHKz2xIGvbk0LLvg",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCbV60AGIHKz2xIGvbk0LLvg",
+      "country": "US",
+      "awards": [
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 9,
+          "award": "streamy",
+          "category": "Health and Wellness"
+        },
+        {
+          "year": 13,
+          "award": "streamy",
+          "category": "Podcast"
+        },
+        {
+          "year": 13,
+          "award": "shorty",
+          "category": ""
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 8
+    },
+    {
+      "channel_id": "UCsKDcxNw7TaJwyjd2iH0QWg",
+      "channel_name": "Crossover",
+      "channel_url": "https://www.youtube.com/channel/UCsKDcxNw7TaJwyjd2iH0QWg",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCsKDcxNw7TaJwyjd2iH0QWg",
+      "country": "ES",
+      "awards": [
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "Collaboration"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Collaboration"
+        },
+        {
+          "year": 12,
+          "award": "streamy",
+          "category": "Collaboration"
+        },
+        {
+          "year": 13,
+          "award": "streamy",
+          "category": "Collaboration"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 10
+    },
+    {
+      "channel_id": "UCccUOsMDVKadNgq2cQeR-Dw",
+      "channel_name": "The Commentary Magazine Podcast",
+      "channel_url": "https://www.youtube.com/channel/UCccUOsMDVKadNgq2cQeR-Dw",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCccUOsMDVKadNgq2cQeR-Dw",
+      "country": "US",
+      "awards": [
+        {
+          "year": 10,
+          "award": "streamy",
+          "category": "Comedy"
+        },
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Comedy"
+        },
+        {
+          "year": 12,
+          "award": "streamy",
+          "category": "Comedy"
+        },
+        {
+          "year": 13,
+          "award": "streamy",
+          "category": "Comedy"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 10
+    },
+    {
+      "channel_id": "UCKqSuE8yStsbWU-hthq2q2w",
+      "channel_name": "Kid President",
+      "channel_url": "https://www.youtube.com/channel/UCKqSuE8yStsbWU-hthq2q2w",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCKqSuE8yStsbWU-hthq2q2w",
+      "country": "",
+      "awards": [
+        {
+          "year": 4,
+          "award": "streamy",
+          "category": "Kids and Family"
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Kids and Family"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Kids and Family"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 4
+    },
+    {
+      "channel_id": "UCpsSadsgX_Qk9i6i_bJoUwQ",
+      "channel_name": "Just For Laughs Gags",
+      "channel_url": "https://www.youtube.com/channel/UCpsSadsgX_Qk9i6i_bJoUwQ",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpsSadsgX_Qk9i6i_bJoUwQ",
+      "country": "US",
+      "awards": [
+        {
+          "year": 4,
+          "award": "streamy",
+          "category": "Kids and Family"
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Kids and Family"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Lifestyle"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 4
+    },
+    {
+      "channel_id": "UCjN61NmwhA0IXoqIhMCyvDA",
+      "channel_name": "ORIGINAL SONG - Topic",
+      "channel_url": "https://www.youtube.com/channel/UCjN61NmwhA0IXoqIhMCyvDA",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCjN61NmwhA0IXoqIhMCyvDA",
+      "country": "",
+      "awards": [
+        {
+          "year": 4,
+          "award": "streamy",
+          "category": "Music Video"
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Cover Song"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Cover Song"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 4
+    },
+    {
+      "channel_id": "UCc41Yk9xrdwGok7Oip3atAw",
+      "channel_name": "Learn German with Kanwalrukh",
+      "channel_url": "https://www.youtube.com/channel/UCc41Yk9xrdwGok7Oip3atAw",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCc41Yk9xrdwGok7Oip3atAw",
+      "country": "PK",
+      "awards": [
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Breakout Creator"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Breakout Creator"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "Gaming"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 5
+    },
+    {
+      "channel_id": "UCZ90tZPn-ue2BmRAcDD88tA",
+      "channel_name": "Amanda Steele",
+      "channel_url": "https://www.youtube.com/channel/UCZ90tZPn-ue2BmRAcDD88tA",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ90tZPn-ue2BmRAcDD88tA",
+      "country": "US",
+      "awards": [
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Fashion"
+        },
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Fashion"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "Fashion"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 5
+    },
+    {
+      "channel_id": "UCGCVyTWogzQ4D170BLy2Arw",
+      "channel_name": "Simply Nailogical",
+      "channel_url": "https://www.youtube.com/channel/UCGCVyTWogzQ4D170BLy2Arw",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCGCVyTWogzQ4D170BLy2Arw",
+      "country": "CA",
+      "awards": [
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "Breakout Creator"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "Fashion"
+        },
+        {
+          "year": 9,
+          "award": "streamy",
+          "category": "Podcast"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 6
+    },
+    {
+      "channel_id": "UCtinbF-Q-fVthA0qrFQTgXQ",
+      "channel_name": "CaseyNeistat",
+      "channel_url": "https://www.youtube.com/channel/UCtinbF-Q-fVthA0qrFQTgXQ",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCtinbF-Q-fVthA0qrFQTgXQ",
+      "country": "US",
+      "awards": [
+        {
+          "year": 6,
+          "award": "streamy",
+          "category": "First Person"
+        },
+        {
+          "year": 7,
+          "award": "streamy",
+          "category": "First Person"
+        },
+        {
+          "year": 8,
+          "award": "streamy",
+          "category": "First Person"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 6
+    },
+    {
+      "channel_id": "UC_gtN4lepSR1ebO2fKGd85g",
+      "channel_name": "Wisdom Kaye",
+      "channel_url": "https://www.youtube.com/channel/UC_gtN4lepSR1ebO2fKGd85g",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_gtN4lepSR1ebO2fKGd85g",
+      "country": "",
+      "awards": [
+        {
+          "year": 11,
+          "award": "streamy",
+          "category": "Food"
+        },
+        {
+          "year": 12,
+          "award": "streamy",
+          "category": "Food"
+        },
+        {
+          "year": 13,
+          "award": "streamy",
+          "category": "Food"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 11
+    },
+    {
+      "channel_id": "UCj5i58mCkAREDqFWlhaQbOw",
+      "channel_name": "stampylonghead",
+      "channel_url": "https://www.youtube.com/channel/UCj5i58mCkAREDqFWlhaQbOw",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCj5i58mCkAREDqFWlhaQbOw",
+      "country": "",
+      "awards": [
+        {
+          "year": 4,
+          "award": "streamy",
+          "category": "Gaming"
+        },
+        {
+          "year": 5,
+          "award": "streamy",
+          "category": "Gaming"
+        }
+      ],
+      "primary_award": "streamy",
+      "year": 4
+    }
+  ]
+}

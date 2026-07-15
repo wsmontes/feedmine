@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Construction, Building &amp; Civil Engineering</title>
+  </head>
+  <body>
+    <outline text="Construction News &amp; Industry">
+      <outline title="Engineering News-Record (ENR)" xmlUrl="https://www.enr.com/rss" type="rss" />
+      <outline title="Construction Executive" xmlUrl="https://www.constructionexec.com/rss" type="rss" />
+      <outline title="For Construction Pros" xmlUrl="https://www.forconstructionpros.com/rss" type="rss" />
+      <outline title="Construction News (UK)" xmlUrl="https://www.constructionnews.co.uk/rss" type="rss" />
+      <outline title="The Construction Index" xmlUrl="https://www.theconstructionindex.co.uk/rss" type="rss" />
+    </outline>
+    <outline text="Civil Engineering">
+      <outline title="New Civil Engineer" xmlUrl="https://www.newcivilengineer.com/rss" type="rss" />
+      <outline title="The Institution of Civil Engineers (ICE)" xmlUrl="https://www.ice.org.uk/rss" type="rss" />
+      <outline title="Engineering.com — Civil" xmlUrl="https://www.engineering.com/rss/civil" type="rss" />
+    </outline>
+    <outline text="Architecture &amp; Design">
+      <outline title="ArchDaily" xmlUrl="https://www.archdaily.com/rss" type="rss" />
+      <outline title="Dezeen" xmlUrl="https://www.dezeen.com/feed/" type="rss" />
+      <outline title="Architectural Record" xmlUrl="https://www.architecturalrecord.com/rss" type="rss" />
+      <outline title="Designboom" xmlUrl="https://www.designboom.com/feed/" type="rss" />
+      <outline title="The Architect's Newspaper" xmlUrl="https://www.archpaper.com/feed/" type="rss" />
+    </outline>
+    <outline text="Green Building &amp; Sustainability">
+      <outline title="Green Building Advisor" xmlUrl="https://www.greenbuildingadvisor.com/rss" type="rss" />
+      <outline title="USGBC (LEED) Blog" xmlUrl="https://www.usgbc.org/rss" type="rss" />
+      <outline title="EcoBuilding Pulse" xmlUrl="https://www.ecobuildingpulse.com/rss" type="rss" />
+    </outline>
+    <outline text="Home Building &amp; Remodeling">
+      <outline title="Fine Homebuilding" xmlUrl="https://www.finehomebuilding.com/feed/" type="rss" />
+      <outline title="Family Handyman" xmlUrl="https://www.familyhandyman.com/feed/" type="rss" />
+      <outline title="Bob Vila" xmlUrl="https://www.bobvila.com/rss" type="rss" />
+    </outline>
+    <outline text="Heavy Equipment &amp; Machinery">
+      <outline title="Compact Equipment" xmlUrl="https://compactequip.com/rss/" type="rss" />
+      <outline title="Construction Equipment Guide" xmlUrl="https://www.constructionequipmentguide.com/rss" type="rss" />
+    </outline>
+    <outline text="Construction Podcasts">
+      <outline title="Construction Leading Edge" xmlUrl="https://feeds.libsyn.com/constructionleadingedge" type="rss" />
+    </outline>
+    <outline text="YouTube — Construction &amp; Building">
+      </outline>
+    <outline text="Concrete &amp; Masonry">
+      <outline title="Precast Concrete Blog" xmlUrl="https://precast.org/rss/" type="rss" />
+    </outline>
+    <outline text="Plumbing &amp; Electrical">
+      <outline title="Plumbing &amp; Mechanical" xmlUrl="https://www.pmmag.com/rss" type="rss" />
+      <outline title="Plumber Magazine" xmlUrl="https://plumbermag.com/feed/" type="rss" />
+      <outline title="PHCP Pros" xmlUrl="https://www.phcppros.com/rss" type="rss" />
+    </outline>
+    <outline text="Construction Tech &amp; BIM">
+      <outline title="AEC Magazine" xmlUrl="https://aecmag.com/rss/" type="rss" />
+    </outline>
+    <outline text="Roofing &amp; Building Envelope">
+      <outline title="Roofing Contractor" xmlUrl="https://www.roofingcontractor.com/rss" type="rss" />
+      <outline title="Walls &amp; Ceilings" xmlUrl="https://www.wconline.com/rss" type="rss" />
+      <outline title="FacilitiesNet" xmlUrl="https://www.facilitiesnet.com/rss" type="rss" />
+    </outline>
+    <outline text="More Construction YouTube">
+      </outline>
+    <outline text="Brazilian Construção">
+      <outline title="PINI Web" xmlUrl="https://pini.com.br/rss/" type="rss" />
+      <outline title="Cimento Itambé" xmlUrl="https://www.cimentoitambe.com.br/rss/" type="rss" />
+      <outline title="CBIC (Câmara Brasileira)" xmlUrl="https://cbic.org.br/rss/" type="rss" />
+      <outline title="SindusCon-SP" xmlUrl="https://www.sindusconsp.com.br/rss/" type="rss" />
+    </outline>
+    <outline text="More Construction Resources">
+      <outline title="Jobsite Blog" xmlUrl="https://jobsite.procore.com/feed/" type="rss" />
+      <outline title="Viewpoint Blog" xmlUrl="https://www.viewpoint.com/blog/rss" type="rss" />
+      <outline title="BuildingConnected Blog" xmlUrl="https://www.buildingconnected.com/blog/rss/" type="rss" />
+      <outline title="Construction Physics" xmlUrl="https://www.construction-physics.com/feed" type="rss" />
+      <outline title="Infrastructure Show" xmlUrl="https://feeds.libsyn.com/infrastructure" type="rss" />
+    </outline>
+  </body>
+</opml>

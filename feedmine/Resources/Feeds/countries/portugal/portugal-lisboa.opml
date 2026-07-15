@@ -5,8 +5,9 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="2050 - 25 Anos do Terramoto de Lisboa" xmlUrl="https://rss.podplaystudio.com/3430.xml" type="rss" category="Fiction" />
       <outline title="Lisboa a capital de Portugal" xmlUrl="https://anchor.fm/s/5c7ff718/podcast/rss" type="rss" category="Arts" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

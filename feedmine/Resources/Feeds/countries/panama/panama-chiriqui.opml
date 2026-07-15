@@ -7,14 +7,11 @@
     <outline text="Podcasts">
       <outline title="Why Tango Podcast" xmlUrl="https://api.substack.com/feed/podcast/4173455.rss" type="rss" category="Music Commentary" />
       <outline title="Juego de Asesinos Podcast" xmlUrl="https://feeds.ivoox.com/feed_fg_f1731758_filtro_1.xml" type="rss" category="True Crime" />
-      <outline title="Omega Stereo Panamá" xmlUrl="https://anchor.fm/s/395b4c38/podcast/rss" type="rss" category="News" />
       <outline title="Seguros y más" xmlUrl="https://rss.buzzsprout.com/2038934.rss" type="rss" category="Management" />
       <outline title="2017 Serapis Bey - Río de Luz Electrónica" xmlUrl="https://www.serapisbey.com/rayoblanco/sbpodcasts/2017_nelson.xml" type="rss" category="Spirituality" />
       <outline title="The PanaFamilia Podcast" xmlUrl="https://media.rss.com/thepanafamiliapodcast/feed.xml" type="rss" category="Places &amp; Travel" />
       <outline title="ECO NEWS" xmlUrl="https://rss.buzzsprout.com/348812.rss" type="rss" category="Arts" />
       <outline title="Secretos Inmobiliarios de Prestige Panama Realty" xmlUrl="https://anchor.fm/s/1b6359dc/podcast/rss" type="rss" category="Investing" />
-      <outline title="Panamá en Directo" xmlUrl="https://anchor.fm/s/9156fea0/podcast/rss" type="rss" category="News Commentary" />
-      <outline title="PanamAnonima: crímenes reales en Panamá" xmlUrl="https://www.spreaker.com/show/5786181/episodes/feed" type="rss" category="True Crime" />
       <outline title="Pitchout Podcast" xmlUrl="https://anchor.fm/s/f5532064/podcast/rss" type="rss" category="Baseball" />
       <outline title="Sal y PImienta" xmlUrl="https://anchor.fm/s/2cd17c8/podcast/rss" type="rss" category="News" />
       <outline title="RADIOGRAFÍA" xmlUrl="https://rss.buzzsprout.com/348800.rss" type="rss" category="Arts" />
@@ -22,7 +19,6 @@
       <outline title="Deportes TVP" xmlUrl="https://anchor.fm/s/425d351c/podcast/rss" type="rss" category="Sports News" />
       <outline title="Erazno y La Chokolata El Podcast" xmlUrl="https://feeds.simplecast.com/WDug2Tly" type="rss" category="Comedy" />
       <outline title="TV AGRO" xmlUrl="https://anchor.fm/s/10c2b08d8/podcast/rss" type="rss" category="Business" />
-      <outline title="Radio Maria Panamá" xmlUrl="https://radiomaria.pa/feed/podcast/" type="rss" category="Religion &amp; Spirituality" />
       <outline title="R10 SPORTS" xmlUrl="https://anchor.fm/s/3e09e988/podcast/rss" type="rss" category="Sports" />
       <outline title="POR LA VIA LEGAL Giselle Moncada" xmlUrl="https://anchor.fm/s/4fc10760/podcast/rss" type="rss" category="Education" />
       <outline title="EN CONTEXTO" xmlUrl="https://rss.buzzsprout.com/330251.rss" type="rss" category="Arts" />
@@ -32,7 +28,6 @@
       <outline title="Actually Good Coffee Podcast" xmlUrl="https://feed.podbean.com/actuallygoodcoffeepodcast/feed.xml" type="rss" category="Entrepreneurship" />
       <outline title="Reality Gays with Mattie and Poodle" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/reality-gays" type="rss" category="TV &amp; Film" />
       <outline title="Radio Amistad - Temas Vitales" xmlUrl="https://podcasts.subsplash.com/5jcxd4z/podcast.rss" type="rss" category="Christianity" />
-      <outline title="Noticias de Panamá" xmlUrl="https://www.spreaker.com/show/4661563/episodes/feed" type="rss" category="Daily News" />
       <outline title="Con Intención" xmlUrl="https://anchor.fm/s/34ebc998/podcast/rss" type="rss" category="Self-Improvement" />
       <outline title="Lo Más Focop" xmlUrl="https://anchor.fm/s/341b484/podcast/rss" type="rss" category="Daily News" />
       <outline title="Pauta en Radio" xmlUrl="https://anchor.fm/s/318b86d0/podcast/rss" type="rss" category="Business" />
@@ -45,7 +40,6 @@
       <outline title="En el banquillo" xmlUrl="https://anchor.fm/s/7323ce4/podcast/rss" type="rss" category="Sports" />
       <outline title="Gabo Rebollon Podcast Show GRPS" xmlUrl="https://rss.libsyn.com/shows/264959/destinations/2014721.xml" type="rss" category="News" />
       <outline title="Asociación Culturama Internacional" xmlUrl="https://anchor.fm/s/5e533e24/podcast/rss" type="rss" category="Education" />
-      <outline title="Peace Corps Panama Files" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:66923092/sounds.rss" type="rss" category="Society &amp; Culture" />
       <outline title="cesarpvlog" xmlUrl="https://anchor.fm/s/34be8b90/podcast/rss" type="rss" category="Society &amp; Culture" />
       <outline title="Bitácora Deportiva" xmlUrl="https://anchor.fm/s/7b256720/podcast/rss" type="rss" category="Sports" />
       <outline title="Agenda Fútbol" xmlUrl="https://anchor.fm/s/de43060/podcast/rss" type="rss" category="Soccer" />
@@ -53,5 +47,7 @@
       <outline title="Ida y Vuelta" xmlUrl="https://anchor.fm/s/197701a0/podcast/rss" type="rss" category="Sports" />
       <outline title="Sin Pasaporte" xmlUrl="https://anchor.fm/s/f99730c/podcast/rss" type="rss" category="News" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

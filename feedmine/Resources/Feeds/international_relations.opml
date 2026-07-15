@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>International Relations, Geopolitics &amp; Diplomacy</title>
+  </head>
+  <body>
+    <outline text="Foreign Policy &amp; IR News">
+      <outline title="Foreign Policy" xmlUrl="https://foreignpolicy.com/feed/" type="rss" />
+      <outline title="The Diplomat" xmlUrl="https://thediplomat.com/feed/" type="rss" />
+      <outline title="World Politics Review" xmlUrl="https://www.worldpoliticsreview.com/rss" type="rss" />
+      <outline title="Responsible Statecraft" xmlUrl="https://responsiblestatecraft.org/feed/" type="rss" />
+      <outline title="The National Interest" xmlUrl="https://nationalinterest.org/rss" type="rss" />
+      <outline title="Geopolitical Futures" xmlUrl="https://geopoliticalfutures.com/feed/" type="rss" />
+      <outline title="Geopolitical Monitor" xmlUrl="https://www.geopoliticalmonitor.com/feed/" type="rss" />
+      <outline title="The Cipher Brief" xmlUrl="https://www.thecipherbrief.com/feed" type="rss" />
+    </outline>
+    <outline text="Think Tanks &amp; Research">
+      <outline title="Carnegie Endowment" xmlUrl="https://carnegieendowment.org/rss" type="rss" />
+      <outline title="Brookings — Foreign Policy" xmlUrl="https://www.brookings.edu/rss/foreign-policy/" type="rss" />
+      <outline title="Atlantic Council" xmlUrl="https://www.atlanticcouncil.org/rss/" type="rss" />
+      <outline title="European Council on Foreign Relations" xmlUrl="https://ecfr.eu/rss/" type="rss" />
+    </outline>
+    <outline text="Geopolitics &amp; Strategy">
+      <outline title="War on the Rocks" xmlUrl="https://warontherocks.com/feed/" type="rss" />
+      <outline title="Small Wars Journal" xmlUrl="https://smallwarsjournal.com/rss" type="rss" />
+      <outline title="Modern War Institute" xmlUrl="https://mwi.westpoint.edu/feed/" type="rss" />
+    </outline>
+    <outline text="International Organizations">
+      <outline title="United Nations News" xmlUrl="https://news.un.org/rss" type="rss" />
+      <outline title="WTO News" xmlUrl="https://www.wto.org/rss" type="rss" />
+    </outline>
+    <outline text="Regional — Middle East">
+      <outline title="Al-Monitor" xmlUrl="https://www.al-monitor.com/rss" type="rss" />
+      <outline title="Middle East Eye" xmlUrl="https://www.middleeasteye.net/rss" type="rss" />
+      <outline title="+972 Magazine" xmlUrl="https://www.972mag.com/feed/" type="rss" />
+      <outline title="Middle East Institute" xmlUrl="https://www.mei.edu/rss" type="rss" />
+    </outline>
+    <outline text="Regional — Asia-Pacific">
+      <outline title="The Interpreter (Lowy Institute)" xmlUrl="https://www.lowyinstitute.org/rss" type="rss" />
+      <outline title="ChinaPower (CSIS)" xmlUrl="https://chinapower.csis.org/feed/" type="rss" />
+      <outline title="The China Project" xmlUrl="https://thechinaproject.com/feed/" type="rss" />
+      <outline title="NK News" xmlUrl="https://www.nknews.org/feed/" type="rss" />
+    </outline>
+    <outline text="Regional — Latin America">
+      <outline title="Americas Quarterly" xmlUrl="https://www.americasquarterly.org/rss" type="rss" />
+      <outline title="LatAm Dialogue" xmlUrl="https://www.thedialogue.org/rss/" type="rss" />
+      <outline title="Brazzil" xmlUrl="https://www.brazzil.com/feed/" type="rss" />
+      <outline title="Latin America Reports" xmlUrl="https://latinamericareports.com/feed/" type="rss" />
+    </outline>
+    <outline text="Regional — Africa &amp; Europe">
+      <outline title="African Arguments" xmlUrl="https://africanarguments.org/feed/" type="rss" />
+      <outline title="EUobserver" xmlUrl="https://euobserver.com/rss" type="rss" />
+      <outline title="Politico Europe" xmlUrl="https://www.politico.eu/feed/" type="rss" />
+      <outline title="Balkan Insight" xmlUrl="https://balkaninsight.com/feed/" type="rss" />
+    </outline>
+    <outline text="IR Podcasts">
+      </outline>
+    <outline text="YouTube — Geopolitics &amp; IR">
+      </outline>
+    <outline text="US Foreign Policy">
+      <outline title="State Dept — Press Releases" xmlUrl="https://www.state.gov/rss/" type="rss" />
+      <outline title="USIP (Peace Institute)" xmlUrl="https://www.usip.org/rss" type="rss" />
+      <outline title="War on the Rocks" xmlUrl="https://warontherocks.com/feed/" type="rss" />
+      <outline title="Defense Priorities" xmlUrl="https://www.defensepriorities.org/rss" type="rss" />
+      <outline title="Quincy Institute" xmlUrl="https://quincyinst.org/feed/" type="rss" />
+    </outline>
+    <outline text="Development &amp; Aid">
+      </outline>
+    <outline text="Global Trade &amp; Economics">
+      </outline>
+    <outline text="Climate &amp; Energy Security">
+      <outline title="E3G" xmlUrl="https://www.e3g.org/rss/" type="rss" />
+      <outline title="Carbon Brief" xmlUrl="https://www.carbonbrief.org/feed/" type="rss" />
+    </outline>
+    <outline text="More IR Podcasts">
+      </outline>
+    <outline text="More YouTube — IR">
+      </outline>
+  </body>
+</opml>

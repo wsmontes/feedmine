@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Art Galleries &amp; Art Market Feeds</title>
+  </head>
+  <body>
+    <outline text="Art News &amp; Market">
+      <outline title="Artnet News" xmlUrl="https://news.artnet.com/feed/" type="rss" />
+      <outline title="Artforum" xmlUrl="https://www.artforum.com/rss" type="rss" />
+      <outline title="Hyperallergic" xmlUrl="https://hyperallergic.com/feed/" type="rss" />
+      <outline title="ARTnews" xmlUrl="https://www.artnews.com/feed/" type="rss" />
+    </outline>
+    <outline text="Major International Galleries">
+      <outline title="Sprüth Magers" xmlUrl="https://spruethmagers.com/rss/" type="rss" />
+      <outline title="Lehmann Maupin" xmlUrl="https://www.lehmannmaupin.com/rss" type="rss" />
+    </outline>
+    <outline text="Auction Houses">
+      <outline title="Christie's — News" xmlUrl="https://www.christies.com/rss" type="rss" />
+      <outline title="Bonhams" xmlUrl="https://www.bonhams.com/rss/" type="rss" />
+    </outline>
+    <outline text="Art Fairs">
+      <outline title="Art Dubai" xmlUrl="https://www.artdubai.ae/rss/" type="rss" />
+      <outline title="SP-Arte (Brazil)" xmlUrl="https://www.sp-arte.com/rss/" type="rss" />
+      <outline title="ArtRio" xmlUrl="https://artrio.com/rss/" type="rss" />
+    </outline>
+    <outline text="Art Criticism &amp; Magazines">
+      <outline title="Art in America" xmlUrl="https://www.artnews.com/c/art-in-america/feed/" type="rss" />
+      <outline title="Elephant Magazine" xmlUrl="https://elephant.art/feed/" type="rss" />
+      <outline title="Juxtapoz Magazine" xmlUrl="https://www.juxtapoz.com/rss/" type="rss" />
+      <outline title="Artillery Magazine" xmlUrl="https://artillerymag.com/feed/" type="rss" />
+      <outline title="Artillery" xmlUrl="https://www.artillerymag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Street Art &amp; Graffiti">
+      <outline title="StreetArtNews" xmlUrl="https://streetartnews.net/feed/" type="rss" />
+      <outline title="Brooklyn Street Art" xmlUrl="https://www.brooklynstreetart.com/feed/" type="rss" />
+      <outline title="Vandalog" xmlUrl="https://blog.vandalog.com/feed/" type="rss" />
+      <outline title="GraffitiStreet" xmlUrl="https://www.graffitistreet.com/feed/" type="rss" />
+      <outline title="Widewalls — Street Art" xmlUrl="https://www.widewalls.ch/rss/street-art/" type="rss" />
+      <outline title="Colossal — Art &amp; Design" xmlUrl="https://www.thisiscolossal.com/feed/" type="rss" />
+    </outline>
+    <outline text="Brazilian Galleries &amp; Art">
+      <outline title="Vermelho" xmlUrl="https://www.galeriavermelho.com.br/rss/" type="rss" />
+      <outline title="ArtRio" xmlUrl="https://artrio.com/rss/" type="rss" />
+      <outline title="Select Art Magazine (Brazil)" xmlUrl="https://www.select.art.br/feed/" type="rss" />
+    </outline>
+    <outline text="Art Podcasts">
+      <outline title="Art &amp; Cocktails" xmlUrl="https://feeds.libsyn.com/artandcocktails" type="rss" />
+    </outline>
+    <outline text="YouTube — Art &amp; Galleries">
+      </outline>
+    <outline text="Online Art Platforms &amp; Marketplaces">
+      </outline>
+    <outline text="More US &amp; UK Galleries">
+      </outline>
+    <outline text="Art Collecting &amp; Advisory">
+      <outline title="MutualArt" xmlUrl="https://www.mutualart.com/rss" type="rss" />
+      <outline title="ArtTactic — Analysis" xmlUrl="https://www.arttactic.com/rss/" type="rss" />
+      <outline title="Canvas Art Magazine" xmlUrl="https://www.canvasonline.com/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

@@ -6,7 +6,7 @@ struct OPMLParser {
     /// Bump when the parse LOGIC or FeedSource shape changes (region derivation,
     /// mediaKind classification, dedup/normalize) so caches produced by the old
     /// logic are ignored even within the same app build.
-    private static let cacheFormatVersion = 3  // multi-source pipeline: 444 OPMLs, 14K+ feeds
+    private static let cacheFormatVersion = 4  // 1.9K OPMLs, 276K+ feeds (ranking sources: socialblade, kaggle, wikipedia, awards)
 
     /// Codable envelope persisted to Caches/.
     private struct CachedParse: Codable {
@@ -250,6 +250,7 @@ struct OPMLParser {
         let lower = fileName.lowercased()
         if lower.contains("podcast") { return .audio }
         if lower.contains("youtube") { return .video }
+        if lower.contains("reddit") || lower.contains("forum") { return .forum }
         return .text
     }
 
@@ -383,6 +384,7 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
         let resolvedKind: MediaKind = {
             if xmlUrl.contains("youtube.com/feeds") { return .video }
             if xmlUrl.contains("anchor.fm") || xmlUrl.contains("spreaker.com") || xmlUrl.contains("podcast") { return .audio }
+            if xmlUrl.contains("reddit.com/r/") { return .forum }
             return mediaKind
         }()
         sources.append(

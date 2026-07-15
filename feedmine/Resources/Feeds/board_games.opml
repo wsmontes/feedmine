@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Board Games, RPGs &amp; Tabletop Gaming</title>
+  </head>
+  <body>
+    <outline text="Board Game News &amp; Reviews">
+      <outline title="Shut Up &amp; Sit Down" xmlUrl="https://www.shutupandsitdown.com/feed/" type="rss" />
+      <outline title="Tabletop Gaming Magazine" xmlUrl="https://tabletopgaming.co.uk/feed/" type="rss" />
+      <outline title="Meeple Mountain" xmlUrl="https://www.meeplemountain.com/feed/" type="rss" />
+      <outline title="Board Game Quest" xmlUrl="https://www.boardgamequest.com/feed/" type="rss" />
+    </outline>
+    <outline text="D&amp;D &amp; Fantasy RPGs">
+      <outline title="Critical Role Blog" xmlUrl="https://critrole.com/feed/" type="rss" />
+      <outline title="The Monsters Know What They're Doing" xmlUrl="https://www.themonstersknow.com/feed/" type="rss" />
+    </outline>
+    <outline text="Indie RPGs &amp; Story Games">
+      <outline title="Story Games Forum" xmlUrl="https://storygames.com/rss" type="rss" />
+    </outline>
+    <outline text="Warhammer &amp; Miniature Wargaming">
+      <outline title="Spikey Bits" xmlUrl="https://spikeybits.com/feed/" type="rss" />
+      <outline title="Goonhammer" xmlUrl="https://www.goonhammer.com/feed/" type="rss" />
+      <outline title="Bell of Lost Souls" xmlUrl="https://www.belloflostsouls.net/feed/" type="rss" />
+      <outline title="Wargaming Hub" xmlUrl="https://www.wargaminghub.com/rss/" type="rss" />
+    </outline>
+    <outline text="Magic: The Gathering &amp; TCGs">
+      <outline title="EDHREC Blog" xmlUrl="https://articles.edhrec.com/feed/" type="rss" />
+      <outline title="Card Kingdom Blog" xmlUrl="https://blog.cardkingdom.com/feed/" type="rss" />
+    </outline>
+    <outline text="Board Game Design &amp; Industry">
+      <outline title="League of Gamemakers" xmlUrl="https://www.leagueofgamemakers.com/feed/" type="rss" />
+      <outline title="Stonemaier Games Blog (Jamey Stegmaier)" xmlUrl="https://stonemaiergames.com/rss/" type="rss" />
+      <outline title="Board Game Design Lab" xmlUrl="https://boardgamedesignlab.com/feed/" type="rss" />
+      <outline title="The Board Game Workshop" xmlUrl="https://theboardgameworkshop.com/feed/" type="rss" />
+    </outline>
+    <outline text="Tabletop Podcasts">
+      <outline title="Ludology" xmlUrl="https://feeds.libsyn.com/ludology" type="rss" />
+      <outline title="Limited Resources (MTG Draft)" xmlUrl="https://feeds.libsyn.com/limitedresources" type="rss" />
+    </outline>
+    <outline text="YouTube — Board Games &amp; RPG">
+      </outline>
+  </body>
+</opml>

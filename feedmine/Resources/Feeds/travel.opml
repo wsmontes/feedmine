@@ -1,11 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0"><head><title>Travel</title></head><body><outline text="Travel">
-<outline title="Atlas Obscura" xmlUrl="https://www.atlasobscura.com/feeds/latest" type="rss"/>
-<outline title="Nomadic Matt" xmlUrl="https://www.nomadicmatt.com/travel-blog/feed/" type="rss"/>
-<outline title="Adventure.com" xmlUrl="http://adventure.com/feed/" type="rss"/>
-<outline title="Travel Dudes" xmlUrl="https://www.traveldudes.com/feed/" type="rss"/>
-<outline title="Live Life Travel" xmlUrl="https://www.livelifetravel.world/feed/" type="rss"/>
-<outline title="Everything Everywhere" xmlUrl="http://feeds2.feedburner.com/EverythingEverywhere/" type="rss"/>
-<outline title="The Points Guy" xmlUrl="http://feeds.feedburner.com/thepointsguy" type="rss"/>
-<outline title="Guardian Travel" xmlUrl="https://www.theguardian.com/uk/travel/rss" type="rss"/>
-</outline></body></opml>
+<opml version="1.0">
+  <head>
+    <title>Travel &amp; Tourism — News, Cruises, Backpacking &amp; Destinations</title>
+  </head>
+  <body>
+    <outline text="Travel News &amp; Magazines">
+      <outline title="Skift (Travel Industry)" xmlUrl="https://skift.com/feed/" type="rss" />
+      <outline title="Wanderlust Magazine" xmlUrl="https://www.wanderlust.co.uk/rss" type="rss" />
+      <outline title="Matador Network" xmlUrl="https://matadornetwork.com/feed/" type="rss" />
+      <outline title="Atlas Obscura" xmlUrl="https://www.atlasobscura.com/feeds/latest" type="rss" />
+      <outline title="The Points Guy" xmlUrl="https://thepointsguy.com/feed/" type="rss" />
+      <outline title="Travel Dudes" xmlUrl="https://www.traveldudes.com/feed/" type="rss" />
+      <outline title="Guardian Travel" xmlUrl="https://www.theguardian.com/uk/travel/rss" type="rss" />
+      <outline title="Everything Everywhere" xmlUrl="http://feeds2.feedburner.com/EverythingEverywhere/" type="rss" />
+    </outline>
+    <outline text="Travel Blogs — Top Bloggers">
+      <outline title="Nomadic Matt" xmlUrl="https://www.nomadicmatt.com/feed/" type="rss" />
+      <outline title="The Blonde Abroad" xmlUrl="https://theblondeabroad.com/feed/" type="rss" />
+      <outline title="Adventurous Kate" xmlUrl="https://www.adventurouskate.com/feed/" type="rss" />
+      <outline title="Legal Nomads" xmlUrl="https://www.legalnomads.com/feed/" type="rss" />
+      <outline title="Never Ending Footsteps" xmlUrl="https://www.neverendingfootsteps.com/feed/" type="rss" />
+      <outline title="Expert Vagabond" xmlUrl="https://expertvagabond.com/feed/" type="rss" />
+      <outline title="Hand Luggage Only" xmlUrl="https://handluggageonly.co.uk/feed/" type="rss" />
+      <outline title="A Broken Backpack" xmlUrl="https://abrokenbackpack.com/feed/" type="rss" />
+      <outline title="Be My Travel Muse" xmlUrl="https://www.bemytravelmuse.com/feed/" type="rss" />
+      <outline title="Oneika the Traveller" xmlUrl="https://www.oneikathetraveller.com/feed/" type="rss" />
+      <outline title="The Planet D" xmlUrl="https://theplanetd.com/feed/" type="rss" />
+      <outline title="Live Life Travel" xmlUrl="https://www.livelifetravel.world/feed/" type="rss" />
+    </outline>
+    <outline text="Cruzeiros / Cruises">
+      <outline title="Cruise Critic — News" xmlUrl="https://www.cruisecritic.com/rss/" type="rss" />
+      <outline title="Cruise Industry News" xmlUrl="https://www.cruiseindustrynews.com/rss/" type="rss" />
+      <outline title="Cruise Hive" xmlUrl="https://www.cruisehive.com/feed/" type="rss" />
+      <outline title="Cruise Radio" xmlUrl="https://cruiseradio.net/feed/" type="rss" />
+      <outline title="Porthole Cruise Magazine" xmlUrl="https://porthole.com/feed/" type="rss" />
+      <outline title="Cruise Fever" xmlUrl="https://cruisefever.net/feed/" type="rss" />
+      <outline title="Cruise Maven" xmlUrl="https://cruisemaven.com/feed/" type="rss" />
+      <outline title="Avid Cruiser" xmlUrl="https://www.avidcruiser.com/feed/" type="rss" />
+    </outline>
+    <outline text="Mochilão / Backpacking &amp; Budget">
+      <outline title="The Savvy Backpacker" xmlUrl="https://thesavvybackpacker.com/feed/" type="rss" />
+      <outline title="Backpacker Magazine" xmlUrl="https://www.backpacker.com/feed/" type="rss" />
+      <outline title="Hostelworld Blog" xmlUrl="https://www.hostelworld.com/blog/feed/" type="rss" />
+      <outline title="The Broke Backpacker" xmlUrl="https://www.thebrokebackpacker.com/feed/" type="rss" />
+      <outline title="Indie Traveller" xmlUrl="https://indietraveller.co/feed/" type="rss" />
+      <outline title="Too Many Adapters" xmlUrl="https://toomanyadapters.com/feed/" type="rss" />
+      <outline title="Divergent Travelers" xmlUrl="https://www.divergenttravelers.com/feed/" type="rss" />
+      <outline title="Travel Dave (Solo Travel)" xmlUrl="https://www.traveldave.co.uk/feed/" type="rss" />
+      <outline title="Don't Stop Living" xmlUrl="https://dontstopliving.net/feed/" type="rss" />
+    </outline>
+    <outline text="Destinos &amp; Pontos Turísticos">
+      </outline>
+    <outline text="Adventure &amp; Outdoor Travel">
+      <outline title="Adventure.com" xmlUrl="https://adventure.com/feed/" type="rss" />
+      <outline title="Outside Magazine" xmlUrl="https://www.outsideonline.com/rss" type="rss" />
+      <outline title="Much Better Adventures Mag" xmlUrl="https://www.muchbetteradventures.com/magazine/feed/" type="rss" />
+      <outline title="Mountain Travel Blog" xmlUrl="https://mountainblog.com/feed/" type="rss" />
+      <outline title="Active Traveller" xmlUrl="https://www.activetraveller.com/feed/" type="rss" />
+    </outline>
+    <outline text="Hotel &amp; Accommodation">
+      <outline title="Airbnb News" xmlUrl="https://news.airbnb.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel Food &amp; Culture">
+      <outline title="Migrationology (Food Travel)" xmlUrl="https://migrationology.com/feed/" type="rss" />
+      <outline title="Roads &amp; Kingdoms" xmlUrl="https://roadsandkingdoms.com/feed/" type="rss" />
+    </outline>
+    <outline text="Travel Podcasts">
+      <outline title="Zero to Travel" xmlUrl="https://feeds.megaphone.fm/zerototravel" type="rss" />
+      <outline title="The Offbeat Life" xmlUrl="https://feeds.libsyn.com/theoffbeatlife" type="rss" />
+    </outline>
+    <outline text="YouTube — Travel">
+      </outline>
+    <outline text="More Travel Blogs">
+      <outline title="Dangerous Business" xmlUrl="https://www.dangerous-business.com/feed/" type="rss" />
+      <outline title="Brendan's Adventures" xmlUrl="https://www.brendansadventures.com/feed/" type="rss" />
+      <outline title="The Travel Hack" xmlUrl="https://thetravelhack.com/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

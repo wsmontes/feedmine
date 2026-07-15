@@ -5,29 +5,23 @@
   </head>
   <body>
     <outline text="Podcasts">
-      <outline title="Conflicted: A History Podcast" xmlUrl="https://feeds.megaphone.fm/conflicted" type="rss" category="History" />
       <outline title="Everything Everywhere Daily: History, Science, Geography &amp; More" xmlUrl="https://feeds.megaphone.fm/ADV3162807280" type="rss" category="History" />
       <outline title="Cerealistico" xmlUrl="https://anchor.fm/s/8412d188/podcast/rss" type="rss" category="Society &amp; Culture" />
-      <outline title="Omega Stereo Panamá" xmlUrl="https://anchor.fm/s/395b4c38/podcast/rss" type="rss" category="News" />
       <outline title="Geopolitical Economy Report" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:321045635/sounds.rss" type="rss" category="News" />
       <outline title="Fall of Civilizations Podcast" xmlUrl="https://anchor.fm/s/101adcf44/podcast/rss" type="rss" category="History" />
       <outline title="The VGirl Podcast" xmlUrl="https://anchor.fm/s/d0cedbc/podcast/rss" type="rss" category="Society &amp; Culture" />
       <outline title="The Immigrant Experience in America (TIEIA)" xmlUrl="https://rss.pdrl.fm/f42496/feeds.libsyn.com/379676/rss/?redirect=false" type="rss" category="Society &amp; Culture" />
       <outline title="RADIOGRAFÍA" xmlUrl="https://rss.buzzsprout.com/348800.rss" type="rss" category="Arts" />
-      <outline title="Panamá en Directo" xmlUrl="https://anchor.fm/s/9156fea0/podcast/rss" type="rss" category="News Commentary" />
       <outline title="Wanderlust Woman Podcast" xmlUrl="https://anchor.fm/s/4b77beb0/podcast/rss" type="rss" category="Places &amp; Travel" />
       <outline title="Half-Arsed History" xmlUrl="https://feeds.acast.com/public/shows/65a47774968ba8001771f445" type="rss" category="History" />
       <outline title="¿Qué dicen los jóvenes?" xmlUrl="https://anchor.fm/s/31c21a4c/podcast/rss" type="rss" category="Education" />
       <outline title="G3:16 Condesa" xmlUrl="https://anchor.fm/s/1bf4eca8/podcast/rss" type="rss" category="Religion" />
-      <outline title="Noticias de Panamá" xmlUrl="https://www.spreaker.com/show/4661563/episodes/feed" type="rss" category="Daily News" />
       <outline title="hacarrasquilla" xmlUrl="https://anchor.fm/s/38390fd4/podcast/rss" type="rss" category="Social Sciences" />
       <outline title="The Black Doctors Podcast" xmlUrl="https://feeds.acast.com/public/shows/63b32d730c3fc60010fa867f" type="rss" category="Medicine" />
       <outline title="The Outlier's Journey - Stories of Inspiring Paths to Success" xmlUrl="https://anchor.fm/s/10894bc78/podcast/rss" type="rss" category="Self-Improvement" />
       <outline title="Guanatoz FM Network Podcast" xmlUrl="https://anchor.fm/s/6b2b68d8/podcast/rss" type="rss" category="Daily News" />
       <outline title="HearSay with Cathy Lewis" xmlUrl="https://podcasts.whro.org/hearsay/podcast.xml" type="rss" category="Society &amp; Culture" />
       <outline title="Leopoldo" xmlUrl="https://anchor.fm/s/319c3a98/podcast/rss" type="rss" category="Christianity" />
-      <outline title="Panamá América Podcast" xmlUrl="https://anchor.fm/s/118943f4/podcast/rss" type="rss" category="Daily News" />
-      <outline title="Panama: Crossroads of the World" xmlUrl="https://agzhvmuekfiebxwywwan.supabase.co/storage/v1/object/public/panama/feed.xml" type="rss" category="Education" />
       <outline title="The Bestraveler Podcast" xmlUrl="https://anchor.fm/s/3d1ae54/podcast/rss" type="rss" category="Sports" />
       <outline title="The Geopolitical Puzzle" xmlUrl="https://anchor.fm/s/e2907148/podcast/rss" type="rss" category="Politics" />
       <outline title="Pinta &amp; Cinta" xmlUrl="https://anchor.fm/s/3d66073c/podcast/rss" type="rss" category="Comedy" />
@@ -39,7 +33,6 @@
       <outline title="Reality Gays with Mattie and Poodle" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/reality-gays" type="rss" category="TV &amp; Film" />
       <outline title="Sal y PImienta" xmlUrl="https://anchor.fm/s/2cd17c8/podcast/rss" type="rss" category="News" />
       <outline title="Arca Media En Directo" xmlUrl="https://anchor.fm/s/108ea3d88/podcast/rss" type="rss" category="News" />
-      <outline title="Radio Maria Panamá" xmlUrl="https://radiomaria.pa/feed/podcast/" type="rss" category="Religion &amp; Spirituality" />
       <outline title="Lo Más Focop" xmlUrl="https://anchor.fm/s/341b484/podcast/rss" type="rss" category="Daily News" />
       <outline title="Guía de Turismo 1-2" xmlUrl="https://anchor.fm/s/318b81bc/podcast/rss" type="rss" category="History" />
       <outline title="The Meaning of Green" xmlUrl="https://rss.libsyn.com/shows/500743/destinations/4287708.xml" type="rss" category="Science" />
@@ -53,5 +46,7 @@
       <outline title="El Show de Carlos Guillen" xmlUrl="https://anchor.fm/s/5b294630/podcast/rss" type="rss" category="Entertainment News" />
       <outline title="Pauta en Radio" xmlUrl="https://anchor.fm/s/318b86d0/podcast/rss" type="rss" category="Business" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

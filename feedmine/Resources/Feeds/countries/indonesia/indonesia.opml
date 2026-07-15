@@ -1,1248 +1,640 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  
-  
   <head>
-    
-    
     <title>Indonesia Feeds</title>
-    
-  
   </head>
-  
-  
   <body>
-    
-    
     <outline text="News">
-      
-      
-      <outline title="Republika" xmlUrl="https://www.republika.co.id/rss/" type="rss"/>
-      
-      
-      <outline title="Antara News" xmlUrl="https://www.antaranews.com/rss/" type="rss"/>
-      
-      
-      <outline title="Okezone" xmlUrl="https://www.okezone.com/rss/" type="rss"/>
-      
-      
-      <outline title="Sindo News" xmlUrl="https://www.sindonews.com/rss/" type="rss"/>
-      
-      
-      <outline title="MetroTV News" xmlUrl="https://www.metrotvnews.com/rss/" type="rss"/>
-      
-      
-      <outline title="CNN Indonesia" xmlUrl="https://www.cnnindonesia.com/rss/" type="rss"/>
-      
-    
+      <outline title="Republika" xmlUrl="https://www.republika.co.id/rss/" type="rss" />
+      <outline title="Antara News" xmlUrl="https://www.antaranews.com/rss/" type="rss" />
+      <outline title="Okezone" xmlUrl="https://www.okezone.com/rss/" type="rss" />
+      <outline title="Sindo News" xmlUrl="https://www.sindonews.com/rss/" type="rss" />
+      <outline title="MetroTV News" xmlUrl="https://www.metrotvnews.com/rss/" type="rss" />
+      <outline title="CNN Indonesia" xmlUrl="https://www.cnnindonesia.com/rss/" type="rss" />
+      <outline title="Google News — INDONESIA (en)" xmlUrl="https://news.google.com/rss?hl=en&amp;gl=ID&amp;ceid=ID:en" type="rss" />
     </outline>
-    
-    
     <outline text="Sports">
-      
-      
-      <outline title="Indosport" xmlUrl="https://www.indosport.com/rss/" type="rss"/>
-      
-      
-      <outline title="Sindo Sport" xmlUrl="https://www.sindonews.com/sport/rss/" type="rss"/>
-      
-    
+      <outline title="Indosport" xmlUrl="https://www.indosport.com/rss/" type="rss" />
+      <outline title="Sindo Sport" xmlUrl="https://www.sindonews.com/sport/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Technology">
-      
-      
-      <outline title="Gadgetren" xmlUrl="https://www.gadgetren.com/rss/" type="rss"/>
-      
-      
-      <outline title="Pricebook" xmlUrl="https://www.pricebook.co.id/rss/" type="rss"/>
-      
-      
-      <outline title="Gizmologi" xmlUrl="https://www.gizmologi.id/feed/" type="rss"/>
-      
-    
+      <outline title="Gadgetren" xmlUrl="https://www.gadgetren.com/rss/" type="rss" />
+      <outline title="Pricebook" xmlUrl="https://www.pricebook.co.id/rss/" type="rss" />
+      <outline title="Gizmologi" xmlUrl="https://www.gizmologi.id/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Science">
-      
-      
-      <outline title="Detik Science" xmlUrl="https://www.detik.com/edu/rss/" type="rss"/>
-      
-    
+      <outline title="Detik Science" xmlUrl="https://www.detik.com/edu/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Culture">
-      
-      
-      <outline title="Whiteboard Journal" xmlUrl="https://www.whiteboardjournal.com/rss/" type="rss"/>
-      
-      
-      <outline title="Manual" xmlUrl="https://www.manual.co.id/feed/" type="rss"/>
-      
-      
-      <outline title="Indonesia Kaya" xmlUrl="https://www.indonesiakaya.com/rss/" type="rss"/>
-      
-    
+      <outline title="Whiteboard Journal" xmlUrl="https://www.whiteboardjournal.com/rss/" type="rss" />
+      <outline title="Manual" xmlUrl="https://www.manual.co.id/feed/" type="rss" />
+      <outline title="Indonesia Kaya" xmlUrl="https://www.indonesiakaya.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Movies">
-      
-      
-      <outline title="Kincir" xmlUrl="https://www.kincir.com/rss/" type="rss"/>
-      
-      
-      <outline title="Bintang" xmlUrl="https://www.bintang.com/rss/" type="rss"/>
-      
-    
+      <outline title="Kincir" xmlUrl="https://www.kincir.com/rss/" type="rss" />
+      <outline title="Bintang" xmlUrl="https://www.bintang.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Music">
-      
-      
-      <outline title="Pophariini" xmlUrl="https://www.pophariini.com/rss/" type="rss"/>
-      
-      
-      <outline title="The Display" xmlUrl="https://www.thedisplay.net/feed/" type="rss"/>
-      
-      
-      <outline title="Musikeras" xmlUrl="https://www.musikeras.com/feed/" type="rss"/>
-      
-      
-      <outline title="DCDC" xmlUrl="https://www.dcdc.id/feed/" type="rss"/>
-      
-    
+      <outline title="Pophariini" xmlUrl="https://www.pophariini.com/rss/" type="rss" />
+      <outline title="The Display" xmlUrl="https://www.thedisplay.net/feed/" type="rss" />
+      <outline title="Musikeras" xmlUrl="https://www.musikeras.com/feed/" type="rss" />
+      <outline title="DCDC" xmlUrl="https://www.dcdc.id/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="Food">
-      
-      
-      <outline title="ResepKoki" xmlUrl="https://www.resepkoki.id/rss/" type="rss"/>
-      
-      
-      <outline title="Endeus TV" xmlUrl="https://www.endeus.tv/rss/" type="rss"/>
-      
-      
-      <outline title="Foody ID" xmlUrl="https://www.foody.id/rss/" type="rss"/>
-      
-      
-      <outline title="Resep Masakan" xmlUrl="https://www.resepmasakanindonesia.com/feed/" type="rss"/>
-      
-      
-      <outline title="Femina Kuliner" xmlUrl="https://www.femina.co.id/kuliner/rss/" type="rss"/>
-      
-    
+      <outline title="ResepKoki" xmlUrl="https://www.resepkoki.id/rss/" type="rss" />
+      <outline title="Endeus TV" xmlUrl="https://www.endeus.tv/rss/" type="rss" />
+      <outline title="Foody ID" xmlUrl="https://www.foody.id/rss/" type="rss" />
+      <outline title="Resep Masakan" xmlUrl="https://www.resepmasakanindonesia.com/feed/" type="rss" />
+      <outline title="Femina Kuliner" xmlUrl="https://www.femina.co.id/kuliner/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Gaming">
-      
-      
-      <outline title="Gamebrott" xmlUrl="https://www.gamebrott.com/rss/" type="rss"/>
-      
-      
-      <outline title="Jagat Play" xmlUrl="https://www.jagatplay.com/rss/" type="rss"/>
-      
-      
-      <outline title="Esports ID" xmlUrl="https://www.esports.id/rss/" type="rss"/>
-      
-    
+      <outline title="Gamebrott" xmlUrl="https://www.gamebrott.com/rss/" type="rss" />
+      <outline title="Jagat Play" xmlUrl="https://www.jagatplay.com/rss/" type="rss" />
+      <outline title="Esports ID" xmlUrl="https://www.esports.id/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Travel">
-      
-      
-      <outline title="Anak Bisa" xmlUrl="https://www.anakbisa.com/feed/" type="rss"/>
-      
-      
-      <outline title="Pergi Dulu" xmlUrl="https://www.pergidulu.com/feed/" type="rss"/>
-      
-      
-      <outline title="Jakarta Tourism" xmlUrl="https://www.jakarta-tourism.go.id/rss/" type="rss"/>
-      
-    
+      <outline title="Anak Bisa" xmlUrl="https://www.anakbisa.com/feed/" type="rss" />
+      <outline title="Pergi Dulu" xmlUrl="https://www.pergidulu.com/feed/" type="rss" />
+      <outline title="Jakarta Tourism" xmlUrl="https://www.jakarta-tourism.go.id/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Blogs">
-      
-      
-      <outline title="Mojok" xmlUrl="https://www.mojok.co/rss/" type="rss"/>
-      
-      
-      <outline title="Tirto" xmlUrl="https://www.tirto.id/rss/" type="rss"/>
-      
-      
-      <outline title="Hipwee" xmlUrl="https://www.hipwee.com/rss/" type="rss"/>
-      
-    
+      <outline title="Mojok" xmlUrl="https://www.mojok.co/rss/" type="rss" />
+      <outline title="Tirto" xmlUrl="https://www.tirto.id/rss/" type="rss" />
+      <outline title="Hipwee" xmlUrl="https://www.hipwee.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Design">
-      
-      
-      <outline title="Desain Studio" xmlUrl="https://www.desainstudio.com/rss/" type="rss"/>
-      
-    
+      <outline title="Desain Studio" xmlUrl="https://www.desainstudio.com/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Environment">
-      
-      
-      <outline title="Greenpeace Indonesia" xmlUrl="https://www.greenpeace.org/indonesia/feed/" type="rss"/>
-      
-      
-      <outline title="Mongabay Indonesia" xmlUrl="https://www.mongabay.co.id/feed/" type="rss"/>
-      
-      
-      <outline title="Forest Digest" xmlUrl="https://www.forestdigest.com/feed/" type="rss"/>
-      
-    
+      <outline title="Greenpeace Indonesia" xmlUrl="https://www.greenpeace.org/indonesia/feed/" type="rss" />
+      <outline title="Mongabay Indonesia" xmlUrl="https://www.mongabay.co.id/feed/" type="rss" />
+      <outline title="Forest Digest" xmlUrl="https://www.forestdigest.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="DIY">
-      
-      
-      <outline title="Rumah" xmlUrl="https://www.rumah.com/berita/rss/" type="rss"/>
-      
-      
-      <outline title="Fabelio" xmlUrl="https://www.fabelio.com/blog/feed/" type="rss"/>
-      
-      
-      <outline title="DIY ID" xmlUrl="https://www.diy-id.com/feed/" type="rss"/>
-      
-    
+      <outline title="Rumah" xmlUrl="https://www.rumah.com/berita/rss/" type="rss" />
+      <outline title="Fabelio" xmlUrl="https://www.fabelio.com/blog/feed/" type="rss" />
+      <outline title="DIY ID" xmlUrl="https://www.diy-id.com/feed/" type="rss" />
     </outline>
-    
-    
     <outline text="History">
-      
-      
-      <outline title="Museum Nasional" xmlUrl="https://www.museumnasional.or.id/rss/" type="rss"/>
-      
-      
-      <outline title="Arsip Nasional" xmlUrl="https://www.anri.go.id/rss/" type="rss"/>
-      
-    
+      <outline title="Museum Nasional" xmlUrl="https://www.museumnasional.or.id/rss/" type="rss" />
+      <outline title="Arsip Nasional" xmlUrl="https://www.anri.go.id/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Architecture">
-      
-      
-      <outline title="IAI" xmlUrl="https://www.iai.or.id/rss/" type="rss"/>
-      
-    
+      <outline title="IAI" xmlUrl="https://www.iai.or.id/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Programming">
-      
-      
-      <outline title="Codepolitan" xmlUrl="https://www.codepolitan.com/rss/" type="rss"/>
-      
-      
-      <outline title="Dicoding Blog" xmlUrl="https://www.dicoding.com/blog/feed/" type="rss"/>
-      
-      
-      <outline title="Tokopedia Engineering" xmlUrl="https://medium.com/feed/tokopedia-engineering" type="rss"/>
-      
-      
-      <outline title="Traveloka Engineering" xmlUrl="https://medium.com/feed/traveloka-engineering" type="rss"/>
-      
-    
+      <outline title="Codepolitan" xmlUrl="https://www.codepolitan.com/rss/" type="rss" />
+      <outline title="Dicoding Blog" xmlUrl="https://www.dicoding.com/blog/feed/" type="rss" />
+      <outline title="Tokopedia Engineering" xmlUrl="https://medium.com/feed/tokopedia-engineering" type="rss" />
+      <outline title="Traveloka Engineering" xmlUrl="https://medium.com/feed/traveloka-engineering" type="rss" />
     </outline>
-    
-    
     <outline text="Business">
-      
-      
-      <outline title="Kontan" xmlUrl="https://www.kontan.co.id/rss/" type="rss"/>
-      
-      
-      <outline title="CNBC Indonesia" xmlUrl="https://www.cnbcindonesia.com/rss/" type="rss"/>
-      
-      
-      <outline title="IDX Channel" xmlUrl="https://www.idxchannel.com/rss/" type="rss"/>
-      
-      
-      <outline title="Indonesia Expat" xmlUrl="https://www.indonesiaexpat.id/rss/" type="rss"/>
-      
-    
+      <outline title="Kontan" xmlUrl="https://www.kontan.co.id/rss/" type="rss" />
+      <outline title="CNBC Indonesia" xmlUrl="https://www.cnbcindonesia.com/rss/" type="rss" />
+      <outline title="IDX Channel" xmlUrl="https://www.idxchannel.com/rss/" type="rss" />
+      <outline title="Indonesia Expat" xmlUrl="https://www.indonesiaexpat.id/rss/" type="rss" />
     </outline>
-    
-    
     <outline text="Podcasts">
-      
-      
-      <outline title="SEJARAH SERU" xmlUrl="https://feed.firstory.me/rss/user/clmpw5aa201n001y735rk4z89" type="rss"/>
-      
-      
-      <outline title="WIO ( Waktu Indonesia Bagian Overthingking )" xmlUrl="https://anchor.fm/s/2d13c158/podcast/rss" type="rss"/>
-      
-      
-      <outline title="A History of Indonesia" xmlUrl="https://anchor.fm/s/6f15f080/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Cerita Lucu Orang-orang Indonesia" xmlUrl="https://anchor.fm/s/1fe76138/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cerita Sejarah Alternatif" xmlUrl="https://anchor.fm/s/d9a9d9c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="CNN Indonesia" xmlUrl="https://anchor.fm/s/4b4820d8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="NOISE INDONESIA" xmlUrl="https://anchor.fm/s/47794400/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Fans Stand Up Comedy Indonesia" xmlUrl="https://anchor.fm/s/1e11b3b8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cerita Nabi dan Rasul" xmlUrl="https://feed.firstory.me/rss/user/clmpxe14j01rj01yg3r7ke6vp" type="rss"/>
-      
-      
-      <outline title="Dongeng Cerita Anak Indonesia" xmlUrl="https://anchor.fm/s/317d5ab0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Hiduplah Indonesia Maya" xmlUrl="https://anchor.fm/s/b2f94f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Indonesia Business Podcast" xmlUrl="https://feeds.podcastle.ai/b8f6f162-6233-47f2-88be-ff390476b7d5.rss" type="rss"/>
-      
-      
-      <outline title="MUSIK INDONESIA" xmlUrl="https://anchor.fm/s/37a72fb0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Talking Indonesia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:165729885/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Finansialku Talk Podcast (Indonesia)" xmlUrl="https://anchor.fm/s/79f9a28/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cuap Cuap Cuan" xmlUrl="https://anchor.fm/s/16eb4edc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dongeng Anak Indonesia" xmlUrl="https://anchor.fm/s/4a772ab4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Learning Indonesian - The fun and easy self-paced course in Bahasa Indonesia, the Indonesian Language" xmlUrl="http://www.learningindonesian.com/podcast.xml" type="rss"/>
-      
-      
-      <outline title="Sleep Sounds by Tmsoft (Bahasa Indonesia)" xmlUrl="https://anchor.fm/s/56944908/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Sejarah Indonesia (POSEIDON)" xmlUrl="https://feed.firstory.me/rss/user/clnt06age015901u71c8mhpnh" type="rss"/>
-      
-      
-      <outline title="Wahana Visi Indonesia" xmlUrl="https://anchor.fm/s/255e8484/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Murottal Qur'an Terjemahan Audio Indonesia" xmlUrl="https://anchor.fm/s/ebed1e8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cerita Horor / Mistis di Indonesia" xmlUrl="https://anchor.fm/s/39476d80/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SBS Indonesian - SBS Bahasa Indonesia" xmlUrl="https://sbs-ondemand.streamguys1.com/sbs-indonesian/" type="rss"/>
-      
-      
-      <outline title="Super Stock - Mirae Asset Sekuritas Indonesia" xmlUrl="https://anchor.fm/s/2f9c0d04/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rumah Horor Indonesia (RHI)" xmlUrl="https://feed.firstory.me/rss/user/cljqmlaja02m701y87imo7zvy" type="rss"/>
-      
-      
-      <outline title="&quot;Firman Hidup&quot;, &quot;Kabar Baik&quot; dan &quot;Lagu Injil&quot; - Di Indonesia Bahasa, Dialek dan Bahasa Ethnis. / &quot;Words of Life&quot;, &quot;Good News&quot; and &quot;Gospel Songs&quot; - In Indonesia Language, Dialects and Ethnic Languages." xmlUrl="https://indonesiagoodnews.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="INDONESIA WIBU KLEUB" xmlUrl="https://feed.firstory.me/rss/user/clev701bx01uj01ua2u0lbss8" type="rss"/>
-      
-      
-      <outline title="Wafa Indonesia" xmlUrl="https://anchor.fm/s/66be2664/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Wayang Kulit Indonesia" xmlUrl="https://anchor.fm/s/44bdb228/podcast/rss" type="rss"/>
-      
-      
-      <outline title="VOA This Morning Podcast - Voice of America | Bahasa Indonesia" xmlUrl="https://www.voaindonesia.com/podcast/?zoneId=5982" type="rss"/>
-      
-      
-      <outline title="Hello Tendo - Podcast Nintendo Indonesia" xmlUrl="https://anchor.fm/s/3bc78ef0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Audiobook Indonesia" xmlUrl="https://anchor.fm/s/11aefa40/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bank Indonesia" xmlUrl="https://anchor.fm/s/11ca7374/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bahasa Indonesia Bersama Windah (for intermediate Indonesian language learners)" xmlUrl="https://anchor.fm/s/520f510c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Murrotal Indonesia" xmlUrl="https://anchor.fm/s/aa6a900/podcast/rss" type="rss"/>
-      
-      
-      <outline title="OM BOB Indonesia" xmlUrl="https://anchor.fm/s/42908958/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Indonesia True Crime" xmlUrl="https://anchor.fm/s/dc33403c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dummy Podcast Indonesia" xmlUrl="https://anchor.fm/s/4587254/podcast/rss" type="rss"/>
-      
-      
-      <outline title="LEGAL Podcast Indonesia" xmlUrl="https://anchor.fm/s/aef03a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GATSBY Indonesia" xmlUrl="https://anchor.fm/s/5e3a7344/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Indonesia Menalar" xmlUrl="https://anchor.fm/s/502b86a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Indonesia Digital Marketing Podcast - Ryan Kristo Muljono" xmlUrl="https://rss.buzzsprout.com/340382.rss" type="rss"/>
-      
-      
-      <outline title="The Barbie Podcast (Indonesia)" xmlUrl="https://rss.art19.com/the-barbie-pod-indo" type="rss"/>
-      
-      
-      <outline title="Magnifisia (Magnificent Indonesia)" xmlUrl="https://anchor.fm/s/3d0ead20/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Swift Talk Indonesia" xmlUrl="https://anchor.fm/s/10f98c28/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Nouman Ali Khan Indonesia" xmlUrl="https://anchor.fm/s/2d106c38/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Koran Jakarta" xmlUrl="https://anchor.fm/s/169b3820/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Penuntun Saat Teduh Gereja Kristen Jakarta" xmlUrl="https://anchor.fm/s/36cbc5c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="UNFAEDAH PODCAST" xmlUrl="https://anchor.fm/s/c029a0c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RRI PRO 1 Jakarta" xmlUrl="https://anchor.fm/s/13b69050/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IES Jakarta's Podcast" xmlUrl="https://rss.buzzsprout.com/2627708.rss" type="rss"/>
-      
-      
-      <outline title="Jakarta Uncensored" xmlUrl="https://anchor.fm/s/593bb5d8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cafe Rumi Jakarta" xmlUrl="https://anchor.fm/s/3a7d12a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Perkantas Jakarta - Kumpulan Khotbah" xmlUrl="https://anchor.fm/s/6e29194/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The Jakarta Post Podcast" xmlUrl="https://anchor.fm/s/d42c0a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Persija Jakarta" xmlUrl="https://anchor.fm/s/1f35a218/podcast/rss" type="rss"/>
-      
-      
-      <outline title="THE PAGE" xmlUrl="https://anchor.fm/s/3aed2b20/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Jakarta Central Church" xmlUrl="https://anchor.fm/s/13659bb4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PACARAN (Podcast Cerita Lingkungan)" xmlUrl="https://anchor.fm/s/4731bb1c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PodcastKita | Radio Kita Jakarta" xmlUrl="https://anchor.fm/s/38ca94f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="+Jakarta" xmlUrl="https://anchor.fm/s/5fab6418/podcast/rss" type="rss"/>
-      
-      
-      <outline title="HMCC of Jakarta &amp; Tangerang" xmlUrl="https://anchor.fm/s/69ec4ab4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="The JIS Podcast" xmlUrl="https://anchor.fm/s/3ca39a94/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kumpulan Puisi Covid 19 Karya Squad 11 MIPA 1 SMAN 53 JAKARTA TIMUR" xmlUrl="https://anchor.fm/s/20e0c9a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Pramuka UIN Jakarta" xmlUrl="https://anchor.fm/s/1d548fcc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kanal Edisi 320 - Kanwil DJP Jakarta Selatan II" xmlUrl="https://anchor.fm/s/3d613e3c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Global Radio Jakarta" xmlUrl="https://anchor.fm/s/115d175c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Jurusan Jakarta Bogor (JJB)" xmlUrl="https://anchor.fm/s/274b5b50/podcast/rss" type="rss"/>
-      
-      
-      <outline title="KOMKK KAJ - Komisi Kerasulan Keluarga Keuskupan Agung Jakarta" xmlUrl="https://anchor.fm/s/12d2b1f0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Selfhealing" xmlUrl="https://anchor.fm/s/56d40d40/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Jakarta City Blessing - Bellagio" xmlUrl="https://anchor.fm/s/29de9120/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BIDUAN" xmlUrl="https://anchor.fm/s/f6de50c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IIC Jakarta" xmlUrl="https://anchor.fm/s/41ca295c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Jakarta Outsider" xmlUrl="https://anchor.fm/s/264cea98/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dema IIQ Jakarta" xmlUrl="https://anchor.fm/s/65aa1170/podcast/rss" type="rss"/>
-      
-      
-      <outline title="BPJ PODCAST | Backpacker Jakarta | Pendakian Gunung | Eksplorasi Wisata Alam Indonesia" xmlUrl="https://anchor.fm/s/14b568f0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Living in Jakarta" xmlUrl="https://anchor.fm/s/ae0b334/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Polres Metro Jakarta Timur" xmlUrl="https://anchor.fm/s/1394fe2c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SOUND YFN DKI JAKARTA" xmlUrl="https://anchor.fm/s/4aca32f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SELATAN JAKARTA PODCAST" xmlUrl="https://anchor.fm/s/276dea30/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kampung Rempong 97.1 FM RDI Jakarta" xmlUrl="https://anchor.fm/s/1128f9f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Forum Anak Kota Jakarta Barat" xmlUrl="https://anchor.fm/s/258dcd98/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dialek Jakarta" xmlUrl="https://anchor.fm/s/dbd4db0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bincang Sehat Rumah Sakit Jakarta" xmlUrl="https://anchor.fm/s/2ff74688/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Raffles Jakarta Podcast Corner" xmlUrl="https://anchor.fm/s/10690f9b4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="JakartaExpats.com" xmlUrl="https://anchor.fm/s/429077c4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kanwil DJKN DKI Jakarta" xmlUrl="https://anchor.fm/s/5e82eb38/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Incast - KSR PMI Unit politeknik STMI Jakarta" xmlUrl="https://anchor.fm/s/6a11efd0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Bigreds Jakarta" xmlUrl="https://anchor.fm/s/f79bc4c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IA SMANDEL JAKARTA" xmlUrl="https://anchor.fm/s/5baeacf8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Jakarta Newsroom" xmlUrl="https://anchor.fm/s/c71968c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Selatan Jakarta" xmlUrl="https://anchor.fm/s/20584e34/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Stories From Jakarta" xmlUrl="https://anchor.fm/s/5924820/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Jakarta Fashion Week Podcast" xmlUrl="https://anchor.fm/s/1fdea8cc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Jakarta Good Guide" xmlUrl="https://anchor.fm/s/8a8a4f0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gibeon Church Surabaya" xmlUrl="https://anchor.fm/s/61730a94/podcast/rss" type="rss"/>
-      
-      
-      <outline title="MDC Surabaya" xmlUrl="https://anchor.fm/s/a35b8224/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Surabaya Mengaji" xmlUrl="https://anchor.fm/s/28b5dd44/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GPIB Jemaat Bukit Zaitun Surabaya" xmlUrl="https://anchor.fm/s/1e7effcc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sonora Surabaya" xmlUrl="https://anchor.fm/s/1ac3e848/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cerita Horor Surabaya" xmlUrl="https://anchor.fm/s/1b7465ec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Paroki Redemptor Mundi" xmlUrl="https://anchor.fm/s/39e3ffec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RRI Pro 4 Surabaya" xmlUrl="https://anchor.fm/s/2813d594/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rumah Sehat Surabaya" xmlUrl="https://anchor.fm/s/14145ff0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SMP Santa Maria Surabaya Podcast" xmlUrl="https://anchor.fm/s/5079f39c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Speruna Talks - SMP Barunawati Surabaya" xmlUrl="https://anchor.fm/s/3ffbfc90/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Surabaya Unboxing" xmlUrl="https://anchor.fm/s/169a5144/podcast/rss" type="rss"/>
-      
-      
-      <outline title="JEJERADIO SURABAYA" xmlUrl="https://anchor.fm/s/104224fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Prima Radio Surabaya" xmlUrl="https://anchor.fm/s/3ebc1414/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SDK Sanmar Surabaya" xmlUrl="https://anchor.fm/s/6ae3fa84/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Reni Astuti Surabaya" xmlUrl="https://anchor.fm/s/60913c54/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Surabaya On Air" xmlUrl="https://anchor.fm/s/e6141f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Surabaya Training Centre" xmlUrl="https://anchor.fm/s/341717fc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ISap Surabaya" xmlUrl="https://anchor.fm/s/14bb830c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Result Surabaya" xmlUrl="https://anchor.fm/s/20606f10/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ICA Surabaya Sermons" xmlUrl="https://www.icasby.com/sermons.rss" type="rss"/>
-      
-      
-      <outline title="MNC Trijaya Surabaya" xmlUrl="https://anchor.fm/s/60d64b3c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gereja Orang Beriman Kampus Surabaya" xmlUrl="https://anchor.fm/s/1cbf8e18/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PAS FM Surabaya" xmlUrl="https://anchor.fm/s/1762e3c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bangga Surabaya" xmlUrl="https://anchor.fm/s/a2040cc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="DJFM Surabaya" xmlUrl="https://anchor.fm/s/decf5b0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PODCAST SURABAYA KULON (PSK)" xmlUrl="https://anchor.fm/s/46b8d51c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Surabaya aujourd'hui" xmlUrl="https://anchor.fm/s/2205a7e0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sapawarga Kota Surabaya" xmlUrl="https://anchor.fm/s/1b36e690/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lampu Kota Surabaya" xmlUrl="https://anchor.fm/s/3e2bfbcc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Surabaya Deep Voice" xmlUrl="https://anchor.fm/s/1dca41e0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Ngaji KH. Imam Hambali SURABAYA" xmlUrl="https://anchor.fm/s/483c09b8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Pelkat PT GPIB PNIEL SURABAYA" xmlUrl="https://anchor.fm/s/16ec8a18/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rumah Qur'an Assegaf Surabaya" xmlUrl="https://anchor.fm/s/4d505ee0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Surabaya Chingu" xmlUrl="https://anchor.fm/s/c43ae34/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IndoManUtd Surabaya Podcast" xmlUrl="https://anchor.fm/s/1de89eec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RSIA Kendangsari Surabaya" xmlUrl="https://anchor.fm/s/54c15a44/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Introduction : History of Surabaya" xmlUrl="https://anchor.fm/s/1081b5a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GKJW Jemaat Manukan Surabaya" xmlUrl="https://anchor.fm/s/388313e0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Surabaya ada rindu" xmlUrl="https://anchor.fm/s/13d03fb4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="the battle of surabaya" xmlUrl="https://anchor.fm/s/599018f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cangkrukan Suroboyo" xmlUrl="https://anchor.fm/s/a3a1e48/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PODCAST SERKAM (SERAMBI KAMPUS)" xmlUrl="https://anchor.fm/s/45f26c88/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Spenmas Radio Podcast" xmlUrl="https://anchor.fm/s/419574c8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Spoken Words Of SKI" xmlUrl="https://anchor.fm/s/574c5a20/podcast/rss" type="rss"/>
-      
-      
-      <outline title="TAXCAST 611" xmlUrl="https://anchor.fm/s/68cb146c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="SMAMSEVEN" xmlUrl="https://anchor.fm/s/55a62818/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IPodMu" xmlUrl="https://anchor.fm/s/4048f0f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Xin Zhong School" xmlUrl="https://anchor.fm/s/38241264/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Soe-Ara Peneleh" xmlUrl="https://anchor.fm/s/2a074124/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Komisi Komsos Keuskupan Bandung" xmlUrl="https://anchor.fm/s/11365900/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Maestro Radio Bandung" xmlUrl="https://anchor.fm/s/2f1bf3a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ATCS Dishub Kota Bandung" xmlUrl="https://anchor.fm/s/c68bc24/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Rajawali Radio Bandung" xmlUrl="https://anchor.fm/s/13e76edc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Return to Bandung" xmlUrl="https://anchor.fm/s/fb1f11d8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="YOT Bandung Podcast" xmlUrl="https://anchor.fm/s/108c83a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="di.Bandung.an ajah" xmlUrl="https://anchor.fm/s/49fdf7c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Anterin Bandung" xmlUrl="https://anchor.fm/s/14109988/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Suka-Suka Namaposo GKPS Bandung" xmlUrl="https://anchor.fm/s/1cdc9a08/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Komunitas Suporter Persib Bandung" xmlUrl="https://anchor.fm/s/45bc1534/podcast/rss" type="rss"/>
-      
-      
-      <outline title="UCC BANDUNG" xmlUrl="https://anchor.fm/s/6a60404/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung Prideee" xmlUrl="https://anchor.fm/s/2554fb1c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Persib Belongs to Us" xmlUrl="https://anchor.fm/s/a465604/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Khotbah Online Service 3 Mei 2020" xmlUrl="https://anchor.fm/s/20daf1f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung International" xmlUrl="https://anchor.fm/s/4a99c22c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="JEJAK BANDUNG BARAT" xmlUrl="https://anchor.fm/s/3fda3678/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung Local Guides Podcast" xmlUrl="https://anchor.fm/s/16bce3a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RRI BANDUNG PODCAST" xmlUrl="https://anchor.fm/s/2539de7c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mediasi Bandung" xmlUrl="https://anchor.fm/s/142095b8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast SMP Negeri 30 Bandung" xmlUrl="https://anchor.fm/s/4b67d02c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung Love Story" xmlUrl="https://anchor.fm/s/8a0271c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Rumah BUMN Bandung" xmlUrl="https://anchor.fm/s/311ff3c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IFGF BANDUNG" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:255716036/sounds.rss" type="rss"/>
-      
-      
-      <outline title="Peupeujeuh Bandung" xmlUrl="https://anchor.fm/s/2ffc3954/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Genbi UIN Bandung" xmlUrl="https://anchor.fm/s/3d57997c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Nine Bandung" xmlUrl="https://anchor.fm/s/1f26298c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="TALAQQI TAHFIDZ SMP ISLAM AL-AZHAR CAIRO BANDUNG" xmlUrl="https://anchor.fm/s/66c1c300/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung City blessing" xmlUrl="https://anchor.fm/s/1e198f0c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="DEMA UIN BANDUNG" xmlUrl="https://anchor.fm/s/4d7a61f4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung Permaculture" xmlUrl="https://anchor.fm/s/1cbdc768/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung Eye Center Happy Hour" xmlUrl="https://anchor.fm/s/3ec87600/podcast/rss" type="rss"/>
-      
-      
-      <outline title="POCIS : Podcast with FLMPI Politeknik STTT Bandung" xmlUrl="https://anchor.fm/s/1aa6eb94/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung Tunggul Jagad" xmlUrl="https://anchor.fm/s/1f199988/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Victory Outreach Bandung Podcast" xmlUrl="https://anchor.fm/s/1e7155c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung Undercover" xmlUrl="https://anchor.fm/s/2ce4907c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="OMK St Theodorus Bandung" xmlUrl="https://anchor.fm/s/1457574c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ITJ Bandung Podcast" xmlUrl="https://anchor.fm/s/1ce72cac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast - SMKN 15 BANDUNG" xmlUrl="https://anchor.fm/s/4e2ba98c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ARS Medika Bandung" xmlUrl="https://anchor.fm/s/16702a40/podcast/rss" type="rss"/>
-      
-      
-      <outline title="MINERVASTALK, Podcastnya HMTP-PEP Bandung" xmlUrl="https://anchor.fm/s/68571260/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dema Fidkom UIN Bandung" xmlUrl="https://anchor.fm/s/143e1228/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GKKI BANDUNG (Poadcast)" xmlUrl="https://anchor.fm/s/27902ed8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PODCAST SMAN 6 KOTA BANDUNG" xmlUrl="https://anchor.fm/s/3173fd6c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Remaja Sehat by PMR SMAN 6 Bandung" xmlUrl="https://anchor.fm/s/69721dc0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kurikulum SMAN 13 Bandung" xmlUrl="https://anchor.fm/s/2b16d430/podcast/rss" type="rss"/>
-      
-      
-      <outline title="1000 Guru Bandung Podcast" xmlUrl="https://anchor.fm/s/10cc9d08/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Pajajaran Bandung" xmlUrl="https://anchor.fm/s/60c18094/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bandung Periferi" xmlUrl="https://anchor.fm/s/3a77c920/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Digital Ministry GKP Bandung" xmlUrl="https://anchor.fm/s/2b61e2a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="FPOLOGY: Siaran BBC (Bincang-Bincang Cerdas) FPSH HAM Kab.Bandung" xmlUrl="https://anchor.fm/s/5f12b36c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Medan Mengaji" xmlUrl="https://anchor.fm/s/2c4a1ab0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Budaya Jawa" xmlUrl="https://anchor.fm/s/2cab35ac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="HokMen (Hokkien Medan)" xmlUrl="https://anchor.fm/s/3f61b860/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Cepat" xmlUrl="https://anchor.fm/s/b4cd348/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Orang Medan" xmlUrl="https://anchor.fm/s/2215dac0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Visi FM Medan" xmlUrl="https://anchor.fm/s/f5bffcc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dept. Pemuda GBI Medan Plaza" xmlUrl="https://anchor.fm/s/3887b058/podcast/rss" type="rss"/>
-      
-      
-      <outline title="AF Medan" xmlUrl="https://anchor.fm/s/13d89a60/podcast/rss" type="rss"/>
-      
-      
-      <outline title="AHOY MEDAN" xmlUrl="https://anchor.fm/s/2d396bec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PMR 001 KOTA MEDAN" xmlUrl="https://anchor.fm/s/3de99e58/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Vokasi Medan" xmlUrl="https://anchor.fm/s/692d2e18/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kecamatan Medan Petisah" xmlUrl="https://anchor.fm/s/4b7ca1dc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Medan Cerita" xmlUrl="https://anchor.fm/s/1feb3eac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lífið á meðan" xmlUrl="https://anchor.fm/s/10fb01d68/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kiki Koswara Medan" xmlUrl="https://anchor.fm/s/5095cf40/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Tribun Medan" xmlUrl="https://anchor.fm/s/2b9cf484/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Medan Membaca" xmlUrl="https://anchor.fm/s/4dae9154/podcast/rss" type="rss"/>
-      
-      
-      <outline title="La RadioEnclave del IES El Médano." xmlUrl="https://anchor.fm/s/10d852b0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Allt medan månen går vakt över Ven" xmlUrl="https://feed.podbean.com/svensstattena/feed.xml" type="rss"/>
-      
-      
-      <outline title="Kang Kiki Koswara Pro 4 RRI Medan" xmlUrl="https://anchor.fm/s/31d26f28/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Medan Gabut" xmlUrl="https://anchor.fm/s/3a5118d4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ArizhMedan" xmlUrl="https://anchor.fm/s/ec66304/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kisah anak medan" xmlUrl="https://anchor.fm/s/528b79d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast &quot;Anak Medan&quot; Semalam Suntuk (PAMSS)" xmlUrl="https://anchor.fm/s/69c61da8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="UI Goes to Medan" xmlUrl="https://anchor.fm/s/410e9250/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kecamatan Medan Petisah" xmlUrl="https://anchor.fm/s/4b7b9af8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Medan Talk Vape" xmlUrl="https://anchor.fm/s/5ba2e5bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="MEDAN PODCAST" xmlUrl="https://anchor.fm/s/4dfc68ac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Radio Medan ku" xmlUrl="https://anchor.fm/s/198c5ec4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Médano Blanco" xmlUrl="https://anchor.fm/s/5940ebd4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mas Blangkon Medan" xmlUrl="https://anchor.fm/s/3eb6f204/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Medan me er her" xmlUrl="https://www.omnycontent.com/d/playlist/b879ead7-5fbb-4c64-bede-b13801013ca4/222298e2-3218-40a9-8dd3-b21800a200da/7a11e2be-db2b-47b1-94bf-b21800a203b1/podcast.rss" type="rss"/>
-      
-      
-      <outline title="Pengalaman Di Medan" xmlUrl="https://anchor.fm/s/230910dc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bwaw #1medan" xmlUrl="https://anchor.fm/s/2fa8b2e8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Anak Medan di Jerman" xmlUrl="https://anchor.fm/s/2aea4208/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Lina Medan" xmlUrl="https://anchor.fm/s/20a71244/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kuliner Medan" xmlUrl="https://anchor.fm/s/59988efc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Agile Vocalist" xmlUrl="https://rss.buzzsprout.com/2042129.rss" type="rss"/>
-      
-      
-      <outline title="MNC TRIJAYA PODCAST" xmlUrl="https://anchor.fm/s/6008757c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Jingle Mimbar kristen suara Wakbkereng" xmlUrl="https://anchor.fm/s/11e7bbf0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cerita Uwak Itu" xmlUrl="https://anchor.fm/s/240374dc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="K3DAN" xmlUrl="https://anchor.fm/s/3d5f2c8c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dering Podcast" xmlUrl="https://anchor.fm/s/20aaa198/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Short Podcast STIM Sukma" xmlUrl="https://anchor.fm/s/20a766a4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Fajar Efendi" xmlUrl="https://anchor.fm/s/588ec6c0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ImeldaFM Podcast" xmlUrl="https://anchor.fm/s/3902fa74/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Good To Great" xmlUrl="https://anchor.fm/s/ee103d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Inspirasi Pagi Imelda FM" xmlUrl="https://anchor.fm/s/39901f44/podcast/rss" type="rss"/>
-      
-      
-      <outline title="YAKUA" xmlUrl="https://anchor.fm/s/26763e48/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Radio Elshinta Semarang" xmlUrl="https://anchor.fm/s/13adfe90/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Radar Semarang" xmlUrl="https://anchor.fm/s/3e4bf940/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GKI Karangsaru Semarang" xmlUrl="https://anchor.fm/s/541fdc78/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kejar Mimpi Semarang" xmlUrl="https://anchor.fm/s/390fc254/podcast/rss" type="rss"/>
-      
-      
-      <outline title="ELSA SEMARANG" xmlUrl="https://anchor.fm/s/587a3e80/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Choice Semarang" xmlUrl="https://anchor.fm/s/39694e28/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Aku Tantangin Kamu Pro2 Semarang" xmlUrl="https://anchor.fm/s/102d6a58/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gusdurian Semarang" xmlUrl="https://anchor.fm/s/59272564/podcast/rss" type="rss"/>
-      
-      
-      <outline title="IFGF SEMARANG" xmlUrl="https://ifgfgisisemarang.podomatic.com/rss2.xml" type="rss"/>
-      
-      
-      <outline title="KB-TK PL BERNARDUS SEMARANG" xmlUrl="https://anchor.fm/s/38dac70c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dutria Bayu Adi - Training Semarang dotcom - BF Institute Training Center Semarang - Career Sherpa" xmlUrl="https://anchor.fm/s/2c7e8124/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kejadian Ketiga" xmlUrl="https://anchor.fm/s/6101efe4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Juragan Helm Semarang" xmlUrl="https://anchor.fm/s/64aae1b4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dies Natalis UIN Walisongo Semarang di tengah pandemi" xmlUrl="https://anchor.fm/s/567fa2b4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GKI Beringin, Semarang" xmlUrl="https://anchor.fm/s/1d5dc858/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Mahasiswa Ilmu Komunikasi Unika Soegijapranata Semarang" xmlUrl="https://anchor.fm/s/26d628f8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RYS SEMARANG" xmlUrl="https://anchor.fm/s/40bd95e4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Gojek Semarang" xmlUrl="https://anchor.fm/s/4e5ca2a8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Cah Hijrah Semarang" xmlUrl="https://anchor.fm/s/102f8c70/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kota Semarang Setara" xmlUrl="https://anchor.fm/s/65a14068/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kondisi Semarang di Tengah Covid-19" xmlUrl="https://anchor.fm/s/18df47d4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Apa kabar bisnis cupang dikota semarang ?" xmlUrl="https://anchor.fm/s/49dd725c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Semarang Kota Soto" xmlUrl="https://anchor.fm/s/547527a0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="RYS SEMARANG" xmlUrl="https://anchor.fm/s/51e7a724/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dies Natalis UIN Walisongo Semarang di tengah pandemi" xmlUrl="https://anchor.fm/s/567d7868/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Kuliner Semarang" xmlUrl="https://anchor.fm/s/6067135c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Sant'Egidio Semarang" xmlUrl="https://anchor.fm/s/23d2f53c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PODCAST MSG-SMG (Mari Senda Gurau - Semarang)" xmlUrl="https://anchor.fm/s/3a3b3a64/podcast/rss" type="rss"/>
-      
-      
-      <outline title="[ Easy English Club Semarang ] Easy Podcast" xmlUrl="https://anchor.fm/s/182dcd10/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Trijaya Healtylife" xmlUrl="https://anchor.fm/s/cea1184/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Be The Light Podcast SD PL BERNARDUS" xmlUrl="https://anchor.fm/s/1d470370/podcast/rss" type="rss"/>
-      
-      
-      <outline title="PMKS" xmlUrl="https://anchor.fm/s/549b9bc4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Perjalanan Bermakna" xmlUrl="https://anchor.fm/s/e5d8c58/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Dakwah Islam ID" xmlUrl="https://anchor.fm/s/103873bc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Bantuan Hukum" xmlUrl="https://anchor.fm/s/3160baf4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast Smaga" xmlUrl="https://anchor.fm/s/2294d62c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Tutur Semar" xmlUrl="https://anchor.fm/s/30b3f6d4/podcast/rss" type="rss"/>
-      
-      
-      <outline title="MarbudSmg Podcast" xmlUrl="https://anchor.fm/s/28f6f5b8/podcast/rss" type="rss"/>
-      
-      
-      <outline title="#TTS (Think, Talk, &amp; Share)" xmlUrl="https://anchor.fm/s/2bf8a9dc/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Podcast in the Box (agape 945fm smg)" xmlUrl="https://anchor.fm/s/5495aaac/podcast/rss" type="rss"/>
-      
-      
-      <outline title="#Podreds024" xmlUrl="https://anchor.fm/s/2b1c859c/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Love, Life N' Legacy" xmlUrl="https://anchor.fm/s/254058b0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Iduwikas Podcast" xmlUrl="https://anchor.fm/s/40beafec/podcast/rss" type="rss"/>
-      
-      
-      <outline title="POKES (Podcast Dinkes)" xmlUrl="https://anchor.fm/s/396883d0/podcast/rss" type="rss"/>
-      
-      
-      <outline title="GKI Peterongan – GKI Peterongan" xmlUrl="https://gkipeterongan.org/feed/podcast/" type="rss"/>
-      
-      
-      <outline title="Buku Misteri" xmlUrl="https://anchor.fm/s/5c74f520/podcast/rss" type="rss"/>
-      
-      
-      <outline title="Inspigo" xmlUrl="https://www.inspigo.id/rss/" type="rss"/>
-      
-      
-      <outline title="Noice" xmlUrl="https://www.noice.id/rss/" type="rss"/>
-      
-      
-      <outline title="Anchor FM ID" xmlUrl="https://www.anchor.fm/id/rss/" type="rss"/>
-      
-    
+      <outline title="SEJARAH SERU" xmlUrl="https://feed.firstory.me/rss/user/clmpw5aa201n001y735rk4z89" type="rss" />
+      <outline title="WIO ( Waktu Indonesia Bagian Overthingking )" xmlUrl="https://anchor.fm/s/2d13c158/podcast/rss" type="rss" />
+      <outline title="A History of Indonesia" xmlUrl="https://anchor.fm/s/6f15f080/podcast/rss" type="rss" />
+      <outline title="Podcast Cerita Lucu Orang-orang Indonesia" xmlUrl="https://anchor.fm/s/1fe76138/podcast/rss" type="rss" />
+      <outline title="Cerita Sejarah Alternatif" xmlUrl="https://anchor.fm/s/d9a9d9c/podcast/rss" type="rss" />
+      <outline title="CNN Indonesia" xmlUrl="https://anchor.fm/s/4b4820d8/podcast/rss" type="rss" />
+      <outline title="NOISE INDONESIA" xmlUrl="https://anchor.fm/s/47794400/podcast/rss" type="rss" />
+      <outline title="Fans Stand Up Comedy Indonesia" xmlUrl="https://anchor.fm/s/1e11b3b8/podcast/rss" type="rss" />
+      <outline title="Cerita Nabi dan Rasul" xmlUrl="https://feed.firstory.me/rss/user/clmpxe14j01rj01yg3r7ke6vp" type="rss" />
+      <outline title="Dongeng Cerita Anak Indonesia" xmlUrl="https://anchor.fm/s/317d5ab0/podcast/rss" type="rss" />
+      <outline title="Hiduplah Indonesia Maya" xmlUrl="https://anchor.fm/s/b2f94f4/podcast/rss" type="rss" />
+      <outline title="Indonesia Business Podcast" xmlUrl="https://feeds.podcastle.ai/b8f6f162-6233-47f2-88be-ff390476b7d5.rss" type="rss" />
+      <outline title="MUSIK INDONESIA" xmlUrl="https://anchor.fm/s/37a72fb0/podcast/rss" type="rss" />
+      <outline title="Talking Indonesia" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:165729885/sounds.rss" type="rss" />
+      <outline title="Finansialku Talk Podcast (Indonesia)" xmlUrl="https://anchor.fm/s/79f9a28/podcast/rss" type="rss" />
+      <outline title="Cuap Cuap Cuan" xmlUrl="https://anchor.fm/s/16eb4edc/podcast/rss" type="rss" />
+      <outline title="Dongeng Anak Indonesia" xmlUrl="https://anchor.fm/s/4a772ab4/podcast/rss" type="rss" />
+      <outline title="Learning Indonesian - The fun and easy self-paced course in Bahasa Indonesia, the Indonesian Language" xmlUrl="http://www.learningindonesian.com/podcast.xml" type="rss" />
+      <outline title="Sleep Sounds by Tmsoft (Bahasa Indonesia)" xmlUrl="https://anchor.fm/s/56944908/podcast/rss" type="rss" />
+      <outline title="Podcast Sejarah Indonesia (POSEIDON)" xmlUrl="https://feed.firstory.me/rss/user/clnt06age015901u71c8mhpnh" type="rss" />
+      <outline title="Wahana Visi Indonesia" xmlUrl="https://anchor.fm/s/255e8484/podcast/rss" type="rss" />
+      <outline title="Murottal Qur'an Terjemahan Audio Indonesia" xmlUrl="https://anchor.fm/s/ebed1e8/podcast/rss" type="rss" />
+      <outline title="Cerita Horor / Mistis di Indonesia" xmlUrl="https://anchor.fm/s/39476d80/podcast/rss" type="rss" />
+      <outline title="SBS Indonesian - SBS Bahasa Indonesia" xmlUrl="https://sbs-ondemand.streamguys1.com/sbs-indonesian/" type="rss" />
+      <outline title="Super Stock - Mirae Asset Sekuritas Indonesia" xmlUrl="https://anchor.fm/s/2f9c0d04/podcast/rss" type="rss" />
+      <outline title="Rumah Horor Indonesia (RHI)" xmlUrl="https://feed.firstory.me/rss/user/cljqmlaja02m701y87imo7zvy" type="rss" />
+      <outline title="&quot;Firman Hidup&quot;, &quot;Kabar Baik&quot; dan &quot;Lagu Injil&quot; - Di Indonesia Bahasa, Dialek dan Bahasa Ethnis. / &quot;Words of Life&quot;, &quot;Good News&quot; and &quot;Gospel Songs&quot; - In Indonesia Language, Dialects and Ethnic Languages." xmlUrl="https://indonesiagoodnews.podomatic.com/rss2.xml" type="rss" />
+      <outline title="INDONESIA WIBU KLEUB" xmlUrl="https://feed.firstory.me/rss/user/clev701bx01uj01ua2u0lbss8" type="rss" />
+      <outline title="Wafa Indonesia" xmlUrl="https://anchor.fm/s/66be2664/podcast/rss" type="rss" />
+      <outline title="Wayang Kulit Indonesia" xmlUrl="https://anchor.fm/s/44bdb228/podcast/rss" type="rss" />
+      <outline title="VOA This Morning Podcast - Voice of America | Bahasa Indonesia" xmlUrl="https://www.voaindonesia.com/podcast/?zoneId=5982" type="rss" />
+      <outline title="Hello Tendo - Podcast Nintendo Indonesia" xmlUrl="https://anchor.fm/s/3bc78ef0/podcast/rss" type="rss" />
+      <outline title="Audiobook Indonesia" xmlUrl="https://anchor.fm/s/11aefa40/podcast/rss" type="rss" />
+      <outline title="Bank Indonesia" xmlUrl="https://anchor.fm/s/11ca7374/podcast/rss" type="rss" />
+      <outline title="Bahasa Indonesia Bersama Windah (for intermediate Indonesian language learners)" xmlUrl="https://anchor.fm/s/520f510c/podcast/rss" type="rss" />
+      <outline title="Murrotal Indonesia" xmlUrl="https://anchor.fm/s/aa6a900/podcast/rss" type="rss" />
+      <outline title="OM BOB Indonesia" xmlUrl="https://anchor.fm/s/42908958/podcast/rss" type="rss" />
+      <outline title="Indonesia True Crime" xmlUrl="https://anchor.fm/s/dc33403c/podcast/rss" type="rss" />
+      <outline title="Dummy Podcast Indonesia" xmlUrl="https://anchor.fm/s/4587254/podcast/rss" type="rss" />
+      <outline title="LEGAL Podcast Indonesia" xmlUrl="https://anchor.fm/s/aef03a8/podcast/rss" type="rss" />
+      <outline title="GATSBY Indonesia" xmlUrl="https://anchor.fm/s/5e3a7344/podcast/rss" type="rss" />
+      <outline title="Podcast Indonesia Menalar" xmlUrl="https://anchor.fm/s/502b86a8/podcast/rss" type="rss" />
+      <outline title="Indonesia Digital Marketing Podcast - Ryan Kristo Muljono" xmlUrl="https://rss.buzzsprout.com/340382.rss" type="rss" />
+      <outline title="The Barbie Podcast (Indonesia)" xmlUrl="https://rss.art19.com/the-barbie-pod-indo" type="rss" />
+      <outline title="Magnifisia (Magnificent Indonesia)" xmlUrl="https://anchor.fm/s/3d0ead20/podcast/rss" type="rss" />
+      <outline title="Swift Talk Indonesia" xmlUrl="https://anchor.fm/s/10f98c28/podcast/rss" type="rss" />
+      <outline title="Nouman Ali Khan Indonesia" xmlUrl="https://anchor.fm/s/2d106c38/podcast/rss" type="rss" />
+      <outline title="Koran Jakarta" xmlUrl="https://anchor.fm/s/169b3820/podcast/rss" type="rss" />
+      <outline title="Penuntun Saat Teduh Gereja Kristen Jakarta" xmlUrl="https://anchor.fm/s/36cbc5c4/podcast/rss" type="rss" />
+      <outline title="UNFAEDAH PODCAST" xmlUrl="https://anchor.fm/s/c029a0c/podcast/rss" type="rss" />
+      <outline title="RRI PRO 1 Jakarta" xmlUrl="https://anchor.fm/s/13b69050/podcast/rss" type="rss" />
+      <outline title="IES Jakarta's Podcast" xmlUrl="https://rss.buzzsprout.com/2627708.rss" type="rss" />
+      <outline title="Jakarta Uncensored" xmlUrl="https://anchor.fm/s/593bb5d8/podcast/rss" type="rss" />
+      <outline title="Cafe Rumi Jakarta" xmlUrl="https://anchor.fm/s/3a7d12a4/podcast/rss" type="rss" />
+      <outline title="Perkantas Jakarta - Kumpulan Khotbah" xmlUrl="https://anchor.fm/s/6e29194/podcast/rss" type="rss" />
+      <outline title="The Jakarta Post Podcast" xmlUrl="https://anchor.fm/s/d42c0a4/podcast/rss" type="rss" />
+      <outline title="Persija Jakarta" xmlUrl="https://anchor.fm/s/1f35a218/podcast/rss" type="rss" />
+      <outline title="THE PAGE" xmlUrl="https://anchor.fm/s/3aed2b20/podcast/rss" type="rss" />
+      <outline title="Jakarta Central Church" xmlUrl="https://anchor.fm/s/13659bb4/podcast/rss" type="rss" />
+      <outline title="PACARAN (Podcast Cerita Lingkungan)" xmlUrl="https://anchor.fm/s/4731bb1c/podcast/rss" type="rss" />
+      <outline title="PodcastKita | Radio Kita Jakarta" xmlUrl="https://anchor.fm/s/38ca94f4/podcast/rss" type="rss" />
+      <outline title="+Jakarta" xmlUrl="https://anchor.fm/s/5fab6418/podcast/rss" type="rss" />
+      <outline title="HMCC of Jakarta &amp; Tangerang" xmlUrl="https://anchor.fm/s/69ec4ab4/podcast/rss" type="rss" />
+      <outline title="The JIS Podcast" xmlUrl="https://anchor.fm/s/3ca39a94/podcast/rss" type="rss" />
+      <outline title="Kumpulan Puisi Covid 19 Karya Squad 11 MIPA 1 SMAN 53 JAKARTA TIMUR" xmlUrl="https://anchor.fm/s/20e0c9a8/podcast/rss" type="rss" />
+      <outline title="Pramuka UIN Jakarta" xmlUrl="https://anchor.fm/s/1d548fcc/podcast/rss" type="rss" />
+      <outline title="Kanal Edisi 320 - Kanwil DJP Jakarta Selatan II" xmlUrl="https://anchor.fm/s/3d613e3c/podcast/rss" type="rss" />
+      <outline title="Global Radio Jakarta" xmlUrl="https://anchor.fm/s/115d175c/podcast/rss" type="rss" />
+      <outline title="Jurusan Jakarta Bogor (JJB)" xmlUrl="https://anchor.fm/s/274b5b50/podcast/rss" type="rss" />
+      <outline title="KOMKK KAJ - Komisi Kerasulan Keluarga Keuskupan Agung Jakarta" xmlUrl="https://anchor.fm/s/12d2b1f0/podcast/rss" type="rss" />
+      <outline title="Selfhealing" xmlUrl="https://anchor.fm/s/56d40d40/podcast/rss" type="rss" />
+      <outline title="Jakarta City Blessing - Bellagio" xmlUrl="https://anchor.fm/s/29de9120/podcast/rss" type="rss" />
+      <outline title="BIDUAN" xmlUrl="https://anchor.fm/s/f6de50c/podcast/rss" type="rss" />
+      <outline title="IIC Jakarta" xmlUrl="https://anchor.fm/s/41ca295c/podcast/rss" type="rss" />
+      <outline title="Jakarta Outsider" xmlUrl="https://anchor.fm/s/264cea98/podcast/rss" type="rss" />
+      <outline title="Dema IIQ Jakarta" xmlUrl="https://anchor.fm/s/65aa1170/podcast/rss" type="rss" />
+      <outline title="BPJ PODCAST | Backpacker Jakarta | Pendakian Gunung | Eksplorasi Wisata Alam Indonesia" xmlUrl="https://anchor.fm/s/14b568f0/podcast/rss" type="rss" />
+      <outline title="Living in Jakarta" xmlUrl="https://anchor.fm/s/ae0b334/podcast/rss" type="rss" />
+      <outline title="Polres Metro Jakarta Timur" xmlUrl="https://anchor.fm/s/1394fe2c/podcast/rss" type="rss" />
+      <outline title="SOUND YFN DKI JAKARTA" xmlUrl="https://anchor.fm/s/4aca32f4/podcast/rss" type="rss" />
+      <outline title="SELATAN JAKARTA PODCAST" xmlUrl="https://anchor.fm/s/276dea30/podcast/rss" type="rss" />
+      <outline title="Kampung Rempong 97.1 FM RDI Jakarta" xmlUrl="https://anchor.fm/s/1128f9f4/podcast/rss" type="rss" />
+      <outline title="Forum Anak Kota Jakarta Barat" xmlUrl="https://anchor.fm/s/258dcd98/podcast/rss" type="rss" />
+      <outline title="Dialek Jakarta" xmlUrl="https://anchor.fm/s/dbd4db0/podcast/rss" type="rss" />
+      <outline title="Bincang Sehat Rumah Sakit Jakarta" xmlUrl="https://anchor.fm/s/2ff74688/podcast/rss" type="rss" />
+      <outline title="Raffles Jakarta Podcast Corner" xmlUrl="https://anchor.fm/s/10690f9b4/podcast/rss" type="rss" />
+      <outline title="JakartaExpats.com" xmlUrl="https://anchor.fm/s/429077c4/podcast/rss" type="rss" />
+      <outline title="Kanwil DJKN DKI Jakarta" xmlUrl="https://anchor.fm/s/5e82eb38/podcast/rss" type="rss" />
+      <outline title="Incast - KSR PMI Unit politeknik STMI Jakarta" xmlUrl="https://anchor.fm/s/6a11efd0/podcast/rss" type="rss" />
+      <outline title="Podcast Bigreds Jakarta" xmlUrl="https://anchor.fm/s/f79bc4c/podcast/rss" type="rss" />
+      <outline title="IA SMANDEL JAKARTA" xmlUrl="https://anchor.fm/s/5baeacf8/podcast/rss" type="rss" />
+      <outline title="Jakarta Newsroom" xmlUrl="https://anchor.fm/s/c71968c/podcast/rss" type="rss" />
+      <outline title="Selatan Jakarta" xmlUrl="https://anchor.fm/s/20584e34/podcast/rss" type="rss" />
+      <outline title="Stories From Jakarta" xmlUrl="https://anchor.fm/s/5924820/podcast/rss" type="rss" />
+      <outline title="Jakarta Fashion Week Podcast" xmlUrl="https://anchor.fm/s/1fdea8cc/podcast/rss" type="rss" />
+      <outline title="Jakarta Good Guide" xmlUrl="https://anchor.fm/s/8a8a4f0/podcast/rss" type="rss" />
+      <outline title="Gibeon Church Surabaya" xmlUrl="https://anchor.fm/s/61730a94/podcast/rss" type="rss" />
+      <outline title="MDC Surabaya" xmlUrl="https://anchor.fm/s/a35b8224/podcast/rss" type="rss" />
+      <outline title="Surabaya Mengaji" xmlUrl="https://anchor.fm/s/28b5dd44/podcast/rss" type="rss" />
+      <outline title="GPIB Jemaat Bukit Zaitun Surabaya" xmlUrl="https://anchor.fm/s/1e7effcc/podcast/rss" type="rss" />
+      <outline title="Sonora Surabaya" xmlUrl="https://anchor.fm/s/1ac3e848/podcast/rss" type="rss" />
+      <outline title="Cerita Horor Surabaya" xmlUrl="https://anchor.fm/s/1b7465ec/podcast/rss" type="rss" />
+      <outline title="Paroki Redemptor Mundi" xmlUrl="https://anchor.fm/s/39e3ffec/podcast/rss" type="rss" />
+      <outline title="RRI Pro 4 Surabaya" xmlUrl="https://anchor.fm/s/2813d594/podcast/rss" type="rss" />
+      <outline title="Rumah Sehat Surabaya" xmlUrl="https://anchor.fm/s/14145ff0/podcast/rss" type="rss" />
+      <outline title="SMP Santa Maria Surabaya Podcast" xmlUrl="https://anchor.fm/s/5079f39c/podcast/rss" type="rss" />
+      <outline title="Speruna Talks - SMP Barunawati Surabaya" xmlUrl="https://anchor.fm/s/3ffbfc90/podcast/rss" type="rss" />
+      <outline title="Surabaya Unboxing" xmlUrl="https://anchor.fm/s/169a5144/podcast/rss" type="rss" />
+      <outline title="JEJERADIO SURABAYA" xmlUrl="https://anchor.fm/s/104224fc/podcast/rss" type="rss" />
+      <outline title="Prima Radio Surabaya" xmlUrl="https://anchor.fm/s/3ebc1414/podcast/rss" type="rss" />
+      <outline title="SDK Sanmar Surabaya" xmlUrl="https://anchor.fm/s/6ae3fa84/podcast/rss" type="rss" />
+      <outline title="Reni Astuti Surabaya" xmlUrl="https://anchor.fm/s/60913c54/podcast/rss" type="rss" />
+      <outline title="Surabaya On Air" xmlUrl="https://anchor.fm/s/e6141f4/podcast/rss" type="rss" />
+      <outline title="Surabaya Training Centre" xmlUrl="https://anchor.fm/s/341717fc/podcast/rss" type="rss" />
+      <outline title="ISap Surabaya" xmlUrl="https://anchor.fm/s/14bb830c/podcast/rss" type="rss" />
+      <outline title="Result Surabaya" xmlUrl="https://anchor.fm/s/20606f10/podcast/rss" type="rss" />
+      <outline title="ICA Surabaya Sermons" xmlUrl="https://www.icasby.com/sermons.rss" type="rss" />
+      <outline title="MNC Trijaya Surabaya" xmlUrl="https://anchor.fm/s/60d64b3c/podcast/rss" type="rss" />
+      <outline title="Gereja Orang Beriman Kampus Surabaya" xmlUrl="https://anchor.fm/s/1cbf8e18/podcast/rss" type="rss" />
+      <outline title="PAS FM Surabaya" xmlUrl="https://anchor.fm/s/1762e3c0/podcast/rss" type="rss" />
+      <outline title="Bangga Surabaya" xmlUrl="https://anchor.fm/s/a2040cc/podcast/rss" type="rss" />
+      <outline title="DJFM Surabaya" xmlUrl="https://anchor.fm/s/decf5b0/podcast/rss" type="rss" />
+      <outline title="PODCAST SURABAYA KULON (PSK)" xmlUrl="https://anchor.fm/s/46b8d51c/podcast/rss" type="rss" />
+      <outline title="Surabaya aujourd'hui" xmlUrl="https://anchor.fm/s/2205a7e0/podcast/rss" type="rss" />
+      <outline title="Sapawarga Kota Surabaya" xmlUrl="https://anchor.fm/s/1b36e690/podcast/rss" type="rss" />
+      <outline title="Lampu Kota Surabaya" xmlUrl="https://anchor.fm/s/3e2bfbcc/podcast/rss" type="rss" />
+      <outline title="Surabaya Deep Voice" xmlUrl="https://anchor.fm/s/1dca41e0/podcast/rss" type="rss" />
+      <outline title="Ngaji KH. Imam Hambali SURABAYA" xmlUrl="https://anchor.fm/s/483c09b8/podcast/rss" type="rss" />
+      <outline title="Pelkat PT GPIB PNIEL SURABAYA" xmlUrl="https://anchor.fm/s/16ec8a18/podcast/rss" type="rss" />
+      <outline title="Rumah Qur'an Assegaf Surabaya" xmlUrl="https://anchor.fm/s/4d505ee0/podcast/rss" type="rss" />
+      <outline title="Surabaya Chingu" xmlUrl="https://anchor.fm/s/c43ae34/podcast/rss" type="rss" />
+      <outline title="IndoManUtd Surabaya Podcast" xmlUrl="https://anchor.fm/s/1de89eec/podcast/rss" type="rss" />
+      <outline title="RSIA Kendangsari Surabaya" xmlUrl="https://anchor.fm/s/54c15a44/podcast/rss" type="rss" />
+      <outline title="Introduction : History of Surabaya" xmlUrl="https://anchor.fm/s/1081b5a4/podcast/rss" type="rss" />
+      <outline title="GKJW Jemaat Manukan Surabaya" xmlUrl="https://anchor.fm/s/388313e0/podcast/rss" type="rss" />
+      <outline title="Surabaya ada rindu" xmlUrl="https://anchor.fm/s/13d03fb4/podcast/rss" type="rss" />
+      <outline title="the battle of surabaya" xmlUrl="https://anchor.fm/s/599018f8/podcast/rss" type="rss" />
+      <outline title="Cangkrukan Suroboyo" xmlUrl="https://anchor.fm/s/a3a1e48/podcast/rss" type="rss" />
+      <outline title="PODCAST SERKAM (SERAMBI KAMPUS)" xmlUrl="https://anchor.fm/s/45f26c88/podcast/rss" type="rss" />
+      <outline title="Spenmas Radio Podcast" xmlUrl="https://anchor.fm/s/419574c8/podcast/rss" type="rss" />
+      <outline title="Spoken Words Of SKI" xmlUrl="https://anchor.fm/s/574c5a20/podcast/rss" type="rss" />
+      <outline title="TAXCAST 611" xmlUrl="https://anchor.fm/s/68cb146c/podcast/rss" type="rss" />
+      <outline title="SMAMSEVEN" xmlUrl="https://anchor.fm/s/55a62818/podcast/rss" type="rss" />
+      <outline title="IPodMu" xmlUrl="https://anchor.fm/s/4048f0f4/podcast/rss" type="rss" />
+      <outline title="Xin Zhong School" xmlUrl="https://anchor.fm/s/38241264/podcast/rss" type="rss" />
+      <outline title="Soe-Ara Peneleh" xmlUrl="https://anchor.fm/s/2a074124/podcast/rss" type="rss" />
+      <outline title="Komisi Komsos Keuskupan Bandung" xmlUrl="https://anchor.fm/s/11365900/podcast/rss" type="rss" />
+      <outline title="Maestro Radio Bandung" xmlUrl="https://anchor.fm/s/2f1bf3a8/podcast/rss" type="rss" />
+      <outline title="ATCS Dishub Kota Bandung" xmlUrl="https://anchor.fm/s/c68bc24/podcast/rss" type="rss" />
+      <outline title="Rajawali Radio Bandung" xmlUrl="https://anchor.fm/s/13e76edc/podcast/rss" type="rss" />
+      <outline title="Return to Bandung" xmlUrl="https://anchor.fm/s/fb1f11d8/podcast/rss" type="rss" />
+      <outline title="YOT Bandung Podcast" xmlUrl="https://anchor.fm/s/108c83a8/podcast/rss" type="rss" />
+      <outline title="di.Bandung.an ajah" xmlUrl="https://anchor.fm/s/49fdf7c0/podcast/rss" type="rss" />
+      <outline title="Anterin Bandung" xmlUrl="https://anchor.fm/s/14109988/podcast/rss" type="rss" />
+      <outline title="Suka-Suka Namaposo GKPS Bandung" xmlUrl="https://anchor.fm/s/1cdc9a08/podcast/rss" type="rss" />
+      <outline title="Podcast Komunitas Suporter Persib Bandung" xmlUrl="https://anchor.fm/s/45bc1534/podcast/rss" type="rss" />
+      <outline title="UCC BANDUNG" xmlUrl="https://anchor.fm/s/6a60404/podcast/rss" type="rss" />
+      <outline title="Bandung Prideee" xmlUrl="https://anchor.fm/s/2554fb1c/podcast/rss" type="rss" />
+      <outline title="Persib Belongs to Us" xmlUrl="https://anchor.fm/s/a465604/podcast/rss" type="rss" />
+      <outline title="Khotbah Online Service 3 Mei 2020" xmlUrl="https://anchor.fm/s/20daf1f4/podcast/rss" type="rss" />
+      <outline title="Bandung International" xmlUrl="https://anchor.fm/s/4a99c22c/podcast/rss" type="rss" />
+      <outline title="JEJAK BANDUNG BARAT" xmlUrl="https://anchor.fm/s/3fda3678/podcast/rss" type="rss" />
+      <outline title="Bandung Local Guides Podcast" xmlUrl="https://anchor.fm/s/16bce3a8/podcast/rss" type="rss" />
+      <outline title="RRI BANDUNG PODCAST" xmlUrl="https://anchor.fm/s/2539de7c/podcast/rss" type="rss" />
+      <outline title="Mediasi Bandung" xmlUrl="https://anchor.fm/s/142095b8/podcast/rss" type="rss" />
+      <outline title="Podcast SMP Negeri 30 Bandung" xmlUrl="https://anchor.fm/s/4b67d02c/podcast/rss" type="rss" />
+      <outline title="Bandung Love Story" xmlUrl="https://anchor.fm/s/8a0271c/podcast/rss" type="rss" />
+      <outline title="Podcast Rumah BUMN Bandung" xmlUrl="https://anchor.fm/s/311ff3c0/podcast/rss" type="rss" />
+      <outline title="IFGF BANDUNG" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:255716036/sounds.rss" type="rss" />
+      <outline title="Peupeujeuh Bandung" xmlUrl="https://anchor.fm/s/2ffc3954/podcast/rss" type="rss" />
+      <outline title="Genbi UIN Bandung" xmlUrl="https://anchor.fm/s/3d57997c/podcast/rss" type="rss" />
+      <outline title="Podcast Nine Bandung" xmlUrl="https://anchor.fm/s/1f26298c/podcast/rss" type="rss" />
+      <outline title="TALAQQI TAHFIDZ SMP ISLAM AL-AZHAR CAIRO BANDUNG" xmlUrl="https://anchor.fm/s/66c1c300/podcast/rss" type="rss" />
+      <outline title="Bandung City blessing" xmlUrl="https://anchor.fm/s/1e198f0c/podcast/rss" type="rss" />
+      <outline title="DEMA UIN BANDUNG" xmlUrl="https://anchor.fm/s/4d7a61f4/podcast/rss" type="rss" />
+      <outline title="Bandung Permaculture" xmlUrl="https://anchor.fm/s/1cbdc768/podcast/rss" type="rss" />
+      <outline title="Bandung Eye Center Happy Hour" xmlUrl="https://anchor.fm/s/3ec87600/podcast/rss" type="rss" />
+      <outline title="POCIS : Podcast with FLMPI Politeknik STTT Bandung" xmlUrl="https://anchor.fm/s/1aa6eb94/podcast/rss" type="rss" />
+      <outline title="Bandung Tunggul Jagad" xmlUrl="https://anchor.fm/s/1f199988/podcast/rss" type="rss" />
+      <outline title="Victory Outreach Bandung Podcast" xmlUrl="https://anchor.fm/s/1e7155c0/podcast/rss" type="rss" />
+      <outline title="Bandung Undercover" xmlUrl="https://anchor.fm/s/2ce4907c/podcast/rss" type="rss" />
+      <outline title="OMK St Theodorus Bandung" xmlUrl="https://anchor.fm/s/1457574c/podcast/rss" type="rss" />
+      <outline title="ITJ Bandung Podcast" xmlUrl="https://anchor.fm/s/1ce72cac/podcast/rss" type="rss" />
+      <outline title="Podcast - SMKN 15 BANDUNG" xmlUrl="https://anchor.fm/s/4e2ba98c/podcast/rss" type="rss" />
+      <outline title="ARS Medika Bandung" xmlUrl="https://anchor.fm/s/16702a40/podcast/rss" type="rss" />
+      <outline title="MINERVASTALK, Podcastnya HMTP-PEP Bandung" xmlUrl="https://anchor.fm/s/68571260/podcast/rss" type="rss" />
+      <outline title="Dema Fidkom UIN Bandung" xmlUrl="https://anchor.fm/s/143e1228/podcast/rss" type="rss" />
+      <outline title="GKKI BANDUNG (Poadcast)" xmlUrl="https://anchor.fm/s/27902ed8/podcast/rss" type="rss" />
+      <outline title="PODCAST SMAN 6 KOTA BANDUNG" xmlUrl="https://anchor.fm/s/3173fd6c/podcast/rss" type="rss" />
+      <outline title="Remaja Sehat by PMR SMAN 6 Bandung" xmlUrl="https://anchor.fm/s/69721dc0/podcast/rss" type="rss" />
+      <outline title="Kurikulum SMAN 13 Bandung" xmlUrl="https://anchor.fm/s/2b16d430/podcast/rss" type="rss" />
+      <outline title="1000 Guru Bandung Podcast" xmlUrl="https://anchor.fm/s/10cc9d08/podcast/rss" type="rss" />
+      <outline title="Pajajaran Bandung" xmlUrl="https://anchor.fm/s/60c18094/podcast/rss" type="rss" />
+      <outline title="Bandung Periferi" xmlUrl="https://anchor.fm/s/3a77c920/podcast/rss" type="rss" />
+      <outline title="Digital Ministry GKP Bandung" xmlUrl="https://anchor.fm/s/2b61e2a4/podcast/rss" type="rss" />
+      <outline title="FPOLOGY: Siaran BBC (Bincang-Bincang Cerdas) FPSH HAM Kab.Bandung" xmlUrl="https://anchor.fm/s/5f12b36c/podcast/rss" type="rss" />
+      <outline title="Medan Mengaji" xmlUrl="https://anchor.fm/s/2c4a1ab0/podcast/rss" type="rss" />
+      <outline title="Budaya Jawa" xmlUrl="https://anchor.fm/s/2cab35ac/podcast/rss" type="rss" />
+      <outline title="HokMen (Hokkien Medan)" xmlUrl="https://anchor.fm/s/3f61b860/podcast/rss" type="rss" />
+      <outline title="Podcast Cepat" xmlUrl="https://anchor.fm/s/b4cd348/podcast/rss" type="rss" />
+      <outline title="Orang Medan" xmlUrl="https://anchor.fm/s/2215dac0/podcast/rss" type="rss" />
+      <outline title="Visi FM Medan" xmlUrl="https://anchor.fm/s/f5bffcc/podcast/rss" type="rss" />
+      <outline title="Dept. Pemuda GBI Medan Plaza" xmlUrl="https://anchor.fm/s/3887b058/podcast/rss" type="rss" />
+      <outline title="AF Medan" xmlUrl="https://anchor.fm/s/13d89a60/podcast/rss" type="rss" />
+      <outline title="AHOY MEDAN" xmlUrl="https://anchor.fm/s/2d396bec/podcast/rss" type="rss" />
+      <outline title="PMR 001 KOTA MEDAN" xmlUrl="https://anchor.fm/s/3de99e58/podcast/rss" type="rss" />
+      <outline title="Podcast Vokasi Medan" xmlUrl="https://anchor.fm/s/692d2e18/podcast/rss" type="rss" />
+      <outline title="Kecamatan Medan Petisah" xmlUrl="https://anchor.fm/s/4b7ca1dc/podcast/rss" type="rss" />
+      <outline title="Medan Cerita" xmlUrl="https://anchor.fm/s/1feb3eac/podcast/rss" type="rss" />
+      <outline title="Lífið á meðan" xmlUrl="https://anchor.fm/s/10fb01d68/podcast/rss" type="rss" />
+      <outline title="Kiki Koswara Medan" xmlUrl="https://anchor.fm/s/5095cf40/podcast/rss" type="rss" />
+      <outline title="Tribun Medan" xmlUrl="https://anchor.fm/s/2b9cf484/podcast/rss" type="rss" />
+      <outline title="Medan Membaca" xmlUrl="https://anchor.fm/s/4dae9154/podcast/rss" type="rss" />
+      <outline title="La RadioEnclave del IES El Médano." xmlUrl="https://anchor.fm/s/10d852b0/podcast/rss" type="rss" />
+      <outline title="Allt medan månen går vakt över Ven" xmlUrl="https://feed.podbean.com/svensstattena/feed.xml" type="rss" />
+      <outline title="Kang Kiki Koswara Pro 4 RRI Medan" xmlUrl="https://anchor.fm/s/31d26f28/podcast/rss" type="rss" />
+      <outline title="Medan Gabut" xmlUrl="https://anchor.fm/s/3a5118d4/podcast/rss" type="rss" />
+      <outline title="ArizhMedan" xmlUrl="https://anchor.fm/s/ec66304/podcast/rss" type="rss" />
+      <outline title="Kisah anak medan" xmlUrl="https://anchor.fm/s/528b79d0/podcast/rss" type="rss" />
+      <outline title="Podcast &quot;Anak Medan&quot; Semalam Suntuk (PAMSS)" xmlUrl="https://anchor.fm/s/69c61da8/podcast/rss" type="rss" />
+      <outline title="UI Goes to Medan" xmlUrl="https://anchor.fm/s/410e9250/podcast/rss" type="rss" />
+      <outline title="Kecamatan Medan Petisah" xmlUrl="https://anchor.fm/s/4b7b9af8/podcast/rss" type="rss" />
+      <outline title="Medan Talk Vape" xmlUrl="https://anchor.fm/s/5ba2e5bc/podcast/rss" type="rss" />
+      <outline title="MEDAN PODCAST" xmlUrl="https://anchor.fm/s/4dfc68ac/podcast/rss" type="rss" />
+      <outline title="Radio Medan ku" xmlUrl="https://anchor.fm/s/198c5ec4/podcast/rss" type="rss" />
+      <outline title="Médano Blanco" xmlUrl="https://anchor.fm/s/5940ebd4/podcast/rss" type="rss" />
+      <outline title="Mas Blangkon Medan" xmlUrl="https://anchor.fm/s/3eb6f204/podcast/rss" type="rss" />
+      <outline title="Medan me er her" xmlUrl="https://www.omnycontent.com/d/playlist/b879ead7-5fbb-4c64-bede-b13801013ca4/222298e2-3218-40a9-8dd3-b21800a200da/7a11e2be-db2b-47b1-94bf-b21800a203b1/podcast.rss" type="rss" />
+      <outline title="Pengalaman Di Medan" xmlUrl="https://anchor.fm/s/230910dc/podcast/rss" type="rss" />
+      <outline title="Bwaw #1medan" xmlUrl="https://anchor.fm/s/2fa8b2e8/podcast/rss" type="rss" />
+      <outline title="Podcast Anak Medan di Jerman" xmlUrl="https://anchor.fm/s/2aea4208/podcast/rss" type="rss" />
+      <outline title="Lina Medan" xmlUrl="https://anchor.fm/s/20a71244/podcast/rss" type="rss" />
+      <outline title="Kuliner Medan" xmlUrl="https://anchor.fm/s/59988efc/podcast/rss" type="rss" />
+      <outline title="Agile Vocalist" xmlUrl="https://rss.buzzsprout.com/2042129.rss" type="rss" />
+      <outline title="MNC TRIJAYA PODCAST" xmlUrl="https://anchor.fm/s/6008757c/podcast/rss" type="rss" />
+      <outline title="Jingle Mimbar kristen suara Wakbkereng" xmlUrl="https://anchor.fm/s/11e7bbf0/podcast/rss" type="rss" />
+      <outline title="Cerita Uwak Itu" xmlUrl="https://anchor.fm/s/240374dc/podcast/rss" type="rss" />
+      <outline title="K3DAN" xmlUrl="https://anchor.fm/s/3d5f2c8c/podcast/rss" type="rss" />
+      <outline title="Dering Podcast" xmlUrl="https://anchor.fm/s/20aaa198/podcast/rss" type="rss" />
+      <outline title="Short Podcast STIM Sukma" xmlUrl="https://anchor.fm/s/20a766a4/podcast/rss" type="rss" />
+      <outline title="Fajar Efendi" xmlUrl="https://anchor.fm/s/588ec6c0/podcast/rss" type="rss" />
+      <outline title="ImeldaFM Podcast" xmlUrl="https://anchor.fm/s/3902fa74/podcast/rss" type="rss" />
+      <outline title="Good To Great" xmlUrl="https://anchor.fm/s/ee103d0/podcast/rss" type="rss" />
+      <outline title="Inspirasi Pagi Imelda FM" xmlUrl="https://anchor.fm/s/39901f44/podcast/rss" type="rss" />
+      <outline title="YAKUA" xmlUrl="https://anchor.fm/s/26763e48/podcast/rss" type="rss" />
+      <outline title="Radio Elshinta Semarang" xmlUrl="https://anchor.fm/s/13adfe90/podcast/rss" type="rss" />
+      <outline title="Radar Semarang" xmlUrl="https://anchor.fm/s/3e4bf940/podcast/rss" type="rss" />
+      <outline title="GKI Karangsaru Semarang" xmlUrl="https://anchor.fm/s/541fdc78/podcast/rss" type="rss" />
+      <outline title="Kejar Mimpi Semarang" xmlUrl="https://anchor.fm/s/390fc254/podcast/rss" type="rss" />
+      <outline title="ELSA SEMARANG" xmlUrl="https://anchor.fm/s/587a3e80/podcast/rss" type="rss" />
+      <outline title="Podcast Choice Semarang" xmlUrl="https://anchor.fm/s/39694e28/podcast/rss" type="rss" />
+      <outline title="Aku Tantangin Kamu Pro2 Semarang" xmlUrl="https://anchor.fm/s/102d6a58/podcast/rss" type="rss" />
+      <outline title="Gusdurian Semarang" xmlUrl="https://anchor.fm/s/59272564/podcast/rss" type="rss" />
+      <outline title="IFGF SEMARANG" xmlUrl="https://ifgfgisisemarang.podomatic.com/rss2.xml" type="rss" />
+      <outline title="KB-TK PL BERNARDUS SEMARANG" xmlUrl="https://anchor.fm/s/38dac70c/podcast/rss" type="rss" />
+      <outline title="Dutria Bayu Adi - Training Semarang dotcom - BF Institute Training Center Semarang - Career Sherpa" xmlUrl="https://anchor.fm/s/2c7e8124/podcast/rss" type="rss" />
+      <outline title="Kejadian Ketiga" xmlUrl="https://anchor.fm/s/6101efe4/podcast/rss" type="rss" />
+      <outline title="Juragan Helm Semarang" xmlUrl="https://anchor.fm/s/64aae1b4/podcast/rss" type="rss" />
+      <outline title="Dies Natalis UIN Walisongo Semarang di tengah pandemi" xmlUrl="https://anchor.fm/s/567fa2b4/podcast/rss" type="rss" />
+      <outline title="GKI Beringin, Semarang" xmlUrl="https://anchor.fm/s/1d5dc858/podcast/rss" type="rss" />
+      <outline title="Mahasiswa Ilmu Komunikasi Unika Soegijapranata Semarang" xmlUrl="https://anchor.fm/s/26d628f8/podcast/rss" type="rss" />
+      <outline title="RYS SEMARANG" xmlUrl="https://anchor.fm/s/40bd95e4/podcast/rss" type="rss" />
+      <outline title="Gojek Semarang" xmlUrl="https://anchor.fm/s/4e5ca2a8/podcast/rss" type="rss" />
+      <outline title="Cah Hijrah Semarang" xmlUrl="https://anchor.fm/s/102f8c70/podcast/rss" type="rss" />
+      <outline title="Kota Semarang Setara" xmlUrl="https://anchor.fm/s/65a14068/podcast/rss" type="rss" />
+      <outline title="Kondisi Semarang di Tengah Covid-19" xmlUrl="https://anchor.fm/s/18df47d4/podcast/rss" type="rss" />
+      <outline title="Apa kabar bisnis cupang dikota semarang ?" xmlUrl="https://anchor.fm/s/49dd725c/podcast/rss" type="rss" />
+      <outline title="Semarang Kota Soto" xmlUrl="https://anchor.fm/s/547527a0/podcast/rss" type="rss" />
+      <outline title="RYS SEMARANG" xmlUrl="https://anchor.fm/s/51e7a724/podcast/rss" type="rss" />
+      <outline title="Dies Natalis UIN Walisongo Semarang di tengah pandemi" xmlUrl="https://anchor.fm/s/567d7868/podcast/rss" type="rss" />
+      <outline title="Kuliner Semarang" xmlUrl="https://anchor.fm/s/6067135c/podcast/rss" type="rss" />
+      <outline title="Sant'Egidio Semarang" xmlUrl="https://anchor.fm/s/23d2f53c/podcast/rss" type="rss" />
+      <outline title="PODCAST MSG-SMG (Mari Senda Gurau - Semarang)" xmlUrl="https://anchor.fm/s/3a3b3a64/podcast/rss" type="rss" />
+      <outline title="[ Easy English Club Semarang ] Easy Podcast" xmlUrl="https://anchor.fm/s/182dcd10/podcast/rss" type="rss" />
+      <outline title="Trijaya Healtylife" xmlUrl="https://anchor.fm/s/cea1184/podcast/rss" type="rss" />
+      <outline title="Be The Light Podcast SD PL BERNARDUS" xmlUrl="https://anchor.fm/s/1d470370/podcast/rss" type="rss" />
+      <outline title="PMKS" xmlUrl="https://anchor.fm/s/549b9bc4/podcast/rss" type="rss" />
+      <outline title="Perjalanan Bermakna" xmlUrl="https://anchor.fm/s/e5d8c58/podcast/rss" type="rss" />
+      <outline title="Dakwah Islam ID" xmlUrl="https://anchor.fm/s/103873bc/podcast/rss" type="rss" />
+      <outline title="Bantuan Hukum" xmlUrl="https://anchor.fm/s/3160baf4/podcast/rss" type="rss" />
+      <outline title="Podcast Smaga" xmlUrl="https://anchor.fm/s/2294d62c/podcast/rss" type="rss" />
+      <outline title="Tutur Semar" xmlUrl="https://anchor.fm/s/30b3f6d4/podcast/rss" type="rss" />
+      <outline title="MarbudSmg Podcast" xmlUrl="https://anchor.fm/s/28f6f5b8/podcast/rss" type="rss" />
+      <outline title="#TTS (Think, Talk, &amp; Share)" xmlUrl="https://anchor.fm/s/2bf8a9dc/podcast/rss" type="rss" />
+      <outline title="Podcast in the Box (agape 945fm smg)" xmlUrl="https://anchor.fm/s/5495aaac/podcast/rss" type="rss" />
+      <outline title="#Podreds024" xmlUrl="https://anchor.fm/s/2b1c859c/podcast/rss" type="rss" />
+      <outline title="Love, Life N' Legacy" xmlUrl="https://anchor.fm/s/254058b0/podcast/rss" type="rss" />
+      <outline title="Iduwikas Podcast" xmlUrl="https://anchor.fm/s/40beafec/podcast/rss" type="rss" />
+      <outline title="POKES (Podcast Dinkes)" xmlUrl="https://anchor.fm/s/396883d0/podcast/rss" type="rss" />
+      <outline title="GKI Peterongan – GKI Peterongan" xmlUrl="https://gkipeterongan.org/feed/podcast/" type="rss" />
+      <outline title="Buku Misteri" xmlUrl="https://anchor.fm/s/5c74f520/podcast/rss" type="rss" />
+      <outline title="Inspigo" xmlUrl="https://www.inspigo.id/rss/" type="rss" />
+      <outline title="Noice" xmlUrl="https://www.noice.id/rss/" type="rss" />
+      <outline title="Anchor FM ID" xmlUrl="https://www.anchor.fm/id/rss/" type="rss" />
+      <outline title="SAMURAI TOKYO – Podcast Bisnis &amp; Budaya Jepang (Edisi Bahasa Indonesia)" xmlUrl="https://feeds.transistor.fm/samurai-tokyo-podcast-bisnis-budaya-jepang-edisi-bahasa-indonesia" type="rss" category="Society" />
+      <outline title="OzAlum Podcast" xmlUrl="https://rss.buzzsprout.com/1695415.rss" type="rss" category="Education" />
+      <outline title="Bitcoin Indonesia Podcast" xmlUrl="https://feed.podbean.com/bitcoinindonesia/feed.xml" type="rss" category="Education" />
+      <outline title="SWAP (Space Weekly Audio Podcast) from RXN Space Indonesia" xmlUrl="https://anchor.fm/s/52c119f0/podcast/rss" type="rss" category="Science" />
+      <outline title="podcast indonesia" xmlUrl="https://anchor.fm/s/2f1f2924/podcast/rss" type="rss" category="Society" />
+      <outline title="Podcast Cryptocurrency Indonesia" xmlUrl="https://www.spreaker.com/show/3026754/episodes/feed" type="rss" category="Technology" />
+      <outline title="A Food Rescue Foundation Podcast" xmlUrl="https://media.rss.com/foodrescuefoundation/feed.xml" type="rss" category="Arts" />
+      <outline title="IGA Podcast (Indonesia Gaming Arena Podcast)" xmlUrl="https://anchor.fm/s/78c076a0/podcast/rss" type="rss" category="Leisure" />
+      <outline title="Podcast Lazio Indonesia" xmlUrl="https://anchor.fm/s/2775ecf8/podcast/rss" type="rss" category="Sports" />
+      <outline title="Podcast #KesejahteraanHewan Animal Welfare Indonesia" xmlUrl="https://anchor.fm/s/a908d99c/podcast/rss" type="rss" category="Kids" />
+      <outline title="Indonesia famous folk story. A podcast on Anchor" xmlUrl="https://anchor.fm/s/5499a3dc/podcast/rss" type="rss" category="Arts" />
+      <outline title="IPOD (Imasasi on Podcast)" xmlUrl="https://anchor.fm/s/c6b1550/podcast/rss" type="rss" category="Education" />
+      <outline title="Portcast Indonesia" xmlUrl="https://anchor.fm/s/47931948/podcast/rss" type="rss" category="Leisure" />
+      <outline title="Terekam Podcast" xmlUrl="https://anchor.fm/s/93023a8/podcast/rss" type="rss" category="Society" />
+      <outline title="Podcast Jogjakarta United Indonesia" xmlUrl="https://anchor.fm/s/1e77635c/podcast/rss" type="rss" category="News" />
+      <outline title="Podcast Film No. 2 di Indonesia" xmlUrl="https://anchor.fm/s/20df67c/podcast/rss" type="rss" category="Tv" />
+      <outline title="MOB Podcast" xmlUrl="https://anchor.fm/s/37785974/podcast/rss" type="rss" category="Sports" />
+      <outline title="BRANKAS - BI Runners Podcast" xmlUrl="https://anchor.fm/s/585af19c/podcast/rss" type="rss" category="Sports" />
+      <outline title="Podcast Soccerside" xmlUrl="https://anchor.fm/s/29220c30/podcast/rss" type="rss" category="Sports" />
+      <outline title="J-Pop Podcast Indonesia" xmlUrl="https://anchor.fm/s/c2ae674/podcast/rss" type="rss" category="Leisure" />
+      <outline title="SheForChange Podcast" xmlUrl="https://anchor.fm/s/13b0724c/podcast/rss" type="rss" category="Society" />
+      <outline title="Podcast Sohib" xmlUrl="https://anchor.fm/s/1288bac8/podcast/rss" type="rss" category="Government" />
+      <outline title="Volume Podcast" xmlUrl="https://anchor.fm/s/7ffb034/podcast/rss" type="rss" category="Society" />
+      <outline title="Podcast Berani Berinvestasi" xmlUrl="https://anchor.fm/s/1a7985b4/podcast/rss" type="rss" category="Business" />
+      <outline title="Spieltag Indonesia" xmlUrl="https://anchor.fm/s/6c791dc/podcast/rss" type="rss" category="Sports" />
+      <outline title="PodPat (Podcast Patria)" xmlUrl="https://anchor.fm/s/a610a58/podcast/rss" type="rss" category="Religion" />
+      <outline title="Podcast Katolik (PoKat) bahasa Indonesia" xmlUrl="https://anchor.fm/s/46e42d34/podcast/rss" type="rss" category="Religion" />
+      <outline title="Digipreneur Podcast - Digital Marketing, Startup, Teknologi, dan Bisnis Online di Indonesia" xmlUrl="https://anchor.fm/s/3aa8554/podcast/rss" type="rss" category="Business" />
+      <outline title="HODCAST- Her World Podcast" xmlUrl="https://anchor.fm/s/f41314c/podcast/rss" type="rss" category="Society" />
+      <outline title="PODCAST BISNIS ONLINE INDONESIA" xmlUrl="https://anchor.fm/s/133e78f4/podcast/rss" type="rss" category="Business" />
+      <outline title="Podcast Save the Children Indonesia" xmlUrl="https://anchor.fm/s/16953bb4/podcast/rss" type="rss" category="Kids" />
+      <outline title="Bergulat: Podcast Pro-Wrestling Indonesia" xmlUrl="https://anchor.fm/s/1266ccd8/podcast/rss" type="rss" category="Sports" />
+      <outline title="Podcast Ngeluh Pekerja Indonesia" xmlUrl="https://anchor.fm/s/1c7c57d8/podcast/rss" type="rss" category="Comedy" />
+      <outline title="YEA Podcast" xmlUrl="https://anchor.fm/s/1cff16f0/podcast/rss" type="rss" category="Business" />
+      <outline title="Ayo Indonesia PODCAST" xmlUrl="https://anchor.fm/s/29de280c/podcast/rss" type="rss" category="Business" />
+      <outline title="Podcast Beneran Indonesia" xmlUrl="https://anchor.fm/s/1a87db3c/podcast/rss" type="rss" category="Education" />
+      <outline title="Rest In Podcast (Indonesia)" xmlUrl="https://anchor.fm/s/2c0566cc/podcast/rss" type="rss" category="Comedy" />
+      <outline title="MyEduSolve Podcast" xmlUrl="https://anchor.fm/s/255fb9e4/podcast/rss" type="rss" category="Education" />
+      <outline title="Ray White Indonesia Podcast" xmlUrl="https://anchor.fm/s/2381351c/podcast/rss" type="rss" category="Business" />
+      <outline title="POSESIP - Podcast Seru Seputar Konservasi Primata" xmlUrl="https://anchor.fm/s/27451768/podcast/rss" type="rss" category="Science" />
+      <outline title="PODCAST INDAH INDONESIA" xmlUrl="https://anchor.fm/s/2919a694/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Dibalik Kejadian" xmlUrl="https://anchor.fm/s/299156d0/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Haqin Podcast" xmlUrl="https://anchor.fm/s/27ead4b4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Papa Podcast Indonesia" xmlUrl="https://anchor.fm/s/147c7f68/podcast/rss" type="rss" category="Comedy" />
+      <outline title="I'd Like To Thank Myself" xmlUrl="https://feeds.transistor.fm/id-like-to-thank-myself" type="rss" category="Arts" />
+      <outline title="Arroe Collins Like It's Live" xmlUrl="https://www.spreaker.com/show/4113802/episodes/feed" type="rss" category="News" />
+      <outline title="Seriously Mysterious - Missing Persons, Unsolved Murders &amp; Historical True Crime" xmlUrl="https://www.spreaker.com/show/4532075/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Life Hacks DIY &amp; More - Transform Your Everyday With Simple Tricks and DIY Magic!" xmlUrl="https://www.spreaker.com/show/5995484/episodes/feed" type="rss" category="Education" />
+      <outline title="Reddit Stories" xmlUrl="https://www.spreaker.com/show/6370551/episodes/feed" type="rss" category="Leisure" />
+      <outline title="The Kyle Peterson Show" xmlUrl="https://www.spreaker.com/show/6573404/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Reality After Show" xmlUrl="https://www.spreaker.com/show/5448874/episodes/feed" type="rss" category="Tv" />
+      <outline title="3-Bit Gamer Show" xmlUrl="https://www.spreaker.com/show/2255796/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Come explore the paranormal files as we delve into the unexplained. The paranormal podcast." xmlUrl="https://www.spreaker.com/show/5547977/episodes/feed" type="rss" category="Society" />
+      <outline title="Minding Your Business Podcast" xmlUrl="https://www.spreaker.com/show/6367325/episodes/feed" type="rss" category="Business" />
+      <outline title="95.3 Gorilla" xmlUrl="https://wznfpodcast.mainevibe.com/feed.xml" type="rss" category="Music" />
+      <outline title="Gamefully Unemployed" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:395741505/sounds.rss" type="rss" category="Tv" />
+      <outline title="Cog-Dog Radio" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:236473103/sounds.rss" type="rss" category="Education" />
+      <outline title="Managing Tech Millions" xmlUrl="https://feeds.redcircle.com/8f2225e0-c4ac-469c-9e36-07f3677a22a7" type="rss" category="Business" />
+      <outline title="Vocal Booth Radio Listen Again" xmlUrl="https://vocalboothradio.com/feed/mp3" type="rss" category="Music" />
+      <outline title="Daily Shower Thoughts" xmlUrl="https://feeds.megaphone.fm/dailyshowerthoughts" type="rss" category="Comedy" />
+      <outline title="BIG Life Devotional | Daily Devotional for Women" xmlUrl="https://biglifehq.com/feed/podcast" type="rss" category="Religion" />
+      <outline title="Fun Content" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1469" type="rss" category="News" />
+      <outline title="94WIP Morning Show with Joe DeCamara and Jon Ritchie" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/philadelphia_wipfm-94wip_morning_show_with_joe_decamara_and_jon_ritchie" type="rss" category="Sports" />
+      <outline title="Based Camp | Simone &amp; Malcolm Collins" xmlUrl="https://api.substack.com/feed/podcast/1643534/s/64409.rss" type="rss" category="Society" />
+      <outline title="Bonjour France Podcast" xmlUrl="https://www.spreaker.com/show/6773527/episodes/feed" type="rss" category="Society" />
+      <outline title="Milena's Diary" xmlUrl="https://feeds.megaphone.fm/hmstalksltd9487207744" type="rss" category="Society" />
+      <outline title="North Point Baptist Church Sermons" xmlUrl="https://www.spreaker.com/show/6124300/episodes/feed" type="rss" category="Religion" />
+      <outline title="York County's Morning Show" xmlUrl="https://www.spreaker.com/show/6243862/episodes/feed" type="rss" category="Society" />
+      <outline title="Brian Thomas" xmlUrl="https://www.spreaker.com/show/2459972/episodes/feed" type="rss" category="News" />
+      <outline title="Wave 94" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:16676106/sounds.rss" type="rss" category="Religion" />
+      <outline title="Cleveland Browns News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/cleveland-browns-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Cork News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/fort-smith-daily-news-now.xml" type="rss" category="News" />
+      <outline title="The Missing Persons Report" xmlUrl="https://www.spreaker.com/show/6763610/episodes/feed" type="rss" category="True Crime" />
+      <outline title="Rabbi Kraz's Shiurim" xmlUrl="https://anchor.fm/s/d89491c4/podcast/rss" type="rss" category="Religion" />
+      <outline title="Toronto Today with Greg Brady" xmlUrl="https://feeds.megaphone.fm/coru2066336057" type="rss" category="News" />
+      <outline title="The Drake Toll Show" xmlUrl="https://feeds.megaphone.fm/wwo4349656783" type="rss" category="News" />
+      <outline title="Going Ultra - Presented by Henshin Inspection" xmlUrl="https://media.rss.com/mjmgu/feed.xml" type="rss" category="Tv" />
+      <outline title="JPost Headlines" xmlUrl="https://www.spreaker.com/show/6677418/episodes/feed" type="rss" category="News" />
+      <outline title="Audio Mises Wire" xmlUrl="https://cdn.mises.org/itunes/en_127226.xml" type="rss" category="News" />
+      <outline title="Outsource to Profits Podcast" xmlUrl="https://feed.podbean.com/getlevrg/feed.xml" type="rss" category="Business" />
+      <outline title="24 Oras Podcast" xmlUrl="https://feeds.acast.com/public/shows/685d292847311de1b6e0e89a" type="rss" category="News" />
+      <outline title="Excess Returns" xmlUrl="https://anchor.fm/s/9a1dfac/podcast/rss" type="rss" category="Business" />
+      <outline title="Red Sox Digest Podcast" xmlUrl="https://www.spreaker.com/show/6691213/episodes/feed" type="rss" category="News" />
+      <outline title="The Tony Kornheiser Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacynetwork/the-tony-kornheiser-show" type="rss" category="Sports" />
+      <outline title="Radio Miraya" xmlUrl="https://audioboom.com/channels/3891441.rss" type="rss" category="Technology" />
+      <outline title="Pivot: SHIFT Ahead Mastermind" xmlUrl="https://media.rss.com/pivot-shift-ahead-mastermind/feed.xml" type="rss" category="Business" />
+      <outline title="Los Angeles Rams News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/los-angeles-rams-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Get Up" xmlUrl="https://feeds.megaphone.fm/esp2870920494" type="rss" category="Sports" />
+      <outline title="Courtney and KISS in the morning" xmlUrl="https://www.spreaker.com/show/2497425/episodes/feed" type="rss" category="Leisure" />
+      <outline title="Computer Talk with TAB" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/f8c743d7682ab4bac553696e6093d3e7" type="rss" category="Business" />
+      <outline title="Tennessee Titans News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/tennessee-titans-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Wrestle Radio Australia" xmlUrl="https://wrestleradioaustralia.libsyn.com/rss" type="rss" category="Sports" />
+      <outline title="Hope Expression Podcast" xmlUrl="https://www.spreaker.com/show/5891904/episodes/feed" type="rss" category="Religion" />
+      <outline title="Spurs Chat: Discussing all Things Tottenham Hotspur: Hosted by Chris Cowlin: The Daily Tottenham/Spurs Podcast" xmlUrl="https://feeds.acast.com/public/shows/639c5ea1bcab760012015b61" type="rss" category="Sports" />
+      <outline title="Federalist Radio Hour" xmlUrl="https://feeds.feedburner.com/ricochetaudionetwork/federalistradiohour" type="rss" category="News" />
+      <outline title="The Irish Passport" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:298752213/sounds.rss" type="rss" category="Society" />
+      <outline title="The Lunduke Journal of Technology" xmlUrl="https://api.substack.com/feed/podcast/462466.rss" type="rss" category="Technology" />
+      <outline title="Boston Bruins News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/boston-bruins-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Warden's Watch" xmlUrl="https://feeds.megaphone.fm/wpcm3659727000" type="rss" category="Sports" />
+      <outline title="Experience in Golf Clubhouse Design" xmlUrl="https://feeds.libsyn.com/475266/rss" type="rss" category="Arts" />
+      <outline title="Betting Weekly Studios" xmlUrl="https://feeds.megaphone.fm/rerre3101069934" type="rss" category="Sports" />
+      <outline title="The Long Run with Luke Timmerman" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:317770704/sounds.rss" type="rss" category="Science" />
+      <outline title="Belfast News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/bridgeport-daily-news-now.xml" type="rss" category="News" />
+      <outline title="AM Quincy" xmlUrl="https://feeds.feedburner.com/qatv_amquincypodcast" type="rss" category="Government" />
+      <outline title="Autoblog News" xmlUrl="https://feeds.feedburner.com/podcast/autoblog" type="rss" category="Games" />
+      <outline title="The Irish Passport" xmlUrl="https://www.theirishpassport.com/feed/podcast" type="rss" category="News" />
+      <outline title="Filterbuy.com Audio Blogs Podcast" xmlUrl="https://www.spreaker.com/show/6267470/episodes/feed" type="rss" category="Education" />
+      <outline title="The Flex Podcast with Anna Martin Fitness" xmlUrl="https://media.rss.com/the-flex-podcast-with-anna-martin-fitness/feed.xml" type="rss" category="Health" />
+      <outline title="Church and State" xmlUrl="https://feed.podbean.com/churchandstate/feed.xml" type="rss" category="News" />
+      <outline title="Bite-Sized Dental Marketing" xmlUrl="https://media.rss.com/bsdm/feed.xml" type="rss" category="Business" />
+      <outline title="DD Fantasy Football Radio" xmlUrl="https://feeds.megaphone.fm/blu7133453702" type="rss" category="Sports" />
+      <outline title="Cybercrime Magazine Podcast" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:286242900/sounds.rss" type="rss" category="Technology" />
+      <outline title="Lawrence News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/lawrence-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Sasquatch Experience" xmlUrl="https://www.spreaker.com/show/4208641/episodes/feed" type="rss" category="Science" />
+      <outline title="Ciliberto and Friends" xmlUrl="https://www.spreaker.com/show/5983689/episodes/feed" type="rss" category="Music" />
+      <outline title="The Automated Daily" xmlUrl="https://theautomateddaily.com/feed.xml" type="rss" category="Technology" />
+      <outline title="The Automated Daily - Space News Edition" xmlUrl="https://theautomateddaily.com/space/feed.xml" type="rss" category="Science" />
+      <outline title="Word Balloon Comics Podcast" xmlUrl="https://www.spreaker.com/show/3143082/episodes/feed" type="rss" category="Tv" />
+      <outline title="Daily Morning Class" xmlUrl="https://media.rss.com/rabbiyedid/feed.xml" type="rss" category="Religion" />
+      <outline title="Reality with The King" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/a1735c70-f70f-4045-805b-b302010c5b8c/5db0a3af-13d8-4a16-974c-b302010c5bb4/podcast.rss" type="rss" category="Tv" />
+      <outline title="The Dentalpreneur Podcast w/ Dr. Mark Costes" xmlUrl="https://markcostes.libsyn.com/rss" type="rss" category="Business" />
+      <outline title="The Kapeel Gupta Career Podshow" xmlUrl="https://rss.buzzsprout.com/2012553.rss" type="rss" category="Business" />
+      <outline title="What in the World" xmlUrl="https://podcasts.files.bbci.co.uk/w13xtvrv.rss" type="rss" category="News" />
+      <outline title="The Buddy System with Chris &amp; Matty" xmlUrl="https://feeds.megaphone.fm/mduyh3921896096?1?1" type="rss" category="Comedy" />
+      <outline title="Fore Love of Golf" xmlUrl="https://feeds.megaphone.fm/rogxo2747915340" type="rss" category="Sports" />
+      <outline title="Dr. John Campbell" xmlUrl="https://feeds.megaphone.fm/vg9554039150" type="rss" category="Education" />
+      <outline title="Paranormal UK Radio Network" xmlUrl="https://www.spreaker.com/show/4541473/episodes/feed" type="rss" category="Society" />
+      <outline title="This Day in History" xmlUrl="https://feeds.redcircle.com/9339ef5f-2c20-4a38-b60d-eb4ac27759c3" type="rss" category="History" />
+      <outline title="Football Social Daily" xmlUrl="https://feeds.megaphone.fm/comg9297908545" type="rss" category="Sports" />
+      <outline title="Edmonton News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/the-stockton-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Park Avenue Synagogue Podcast" xmlUrl="https://feed.podbean.com/parkavenuepodcast/feed.xml" type="rss" category="Religion" />
+      <outline title="PreMarket Prep" xmlUrl="https://anchor.fm/s/fd33c360/podcast/rss" type="rss" category="Business" />
+      <outline title="StribSports Daily Delivery" xmlUrl="https://feeds.megaphone.fm/stribsportsdailydelivery" type="rss" category="Sports" />
+      <outline title="Legacy Nashville Podcast" xmlUrl="https://media.rss.com/legacy-nashville-podcast/feed.xml" type="rss" category="Religion" />
+      <outline title="&quot;There I was...&quot; An Aviation Podcast" xmlUrl="https://feeds.megaphone.fm/aopa1855704656" type="rss" category="Leisure" />
+      <outline title="Marketer of the Day with Robert Plank: Business Growth &amp; Entrepreneur Stories" xmlUrl="https://www.robertplank.com/feed/podcast" type="rss" category="Business" />
+      <outline title="3 Things" xmlUrl="https://www.spreaker.com/show/5008053/episodes/feed" type="rss" category="News" />
+      <outline title="In The Money Media Network" xmlUrl="https://feeds.captivate.fm/in-the-money-media-network" type="rss" category="Sports" />
+      <outline title="This Paranormal Life" xmlUrl="https://feeds.megaphone.fm/nsr2334813337" type="rss" category="Comedy" />
+      <outline title="Let's Address This with Qasim Rashid Podcast" xmlUrl="https://api.substack.com/feed/podcast/2550223.rss" type="rss" category="News" />
+      <outline title="Flashscore News" xmlUrl="https://feeds.captivate.fm/flashscore-news" type="rss" category="News" />
+      <outline title="JACC Global" xmlUrl="https://feeds.libsyn.com/75161" type="rss" category="Health" />
+      <outline title="Health News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/health-and-fitness-news-today-2-min-news-the-daily-news-now.xml" type="rss" category="Health" />
+      <outline title="Food Freedom" xmlUrl="https://anchor.fm/s/d625f518/podcast/rss" type="rss" category="Health" />
+      <outline title="See Ball Get Ball with David Pollack" xmlUrl="https://media.rss.com/see-ball-get-ball-david-pollack/feed.xml" type="rss" category="Sports" />
+      <outline title="Blurt Vibes" xmlUrl="https://blurt.media/feeds/videos.xml?videochannelid=1398" type="rss" category="News" />
+      <outline title="Twisted Podcast" xmlUrl="https://twistedpodcast.libsyn.com/rss" type="rss" category="Society" />
+      <outline title="Billianon" xmlUrl="https://podcast.billianon.com/@billianon/feed.xml" type="rss" category="Education" />
+      <outline title="Global Research Unlocked" xmlUrl="https://feed.podbean.com/bofaglobalresearch/feed.xml" type="rss" category="Business" />
+      <outline title="Fresh Pinball Podcast" xmlUrl="https://media.rss.com/freshpinballpodcast/feed.xml" type="rss" category="Comedy" />
+      <outline title="Georgia Tech Yellow Jackets Football Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/georgia-tech-yellow-jackets-football-today-2-min-news.xml" type="rss" category="News" />
+      <outline title="Magical Transformations" xmlUrl="https://feeds.captivate.fm/magicaltrasformations" type="rss" category="Health" />
+      <outline title="The Nielson Show" xmlUrl="https://feeds.libsyn.com/481581/rss" type="rss" category="Sports" />
+      <outline title="The Bridge" xmlUrl="https://www.spreaker.com/show/3099883/episodes/feed" type="rss" category="Sports" />
+      <outline title="Politics Unpacked" xmlUrl="https://feeds.acast.com/public/shows/92a301e1-443b-435f-b4e2-2e2dd1e37fc5" type="rss" category="News" />
+      <outline title="*“Yesterday, I Went to Mars ♡”*" xmlUrl="https://anchor.fm/s/fcce555c/podcast/rss" type="rss" category="Society" />
+      <outline title="SYSTEMIZE YOUR LIFE + BUSINESS | Schedules, Routines, Productivity, Time Management, Operating System" xmlUrl="https://feed.podbean.com/systemizeyourlife/feed.xml" type="rss" category="Kids" />
+      <outline title="San Francisco 49ers News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/san-francisco-49ers-the-daily-news-now.xml" type="rss" category="News" />
+      <outline title="Chiney Today" xmlUrl="https://feeds.megaphone.fm/esp1950629932" type="rss" category="Sports" />
+      <outline title="Top Entrepreneurs Podcast | Enterprise Podcast Network" xmlUrl="https://feeds.feedburner.com/entrepreneurpodcastnetwork" type="rss" category="Business" />
+      <outline title="Restoration Home with Jennifer Pepito" xmlUrl="https://feed.podbean.com/restorationhome/feed.xml" type="rss" category="Kids" />
+      <outline title="Keys to Success" xmlUrl="https://www.spreaker.com/show/6414073/episodes/feed" type="rss" category="Society" />
+      <outline title="Athletics Weekly Podcast" xmlUrl="https://feeds.acast.com/public/shows/6697e5223fac6c42420fe0e8" type="rss" category="Sports" />
+      <outline title="Mully &amp; Haugh Show" xmlUrl="https://rss.amperwave.net/v2/feed/audacy/chicago_wscram_mully___haugh_show" type="rss" category="Sports" />
+      <outline title="Grow My Salon Business Podcast" xmlUrl="https://feeds.transistor.fm/grow-my-salon-business-podcast" type="rss" category="Arts" />
+      <outline title="Prepper Broadcasting Network" xmlUrl="https://www.spreaker.com/show/3295097/episodes/feed" type="rss" category="News" />
+      <outline title="Mornings With Gary Byron Podcast" xmlUrl="https://feeds.transistor.fm/mornings-with-gary-byron-podcast" type="rss" category="News" />
+      <outline title="The Ricochet Superfeed" xmlUrl="https://ricochet.com/podcast/feed" type="rss" category="News" />
+      <outline title="Arkansas Razorbacks Basketball News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/arkansas-razorbacks-basketball-news-today-2-min-news-the-dai.xml" type="rss" category="News" />
+      <outline title="Galway Bay fm - Sports" xmlUrl="https://galwaybayfmsports.podbean.com/feed.xml" type="rss" category="Sports" />
+      <outline title="Harmonizing Success" xmlUrl="https://www.spreaker.com/show/6418590/episodes/feed" type="rss" category="Business" />
+      <outline title="World Today" xmlUrl="https://aezfm.meldingcloud.com/rss/program/46" type="rss" category="News" />
+      <outline title="Montreal Canadiens News Today | 2 Min News | The Daily News Now!" xmlUrl="https://feeds.fastcast.ai/montreal-canadiens-the-daily-news-now.xml" type="rss" category="Sports" />
+      <outline title="Giggly Squad" xmlUrl="https://feeds.acast.com/public/shows/780a3042-864b-40fa-ae09-4557aec621c3" type="rss" category="Comedy" />
     </outline>
-    
-    
     <outline text="Photography">
-      
-      
-      <outline title="Canon ID" xmlUrl="https://www.canon.co.id/rss/" type="rss"/>
-      
-      
-      <outline title="Kamera Digital" xmlUrl="https://www.kameradigital.com/feed/" type="rss"/>
-      
-    
+      <outline title="Canon ID" xmlUrl="https://www.canon.co.id/rss/" type="rss" />
+      <outline title="Kamera Digital" xmlUrl="https://www.kameradigital.com/feed/" type="rss" />
     </outline>
-    
-
     <outline text="YouTube">
-      <outline title="Ed Sheeran" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-w0YjGpqDXGB8IHb662A" type="rss"/>
-      <outline title="Infobellsмовою гінді" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1ciY6kR3yj3kaKZ6R7ewAg" type="rss"/>
-      <outline title="वेभ म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC22nIfOTM7KLIQuFGMKzQbg" type="rss"/>
-      <outline title="फाइभ मिनेट क्राफ्ट्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC295-Dw_tDNtZXFeAPAW6Aw" type="rss"/>
-      <outline title="ह्याब लेबल्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3IZKseVpdzPSBaWxBxundA" type="rss"/>
-      <outline title="whinderssonnunes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3KQ5GWANYF8lChqjZpXsQw" type="rss"/>
-      <outline title="SonyMusicIndiaVEVO" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3MLnJtqc_phABBriLRhtgQ" type="rss"/>
-      <outline title="मुभी क्लिप्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3gNmTGu-TTbFPpfSs5kNkg" type="rss"/>
-      <outline title="LooLoo Kids - Nursery Rhymes and Children's Songs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4NALVCmcmL5ntpV0thoH6w" type="rss"/>
-      <outline title="YouTube - Most Subscribed Channels" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4hPLT5cpqobHmYT5B9zr3w" type="rss"/>
-      <outline title="Bright Side" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4rlAVgAK0SGk-yTfe48Qpw" type="rss"/>
-      <outline title="कलर्स टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC55IWqFLDH1Xp7iu1_xknRA" type="rss"/>
-      <outline title="Sony Music India" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC56gTxNs4f9xZ7Pa2i5xNzg" type="rss"/>
-      <outline title="Judson Laipply" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5B9H4l2vtgo7cAoExcFh-w" type="rss"/>
-      <outline title="Sony SAB" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6-F5tO8uklgE9Zy8IvbdFw" type="rss"/>
-      <outline title="Fred" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7RGwnsSAEClqqxJ9MxUhyQ" type="rss"/>
-      <outline title="Ariana Grande" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9CoOnJkIBMdeijd9qYoT_g" type="rss"/>
-      <outline title="geriatric1927" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pKXHIbEZXelvUgyNIStMw" type="rss"/>
-      <outline title="Brookers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAb3tKlaLC80hcPE3zIr5Vw" type="rss"/>
-      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAiLfjNXkNv24uhpzUgPa6A" type="rss"/>
-      <outline title="चुचु टिभी नर्सरी राइम्स एन्ड किड्स सङ्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBnZ16ahKA2DZ_T5W0FPUXg" type="rss"/>
-      <outline title="Ray William Johnson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCESNYRD3HRimEVi-2EpziVg" type="rss"/>
-      <outline title="Marshmello" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEdvpU2pFRCVqU6yIPyTpMQ" type="rss"/>
-      <outline title="ज़ी म्यूज़िक कम्पनी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFFbwnve3yF62-tVXkTyHqg" type="rss"/>
-      <outline title="Alan's Universe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIwFjwMjI0y7PDBVEO9-bkQ" type="rss"/>
-      <outline title="WWE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ5v_MCY6GNUBTO8-D3XoAg" type="rss"/>
-      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss"/>
-      <outline title="Tips Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJrDMFOdv1I2k8n9oK_V21w" type="rss"/>
-      <outline title="एल रेइनो इन्फान्तिल" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCK1i2UviaXLUNrZlAFpw_jA" type="rss"/>
-      <outline title="बाङतान टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLkAepWjdylmXSltofFvsYQ" type="rss"/>
-      <outline title="ब्ल्याकपिङ्क" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmHUn--16B90oW2L6FRR3A" type="rss"/>
-      <outline title="Shemaroo Entertainment" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP6uH_XlsxrXwZQ4DlqbqPg" type="rss"/>
-      <outline title="PewDiePie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4zIVlfhsmvds7WuKeL2Bw" type="rss"/>
-      <outline title="Dude Perfect" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRijo3ddMTht_IHyNSNXpNQ" type="rss"/>
-      <outline title="BillionSurpriseToys - English Kids Songs &amp; Cartoon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRx3mKNUdl8QE06nEug7p6Q" type="rss"/>
-      <outline title="nigahiga" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSAUGyc_xA8uYzaIVG6MESQ" type="rss"/>
-      <outline title="Felipe Neto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV306eHqgo0LvBf3Mh36AHg" type="rss"/>
-      <outline title="Fernanfloo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV4xOVpbcV8SdueDCOxLXtQ" type="rss"/>
-      <outline title="lonelygirl15" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVEfyEuLJpgw_y4jSgV8Rtg" type="rss"/>
-      <outline title="Smosh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYJPby9DRCteedh5tfxVbrw" type="rss"/>
-      <outline title="Badatrash" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYWOjHweP2V-8kGKmmAmQJQ" type="rss"/>
-      <outline title="JuegaGerman" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYiGq8XF7YQD00x7wAd62Zg" type="rss"/>
-      <outline title="T-Series Bhakti Sagar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaayLD9i5x4MmIoVZxXSv_g" type="rss"/>
-      <outline title="Cocomelon - Nursery Rhymes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbCmjCuTUZos6Inko4u57UQ" type="rss"/>
-      <outline title="Yash Raj Films" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbTLwN10NoCU4WDzLf1JMOA" type="rss"/>
-      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss"/>
-      <outline title="एमिनेम म्युजिक" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfM3zsQsOnfWNUppiycmBuw" type="rss"/>
-      <outline title="क्यानल कोन्डजिला" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCffDXn7ycAzwL2LDlbyWOTw" type="rss"/>
-      <outline title="Billie Eilish" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiGm_E4ZwYSHV3bcW1pnSeQ" type="rss"/>
-      <outline title="Você Sabia?" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCj0O6W8yDuLg3iraAXKgCrQ" type="rss"/>
-      <outline title="✿ Kids Diana Show" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCk8GzjMOrta8yxDcKfylJYw" type="rss"/>
-      <outline title="Bad Bunny" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmBA_wu8xGg1OfOkfW13Q0Q" type="rss"/>
-      <outline title="सोनी एंटरटेनमेंट टेलीविज़न (भारत)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpEhnqL0y41EpW2TvWAHD7Q" type="rss"/>
-      <outline title="जी टिभी" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCppHT7SZKKvar4Oc9J4oljQ" type="rss"/>
-      <outline title="T-Series" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq-Fj5jknLsUf-MWSy4_brA" type="rss"/>
-      <outline title="Taylor Swift" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqECaJ8Gagnn7YCbPEzWH6g" type="rss"/>
-      <outline title="Aaj Tak" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCt4t-jeY85JegMlZ-E5UWtA" type="rss"/>
-      <outline title="סרגיי וויקטוריה ושקטוב (ההורים של ולאד וניקי)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvlE5gTbOvjiolFlEm-c_Ow" type="rss"/>
-      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss"/>
+      <outline title="אנה רדזינסקאיה וסרגיי רדזינסקי (ההורים של נטסיה)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJplp5SjeGSdVdwsfb9Q7lQ" type="rss" />
+      <outline title="Baby Shark - Pinkfong Kids’ Songs &amp; Stories" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcdwLMPsaU2ezNSJU1nFoBQ" type="rss" />
+      <outline title="गोल्डमाइन्स" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyoXW-Dse7fURq30EWl_CUA" type="rss" />
+      <outline title="Philip DeFranco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw" type="rss" />
+      <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />
+      <outline title="MrBeast Gaming" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIPPMRA040LQr5QPyJEbmXA" type="rss" />
+      <outline title="Obit" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpxxQUGNgkns9i3EhLEHoQg" type="rss" />
+      <outline title="Henny Adella" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP3J77MiNCYxhRnfHmeWk7Q" type="rss" />
+      <outline title="Indosiar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYqOeAXJm8yV9sJ8Ud3cR7A" type="rss" />
+      <outline title="TRANS TV Official" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIohHXwCEKxWCLvAguJ-GjA" type="rss" />
+      <outline title="BaLiTa - Baba Lili Tata" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5Tg_aUYKBtpnGipTVqDDuQ" type="rss" />
+      <outline title="MrBeast" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA" type="rss" />
+    </outline>
+    <outline text="Podcast">
+      <outline title="Lentera Malam (Podcast Horor)" xmlUrl="https://anchor.fm/s/1dd688d8/podcast/rss" type="rss" category="True Crime" />
+      <outline title="Podcast Seminggu" xmlUrl="https://anchor.fm/s/a832660/podcast/rss" type="rss" category="Comedy Interviews" />
+      <outline title="BKR Brothers" xmlUrl="https://anchor.fm/s/bd4a278/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Rapot" xmlUrl="https://anchor.fm/s/9963300/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Hanan Attaki" xmlUrl="https://anchor.fm/s/1fd2c318/podcast/rss" type="rss" category="Spirituality" />
+      <outline title="Tentang Rasa" xmlUrl="https://anchor.fm/s/4d320684/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="Do You See What I See?" xmlUrl="https://anchor.fm/s/7b6e764/podcast/rss" type="rss" category="Drama" />
+      <outline title="Rotten Mango" xmlUrl="https://feeds.simplecast.com/6Qp23t6h" type="rss" category="True Crime" />
+      <outline title="Global News Podcast" xmlUrl="https://podcasts.files.bbci.co.uk/p02nq0gn.rss" type="rss" category="Daily News" />
+      <outline title="The Catch Up Club" xmlUrl="https://anchor.fm/s/10f4a206c/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="The Diary Of A CEO with Steven Bartlett" xmlUrl="https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn" type="rss" category="Business" />
+      <outline title="Menjadi Manusia" xmlUrl="https://anchor.fm/s/3a66af0/podcast/rss" type="rss" category="Self-Improvement" />
+      <outline title="TED Talks Daily" xmlUrl="https://feeds.acast.com/public/shows/67587e77c705e441797aff96" type="rss" category="Society &amp; Culture" />
+      <outline title="The Mel Robbins Podcast" xmlUrl="https://feeds.simplecast.com/UCwaTX1J" type="rss" category="Self-Improvement" />
+      <outline title="MENDOAN" xmlUrl="https://anchor.fm/s/e05e0fc/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Moral Of The Story" xmlUrl="https://feeds.simplecast.com/lB9rtGAq" type="rss" category="Comedy" />
+      <outline title="Contemporary Piano Music" xmlUrl="https://www.podcasts.com/rss_feed/86d241aec09806249b723c31e4788070" type="rss" category="Arts" />
+      <outline title="Obrolan Tengah Malam (Podcast Horor)" xmlUrl="https://anchor.fm/s/10842b3b0/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="6 Minute English" xmlUrl="https://podcasts.files.bbci.co.uk/p02pc9tn.rss" type="rss" category="Language Learning" />
+      <outline title="Mishary Rashid Alafasy" xmlUrl="https://rss.qurancentral.com/mishary-rashid-alafasy.rss" type="rss" category="Islam" />
+      <outline title="GJLS" xmlUrl="https://anchor.fm/s/2c478df4/podcast/rss" type="rss" category="Comedy" />
+      <outline title="The Holy Quran, Sheikh Saad Al Ghamdi | القران الكريم سعد الغامدي" xmlUrl="https://www.spreaker.com/show/6277093/episodes/feed" type="rss" category="History" />
+      <outline title="Firanda Andirja Official" xmlUrl="https://anchor.fm/s/2e8effac/podcast/rss" type="rss" category="Islam" />
+      <outline title="Kumpulan Dakwah Sunnah" xmlUrl="https://anchor.fm/s/dfe55008/podcast/rss" type="rss" category="Islam" />
+      <outline title="On Purpose with Jay Shetty" xmlUrl="https://feeds.megaphone.fm/on-purpose" type="rss" category="Mental Health" />
+      <outline title="AGAK LAEN!" xmlUrl="https://anchor.fm/s/5543ec70/podcast/rss" type="rss" category="Comedy" />
+      <outline title="Riri Cerita Anak Interaktif" xmlUrl="https://anchor.fm/s/d600920/podcast/rss" type="rss" category="Stories for Kids" />
+      <outline title="Endgame with Gita Wirjawan" xmlUrl="https://anchor.fm/s/2f9942f4/podcast/rss" type="rss" category="Business" />
+      <outline title="The Daily" xmlUrl="https://feeds.simplecast.com/Sl5CSM3S" type="rss" category="Daily News" />
+      <outline title="The Rest Is History" xmlUrl="https://feeds.megaphone.fm/GLT4787413333" type="rss" category="History" />
+      <outline title="Close The Door" xmlUrl="https://anchor.fm/s/1438aaf4/podcast/rss" type="rss" category="Entertainment News" />
+      <outline title="Podcast Raditya Dika" xmlUrl="https://anchor.fm/s/a345a1c/podcast/rss" type="rss" category="Comedy" />
+      <outline title="IELTS Speaking for Success" xmlUrl="https://feeds.megaphone.fm/TPG4197403620" type="rss" category="Language Learning" />
+      <outline title="How to Be a Better Human" xmlUrl="https://feeds.acast.com/public/shows/67572b3b2dd88df13220eb3b" type="rss" category="Self-Improvement" />
+      <outline title="Pastor Rick's Daily Hope" xmlUrl="https://rss.libsyn.com/shows/87974/destinations/430545.xml" type="rss" category="Religion" />
+      <outline title="The Psychology of your 20s" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/bc44988a-a82a-4291-ab8b-afdd01187fa8/39e2f432-53df-43b8-a7b9-afdd01187fc4/podcast.rss" type="rss" category="Mental Health" />
+      <outline title="Learning Easy English" xmlUrl="https://podcasts.files.bbci.co.uk/p0hsrwv5.rss" type="rss" category="Language Learning" />
+      <outline title="Growth Mindset Psychology: The Science of Self-Improvement" xmlUrl="https://feeds.megaphone.fm/NSR1382158191" type="rss" category="Self-Improvement" />
+      <outline title="Besok Pagi (Podcast Pendakian Horor)" xmlUrl="https://anchor.fm/s/103c6de60/podcast/rss" type="rss" category="Society &amp; Culture" />
+      <outline title="Listening Time: English Practice" xmlUrl="https://feeds.simplecast.com/obaHfEr1" type="rss" category="Language Learning" />
+      <outline title="Kajian Tafsir Al Qur'an" xmlUrl="https://anchor.fm/s/1b5a1e30/podcast/rss" type="rss" category="Islam" />
+      <outline title="Joel Osteen Podcast" xmlUrl="https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/752ba8f1-0e9f-43cc-81d8-b45f00f9a408/6f1d99f7-4f58-4689-b4f7-b45f00f9a4e3/podcast.rss" type="rss" category="Religion &amp; Spirituality" />
+      <outline title="Kajian Ustadz Khalid Basalamah" xmlUrl="https://anchor.fm/s/f01c55c/podcast/rss" type="rss" category="Islam" />
+      <outline title="Conan O’Brien Needs A Friend" xmlUrl="https://feeds.simplecast.com/dHoohVNH" type="rss" category="Comedy" />
+      <outline title="The Journal." xmlUrl="https://video-api.wsj.com/podcast/rss/wsj/the-journal" type="rss" category="Daily News" />
+      <outline title="Cerita Sejarah Islam (CESI)" xmlUrl="https://anchor.fm/s/10bcd9cd4/podcast/rss" type="rss" category="Education" />
+      <outline title="L'After Foot" xmlUrl="https://feeds.simplecast.com/VVMraBM_" type="rss" category="Soccer" />
+      <outline title="Self Healing" xmlUrl="https://feed.firstory.me/rss/user/cli77xv0u00bj01307mtm9zlp" type="rss" category="Mental Health" />
+      <outline title="Sherlock &amp; Co." xmlUrl="https://feeds.megaphone.fm/GLT1918729224" type="rss" category="Drama" />
+    </outline>
+    <outline text="Social">
+      <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
     </outline>
   </body>
-  
-
 </opml>

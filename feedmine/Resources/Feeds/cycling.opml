@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cycling — Road, MTB, Gravel &amp; BMX</title>
+  </head>
+  <body>
+    <outline text="Cycling News &amp; Magazines">
+      <outline title="Cycling Weekly" xmlUrl="https://www.cyclingweekly.com/rss" type="rss" />
+      <outline title="Cycling News" xmlUrl="https://www.cyclingnews.com/rss/" type="rss" />
+      <outline title="VeloNews" xmlUrl="https://www.velonews.com/feed/" type="rss" />
+      <outline title="CyclingTips" xmlUrl="https://cyclingtips.com/feed/" type="rss" />
+      <outline title="Road.cc" xmlUrl="https://road.cc/rss" type="rss" />
+      <outline title="Singletracks (MTB)" xmlUrl="https://www.singletracks.com/rss/" type="rss" />
+    </outline>
+    <outline text="Pro Cycling &amp; Racing">
+      <outline title="Giro d'Italia — News" xmlUrl="https://www.giroditalia.it/en/rss/" type="rss" />
+      <outline title="ProCyclingUK" xmlUrl="https://www.procyclinguk.com/rss/" type="rss" />
+    </outline>
+    <outline text="Mountain Biking &amp; Gravel">
+      <outline title="Bike Magazine (MTB)" xmlUrl="https://www.bikemag.com/feed/" type="rss" />
+      <outline title="Gravel Cyclist" xmlUrl="https://www.gravelcyclist.com/feed/" type="rss" />
+      <outline title="The Radavist" xmlUrl="https://theradavist.com/feed/" type="rss" />
+      <outline title="NSMB (MTB)" xmlUrl="https://nsmb.com/rss" type="rss" />
+    </outline>
+    <outline text="Bike Gear &amp; Tech">
+      <outline title="DC Rainmaker (Bike Tech)" xmlUrl="https://www.dcrainmaker.com/feed" type="rss" />
+      <outline title="BikeRumor" xmlUrl="https://bikerumor.com/feed/" type="rss" />
+      <outline title="Cycling Industry News" xmlUrl="https://cyclingindustry.news/feed/" type="rss" />
+    </outline>
+    <outline text="BMX">
+      <outline title="BMX News" xmlUrl="https://bmxnews.com/feed/" type="rss" />
+      <outline title="BMX Weekly" xmlUrl="https://bmxweekly.com/feed/" type="rss" />
+    </outline>
+    <outline text="Cycling Podcasts">
+      </outline>
+    <outline text="YouTube — Cycling">
+      </outline>
+  </body>
+</opml>

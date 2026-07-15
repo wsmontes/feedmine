@@ -4,10 +4,13 @@
     <title>Ulsan Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Ulsan Daily" xmlUrl="https://www.ulsannews.com/rss/" type="rss" />
+    <outline text="News">
+      <outline title="Ulsan Daily" xmlUrl="https://www.ulsannews.com/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Business" />
+    <outline text="Education" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Business" />
-      <outline text="Education" /></body>
-    </opml>
+  </body>
+</opml>

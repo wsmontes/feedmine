@@ -11,14 +11,10 @@
     <outline text="Education" />
     <outline text="Podcasts">
       <outline title="新聞" xmlUrl="https://feeds.soundon.fm/podcasts/48aa48f9-2bcb-4e2e-ba6d-3bb35d049de6.xml" type="rss" category="News" />
-      <outline title="Takeaway Chinese" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/54" type="rss" category="Education" />
       <outline title="The 5mins Nightcap" xmlUrl="https://anchor.fm/s/56815898/podcast/rss" type="rss" category="Relationships" />
-      <outline title="The China History Podcast" xmlUrl="https://rss.libsyn.com/shows/572640/destinations/4955980.xml" type="rss" category="History" />
       <outline title="Ear to Asia" xmlUrl="https://media.rss.com/ear-to-asia/feed.xml" type="rss" category="Society &amp; Culture" />
       <outline title="Teatime With Jesse" xmlUrl="https://feeds.megaphone.fm/teatimewithjesse" type="rss" category="Comedy Interviews" />
-      <outline title="New Books Network" xmlUrl="https://feeds.megaphone.fm/LIT4543917034" type="rss" category="News" />
       <outline title="98.5 ONE FM Podcasts" xmlUrl="https://feeds.soundcloud.com/users/soundcloud:users:291490973/sounds.rss" type="rss" category="Music" />
-      <outline title="The Beijing Hour" xmlUrl="https://aezfm.meldingcloud.com/rss/program/5" type="rss" category="News" />
       <outline title="Economist Podcasts" xmlUrl="https://access.acast.com/rss/ec380acc-fe13-46a0-991f-a1e508d126f8" type="rss" category="News" />
       <outline title="China Now" xmlUrl="https://feed.podbean.com/chinanow/feed.xml" type="rss" category="Politics" />
       <outline title="Drum Tower from The Economist" xmlUrl="https://access.acast.com/rss/633ebf6dfc7f5a0012acdc97" type="rss" category="News" />
@@ -31,56 +27,8 @@
       <outline title="Old Wisdom, New Insights" xmlUrl="https://cgtn-radio-data.cgtn.com/rss/programother/517" type="rss" category="Education" />
     </outline>
     <outline text="YouTube">
-      <outline title="ChinaCulturalTravel " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLVzkDvR7PIi9Sllc3q6GkQ" type="rss" />
-      <outline title="China Forest 福建:中国的森林城市" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVVQvxcZZuZga2wAg3bT7xA" type="rss" />
-      <outline title="China, the side you don't see - 这是你很少看到的中国一面" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6lvHwAtAK4RX6DBCo12Gkw" type="rss" />
-      <outline title="Afanda Exploring Fujian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMP6tMOSPH_Eq4Td2oGI4Yg" type="rss" />
-      <outline title="欧美中文融媒体中心" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCh1L81W_PGYskun01mioGYw" type="rss" />
-      <outline title="4K China Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOgcniNUbOy7tfi8j_T4m4Q" type="rss" />
-      <outline title="Beautiful China 美丽的中国 4K" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzsJplmidmkyWuEAvzjh-oQ" type="rss" />
-      <outline title="畫說福建" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgrxkkj0kwBWQzNhR-HgbwA" type="rss" />
-      <outline title="Chinese Culture Travel@诗意中国之旅" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_FUPL3UvBh8PajmIgMB44w" type="rss" />
-      <outline title="Hidden China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiOmEvmk4enDCUeYs64kqzg" type="rss" />
-      <outline title="Martime Fujian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeTgNlU-1d2v0za4j5jrp5Q" type="rss" />
-      <outline title="中国街 sightseeing trip tour" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB9TbUZak43g5aa4wI8mhxQ" type="rss" />
-      <outline title="Taste China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa_pOrzEvZxZnku27qbUaDw" type="rss" />
       <outline title="Impression of China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpojt3rpb8YYcGYLHkoYsCQ" type="rss" />
-      <outline title="EaAe Emora" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdCjELZkTriEWaOBi_S841w" type="rss" />
-      <outline title="China Museum for Fujian-Taiwan Kinship" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqGA_FehGAM0Cf1dT0rGFmQ" type="rss" />
-      <outline title="梅卷卷的Beautiful fujian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnED3fH_U0iCwerPu2FrRcA" type="rss" />
-      <outline title="美食中国 Tasty China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm9VVJPdCZ629FI4Up6fbKw" type="rss" />
-      <outline title="China Mística" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEr6nmmKNF3RuQ6M8Aw8H0A" type="rss" />
-      <outline title="Indian in china vlog" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCF3D68RRn4rFbYShwJg__xA" type="rss" />
-      <outline title="漫步中國街 | China Street" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFmQHnmdSNcwqkATKyxPVcg" type="rss" />
-      <outline title="china travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4NFiqTZZcgWHEMSG4TzgrA" type="rss" />
-      <outline title="China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFw5nTDeaGN0kuba-udmYDQ" type="rss" />
-      <outline title="China at Expo 2020" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCA4RM1KMb61MhoD1O8m1o-Q" type="rss" />
-      <outline title="中国城市旅游介绍  China City Tour Introduction" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHIK3M9ZoXtKfGE-2TIlWhQ" type="rss" />
-      <outline title="Meet China遇见中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXpWXQCsJY-Ixa9KQZjs-DQ" type="rss" />
-      <outline title="中国福建茶厂" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIjgckMGZSqAvL67j46N1AQ" type="rss" />
-      <outline title="Terry in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnpz9-U2IJXolxfAMhxWrag" type="rss" />
-      <outline title="HiChina" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcvRJI_K39kSlqsExbv7B8A" type="rss" />
-      <outline title="福建非万亿" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQykxOImMUxZLyDetGmsTgw" type="rss" />
-      <outline title="Refreshing Fujian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyCae_uE6nnlAnF9kaYbllw" type="rss" />
-      <outline title="Follow the beard to see China 跟着大胡子看中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGQ2A4d8iGTHzb6DXe_R6Hg" type="rss" />
-      <outline title="Fujian For You" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYg_kfRTmng4NaOv2Cpl8yQ" type="rss" />
-      <outline title="China Travel Guide / 中国旅游指南" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnjufAWolPbFlxyC3xkvhrQ" type="rss" />
-      <outline title="面向中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPPko8Z19x9T0jomFUgl44w" type="rss" />
-      <outline title="lifeinchina" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNAZdoVjhBLsusnUgZEBDow" type="rss" />
-      <outline title="中国媳妇卡佳" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkkhvEgYB6pnN0jd_0CPtgA" type="rss" />
-      <outline title="福建大乔" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBiQY2oEsehBmclPxBfCGkw" type="rss" />
-      <outline title="天汉" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCe0Fi9dQTXKY2WjPiNI5kmA" type="rss" />
-      <outline title="putian guy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6z5fmOUcZTbYO2KZwoLKfw" type="rss" />
-      <outline title="中国新闻社" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpbfXQsYBJTwq5lCkwGIeuQ" type="rss" />
-      <outline title="中国东南卫视官方频道 China Southeast TV Official Channel 【欢迎订阅】" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN2e8dLY9KnH-B15LyBM7Fg" type="rss" />
-      <outline title="Awkward and Irish in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI989VWGaUy-11APZAC9JRw" type="rss" />
-      <outline title="China traveller美丽中国" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCol7vQNV46few7uthhsCgqg" type="rss" />
-      <outline title="重回福建" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_B07UH5F303oB2yIVCT4WQ" type="rss" />
       <outline title="China Memory Trip " xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY3sO0wXCkKNSLuiw99YVHA" type="rss" />
-      <outline title="Fun Fujian 欢·福建" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNyF9Cz3_5vkWZ8iZKP-d7Q" type="rss" />
-      <outline title="China Undercover" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuQ5pTs7ANOc2UAf1gR71-A" type="rss" />
-      <outline title="Blondie in China" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCISrVZmDM4x-Rq9mmNUw7Zw" type="rss" />
-      <outline title="闽湖阿嬤Fujian Grandma" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCA9n787LX5srHH-KTv_yZ9Q" type="rss" />
     </outline>
   </body>
 </opml>

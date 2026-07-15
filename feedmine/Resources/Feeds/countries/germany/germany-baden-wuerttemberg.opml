@@ -4,7 +4,10 @@
     <title>Baden-Württemberg Feeds</title>
   </head>
   <body>
-      <outline text="News" />
-      <outline text="Politics" />
-      <outline text="Education" /></body>
-    </opml>
+    <outline text="News" />
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

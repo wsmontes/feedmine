@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Literary Criticism, Book Reviews &amp; Reading Feeds</title>
+  </head>
+  <body>
+    <outline text="Book Reviews &amp; Literary Criticism">
+      <outline title="London Review of Books (LRB)" xmlUrl="https://www.lrb.co.uk/rss" type="rss" />
+      <outline title="The New York Review of Books" xmlUrl="https://www.nybooks.com/feed/" type="rss" />
+      <outline title="Bookforum" xmlUrl="https://www.bookforum.com/rss" type="rss" />
+      <outline title="Literary Hub (LitHub)" xmlUrl="https://lithub.com/feed/" type="rss" />
+      <outline title="The Millions" xmlUrl="https://themillions.com/feed/" type="rss" />
+      <outline title="Electric Literature" xmlUrl="https://electricliterature.com/feed/" type="rss" />
+      <outline title="The Rumpus" xmlUrl="https://therumpus.net/feed/" type="rss" />
+      <outline title="Publishers Weekly" xmlUrl="https://www.publishersweekly.com/rss" type="rss" />
+      <outline title="The Guardian — Books" xmlUrl="https://www.theguardian.com/books/rss" type="rss" />
+      <outline title="NYT — Books" xmlUrl="https://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/section/books/rss.xml" type="rss" />
+      <outline title="Shelf Awareness" xmlUrl="https://www.shelf-awareness.com/rss" type="rss" />
+    </outline>
+    <outline text="Literary Magazines &amp; Journals">
+      <outline title="Granta" xmlUrl="https://granta.com/feed/" type="rss" />
+      <outline title="n+1 Magazine" xmlUrl="https://www.nplusonemag.com/feed/" type="rss" />
+      <outline title="The Kenyon Review" xmlUrl="https://kenyonreview.org/feed/" type="rss" />
+      <outline title="Ploughshares" xmlUrl="https://www.pshares.org/rss" type="rss" />
+      <outline title="Guernica Magazine" xmlUrl="https://www.guernicamag.com/feed/" type="rss" />
+      <outline title="The Common Magazine" xmlUrl="https://www.thecommononline.org/feed/" type="rss" />
+      <outline title="One Story" xmlUrl="https://one-story.com/feed/" type="rss" />
+      <outline title="American Short Fiction" xmlUrl="https://americanshortfiction.org/feed/" type="rss" />
+      <outline title="The White Review" xmlUrl="https://www.thewhitereview.org/feed/" type="rss" />
+      <outline title="LitMag" xmlUrl="https://www.litmag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Book Blogs &amp; Communities">
+      <outline title="Book Riot" xmlUrl="https://bookriot.com/feed/" type="rss" />
+      <outline title="Tor.com (Sci-Fi &amp; Fantasy)" xmlUrl="https://www.tor.com/rss/" type="rss" />
+      <outline title="The Book Smugglers" xmlUrl="https://www.thebooksmugglers.com/feed/" type="rss" />
+      <outline title="Literary Quicksand" xmlUrl="https://literaryquicksand.com/feed/" type="rss" />
+      <outline title="BookPage" xmlUrl="https://www.bookpage.com/feed/" type="rss" />
+      <outline title="Book Marks (LitHub)" xmlUrl="https://bookmarks.reviews/feed/" type="rss" />
+      <outline title="CrimeReads" xmlUrl="https://crimereads.com/feed/" type="rss" />
+      <outline title="Reading Group Choices" xmlUrl="https://readinggroupchoices.com/feed/" type="rss" />
+    </outline>
+    <outline text="Publishing Industry News">
+      <outline title="Publishers Weekly" xmlUrl="https://www.publishersweekly.com/rss" type="rss" />
+      <outline title="The Bookseller (UK)" xmlUrl="https://www.thebookseller.com/rss" type="rss" />
+      <outline title="Publishing Perspectives" xmlUrl="https://publishingperspectives.com/feed/" type="rss" />
+      <outline title="Literary Hub — Publishing" xmlUrl="https://lithub.com/category/publishing/feed/" type="rss" />
+      <outline title="Jane Friedman (Publishing)" xmlUrl="https://janefriedman.com/feed/" type="rss" />
+    </outline>
+    <outline text="Literary Prizes &amp; Awards">
+      <outline title="National Book Awards" xmlUrl="https://www.nationalbook.org/rss/" type="rss" />
+      <outline title="Women's Prize for Fiction" xmlUrl="https://www.womensprizeforfiction.co.uk/rss" type="rss" />
+    </outline>
+    <outline text="Brazilian Literary Scene">
+      <outline title="Revista Piauí" xmlUrl="https://piaui.folha.uol.com.br/feed/" type="rss" />
+      <outline title="Rascunho (Jornal Literário)" xmlUrl="https://rascunho.com.br/feed/" type="rss" />
+      <outline title="Suplemento Pernambuco" xmlUrl="https://suplementopernambuco.com.br/feed/" type="rss" />
+      <outline title="Quatro Cinco Um" xmlUrl="https://www.quatrocincoum.com.br/rss/" type="rss" />
+      <outline title="Revista Cult" xmlUrl="https://revistacult.uol.com.br/home/feed/" type="rss" />
+    </outline>
+    <outline text="Literary Podcasts">
+      </outline>
+    <outline text="YouTube — Literary &amp; BookTube">
+      </outline>
+    <outline text="More Literary Blogs &amp; Sites">
+      <outline title="Public Books" xmlUrl="https://www.publicbooks.org/feed/" type="rss" />
+      <outline title="Full Stop" xmlUrl="https://www.full-stop.net/feed/" type="rss" />
+      <outline title="The Drift Magazine" xmlUrl="https://www.thedriftmag.com/feed/" type="rss" />
+      <outline title="The Point Magazine" xmlUrl="https://thepointmag.com/feed/" type="rss" />
+      <outline title="The Baffler" xmlUrl="https://thebaffler.com/feed" type="rss" />
+      <outline title="3:AM Magazine" xmlUrl="https://www.3ammagazine.com/3am/feed/" type="rss" />
+      <outline title="The Literary Review" xmlUrl="https://www.theliteraryreview.org/feed/" type="rss" />
+      <outline title="Cleaver Magazine" xmlUrl="https://www.cleavermagazine.com/feed/" type="rss" />
+      <outline title="Vol. 1 Brooklyn" xmlUrl="https://vol1brooklyn.com/feed/" type="rss" />
+      <outline title="Largehearted Boy" xmlUrl="https://largeheartedboy.com/feed/" type="rss" />
+    </outline>
+    <outline text="More Literary Podcasts">
+      <outline title="Reading Women" xmlUrl="https://feeds.libsyn.com/readingwomen" type="rss" />
+    </outline>
+    <outline text="More YouTube — Book Reviewers">
+      </outline>
+  </body>
+</opml>

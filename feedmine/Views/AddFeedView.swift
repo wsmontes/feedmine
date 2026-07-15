@@ -342,6 +342,7 @@ struct AddFeedView: View {
         case .text: return "doc.text"
         case .video: return "play.rectangle.fill"
         case .audio: return "headphones"
+        case .forum: return "bubble.left.and.bubble.right.fill"
         }
     }
 
@@ -350,6 +351,7 @@ struct AddFeedView: View {
         case .text: return .blue
         case .video: return .red
         case .audio: return .purple
+        case .forum: return .orange
         }
     }
 }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Data Science, ML, Analytics &amp; Big Data</title>
+  </head>
+  <body>
+    <outline text="Data Science News &amp; Publications">
+      <outline title="Towards Data Science" xmlUrl="https://towardsdatascience.com/feed" type="rss" />
+      <outline title="KDnuggets" xmlUrl="https://www.kdnuggets.com/feed" type="rss" />
+      <outline title="Analytics Vidhya" xmlUrl="https://www.analyticsvidhya.com/feed/" type="rss" />
+      <outline title="Data Science Central" xmlUrl="https://www.datasciencecentral.com/feed/" type="rss" />
+      <outline title="Kaggle Blog" xmlUrl="https://medium.com/feed/kaggle-blog" type="rss" />
+      <outline title="Machine Learning Mastery" xmlUrl="https://machinelearningmastery.com/feed/" type="rss" />
+      <outline title="Datafloq" xmlUrl="https://datafloq.com/feed/" type="rss" />
+      <outline title="O'Reilly Data" xmlUrl="https://www.oreilly.com/radar/feed/" type="rss" />
+    </outline>
+    <outline text="AI &amp; Machine Learning Research">
+      <outline title="ArXiv — Machine Learning" xmlUrl="https://arxiv.org/rss/cs.LG" type="rss" />
+      <outline title="ArXiv — AI" xmlUrl="https://arxiv.org/rss/cs.AI" type="rss" />
+      <outline title="ArXiv — Computer Vision" xmlUrl="https://arxiv.org/rss/cs.CV" type="rss" />
+      <outline title="ArXiv — NLP" xmlUrl="https://arxiv.org/rss/cs.CL" type="rss" />
+      <outline title="Papers With Code" xmlUrl="https://paperswithcode.com/feed" type="rss" />
+      <outline title="Distill.pub" xmlUrl="https://distill.pub/rss.xml" type="rss" />
+    </outline>
+    <outline text="ML/AI Company Blogs">
+      <outline title="Hugging Face Blog" xmlUrl="https://huggingface.co/blog/feed.xml" type="rss" />
+      <outline title="NVIDIA AI Blog" xmlUrl="https://blogs.nvidia.com/feed/" type="rss" />
+      <outline title="Microsoft Research Blog" xmlUrl="https://www.microsoft.com/en-us/research/feed/" type="rss" />
+    </outline>
+    <outline text="Big Data &amp; Engineering">
+      <outline title="dbt Labs Blog" xmlUrl="https://www.getdbt.com/blog/rss.xml" type="rss" />
+    </outline>
+    <outline text="Statistics &amp; Visualization">
+      <outline title="FiveThirtyEight" xmlUrl="https://fivethirtyeight.com/feed/" type="rss" />
+      <outline title="FlowingData" xmlUrl="https://flowingdata.com/feed/" type="rss" />
+      <outline title="Statistical Modeling Blog" xmlUrl="https://statmodeling.stat.columbia.edu/feed/" type="rss" />
+      <outline title="Observable Blog" xmlUrl="https://observablehq.com/blog/feed" type="rss" />
+    </outline>
+    <outline text="Data Science Podcasts">
+      <outline title="Data Skeptic" xmlUrl="https://feeds.libsyn.com/dataskeptic" type="rss" />
+    </outline>
+    <outline text="YouTube — Data Science &amp; ML">
+      </outline>
+    <outline text="Python for Data Science">
+      <outline title="PyData Blog" xmlUrl="https://pydata.org/rss/" type="rss" />
+      <outline title="Python Weekly" xmlUrl="https://www.pythonweekly.com/rss" type="rss" />
+      <outline title="Jupyter Blog" xmlUrl="https://blog.jupyter.org/feed" type="rss" />
+      <outline title="Anaconda Blog" xmlUrl="https://www.anaconda.com/blog/feed/" type="rss" />
+    </outline>
+    <outline text="R Language &amp; Statistics">
+      <outline title="R-bloggers" xmlUrl="https://www.r-bloggers.com/feed/" type="rss" />
+    </outline>
+    <outline text="Data Engineering &amp; Warehousing">
+      <outline title="Monte Carlo Data" xmlUrl="https://www.montecarlodata.com/blog/feed/" type="rss" />
+      <outline title="Prefect Blog" xmlUrl="https://www.prefect.io/blog/rss" type="rss" />
+    </outline>
+    <outline text="More DS &amp; ML Sites">
+      <outline title="Import AI (Jack Clark)" xmlUrl="https://jack-clark.net/feed/" type="rss" />
+      <outline title="The Gradient" xmlUrl="https://thegradient.pub/rss/" type="rss" />
+      <outline title="Weights &amp; Biases Blog" xmlUrl="https://wandb.ai/rss" type="rss" />
+    </outline>
+    <outline text="More DS YouTube &amp; Podcasts">
+      <outline title="Data Viz Today" xmlUrl="https://feeds.libsyn.com/dataviztoday" type="rss" />
+      <outline title="Storytelling with Data Podcast" xmlUrl="https://feeds.libsyn.com/storytellingwithdata" type="rss" />
+      <outline title="Data &amp; Society" xmlUrl="https://datasociety.net/feed/" type="rss" />
+      <outline title="AI Now Institute" xmlUrl="https://ainowinstitute.org/rss" type="rss" />
+      <outline title="Data &amp; Analytics — The Verge" xmlUrl="https://www.theverge.com/rss/ai-artificial-intelligence" type="rss" />
+    </outline>
+  </body>
+</opml>

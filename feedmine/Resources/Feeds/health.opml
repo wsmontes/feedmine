@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Health &amp; Wellness Feeds</title>
+  </head>
+  <body>
+    <outline text="Health Organizations &amp; Agencies">
+      <outline title="NHS England — News" xmlUrl="https://www.england.nhs.uk/feed/" type="rss" />
+      <outline title="Health Canada" xmlUrl="https://www.canada.ca/en/health-canada/rss.html" type="rss" />
+    </outline>
+    <outline text="Health News &amp; Media">
+      <outline title="STAT News" xmlUrl="https://www.statnews.com/feed/" type="rss" />
+      <outline title="Medscape" xmlUrl="https://www.medscape.com/rss" type="rss" />
+      <outline title="NPR — Health" xmlUrl="https://feeds.npr.org/1001/rss.xml" type="rss" />
+      <outline title="BBC — Health" xmlUrl="https://feeds.bbci.co.uk/news/health/rss.xml" type="rss" />
+      <outline title="The Guardian — Health" xmlUrl="https://www.theguardian.com/society/health/rss" type="rss" />
+      <outline title="Kaiser Health News" xmlUrl="https://khn.org/feed/" type="rss" />
+      <outline title="Everyday Health" xmlUrl="https://www.everydayhealth.com/rss/" type="rss" />
+    </outline>
+    <outline text="Major Medical Centers">
+      </outline>
+    <outline text="Medical Research &amp; Journals">
+      <outline title="BMJ (British Medical Journal)" xmlUrl="https://www.bmj.com/rss" type="rss" />
+      <outline title="Nature Medicine" xmlUrl="https://www.nature.com/nm.rss" type="rss" />
+      <outline title="BMC Medicine" xmlUrl="https://bmcmedicine.biomedcentral.com/rss" type="rss" />
+    </outline>
+    <outline text="Fitness &amp; Exercise">
+      <outline title="Men's Health" xmlUrl="https://www.menshealth.com/feed/" type="rss" />
+      <outline title="Women's Health" xmlUrl="https://www.womenshealthmag.com/feed/" type="rss" />
+      <outline title="Muscle &amp; Fitness" xmlUrl="https://www.muscleandfitness.com/feed/" type="rss" />
+      <outline title="ACE Fitness" xmlUrl="https://www.acefitness.org/rss/" type="rss" />
+      <outline title="Nerd Fitness" xmlUrl="https://www.nerdfitness.com/feed/" type="rss" />
+      <outline title="Breaking Muscle" xmlUrl="https://breakingmuscle.com/feed/" type="rss" />
+      <outline title="Triathlete Magazine" xmlUrl="https://www.triathlete.com/feed/" type="rss" />
+      <outline title="Yoga Journal" xmlUrl="https://www.yogajournal.com/feed/" type="rss" />
+    </outline>
+    <outline text="Nutrition &amp; Diet">
+      <outline title="NutritionFacts.org" xmlUrl="https://nutritionfacts.org/feed/" type="rss" />
+      <outline title="Precision Nutrition" xmlUrl="https://www.precisionnutrition.com/feed" type="rss" />
+      <outline title="The Nutrition Source (Harvard)" xmlUrl="https://www.hsph.harvard.edu/nutritionsource/feed/" type="rss" />
+      <outline title="Diet Doctor" xmlUrl="https://www.dietdoctor.com/feed" type="rss" />
+      <outline title="Wellness Mama" xmlUrl="https://wellnessmama.com/feed/" type="rss" />
+    </outline>
+    <outline text="Mental Health">
+      </outline>
+    <outline text="Wellness &amp; Lifestyle">
+      <outline title="Well+Good" xmlUrl="https://www.wellandgood.com/feed/" type="rss" />
+      <outline title="Dr. Axe" xmlUrl="https://draxe.com/feed/" type="rss" />
+      <outline title="Mark's Daily Apple" xmlUrl="https://www.marksdailyapple.com/feed/" type="rss" />
+      <outline title="Greatist" xmlUrl="https://greatist.com/feed" type="rss" />
+    </outline>
+    <outline text="Health Podcasts">
+      <outline title="The Doctor's Farmacy (Mark Hyman)" xmlUrl="https://feeds.megaphone.fm/thedoctorsfarmacy" type="rss" />
+      <outline title="Huberman Lab" xmlUrl="https://feeds.megaphone.fm/hubermanlab" type="rss" />
+      <outline title="FoundMyFitness (Rhonda Patrick)" xmlUrl="https://feeds.libsyn.com/foundmyfitness" type="rss" />
+      <outline title="Feel Better, Live More (Rangan Chatterjee)" xmlUrl="https://feeds.megaphone.fm/feelbetterlivemore" type="rss" />
+    </outline>
+    <outline text="YouTube — Health &amp; Fitness">
+      </outline>
+    <outline text="More Health &amp; Medical Sites">
+      <outline title="Healio" xmlUrl="https://www.healio.com/rss" type="rss" />
+      <outline title="Medical Xpress" xmlUrl="https://medicalxpress.com/rss-feed/" type="rss" />
+      <outline title="ScienceDaily — Health" xmlUrl="https://www.sciencedaily.com/rss/health_medicine.xml" type="rss" />
+      <outline title="American Heart Association" xmlUrl="https://www.heart.org/rss" type="rss" />
+      <outline title="American Cancer Society" xmlUrl="https://www.cancer.org/rss" type="rss" />
+      <outline title="Sleep Foundation" xmlUrl="https://www.sleepfoundation.org/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

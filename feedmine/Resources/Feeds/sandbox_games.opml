@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Minecraft, Roblox &amp; Sandbox/Infinite World Games</title>
+  </head>
+  <body>
+    <outline text="Minecraft — Official &amp; News">
+      </outline>
+    <outline text="Minecraft Community &amp; Mods">
+      <outline title="Minecraft Forum" xmlUrl="https://www.minecraftforum.net/rss/" type="rss" />
+      <outline title="MineCraftMods" xmlUrl="https://minecraftmods.com/feed/" type="rss" />
+      <outline title="ResourcePack.net" xmlUrl="https://resourcepack.net/rss/" type="rss" />
+      <outline title="Minecraft Maps" xmlUrl="https://www.minecraftmaps.com/rss" type="rss" />
+    </outline>
+    <outline text="Roblox — Official &amp; Dev">
+      <outline title="Roblox Blog" xmlUrl="https://blog.roblox.com/rss/" type="rss" />
+    </outline>
+    <outline text="Roblox Community">
+      <outline title="Roblox News Blog" xmlUrl="https://robloxnews.com/feed/" type="rss" />
+      <outline title="RobloxScripting.com" xmlUrl="https://robloxscripting.com/feed/" type="rss" />
+    </outline>
+    <outline text="Terraria &amp; Pixel Sandboxes">
+      <outline title="Terraria News" xmlUrl="https://terraria.org/rss" type="rss" />
+      <outline title="Stardew Valley Blog" xmlUrl="https://www.stardewvalley.net/feed/" type="rss" />
+      <outline title="Starbound Blog" xmlUrl="https://playstarbound.com/feed/" type="rss" />
+      <outline title="Factorio Blog" xmlUrl="https://factorio.com/blog/rss" type="rss" />
+    </outline>
+    <outline text="Infinite Worlds &amp; Survival">
+      </outline>
+    <outline text="Minecraft YouTube">
+      </outline>
+    <outline text="Roblox &amp; More YouTube">
+      </outline>
+    <outline text="More Sandbox &amp; Creation Games">
+      <outline title="Scrap Mechanic Blog" xmlUrl="https://www.scrapmechanic.com/rss/" type="rss" />
+      <outline title="Garry's Mod News" xmlUrl="https://www.garrysmod.com/rss/" type="rss" />
+      <outline title="7 Days to Die Blog" xmlUrl="https://7daystodie.com/rss/" type="rss" />
+    </outline>
+    <outline text="More Minecraft &amp; Sandbox YouTube">
+      </outline>
+  </body>
+</opml>

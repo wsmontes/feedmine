@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Motorcycling — News, Reviews, Custom &amp; Adventure</title>
+  </head>
+  <body>
+    <outline text="Motorcycle News &amp; Magazines">
+      <outline title="Visordown" xmlUrl="https://www.visordown.com/rss" type="rss" />
+      <outline title="Rider Magazine" xmlUrl="https://ridermagazine.com/feed/" type="rss" />
+      <outline title="Ultimate Motorcycling" xmlUrl="https://ultimatemotorcycling.com/feed/" type="rss" />
+      <outline title="Australian Motorcycle News" xmlUrl="https://amcn.com.au/feed/" type="rss" />
+    </outline>
+    <outline text="Motorcycle Gear &amp; Reviews">
+      <outline title="Asphalt &amp; Rubber" xmlUrl="https://www.asphaltandrubber.com/feed/" type="rss" />
+      <outline title="RideApart — Gear" xmlUrl="https://www.rideapart.com/rss/" type="rss" />
+      <outline title="webbikeworld" xmlUrl="https://www.webbikeworld.com/feed/" type="rss" />
+      <outline title="Motorcycle Gear Reviews" xmlUrl="https://motorcyclegearreview.com/feed/" type="rss" />
+    </outline>
+    <outline text="Custom &amp; Cafe Racer Motorcycles">
+      <outline title="Bike EXIF" xmlUrl="https://www.bikeexif.com/feed" type="rss" />
+      <outline title="Pipeburn" xmlUrl="https://www.pipeburn.com/feed/" type="rss" />
+      <outline title="BikeBound" xmlUrl="https://www.bikebound.com/feed/" type="rss" />
+      <outline title="Silodrome — Motorcycles" xmlUrl="https://silodrome.com/category/motorcycles/feed/" type="rss" />
+      <outline title="Inazuma Café Racer" xmlUrl="https://inazumacafe.blogspot.com/feeds/posts/default" type="rss" />
+    </outline>
+    <outline text="Adventure &amp; Touring Motorcycling">
+      <outline title="ADV Pulse" xmlUrl="https://www.advpulse.com/feed/" type="rss" />
+      <outline title="Adventure Rider (ADVRider)" xmlUrl="https://www.advrider.com/rss/" type="rss" />
+      <outline title="Overland Magazine" xmlUrl="https://overlandmag.com/feed/" type="rss" />
+      <outline title="Mad or Nomad" xmlUrl="https://www.madornomad.com/feed/" type="rss" />
+    </outline>
+    <outline text="MotoGP &amp; Racing">
+      <outline title="Crash.net — MotoGP" xmlUrl="https://www.crash.net/rss/motogp" type="rss" />
+      <outline title="Roadracing World" xmlUrl="https://www.roadracingworld.com/feed/" type="rss" />
+    </outline>
+    <outline text="Motorcycle Safety &amp; Training">
+      <outline title="Motorcycle Safety Foundation" xmlUrl="https://www.msf-usa.org/rss" type="rss" />
+    </outline>
+    <outline text="Women &amp; Motorcycles">
+      <outline title="Women Riders Now" xmlUrl="https://www.womenridersnow.com/rss" type="rss" />
+      <outline title="Women's Motorcycle Tours" xmlUrl="https://womensmotorcycletours.com/feed/" type="rss" />
+    </outline>
+    <outline text="Motorcycle Podcasts">
+      <outline title="Front End Chatter" xmlUrl="https://feeds.libsyn.com/frontendchatter" type="rss" />
+    </outline>
+    <outline text="YouTube — Motorcycle Channels">
+      </outline>
+    <outline text="Harley-Davidson &amp; Cruiser Scene">
+      <outline title="Thunder Press" xmlUrl="https://www.thunderpress.net/rss" type="rss" />
+      <outline title="Hot Bike Magazine" xmlUrl="https://www.hotbikeweb.com/rss/" type="rss" />
+      <outline title="Cycle Source Magazine" xmlUrl="https://cyclesource.com/feed/" type="rss" />
+      <outline title="American Iron Magazine" xmlUrl="https://aimag.com/feed/" type="rss" />
+    </outline>
+    <outline text="Dirt Bikes &amp; Off-Road">
+      <outline title="Dirt Bike Magazine" xmlUrl="https://dirtbikemagazine.com/feed/" type="rss" />
+      <outline title="Motocross Action Magazine" xmlUrl="https://motocrossactionmag.com/feed/" type="rss" />
+      <outline title="Vital MX" xmlUrl="https://www.vitalmx.com/rss/" type="rss" />
+      <outline title="Enduro21" xmlUrl="https://enduro21.com/feed" type="rss" />
+    </outline>
+    <outline text="Scooters &amp; Urban Mobility">
+      </outline>
+    <outline text="More Motorcycle YouTube">
+      </outline>
+    <outline text="Motorcycle Travel Blogs">
+      <outline title="Motorcycle Traveler" xmlUrl="https://motorcycletraveler.com/feed/" type="rss" />
+      <outline title="MotoTrek" xmlUrl="https://mototrek.net/feed/" type="rss" />
+    </outline>
+    <outline text="Motorcycle Events &amp; Shows">
+      <outline title="EICMA — Milan Motorcycle Show" xmlUrl="https://www.eicma.it/en/rss/" type="rss" />
+      <outline title="Sturgis Motorcycle Rally" xmlUrl="https://www.sturgis.com/rss/" type="rss" />
+      <outline title="The Distinguished Gentleman's Ride" xmlUrl="https://www.gentlemansride.com/rss/" type="rss" />
+    </outline>
+  </body>
+</opml>

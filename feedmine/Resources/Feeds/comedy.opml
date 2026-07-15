@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Humor &amp; Comedy Feeds</title>
+  </head>
+  <body>
+    <outline text="Satire &amp; Fake News">
+      <outline title="The Onion" xmlUrl="https://www.theonion.com/rss" type="rss" />
+      <outline title="ClickHole" xmlUrl="https://clickhole.com/rss/" type="rss" />
+      <outline title="The Hard Times" xmlUrl="https://thehardtimes.net/feed/" type="rss" />
+      <outline title="The Beaverton (Canada)" xmlUrl="https://www.thebeaverton.com/feed/" type="rss" />
+      <outline title="The Daily Mash (UK)" xmlUrl="https://www.thedailymash.co.uk/feed" type="rss" />
+      <outline title="NewsThump (UK)" xmlUrl="https://newsthump.com/feed/" type="rss" />
+      <outline title="The Shovel (Australia)" xmlUrl="https://www.theshovel.com.au/feed/" type="rss" />
+      <outline title="Waterford Whispers (Ireland)" xmlUrl="https://waterfordwhispersnews.com/feed/" type="rss" />
+      <outline title="The Borowitz Report (New Yorker)" xmlUrl="https://www.newyorker.com/feed/humor/borowitz-report" type="rss" />
+    </outline>
+    <outline text="Humor &amp; Comedy Websites">
+      <outline title="Funny or Die" xmlUrl="https://www.funnyordie.com/feed" type="rss" />
+      <outline title="Bored Panda — Funny" xmlUrl="https://www.boredpanda.com/funny/feed/" type="rss" />
+      <outline title="The Chive" xmlUrl="https://thechive.com/feed/" type="rss" />
+      <outline title="Sad and Useless" xmlUrl="https://www.sadanduseless.com/feed/" type="rss" />
+      <outline title="Awkward Family Photos" xmlUrl="https://awkwardfamilyphotos.com/feed/" type="rss" />
+      <outline title="Pleated Jeans" xmlUrl="https://pleated-jeans.com/feed/" type="rss" />
+      <outline title="The Poke (UK)" xmlUrl="https://www.thepoke.com/feed/" type="rss" />
+    </outline>
+    <outline text="Webcomics">
+      <outline title="xkcd" xmlUrl="https://xkcd.com/rss.xml" type="rss" />
+      <outline title="The Oatmeal" xmlUrl="https://theoatmeal.com/feed/rss" type="rss" />
+      <outline title="Cyanide &amp; Happiness (Explosm)" xmlUrl="https://explosm.net/rss" type="rss" />
+      <outline title="SMBC — Saturday Morning Breakfast Cereal" xmlUrl="https://www.smbc-comics.com/rss.php" type="rss" />
+      <outline title="Poorly Drawn Lines" xmlUrl="https://poorlydrawnlines.com/feed/" type="rss" />
+      <outline title="Loading Artist" xmlUrl="https://loadingartist.com/feed/" type="rss" />
+      <outline title="Perry Bible Fellowship" xmlUrl="https://pbfcomics.com/rss/" type="rss" />
+    </outline>
+    <outline text="Late Night Shows">
+      <outline title="The Onion — TV" xmlUrl="https://www.theonion.com/rss/tv" type="rss" />
+    </outline>
+    <outline text="Comedy Podcasts">
+      <outline title="TigerBelly (Bobby Lee)" xmlUrl="https://feeds.megaphone.fm/tigerbelly" type="rss" />
+      <outline title="Bad Friends (Bobby Lee &amp; Santino)" xmlUrl="https://feeds.megaphone.fm/badfriends" type="rss" />
+      <outline title="This Past Weekend (Theo Von)" xmlUrl="https://feeds.megaphone.fm/thispastweekend" type="rss" />
+      <outline title="Kill Tony" xmlUrl="https://feeds.megaphone.fm/killtony" type="rss" />
+    </outline>
+    <outline text="YouTube — Comedy Channels">
+      </outline>
+    <outline text="More Webcomics">
+      <outline title="Buttersafe" xmlUrl="https://buttersafe.com/feed/" type="rss" />
+      <outline title="War and Peas" xmlUrl="https://warandpeas.com/feed/" type="rss" />
+      <outline title="False Knees" xmlUrl="https://falseknees.com/rss.xml" type="rss" />
+      <outline title="Mr. Lovenstein" xmlUrl="https://www.mrlovenstein.com/rss.xml" type="rss" />
+      <outline title="Wondermark" xmlUrl="https://wondermark.com/rss/" type="rss" />
+      <outline title="Catana Comics" xmlUrl="https://catanacomics.com/rss/" type="rss" />
+      <outline title="The Odd 1s Out" xmlUrl="https://theodd1sout.com/rss" type="rss" />
+    </outline>
+    <outline text="More Comedy Podcasts">
+      <outline title="Wait Wait... Don't Tell Me! (NPR)" xmlUrl="https://feeds.npr.org/344098539/podcast.xml" type="rss" />
+    </outline>
+    <outline text="More Comedy &amp; Humor Sites">
+      <outline title="The Toast (Daniel Lavery)" xmlUrl="https://the-toast.net/feed/" type="rss" />
+      <outline title="The Impersonals" xmlUrl="https://theimpersonals.com/feed/" type="rss" />
+      <outline title="Funny Twitter — Best of Tweets" xmlUrl="https://www.boredpanda.com/twitter/feed/" type="rss" />
+    </outline>
+  </body>
+</opml>

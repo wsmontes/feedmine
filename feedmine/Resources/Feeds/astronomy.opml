@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Astronomy &amp; Space Feeds</title>
+  </head>
+  <body>
+    <outline text="Space Agencies">
+      <outline title="NASA Breaking News" xmlUrl="https://www.nasa.gov/rss/dyn/breaking_news.rss" type="rss" />
+      <outline title="ESA Space Science" xmlUrl="https://www.esa.int/rssfeed/Our_Activities/Space_Science" type="rss" />
+      <outline title="ESA Human Spaceflight" xmlUrl="https://www.esa.int/rssfeed/Our_Activities/Human_Spaceflight" type="rss" />
+      <outline title="ESA Operations" xmlUrl="https://www.esa.int/rssfeed/Operations" type="rss" />
+      <outline title="UK Space Agency" xmlUrl="https://www.gov.uk/government/organisations/uk-space-agency.atom" type="rss" />
+    </outline>
+    <outline text="Observatories &amp; Telescopes">
+      <outline title="James Webb Space Telescope Blog" xmlUrl="https://blogs.nasa.gov/webb/feed/" type="rss" />
+      <outline title="NRAO News" xmlUrl="https://public.nrao.edu/feed/" type="rss" />
+      <outline title="Gemini Observatory" xmlUrl="https://www.gemini.edu/rss.xml" type="rss" />
+      <outline title="Keck Observatory News" xmlUrl="https://keckobservatory.org/feed/" type="rss" />
+      <outline title="Subaru Telescope" xmlUrl="https://subarutelescope.org/en/rss/" type="rss" />
+      <outline title="Very Large Array (VLA)" xmlUrl="https://public.nrao.edu/feed/" type="rss" />
+      <outline title="IceCube Neutrino Observatory" xmlUrl="https://icecube.wisc.edu/rss/" type="rss" />
+    </outline>
+    <outline text="News &amp; Magazines">
+      <outline title="Space.com — All" xmlUrl="https://www.space.com/feeds/all" type="rss" />
+      <outline title="Universe Today" xmlUrl="https://www.universetoday.com/feed/" type="rss" />
+      <outline title="SpaceNews" xmlUrl="https://spacenews.com/feed/" type="rss" />
+      <outline title="SpaceFlight Now" xmlUrl="https://spaceflightnow.com/feed/" type="rss" />
+      <outline title="NASASpaceFlight.com" xmlUrl="https://www.nasaspaceflight.com/feed/" type="rss" />
+      <outline title="Sky &amp; Telescope" xmlUrl="https://skyandtelescope.org/feed/" type="rss" />
+      <outline title="Astronomy Magazine" xmlUrl="https://astronomy.com/feed" type="rss" />
+      <outline title="EarthSky" xmlUrl="https://earthsky.org/feed/" type="rss" />
+      <outline title="New Scientist — Space" xmlUrl="https://www.newscientist.com/subject/space/feed/" type="rss" />
+      <outline title="Phys.org — Astronomy" xmlUrl="https://phys.org/rss-feed/space-news/" type="rss" />
+      <outline title="ScienceDaily — Astronomy" xmlUrl="https://www.sciencedaily.com/rss/space_time/astronomy.xml" type="rss" />
+      <outline title="ScienceDaily — Space Exploration" xmlUrl="https://www.sciencedaily.com/rss/space_time/space_exploration.xml" type="rss" />
+      <outline title="ScienceDaily — Extrasolar Planets" xmlUrl="https://www.sciencedaily.com/rss/space_time/extrasolar_planets.xml" type="rss" />
+      <outline title="ScienceDaily — Cosmology" xmlUrl="https://www.sciencedaily.com/rss/space_time/cosmology.xml" type="rss" />
+      <outline title="Ars Technica — Science" xmlUrl="https://feeds.arstechnica.com/arstechnica/science/" type="rss" />
+      <outline title="Wired — Science" xmlUrl="https://www.wired.com/category/science/feed/" type="rss" />
+      <outline title="Popular Science — Space" xmlUrl="https://www.popsci.com/category/space/feed/" type="rss" />
+      <outline title="Nature Astronomy" xmlUrl="https://www.nature.com/natastron.rss" type="rss" />
+      <outline title="Astronomy Now" xmlUrl="https://astronomynow.com/feed/" type="rss" />
+    </outline>
+    <outline text="Blogs &amp; Columns">
+      <outline title="Bad Astronomy (Phil Plait)" xmlUrl="https://www.syfy.com/tags/bad-astronomy/feed" type="rss" />
+      <outline title="Starts With a Bang (Ethan Siegel)" xmlUrl="https://www.forbes.com/sites/startswithabang/feed/" type="rss" />
+      <outline title="Centauri Dreams" xmlUrl="https://www.centauri-dreams.org/feed/" type="rss" />
+      <outline title="Cosmic Log" xmlUrl="https://cosmiclog.com/feed/" type="rss" />
+      <outline title="Astroblog (Ian Musgrave)" xmlUrl="http://astroblogger.blogspot.com/feeds/posts/default" type="rss" />
+      <outline title="One Minute Astronomer" xmlUrl="https://oneminuteastronomer.com/feed/" type="rss" />
+      <outline title="Visual Astronomy" xmlUrl="https://visualastronomy.com/feed/" type="rss" />
+      <outline title="The Daily Galaxy" xmlUrl="https://dailygalaxy.com/feed/" type="rss" />
+      <outline title="Many Worlds (Astrobiology)" xmlUrl="https://manyworlds.space/feed/" type="rss" />
+    </outline>
+    <outline text="Podcasts">
+      <outline title="Liftoff (Relay FM)" xmlUrl="https://www.relay.fm/liftoff/feed" type="rss" />
+      <outline title="Awesome Astronomy" xmlUrl="https://awesomeastronomy.libsyn.com/rss" type="rss" />
+    </outline>
+    <outline text="Research &amp; Preprints">
+      <outline title="arXiv — Astrophysics" xmlUrl="https://arxiv.org/rss/astro-ph" type="rss" />
+      <outline title="arXiv — Earth &amp; Planetary" xmlUrl="https://arxiv.org/rss/astro-ph.EP" type="rss" />
+      <outline title="arXiv — Cosmology &amp; Nongalactic" xmlUrl="https://arxiv.org/rss/astro-ph.CO" type="rss" />
+      <outline title="arXiv — Solar &amp; Stellar" xmlUrl="https://arxiv.org/rss/astro-ph.SR" type="rss" />
+      <outline title="arXiv — Galaxies" xmlUrl="https://arxiv.org/rss/astro-ph.GA" type="rss" />
+      <outline title="arXiv — High-Energy" xmlUrl="https://arxiv.org/rss/astro-ph.HE" type="rss" />
+      <outline title="arXiv — Instrumentation" xmlUrl="https://arxiv.org/rss/astro-ph.IM" type="rss" />
+      <outline title="AAS Nova" xmlUrl="https://aasnova.org/feed/" type="rss" />
+      <outline title="Astrobiology Magazine" xmlUrl="https://astrobiology.com/feed" type="rss" />
+      <outline title="Royal Astronomical Society" xmlUrl="https://ras.ac.uk/rss.xml" type="rss" />
+    </outline>
+    <outline text="Space Missions">
+      <outline title="Mars Exploration (NASA)" xmlUrl="https://mars.nasa.gov/rss/" type="rss" />
+      <outline title="Artemis Blog (NASA)" xmlUrl="https://blogs.nasa.gov/artemis/feed/" type="rss" />
+      <outline title="Space Station Blog" xmlUrl="https://blogs.nasa.gov/spacestation/feed/" type="rss" />
+      <outline title="OSIRIS-REx" xmlUrl="https://blogs.nasa.gov/osiris-rex/feed/" type="rss" />
+      <outline title="Mars 2020 Perseverance" xmlUrl="https://mars.nasa.gov/mars2020/rss/" type="rss" />
+      <outline title="Curiosity Rover" xmlUrl="https://mars.nasa.gov/msl/rss/" type="rss" />
+      <outline title="Europa Clipper" xmlUrl="https://europa.nasa.gov/rss/" type="rss" />
+    </outline>
+    <outline text="Commercial Space">
+      <outline title="SpaceX (SpaceNews Coverage)" xmlUrl="https://spacenews.com/tag/spacex/feed/" type="rss" />
+      <outline title="SpaceNews — Launch" xmlUrl="https://spacenews.com/segment/launch/feed/" type="rss" />
+    </outline>
+    <outline text="Space Weather">
+      <outline title="Space Weather Live" xmlUrl="https://www.spaceweatherlive.com/rss" type="rss" />
+    </outline>
+    <outline text="YouTube — Astronomy Channels">
+      <outline title="SciShow Space (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrMePiHCWG4Vwqv3t7W9EFg" type="rss" />
+      <outline title="PBS Space Time (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g" type="rss" />
+    </outline>
+  </body>
+</opml>

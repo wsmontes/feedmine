@@ -10,11 +10,8 @@
     </outline>
     <outline text="Education" />
     <outline text="Podcasts">
-      <outline title="Hapa英会話 Podcast" xmlUrl="https://feeds.acast.com/public/shows/65a19d6398c1070016f3e0f8" type="rss" category="Language Learning" />
-      <outline title="Deep in Japan" xmlUrl="https://feeds.transistor.fm/deep-in-japan" type="rss" category="Society &amp; Culture" />
       <outline title="Japan Eats!" xmlUrl="https://rss.art19.com/japan-eats" type="rss" category="Arts" />
       <outline title="Nightlife" xmlUrl="https://www.abc.net.au/feeds/7642312/podcast.xml" type="rss" category="Society &amp; Culture" />
-      <outline title="Live in Tokyo with Max D. Capo" xmlUrl="https://podcasts.apple.com/us/podcast/live-in-tokyo-with-max-d-capo/id1723641269" type="rss" category="Places &amp; Travel" />
       <outline title="Dreamlet" xmlUrl="https://anchor.fm/s/1298e894/podcast/rss" type="rss" category="Self-Improvement" />
       <outline title="Johnny Massacre's World" xmlUrl="https://anchor.fm/s/fb489d64/podcast/rss" type="rss" category="Politics" />
       <outline title="Coffee Break Japanese" xmlUrl="https://feeds.acast.com/public/shows/6790e290455ab42f9db3adf1" type="rss" category="Language Learning" />
@@ -24,5 +21,7 @@
       <outline title="Marriage Life and More" xmlUrl="https://rss.buzzsprout.com/1820062.rss" type="rss" category="Christianity" />
       <outline title="Chronicles of Old Singapore" xmlUrl="https://anchor.fm/s/f8688974/podcast/rss" type="rss" category="History" />
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

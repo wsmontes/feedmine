@@ -4,10 +4,12 @@
     <title>Pays de la Loire Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="France 3 PdL" xmlUrl="https://france3-regions.francetvinfo.fr/pays-de-la-loire/rss" type="rss" />
+    <outline text="News">
+      <outline title="France 3 PdL" xmlUrl="https://france3-regions.francetvinfo.fr/pays-de-la-loire/rss" type="rss" />
+    </outline>
+    <outline text="Politics">
       </outline>
-      <outline text="Politics">
-        <outline title="Région PdL" xmlUrl="https://www.paysdelaloire.fr/rss" type="rss" />
-      </outline></body>
-    </opml>
+    <outline text="YouTube">
+      </outline>
+  </body>
+</opml>

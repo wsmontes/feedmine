@@ -4,8 +4,11 @@
     <title>Sejong Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Sejong News" xmlUrl="https://www.sejongnews.co.kr/rss/" type="rss" />
+    <outline text="News">
+      <outline title="Sejong News" xmlUrl="https://www.sejongnews.co.kr/rss/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" /></body>
-    </opml>
+  </body>
+</opml>

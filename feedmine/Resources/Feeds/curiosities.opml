@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Curiosities, Trivia &amp; Interesting Facts</title>
+  </head>
+  <body>
+    <outline text="Trivia &amp; Fun Facts">
+      <outline title="The Fact Site" xmlUrl="https://www.thefactsite.com/feed/" type="rss" />
+      <outline title="Did You Know Facts" xmlUrl="https://didyouknowfacts.com/feed/" type="rss" />
+      <outline title="Unbelievable Facts" xmlUrl="https://unbelievable-facts.com/feed/" type="rss" />
+      <outline title="Fact City" xmlUrl="https://factcity.com/feed/" type="rss" />
+      <outline title="KickassFacts" xmlUrl="https://www.kickassfacts.com/feed/" type="rss" />
+      <outline title="List25" xmlUrl="https://list25.com/feed/" type="rss" />
+    </outline>
+    <outline text="Weird &amp; Bizarre">
+      <outline title="Oddity Central" xmlUrl="https://www.odditycentral.com/feed/" type="rss" />
+      <outline title="Atlas Obscura" xmlUrl="https://www.atlasobscura.com/feeds/latest" type="rss" />
+      <outline title="Bored Panda — Interesting" xmlUrl="https://www.boredpanda.com/interesting/feed/" type="rss" />
+      <outline title="Messy Nessy Chic" xmlUrl="https://www.messynessychic.com/feed/" type="rss" />
+      <outline title="Curious History" xmlUrl="https://curioushistory.com/feed/" type="rss" />
+      <outline title="Strange Remains" xmlUrl="https://strangeremains.com/feed/" type="rss" />
+    </outline>
+    <outline text="Knowledge &amp; Learning">
+      <outline title="Stack Exchange — Hot Questions" xmlUrl="https://stackexchange.com/feeds/questions" type="rss" />
+      <outline title="HowStuffWorks" xmlUrl="https://www.howstuffworks.com/rss" type="rss" />
+      <outline title="Now I Know" xmlUrl="https://nowiknow.com/feed/" type="rss" />
+      <outline title="Damn Interesting" xmlUrl="https://www.damninteresting.com/feed" type="rss" />
+      <outline title="The Kid Should See This" xmlUrl="https://thekidshouldseethis.com/feed" type="rss" />
+      <outline title="Aeon Magazine" xmlUrl="https://aeon.co/feed.rss" type="rss" />
+    </outline>
+    <outline text="Guinness &amp; Records">
+      <outline title="Guinness World Records" xmlUrl="https://www.guinnessworldrecords.com/rss" type="rss" />
+      <outline title="World Record Academy" xmlUrl="https://www.worldrecordacademy.com/rss" type="rss" />
+    </outline>
+    <outline text="Mystery &amp; Unexplained">
+      <outline title="Mysterious Universe" xmlUrl="https://mysteriousuniverse.org/feed/" type="rss" />
+      <outline title="Mystery Tribune" xmlUrl="https://www.mysterytribune.com/feed/" type="rss" />
+    </outline>
+    <outline text="Science &amp; Nature Curiosities">
+      <outline title="ZME Science" xmlUrl="https://www.zmescience.com/feed/" type="rss" />
+      <outline title="Earthly Mission" xmlUrl="https://earthlymission.com/feed/" type="rss" />
+      <outline title="Twisted Sifter" xmlUrl="https://twistedsifter.com/feed/" type="rss" />
+      <outline title="Laughing Squid" xmlUrl="https://laughingsquid.com/feed/" type="rss" />
+      <outline title="Colossal — Art &amp; Design" xmlUrl="https://www.thisiscolossal.com/feed/" type="rss" />
+    </outline>
+    <outline text="Curiosity Podcasts">
+      <outline title="Every Little Thing" xmlUrl="https://feeds.megaphone.fm/everylittlething" type="rss" />
+    </outline>
+    <outline text="YouTube — Curiosity &amp; Facts">
+      </outline>
+    <outline text="More Fun &amp; Interesting Sites">
+      <outline title="Boing Boing" xmlUrl="https://boingboing.net/feed" type="rss" />
+      <outline title="Neatorama" xmlUrl="https://www.neatorama.com/feed/" type="rss" />
+      <outline title="Cool Material" xmlUrl="https://coolmaterial.com/feed/" type="rss" />
+      <outline title="The Awesomer" xmlUrl="https://theawesomer.com/feed/" type="rss" />
+      <outline title="Swiss Miss" xmlUrl="https://www.swiss-miss.com/feed" type="rss" />
+      <outline title="DudeIWantThat" xmlUrl="https://www.dudeiwantthat.com/rss" type="rss" />
+      <outline title="Bored Panda" xmlUrl="https://www.boredpanda.com/feed/" type="rss" />
+      <outline title="Lifehacker" xmlUrl="https://lifehacker.com/rss" type="rss" />
+    </outline>
+    <outline text="Amazing Facts — Animals &amp; Nature">
+      <outline title="Animal Facts" xmlUrl="https://animalfacts.com/feed/" type="rss" />
+      <outline title="Fact Animal" xmlUrl="https://factanimal.com/feed/" type="rss" />
+      <outline title="One Kind Planet" xmlUrl="https://onekindplanet.org/feed/" type="rss" />
+    </outline>
+    <outline text="History &amp; Archaeology Curiosities">
+      <outline title="History Daily" xmlUrl="https://historydaily.com/feed/" type="rss" />
+      <outline title="The Vintage News" xmlUrl="https://www.thevintagenews.com/feed/" type="rss" />
+      <outline title="Rare Historical Photos" xmlUrl="https://rarehistoricalphotos.com/feed/" type="rss" />
+    </outline>
+    <outline text="Brazilian Curiosidades">
+      <outline title="Fatos Desconhecidos" xmlUrl="https://www.fatosdesconhecidos.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="More Curiosity YouTube">
+      </outline>
+  </body>
+</opml>

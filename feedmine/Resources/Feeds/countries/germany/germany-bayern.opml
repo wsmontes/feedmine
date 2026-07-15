@@ -4,13 +4,16 @@
     <title>Bayern Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Süddeutsche München" xmlUrl="https://rss.sueddeutsche.de/rss/Muenchen" type="rss" />
-        <outline title="Augsburger Allgemeine" xmlUrl="https://www.augsburger-allgemeine.de/rss" type="rss" />
+    <outline text="News">
+      <outline title="Süddeutsche München" xmlUrl="https://rss.sueddeutsche.de/rss/Muenchen" type="rss" />
+      <outline title="Augsburger Allgemeine" xmlUrl="https://www.augsburger-allgemeine.de/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="Sports">
+      <outline title="FC Bayern" xmlUrl="https://fcbayern.com/rss" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Education" />
-      <outline text="Sports">
-        <outline title="FC Bayern" xmlUrl="https://fcbayern.com/rss" type="rss" />
-      </outline></body>
-    </opml>
+  </body>
+</opml>

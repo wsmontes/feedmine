@@ -10,10 +10,12 @@
     <outline text="Sports">
       <outline title="AC Milan" xmlUrl="https://www.acmilan.com/feed/" type="rss" />
     </outline>
-<outline text="Cities">
-<outline text="Bergamo">
+    <outline text="Cities">
+      <outline text="Bergamo">
         <outline title="Bergamo News" xmlUrl="https://www.bergamonews.it/feed/" type="rss" />
       </outline>
     </outline>
+    <outline text="YouTube">
+      </outline>
   </body>
 </opml>

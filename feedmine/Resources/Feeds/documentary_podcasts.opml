@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Documentary &amp; Investigation Podcasts</title>
+  </head>
+  <body>
+    <outline text="True Crime Investigation">
+      <outline title="Your Own Backyard" xmlUrl="https://feeds.libsyn.com/yourownbackyard" type="rss" />
+    </outline>
+    <outline text="Investigative Journalism">
+      <outline title="Embedded (NPR)" xmlUrl="https://feeds.npr.org/510311/podcast.xml" type="rss" />
+      <outline title="Throughline (NPR)" xmlUrl="https://feeds.npr.org/510333/podcast.xml" type="rss" />
+    </outline>
+    <outline text="History Documentary">
+      <outline title="Dan Carlin's Hardcore History" xmlUrl="https://feeds.feedburner.com/dancarlin/history" type="rss" />
+      <outline title="The History of Rome" xmlUrl="https://feeds.libsyn.com/historyofrome" type="rss" />
+    </outline>
+    <outline text="Science &amp; Nature Documentary">
+      <outline title="Science Vs" xmlUrl="https://feeds.megaphone.fm/sciencevs" type="rss" />
+      <outline title="Invisibilia (NPR)" xmlUrl="https://feeds.npr.org/510307/podcast.xml" type="rss" />
+      <outline title="Twenty Thousand Hertz (Sound)" xmlUrl="https://feeds.megaphone.fm/20k" type="rss" />
+    </outline>
+    <outline text="Society &amp; Culture Documentary">
+      <outline title="Reply All (Internet)" xmlUrl="https://feeds.megaphone.fm/replyall" type="rss" />
+      <outline title="Floodlines (Hurricane Katrina)" xmlUrl="https://feeds.megaphone.fm/floodlines" type="rss" />
+    </outline>
+    <outline text="Documentary Podcast Networks">
+      <outline title="ABC (Australia) Podcasts" xmlUrl="https://www.abc.net.au/podcasts/rss" type="rss" />
+      <outline title="Pushkin Industries" xmlUrl="https://www.pushkin.fm/rss" type="rss" />
+    </outline>
+    <outline text="More True Crime &amp; Investigation">
+      <outline title="Culpable" xmlUrl="https://feeds.megaphone.fm/culpable" type="rss" />
+      <outline title="Chameleon: Hollywood Con Queen" xmlUrl="https://feeds.megaphone.fm/chameleon" type="rss" />
+    </outline>
+  </body>
+</opml>

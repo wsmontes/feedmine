@@ -1,0 +1,129 @@
+{
+  "country": "angola",
+  "internet_penetration": 0.36,
+  "dominant_platforms": [
+    "whatsapp",
+    "facebook",
+    "boomplay",
+    "audiomack",
+    "youtube"
+  ],
+  "languages": [
+    "en",
+    "fr",
+    "ar",
+    "sw",
+    "pt"
+  ],
+  "sources": {
+    "podcast_index": {
+      "priority": 1,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "deezer": {
+      "priority": 2,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "youtube_api": {
+      "priority": 3,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "ddg_text": {
+      "priority": 4,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "itunes": {
+      "priority": 5,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "listen_notes": {
+      "priority": 6,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "spotify": {
+      "priority": 7,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    },
+    "feedly": {
+      "priority": 8,
+      "enabled": true,
+      "params": {},
+      "min_results": 3,
+      "max_results": 50,
+      "timeout": 15
+    }
+  },
+  "local_directories": [],
+  "media_domains": [
+    "vanguardngr.com",
+    "punchng.com",
+    "thisdaylive.com",
+    "channelstv.com",
+    "premiumtimesng.com",
+    "guardian.ng",
+    "dailypost.ng",
+    "thecable.ng",
+    "saharareporters.com",
+    "nation.africa",
+    "citizen.digital",
+    "standardmedia.co.ke",
+    "the-star.co.ke",
+    "capitalfm.co.ke",
+    "mg.co.za",
+    "news24.com",
+    "iol.co.za",
+    "timeslive.co.za",
+    "ewn.co.za",
+    "dailymaverick.co.za",
+    "ghananewsagency.org",
+    "myjoyonline.com",
+    "citinewsroom.com",
+    "graphic.com.gh",
+    "peacefmonline.com",
+    "addisfortune.news",
+    "thereporterethiopia.com",
+    "ethiopianreporter.com",
+    "africanews.com",
+    "apanews.net",
+    "allafrica.com",
+    "theeastafrican.co.ke",
+    "africanarguments.org",
+    "jeuneafrique.com",
+    "lefaso.net",
+    "abidjan.net",
+    "seneweb.com",
+    "koaci.com"
+  ],
+  "disabled_sources": [],
+  "source_performance": {},
+  "generated_at": "2026-07-12T23:40:49.418253+00:00",
+  "generation_version": 2
+}

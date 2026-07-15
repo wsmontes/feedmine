@@ -4,12 +4,15 @@
     <title>New Hampshire Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Concord Monitor" xmlUrl="https://www.concordmonitor.com/rss" type="rss" />
-        <outline title="Nashua Telegraph" xmlUrl="https://www.nashuatelegraph.com/rss" type="rss" />
-        <outline title="NH Bulletin" xmlUrl="https://newhampshirebulletin.com/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Concord Monitor" xmlUrl="https://www.concordmonitor.com/rss" type="rss" />
+      <outline title="Nashua Telegraph" xmlUrl="https://www.nashuatelegraph.com/rss" type="rss" />
+      <outline title="NH Bulletin" xmlUrl="https://newhampshirebulletin.com/feed/" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education" />
+    <outline text="Culture" />
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Education" />
-      <outline text="Culture" /></body>
-    </opml>
+  </body>
+</opml>

@@ -4,58 +4,58 @@
     <title>Goiás Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Diário de Goiás" xmlUrl="https://diariodegoias.com.br/feed/" type="rss" />
-        <outline title="Jornal Opção" xmlUrl="https://www.jornalopcao.com.br/feed/" type="rss" />
-        <outline title="Governo de Goiás" xmlUrl="https://www.goias.gov.br/feed/" type="rss" />
-        <outline title="Prefeitura de Goiânia" xmlUrl="https://www.goiania.go.gov.br/feed/" type="rss" />
-        <outline title="Curta Mais Goiânia" xmlUrl="https://www.curtamais.com.br/goiania/feed/" type="rss" />
-        <outline title="A Redação" xmlUrl="https://www.aredacao.com.br/feed/" type="rss" />
-        <outline title="Zap Catalão" xmlUrl="https://www.zapcatalao.com.br/feed/" type="rss" />
+    <outline text="News">
+      <outline title="Diário de Goiás" xmlUrl="https://diariodegoias.com.br/feed/" type="rss" />
+      <outline title="Governo de Goiás" xmlUrl="https://www.goias.gov.br/feed/" type="rss" />
+      <outline title="Prefeitura de Goiânia" xmlUrl="https://www.goiania.go.gov.br/feed/" type="rss" />
+      <outline title="Curta Mais Goiânia" xmlUrl="https://www.curtamais.com.br/goiania/feed/" type="rss" />
+      <outline title="A Redação" xmlUrl="https://www.aredacao.com.br/feed/" type="rss" />
+      <outline title="Zap Catalão" xmlUrl="https://www.zapcatalao.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Sports">
+      <outline title="Atlético Goianiense" xmlUrl="https://www.atleticogoianiense.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Culture">
+      <outline title="Cultura GO" xmlUrl="https://www.cultura.go.gov.br/feed/" type="rss" />
+      <outline title="Vila Cultural" xmlUrl="https://vilacultural.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Education">
+      <outline title="UFG" xmlUrl="https://www.ufg.br/feed/" type="rss" />
+      <outline title="PUC Goiás" xmlUrl="https://www.pucgoias.edu.br/feed/" type="rss" />
+      <outline title="UEG" xmlUrl="https://www.ueg.br/feed/" type="rss" />
+    </outline>
+    <outline text="Technology">
       </outline>
-      <outline text="Sports">
-        <outline title="Atlético Goianiense" xmlUrl="https://www.atleticogoianiense.com.br/feed/" type="rss" />
+    <outline text="Business">
+      <outline title="FIEG" xmlUrl="https://www.fieg.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Food">
       </outline>
-      <outline text="Culture">
-        <outline title="Cultura GO" xmlUrl="https://www.cultura.go.gov.br/feed/" type="rss" />
-        <outline title="Vila Cultural" xmlUrl="https://vilacultural.com.br/feed/" type="rss" />
+    <outline text="Blogs">
+      <outline title="Blog do Altair Tavares" xmlUrl="https://altairtavares.com.br/feed/" type="rss" />
+      <outline title="Goiás 24h" xmlUrl="https://goias24horas.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Education">
-        <outline title="UFG" xmlUrl="https://www.ufg.br/feed/" type="rss" />
-        <outline title="PUC Goiás" xmlUrl="https://www.pucgoias.edu.br/feed/" type="rss" />
-        <outline title="IFG" xmlUrl="https://www.ifg.edu.br/feed/" type="rss" />
-        <outline title="UEG" xmlUrl="https://www.ueg.br/feed/" type="rss" />
-      </outline>
-      <outline text="Technology">
-      </outline>
-      <outline text="Business">
-        <outline title="FIEG" xmlUrl="https://www.fieg.com.br/feed/" type="rss" />
-      </outline>
-      <outline text="Food">
-      </outline>
-      <outline text="Blogs">
-        <outline title="Blog do Altair Tavares" xmlUrl="https://altairtavares.com.br/feed/" type="rss" />
-        <outline title="Goiás 24h" xmlUrl="https://goias24horas.com.br/feed/" type="rss" />
-      </outline></body>
-      <outline text="Podcasts">
-        <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
-        <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
-      </outline>
-      <outline text="YouTube">
-        <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
-        <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
-      </outline>
-      <outline text="Cities">
-        <outline text="Anápolis">
-          <outline title="DM Anápolis" xmlUrl="https://www.dmanapolis.com.br/feed/" type="rss" />
-          <outline title="Pref Anápolis" xmlUrl="https://www.anapolis.go.gov.br/feed/" type="rss" />
-        </outline>
-        <outline text="Pirenópolis">
-          <outline title="Piri News" xmlUrl="https://www.pirenopolisnews.com.br/feed/" type="rss" />
-        </outline>
-        <outline text="Caldas Novas">
-          <outline title="Caldas News" xmlUrl="https://www.caldasnovasnews.com.br/feed/" type="rss" />
-        </outline>
-      </outline>
-
-    </opml>
+  </body>
+  <outline text="Podcasts">
+    <outline title="NerdCast" xmlUrl="https://jovemnerd.com.br/feed-nerdcast/" type="rss" />
+    <outline title="Xadrez Verbal" xmlUrl="https://xadrezverbal.com/feed/" type="rss" />
+  </outline>
+  <outline text="YouTube">
+    <outline title="Manual do Mundo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHhA5hN2UohhFDfNXB_cvQ" type="rss" />
+    <outline title="Nerdologia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClu474HMtSe5u3FkDg4Z0BA" type="rss" />
+  </outline>
+  <outline text="Cities">
+    <outline text="Anápolis">
+      <outline title="DM Anápolis" xmlUrl="https://www.dmanapolis.com.br/feed/" type="rss" />
+      <outline title="Pref Anápolis" xmlUrl="https://www.anapolis.go.gov.br/feed/" type="rss" />
+    </outline>
+    <outline text="Pirenópolis">
+      <outline title="Piri News" xmlUrl="https://www.pirenopolisnews.com.br/feed/" type="rss" />
+    </outline>
+    <outline text="Caldas Novas">
+      <outline title="Caldas News" xmlUrl="https://www.caldasnovasnews.com.br/feed/" type="rss" />
+    </outline>
+  </outline>
+</opml>

@@ -4,11 +4,14 @@
     <title>Berlin Feeds</title>
   </head>
   <body>
-      <outline text="News">
-        <outline title="Berliner Zeitung" xmlUrl="https://www.berliner-zeitung.de/rss" type="rss" />
+    <outline text="News">
+      <outline title="Berliner Zeitung" xmlUrl="https://www.berliner-zeitung.de/rss" type="rss" />
+    </outline>
+    <outline text="Politics" />
+    <outline text="Education">
+      <outline title="HU Berlin" xmlUrl="https://www.hu-berlin.de/rss" type="rss" />
+    </outline>
+    <outline text="YouTube">
       </outline>
-      <outline text="Politics" />
-      <outline text="Education">
-        <outline title="HU Berlin" xmlUrl="https://www.hu-berlin.de/rss" type="rss" />
-      </outline></body>
-    </opml>
+  </body>
+</opml>

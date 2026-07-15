@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Arcade Games, Pinball &amp; Retro Gaming</title>
+  </head>
+  <body>
+    <outline text="Arcade News &amp; Culture">
+      <outline title="Arcade Heroes" xmlUrl="https://arcadeheroes.com/feed/" type="rss" />
+      <outline title="Arcade Blogger" xmlUrl="https://arcadeblogger.com/feed/" type="rss" />
+      <outline title="Retro Gamer Magazine" xmlUrl="https://www.retrogamer.net/rss/" type="rss" />
+      <outline title="Arcade Club Blog" xmlUrl="https://www.arcadeclub.co.uk/rss/" type="rss" />
+      <outline title="The Arcade Blogger" xmlUrl="https://arcadeblogger.com/feed/" type="rss" />
+    </outline>
+    <outline text="Pinball">
+      <outline title="This Week in Pinball" xmlUrl="https://www.thisweekinpinball.com/feed/" type="rss" />
+      <outline title="Stern Pinball News" xmlUrl="https://sternpinball.com/rss/" type="rss" />
+    </outline>
+    <outline text="Retro Gaming Community">
+      <outline title="Nintendo Life" xmlUrl="https://www.nintendolife.com/rss" type="rss" />
+      <outline title="Retro Dodo" xmlUrl="https://retrododo.com/feed/" type="rss" />
+      <outline title="Old School Gamer Magazine" xmlUrl="https://www.oldschoolgamermagazine.com/feed/" type="rss" />
+      <outline title="The Retro Room" xmlUrl="https://theretroroom.com/feed/" type="rss" />
+      <outline title="Retro Handhelds" xmlUrl="https://retrohandhelds.gg/feed/" type="rss" />
+      <outline title="RetroRGB" xmlUrl="https://www.retrorgb.com/rss" type="rss" />
+    </outline>
+    <outline text="Fighting Game Community (FGC)">
+      <outline title="FG Online" xmlUrl="https://www.fgonline.com/rss/" type="rss" />
+    </outline>
+    <outline text="Emulation &amp; FPGA">
+      <outline title="RPAN (Retro Portable)" xmlUrl="https://rpan.com/feed/" type="rss" />
+    </outline>
+    <outline text="Retro Podcasts">
+      <outline title="Retronauts" xmlUrl="https://feeds.libsyn.com/retronauts" type="rss" />
+      <outline title="Retro Asylum" xmlUrl="https://feeds.libsyn.com/retroasylum" type="rss" />
+    </outline>
+    <outline text="YouTube — Arcade &amp; Retro">
+      </outline>
+  </body>
+</opml>

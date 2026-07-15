@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Makeup, Beauty &amp; Skincare</title>
+  </head>
+  <body>
+    <outline text="Beauty &amp; Makeup Magazines">
+      </outline>
+    <outline text="Skincare &amp; Dermatology">
+      <outline title="The Skincare Edit" xmlUrl="https://theskincareedit.com/feed/" type="rss" />
+    </outline>
+    <outline text="Beauty Bloggers &amp; Influencers">
+      <outline title="Temptalia" xmlUrl="https://www.temptalia.com/feed/" type="rss" />
+      <outline title="Makeup and Beauty Blog" xmlUrl="https://www.makeupandbeautyblog.com/feed/" type="rss" />
+      <outline title="Nouveau Cheap" xmlUrl="https://nouveaucheap.com/feed/" type="rss" />
+      <outline title="A Model Recommends" xmlUrl="https://www.amodelrecommends.com/feed/" type="rss" />
+      <outline title="British Beauty Blogger" xmlUrl="https://www.britishbeautyblogger.com/feed/" type="rss" />
+      <outline title="Really Ree" xmlUrl="https://www.reallyree.com/feed" type="rss" />
+    </outline>
+    <outline text="Professional Makeup Artists">
+      </outline>
+    <outline text="Beauty Products &amp; Reviews">
+      <outline title="Sephora Blog" xmlUrl="https://www.sephora.com/beauty/rss/" type="rss" />
+      <outline title="Ulta Beauty Blog" xmlUrl="https://www.ulta.com/blog/rss" type="rss" />
+      <outline title="Beauty Bay Blog" xmlUrl="https://www.beautybay.com/blog/rss/" type="rss" />
+      <outline title="Beautylish Blog" xmlUrl="https://www.beautylish.com/rss" type="rss" />
+    </outline>
+    <outline text="Beauty Podcasts">
+      </outline>
+    <outline text="YouTube — Makeup &amp; Beauty">
+      </outline>
+    <outline text="More Skincare &amp; Clean Beauty">
+      <outline title="Herbivore Botanicals Blog" xmlUrl="https://www.herbivorebotanicals.com/blogs/news.atom" type="rss" />
+    </outline>
+    <outline text="Fragrance &amp; Perfume">
+      <outline title="Now Smell This" xmlUrl="https://www.nstperfume.com/feed/" type="rss" />
+      <outline title="Bois de Jasmin" xmlUrl="https://boisdejasmin.com/feed" type="rss" />
+      <outline title="The Perfume Society" xmlUrl="https://perfumesociety.org/feed/" type="rss" />
+    </outline>
+    <outline text="Nail Art &amp; Manicure">
+      <outline title="SoNailicious" xmlUrl="https://sonailicious.com/feed/" type="rss" />
+      <outline title="The Nailasaurus" xmlUrl="https://www.thenailasaurus.com/feeds/posts/default" type="rss" />
+      <outline title="Scratch Magazine" xmlUrl="https://www.scratchmagazine.co.uk/rss/" type="rss" />
+    </outline>
+    <outline text="Beauty for Men / Grooming">
+      <outline title="The Modest Man" xmlUrl="https://www.themodestman.com/feed/" type="rss" />
+    </outline>
+    <outline text="More Beauty YouTube">
+      </outline>
+  </body>
+</opml>
