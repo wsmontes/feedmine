@@ -16,7 +16,9 @@ final class SourceScheduler {
         sourcesByRegion: [String: [FeedSource]],
         activeRegion: String?,
         activeCategory: String?,
-        activeContentType: String? = nil  // "video", "audio", or nil for all
+        activeContentType: String? = nil,  // "video", "audio", or nil for all
+        prioritySourceURLs: Set<String> = [],
+        activeLanguages: Set<String> = []
     ) -> [FeedSource] {
         // 1. Determine scope
         let regions = activeRegion.map { [$0] } ?? Array(sourcesByRegion.keys)
@@ -89,52 +91,77 @@ final class SourceScheduler {
         // once, sort once, and pick from the front (O(S log S)).
         let deficitNeeded = Int(ceil(Double(bufferNeeded - currentBuffer) / 3.0))
         let maxSelect = max(deficitNeeded, 10)
-        let now = Date()
-        var scored: [(source: FeedSource, score: Double)] = []
-        scored.reserveCapacity(sourcesByRegion.values.map(\.count).reduce(0, +))
 
-        for region in regions {
-            guard let sources = sourcesByRegion[region] else { continue }
-            let regionDeficit = max(0, regionDeficits[region] ?? 0)
-            for source in sources {
-                let failures = consecutiveFailures[source.url] ?? 0
-                if failures >= 3 {
-                    let backoff = pow(2.0, Double(failures - 2)) * 60
-                    if let last = lastFetchedAt[source.url],
-                       now.timeIntervalSince(last) < backoff { continue }
-                }
-                let catDeficit = max(0, finalCategoryDeficits[source.category] ?? 0)
-
-                let contentTypeBoost: Double = switch activeContentType {
-                case "video": source.mediaKind == .video ? 3.0 : 1.0
-                case "audio": source.mediaKind == .audio ? 3.0 : 1.0
-                case "text":  source.mediaKind == .video ? 0.3 : (source.mediaKind == .audio ? 0.3 : 1.0)
-                default:      source.isYouTube ? 2.0 : (source.mediaKind == .audio ? 2.0 : 1.0)
-                }
-
-                let timeFactor: Double
-                if let last = lastFetchedAt[source.url] {
-                    timeFactor = min(1.0, now.timeIntervalSince(last) / 1800)
-                } else {
-                    timeFactor = 1.0
-                }
-
-                let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost
-                let finalScore = max(score, 0.01)
-                if finalScore > 0 { scored.append((source, finalScore)) }
-            }
-        }
-
-        scored.sort(by: { $0.score > $1.score })
-
+        // Phase 1: Priority sources jump the queue (Disney Fast Pass)
         var selected: [FeedSource] = []
         var selectedURLs = Set<String>()
         selectedURLs.reserveCapacity(maxSelect)
-        for (source, _) in scored {
-            guard selected.count < maxSelect else { break }
-            guard selectedURLs.insert(source.url).inserted else { continue }
-            selected.append(source)
+
+        if !prioritySourceURLs.isEmpty {
+            for region in regions {
+                guard let sources = sourcesByRegion[region] else { continue }
+                for source in sources {
+                    guard prioritySourceURLs.contains(source.url) else { continue }
+                    guard selectedURLs.insert(source.url).inserted else { continue }
+                    // Clear cooldown — treat as never-fetched
+                    lastFetchedAt.removeValue(forKey: source.url)
+                    consecutiveFailures.removeValue(forKey: source.url)
+                    selected.append(source)
+                }
+            }
         }
+
+        // Phase 2: Fill remaining slots with normal scoring
+        let remaining = maxSelect - selected.count
+        if remaining > 0 {
+            let now = Date()
+            var scored: [(source: FeedSource, score: Double)] = []
+            scored.reserveCapacity(sourcesByRegion.values.map(\.count).reduce(0, +))
+
+            for region in regions {
+                guard let sources = sourcesByRegion[region] else { continue }
+                let regionDeficit = max(0, regionDeficits[region] ?? 0)
+                for source in sources {
+                    guard !selectedURLs.contains(source.url) else { continue }
+                    let failures = consecutiveFailures[source.url] ?? 0
+                    if failures >= 3 {
+                        let backoff = pow(2.0, Double(failures - 2)) * 60
+                        if let last = lastFetchedAt[source.url],
+                           now.timeIntervalSince(last) < backoff { continue }
+                    }
+                    let catDeficit = max(0, finalCategoryDeficits[source.category] ?? 0)
+
+                    let contentTypeBoost: Double = switch activeContentType {
+                    case "video": source.mediaKind == .video ? 3.0 : 1.0
+                    case "audio": source.mediaKind == .audio ? 3.0 : 1.0
+                    case "text":  source.mediaKind == .video ? 0.3 : (source.mediaKind == .audio ? 0.3 : 1.0)
+                    default:      source.isYouTube ? 2.0 : (source.mediaKind == .audio ? 2.0 : 1.0)
+                    }
+
+                    let timeFactor: Double
+                    if let last = lastFetchedAt[source.url] {
+                        timeFactor = min(1.0, now.timeIntervalSince(last) / 1800)
+                    } else {
+                        timeFactor = 1.0
+                    }
+
+                    let languageBoost: Double = activeLanguages.isEmpty ? 1.0
+                        : (activeLanguages.contains(source.language ?? "") ? 3.0 : 0.5)
+
+                    let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost * languageBoost
+                    let finalScore = max(score, 0.01)
+                    if finalScore > 0 { scored.append((source, finalScore)) }
+                }
+            }
+
+            scored.sort(by: { $0.score > $1.score })
+            for (source, _) in scored {
+                guard selected.count < maxSelect else { break }
+                guard selectedURLs.insert(source.url).inserted else { continue }
+                selected.append(source)
+            }
+        }
+
         return selected
     }
 

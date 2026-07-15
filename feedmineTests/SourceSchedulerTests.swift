@@ -1,6 +1,7 @@
 import XCTest
 @testable import feedmine
 
+@MainActor
 final class SourceSchedulerTests: XCTestCase {
 
     func testNextBatchReturnsSourcesWhenBufferEmpty() {
@@ -20,7 +21,7 @@ final class SourceSchedulerTests: XCTestCase {
         let sources: [String: [FeedSource]] = [
             "global": [FeedSource(title: "A", url: "https://a.com/feed", category: "Tech", region: "global")]
         ]
-        // Fill reservoir with many text items
+        // Fill reservoir with many items across all content types
         var reservoir = [FeedItem]()
         for i in 0..<400 {
             reservoir.append(FeedItem(
@@ -30,8 +31,26 @@ final class SourceSchedulerTests: XCTestCase {
                 audioURL: nil, duration: nil, region: "global"
             ))
         }
+        // Add video items (URL must contain "youtu" to trigger isYouTube)
+        for i in 0..<100 {
+            reservoir.append(FeedItem(
+                id: "vid\(i)", sourceTitle: "S", sourceURL: "https://youtube.com/feed",
+                category: "Tech", title: "V", excerpt: "E", url: "https://youtube.com/watch?v=vid\(i)",
+                imageURL: nil, publishedAt: Date(),
+                audioURL: nil, duration: nil, region: "global"
+            ))
+        }
+        // Add podcast items (must have audioURL to trigger isPodcast)
+        for i in 0..<100 {
+            reservoir.append(FeedItem(
+                id: "pod\(i)", sourceTitle: "S", sourceURL: "https://podcast.com/feed",
+                category: "Tech", title: "P", excerpt: "E", url: "https://podcast.com/\(i)",
+                imageURL: nil, publishedAt: Date(),
+                audioURL: "https://audio.com/ep\(i).mp3", duration: 1800, region: "global"
+            ))
+        }
         let batch = s.nextBatch(reservoir: reservoir, sourcesByRegion: sources, activeRegion: nil, activeCategory: nil)
-        XCTAssertTrue(batch.isEmpty, "Should skip when text buffer is full")
+        XCTAssertTrue(batch.isEmpty, "Should skip when all buffers are full")
     }
 
     func testNextBatchPicksYouTubeWhenVideoBufferEmpty() {
@@ -76,5 +95,55 @@ final class SourceSchedulerTests: XCTestCase {
         let health = s.healthSnapshot(for: "https://a.com/feed")
         XCTAssertEqual(health.consecutiveFailures, 2)
         XCTAssertEqual(health.lastStatus, "error")
+    }
+
+    func testPriorityURLsJumpToFront() {
+        let scheduler = SourceScheduler()
+        let priorityURL = "https://priority.com/feed"
+        let normalURL = "https://normal.com/feed"
+
+        let sourcesByRegion: [String: [FeedSource]] = [
+            "global": [
+                FeedSource(title: "Priority", url: priorityURL, category: "News", region: "global"),
+                FeedSource(title: "Normal", url: normalURL, category: "News", region: "global"),
+            ]
+        ]
+
+        let batch = scheduler.nextBatch(
+            reservoir: [],
+            sourcesByRegion: sourcesByRegion,
+            activeRegion: nil,
+            activeCategory: nil,
+            prioritySourceURLs: [priorityURL]
+        )
+
+        XCTAssertEqual(batch.first?.url, priorityURL, "Priority URL must be first in batch")
+    }
+
+    func testLanguageScoringBoost() {
+        let scheduler = SourceScheduler()
+        let ptURL = "https://pt.com/feed"
+        let enURL = "https://en.com/feed"
+
+        let sourcesByRegion: [String: [FeedSource]] = [
+            "global": [
+                FeedSource(title: "PT", url: ptURL, category: "News", region: "global", language: "pt"),
+                FeedSource(title: "EN", url: enURL, category: "News", region: "global", language: "en"),
+            ]
+        ]
+
+        let batch = scheduler.nextBatch(
+            reservoir: [],
+            sourcesByRegion: sourcesByRegion,
+            activeRegion: nil,
+            activeCategory: nil,
+            prioritySourceURLs: [],
+            activeLanguages: ["pt"]
+        )
+
+        // Both should appear (language filter doesn't exclude, just boosts)
+        XCTAssertEqual(batch.count, 2)
+        // Portuguese source should be first (boosted)
+        XCTAssertEqual(batch.first?.url, ptURL, "Language-matching source should be first")
     }
 }
