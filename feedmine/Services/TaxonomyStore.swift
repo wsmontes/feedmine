@@ -38,6 +38,10 @@ final class TaxonomyStore {
     /// Build the taxonomy tree from all feed sources.
     /// Single pass, O(n). Caches result to disk for warm starts.
     func build(from sources: [FeedSource]) {
+        // Clear stale state from previous builds
+        feedToNodeID.removeAll()
+        selectedNodeIDs.removeAll()
+
         // Intermediate: path segments → children
         var tree: [String: (node: TaxonomyNode, childIDs: Set<String>)] = [:]
         var rootChildren: Set<String> = []
@@ -85,24 +89,25 @@ final class TaxonomyStore {
             feedToNodeID[normalizedURL] = parentID
         }
 
-        // Bottom-up: compute feedCount (feeds at this node + all descendants)
-        @discardableResult
-        func computeFeedCount(_ nodeID: String) -> Int {
-            guard let entry = tree[nodeID] else { return 0 }
-            let directFeeds = feedToNodeID.values.filter { $0 == nodeID }.count
-            let descendantFeeds = entry.childIDs.reduce(0) { $0 + computeFeedCount($1) }
-            return directFeeds + descendantFeeds
+        // Bottom-up feedCount computation — single pass, true O(n)
+        // Sort by descending level so leaves are processed before parents
+        let sortedIDs = tree.keys.sorted {
+            (tree[$0]?.node.level ?? 0) > (tree[$1]?.node.level ?? 0)
         }
-
-        // Compute all feedCounts
-        for nodeID in tree.keys {
-            let count = computeFeedCount(nodeID)
-            let old = tree[nodeID]!
+        for nodeID in sortedIDs {
+            guard var entry = tree[nodeID] else { continue }
+            // Direct feeds at this node
+            let directFeeds = feedToNodeID.values.filter { $0 == nodeID }.count
+            // Child feedCounts are already computed (children have higher level)
+            let childTotal = entry.childIDs.reduce(0) {
+                $0 + (tree[$1]?.node.feedCount ?? 0)
+            }
+            let total = directFeeds + childTotal
             tree[nodeID] = (TaxonomyNode(
-                id: old.node.id, name: old.node.name, parentId: old.node.parentId,
-                childrenCount: old.childIDs.count, feedCount: count,
-                language: old.node.language, level: old.node.level, kind: old.node.kind
-            ), old.childIDs)
+                id: entry.node.id, name: entry.node.name, parentId: entry.node.parentId,
+                childrenCount: entry.childIDs.count, feedCount: total,
+                language: entry.node.language, level: entry.node.level, kind: entry.node.kind
+            ), entry.childIDs)
         }
 
         // Update root
