@@ -86,33 +86,27 @@ final class ReservoirTests: XCTestCase {
     }
 
     func testInterleaveOffMainSpreadsTextItems() {
-        // Text feed (Science) + podcast feed (Technology) — the spreadConsecutive
-        // pass must avoid consecutive text-text pairs by using podcast items as
-        // swap candidates, ensuring the text-text adjacency check added to the
-        // static path actually fires and finds a non-text item to swap in.
-        let science = makeItems(count: 10, sourceURL: "https://science.com/feed",
-                               category: "Science")
-        let podcast = (0..<10).map { i in
-            FeedItem(
-                id: "https://podcast.com/feed#\(i)",
-                sourceTitle: "Podcast",
-                sourceURL: "https://podcast.com/feed",
-                category: "Technology",
-                title: "Podcast \(i)",
-                excerpt: "Excerpt \(i)",
-                url: "https://example.com/\(i)",
-                imageURL: nil,
-                publishedAt: Date().addingTimeInterval(-Double(i) * 3600),
-                audioURL: "https://example.com/episode\(i).mp3",
-                duration: 1800,
-                region: "global"
-            )
-        }
-        let all = science + podcast
+        // Three feeds: two text-only (News, Sports) and one all-podcast
+        // (Technology). The round-robin naturally places text items from News
+        // and Sports adjacent, creating text-text clashes that exercise the
+        // spreadConsecutiveImpl text-text detection path. The podcast items
+        // from Technology serve as swap candidates, so the post-processing
+        // can actually reduce consecutive text-text pairs below threshold.
+        let news = makeItems(count: 15, sourceURL: "https://news.com/feed",
+                            category: "News")
+        let sports = makeItems(count: 15, sourceURL: "https://sports.com/feed",
+                              category: "Sports")
+        // Use 18 podcast items so there is excess capacity for swap candidates
+        // beyond the 15 text-text pairs created by the News/Sports round-robin.
+        let tech = makeItems(count: 18, sourceURL: "https://tech.com/feed",
+                            category: "Technology",
+                            audioURL: "https://tech.com/episode")
+        let all = news + sports + tech
         let result = Reservoir.interleaveOffMain(
             all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
         )
-        // With interleaving, fewer than half the pairs should be text-text
+        // Verify the text-text clash detection fired and the spread reduced
+        // consecutive text-text pairs below 30% of total adjacent pairs.
         var consecutiveTextCount = 0
         for i in 0..<(result.count - 1) {
             let a = result[i], b = result[i + 1]
@@ -120,8 +114,9 @@ final class ReservoirTests: XCTestCase {
                 consecutiveTextCount += 1
             }
         }
-        XCTAssertLessThan(consecutiveTextCount, result.count / 2,
-                          "Too many consecutive text pairs: \(consecutiveTextCount)/\(result.count)")
+        let totalPairs = result.count - 1
+        XCTAssertLessThan(consecutiveTextCount, totalPairs * 30 / 100,
+                          "Too many consecutive text pairs: \(consecutiveTextCount)/\(totalPairs)")
     }
 
     func testInterleaveOffMainUsesSourceRegionMap() {
@@ -148,7 +143,7 @@ final class ReservoirTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func makeItems(count: Int, sourceURL: String, category: String = "Tech") -> [FeedItem] {
+    private func makeItems(count: Int, sourceURL: String, category: String = "Tech", audioURL: String? = nil) -> [FeedItem] {
         (0..<count).map { i in
             FeedItem(
                 id: "\(sourceURL)#\(i)",
@@ -160,8 +155,8 @@ final class ReservoirTests: XCTestCase {
                 url: "https://example.com/\(i)",
                 imageURL: nil,
                 publishedAt: Date().addingTimeInterval(-Double(i) * 3600),
-                audioURL: nil,
-                duration: nil,
+                audioURL: audioURL.map { _ in "\(sourceURL)/episode\(i).mp3" },
+                duration: audioURL != nil ? 1800 : nil,
                 region: "global"
             )
         }

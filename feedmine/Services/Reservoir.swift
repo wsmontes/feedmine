@@ -370,7 +370,9 @@ final class Reservoir {
                 if a.sourceURL != c.sourceURL && b.sourceURL != c.sourceURL
                     && a.category != c.category
                     && !(a.isYouTube && c.isYouTube) && !(a.isPodcast && c.isPodcast)
-                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast) {
+                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast)
+                    && !(!a.isYouTube && !a.isPodcast && !c.isYouTube && !c.isPodcast)
+                    && !(!b.isYouTube && !b.isPodcast && !c.isYouTube && !c.isPodcast) {
                     result.swapAt(i + 1, lookAhead)
                     break
                 }
