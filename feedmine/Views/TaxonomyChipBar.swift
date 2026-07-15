@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Horizontal scrollable chip bar showing selected taxonomy nodes.
+/// Horizontal scrollable chip bar showing selected taxonomy nodes and languages.
 /// Replaces the flat `CategoryFilterBar` with multi-select chip UI.
 /// Max 3 visible chips; overflow shows "+N more".
 struct TaxonomyChipBar: View {
@@ -10,20 +10,14 @@ struct TaxonomyChipBar: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                // "All" chip — shown when nothing selected, or always as reset
-                if !loader.hasTaxonomySelection {
-                    TaxonomyChip(
-                        title: "All",
-                        isSelected: true,
-                        color: .gray
-                    ) {}
-                } else {
+                // "All" chip — only visible when filters are active, as quick-reset
+                if loader.hasActiveFilters {
                     TaxonomyChip(
                         title: "All",
                         isSelected: false,
                         color: .gray
                     ) {
-                        loader.clearTaxonomySelection()
+                        loader.clearAllFilters()
                     }
                 }
 
@@ -43,9 +37,22 @@ struct TaxonomyChipBar: View {
                     }
                 }
 
+                // Language chips
+                ForEach(Array(loader.selectedLanguages).sorted(), id: \.self) { lang in
+                    TaxonomyChip(
+                        title: langDisplay(lang),
+                        isSelected: true,
+                        color: .green
+                    ) {
+                        loader.toggleLanguage(lang)
+                    }
+                }
+
                 // Overflow indicator
-                if names.count > 3 {
-                    Text("+\(names.count - 3) more")
+                let totalChips = names.count + loader.selectedLanguages.count + (loader.hasActiveFilters ? 1 : 0)
+                let visibleChips = min(names.count, 3) + loader.selectedLanguages.count
+                if totalChips > visibleChips {
+                    Text("+\(totalChips - visibleChips) more")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .padding(.horizontal, 8)
@@ -69,6 +76,11 @@ struct TaxonomyChipBar: View {
         }
         .padding(.vertical, 8)
         .background(.ultraThinMaterial)
+    }
+
+    private func langDisplay(_ code: String) -> String {
+        let name = Locale.current.localizedString(forLanguageCode: code) ?? code
+        return "\(name) (\(code.uppercased()))"
     }
 }
 

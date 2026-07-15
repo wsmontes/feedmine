@@ -221,7 +221,6 @@
 		19E7B0D6A32049553052258F /* south-korea-seoul.opml in Resources */ = {isa = PBXBuildFile; fileRef = 7096F3703E7733374EBF1362 /* south-korea-seoul.opml */; };
 		19F62AA1491C38C9ABE0B07F /* venezuela-portuguesa.opml in Resources */ = {isa = PBXBuildFile; fileRef = 400A4BF6FA269668C3A617CD /* venezuela-portuguesa.opml */; };
 		19FB1EF051FD144E89CD0224 /* india.opml in Resources */ = {isa = PBXBuildFile; fileRef = 16E05E25D7D35EE5E10A8B2B /* india.opml */; };
-		1A2B3C4D5E6F7890ABCDEF1234567890 /* TaxonomyTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E2D3C4B5A69788796A5B4C3D2E1F0 /* TaxonomyTreeView.swift */; };
 		1A3A316F1FC569C8D49B1166 /* turkey.opml in Resources */ = {isa = PBXBuildFile; fileRef = D9D04C167B33B275E39B39AC /* turkey.opml */; };
 		1A4E62E52BAE2852005B8EDC /* ecuador-bolivar.opml in Resources */ = {isa = PBXBuildFile; fileRef = 43AD867FBB6A251F531CE328 /* ecuador-bolivar.opml */; };
 		1A59458F4C64F5856D790750 /* philippines.opml in Resources */ = {isa = PBXBuildFile; fileRef = 5193F2358E696D72BC80CFFD /* philippines.opml */; };
@@ -2197,7 +2196,6 @@
 		0EA541FEAC08018742506F9C /* slovakia-nitriansky.opml */ = {isa = PBXFileReference; path = "slovakia-nitriansky.opml"; sourceTree = "<group>"; };
 		0ECECC606AEF790BE2DB0680 /* sri-lanka.opml */ = {isa = PBXFileReference; path = "sri-lanka.opml"; sourceTree = "<group>"; };
 		0EEA9674DAB39FF5ECAC6760 /* jamaica-saint-catherine.opml */ = {isa = PBXFileReference; path = "jamaica-saint-catherine.opml"; sourceTree = "<group>"; };
-		0F1E2D3C4B5A69788796A5B4C3D2E1F0 /* TaxonomyTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyTreeView.swift; sourceTree = "<group>"; };
 		0F2D418030A8700DD6B5D253 /* dominican-republic-hato-mayor.opml */ = {isa = PBXFileReference; path = "dominican-republic-hato-mayor.opml"; sourceTree = "<group>"; };
 		0F419EE1229BD84A5C25D59C /* ghana-western-north.opml */ = {isa = PBXFileReference; path = "ghana-western-north.opml"; sourceTree = "<group>"; };
 		0F61CB7F76A5E416DDE24CA9 /* cuba-pinar-del-rio.opml */ = {isa = PBXFileReference; path = "cuba-pinar-del-rio.opml"; sourceTree = "<group>"; };
@@ -5044,7 +5042,6 @@
 				79130EC237E74F3A8CB41ACC /* ContentFilterView.swift */,
 				44FB84E4C4A34E4DACB6BED1 /* ExportView.swift */,
 				C3C299F7C2624469B918CAAF /* TaxonomyChipBar.swift */,
-				0F1E2D3C4B5A69788796A5B4C3D2E1F0 /* TaxonomyTreeView.swift */,
 				8198cf9649b74d8ca3017902d507e2d3 /* TaxonomyBrowseView.swift */,
 			);
 			path = Views;
@@ -9270,7 +9267,6 @@
 				F009AC7BE94C471A8CE3B43F /* CollectionManagementView.swift in Sources */,
 				85648475A44E4E46834B81A1 /* ContentFilterView.swift in Sources */,
 				068CB2522EDF4F2C9F75F222 /* ExportView.swift in Sources */,
-				1A2B3C4D5E6F7890ABCDEF1234567890 /* TaxonomyTreeView.swift in Sources */,
 				6957a025b7e04fc3afdd9806b6689dbb /* TaxonomyBrowseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

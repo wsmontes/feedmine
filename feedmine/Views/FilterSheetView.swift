@@ -15,7 +15,7 @@ struct FilterSheetView: View {
                     } label: {
                         Label("Clear All Filters", systemImage: "xmark.circle")
                     }
-                    .disabled(loader.selectedCategory == nil && loader.selectedMood == .all && loader.selectedContentType == .all && loader.searchQuery.isEmpty)
+                    .disabled(!loader.hasActiveFilters && loader.searchQuery.isEmpty)
                 }
 
                 Section("Feeds") {
@@ -57,12 +57,47 @@ struct FilterSheetView: View {
                 }
 
                 Section("Topics") {
-                    TaxonomyTreeView()
-
                     NavigationLink {
                         TaxonomyBrowseView()
                     } label: {
-                        Label("Browse All Topics", systemImage: "list.bullet.rectangle")
+                        HStack {
+                            Label("Browse Topics", systemImage: "list.bullet.rectangle")
+                            Spacer()
+                            if !loader.selectedNodeNames.isEmpty {
+                                Text(loader.selectedNodeNames.prefix(3).joined(separator: ", "))
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(1)
+                            }
+                        }
+                    }
+                }
+
+                Section("Language") {
+                    if loader.availableLanguages.isEmpty {
+                        Text("No language data available")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    } else {
+                        ForEach(loader.availableLanguages) { lang in
+                            Button {
+                                loader.toggleLanguage(lang.code)
+                            } label: {
+                                HStack {
+                                    Text(lang.flag)
+                                    Text(lang.name)
+                                        .foregroundStyle(.primary)
+                                    Spacer()
+                                    if loader.selectedLanguages.contains(lang.code) {
+                                        Image(systemName: "checkmark")
+                                            .foregroundStyle(.blue)
+                                    }
+                                    Text("\(lang.feedCount)")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                        }
                     }
                 }
 

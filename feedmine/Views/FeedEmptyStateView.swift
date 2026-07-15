@@ -1,8 +1,17 @@
 import SwiftUI
 
+enum FeedEmptyMode {
+    case noSourcesEnabled
+    case fetching(topic: String, fetched: Int, total: Int)
+    case noResults(topic: String)
+    case generic
+}
+
 struct FeedEmptyStateView: View {
     @Environment(FeedLoader.self) private var loader
     @State private var engine = CircadianEngine.shared
+
+    var mode: FeedEmptyMode = .generic
 
     var body: some View {
         VStack(spacing: 24) {
@@ -39,30 +48,61 @@ struct FeedEmptyStateView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 40)
 
+            // Fetching progress
+            if case .fetching(let topic, let fetched, let total) = mode {
+                HStack(spacing: 4) {
+                    ProgressView()
+                        .scaleEffect(0.7)
+                    Text("Fetched \(fetched) of \(total) sources...")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.top, 8)
+            }
+
             // Action buttons
             if showActions {
                 VStack(spacing: 12) {
-                    Button {
-                        let impact = UIImpactFeedbackGenerator(style: .light)
-                        impact.impactOccurred()
-                        Task { await loader.refresh() }
-                    } label: {
-                        HStack {
-                            Image(systemName: "arrow.clockwise")
-                            Text("Refresh Now")
+                    if showOpenFilters {
+                        Button {
+                            let impact = UIImpactFeedbackGenerator(style: .light)
+                            impact.impactOccurred()
+                            showFilters = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "line.3.horizontal.decrease")
+                                Text("Open Filters")
+                            }
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .frame(maxWidth: 200)
                         }
-                        .font(.subheadline)
-                        .fontWeight(.medium)
-                        .frame(maxWidth: 200)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(engine.accent)
-                    .controlSize(.large)
+                        .buttonStyle(.borderedProminent)
+                        .tint(engine.accent)
+                        .controlSize(.large)
+                    } else {
+                        Button {
+                            let impact = UIImpactFeedbackGenerator(style: .light)
+                            impact.impactOccurred()
+                            Task { await loader.refresh() }
+                        } label: {
+                            HStack {
+                                Image(systemName: "arrow.clockwise")
+                                Text("Refresh Now")
+                            }
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .frame(maxWidth: 200)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(engine.accent)
+                        .controlSize(.large)
 
-                    if loader.disabledSourceIDs.count > 0 {
-                        Text("Tip: \(loader.disabledSourceIDs.count) source\(loader.disabledSourceIDs.count == 1 ? " is" : "s are") disabled")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                        if loader.disabledSourceIDs.count > 0 {
+                            Text("Tip: \(loader.disabledSourceIDs.count) source\(loader.disabledSourceIDs.count == 1 ? " is" : "s are") disabled")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                 }
             }
@@ -70,47 +110,72 @@ struct FeedEmptyStateView: View {
             Spacer()
         }
         .padding(.top, 40)
+        .sheet(isPresented: $showFilters) {
+            FilterSheetView()
+        }
+    }
+
+    @State private var showFilters = false
+
+    private var showOpenFilters: Bool {
+        if case .noSourcesEnabled = mode { return true }
+        return false
     }
 
     private var iconName: String {
-        if loader.loadingState == .initial {
-            return "antenna.radiowaves.left.and.right"
-        } else if loader.loadingState == .refreshing {
-            return "line.3.horizontal.decrease.circle"
-        } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
-            return "wifi.slash"
-        } else if loader.sources.isEmpty {
-            return "folder.badge.questionmark"
-        } else {
-            return "newspaper.fill"
+        switch mode {
+        case .noSourcesEnabled: return "globe.americas.fill"
+        case .fetching: return "magnifyingglass"
+        case .noResults: return "tray"
+        case .generic:
+            if loader.loadingState == .initial {
+                return "antenna.radiowaves.left.and.right"
+            } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
+                return "wifi.slash"
+            } else if loader.sources.isEmpty {
+                return "folder.badge.questionmark"
+            } else {
+                return "newspaper.fill"
+            }
         }
     }
 
     private var title: String {
-        if loader.loadingState == .initial {
-            return String(localized: "Loading your feed...", comment: "Empty state title")
-        } else if loader.loadingState == .refreshing {
-            return String(localized: "Filtering articles...", comment: "Empty state title — filter in progress")
-        } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
-            return String(localized: "Couldn't load feeds", comment: "Empty state title")
-        } else if loader.sources.isEmpty {
-            return String(localized: "No sources found", comment: "Empty state title")
-        } else {
-            return String(localized: "No articles yet", comment: "Empty state title")
+        switch mode {
+        case .noSourcesEnabled: return String(localized: "No sources enabled", comment: "Empty state title")
+        case .fetching(let topic, _, _): return String(localized: "Searching for \(topic)...", comment: "Empty state title — fetching")
+        case .noResults(let topic): return String(localized: "No articles found for \(topic)", comment: "Empty state title — no results")
+        case .generic:
+            if loader.loadingState == .initial {
+                return String(localized: "Loading your feed...", comment: "Empty state title")
+            } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
+                return String(localized: "Couldn't load feeds", comment: "Empty state title")
+            } else if loader.sources.isEmpty {
+                return String(localized: "No sources found", comment: "Empty state title")
+            } else {
+                return String(localized: "No articles yet", comment: "Empty state title")
+            }
         }
     }
 
     private var description: String {
-        if loader.loadingState == .initial {
-            return String(localized: "Fetching articles from \(loader.sourceCount) sources.", comment: "Empty state description")
-        } else if loader.loadingState == .refreshing {
-            return String(localized: "Finding the best matches for your filters.", comment: "Empty state description — filter in progress")
-        } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
-            return String(localized: "All \(loader.fetchErrorCount) sources failed to load. Check your internet connection and pull to refresh.", comment: "Empty state description")
-        } else if loader.sources.isEmpty {
-            return String(localized: "Add .opml files to the Resources/Feeds folder in Xcode and rebuild the app.", comment: "Empty state description")
-        } else {
-            return circadianNoArticlesMessage
+        switch mode {
+        case .noSourcesEnabled:
+            return String(localized: "Enable some countries or topics in Filters to start seeing content.", comment: "Empty state description")
+        case .fetching(let topic, _, let total):
+            return String(localized: "We're fetching the latest articles from \(total) sources in \(topic). They'll appear here as they arrive.", comment: "Empty state description — fetching")
+        case .noResults:
+            return String(localized: "These sources may not have published recently. Try a different topic or check back later.", comment: "Empty state description — no results")
+        case .generic:
+            if loader.loadingState == .initial {
+                return String(localized: "Fetching articles from \(loader.sourceCount) sources.", comment: "Empty state description")
+            } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
+                return String(localized: "All \(loader.fetchErrorCount) sources failed to load. Check your internet connection and pull to refresh.", comment: "Empty state description")
+            } else if loader.sources.isEmpty {
+                return String(localized: "Add .opml files to the Resources/Feeds folder in Xcode and rebuild the app.", comment: "Empty state description")
+            } else {
+                return circadianNoArticlesMessage
+            }
         }
     }
 

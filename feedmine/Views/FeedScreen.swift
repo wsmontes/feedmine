@@ -42,6 +42,23 @@ struct FeedScreen: View {
     @State private var didRestoreScroll = false
     @State private var player = AudioPlayerManager.shared
 
+    private var emptyMode: FeedEmptyMode {
+        if loader.sources.isEmpty || (!loader.isGlobalFeedsEnabled && !loader.isAnyCountryEnabled) {
+            return .noSourcesEnabled
+        }
+        if loader.hasActiveFilters && loader.items.isEmpty && loader.loadingState == .refreshing {
+            return .fetching(
+                topic: loader.selectedNodeNames.joined(separator: ", "),
+                fetched: 0,
+                total: loader.selectedNodeIDs.reduce(0) { $0 + (TaxonomyStore.shared.node(id: $1)?.feedCount ?? 0) }
+            )
+        }
+        if loader.hasActiveFilters && loader.items.isEmpty && loader.loadingState == .idle {
+            return .noResults(topic: loader.selectedNodeNames.joined(separator: ", "))
+        }
+        return .generic
+    }
+
     var body: some View {
         ZStack(alignment: .top) {
             // Full-bleed feed content with circadian page tint
@@ -50,7 +67,7 @@ struct FeedScreen: View {
             if loader.loadingState == .initial && loader.items.isEmpty {
                 SkeletonLoadingView()
             } else if loader.items.isEmpty && loader.loadingState != .initial {
-                FeedEmptyStateView()
+                FeedEmptyStateView(mode: emptyMode)
             } else {
                 feedScrollView
             }
@@ -255,13 +272,15 @@ struct FeedScreen: View {
                 Divider().opacity(0.3)
             }
 
-            // Taxonomy chip bar — shows selected taxonomy nodes with multi-select UI
-            TaxonomyChipBar {
-                showFilters = true
+            // Taxonomy chip bar — only visible when filters are active
+            if loader.hasActiveFilters {
+                TaxonomyChipBar {
+                    showFilters = true
+                }
             }
 
             // Active filter banner — shows what's being filtered and offers clear
-            if loader.hasTaxonomySelection || loader.selectedMood != .all || loader.selectedContentType != .all {
+            if loader.hasActiveFilters {
                 filterActiveBanner
                     .transition(.move(edge: .top).combined(with: .opacity))
             }
@@ -296,6 +315,11 @@ struct FeedScreen: View {
         var parts: [String] = []
         if loader.hasTaxonomySelection {
             parts.append(contentsOf: loader.selectedNodeNames)
+        }
+        if loader.hasLanguageSelection {
+            parts.append(contentsOf: loader.selectedLanguages.map { lang in
+                Locale.current.localizedString(forLanguageCode: lang) ?? lang
+            })
         }
         if loader.selectedMood != .all { parts.append(loader.selectedMood.rawValue) }
         if loader.selectedContentType != .all { parts.append(loader.selectedContentType.rawValue) }
@@ -334,7 +358,7 @@ struct FeedScreen: View {
     private var filterChips: some View {
         let mood = loader.selectedMood
         let type = loader.selectedContentType
-        let hasFilters = loader.hasTaxonomySelection || mood != .all || type != .all
+        let hasFilters = loader.hasActiveFilters
 
         guard hasFilters else { return AnyView(EmptyView()) }
 
@@ -343,6 +367,10 @@ struct FeedScreen: View {
                 HStack(spacing: 4) {
                     ForEach(loader.selectedNodeNames, id: \.self) { name in
                         chip(name, action: {})
+                    }
+                    ForEach(Array(loader.selectedLanguages).sorted(), id: \.self) { lang in
+                        chip(Locale.current.localizedString(forLanguageCode: lang) ?? lang,
+                             action: { loader.toggleLanguage(lang) })
                     }
                     if mood != .all {
                         chip(mood.rawValue, action: { loader.selectMood(mood) })
@@ -368,7 +396,7 @@ struct FeedScreen: View {
     }
 
     private var filterButton: some View {
-        let activeCount = (loader.hasTaxonomySelection ? loader.selectedNodeIDs.count : 0) + (loader.selectedMood != .all ? 1 : 0) + (loader.selectedContentType != .all ? 1 : 0) + (!loader.searchQuery.isEmpty ? 1 : 0)
+        let activeCount = (loader.hasTaxonomySelection ? loader.selectedNodeIDs.count : 0) + (loader.selectedMood != .all ? 1 : 0) + (loader.selectedContentType != .all ? 1 : 0) + (loader.hasLanguageSelection ? loader.selectedLanguages.count : 0) + (!loader.searchQuery.isEmpty ? 1 : 0)
         return Button {
             showFilters = true
         } label: {
@@ -413,8 +441,8 @@ struct FeedScreen: View {
                         }
                         // What's New carousel — hidden in bookmark mode
                         if loader.selectedBookmarkListID == nil
-                            && !loader.hasTaxonomySelection && loader.selectedMood == .all
-                            && loader.selectedContentType == .all && loader.searchQuery.isEmpty {
+                            && !loader.hasActiveFilters
+                            && loader.searchQuery.isEmpty {
                             WhatsNewCarousel(onOpen: { articleItem = $0 })
                                 .padding(.top, 8)
                         }

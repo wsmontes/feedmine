@@ -93,7 +93,12 @@ final class FeedLoader {
     var selectedMood: MoodFilter { store.activeMood }
     var selectedNodeIDs: Set<String> { store.activeNodeIDs }
     var selectedNodeNames: [String] { TaxonomyStore.shared.selectedNodeNames }
+    var selectedLanguages: Set<String> { store.activeLanguages }
+    var hasLanguageSelection: Bool { !store.activeLanguages.isEmpty }
     var hasTaxonomySelection: Bool { !selectedNodeIDs.isEmpty }
+    var hasActiveFilters: Bool {
+        hasTaxonomySelection || selectedMood != .all || selectedContentType != .all || hasLanguageSelection
+    }
     var availableTaxonomyRoot: TaxonomyNode? { TaxonomyStore.shared.root }
 
     /// Backward-compat: returns name of first selected node, or nil.
@@ -142,6 +147,16 @@ final class FeedLoader {
                        lower.contains("hero") || lower.contains("changed") || lower.contains("revolutionary")
             }
         }
+    }
+
+    // MARK: - Language Filter
+
+    struct LanguageInfo: Identifiable {
+        var id: String { code }
+        let code: String       // ISO 639-1
+        let name: String       // localized display name
+        let flag: String       // emoji flag
+        let feedCount: Int
     }
 
     // MARK: - Search
@@ -236,6 +251,33 @@ final class FeedLoader {
     var availableCountries: [Country] { store.registry.availableCountries }
     var availableCategories: [String] {
         Set(store.registry.enabledSources.map(\.category)).sorted()
+    }
+    var availableLanguages: [LanguageInfo] {
+        let grouped = Dictionary(grouping: store.registry.sources.filter { $0.language != nil }, by: \.language!)
+        return grouped.compactMap { code, sources -> LanguageInfo? in
+            LanguageInfo(
+                code: code,
+                name: Locale.current.localizedString(forLanguageCode: code) ?? code,
+                flag: FeedLoader.flagEmoji(for: code),
+                feedCount: sources.count
+            )
+        }.sorted { $0.feedCount > $1.feedCount }
+    }
+    private static func flagEmoji(for languageCode: String) -> String {
+        let base: UInt32 = 127397
+        let mapping: [String: String] = [
+            "pt": "BR", "en": "US", "es": "ES", "fr": "FR", "de": "DE",
+            "it": "IT", "ja": "JP", "ko": "KR", "zh": "CN", "ru": "RU",
+            "ar": "SA", "hi": "IN", "nl": "NL", "sv": "SE", "no": "NO",
+            "da": "DK", "fi": "FI", "pl": "PL", "tr": "TR", "th": "TH",
+            "vi": "VN", "id": "ID", "ms": "MY", "fil": "PH", "he": "IL",
+            "el": "GR", "cs": "CZ", "ro": "RO", "hu": "HU", "uk": "UA",
+            "ca": "ES", "eu": "ES", "gl": "ES",
+        ]
+        guard let country = mapping[languageCode] else { return "🌐" }
+        return country.unicodeScalars.map {
+            String(UnicodeScalar(base + $0.value)!)
+        }.joined()
     }
     var enabledSources: [FeedSource] { store.registry.enabledSources }
     var sources: [FeedSource] { store.registry.sources }
@@ -430,7 +472,22 @@ final class FeedLoader {
         TaxonomyStore.shared.toggle(nodeID)
         store.setFilter(region: store.activeRegion,
                         nodeIDs: TaxonomyStore.shared.selectedNodeIDs,
-                        type: store.activeContentType, mood: store.activeMood)
+                        type: store.activeContentType, mood: store.activeMood,
+                        languages: store.activeLanguages)
+        Task { await loadWhatsNew() }
+    }
+
+    func toggleLanguage(_ code: String) {
+        var langs = store.activeLanguages
+        if langs.contains(code) {
+            langs.remove(code)
+        } else {
+            langs.insert(code)
+        }
+        store.setFilter(region: store.activeRegion,
+                        nodeIDs: store.activeNodeIDs,
+                        type: store.activeContentType, mood: store.activeMood,
+                        languages: langs)
         Task { await loadWhatsNew() }
     }
 
@@ -438,7 +495,8 @@ final class FeedLoader {
         TaxonomyStore.shared.clearSelection()
         store.setFilter(region: store.activeRegion,
                         nodeIDs: [],
-                        type: store.activeContentType, mood: store.activeMood)
+                        type: store.activeContentType, mood: store.activeMood,
+                        languages: store.activeLanguages)
         Task { await loadWhatsNew() }
     }
 
@@ -456,14 +514,16 @@ final class FeedLoader {
     func selectMood(_ mood: MoodFilter) {
         let newValue = (store.activeMood == mood) ? .all : mood
         store.setFilter(region: store.activeRegion, nodeIDs: store.activeNodeIDs,
-                        type: store.activeContentType, mood: newValue)
+                        type: store.activeContentType, mood: newValue,
+                        languages: store.activeLanguages)
         Task { await loadWhatsNew() }
     }
 
     func selectContentType(_ type: ContentType) {
         let newValue = (store.activeContentType == type) ? .all : type
         store.setFilter(region: store.activeRegion, nodeIDs: store.activeNodeIDs,
-                        type: newValue, mood: store.activeMood)
+                        type: newValue, mood: store.activeMood,
+                        languages: store.activeLanguages)
         Task { await loadWhatsNew() }
     }
 
@@ -755,7 +815,8 @@ final class FeedLoader {
             region: store.activeRegion,
             nodeIDs: store.activeNodeIDs,
             type: store.activeContentType,
-            mood: store.activeMood
+            mood: store.activeMood,
+            languages: store.activeLanguages
         )
     }
 

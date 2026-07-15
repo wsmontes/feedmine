@@ -639,8 +639,6 @@ final class FeedStore {
         activeMood = mood
         if let langs = languages {
             activeLanguages = langs
-        } else {
-            activeLanguages = []
         }
 
         // Rebuild taxonomy URL cache when selection changes (O(1) filter instead of O(n x m))
