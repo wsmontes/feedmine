@@ -368,6 +368,7 @@
 		2B430167A87155AC07A56B03 /* egypt-cairo.opml in Resources */ = {isa = PBXBuildFile; fileRef = BC2767E84E255C19E5989D16 /* egypt-cairo.opml */; };
 		7C5C90DF83D94CC6989B0333 /* TaxonomyChipBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C299F7C2624469B918CAAF /* TaxonomyChipBar.swift */; };
 		2B5AC4E1A664F1CCE40B5A03 /* ShakeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA499573FA22F43B9CCABCB2 /* ShakeHandler.swift */; };
+		1A2B3C4D5E6F7890ABCDEF1234567890 /* TaxonomyTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E2D3C4B5A69788796A5B4C3D2E1F0 /* TaxonomyTreeView.swift */; };
 		2B75A417D2B13CAA69DA0C49 /* portugal-porto.opml in Resources */ = {isa = PBXBuildFile; fileRef = 8DD29A39B40D691CE64EB18F /* portugal-porto.opml */; };
 		2BDC8D4D14CF5F1F88ED2703 /* usa-oklahoma.opml in Resources */ = {isa = PBXBuildFile; fileRef = 99C9F58BBED19EE37BF5607A /* usa-oklahoma.opml */; };
 		2BFBBDCA3503F4963B918522 /* ghana-eastern.opml in Resources */ = {isa = PBXBuildFile; fileRef = 6A3D393C65B5D373CC6F2F50 /* ghana-eastern.opml */; };
@@ -4028,6 +4029,7 @@
 		FA2AF9B4065E3C43909FB4C2 /* nigeria-plateau.opml */ = {isa = PBXFileReference; path = "nigeria-plateau.opml"; sourceTree = "<group>"; };
 		FA417057F92FDAD41A73E6C6 /* algeria-bejaia.opml */ = {isa = PBXFileReference; path = "algeria-bejaia.opml"; sourceTree = "<group>"; };
 		C3C299F7C2624469B918CAAF /* TaxonomyChipBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyChipBar.swift; sourceTree = "<group>"; };
+		0F1E2D3C4B5A69788796A5B4C3D2E1F0 /* TaxonomyTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyTreeView.swift; sourceTree = "<group>"; };
 		FA499573FA22F43B9CCABCB2 /* ShakeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeHandler.swift; sourceTree = "<group>"; };
 		FA61A80E57635B68637674E2 /* serbia-juzna-backa.opml */ = {isa = PBXFileReference; path = "serbia-juzna-backa.opml"; sourceTree = "<group>"; };
 		FA90BC9F0B11932FACD1224E /* bulgaria-plovdiv.opml */ = {isa = PBXFileReference; path = "bulgaria-plovdiv.opml"; sourceTree = "<group>"; };
@@ -5024,6 +5026,7 @@
                 79130EC237E74F3A8CB41ACC /* ContentFilterView.swift */,
                 44FB84E4C4A34E4DACB6BED1 /* ExportView.swift */,
                 C3C299F7C2624469B918CAAF /* TaxonomyChipBar.swift */,
+                0F1E2D3C4B5A69788796A5B4C3D2E1F0 /* TaxonomyTreeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -9236,6 +9239,7 @@
 				F009AC7BE94C471A8CE3B43F /* CollectionManagementView.swift in Sources */,
 				85648475A44E4E46834B81A1 /* ContentFilterView.swift in Sources */,
 				068CB2522EDF4F2C9F75F222 /* ExportView.swift in Sources */,
+				1A2B3C4D5E6F7890ABCDEF1234567890 /* TaxonomyTreeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

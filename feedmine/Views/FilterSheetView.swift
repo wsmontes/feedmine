@@ -56,23 +56,8 @@ struct FilterSheetView: View {
                     }
                 }
 
-                Section("Category") {
-                    Button { loader.selectCategory(nil) } label: {
-                        HStack {
-                            Label("All Categories", systemImage: "square.grid.2x2")
-                            Spacer()
-                            if loader.selectedCategory == nil { Image(systemName: "checkmark").foregroundStyle(.blue) }
-                        }
-                    }
-                    ForEach(loader.availableCategories, id: \.self) { cat in
-                        Button { loader.selectCategory(cat) } label: {
-                            HStack {
-                                Label(cat, systemImage: categoryIcon(cat))
-                                Spacer()
-                                if loader.selectedCategory == cat { Image(systemName: "checkmark").foregroundStyle(.blue) }
-                            }
-                        }
-                    }
+                Section("Topics") {
+                    TaxonomyTreeView()
                 }
 
                 Section("Mood") {
@@ -98,14 +83,4 @@ struct FilterSheetView: View {
         .presentationDetents([.medium, .large])
     }
 
-    private func categoryIcon(_ cat: String) -> String {
-        switch cat.lowercased() {
-        case "tech": return "laptopcomputer"
-        case "news": return "newspaper.fill"
-        case "science": return "flask.fill"
-        case "design": return "paintpalette.fill"
-        case "culture": return "theatermasks.fill"
-        default: return "dot.radiowaves.left.and.right"
-        }
-    }
 }
