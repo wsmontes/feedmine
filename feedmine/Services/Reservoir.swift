@@ -452,9 +452,16 @@ final class Reservoir {
                 surfacedTimestamps[item.id] = now
             }
         }
-        if surfacedTimestamps.count > 2000 {
+        // Two-tier cleanup: first remove expired (older than cooldown),
+        // then cap at 1500 most recent if still over threshold.
+        if surfacedTimestamps.count > 1500 {
             let cutoff = now.addingTimeInterval(-Self.surfacedCooldown)
             surfacedTimestamps = surfacedTimestamps.filter { $0.value > cutoff }
+        }
+        // If still too many (all within cooldown), keep only the 1500 newest
+        if surfacedTimestamps.count > 1500 {
+            let sorted = surfacedTimestamps.sorted { $0.value > $1.value }
+            surfacedTimestamps = Dictionary(uniqueKeysWithValues: sorted.prefix(1500).map { ($0.key, $0.value) })
         }
     }
 

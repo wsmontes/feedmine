@@ -961,14 +961,9 @@ final class FeedStore {
             await capSourceItemsBatch(sourceURLs)
         }
 
-        // Append to reservoir
-        reservoir.append(actualNew)
+        // Append to reservoir via throttled path — interleave runs off MainActor
+        throttledReservoirAppend(actualNew)
         prefetchImagesIfEnabled(for: actualNew)
-        // Only update visibleItems if no active search
-        if !isSearching {
-            visibleItems = applyFilters(reservoir.visibleItems)
-            reservoirCount = reservoir.reservoirCount
-        }
 
         lastRefreshDate = .now
 
