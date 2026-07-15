@@ -41,7 +41,7 @@ final class TaxonomyStore {
 
     /// Build the taxonomy tree from all feed sources.
     /// Single pass, O(n). Caches result to disk for warm starts.
-    func build(from sources: [FeedSource]) {
+    func build(from sources: [FeedSource]) async {
         // Clear stale state from previous builds
         feedToNodeID.removeAll()
         selectedNodeIDs.removeAll()
@@ -271,12 +271,10 @@ final class TaxonomyStore {
 
     func select(_ nodeID: String) {
         selectedNodeIDs.insert(nodeID)
-        persistSelection()
     }
 
     func deselect(_ nodeID: String) {
         selectedNodeIDs.remove(nodeID)
-        persistSelection()
     }
 
     func toggle(_ nodeID: String) {
@@ -289,7 +287,6 @@ final class TaxonomyStore {
 
     func clearSelection() {
         selectedNodeIDs.removeAll()
-        persistSelection()
     }
 
     var hasSelection: Bool { !selectedNodeIDs.isEmpty }
@@ -315,7 +312,6 @@ final class TaxonomyStore {
         self.flatIndex = cached.flatIndex
         self.feedToNodeID = cached.feedToNodeID
         self.root = cached.root
-        self.selectedNodeIDs = cached.selectedNodeIDs
         return true
     }
 
@@ -323,16 +319,10 @@ final class TaxonomyStore {
         let cached = CachedTree(
             root: root,
             flatIndex: flatIndex,
-            feedToNodeID: feedToNodeID,
-            selectedNodeIDs: selectedNodeIDs
+            feedToNodeID: feedToNodeID
         )
         guard let data = try? JSONEncoder().encode(cached) else { return }
         try? data.write(to: cacheURL, options: .atomic)
-    }
-
-    private func persistSelection() {
-        // Just re-save the cache with updated selection
-        persistCache()
     }
 }
 
@@ -342,5 +332,4 @@ private struct CachedTree: Codable {
     let root: TaxonomyNode?
     let flatIndex: [String: TaxonomyNode]
     let feedToNodeID: [String: String]
-    let selectedNodeIDs: Set<String>
 }

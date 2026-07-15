@@ -6,9 +6,9 @@ final class TaxonomyStoreTests: XCTestCase {
 
     // MARK: - Tree Building
 
-    func testBuildEmptySourcesProducesEmptyTree() {
+    func testBuildEmptySourcesProducesEmptyTree() async {
         let store = TaxonomyStore()
-        store.build(from: [])
+        await store.build(from: [])
         let root = store.root
         XCTAssertNotNil(root)
         XCTAssertEqual(root?.id, TaxonomyNode.rootID)
@@ -16,7 +16,7 @@ final class TaxonomyStoreTests: XCTestCase {
         XCTAssertEqual(root?.childrenCount, 0)
     }
 
-    func testBuildSingleTopicOPML() {
+    func testBuildSingleTopicOPML() async {
         let sources = [
             FeedSource(title: "Sprudge", url: "https://sprudge.com/feed",
                        category: "Coffee News", region: "global", mediaKind: .text),
@@ -24,7 +24,7 @@ final class TaxonomyStoreTests: XCTestCase {
                        category: "Tea Culture", region: "global", mediaKind: .text),
         ]
         let store = TaxonomyStore()
-        store.build(from: sources)
+        await store.build(from: sources)
 
         // Root has 1 child (the topic OPML)
         let rootChildren = store.children(of: TaxonomyNode.rootID)
@@ -40,7 +40,7 @@ final class TaxonomyStoreTests: XCTestCase {
         XCTAssertEqual(subChildren.map(\.name).sorted(), ["Coffee News", "Tea Culture"])
     }
 
-    func testBuildCountryOPMLWithDepth() {
+    func testBuildCountryOPMLWithDepth() async {
         let sources = [
             FeedSource(title: "Folha", url: "https://folha.com/feed",
                        category: "News", region: "countries/brazil", mediaKind: .text),
@@ -48,7 +48,7 @@ final class TaxonomyStoreTests: XCTestCase {
                        category: "Sports", region: "countries/brazil", mediaKind: .text),
         ]
         let store = TaxonomyStore()
-        store.build(from: sources)
+        await store.build(from: sources)
 
         let rootChildren = store.children(of: TaxonomyNode.rootID)
         XCTAssertEqual(rootChildren.count, 1)
@@ -62,13 +62,13 @@ final class TaxonomyStoreTests: XCTestCase {
         XCTAssertEqual(brazilChildren.count, 2)
     }
 
-    func testFeedToNodeMapping() {
+    func testFeedToNodeMapping() async {
         let sources = [
             FeedSource(title: "Test", url: "https://test.com/feed",
                        category: "News", region: "global", mediaKind: .text),
         ]
         let store = TaxonomyStore()
-        store.build(from: sources)
+        await store.build(from: sources)
 
         let nodeID = store.nodeID(for: "https://test.com/feed")
         XCTAssertNotNil(nodeID)
@@ -77,7 +77,7 @@ final class TaxonomyStoreTests: XCTestCase {
 
     // MARK: - Search
 
-    func testSearchFindsMatchingNodes() {
+    func testSearchFindsMatchingNodes() async {
         let sources = [
             FeedSource(title: "Sprudge", url: "https://a.com",
                        category: "Coffee News", region: "global", mediaKind: .text),
@@ -85,20 +85,20 @@ final class TaxonomyStoreTests: XCTestCase {
                        category: "Startups", region: "global", mediaKind: .text),
         ]
         let store = TaxonomyStore()
-        store.build(from: sources)
+        await store.build(from: sources)
 
         let results = store.search("coffee")
         XCTAssertEqual(results.count, 1)
         XCTAssertEqual(results[0].name, "Coffee News")
     }
 
-    func testSearchIsCaseInsensitive() {
+    func testSearchIsCaseInsensitive() async {
         let sources = [
             FeedSource(title: "Test", url: "https://a.com",
                        category: "Coffee News", region: "global", mediaKind: .text),
         ]
         let store = TaxonomyStore()
-        store.build(from: sources)
+        await store.build(from: sources)
 
         XCTAssertEqual(store.search("COFFEE").count, 1)
         XCTAssertEqual(store.search("coffee").count, 1)
@@ -125,13 +125,13 @@ final class TaxonomyStoreTests: XCTestCase {
 
     // MARK: - isFeedInSubtree
 
-    func testIsFeedInSubtree() {
+    func testIsFeedInSubtree() async {
         let sources = [
             FeedSource(title: "Folha", url: "https://folha.com/feed",
                        category: "News", region: "countries/brazil", mediaKind: .text),
         ]
         let store = TaxonomyStore()
-        store.build(from: sources)
+        await store.build(from: sources)
 
         let folhaNodeID = store.nodeID(for: "https://folha.com/feed")!
         let brazilNodeID = folhaNodeID.components(separatedBy: "/").prefix(3).joined(separator: "/")

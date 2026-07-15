@@ -646,6 +646,7 @@ final class FeedLoader {
             store.registry.sources + newSources
         )
         persistImportedSources()
+        Task { await TaxonomyStore.shared.build(from: store.registry.sources) }
         // Trigger fetch for new sources + reload feed
         Task { await fetchAndReloadAfterImport(newSources) }
     }
@@ -654,6 +655,7 @@ final class FeedLoader {
     func replaceAllSources(_ sources: [FeedSource]) {
         store.registry.sources = sources
         persistImportedSources()
+        Task { await TaxonomyStore.shared.build(from: store.registry.sources) }
     }
 
     /// Import feed URLs (paste, share sheet, etc.) with full validation.
@@ -685,6 +687,7 @@ final class FeedLoader {
                     store.registry.sources + newSources
                 )
                 persistImportedSources()
+                await TaxonomyStore.shared.build(from: store.registry.sources)
                 await fetchAndReloadAfterImport(newSources)
             }
             return ImportResult(items: results)
@@ -698,6 +701,7 @@ final class FeedLoader {
                 store.registry.sources + sources
             )
             persistImportedSources()
+            await TaxonomyStore.shared.build(from: store.registry.sources)
             await fetchAndReloadAfterImport(sources)
         }
         return result
@@ -714,6 +718,7 @@ final class FeedLoader {
                 store.registry.sources + sources
             )
             persistImportedSources()
+            await TaxonomyStore.shared.build(from: store.registry.sources)
             await fetchAndReloadAfterImport(sources)
         }
         return result
@@ -730,6 +735,7 @@ final class FeedLoader {
                 store.registry.sources + sources
             )
             persistImportedSources()
+            await TaxonomyStore.shared.build(from: store.registry.sources)
             await fetchAndReloadAfterImport(sources)
         }
         return result

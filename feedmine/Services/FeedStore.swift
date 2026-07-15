@@ -357,6 +357,11 @@ final class FeedStore {
         await registry.loadFromOPML()
         reservoir.sourceRegionMap = registry.regionMap
 
+        // Build taxonomy tree from loaded sources — try cache first, build if needed
+        if !TaxonomyStore.shared.loadFromCache() {
+            await TaxonomyStore.shared.build(from: registry.sources)
+        }
+
         // Restore persisted filters FIRST so the first render shows
         // correctly filtered content, not a flash of unfiltered items.
         restoreFilters()
@@ -584,6 +589,7 @@ final class FeedStore {
 
         activeRegion = Settings.filterRegion
         activeNodeIDs = Set(Settings.filterTaxonomyNodes)
+        TaxonomyStore.shared.selectedNodeIDs = activeNodeIDs
         if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
         }
