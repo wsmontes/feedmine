@@ -891,18 +891,23 @@ final class FeedStore {
             (item, regionOverride ?? registry.regionFor(sourceURL: item.sourceURL))
         }
         do {
-            // Single batch write with SAVEPOINT per item. One bad row
-            // rolls back to its savepoint without killing the whole batch. (#2)
+            // Single batch write. Items are deduplicated in memory before this
+            // point (loadedIDs check + batch-internal dedup), so the only
+            // possible conflict is a PRIMARY KEY collision from a concurrent
+            // write — do/catch handles that without the 3x per-item SQL
+            // overhead of SAVEPOINT/RELEASE/ROLLBACK.
             let succeeded: [FeedItem] = try await db.write { db -> [FeedItem] in
                 var ok: [FeedItem] = []
                 for (item, region) in itemsWithRegions {
                     do {
-                        try db.execute(sql: "SAVEPOINT item_insert")
                         try FeedItemRecord(from: item, region: region).insert(db)
-                        try db.execute(sql: "RELEASE SAVEPOINT item_insert")
                         ok.append(item)
                     } catch {
-                        try? db.execute(sql: "ROLLBACK TO SAVEPOINT item_insert")
+                        // Skip individual row failures. Items are deduplicated in
+                        // memory (loadedIDs + batch-internal), so the only expected
+                        // failure is a PRIMARY KEY collision from a concurrent write.
+                        // One bad row does not roll back the batch.
+                        Log.db.warning("persistFetchedItems: skip \(item.id): \(error)")
                     }
                 }
                 return ok
