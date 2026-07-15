@@ -8,13 +8,14 @@
 
 ## 1. Context
 
-The taxonomy system shipped (design spec `2026-07-15-feed-taxonomy-design.md`) but three structural problems emerged at real scale — 18,145 OPML files, ~7,500 sources, 39 languages, thousands of taxonomy nodes:
+The taxonomy system shipped (design spec `2026-07-15-feed-taxonomy-design.md`) but four structural problems emerged at real scale — 18,145 OPML files, ~7,500 sources, 39 languages, thousands of taxonomy nodes:
 
 | Problem | Root Cause | Impact |
 |---------|-----------|--------|
 | Menu freezes (15s clicks) | Recursive `DisclosureGroup` in `TaxonomyTreeView` — SwiftUI evaluates body of all nodes even collapsed | Unusable filter UI |
 | Filter shows no content | SQL query uses `LIMIT 200` without taxonomy filtering; scheduler ignores taxonomy selection | Empty feed after filter |
 | ChipBar wastes space | Always visible, shows "All" when nothing selected | ~56px of dead space |
+| Language is invisible | Parsed and stored but never used — no filter UI, no SQL filter, no scheduler awareness | 39 languages of content, zero user control |
 
 ### Design Principles (from user)
 
@@ -384,37 +385,331 @@ enum FeedEmptyMode {
 
 ---
 
-## 5. File Manifest
+## 5. Part 4: Language Filtering (Levels A + B + C)
 
-| File | Action | Description |
-|------|--------|-------------|
-| `Services/FeedStore.swift` | MODIFY | SQL taxonomy filter in `reloadFromSQLite`; urgent taxonomy fetch; pause/resume background on filter |
-| `Services/SourceScheduler.swift` | MODIFY | `prioritySourceURLs` param in `nextBatch` |
-| `Views/FilterSheetView.swift` | MODIFY | Replace `TaxonomyTreeView` with `NavigationLink` to `TaxonomyBrowseView` |
-| `Views/TaxonomyBrowseView.swift` | MODIFY | Add search bar at root level |
-| `Views/TaxonomyTreeView.swift` | REMOVE | No longer needed — replaced by `TaxonomyBrowseView` |
-| `Views/TaxonomyChipBar.swift` | MODIFY | Remove always-visible "All"; accept `isVisible` binding or read from environment |
-| `Views/FeedScreen.swift` | MODIFY | Conditional ChipBar visibility; wire `hasActiveFilters` |
-| `Views/FeedEmptyStateView.swift` | MODIFY | Add mode enum and state-specific content |
-| `Services/FeedLoader.swift` | MODIFY | Add `hasActiveFilters` computed property |
+### 5.1 Current State (Gap Analysis)
+
+Language is parsed from OPML (`<head><language>` and `<outline language="...">`) with proper inheritance (outline → parent → file-level → nil). It's stored on `FeedSource.language` and `TaxonomyNode.language`. But it is **completely invisible** to the user and has **zero effect** on any pipeline:
+
+| Layer | Status |
+|-------|--------|
+| OPML parsing | ✅ parsed with inheritance |
+| `FeedSource.language` | ✅ stored |
+| `TaxonomyNode.language` | ✅ stored |
+| `feed_item` table | ❌ no language column |
+| `applyFilters` | ❌ no language filter |
+| SQL query | ❌ no language filter |
+| `FilterSheetView` | ❌ no language section |
+| `TaxonomyBrowseView` | ❌ no language badge on nodes |
+| `TaxonomyChipBar` | ❌ no language chips |
+| `FeedScreen` | ❌ no language indicator |
+| `SourceScheduler` | ❌ no language prioritization |
+| UI strings | ❌ hardcoded English only |
+
+### 5.2 Level A: Basic Language Filter
+
+#### 5.2.1 Database Migration v7
+
+```sql
+ALTER TABLE feed_item ADD COLUMN language TEXT;
+CREATE INDEX idx_item_language ON feed_item(language);
+```
+
+The column is nullable — historical items without language remain `NULL`.
+
+#### 5.2.2 Populate at Insert Time
+
+`FeedItemRecord.init(from:region:)` already has access to the `FeedSource` via `SourceRegistry`. Add language lookup:
+
+```swift
+// In FeedItemRecord.init
+init(from item: FeedItem, region: String, language: String?) {
+    // ... existing fields ...
+    self.language = language  // ISO 639-1 code or nil
+}
+```
+
+`persistFetchedItems` already resolves the region via `registry.regionFor(sourceURL:)`; add a parallel language resolution:
+
+```swift
+let itemsWithRegions: [(item: FeedItem, region: String, language: String?)] = actualNew.map { item in
+    let resolvedRegion = regionOverride ?? registry.regionFor(sourceURL: item.sourceURL)
+    let resolvedLanguage = registry.languageFor(sourceURL: item.sourceURL)
+    return (item, resolvedRegion, resolvedLanguage)
+}
+```
+
+#### 5.2.3 Filter State
+
+Add to `FeedStore`:
+
+```swift
+var activeLanguages: Set<String> = []
+```
+
+Add to `FeedLoader`:
+
+```swift
+var selectedLanguages: Set<String> { store.activeLanguages }
+var hasLanguageSelection: Bool { !store.activeLanguages.isEmpty }
+```
+
+#### 5.2.4 applyFilters
+
+```swift
+private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
+    let region = activeRegion
+    let contentType = filterContentType
+    let languages = activeLanguages
+    let contentFilters = ContentFilterStore.shared.isEnabled
+        ? ContentFilterStore.shared.activeFilters : []
+    return items.filter { item in
+        isItemEnabled(item)
+        && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
+        && (cachedTaxonomyFeedURLs.isEmpty || cachedTaxonomyFeedURLs.contains(item.sourceURL))
+        && (languages.isEmpty || item.language.map { languages.contains($0) } ?? false)
+        && contentType(item)
+        && !contentFilterExcludes(item, filters: contentFilters)
+    }
+}
+```
+
+Note: items with `language == nil` are **excluded** when a language filter is active. If the user selects "English", content without a declared language is hidden. This is intentional — language filtering is an opt-in precision tool.
+
+#### 5.2.5 SQL Query
+
+Add to the `reloadFromSQLite` query:
+
+```swift
+if !activeLanguages.isEmpty {
+    let placeholders = activeLanguages.map { _ in "?" }.joined(separator: ",")
+    request = request.filter(
+        sql: "language IN (\(placeholders))",
+        arguments: StatementArguments(activeLanguages.map { $0 as String? })
+    )
+}
+```
+
+#### 5.2.6 UI: Language Section in FilterSheetView
+
+New section in `FilterSheetView`:
+
+```swift
+Section("Language") {
+    ForEach(loader.availableLanguages, id: \.code) { lang in
+        Button { loader.toggleLanguage(lang.code) } label: {
+            HStack {
+                Label("\(lang.flag) \(lang.name)", systemImage: "")
+                Spacer()
+                if loader.selectedLanguages.contains(lang.code) {
+                    Image(systemName: "checkmark").foregroundStyle(.blue)
+                }
+                Text("\(lang.feedCount)")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+```
+
+`availableLanguages` is computed from `SourceRegistry`:
+
+```swift
+struct LanguageInfo {
+    let code: String       // "pt", "en", "ja"
+    let name: String       // "Português", "English", "日本語"
+    let flag: String       // "🇧🇷", "🇺🇸", "🇯🇵"
+    let feedCount: Int     // number of sources with this language
+}
+
+var availableLanguages: [LanguageInfo] {
+    let grouped = Dictionary(grouping: registry.sources, by: \.language)
+    return grouped.compactMap { code, sources -> LanguageInfo? in
+        guard let code else { return nil }
+        return LanguageInfo(
+            code: code,
+            name: Locale.current.localizedString(forLanguageCode: code) ?? code,
+            flag: flagEmoji(for: code),
+            feedCount: sources.count
+        )
+    }.sorted { $0.feedCount > $1.feedCount }
+}
+```
+
+### 5.3 Level B: Language Awareness in Tree
+
+#### 5.3.1 Language Badge on Taxonomy Nodes
+
+Each node in `TaxonomyBrowseView` shows its language as a subtle badge:
+
+```swift
+// In TaxonomyLevelView row
+HStack {
+    Image(systemName: store.selectedNodeIDs.contains(node.id)
+          ? "checkmark.circle.fill" : "circle")
+    Text(node.name)
+    if let lang = node.language {
+        Text(lang.uppercased())
+            .font(.caption2)
+            .foregroundStyle(.secondary)
+            .padding(.horizontal, 4).padding(.vertical, 1)
+            .background(.quaternary, in: Capsule())
+    }
+    Spacer()
+    Text("\(node.feedCount)")
+        .font(.caption).foregroundStyle(.secondary)
+}
+```
+
+#### 5.3.2 Language Chip in ChipBar
+
+When a language filter is active, it appears as a chip alongside taxonomy chips:
+
+```
+[Coffee ×] [Brazil ×] [🇧🇷 pt ×] [+1] ✎
+```
+
+Same behavior: tap `×` to deselect, tap chip body to open filters.
+
+#### 5.3.3 Auto-Detect for nil-Language Feeds
+
+For feeds whose OPML didn't declare a language, use `NLLanguageRecognizer` as a fallback. The code skeleton already exists in `logNonEnglishItems` — extract and generalize it:
+
+```swift
+// New utility in SourceRegistry or a dedicated LanguageDetector
+nonisolated static func detectLanguage(title: String, excerpt: String) -> String? {
+    let text = "\(title) \(excerpt)".trimmingCharacters(in: .whitespacesAndNewlines)
+    guard text.count >= 12 else { return nil }
+    let recognizer = NLLanguageRecognizer()
+    recognizer.processString(text)
+    guard let lang = recognizer.dominantLanguage else { return nil }
+    return lang.rawValue  // ISO 639-1
+}
+```
+
+Called at persist time for items where `FeedSource.language` is nil. The detected language is stored in `feed_item.language` but does NOT overwrite `FeedSource.language` (the OPML declaration remains authoritative).
+
+```
+Priority chain: OPML <outline> attr → OPML <head> → NLLanguageRecognizer → nil
+```
+
+### 5.4 Level C: Smart Default + Scheduler Priority
+
+#### 5.4.1 Device Language as Default
+
+On first launch, detect the device language and auto-select it as the active language filter:
+
+```swift
+// In FeedStore.start(), after registry.loadFromOPML()
+if !Settings.hasInitializedLanguageDefault {
+    let deviceLang = Locale.current.language.languageCode?.identifier
+    if let lang = deviceLang, availableLanguagesInRegistry.contains(lang) {
+        activeLanguages = [lang]
+    }
+    Settings.hasInitializedLanguageDefault = true
+}
+```
+
+This means a Brazilian user opening the app for the first time sees Portuguese content by default. They can still browse all languages by clearing the filter.
+
+#### 5.4.2 Language in the Scheduler
+
+`SourceScheduler.nextBatch()` gets the active languages and boosts sources matching them:
+
+```swift
+func nextBatch(
+    reservoir: [FeedItem],
+    sourcesByRegion: [String: [FeedSource]],
+    activeRegion: String?,
+    activeContentType: String?,
+    prioritySourceURLs: Set<String> = [],
+    activeLanguages: Set<String> = []     // NEW
+) -> [FeedSource]
+```
+
+In the scoring loop, sources matching the active language get a `languageBoost`:
+
+```swift
+let languageBoost: Double = activeLanguages.isEmpty ? 1.0
+    : (activeLanguages.contains(source.language ?? "") ? 3.0 : 0.5)
+
+let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost * languageBoost
+```
+
+This doesn't exclude non-matching sources — it just deprioritizes them. The user can still see content in other languages; their language just shows up first.
+
+#### 5.4.3 Language Toggle = Disney Fast Pass
+
+When the user changes the language filter, the same `applyUpdate(.flush)` + `fetchNextBatch` pipeline from Part 1 applies. Sources matching the new language get `prioritySourceURLs` status. The urgent taxonomy fetch works identically — language sources jump the queue.
+
+#### 5.4.4 Persistence
+
+Language filter is persisted alongside other filters:
+
+```swift
+Settings.filterLanguages = Array(activeLanguages)  // [String]
+```
+
+Restored in `restoreFilters()` with the same 4-hour auto-expire logic.
+
+### 5.5 Language Filter Composition
+
+Filters compose with AND semantics:
+
+```
+visible = all
+  ∩ taxonomyFilter(selectedNodeIDs)     // UNION of subtrees
+  ∩ languageFilter(activeLanguages)     // UNION of selected languages
+  ∩ contentTypeFilter(selectedType)
+  ∩ moodFilter(selectedMood)
+  ∩ regionFilter(enabledRegions)
+  ∩ searchQuery(query)
+  ∩ contentFilters(activeKeywords)
+```
+
+A user can say: "show me Coffee & Tea feeds, in Portuguese OR English, text only, from Brazil."
 
 ---
 
-## 6. Performance Targets
+## 6. File Manifest
+
+| File | Action | Description |
+|------|--------|-------------|
+| `Services/FeedStore.swift` | MODIFY | SQL taxonomy + language filter in `reloadFromSQLite`; urgent taxonomy fetch; pause/resume background on filter; `activeLanguages` state; language default logic |
+| `Services/SourceScheduler.swift` | MODIFY | `prioritySourceURLs` + `activeLanguages` params in `nextBatch`; language scoring boost |
+| `Views/FilterSheetView.swift` | MODIFY | Replace `TaxonomyTreeView` with `NavigationLink` to `TaxonomyBrowseView`; add Language section |
+| `Views/TaxonomyBrowseView.swift` | MODIFY | Add search bar at root level; language badge on each node |
+| `Views/TaxonomyTreeView.swift` | REMOVE | No longer needed — replaced by `TaxonomyBrowseView` |
+| `Views/TaxonomyChipBar.swift` | MODIFY | Remove always-visible "All"; show language chip when active |
+| `Views/FeedScreen.swift` | MODIFY | Conditional ChipBar visibility; wire `hasActiveFilters` (includes language) |
+| `Views/FeedEmptyStateView.swift` | MODIFY | Add mode enum and state-specific content |
+| `Services/FeedLoader.swift` | MODIFY | `hasActiveFilters`; `selectedLanguages`; `hasLanguageSelection`; `availableLanguages`; `toggleLanguage` |
+| `Models/FeedItem.swift` | MODIFY | Add `language: String?` field |
+| `Services/OPMLParser.swift` | MODIFY | Extract language detection to reusable utility |
+| `Services/SourceRegistry.swift` | MODIFY | `languageFor(sourceURL:)` lookup |
+| `feed_item` table | MIGRATE v7 | Add `language TEXT` column + index |
+
+---
+
+## 7. Performance Targets
 
 | Operation | Target | Mechanism |
 |-----------|--------|-----------|
-| Filter SQL query (50 feeds) | <20ms | Composite index `(source_url, published_at)` |
-| Filter SQL query (3,200 feeds) | <100ms | Batched IN clause, same index |
+| Filter SQL query (50 feeds, taxonomy) | <20ms | Composite index `(source_url, published_at)` |
+| Filter SQL query (3,200 feeds, taxonomy) | <100ms | Batched IN clause, same index |
+| Filter SQL query (language only) | <10ms | `idx_item_language` index |
+| Combined taxonomy + language SQL | <30ms | Both indexes used in query plan |
 | Scheduler priority sort | <5ms | Hash set lookups, O(sources) |
+| Scheduler language scoring | <2ms | Simple string comparison in scoring loop |
 | TaxonomyBrowseView navigation push | <100ms | Flat `List`, no recursion |
 | ChipBar show/hide | 0 frames | Pure conditional, no animation needed |
 | First item appears after filter | <500ms | SQL query + seed + first render |
 | Urgent fetch completion (15 sources) | <3s typical | Concurrent fetch, 15 at a time |
+| NLLanguageRecognizer detection | <5ms per item | Single pass, already in background Task |
 
 ---
 
-## 7. Edge Cases
+## 8. Edge Cases
 
 1. **Rapid filter toggling**: `filterDebounceTask` already throttles to 300ms — multiple rapid toggles only trigger one flush.
 2. **Network unavailable during filter**: SQL query still returns cached items. Empty state B shows "Fetching..." with progress stuck — transitions to state C after timeout (30s).
@@ -422,15 +717,45 @@ enum FeedEmptyMode {
 4. **Empty taxonomy tree**: `TaxonomyStore.root` is nil → `TaxonomyBrowseView` shows "No topics available" content unavailable view.
 5. **Filter then immediate unfilter**: `progressiveFetch` was cancelled; needs restart. On clearAllFilters, `applyUpdate(.flush)` restarts normal pipeline.
 6. **Concurrent urgent fetches**: If user changes filter while urgent fetch is running, cancel the previous urgent task (tracked via `urgentFetchTask`).
+7. **Language: nil-language items when filter is active**: Items without a declared language are excluded from results when any language filter is selected. This prevents "Unknown" content from leaking through. If ALL items become excluded, the feed shows empty state C.
+8. **Language: device language not in available languages**: If the user's device is set to a language not present in any OPML (e.g., Korean when only en/pt/es exist), no language default is set — shows all languages unfiltered.
+9. **Language: rapid language toggling**: Same debounce as taxonomy — 300ms gate on `setFilter`.
+10. **Language: migration v7 on existing databases**: `ALTER TABLE ADD COLUMN` sets `language` to `NULL` for all existing rows. New fetches populate the column. Over time, the NULL proportion decreases naturally as old items expire (30-day window).
+11. **NLLanguageRecognizer fallback accuracy**: Short titles (<12 chars) skip detection. Results are best-effort — OPML `language` attribute is always authoritative.
+12. **Language + Taxonomy + ContentType all active simultaneously**: All filters compose as AND. SQL query has multiple WHERE clauses. Query planner uses the most selective index first.
 
 ---
 
-## 8. Migration Path
+## 9. Migration Path
 
-No database migration required. No OPML changes. No new persistence. All changes are in-memory query logic and SwiftUI view hierarchy.
+### 9.1 Database Migration
 
-1. Implement Part 1 (SQL + scheduler) → verify filters work
-2. Implement Part 2 (NavigationStack menu) → verify no more freezing
-3. Implement Part 3 (ChipBar + empty states) → verify space and messaging
-4. Remove `TaxonomyTreeView.swift`
-5. Full regression test with 18K OPML dataset
+One new migration (v7):
+
+```sql
+ALTER TABLE feed_item ADD COLUMN language TEXT;
+CREATE INDEX idx_item_language ON feed_item(language);
+```
+
+Existing rows get `NULL` — populated on next fetch. No backfill needed (30-day retention window handles it naturally).
+
+### 9.2 No OPML Changes Required
+
+Language attributes already exist in the OPML files. The parser already handles them. No new OPML attributes or structure changes.
+
+### 9.3 Implementation Order
+
+1. **Part 4-A (DB + Model)** — Migration v7, `FeedItem.language`, `FeedItemRecord` update, `SourceRegistry.languageFor`, populate at persist
+2. **Part 1 (SQL + Scheduler)** — Taxonomy SQL filter, priority URLs, urgent fetch
+3. **Part 4-A (Filter Logic)** — `activeLanguages`, `applyFilters`, SQL language filter, `FeedLoader` bindings
+4. **Part 4-B+C (Language UI + Smart Default)** — Language section in FilterSheet, badges on tree, device default, scheduler boost
+5. **Part 2 (NavigationStack Menu)** — Replace TreeView with BrowseView entry point, add search bar
+6. **Part 3 (ChipBar + Empty States)** — Conditional visibility, empty state modes
+7. **Remove `TaxonomyTreeView.swift`**
+8. **Full regression test** with 18K OPML dataset, validate language filtering end-to-end
+
+### 9.4 Rollback Safety
+
+- Language filter defaults to empty (all languages shown) — no behavior change for existing users on upgrade
+- `language` column is nullable — no schema breakage for existing databases
+- Device language default only applies on first launch (`hasInitializedLanguageDefault` flag)
