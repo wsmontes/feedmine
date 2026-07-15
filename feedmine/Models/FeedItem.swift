@@ -14,6 +14,26 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
     let audioURL: String?
     let duration: TimeInterval?
     let region: String   // "global" | "countries/brazil/sao-paulo"
+    let language: String?  // ISO 639-1 code from OPML or NLLanguageRecognizer
+
+    init(id: String, sourceTitle: String, sourceURL: String, category: String,
+         title: String, excerpt: String, url: String, imageURL: String?,
+         publishedAt: Date, audioURL: String? = nil, duration: TimeInterval? = nil,
+         region: String = "global", language: String? = nil) {
+        self.id = id
+        self.sourceTitle = sourceTitle
+        self.sourceURL = sourceURL
+        self.category = category
+        self.title = title
+        self.excerpt = excerpt
+        self.url = url
+        self.imageURL = imageURL
+        self.publishedAt = publishedAt
+        self.audioURL = audioURL
+        self.duration = duration
+        self.region = region
+        self.language = language
+    }
 
     /// True if this article links to a YouTube video
     var isYouTube: Bool { youTubeVideoID != nil }
@@ -105,7 +125,8 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
         FeedItem(
             id: id, sourceTitle: sourceTitle, sourceURL: sourceURL, category: category,
             title: title, excerpt: excerpt, url: url, imageURL: imageURL,
-            publishedAt: publishedAt, audioURL: nil, duration: nil, region: region
+            publishedAt: publishedAt, audioURL: nil, duration: nil, region: region,
+            language: language
         )
     }
 

@@ -1714,6 +1714,7 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
     var fetchedAt: Int     // epoch seconds
     var isRead: Bool
     var openedAt: Int?     // epoch seconds
+    var language: String?
 
     static var databaseTableName: String { "feed_item" }
 
@@ -1736,9 +1737,10 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
         case fetchedAt = "fetched_at"
         case isRead = "is_read"
         case openedAt = "opened_at"
+        case language
     }
 
-    init(from item: FeedItem, region: String) {
+    init(from item: FeedItem, region: String, language: String? = nil) {
         self.id = item.id
         self.sourceURL = item.sourceURL
         self.sourceTitle = item.sourceTitle
@@ -1754,6 +1756,7 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
         self.fetchedAt = Int(Date().timeIntervalSince1970)
         self.isRead = false
         self.openedAt = nil
+        self.language = language
     }
 
     func toFeedItem() -> FeedItem {
@@ -1769,7 +1772,8 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
             publishedAt: Date(timeIntervalSince1970: TimeInterval(publishedAt)),
             audioURL: audioURL,
             duration: duration,
-            region: region
+            region: region,
+            language: language
         )
     }
 }
