@@ -6,7 +6,6 @@
   <body>
     <outline text="News">
       <outline title="Infonet" xmlUrl="https://infonet.com.br/feed/" type="rss" />
-      <outline title="Governo de Sergipe" xmlUrl="https://www.se.gov.br/feed/" type="rss" />
       <outline title="Prefeitura de Aracaju" xmlUrl="https://www.aracaju.se.gov.br/feed/" type="rss" />
     </outline>
     <outline text="Sports">

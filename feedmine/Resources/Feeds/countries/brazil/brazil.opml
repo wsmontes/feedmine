@@ -129,7 +129,6 @@
       <outline title="FFW" xmlUrl="https://ffw.uol.com.br/feed/" type="rss" />
       <outline title="PapelPop" xmlUrl="https://www.papelpop.com/feed/" type="rss" />
       <outline title="Jornal Opção" xmlUrl="https://www.jornalopcao.com.br/feed/" type="rss" />
-      <outline title="DCM" xmlUrl="https://www.diariodocentrodomundo.com.br/feed/" type="rss" />
       <outline title="O Cafezinho" xmlUrl="https://www.ocafezinho.com/feed/" type="rss" />
     </outline>
     <outline text="Design">
@@ -785,7 +784,6 @@
       <outline title="r/technology" xmlUrl="https://www.reddit.com/r/technology/.rss" type="rss" />
     </outline>
     <outline text="Reddit">
-      <outline title="r/brazil" xmlUrl="https://www.reddit.com/r/brazil/.rss" type="rss" />
-    </outline>
+      </outline>
   </body>
 </opml>

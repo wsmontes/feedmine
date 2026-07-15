@@ -5,7 +5,6 @@
   </head>
   <body>
     <outline text="News">
-      <outline title="ABC News" xmlUrl="https://www.abc.net.au/news/feed/51120/rss.xml" type="rss" />
       <outline title="Sydney Morning Herald" xmlUrl="https://www.smh.com.au/rss/feed.xml" type="rss" />
       <outline title="The Age" xmlUrl="https://www.theage.com.au/rss/feed.xml" type="rss" />
       <outline title="The Guardian Australia" xmlUrl="https://www.theguardian.com/au/rss" type="rss" />
@@ -34,7 +33,6 @@
       <outline title="Pickr" xmlUrl="https://www.pickr.com.au/feed/" type="rss" />
     </outline>
     <outline text="Science">
-      <outline title="Australian Geographic" xmlUrl="https://www.australiangeographic.com.au/feed/" type="rss" />
       <outline title="Science Alert" xmlUrl="https://www.sciencealert.com/feed/" type="rss" />
       <outline title="Australasian Science" xmlUrl="https://www.australasianscience.com.au/feed/" type="rss" />
       <outline title="Bureau of Meteorology" xmlUrl="https://www.bom.gov.au/rss/" type="rss" />
@@ -614,7 +612,6 @@
       <outline title="Digital Photography School" xmlUrl="https://digital-photography-school.com/feed/" type="rss" />
       <outline title="The Landscape Awards" xmlUrl="https://thelandscapeawards.com/feed/" type="rss" />
       <outline title="Focus Magazine" xmlUrl="https://www.focusmag.com.au/feed/" type="rss" />
-      <outline title="Australian Geographic Photos" xmlUrl="https://www.australiangeographic.com.au/photography/feed/" type="rss" />
     </outline>
     <outline text="YouTube">
       <outline title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" type="rss" />

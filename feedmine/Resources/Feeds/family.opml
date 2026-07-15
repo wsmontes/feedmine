@@ -1,66 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Family, Relationships &amp; Parenting</title></head>
+  <head>
+    <title>Family, Relationships &amp; Parenting</title>
+  </head>
   <body>
     <outline text="Family &amp; Parenting News">
-      <outline title="Parents Magazine" xmlUrl="https://www.parents.com/rss/" type="rss"/>
-      <outline title="Fatherly" xmlUrl="https://www.fatherly.com/feed/" type="rss"/>
-      <outline title="Scary Mommy" xmlUrl="https://www.scarymommy.com/feed/" type="rss"/>
-      <outline title="Motherly" xmlUrl="https://www.mother.ly/rss" type="rss"/>
-      <outline title="Today's Parent" xmlUrl="https://www.todaysparent.com/feed/" type="rss"/>
-      <outline title="The Bump (Pregnancy &amp; Baby)" xmlUrl="https://www.thebump.com/rss" type="rss"/>
-      <outline title="What to Expect Blog" xmlUrl="https://www.whattoexpect.com/rss/" type="rss"/>
-      <outline title="BabyCenter Blog" xmlUrl="https://www.babycenter.com/rss" type="rss"/>
-      <outline title="ParentMap" xmlUrl="https://www.parentmap.com/rss" type="rss"/>
+      <outline title="Fatherly" xmlUrl="https://www.fatherly.com/feed/" type="rss" />
+      <outline title="Scary Mommy" xmlUrl="https://www.scarymommy.com/feed/" type="rss" />
+      <outline title="BabyCenter Blog" xmlUrl="https://www.babycenter.com/rss" type="rss" />
+      <outline title="ParentMap" xmlUrl="https://www.parentmap.com/rss" type="rss" />
     </outline>
     <outline text="Relationships &amp; Dating">
-      <outline title="The Gottman Institute" xmlUrl="https://www.gottman.com/rss/" type="rss"/>
-      <outline title="Psychology Today — Relationships" xmlUrl="https://www.psychologytoday.com/rss/relationships" type="rss"/>
-      <outline title="Love and Life Toolbox" xmlUrl="https://www.loveandlifetoolbox.com/feed/" type="rss"/>
-      <outline title="The Dating Blog" xmlUrl="https://thedatingblog.com/feed/" type="rss"/>
-      <outline title="Marriage.com Blog" xmlUrl="https://www.marriage.com/rss" type="rss"/>
-      <outline title="Relationship Hero Blog" xmlUrl="https://www.relationshiphero.com/blog/rss/" type="rss"/>
-      <outline title="Modern Love (NYT)" xmlUrl="https://www.nytimes.com/rss/modern-love" type="rss"/>
-      <outline title="Relationship Advice Blog" xmlUrl="https://www.relationshipadviceblog.com/feed/" type="rss"/>
+      <outline title="The Gottman Institute" xmlUrl="https://www.gottman.com/rss/" type="rss" />
+      <outline title="Love and Life Toolbox" xmlUrl="https://www.loveandlifetoolbox.com/feed/" type="rss" />
+      <outline title="The Dating Blog" xmlUrl="https://thedatingblog.com/feed/" type="rss" />
+      <outline title="Modern Love (NYT)" xmlUrl="https://www.nytimes.com/rss/modern-love" type="rss" />
+      <outline title="Relationship Advice Blog" xmlUrl="https://www.relationshipadviceblog.com/feed/" type="rss" />
     </outline>
     <outline text="Pregnancy &amp; Newborns">
-      <outline title="Fit Pregnancy" xmlUrl="https://www.fitpregnancy.com/rss/" type="rss"/>
-      <outline title "Baby Chick Blog" xmlUrl="https://www.babychick.com/feed/" type="rss"/>
-      <outline title="Lucie's List" xmlUrl="https://www.lucieslist.com/rss/" type="rss"/>
-      <outline title="Pregnant Chicken" xmlUrl="https://pregnantchicken.com/feed/" type="rss"/>
-      <outline title="Expectful Blog" xmlUrl="https://expectful.com/blog/rss/" type="rss"/>
+      <outline title="Baby Chick Blog" xmlUrl="https://www.babychick.com/feed/" type="rss" />
     </outline>
     <outline text="Raising Kids &amp; Education">
-      <outline title="Scholastic Parents Blog" xmlUrl="https://www.scholastic.com/parents/rss/" type="rss"/>
-      <outline title="Understood.org — Parenting" xmlUrl="https://www.understood.org/rss" type="rss"/>
-      <outline title="Child Mind Institute Blog" xmlUrl="https://childmind.org/rss/" type="rss"/>
-      <outline title="Parenting Science" xmlUrl="https://www.parentingscience.com/rss" type="rss"/>
-      <outline title="Aha! Parenting Blog" xmlUrl="https://www.ahaparenting.com/rss" type="rss"/>
-      <outline title="Janet Lansbury (Elevating Childcare)" xmlUrl="https://www.janetlansbury.com/feed/" type="rss"/>
+      <outline title="Child Mind Institute Blog" xmlUrl="https://childmind.org/rss/" type="rss" />
+      <outline title="Parenting Science" xmlUrl="https://www.parentingscience.com/rss" type="rss" />
+      <outline title="Janet Lansbury (Elevating Childcare)" xmlUrl="https://www.janetlansbury.com/feed/" type="rss" />
     </outline>
     <outline text="Teens &amp; Young Adults">
-      <outline title="Your Teen Magazine" xmlUrl="https://yourteenmag.com/feed/" type="rss"/>
-      <outline title="Grown and Flown" xmlUrl="https://grownandflown.com/feed/" type="rss"/>
-      <outline title="Teens Today Blog" xmlUrl="https://teenstodayblog.com/feed/" type="rss"/>
-      <outline title="Center for Parent &amp; Teen Communication" xmlUrl="https://parentandteen.com/rss/" type="rss"/>
+      <outline title="Your Teen Magazine" xmlUrl="https://yourteenmag.com/feed/" type="rss" />
+      <outline title="Grown and Flown" xmlUrl="https://grownandflown.com/feed/" type="rss" />
+      <outline title="Center for Parent &amp; Teen Communication" xmlUrl="https://parentandteen.com/rss/" type="rss" />
     </outline>
     <outline text="Family Podcasts">
-      <outline title="The Longest Shortest Time" xmlUrl="https://feeds.megaphone.fm/thelongestshortesttime" type="rss"/>
-      <outline title="Unruffled (Janet Lansbury)" xmlUrl="https://feeds.libsyn.com/unruffled" type="rss"/>
-      <outline title="The Mom Hour" xmlUrl="https://feeds.libsyn.com/themomhour" type="rss"/>
-      <outline title="Marriage Therapy Radio" xmlUrl="https://feeds.libsyn.com/marriagetherapyradio" type="rss"/>
-      <outline title="Where Should We Begin? (Esther Perel)" xmlUrl="https://feeds.megaphone.fm/whereshouldwebegin" type="rss"/>
-      <outline title="Dear Sugars" xmlUrl="https://feeds.megaphone.fm/dearsugars" type="rss"/>
-      <outline title="Raising Good Humans" xmlUrl="https://feeds.libsyn.com/raisinggoodhumans" type="rss"/>
-    </outline>
+      </outline>
     <outline text="YouTube — Family &amp; Parenting">
-      <outline title="What's Up Moms (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UC_974JJv9S25yjvRUSWpV3A" type="rss"/>
-      <outline title="The Parenting Junkie (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCqCKHzPnS9TF1XKRP7q4lIw" type="rss"/>
-      <outline title="Daily Bumps (Family Vlogs, YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCY6fz0M-sGClqxjJdUyLLXw" type="rss"/>
-      <outline title="ELLE &amp; VITO (Family, YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCq4qiECeFDeMQcxTMjjGBPA" type="rss"/>
-      <outline title="Family Fun Pack (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCz1pIaQA7MKxGXMkSqDN_fg" type="rss"/>
-      <outline title="This Is How We Bingham (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCzidGFCo71sfpANOm50Ocsg" type="rss"/>
-      <outline title "The ACE Family (YouTube)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id/UCZYS4r6lH1mFe02gFIHMpUA" type="rss"/>
-    </outline>
+      </outline>
   </body>
 </opml>

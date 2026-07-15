@@ -32,6 +32,19 @@
 - [x] BUILD SUCCEEDED
 - [x] Existing tests still pass
 
+## Fix Report (Critical issues)
+### Fix 1: Wire taxonomy build
+- Added TaxonomyStore.build(from:) call in FeedStore.start() after registry.loadFromOPML()
+- Added rebuild after source mutations in FeedLoader import methods (addSources, replaceAllSources, importFeeds, importOPML)
+
+### Fix 2: Single source of truth
+- Synced TaxonomyStore.selectedNodeIDs from FeedStore in restoreFilters()
+- Removed independent selection persistence from TaxonomyStore (persistSelection, selectedNodeIDs from CachedTree)
+
+Build: **BUILD SUCCEEDED** (iPhone 14 Plus Simulator, iOS 26.5)
+Tests: **9 passed, 0 failed**
+Commit: `2c2d923f`
+
 ## Concerns
 
 1. **TaxonomyStore.shared singleton was missing** — The brief stated TaxonomyStore has a `shared` singleton, but the actual code didn't have one. Added it in this task.

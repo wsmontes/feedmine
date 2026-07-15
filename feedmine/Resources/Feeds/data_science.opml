@@ -25,7 +25,6 @@
     <outline text="ML/AI Company Blogs">
       <outline title="Hugging Face Blog" xmlUrl="https://huggingface.co/blog/feed.xml" type="rss" />
       <outline title="NVIDIA AI Blog" xmlUrl="https://blogs.nvidia.com/feed/" type="rss" />
-      <outline title="Microsoft Research Blog" xmlUrl="https://www.microsoft.com/en-us/research/feed/" type="rss" />
     </outline>
     <outline text="Big Data &amp; Engineering">
       <outline title="dbt Labs Blog" xmlUrl="https://www.getdbt.com/blog/rss.xml" type="rss" />

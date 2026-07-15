@@ -1184,9 +1184,18 @@ final class FeedStore {
         // Split: news items (time-sensitive) keep recency order; everything
         // else gets shuffled for diversity. Then merge: all news first (most
         // recent at top), then random non-news, capped at 200.
-        let newsCategories = Set(["news", "News & Politics", "Sports"])
-        var news = items.filter { newsCategories.contains($0.category) }
-        var other = items.filter { !newsCategories.contains($0.category) }.shuffled()
+        // After taxonomy changes, category stores slugified node paths
+        // (e.g. "coffee_news", "countries/brazil/news", "sports") so we
+        // match on the last path segment rather than raw OPML text.
+        let newsSlugs = Set(["news", "sports", "politics"])
+        var news = items.filter { item in
+            let lastSegment = item.category.components(separatedBy: "/").last?.lowercased() ?? ""
+            return newsSlugs.contains(lastSegment) || newsSlugs.contains(where: { item.category.lowercased().hasSuffix("/\($0)") })
+        }
+        var other = items.filter { item in
+            let lastSegment = item.category.components(separatedBy: "/").last?.lowercased() ?? ""
+            return !newsSlugs.contains(lastSegment) && !newsSlugs.contains(where: { item.category.lowercased().hasSuffix("/\($0)") })
+        }.shuffled()
         // News already ordered by published_at DESC from the query
         var selected = news + other
         if selected.count > 200 { selected = Array(selected.prefix(200)) }
