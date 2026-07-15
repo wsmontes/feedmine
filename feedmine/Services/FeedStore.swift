@@ -1660,6 +1660,12 @@ final class FeedStore {
                 WHERE typeof(added_at) = 'text'
             """)
         }
+        migrator.registerMigration("v7_language") { db in
+            try db.alter(table: "feed_item") { t in
+                t.add(column: "language", .text)
+            }
+            try db.create(index: "idx_item_language", on: "feed_item", columns: ["language"])
+        }
         try migrator.migrate(db)
     }
 }
