@@ -29,6 +29,8 @@ final class FeedStore {
     private(set) var lastFetchSucceeded = false  // reset error banner on success
     private(set) var emptyFeedCount = 0
     private(set) var totalDiscarded = 0
+    var emptyStateFetchedCount: Int = 0
+    var emptyStateFetchTotal: Int = 0
 
     /// Cached podcast counts — updated after fetch batches, not on every access (#24)
     private(set) var podcastItemCount = 0
@@ -53,6 +55,7 @@ final class FeedStore {
     var activeNodeIDs: Set<String> = []
     var activeContentType: FeedLoader.ContentType = .all
     var activeMood: FeedLoader.MoodFilter = .all
+    var activeLanguages: Set<String> = []
 
     /// Cached set of feed URLs that match the current taxonomy selection.
     /// Invalidated when activeNodeIDs changes. Makes applyFilters O(items) instead
@@ -116,12 +119,14 @@ final class FeedStore {
     private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
         let region = activeRegion
         let contentType = filterContentType
+        let languages = activeLanguages
         let contentFilters = ContentFilterStore.shared.isEnabled
             ? ContentFilterStore.shared.activeFilters : []
         return items.filter { item in
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
             && (cachedTaxonomyFeedURLs.isEmpty || cachedTaxonomyFeedURLs.contains(item.sourceURL))
+            && (languages.isEmpty || item.language.map { languages.contains($0) } ?? false)
             && contentType(item)
             && !contentFilterExcludes(item, filters: contentFilters)
         }
@@ -177,6 +182,7 @@ final class FeedStore {
     private var backgroundRefreshTask: Task<Void, Never>?
     private var regionToggleTask: Task<Void, Never>?
     private var filterDebounceTask: Task<Void, Never>?
+    private var urgentFetchTask: Task<Void, Never>?
 
     // MARK: - Throttled reservoir append
     // Accumulates items from progressive/background fetches and flushes them
@@ -372,6 +378,20 @@ final class FeedStore {
         // Restore persisted filters FIRST so the first render shows
         // correctly filtered content, not a flash of unfiltered items.
         restoreFilters()
+
+        // Set language default on first launch — only applies when no
+        // persisted language filter was restored above.
+        if !Settings.hasInitializedLanguageDefault {
+            let deviceLang = Locale.current.language.languageCode?.identifier
+            if let lang = deviceLang {
+                let availableLangs = Set(registry.sources.compactMap(\.language))
+                if availableLangs.contains(lang) {
+                    activeLanguages = [lang]
+                }
+            }
+            Settings.hasInitializedLanguageDefault = true
+        }
+
         await loadReadState()
         reservoir.readItemIDs = readItemIDs
 
@@ -575,6 +595,7 @@ final class FeedStore {
         Settings.filterRegion = activeRegion
         Settings.filterTaxonomyNodes = Array(activeNodeIDs)
         Settings.filterContentType = activeContentType.rawValue
+        Settings.filterLanguages = Array(activeLanguages)
         Settings.filterSetAt = Date().timeIntervalSince1970
     }
 
@@ -582,6 +603,7 @@ final class FeedStore {
         let hasActiveFilters = Settings.filterRegion != nil
             || !Settings.filterTaxonomyNodes.isEmpty
             || (FeedLoader.ContentType(rawValue: Settings.filterContentType) ?? .all) != .all
+            || !Settings.filterLanguages.isEmpty
 
         if hasActiveFilters && Settings.filterAutoExpire {
             let elapsed = Date().timeIntervalSince1970 - Settings.filterSetAt
@@ -589,6 +611,7 @@ final class FeedStore {
                 Settings.filterRegion = nil
                 Settings.filterTaxonomyNodes = []
                 Settings.filterContentType = "All"
+                Settings.filterLanguages = []
                 Settings.filterSetAt = 0
                 return
             }
@@ -597,6 +620,7 @@ final class FeedStore {
         activeRegion = Settings.filterRegion
         activeNodeIDs = Set(Settings.filterTaxonomyNodes)
         TaxonomyStore.shared.selectedNodeIDs = activeNodeIDs
+        activeLanguages = Set(Settings.filterLanguages)
         if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
         }
@@ -606,12 +630,17 @@ final class FeedStore {
         }
     }
 
-    func setFilter(region: String?, nodeIDs: Set<String>, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
+    func setFilter(region: String?, nodeIDs: Set<String>, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all, languages: Set<String>? = nil) {
         // Update state immediately for UI responsiveness
         activeRegion = region
         activeNodeIDs = nodeIDs
         activeContentType = type
         activeMood = mood
+        if let langs = languages {
+            activeLanguages = langs
+        } else {
+            activeLanguages = []
+        }
 
         // Rebuild taxonomy URL cache when selection changes (O(1) filter instead of O(n x m))
         if activeNodeIDs != cachedTaxonomyNodeIDs {
@@ -621,6 +650,11 @@ final class FeedStore {
 
         persistFilters()
 
+        // Cancel progressive fetch — waste of budget when user wants specific content
+        progressiveFetchTask?.cancel()
+        // Cancel any previous urgent fetch
+        urgentFetchTask?.cancel()
+
         // Debounce the expensive flush+reload: if multiple filter changes
         // arrive within 300ms (e.g. user tapping category then mood quickly),
         // only the last one triggers the full reload pipeline.
@@ -628,6 +662,18 @@ final class FeedStore {
         filterDebounceTask = Task { [weak self] in
             try? await Task.sleep(for: .milliseconds(300))
             guard !Task.isCancelled, let self else { return }
+
+            // Kick off urgent fetch for taxonomy sources
+            let priorityURLs = TaxonomyStore.shared.feedURLs(inSubtreesOf: self.activeNodeIDs)
+            if !priorityURLs.isEmpty {
+                self.urgentFetchTask = Task { [weak self] in
+                    guard let self else { return }
+                    await self.fetchUrgentTaxonomyBatch(sourceURLs: priorityURLs)
+                    // Resume background refresh after urgent work completes
+                    self.startBackgroundRefresh()
+                }
+            }
+
             self.loadingState = .refreshing
             self.refreshWhatsNew()
             self.applyUpdate(.flush())
@@ -935,7 +981,9 @@ final class FeedStore {
             sourcesByRegion: sourcesByRegion,
             activeRegion: activeRegion,
             activeCategory: nil,
-            activeContentType: contentTypeStr
+            activeContentType: contentTypeStr,
+            prioritySourceURLs: activeNodeIDs.isEmpty ? [] : cachedTaxonomyFeedURLs,
+            activeLanguages: activeLanguages
         )
         guard !batch.isEmpty else { return }
 
@@ -1009,6 +1057,23 @@ final class FeedStore {
             let region = registry.regionFor(sourceURL: item.sourceURL)
             Log.feed.debug("[LangCheck] \(lang.rawValue) source=\"\(item.sourceTitle)\" region=\(region) url=\(item.url)")
         }
+    }
+
+    /// Urgent fetch for the current taxonomy selection. Runs immediately when
+    /// the user changes filters so the taxonomy-curated feed populates quickly
+    /// instead of waiting for the next progressive or background refresh cycle.
+    private func fetchUrgentTaxonomyBatch(sourceURLs: Set<String>) async {
+        let sources = registry.enabledSources.filter { sourceURLs.contains($0.url) }
+        guard !sources.isEmpty else { return }
+        emptyStateFetchTotal = sourceURLs.count
+        emptyStateFetchedCount = 0
+        let result = await fetcher.fetchAll(sources, maxConcurrent: 15)
+        emptyStateFetchedCount = result.sourceStatuses.count
+        let actualNew = await persistFetchedItems(result.items)
+        guard !actualNew.isEmpty else { return }
+        throttledReservoirAppend(actualNew)
+        collectWhatsNewCandidates(actualNew)
+        prefetchImagesIfEnabled(for: actualNew)
     }
 
     /// Fetch a budgeted batch of remaining enabled sources in the background.
@@ -1123,6 +1188,7 @@ final class FeedStore {
         guard !isSearching else { return }
         let region = activeRegion
         let contentType = activeContentType
+        let languages = activeLanguages
         // Capture taxonomy feed URLs before entering the read closure (which may
         // run off the main actor). When taxonomy is active we need ALL matching
         // items, so the batched IN clause replaces the usual LIMIT 200.
@@ -1148,6 +1214,15 @@ final class FeedStore {
                             .filter(!Column("source_url").like("%reddit%"))
             case .forum: request = request.filter(Column("source_url").like("%reddit%"))
             case .all: break
+            }
+
+            // Language filter — shared by both taxonomy and non-taxonomy paths.
+            if !languages.isEmpty {
+                let langPlaceholders = languages.map { _ in "?" }.joined(separator: ",")
+                request = request.filter(
+                    sql: "language IN (\(langPlaceholders))",
+                    arguments: StatementArguments(Array(languages))
+                )
             }
 
             // Taxonomy filter — batched IN clause to stay within SQLite's

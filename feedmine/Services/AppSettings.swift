@@ -13,6 +13,8 @@ enum Keys {
     static let filterMood = "filterMood"
     static let filterSetAt = "filterSetAt"
     static let filterAutoExpire = "filterAutoExpire"
+    static let filterLanguages = "filterLanguages"
+    static let hasInitializedLanguageDefault = "hasInitializedLanguageDefault"
 
     // Appearance
     static let circadianPaletteOn = "circadianPaletteOn"
@@ -76,6 +78,14 @@ enum Settings {
     static var filterSetAt: TimeInterval {
         get { d.double(forKey: Keys.filterSetAt) }
         set { d.set(newValue, forKey: Keys.filterSetAt) }
+    }
+    static var filterLanguages: [String] {
+        get { d.stringArray(forKey: Keys.filterLanguages) ?? [] }
+        set { d.set(newValue, forKey: Keys.filterLanguages) }
+    }
+    static var hasInitializedLanguageDefault: Bool {
+        get { d.bool(forKey: Keys.hasInitializedLanguageDefault) }
+        set { d.set(newValue, forKey: Keys.hasInitializedLanguageDefault) }
     }
 
     // MARK: Appearance
