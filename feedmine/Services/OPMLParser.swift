@@ -412,11 +412,26 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
             return mediaKind
         }()
         let resolvedLanguage = language ?? languageStack.last ?? fileLanguage
+
+        // Build node path: slugified category for global, region-prefixed for others.
+        let nodePath: String
+        if region == "global" {
+            let slug = category.lowercased()
+                .replacingOccurrences(of: "&", with: "and")
+                .replacingOccurrences(of: " ", with: "_")
+            nodePath = slug
+        } else {
+            let catSlug = category.lowercased()
+                .replacingOccurrences(of: "&", with: "and")
+                .replacingOccurrences(of: " ", with: "_")
+            nodePath = "\(region)/\(catSlug)"
+        }
+
         sources.append(
             FeedSource(
                 title: title.isEmpty ? category : title,
                 url: xmlUrl,
-                category: category,
+                category: nodePath,
                 region: region,
                 mediaKind: resolvedKind,
                 language: resolvedLanguage

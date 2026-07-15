@@ -35,4 +35,31 @@ final class SearchEngine {
         return results.map { $0.toFeedItem() }
     }
 
+    /// Execute an FTS5 search with taxonomy-based post-filter.
+    /// Searches the full 30-day window, then filters results by taxonomy node subtree.
+    func search(_ query: String, region: String?, taxonomyNodeIDs: Set<String>) async -> [FeedItem] {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !q.isEmpty else { return [] }
+        guard let pattern = FTS5Pattern(matchingAllTokensIn: q) else { return [] }
+
+        let results: [FeedItemRecord] = (try? await db.read { [thirtyDayCutoffEpoch] db in
+            var request = FeedItemRecord
+                .filter(Column("fetched_at") > thirtyDayCutoffEpoch)
+                .matching(pattern)
+            if let r = region { request = request.filter(Column("region") == r) }
+            return try request
+                .order(Column("published_at").desc)
+                .limit(100)
+                .fetchAll(db)
+        }) ?? []
+        var feedItems = results.map { $0.toFeedItem() }
+        if !taxonomyNodeIDs.isEmpty {
+            feedItems = feedItems.filter { item in
+                taxonomyNodeIDs.contains(where: { nodeID in
+                    TaxonomyStore.shared.isFeedInSubtree(feedURL: item.sourceURL, nodeID: nodeID)
+                })
+            }
+        }
+        return feedItems
+    }
 }

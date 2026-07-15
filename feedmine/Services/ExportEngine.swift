@@ -88,7 +88,7 @@ struct FeedmineBackup: Codable {
 
     struct BackupSettings: Codable {
         let filterRegion: String?
-        let filterCategory: String?
+        let filterTaxonomyNodes: [String]
         let filterContentType: String
         let circadianPaletteOn: Bool
         let paletteFamily: String
@@ -143,7 +143,7 @@ enum ExportEngine {
             bookmarkIDs: bookmarkIDs,
             settings: FeedmineBackup.BackupSettings(
                 filterRegion: Settings.filterRegion,
-                filterCategory: Settings.filterCategory,
+                filterTaxonomyNodes: Settings.filterTaxonomyNodes,
                 filterContentType: Settings.filterContentType,
                 circadianPaletteOn: Settings.circadianPaletteOn,
                 paletteFamily: Settings.paletteFamily

@@ -8,7 +8,7 @@ import Foundation
 enum Keys {
     // Filters
     static let filterRegion = "filterRegion"
-    static let filterCategory = "filterCategory"
+    static let filterTaxonomyNodes = "filterTaxonomyNodes"
     static let filterContentType = "filterContentType"
     static let filterMood = "filterMood"
     static let filterSetAt = "filterSetAt"
@@ -61,9 +61,9 @@ enum Settings {
         get { d.string(forKey: Keys.filterRegion) }
         set { d.set(newValue, forKey: Keys.filterRegion) }
     }
-    static var filterCategory: String? {
-        get { d.string(forKey: Keys.filterCategory) }
-        set { d.set(newValue, forKey: Keys.filterCategory) }
+    static var filterTaxonomyNodes: [String] {
+        get { d.stringArray(forKey: Keys.filterTaxonomyNodes) ?? [] }
+        set { d.set(newValue, forKey: Keys.filterTaxonomyNodes) }
     }
     static var filterContentType: String {
         get { d.string(forKey: Keys.filterContentType) ?? "All" }

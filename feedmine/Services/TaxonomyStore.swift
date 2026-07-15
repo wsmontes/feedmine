@@ -16,6 +16,10 @@ import Observation
 @Observable
 final class TaxonomyStore {
 
+    // MARK: - Shared singleton
+
+    static let shared = TaxonomyStore()
+
     // MARK: - State
 
     private(set) var root: TaxonomyNode?

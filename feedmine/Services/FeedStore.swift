@@ -50,7 +50,7 @@ final class FeedStore {
 
     // MARK: - Filter state (bidirectional)
     var activeRegion: String?
-    var activeCategory: String?
+    var activeNodeIDs: Set<String> = []
     var activeContentType: FeedLoader.ContentType = .all
     var activeMood: FeedLoader.MoodFilter = .all
     /// When set, the feed shows only items from this bookmark list.
@@ -108,7 +108,7 @@ final class FeedStore {
     /// (loadMoreIfNeeded) and the UI (FeedLoader.filteredItems) agree on count.
     /// Single-pass to avoid intermediate array allocations.
     private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
-        let category = activeCategory
+        let nodeIDs = activeNodeIDs
         let region = activeRegion
         let contentType = filterContentType
         let contentFilters = ContentFilterStore.shared.isEnabled
@@ -116,7 +116,9 @@ final class FeedStore {
         return items.filter { item in
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
-            && (category == nil || item.category == category)
+            && (nodeIDs.isEmpty || nodeIDs.contains(where: { nodeID in
+                TaxonomyStore.shared.isFeedInSubtree(feedURL: item.sourceURL, nodeID: nodeID)
+            }))
             && contentType(item)
             && !contentFilterExcludes(item, filters: contentFilters)
         }
@@ -559,21 +561,21 @@ final class FeedStore {
 
     private func persistFilters() {
         Settings.filterRegion = activeRegion
-        Settings.filterCategory = activeCategory
+        Settings.filterTaxonomyNodes = Array(activeNodeIDs)
         Settings.filterContentType = activeContentType.rawValue
         Settings.filterSetAt = Date().timeIntervalSince1970
     }
 
     private func restoreFilters() {
         let hasActiveFilters = Settings.filterRegion != nil
-            || Settings.filterCategory != nil
+            || !Settings.filterTaxonomyNodes.isEmpty
             || (FeedLoader.ContentType(rawValue: Settings.filterContentType) ?? .all) != .all
 
         if hasActiveFilters && Settings.filterAutoExpire {
             let elapsed = Date().timeIntervalSince1970 - Settings.filterSetAt
             if Settings.filterSetAt > 0 && elapsed > Self.filterExpirySeconds {
                 Settings.filterRegion = nil
-                Settings.filterCategory = nil
+                Settings.filterTaxonomyNodes = []
                 Settings.filterContentType = "All"
                 Settings.filterSetAt = 0
                 return
@@ -581,7 +583,7 @@ final class FeedStore {
         }
 
         activeRegion = Settings.filterRegion
-        activeCategory = Settings.filterCategory
+        activeNodeIDs = Set(Settings.filterTaxonomyNodes)
         if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
         }
@@ -591,10 +593,10 @@ final class FeedStore {
         }
     }
 
-    func setFilter(region: String?, category: String?, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
+    func setFilter(region: String?, nodeIDs: Set<String>, type: FeedLoader.ContentType, mood: FeedLoader.MoodFilter = .all) {
         // Update state immediately for UI responsiveness
         activeRegion = region
-        activeCategory = category
+        activeNodeIDs = nodeIDs
         activeContentType = type
         activeMood = mood
         persistFilters()
@@ -615,7 +617,7 @@ final class FeedStore {
     func clearAllFilters() {
         loadingState = .refreshing
         activeRegion = nil
-        activeCategory = nil
+        activeNodeIDs = []
         activeContentType = .all
         activeMood = .all
         persistFilters()
@@ -634,7 +636,7 @@ final class FeedStore {
             return
         }
         Task {
-            let results = await searchEngine.search(query, region: activeRegion, category: activeCategory)
+            let results = await searchEngine.search(query, region: activeRegion, taxonomyNodeIDs: activeNodeIDs)
             guard isSearching else { return }
             searchResults = results
             applyUpdate(.replace(applyFilters(searchResults)))
@@ -904,7 +906,7 @@ final class FeedStore {
             reservoir: reservoir.reservoir,
             sourcesByRegion: sourcesByRegion,
             activeRegion: activeRegion,
-            activeCategory: activeCategory,
+            activeCategory: nil,
             activeContentType: contentTypeStr
         )
         guard !batch.isEmpty else { return }
@@ -1097,7 +1099,6 @@ final class FeedStore {
     private func reloadFromSQLite(prepend: [FeedItem] = [], skipRead: Bool = false) async {
         guard !isSearching else { return }
         let region = activeRegion
-        let category = activeCategory
         let contentType = activeContentType
         // Always exclude read items — the feed should only show unseen content.
         // Read/opened items are tracked continuously and this information is
@@ -1109,7 +1110,6 @@ final class FeedStore {
             if let r = region {
                 request = request.filter(Column("region") == r)
             }
-            if let c = category { request = request.filter(Column("category") == c) }
             // Filter by content type at SQL level to avoid loading 200 items
             // only to discard 95% in-memory (e.g. "Podcasts" filter with few
             // podcast items in the DB).

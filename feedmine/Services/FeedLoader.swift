@@ -91,7 +91,15 @@ final class FeedLoader {
     // Single source of truth: all filter state lives in FeedStore
     var selectedContentType: ContentType { store.activeContentType }
     var selectedMood: MoodFilter { store.activeMood }
-    var selectedCategory: String? { store.activeCategory }
+    var selectedNodeIDs: Set<String> { store.activeNodeIDs }
+    var selectedNodeNames: [String] { TaxonomyStore.shared.selectedNodeNames }
+    var hasTaxonomySelection: Bool { !selectedNodeIDs.isEmpty }
+    var availableTaxonomyRoot: TaxonomyNode? { TaxonomyStore.shared.root }
+
+    /// Backward-compat: returns name of first selected node, or nil.
+    var selectedCategory: String? {
+        selectedNodeIDs.first.flatMap { TaxonomyStore.shared.flatIndex[$0]?.name }
+    }
 
     // MARK: - Mood Filter
 
@@ -418,29 +426,50 @@ final class FeedLoader {
         await loadWhatsNew()
     }
 
-    func selectCategory(_ category: String?) {
-        let newValue = (store.activeCategory == category) ? nil : category
-        store.setFilter(region: store.activeRegion, category: newValue,
+    func toggleNode(_ nodeID: String) {
+        TaxonomyStore.shared.toggle(nodeID)
+        store.setFilter(region: store.activeRegion,
+                        nodeIDs: TaxonomyStore.shared.selectedNodeIDs,
                         type: store.activeContentType, mood: store.activeMood)
         Task { await loadWhatsNew() }
     }
 
+    func clearTaxonomySelection() {
+        TaxonomyStore.shared.clearSelection()
+        store.setFilter(region: store.activeRegion,
+                        nodeIDs: [],
+                        type: store.activeContentType, mood: store.activeMood)
+        Task { await loadWhatsNew() }
+    }
+
+    /// Backward-compat shim for single-category selection.
+    func selectCategory(_ category: String?) {
+        if let cat = category {
+            if let node = TaxonomyStore.shared.flatIndex.values.first(where: { $0.name == cat }) {
+                toggleNode(node.id)
+            }
+        } else {
+            clearTaxonomySelection()
+        }
+    }
+
     func selectMood(_ mood: MoodFilter) {
         let newValue = (store.activeMood == mood) ? .all : mood
-        store.setFilter(region: store.activeRegion, category: store.activeCategory,
+        store.setFilter(region: store.activeRegion, nodeIDs: store.activeNodeIDs,
                         type: store.activeContentType, mood: newValue)
         Task { await loadWhatsNew() }
     }
 
     func selectContentType(_ type: ContentType) {
         let newValue = (store.activeContentType == type) ? .all : type
-        store.setFilter(region: store.activeRegion, category: store.activeCategory,
+        store.setFilter(region: store.activeRegion, nodeIDs: store.activeNodeIDs,
                         type: newValue, mood: store.activeMood)
         Task { await loadWhatsNew() }
     }
 
     func clearAllFilters() {
         searchQuery = ""
+        TaxonomyStore.shared.clearSelection()
         store.clearAllFilters()
         Task { await loadWhatsNew() }
     }
@@ -718,7 +747,7 @@ final class FeedLoader {
         // Force reload to show new content
         store.setFilter(
             region: store.activeRegion,
-            category: store.activeCategory,
+            nodeIDs: store.activeNodeIDs,
             type: store.activeContentType,
             mood: store.activeMood
         )
