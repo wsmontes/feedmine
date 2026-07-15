@@ -472,7 +472,8 @@ actor RSSFetcher {
             publishedAt: publishedAt ?? Date(),
             audioURL: audioURL,
             duration: duration,
-            region: source.region
+            region: source.region,
+            language: source.language
         )
     }
 

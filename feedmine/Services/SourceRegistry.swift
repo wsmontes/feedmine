@@ -66,6 +66,7 @@ final class SourceRegistry {
     private func rebuildCaches() {
         sourceByURL = Dictionary(uniqueKeysWithValues: sources.map { ($0.url, $0) })
         _regionMap = nil
+        _languageMap = nil
     }
 
     func isSourceEnabled(_ sourceURL: String) -> Bool {
@@ -231,6 +232,20 @@ final class SourceRegistry {
 
     func regionFor(sourceURL: String) -> String {
         regionMap[sourceURL] ?? "global"
+    }
+
+    // MARK: - Language lookup
+
+    private var _languageMap: [String: String?]?
+    var languageMap: [String: String?] {
+        if let cached = _languageMap { return cached }
+        let map = Dictionary(sources.map { ($0.url, $0.language) }, uniquingKeysWith: { first, _ in first })
+        _languageMap = map
+        return map
+    }
+
+    func languageFor(sourceURL: String) -> String? {
+        languageMap[sourceURL] ?? nil
     }
 
     // MARK: - Countries

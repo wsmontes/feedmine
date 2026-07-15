@@ -886,9 +886,11 @@ final class FeedStore {
         }
         guard !actualNew.isEmpty else { return [] }
 
-        // Compute regions on the main actor before entering the write closure.
-        let itemsWithRegions: [(item: FeedItem, region: String)] = actualNew.map { item in
-            (item, regionOverride ?? registry.regionFor(sourceURL: item.sourceURL))
+        // Compute regions and language on the main actor before entering the write closure.
+        let itemsWithRegions: [(item: FeedItem, region: String, language: String?)] = actualNew.map { item in
+            let resolvedRegion = regionOverride ?? registry.regionFor(sourceURL: item.sourceURL)
+            let resolvedLanguage = registry.languageFor(sourceURL: item.sourceURL)
+            return (item, resolvedRegion, resolvedLanguage)
         }
         do {
             // Single batch write. Items are deduplicated in memory before this
@@ -898,9 +900,10 @@ final class FeedStore {
             // overhead of SAVEPOINT/RELEASE/ROLLBACK.
             let succeeded: [FeedItem] = try await db.write { db -> [FeedItem] in
                 var ok: [FeedItem] = []
-                for (item, region) in itemsWithRegions {
+                for (item, region, language) in itemsWithRegions {
                     do {
-                        try FeedItemRecord(from: item, region: region).insert(db)
+                        let record = FeedItemRecord(from: item, region: region, language: language)
+                        try record.insert(db)
                         ok.append(item)
                     } catch {
                         // Skip individual row failures. Items are deduplicated in
