@@ -58,6 +58,12 @@ struct FilterSheetView: View {
 
                 Section("Topics") {
                     TaxonomyTreeView()
+
+                    NavigationLink {
+                        TaxonomyBrowseView()
+                    } label: {
+                        Label("Browse All Topics", systemImage: "list.bullet.rectangle")
+                    }
                 }
 
                 Section("Mood") {
