@@ -13,6 +13,7 @@ struct FeedSource: Codable, Identifiable, Sendable {
     let url: String
     let category: String
     let region: String  // "global" | "countries/brazil"
+    let language: String?   // ISO 639-1 code, inherited from OPML <head> or <outline>
     let mediaKind: MediaKind
 
     /// YouTube RSS feeds follow this URL pattern — it's the standard endpoint.
@@ -32,16 +33,18 @@ struct FeedSource: Codable, Identifiable, Sendable {
         region.hasPrefix("countries/") && !isYouTube && mediaKind != .audio
     }
 
-    init(title: String, url: String, category: String, region: String = "global", mediaKind: MediaKind = .text) {
+    init(title: String, url: String, category: String, region: String = "global",
+         mediaKind: MediaKind = .text, language: String? = nil) {
         self.title = title
         self.url = url
         self.category = category
         self.region = region
         self.mediaKind = mediaKind
+        self.language = language
     }
 
     enum CodingKeys: String, CodingKey {
-        case title, url, category, region, mediaKind = "media_kind"
+        case title, url, category, region, language, mediaKind = "media_kind"
     }
 
     init(from decoder: Decoder) throws {
@@ -50,6 +53,7 @@ struct FeedSource: Codable, Identifiable, Sendable {
         url = try c.decode(String.self, forKey: .url)
         category = try c.decode(String.self, forKey: .category)
         region = (try? c.decode(String.self, forKey: .region)) ?? "global"
+        language = try? c.decode(String.self, forKey: .language)
         mediaKind = (try? c.decode(MediaKind.self, forKey: .mediaKind)) ?? .text
     }
 }

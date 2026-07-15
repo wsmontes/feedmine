@@ -1831,6 +1831,7 @@
 		E2D9A65CDD3F85D7D2AB0A14 /* new-zealand-gisborne.opml in Resources */ = {isa = PBXBuildFile; fileRef = CD9401A571B551D9AEB25973 /* new-zealand-gisborne.opml */; };
 		E32864C28A4844FFA2CB51C6 /* slovenia-posavska.opml in Resources */ = {isa = PBXBuildFile; fileRef = 4D65A6AF7B74A54123284431 /* slovenia-posavska.opml */; };
 		E329993C44BCCC9D90D8E187 /* egypt-north-sinai.opml in Resources */ = {isa = PBXBuildFile; fileRef = 807B7D54B70713F3027E2B18 /* egypt-north-sinai.opml */; };
+		E3EFE92FE6F12CF33A9A70AE /* TaxonomyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67F5CE0A43DBFEF71662A3C /* TaxonomyNode.swift */; };
 		E4126AD6458DCDF9103D559E /* nigeria-ondo.opml in Resources */ = {isa = PBXBuildFile; fileRef = 2BA4BAC4CCF8254D19039A63 /* nigeria-ondo.opml */; };
 		E4243CB6B48A198D6BA1C2C1 /* india-chhattisgarh.opml in Resources */ = {isa = PBXBuildFile; fileRef = F57820F4F9144B77290419CE /* india-chhattisgarh.opml */; };
 		E48AF2CA05058FC18D7B34B8 /* puerto-rico-arecibo.opml in Resources */ = {isa = PBXBuildFile; fileRef = 8702246DAF4FA56289A3E8A9 /* puerto-rico-arecibo.opml */; };
@@ -3453,6 +3454,7 @@
 		B662A03C1FF911C06BCDDAC7 /* costa-rica-heredia.opml */ = {isa = PBXFileReference; path = "costa-rica-heredia.opml"; sourceTree = "<group>"; };
 		B6763780C739369B94EB25B6 /* finland-satakunta.opml */ = {isa = PBXFileReference; path = "finland-satakunta.opml"; sourceTree = "<group>"; };
 		B67EB1753B0B16100A3C95B0 /* ireland-kilkenny.opml */ = {isa = PBXFileReference; path = "ireland-kilkenny.opml"; sourceTree = "<group>"; };
+		B67F5CE0A43DBFEF71662A3C /* TaxonomyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyNode.swift; sourceTree = "<group>"; };
 		B6978B40F6EA989D68469C76 /* egypt-asyut.opml */ = {isa = PBXFileReference; path = "egypt-asyut.opml"; sourceTree = "<group>"; };
 		B6AE4727629A1EE94BDBA6DF /* sudan-north-darfur.opml */ = {isa = PBXFileReference; path = "sudan-north-darfur.opml"; sourceTree = "<group>"; };
 		B6EC26A92B6C2241280ED7DE /* austria-oberoesterreich.opml */ = {isa = PBXFileReference; path = "austria-oberoesterreich.opml"; sourceTree = "<group>"; };
@@ -6042,6 +6044,7 @@
 				C15E7A90D2773F4370B149BA /* FeedSource.swift */,
 				4075C82BAA3F80E12152684C /* OPMLParseResult.swift */,
 				A3FEA8EAA0D345AA732D6557 /* Region.swift */,
+				B67F5CE0A43DBFEF71662A3C /* TaxonomyNode.swift */,
                 04F4E96D37E04D6BA9347A64 /* ContentFilter.swift */,
 			);
 			path = Models;
@@ -9155,6 +9158,7 @@
 				7D50E979F88694C1588392D8 /* RSSFetcher.swift in Sources */,
 				64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */,
 				7B3DCB5F06E3266F670AA817 /* Region.swift in Sources */,
+				E3EFE92FE6F12CF33A9A70AE /* TaxonomyNode.swift in Sources */,
 				68CB8603805A33A1D57030A4 /* RegionDetailScreen.swift in Sources */,
 				6CBFFC3867A630255B4A171B /* Reservoir.swift in Sources */,
 				6986DBDE303222A19B7A5798 /* SearchBarView.swift in Sources */,
