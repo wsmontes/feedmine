@@ -31,7 +31,7 @@ final class TaxonomyStoreTests: XCTestCase {
         XCTAssertEqual(rootChildren.count, 1, "Should have 1 topic node")
 
         let topicNode = rootChildren[0]
-        XCTAssertEqual(topicNode.name, "global")  // region as topic name
+        XCTAssertEqual(topicNode.name, "Global")
         XCTAssertEqual(topicNode.feedCount, 2)
 
         // Topic has 2 subcategory children

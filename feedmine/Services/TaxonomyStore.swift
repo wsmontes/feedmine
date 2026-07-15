@@ -156,7 +156,7 @@ final class TaxonomyStore {
         if region == "global" {
             // Global region: add "global" virtual node then category as subcategory
             segments.append(PathSegment(
-                slug: "global", name: "global",
+                slug: "global", name: "Global",
                 language: nil, kind: .topic
             ))
             let slug = source.category

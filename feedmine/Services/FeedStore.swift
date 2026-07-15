@@ -1184,17 +1184,16 @@ final class FeedStore {
         // Split: news items (time-sensitive) keep recency order; everything
         // else gets shuffled for diversity. Then merge: all news first (most
         // recent at top), then random non-news, capped at 200.
-        // After taxonomy changes, category stores slugified node paths
-        // (e.g. "coffee_news", "countries/brazil/news", "sports") so we
-        // match on the last path segment rather than raw OPML text.
-        let newsSlugs = Set(["news", "sports", "politics"])
+        // Match category by keyword (case-insensitive). After taxonomy changes
+        // category stores the original OPML outline text (e.g. "News", "Sports").
+        let newsKeywords = ["news", "sports", "politics"]
         var news = items.filter { item in
-            let lastSegment = item.category.components(separatedBy: "/").last?.lowercased() ?? ""
-            return newsSlugs.contains(lastSegment) || newsSlugs.contains(where: { item.category.lowercased().hasSuffix("/\($0)") })
+            let lower = item.category.lowercased()
+            return newsKeywords.contains(where: { lower.contains($0) })
         }
         var other = items.filter { item in
-            let lastSegment = item.category.components(separatedBy: "/").last?.lowercased() ?? ""
-            return !newsSlugs.contains(lastSegment) && !newsSlugs.contains(where: { item.category.lowercased().hasSuffix("/\($0)") })
+            let lower = item.category.lowercased()
+            return !newsKeywords.contains(where: { lower.contains($0) })
         }.shuffled()
         // News already ordered by published_at DESC from the query
         var selected = news + other
