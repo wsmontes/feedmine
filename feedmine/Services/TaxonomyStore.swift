@@ -330,6 +330,12 @@ final class TaxonomyStore {
         }
         self.flatIndex = cached.flatIndex
         self.feedToNodeID = cached.feedToNodeID
+        // Rebuild children index from restored flatIndex
+        self.childrenIndex.removeAll()
+        for (nodeID, node) in self.flatIndex {
+            guard let parentID = node.parentId else { continue }
+            self.childrenIndex[parentID, default: []].append(nodeID)
+        }
         self.root = cached.root
         return true
     }
