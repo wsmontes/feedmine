@@ -212,6 +212,72 @@ final class FeedStoreTests: XCTestCase {
                        "SQLite must also store the item's own language")
     }
 
+    func testEmptyItemLanguageFallsBackToRegistryLanguage() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        // Source has explicit "pt" language in the registry
+        let source = FeedSource(title: "Folha", url: "https://folha.com/feed",
+                                category: "News", region: "countries/brazil", language: "pt")
+        store.registry.sources = [source]
+
+        // Item has empty string for language — must fall back to registry "pt"
+        let item = FeedItem(
+            id: "empty-lang-1", sourceTitle: "Folha",
+            sourceURL: "https://folha.com/feed",
+            category: "News",
+            title: "Breve",
+            excerpt: "Nota.",
+            url: "https://folha.com/article/1", imageURL: nil,
+            publishedAt: Date(),
+            region: "countries/brazil",
+            language: ""  // empty — should fall through to registry
+        )
+
+        let result = await store.persistFetchedItems([item])
+        let returned: FeedItem = try XCTUnwrap(result.first)
+
+        XCTAssertEqual(returned.language, "pt",
+                       "Empty item.language must fall back to registry language 'pt'")
+
+        let dbLanguage: String? = try await store.db.read { db in
+            try String.fetchOne(db, sql: "SELECT language FROM feed_item WHERE id = ?", arguments: [item.id])
+        }
+        XCTAssertEqual(dbLanguage, "pt",
+                       "SQLite must store the registry language when item.language is empty")
+    }
+
+    func testWhitespaceItemLanguageFallsBackToRegistryLanguage() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        let source = FeedSource(title: "Asahi", url: "https://asahi.com/feed",
+                                category: "News", region: "countries/japan", language: "ja")
+        store.registry.sources = [source]
+
+        let item = FeedItem(
+            id: "ws-lang-1", sourceTitle: "Asahi",
+            sourceURL: "https://asahi.com/feed",
+            category: "News",
+            title: "短い",
+            excerpt: "記事。",
+            url: "https://asahi.com/article/1", imageURL: nil,
+            publishedAt: Date(),
+            region: "countries/japan",
+            language: "   "  // whitespace-only — should fall through to registry
+        )
+
+        let result = await store.persistFetchedItems([item])
+        let returned: FeedItem = try XCTUnwrap(result.first)
+
+        XCTAssertEqual(returned.language, "ja",
+                       "Whitespace-only item.language must fall back to registry language 'ja'")
+
+        let dbLanguage: String? = try await store.db.read { db in
+            try String.fetchOne(db, sql: "SELECT language FROM feed_item WHERE id = ?", arguments: [item.id])
+        }
+        XCTAssertEqual(dbLanguage, "ja",
+                       "SQLite must store the registry language when item.language is whitespace")
+    }
+
     func testPersistExplicitSourceLanguagePreserved() async throws {
         let store = try FeedStore(inMemory: true)
 

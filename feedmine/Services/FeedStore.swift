@@ -142,6 +142,14 @@ final class FeedStore {
         return false
     }
 
+    /// Normalize a language code: trim whitespace, lowercased, nil if empty.
+    /// Treats `""` and `"   "` the same as `nil` so the `??` chain works correctly.
+    private static func nonEmptyLanguage(_ raw: String?) -> String? {
+        guard let raw else { return nil }
+        let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? nil : trimmed.lowercased()
+    }
+
     /// Lightweight, Sendable input for off‑main‑actor language detection.
     private struct LanguageDetectionInput: Sendable {
         let title: String
@@ -1037,11 +1045,12 @@ final class FeedStore {
         // NLLanguageRecognizer runs in a detached task to avoid blocking UI.
         let regions: [String] = actualNew.map { regionOverride ?? registry.regionFor(sourceURL: $0.sourceURL) }
         let detectionInputs: [LanguageDetectionInput] = actualNew.map { item in
-            LanguageDetectionInput(
+            let itemLang = Self.nonEmptyLanguage(item.language)
+            let sourceLang = Self.nonEmptyLanguage(registry.languageFor(sourceURL: item.sourceURL))
+            return LanguageDetectionInput(
                 title: item.title,
                 excerpt: item.excerpt,
-                explicitLanguage: item.language
-                    ?? registry.languageFor(sourceURL: item.sourceURL)
+                explicitLanguage: itemLang ?? sourceLang
             )
         }
         let resolvedLanguages: [String?] = await Task.detached(priority: .utility) {
