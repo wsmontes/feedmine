@@ -129,6 +129,7 @@ private struct TaxonomyLevelView: View {
             }
         }
         .listStyle(.plain)
+        .onDisappear { searchTask?.cancel() }
     }
 
     private func taxonomyRow(_ child: TaxonomyNode) -> some View {

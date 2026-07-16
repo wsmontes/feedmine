@@ -169,7 +169,7 @@ final class FeedLoader {
     // MARK: - Filtered Items (reads from FeedStore as single source)
 
     private var _cachedFiltered: [FeedItem] = []
-    private var _cacheKey: UInt64 = 0
+    private var _cacheKey: UInt64 = .max
     /// Previous visibleItemsGeneration — used to detect real mutations from
     /// FeedStore (replacements, reorderings, filter changes) reliably,
     /// unlike count-based detection which misses same-size replacements.
@@ -179,7 +179,10 @@ final class FeedLoader {
         // Catches ALL mutations — same-count replacements, reorderings,
         // content/region/filter/taxonomy changes — not just count deltas.
         let generation = store.visibleItemsGeneration
-        let key = generation ^ UInt64(bitPattern: Int64(searchQuery.hashValue))
+        var hasher = Hasher()
+        hasher.combine(generation)
+        hasher.combine(searchQuery)
+        let key = UInt64(bitPattern: Int64(hasher.finalize()))
         if key == _cacheKey { return _cachedFiltered }
         _cacheKey = key
         var result = items
@@ -203,7 +206,7 @@ final class FeedLoader {
     }
 
     private var _cachedSections: [DateSection] = []
-    private var _sectionsCacheKey: UInt64 = 0
+    private var _sectionsCacheKey: UInt64 = .max
 
     var dateSections: [DateSection] {
         // Force filteredItems to refresh _cacheKey and _cachedFiltered before

@@ -46,7 +46,7 @@ struct FeedScreen: View {
         if loader.sources.isEmpty || (!loader.isGlobalFeedsEnabled && !loader.isAnyCountryEnabled) {
             return .noSourcesEnabled
         }
-        if loader.hasActiveFilters && loader.items.isEmpty && (loader.loadingState == .refreshing || loader.loadingState == .loadingMore) {
+        if loader.hasActiveFilters && loader.items.isEmpty && loader.loadingState == .refreshing {
             return .fetching(
                 topic: loader.selectedNodeNames.joined(separator: ", "),
                 fetched: loader.emptyStateFetchedCount,

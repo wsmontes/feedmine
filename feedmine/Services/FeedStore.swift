@@ -126,7 +126,7 @@ final class FeedStore {
         let mood = activeMood
         let contentFilters = ContentFilterStore.shared.isEnabled
             ? ContentFilterStore.shared.activeFilters : []
-        var hitFilterIDs = Set<UUID>()  // collect once, record after filtering
+        var hitFilterIDs: [UUID] = []  // collect once, record after filtering
         let result = items.filter { item in
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
@@ -149,7 +149,7 @@ final class FeedStore {
     /// Uses localizedStandardContains on pre-folded text for locale-aware matching
     /// (200 items x 50 keywords = 10K comparisons). Text is lowercased+folded once
     /// per item; keywords are pre-folded in ContentFilterStore.activeFilters.
-    private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])], hitIDs: inout Set<UUID>) -> Bool {
+    private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])], hitIDs: inout [UUID]) -> Bool {
         guard !filters.isEmpty else { return false }
         let text = (item.title + " " + item.excerpt)
             .lowercased()
@@ -157,7 +157,7 @@ final class FeedStore {
         for filter in filters {
             for keyword in filter.keywords {
                 if text.localizedStandardContains(keyword) {
-                    hitIDs.insert(filter.id)
+                    hitIDs.append(filter.id)
                     return true
                 }
             }
@@ -166,21 +166,15 @@ final class FeedStore {
     }
 
     /// Backwards-compatible wrapper for external consumers (WhatsNewManager, Reservoir)
-    /// that don't need hit tracking. Records hits inline like the old implementation.
+    /// that don't need hit tracking. Delegates to the hitIDs overload and records
+    /// hits inline, matching the old per-item recordHit semantics.
     private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
-        guard !filters.isEmpty else { return false }
-        let text = (item.title + " " + item.excerpt)
-            .lowercased()
-            .folding(options: .diacriticInsensitive, locale: nil)
-        for filter in filters {
-            for keyword in filter.keywords {
-                if text.localizedStandardContains(keyword) {
-                    ContentFilterStore.shared.recordHit(filter.id)
-                    return true
-                }
-            }
+        var hitIDs: [UUID] = []
+        let excluded = contentFilterExcludes(item, filters: filters, hitIDs: &hitIDs)
+        for id in hitIDs {
+            ContentFilterStore.shared.recordHit(id)
         }
-        return false
+        return excluded
     }
 
     private var filterContentType: (FeedItem) -> Bool {
@@ -502,6 +496,7 @@ final class FeedStore {
     /// Single writer for `visibleItems`. Every mutation routes through here.
     /// Increments `visibleItemsGeneration` so FeedLoader caches invalidate reliably.
     private func setVisibleItems(_ items: [FeedItem]) {
+        guard items != visibleItems else { return }
         visibleItems = items
         visibleItemsGeneration &+= 1
     }
@@ -1109,7 +1104,7 @@ final class FeedStore {
         emptyStateFetchTotal = sourceURLs.count
         emptyStateFetchedCount = 0
         let result = await fetcher.fetchAll(sources, maxConcurrent: 15)
-        emptyStateFetchedCount = Set(result.items.map(\.sourceURL)).count
+        emptyStateFetchedCount = result.sourceStatuses.count
         let actualNew = await persistFetchedItems(result.items)
         guard !actualNew.isEmpty else { return }
         throttledReservoirAppend(actualNew)
@@ -1139,11 +1134,13 @@ final class FeedStore {
             fetchErrorCount += result.failedSourceCount
             emptyFeedCount += result.emptySourceCount
             // Batch-save source health with real item counts
+            let sourceItemCounts = Dictionary(grouping: result.items, by: \.sourceURL)
+                .mapValues(\.count)
             var healthEntries: [(url: String, itemCount: Int?)] = []
             for source in chunk {
                 let failed = result.sourceStatuses[source.url] == .failed
                 scheduler.recordFetch(sourceURL: source.url, success: !failed)
-                let count = result.items.filter { $0.sourceURL == source.url }.count
+                let count = sourceItemCounts[source.url]
                 healthEntries.append((source.url, count))
             }
             saveSourceHealthBatch(healthEntries)
