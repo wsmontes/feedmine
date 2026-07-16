@@ -14,11 +14,8 @@
 	<array>
 		<string>ar</string>
 		<string>ca</string>
-		<string>en</string>
 		<string>zh-Hans</string>
-		<string>en</string>
 		<string>zh-Hant</string>
-		<string>en</string>
 		<string>hr</string>
 		<string>cs</string>
 		<string>da</string>
@@ -31,7 +28,6 @@
 		<string>fr</string>
 		<string>fr-CA</string>
 		<string>de</string>
-		<string>en</string>
 		<string>el</string>
 		<string>he</string>
 		<string>hi</string>
@@ -64,6 +60,11 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsForMedia</key>
+		<true/>
+	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is used to show local weather in the daily briefing.</string>
 	<key>UIBackgroundModes</key>
@@ -72,37 +73,5 @@
 	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoadsForMedia</key>
-		<true/>
-	</dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>com.feedmine.app</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>feedmine</string>
-			</array>
-		</dict>
-	</array>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeName</key>
-			<string>OPML File</string>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>LSHandlerRank</key>
-			<string>Alternate</string>
-			<key>LSItemContentTypes</key>
-			<array>
-				<string>public.xml</string>
-				<string>org.opml.opml</string>
-			</array>
-		</dict>
-	</array>
 </dict>
 </plist>

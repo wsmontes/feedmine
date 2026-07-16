@@ -591,6 +591,20 @@ final class FeedLoader {
         Task { await loadWhatsNew() }
     }
     func toggleGlobalFeeds() {
+        // Toggle all non-country, non-imported topic regions together.
+        let topicRegions = store.registry.allTopicRegions
+        if !topicRegions.isEmpty {
+            // If any topic region is on, turn them all off; otherwise turn them all on
+            let anyOn = topicRegions.contains { isRegionEnabled($0) }
+            for region in topicRegions {
+                if anyOn {
+                    if isRegionEnabled(region) { store.toggleRegion(region) }
+                } else {
+                    if !isRegionEnabled(region) { store.toggleRegion(region) }
+                }
+            }
+        }
+        // Also toggle legacy "global" region for any root-level feeds
         store.toggleRegion("global")
         store.resetWhatsNewBaseline()
         Task { await loadWhatsNew() }
@@ -606,7 +620,13 @@ final class FeedLoader {
     /// True if the category is not explicitly disabled.
     func isCategoryEnabled(_ category: String) -> Bool { store.registry.status(of: SourceRegistry.categoryKey(category)) == .on }
     var isAnyCountryEnabled: Bool { store.registry.isAnyCountryEnabled }
-    var isGlobalFeedsEnabled: Bool { store.registry.status(of: SourceRegistry.regionKey("global")) == .on }
+    var isGlobalFeedsEnabled: Bool {
+        let topicRegions = store.registry.allTopicRegions
+        if !topicRegions.isEmpty {
+            return topicRegions.contains { store.registry.status(of: SourceRegistry.regionKey($0)) == .on }
+        }
+        return store.registry.status(of: SourceRegistry.regionKey("global")) == .on
+    }
 
     func markAsRead(_ itemID: String) { store.markAsRead(itemID) }
     func markAsUnread(_ itemID: String) { store.markAsUnread(itemID) }

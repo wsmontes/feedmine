@@ -174,8 +174,33 @@ final class TaxonomyStore {
         var segments: [PathSegment] = []
         let region = source.region
 
-        if region == "global" {
-            // Global region: add "global" virtual node then category as subcategory
+        if region.hasPrefix("topic/") {
+            // Topic subdirectory: encode the folder hierarchy as taxonomy nodes,
+            // then append the category as leaf.  "topic/Sports" → Sports → category
+            let parts = region.components(separatedBy: "/")
+            // parts[0] = "topic", parts[1...] = directory path
+            for (idx, part) in parts.enumerated() where idx >= 1 {
+                let kind: NodeKind = idx == 1 ? .topic : .subcategory
+                let displayName = part
+                    .replacingOccurrences(of: "_", with: " ")
+                    .capitalized
+                segments.append(PathSegment(
+                    slug: part.lowercased(), name: displayName,
+                    language: source.language, kind: kind
+                ))
+            }
+            // Append the category itself as the leaf subcategory
+            let subSlug = source.category
+                .lowercased()
+                .replacingOccurrences(of: "&", with: "and")
+                .replacingOccurrences(of: " ", with: "_")
+                .replacingOccurrences(of: "/", with: "-")
+            segments.append(PathSegment(
+                slug: subSlug, name: source.category,
+                language: source.language, kind: .subcategory
+            ))
+        } else if region == "global" {
+            // Flat global feeds (no parent directory) — add "global" virtual node
             segments.append(PathSegment(
                 slug: "global", name: "Global",
                 language: nil, kind: .topic

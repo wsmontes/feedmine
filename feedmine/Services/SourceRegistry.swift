@@ -274,6 +274,17 @@ final class SourceRegistry {
         languageMap[sourceURL] ?? nil
     }
 
+    // MARK: - Topic regions
+
+    /// All topic-based regions (non-country, non-imported, non-global).
+    /// Used by Global Feeds toggle to batch-enable/disable all topic groups.
+    var allTopicRegions: [String] {
+        let regions = Set(sources.map(\.region))
+        return regions
+            .filter { $0.hasPrefix("topic/") }
+            .sorted()
+    }
+
     // MARK: - Countries
 
     var availableCountries: [Country] {

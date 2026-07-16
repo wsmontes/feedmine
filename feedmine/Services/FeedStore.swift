@@ -1638,6 +1638,12 @@ final class FeedStore {
                     let name: String
                     if region == "global" {
                         name = "Global feeds"
+                    } else if region.hasPrefix("topic/") {
+                        // Derive a human-readable name from the topic path
+                        let topicPath = String(region.dropFirst(6))  // strip "topic/"
+                        name = topicPath
+                            .replacingOccurrences(of: "_", with: " ")
+                            .capitalized
                     } else {
                         name = CountryStore.countryName(for: region.replacingOccurrences(of: "countries/", with: ""))
                     }

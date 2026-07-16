@@ -196,24 +196,41 @@ struct OPMLParser {
     // MARK: - Private
 
     /// Encode a file's region from its path/name:
-    /// - "global" for root/category feeds
+    /// - "global" for root/category feeds (flat, no parent directory)
     /// - "countries/{country}" for a country-level feed (e.g. brazil.opml in brazil/)
     /// - "countries/{country}/{region}" for a sub-region feed (e.g. brazil-acre.opml)
+    /// - "topic/{group}" for a feed in a topic subdirectory (e.g. Sports/soccer.opml)
+    /// - "topic/{group}/{subgroup}" for nested topic subdirectories
     private static func region(for fileURL: URL, fileName: String) -> String {
         let components = fileURL.pathComponents
-        guard let countriesIdx = components.lastIndex(of: "countries"),
-              countriesIdx + 1 < components.count else {
-            return "global"
-        }
-        let countryDir = components[countriesIdx + 1]
-        if fileName == countryDir {
+        // Check for countries/ first (existing behavior preserved)
+        if let countriesIdx = components.lastIndex(of: "countries"),
+           countriesIdx + 1 < components.count {
+            let countryDir = components[countriesIdx + 1]
+            if fileName == countryDir {
+                return "countries/\(countryDir)"
+            }
+            if fileName.hasPrefix("\(countryDir)-") {
+                let regionSlug = String(fileName.dropFirst(countryDir.count + 1))
+                return "countries/\(countryDir)/\(regionSlug)"
+            }
             return "countries/\(countryDir)"
         }
-        if fileName.hasPrefix("\(countryDir)-") {
-            let regionSlug = String(fileName.dropFirst(countryDir.count + 1))
-            return "countries/\(countryDir)/\(regionSlug)"
+        // Check if file is inside a subdirectory of Feeds/ (excluding languages/)
+        if let feedsIdx = components.lastIndex(of: "Feeds"),
+           feedsIdx + 2 < components.count {
+            let relative = Array(components[(feedsIdx + 1)...])
+            // Skip languages/ — those are language variants of global topics
+            if relative.first == "languages" { return "global" }
+            // Skip countries/ (handled above)
+            if relative.first == "countries" { return "global" }
+            // Encode the directory path as a topic region
+            if relative.count >= 2 {
+                let dirPath = relative.dropLast().joined(separator: "/")
+                return "topic/\(dirPath)"
+            }
         }
-        return "countries/\(countryDir)"
+        return "global"
     }
 
     /// Extract <language> from the OPML <head> section by scanning the raw XML.

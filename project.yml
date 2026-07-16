@@ -26,6 +26,8 @@ targets:
     deploymentTarget: "18.0"
     sources:
       - path: feedmine
+        excludes:
+          - Resources/Feeds
       - path: feedmine/Resources/Feeds
         type: folder
     info:
