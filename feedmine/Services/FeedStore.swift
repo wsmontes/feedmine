@@ -93,9 +93,24 @@ final class FeedStore {
         startBackgroundRefresh()
         applyUpdate(.flush())
     }
+    /// Single eligibility rule — used by fetch, in-memory filter, and SQL paths.
+    /// - When taxonomy is active AND the item's source URL is in the taxonomy
+    ///   set: bypass category/region disables but still respect individual
+    ///   per-source opt-outs. An explicit taxonomy selection acts as a temporary
+    ///   query over the full catalogue.
+    /// - Otherwise: delegate to the normal SourceRegistry enablement check.
+    private func isSourceEligible(sourceURL: String, taxonomySelectionActive: Bool) -> Bool {
+        if taxonomySelectionActive, cachedTaxonomyFeedURLs.contains(OPMLParser.normalizeURL(sourceURL)) {
+            // Bypass inherited disables (category, region) but respect individual off
+            return !registry.isSourceExplicitlyDisabled(sourceURL)
+        }
+        return registry.isSourceEnabled(sourceURL)
+    }
+
     /// Safety filter: excludes items from disabled regions/categories/feeds.
+    /// Respects taxonomy override — see isSourceEligible for semantics.
     private func isItemEnabled(_ item: FeedItem) -> Bool {
-        registry.isSourceEnabled(item.sourceURL)
+        isSourceEligible(sourceURL: item.sourceURL, taxonomySelectionActive: !cachedTaxonomyFeedURLs.isEmpty)
     }
 
     /// Prefetch images for items if enabled (default: true).
@@ -1242,21 +1257,36 @@ final class FeedStore {
     /// the user changes filters so the taxonomy-curated feed populates quickly
     /// instead of waiting for the next progressive or background refresh cycle.
     private func fetchUrgentTaxonomyBatch(sourceURLs: Set<String>) async {
-        // Match against normalized URLs — sourceURLs from feedToNodeID are
-        // already normalized (no trailing slash, https upgrade, etc.) while
-        // registry.enabledSources may have raw OPML URLs.
-        let sources = registry.enabledSources.filter { sourceURLs.contains(OPMLParser.normalizeURL($0.url)) }
+        // Resolve taxonomy URLs against ALL registered sources, not just
+        // enabledSources. An explicit taxonomy selection acts as a temporary
+        // catalogue query — category/region disables are bypassed, but
+        // individual per-source opt-outs are respected.
+        let allMatching = registry.sources.filter { sourceURLs.contains(OPMLParser.normalizeURL($0.url)) }
+        let individuallyDisabled = allMatching.filter { registry.isSourceExplicitlyDisabled($0.url) }
+        let eligible = allMatching.filter { !registry.isSourceExplicitlyDisabled($0.url) }
+
+        // Diagnostics — emit once so we can trace why a taxonomy selection
+        // produces zero visible cards even when feedCount > 0.
+        Log.feed.info("""
+            fetchUrgentTaxonomyBatch: taxonomyURLs=\(sourceURLs.count) \
+            allMatching=\(allMatching.count) normallyEnabled=\(eligible.filter { registry.isSourceEnabled($0.url) }.count) \
+            eligible=\(eligible.count) individuallyDisabled=\(individuallyDisabled.count)
+            """)
+
         // Always define both progress values together, before any early return,
         // so stale totals from a previous fetch can never leak into the UI.
-        emptyStateFetchTotal = sources.count
+        emptyStateFetchTotal = eligible.count
         emptyStateFetchedCount = 0
-        guard !sources.isEmpty else {
-            Log.feed.warning("fetchUrgentTaxonomyBatch: \(sourceURLs.count) taxonomy URLs matched 0 enabled sources — finishing early")
+        guard !eligible.isEmpty else {
+            Log.feed.warning("fetchUrgentTaxonomyBatch: \(sourceURLs.count) taxonomy URLs matched 0 eligible sources (allMatching=\(allMatching.count), individuallyDisabled=\(individuallyDisabled.count))")
             return
         }
-        let result = await fetcher.fetchAll(sources, maxConcurrent: 15)
+        let result = await fetcher.fetchAll(eligible, maxConcurrent: 15)
         emptyStateFetchedCount = result.sourceStatuses.count
+
         let actualNew = await persistFetchedItems(result.items)
+        Log.feed.info("fetchUrgentTaxonomyBatch: fetched=\(result.items.count) persisted=\(actualNew.count) visible=\(self.applyFilters(actualNew).count)")
+
         // Bypass throttling: the user is waiting for taxonomy-filtered items.
         // Append directly and flush immediately instead of the normal 3-second delay.
         pendingReservoirItems.append(contentsOf: actualNew)

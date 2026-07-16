@@ -69,6 +69,14 @@ final class SourceRegistry {
         _languageMap = nil
     }
 
+    /// True only when the source itself is explicitly turned off via its own
+    /// `url:<sourceURL>` key — NOT because of a parent region or category.
+    /// Used by taxonomy override: a taxonomy selection should bypass inherited
+    /// disables but still respect per-source opt-outs.
+    func isSourceExplicitlyDisabled(_ sourceURL: String) -> Bool {
+        disabled.contains(Self.sourceKey(sourceURL))
+    }
+
     func isSourceEnabled(_ sourceURL: String) -> Bool {
         guard let source = sourceByURL[sourceURL] else { return false }
         let ownKey = Self.sourceKey(sourceURL)

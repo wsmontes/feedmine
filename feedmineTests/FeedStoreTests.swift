@@ -451,4 +451,145 @@ final class FeedStoreTests: XCTestCase {
         XCTAssertEqual(store.activeLanguages, ["en", "pt"],
                        "setFilter must normalize BCP 47 codes to base codes")
     }
+
+    // MARK: - Taxonomy eligibility (category/region bypass)
+
+    func testSourceExplicitlyDisabledFlag() {
+        let registry = SourceRegistry()
+        registry.sources = [
+            FeedSource(title: "A", url: "https://a.com/feed", category: "Acoustics", region: "global"),
+            FeedSource(title: "B", url: "https://b.com/feed", category: "Acoustics", region: "global"),
+        ]
+        // Disable source A individually
+        registry.toggleSource("https://a.com/feed")
+
+        XCTAssertTrue(registry.isSourceExplicitlyDisabled("https://a.com/feed"))
+        XCTAssertFalse(registry.isSourceExplicitlyDisabled("https://b.com/feed"))
+    }
+
+    func testTaxonomySelectionMakesDisabledCategorySourcesEligible() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        // Four sources in Acoustics, category disabled
+        let sources = [
+            FeedSource(title: "Sound1", url: "https://sound1.com/feed", category: "Acoustics", region: "global"),
+            FeedSource(title: "Sound2", url: "https://sound2.com/feed", category: "Acoustics", region: "global"),
+            FeedSource(title: "Sound3", url: "https://sound3.com/feed", category: "Acoustics", region: "global"),
+            FeedSource(title: "Sound4", url: "https://sound4.com/feed", category: "Acoustics", region: "global"),
+        ]
+        store.registry.sources = sources
+        store.registry.toggleCategory("Acoustics")  // disable entire category
+
+        // Normally none are enabled
+        XCTAssertFalse(store.registry.isSourceEnabled("https://sound1.com/feed"))
+        XCTAssertFalse(store.registry.isSourceEnabled("https://sound2.com/feed"))
+
+        // Build taxonomy tree
+        await TaxonomyStore.shared.build(from: sources)
+        let nodeID = try XCTUnwrap(TaxonomyStore.shared.nodeID(for: "https://sound1.com/feed"))
+        let taxonomyURLs = TaxonomyStore.shared.feedURLs(inSubtreesOf: [nodeID])
+        XCTAssertEqual(taxonomyURLs.count, 4)
+
+        // Set taxonomy filter (simulates selecting Acoustics node)
+        store.setFilter(region: nil, nodeIDs: [nodeID], type: .all, mood: .all, languages: [])
+
+        // Poll for pipeline flush
+        let deadline = Date().addingTimeInterval(5)
+        while store.loadingState != .idle && Date() < deadline {
+            try await Task.sleep(for: .milliseconds(50))
+        }
+
+        // All four should now be visible as eligible (category bypassed, none individually disabled)
+        // Insert test items for these sources and verify they pass filters
+        let items = sources.map { src in
+            FeedItem(id: FeedItem.generateID(sourceURL: src.url, guid: src.url, link: nil),
+                     sourceTitle: src.title, sourceURL: src.url, category: "Acoustics",
+                     title: "Test Article", excerpt: "Content.",
+                     url: src.url + "/article/1", imageURL: nil,
+                     publishedAt: Date(), region: "global")
+        }
+        let persisted = await store.persistFetchedItems(items)
+        XCTAssertEqual(persisted.count, 4, "All 4 items should be persisted (taxonomy override)")
+
+        // All 4 items from taxonomy URLs, none individually disabled → should survive applyFilters
+        let filtered = persisted.filter { item in
+            FeedStore.languageFilterMatches(itemLanguage: item.language, selectedLanguages: [], deviceLanguage: "en")
+        }
+        XCTAssertEqual(filtered.count, 4, "All 4 taxonomy items must survive filters when no individual disable")
+    }
+
+    func testTaxonomySelectionStillBlocksIndividuallyDisabledSource() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        let sources = [
+            FeedSource(title: "S1", url: "https://s1.com/feed", category: "Acoustics", region: "global"),
+            FeedSource(title: "S2", url: "https://s2.com/feed", category: "Acoustics", region: "global"),
+        ]
+        store.registry.sources = sources
+        // Toggle S1 off individually FIRST (category still enabled)
+        store.registry.toggleSource("https://s1.com/feed")  // S1 → disabled
+        // Then disable the category (S2 now blocked by category, S1 still individually off)
+        store.registry.toggleCategory("Acoustics")
+
+        await TaxonomyStore.shared.build(from: sources)
+        let nodeID = try XCTUnwrap(TaxonomyStore.shared.nodeID(for: "https://s1.com/feed"))
+
+        // Select Acoustics node
+        store.setFilter(region: nil, nodeIDs: [nodeID], type: .all, mood: .all, languages: [])
+
+        let deadline = Date().addingTimeInterval(5)
+        while store.loadingState != .idle && Date() < deadline {
+            try await Task.sleep(for: .milliseconds(50))
+        }
+
+        // S1 individually disabled → must be blocked
+        // S2 category-disabled but taxonomy overrides → must be eligible
+        XCTAssertTrue(store.registry.isSourceExplicitlyDisabled("https://s1.com/feed"),
+                      "S1 is individually off")
+        XCTAssertFalse(store.registry.isSourceExplicitlyDisabled("https://s2.com/feed"),
+                       "S2 is NOT individually off")
+
+        let items = sources.map { src in
+            FeedItem(id: FeedItem.generateID(sourceURL: src.url, guid: src.url, link: nil),
+                     sourceTitle: src.title, sourceURL: src.url, category: "Acoustics",
+                     title: "Test", excerpt: "Content.",
+                     url: src.url + "/a/1", imageURL: nil,
+                     publishedAt: Date(), region: "global")
+        }
+        let persisted = await store.persistFetchedItems(items)
+        XCTAssertEqual(persisted.count, 2)
+    }
+
+    func testClearingTaxonomyRestoresNormalEnablement() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        let sources = [
+            FeedSource(title: "S1", url: "https://s1.com/feed", category: "Acoustics", region: "global"),
+        ]
+        store.registry.sources = sources
+        store.registry.toggleCategory("Acoustics")
+
+        XCTAssertFalse(store.registry.isSourceEnabled("https://s1.com/feed"),
+                       "Category disabled → source not enabled")
+
+        await TaxonomyStore.shared.build(from: sources)
+        let nodeID = try XCTUnwrap(TaxonomyStore.shared.nodeID(for: "https://s1.com/feed"))
+
+        // Select taxonomy → temporarily eligible
+        store.setFilter(region: nil, nodeIDs: [nodeID], type: .all, mood: .all, languages: [])
+        let deadline = Date().addingTimeInterval(5)
+        while store.loadingState != .idle && Date() < deadline {
+            try await Task.sleep(for: .milliseconds(50))
+        }
+
+        // Clear filters → normal enablement restored
+        store.clearAllFilters()
+        while store.loadingState != .idle && Date() < deadline {
+            try await Task.sleep(for: .milliseconds(50))
+        }
+
+        // Source should be disabled again (category still off, no taxonomy override)
+        XCTAssertFalse(store.registry.isSourceEnabled("https://s1.com/feed"),
+                       "After clearing taxonomy, normal category disable must be restored")
+    }
 }
