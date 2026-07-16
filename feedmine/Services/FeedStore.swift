@@ -658,6 +658,10 @@ final class FeedStore {
         activeRegion = Settings.filterRegion
         activeNodeIDs = Set(Settings.filterTaxonomyNodes)
         TaxonomyStore.shared.selectedNodeIDs = activeNodeIDs
+        // Rebuild taxonomy URL cache so applyFilters actually enforces the
+        // restored taxonomy selection (cache is empty on cold start).
+        cachedTaxonomyNodeIDs = activeNodeIDs
+        cachedTaxonomyFeedURLs = TaxonomyStore.shared.feedURLs(inSubtreesOf: activeNodeIDs)
         activeLanguages = Set(Settings.filterLanguages)
         if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
