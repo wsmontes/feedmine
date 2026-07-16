@@ -130,17 +130,17 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
         )
     }
 
-    /// Immutable copy with region and/or language replaced.
-    /// Used by persistFetchedItems to ensure the returned item matches
-    /// exactly what was written to SQLite — no divergence between memory
-    /// and database.
-    func with(region: String? = nil, language: String?? = nil) -> FeedItem {
+    /// Immutable copy with region and language replaced — used by
+    /// persistFetchedItems so the returned item matches exactly what
+    /// was written to SQLite. Both parameters are always provided;
+    /// there is no "keep current value" sentinel.
+    func replacingMetadata(region: String, language: String?) -> FeedItem {
         FeedItem(
             id: id, sourceTitle: sourceTitle, sourceURL: sourceURL, category: category,
             title: title, excerpt: excerpt, url: url, imageURL: imageURL,
             publishedAt: publishedAt, audioURL: audioURL, duration: duration,
-            region: region ?? self.region,
-            language: language ?? self.language
+            region: region,
+            language: language
         )
     }
 

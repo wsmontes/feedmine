@@ -1040,7 +1040,8 @@ final class FeedStore {
             LanguageDetectionInput(
                 title: item.title,
                 excerpt: item.excerpt,
-                explicitLanguage: registry.languageFor(sourceURL: item.sourceURL)
+                explicitLanguage: item.language
+                    ?? registry.languageFor(sourceURL: item.sourceURL)
             )
         }
         let resolvedLanguages: [String?] = await Task.detached(priority: .utility) {
@@ -1058,7 +1059,7 @@ final class FeedStore {
         // in-memory representation matches exactly what is written to SQLite.
         // No divergence between the returned FeedItem array and the DB.
         let enriched: [FeedItem] = (0..<actualNew.count).map { i in
-            actualNew[i].with(region: regions[i], language: resolvedLanguages[i])
+            actualNew[i].replacingMetadata(region: regions[i], language: resolvedLanguages[i])
         }
         do {
             // Single batch write. Items are deduplicated in memory before this

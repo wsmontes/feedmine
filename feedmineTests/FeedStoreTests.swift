@@ -175,6 +175,43 @@ final class FeedStoreTests: XCTestCase {
                        "DB record (ja) must NOT pass English filter")
     }
 
+    func testPersistPreservesItemLanguageOverDetection() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        // Source has NO explicit language — detection would be needed
+        let source = FeedSource(title: "Le Monde", url: "https://lemonde.fr/feed",
+                                category: "News", region: "countries/france", language: nil)
+        store.registry.sources = [source]
+
+        // But the item itself already carries "fr" (set by the fetcher).
+        // Short, ambiguous text that could mislead detection.
+        let item = FeedItem(
+            id: "fr-item-1", sourceTitle: "Le Monde",
+            sourceURL: "https://lemonde.fr/feed",
+            category: "News",
+            title: "Édito",
+            excerpt: "Bref.",
+            url: "https://lemonde.fr/article/1", imageURL: nil,
+            publishedAt: Date(),
+            region: "countries/france",
+            language: "fr"  // already known — must not be overwritten
+        )
+
+        let result = await store.persistFetchedItems([item])
+        let returned: FeedItem = try XCTUnwrap(result.first)
+
+        // The item's own language must survive, even with no registry language
+        // and text too short for reliable detection
+        XCTAssertEqual(returned.language, "fr",
+                       "Item's own language 'fr' must be preserved when registry has none and text is short")
+
+        let dbLanguage: String? = try await store.db.read { db in
+            try String.fetchOne(db, sql: "SELECT language FROM feed_item WHERE id = ?", arguments: [item.id])
+        }
+        XCTAssertEqual(dbLanguage, "fr",
+                       "SQLite must also store the item's own language")
+    }
+
     func testPersistExplicitSourceLanguagePreserved() async throws {
         let store = try FeedStore(inMemory: true)
 
