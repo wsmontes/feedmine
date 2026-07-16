@@ -132,7 +132,7 @@ final class FeedStore {
         return items.filter { item in
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
-            && (cachedTaxonomyFeedURLs.isEmpty || cachedTaxonomyFeedURLs.contains(item.sourceURL))
+            && (cachedTaxonomyFeedURLs.isEmpty || cachedTaxonomyFeedURLs.contains(OPMLParser.normalizeURL(item.sourceURL)))
             && (languages.isEmpty || item.language.map { languages.contains($0) } ?? false)
             && contentType(item)
             && (mood == .all || mood.matches(item.title))
@@ -1322,10 +1322,13 @@ final class FeedStore {
                 var allItems: [FeedItemRecord] = []
                 for chunkStart in stride(from: 0, to: urlArray.count, by: batchSize) {
                     let chunk = Array(urlArray[chunkStart..<min(chunkStart + batchSize, urlArray.count)])
-                    let placeholders = chunk.map { _ in "?" }.joined(separator: ",")
+                    // Include both normalized (no trailing /) and raw (trailing /)
+                    // variants — items in DB may have either form.
+                    let chunkBoth = chunk.flatMap { [$0, "\($0)/"] }
+                    let placeholders = chunkBoth.map { _ in "?" }.joined(separator: ",")
                     let chunkRequest = request.filter(
                         sql: "source_url IN (\(placeholders))",
-                        arguments: StatementArguments(chunk)
+                        arguments: StatementArguments(chunkBoth)
                     )
                     let batchItems = try chunkRequest
                         .order(Column("published_at").desc)
