@@ -34,6 +34,9 @@ final class FeedStore {
     private(set) var totalDiscarded = 0
     var emptyStateFetchedCount: Int = 0
     var emptyStateFetchTotal: Int = 0
+    /// True while an urgent taxonomy fetch is in-flight — FeedScreen uses this
+    /// to keep the empty state in .fetching mode until items actually arrive.
+    private(set) var isUrgentFetching = false
 
     /// Cached podcast counts — updated after fetch batches, not on every access (#24)
     private(set) var podcastItemCount = 0
@@ -686,6 +689,7 @@ final class FeedStore {
         progressiveFetchTask?.cancel()
         // Cancel any previous urgent fetch
         urgentFetchTask?.cancel()
+        isUrgentFetching = false
 
         // Debounce the expensive flush+reload: if multiple filter changes
         // arrive within 300ms (e.g. user tapping category then mood quickly),
@@ -698,9 +702,11 @@ final class FeedStore {
             // Kick off urgent fetch for taxonomy sources
             let priorityURLs = self.cachedTaxonomyFeedURLs
             if !priorityURLs.isEmpty {
+                self.isUrgentFetching = true
                 self.urgentFetchTask = Task { [weak self] in
                     guard let self else { return }
                     await self.fetchUrgentTaxonomyBatch(sourceURLs: priorityURLs)
+                    self.isUrgentFetching = false
                     // Resume background refresh after urgent work completes
                     self.startBackgroundRefresh()
                 }

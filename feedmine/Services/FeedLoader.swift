@@ -48,6 +48,7 @@ final class FeedLoader {
     var emptyFeedCount: Int { store.emptyFeedCount }
     var emptyStateFetchedCount: Int { store.emptyStateFetchedCount }
     var emptyStateFetchTotal: Int { store.emptyStateFetchTotal }
+    var isUrgentFetching: Bool { store.isUrgentFetching }
 
     // MARK: - Date Sections
 

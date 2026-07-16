@@ -9,7 +9,7 @@ struct TaxonomyBrowseView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        NavigationStack {
+        Group {
             if let root = store.root {
                 TaxonomyLevelView(node: root, isRoot: true)
                     .navigationTitle("Topics")
