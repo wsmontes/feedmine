@@ -1115,7 +1115,10 @@ final class FeedStore {
     /// the user changes filters so the taxonomy-curated feed populates quickly
     /// instead of waiting for the next progressive or background refresh cycle.
     private func fetchUrgentTaxonomyBatch(sourceURLs: Set<String>) async {
-        let sources = registry.enabledSources.filter { sourceURLs.contains($0.url) }
+        // Match against normalized URLs — sourceURLs from feedToNodeID are
+        // already normalized (no trailing slash, https upgrade, etc.) while
+        // registry.enabledSources may have raw OPML URLs.
+        let sources = registry.enabledSources.filter { sourceURLs.contains(OPMLParser.normalizeURL($0.url)) }
         guard !sources.isEmpty else { return }
         emptyStateFetchTotal = sourceURLs.count
         emptyStateFetchedCount = 0
