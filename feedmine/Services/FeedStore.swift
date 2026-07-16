@@ -116,9 +116,9 @@ final class FeedStore {
     }
 
     /// Apply all active filters to a list of items — single source of truth.
-    /// Every visibleItems assignment must pass through here so pagination
-    /// (loadMoreIfNeeded) and the UI (FeedLoader.filteredItems) agree on count.
-    /// Single-pass to avoid intermediate array allocations.
+    /// Hit recording is NOT performed here; it happens once at ingestion time
+    /// in persistFetchedItems so each item is counted exactly once regardless
+    /// of how many times applyFilters runs on the same items.
     private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
         let region = activeRegion
         let contentType = filterContentType
@@ -126,30 +126,22 @@ final class FeedStore {
         let mood = activeMood
         let contentFilters = ContentFilterStore.shared.isEnabled
             ? ContentFilterStore.shared.activeFilters : []
-        var hitFilterIDs: [UUID] = []  // collect once, record after filtering
-        let result = items.filter { item in
+        return items.filter { item in
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
             && (cachedTaxonomyFeedURLs.isEmpty || cachedTaxonomyFeedURLs.contains(item.sourceURL))
             && (languages.isEmpty || item.language.map { languages.contains($0) } ?? false)
             && contentType(item)
             && (mood == .all || mood.matches(item.title))
-            && !contentFilterExcludes(item, filters: contentFilters, hitIDs: &hitFilterIDs)
+            && !contentFilterExcludes(item, filters: contentFilters)
         }
-        // Record hits once — no side effects during the pure filter pass
-        for id in hitFilterIDs {
-            ContentFilterStore.shared.recordHit(id)
-        }
-        return result
     }
 
-    /// Content filter engine: checks if an item's title+excerpt contains any
-    /// keyword from the user's active content filters. Pure predicate —
-    /// hit tracking is collected via `hitIDs` and recorded once after filtering.
-    /// Uses localizedStandardContains on pre-folded text for locale-aware matching
-    /// (200 items x 50 keywords = 10K comparisons). Text is lowercased+folded once
-    /// per item; keywords are pre-folded in ContentFilterStore.activeFilters.
-    private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])], hitIDs: inout [UUID]) -> Bool {
+    /// Content filter matching engine: checks if an item's title+excerpt contains any
+    /// keyword from the user's active content filters. Collects matching filter IDs
+    /// in `hitIDs` for optional hit tracking by the caller. Pure matching — no
+    /// side effects; callers decide whether to record hits via ContentFilterStore.
+    private func _contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])], hitIDs: inout [UUID]) -> Bool {
         guard !filters.isEmpty else { return false }
         let text = (item.title + " " + item.excerpt)
             .lowercased()
@@ -165,12 +157,19 @@ final class FeedStore {
         return false
     }
 
-    /// Backwards-compatible wrapper for external consumers (WhatsNewManager, Reservoir)
-    /// that don't need hit tracking. Delegates to the hitIDs overload and records
-    /// hits inline, matching the old per-item recordHit semantics.
+    /// Pure predicate — no side effects. Used by applyFilters where hits are
+    /// recorded once at ingestion time in persistFetchedItems instead of on
+    /// every filter pass.
     private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
+        var unused: [UUID] = []
+        return _contentFilterExcludes(item, filters: filters, hitIDs: &unused)
+    }
+
+    /// Records a hit for each matching filter. Used at item ingestion time
+    /// (persistFetchedItems) so each item is counted exactly once.
+    private func contentFilterExcludesAndRecord(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
         var hitIDs: [UUID] = []
-        let excluded = contentFilterExcludes(item, filters: filters, hitIDs: &hitIDs)
+        let excluded = _contentFilterExcludes(item, filters: filters, hitIDs: &hitIDs)
         for id in hitIDs {
             ContentFilterStore.shared.recordHit(id)
         }
@@ -629,6 +628,7 @@ final class FeedStore {
         Settings.filterTaxonomyNodes = Array(activeNodeIDs)
         Settings.filterContentType = activeContentType.rawValue
         Settings.filterLanguages = Array(activeLanguages)
+        Settings.filterMood = activeMood.rawValue
         Settings.filterSetAt = Date().timeIntervalSince1970
     }
 
@@ -637,6 +637,7 @@ final class FeedStore {
             || !Settings.filterTaxonomyNodes.isEmpty
             || (FeedLoader.ContentType(rawValue: Settings.filterContentType) ?? .all) != .all
             || !Settings.filterLanguages.isEmpty
+            || (FeedLoader.MoodFilter(rawValue: Settings.filterMood) ?? .all) != .all
 
         if hasActiveFilters && Settings.filterAutoExpire {
             let elapsed = Date().timeIntervalSince1970 - Settings.filterSetAt
@@ -644,6 +645,7 @@ final class FeedStore {
                 Settings.filterRegion = nil
                 Settings.filterTaxonomyNodes = []
                 Settings.filterContentType = "All"
+                Settings.filterMood = "all"
                 Settings.filterLanguages = []
                 Settings.filterSetAt = 0
                 return
@@ -657,8 +659,7 @@ final class FeedStore {
         if let type = FeedLoader.ContentType(rawValue: Settings.filterContentType) {
             activeContentType = type
         }
-        if let raw = UserDefaults.standard.string(forKey: Keys.filterMood),
-           let mood = FeedLoader.MoodFilter(rawValue: raw) {
+        if let mood = FeedLoader.MoodFilter(rawValue: Settings.filterMood) {
             activeMood = mood
         }
     }
@@ -997,6 +998,15 @@ final class FeedStore {
             }
             for item in succeeded { loadedIDs.insert(item.id) }
             loadedIDsCount = loadedIDs.count
+
+            // Record content filter hits on first ingestion (idempotent)
+            if ContentFilterStore.shared.isEnabled {
+                let filters = ContentFilterStore.shared.activeFilters
+                for item in succeeded {
+                    _ = contentFilterExcludesAndRecord(item, filters: filters)
+                }
+            }
+
             return succeeded
         } catch {
             Log.db.error("persist error: \(error.localizedDescription)")
@@ -1239,7 +1249,13 @@ final class FeedStore {
                 .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
                 .filter(Column("is_read") == 0)
             if let r = region {
-                request = request.filter(Column("region") == r)
+                // Exact match or descendant prefix (e.g. "countries/brazil/sao-paulo")
+                // matches both the region itself and its sub-regions, matching the
+                // in-memory filter behavior in applyFilters.
+                request = request.filter(
+                    sql: "region = ? OR region LIKE ?",
+                    arguments: [r, "\(r)/%"]
+                )
             }
             // Filter by content type at SQL level to avoid loading 200 items
             // only to discard 95% in-memory (e.g. "Podcasts" filter with few

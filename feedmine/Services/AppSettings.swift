@@ -83,6 +83,10 @@ enum Settings {
         get { d.stringArray(forKey: Keys.filterLanguages) ?? [] }
         set { d.set(newValue, forKey: Keys.filterLanguages) }
     }
+    static var filterMood: String {
+        get { d.string(forKey: Keys.filterMood) ?? "all" }
+        set { d.set(newValue, forKey: Keys.filterMood) }
+    }
     static var hasInitializedLanguageDefault: Bool {
         get { d.bool(forKey: Keys.hasInitializedLanguageDefault) }
         set { d.set(newValue, forKey: Keys.hasInitializedLanguageDefault) }
