@@ -417,25 +417,38 @@ final class FeedStoreTests: XCTestCase {
         // Simulate legacy persisted settings with BCP 47 codes
         UserDefaults.standard.set(["pt-BR", "en-US"], forKey: "filterLanguages")
         UserDefaults.standard.set(true, forKey: "filterAutoExpire")
+        // Set a recent timestamp so auto-expire doesn't kick in
         UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: "filterSetAt")
+        // Persist neutral values for other filters
+        UserDefaults.standard.set(nil, forKey: "filterRegion")
+        UserDefaults.standard.set([], forKey: "filterTaxonomyNodes")
+        UserDefaults.standard.set("All", forKey: "filterContentType")
+        UserDefaults.standard.set("all", forKey: "filterMood")
 
-        // Register a source so start() doesn't bail early
-        store.registry.sources = [
-            FeedSource(title: "Test", url: "https://test.com/feed", category: "News", region: "global")
-        ]
+        // Call restoreFilters directly — this is the actual code path that
+        // reads legacy settings and populates activeLanguages
+        store.restoreFilters()
 
-        // Trigger filter restore via start (hasStarted gate prevents full startup,
-        // but we can test the restore path directly by setting hasStarted)
-        // Instead, test that the public API normalizes on entry via setFilter
-        store.setFilter(region: nil, nodeIDs: [], type: .all, mood: .all, languages: ["pt-BR", "en-US"])
-
-        // activeLanguages should now contain base codes only
-        XCTAssertEqual(store.activeLanguages, ["pt", "en"],
-                       "setFilter must normalize BCP 47 codes in selected languages")
+        // activeLanguages must contain normalized base codes, not raw BCP 47
+        XCTAssertEqual(store.activeLanguages, ["en", "pt"],
+                       "restoreFilters must normalize legacy BCP 47 settings to ISO 639-1 base codes")
 
         // Clean up
         UserDefaults.standard.removeObject(forKey: "filterLanguages")
         UserDefaults.standard.removeObject(forKey: "filterAutoExpire")
         UserDefaults.standard.removeObject(forKey: "filterSetAt")
+        UserDefaults.standard.removeObject(forKey: "filterRegion")
+        UserDefaults.standard.removeObject(forKey: "filterTaxonomyNodes")
+        UserDefaults.standard.removeObject(forKey: "filterContentType")
+        UserDefaults.standard.removeObject(forKey: "filterMood")
+    }
+
+    func testSetFilterNormalizesLanguagesOnEntry() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        store.setFilter(region: nil, nodeIDs: [], type: .all, mood: .all, languages: ["pt-BR", "en-US"])
+
+        XCTAssertEqual(store.activeLanguages, ["en", "pt"],
+                       "setFilter must normalize BCP 47 codes to base codes")
     }
 }

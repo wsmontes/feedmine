@@ -125,31 +125,41 @@ final class FeedStore {
         Set(languages.compactMap(normalizedLanguageCode))
     }
 
-    /// Shared language filter rule — single source of truth for both in-memory
-    /// (applyFilters) and SQL (reloadFromSQLite) paths.
+    /// Fast-path language filter — assumes `selectedLanguages` and
+    /// `deviceLanguage` are already normalized to ISO 639-1 base codes.
+    /// Only `itemLanguage` is normalized (items may carry raw BCP 47 tags
+    /// or unrecognized input from feeds).
     ///
-    /// - All inputs are normalized to ISO 639-1 base codes before comparison
-    ///   so "pt-BR" matches "pt" regardless of which side carries the tag.
-    /// - Items with known language: pass only when that language is selected.
-    /// - Items with nil language: pass provisionally only when the device
-    ///   language is among the selected set (the item is likely in the user's
-    ///   language even if detection failed).
-    /// - No selection (empty set): all items pass.
+    /// Used in hot paths (`applyFilters`) where the set and device language
+    /// are normalized once before the per-item loop.
+    nonisolated static func languageFilterMatchesNormalized(
+        itemLanguage: String?,
+        selectedLanguages: Set<String>,
+        deviceLanguage: String?
+    ) -> Bool {
+        guard !selectedLanguages.isEmpty else { return true }
+        if let lang = normalizedLanguageCode(itemLanguage) {
+            return selectedLanguages.contains(lang)
+        }
+        if let device = deviceLanguage {
+            return selectedLanguages.contains(device)
+        }
+        return false
+    }
+
+    /// Public defensive wrapper — normalizes all three inputs before
+    /// delegating to the fast path. Safe for external callers, tests,
+    /// and any code that may receive unnormalized BCP 47 input.
     static func languageFilterMatches(
         itemLanguage: String?,
         selectedLanguages: Set<String>,
         deviceLanguage: String?
     ) -> Bool {
-        let selected = normalizedLanguageSet(selectedLanguages)
-        guard !selected.isEmpty else { return true }
-        if let lang = normalizedLanguageCode(itemLanguage) {
-            return selected.contains(lang)
-        }
-        // nil or empty language: pass only if device language is selected
-        if let device = deviceLanguage, let deviceBase = normalizedLanguageCode(device) {
-            return selected.contains(deviceBase)
-        }
-        return false
+        languageFilterMatchesNormalized(
+            itemLanguage: itemLanguage,
+            selectedLanguages: normalizedLanguageSet(selectedLanguages),
+            deviceLanguage: normalizedLanguageCode(deviceLanguage)
+        )
     }
 
     /// Normalize a language tag to its ISO 639-1 base code.
@@ -222,7 +232,7 @@ final class FeedStore {
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
             && (cachedTaxonomyFeedURLs.isEmpty || cachedTaxonomyFeedURLs.contains(OPMLParser.normalizeURL(item.sourceURL)))
-            && Self.languageFilterMatches(itemLanguage: item.language, selectedLanguages: languages, deviceLanguage: deviceLanguage)
+            && Self.languageFilterMatchesNormalized(itemLanguage: item.language, selectedLanguages: languages, deviceLanguage: deviceLanguage)
             && contentType(item)
             && (mood == .all || mood.matches(item.title))
             && !contentFilterExcludes(item, filters: contentFilters)
@@ -724,7 +734,7 @@ final class FeedStore {
         Settings.filterSetAt = Date().timeIntervalSince1970
     }
 
-    private func restoreFilters() {
+    func restoreFilters() {
         let hasActiveFilters = Settings.filterRegion != nil
             || !Settings.filterTaxonomyNodes.isEmpty
             || (FeedLoader.ContentType(rawValue: Settings.filterContentType) ?? .all) != .all
