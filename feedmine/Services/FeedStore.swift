@@ -1238,8 +1238,8 @@ final class FeedStore {
         let contentType = activeContentType
         let languages = activeLanguages
         // Capture taxonomy feed URLs before entering the read closure (which may
-        // run off the main actor). When taxonomy is active we need ALL matching
-        // items, so the batched IN clause replaces the usual LIMIT 200.
+        // run off the main actor). When taxonomy is active we load matching
+        // items via batched IN clause with per-chunk and global caps.
         let taxonomyURLs: Set<String>? = activeNodeIDs.isEmpty ? nil : cachedTaxonomyFeedURLs
         // Always exclude read items — the feed should only show unseen content.
         // Read/opened items are tracked continuously and this information is
@@ -1298,7 +1298,7 @@ final class FeedStore {
             }
 
             // Taxonomy filter — batched IN clause to stay within SQLite's
-            // 999-parameter limit. When taxonomy is active, load ALL matching
+            // 999-parameter limit. When taxonomy is active, load matching items
             // items so the user sees the full curated feed rather than just
             // the 200 most recent items (which may not overlap at all with
             // the selected taxonomy nodes).

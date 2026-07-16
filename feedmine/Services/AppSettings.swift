@@ -84,7 +84,7 @@ enum Settings {
         set { d.set(newValue, forKey: Keys.filterLanguages) }
     }
     static var filterMood: String {
-        get { d.string(forKey: Keys.filterMood) ?? "all" }
+        get { d.string(forKey: Keys.filterMood) ?? FeedLoader.MoodFilter.all.rawValue }
         set { d.set(newValue, forKey: Keys.filterMood) }
     }
     static var hasInitializedLanguageDefault: Bool {
