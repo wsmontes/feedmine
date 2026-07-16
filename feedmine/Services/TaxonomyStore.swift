@@ -157,7 +157,7 @@ final class TaxonomyStore {
             childrenIndex[parentID, default: []].append(nodeID)
         }
 
-        persistCache()
+        persistCache(sourceCount: sources.count)
     }
 
     // MARK: - Path derivation
@@ -339,11 +339,13 @@ final class TaxonomyStore {
     }
 
     /// Try to load from disk cache. Returns true if cache was valid.
-    func loadFromCache() -> Bool {
+    func loadFromCache(sourceCount: Int) -> Bool {
         guard let data = try? Data(contentsOf: cacheURL),
               let cached = try? JSONDecoder().decode(CachedTree.self, from: data) else {
             return false
         }
+        // Invalidate cache if source list changed (feeds added/removed in OPML)
+        guard cached.sourceCount == sourceCount else { return false }
         self.flatIndex = cached.flatIndex
         self.feedToNodeID = cached.feedToNodeID
         // Rebuild children index from restored flatIndex
@@ -356,11 +358,12 @@ final class TaxonomyStore {
         return true
     }
 
-    private func persistCache() {
+    private func persistCache(sourceCount: Int) {
         let cached = CachedTree(
             root: root,
             flatIndex: flatIndex,
-            feedToNodeID: feedToNodeID
+            feedToNodeID: feedToNodeID,
+            sourceCount: sourceCount
         )
         guard let data = try? JSONEncoder().encode(cached) else { return }
         try? data.write(to: cacheURL, options: .atomic)
@@ -373,4 +376,5 @@ private struct CachedTree: Codable {
     let root: TaxonomyNode?
     let flatIndex: [String: TaxonomyNode]
     let feedToNodeID: [String: String]
+    let sourceCount: Int
 }

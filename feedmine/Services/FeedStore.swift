@@ -393,7 +393,7 @@ final class FeedStore {
         reservoir.sourceRegionMap = registry.regionMap
 
         // Build taxonomy tree from loaded sources — try cache first, build if needed
-        if !TaxonomyStore.shared.loadFromCache() {
+        if !TaxonomyStore.shared.loadFromCache(sourceCount: registry.sources.count) {
             await TaxonomyStore.shared.build(from: registry.sources)
         }
 
@@ -1123,14 +1123,16 @@ final class FeedStore {
         // already normalized (no trailing slash, https upgrade, etc.) while
         // registry.enabledSources may have raw OPML URLs.
         let sources = registry.enabledSources.filter { sourceURLs.contains(OPMLParser.normalizeURL($0.url)) }
-        guard !sources.isEmpty else { return }
         emptyStateFetchTotal = sourceURLs.count
         emptyStateFetchedCount = 0
         let result = await fetcher.fetchAll(sources, maxConcurrent: 15)
         emptyStateFetchedCount = result.sourceStatuses.count
         let actualNew = await persistFetchedItems(result.items)
-        guard !actualNew.isEmpty else { return }
-        throttledReservoirAppend(actualNew)
+        // Bypass throttling: the user is waiting for taxonomy-filtered items.
+        // Append directly and flush immediately instead of the normal 3-second delay.
+        pendingReservoirItems.append(contentsOf: actualNew)
+        reservoirFlushTask?.cancel()
+        flushPendingReservoir()
         collectWhatsNewCandidates(actualNew)
         prefetchImagesIfEnabled(for: actualNew)
     }
