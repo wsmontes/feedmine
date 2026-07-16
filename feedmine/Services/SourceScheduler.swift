@@ -98,9 +98,10 @@ final class SourceScheduler {
         selectedURLs.reserveCapacity(maxSelect)
 
         if !prioritySourceURLs.isEmpty {
-            for region in regions {
+            priorityLoop: for region in regions {
                 guard let sources = sourcesByRegion[region] else { continue }
                 for source in sources {
+                    guard selected.count < maxSelect else { break priorityLoop }
                     guard prioritySourceURLs.contains(source.url) else { continue }
                     guard selectedURLs.insert(source.url).inserted else { continue }
                     // Clear cooldown — treat as never-fetched
@@ -145,8 +146,9 @@ final class SourceScheduler {
                         timeFactor = 1.0
                     }
 
+                    let sourceLang = source.language.flatMap { $0.isEmpty ? nil : $0 }
                     let languageBoost: Double = activeLanguages.isEmpty ? 1.0
-                        : (activeLanguages.contains(source.language ?? "") ? 3.0 : 0.5)
+                        : (sourceLang.map { activeLanguages.contains($0) } == true ? 3.0 : 0.5)
 
                     let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost * languageBoost
                     let finalScore = max(score, 0.01)

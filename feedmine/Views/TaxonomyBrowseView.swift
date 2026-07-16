@@ -30,6 +30,7 @@ private struct TaxonomyLevelView: View {
     @State private var store = TaxonomyStore.shared
     @State private var searchText = ""
     @State private var searchResults: [TaxonomyNode] = []
+    @State private var searchTask: Task<Void, Never>?
     let node: TaxonomyNode
     var isRoot: Bool = false
 
@@ -57,11 +58,17 @@ private struct TaxonomyLevelView: View {
                     }
                 }
                 .onChange(of: searchText) { _, query in
+                    searchTask?.cancel()
                     guard !query.isEmpty else {
                         searchResults = []
                         return
                     }
-                    searchResults = store.search(query)
+                    let q = query
+                    searchTask = Task {
+                        try? await Task.sleep(for: .milliseconds(300))
+                        guard !Task.isCancelled else { return }
+                        searchResults = store.search(q)
+                    }
                 }
             }
 

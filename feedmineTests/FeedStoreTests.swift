@@ -60,10 +60,13 @@ final class FeedStoreTests: XCTestCase {
 
         // Trigger reload via setFilter — this computes cachedTaxonomyFeedURLs
         // internally and then flushes the pipeline after a 300ms debounce.
-        store.setFilter(region: nil, nodeIDs: [nodeID], type: .all, mood: .all)
+        store.setFilter(region: nil, nodeIDs: [nodeID], type: .all, mood: .all, languages: [])
 
-        // Wait for debounce (300ms) + reload pipeline to complete.
-        try await Task.sleep(for: .milliseconds(1000))
+        // Poll for result with timeout instead of a fixed sleep (avoids CI flakiness).
+        let deadline = Date().addingTimeInterval(5)
+        while store.visibleItems.isEmpty, Date() < deadline {
+            try await Task.sleep(for: .milliseconds(50))
+        }
 
         // Verify only matching item appears
         XCTAssertEqual(store.visibleItems.count, 1)

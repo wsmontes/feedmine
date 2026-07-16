@@ -130,6 +130,8 @@ struct FeedEmptyStateView: View {
         case .generic:
             if loader.loadingState == .initial {
                 return "antenna.radiowaves.left.and.right"
+            } else if loader.loadingState == .refreshing {
+                return "line.3.horizontal.decrease.circle"
             } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
                 return "wifi.slash"
             } else if loader.sources.isEmpty {
@@ -148,6 +150,8 @@ struct FeedEmptyStateView: View {
         case .generic:
             if loader.loadingState == .initial {
                 return String(localized: "Loading your feed...", comment: "Empty state title")
+            } else if loader.loadingState == .refreshing {
+                return String(localized: "Filtering articles...", comment: "Empty state title — filter in progress")
             } else if loader.fetchErrorCount > 0 && loader.totalFetched == 0 {
                 return String(localized: "Couldn't load feeds", comment: "Empty state title")
             } else if loader.sources.isEmpty {

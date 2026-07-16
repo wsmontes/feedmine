@@ -50,7 +50,7 @@ struct TaxonomyChipBar: View {
 
                 // Overflow indicator
                 let totalChips = names.count + loader.selectedLanguages.count + (loader.hasActiveFilters ? 1 : 0)
-                let visibleChips = min(names.count, 3) + loader.selectedLanguages.count
+                let visibleChips = min(names.count, 3) + loader.selectedLanguages.count + (loader.hasActiveFilters ? 1 : 0)
                 if totalChips > visibleChips {
                     Text("+\(totalChips - visibleChips) more")
                         .font(.caption)

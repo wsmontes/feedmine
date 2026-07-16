@@ -46,6 +46,8 @@ final class FeedLoader {
     var podcastItemCount: Int { store.podcastItemCount }
     var totalDiscarded: Int { store.totalDiscarded }
     var emptyFeedCount: Int { store.emptyFeedCount }
+    var emptyStateFetchedCount: Int { store.emptyStateFetchedCount }
+    var emptyStateFetchTotal: Int { store.emptyStateFetchTotal }
 
     // MARK: - Date Sections
 
@@ -253,30 +255,54 @@ final class FeedLoader {
         Set(store.registry.enabledSources.map(\.category)).sorted()
     }
     var availableLanguages: [LanguageInfo] {
-        let grouped = Dictionary(grouping: store.registry.sources.filter { $0.language != nil }, by: \.language!)
-        return grouped.compactMap { code, sources -> LanguageInfo? in
+        // Use enabled sources so counts reflect what the user can actually see.
+        // Group by language safely without force-unwrap — filter nil first,
+        // then compactMap to extract code+source pairs.
+        let withLang = store.registry.enabledSources.compactMap { src -> (code: String, source: FeedSource)? in
+            guard let code = src.language, !code.isEmpty else { return nil }
+            return (code, src)
+        }
+        let grouped = Dictionary(grouping: withLang, by: \.code)
+        return grouped.compactMap { code, pairs -> LanguageInfo? in
             LanguageInfo(
                 code: code,
                 name: Locale.current.localizedString(forLanguageCode: code) ?? code,
-                flag: FeedLoader.flagEmoji(for: code),
-                feedCount: sources.count
+                flag: Self.flagEmoji(for: code),
+                feedCount: pairs.count
             )
         }.sorted { $0.feedCount > $1.feedCount }
     }
+
+    private static let flagEmojiMapping: [String: String] = [
+        "pt": "BR", "en": "US", "es": "ES", "fr": "FR", "de": "DE",
+        "it": "IT", "ja": "JP", "ko": "KR", "zh": "CN", "ru": "RU",
+        "ar": "SA", "hi": "IN", "nl": "NL", "sv": "SE", "no": "NO",
+        "da": "DK", "fi": "FI", "pl": "PL", "tr": "TR", "th": "TH",
+        "vi": "VN", "id": "ID", "ms": "MY", "fil": "PH", "he": "IL",
+        "el": "GR", "cs": "CZ", "ro": "RO", "hu": "HU", "uk": "UA",
+        "ca": "ES", "eu": "ES", "gl": "ES",
+        "sw": "TZ", "ur": "PK", "fa": "IR", "bn": "BD", "km": "KH",
+        "my": "MM", "ne": "NP", "si": "LK", "af": "ZA", "ha": "NG",
+        "yo": "NG", "zu": "ZA", "so": "SO", "st": "LS", "tl": "PH",
+        "am": "ET", "az": "AZ", "bg": "BG", "bs": "BA", "hr": "HR",
+        "et": "EE", "ka": "GE", "is": "IS", "lv": "LV", "lt": "LT",
+        "mk": "MK", "mt": "MT", "sk": "SK", "sl": "SI", "sr": "RS",
+        "sq": "AL", "hy": "AM", "mn": "MN", "lo": "LA", "kk": "KZ",
+        "ky": "KG", "tg": "TJ", "uz": "UZ", "ps": "AF", "ku": "IQ",
+        "be": "BY", "ga": "IE", "cy": "GB", "fy": "NL", "lb": "LU",
+        "jv": "ID", "su": "ID", "xh": "ZA", "ny": "MW", "mg": "MG",
+        "om": "ET", "rw": "RW", "sn": "ZW", "ig": "NG", "ml": "IN",
+        "kn": "IN", "ta": "IN", "te": "IN", "mr": "IN", "gu": "IN",
+        "pa": "IN", "or": "IN", "as": "IN", "sd": "PK", "bo": "CN",
+        "ug": "CN", "yi": "IL", "gd": "GB", "eo": "EU", "la": "VA",
+    ]
+
+    private static let flagEmojiBase: UInt32 = 127397
+
     private static func flagEmoji(for languageCode: String) -> String {
-        let base: UInt32 = 127397
-        let mapping: [String: String] = [
-            "pt": "BR", "en": "US", "es": "ES", "fr": "FR", "de": "DE",
-            "it": "IT", "ja": "JP", "ko": "KR", "zh": "CN", "ru": "RU",
-            "ar": "SA", "hi": "IN", "nl": "NL", "sv": "SE", "no": "NO",
-            "da": "DK", "fi": "FI", "pl": "PL", "tr": "TR", "th": "TH",
-            "vi": "VN", "id": "ID", "ms": "MY", "fil": "PH", "he": "IL",
-            "el": "GR", "cs": "CZ", "ro": "RO", "hu": "HU", "uk": "UA",
-            "ca": "ES", "eu": "ES", "gl": "ES",
-        ]
-        guard let country = mapping[languageCode] else { return "🌐" }
-        return country.unicodeScalars.map {
-            String(UnicodeScalar(base + $0.value)!)
+        guard let country = flagEmojiMapping[languageCode] else { return "🌐" }
+        return country.unicodeScalars.map { scalar in
+            String(UnicodeScalar(flagEmojiBase + scalar.value) ?? "�")
         }.joined()
     }
     var enabledSources: [FeedSource] { store.registry.enabledSources }

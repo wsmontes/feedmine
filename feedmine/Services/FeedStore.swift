@@ -686,6 +686,8 @@ final class FeedStore {
         activeContentType = .all
         activeMood = .all
         activeLanguages = []
+        cachedTaxonomyNodeIDs = []
+        cachedTaxonomyFeedURLs = []
         persistFilters()
         // Content on screen is untouchable. Clear everything, reload fresh.
         refreshWhatsNew()
@@ -1068,7 +1070,7 @@ final class FeedStore {
         emptyStateFetchTotal = sourceURLs.count
         emptyStateFetchedCount = 0
         let result = await fetcher.fetchAll(sources, maxConcurrent: 15)
-        emptyStateFetchedCount = result.sourceStatuses.count
+        emptyStateFetchedCount = Set(result.items.map(\.sourceURL)).count
         let actualNew = await persistFetchedItems(result.items)
         guard !actualNew.isEmpty else { return }
         throttledReservoirAppend(actualNew)
@@ -1217,12 +1219,30 @@ final class FeedStore {
             }
 
             // Language filter — shared by both taxonomy and non-taxonomy paths.
+            // Batch to stay within SQLite's 999 parameter limit (defense in depth).
             if !languages.isEmpty {
-                let langPlaceholders = languages.map { _ in "?" }.joined(separator: ",")
-                request = request.filter(
-                    sql: "language IN (\(langPlaceholders))",
-                    arguments: StatementArguments(Array(languages))
-                )
+                let langArray = Array(languages)
+                if langArray.count <= 999 {
+                    let langPlaceholders = langArray.map { _ in "?" }.joined(separator: ",")
+                    request = request.filter(
+                        sql: "language IN (\(langPlaceholders))",
+                        arguments: StatementArguments(langArray)
+                    )
+                } else {
+                    // Fallback: batch in chunks of 999 (unlikely with real language counts)
+                    let batchSize = 999
+                    var orParts: [String] = []
+                    var allArgs: [String] = []
+                    for chunkStart in stride(from: 0, to: langArray.count, by: batchSize) {
+                        let chunk = Array(langArray[chunkStart..<min(chunkStart + batchSize, langArray.count)])
+                        orParts.append("language IN (\(chunk.map { _ in "?" }.joined(separator: ",")))")
+                        allArgs.append(contentsOf: chunk)
+                    }
+                    request = request.filter(
+                        sql: "(\(orParts.joined(separator: " OR ")))",
+                        arguments: StatementArguments(allArgs)
+                    )
+                }
             }
 
             // Taxonomy filter — batched IN clause to stay within SQLite's
