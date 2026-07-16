@@ -39,6 +39,17 @@ targets:
           NSAllowsArbitraryLoadsForMedia: true
         UIBackgroundModes:
           - audio
+        CFBundleURLTypes:
+          - CFBundleURLName: com.feedmine.app
+            CFBundleURLSchemes:
+              - feedmine
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: "OPML File"
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            LSItemContentTypes:
+              - public.xml
+              - org.opml.opml
         CFBundleLocalizations:
           - ar
           - ca
@@ -87,10 +98,26 @@ targets:
     dependencies:
       - package: FeedKit
       - package: GRDB
+  feedmineTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: feedmineTests
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.feedmine.app.tests
+      TARGETED_DEVICE_FAMILY: "1"
+    dependencies:
+      - target: feedmine
 schemes:
   feedmine:
     build:
       targets:
         feedmine: all
+        feedmineTests: [test]
     run:
       config: Debug
+    test:
+      config: Debug
+      targets:
+        - feedmineTests

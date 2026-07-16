@@ -774,8 +774,26 @@ final class FeedStore {
         }
 
         activeRegion = Settings.filterRegion
-        activeNodeIDs = Set(Settings.filterTaxonomyNodes)
-        TaxonomyStore.shared.selectedNodeIDs = activeNodeIDs
+        // Migrate persisted taxonomy node IDs: old flat global IDs
+        // ("global/acoustics") may no longer exist after the topic-directory
+        // reorganization.  Filter to only valid IDs; if every saved ID is
+        // stale, clear the selection so the user doesn't see a ghost filter.
+        let savedIDs = Settings.filterTaxonomyNodes
+        let validIDs = savedIDs.filter { TaxonomyStore.shared.node(id: $0) != nil }
+        if validIDs.count != savedIDs.count {
+            Settings.filterTaxonomyNodes = validIDs
+            if validIDs.isEmpty && !savedIDs.isEmpty {
+                // All previously-saved IDs are gone — clear selection entirely.
+                activeNodeIDs = []
+                TaxonomyStore.shared.clearSelection()
+            } else {
+                activeNodeIDs = Set(validIDs)
+                TaxonomyStore.shared.selectedNodeIDs = activeNodeIDs
+            }
+        } else {
+            activeNodeIDs = Set(savedIDs)
+            TaxonomyStore.shared.selectedNodeIDs = activeNodeIDs
+        }
         // Rebuild taxonomy URL cache so applyFilters actually enforces the
         // restored taxonomy selection (cache is empty on cold start).
         cachedTaxonomyNodeIDs = activeNodeIDs

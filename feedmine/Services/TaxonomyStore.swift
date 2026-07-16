@@ -189,16 +189,21 @@ final class TaxonomyStore {
                     language: source.language, kind: kind
                 ))
             }
-            // Append the category itself as the leaf subcategory
+            // Append the category itself as the leaf subcategory, BUT skip
+            // when it would duplicate the last directory segment (e.g. a file
+            // "acoustics.opml" inside an "Acoustics/" directory would produce
+            // "Acoustics → Acoustics" — the directory IS the category).
             let subSlug = source.category
                 .lowercased()
                 .replacingOccurrences(of: "&", with: "and")
                 .replacingOccurrences(of: " ", with: "_")
                 .replacingOccurrences(of: "/", with: "-")
-            segments.append(PathSegment(
-                slug: subSlug, name: source.category,
-                language: source.language, kind: .subcategory
-            ))
+            if segments.last?.slug != subSlug {
+                segments.append(PathSegment(
+                    slug: subSlug, name: source.category,
+                    language: source.language, kind: .subcategory
+                ))
+            }
         } else if region == "global" {
             // Flat global feeds (no parent directory) — add "global" virtual node
             segments.append(PathSegment(

@@ -591,21 +591,10 @@ final class FeedLoader {
         Task { await loadWhatsNew() }
     }
     func toggleGlobalFeeds() {
-        // Toggle all non-country, non-imported topic regions together.
-        let topicRegions = store.registry.allTopicRegions
-        if !topicRegions.isEmpty {
-            // If any topic region is on, turn them all off; otherwise turn them all on
-            let anyOn = topicRegions.contains { isRegionEnabled($0) }
-            for region in topicRegions {
-                if anyOn {
-                    if isRegionEnabled(region) { store.toggleRegion(region) }
-                } else {
-                    if !isRegionEnabled(region) { store.toggleRegion(region) }
-                }
-            }
-        }
-        // Also toggle legacy "global" region for any root-level feeds
-        store.toggleRegion("global")
+        // Single batch operation: recompute counts + persist once for all
+        // topic regions and the legacy "global" region.
+        let anyOn = isGlobalFeedsEnabled
+        store.registry.setTopicRegionsEnabled(!anyOn)
         store.resetWhatsNewBaseline()
         Task { await loadWhatsNew() }
     }
@@ -620,12 +609,33 @@ final class FeedLoader {
     /// True if the category is not explicitly disabled.
     func isCategoryEnabled(_ category: String) -> Bool { store.registry.status(of: SourceRegistry.categoryKey(category)) == .on }
     var isAnyCountryEnabled: Bool { store.registry.isAnyCountryEnabled }
+    /// True when at least one topic region (or legacy global) is enabled.
+    /// A partial state (some on, some off) still returns true — the toggle
+    /// will turn everything off.  Use `globalFeedsStatus` for the three-way
+    /// ON / OFF / PARTIAL distinction in UI.
     var isGlobalFeedsEnabled: Bool {
         let topicRegions = store.registry.allTopicRegions
         if !topicRegions.isEmpty {
             return topicRegions.contains { store.registry.status(of: SourceRegistry.regionKey($0)) == .on }
         }
         return store.registry.status(of: SourceRegistry.regionKey("global")) == .on
+    }
+
+    /// Three-way status for the Global Feeds toggle: ON (all topic groups
+    /// enabled), OFF (none enabled), or PARTIAL (some enabled).
+    var globalFeedsStatus: NodeStatus {
+        let topicRegions = store.registry.allTopicRegions
+        let keys = topicRegions.isEmpty
+            ? [SourceRegistry.regionKey("global")]
+            : topicRegions.map { SourceRegistry.regionKey($0) }
+        let statuses = keys.map { store.registry.status(of: $0) }
+        let onCount = statuses.filter { $0 == .on }.count
+        if onCount == keys.count { return .on }
+        if onCount == 0 { return .off }
+        return .partial(activeCount: store.registry.sources
+            .filter { $0.region.hasPrefix("topic/") || $0.region == "global" }
+            .filter { store.registry.isSourceEnabled($0.url) }
+            .count)
     }
 
     func markAsRead(_ itemID: String) { store.markAsRead(itemID) }

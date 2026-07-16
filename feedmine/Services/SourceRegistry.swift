@@ -170,6 +170,34 @@ final class SourceRegistry {
         saveState()
     }
 
+    /// Enable or disable all topic regions in a single batch — one recompute,
+    /// one UserDefaults write, instead of N per-region toggles.
+    func setTopicRegionsEnabled(_ enabled: Bool) {
+        let topicKeys = allTopicRegions.map { Self.regionKey($0) }
+        if enabled {
+            disabled.subtract(topicKeys)
+        } else {
+            disabled.formUnion(topicKeys)
+            // Clear per-feed overrides for all topic sources so the group
+            // disable takes full effect.
+            for source in sources where source.region.hasPrefix("topic/") {
+                enabledOverrides.remove(Self.sourceKey(source.url))
+            }
+        }
+        // Also toggle legacy "global" region
+        let globalKey = Self.regionKey("global")
+        if enabled {
+            disabled.remove(globalKey)
+        } else {
+            disabled.insert(globalKey)
+            for source in sources where source.region == "global" {
+                enabledOverrides.remove(Self.sourceKey(source.url))
+            }
+        }
+        recomputeActiveCounts()
+        saveState()
+    }
+
     func toggleAllCountries() {
         let countryKeys = Set(sources
             .filter { $0.isCountryFeed }
