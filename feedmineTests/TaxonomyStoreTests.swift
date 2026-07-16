@@ -218,4 +218,43 @@ final class TaxonomyStoreTests: XCTestCase {
         let result2 = store.isFeedInSubtree(feedURL: "https://folha.com/feed", nodeID: "coffee-tea")
         XCTAssertFalse(result2)
     }
+
+    // MARK: - Cache Fingerprint
+
+    func testCacheFingerprintRejectsEqualCountDifferentURLs() async {
+        // Build set A, persist, then verify set B (same count) is rejected
+        let setA = [
+            FeedSource(title: "A", url: "https://a.com/feed", category: "News", region: "global", mediaKind: .text),
+            FeedSource(title: "B", url: "https://b.com/feed", category: "Sports", region: "global", mediaKind: .text),
+        ]
+        let setB = [
+            FeedSource(title: "C", url: "https://c.com/feed", category: "Tech", region: "global", mediaKind: .text),
+            FeedSource(title: "D", url: "https://d.com/feed", category: "Music", region: "global", mediaKind: .text),
+        ]
+        XCTAssertEqual(setA.count, setB.count, "Both sets must have same count to validate fingerprint guards against count-only check")
+
+        let store = TaxonomyStore()
+        await store.build(from: setA)
+        // Cache written by build — fingerprint = hash of sorted A URLs
+
+        // Same store loading set B (same count, different URLs) → must reject
+        let loaded = store.loadFromCache(sources: setB)
+        XCTAssertFalse(loaded, "Cache must be rejected when URLs differ even though count matches")
+    }
+
+    func testCacheFingerprintAcceptsSameURLsDifferentOrder() async {
+        let ordered = [
+            FeedSource(title: "A", url: "https://a.com/feed", category: "News", region: "global", mediaKind: .text),
+            FeedSource(title: "B", url: "https://b.com/feed", category: "Sports", region: "global", mediaKind: .text),
+        ]
+        let shuffled: [FeedSource] = [ordered[1], ordered[0]]
+        XCTAssertEqual(ordered.count, shuffled.count)
+
+        let store = TaxonomyStore()
+        await store.build(from: ordered)
+        // Cache written with fingerprint of sorted URLs
+
+        let loaded = store.loadFromCache(sources: shuffled)
+        XCTAssertTrue(loaded, "Cache must be accepted when URLs are identical (order-independent fingerprint)")
+    }
 }

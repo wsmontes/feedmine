@@ -118,6 +118,48 @@ final class FeedStore {
         Task { await prefetcher.prefetch(urls: all, priorityURLs: visible) }
     }
 
+    /// Shared language filter rule — single source of truth for both in-memory
+    /// (applyFilters) and SQL (reloadFromSQLite) paths.
+    ///
+    /// - Items with known language: pass only when that language is selected.
+    /// - Items with nil language: pass provisionally only when the device
+    ///   language is among the selected set (the item is likely in the user's
+    ///   language even if detection failed).
+    /// - No selection (empty set): all items pass.
+    static func languageFilterMatches(
+        itemLanguage: String?,
+        selectedLanguages: Set<String>,
+        deviceLanguage: String?
+    ) -> Bool {
+        guard !selectedLanguages.isEmpty else { return true }
+        if let lang = itemLanguage {
+            return selectedLanguages.contains(lang)
+        }
+        // nil language: pass only if device language is selected
+        if let deviceLang = deviceLanguage {
+            return selectedLanguages.contains(deviceLang)
+        }
+        return false
+    }
+
+    /// Resolve language for an item at ingestion time. Tries:
+    /// 1. Explicit language from the source OPML.
+    /// 2. NLLanguageRecognizer on title + excerpt (≥12 chars for reliable detection).
+    /// Returns nil only when both sources are unavailable.
+    private static func resolveLanguage(for item: FeedItem, registry: SourceRegistry) -> String? {
+        // 1. Explicit source language (OPML xml:lang or category directory)
+        if let lang = registry.languageFor(sourceURL: item.sourceURL), !lang.isEmpty {
+            return lang
+        }
+        // 2. On-device detection fallback
+        let text = (item.title + " " + item.excerpt)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard text.count >= 12 else { return nil }
+        let recognizer = NLLanguageRecognizer()
+        recognizer.processString(text)
+        return recognizer.dominantLanguage?.rawValue
+    }
+
     /// Apply all active filters to a list of items — single source of truth.
     /// Hit recording is NOT performed here; it happens once at ingestion time
     /// in persistFetchedItems so each item is counted exactly once regardless
@@ -129,11 +171,12 @@ final class FeedStore {
         let mood = activeMood
         let contentFilters = ContentFilterStore.shared.isEnabled
             ? ContentFilterStore.shared.activeFilters : []
+        let deviceLanguage = Locale.current.language.languageCode?.identifier
         return items.filter { item in
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
             && (cachedTaxonomyFeedURLs.isEmpty || cachedTaxonomyFeedURLs.contains(OPMLParser.normalizeURL(item.sourceURL)))
-            && (languages.isEmpty || item.language.map { languages.contains($0) } ?? true)
+            && Self.languageFilterMatches(itemLanguage: item.language, selectedLanguages: languages, deviceLanguage: deviceLanguage)
             && contentType(item)
             && (mood == .all || mood.matches(item.title))
             && !contentFilterExcludes(item, filters: contentFilters)
@@ -393,7 +436,7 @@ final class FeedStore {
         reservoir.sourceRegionMap = registry.regionMap
 
         // Build taxonomy tree from loaded sources — try cache first, build if needed
-        if !TaxonomyStore.shared.loadFromCache(sourceCount: registry.sources.count) {
+        if !TaxonomyStore.shared.loadFromCache(sources: registry.sources) {
             await TaxonomyStore.shared.build(from: registry.sources)
         }
 
@@ -980,7 +1023,7 @@ final class FeedStore {
         // Compute regions and language on the main actor before entering the write closure.
         let itemsWithRegions: [(item: FeedItem, region: String, language: String?)] = actualNew.map { item in
             let resolvedRegion = regionOverride ?? registry.regionFor(sourceURL: item.sourceURL)
-            let resolvedLanguage = registry.languageFor(sourceURL: item.sourceURL)
+            let resolvedLanguage = Self.resolveLanguage(for: item, registry: registry)
             return (item, resolvedRegion, resolvedLanguage)
         }
         do {
@@ -1123,6 +1166,11 @@ final class FeedStore {
         // already normalized (no trailing slash, https upgrade, etc.) while
         // registry.enabledSources may have raw OPML URLs.
         let sources = registry.enabledSources.filter { sourceURLs.contains(OPMLParser.normalizeURL($0.url)) }
+        guard !sources.isEmpty else {
+            Log.feed.warning("fetchUrgentTaxonomyBatch: \(sourceURLs.count) taxonomy URLs matched 0 enabled sources — finishing early")
+            emptyStateFetchedCount = 0
+            return
+        }
         emptyStateFetchTotal = sourceURLs.count
         emptyStateFetchedCount = 0
         let result = await fetcher.fetchAll(sources, maxConcurrent: 15)
@@ -1256,6 +1304,7 @@ final class FeedStore {
         // run off the main actor). When taxonomy is active we load matching
         // items via batched IN clause with per-chunk and global caps.
         let taxonomyURLs: Set<String>? = activeNodeIDs.isEmpty ? nil : cachedTaxonomyFeedURLs
+        let deviceLanguage = Locale.current.language.languageCode?.identifier
         // Always exclude read items — the feed should only show unseen content.
         // Read/opened items are tracked continuously and this information is
         // consumed by all feed-population paths (shake, filter, startup).
@@ -1285,14 +1334,17 @@ final class FeedStore {
             case .all: break
             }
 
-            // Language filter — shared by both taxonomy and non-taxonomy paths.
-            // Batch to stay within SQLite's 999 parameter limit (defense in depth).
+            // Language filter — shared rule with applyFilters via LanguageFilterMatches.
+            // nil-language items pass provisionally only when the device language
+            // is among the selected set (matching the in-memory filter behavior).
             if !languages.isEmpty {
                 let langArray = Array(languages)
+                let nilPasses = deviceLanguage.map { languages.contains($0) } ?? false
+                let nilClause = nilPasses ? " OR language IS NULL" : ""
                 if langArray.count <= 999 {
                     let langPlaceholders = langArray.map { _ in "?" }.joined(separator: ",")
                     request = request.filter(
-                        sql: "(language IN (\(langPlaceholders)) OR language IS NULL)",
+                        sql: "(language IN (\(langPlaceholders))\(nilClause))",
                         arguments: StatementArguments(langArray)
                     )
                 } else {
@@ -1306,7 +1358,7 @@ final class FeedStore {
                         allArgs.append(contentsOf: chunk)
                     }
                     request = request.filter(
-                        sql: "((\(orParts.joined(separator: " OR "))) OR language IS NULL)",
+                        sql: "((\(orParts.joined(separator: " OR ")))\(nilClause))",
                         arguments: StatementArguments(allArgs)
                     )
                 }

@@ -1,3 +1,4 @@
+import CryptoKit
 import Foundation
 import Observation
 
@@ -157,7 +158,7 @@ final class TaxonomyStore {
             childrenIndex[parentID, default: []].append(nodeID)
         }
 
-        persistCache(sourceCount: sources.count)
+        persistCache(sources: sources)
     }
 
     // MARK: - Path derivation
@@ -331,6 +332,17 @@ final class TaxonomyStore {
         selectedNodeIDs.compactMap { flatIndex[$0]?.name }.sorted()
     }
 
+    // MARK: - Fingerprint
+
+    /// Stable fingerprint of the source set — normalized, sorted, SHA-256.
+    /// Used to validate disk cache integrity independently of source count.
+    static func sourceFingerprint(for sources: [FeedSource]) -> String {
+        let urls = sources.map { OPMLParser.normalizeURL($0.url) }.sorted()
+        let payload = urls.joined(separator: "\n")
+        let digest = SHA256.hash(data: Data(payload.utf8))
+        return digest.compactMap { String(format: "%02x", $0) }.joined()
+    }
+
     // MARK: - Cache
 
     /// Invalidate disk cache — call when OPML manifest changes.
@@ -339,13 +351,23 @@ final class TaxonomyStore {
     }
 
     /// Try to load from disk cache. Returns true if cache was valid.
-    func loadFromCache(sourceCount: Int) -> Bool {
+    /// Validates both sourceCount (fast pre-check) and sourceFingerprint
+    /// (guards against equal-count URL swaps). Rejects old caches without
+    /// a fingerprint so stale data never survives an upgrade.
+    func loadFromCache(sources: [FeedSource]) -> Bool {
+        let count = sources.count
+        let fingerprint = Self.sourceFingerprint(for: sources)
         guard let data = try? Data(contentsOf: cacheURL),
               let cached = try? JSONDecoder().decode(CachedTree.self, from: data) else {
             return false
         }
-        // Invalidate cache if source list changed (feeds added/removed in OPML)
-        guard cached.sourceCount == sourceCount else { return false }
+        // Fast pre-check — count mismatch is a cheap rejection
+        guard cached.sourceCount == count else { return false }
+        // Reject old caches that predate fingerprint persistence
+        guard let cachedFingerprint = cached.sourceFingerprint else { return false }
+        // Content-level validation — same count, different URLs
+        guard cachedFingerprint == fingerprint else { return false }
+
         self.flatIndex = cached.flatIndex
         self.feedToNodeID = cached.feedToNodeID
         // Rebuild children index from restored flatIndex
@@ -358,12 +380,14 @@ final class TaxonomyStore {
         return true
     }
 
-    private func persistCache(sourceCount: Int) {
+    private func persistCache(sources: [FeedSource]) {
+        let fingerprint = Self.sourceFingerprint(for: sources)
         let cached = CachedTree(
             root: root,
             flatIndex: flatIndex,
             feedToNodeID: feedToNodeID,
-            sourceCount: sourceCount
+            sourceCount: sources.count,
+            sourceFingerprint: fingerprint
         )
         guard let data = try? JSONEncoder().encode(cached) else { return }
         try? data.write(to: cacheURL, options: .atomic)
@@ -377,4 +401,7 @@ private struct CachedTree: Codable {
     let flatIndex: [String: TaxonomyNode]
     let feedToNodeID: [String: String]
     let sourceCount: Int
+    /// SHA-256 fingerprint of normalized, sorted source URLs.
+    /// `nil` for caches written before this field existed — rejected on load.
+    let sourceFingerprint: String?
 }

@@ -72,4 +72,53 @@ final class FeedStoreTests: XCTestCase {
         XCTAssertEqual(store.visibleItems.count, 1)
         XCTAssertEqual(store.visibleItems.first?.sourceURL, "https://coffee.com/feed")
     }
+
+    // MARK: - Language Filter (shared rule)
+
+    func testLanguageFilterNilPassesWhenDeviceLanguageSelected() {
+        // nil language + English selected + device = English → pass
+        let result = FeedStore.languageFilterMatches(
+            itemLanguage: nil,
+            selectedLanguages: ["en", "pt"],
+            deviceLanguage: "en"
+        )
+        XCTAssertTrue(result, "nil-language item should pass when device language (en) is selected")
+    }
+
+    func testLanguageFilterNilBlockedWhenDeviceLanguageNotSelected() {
+        // nil language + Japanese selected + device = English → block
+        let result = FeedStore.languageFilterMatches(
+            itemLanguage: nil,
+            selectedLanguages: ["ja"],
+            deviceLanguage: "en"
+        )
+        XCTAssertFalse(result, "nil-language item must not pass when device language (en) is NOT among selected (ja)")
+    }
+
+    func testLanguageFilterKnownLanguagePasses() {
+        // ja + Japanese selected → pass
+        let result = FeedStore.languageFilterMatches(
+            itemLanguage: "ja",
+            selectedLanguages: ["ja"],
+            deviceLanguage: "en"
+        )
+        XCTAssertTrue(result)
+    }
+
+    func testLanguageFilterKnownLanguageBlocked() {
+        // en + Japanese selected → block
+        let result = FeedStore.languageFilterMatches(
+            itemLanguage: "en",
+            selectedLanguages: ["ja"],
+            deviceLanguage: "pt"
+        )
+        XCTAssertFalse(result)
+    }
+
+    func testLanguageFilterEmptySelectionPassesAll() {
+        // No selection → all pass (nil, known, any device language)
+        XCTAssertTrue(FeedStore.languageFilterMatches(itemLanguage: nil, selectedLanguages: [], deviceLanguage: "en"))
+        XCTAssertTrue(FeedStore.languageFilterMatches(itemLanguage: "ja", selectedLanguages: [], deviceLanguage: "en"))
+        XCTAssertTrue(FeedStore.languageFilterMatches(itemLanguage: "pt", selectedLanguages: [], deviceLanguage: nil))
+    }
 }
