@@ -1,118 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Scheme
-   LastUpgradeVersion = "1600"
-   version = "1.7">
-   <BuildAction
-      parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES"
-      runPostActionsOnFailure = "NO">
+<?xml version='1.0' encoding='UTF-8'?>
+<Scheme LastUpgradeVersion='1600' version='1.7'>
+   <BuildAction buildImplicitDependencies='YES' parallelizeBuildables='YES' runPostActionsOnFailure='NO'>
       <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "057DBDD4C964DDBA254C0BA5"
-               BuildableName = "feedmine.app"
-               BlueprintName = "feedmine"
-               ReferencedContainer = "container:feedmine.xcodeproj">
+         <BuildActionEntry buildForAnalyzing='YES' buildForArchiving='YES' buildForProfiling='YES' buildForRunning='YES' buildForTesting='YES'>
+            <BuildableReference BlueprintIdentifier='057DBDD4C964DDBA254C0BA5' BlueprintName='feedmine' BuildableIdentifier='primary' BuildableName='feedmine.app' ReferencedContainer='container:feedmine.xcodeproj'>
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "58CAC5F0FAA8580D56CC16D4"
-               BuildableName = "feedmineTests.xctest"
-               BlueprintName = "feedmineTests"
-               ReferencedContainer = "container:feedmine.xcodeproj">
+         <BuildActionEntry buildForAnalyzing='NO' buildForArchiving='NO' buildForProfiling='NO' buildForRunning='NO' buildForTesting='YES'>
+            <BuildableReference BlueprintIdentifier='58CAC5F0FAA8580D56CC16D4' BlueprintName='feedmineTests' BuildableIdentifier='primary' BuildableName='feedmineTests.xctest' ReferencedContainer='container:feedmine.xcodeproj'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
-   <TestAction
-      buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "NO">
+   <TestAction buildConfiguration='Debug' onlyGenerateCoverageForSpecifiedTargets='NO' selectedDebuggerIdentifier='Xcode.DebuggerFoundation.Debugger.LLDB' selectedLauncherIdentifier='Xcode.DebuggerFoundation.Launcher.LLDB' shouldUseLaunchSchemeArgsEnv='YES'>
       <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "057DBDD4C964DDBA254C0BA5"
-            BuildableName = "feedmine.app"
-            BlueprintName = "feedmine"
-            ReferencedContainer = "container:feedmine.xcodeproj">
+         <BuildableReference BlueprintIdentifier='057DBDD4C964DDBA254C0BA5' BlueprintName='feedmine' BuildableIdentifier='primary' BuildableName='feedmine.app' ReferencedContainer='container:feedmine.xcodeproj'>
          </BuildableReference>
       </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "58CAC5F0FAA8580D56CC16D4"
-               BuildableName = "feedmineTests.xctest"
-               BlueprintName = "feedmineTests"
-               ReferencedContainer = "container:feedmine.xcodeproj">
+         <TestableReference parallelizable='NO' skipped='NO'>
+            <BuildableReference BlueprintIdentifier='58CAC5F0FAA8580D56CC16D4' BlueprintName='feedmineTests' BuildableIdentifier='primary' BuildableName='feedmineTests.xctest' ReferencedContainer='container:feedmine.xcodeproj'>
             </BuildableReference>
          </TestableReference>
-      </Testables>
+      <TestableReference skipped='NO'><BuildableReference BlueprintIdentifier='F223185128DAD3AE8C025C1F' BlueprintName='feedmineUITests' BuildableIdentifier='primary' BuildableName='feedmineUITests.xctest' ReferencedContainer='container:feedmine.xcodeproj'/></TestableReference></Testables>
       <CommandLineArguments>
       </CommandLineArguments>
    </TestAction>
-   <LaunchAction
-      buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
-      ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "YES"
-      debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "057DBDD4C964DDBA254C0BA5"
-            BuildableName = "feedmine.app"
-            BlueprintName = "feedmine"
-            ReferencedContainer = "container:feedmine.xcodeproj">
+   <LaunchAction allowLocationSimulation='YES' buildConfiguration='Debug' debugDocumentVersioning='YES' debugServiceExtension='internal' ignoresPersistentStateOnLaunch='NO' launchStyle='0' selectedDebuggerIdentifier='Xcode.DebuggerFoundation.Debugger.LLDB' selectedLauncherIdentifier='Xcode.DebuggerFoundation.Launcher.LLDB' useCustomWorkingDirectory='NO'>
+      <BuildableProductRunnable runnableDebuggingMode='0'>
+         <BuildableReference BlueprintIdentifier='057DBDD4C964DDBA254C0BA5' BlueprintName='feedmine' BuildableIdentifier='primary' BuildableName='feedmine.app' ReferencedContainer='container:feedmine.xcodeproj'>
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
       </CommandLineArguments>
    </LaunchAction>
-   <ProfileAction
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = ""
-      useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "057DBDD4C964DDBA254C0BA5"
-            BuildableName = "feedmine.app"
-            BlueprintName = "feedmine"
-            ReferencedContainer = "container:feedmine.xcodeproj">
+   <ProfileAction buildConfiguration='Release' debugDocumentVersioning='YES' savedToolIdentifier='' shouldUseLaunchSchemeArgsEnv='YES' useCustomWorkingDirectory='NO'>
+      <BuildableProductRunnable runnableDebuggingMode='0'>
+         <BuildableReference BlueprintIdentifier='057DBDD4C964DDBA254C0BA5' BlueprintName='feedmine' BuildableIdentifier='primary' BuildableName='feedmine.app' ReferencedContainer='container:feedmine.xcodeproj'>
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
-   <AnalyzeAction
-      buildConfiguration = "Debug">
+   <AnalyzeAction buildConfiguration='Debug'>
    </AnalyzeAction>
-   <ArchiveAction
-      buildConfiguration = "Release"
-      revealArchiveInOrganizer = "YES">
+   <ArchiveAction buildConfiguration='Release' revealArchiveInOrganizer='YES'>
    </ArchiveAction>
 </Scheme>

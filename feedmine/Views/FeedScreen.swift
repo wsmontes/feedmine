@@ -403,6 +403,7 @@ struct FeedScreen: View {
             ZStack(alignment: .topTrailing) {
                 Image(systemName: "line.3.horizontal.decrease")
                     .headerButtonStyle(accent: engine.accent)
+                    .accessibilityIdentifier("filter-button")
                 if activeCount > 0 {
                     Text("\(activeCount)")
                         .font(.system(size: 9, weight: .bold))
@@ -449,9 +450,12 @@ struct FeedScreen: View {
 
                         ForEach(loader.dateSections) { section in
                             Section {
-                                ForEach(Array(section.items.enumerated()), id: \.element.id) { index, item in
+                                // Use index-based iteration to avoid allocating
+                                // Array(section.items.enumerated()) on every body eval
+                                ForEach(0..<section.items.count, id: \.self) { idx in
+                                    let item = section.items[idx]
                                     let isFirst = !impressions.seen.contains(item.id)
-                                    FeedItemView(item: item, index: index,
+                                    FeedItemView(item: item, index: idx,
                                         isFirstAppearance: isFirst,
                                         onOpen: { articleItem = item },
                                         onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } },
@@ -466,7 +470,7 @@ struct FeedScreen: View {
                                     .contentShape(Rectangle())
                                     .onAppear {
                                         impressions.mark(item.id)
-                                        loader.noteVisibleIndex(index)
+                                        loader.noteVisibleIndex(idx)
                                         if impressions.count % 8 == 0 {
                                             let idx = loader.currentVisibleIndex
                                             let goingUp = idx < lastScrollIndex

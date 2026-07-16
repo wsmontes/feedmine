@@ -211,17 +211,26 @@ final class FeedLoader {
         }
         _cachedDateSectionsGen = _cachedGeneration
         _cachedDateSectionsQuery = _cachedSearchQuery
+        // Use pre-computed sectionDayOffset when available (new items);
+        // fall back to Calendar for older items loaded from SQLite.
         let calendar = Calendar.current; let now = Date()
-        // Ordered grouping — Dictionary(grouping:) does not preserve array
-        // order, which caused visible cards to reorder on every cache miss.
         var grouped: [String: [FeedItem]] = [:]
         for item in items {
             let section: String
-            if calendar.isDateInToday(item.publishedAt) { section = "Today" }
-            else if calendar.isDateInYesterday(item.publishedAt) { section = "Yesterday" }
-            else {
-                let days = calendar.dateComponents([.day], from: item.publishedAt, to: now).day ?? 0
-                section = days < 7 ? "This Week" : "Earlier"
+            let offset = item.sectionDayOffset
+            if offset > 0 {
+                // Pre-computed offset — fast path, no Calendar needed
+                if offset == 1 { section = "Yesterday" }
+                else if offset < 7 { section = "This Week" }
+                else { section = "Earlier" }
+            } else {
+                // Legacy item or explicit today — use Calendar for accuracy
+                if calendar.isDateInToday(item.publishedAt) { section = "Today" }
+                else if calendar.isDateInYesterday(item.publishedAt) { section = "Yesterday" }
+                else {
+                    let days = calendar.dateComponents([.day], from: item.publishedAt, to: now).day ?? 0
+                    section = days < 7 ? "This Week" : "Earlier"
+                }
             }
             grouped[section, default: []].append(item)
         }

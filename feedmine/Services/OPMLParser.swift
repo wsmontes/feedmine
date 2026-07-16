@@ -6,7 +6,7 @@ struct OPMLParser {
     /// Bump when the parse LOGIC or FeedSource shape changes (region derivation,
     /// mediaKind classification, dedup/normalize) so caches produced by the old
     /// logic are ignored even within the same app build.
-    private static let cacheFormatVersion = 5  // 1.9K OPMLs, 276K+ feeds (ranking sources: socialblade, kaggle, wikipedia, awards)
+    private static let cacheFormatVersion = 6  // +file stat in fingerprint (OPML reorg in ae17b903)
 
     /// Codable envelope persisted to Caches/.
     private struct CachedParse: Codable {
@@ -18,21 +18,33 @@ struct OPMLParser {
         let duplicateSourceCount: Int
     }
 
-    /// Cache key. The bundled OPML corpus is immutable within a build, so the
-    /// deduped parse result is fully determined by (parse-logic version, app
-    /// build). A new build — App Store update, TestFlight, or a bumped build
-    /// number — changes CFBundleVersion and invalidates the cache. This needs no
-    /// filesystem access, so the cache-hit path is O(1): no directory walk, no
-    /// per-file stat.
-    ///
-    /// Dev note: editing bundled OPML WITHOUT bumping the build number won't
-    /// invalidate the cache — delete the app (or bump cacheFormatVersion) when
-    /// iterating on feed files locally.
+    /// Cache key combining app version with file-system metadata so that
+    /// reorganizing, adding, or removing OPML files automatically invalidates
+    /// the cache. The file count and the newest mtime among bundled OPML files
+    /// serve as a fast approximate fingerprint — no per-file hash walk.
     private static func cacheFingerprint() -> String {
         let info = Bundle.main.infoDictionary
         let build = info?["CFBundleVersion"] as? String ?? "0"
         let short = info?["CFBundleShortVersionString"] as? String ?? "0"
-        return "\(cacheFormatVersion)-\(short)-\(build)"
+        // Quick file-system check: count + newest mtime of bundled OPML files.
+        // If the corpus changed (reorg, add, remove) since the last parse,
+        // the fingerprint won't match and the cache is rebuilt.
+        var fileCount = 0
+        var newestMtime: Double = 0
+        if let feedsURL = Bundle.main.resourceURL?.appendingPathComponent("Feeds"),
+           let enumerator = FileManager.default.enumerator(
+            at: feedsURL, includingPropertiesForKeys: [.contentModificationDateKey]) {
+            while let fileURL = enumerator.nextObject() as? URL {
+                if fileURL.pathExtension == "opml" {
+                    fileCount += 1
+                    if let mtime = (try? fileURL.resourceValues(forKeys: [.contentModificationDateKey]))?.contentModificationDate {
+                        newestMtime = max(newestMtime, mtime.timeIntervalSince1970)
+                    }
+                }
+            }
+        }
+        let mtimeMs = Int64(newestMtime * 1000)
+        return "\(cacheFormatVersion)-\(short)-\(build)-fc\(fileCount)-mt\(mtimeMs)"
     }
 
     private static var cacheURL: URL? {

@@ -17,6 +17,7 @@ struct TaxonomyBrowseView: View {
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
                             Button("Done") { dismiss() }
+                                .accessibilityIdentifier("topics-done")
                         }
                     }
             }
@@ -45,6 +46,7 @@ private struct TaxonomyLevelView: View {
                             .foregroundStyle(.secondary)
                         TextField("Search topics...", text: $searchText)
                             .textFieldStyle(.plain)
+                            .accessibilityIdentifier("search-topics")
                         if !searchText.isEmpty {
                             Button {
                                 searchText = ""

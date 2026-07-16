@@ -6,26 +6,26 @@ final class ReservoirTests: XCTestCase {
 
     // MARK: - seed
 
-    func testSeedEmpty() {
+    func testSeedEmpty() async {
         let r = Reservoir()
-        r.seed(items: [])
+        await r.seed(items: [])
         XCTAssertTrue(r.visibleItems.isEmpty)
         XCTAssertEqual(r.reservoirCount, 0)
     }
 
-    func testSeedSingleSource() {
+    func testSeedSingleSource() async {
         let r = Reservoir()
         let items = makeItems(count: 30, sourceURL: "https://a.com/feed")
-        r.seed(items: items)
+        await r.seed(items: items)
         XCTAssertFalse(r.visibleItems.isEmpty)
         XCTAssertEqual(r.reservoirCount, 30 - r.visibleItems.count)
     }
 
-    func testSeedMultipleSourcesInterleaves() {
+    func testSeedMultipleSourcesInterleaves() async {
         let r = Reservoir()
         let a = makeItems(count: 10, sourceURL: "https://a.com/feed")
         let b = makeItems(count: 10, sourceURL: "https://b.com/feed")
-        r.seed(items: a + b)
+        await r.seed(items: a + b)
         // Interleave should spread sources — no 3 consecutive from same source
         for i in 0..<(r.visibleItems.count - 3) {
             let slice = r.visibleItems[i..<(i + 3)]
@@ -36,10 +36,10 @@ final class ReservoirTests: XCTestCase {
 
     // MARK: - append
 
-    func testAppendDoesNotReorderVisible() {
+    func testAppendDoesNotReorderVisible() async {
         let r = Reservoir()
         let initial = makeItems(count: 25, sourceURL: "https://a.com/feed")
-        r.seed(items: initial)
+        await r.seed(items: initial)
         let before = r.visibleItems.map(\.id)
 
         let more = makeItems(count: 10, sourceURL: "https://b.com/feed")
@@ -54,16 +54,16 @@ final class ReservoirTests: XCTestCase {
 
     // MARK: - capacity
 
-    func testSeedProducesPageSize() {
+    func testSeedProducesPageSize() async {
         let r = Reservoir()
         let items = makeItems(count: 100, sourceURL: "https://a.com/feed")
-        r.seed(items: items)
+        await r.seed(items: items)
         XCTAssertLessThanOrEqual(r.visibleItems.count, Reservoir.pageSize)
     }
 
-    func testReservoirCapped() {
+    func testReservoirCapped() async {
         let r = Reservoir()
-        r.seed(items: makeItems(count: 600, sourceURL: "https://a.com/feed"))
+        await r.seed(items: makeItems(count: 600, sourceURL: "https://a.com/feed"))
         XCTAssertLessThanOrEqual(r.reservoirCount, Reservoir.maxReservoirSize)
     }
 

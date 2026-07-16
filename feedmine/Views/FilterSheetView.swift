@@ -71,6 +71,7 @@ struct FilterSheetView: View {
                             }
                         }
                     }
+                    .accessibilityIdentifier("browse-topics")
                 }
 
                 Section("Language") {
@@ -118,6 +119,7 @@ struct FilterSheetView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") { dismiss() }
+                        .accessibilityIdentifier("filter-done")
                 }
             }
         }

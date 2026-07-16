@@ -16,10 +16,23 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
     let region: String   // "global" | "countries/brazil/sao-paulo"
     let language: String?  // ISO 639-1 code from OPML or NLLanguageRecognizer
 
+    /// Snapshot of read state at render time — avoids mass view invalidation
+    /// when another item is read. Updated via FeedStore when visible items change.
+    var isRead: Bool = false
+    /// Snapshot of bookmark state at render time. Same rationale as isRead.
+    var isBookmarked: Bool = false
+
+    /// Pre-computed day offset from today (0 = today, 1 = yesterday, 2-7 = this
+    /// week, 8+ = earlier). Set once at persistence so dateSections doesn't
+    /// re-run expensive Calendar operations on every scroll-driven cache miss.
+    var sectionDayOffset: Int = 0
+
     init(id: String, sourceTitle: String, sourceURL: String, category: String,
          title: String, excerpt: String, url: String, imageURL: String?,
          publishedAt: Date, audioURL: String? = nil, duration: TimeInterval? = nil,
-         region: String = "global", language: String? = nil) {
+         region: String = "global", language: String? = nil,
+         isRead: Bool = false, isBookmarked: Bool = false,
+         sectionDayOffset: Int = 0) {
         self.id = id
         self.sourceTitle = sourceTitle
         self.sourceURL = sourceURL
@@ -33,6 +46,9 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
         self.duration = duration
         self.region = region
         self.language = language
+        self.isRead = isRead
+        self.isBookmarked = isBookmarked
+        self.sectionDayOffset = sectionDayOffset
     }
 
     /// True if this article links to a YouTube video
@@ -40,6 +56,15 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
 
     /// True if this item comes from a forum source (Reddit)
     var isForum: Bool { sourceURL.contains("reddit.com/r/") }
+
+    /// Pre-computed lowercased + diacritic-folded title+excerpt for fast keyword
+    /// matching. Used by content filter to avoid per-pass string normalization.
+    /// Computed lazily — the cost is paid once at first content-filter evaluation.
+    var searchableText: String {
+        (title + " " + excerpt)
+            .lowercased()
+            .folding(options: .diacriticInsensitive, locale: nil)
+    }
 
     /// Extracts the YouTube video ID from the URL, if any
     var youTubeVideoID: String? {
@@ -140,7 +165,55 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
             title: title, excerpt: excerpt, url: url, imageURL: imageURL,
             publishedAt: publishedAt, audioURL: audioURL, duration: duration,
             region: region,
-            language: language
+            language: language,
+            isRead: isRead,
+            isBookmarked: isBookmarked,
+            sectionDayOffset: sectionDayOffset
+        )
+    }
+
+    /// Returns a copy with the sourceURL normalized via OPMLParser.normalizeURL.
+    /// All hot-path comparisons (applyFilters, taxonomy matching) then use
+    /// pre-normalized strings — no runtime normalization per comparison.
+    var withNormalizedSourceURL: FeedItem {
+        let normalized = OPMLParser.normalizeURL(sourceURL)
+        guard normalized != sourceURL else { return self }
+        return FeedItem(
+            id: id, sourceTitle: sourceTitle, sourceURL: normalized, category: category,
+            title: title, excerpt: excerpt, url: url, imageURL: imageURL,
+            publishedAt: publishedAt, audioURL: audioURL, duration: duration,
+            region: region,
+            language: language,
+            isRead: isRead,
+            isBookmarked: isBookmarked,
+            sectionDayOffset: sectionDayOffset
+        )
+    }
+
+    /// Returns a copy with the sectionDayOffset set. Used during persistence
+    /// to pre-compute date sections once instead of per scroll-cache-miss.
+    func withSectionDayOffset(_ offset: Int) -> FeedItem {
+        FeedItem(
+            id: id, sourceTitle: sourceTitle, sourceURL: sourceURL, category: category,
+            title: title, excerpt: excerpt, url: url, imageURL: imageURL,
+            publishedAt: publishedAt, audioURL: audioURL, duration: duration,
+            region: region, language: language,
+            isRead: isRead, isBookmarked: isBookmarked,
+            sectionDayOffset: offset
+        )
+    }
+
+    /// Returns a copy with isRead/isBookmarked stamped from the given sets.
+    func stamped(readItemIDs: Set<String>, bookmarkItemIDs: Set<String>) -> FeedItem {
+        FeedItem(
+            id: id, sourceTitle: sourceTitle, sourceURL: sourceURL, category: category,
+            title: title, excerpt: excerpt, url: url, imageURL: imageURL,
+            publishedAt: publishedAt, audioURL: audioURL, duration: duration,
+            region: region,
+            language: language,
+            isRead: readItemIDs.contains(id),
+            isBookmarked: bookmarkItemIDs.contains(id),
+            sectionDayOffset: sectionDayOffset
         )
     }
 

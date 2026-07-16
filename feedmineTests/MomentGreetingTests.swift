@@ -1,6 +1,7 @@
 import XCTest
 @testable import feedmine
 
+@MainActor
 final class MomentGreetingTests: XCTestCase {
 
     func testGenerateReturnsNonEmptyString() {

@@ -16,8 +16,8 @@ struct FeedItemView: View {
             if loader.layout == .card {
                 FeedItemCardView(
                     item: item,
-                    isRead: loader.isRead(item.id),
-                    isBookmarked: loader.isBookmarked(item.id),
+                    isRead: item.isRead,
+                    isBookmarked: item.isBookmarked,
                     appearDelay: Double(index % 8) * 0.04,
                     onBookmark: { loader.toggleBookmark(item.id) },
                     isInBookmarkBox: loader.selectedBookmarkListID != nil,
@@ -28,18 +28,13 @@ struct FeedItemView: View {
             } else {
                 FeedItemRowView(
                     item: item,
-                    isRead: loader.isRead(item.id),
-                    isBookmarked: loader.isBookmarked(item.id)
+                    isRead: item.isRead,
+                    isBookmarked: item.isBookmarked
                 )
                 Divider()
             }
         }
         .id(item.id)
-        .scrollTransition(.animated(.spring(duration: 0.4))) { content, phase in
-            content
-                .opacity(phase == .identity ? 1 : 0.5)
-                .scaleEffect(phase == .identity ? 1 : 0.95)
-        }
         .onTapGesture {
             let impact = UIImpactFeedbackGenerator(style: .light)
             impact.impactOccurred()
@@ -61,18 +56,18 @@ struct FeedItemView: View {
             Button {
                 let impact = UIImpactFeedbackGenerator(style: .light)
                 impact.impactOccurred()
-                if loader.isRead(item.id) {
+                if item.isRead {
                     loader.markAsUnread(item.id)
                 } else {
                     loader.markAsRead(item.id)
                 }
             } label: {
                 Label(
-                    loader.isRead(item.id) ? "Unread" : "Read",
-                    systemImage: loader.isRead(item.id) ? "eye.slash" : "eye"
+                    item.isRead ? "Unread" : "Read",
+                    systemImage: item.isRead ? "eye.slash" : "eye"
                 )
             }
-            .tint(loader.isRead(item.id) ? .gray : .green)
+            .tint(item.isRead ? .gray : .green)
         }
         .swipeActions(edge: .trailing) {
             Button {
@@ -81,8 +76,8 @@ struct FeedItemView: View {
                 loader.toggleBookmark(item.id)
             } label: {
                 Label(
-                    loader.isBookmarked(item.id) ? "Remove" : "Save",
-                    systemImage: loader.isBookmarked(item.id) ? "bookmark.slash.fill" : "bookmark.fill"
+                    item.isBookmarked ? "Remove" : "Save",
+                    systemImage: item.isBookmarked ? "bookmark.slash.fill" : "bookmark.fill"
                 )
             }
             .tint(.yellow)
@@ -121,6 +116,6 @@ struct FeedItemView: View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(item.title) from \(item.sourceTitle)")
-        .accessibilityAddTraits(loader.isRead(item.id) ? [] : .isHeader)
+        .accessibilityAddTraits(item.isRead ? [] : .isHeader)
     }
 }

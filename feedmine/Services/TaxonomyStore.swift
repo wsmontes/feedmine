@@ -33,6 +33,11 @@ final class TaxonomyStore {
     /// parentID → [childID] index, rebuilt during build(). Makes children(of:) O(1).
     private var childrenIndex: [String: [String]] = [:]
 
+    /// Reverse index: nodeID → all feed URLs in that node's subtree.
+    /// Built once during build(from:) and used by feedURLs(inSubtreesOf:)
+    /// for O(selectedNodes) lookups instead of O(allFeeds × selectedNodes).
+    private var nodeToFeedURLs: [String: Set<String>] = [:]
+
     var selectedNodeIDs: Set<String> = []
 
     // MARK: - Persistence
@@ -51,6 +56,7 @@ final class TaxonomyStore {
         feedToNodeID.removeAll()
         childrenIndex.removeAll()
         selectedNodeIDs.removeAll()
+        nodeToFeedURLs.removeAll()
 
         // Intermediate: path segments → children
         var tree: [String: (node: TaxonomyNode, childIDs: Set<String>)] = [:]
@@ -97,6 +103,8 @@ final class TaxonomyStore {
             // Map feed URL → leaf node
             let normalizedURL = OPMLParser.normalizeURL(source.url)
             feedToNodeID[normalizedURL] = parentID
+            // Populate reverse index: leaf node accumulates direct feed URLs
+            nodeToFeedURLs[parentID, default: []].insert(normalizedURL)
         }
 
         // Pre-compute direct feed counts: single O(M) pass over feedToNodeID,
@@ -118,6 +126,13 @@ final class TaxonomyStore {
             // Child feedCounts are already computed (children have higher level)
             let childTotal = entry.childIDs.reduce(0) {
                 $0 + (tree[$1]?.node.feedCount ?? 0)
+            }
+            // Propagate child URLs up to parent: parent's URL set = union of children's sets
+            // plus its own direct URLs (already populated in the main loop)
+            for childID in entry.childIDs {
+                if let childURLs = nodeToFeedURLs[childID] {
+                    nodeToFeedURLs[nodeID, default: []].formUnion(childURLs)
+                }
             }
             let total = directFeeds + childTotal
             tree[nodeID] = (TaxonomyNode(
@@ -308,16 +323,14 @@ final class TaxonomyStore {
     }
 
     /// All feed URLs whose leaf node falls within the subtree of any of the given node IDs.
-    /// Used by FeedStore to pre-compute the taxonomy filter set for O(1) filtering.
+    /// Uses a pre-computed reverse index (nodeID → Set<feedURL>) for O(selectedNodes)
+    /// instead of scanning all 276K+ feedToNodeID entries.
     func feedURLs(inSubtreesOf nodeIDs: Set<String>) -> Set<String> {
         guard !nodeIDs.isEmpty else { return [] }
         var result: Set<String> = []
-        for (feedURL, leafID) in feedToNodeID {
-            for nodeID in nodeIDs {
-                if leafID == nodeID || leafID.hasPrefix(nodeID + "/") {
-                    result.insert(feedURL)
-                    break
-                }
+        for nodeID in nodeIDs {
+            if let urls = nodeToFeedURLs[nodeID] {
+                result.formUnion(urls)
             }
         }
         return result

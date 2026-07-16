@@ -39,8 +39,15 @@ final class Reservoir {
 
     // MARK: - Seed (cold/warm start)
 
-    func seed(items: [FeedItem]) {
-        let interleaved = interleave(items)
+    /// Seeds the reservoir with pre-filtered items. Runs the expensive interleave
+    /// computation off the main actor; only the final array assignment is MainActor.
+    func seed(items: [FeedItem]) async {
+        let rid = readItemIDs
+        let st = surfacedTimestamps
+        let srm = sourceRegionMap
+        let interleaved = await Task.detached(priority: .userInitiated) {
+            Reservoir.interleaveOffMain(items, readItemIDs: rid, surfacedTimestamps: st, sourceRegionMap: srm)
+        }.value
         let w = min(Self.pageSize, interleaved.count)
         visibleItems = Array(interleaved.prefix(w))
         reservoir = Array(interleaved.dropFirst(w))
