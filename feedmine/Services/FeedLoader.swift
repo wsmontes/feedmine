@@ -169,25 +169,17 @@ final class FeedLoader {
     // MARK: - Filtered Items (reads from FeedStore as single source)
 
     private var _cachedFiltered: [FeedItem] = []
-    private var _cacheKey: Int = -1
-    /// Mutation counter — bumped every time the items array changes.
-    /// Combined with searchQuery via XOR for a robust O(1) cache key.
-    private var _itemsGeneration: Int = 0
-    /// Tracks the last known item count to detect changes from the store.
-    /// `items` is computed from `store.visibleItems`, so we use this as
-    /// a lightweight proxy instead of sampling individual item IDs.
-    private var _lastItemCount: Int = -1
+    private var _cacheKey: UInt64 = 0
+    /// Previous visibleItemsGeneration — used to detect real mutations from
+    /// FeedStore (replacements, reorderings, filter changes) reliably,
+    /// unlike count-based detection which misses same-size replacements.
 
     var filteredItems: [FeedItem] {
-        // Use mutation counter + search query for cache key. O(1) and
-        // catches all item-count changes instead of only first/second/last.
-        // `items` is computed from `store.visibleItems`, so mutations happen
-        // in FeedStore — we detect them by comparing the count on each access.
-        if items.count != _lastItemCount {
-            _itemsGeneration &+= 1
-            _lastItemCount = items.count
-        }
-        let key = _itemsGeneration ^ searchQuery.hashValue
+        // Use FeedStore's monotonic generation counter for cache invalidation.
+        // Catches ALL mutations — same-count replacements, reorderings,
+        // content/region/filter/taxonomy changes — not just count deltas.
+        let generation = store.visibleItemsGeneration
+        let key = generation ^ UInt64(bitPattern: Int64(searchQuery.hashValue))
         if key == _cacheKey { return _cachedFiltered }
         _cacheKey = key
         var result = items
@@ -211,7 +203,7 @@ final class FeedLoader {
     }
 
     private var _cachedSections: [DateSection] = []
-    private var _sectionsCacheKey: Int = -1
+    private var _sectionsCacheKey: UInt64 = 0
 
     var dateSections: [DateSection] {
         // Force filteredItems to refresh _cacheKey and _cachedFiltered before

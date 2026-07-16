@@ -20,6 +20,9 @@ final class FeedStore {
 
     // MARK: - Public state
     private(set) var visibleItems: [FeedItem] = []
+    /// Monotonic generation counter — incremented on every visibleItems change.
+    /// FeedLoader uses this for cache invalidation instead of item count.
+    private(set) var visibleItemsGeneration: UInt64 = 0
     private(set) var reservoirCount: Int = 0
     var lastToggleMessage: String?
     private(set) var loadingState: FeedLoadingState = .idle
@@ -76,7 +79,7 @@ final class FeedStore {
         trimDebounceTask?.cancel()
         progressiveFetchTask?.cancel()
         backgroundRefreshTask?.cancel()
-        visibleItems = items
+        setVisibleItems(items)
         reservoirCount = 0
         reservoir.clear()
     }
@@ -120,23 +123,50 @@ final class FeedStore {
         let region = activeRegion
         let contentType = filterContentType
         let languages = activeLanguages
+        let mood = activeMood
         let contentFilters = ContentFilterStore.shared.isEnabled
             ? ContentFilterStore.shared.activeFilters : []
-        return items.filter { item in
+        var hitFilterIDs = Set<UUID>()  // collect once, record after filtering
+        let result = items.filter { item in
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
             && (cachedTaxonomyFeedURLs.isEmpty || cachedTaxonomyFeedURLs.contains(item.sourceURL))
             && (languages.isEmpty || item.language.map { languages.contains($0) } ?? false)
             && contentType(item)
-            && !contentFilterExcludes(item, filters: contentFilters)
+            && (mood == .all || mood.matches(item.title))
+            && !contentFilterExcludes(item, filters: contentFilters, hitIDs: &hitFilterIDs)
         }
+        // Record hits once — no side effects during the pure filter pass
+        for id in hitFilterIDs {
+            ContentFilterStore.shared.recordHit(id)
+        }
+        return result
     }
 
     /// Content filter engine: checks if an item's title+excerpt contains any
-    /// keyword from the user's active content filters.
+    /// keyword from the user's active content filters. Pure predicate —
+    /// hit tracking is collected via `hitIDs` and recorded once after filtering.
     /// Uses localizedStandardContains on pre-folded text for locale-aware matching
     /// (200 items x 50 keywords = 10K comparisons). Text is lowercased+folded once
     /// per item; keywords are pre-folded in ContentFilterStore.activeFilters.
+    private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])], hitIDs: inout Set<UUID>) -> Bool {
+        guard !filters.isEmpty else { return false }
+        let text = (item.title + " " + item.excerpt)
+            .lowercased()
+            .folding(options: .diacriticInsensitive, locale: nil)
+        for filter in filters {
+            for keyword in filter.keywords {
+                if text.localizedStandardContains(keyword) {
+                    hitIDs.insert(filter.id)
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
+    /// Backwards-compatible wrapper for external consumers (WhatsNewManager, Reservoir)
+    /// that don't need hit tracking. Records hits inline like the old implementation.
     private func contentFilterExcludes(_ item: FeedItem, filters: [(id: UUID, keywords: [String])]) -> Bool {
         guard !filters.isEmpty else { return false }
         let text = (item.title + " " + item.excerpt)
@@ -236,7 +266,7 @@ final class FeedStore {
                 self.reservoir.appendPreInterleaved(interleaved)
                 if !self.isSearching && self.visibleItems.isEmpty && !self.reservoir.reservoir.isEmpty {
                     self.reservoir.moveToVisible(count: Reservoir.pageSize)
-                    self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
+                    self.setVisibleItems(self.applyFilters(self.reservoir.visibleItems))
                 }
                 self.reservoirCount = self.reservoir.reservoirCount
             }
@@ -405,11 +435,11 @@ final class FeedStore {
             let filteredItems = applyFilters(items)
             reservoir.seed(items: filteredItems)
             markSurfaced(reservoir.visibleItems)
-            visibleItems = reservoir.visibleItems  // already filtered
+            setVisibleItems(reservoir.visibleItems)  // already filtered
             if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
                 repeat {
                     reservoir.moveToVisible(count: Reservoir.pageSize)
-                    visibleItems = applyFilters(reservoir.visibleItems)
+                    setVisibleItems(applyFilters(reservoir.visibleItems))
                 } while visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0
             }
             reservoirCount = reservoir.reservoirCount
@@ -470,6 +500,13 @@ final class FeedStore {
     private var pipelineTask: Task<Void, Never>?
 
     /// Single writer for `visibleItems`. Every mutation routes through here.
+    /// Increments `visibleItemsGeneration` so FeedLoader caches invalidate reliably.
+    private func setVisibleItems(_ items: [FeedItem]) {
+        visibleItems = items
+        visibleItemsGeneration &+= 1
+    }
+
+    /// Single writer for `visibleItems`. Every mutation routes through here.
     /// - `.flush`: cancels all competing work, clears, then reloads from SQLite.
     /// - `.append` / `.refresh` / `.trim`: serialized behind the current pipeline.
     /// - `.replace`: immediate (search results, source toggle — caller owns the data).
@@ -481,7 +518,7 @@ final class FeedStore {
             pipelineTask?.cancel()
             progressiveFetchTask?.cancel()
             trimDebounceTask?.cancel()
-            visibleItems = []
+            setVisibleItems([])
             reservoirCount = 0
             reservoir.clear()
             pipelineTask = Task { [weak self] in
@@ -499,7 +536,7 @@ final class FeedStore {
                 guard !Task.isCancelled, let self else { return }
                 self.reservoir.moveToVisible(count: Reservoir.pageSize)
                 self.markSurfaced(self.reservoir.visibleItems)
-                self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
+                self.setVisibleItems(self.applyFilters(self.reservoir.visibleItems))
                 self.reservoirCount = self.reservoir.reservoirCount
                 self.prefetchVisibleAndNext()
             }
@@ -510,7 +547,7 @@ final class FeedStore {
                 await prev?.value
                 guard !Task.isCancelled, let self else { return }
                 self.markSurfaced(self.reservoir.visibleItems)
-                self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
+                self.setVisibleItems(self.applyFilters(self.reservoir.visibleItems))
                 self.reservoirCount = self.reservoir.reservoirCount
             }
 
@@ -520,13 +557,13 @@ final class FeedStore {
                 await prev?.value
                 guard !Task.isCancelled, let self else { return }
                 self.reservoir.trimBuffer(currentVisibleIndex: idx)
-                self.visibleItems = self.applyFilters(self.reservoir.visibleItems)
+                self.setVisibleItems(self.applyFilters(self.reservoir.visibleItems))
                 self.reservoirCount = self.reservoir.reservoirCount
             }
 
         case .replace(let items):
             pipelineTask?.cancel()
-            visibleItems = items
+            setVisibleItems(items)
         }
     }
 
@@ -1002,12 +1039,14 @@ final class FeedStore {
         lastFetchSucceeded = result.failedSourceCount == 0
         emptyFeedCount += result.emptySourceCount
 
-        // Record per-source health in batch
+        // Record per-source health in batch — count items once, look up O(1)
+        let sourceItemCounts = Dictionary(grouping: result.items, by: \.sourceURL)
+            .mapValues(\.count)
         var healthEntries: [(url: String, itemCount: Int?)] = []
         for source in batch {
             let failed = result.sourceStatuses[source.url] == .failed
             scheduler.recordFetch(sourceURL: source.url, success: !failed)
-            let count = result.items.filter { $0.sourceURL == source.url }.count
+            let count = sourceItemCounts[source.url]
             healthEntries.append((source.url, count))
         }
         saveSourceHealthBatch(healthEntries)
@@ -1294,7 +1333,7 @@ final class FeedStore {
         // markSurfaced runs on reservoir.visibleItems AFTER seed, so only
         // items that actually appear on screen are recorded as surfaced.
         markSurfaced(reservoir.visibleItems)
-        visibleItems = reservoir.visibleItems  // already filtered — no double-filter needed
+        setVisibleItems(reservoir.visibleItems)  // already filtered — no double-filter needed)
         // If the active filter (e.g. Podcasts) removed all seeded items,
         // pull more from the reservoir so the screen isn't empty.
         // (This loop is now a safety net — the reservoir is pre-filtered,
@@ -1303,7 +1342,7 @@ final class FeedStore {
         if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
             repeat {
                 reservoir.moveToVisible(count: Reservoir.pageSize)
-                visibleItems = applyFilters(reservoir.visibleItems)
+                setVisibleItems(applyFilters(reservoir.visibleItems))
             } while visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0
         }
         reservoirCount = reservoir.reservoirCount
@@ -1629,7 +1668,7 @@ final class FeedStore {
 
     func emergencyTrim() {
         reservoir.emergencyTrim()
-        visibleItems = applyFilters(reservoir.visibleItems)
+        setVisibleItems(applyFilters(reservoir.visibleItems))
         reservoirCount = reservoir.reservoirCount
     }
 
