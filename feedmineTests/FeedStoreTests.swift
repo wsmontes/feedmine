@@ -467,6 +467,25 @@ final class FeedStoreTests: XCTestCase {
         XCTAssertFalse(registry.isSourceExplicitlyDisabled("https://b.com/feed"))
     }
 
+    func testSourceKeyNormalizesURLVariants() {
+        // Trailing slash, http vs https, and www. must all map to the same key
+        let registry = SourceRegistry()
+        registry.sources = [
+            FeedSource(title: "A", url: "https://example.com/feed", category: "X", region: "global"),
+        ]
+        // Disable with trailing slash
+        registry.toggleSource("https://example.com/feed/")
+        // Check without trailing slash — must still be recognized as disabled
+        XCTAssertTrue(registry.isSourceExplicitlyDisabled("https://example.com/feed"),
+                      "Trailing-slash variant must match normalized key")
+        // Check http variant
+        XCTAssertTrue(registry.isSourceExplicitlyDisabled("http://example.com/feed"),
+                      "http→https upgrade must converge on same key")
+        // Check www variant
+        XCTAssertTrue(registry.isSourceExplicitlyDisabled("http://www.example.com/feed"),
+                      "www. stripping must converge on same key")
+    }
+
     func testTaxonomySelectionMakesDisabledCategorySourcesEligible() async throws {
         let store = try FeedStore(inMemory: true)
 
@@ -500,7 +519,7 @@ final class FeedStoreTests: XCTestCase {
         }
 
         // All four should now be visible as eligible (category bypassed, none individually disabled)
-        // Insert test items for these sources and verify they pass filters
+        // Insert test items for these sources and verify they pass the REAL applyFilters
         let items = sources.map { src in
             FeedItem(id: FeedItem.generateID(sourceURL: src.url, guid: src.url, link: nil),
                      sourceTitle: src.title, sourceURL: src.url, category: "Acoustics",
@@ -509,13 +528,13 @@ final class FeedStoreTests: XCTestCase {
                      publishedAt: Date(), region: "global")
         }
         let persisted = await store.persistFetchedItems(items)
-        XCTAssertEqual(persisted.count, 4, "All 4 items should be persisted (taxonomy override)")
+        XCTAssertEqual(persisted.count, 4, "All 4 items should be persisted")
 
-        // All 4 items from taxonomy URLs, none individually disabled → should survive applyFilters
-        let filtered = persisted.filter { item in
-            FeedStore.languageFilterMatches(itemLanguage: item.language, selectedLanguages: [], deviceLanguage: "en")
-        }
-        XCTAssertEqual(filtered.count, 4, "All 4 taxonomy items must survive filters when no individual disable")
+        // This is the real filter pipeline — isSourceEligible, isItemEnabled,
+        // cachedTaxonomyFeedURLs, all of it
+        let filtered = store.applyFilters(persisted)
+        XCTAssertEqual(filtered.count, 4,
+                       "applyFilters must keep all 4 taxonomy items when none are individually disabled")
     }
 
     func testTaxonomySelectionStillBlocksIndividuallyDisabledSource() async throws {
@@ -557,7 +576,13 @@ final class FeedStoreTests: XCTestCase {
                      publishedAt: Date(), region: "global")
         }
         let persisted = await store.persistFetchedItems(items)
-        XCTAssertEqual(persisted.count, 2)
+
+        // This is the real filter — only S2 should survive
+        let filtered = store.applyFilters(persisted)
+        XCTAssertEqual(filtered.count, 1,
+                       "Only S2 (not individually disabled) should pass taxonomy override")
+        XCTAssertEqual(filtered.first?.sourceURL, "https://s2.com/feed",
+                       "S2 must be the sole survivor")
     }
 
     func testClearingTaxonomyRestoresNormalEnablement() async throws {

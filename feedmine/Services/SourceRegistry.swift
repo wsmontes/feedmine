@@ -56,7 +56,7 @@ final class SourceRegistry {
 
     nonisolated static func regionKey(_ path: String) -> String { "region:\(path)" }
     nonisolated static func categoryKey(_ name: String) -> String { "cat:\(name)" }
-    nonisolated static func sourceKey(_ url: String) -> String { "url:\(url)" }
+    nonisolated static func sourceKey(_ url: String) -> String { "url:\(OPMLParser.normalizeURL(url))" }
 
     // MARK: - Feed resolution (O(1) — all Dict/Set lookups)
 
@@ -64,7 +64,7 @@ final class SourceRegistry {
     private var sourceByURL: [String: FeedSource] = [:]
 
     private func rebuildCaches() {
-        sourceByURL = Dictionary(uniqueKeysWithValues: sources.map { ($0.url, $0) })
+        sourceByURL = Dictionary(uniqueKeysWithValues: sources.map { (OPMLParser.normalizeURL($0.url), $0) })
         _regionMap = nil
         _languageMap = nil
     }
@@ -73,12 +73,15 @@ final class SourceRegistry {
     /// `url:<sourceURL>` key — NOT because of a parent region or category.
     /// Used by taxonomy override: a taxonomy selection should bypass inherited
     /// disables but still respect per-source opt-outs.
+    /// URLs are normalized so trailing-slash, http/https, and www. variants
+    /// all map to the same key.
     func isSourceExplicitlyDisabled(_ sourceURL: String) -> Bool {
         disabled.contains(Self.sourceKey(sourceURL))
     }
 
     func isSourceEnabled(_ sourceURL: String) -> Bool {
-        guard let source = sourceByURL[sourceURL] else { return false }
+        let normalized = OPMLParser.normalizeURL(sourceURL)
+        guard let source = sourceByURL[normalized] else { return false }
         let ownKey = Self.sourceKey(sourceURL)
         if disabled.contains(ownKey) { return false }          // explicit OFF wins
         if enabledOverrides.contains(ownKey) { return true }   // explicit ON beats a disabled parent
@@ -220,10 +223,25 @@ final class SourceRegistry {
 
     func loadState() {
         if let arr = UserDefaults.standard.stringArray(forKey: Keys.toggleDisabled) {
-            disabled = Set(arr)
+            // Normalize legacy keys: old code stored raw URLs; new code uses
+            // OPMLParser.normalizeURL. Re-create each key so trailing-slash,
+            // http/https, and www. variants converge.
+            disabled = Set(arr.map { key in
+                if key.hasPrefix("url:") {
+                    let raw = String(key.dropFirst(4))
+                    return Self.sourceKey(raw)
+                }
+                return key
+            })
         }
         if let arr = UserDefaults.standard.stringArray(forKey: "toggleEnabledOverrides") {
-            enabledOverrides = Set(arr)
+            enabledOverrides = Set(arr.map { key in
+                if key.hasPrefix("url:") {
+                    let raw = String(key.dropFirst(4))
+                    return Self.sourceKey(raw)
+                }
+                return key
+            })
         }
         recomputeActiveCounts()
     }

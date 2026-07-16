@@ -93,7 +93,11 @@ final class FeedStore {
         startBackgroundRefresh()
         applyUpdate(.flush())
     }
-    /// Single eligibility rule — used by fetch, in-memory filter, and SQL paths.
+    /// Single eligibility rule — used by fetch and in-memory filter paths.
+    /// (The SQL path loads items from taxonomy URLs unconditionally; the
+    /// in-memory applyFilters pass then applies this rule to cull individually
+    /// disabled sources.)
+    ///
     /// - When taxonomy is active AND the item's source URL is in the taxonomy
     ///   set: bypass category/region disables but still respect individual
     ///   per-source opt-outs. An explicit taxonomy selection acts as a temporary
@@ -235,7 +239,7 @@ final class FeedStore {
     /// Hit recording is NOT performed here; it happens once at ingestion time
     /// in persistFetchedItems so each item is counted exactly once regardless
     /// of how many times applyFilters runs on the same items.
-    private func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
+    func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
         let region = activeRegion
         let contentType = filterContentType
         let languages = activeLanguages
