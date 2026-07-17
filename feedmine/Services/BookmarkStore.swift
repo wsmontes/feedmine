@@ -85,6 +85,14 @@ final class BookmarkStore {
         }
     }
 
+    /// All bookmarked item IDs across every list. Used by FeedStore to stamp
+    /// `isBookmarked` on visible items so bookmark indicators render correctly.
+    func allBookmarkedItemIDs() -> Set<String> {
+        (try? db.read { db in
+            try Set(String.fetchAll(db, sql: "SELECT DISTINCT item_id FROM bookmark_item"))
+        }) ?? []
+    }
+
     func bookmarkedItems(listID: Int64? = nil) async throws -> [FeedItem] {
         let targetListID = listID ?? defaultListID()
         let records: [FeedItemRecord] = try await db.read { db in

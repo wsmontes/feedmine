@@ -318,6 +318,9 @@ final class FeedStore {
 
     // MARK: - Read & Seen state
     private(set) var readItemIDs: Set<String> = []
+    /// Items that the user has bookmarked — loaded at startup and kept in sync
+    /// with every toggle so `setVisibleItems` can stamp `isBookmarked` correctly.
+    private(set) var bookmarkedItemIDs: Set<String> = []
     /// Items that have appeared in the main feed (surfaced). Tracked
     /// continuously so What's New can exclude already-seen content.
     private(set) var surfacedItemIDs: Set<String> = []
@@ -350,17 +353,20 @@ final class FeedStore {
         reservoirFlushTask?.cancel()
         // Flush immediately if large batch (user might be scrolling)
         if pendingReservoirItems.count >= 100 {
-            flushPendingReservoir()
+            flushPendingReservoirFireAndForget()
             return
         }
         reservoirFlushTask = Task { [weak self] in
             try? await Task.sleep(for: Self.reservoirFlushInterval)
             guard !Task.isCancelled, let self else { return }
-            self.flushPendingReservoir()
+            self.flushPendingReservoirFireAndForget()
         }
     }
 
-    private func flushPendingReservoir() {
+    /// Flush pending reservoir items — interleave + append — and return when
+    /// the items are fully committed to the reservoir. Await this before any
+    /// pipeline operation (.refresh, .append) that must see the new items.
+    private func flushPendingReservoir() async {
         guard !pendingReservoirItems.isEmpty else { return }
         let batch = pendingReservoirItems
         pendingReservoirItems = []
@@ -375,22 +381,25 @@ final class FeedStore {
         let trulyNew = batch.filter { !visibleIDs.contains($0.id) }
         guard !trulyNew.isEmpty else { return }
 
-        Task.detached(priority: .userInitiated) { [weak self] in
-            // Pure computation — no actor isolation needed
-            let interleaved = Reservoir.interleaveOffMain(
+        let interleaved = await Task.detached(priority: .userInitiated) {
+            Reservoir.interleaveOffMain(
                 trulyNew, readItemIDs: readIDs,
                 surfacedTimestamps: surfacedTs, sourceRegionMap: regionMap
             )
-            // Hop back to MainActor for the mutation
-            await MainActor.run { [weak self] in
-                guard let self else { return }
-                self.reservoir.appendPreInterleaved(interleaved)
-                if !self.isSearching && self.visibleItems.isEmpty && !self.reservoir.reservoir.isEmpty {
-                    self.reservoir.moveToVisible(count: Reservoir.pageSize)
-                    self.setVisibleItems(self.applyFilters(self.reservoir.visibleItems))
-                }
-                self.reservoirCount = self.reservoir.reservoirCount
-            }
+        }.value
+        self.reservoir.appendPreInterleaved(interleaved)
+        if !self.isSearching && self.visibleItems.isEmpty && !self.reservoir.reservoir.isEmpty {
+            self.reservoir.moveToVisible(count: Reservoir.pageSize)
+            self.setVisibleItems(self.applyFilters(self.reservoir.visibleItems))
+        }
+        self.reservoirCount = self.reservoir.reservoirCount
+    }
+
+    /// Fire-and-forget wrapper — use in throttled/debounced paths where the
+    /// caller does not need to wait for the flush to complete.
+    private func flushPendingReservoirFireAndForget() {
+        Task { [weak self] in
+            await self?.flushPendingReservoir()
         }
     }
 
@@ -546,6 +555,7 @@ final class FeedStore {
 
         await loadReadState()
         reservoir.readItemIDs = readItemIDs
+        bookmarkedItemIDs = bookmarkStore.allBookmarkedItemIDs()
 
         // Warm start: hydrate from SQLite with filters already active
         let cached = try? await loadReservoir()
@@ -615,7 +625,7 @@ final class FeedStore {
         case flush(forceFetch: Bool = false, skipRead: Bool = false, generation: Int64 = 0)
         case append         // Move from reservoir → visible (scroll)
         case refresh(generation: Int64 = 0)  // Sync visible from reservoir (after fetch)
-        case trim(Int)      // Trim buffer with currentVisibleIndex
+        case trim(Int, generation: Int64 = 0)      // Trim buffer with currentVisibleIndex
         case replace([FeedItem])  // Full replace (search, toggle)
     }
     private var pipelineTask: Task<Void, Never>?
@@ -625,7 +635,7 @@ final class FeedStore {
     /// global sets directly — reading one item won't invalidate all cards.
     /// Increments `visibleItemsGeneration` so FeedLoader caches invalidate reliably.
     private func setVisibleItems(_ items: [FeedItem]) {
-        let stamped = items.map { $0.stamped(readItemIDs: readItemIDs, bookmarkItemIDs: []) }
+        let stamped = items.map { $0.stamped(readItemIDs: readItemIDs, bookmarkItemIDs: bookmarkedItemIDs) }
         guard stamped != visibleItems else { return }
         visibleItems = stamped
         visibleItemsGeneration &+= 1
@@ -694,11 +704,14 @@ final class FeedStore {
                 Log.feed.info("[TaxonomyTrace] refresh gen=\(generation) visibleItems=\(self.visibleItems.count) (was \(oldCount))")
             }
 
-        case .trim(let idx):
+        case .trim(let idx, let generation):
             let prev = pipelineTask
             pipelineTask = Task { [weak self] in
                 await prev?.value
                 guard !Task.isCancelled, let self else { return }
+                // Drop stale trim — a newer filter may have triggered a more
+                // recent pipeline that already seeded fresher data.
+                if generation != 0, generation != self.filterGeneration { return }
                 self.reservoir.trimBuffer(currentVisibleIndex: idx)
                 self.setVisibleItems(self.applyFilters(self.reservoir.visibleItems))
                 self.reservoirCount = self.reservoir.reservoirCount
@@ -743,7 +756,7 @@ final class FeedStore {
         trimDebounceTask = Task { [weak self] in
             try? await Task.sleep(for: .seconds(1.5))
             guard !Task.isCancelled, let self else { return }
-            self.applyUpdate(.trim(idx))
+            self.applyUpdate(.trim(idx, generation: self.filterGeneration))
         }
 
         if reservoir.reservoirCount < Reservoir.reservoirLowWatermark {
@@ -1008,6 +1021,7 @@ final class FeedStore {
 
     func clearAllBookmarks() {
         bookmarkStore.clearAllBookmarks()
+        bookmarkedItemIDs.removeAll()
     }
 
     // MARK: - Source health
@@ -1405,16 +1419,15 @@ final class FeedStore {
         Log.feed.info("[TaxonomyTrace] urgentFetch gen=\(generation): fetched=\(result.items.count) persisted=\(actualNew.count) afterFilters=\(filteredCount)")
 
         // Bypass throttling: the user is waiting for taxonomy-filtered items.
-        // Append directly and flush immediately instead of the normal 3-second delay.
+        // Flush synchronously so items are committed to the reservoir BEFORE
+        // the .refresh pipeline runs — the refresh must see the new items.
         pendingReservoirItems.append(contentsOf: actualNew)
         reservoirFlushTask?.cancel()
-        flushPendingReservoir()
+        await flushPendingReservoir()
 
-        // CRITICAL FIX: flushPendingReservoir only moves items from reservoir to
-        // visible when visibleItems.isEmpty. By this point, the concurrent
-        // .flush() pipeline may have already seeded old SQLite items into visible.
-        // Force a refresh to ensure freshly fetched items become visible regardless.
-        // The refresh is serialized behind the pipeline task, so it won't race.
+        // Now that the flush is complete, refresh to move items into visible.
+        // The refresh is serialized behind the pipeline task, and the flush
+        // is already done, so items are guaranteed to be in the reservoir.
         if !actualNew.isEmpty {
             applyUpdate(.refresh(generation: generation))
         }
@@ -1467,7 +1480,7 @@ final class FeedStore {
             prefetchImagesIfEnabled(for: actualNew)
             await matchPersistentSearches(actualNew)
             if visibleItems.isEmpty {
-                flushPendingReservoir()
+                await flushPendingReservoir()
             }
         }
         Log.feed.info("progressiveFetch DONE — all \(allEnabled.count) sources processed")
@@ -1621,8 +1634,20 @@ final class FeedStore {
                     // - www. variant (items stored with original OPML URL
                     //   may have www. that normalizeURL stripped)
                     // - www. variant + trailing slash
+                    // - http:// variants for legacy rows stored before
+                    //   normalizeURL began forcing https (v1-v5 era)
                     let chunkBoth = chunk.flatMap { url -> [String] in
                         var variants = [url, "\(url)/"]
+                        // http:// variants — legacy rows may use http scheme
+                        if let comps = URLComponents(string: url),
+                           comps.scheme == "https" {
+                            var httpComps = comps
+                            httpComps.scheme = "http"
+                            if let httpURL = httpComps.string {
+                                variants.append(httpURL)
+                                variants.append("\(httpURL)/")
+                            }
+                        }
                         // Add www.-prefixed variants if the normalized URL lacks www.
                         if let comps = URLComponents(string: url),
                            let host = comps.host, !host.hasPrefix("www.") {
@@ -1631,6 +1656,12 @@ final class FeedStore {
                             if let wwwURL = wwwComps.string {
                                 variants.append(wwwURL)
                                 variants.append("\(wwwURL)/")
+                                // Also add http://www... for legacy rows
+                                wwwComps.scheme = "http"
+                                if let httpWWWURL = wwwComps.string {
+                                    variants.append(httpWWWURL)
+                                    variants.append("\(httpWWWURL)/")
+                                }
                             }
                         }
                         return variants
@@ -1664,20 +1695,23 @@ final class FeedStore {
         if !prepend.isEmpty {
             feedItems = prepend + feedItems
         }
-        // Register all loaded IDs to prevent re-fetch duplicates
+        // Drop stale reload BEFORE mutating loadedIDs — a newer filter may have
+        // triggered a more recent pipeline that already seeded fresher data.
+        // Only check when generation is explicitly tracked (non-zero).
+        if generation != 0, generation != self.filterGeneration {
+            Log.feed.info("[TaxonomyTrace] reloadFromSQLite gen=\(generation) dropping stale seed (current=\(self.filterGeneration))")
+            return
+        }
+        // Register all loaded IDs to prevent re-fetch duplicates.
+        // Must happen AFTER the stale-generation guard so IDs are only
+        // registered when the items are actually used.
         for item in feedItems { loadedIDs.insert(item.id) }
+        loadedIDsCount = loadedIDs.count
         // Pre-filter before seeding so the reservoir never holds items that
         // would be filtered out. This prevents the reservoir from becoming a
         // trove of disabled-source items that leak through on .append/.trim
         // (even after Task 1-2 fixes, this avoids wasted memory and ensures
         // consistent reservoirCount).
-        // Drop stale reload — a newer filter may have triggered a more recent
-        // pipeline that already seeded fresher data. Only check when generation
-        // is explicitly tracked (non-zero).
-        if generation != 0, generation != self.filterGeneration {
-            Log.feed.info("[TaxonomyTrace] reloadFromSQLite gen=\(generation) dropping stale seed (current=\(self.filterGeneration))")
-            return
-        }
 
         let filteredItems = applyFilters(feedItems)
         Log.feed.info("[TaxonomyTrace] reloadFromSQLite gen=\(generation) loaded=\(feedItems.count) filtered=\(filteredItems.count) taxonomyURLs=\(taxonomyURLs?.count ?? 0)")
@@ -1977,7 +2011,20 @@ final class FeedStore {
     }
 
     func toggleBookmark(itemID: String, listID: Int64? = nil) async throws {
+        let wasBookmarked = try await bookmarkStore.isBookmarked(itemID: itemID, listID: listID)
         try await bookmarkStore.toggleBookmark(itemID: itemID, listID: listID)
+        // Keep the in-memory set in sync so setVisibleItems stamps correctly.
+        // Also re-stamp visible items in-place so the bookmark indicator
+        // updates immediately without a full pipeline cycle.
+        if wasBookmarked {
+            bookmarkedItemIDs.remove(itemID)
+        } else {
+            bookmarkedItemIDs.insert(itemID)
+        }
+        if let idx = visibleItems.firstIndex(where: { $0.id == itemID }) {
+            visibleItems[idx].isBookmarked = !wasBookmarked
+            visibleItemsGeneration &+= 1
+        }
     }
 
     func isBookmarked(itemID: String, listID: Int64? = nil) async throws -> Bool {

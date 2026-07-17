@@ -431,6 +431,25 @@ final class TaxonomyStore {
             guard let parentID = node.parentId else { continue }
             self.childrenIndex[parentID, default: []].append(nodeID)
         }
+        // Rebuild reverse index (nodeToFeedURLs) from restored feedToNodeID.
+        // Must replicate the bottom-up propagation from build() so that
+        // feedURLs(inSubtreesOf:) works correctly on the warm-cache path.
+        self.nodeToFeedURLs.removeAll()
+        for (feedURL, nodeID) in self.feedToNodeID {
+            self.nodeToFeedURLs[nodeID, default: []].insert(feedURL)
+        }
+        // Bottom-up: propagate child URLs to parents, sorted by descending level
+        let sortedIDs = self.flatIndex.keys.sorted {
+            (self.flatIndex[$0]?.level ?? 0) > (self.flatIndex[$1]?.level ?? 0)
+        }
+        for nodeID in sortedIDs {
+            guard let childIDs = self.childrenIndex[nodeID] else { continue }
+            for childID in childIDs {
+                if let childURLs = self.nodeToFeedURLs[childID] {
+                    self.nodeToFeedURLs[nodeID, default: []].formUnion(childURLs)
+                }
+            }
+        }
         self.root = cached.root
         return true
     }
