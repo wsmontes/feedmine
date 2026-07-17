@@ -2,6 +2,9 @@ import Foundation
 import GRDB
 import NaturalLanguage
 import Observation
+#if DEBUG
+import os
+#endif
 
 @MainActor
 @Observable
@@ -405,6 +408,11 @@ final class FeedStore {
 
     // MARK: - Init
     init(inMemory: Bool = false) throws {
+        #if DEBUG
+        let signposter = OSSignposter(subsystem: "com.feedmine.app", category: "FeedEngine")
+        let initState = signposter.beginInterval("FeedStore.init")
+        defer { signposter.endInterval("FeedStore.init", initState) }
+        #endif
         if inMemory {
             self.db = try DatabaseQueue(configuration: Self.dbConfig)
         } else {
@@ -523,13 +531,30 @@ final class FeedStore {
         hasStarted = true
         loadingState = .initial
         networkMonitor.start()
+        #if DEBUG
+        let opmlSignposter = OSSignposter(subsystem: "com.feedmine.app", category: "FeedEngine")
+        let opmlState = opmlSignposter.beginInterval("OPML.load")
+        #endif
         await registry.loadFromOPML()
+        #if DEBUG
+        opmlSignposter.endInterval("OPML.load", opmlState)
+        opmlSignposter.emitEvent("OPML.sourceCount", id: opmlSignposter.makeSignpostID(), "count=\(self.registry.sources.count)")
+        #endif
         reservoir.sourceRegionMap = registry.regionMap
 
         // Build taxonomy tree from loaded sources — try cache first, build if needed
-        if !TaxonomyStore.shared.loadFromCache(sources: registry.sources) {
+        #if DEBUG
+        let taxSignposter = OSSignposter(subsystem: "com.feedmine.app", category: "FeedEngine")
+        let taxState = taxSignposter.beginInterval("Taxonomy.loadOrBuild")
+        #endif
+        let taxonomyCacheHit = TaxonomyStore.shared.loadFromCache(sources: registry.sources)
+        if !taxonomyCacheHit {
             await TaxonomyStore.shared.build(from: registry.sources)
         }
+        #if DEBUG
+        taxSignposter.endInterval("Taxonomy.loadOrBuild", taxState)
+        taxSignposter.emitEvent(taxonomyCacheHit ? "Taxonomy.cacheHit" : "Taxonomy.cacheMiss")
+        #endif
 
         // Invalidate taxonomy filter cache after rebuild
         cachedTaxonomyNodeIDs = []
@@ -553,18 +578,51 @@ final class FeedStore {
             Settings.hasInitializedLanguageDefault = true
         }
 
+        #if DEBUG
+        let rsSignposter = OSSignposter(subsystem: "com.feedmine.app", category: "FeedEngine")
+        let rsState = rsSignposter.beginInterval("ReadState.load")
+        #endif
         await loadReadState()
+        #if DEBUG
+        rsSignposter.endInterval("ReadState.load", rsState)
+        #endif
         reservoir.readItemIDs = readItemIDs
         bookmarkedItemIDs = bookmarkStore.allBookmarkedItemIDs()
 
         // Warm start: hydrate from SQLite with filters already active
+        #if DEBUG
+        let rlState = rsSignposter.beginInterval("Reservoir.load")
+        #endif
         let cached = try? await loadReservoir()
+        #if DEBUG
+        rsSignposter.endInterval("Reservoir.load", rlState)
+        #endif
         if let items = cached, !items.isEmpty {
             for item in items { loadedIDs.insert(item.id) }
             loadedIDsCount = loadedIDs.count
             // Pre-filter before seeding — same pattern as reloadFromSQLite.
             let filteredItems = applyFilters(items)
+            #if DEBUG
+            let seedSignposter = OSSignposter(subsystem: "com.feedmine.app", category: "FeedEngine")
+            let seedState = seedSignposter.beginInterval("Reservoir.seed")
+            #endif
             await reservoir.seed(items: filteredItems)
+            #if DEBUG
+            seedSignposter.endInterval("Reservoir.seed", seedState)
+            seedSignposter.emitEvent("FirstVisibleItems", id: seedSignposter.makeSignpostID(), "count=\(self.reservoir.visibleItems.count)")
+            // Memory: record phys_footprint after first visible items
+            var info = task_vm_info_data_t()
+            var count = mach_msg_type_number_t(MemoryLayout<task_vm_info_data_t>.size / MemoryLayout<integer_t>.size)
+            let result = withUnsafeMutablePointer(to: &info) {
+                $0.withMemoryRebound(to: integer_t.self, capacity: 1) {
+                    task_info(mach_task_self_, task_flavor_t(TASK_VM_INFO), $0, &count)
+                }
+            }
+            if result == KERN_SUCCESS {
+                let mb = info.phys_footprint / (1024 * 1024)
+                seedSignposter.emitEvent("Memory", id: seedSignposter.makeSignpostID(), "afterFirstVisible phys_footprint=\(mb)MB")
+            }
+            #endif
             markSurfaced(reservoir.visibleItems)
             setVisibleItems(reservoir.visibleItems)  // already filtered
             if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
