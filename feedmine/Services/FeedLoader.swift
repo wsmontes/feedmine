@@ -164,6 +164,11 @@ final class FeedLoader {
         let feedCount: Int
     }
 
+    @ObservationIgnored private var _cachedAvailableLanguages: [LanguageInfo] = []
+    @ObservationIgnored private var _cachedAvailableLanguagesSourceRevision: UInt64?
+    @ObservationIgnored private var _cachedAvailableLanguagesEnablementRevision: UInt64?
+    @ObservationIgnored private var _cachedAvailableLanguagesLocaleIdentifier: String?
+
     // MARK: - Search
 
     var searchQuery: String = ""
@@ -256,21 +261,37 @@ final class FeedLoader {
         Set(store.registry.enabledSources.map(\.category)).sorted()
     }
     var availableLanguages: [LanguageInfo] {
+        let sourceRevision = store.registry.sourceRevision
+        let enablementRevision = store.registry.enablementRevision
+        let localeIdentifier = Locale.current.identifier
+        if _cachedAvailableLanguagesSourceRevision == sourceRevision,
+           _cachedAvailableLanguagesEnablementRevision == enablementRevision,
+           _cachedAvailableLanguagesLocaleIdentifier == localeIdentifier {
+            return _cachedAvailableLanguages
+        }
+
         // Use enabled sources so counts reflect what the user can actually see.
         // Normalize to ISO 639-1 base codes so "pt-BR" and "pt" merge into one entry.
-        let withLang = store.registry.enabledSources.compactMap { src -> (code: String, source: FeedSource)? in
-            guard let normalized = FeedStore.normalizedLanguageCode(src.language) else { return nil }
-            return (normalized, src)
+        var counts: [String: Int] = [:]
+        for source in store.registry.enabledSources {
+            guard let normalized = FeedStore.normalizedLanguageCode(source.language) else { continue }
+            counts[normalized, default: 0] += 1
         }
-        let grouped = Dictionary(grouping: withLang, by: \.code)
-        return grouped.compactMap { code, pairs -> LanguageInfo? in
+
+        let languages = counts.map { code, count in
             LanguageInfo(
                 code: code,
                 name: Locale.current.localizedString(forLanguageCode: code) ?? code,
                 flag: Self.flagEmoji(for: code),
-                feedCount: pairs.count
+                feedCount: count
             )
         }.sorted { $0.feedCount > $1.feedCount }
+
+        _cachedAvailableLanguages = languages
+        _cachedAvailableLanguagesSourceRevision = sourceRevision
+        _cachedAvailableLanguagesEnablementRevision = enablementRevision
+        _cachedAvailableLanguagesLocaleIdentifier = localeIdentifier
+        return languages
     }
 
     private static let flagEmojiMapping: [String: String] = [
@@ -535,7 +556,6 @@ final class FeedLoader {
                         nodeIDs: TaxonomyStore.shared.selectedNodeIDs,
                         type: store.activeContentType, mood: store.activeMood,
                         languages: store.activeLanguages)
-        Task { await loadWhatsNew() }
     }
 
     func toggleLanguage(_ code: String) {
@@ -549,7 +569,6 @@ final class FeedLoader {
                         nodeIDs: store.activeNodeIDs,
                         type: store.activeContentType, mood: store.activeMood,
                         languages: langs)
-        Task { await loadWhatsNew() }
     }
 
     func clearTaxonomySelection() {
@@ -558,7 +577,6 @@ final class FeedLoader {
                         nodeIDs: [],
                         type: store.activeContentType, mood: store.activeMood,
                         languages: store.activeLanguages)
-        Task { await loadWhatsNew() }
     }
 
     /// Backward-compat shim for single-category selection.
@@ -577,7 +595,6 @@ final class FeedLoader {
         store.setFilter(region: store.activeRegion, nodeIDs: store.activeNodeIDs,
                         type: store.activeContentType, mood: newValue,
                         languages: store.activeLanguages)
-        Task { await loadWhatsNew() }
     }
 
     func selectContentType(_ type: ContentType) {
@@ -585,14 +602,12 @@ final class FeedLoader {
         store.setFilter(region: store.activeRegion, nodeIDs: store.activeNodeIDs,
                         type: newValue, mood: store.activeMood,
                         languages: store.activeLanguages)
-        Task { await loadWhatsNew() }
     }
 
     func clearAllFilters() {
         searchQuery = ""
         TaxonomyStore.shared.clearSelection()
         store.clearAllFilters()
-        Task { await loadWhatsNew() }
     }
 
     func clearReadHistory() {

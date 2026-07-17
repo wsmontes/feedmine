@@ -75,12 +75,13 @@ struct FilterSheetView: View {
                 }
 
                 Section("Language") {
-                    if loader.availableLanguages.isEmpty {
+                    let languages = loader.availableLanguages
+                    if languages.isEmpty {
                         Text("No language data available")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     } else {
-                        ForEach(loader.availableLanguages) { lang in
+                        ForEach(languages) { lang in
                             Button {
                                 loader.toggleLanguage(lang.code)
                             } label: {

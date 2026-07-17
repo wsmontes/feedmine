@@ -118,6 +118,7 @@
 		C45B317AFADC404026F51D49 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F08DCDC7CAEAF98BEFD0654 /* Country.swift */; };
 		C45F9D00A3268B1250B39812 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89B6467E341514F26C040B /* FeedLoader.swift */; };
 		C4CA39AE33AC4D6BAC4F4807 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A9AAAD41A543FF40BD3852 /* FeedStore.swift */; };
+		C4F11EADD17F4744B4C0A001 /* FeedLoaderCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F11EADD17F4744B4C0A000 /* FeedLoaderCacheTests.swift */; };
 		C78C9FF1759D422ECD0FA38C /* tr.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B6C4C8CEA78642249B492C4 /* tr.json */; };
 		C87BB6813402E8C3FCA7963D /* FilterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15CFE1B5B333D4013B39871 /* FilterSheetView.swift */; };
 		C9E7040EFE726C29B2A3C161 /* ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 85CC861DFB4DB8E6C0C0B564 /* ko.json */; };
@@ -214,6 +215,7 @@
 		D1E2F3041526374859A6B7C8 /* FeedEngineBoundaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEngineBoundaryTests.swift; sourceTree = "<group>"; };
 		E2F3041526374859A6B7C8D /* SQLiteCatalogStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCatalogStoreTests.swift; sourceTree = "<group>"; };
 		F4F5F6F7061728394A5B6C7D8 /* CatalogBrowserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogBrowserViewModelTests.swift; sourceTree = "<group>"; };
+		C4F11EADD17F4744B4C0A000 /* FeedLoaderCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheTests.swift; sourceTree = "<group>"; };
 		4ABBCA0F4F9C3C20E2480EBA /* FeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemView.swift; sourceTree = "<group>"; };
 		4DAEEFD2AA76F4638DC510B3 /* TaxonomyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyStore.swift; sourceTree = "<group>"; };
 		4F27D4A089C0A2A81E64B2BC /* feedmineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedmineApp.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				4A6C36C85C8CA1D4F1D0D261 /* FeedStoreTests.swift */,
+				C4F11EADD17F4744B4C0A000 /* FeedLoaderCacheTests.swift */,
 				D1E2F3041526374859A6B7C8 /* FeedEngineBoundaryTests.swift */,
 				FCDDC3174C82B39C1ED9A1FD /* Info.plist */,
 				A626A44D7E1556F17250BD2A /* MomentGreetingTests.swift */,
@@ -819,6 +822,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B07DB4F715E9688D1EC1053B /* FeedStoreTests.swift in Sources */,
+				C4F11EADD17F4744B4C0A001 /* FeedLoaderCacheTests.swift in Sources */,
 				B1C2D3E4F5061728394A5B6C /* FeedEngineBoundaryTests.swift in Sources */,
 				863F9CC00114089539CE5D5D /* MomentGreetingTests.swift in Sources */,
 				2EA55D1122EE30642380948D /* ReservoirTests.swift in Sources */,

@@ -32,9 +32,11 @@ final class SourceRegistry {
             // Skip rebuild when sources haven't changed — prevents redundant
             // 7,500-entry dictionary allocation during startup when
             // loadFromOPML then restoreImportedSources both assign.
-            // Compare by count first (fast reject), then by URL set (O(n)).
+            // Compare by count first (fast reject), then by source metadata
+            // set (O(n)). Language/category/region/title edits must refresh
+            // derived caches used by filter sheets and fetch scheduling.
             guard sources.count != oldValue.count
-                    || Set(sources.map(\.url)) != Set(oldValue.map(\.url)) else { return }
+                    || sourceCacheIdentity(sources) != sourceCacheIdentity(oldValue) else { return }
             rebuildCaches()
         }
     }
@@ -45,6 +47,13 @@ final class SourceRegistry {
     /// Cached count of active sources under each region/category key.
     /// Recomputed after every toggle.
     private var activeCount: [String: Int] = [:]
+
+    private(set) var sourceRevision: UInt64 = 0
+    private(set) var enablementRevision: UInt64 = 0
+
+    @ObservationIgnored private var _enabledSources: [FeedSource]?
+    @ObservationIgnored private var _allTopicRegions: [String]?
+    @ObservationIgnored private var _availableCountries: [Country]?
 
     // Debug counters
     private(set) var opmlFileCount = 0
@@ -63,10 +72,29 @@ final class SourceRegistry {
     /// url → FeedSource, rebuilt when sources change
     private var sourceByURL: [String: FeedSource] = [:]
 
+    private func sourceCacheIdentity(_ sourceList: [FeedSource]) -> Set<String> {
+        Set(sourceList.map { source in
+            [
+                OPMLParser.normalizeURL(source.url),
+                source.title,
+                source.category,
+                source.region,
+                source.language ?? "",
+                source.mediaKind.rawValue,
+            ].joined(separator: "\u{1F}")
+        })
+    }
+
     private func rebuildCaches() {
         sourceByURL = Dictionary(uniqueKeysWithValues: sources.map { (OPMLParser.normalizeURL($0.url), $0) })
         _regionMap = nil
         _languageMap = nil
+        _enabledSources = nil
+        _allTopicRegions = nil
+        _availableCountries = nil
+        activeCount.removeAll()
+        sourceRevision &+= 1
+        enablementRevision &+= 1
     }
 
     /// True only when the source itself is explicitly turned off via its own
@@ -223,7 +251,10 @@ final class SourceRegistry {
     // MARK: - Enabled sources
 
     var enabledSources: [FeedSource] {
-        sources.filter { isSourceEnabled($0.url) }
+        if let cached = _enabledSources { return cached }
+        let enabled = sources.filter { isSourceEnabled($0.url) }
+        _enabledSources = enabled
+        return enabled
     }
 
     var sourceCount: Int { sources.count }
@@ -232,7 +263,10 @@ final class SourceRegistry {
 
     private func recomputeActiveCounts() {
         activeCount.removeAll()
+        var enabled: [FeedSource] = []
+        enabled.reserveCapacity(sources.count)
         for source in sources where isSourceEnabled(source.url) {
+            enabled.append(source)
             activeCount[Self.regionKey(source.region), default: 0] += 1
             let parts = source.region.split(separator: "/").map(String.init)
             if parts.count >= 2, parts[0] == "countries" {
@@ -240,6 +274,8 @@ final class SourceRegistry {
             }
             activeCount[Self.categoryKey(source.category), default: 0] += 1
         }
+        _enabledSources = enabled
+        enablementRevision &+= 1
     }
 
     // MARK: - Persistence
@@ -276,7 +312,7 @@ final class SourceRegistry {
 
     // MARK: - Region lookup
 
-    private var _regionMap: [String: String]?
+    @ObservationIgnored private var _regionMap: [String: String]?
     var regionMap: [String: String] {
         if let cached = _regionMap { return cached }
         let map = Dictionary(sources.map { ($0.url, $0.region) }, uniquingKeysWith: { first, _ in first })
@@ -290,7 +326,7 @@ final class SourceRegistry {
 
     // MARK: - Language lookup
 
-    private var _languageMap: [String: String?]?
+    @ObservationIgnored private var _languageMap: [String: String?]?
     var languageMap: [String: String?] {
         if let cached = _languageMap { return cached }
         let map = Dictionary(sources.map { ($0.url, $0.language) }, uniquingKeysWith: { first, _ in first })
@@ -307,22 +343,26 @@ final class SourceRegistry {
     /// All topic-based regions (non-country, non-imported, non-global).
     /// Used by Global Feeds toggle to batch-enable/disable all topic groups.
     var allTopicRegions: [String] {
+        if let cached = _allTopicRegions { return cached }
         let regions = Set(sources.map(\.region))
-        return regions
+        let topicRegions = regions
             .filter { $0.hasPrefix("topic/") }
             .sorted()
+        _allTopicRegions = topicRegions
+        return topicRegions
     }
 
     // MARK: - Countries
 
     var availableCountries: [Country] {
+        if let cached = _availableCountries { return cached }
         let grouped = Dictionary(grouping: sources, by: \.region)
         let countryRegions = grouped.keys.filter { key in
             guard key.hasPrefix("countries/") else { return false }
             let remainder = key.replacingOccurrences(of: "countries/", with: "")
             return !remainder.contains("/")
         }
-        return countryRegions.compactMap { region -> Country? in
+        let countries = countryRegions.compactMap { region -> Country? in
             let slug = region.replacingOccurrences(of: "countries/", with: "")
             let countryFeeds = grouped[region] ?? []
             let regionPrefix = "\(region)/"
@@ -351,6 +391,8 @@ final class SourceRegistry {
             )
         }
         .sorted { $0.name < $1.name }
+        _availableCountries = countries
+        return countries
     }
 
     // MARK: - Load
