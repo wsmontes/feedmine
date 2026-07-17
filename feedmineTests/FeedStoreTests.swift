@@ -1116,6 +1116,31 @@ final class FeedStoreTests: XCTestCase {
         XCTAssertFalse(unrelated.isBookmarked, "Item whose ID is not in bookmarkItemIDs must not be bookmarked")
     }
 
+    // MARK: - Reservoir Flush Ordering
+
+    func testPendingReservoirFlushCancelsDebounceAndCommitsImmediately() async throws {
+        let store = try FeedStore(inMemory: true)
+        store.registry.sources = [
+            FeedSource(title: "S", url: "https://x.com/feed", category: "News", region: "global")
+        ]
+        let item = FeedItem(id: "pending-flush", sourceTitle: "S",
+                            sourceURL: "https://x.com/feed",
+                            category: "News", title: "Pending", excerpt: "E",
+                            url: "https://x.com/1", imageURL: nil,
+                            publishedAt: Date(), audioURL: nil,
+                            duration: nil, region: "global")
+
+        store.throttledReservoirAppend([item])
+
+        let started = Date()
+        await store.flushPendingReservoirForTesting()
+        let elapsed = Date().timeIntervalSince(started)
+
+        XCTAssertLessThan(elapsed, 2.5, "Explicit flush must not wait for the 3s debounce")
+        XCTAssertEqual(store.visibleItems.map(\.id), ["pending-flush"])
+        XCTAssertEqual(store.reservoirCount, 0)
+    }
+
     // MARK: - HTTP Legacy Alias Compatibility
 
     func testInMemoryFilterMatchesHTTPSourceForHTTPItem() async throws {

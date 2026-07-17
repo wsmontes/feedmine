@@ -380,10 +380,13 @@ final class FeedStore {
     /// refresh sees them. The task body clears its own reference before
     /// calling us, preventing a circular await.
     private func flushPendingReservoir() async {
-        // Await any scheduled flush task that hasn't started executing yet.
+        // Cancel and drain any scheduled flush task that hasn't started
+        // executing yet so callers that need ordering guarantees do not wait
+        // for the debounce interval before committing pending items.
         // (Tasks that already started clear reservoirFlushTask before calling us.)
         if let task = reservoirFlushTask {
             reservoirFlushTask = nil
+            task.cancel()
             await task.value
         }
 
@@ -423,6 +426,12 @@ final class FeedStore {
         }
         self.reservoirCount = self.reservoir.reservoirCount
     }
+
+    #if DEBUG
+    func flushPendingReservoirForTesting() async {
+        await flushPendingReservoir()
+    }
+    #endif
 
     // MARK: - Init
     init(inMemory: Bool = false) throws {
