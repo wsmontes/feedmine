@@ -163,14 +163,11 @@ final class FeedStore {
     nonisolated static func languageFilterMatchesNormalized(
         itemLanguage: String?,
         selectedLanguages: Set<String>,
-        deviceLanguage: String?
+        deviceLanguage _: String?
     ) -> Bool {
         guard !selectedLanguages.isEmpty else { return true }
         if let lang = normalizedLanguageCode(itemLanguage) {
             return selectedLanguages.contains(lang)
-        }
-        if let device = deviceLanguage {
-            return selectedLanguages.contains(device)
         }
         return false
     }
@@ -232,6 +229,10 @@ final class FeedStore {
     nonisolated private static func detectLanguages(_ inputs: [LanguageDetectionInput]) -> [String?] {
         guard !inputs.isEmpty else { return [] }
         let recognizer = NLLanguageRecognizer()
+        let minimumTextForDetection = 12
+        let minimumTextForSourceOverride = 48
+        let minimumOverrideConfidence = 0.65
+        let minimumOverrideMargin = 0.15
         return inputs.map { input in
             // Item-level language is authoritative — never override it.
             if input.hasItemLanguage, let lang = input.explicitLanguage {
@@ -242,14 +243,27 @@ final class FeedStore {
             // Run detection when there's enough text. Source-level OPML tags
             // can be wrong for multilingual feeds (e.g. youtube.opml tagged
             // "en" with content in many languages).
-            if text.count >= 12 {
+            if text.count >= minimumTextForDetection {
                 recognizer.reset()
                 recognizer.processString(text)
-                if let detectedRaw = recognizer.dominantLanguage?.rawValue,
-                   let detected = normalizedLanguageCode(detectedRaw) {
-                    // If the source had an explicit tag and detection agrees, keep it
+                let hypotheses = recognizer.languageHypotheses(withMaximum: 2)
+                    .compactMap { language, confidence -> (language: String, confidence: Double)? in
+                        guard let code = normalizedLanguageCode(language.rawValue) else { return nil }
+                        return (code, confidence)
+                    }
+                    .sorted { $0.confidence > $1.confidence }
+                if let best = hypotheses.first {
+                    let detected = best.language
+                    let runnerUp = hypotheses.dropFirst().first?.confidence ?? 0
                     if let explicit = input.explicitLanguage, !explicit.isEmpty {
-                        return explicit == detected ? explicit : detected
+                        if explicit == detected { return explicit }
+                        let margin = best.confidence - runnerUp
+                        if text.count >= minimumTextForSourceOverride,
+                           best.confidence >= minimumOverrideConfidence,
+                           margin >= minimumOverrideMargin {
+                            return detected
+                        }
+                        return explicit
                     }
                     return detected
                 }
@@ -1697,7 +1711,6 @@ final class FeedStore {
         // run off the main actor). When taxonomy is active we load matching
         // items via batched IN clause with per-chunk and global caps.
         let taxonomyURLs: Set<String>? = activeNodeIDs.isEmpty ? nil : cachedTaxonomyFeedURLs
-        let deviceLanguage = Self.normalizedLanguageCode(Locale.current.language.languageCode?.identifier)
         // Always exclude read items — the feed should only show unseen content.
         // Read/opened items are tracked continuously and this information is
         // consumed by all feed-population paths (shake, filter, startup).
@@ -1727,17 +1740,14 @@ final class FeedStore {
             case .all: break
             }
 
-            // Language filter — shared rule with applyFilters via LanguageFilterMatches.
-            // nil-language items pass provisionally only when the device language
-            // is among the selected set (matching the in-memory filter behavior).
+            // Language filter — shared rule with applyFilters.
+            // Unknown-language rows do not pass while a language filter is active.
             if !languages.isEmpty {
                 let langArray = Array(languages)
-                let nilPasses = deviceLanguage.map { languages.contains($0) } ?? false
-                let nilClause = nilPasses ? " OR language IS NULL" : ""
                 if langArray.count <= 999 {
                     let langPlaceholders = langArray.map { _ in "?" }.joined(separator: ",")
                     request = request.filter(
-                        sql: "(language IN (\(langPlaceholders))\(nilClause))",
+                        sql: "language IN (\(langPlaceholders))",
                         arguments: StatementArguments(langArray)
                     )
                 } else {
@@ -1751,7 +1761,7 @@ final class FeedStore {
                         allArgs.append(contentsOf: chunk)
                     }
                     request = request.filter(
-                        sql: "((\(orParts.joined(separator: " OR ")))\(nilClause))",
+                        sql: "(\(orParts.joined(separator: " OR ")))",
                         arguments: StatementArguments(allArgs)
                     )
                 }

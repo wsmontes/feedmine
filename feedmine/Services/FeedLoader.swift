@@ -579,8 +579,8 @@ final class FeedLoader {
         } else {
             langs.insert(code)
         }
-        // User explicitly chose a language — clear the "all languages" flag
-        store.hasUserClearedLanguageFilter = false
+        // Removing the last selected language is an explicit "all languages" choice.
+        store.hasUserClearedLanguageFilter = langs.isEmpty
         store.setFilter(region: store.activeRegion,
                         nodeIDs: store.activeNodeIDs,
                         type: store.activeContentType, mood: store.activeMood,

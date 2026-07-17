@@ -75,14 +75,15 @@ final class FeedStoreTests: XCTestCase {
 
     // MARK: - Language Filter (shared rule)
 
-    func testLanguageFilterNilPassesWhenDeviceLanguageSelected() {
-        // nil language + English selected + device = English → pass
+    func testLanguageFilterNilBlockedEvenWhenDeviceLanguageSelected() {
+        // Unknown language must not pass an active language filter. Falling
+        // back to the device language lets unrelated video sources leak in.
         let result = FeedStore.languageFilterMatches(
             itemLanguage: nil,
             selectedLanguages: ["en", "pt"],
             deviceLanguage: "en"
         )
-        XCTAssertTrue(result, "nil-language item should pass when device language (en) is selected")
+        XCTAssertFalse(result, "nil-language item must not pass an active language filter")
     }
 
     func testLanguageFilterNilBlockedWhenDeviceLanguageNotSelected() {
@@ -396,9 +397,10 @@ final class FeedStoreTests: XCTestCase {
         ))
     }
 
-    func testBCP47DeviceLanguageNormalizedDefensively() {
-        // nil language + selected ["en"] + device "en-GB" → must match (nil falls back to device)
-        XCTAssertTrue(FeedStore.languageFilterMatches(
+    func testBCP47DeviceLanguageDoesNotRescueUnknownItemLanguage() {
+        // Device language is normalized defensively, but unknown item language
+        // still cannot satisfy an active language filter.
+        XCTAssertFalse(FeedStore.languageFilterMatches(
             itemLanguage: nil,
             selectedLanguages: ["en"],
             deviceLanguage: "en-GB"
@@ -1212,9 +1214,9 @@ final class FeedStoreTests: XCTestCase {
             itemLanguage: nil, selectedLanguages: [], deviceLanguage: "en"))
     }
 
-    func testNilLanguageItemPassesWhenDeviceLanguageSelected() {
-        // nil item + en selected + device en → passes (device matches selection)
-        XCTAssertTrue(FeedStore.languageFilterMatchesNormalized(
+    func testNilLanguageItemBlockedWhenDeviceLanguageSelected() {
+        // nil item + en selected + device en → blocked (unknown is not en)
+        XCTAssertFalse(FeedStore.languageFilterMatchesNormalized(
             itemLanguage: nil, selectedLanguages: ["en"], deviceLanguage: "en"))
     }
 
@@ -1275,6 +1277,69 @@ final class FeedStoreTests: XCTestCase {
         }
     }
 
+    func testSourceLanguageNotOverriddenByShortContradictoryText() async throws {
+        let store = try FeedStore(inMemory: true)
+        let source = FeedSource(title: "Brazilian Channel", url: "https://br-short.com/feed",
+                                category: "News", region: "countries/brazil",
+                                language: "pt")
+        store.registry.sources = [source]
+
+        let item = FeedItem(
+            id: "short-source-lang", sourceTitle: "Brazilian News",
+            sourceURL: "https://br-short.com/feed",
+            category: "News", title: "Breaking update",
+            excerpt: "Live now",
+            url: "https://br-short.com/video", imageURL: nil,
+            publishedAt: Date(), region: "countries/brazil",
+            language: nil
+        )
+
+        let result = await store.persistFetchedItems([item])
+        let returned = try XCTUnwrap(result.first)
+        XCTAssertEqual(returned.language, "pt",
+                       "Short ambiguous text must not override an explicit source language")
+    }
+
+    func testSQLiteLanguageFilterExcludesUnknownLanguageVideos() async throws {
+        let store = try FeedStore(inMemory: true)
+        let ptURL = "https://youtube.com/feeds/videos.xml?channel_id=pt"
+        let unknownURL = "https://youtube.com/feeds/videos.xml?channel_id=unknown"
+        store.registry.sources = [
+            FeedSource(title: "PT", url: ptURL, category: "Video", region: "global", mediaKind: .video, language: "pt"),
+            FeedSource(title: "Unknown", url: unknownURL, category: "Video", region: "global", mediaKind: .video, language: nil),
+        ]
+
+        let ptItem = FeedItemRecord(from: FeedItem(
+            id: "pt-video-db", sourceTitle: "PT", sourceURL: ptURL,
+            category: "Video", title: "Video em portugues", excerpt: "Conteudo",
+            url: "https://youtube.com/watch?v=pt", imageURL: nil,
+            publishedAt: Date(), region: "global",
+            language: "pt"
+        ), region: "global", language: "pt")
+        let unknownItem = FeedItemRecord(from: FeedItem(
+            id: "unknown-video-db", sourceTitle: "Unknown", sourceURL: unknownURL,
+            category: "Video", title: "Unknown video", excerpt: "Content",
+            url: "https://youtube.com/watch?v=unknown", imageURL: nil,
+            publishedAt: Date(), region: "global",
+            language: nil
+        ), region: "global", language: nil)
+
+        try await store.db.write { db in
+            try ptItem.insert(db)
+            try unknownItem.insert(db)
+        }
+
+        store.setFilter(region: nil, nodeIDs: [], type: .video, mood: .all, languages: ["pt"])
+
+        let deadline = Date().addingTimeInterval(5)
+        while store.visibleItems.isEmpty, Date() < deadline {
+            try await Task.sleep(for: .milliseconds(50))
+        }
+
+        XCTAssertEqual(store.visibleItems.map(\.id), ["pt-video-db"],
+                       "SQLite reload must not include unknown-language videos for an active language filter")
+    }
+
     // MARK: - Clear All Filters + Content Type Integration
 
     func testClearAllFiltersThenSelectVideoHonorsLanguageFlag() async throws {
@@ -1306,5 +1371,25 @@ final class FeedStoreTests: XCTestCase {
         store.hasUserClearedLanguageFilter = false
         XCTAssertFalse(store.hasUserClearedLanguageFilter,
                        "Flag must reset after explicit language toggle")
+    }
+
+    func testTogglingLastLanguageKeepsAllLanguagesIntentForNextFilter() throws {
+        let store = try FeedStore(inMemory: true)
+        store.registry.sources = [
+            FeedSource(title: "PT", url: "https://pt.com/feed",
+                       category: "News", region: "global", language: "pt")
+        ]
+        let loader = FeedLoader(store: store)
+
+        store.setFilter(region: nil, nodeIDs: [], type: .all, mood: .all, languages: ["pt"])
+
+        loader.toggleLanguage("pt")
+        XCTAssertTrue(store.activeLanguages.isEmpty)
+        XCTAssertTrue(store.hasUserClearedLanguageFilter,
+                      "Removing the last language is an explicit all-languages choice")
+
+        loader.selectContentType(.video)
+        XCTAssertTrue(store.activeLanguages.isEmpty,
+                      "Selecting a content type after clearing languages must not reapply device language")
     }
 }
