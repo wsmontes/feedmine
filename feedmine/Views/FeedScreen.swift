@@ -26,6 +26,7 @@ struct FeedScreen: View {
     @State private var showAddFeed = false
     @State private var showCollections = false
     @State private var showExport = false
+    @State private var showCatalogExplore = false
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
@@ -40,6 +41,8 @@ struct FeedScreen: View {
     /// started reading. (Feed is sacred: it doesn't move on its own.)
     @State private var userHasScrolled = false
     @State private var didRestoreScroll = false
+    @State private var didRecordFirstScreen = false
+    @State private var didRecordFirstUsefulContent = false
     @State private var player = AudioPlayerManager.shared
 
     private var emptyMode: FeedEmptyMode {
@@ -122,31 +125,11 @@ struct FeedScreen: View {
             }
             didRestoreScroll = true
         }
-        .onChange(of: scenePhase) { _, phase in
-            if phase == .active {
-                SessionTracker.shared.onForeground()
-                engine.refresh()
-                // Do NOT restore scroll on foreground: SwiftUI already preserves
-                // the position across background, so re-scrolling here only makes
-                // the feed jump under the user. (Feed is sacred.)
-            }
-            if phase == .background {
-                SessionTracker.shared.onBackground()
-                loader.flushWhatsNewQueue()
-                AudioPlayerManager.shared.savePosition()
-                // Save scroll position for restoration on next foreground
-                let allItems = loader.dateSections.flatMap(\.items)
-                let idx = min(lastScrollIndex, allItems.count - 1)
-                if idx >= 0, idx < allItems.count {
-                    lastScrollItemID = allItems[idx].id
-                }
-            }
-        }
+        .onAppear { recordFirstScreenMetric() }
+        .onChange(of: loader.items.count) { _, count in recordFirstUsefulContentMetric(count: count) }
+        .onChange(of: scenePhase) { _, phase in handleScenePhase(phase) }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            Task {
-                engine.refresh()
-                await loader.refreshIfStale()
-            }
+            handleWillEnterForeground()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
             loader.emergencyTrim()
@@ -197,6 +180,18 @@ struct FeedScreen: View {
         .sheet(isPresented: $showAddFeed) { AddFeedView() }
         .sheet(isPresented: $showCollections) { CollectionManagementView() }
         .sheet(isPresented: $showExport) { ExportView() }
+        .sheet(isPresented: $showCatalogExplore) {
+            if let databaseURL = FeedEngineCatalogDiagnostics.bundledDatabaseURL(),
+               let repository = try? SQLiteCatalogRepository(databaseURL: databaseURL, readOnly: true) {
+                CatalogExploreView(engine: repository)
+            } else {
+                ContentUnavailableView(
+                    "Catalog unavailable",
+                    systemImage: "exclamationmark.triangle",
+                    description: Text("The bundled catalog could not be opened.")
+                )
+            }
+        }
         .tint(engine.accent)
         .animation(.easeInOut(duration: 2.0), value: engine.period)
         .overlay { if nightMode { nightOverlay } }
@@ -243,6 +238,15 @@ struct FeedScreen: View {
                         }
                     }
                     filterButton
+                    if showDebugBar {
+                        Button {
+                            showCatalogExplore = true
+                        } label: {
+                            Image(systemName: "books.vertical")
+                                .headerButtonStyle(accent: engine.accent)
+                        }
+                        .accessibilityLabel("Explore Catalog")
+                    }
                     Menu {
                         Button { showAddFeed = true } label: {
                             Label("Add Feed", systemImage: "plus.circle")
@@ -598,6 +602,47 @@ struct FeedScreen: View {
     private func updateBadge() {
         let unread = loader.items.count - loader.readItemIDs.count
         Task { @MainActor in UIApplication.shared.applicationIconBadgeNumber = max(0, unread) }
+    }
+
+    private func recordFirstScreenMetric() {
+        guard !didRecordFirstScreen else { return }
+        didRecordFirstScreen = true
+        FeedMetrics.event("UI.firstScreenRendered")
+        FeedMetrics.memory("firstScreenRendered")
+    }
+
+    private func recordFirstUsefulContentMetric(count: Int) {
+        guard count > 0, !didRecordFirstUsefulContent else { return }
+        didRecordFirstUsefulContent = true
+        FeedMetrics.event("UI.firstUsefulContent", "count=\(count)")
+        FeedMetrics.memory("firstUsefulContent")
+    }
+
+    private func handleScenePhase(_ phase: ScenePhase) {
+        if phase == .active {
+            SessionTracker.shared.onForeground()
+            engine.refresh()
+            // Do NOT restore scroll on foreground: SwiftUI already preserves
+            // the position across background, so re-scrolling here only makes
+            // the feed jump under the user. (Feed is sacred.)
+        }
+        if phase == .background {
+            SessionTracker.shared.onBackground()
+            loader.flushWhatsNewQueue()
+            AudioPlayerManager.shared.savePosition()
+            let allItems = loader.dateSections.flatMap(\.items)
+            let idx = min(lastScrollIndex, allItems.count - 1)
+            if idx >= 0, idx < allItems.count {
+                lastScrollItemID = allItems[idx].id
+            }
+        }
+    }
+
+    private func handleWillEnterForeground() {
+        Task {
+            engine.refresh()
+            await loader.refreshIfStale()
+        }
     }
 }
 
