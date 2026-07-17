@@ -1274,4 +1274,37 @@ final class FeedStoreTests: XCTestCase {
                 "Portuguese content from Portuguese source should stay pt, got: \(lang)")
         }
     }
+
+    // MARK: - Clear All Filters + Content Type Integration
+
+    func testClearAllFiltersThenSelectVideoHonorsLanguageFlag() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        let deviceLang = FeedStore.normalizedLanguageCode(
+            Locale.current.language.languageCode?.identifier
+        ) ?? "en"
+        let source = FeedSource(title: "Test", url: "https://test.com/feed",
+                                category: "News", region: "global",
+                                language: deviceLang)
+        store.registry.sources = [source]
+
+        // Clear all filters sets hasUserClearedLanguageFilter = true
+        store.clearAllFilters()
+        XCTAssertTrue(store.activeLanguages.isEmpty)
+        XCTAssertTrue(store.hasUserClearedLanguageFilter,
+                      "clearAllFilters must set hasUserClearedLanguageFilter")
+
+        // When the flag is true, selecting content types with empty languages
+        // yields all languages (user explicitly chose 'all')
+        store.setFilter(region: nil, nodeIDs: [],
+                        type: .video, mood: .all,
+                        languages: store.activeLanguages)
+        XCTAssertTrue(store.activeLanguages.isEmpty,
+                      "After clearAllFilters + selectContentType, languages stay empty (user chose all)")
+
+        // When the user toggles a specific language, the flag resets
+        store.hasUserClearedLanguageFilter = false
+        XCTAssertFalse(store.hasUserClearedLanguageFilter,
+                       "Flag must reset after explicit language toggle")
+    }
 }

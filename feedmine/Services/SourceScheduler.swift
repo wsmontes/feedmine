@@ -104,6 +104,14 @@ final class SourceScheduler {
                     guard selected.count < maxSelect else { break priorityLoop }
                     guard prioritySourceURLs.contains(source.url) else { continue }
                     guard selectedURLs.insert(source.url).inserted else { continue }
+                    // Respect active language filter — priority sources with a
+                    // known non-matching language must not waste fetch budget.
+                    if !activeLanguages.isEmpty {
+                        let sourceLang = FeedStore.normalizedLanguageCode(
+                            source.language.flatMap { $0.isEmpty ? nil : $0 }
+                        )
+                        if let sourceLang, !activeLanguages.contains(sourceLang) { continue }
+                    }
                     // Clear cooldown — treat as never-fetched
                     lastFetchedAt.removeValue(forKey: source.url)
                     consecutiveFailures.removeValue(forKey: source.url)
@@ -146,7 +154,11 @@ final class SourceScheduler {
                         timeFactor = 1.0
                     }
 
-                    let sourceLang = source.language.flatMap { $0.isEmpty ? nil : $0 }
+                    // Normalize the source language tag to base code so that
+                    // pt-BR, en-US, zh-Hans etc. match pt, en, zh selections.
+                    let sourceLang = FeedStore.normalizedLanguageCode(
+                        source.language.flatMap { $0.isEmpty ? nil : $0 }
+                    )
                     // When the user has an explicit language filter, exclude sources
                     // with a known non-matching language — don't just penalise them.
                     // Sources without a language tag can still be included (we can't

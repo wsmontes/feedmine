@@ -63,6 +63,10 @@ final class FeedStore {
     var activeContentType: FeedLoader.ContentType = .all
     var activeMood: FeedLoader.MoodFilter = .all
     var activeLanguages: Set<String> = []
+    /// True when the user explicitly chose "all languages" (cleared filter).
+    /// Reset when the user toggles a specific language. Not persisted — on
+    /// next launch the device-language default is applied again.
+    var hasUserClearedLanguageFilter = false
 
     /// Cached set of feed URLs that match the current taxonomy selection.
     /// Invalidated when activeNodeIDs changes. Makes applyFilters O(items) instead
@@ -215,6 +219,10 @@ final class FeedStore {
         let excerpt: String
         /// Explicit language from the source OPML (xml:lang or category directory).
         let explicitLanguage: String?
+        /// True when `explicitLanguage` came from the item itself (feed XML).
+        /// Item-level language is trusted; source-level (OPML) can be overridden
+        /// when detection contradicts it.
+        let hasItemLanguage: Bool
     }
 
     /// Run language detection for a batch of items off the main actor.
@@ -225,26 +233,28 @@ final class FeedStore {
         guard !inputs.isEmpty else { return [] }
         let recognizer = NLLanguageRecognizer()
         return inputs.map { input in
+            // Item-level language is authoritative — never override it.
+            if input.hasItemLanguage, let lang = input.explicitLanguage {
+                return lang
+            }
             let text = (input.title + " " + input.excerpt)
                 .trimmingCharacters(in: .whitespacesAndNewlines)
-            // Run detection when there's enough text, even if the source has
-            // an explicit language — OPML <language> tags can be wrong for
-            // multilingual feeds (e.g. youtube.opml tagged "en" with
-            // content in many languages).
+            // Run detection when there's enough text. Source-level OPML tags
+            // can be wrong for multilingual feeds (e.g. youtube.opml tagged
+            // "en" with content in many languages).
             if text.count >= 12 {
                 recognizer.reset()
                 recognizer.processString(text)
                 if let detectedRaw = recognizer.dominantLanguage?.rawValue,
                    let detected = normalizedLanguageCode(detectedRaw) {
-                    // Prefer detection when it contradicts a generic source tag
-                    // like "en" on a multilingual OPML file.
+                    // If the source had an explicit tag and detection agrees, keep it
                     if let explicit = input.explicitLanguage, !explicit.isEmpty {
                         return explicit == detected ? explicit : detected
                     }
                     return detected
                 }
             }
-            // Fall back to explicit source language (item or OPML header)
+            // Fall back to explicit source language (OPML header)
             if let lang = input.explicitLanguage, !lang.isEmpty {
                 return lang
             }
@@ -1016,7 +1026,7 @@ final class FeedStore {
         activeContentType = .all
         activeMood = .all
         activeLanguages = []
-        Settings.hasUserClearedLanguageFilter = true
+        hasUserClearedLanguageFilter = true
         cachedTaxonomyNodeIDs = []
         cachedTaxonomyFeedURLs = []
         scheduleFilterPersistence(generation: generation)
@@ -1310,10 +1320,14 @@ final class FeedStore {
         let detectionInputs: [LanguageDetectionInput] = actualNew.map { item in
             let itemLang = Self.normalizedLanguageCode(item.language)
             let sourceLang = Self.normalizedLanguageCode(registry.languageFor(sourceURL: item.sourceURL))
+            // Item-level language is authoritative; source-level (OPML) can
+            // be overridden by detection when content text disagrees.
+            let hasItemLang = itemLang != nil
             return LanguageDetectionInput(
                 title: item.title,
                 excerpt: item.excerpt,
-                explicitLanguage: itemLang ?? sourceLang
+                explicitLanguage: itemLang ?? sourceLang,
+                hasItemLanguage: hasItemLang
             )
         }
         let resolvedLanguages: [String?] = await Task.detached(priority: .utility) {

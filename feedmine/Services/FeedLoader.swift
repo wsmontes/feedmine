@@ -579,6 +579,8 @@ final class FeedLoader {
         } else {
             langs.insert(code)
         }
+        // User explicitly chose a language — clear the "all languages" flag
+        store.hasUserClearedLanguageFilter = false
         store.setFilter(region: store.activeRegion,
                         nodeIDs: store.activeNodeIDs,
                         type: store.activeContentType, mood: store.activeMood,
@@ -627,7 +629,7 @@ final class FeedLoader {
     /// videos/articles from every language.
     private func resolvedLanguagesForFilter(_ selected: Set<String>) -> Set<String> {
         if !selected.isEmpty { return selected }
-        if Settings.hasUserClearedLanguageFilter { return [] }
+        if store.hasUserClearedLanguageFilter { return [] }
         guard let deviceLang = FeedStore.normalizedLanguageCode(
             Locale.current.language.languageCode?.identifier
         ) else { return [] }
