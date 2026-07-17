@@ -289,4 +289,43 @@ final class TaxonomyStoreTests: XCTestCase {
         let loaded = store.loadFromCache(sources: setB)
         XCTAssertFalse(loaded, "Cache must be rejected when region changes even though URL, count, and category are identical")
     }
+
+    // MARK: - Warm-Cache nodeToFeedURLs Rebuild
+
+    func testWarmCacheRestoresSubtreeFeedURLs() async throws {
+        // Build taxonomy with sources spread across nodes
+        let sources = [
+            FeedSource(title: "Folha", url: "https://folha.com/feed",
+                       category: "News", region: "countries/brazil", mediaKind: .text),
+            FeedSource(title: "Globo", url: "https://globo.com/feed",
+                       category: "Sports", region: "countries/brazil", mediaKind: .text),
+            FeedSource(title: "Sprudge", url: "https://sprudge.com/feed",
+                       category: "Coffee News", region: "global", mediaKind: .text),
+        ]
+        let store = TaxonomyStore()
+        await store.build(from: sources)
+
+        // Cold-path: feedURLs(inSubtreesOf:) should return correct URLs.
+        // Node IDs are hierarchical paths — drop the leaf (category) to get the country node.
+        let folhaLeafID = try XCTUnwrap(store.nodeID(for: "https://folha.com/feed"))
+        let brazilNodeID = folhaLeafID.components(separatedBy: "/").dropLast().joined(separator: "/")
+        XCTAssertTrue(brazilNodeID.hasSuffix("brazil"), "Parent of leaf node should be brazil country node")
+
+        let coldURLs = store.feedURLs(inSubtreesOf: [brazilNodeID])
+        XCTAssertEqual(coldURLs.count, 2, "Cold path should return 2 Brazil feed URLs")
+        XCTAssertTrue(coldURLs.contains(OPMLParser.normalizeURL("https://folha.com/feed")))
+        XCTAssertTrue(coldURLs.contains(OPMLParser.normalizeURL("https://globo.com/feed")))
+
+        // Reload from cache (warm path)
+        let warmStore = TaxonomyStore()
+        let cacheHit = warmStore.loadFromCache(sources: sources)
+        XCTAssertTrue(cacheHit, "Cache load should succeed with same source set")
+
+        // Warm-path: feedURLs(inSubtreesOf:) must return the same results
+        let warmURLs = warmStore.feedURLs(inSubtreesOf: [brazilNodeID])
+        XCTAssertEqual(warmURLs.count, coldURLs.count,
+                       "Warm cache should return same feed URL count as cold build")
+        XCTAssertEqual(warmURLs, coldURLs,
+                       "Warm cache should restore identical nodeToFeedURLs including bottom-up propagation")
+    }
 }

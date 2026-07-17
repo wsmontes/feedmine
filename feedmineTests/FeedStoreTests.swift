@@ -1093,4 +1093,67 @@ final class FeedStoreTests: XCTestCase {
         // App must not crash, loadingState must settle
         XCTAssertEqual(store.loadingState, .idle, "Loading state must settle even with empty results")
     }
+
+    // MARK: - Bookmark Stamping
+
+    func testStampedPreservesBookmarkStateFromRealIDs() {
+        // Verify the stamping function passes through real bookmark IDs (not [])
+        let item = FeedItem(id: "bm-test", sourceTitle: "S", sourceURL: "https://x.com/feed",
+                           category: "News", title: "Test", excerpt: "E",
+                           url: "https://x.com/1", imageURL: nil, publishedAt: Date(),
+                           audioURL: nil, duration: nil, region: "global")
+
+        // With real bookmark IDs — item should be stamped as bookmarked
+        let stamped = item.stamped(readItemIDs: [], bookmarkItemIDs: ["bm-test"])
+        XCTAssertTrue(stamped.isBookmarked, "Item whose ID is in bookmarkItemIDs must be stamped as bookmarked")
+
+        // With empty bookmark IDs — item should NOT be bookmarked
+        let notBookmarked = item.stamped(readItemIDs: [], bookmarkItemIDs: [])
+        XCTAssertFalse(notBookmarked.isBookmarked, "Item stamped with empty set must not be bookmarked")
+
+        // With unrelated bookmark IDs — item should NOT be bookmarked
+        let unrelated = item.stamped(readItemIDs: [], bookmarkItemIDs: ["other-id"])
+        XCTAssertFalse(unrelated.isBookmarked, "Item whose ID is not in bookmarkItemIDs must not be bookmarked")
+    }
+
+    // MARK: - HTTP Legacy Alias Compatibility
+
+    func testInMemoryFilterMatchesHTTPSourceForHTTPItem() async throws {
+        let store = try FeedStore(inMemory: true)
+
+        // Register source with https URL (as normalizeURL produces)
+        let source = FeedSource(title: "Legacy Blog", url: "https://legacy.com/feed",
+                                category: "News", region: "global")
+        store.registry.sources = [source]
+        await TaxonomyStore.shared.build(from: [source])
+        let nodeID = try XCTUnwrap(TaxonomyStore.shared.nodeID(for: "https://legacy.com/feed"))
+
+        // Activate taxonomy filter — this populates cachedTaxonomyFeedURLs
+        store.setFilter(region: nil, nodeIDs: [nodeID], type: .all, mood: .all, languages: [])
+
+        // Item with http:// URL (legacy row from v1-v5 era)
+        let legacyItem = FeedItem(id: "http-item", sourceTitle: "S",
+                                  sourceURL: "http://legacy.com/feed",
+                                  category: "News", title: "Legacy", excerpt: "E",
+                                  url: "http://legacy.com/1", imageURL: nil, publishedAt: Date(),
+                                  audioURL: nil, duration: nil, region: "global")
+
+        // applyFilters must not reject http:// items when https:// is in taxonomy
+        let filtered = store.applyFilters([legacyItem])
+        XCTAssertEqual(filtered.count, 1,
+                       "http:// legacy source_url must survive in-memory filter when https:// counterpart is in taxonomy")
+    }
+
+    func testRegistrySourceLookupHandlesHTTPSchemeDifference() {
+        let store = try! FeedStore(inMemory: true)
+
+        // Source registered with https
+        let source = FeedSource(title: "Test", url: "https://example.com/feed",
+                                category: "News", region: "global")
+        store.registry.sources = [source]
+
+        // Legacy item with http:// — should still match via normalizeURL
+        let isEnabled = store.registry.isSourceEnabled("http://example.com/feed")
+        XCTAssertTrue(isEnabled, "Registry must match http:// source URLs via normalizeURL")
+    }
 }
