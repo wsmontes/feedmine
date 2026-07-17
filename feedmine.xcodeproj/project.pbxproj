@@ -134,6 +134,7 @@
 		E5A3540B2D76BDB78494BEF8 /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35537050ED8F38737F96004E /* InputParser.swift */; };
 		E66C50294CB5B39889F7B69B /* BookmarkBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C154C823E5BF5A7ECB27A4E /* BookmarkBoxesView.swift */; };
 		E692DD4F042EB2DB7DCCDFDB /* BookmarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C800202327D772D477468 /* BookmarkStore.swift */; };
+		DB2C330E13894EE3A6FCB3C4 /* UserStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39916193C0AF4385A15ECF37 /* UserStateStore.swift */; };
 		E78315972561825A040080EF /* fi.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A3E6D1E7A0B0AC3D6A4F9BD /* fi.json */; };
 		E914E397420D1E5534EA112B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 99C864B082460925B45F2DEA /* Localizable.xcstrings */; };
 		E944BAE9B239561A5C3204D0 /* hi.json in Resources */ = {isa = PBXBuildFile; fileRef = F50E915B626DEC97299D8F2D /* hi.json */; };
@@ -246,6 +247,7 @@
 		7A0F8EDFCD13C1A5671BDEBF /* ca.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ca.json; sourceTree = "<group>"; };
 		7B6C4C8CEA78642249B492C4 /* tr.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tr.json; sourceTree = "<group>"; };
 		7C1C800202327D772D477468 /* BookmarkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStore.swift; sourceTree = "<group>"; };
+		39916193C0AF4385A15ECF37 /* UserStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateStore.swift; sourceTree = "<group>"; };
 		7DA32044B1E11A17524653C0 /* zh-Hans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "zh-Hans.json"; sourceTree = "<group>"; };
 		7FDA9A61FE5E6C63980C0477 /* es-419.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-419.json"; sourceTree = "<group>"; };
 		85BC7361CDC09C1858857316 /* CircadianEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircadianEngine.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				7211F172980C9D80444C575E /* AppSettings.swift */,
 				01C4ABF16D3BCCA6595D02EA /* AudioPlayerManager.swift */,
 				7C1C800202327D772D477468 /* BookmarkStore.swift */,
+				39916193C0AF4385A15ECF37 /* UserStateStore.swift */,
 				85BC7361CDC09C1858857316 /* CircadianEngine.swift */,
 				A8B50077DA1D77D2A8954743 /* DesignTokens.swift */,
 				3BED6C6B303B501C9F3EE980 /* ExportEngine.swift */,
@@ -840,6 +843,7 @@
 				E66C50294CB5B39889F7B69B /* BookmarkBoxesView.swift in Sources */,
 				695B8BB470F71442A699C5F3 /* BookmarkList.swift in Sources */,
 				E692DD4F042EB2DB7DCCDFDB /* BookmarkStore.swift in Sources */,
+				DB2C330E13894EE3A6FCB3C4 /* UserStateStore.swift in Sources */,
 				785D6E99FD2AB46F9137E9B6 /* BookmarksSheetView.swift in Sources */,
 				9AAE00512233445566778899 /* CatalogExploreView.swift in Sources */,
 				11D1CE76F9C9C6FB02903C60 /* CircadianEngine.swift in Sources */,

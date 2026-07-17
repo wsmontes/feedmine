@@ -14,6 +14,7 @@ final class FeedStore {
     let fetcher = RSSFetcher()
     let prefetcher = ImagePrefetcher()
     let networkMonitor = NetworkMonitor()
+    let userRepo: UserStateStore
     let bookmarkStore: BookmarkStore
     let searchEngine: SearchEngine
     let whatsNewManager: WhatsNewManager
@@ -433,9 +434,25 @@ final class FeedStore {
             self.db = try DatabaseQueue(path: Self.dbPath, configuration: Self.dbConfig)
         }
         try Self.migrate(db)
-        self.bookmarkStore = BookmarkStore(db: db)
+        // user.sqlite — owns bookmark identity, survives catalog rebuilds
+        self.userRepo = try UserStateStore(inMemory: inMemory)
+        self.bookmarkStore = BookmarkStore(userDB: userRepo.db, contentDB: db)
         self.searchEngine = SearchEngine(db: db)
         self.whatsNewManager = WhatsNewManager(db: db)
+        // Migrate legacy bookmark data from feedmine.sqlite → user.sqlite
+        // if this is the first launch after the split.
+        if !inMemory {
+            Task { [weak self] in
+                guard let self else { return }
+                do {
+                    if try self.userRepo.needsLegacyMigration(legacyDB: self.db) {
+                        try await self.userRepo.migrateFromLegacy(legacyDB: self.db)
+                    }
+                } catch {
+                    Log.db.error("Bookmark migration to user.sqlite failed: \(error)")
+                }
+            }
+        }
         // Create default "Favorites" list if not exists
         try? db.write { db in
             let count = try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM bookmark_list WHERE is_default = 1") ?? 0
