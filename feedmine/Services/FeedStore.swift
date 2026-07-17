@@ -351,25 +351,43 @@ final class FeedStore {
     func throttledReservoirAppend(_ items: [FeedItem]) {
         pendingReservoirItems.append(contentsOf: items)
         reservoirFlushTask?.cancel()
-        // Flush immediately if large batch (user might be scrolling)
+        // Flush immediately if large batch (user might be scrolling).
+        // Schedule via reservoirFlushTask so that flushPendingReservoir()
+        // can await it when a pipeline op needs ordering guarantees.
         if pendingReservoirItems.count >= 100 {
-            flushPendingReservoirFireAndForget()
+            reservoirFlushTask = Task { [weak self] in
+                guard let self else { return }
+                self.reservoirFlushTask = nil
+                await self.flushPendingReservoir()
+            }
             return
         }
         reservoirFlushTask = Task { [weak self] in
             try? await Task.sleep(for: Self.reservoirFlushInterval)
             guard !Task.isCancelled, let self else { return }
-            self.flushPendingReservoirFireAndForget()
+            self.reservoirFlushTask = nil
+            await self.flushPendingReservoir()
         }
     }
 
     /// Flush pending reservoir items — interleave + append — and return when
     /// the items are fully committed to the reservoir. Await this before any
     /// pipeline operation (.refresh, .append) that must see the new items.
+    ///
+    /// Drains any scheduled `reservoirFlushTask` before proceeding so that
+    /// items batched by the throttled path are always committed before a
+    /// refresh sees them. The task body clears its own reference before
+    /// calling us, preventing a circular await.
     private func flushPendingReservoir() async {
+        // Await any scheduled flush task that hasn't started executing yet.
+        // (Tasks that already started clear reservoirFlushTask before calling us.)
+        if let task = reservoirFlushTask {
+            reservoirFlushTask = nil
+            await task.value
+        }
+
         guard !pendingReservoirItems.isEmpty else { return }
         let batch = pendingReservoirItems
-        pendingReservoirItems = []
 
         // Compute interleave off the main actor — this is the expensive part
         // (O(n × sources) with multiple spread passes). Only the final
@@ -379,7 +397,10 @@ final class FeedStore {
         let regionMap = reservoir.sourceRegionMap
         let visibleIDs = Set(reservoir.visibleItems.map(\.id))
         let trulyNew = batch.filter { !visibleIDs.contains($0.id) }
-        guard !trulyNew.isEmpty else { return }
+        guard !trulyNew.isEmpty else {
+            pendingReservoirItems = []
+            return
+        }
 
         let interleaved = await Task.detached(priority: .userInitiated) {
             Reservoir.interleaveOffMain(
@@ -387,20 +408,19 @@ final class FeedStore {
                 surfacedTimestamps: surfacedTs, sourceRegionMap: regionMap
             )
         }.value
+
+        // Drain the batch only after the interleave completes — otherwise a
+        // concurrent caller during the suspension would see an empty queue
+        // and proceed without waiting for the in-flight items.
+        let batchIDs = Set(batch.map(\.id))
+        pendingReservoirItems.removeAll { batchIDs.contains($0.id) }
+
         self.reservoir.appendPreInterleaved(interleaved)
         if !self.isSearching && self.visibleItems.isEmpty && !self.reservoir.reservoir.isEmpty {
             self.reservoir.moveToVisible(count: Reservoir.pageSize)
             self.setVisibleItems(self.applyFilters(self.reservoir.visibleItems))
         }
         self.reservoirCount = self.reservoir.reservoirCount
-    }
-
-    /// Fire-and-forget wrapper — use in throttled/debounced paths where the
-    /// caller does not need to wait for the flush to complete.
-    private func flushPendingReservoirFireAndForget() {
-        Task { [weak self] in
-            await self?.flushPendingReservoir()
-        }
     }
 
     // MARK: - Init
