@@ -1,47 +1,55 @@
-# Task 1 Report: Database Migration v7 — Language Column
+# Task 1 Report: CatalogBrowserViewModel
 
-## Status
+## Status: DONE
 
-DONE
+## File Created
 
-## Summary
+`/Users/wagnermontes/Documents/GitHub/feedmine/feedmine/FeedEngine/CatalogBrowserViewModel.swift`
 
-Added a v7 GRDB migration that adds a `language TEXT` column and `idx_item_language` index to the `feed_item` table, along with a migration test.
+## Commit SHA(s)
 
-## What was done
+No commits yet — working tree only, as specified.
 
-1. **Migration added** in `FeedStore.swift` — registered `"v7_language"` migration after the v6 block, which:
-   - Adds `language TEXT` column to `feed_item` via `db.alter(table:)`
-   - Creates index `idx_item_language` on the `language` column
+## Build Verification
 
-2. **Build verification** — `xcodebuild build` completed with `** BUILD SUCCEEDED **`
+- `xcodebuild -scheme feedmine -sdk iphonesimulator build` — **BUILD SUCCEEDED**
+- No warnings emitted for the new file.
 
-3. **Test file created** — `feedmineTests/FeedStoreTests.swift` with `testV7MigrationAddsLanguageColumn()` that:
-   - Creates an in-memory `FeedStore` (run through full migration)
-   - Inserts a row including the new `language` column
-   - Reads back the language value and asserts it equals `"en"`
+## Implementation Summary
 
-4. **Xcode project updated** — added `FeedStoreTests.swift` to the `feedmineTests` target in `project.pbxproj` (file reference, build file, group, and sources build phase)
+The ViewModel wraps `FeedEngineProtocol` and provides:
 
-5. **Test verification** — test passes cleanly: `** TEST SUCCEEDED **` (1 test, 0 failures)
+### Public API
 
-6. **Regression check** — all existing tests pass:
-   - `TaxonomyStoreTests`: 11 tests, 0 failures
-   - `ReservoirTests`: 9 tests, 0 failures
+- **Browse**: `loadRoot()`, `navigate(to:)`, `goBack()`, `goToRoot()`, `loadNextPage()`
+- **Search**: `runSearch()`, `loadNextSearchPage()`, `clearSearch()`
+- **Details**: `loadSourceDetails(for:)`, `clearSourceDetails()`
+- **State management**: `clearError()`
 
-## Files changed
+### Computed Properties
 
-- `feedmine/Services/FeedStore.swift` — added v7 migration block (3 lines)
-- `feedmineTests/FeedStoreTests.swift` — new migration test file (22 lines)
-- `feedmine.xcodeproj/project.pbxproj` — added FeedStoreTests to test target (4 entries)
+- `currentNodeID`, `currentNodeName` — derived from `navigationPath`
+- `displaySources` — returns `searchResults` when searching, `sources` otherwise
+- `canLoadMoreBrowse`, `canLoadMoreSearch` — cursor-based, gated by `isSearching`
+- `hasContent` — aggregates `nodes` and `displaySources`
 
-## Commit
+### Required Behaviors Enforced
 
-```
-e8d1babb feat: add v7 migration — language column + index on feed_item
-```
+| Requirement | Implementation |
+|---|---|
+| Browse methods await fetch before returning | All use direct `try await`, no detached `Task` |
+| Browse loading resets state | `resetBrowseState()` clears `nodes`, `sources`, `browseNextCursor`, `estimatedTotalCount` |
+| Search updates only search state | `runSearch()` writes only `searchResults`/`searchNextCursor` |
+| `loadNextPage()` no-ops while searching | Guard: `guard !isSearching, let cursor = browseNextCursor` |
+| `loadNextSearchPage()` no-ops when not searching | Guard: `guard isSearching, let cursor = searchNextCursor` |
+| `clearSearch()` resets all search state | Cancels task, clears text, `isSearching`, results, cursor |
+| Debounce ~300ms | `Task.sleep(300ms)` in `scheduleSearchIfNeeded()`, previous task cancelled |
+| `loadSourceDetails(for:)` sets loadingDetailsSourceID before fetch | Set before do-block, cleared in `defer` |
+| Cursor properties private | `browseNextCursor` and `searchNextCursor` are `private` |
+| `searchTask` `@ObservationIgnored` | Yes, to avoid observing non-Sendable Task |
 
-## Concerns
+## Potential Concerns
 
-- The `language` column is nullable (`.text` with no `NOT NULL` constraint), which is correct for the migration — existing rows will have `NULL` initially.
-- Later tasks are expected to populate this column; consider whether a NOT NULL or default value constraint is needed after backfill.
+1. **No standalone tests yet** — Task 2 will add tests for this ViewModel.
+2. **No wiring** — The ViewModel receives `engine: FeedEngineProtocol` via init. Wiring into the app is deferred to Task 4 (FeedScreen integration).
+3. **Empty search edge case** — `clearSearch()` sets `searchText = ""`, which triggers `didSet` to `scheduleSearchIfNeeded()`. The resulting debounced call to `runSearch()` encounters empty `searchText` and returns early without re-entering `clearSearch()`, avoiding recursive reset.
