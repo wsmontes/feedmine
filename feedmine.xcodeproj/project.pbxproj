@@ -152,6 +152,7 @@
 		0B52C790E53D4510975B9FA5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA91B8FA0E4914823784C8 /* Pagination.swift */; };
 		0BCBCF8A14BA4B2981AAC017 /* CatalogProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261B134CBC04654B78C8CA0 /* CatalogProtocols.swift */; };
 		9AAE10612233445566778899 /* CatalogBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAE10512233445566778899 /* CatalogBrowserViewModel.swift */; };
+		9AAE00512233445566778899 /* CatalogExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAE10712233445566778899 /* CatalogExploreView.swift */; };
 		9AAE00112233445566778899 /* CatalogIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAE10112233445566778899 /* CatalogIdentity.swift */; };
 		9AAE00212233445566778899 /* CatalogInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAE10212233445566778899 /* CatalogInput.swift */; };
 		9AAE00312233445566778899 /* OPMLCatalogScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAE10312233445566778899 /* OPMLCatalogScanner.swift */; };
@@ -325,6 +326,7 @@
 		7DBA91B8FA0E4914823784C8 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		1261B134CBC04654B78C8CA0 /* CatalogProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProtocols.swift; sourceTree = "<group>"; };
 		9AAE10512233445566778899 /* CatalogBrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogBrowserViewModel.swift; sourceTree = "<group>"; };
+		9AAE10712233445566778899 /* CatalogExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogExploreView.swift; sourceTree = "<group>"; };
 		9AAE10112233445566778899 /* CatalogIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogIdentity.swift; sourceTree = "<group>"; };
 		9AAE10212233445566778899 /* CatalogInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogInput.swift; sourceTree = "<group>"; };
 		9AAE10312233445566778899 /* OPMLCatalogScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPMLCatalogScanner.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				0C154C823E5BF5A7ECB27A4E /* BookmarkBoxesView.swift */,
 				BCA74960C61CC910D60AE2AF /* BookmarkBoxPickerView.swift */,
 				E9B75EEA60ABFE02AB66FF3B /* BookmarksSheetView.swift */,
+				9AAE10712233445566778899 /* CatalogExploreView.swift */,
 				B674EA479BAC083355DC6A8B /* ClipboardBanner.swift */,
 				9574FA1A8E4D9517C9776821 /* CollectionManagementView.swift */,
 				5226AA0BD559550AC977BC3C /* ContentFilterView.swift */,
@@ -838,6 +841,7 @@
 				695B8BB470F71442A699C5F3 /* BookmarkList.swift in Sources */,
 				E692DD4F042EB2DB7DCCDFDB /* BookmarkStore.swift in Sources */,
 				785D6E99FD2AB46F9137E9B6 /* BookmarksSheetView.swift in Sources */,
+				9AAE00512233445566778899 /* CatalogExploreView.swift in Sources */,
 				11D1CE76F9C9C6FB02903C60 /* CircadianEngine.swift in Sources */,
 				060D13DBC33E3B088A3DE2E4 /* ClipboardBanner.swift in Sources */,
 				4EB0F987D45E540666175906 /* CollectionManagementView.swift in Sources */,
