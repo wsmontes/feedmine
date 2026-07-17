@@ -4,6 +4,7 @@ struct CountriesListScreen: View {
     @Environment(FeedLoader.self) private var loader
 
     var body: some View {
+        let countries = loader.availableCountries
         List {
             Section {
                 HStack {
@@ -20,7 +21,7 @@ struct CountriesListScreen: View {
             }
 
             Section {
-                ForEach(loader.availableCountries) { country in
+                ForEach(countries) { country in
                     NavigationLink {
                         CountryDetailScreen(country: country)
                     } label: {
@@ -43,8 +44,8 @@ struct CountriesListScreen: View {
                     }
                 }
             } footer: {
-                let total = loader.availableCountries.map(\.feedCount).reduce(0, +)
-                Text("\(loader.availableCountries.count) countries · \(total) feeds")
+                let total = countries.map(\.feedCount).reduce(0, +)
+                Text("\(countries.count) countries · \(total) feeds")
             }
         }
         .navigationTitle("Countries")

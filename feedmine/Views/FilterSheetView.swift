@@ -5,6 +5,7 @@ struct FilterSheetView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
+        let countries = loader.availableCountries
         NavigationStack {
             List {
                 // Clear at top
@@ -36,7 +37,7 @@ struct FilterSheetView: View {
                         HStack {
                             Label("Countries", systemImage: "globe")
                             Spacer()
-                            let enabled = loader.availableCountries.filter { loader.isRegionEnabled($0.region) }.count
+                            let enabled = countries.filter { loader.isRegionEnabled($0.region) }.count
                             Text("\(enabled) on")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)

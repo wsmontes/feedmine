@@ -54,6 +54,12 @@ final class SourceRegistry {
     @ObservationIgnored private var _enabledSources: [FeedSource]?
     @ObservationIgnored private var _allTopicRegions: [String]?
     @ObservationIgnored private var _availableCountries: [Country]?
+    @ObservationIgnored private var _sourcesByRegion: [String: [FeedSource]]?
+    @ObservationIgnored private var _uniqueRegions: Set<String>?
+    @ObservationIgnored private var _countrySources: [FeedSource]?
+    @ObservationIgnored private var _countryRegionKeys: Set<String>?
+    @ObservationIgnored private var activeCountsAreCurrent = false
+    @ObservationIgnored private var saveStateTask: Task<Void, Never>?
 
     // Debug counters
     private(set) var opmlFileCount = 0
@@ -92,9 +98,53 @@ final class SourceRegistry {
         _enabledSources = nil
         _allTopicRegions = nil
         _availableCountries = nil
+        _sourcesByRegion = nil
+        _uniqueRegions = nil
+        _countrySources = nil
+        _countryRegionKeys = nil
         activeCount.removeAll()
+        activeCountsAreCurrent = false
         sourceRevision &+= 1
         enablementRevision &+= 1
+    }
+
+    private var sourcesByRegion: [String: [FeedSource]] {
+        if let cached = _sourcesByRegion { return cached }
+        let grouped = Dictionary(grouping: sources, by: \.region)
+        _sourcesByRegion = grouped
+        return grouped
+    }
+
+    private var uniqueRegions: Set<String> {
+        if let cached = _uniqueRegions { return cached }
+        let regions = Set(sources.map(\.region))
+        _uniqueRegions = regions
+        return regions
+    }
+
+    private var countrySources: [FeedSource] {
+        if let cached = _countrySources { return cached }
+        let country = sources.filter(\.isCountryFeed)
+        _countrySources = country
+        return country
+    }
+
+    private var countryRegionKeys: Set<String> {
+        if let cached = _countryRegionKeys { return cached }
+        let keys = Set(countrySources.map { Self.regionKey($0.region) })
+        _countryRegionKeys = keys
+        return keys
+    }
+
+    func sources(inRegionTree region: String) -> [FeedSource] {
+        let prefix = "\(region)/"
+        return uniqueRegions
+            .filter { $0 == region || $0.hasPrefix(prefix) }
+            .flatMap { sourcesByRegion[$0] ?? [] }
+    }
+
+    func sourceURLs(inRegionTree region: String) -> [String] {
+        sources(inRegionTree: region).map(\.url)
     }
 
     /// True only when the source itself is explicitly turned off via its own
@@ -130,13 +180,15 @@ final class SourceRegistry {
     // MARK: - Group status (O(1) cached)
 
     func status(of key: String) -> NodeStatus {
+        ensureActiveCounts()
         if !disabled.contains(key) { return .on }
         let count = activeCount[key] ?? 0
         return count > 0 ? .partial(activeCount: count) : .off
     }
 
     func activeCount(for key: String) -> Int {
-        activeCount[key] ?? 0
+        ensureActiveCounts()
+        return activeCount[key] ?? 0
     }
 
     // MARK: - Toggle actions
@@ -144,26 +196,22 @@ final class SourceRegistry {
     func toggleRegion(_ region: String) {
         let key = Self.regionKey(region)
         let prefix = "\(region)/"
+        let affectedRegions = uniqueRegions.filter { $0 == region || $0.hasPrefix(prefix) }
+        let affectedRegionKeys = Set(affectedRegions.map(Self.regionKey)).union([key])
         if disabled.contains(key) {
             // Enabling — cascade down to sub-regions
-            disabled.remove(key)
-            for sub in sources.map(\.region) where sub.hasPrefix(prefix) {
-                disabled.remove(Self.regionKey(sub))
-            }
+            disabled.subtract(affectedRegionKeys)
         } else {
             // Disabling — cascade down to sub-regions
-            disabled.insert(key)
-            for sub in sources.map(\.region) where sub.hasPrefix(prefix) {
-                disabled.insert(Self.regionKey(sub))
-            }
+            disabled.formUnion(affectedRegionKeys)
             // Disabling a group clears per-feed overrides beneath it, so the
             // whole region really goes dark.
-            for source in sources where source.region == region || source.region.hasPrefix(prefix) {
+            for source in affectedRegions.flatMap({ sourcesByRegion[$0] ?? [] }) {
                 enabledOverrides.remove(Self.sourceKey(source.url))
             }
         }
         recomputeActiveCounts()
-        saveState()
+        scheduleSaveState()
     }
 
     func toggleCategory(_ category: String) {
@@ -177,11 +225,13 @@ final class SourceRegistry {
             }
         }
         recomputeActiveCounts()
-        saveState()
+        scheduleSaveState()
     }
 
     func toggleSource(_ sourceURL: String) {
+        ensureActiveCounts()
         let key = Self.sourceKey(sourceURL)
+        let wasEnabled = isSourceEnabled(sourceURL)
         if isSourceEnabled(sourceURL) {
             // Turn OFF — drop any override, mark explicitly disabled.
             enabledOverrides.remove(key)
@@ -194,8 +244,13 @@ final class SourceRegistry {
                 enabledOverrides.insert(key)
             }
         }
-        recomputeActiveCounts()
-        saveState()
+        let isEnabled = isSourceEnabled(sourceURL)
+        if wasEnabled != isEnabled, let source = sourceByURL[OPMLParser.normalizeURL(sourceURL)] {
+            applyActiveCountDelta(for: source, delta: isEnabled ? 1 : -1)
+            updateEnabledSourcesCache(source: source, isEnabled: isEnabled)
+            enablementRevision &+= 1
+        }
+        scheduleSaveState()
     }
 
     /// Enable or disable all topic regions in a single batch — one recompute,
@@ -208,7 +263,7 @@ final class SourceRegistry {
             disabled.formUnion(topicKeys)
             // Clear per-feed overrides for all topic sources so the group
             // disable takes full effect.
-            for source in sources where source.region.hasPrefix("topic/") {
+            for source in allTopicRegions.flatMap({ sourcesByRegion[$0] ?? [] }) {
                 enabledOverrides.remove(Self.sourceKey(source.url))
             }
         }
@@ -218,48 +273,49 @@ final class SourceRegistry {
             disabled.remove(globalKey)
         } else {
             disabled.insert(globalKey)
-            for source in sources where source.region == "global" {
+            for source in sourcesByRegion["global"] ?? [] {
                 enabledOverrides.remove(Self.sourceKey(source.url))
             }
         }
         recomputeActiveCounts()
-        saveState()
+        scheduleSaveState()
     }
 
     func toggleAllCountries() {
-        let countryKeys = Set(sources
-            .filter { $0.isCountryFeed }
-            .map { $0.region }
-            .map { Self.regionKey($0) })
+        let countryKeys = countryRegionKeys
         let anyOn = countryKeys.contains { !disabled.contains($0) }
         if anyOn {
             disabled.formUnion(countryKeys)
-            for source in sources where source.region.hasPrefix("countries/") {
+            for source in countrySources {
                 enabledOverrides.remove(Self.sourceKey(source.url))
             }
         } else {
             disabled.subtract(countryKeys)
         }
         recomputeActiveCounts()
-        saveState()
+        scheduleSaveState()
     }
 
     var isAnyCountryEnabled: Bool {
-        sources.contains { $0.isCountryFeed && isSourceEnabled($0.url) }
+        countrySources.contains { isSourceEnabled($0.url) }
     }
 
     // MARK: - Enabled sources
 
     var enabledSources: [FeedSource] {
         if let cached = _enabledSources { return cached }
-        let enabled = sources.filter { isSourceEnabled($0.url) }
-        _enabledSources = enabled
-        return enabled
+        recomputeActiveCounts()
+        return _enabledSources ?? []
     }
 
     var sourceCount: Int { sources.count }
 
     // MARK: - Cache
+
+    private func ensureActiveCounts() {
+        guard !activeCountsAreCurrent else { return }
+        recomputeActiveCounts()
+    }
 
     private func recomputeActiveCounts() {
         activeCount.removeAll()
@@ -267,15 +323,43 @@ final class SourceRegistry {
         enabled.reserveCapacity(sources.count)
         for source in sources where isSourceEnabled(source.url) {
             enabled.append(source)
-            activeCount[Self.regionKey(source.region), default: 0] += 1
-            let parts = source.region.split(separator: "/").map(String.init)
-            if parts.count >= 2, parts[0] == "countries" {
-                activeCount[Self.regionKey(parts.prefix(2).joined(separator: "/")), default: 0] += 1
-            }
-            activeCount[Self.categoryKey(source.category), default: 0] += 1
+            applyActiveCountDelta(for: source, delta: 1)
         }
         _enabledSources = enabled
+        activeCountsAreCurrent = true
         enablementRevision &+= 1
+    }
+
+    private func applyActiveCountDelta(for source: FeedSource, delta: Int) {
+        for key in activeCountKeys(for: source) {
+            let updated = (activeCount[key] ?? 0) + delta
+            if updated > 0 {
+                activeCount[key] = updated
+            } else {
+                activeCount.removeValue(forKey: key)
+            }
+        }
+    }
+
+    private func activeCountKeys(for source: FeedSource) -> [String] {
+        var keys = [Self.regionKey(source.region), Self.categoryKey(source.category)]
+        let parts = source.region.split(separator: "/").map(String.init)
+        if parts.count >= 2, parts[0] == "countries" {
+            keys.append(Self.regionKey(parts.prefix(2).joined(separator: "/")))
+        }
+        return keys
+    }
+
+    private func updateEnabledSourcesCache(source: FeedSource, isEnabled: Bool) {
+        guard var enabledSources = _enabledSources else { return }
+        let normalizedURL = OPMLParser.normalizeURL(source.url)
+        if isEnabled {
+            guard !enabledSources.contains(where: { OPMLParser.normalizeURL($0.url) == normalizedURL }) else { return }
+            enabledSources.append(source)
+        } else {
+            enabledSources.removeAll { OPMLParser.normalizeURL($0.url) == normalizedURL }
+        }
+        _enabledSources = enabledSources
     }
 
     // MARK: - Persistence
@@ -283,6 +367,15 @@ final class SourceRegistry {
     private func saveState() {
         UserDefaults.standard.set(Array(disabled), forKey: Keys.toggleDisabled)
         UserDefaults.standard.set(Array(enabledOverrides), forKey: Keys.toggleEnabledOverrides)
+    }
+
+    private func scheduleSaveState() {
+        saveStateTask?.cancel()
+        saveStateTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(150))
+            guard !Task.isCancelled, let self else { return }
+            self.saveState()
+        }
     }
 
     func loadState() {

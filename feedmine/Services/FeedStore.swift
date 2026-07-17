@@ -245,6 +245,7 @@ final class FeedStore {
     /// in persistFetchedItems so each item is counted exactly once regardless
     /// of how many times applyFilters runs on the same items.
     func applyFilters(_ items: [FeedItem]) -> [FeedItem] {
+        refreshCachedTaxonomyFeedURLsIfNeeded()
         let region = activeRegion
         let contentType = filterContentType
         let languages = activeLanguages
@@ -337,6 +338,8 @@ final class FeedStore {
     private var backgroundRefreshTask: Task<Void, Never>?
     private var regionToggleTask: Task<Void, Never>?
     private var filterDebounceTask: Task<Void, Never>?
+    private var filterPersistenceTask: Task<Void, Never>?
+    private var sourceEnablementRefreshTask: Task<Void, Never>?
     private var urgentFetchTask: Task<Void, Never>?
 
     // MARK: - Throttled reservoir append
@@ -868,6 +871,21 @@ final class FeedStore {
         Settings.filterSetAt = Date().timeIntervalSince1970
     }
 
+    private func scheduleFilterPersistence(generation: Int64) {
+        filterPersistenceTask?.cancel()
+        filterPersistenceTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(100))
+            guard !Task.isCancelled, let self, generation == self.filterGeneration else { return }
+            self.persistFilters()
+        }
+    }
+
+    private func refreshCachedTaxonomyFeedURLsIfNeeded() {
+        guard activeNodeIDs != cachedTaxonomyNodeIDs else { return }
+        cachedTaxonomyNodeIDs = activeNodeIDs
+        cachedTaxonomyFeedURLs = TaxonomyStore.shared.feedURLs(inSubtreesOf: activeNodeIDs)
+    }
+
     func restoreFilters() {
         let hasActiveFilters = Settings.filterRegion != nil
             || !Settings.filterTaxonomyNodes.isEmpty
@@ -937,15 +955,9 @@ final class FeedStore {
             activeLanguages = Self.normalizedLanguageSet(langs)
         }
 
-        // Rebuild taxonomy URL cache when selection changes (O(1) filter instead of O(n x m))
-        if activeNodeIDs != cachedTaxonomyNodeIDs {
-            cachedTaxonomyNodeIDs = activeNodeIDs
-            cachedTaxonomyFeedURLs = TaxonomyStore.shared.feedURLs(inSubtreesOf: activeNodeIDs)
-        }
+        Log.feed.info("[TaxonomyTrace] setFilter gen=\(generation) region=\(region ?? "nil") nodeIDs=\(self.activeNodeIDs)")
 
-        Log.feed.info("[TaxonomyTrace] setFilter gen=\(generation) region=\(region ?? "nil") nodeIDs=\(self.activeNodeIDs) taxonomyURLs=\(self.cachedTaxonomyFeedURLs.count)")
-
-        persistFilters()
+        scheduleFilterPersistence(generation: generation)
 
         // Cancel progressive fetch — waste of budget when user wants specific content
         progressiveFetchTask?.cancel()
@@ -960,6 +972,8 @@ final class FeedStore {
         filterDebounceTask = Task { [weak self] in
             try? await Task.sleep(for: .milliseconds(300))
             guard !Task.isCancelled, let self else { return }
+
+            self.refreshCachedTaxonomyFeedURLsIfNeeded()
 
             // Kick off urgent fetch for taxonomy sources
             let priorityURLs = self.cachedTaxonomyFeedURLs
@@ -981,6 +995,9 @@ final class FeedStore {
     }
 
     func clearAllFilters() {
+        filterGeneration &+= 1
+        let generation = filterGeneration
+
         loadingState = .refreshing
         activeRegion = nil
         activeNodeIDs = []
@@ -989,10 +1006,20 @@ final class FeedStore {
         activeLanguages = []
         cachedTaxonomyNodeIDs = []
         cachedTaxonomyFeedURLs = []
-        persistFilters()
-        // Content on screen is untouchable. Clear everything, reload fresh.
-        refreshWhatsNew()
-        applyUpdate(.flush())
+        scheduleFilterPersistence(generation: generation)
+
+        progressiveFetchTask?.cancel()
+        urgentFetchTask?.cancel()
+        isUrgentFetching = false
+
+        filterDebounceTask?.cancel()
+        filterDebounceTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(100))
+            guard !Task.isCancelled, let self, generation == self.filterGeneration else { return }
+            // Content on screen is untouchable. Clear everything, reload fresh.
+            self.refreshWhatsNew()
+            self.applyUpdate(.flush(generation: generation))
+        }
     }
 
     // MARK: - Search
@@ -1139,7 +1166,18 @@ final class FeedStore {
     func toggleCategory(_ category: String) {
         registry.toggleCategory(category)
         // Category toggle is structural — reload feed
-        applyUpdate(.flush())
+        scheduleSourceEnablementRefresh()
+    }
+
+    func scheduleSourceEnablementRefresh() {
+        sourceEnablementRefreshTask?.cancel()
+        sourceEnablementRefreshTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(300))
+            guard !Task.isCancelled, let self else { return }
+            self.loadingState = .refreshing
+            self.refreshWhatsNew()
+            self.applyUpdate(.flush())
+        }
     }
 
     /// Consecutive failures for a source URL.
@@ -1338,6 +1376,7 @@ final class FeedStore {
 
     private func fetchNextBatch() async {
         guard !isSearching else { return }
+        refreshCachedTaxonomyFeedURLsIfNeeded()
         let sourcesByRegion = Dictionary(grouping: registry.enabledSources, by: \.region)
         let contentTypeStr: String? = switch activeContentType {
         case .video: "video"; case .audio: "audio"; case .text: "text"; default: nil
@@ -1623,6 +1662,7 @@ final class FeedStore {
 
     private func reloadFromSQLite(prepend: [FeedItem] = [], skipRead: Bool = false, generation: Int64 = 0) async {
         guard !isSearching else { return }
+        refreshCachedTaxonomyFeedURLsIfNeeded()
         let region = activeRegion
         let contentType = activeContentType
         let languages = activeLanguages
@@ -1878,9 +1918,7 @@ final class FeedStore {
     func toggleRegion(_ region: String) {
         let wasDisabled = registry.status(of: SourceRegistry.regionKey(region)) == .off
         // Match exact region + sub-regions (e.g. "countries/brazil/sao-paulo")
-        let sourceURLs = registry.sources.filter {
-            $0.region == region || $0.region.hasPrefix(region + "/")
-        }.map(\.url)
+        let sourceURLs = registry.sourceURLs(inRegionTree: region)
         registry.toggleRegion(region)
         if wasDisabled {
             // Enabling: seed fresh content then reload.
@@ -1945,8 +1983,7 @@ final class FeedStore {
             // Enabling all countries — flush and reload from SQLite so
             // country content appears immediately.
             resetWhatsNewBaseline()
-            refreshWhatsNew()
-            applyUpdate(.flush())
+            scheduleSourceEnablementRefresh()
         }
         reservoirCount = reservoir.reservoirCount
     }

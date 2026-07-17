@@ -51,6 +51,7 @@ final class FeedLoader {
     var isUrgentFetching: Bool { store.isUrgentFetching }
     var catalogDiagnosticsStatus = FeedEngineCatalogDiagnosticsStatus.idle
     private var catalogDiagnosticsTask: Task<Void, Never>?
+    private var filterCacheWarmupTask: Task<Void, Never>?
 
     // MARK: - Date Sections
 
@@ -502,9 +503,21 @@ final class FeedLoader {
         await refreshBookmarkLists()
         await refreshBookmarkState()
         await refreshActiveSearchState()
+        scheduleFilterCacheWarmup()
         #if DEBUG || INSTRUMENTATION
         scheduleCatalogDiagnosticsIfNeeded()
         #endif
+    }
+
+    private func scheduleFilterCacheWarmup() {
+        filterCacheWarmupTask?.cancel()
+        filterCacheWarmupTask = Task { [weak self] in
+            try? await Task.sleep(for: .seconds(2))
+            guard !Task.isCancelled, let self else { return }
+            _ = self.availableCountries
+            _ = self.availableLanguages
+            _ = self.isGlobalFeedsEnabled
+        }
     }
 
     #if DEBUG || INSTRUMENTATION
@@ -641,7 +654,6 @@ final class FeedLoader {
 
     func toggleRegion(_ region: String) {
         store.toggleRegion(region)
-        Task { await loadWhatsNew() }
     }
 
     func clearToggleMessage() {
@@ -649,7 +661,6 @@ final class FeedLoader {
     }
     func toggleAllCountries() {
         store.toggleAllCountries()
-        Task { await loadWhatsNew() }
     }
     func toggleGlobalFeeds() {
         // Single batch operation: recompute counts + persist once for all
@@ -657,7 +668,7 @@ final class FeedLoader {
         let anyOn = isGlobalFeedsEnabled
         store.registry.setTopicRegionsEnabled(!anyOn)
         store.resetWhatsNewBaseline()
-        Task { await loadWhatsNew() }
+        store.scheduleSourceEnablementRefresh()
     }
     func toggleSource(_ sourceURL: String) { store.toggleSource(sourceURL) }
     /// True if the region is not explicitly disabled. Partial (disabled but

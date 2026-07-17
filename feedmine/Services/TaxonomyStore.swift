@@ -32,6 +32,7 @@ final class TaxonomyStore {
 
     /// parentID → [childID] index, rebuilt during build(). Makes children(of:) O(1).
     private var childrenIndex: [String: [String]] = [:]
+    @ObservationIgnored private var sortedChildrenCache: [String: [TaxonomyNode]] = [:]
 
     /// Reverse index: nodeID → all feed URLs in that node's subtree.
     /// Built once during build(from:) and used by feedURLs(inSubtreesOf:)
@@ -55,6 +56,7 @@ final class TaxonomyStore {
         // Clear stale state from previous builds
         feedToNodeID.removeAll()
         childrenIndex.removeAll()
+        sortedChildrenCache.removeAll()
         selectedNodeIDs.removeAll()
         nodeToFeedURLs.removeAll()
 
@@ -288,8 +290,9 @@ final class TaxonomyStore {
 
     /// Direct children of a node, sorted by name.
     func children(of nodeID: String) -> [TaxonomyNode] {
+        if let cached = sortedChildrenCache[nodeID] { return cached }
         guard let childIDs = childrenIndex[nodeID] else { return [] }
-        return childIDs
+        let children = childIDs
             .compactMap { flatIndex[$0] }
             .sorted { lhs, rhs in
                 // Countries last, then alphabetical
@@ -297,6 +300,12 @@ final class TaxonomyStore {
                 if rhs.kind == .country && lhs.kind != .country { return true }
                 return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
             }
+        sortedChildrenCache[nodeID] = children
+        return children
+    }
+
+    func hasChildren(_ nodeID: String) -> Bool {
+        !(childrenIndex[nodeID]?.isEmpty ?? true)
     }
 
     /// All ancestors from root to the given node (inclusive).
@@ -427,6 +436,7 @@ final class TaxonomyStore {
         self.feedToNodeID = cached.feedToNodeID
         // Rebuild children index from restored flatIndex
         self.childrenIndex.removeAll()
+        self.sortedChildrenCache.removeAll()
         for (nodeID, node) in self.flatIndex {
             guard let parentID = node.parentId else { continue }
             self.childrenIndex[parentID, default: []].append(nodeID)

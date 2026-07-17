@@ -109,8 +109,7 @@ private struct TaxonomyLevelView: View {
                 }
 
                 ForEach(children) { child in
-                    let grandchildCount = store.children(of: child.id).count
-                    if grandchildCount > 0 {
+                    if store.hasChildren(child.id) {
                         // Has children — navigate deeper
                         NavigationLink {
                             TaxonomyLevelView(node: child)
