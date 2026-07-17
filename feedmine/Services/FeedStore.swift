@@ -225,18 +225,30 @@ final class FeedStore {
         guard !inputs.isEmpty else { return [] }
         let recognizer = NLLanguageRecognizer()
         return inputs.map { input in
-            // 1. Explicit source language (already resolved, just pass through)
+            let text = (input.title + " " + input.excerpt)
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+            // Run detection when there's enough text, even if the source has
+            // an explicit language — OPML <language> tags can be wrong for
+            // multilingual feeds (e.g. youtube.opml tagged "en" with
+            // content in many languages).
+            if text.count >= 12 {
+                recognizer.reset()
+                recognizer.processString(text)
+                if let detectedRaw = recognizer.dominantLanguage?.rawValue,
+                   let detected = normalizedLanguageCode(detectedRaw) {
+                    // Prefer detection when it contradicts a generic source tag
+                    // like "en" on a multilingual OPML file.
+                    if let explicit = input.explicitLanguage, !explicit.isEmpty {
+                        return explicit == detected ? explicit : detected
+                    }
+                    return detected
+                }
+            }
+            // Fall back to explicit source language (item or OPML header)
             if let lang = input.explicitLanguage, !lang.isEmpty {
                 return lang
             }
-            // 2. On-device detection fallback
-            let text = (input.title + " " + input.excerpt)
-                .trimmingCharacters(in: .whitespacesAndNewlines)
-            guard text.count >= 12 else { return nil }
-            recognizer.reset()
-            recognizer.processString(text)
-            // NLLanguageRecognizer may return BCP 47 tags — normalize to base code
-            return normalizedLanguageCode(recognizer.dominantLanguage?.rawValue)
+            return nil
         }
     }
 
@@ -1004,6 +1016,7 @@ final class FeedStore {
         activeContentType = .all
         activeMood = .all
         activeLanguages = []
+        Settings.hasUserClearedLanguageFilter = true
         cachedTaxonomyNodeIDs = []
         cachedTaxonomyFeedURLs = []
         scheduleFilterPersistence(generation: generation)

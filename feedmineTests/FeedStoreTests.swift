@@ -1181,4 +1181,97 @@ final class FeedStoreTests: XCTestCase {
         let isEnabled = store.registry.isSourceEnabled("http://example.com/feed")
         XCTAssertTrue(isEnabled, "Registry must match http:// source URLs via normalizeURL")
     }
+
+    // MARK: - Language Filter: Content Type + Language Interaction
+
+    func testVideoFilterWithPortugueseLanguageExcludesNonPortuguese() {
+        // pt item + pt selected → passes
+        XCTAssertTrue(FeedStore.languageFilterMatchesNormalized(
+            itemLanguage: "pt", selectedLanguages: ["pt"], deviceLanguage: "en"))
+
+        // tr item + pt selected → blocked
+        XCTAssertFalse(FeedStore.languageFilterMatchesNormalized(
+            itemLanguage: "tr", selectedLanguages: ["pt"], deviceLanguage: "en"))
+
+        // en item + pt selected → blocked
+        XCTAssertFalse(FeedStore.languageFilterMatchesNormalized(
+            itemLanguage: "en", selectedLanguages: ["pt"], deviceLanguage: "en"))
+
+        // nil item + pt selected + device en → blocked (device doesn't match pt)
+        XCTAssertFalse(FeedStore.languageFilterMatchesNormalized(
+            itemLanguage: nil, selectedLanguages: ["pt"], deviceLanguage: "en"))
+    }
+
+    func testEmptyLanguageSelectionShowsAllUnlessUserExplicitlyCleared() {
+        // No language filter → all pass
+        XCTAssertTrue(FeedStore.languageFilterMatchesNormalized(
+            itemLanguage: "tr", selectedLanguages: [], deviceLanguage: "en"))
+        XCTAssertTrue(FeedStore.languageFilterMatchesNormalized(
+            itemLanguage: "pt", selectedLanguages: [], deviceLanguage: "en"))
+        XCTAssertTrue(FeedStore.languageFilterMatchesNormalized(
+            itemLanguage: nil, selectedLanguages: [], deviceLanguage: "en"))
+    }
+
+    func testNilLanguageItemPassesWhenDeviceLanguageSelected() {
+        // nil item + en selected + device en → passes (device matches selection)
+        XCTAssertTrue(FeedStore.languageFilterMatchesNormalized(
+            itemLanguage: nil, selectedLanguages: ["en"], deviceLanguage: "en"))
+    }
+
+    func testDetectedLanguageOverridesWrongSourceLanguage() async {
+        // When source says "en" but content is clearly Japanese,
+        // detection should return "ja" — not blindly trust the source.
+        let store = try! FeedStore(inMemory: true)
+        let source = FeedSource(title: "YouTube Channel", url: "https://youtube.com/feed",
+                                category: "General", region: "global",
+                                language: "en")  // OPML says English
+        store.registry.sources = [source]
+
+        let item = FeedItem(
+            id: "ja-video", sourceTitle: "YouTube",
+            sourceURL: "https://youtube.com/feed",
+            category: "General", title: "日本語のニュースまとめ 2024年最新情報をお届けします",
+            excerpt: "本日は日本国内の最新ニュースを詳しく解説していきます。",
+            url: "https://youtube.com/watch?v=test", imageURL: nil,
+            publishedAt: Date(), region: "global",
+            language: nil  // item has no explicit language — must be detected
+        )
+
+        let result = await store.persistFetchedItems([item])
+        XCTAssertEqual(result.count, 1, "Japanese video should not be discarded")
+        // The detected language should be Japanese, not English from the source
+        if let lang = result.first?.language {
+            XCTAssertEqual(lang, "ja",
+                "Japanese-content video from English-tagged OPML should be detected as ja, got: \(lang)")
+        } else {
+            XCTFail("Language must be resolved for this item")
+        }
+    }
+
+    func testSourceWithCorrectLanguageIsPreserved() async {
+        // When source says "pt" and content IS Portuguese, detection
+        // should confirm "pt" — not override with something else.
+        let store = try! FeedStore(inMemory: true)
+        let source = FeedSource(title: "Brazilian Channel", url: "https://br.com/feed",
+                                category: "News", region: "countries/brazil",
+                                language: "pt")
+        store.registry.sources = [source]
+
+        let item = FeedItem(
+            id: "pt-video", sourceTitle: "Brazilian News",
+            sourceURL: "https://br.com/feed",
+            category: "News", title: "Notícias do Brasil hoje",
+            excerpt: "Confira as principais notícias do Brasil nesta semana.",
+            url: "https://br.com/video", imageURL: nil,
+            publishedAt: Date(), region: "countries/brazil",
+            language: nil
+        )
+
+        let result = await store.persistFetchedItems([item])
+        // Source is pt, content is pt — should stay pt
+        if let lang = result.first?.language {
+            XCTAssertEqual(lang, "pt",
+                "Portuguese content from Portuguese source should stay pt, got: \(lang)")
+        }
+    }
 }

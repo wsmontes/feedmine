@@ -565,10 +565,11 @@ final class FeedLoader {
 
     func toggleNode(_ nodeID: String) {
         TaxonomyStore.shared.toggle(nodeID)
+        let languages = resolvedLanguagesForFilter(store.activeLanguages)
         store.setFilter(region: store.activeRegion,
                         nodeIDs: TaxonomyStore.shared.selectedNodeIDs,
                         type: store.activeContentType, mood: store.activeMood,
-                        languages: store.activeLanguages)
+                        languages: languages)
     }
 
     func toggleLanguage(_ code: String) {
@@ -586,10 +587,11 @@ final class FeedLoader {
 
     func clearTaxonomySelection() {
         TaxonomyStore.shared.clearSelection()
+        let languages = resolvedLanguagesForFilter(store.activeLanguages)
         store.setFilter(region: store.activeRegion,
                         nodeIDs: [],
                         type: store.activeContentType, mood: store.activeMood,
-                        languages: store.activeLanguages)
+                        languages: languages)
     }
 
     /// Backward-compat shim for single-category selection.
@@ -605,16 +607,34 @@ final class FeedLoader {
 
     func selectMood(_ mood: MoodFilter) {
         let newValue = (store.activeMood == mood) ? .all : mood
+        let languages = resolvedLanguagesForFilter(store.activeLanguages)
         store.setFilter(region: store.activeRegion, nodeIDs: store.activeNodeIDs,
                         type: store.activeContentType, mood: newValue,
-                        languages: store.activeLanguages)
+                        languages: languages)
     }
 
     func selectContentType(_ type: ContentType) {
         let newValue = (store.activeContentType == type) ? .all : type
+        let languages = resolvedLanguagesForFilter(store.activeLanguages)
         store.setFilter(region: store.activeRegion, nodeIDs: store.activeNodeIDs,
                         type: newValue, mood: store.activeMood,
-                        languages: store.activeLanguages)
+                        languages: languages)
+    }
+
+    /// Return the user's effective language filter. When no explicit choice
+    /// has been made and the user hasn't opted into "all languages," default
+    /// to the device language so that content-type-only filters don't show
+    /// videos/articles from every language.
+    private func resolvedLanguagesForFilter(_ selected: Set<String>) -> Set<String> {
+        if !selected.isEmpty { return selected }
+        if Settings.hasUserClearedLanguageFilter { return [] }
+        guard let deviceLang = FeedStore.normalizedLanguageCode(
+            Locale.current.language.languageCode?.identifier
+        ) else { return [] }
+        let available = FeedStore.normalizedLanguageSet(
+            store.registry.sources.compactMap(\.language)
+        )
+        return available.contains(deviceLang) ? [deviceLang] : []
     }
 
     func clearAllFilters() {

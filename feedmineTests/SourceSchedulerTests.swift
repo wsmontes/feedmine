@@ -120,15 +120,17 @@ final class SourceSchedulerTests: XCTestCase {
         XCTAssertEqual(batch.first?.url, priorityURL, "Priority URL must be first in batch")
     }
 
-    func testLanguageScoringBoost() {
+    func testLanguageFilterExcludesNonMatchingSources() {
         let scheduler = SourceScheduler()
         let ptURL = "https://pt.com/feed"
         let enURL = "https://en.com/feed"
+        let noLangURL = "https://nolang.com/feed"
 
         let sourcesByRegion: [String: [FeedSource]] = [
             "global": [
                 FeedSource(title: "PT", url: ptURL, category: "News", region: "global", language: "pt"),
                 FeedSource(title: "EN", url: enURL, category: "News", region: "global", language: "en"),
+                FeedSource(title: "NoLang", url: noLangURL, category: "News", region: "global", language: nil),
             ]
         ]
 
@@ -141,9 +143,12 @@ final class SourceSchedulerTests: XCTestCase {
             activeLanguages: ["pt"]
         )
 
-        // Both should appear (language filter doesn't exclude, just boosts)
-        XCTAssertEqual(batch.count, 2)
-        // Portuguese source should be first (boosted)
-        XCTAssertEqual(batch.first?.url, ptURL, "Language-matching source should be first")
+        // EN source with known language != pt → excluded (not penalised)
+        let urls = batch.map(\.url)
+        XCTAssertFalse(urls.contains(enURL), "English source must be excluded when Portuguese is selected")
+        // PT source → included (matching language)
+        XCTAssertTrue(urls.contains(ptURL), "Portuguese source must be included")
+        // No-language source → included (can't determine, err on inclusion)
+        XCTAssertTrue(urls.contains(noLangURL), "Source without language tag must be included")
     }
 }

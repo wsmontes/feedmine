@@ -147,8 +147,17 @@ final class SourceScheduler {
                     }
 
                     let sourceLang = source.language.flatMap { $0.isEmpty ? nil : $0 }
+                    // When the user has an explicit language filter, exclude sources
+                    // with a known non-matching language — don't just penalise them.
+                    // Sources without a language tag can still be included (we can't
+                    // determine their language, so we err on the side of inclusion).
+                    if !activeLanguages.isEmpty,
+                       let sourceLang,
+                       !activeLanguages.contains(sourceLang) {
+                        continue  // known language, doesn't match → exclude
+                    }
                     let languageBoost: Double = activeLanguages.isEmpty ? 1.0
-                        : (sourceLang.map { activeLanguages.contains($0) } == true ? 3.0 : 0.5)
+                        : (sourceLang != nil ? 3.0 : 0.8)
 
                     let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost * languageBoost
                     let finalScore = max(score, 0.01)

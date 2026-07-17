@@ -15,6 +15,7 @@ enum Keys {
     static let filterAutoExpire = "filterAutoExpire"
     static let filterLanguages = "filterLanguages"
     static let hasInitializedLanguageDefault = "hasInitializedLanguageDefault"
+    static let hasUserClearedLanguageFilter = "hasUserClearedLanguageFilter"
 
     // Appearance
     static let circadianPaletteOn = "circadianPaletteOn"
@@ -90,6 +91,10 @@ enum Settings {
     static var hasInitializedLanguageDefault: Bool {
         get { d.bool(forKey: Keys.hasInitializedLanguageDefault) }
         set { d.set(newValue, forKey: Keys.hasInitializedLanguageDefault) }
+    }
+    static var hasUserClearedLanguageFilter: Bool {
+        get { d.bool(forKey: Keys.hasUserClearedLanguageFilter) }
+        set { d.set(newValue, forKey: Keys.hasUserClearedLanguageFilter) }
     }
 
     // MARK: Appearance
