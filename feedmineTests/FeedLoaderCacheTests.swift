@@ -29,14 +29,20 @@ final class FeedLoaderCacheTests: XCTestCase {
         let loader = FeedLoader(store: store)
 
         let initial = Dictionary(uniqueKeysWithValues: loader.availableLanguages.map { ($0.code, $0.feedCount) })
+        let initialTotals = Dictionary(uniqueKeysWithValues: loader.availableLanguages.map { ($0.code, $0.totalFeedCount) })
         XCTAssertEqual(initial["en"], 2)
         XCTAssertEqual(initial["pt"], 1)
+        XCTAssertEqual(initialTotals["en"], 2)
+        XCTAssertEqual(initialTotals["pt"], 1)
 
         store.registry.toggleSource("https://en1.example/feed")
 
         let afterToggle = Dictionary(uniqueKeysWithValues: loader.availableLanguages.map { ($0.code, $0.feedCount) })
+        let totalsAfterToggle = Dictionary(uniqueKeysWithValues: loader.availableLanguages.map { ($0.code, $0.totalFeedCount) })
         XCTAssertEqual(afterToggle["en"], 1)
         XCTAssertEqual(afterToggle["pt"], 1)
+        XCTAssertEqual(totalsAfterToggle["en"], 2)
+        XCTAssertEqual(totalsAfterToggle["pt"], 1)
     }
 
     func testAvailableLanguagesInvalidatesWhenSourceLanguageMetadataChanges() throws {

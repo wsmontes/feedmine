@@ -27,6 +27,16 @@ enum NodeStatus: Equatable {
 @MainActor
 @Observable
 final class SourceRegistry {
+    struct LookupSnapshot: Sendable {
+        let sourcesByNormalizedURL: [String: FeedSource]
+        let explicitlyDisabledURLs: Set<String>
+    }
+    struct LanguageCountSnapshot {
+        let sourceRevision: UInt64
+        let enablementRevision: UInt64
+        let enabled: [String: Int]
+        let total: [String: Int]
+    }
     var sources: [FeedSource] = [] {
         didSet {
             // Skip rebuild when sources haven't changed — prevents redundant
@@ -50,6 +60,10 @@ final class SourceRegistry {
 
     private(set) var sourceRevision: UInt64 = 0
     private(set) var enablementRevision: UInt64 = 0
+    private(set) var totalLanguageCounts: [String: Int] = [:]
+    private(set) var enabledLanguageCounts: [String: Int] = [:]
+    private(set) var availableLanguageCodes: Set<String> = []
+    private(set) var availableCategories: [String] = []
 
     @ObservationIgnored private var _enabledSources: [FeedSource]?
     @ObservationIgnored private var _allTopicRegions: [String]?
@@ -92,11 +106,27 @@ final class SourceRegistry {
     }
 
     private func rebuildCaches() {
-        sourceByURL = Dictionary(uniqueKeysWithValues: sources.map { (OPMLParser.normalizeURL($0.url), $0) })
+        var byURL: [String: FeedSource] = [:]
+        var languageCounts: [String: Int] = [:]
+        var topicRegions = Set<String>()
+        byURL.reserveCapacity(sources.count)
+        for source in sources {
+            let normalizedURL = OPMLParser.normalizeURL(source.url)
+            if byURL[normalizedURL] == nil { byURL[normalizedURL] = source }
+            if let language = FeedStore.normalizedLanguageCode(source.language) {
+                languageCounts[language, default: 0] += 1
+            }
+            if source.region.hasPrefix("topic/") {
+                topicRegions.insert(source.region)
+            }
+        }
+        sourceByURL = byURL
+        totalLanguageCounts = languageCounts
+        availableLanguageCodes = Set(languageCounts.keys)
+        _allTopicRegions = topicRegions.sorted()
         _regionMap = nil
         _languageMap = nil
         _enabledSources = nil
-        _allTopicRegions = nil
         _availableCountries = nil
         _sourcesByRegion = nil
         _uniqueRegions = nil
@@ -177,6 +207,30 @@ final class SourceRegistry {
         return true
     }
 
+    func lookupSnapshot() -> LookupSnapshot {
+        let prefix = "url:"
+        let explicitlyDisabled = Set(disabled.compactMap { key -> String? in
+            guard key.hasPrefix(prefix) else { return nil }
+            return String(key.dropFirst(prefix.count))
+        })
+        return LookupSnapshot(
+            sourcesByNormalizedURL: sourceByURL,
+            explicitlyDisabledURLs: explicitlyDisabled
+        )
+    }
+
+    /// Materializes lazy enablement caches before returning their revisions and
+    /// language counts, so callers never cache an empty pre-materialization view.
+    func languageCountSnapshot() -> LanguageCountSnapshot {
+        ensureActiveCounts()
+        return LanguageCountSnapshot(
+            sourceRevision: sourceRevision,
+            enablementRevision: enablementRevision,
+            enabled: enabledLanguageCounts,
+            total: totalLanguageCounts
+        )
+    }
+
     // MARK: - Group status (O(1) cached)
 
     func status(of key: String) -> NodeStatus {
@@ -248,6 +302,22 @@ final class SourceRegistry {
         if wasEnabled != isEnabled, let source = sourceByURL[OPMLParser.normalizeURL(sourceURL)] {
             applyActiveCountDelta(for: source, delta: isEnabled ? 1 : -1)
             updateEnabledSourcesCache(source: source, isEnabled: isEnabled)
+            if let language = FeedStore.normalizedLanguageCode(source.language) {
+                let updated = (enabledLanguageCounts[language] ?? 0) + (isEnabled ? 1 : -1)
+                if updated > 0 {
+                    enabledLanguageCounts[language] = updated
+                } else {
+                    enabledLanguageCounts.removeValue(forKey: language)
+                }
+            }
+            if isEnabled {
+                if !availableCategories.contains(source.category) {
+                    availableCategories.append(source.category)
+                    availableCategories.sort()
+                }
+            } else if activeCount[Self.categoryKey(source.category)] == nil {
+                availableCategories.removeAll { $0 == source.category }
+            }
             enablementRevision &+= 1
         }
         scheduleSaveState()
@@ -320,12 +390,20 @@ final class SourceRegistry {
     private func recomputeActiveCounts() {
         activeCount.removeAll()
         var enabled: [FeedSource] = []
+        var languageCounts: [String: Int] = [:]
+        var categories = Set<String>()
         enabled.reserveCapacity(sources.count)
         for source in sources where isSourceEnabled(source.url) {
             enabled.append(source)
+            categories.insert(source.category)
+            if let language = FeedStore.normalizedLanguageCode(source.language) {
+                languageCounts[language, default: 0] += 1
+            }
             applyActiveCountDelta(for: source, delta: 1)
         }
         _enabledSources = enabled
+        enabledLanguageCounts = languageCounts
+        availableCategories = categories.sorted()
         activeCountsAreCurrent = true
         enablementRevision &+= 1
     }
@@ -488,6 +566,15 @@ final class SourceRegistry {
         return countries
     }
 
+    /// Materialize every derived model used by the filter sheet while the
+    /// catalog is already in its loading phase. Reads during interaction are
+    /// then dictionary/array lookups only.
+    func prepareFilterCaches() {
+        ensureActiveCounts()
+        _ = allTopicRegions
+        _ = availableCountries
+    }
+
     // MARK: - Load
 
     func loadFromOPML() async {
@@ -511,5 +598,6 @@ final class SourceRegistry {
         }
 
         recomputeActiveCounts()
+        prepareFilterCaches()
     }
 }

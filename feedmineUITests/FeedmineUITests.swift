@@ -118,6 +118,28 @@ final class FeedmineUITests: XCTestCase {
         // The key assertion is that the app didn't crash and the sheet dismissed.
     }
 
+    func testContentTypeFilterTapsRespondImmediately() {
+        waitForAppReady()
+        let filterButton = app.buttons["filter-button"]
+        XCTAssertTrue(filterButton.waitForExistence(timeout: 5))
+        filterButton.tap()
+        XCTAssertTrue(app.buttons["filter-done"].waitForExistence(timeout: 3))
+
+        let id = "content-type-videos"
+        let button = app.buttons[id]
+        for _ in 0..<4 where !button.isHittable { app.swipeUp() }
+        XCTAssertTrue(button.waitForExistence(timeout: 2), "Missing \(id) filter")
+        if (button.value as? String) == "selected" {
+            button.tap()
+        }
+        let start = CFAbsoluteTimeGetCurrent()
+        button.tap()
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+        XCTAssertLessThan(elapsed, 1.3, "\(id) filter tap blocked the UI for \(elapsed)s")
+        app.buttons["filter-done"].tap()
+        XCTAssertTrue(filterButton.waitForExistence(timeout: 3))
+    }
+
     // MARK: - Helpers
 
     /// Full flow: wait for app, open filter, search topic, select it, verify results.

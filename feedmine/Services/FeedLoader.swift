@@ -49,9 +49,14 @@ final class FeedLoader {
     var emptyStateFetchedCount: Int { store.emptyStateFetchedCount }
     var emptyStateFetchTotal: Int { store.emptyStateFetchTotal }
     var isUrgentFetching: Bool { store.isUrgentFetching }
+    var startupFetchedSourceCount: Int { store.startupFetchedSourceCount }
+    var startupTargetSourceCount: Int { store.startupTargetSourceCount }
+    var startupTotalSourceCount: Int { store.startupTotalSourceCount }
+    var startupRecentSourceNames: [String] { store.startupRecentSourceNames }
+    var startupRunwayReady: Bool { store.startupRunwayReady }
+    var isPreparingInitialRunway: Bool { store.isPreparingInitialRunway }
     var catalogDiagnosticsStatus = FeedEngineCatalogDiagnosticsStatus.idle
     private var catalogDiagnosticsTask: Task<Void, Never>?
-    private var filterCacheWarmupTask: Task<Void, Never>?
 
     // MARK: - Date Sections
 
@@ -100,10 +105,22 @@ final class FeedLoader {
     var selectedNodeIDs: Set<String> { store.activeNodeIDs }
     var selectedNodeNames: [String] { TaxonomyStore.shared.selectedNodeNames }
     var selectedLanguages: Set<String> { store.activeLanguages }
+    var selectedRegion: String? { store.activeRegion }
     var hasLanguageSelection: Bool { !store.activeLanguages.isEmpty }
     var hasTaxonomySelection: Bool { !selectedNodeIDs.isEmpty }
+    var hasRegionSelection: Bool { selectedRegion != nil }
     var hasActiveFilters: Bool {
-        hasTaxonomySelection || selectedMood != .all || selectedContentType != .all || hasLanguageSelection
+        hasRegionSelection || hasTaxonomySelection || selectedMood != .all || selectedContentType != .all || hasLanguageSelection
+    }
+    var activeFilterCount: Int {
+        var count = 0
+        if hasRegionSelection { count += 1 }
+        count += selectedNodeIDs.count
+        count += selectedLanguages.count
+        if selectedContentType != .all { count += 1 }
+        if selectedMood != .all { count += 1 }
+        if !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { count += 1 }
+        return count
     }
     var availableTaxonomyRoot: TaxonomyNode? { TaxonomyStore.shared.root }
 
@@ -162,7 +179,8 @@ final class FeedLoader {
         let code: String       // ISO 639-1
         let name: String       // localized display name
         let flag: String       // emoji flag
-        let feedCount: Int
+        let feedCount: Int     // enabled sources matching this language
+        let totalFeedCount: Int
     }
 
     @ObservationIgnored private var _cachedAvailableLanguages: [LanguageInfo] = []
@@ -258,39 +276,31 @@ final class FeedLoader {
     // MARK: - Countries / Sources
 
     var availableCountries: [Country] { store.registry.availableCountries }
-    var availableCategories: [String] {
-        Set(store.registry.enabledSources.map(\.category)).sorted()
-    }
+    var availableCategories: [String] { store.registry.availableCategories }
     var availableLanguages: [LanguageInfo] {
-        let sourceRevision = store.registry.sourceRevision
-        let enablementRevision = store.registry.enablementRevision
+        let counts = store.registry.languageCountSnapshot()
         let localeIdentifier = Locale.current.identifier
-        if _cachedAvailableLanguagesSourceRevision == sourceRevision,
-           _cachedAvailableLanguagesEnablementRevision == enablementRevision,
+        if _cachedAvailableLanguagesSourceRevision == counts.sourceRevision,
+           _cachedAvailableLanguagesEnablementRevision == counts.enablementRevision,
            _cachedAvailableLanguagesLocaleIdentifier == localeIdentifier {
             return _cachedAvailableLanguages
         }
 
         // Use enabled sources so counts reflect what the user can actually see.
         // Normalize to ISO 639-1 base codes so "pt-BR" and "pt" merge into one entry.
-        var counts: [String: Int] = [:]
-        for source in store.registry.enabledSources {
-            guard let normalized = FeedStore.normalizedLanguageCode(source.language) else { continue }
-            counts[normalized, default: 0] += 1
-        }
-
-        let languages = counts.map { code, count in
+        let languages = counts.enabled.map { code, count in
             LanguageInfo(
                 code: code,
                 name: Locale.current.localizedString(forLanguageCode: code) ?? code,
                 flag: Self.flagEmoji(for: code),
-                feedCount: count
+                feedCount: count,
+                totalFeedCount: counts.total[code] ?? count
             )
         }.sorted { $0.feedCount > $1.feedCount }
 
         _cachedAvailableLanguages = languages
-        _cachedAvailableLanguagesSourceRevision = sourceRevision
-        _cachedAvailableLanguagesEnablementRevision = enablementRevision
+        _cachedAvailableLanguagesSourceRevision = counts.sourceRevision
+        _cachedAvailableLanguagesEnablementRevision = counts.enablementRevision
         _cachedAvailableLanguagesLocaleIdentifier = localeIdentifier
         return languages
     }
@@ -503,21 +513,9 @@ final class FeedLoader {
         await refreshBookmarkLists()
         await refreshBookmarkState()
         await refreshActiveSearchState()
-        scheduleFilterCacheWarmup()
         #if DEBUG || INSTRUMENTATION
         scheduleCatalogDiagnosticsIfNeeded()
         #endif
-    }
-
-    private func scheduleFilterCacheWarmup() {
-        filterCacheWarmupTask?.cancel()
-        filterCacheWarmupTask = Task { [weak self] in
-            try? await Task.sleep(for: .seconds(2))
-            guard !Task.isCancelled, let self else { return }
-            _ = self.availableCountries
-            _ = self.availableLanguages
-            _ = self.isGlobalFeedsEnabled
-        }
     }
 
     #if DEBUG || INSTRUMENTATION
@@ -596,6 +594,14 @@ final class FeedLoader {
                         languages: languages)
     }
 
+    func clearRegionFilter() {
+        let languages = resolvedLanguagesForFilter(store.activeLanguages)
+        store.setFilter(region: nil,
+                        nodeIDs: store.activeNodeIDs,
+                        type: store.activeContentType, mood: store.activeMood,
+                        languages: languages)
+    }
+
     /// Backward-compat shim for single-category selection.
     func selectCategory(_ category: String?) {
         if let cat = category {
@@ -633,10 +639,7 @@ final class FeedLoader {
         guard let deviceLang = FeedStore.normalizedLanguageCode(
             Locale.current.language.languageCode?.identifier
         ) else { return [] }
-        let available = FeedStore.normalizedLanguageSet(
-            store.registry.sources.compactMap(\.language)
-        )
-        return available.contains(deviceLang) ? [deviceLang] : []
+        return store.registry.availableLanguageCodes.contains(deviceLang) ? [deviceLang] : []
     }
 
     func clearAllFilters() {
@@ -680,6 +683,18 @@ final class FeedLoader {
 
     func clearToggleMessage() {
         store.lastToggleMessage = nil
+    }
+    func beginFilterEditing() { store.beginFilterEditing() }
+    func endFilterEditing() { store.endFilterEditing() }
+    func applyFilterDraft(type: ContentType, mood: MoodFilter, languages: Set<String>) {
+        store.hasUserClearedLanguageFilter = languages.isEmpty
+        store.setFilter(
+            region: store.activeRegion,
+            nodeIDs: store.activeNodeIDs,
+            type: type,
+            mood: mood,
+            languages: languages
+        )
     }
     func toggleAllCountries() {
         store.toggleAllCountries()
@@ -985,6 +1000,7 @@ final class FeedLoader {
             store.registry.sources = OPMLParser.deduplicateSources(
                 store.registry.sources + imported
             )
+            store.registry.prepareFilterCaches()
             Log.import_.info("Restored \(imported.count) imported sources")
         } catch {
             Log.import_.error("Failed to restore imported sources: \(error)")

@@ -6,13 +6,16 @@ import Foundation
 
 @MainActor
 struct MomentGreeting {
-    private static var lastTemplateIndex: Int = -1
     private static var lastTemplateTime: Date = .distantPast
+    private static var lastGreetingText: String?
 
     // MARK: - Public API
 
     static func generate(loader: FeedLoader? = nil) -> String {
         let ctx = AppContext.shared
+        if GreetingStore.currentLanguageCode != "en" {
+            return finishSentence(GreetingStore.random(for: ctx.timeOfDay))
+        }
         let slots = fillSlots(ctx, loader: loader)
         let templates = loadTemplates()
         let candidates = buildCandidates(templates: templates, slots: slots, ctx: ctx)
@@ -20,9 +23,7 @@ struct MomentGreeting {
         let fallback = "\(slots["greeting"] ?? "Hello"). \(slots["count"] ?? "Here's what's new.")"
         let raw = pick ?? fallback
         let cleaned = cleanUnfilledSlots(raw)
-        let trimmed = cleaned.trimmingCharacters(in: .whitespaces)
-        if trimmed.hasSuffix(".") || trimmed.hasSuffix("?") || trimmed.hasSuffix("!") { return trimmed }
-        return trimmed + "."
+        return finishSentence(cleaned)
     }
 
     // MARK: - Slot Engine
@@ -478,14 +479,14 @@ struct MomentGreeting {
         let now = Date()
         if now.timeIntervalSince(lastTemplateTime) > 7200 {
             let pick = top.randomElement()!
-            lastTemplateIndex = candidates.firstIndex { $0.0 == pick } ?? 0
             lastTemplateTime = now
+            lastGreetingText = pick
             return pick
         }
-        let filtered = top.enumerated().filter { $0.offset != lastTemplateIndex || top.count == 1 }
-        let pick = filtered.randomElement()?.element ?? top.randomElement()!
-        lastTemplateIndex = candidates.firstIndex { $0.0 == pick } ?? 0
+        let filtered = top.filter { $0 != lastGreetingText }
+        let pick = filtered.randomElement() ?? top.randomElement()!
         lastTemplateTime = now
+        lastGreetingText = pick
         return pick
     }
 
@@ -518,5 +519,14 @@ struct MomentGreeting {
         while result.hasSuffix(" ·") || result.hasSuffix(" ·") { result = String(result.dropLast(2)) }
         while result.hasSuffix(",") { result = String(result.dropLast()) }
         return result.trimmingCharacters(in: .whitespaces)
+    }
+
+    private static func finishSentence(_ text: String) -> String {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return "" }
+        if trimmed.hasSuffix(".") || trimmed.hasSuffix("?") || trimmed.hasSuffix("!") {
+            return trimmed
+        }
+        return trimmed + "."
     }
 }

@@ -29,4 +29,30 @@ final class MomentGreetingTests: XCTestCase {
         XCTAssertFalse(result.contains("{{"), "Should not contain unfilled template slots")
         XCTAssertFalse(result.contains("}}"), "Should not contain unfilled template slots")
     }
+
+    func testNonEnglishMomentUsesLocalizedGreetingOnly() {
+        let originalLanguages = UserDefaults.standard.stringArray(forKey: "AppleLanguages")
+        UserDefaults.standard.set(["pt-BR"], forKey: "AppleLanguages")
+        defer {
+            if let originalLanguages {
+                UserDefaults.standard.set(originalLanguages, forKey: "AppleLanguages")
+            } else {
+                UserDefaults.standard.removeObject(forKey: "AppleLanguages")
+            }
+        }
+
+        AppContext.shared.refresh()
+        let result = MomentGreeting.generate()
+        let expected = Set(GreetingStore.variants(for: AppContext.shared.timeOfDay).map(finishedSentence))
+        XCTAssertTrue(expected.contains(result),
+                      "Non-English moments should use localized greeting variants without English template fragments")
+    }
+
+    private func finishedSentence(_ text: String) -> String {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.hasSuffix(".") || trimmed.hasSuffix("?") || trimmed.hasSuffix("!") {
+            return trimmed
+        }
+        return trimmed + "."
+    }
 }

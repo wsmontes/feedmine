@@ -8,21 +8,13 @@ struct FeedItemCardView: View, Equatable {
         lhs.item == rhs.item
         && lhs.isRead == rhs.isRead
         && lhs.isBookmarked == rhs.isBookmarked
-        && lhs.appearDelay == rhs.appearDelay
         && lhs.isInBookmarkBox == rhs.isInBookmarkBox
-        && lhs.isFirstAppearance == rhs.isFirstAppearance
     }
     let item: FeedItem
     let isRead: Bool
     let isBookmarked: Bool
-    let appearDelay: Double
     var onBookmark: (() -> Void)?
     var isInBookmarkBox: Bool = false
-    /// When false, skips the entrance animation — the card was already seen
-    /// before (scrolled back into view). Animation plays only for genuinely
-    /// new content.
-    var isFirstAppearance: Bool = true
-    @State private var appeared = false
     @State private var imageLoadFailed = false
     @AppStorage("fontSize") private var fontSize = "medium"
     @State private var engine = CircadianEngine.shared
@@ -61,17 +53,7 @@ struct FeedItemCardView: View, Equatable {
                 portraitCard
             }
         }
-        .opacity(appeared ? (isRead ? 0.92 : 1) : 0)
-        .offset(y: appeared ? 0 : 16)
-        .onAppear {
-            if isFirstAppearance {
-                withAnimation(.easeOut(duration: 0.4).delay(appearDelay)) {
-                    appeared = true
-                }
-            } else {
-                appeared = true  // already surfaced — skip animation
-            }
-        }
+        .opacity(isRead ? 0.92 : 1)
     }
 
     // MARK: - Portrait Card

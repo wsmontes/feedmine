@@ -35,6 +35,12 @@ final class FeedStore {
     private(set) var totalDiscarded = 0
     var emptyStateFetchedCount: Int = 0
     var emptyStateFetchTotal: Int = 0
+    private(set) var startupFetchedSourceCount = 0
+    private(set) var startupTargetSourceCount = 100
+    private(set) var startupTotalSourceCount = 0
+    private(set) var startupRecentSourceNames: [String] = []
+    private(set) var startupRunwayReady = false
+    private(set) var isPreparingInitialRunway = false
     /// True while an urgent taxonomy fetch is in-flight — FeedScreen uses this
     /// to keep the empty state in .fetching mode until items actually arrive.
     private(set) var isUrgentFetching = false
@@ -90,6 +96,7 @@ final class FeedStore {
         pipelineTask?.cancel()
         trimDebounceTask?.cancel()
         progressiveFetchTask?.cancel()
+        coverageMiningTask?.cancel()
         backgroundRefreshTask?.cancel()
         setVisibleItems(items)
         reservoirCount = 0
@@ -113,7 +120,10 @@ final class FeedStore {
     ///   query over the full catalogue.
     /// - Otherwise: delegate to the normal SourceRegistry enablement check.
     private func isSourceEligible(sourceURL: String, taxonomySelectionActive: Bool) -> Bool {
-        if taxonomySelectionActive, cachedTaxonomyFeedURLs.contains(OPMLParser.normalizeURL(sourceURL)) {
+        let isExplicitCatalogueQuery = activeContentType != .all
+            || (taxonomySelectionActive
+                && cachedTaxonomyFeedURLs.contains(OPMLParser.normalizeURL(sourceURL)))
+        if isExplicitCatalogueQuery {
             // Bypass inherited disables (category, region) but respect individual off
             return !registry.isSourceExplicitlyDisabled(sourceURL)
         }
@@ -370,13 +380,26 @@ final class FeedStore {
     var whatsNewItems: [FeedItem] { whatsNewManager.whatsNewItems }
 
     private var hasStarted = false             // guards one-time startup work
+    nonisolated private static let coldStartMinimumSourceCount = 100
+    nonisolated private static let coldStartCatalogSourceCount = 240
+    nonisolated private static let coldStartFetchChunkSize = 240
+    nonisolated static let sourceCoverageTarget = 100
+    nonisolated static let immediateFilteredSourceTarget = 20
+    private var coldStartPendingItems: [FeedItem] = []
+    @ObservationIgnored private var startupSuccessfulSourceURLs: Set<String> = []
+    private var firstLaunchBootstrapTask: Task<Void, Never>?
     private var progressiveFetchTask: Task<Void, Never>?
+    private var coverageMiningTask: Task<Void, Never>?
     private var backgroundRefreshTask: Task<Void, Never>?
     private var regionToggleTask: Task<Void, Never>?
     private var filterDebounceTask: Task<Void, Never>?
     private var filterPersistenceTask: Task<Void, Never>?
+    private var isEditingFilters = false
+    private var pendingFilterReloadGeneration: Int64?
     private var sourceEnablementRefreshTask: Task<Void, Never>?
     private var urgentFetchTask: Task<Void, Never>?
+    private var taxonomyCoverageCursor = 0
+    private var backgroundCoverageCursor = 0
 
     // MARK: - Throttled reservoir append
     // Accumulates items from progressive/background fetches and flushes them
@@ -599,6 +622,227 @@ final class FeedStore {
         Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970)
     }
 
+    /// Read a small, varied starter set from the catalog already bundled with
+    /// the app. This is intentionally not a replacement for SourceRegistry:
+    /// it only overlaps first-install network latency with the authoritative
+    /// OPML/taxonomy reconstruction.
+    nonisolated static func bundledStarterSources(
+        language: String,
+        limit: Int = coldStartCatalogSourceCount
+    ) async -> [FeedSource] {
+        guard limit > 0,
+              let catalogURL = Bundle.main.url(
+                forResource: "catalog",
+                withExtension: "sqlite",
+                subdirectory: "FeedEngine"
+              ) else { return [] }
+
+        let normalizedLanguage = normalizedLanguageCode(language) ?? "en"
+        return await Task.detached(priority: .userInitiated) {
+            do {
+                var configuration = Configuration()
+                configuration.readonly = true
+                let catalog = try DatabaseQueue(path: catalogURL.path, configuration: configuration)
+                let candidateLimit = max(limit * 6, 180)
+                let rows = try catalog.read { db in
+                    try Row.fetchAll(db, sql: """
+                        SELECT
+                            s.title AS title,
+                            s.request_url AS url,
+                            s.media_kind AS media_kind,
+                            s.language AS language,
+                            MIN(n.name) AS category
+                        FROM catalog_source s
+                        JOIN catalog_placement p ON p.source_id = s.id
+                        JOIN catalog_node n ON n.id = p.node_id
+                        WHERE s.language = ?
+                          AND s.request_url LIKE 'https://%'
+                          AND n.kind = 3
+                          AND n.key NOT LIKE 'countries/%'
+                          AND n.key NOT LIKE 'languages/%'
+                        GROUP BY s.id, s.title, s.request_url, s.media_kind, s.language
+                        ORDER BY RANDOM()
+                        LIMIT ?
+                        """, arguments: [normalizedLanguage, candidateLimit])
+                }
+                let candidates: [FeedSource] = rows.compactMap { row in
+                    guard let title: String = row["title"],
+                          let url: String = row["url"],
+                          let kindValue: String = row["media_kind"],
+                          let kind = MediaKind(rawValue: kindValue) else { return nil }
+                    let category: String = row["category"] ?? "General"
+                    let rowLanguage: String? = row["language"]
+                    return FeedSource(
+                        title: title,
+                        url: url,
+                        category: category,
+                        region: "global",
+                        mediaKind: kind,
+                        language: rowLanguage
+                    )
+                }
+                let scored = candidates.map {
+                    (source: $0, score: Double.random(in: 0.9...1.1))
+                }
+                return SourceScheduler.diverseSources(from: scored, limit: limit)
+            } catch {
+                Log.feed.error("Bundled starter catalog failed: \(error.localizedDescription)")
+                return []
+            }
+        }.value
+    }
+
+    nonisolated static func coldStartRunwayIsUseful(
+        _ items: [FeedItem],
+        targetSourceCount: Int = coldStartMinimumSourceCount
+    ) -> Bool {
+        let target = max(1, min(coldStartMinimumSourceCount, targetSourceCount))
+        return items.count >= target && Set(items.map(\.sourceURL)).count >= target
+    }
+
+    nonisolated private static func bundledCatalogSourceCount() -> Int {
+        guard let url = Bundle.main.url(
+            forResource: "catalog-manifest",
+            withExtension: "json",
+            subdirectory: "FeedEngine"
+        ),
+        let data = try? Data(contentsOf: url),
+        let object = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+        let count = object["source_count"] as? Int else { return 0 }
+        return count
+    }
+
+    func configureStartupProgress(targetSourceCount: Int) {
+        startupTargetSourceCount = max(1, min(Self.coldStartMinimumSourceCount, targetSourceCount))
+        startupFetchedSourceCount = min(startupTargetSourceCount, startupSuccessfulSourceURLs.count)
+        startupRunwayReady = startupFetchedSourceCount >= startupTargetSourceCount
+    }
+
+    func recordStartupFetchProgress(_ result: FeedFetchResult) {
+        guard result.status == .success else { return }
+        let normalizedURL = OPMLParser.normalizeURL(result.source.url)
+        guard startupSuccessfulSourceURLs.insert(normalizedURL).inserted else { return }
+
+        startupFetchedSourceCount = min(startupTargetSourceCount, startupSuccessfulSourceURLs.count)
+        startupRecentSourceNames.append(result.source.title)
+        startupRunwayReady = startupFetchedSourceCount >= startupTargetSourceCount
+    }
+
+    /// Build a useful first-session runway instead of returning as soon as a
+    /// handful of prolific feeds produce many items. Distinct sources are the
+    /// release criterion; item count is only the secondary buffer criterion.
+    private func fetchColdStartRunway(from sources: [FeedSource]) async -> FeedFetchBatch {
+        let targetSourceCount = max(
+            1,
+            min(Self.coldStartMinimumSourceCount, Set(sources.map(\.url)).count)
+        )
+        configureStartupProgress(targetSourceCount: targetSourceCount)
+        var items: [FeedItem] = []
+        var fetchedSourceCount = 0
+        var failedSourceCount = 0
+        var emptySourceCount = 0
+        var statuses: [String: FeedFetchStatus] = [:]
+
+        for start in stride(from: 0, to: sources.count, by: Self.coldStartFetchChunkSize) {
+            let end = min(start + Self.coldStartFetchChunkSize, sources.count)
+            let chunk = Array(sources[start..<end])
+            let usefulSourceCount = Set(items.map(\.sourceURL)).count
+            let remainingSources = max(1, targetSourceCount - usefulSourceCount)
+            let remainingItems = max(1, targetSourceCount - items.count)
+            let result = await fetcher.fetchStarter(
+                chunk,
+                maxConcurrent: min(48, chunk.count),
+                minimumSuccessfulSources: remainingSources,
+                minimumItemCount: remainingItems,
+                deadline: .seconds(10),
+                onProgress: { [weak self] result in
+                    self?.recordStartupFetchProgress(result)
+                }
+            )
+            items.append(contentsOf: result.items)
+            fetchedSourceCount += result.fetchedSourceCount
+            failedSourceCount += result.failedSourceCount
+            emptySourceCount += result.emptySourceCount
+            statuses.merge(result.sourceStatuses) { _, newest in newest }
+
+            if Self.coldStartRunwayIsUseful(items, targetSourceCount: targetSourceCount) {
+                break
+            }
+        }
+
+        return FeedFetchBatch(
+            items: items,
+            fetchedSourceCount: fetchedSourceCount,
+            failedSourceCount: failedSourceCount,
+            emptySourceCount: emptySourceCount,
+            sourceStatuses: statuses
+        )
+    }
+
+    private func startFirstLaunchBootstrapIfNeeded() -> Task<Void, Never>? {
+        guard !Settings.hasInitializedLanguageDefault else { return nil }
+        let storedItemCount = (try? db.read { db in
+            try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM feed_item") ?? 0
+        }) ?? 0
+        guard storedItemCount == 0 else { return nil }
+
+        let language = Self.normalizedLanguageCode(
+            Locale.current.language.languageCode?.identifier
+        ) ?? "en"
+        activeLanguages = [language]
+        Settings.filterLanguages = [language]
+        Settings.hasInitializedLanguageDefault = true
+        let generation = filterGeneration
+        let startedAt = Date()
+
+        return Task { [weak self] in
+            guard let self else { return }
+            let sources = await Self.bundledStarterSources(language: language)
+            guard !Task.isCancelled, !sources.isEmpty else { return }
+
+            // Keep bootstrap items eligible until the full registry replaces
+            // this temporary source set a few moments later.
+            if self.registry.sources.isEmpty {
+                self.registry.sources = sources
+                self.reservoir.sourceRegionMap = self.registry.regionMap
+            }
+
+            let result = await self.fetchColdStartRunway(from: sources)
+            guard !Task.isCancelled, generation == self.filterGeneration else { return }
+
+            let targetSourceCount = min(Self.coldStartMinimumSourceCount, sources.count)
+            let usefulSourceCount = Set(result.items.map(\.sourceURL)).count
+            guard Self.coldStartRunwayIsUseful(
+                result.items,
+                targetSourceCount: targetSourceCount
+            ) else {
+                self.coldStartPendingItems = result.items
+                Log.feed.info(
+                    "firstLaunchBootstrap withheld: sources=\(usefulSourceCount)/\(targetSourceCount) items=\(result.items.count)/\(targetSourceCount)"
+                )
+                return
+            }
+
+            for (url, status) in result.sourceStatuses {
+                self.scheduler.recordFetch(sourceURL: url, success: status != .failed)
+            }
+            let actualNew = await self.persistFetchedItems(result.items)
+            guard !Task.isCancelled, !actualNew.isEmpty else { return }
+
+            self.collectWhatsNewCandidates(actualNew)
+            self.throttledReservoirAppend(actualNew)
+            await self.flushPendingReservoir()
+            self.prefetchImagesIfEnabled(for: actualNew)
+            if !self.visibleItems.isEmpty {
+                self.isPreparingInitialRunway = false
+                self.loadingState = .idle
+            }
+            Log.feed.info(
+                "firstLaunchBootstrap published: sources=\(result.fetchedSourceCount) items=\(actualNew.count) visible=\(self.visibleItems.count) elapsed=\(Date().timeIntervalSince(startedAt), format: .fixed(precision: 3))s"
+            )
+        }
+    }
+
     // MARK: - Start (cold + warm)
 
     /// One-time startup: parse OPML, start the network monitor, hydrate from
@@ -609,10 +853,25 @@ final class FeedStore {
         guard !hasStarted else { return }
         hasStarted = true
         loadingState = .initial
+        isPreparingInitialRunway = true
+        startupFetchedSourceCount = 0
+        startupTargetSourceCount = Self.coldStartMinimumSourceCount
+        startupTotalSourceCount = Self.bundledCatalogSourceCount()
+        startupRecentSourceNames = []
+        startupRunwayReady = false
+        startupSuccessfulSourceURLs.removeAll(keepingCapacity: true)
         FeedMetrics.event("Backend.start")
         networkMonitor.start()
+
+        // On the first installation the full OPML registry and taxonomy still
+        // need to be reconstructed. Start a small, language-matched network
+        // race from the bundled compiled catalog while that CPU work runs so
+        // first content is not serialized behind thousands of OPML files.
+        firstLaunchBootstrapTask = startFirstLaunchBootstrapIfNeeded()
+
         let endOPMLMetric = FeedMetrics.beginInterval("OPML.load")
         await registry.loadFromOPML()
+        startupTotalSourceCount = registry.sourceCount
         endOPMLMetric()
         FeedMetrics.event("OPML.sourceCount", "count=\(self.registry.sources.count)")
         FeedMetrics.memory("afterOPML")
@@ -664,29 +923,24 @@ final class FeedStore {
         reservoir.readItemIDs = readItemIDs
         bookmarkedItemIDs = bookmarkStore.allBookmarkedItemIDs()
 
-        // Warm start: hydrate from SQLite with filters already active
+        // Warm start: hydrate from SQLite with filters already active. Reuse
+        // the same filtered path as filter changes so startup never samples a
+        // small unfiltered window and then throws most of it away.
         let endReservoirLoadMetric = FeedMetrics.beginInterval("Reservoir.load")
-        let cached = try? await loadReservoir()
-        endReservoirLoadMetric()
-        if let items = cached, !items.isEmpty {
-            for item in items { loadedIDs.insert(item.id) }
-            loadedIDsCount = loadedIDs.count
-            // Pre-filter before seeding — same pattern as reloadFromSQLite.
-            let filteredItems = applyFilters(items)
-            let endReservoirSeedMetric = FeedMetrics.beginInterval("Reservoir.seed")
-            await reservoir.seed(items: filteredItems)
-            endReservoirSeedMetric()
-            FeedMetrics.event("FirstVisibleItems", "count=\(self.reservoir.visibleItems.count)")
-            FeedMetrics.memory("afterFirstVisible")
-            markSurfaced(reservoir.visibleItems)
-            setVisibleItems(reservoir.visibleItems)  // already filtered
-            if visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0 {
-                repeat {
-                    reservoir.moveToVisible(count: Reservoir.pageSize)
-                    setVisibleItems(applyFilters(reservoir.visibleItems))
-                } while visibleItems.count < Reservoir.pageSize && reservoir.reservoirCount > 0
-            }
+        if visibleItems.isEmpty {
+            await reloadFromSQLite()
+        } else {
+            // The parallel first-launch bootstrap may already have published a
+            // page. Keep its stable IDs/order and only apply the now-complete
+            // registry plus read/bookmark state.
+            setVisibleItems(applyFilters(visibleItems))
             reservoirCount = reservoir.reservoirCount
+        }
+        endReservoirLoadMetric()
+        if !visibleItems.isEmpty {
+            isPreparingInitialRunway = false
+            FeedMetrics.event("FirstVisibleItems", "count=\(visibleItems.count)")
+            FeedMetrics.memory("afterFirstVisible")
             loadingState = .idle
             prefetchVisibleAndNext()
         }
@@ -700,32 +954,67 @@ final class FeedStore {
         }
 
         guard !registry.enabledSources.isEmpty else {
+            isPreparingInitialRunway = false
             loadingState = .idle
             return
         }
 
-        // Unblock the UI immediately — the warm cache already provides content.
-        // First batch and progressive fetch run as background Tasks so the view
-        // finishes layout without waiting for network I/O.
-        loadingState = .idle
+        // A warm cache can render immediately. A gated cold start stays in its
+        // preparation state until the 100-source runway is actually ready;
+        // showing "no articles" while useful collection is in flight is false.
+        loadingState = visibleItems.isEmpty ? .initial : .idle
+
+        // Seed What's New from local data now. Fresh network candidates arrive
+        // through the starter/progressive pipeline, so a second 30-source
+        // booster would only compete with first paint for bandwidth.
+        refreshWhatsNew(shouldBoost: false)
 
         progressiveFetchTask = Task {
-            // First batch: fill the visible feed quickly (scheduler picks ~17 sources).
-            await fetchNextBatch()
-            // Then process remaining enabled sources in the background.
-            await progressiveFetch()
-        }
+            await self.firstLaunchBootstrapTask?.value
+            self.firstLaunchBootstrapTask = nil
 
-        // Kick off What's New pipeline
-        refreshWhatsNew()
+            // A populated warm cache or the first-launch bootstrap already
+            // owns first paint. Otherwise keep collecting distinct providers;
+            // never fall through to the normal progressive path with a thin
+            // four- or five-source sample.
+            var coldStartAttempts = 0
+            while self.visibleItems.isEmpty,
+                  self.reservoir.reservoirCount == 0,
+                  coldStartAttempts < 3 {
+                coldStartAttempts += 1
+                await self.fetchNextBatch()
+            }
+            guard !self.visibleItems.isEmpty || self.reservoir.reservoirCount > 0 else {
+                self.isPreparingInitialRunway = false
+                self.loadingState = .idle
+                Log.feed.info("cold start still withheld after \(coldStartAttempts) registry attempts")
+                return
+            }
+            // Bulk-fill only when the local runway is genuinely shallow. A
+            // warm reservoir should stay quiet while the user starts reading.
+            if self.reservoir.reservoirCount < Reservoir.progressiveFillTarget {
+                await progressiveFetch()
+            } else {
+                Log.feed.info("progressiveFetch skipped: runway=\(self.reservoir.reservoirCount)")
+            }
+            guard !Task.isCancelled else { return }
+            self.startCoverageMining(generation: self.filterGeneration)
+        }
 
         // Slow-drip background refresh — keeps the database and What's New
         // fed with fresh content continuously while the app is in foreground.
         startBackgroundRefresh()
 
-        // Light maintenance on every launch
-        Task { await performLightExpurgo() }
+        // Maintenance is deliberately outside the startup runway. On a fresh
+        // database even VACUUM can contend with ingestion and delay first paint.
+        Task { [weak self] in
+            try? await Task.sleep(for: .seconds(20))
+            guard !Task.isCancelled else { return }
+            await self?.performLightExpurgo()
+        }
         Task.detached(priority: .background) { [weak self] in
+            try? await Task.sleep(for: .seconds(60))
+            guard !Task.isCancelled else { return }
             await self?.performHeavyMaintenance()
         }
     }
@@ -779,7 +1068,23 @@ final class FeedStore {
                     Log.feed.info("[TaxonomyTrace] flush gen=\(generation) dropping stale (current=\(self.filterGeneration))")
                     return
                 }
-                if forceFetch || self.visibleItems.count < 20 { await self.fetchNextBatch() }
+                let needsFilteredBreadth = self.activeContentType != .all
+                    && Set(self.visibleItems.map(\.sourceURL)).count < Self.immediateFilteredSourceTarget
+                if forceFetch || self.visibleItems.count < Reservoir.pageSize || needsFilteredBreadth {
+                    await self.fetchNextBatch()
+                }
+                // A filtered fetch may add providers after the cached page was
+                // seeded. Rebuild once so those providers are interleaved into
+                // the first page instead of waiting behind a prolific channel.
+                if needsFilteredBreadth,
+                   !Task.isCancelled,
+                   (generation == 0 || generation == self.filterGeneration) {
+                    await self.reloadFromSQLite(skipRead: skipRead, generation: generation)
+                }
+                if !Task.isCancelled,
+                   generation == self.filterGeneration {
+                    self.startCoverageMining(generation: generation)
+                }
                 self.loadingState = .idle
                 Log.feed.info("[TaxonomyTrace] flush gen=\(generation) complete visibleItems=\(self.visibleItems.count)")
             }
@@ -991,27 +1296,72 @@ final class FeedStore {
             activeLanguages = Self.normalizedLanguageSet(langs)
         }
 
+        // Never leave visibly incompatible cards on screen during the debounce.
+        // This is a bounded in-memory cull only; database reads, taxonomy
+        // expansion, rebalancing, and network work remain in the async pipeline.
+        immediatelyCullVisibleItemsForActiveFilter()
+
         Log.feed.info("[TaxonomyTrace] setFilter gen=\(generation) region=\(region ?? "nil") nodeIDs=\(self.activeNodeIDs)")
 
         scheduleFilterPersistence(generation: generation)
 
         // Cancel progressive fetch — waste of budget when user wants specific content
         progressiveFetchTask?.cancel()
+        coverageMiningTask?.cancel()
         // Cancel any previous urgent fetch
         urgentFetchTask?.cancel()
         isUrgentFetching = false
 
-        // Debounce the expensive flush+reload: if multiple filter changes
-        // arrive within 300ms (e.g. user tapping category then mood quickly),
-        // only the last one triggers the full reload pipeline.
+        if isEditingFilters {
+            // The sheet owns only selection state. Feed/DB/network work begins
+            // once, after dismissal, so rapid taps remain purely interactive.
+            filterDebounceTask?.cancel()
+            pendingFilterReloadGeneration = generation
+        } else {
+            scheduleFilterReload(generation: generation, delay: .milliseconds(300))
+        }
+    }
+
+    private func immediatelyCullVisibleItemsForActiveFilter() {
+        guard !visibleItems.isEmpty else { return }
+        let region = activeRegion
+        let languages = activeLanguages
+        let contentType = filterContentType
+        let mood = activeMood
+        let deviceLanguage = Self.normalizedLanguageCode(
+            Locale.current.language.languageCode?.identifier
+        )
+        setVisibleItems(visibleItems.filter { item in
+            (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
+            && Self.languageFilterMatchesNormalized(
+                itemLanguage: item.language,
+                selectedLanguages: languages,
+                deviceLanguage: deviceLanguage
+            )
+            && contentType(item)
+            && (mood == .all || mood.matches(item.title))
+        })
+    }
+
+    func beginFilterEditing() {
+        isEditingFilters = true
+    }
+
+    func endFilterEditing() {
+        isEditingFilters = false
+        guard let generation = pendingFilterReloadGeneration else { return }
+        pendingFilterReloadGeneration = nil
+        scheduleFilterReload(generation: generation, delay: .milliseconds(80))
+    }
+
+    private func scheduleFilterReload(generation: Int64, delay: Duration) {
         filterDebounceTask?.cancel()
         filterDebounceTask = Task { [weak self] in
-            try? await Task.sleep(for: .milliseconds(300))
-            guard !Task.isCancelled, let self else { return }
+            try? await Task.sleep(for: delay)
+            guard !Task.isCancelled, let self,
+                  generation == self.filterGeneration else { return }
 
             self.refreshCachedTaxonomyFeedURLsIfNeeded()
-
-            // Kick off urgent fetch for taxonomy sources
             let priorityURLs = self.cachedTaxonomyFeedURLs
             if !priorityURLs.isEmpty {
                 self.isUrgentFetching = true
@@ -1019,7 +1369,6 @@ final class FeedStore {
                     guard let self else { return }
                     await self.fetchUrgentTaxonomyBatch(sourceURLs: priorityURLs, generation: generation)
                     self.isUrgentFetching = false
-                    // Resume background refresh after urgent work completes
                     self.startBackgroundRefresh()
                 }
             }
@@ -1034,7 +1383,6 @@ final class FeedStore {
         filterGeneration &+= 1
         let generation = filterGeneration
 
-        loadingState = .refreshing
         activeRegion = nil
         activeNodeIDs = []
         activeContentType = .all
@@ -1046,16 +1394,15 @@ final class FeedStore {
         scheduleFilterPersistence(generation: generation)
 
         progressiveFetchTask?.cancel()
+        coverageMiningTask?.cancel()
         urgentFetchTask?.cancel()
         isUrgentFetching = false
 
-        filterDebounceTask?.cancel()
-        filterDebounceTask = Task { [weak self] in
-            try? await Task.sleep(for: .milliseconds(100))
-            guard !Task.isCancelled, let self, generation == self.filterGeneration else { return }
-            // Content on screen is untouchable. Clear everything, reload fresh.
-            self.refreshWhatsNew()
-            self.applyUpdate(.flush(generation: generation))
+        if isEditingFilters {
+            filterDebounceTask?.cancel()
+            pendingFilterReloadGeneration = generation
+        } else {
+            scheduleFilterReload(generation: generation, delay: .milliseconds(100))
         }
     }
 
@@ -1236,9 +1583,7 @@ final class FeedStore {
             newItems,
             visibleIDs: visibleIDs,
             readIDs: readIDs,
-            isItemEnabled: { [self] in isItemEnabled($0) },
-            filterContentType: filterContentType,
-            contentFilterExcludes: { [self] in contentFilterExcludes($0, filters: ContentFilterStore.shared.activeFilters) },
+            matchesActiveFilters: { [self] in !applyFilters([$0]).isEmpty },
             markSurfaced: { [self] in markSurfaced($0) }
         )
     }
@@ -1272,10 +1617,12 @@ final class FeedStore {
     /// Refresh What's New: clear the pool, re-seed from DB, and trigger
     /// a booster fetch. Called on any user-triggered update (startup, shake,
     /// filter change) so the carousel always reflects the current context.
-    func refreshWhatsNew() {
+    func refreshWhatsNew(shouldBoost: Bool = true) {
         whatsNewManager.refreshWhatsNew(
             seedFromDB: { [self] in await seedWhatsNewFromDB() },
-            booster: { [self] in fetchWhatsNewBooster() }
+            booster: { [self] in
+                if shouldBoost { fetchWhatsNewBooster() }
+            }
         )
     }
 
@@ -1285,9 +1632,7 @@ final class FeedStore {
         await whatsNewManager.seedWhatsNewFromDB(
             surfacedIDs: surfacedItemIDs,
             readIDs: readItemIDs,
-            isItemEnabled: { [self] in isItemEnabled($0) },
-            filterContentType: filterContentType,
-            contentFilterExcludes: { [self] in contentFilterExcludes($0, filters: ContentFilterStore.shared.activeFilters) },
+            matchesActiveFilters: { [self] in !applyFilters([$0]).isEmpty },
             markSurfaced: { [self] in markSurfaced($0) }
         )
     }
@@ -1417,10 +1762,35 @@ final class FeedStore {
 
     private func fetchNextBatch() async {
         guard !isSearching else { return }
+        let needsStarter = visibleItems.isEmpty && reservoir.reservoirCount == 0
+        // The 100-source runway protects the first impression on a fresh app.
+        // An empty result after a user changes filters is a different state: it
+        // should fetch only compatible sources and publish their first batch.
+        let needsInitialRunway = needsStarter && isPreparingInitialRunway
+        let visibleSourceCount = Set(visibleItems.map(\.sourceURL)).count
+        let needsFilteredRunway = !needsInitialRunway
+            && activeContentType != .all
+            && visibleSourceCount < Self.immediateFilteredSourceTarget
         refreshCachedTaxonomyFeedURLsIfNeeded()
-        let sourcesByRegion = Dictionary(grouping: registry.enabledSources, by: \.region)
+        let sourcePool: [FeedSource]
+        if activeContentType == .all {
+            sourcePool = registry.enabledSources
+        } else {
+            // A top-level type is an explicit catalogue query, not a request
+            // limited to the small default global-source subset.
+            sourcePool = await coverageSources(
+                for: activeContentType,
+                languages: activeLanguages,
+                region: nil,
+                taxonomyURLs: nil
+            )
+        }
+        let sourcesByRegion = await Task.detached(priority: .userInitiated) {
+            Dictionary(grouping: sourcePool, by: \.region)
+        }.value
         let contentTypeStr: String? = switch activeContentType {
-        case .video: "video"; case .audio: "audio"; case .text: "text"; default: nil
+        case .video: "video"; case .audio: "audio"; case .text: "text"
+        case .forum: "forum"; default: nil
         }
         let batch = scheduler.nextBatch(
             reservoir: reservoir.reservoir,
@@ -1429,14 +1799,38 @@ final class FeedStore {
             activeCategory: nil,
             activeContentType: contentTypeStr,
             prioritySourceURLs: activeNodeIDs.isEmpty ? [] : cachedTaxonomyFeedURLs,
-            activeLanguages: activeLanguages
+            activeLanguages: activeLanguages,
+            minimumBatchSize: needsInitialRunway
+                ? Self.coldStartCatalogSourceCount
+                : (needsFilteredRunway ? 120 : 24)
         )
         guard !batch.isEmpty else { return }
+        let coldStartTargetSourceCount = min(
+            Self.coldStartMinimumSourceCount,
+            Set(batch.map(\.url)).count
+        )
 
-        loadingState = .refreshing
-        defer { loadingState = .idle }
+        loadingState = needsInitialRunway ? .initial : .refreshing
+        defer {
+            loadingState = isPreparingInitialRunway && visibleItems.isEmpty ? .initial : .idle
+        }
 
-        let result = await fetcher.fetchAll(batch, maxConcurrent: 15)
+        let result: FeedFetchBatch
+        if needsInitialRunway {
+            result = await fetchColdStartRunway(from: batch)
+            Log.feed.info("starterFetch completed: sources=\(result.fetchedSourceCount) items=\(result.items.count) attempted=\(result.sourceStatuses.count)")
+        } else if needsFilteredRunway {
+            let neededSources = max(1, Self.immediateFilteredSourceTarget - visibleSourceCount)
+            result = await fetcher.fetchStarter(
+                batch,
+                maxConcurrent: min(30, batch.count),
+                minimumSuccessfulSources: min(neededSources, batch.count),
+                minimumItemCount: neededSources,
+                deadline: .seconds(8)
+            )
+        } else {
+            result = await fetcher.fetchAll(batch, maxConcurrent: 15)
+        }
         // Yield to let pending UI work through after network I/O returns
         await Task.yield()
 
@@ -1451,15 +1845,44 @@ final class FeedStore {
             .mapValues(\.count)
         var healthEntries: [(url: String, itemCount: Int?)] = []
         for source in batch {
-            let failed = result.sourceStatuses[source.url] == .failed
+            guard let status = result.sourceStatuses[source.url] else { continue }
+            let failed = status == .failed
             scheduler.recordFetch(sourceURL: source.url, success: !failed)
             let count = sourceItemCounts[source.url]
             healthEntries.append((source.url, count))
         }
         saveSourceHealthBatch(healthEntries)
 
-        let actualNew = await persistFetchedItems(result.items)
+        let itemsToPersist: [FeedItem]
+        if needsInitialRunway {
+            coldStartPendingItems.append(contentsOf: result.items)
+            let usefulSourceCount = Set(coldStartPendingItems.map(\.sourceURL)).count
+            guard Self.coldStartRunwayIsUseful(
+                coldStartPendingItems,
+                targetSourceCount: coldStartTargetSourceCount
+            ) else {
+                Log.feed.info(
+                    "starterIngest withheld: sources=\(usefulSourceCount)/\(coldStartTargetSourceCount) items=\(self.coldStartPendingItems.count)/\(coldStartTargetSourceCount)"
+                )
+                return
+            }
+            itemsToPersist = coldStartPendingItems
+            coldStartPendingItems = []
+        } else {
+            itemsToPersist = result.items
+        }
+
+        let ingestStartedAt = Date()
+        let actualNew = await persistFetchedItems(itemsToPersist)
+        if needsInitialRunway {
+            Log.feed.info("starterIngest persisted: items=\(actualNew.count) elapsed=\(Date().timeIntervalSince(ingestStartedAt), format: .fixed(precision: 3))s")
+        }
         guard !actualNew.isEmpty else { return }
+
+        if needsInitialRunway {
+            isPreparingInitialRunway = false
+            startupRunwayReady = true
+        }
 
         // Yield again after heavy DB work before processing results
         await Task.yield()
@@ -1473,15 +1896,27 @@ final class FeedStore {
             logNonEnglishItems(actualNew)
         }
 
-        // Cap items per source after bulk insert
-        if !actualNew.isEmpty {
-            let sourceURLs = Array(Set(actualNew.map(\.sourceURL)))
-            await capSourceItemsBatch(sourceURLs)
-        }
-
-        // Append to reservoir via throttled path — interleave runs off MainActor
+        // Append to the reservoir via the batched off-main interleave path.
         throttledReservoirAppend(actualNew)
+        // A cold feed or a nearly depleted runway cannot wait for the normal
+        // three-second coalescing interval. Commit this batch now so the first
+        // page appears immediately and fast scrolling always has content ahead.
+        if visibleItems.isEmpty || reservoir.reservoirCount < Reservoir.reservoirLowWatermark {
+            await flushPendingReservoir()
+        }
+        if needsInitialRunway {
+            Log.feed.info("starterIngest published: visible=\(self.visibleItems.count) reservoir=\(self.reservoir.reservoirCount) elapsed=\(Date().timeIntervalSince(ingestStartedAt), format: .fixed(precision: 3))s")
+        }
         prefetchImagesIfEnabled(for: actualNew)
+
+        // Database retention is maintenance, not a prerequisite for showing
+        // content. Run it after publication so it never extends first paint.
+        let sourceURLs = Array(Set(actualNew.map(\.sourceURL)))
+        Task { [weak self] in
+            try? await Task.sleep(for: .seconds(10))
+            guard !Task.isCancelled else { return }
+            await self?.capSourceItemsBatch(sourceURLs)
+        }
 
         lastRefreshDate = .now
 
@@ -1521,20 +1956,48 @@ final class FeedStore {
         // enabledSources. An explicit taxonomy selection acts as a temporary
         // catalogue query — category/region disables are bypassed, but
         // individual per-source opt-outs are respected.
-        let allMatching = self.registry.sources.filter { sourceURLs.contains(OPMLParser.normalizeURL($0.url)) }
-        let individuallyDisabled = allMatching.filter { self.registry.isSourceExplicitlyDisabled($0.url) }
-        let eligible = allMatching.filter { !self.registry.isSourceExplicitlyDisabled($0.url) }
+        let lookup = registry.lookupSnapshot()
+        let languages = activeLanguages
+        let typeRawValue = activeContentType.rawValue
+        let region = activeRegion
+        let allMatching = await Task.detached(priority: .userInitiated) {
+            sourceURLs.compactMap { lookup.sourcesByNormalizedURL[$0] }
+        }.value
+        let individuallyDisabled = await Task.detached(priority: .utility) {
+            allMatching.filter {
+                lookup.explicitlyDisabledURLs.contains(OPMLParser.normalizeURL($0.url))
+            }
+        }.value
+        let eligible = await Task.detached(priority: .userInitiated) {
+            allMatching.filter { source in
+                let normalizedURL = OPMLParser.normalizeURL(source.url)
+                return !lookup.explicitlyDisabledURLs.contains(normalizedURL)
+                    && Self.coverageSourceMatches(
+                        source,
+                        typeRawValue: typeRawValue,
+                        languages: languages,
+                        region: region
+                    )
+            }
+        }.value
+        let enabledSnapshot = registry.enabledSources
+        let normallyEnabledCount = await Task.detached(priority: .utility) {
+            let enabledURLs = Set(enabledSnapshot.map { OPMLParser.normalizeURL($0.url) })
+            return eligible.reduce(into: 0) { count, source in
+                if enabledURLs.contains(OPMLParser.normalizeURL(source.url)) { count += 1 }
+            }
+        }.value
 
         // [TaxonomyTrace] — detailed diagnostic for the 4 Acoustics feeds
         Log.feed.info("""
             [TaxonomyTrace] urgentFetch gen=\(generation): \
             taxonomyURLs=\(sourceURLs.count) \
             allMatching=\(allMatching.count) \
-            normallyEnabled=\(eligible.filter { self.registry.isSourceEnabled($0.url) }.count) \
+            normallyEnabled=\(normallyEnabledCount) \
             eligible=\(eligible.count) \
             individuallyDisabled=\(individuallyDisabled.count)
             """)
-        for src in allMatching {
+        for src in allMatching.prefix(20) {
             Log.feed.info("[TaxonomyTrace] source: title=\"\(src.title)\" url=\(src.url) enabled=\(self.registry.isSourceEnabled(src.url)) explicitOff=\(self.registry.isSourceExplicitlyDisabled(src.url))")
         }
 
@@ -1591,22 +2054,328 @@ final class FeedStore {
         Log.feed.info("[TaxonomyTrace] urgentFetch gen=\(generation) DONE visibleItems=\(self.visibleItems.count)")
     }
 
+    // MARK: - Source coverage
+
+    private struct CoveragePlan: Sendable {
+        let target: Int
+        let representedCount: Int
+        let deficit: Int
+        let candidates: [FeedSource]
+    }
+
+    /// The screen can publish after 20 providers, but collection continues until
+    /// a filter has 100 providers that have actually produced persisted items.
+    /// A successful HTTP response with zero usable items does not count.
+    private func startCoverageMining(generation: Int64) {
+        coverageMiningTask?.cancel()
+        let preferredType = activeContentType
+        let languages = activeLanguages
+        coverageMiningTask = Task(priority: .utility) { [weak self] in
+            guard let self else { return }
+            try? await Task.sleep(for: .milliseconds(600))
+            guard !Task.isCancelled, generation == self.filterGeneration else { return }
+
+            while self.isUrgentFetching, !Task.isCancelled {
+                try? await Task.sleep(for: .milliseconds(250))
+            }
+            guard !Task.isCancelled, generation == self.filterGeneration else { return }
+
+            if preferredType != .all {
+                let activeSources = await self.coverageSources(
+                    for: preferredType,
+                    languages: languages,
+                    region: self.activeRegion,
+                    taxonomyURLs: self.activeNodeIDs.isEmpty ? nil : self.cachedTaxonomyFeedURLs
+                )
+                // The active filter owns the runway. Keep taking bounded passes
+                // until 100 useful providers are represented; switching filters
+                // cancels this task immediately through the generation guard.
+                for pass in 1...6 {
+                    guard !Task.isCancelled, generation == self.filterGeneration else { return }
+                    let started = await self.mineCoverage(
+                        sources: activeSources,
+                        label: "active-\(preferredType.rawValue)-p\(pass)",
+                        deadline: .seconds(20),
+                        publish: true
+                    )
+                    guard started else { break }
+                    try? await Task.sleep(for: .milliseconds(350))
+                }
+            }
+
+            let topTypes: [FeedLoader.ContentType] = [.video, .audio, .forum, .text]
+            for type in topTypes where type != preferredType {
+                guard !Task.isCancelled, generation == self.filterGeneration else { return }
+                let sources = await self.coverageSources(
+                    for: type,
+                    languages: languages,
+                    region: nil,
+                    taxonomyURLs: nil
+                )
+                _ = await self.mineCoverage(
+                    sources: sources,
+                    label: "top-\(type.rawValue)",
+                    deadline: .seconds(12),
+                    publish: false
+                )
+                try? await Task.sleep(for: .milliseconds(750))
+            }
+
+            // Make visible progress across the catalogue on every session. The
+            // slow refresh continues rotating through the remaining categories.
+            for _ in 0..<6 {
+                guard !Task.isCancelled, generation == self.filterGeneration else { return }
+                guard await self.mineNextTaxonomyCoverage(languages: languages) else { break }
+                try? await Task.sleep(for: .milliseconds(750))
+            }
+        }
+    }
+
+    private func coverageSources(
+        for type: FeedLoader.ContentType,
+        languages: Set<String>,
+        region: String?,
+        taxonomyURLs: Set<String>?
+    ) async -> [FeedSource] {
+        let typeRawValue = type.rawValue
+        let sourceSnapshot: [FeedSource]
+        if let taxonomyURLs {
+            let lookup = registry.lookupSnapshot()
+            sourceSnapshot = await Task.detached(priority: .utility) {
+                taxonomyURLs.compactMap { url in
+                    guard !lookup.explicitlyDisabledURLs.contains(url) else { return nil }
+                    return lookup.sourcesByNormalizedURL[url]
+                }
+            }.value
+        } else if type == .all {
+            sourceSnapshot = registry.enabledSources
+        } else {
+            // Top-level media filters query the complete catalogue. Inherited
+            // category/region disables are bypassed, while an explicit source
+            // opt-out remains absolute.
+            let lookup = registry.lookupSnapshot()
+            sourceSnapshot = await Task.detached(priority: .utility) {
+                lookup.sourcesByNormalizedURL.compactMap { url, source in
+                    lookup.explicitlyDisabledURLs.contains(url) ? nil : source
+                }
+            }.value
+        }
+        return await Task.detached(priority: .utility) {
+            sourceSnapshot.filter { source in
+                Self.coverageSourceMatches(
+                    source,
+                    typeRawValue: typeRawValue,
+                    languages: languages,
+                    region: region
+                )
+            }
+        }.value
+    }
+
+    nonisolated private static func coverageSourceMatches(
+        _ source: FeedSource,
+        typeRawValue: String,
+        languages: Set<String>,
+        region: String?
+    ) -> Bool {
+        if let region,
+           source.region != region,
+           !source.region.hasPrefix(region + "/") { return false }
+        if !languages.isEmpty,
+           let language = normalizedLanguageCode(source.language),
+           !languages.contains(language) { return false }
+        switch typeRawValue {
+        case "Videos":
+            return source.isYouTube || source.mediaKind == .video
+        case "Podcasts":
+            return source.mediaKind == .audio
+        case "Forums":
+            return source.mediaKind == .forum
+        case "Articles":
+            return !source.isYouTube && source.mediaKind == .text
+        default:
+            return true
+        }
+    }
+
+    private func storedSourceURLs() async -> Set<String> {
+        let urls = (try? await db.read { db in
+            try String.fetchAll(db, sql: "SELECT DISTINCT source_url FROM feed_item")
+        }) ?? []
+        return Set(urls.map(OPMLParser.normalizeURL))
+    }
+
+    /// Returns true when a network coverage pass was started.
+    @discardableResult
+    private func mineCoverage(
+        sources: [FeedSource],
+        label: String,
+        deadline: Duration,
+        publish: Bool
+    ) async -> Bool {
+        guard !Task.isCancelled else { return false }
+        let stored = await storedSourceURLs()
+        let plan = await Task.detached(priority: .utility) {
+            Self.makeCoveragePlan(sources: sources, stored: stored)
+        }.value
+        guard plan.target > 0 else { return false }
+        guard plan.deficit > 0 else {
+            Log.feed.info("coverage \(label): ready \(plan.representedCount)/\(plan.target) useful sources")
+            return false
+        }
+        let candidates = plan.candidates
+        guard !candidates.isEmpty else { return false }
+
+        Log.feed.info(
+            "coverage \(label): mining \(plan.representedCount)/\(plan.target), candidates=\(candidates.count)"
+        )
+        let result = await fetcher.fetchStarter(
+            candidates,
+            maxConcurrent: min(36, candidates.count),
+            minimumSuccessfulSources: min(plan.deficit, candidates.count),
+            minimumItemCount: min(plan.deficit, candidates.count),
+            deadline: deadline
+        )
+        guard !Task.isCancelled else { return true }
+
+        let sourceItemCounts = await Task.detached(priority: .utility) {
+            Dictionary(grouping: result.items, by: \.sourceURL).mapValues(\.count)
+        }.value
+        var healthEntries: [(url: String, itemCount: Int?)] = []
+        for source in candidates {
+            guard let status = result.sourceStatuses[source.url] else { continue }
+            scheduler.recordFetch(sourceURL: source.url, success: status != .failed)
+            healthEntries.append((source.url, sourceItemCounts[source.url]))
+        }
+        saveSourceHealthBatch(healthEntries)
+
+        totalFetched += result.items.count
+        fetchErrorCount += result.failedSourceCount
+        emptyFeedCount += result.emptySourceCount
+        let actualNew = await persistFetchedItems(result.items)
+        if publish {
+            let visibleNew = await presentationItems(from: actualNew)
+            if !visibleNew.isEmpty {
+                throttledReservoirAppend(visibleNew)
+                collectWhatsNewCandidates(visibleNew)
+                prefetchImagesIfEnabled(for: visibleNew)
+            }
+        }
+        if !actualNew.isEmpty {
+            await capSourceItemsBatch(Array(Set(actualNew.map(\.sourceURL))))
+            await matchPersistentSearches(actualNew)
+        }
+
+        let newlyUsefulCount = await Task.detached(priority: .utility) {
+            Set(result.items.map { OPMLParser.normalizeURL($0.sourceURL) })
+                .subtracting(stored).count
+        }.value
+        let usefulAfter = plan.representedCount + newlyUsefulCount
+        Log.feed.info(
+            "coverage \(label): \(min(usefulAfter, plan.target))/\(plan.target) useful sources after pass"
+        )
+        return true
+    }
+
+    nonisolated private static func makeCoveragePlan(
+        sources: [FeedSource],
+        stored: Set<String>
+    ) -> CoveragePlan {
+        var uniqueSources: [String: FeedSource] = [:]
+        uniqueSources.reserveCapacity(sources.count)
+        for source in sources {
+            let key = OPMLParser.normalizeURL(source.url)
+            if uniqueSources[key] == nil { uniqueSources[key] = source }
+        }
+        let target = min(sourceCoverageTarget, uniqueSources.count)
+        let represented = uniqueSources.keys.reduce(into: 0) { count, url in
+            if stored.contains(url) { count += 1 }
+        }
+        let deficit = max(0, target - represented)
+        let unfetched = uniqueSources.compactMap { url, source in
+            stored.contains(url) ? nil : source
+        }
+        let limit = min(unfetched.count, max(120, deficit * 4))
+        return CoveragePlan(
+            target: target,
+            representedCount: represented,
+            deficit: deficit,
+            candidates: Array(unfetched.shuffled().prefix(limit))
+        )
+    }
+
+    private func presentationItems(from items: [FeedItem]) async -> [FeedItem] {
+        guard !items.isEmpty else { return [] }
+        var filtered: [FeedItem] = []
+        filtered.reserveCapacity(items.count)
+        for start in stride(from: 0, to: items.count, by: 80) {
+            let end = min(start + 80, items.count)
+            filtered.append(contentsOf: applyFilters(Array(items[start..<end])))
+            await Task.yield()
+        }
+        return filtered
+    }
+
+    /// Rotates through leaf taxonomy categories. A category with fewer than 100
+    /// catalogued feeds is complete when every available feed has produced items.
+    private func mineNextTaxonomyCoverage(languages: Set<String>) async -> Bool {
+        let groups = TaxonomyStore.shared.coverageGroups
+        guard !groups.isEmpty else { return false }
+        let lookup = registry.lookupSnapshot()
+        let stored = await storedSourceURLs()
+        let cursor = taxonomyCoverageCursor
+        let next = await Task.detached(priority: .utility) { () -> (Int, String, [FeedSource])? in
+            for offset in 0..<groups.count {
+                let index = (cursor + offset) % groups.count
+                let group = groups[index]
+                let sources = group.feedURLs.compactMap { url -> FeedSource? in
+                    guard !lookup.explicitlyDisabledURLs.contains(url),
+                          let source = lookup.sourcesByNormalizedURL[url] else { return nil }
+                    if !languages.isEmpty,
+                       let language = Self.normalizedLanguageCode(source.language),
+                       !languages.contains(language) { return nil }
+                    return source
+                }
+                let uniqueURLs = Set(sources.map { OPMLParser.normalizeURL($0.url) })
+                let target = min(Self.sourceCoverageTarget, uniqueURLs.count)
+                guard target > 0, uniqueURLs.intersection(stored).count < target else { continue }
+                return (index, group.id, sources)
+            }
+            return nil
+        }.value
+        guard let (index, nodeID, sources) = next else { return false }
+        taxonomyCoverageCursor = (index + 1) % groups.count
+        return await mineCoverage(
+            sources: sources,
+            label: "category-\(nodeID)",
+            deadline: .seconds(10),
+            publish: false
+        )
+    }
+
     /// Fetch a budgeted batch of remaining enabled sources in the background.
     /// Capped per session to avoid hammering 800+ sources at every launch;
     /// the rest trickle in via normal refresh cycles. Shuffled for fair
     /// distribution across text/video/audio types.
     private func progressiveFetch() async {
-        let allEnabled = registry.enabledSources.shuffled()
-        let budget = min(allEnabled.count, 200)  // per-session cap
+        let allEnabled = progressiveFetchSources()
+        let budget = allEnabled.count
         let chunkSize = 20
-        Log.feed.info("progressiveFetch starting: \(budget)/\(allEnabled.count) sources")
+        var processed = 0
+        Log.feed.info("progressiveFetch starting: \(budget) filtered/diverse sources")
         for chunkStart in stride(from: 0, to: budget, by: chunkSize) {
             let end = min(chunkStart + chunkSize, budget)
             let chunk = Array(allEnabled[chunkStart..<end])
+            processed += chunk.count
             // Gentle 1s inter-chunk delay (skip first) to avoid rate-limiting
             // from YouTube and other aggressive CDNs when processing 800+ sources.
             if chunkStart > 0 { try? await Task.sleep(for: .seconds(1)) }
-            let result = await fetcher.fetchAll(chunk, maxConcurrent: 5)
+            let result: FeedFetchBatch
+            if chunkStart == 0 && reservoir.reservoirCount < Reservoir.reservoirLowWatermark {
+                result = await fetcher.fetchStarter(chunk, maxConcurrent: 10)
+            } else {
+                result = await fetcher.fetchAll(chunk, maxConcurrent: 5)
+            }
             guard !Task.isCancelled else { break }
             await Task.yield()  // Let UI work run between chunks
             totalFetched += result.items.count
@@ -1625,6 +2394,9 @@ final class FeedStore {
             saveSourceHealthBatch(healthEntries)
             let actualNew = await persistFetchedItems(result.items)
             throttledReservoirAppend(actualNew)
+            if reservoir.reservoirCount < Reservoir.progressiveFillTarget {
+                await flushPendingReservoir()
+            }
             collectWhatsNewCandidates(actualNew)
             // Cap items per source so no single feed dominates (>50 items)
             if !actualNew.isEmpty {
@@ -1636,10 +2408,55 @@ final class FeedStore {
             if visibleItems.isEmpty {
                 await flushPendingReservoir()
             }
+            if reservoir.reservoirCount >= Reservoir.progressiveFillTarget {
+                Log.feed.info("progressiveFetch runway ready: reservoir=\(self.reservoir.reservoirCount)")
+                break
+            }
         }
-        Log.feed.info("progressiveFetch DONE — all \(allEnabled.count) sources processed")
+        Log.feed.info("progressiveFetch DONE — \(processed)/\(allEnabled.count) sources processed")
         lastRefreshDate = .now
         await capAllSources()
+    }
+
+    private func progressiveFetchSources() -> [FeedSource] {
+        let activeLangs = activeLanguages
+        let activeType = activeContentType
+        let recentCutoff = Date().addingTimeInterval(-300)
+        let candidates = registry.enabledSources.filter { source in
+            sourceMatches(source, languages: activeLangs)
+                && sourceMatches(source, contentType: activeType)
+                && (scheduler.lastFetchedAt[source.url] ?? .distantPast) < recentCutoff
+        }
+        let budget = min(candidates.count, 200)  // per-session cap
+        let scored = candidates.map { source in
+            (source: source, score: Double.random(in: 0.95...1.05))
+        }
+        return SourceScheduler.diverseSources(from: scored, limit: budget)
+    }
+
+    private func sourceMatches(_ source: FeedSource, languages: Set<String>) -> Bool {
+        guard !languages.isEmpty else { return true }
+        let sourceLang = Self.normalizedLanguageCode(
+            source.language.flatMap { $0.isEmpty ? nil : $0 }
+        )
+        guard let sourceLang else { return true }
+        return languages.contains(sourceLang)
+    }
+
+    private func sourceMatches(_ source: FeedSource, contentType: FeedLoader.ContentType) -> Bool {
+        switch contentType {
+        case .all:
+            return true
+        case .text:
+            return !source.isYouTube && source.mediaKind != .video
+                && source.mediaKind != .audio && source.mediaKind != .forum
+        case .video:
+            return source.isYouTube || source.mediaKind == .video
+        case .audio:
+            return source.mediaKind == .audio
+        case .forum:
+            return source.mediaKind == .forum
+        }
     }
 
     /// Slow-drip background refresh — fetches a small batch of sources every
@@ -1647,23 +2464,52 @@ final class FeedStore {
     /// Complements progressiveFetch (bulk initial fill) with continuous renewal.
     private func startBackgroundRefresh() {
         backgroundRefreshTask?.cancel()
-        backgroundRefreshTask = Task { [weak self] in
+        backgroundRefreshTask = Task(priority: .background) { [weak self] in
             guard let self else { return }
             let interval: TimeInterval = 150  // 2.5 minutes
             while !Task.isCancelled {
                 try? await Task.sleep(for: .seconds(interval))
                 guard !Task.isCancelled else { break }
                 guard self.loadingState == .idle, !self.isSearching else { continue }
+
+                let coverageStep = self.backgroundCoverageCursor
+                self.backgroundCoverageCursor &+= 1
+                let didMineCoverage: Bool
+                if coverageStep.isMultiple(of: 2) {
+                    let types: [FeedLoader.ContentType] = [.video, .audio, .forum, .text]
+                    let type = types[(coverageStep / 2) % types.count]
+                    let sources = await self.coverageSources(
+                        for: type,
+                        languages: self.activeLanguages,
+                        region: nil,
+                        taxonomyURLs: nil
+                    )
+                    didMineCoverage = await self.mineCoverage(
+                        sources: sources,
+                        label: "refresh-\(type.rawValue)",
+                        deadline: .seconds(10),
+                        publish: type == self.activeContentType
+                    )
+                } else {
+                    didMineCoverage = await self.mineNextTaxonomyCoverage(
+                        languages: self.activeLanguages
+                    )
+                }
+                if didMineCoverage { continue }
+
                 let batchSize = 5
-                let allSources = self.registry.enabledSources.shuffled()
-                let batch = Array(allSources.prefix(batchSize))
+                let sourceSnapshot = self.registry.enabledSources
+                let batch = await Task.detached(priority: .utility) {
+                    Array(sourceSnapshot.shuffled().prefix(batchSize))
+                }.value
                 guard !batch.isEmpty else { continue }
                 let result = await self.fetcher.fetchAll(batch, maxConcurrent: 2)
                 let actualNew = await self.persistFetchedItems(result.items)
-                if !actualNew.isEmpty {
-                    self.throttledReservoirAppend(actualNew)
-                    self.collectWhatsNewCandidates(actualNew)
-                    self.prefetchImagesIfEnabled(for: actualNew)
+                let visibleNew = await self.presentationItems(from: actualNew)
+                if !visibleNew.isEmpty {
+                    self.throttledReservoirAppend(visibleNew)
+                    self.collectWhatsNewCandidates(visibleNew)
+                    self.prefetchImagesIfEnabled(for: visibleNew)
                     // Cap per source to prevent domination
                     await self.capSourceItemsBatch(Array(Set(actualNew.map(\.sourceURL))))
                 }
@@ -1838,7 +2684,7 @@ final class FeedStore {
 
             return try request
                 .order(Column("published_at").desc)
-                .limit(200)
+                .limit(1200)
                 .fetchAll(db)
         }) ?? []
         var feedItems = items.map { $0.toFeedItem() }
@@ -1865,8 +2711,9 @@ final class FeedStore {
         // consistent reservoirCount).
 
         let filteredItems = applyFilters(feedItems)
-        Log.feed.info("[TaxonomyTrace] reloadFromSQLite gen=\(generation) loaded=\(feedItems.count) filtered=\(filteredItems.count) taxonomyURLs=\(taxonomyURLs?.count ?? 0)")
-        await reservoir.seed(items: filteredItems)
+        let balancedItems = Self.balancedCandidatePool(filteredItems)
+        Log.feed.info("[TaxonomyTrace] reloadFromSQLite gen=\(generation) loaded=\(feedItems.count) filtered=\(filteredItems.count) balanced=\(balancedItems.count) taxonomyURLs=\(taxonomyURLs?.count ?? 0)")
+        await reservoir.seed(items: balancedItems)
         // markSurfaced runs on reservoir.visibleItems AFTER seed, so only
         // items that actually appear on screen are recorded as surfaced.
         markSurfaced(reservoir.visibleItems)
@@ -1886,39 +2733,56 @@ final class FeedStore {
         Log.feed.info("[TaxonomyTrace] reloadFromSQLite gen=\(generation) done visibleItems=\(self.visibleItems.count) reservoirCount=\(self.reservoirCount)")
     }
 
-    private func loadReservoir() async throws -> [FeedItem]? {
-        // Fetch a larger pool, then select with diversity: news items favor
-        // recency; everything else is randomized. This prevents a single
-        // prolific source from dominating the first 200 slots.
-        let poolSize = 400
-        let records: [FeedItemRecord] = try await db.read { db in
-            try FeedItemRecord
-                .filter(Column("fetched_at") > Self.thirtyDayCutoffEpoch)
-                .filter(Column("is_read") == 0)
-                .order(Column("published_at").desc)
-                .limit(poolSize)
-                .fetchAll(db)
-        }
-        guard !records.isEmpty else { return nil }
-        let items = records.map { $0.toFeedItem() }
+    /// Build a broad startup pool without letting the newest prolific feeds
+    /// consume every slot. The first pass admits only a small number per
+    /// provider; a second pass fills unused capacity so narrow filters still
+    /// retain all available content.
+    nonisolated static func balancedCandidatePool(
+        _ items: [FeedItem],
+        limit: Int = 500,
+        initialPerSource: Int = 8
+    ) -> [FeedItem] {
+        guard limit > 0, !items.isEmpty else { return [] }
 
-        // Split: news items (time-sensitive) keep recency order; everything
-        // else gets shuffled for diversity. Then merge: all news first (most
-        // recent at top), then random non-news, capped at 200.
-        // Match category by keyword (case-insensitive). After taxonomy changes
-        // category stores the original OPML outline text (e.g. "News", "Sports").
-        let newsKeywords = ["news", "sports", "politics"]
-        var news = items.filter { item in
-            let lower = item.category.lowercased()
-            return newsKeywords.contains(where: { lower.contains($0) })
+        var selected: [FeedItem] = []
+        var overflowBySource: [String: [FeedItem]] = [:]
+        var sourceOrder: [String] = []
+        var sourceCounts: [String: Int] = [:]
+        var seenIDs = Set<String>()
+        selected.reserveCapacity(min(limit, items.count))
+
+        for item in items where seenIDs.insert(item.id).inserted {
+            if sourceCounts[item.sourceURL] == nil {
+                sourceOrder.append(item.sourceURL)
+            }
+            if sourceCounts[item.sourceURL, default: 0] < initialPerSource,
+               selected.count < limit {
+                selected.append(item)
+                sourceCounts[item.sourceURL, default: 0] += 1
+            } else {
+                overflowBySource[item.sourceURL, default: []].append(item)
+            }
         }
-        var other = items.filter { item in
-            let lower = item.category.lowercased()
-            return !newsKeywords.contains(where: { lower.contains($0) })
-        }.shuffled()
-        // News already ordered by published_at DESC from the query
-        var selected = news + other
-        if selected.count > 200 { selected = Array(selected.prefix(200)) }
+
+        // Source URLs originate in remote feeds and can repeat in malformed or
+        // partially merged data. Build the index incrementally so a repeated
+        // provider never turns a recoverable refresh into a duplicate-key trap.
+        var overflowIndices: [String: Int] = [:]
+        overflowIndices.reserveCapacity(sourceOrder.count)
+        for sourceURL in sourceOrder {
+            overflowIndices[sourceURL] = 0
+        }
+        while selected.count < limit {
+            var appended = false
+            for sourceURL in sourceOrder where selected.count < limit {
+                let index = overflowIndices[sourceURL, default: 0]
+                guard let overflow = overflowBySource[sourceURL], index < overflow.count else { continue }
+                selected.append(overflow[index])
+                overflowIndices[sourceURL] = index + 1
+                appended = true
+            }
+            if !appended { break }
+        }
         return selected
     }
 
@@ -2483,13 +3347,21 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
     }
 
     func toFeedItem() -> FeedItem {
-        FeedItem(
+        let cleanedSourceTitle = FeedTextSanitizer.sanitizedHTMLText(sourceTitle)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedTitle = FeedTextSanitizer.sanitizedHTMLText(title)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedExcerpt = FeedTextSanitizer.sanitizedHTMLText(excerpt)
+            .replacingOccurrences(of: #"\s+"#, with: " ", options: .regularExpression)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        return FeedItem(
             id: id,
-            sourceTitle: sourceTitle,
+            sourceTitle: cleanedSourceTitle.isEmpty ? sourceTitle : cleanedSourceTitle,
             sourceURL: sourceURL,
             category: category,
-            title: title,
-            excerpt: excerpt,
+            title: cleanedTitle.isEmpty ? title : cleanedTitle,
+            excerpt: cleanedExcerpt,
             url: url,
             imageURL: imageURL,
             publishedAt: Date(timeIntervalSince1970: TimeInterval(publishedAt)),

@@ -16,6 +16,9 @@ xcodebuild build -project feedmine.xcodeproj -scheme feedmine \
 
 **Important:** Edit `feedmine.xcodeproj` directly. Do not regenerate with `xcodegen` from `project.yml` — it would drop the GRDB dependency that was added manually.
 
+For build, installation, XCUITest automation, screenshots, and diagnostics on a
+USB-connected iPhone, see [Physical Device Testing](docs/PhysicalDeviceTesting.md).
+
 ## Dependencies
 
 | Package | Version | Purpose |

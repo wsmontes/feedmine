@@ -15,10 +15,12 @@ final class Reservoir {
     static let pageSize = 20
     static let loadMoreThreshold = 5
     static let discardBatchSize = 50
-    static let reservoirLowWatermark = 30
+    static let reservoirLowWatermark = 80
+    static let progressiveFillTarget = 240
     static let safetyZoneRadius = 50
     static let maxReservoirSize = 500
     nonisolated static let surfacedCooldown: TimeInterval = 1800
+    nonisolated static let initialUniqueSourceTarget = 100
 
     private(set) var visibleItems: [FeedItem] = []
     private(set) var reservoir: [FeedItem] = []
@@ -279,7 +281,38 @@ final class Reservoir {
                 added = true
             }
         }
-        return spreadConsecutiveImpl(result)
+        let fresh = spreadForFreshnessImpl(result, sourceRegionMap: sourceRegionMap)
+        return frontLoadUniqueSourcesImpl(fresh, count: initialUniqueSourceTarget)
+    }
+
+    /// The first screen is the app's promise of breadth. When enough providers
+    /// are available, reserve one slot per provider before any provider gets a
+    /// second card; the remainder keeps the freshness pass order unchanged.
+    private nonisolated static func frontLoadUniqueSourcesImpl(
+        _ items: [FeedItem],
+        count: Int
+    ) -> [FeedItem] {
+        guard count > 1, items.count > 1 else { return items }
+        let target = min(count, Set(items.map(\.sourceURL)).count)
+        guard target > 1 else { return items }
+
+        var selectedIndices = Set<Int>()
+        var selectedSources = Set<String>()
+        var prefix: [FeedItem] = []
+        prefix.reserveCapacity(target)
+
+        for (index, item) in items.enumerated() {
+            guard selectedSources.insert(item.sourceURL).inserted else { continue }
+            prefix.append(item)
+            selectedIndices.insert(index)
+            if prefix.count == target { break }
+        }
+
+        guard prefix.count == target else { return items }
+        prefix.append(contentsOf: items.enumerated().compactMap { index, item in
+            selectedIndices.contains(index) ? nil : item
+        })
+        return prefix
     }
 
     private nonisolated static func interleaveByTypeCategoryImpl(_ items: [FeedItem]) -> [FeedItem] {
@@ -356,38 +389,65 @@ final class Reservoir {
         return result
     }
 
-    /// Post-processing pass: scan for back-to-back items that share an
-    /// attribute (source, type, category) and swap with a later item that
-    /// breaks the run. O(n) single pass — maintains a look-ahead pointer.
-    private nonisolated static func spreadConsecutiveImpl(_ items: [FeedItem]) -> [FeedItem] {
+    /// Keep the next screenful fresh. Provider repetition is the strongest
+    /// signal, followed by subject, geography, and media type. Each choice is
+    /// made from a bounded look-ahead window so recency tiers stay broadly in
+    /// place and the pass remains cheap for large fetches.
+    private nonisolated static func spreadForFreshnessImpl(
+        _ items: [FeedItem],
+        sourceRegionMap: [String: String]
+    ) -> [FeedItem] {
         guard items.count > 2 else { return items }
-        var result = items
-        var lookAhead = 2
-        for i in 0..<(result.count - 1) {
-            let a = result[i], b = result[i + 1]
-            let clash = a.sourceURL == b.sourceURL
-                || a.category == b.category
-                || (a.isYouTube && b.isYouTube)
-                || (a.isPodcast && b.isPodcast)
-                || (!a.isYouTube && !a.isPodcast && !b.isYouTube && !b.isPodcast)
-            guard clash else { continue }
-            lookAhead = max(lookAhead, i + 2)
-            while lookAhead < result.count {
-                let c = result[lookAhead]
-                if a.sourceURL != c.sourceURL && b.sourceURL != c.sourceURL
-                    && a.category != c.category
-                    && !(a.isYouTube && c.isYouTube) && !(a.isPodcast && c.isPodcast)
-                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast)
-                    && !(!a.isYouTube && !a.isPodcast && !c.isYouTube && !c.isPodcast)
-                    && !(!b.isYouTube && !b.isPodcast && !c.isYouTube && !c.isPodcast) {
-                    result.swapAt(i + 1, lookAhead)
-                    break
+
+        var pool = items
+        var result: [FeedItem] = []
+        result.reserveCapacity(items.count)
+
+        let sourceVariety = Set(items.map(\.sourceURL)).count
+        let categoryVariety = Set(items.map(\.category)).count
+        let regionVariety = Set(items.map { sourceRegionMap[$0.sourceURL] ?? $0.region }).count
+        let mediaVariety = Set(items.map(mediaKey)).count
+        let sourceWindow = min(6, max(0, sourceVariety - 1))
+        let categoryWindow = min(3, max(0, categoryVariety - 1))
+        let regionWindow = min(2, max(0, regionVariety - 1))
+        let mediaWindow = min(1, max(0, mediaVariety - 1))
+
+        while !pool.isEmpty {
+            let searchCount = min(96, pool.count)
+            let recentSources = Set(result.suffix(sourceWindow).map(\.sourceURL))
+            let recentCategories = Set(result.suffix(categoryWindow).map(\.category))
+            let recentRegions = Set(result.suffix(regionWindow).map {
+                sourceRegionMap[$0.sourceURL] ?? $0.region
+            })
+            let recentMedia = Set(result.suffix(mediaWindow).map(mediaKey))
+
+            var bestIndex = 0
+            var bestPenalty = Int.max
+            for index in 0..<searchCount {
+                let candidate = pool[index]
+                let region = sourceRegionMap[candidate.sourceURL] ?? candidate.region
+                var penalty = index
+                if recentSources.contains(candidate.sourceURL) { penalty += 100_000 }
+                if recentCategories.contains(candidate.category) { penalty += 10_000 }
+                if recentRegions.contains(region) { penalty += 2_000 }
+                if recentMedia.contains(mediaKey(candidate)) { penalty += 20_000 }
+                if penalty < bestPenalty {
+                    bestPenalty = penalty
+                    bestIndex = index
+                    if penalty == index { break }
                 }
-                lookAhead += 1
             }
-            if lookAhead >= result.count { break }
+
+            result.append(pool.remove(at: bestIndex))
         }
         return result
+    }
+
+    private nonisolated static func mediaKey(_ item: FeedItem) -> String {
+        if item.isPodcast { return "audio" }
+        if item.isYouTube { return "video" }
+        if item.isForum { return "forum" }
+        return "text"
     }
 
     private func dedupReservoir() {

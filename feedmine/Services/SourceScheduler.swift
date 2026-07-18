@@ -18,7 +18,8 @@ final class SourceScheduler {
         activeCategory: String?,
         activeContentType: String? = nil,  // "video", "audio", or nil for all
         prioritySourceURLs: Set<String> = [],
-        activeLanguages: Set<String> = []
+        activeLanguages: Set<String> = [],
+        minimumBatchSize: Int = 10
     ) -> [FeedSource] {
         // 1. Determine scope
         let regions = activeRegion.map { [$0] } ?? Array(sourcesByRegion.keys)
@@ -32,15 +33,22 @@ final class SourceScheduler {
         // per-type ceiling.
         let currentBuffer: Int
         if let ct = activeContentType {
-            currentBuffer = reservoir.filter { item in
+            let matchingItems = reservoir.filter { item in
                 switch ct {
                 case "video": return item.isYouTube
                 case "audio": return item.isPodcast
                 case "text": return !item.isYouTube && !item.isPodcast
                 default: return true
                 }
-            }.count
-            guard currentBuffer < bufferNeeded else { return [] }
+            }
+            currentBuffer = matchingItems.count
+            let sourceBreadth = Set(matchingItems.map(\.sourceURL)).count
+            // A prolific provider can fill the numeric buffer alone. Keep the
+            // gate open until a filtered first page can represent enough distinct
+            // providers. The persistent 100-source goal is handled by FeedStore's
+            // coverage miner and must not delay this immediate response.
+            guard currentBuffer < bufferNeeded
+                || sourceBreadth < FeedStore.immediateFilteredSourceTarget else { return [] }
         } else {
             // Mixed feed: per-type ceilings. Text items are abundant; video
             // and audio are scarce. If any type is below its ceiling, the
@@ -90,7 +98,7 @@ final class SourceScheduler {
         // re-scanning all 800+ sources each time (O(N × S)). Now we score
         // once, sort once, and pick from the front (O(S log S)).
         let deficitNeeded = Int(ceil(Double(bufferNeeded - currentBuffer) / 3.0))
-        let maxSelect = max(deficitNeeded, 10)
+        let maxSelect = max(deficitNeeded, minimumBatchSize)
 
         // Phase 1: Priority sources jump the queue (Disney Fast Pass)
         var selected: [FeedSource] = []
@@ -104,6 +112,7 @@ final class SourceScheduler {
                     guard selected.count < maxSelect else { break priorityLoop }
                     guard prioritySourceURLs.contains(source.url) else { continue }
                     guard selectedURLs.insert(source.url).inserted else { continue }
+                    guard Self.matches(source, contentType: activeContentType) else { continue }
                     // Respect active language filter — priority sources with a
                     // known non-matching language must not waste fetch budget.
                     if !activeLanguages.isEmpty {
@@ -132,6 +141,7 @@ final class SourceScheduler {
                 let regionDeficit = max(0, regionDeficits[region] ?? 0)
                 for source in sources {
                     guard !selectedURLs.contains(source.url) else { continue }
+                    guard Self.matches(source, contentType: activeContentType) else { continue }
                     let failures = consecutiveFailures[source.url] ?? 0
                     if failures >= 3 {
                         let backoff = pow(2.0, Double(failures - 2)) * 60
@@ -141,7 +151,7 @@ final class SourceScheduler {
                     let catDeficit = max(0, finalCategoryDeficits[source.category] ?? 0)
 
                     let contentTypeBoost: Double = switch activeContentType {
-                    case "video": source.mediaKind == .video ? 3.0 : 1.0
+                    case "video": source.isYouTube || source.mediaKind == .video ? 3.0 : 1.0
                     case "audio": source.mediaKind == .audio ? 3.0 : 1.0
                     case "text":  source.mediaKind == .video ? 0.3 : (source.mediaKind == .audio ? 0.3 : 1.0)
                     default:      source.isYouTube ? 2.0 : (source.mediaKind == .audio ? 2.0 : 1.0)
@@ -172,13 +182,13 @@ final class SourceScheduler {
                         : (sourceLang != nil ? 3.0 : 0.8)
 
                     let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost * languageBoost
-                    let finalScore = max(score, 0.01)
+                    let finalScore = max(score, 0.01) * Double.random(in: 0.98...1.02)
                     if finalScore > 0 { scored.append((source, finalScore)) }
                 }
             }
 
-            scored.sort(by: { $0.score > $1.score })
-            for (source, _) in scored {
+            let diverse = Self.diverseSources(from: scored, limit: remaining)
+            for source in diverse {
                 guard selected.count < maxSelect else { break }
                 guard selectedURLs.insert(source.url).inserted else { continue }
                 selected.append(source)
@@ -186,6 +196,22 @@ final class SourceScheduler {
         }
 
         return selected
+    }
+
+    private static func matches(_ source: FeedSource, contentType: String?) -> Bool {
+        switch contentType {
+        case "video":
+            return source.isYouTube || source.mediaKind == .video
+        case "audio":
+            return source.mediaKind == .audio
+        case "text":
+            return !source.isYouTube && source.mediaKind != .video
+                && source.mediaKind != .audio && source.mediaKind != .forum
+        case "forum":
+            return source.mediaKind == .forum
+        default:
+            return true
+        }
     }
 
     func recordConsumption() {
@@ -255,6 +281,68 @@ final class SourceScheduler {
         let rate = Double(recent.count) / 120.0 // scrolls per second over last 2 min
         let target = Int(rate * 180) // 3 min buffer
         return max(50, min(500, target))
+    }
+
+    /// Pick high-scoring sources without letting a single category/provider
+    /// cluster dominate the cold-start batch. Scores still lead; diversity
+    /// breaks ties and near-ties.
+    nonisolated static func diverseSources(
+        from scoredSources: [(source: FeedSource, score: Double)],
+        limit: Int
+    ) -> [FeedSource] {
+        guard limit > 0, !scoredSources.isEmpty else { return [] }
+
+        var pool = scoredSources.sorted {
+            if $0.score == $1.score { return $0.source.url < $1.source.url }
+            return $0.score > $1.score
+        }
+        var selected: [FeedSource] = []
+        selected.reserveCapacity(min(limit, pool.count))
+        var categoryCounts: [String: Int] = [:]
+        var mediaCounts: [String: Int] = [:]
+        var regionCounts: [String: Int] = [:]
+        var lastCategory: String?
+
+        while selected.count < limit, !pool.isEmpty {
+            var bestIndex = pool.startIndex
+            var bestRank = -Double.infinity
+
+            for index in pool.indices {
+                let candidate = pool[index]
+                let source = candidate.source
+                let categoryPenalty = 1.0 + Double(categoryCounts[source.category, default: 0]) * 1.85
+                let mediaPenalty = 1.0 + Double(mediaCounts[source.mediaKind.rawValue, default: 0]) * 0.18
+                let regionKey = diversityRegionKey(source.region)
+                let regionPenalty = 1.0 + Double(regionCounts[regionKey, default: 0]) * 0.35
+                let immediateRepeatPenalty = source.category == lastCategory ? 0.35 : 1.0
+                let rank = candidate.score * immediateRepeatPenalty / categoryPenalty / mediaPenalty / regionPenalty
+
+                if rank > bestRank {
+                    bestRank = rank
+                    bestIndex = index
+                }
+            }
+
+            let source = pool.remove(at: bestIndex).source
+            selected.append(source)
+            categoryCounts[source.category, default: 0] += 1
+            mediaCounts[source.mediaKind.rawValue, default: 0] += 1
+            regionCounts[diversityRegionKey(source.region), default: 0] += 1
+            lastCategory = source.category
+        }
+
+        return selected
+    }
+
+    private nonisolated static func diversityRegionKey(_ region: String) -> String {
+        let parts = region.split(separator: "/")
+        if parts.count >= 2, parts[0] == "countries" {
+            return "countries/\(parts[1])"
+        }
+        if parts.count >= 2, parts[0] == "topic" {
+            return "topic/\(parts[1])"
+        }
+        return region
     }
 
     private func distribution<T: Hashable>(of items: [FeedItem], key: (FeedItem) -> T) -> [T: Double] {

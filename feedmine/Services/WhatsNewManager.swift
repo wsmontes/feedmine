@@ -30,17 +30,13 @@ final class WhatsNewManager {
         _ newItems: [FeedItem],
         visibleIDs: Set<String>,
         readIDs: Set<String>,
-        isItemEnabled: (FeedItem) -> Bool,
-        filterContentType: (FeedItem) -> Bool,
-        contentFilterExcludes: (FeedItem) -> Bool,
+        matchesActiveFilters: (FeedItem) -> Bool,
         markSurfaced: ([FeedItem]) -> Void
     ) {
         let weekAgo = Date().addingTimeInterval(-604800)  // 7 days
         let candidates = newItems.filter { item in
             item.publishedAt > weekAgo
-            && isItemEnabled(item)
-            && filterContentType(item)
-            && !contentFilterExcludes(item)
+            && matchesActiveFilters(item)
             && !visibleIDs.contains(item.id)
             && !readIDs.contains(item.id)
         }
@@ -125,9 +121,7 @@ final class WhatsNewManager {
     func seedWhatsNewFromDB(
         surfacedIDs: Set<String>,
         readIDs: Set<String>,
-        isItemEnabled: (FeedItem) -> Bool,
-        filterContentType: (FeedItem) -> Bool,
-        contentFilterExcludes: (FeedItem) -> Bool,
+        matchesActiveFilters: (FeedItem) -> Bool,
         markSurfaced: ([FeedItem]) -> Void
     ) async {
         guard whatsNewPool.isEmpty else { return }
@@ -141,9 +135,8 @@ final class WhatsNewManager {
                     .fetchAll(db)
             }
             let items = records.map { $0.toFeedItem() }
-                .filter(isItemEnabled).filter(filterContentType)
+                .filter(matchesActiveFilters)
                 .filter { !surfacedIDs.contains($0.id) && !readIDs.contains($0.id) }
-                .filter { !contentFilterExcludes($0) }
             var seen = Set<String>()
             whatsNewPool = items.filter { seen.insert($0.sourceURL).inserted }
             promoteWhatsNewIfReady(markSurfaced: markSurfaced)

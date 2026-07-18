@@ -26,25 +26,21 @@ struct OPMLParser {
         let info = Bundle.main.infoDictionary
         let build = info?["CFBundleVersion"] as? String ?? "0"
         let short = info?["CFBundleShortVersionString"] as? String ?? "0"
-        // Quick file-system check: count + newest mtime of bundled OPML files.
-        // If the corpus changed (reorg, add, remove) since the last parse,
-        // the fingerprint won't match and the cache is rebuilt.
-        var fileCount = 0
-        var newestMtime: Double = 0
-        if let feedsURL = Bundle.main.resourceURL?.appendingPathComponent("Feeds"),
-           let enumerator = FileManager.default.enumerator(
-            at: feedsURL, includingPropertiesForKeys: [.contentModificationDateKey]) {
-            while let fileURL = enumerator.nextObject() as? URL {
-                if fileURL.pathExtension == "opml" {
-                    fileCount += 1
-                    if let mtime = (try? fileURL.resourceValues(forKeys: [.contentModificationDateKey]))?.contentModificationDate {
-                        newestMtime = max(newestMtime, mtime.timeIntervalSince1970)
-                    }
-                }
-            }
-        }
-        let mtimeMs = Int64(newestMtime * 1000)
-        return "\(cacheFormatVersion)-\(short)-\(build)-fc\(fileCount)-mt\(mtimeMs)"
+        // Bundled resources are immutable for an installed build. One stat on
+        // the executable plus one on the Feeds root invalidates development
+        // installs without walking thousands of OPML files on every launch.
+        let feedsURL = Bundle.main.resourceURL?.appendingPathComponent("Feeds")
+        let executableMtime = Bundle.main.executableURL.flatMap {
+            try? $0.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate
+        } ?? nil
+        let feedsMtime = feedsURL.flatMap {
+            try? $0.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate
+        } ?? nil
+        let stamp = max(
+            executableMtime?.timeIntervalSince1970 ?? 0,
+            feedsMtime?.timeIntervalSince1970 ?? 0
+        )
+        return "\(cacheFormatVersion)-\(short)-\(build)-mt\(Int64(stamp * 1000))"
     }
 
     private static var cacheURL: URL? {
@@ -90,8 +86,7 @@ struct OPMLParser {
 
     /// Scan the app bundle for all .opml files and parse them into FeedSource entries.
     static func parseAll() async -> OPMLParseResult {
-        // Cache fast path after fingerprinting. The fingerprint still walks the
-        // bundled OPML tree to count files and read the newest mtime.
+        // Cache fast path after a constant-time bundle fingerprint.
         let endFingerprintMetric = FeedMetrics.beginInterval("OPML.fingerprint")
         let fingerprint = cacheFingerprint()
         endFingerprintMetric()

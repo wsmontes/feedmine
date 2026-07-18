@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>News Feeds</title></head>
-    <language>en</language>
+  <head><title>News Feeds</title><language>en</language></head>
   <body>
     <outline text="News">
       <outline title="BBC News" xmlUrl="https://feeds.bbci.co.uk/news/rss.xml" type="rss"/>

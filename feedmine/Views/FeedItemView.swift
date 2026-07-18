@@ -5,8 +5,6 @@ import SwiftUI
 struct FeedItemView: View {
     @Environment(FeedLoader.self) private var loader
     let item: FeedItem
-    let index: Int
-    var isFirstAppearance: Bool = true
     var onOpen: (() -> Void)?
     var onCopy: (() -> Void)?
     var onPlaybackFailed: (() -> Void)?
@@ -18,10 +16,8 @@ struct FeedItemView: View {
                     item: item,
                     isRead: item.isRead,
                     isBookmarked: item.isBookmarked,
-                    appearDelay: Double(index % 8) * 0.04,
                     onBookmark: { loader.toggleBookmark(item.id) },
-                    isInBookmarkBox: loader.selectedBookmarkListID != nil,
-                    isFirstAppearance: isFirstAppearance
+                    isInBookmarkBox: loader.selectedBookmarkListID != nil
                 )
                 .equatable()
                 .padding(.horizontal, 12)

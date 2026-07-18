@@ -40,16 +40,22 @@ struct FeedEmptyStateView: View {
                 .font(.title3)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
+                .lineLimit(3)
+                .minimumScaleFactor(0.82)
+                .frame(maxWidth: 360)
+                .padding(.horizontal, 24)
 
             // Description
             Text(description)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
-                .padding(.horizontal, 40)
+                .lineLimit(4)
+                .minimumScaleFactor(0.9)
+                .padding(.horizontal, 32)
 
             // Fetching progress
-            if case .fetching(let topic, let fetched, let total) = mode {
+            if case .fetching(_, let fetched, let total) = mode {
                 HStack(spacing: 4) {
                     ProgressView()
                         .scaleEffect(0.7)

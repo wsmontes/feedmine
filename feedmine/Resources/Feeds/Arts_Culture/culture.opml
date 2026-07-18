@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-  <head><title>Culture Feeds</title></head>
-    <language>en</language>
+  <head><title>Culture Feeds</title><language>en</language></head>
   <body>
     <outline text="Culture">
       <outline title="Aeon" xmlUrl="https://aeon.co/feed.rss" type="rss"/>

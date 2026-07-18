@@ -64,6 +64,10 @@ actor RSSFetcher {
                 Log.network.error("Parse failure for \(source.title): \(error)")
                 return FeedFetchResult(source: source, items: [], status: .failed)
             }
+        } catch is CancellationError {
+            return FeedFetchResult(source: source, items: [], status: .failed)
+        } catch let error as URLError where error.code == .cancelled {
+            return FeedFetchResult(source: source, items: [], status: .failed)
         } catch {
             Log.network.error("Network error for \(source.title): \(error)")
             return FeedFetchResult(source: source, items: [], status: .failed)
@@ -116,6 +120,95 @@ actor RSSFetcher {
                     group.cancelAll()
                 } else if let source = iterator.next() {
                     group.addTask { await self.fetch(source) }
+                }
+            }
+        }
+
+        return FeedFetchBatch(
+            items: allItems,
+            fetchedSourceCount: fetchedSourceCount,
+            failedSourceCount: failedSourceCount,
+            emptySourceCount: emptySourceCount,
+            sourceStatuses: sourceStatuses
+        )
+    }
+
+    /// Cold-start fetch that stops waiting as soon as there is enough content
+    /// for the first page and its runway. Slow feeds are cancelled for this
+    /// pass and remain eligible for the progressive background fetch.
+    func fetchStarter(
+        _ sources: [FeedSource],
+        maxConcurrent: Int = 15,
+        minimumSuccessfulSources: Int = 4,
+        minimumItemCount: Int = 40,
+        deadline: Duration = .milliseconds(2_250),
+        onProgress: (@MainActor @Sendable (FeedFetchResult) -> Void)? = nil
+    ) async -> FeedFetchBatch {
+        enum Event: Sendable {
+            case result(FeedFetchResult)
+            case deadline
+            case cancelled
+        }
+
+        var allItems: [FeedItem] = []
+        var fetchedSourceCount = 0
+        var failedSourceCount = 0
+        var emptySourceCount = 0
+        var sourceStatuses: [String: FeedFetchStatus] = [:]
+        let cap = max(1, maxConcurrent)
+
+        await withTaskGroup(of: Event.self) { group in
+            var iterator = sources.makeIterator()
+            var activeFetches = 0
+
+            while activeFetches < cap, let source = iterator.next() {
+                group.addTask { .result(await self.fetch(source)) }
+                activeFetches += 1
+            }
+            group.addTask {
+                do {
+                    try await Task.sleep(for: deadline)
+                    return .deadline
+                } catch {
+                    return .cancelled
+                }
+            }
+
+            eventLoop: while let event = await group.next() {
+                switch event {
+                case .cancelled:
+                    continue
+                case .deadline:
+                    group.cancelAll()
+                    break eventLoop
+                case .result(let result):
+                    activeFetches -= 1
+                    sourceStatuses[result.source.url] = result.status
+                    switch result.status {
+                    case .success:
+                        fetchedSourceCount += 1
+                        allItems.append(contentsOf: result.items)
+                    case .empty:
+                        emptySourceCount += 1
+                    case .failed:
+                        failedSourceCount += 1
+                    }
+                    await onProgress?(result)
+
+                    let runwayReady = fetchedSourceCount >= minimumSuccessfulSources
+                        && allItems.count >= minimumItemCount
+                    if runwayReady {
+                        group.cancelAll()
+                        break eventLoop
+                    }
+
+                    if let source = iterator.next() {
+                        group.addTask { .result(await self.fetch(source)) }
+                        activeFetches += 1
+                    } else if activeFetches == 0 {
+                        group.cancelAll()
+                        break eventLoop
+                    }
                 }
             }
         }
@@ -455,7 +548,7 @@ actor RSSFetcher {
         let resolvedImageURL = resolveImageURL(imageURL, baseURL: link ?? source.url)
 
         // Sanitize: truncate long titles, strip HTML, cap source names
-        let sanitizedTitle = strippingHTMLTags(title ?? "Untitled")
+        let sanitizedTitle = Self.sanitizedHTMLText(title ?? "Untitled")
             .trimmingCharacters(in: .whitespacesAndNewlines)
         let truncatedTitle = String(sanitizedTitle.prefix(200))
         let sanitizedSource = String(source.title.prefix(50))
@@ -575,9 +668,8 @@ actor RSSFetcher {
     /// Extract excerpt from available fields in priority order.
     private func extractExcerpt(description: String?, content: String?) -> String {
         let raw = description ?? content ?? ""
-        let stripped = strippingHTMLTags(raw)
-            .replacingOccurrences(of: "\n", with: " ")
-            .replacingOccurrences(of: "  ", with: " ")
+        let stripped = Self.sanitizedHTMLText(raw)
+            .replacingOccurrences(of: #"\s+"#, with: " ", options: .regularExpression)
             .trimmingCharacters(in: .whitespacesAndNewlines)
         if stripped.isEmpty { return "No description" }
         // Find last full word within 200 char limit
@@ -588,23 +680,98 @@ actor RSSFetcher {
         return capped
     }
 
-    private static let htmlTagRegex = try! NSRegularExpression(pattern: "<[^>]+>")
     private static let imgSrcRegex = try! NSRegularExpression(pattern: #"<img[^>]+src=["']([^"']+)["']"#, options: .caseInsensitive)
 
-    /// Strip HTML tags using regex — avoids WebKit NSAttributedString overhead.
-    private func strippingHTMLTags(_ html: String) -> String {
-        // Use the precompiled regex instead of `.regularExpression`, which
-        // recompiles the pattern on every call (this runs twice per feed item).
-        let range = NSRange(html.startIndex..., in: html)
-        let stripped = Self.htmlTagRegex.stringByReplacingMatches(in: html, range: range, withTemplate: "")
-        // Decode entities with `&amp;` LAST: decoding it first would double-
-        // unescape sequences like `&amp;lt;` into `<` instead of literal `&lt;`.
-        return stripped
-            .replacingOccurrences(of: "&lt;", with: "<")
-            .replacingOccurrences(of: "&gt;", with: ">")
-            .replacingOccurrences(of: "&quot;", with: "\"")
-            .replacingOccurrences(of: "&nbsp;", with: " ")
-            .replacingOccurrences(of: "&#39;", with: "'")
-            .replacingOccurrences(of: "&amp;", with: "&")
+    /// Convert feed HTML/XML fragments into display text without pulling in
+    /// NSAttributedString's HTML parser for every item.
+    nonisolated static func sanitizedHTMLText(_ html: String) -> String {
+        FeedTextSanitizer.sanitizedHTMLText(html)
     }
+}
+
+enum FeedTextSanitizer {
+    private static let htmlTagRegex = try! NSRegularExpression(pattern: "<[^>]+>")
+    private static let htmlEntityRegex = try! NSRegularExpression(
+        pattern: #"&#(?:x[0-9A-Fa-f]+|[0-9]+);?|&[A-Za-z][A-Za-z0-9]{1,31};"#
+    )
+
+    /// Convert feed HTML/XML fragments into display text without pulling in
+    /// NSAttributedString's HTML parser for every item.
+    static func sanitizedHTMLText(_ html: String) -> String {
+        let decodedMarkup = decodeHTMLEntities(in: html)
+        let range = NSRange(decodedMarkup.startIndex..., in: decodedMarkup)
+        let stripped = htmlTagRegex.stringByReplacingMatches(in: decodedMarkup, range: range, withTemplate: " ")
+        return decodeHTMLEntities(in: stripped)
+    }
+
+    private static func decodeHTMLEntities(in text: String) -> String {
+        guard text.contains("&") else { return text }
+
+        let matches = htmlEntityRegex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+        guard !matches.isEmpty else { return text }
+
+        var decoded = ""
+        decoded.reserveCapacity(text.count)
+        var cursor = text.startIndex
+
+        for match in matches {
+            guard let range = Range(match.range, in: text) else { continue }
+            decoded.append(contentsOf: text[cursor..<range.lowerBound])
+            let token = String(text[range])
+            decoded.append(decodedHTMLEntity(token) ?? token)
+            cursor = range.upperBound
+        }
+
+        decoded.append(contentsOf: text[cursor...])
+        return decoded
+    }
+
+    private static func decodedHTMLEntity(_ token: String) -> String? {
+        guard token.hasPrefix("&") else { return nil }
+        var body = String(token.dropFirst())
+        if body.hasSuffix(";") {
+            body.removeLast()
+        }
+
+        if body.hasPrefix("#x") || body.hasPrefix("#X") {
+            let hex = String(body.dropFirst(2))
+            guard let value = UInt32(hex, radix: 16), let scalar = UnicodeScalar(value) else { return nil }
+            return scalar.value == 160 ? " " : String(scalar)
+        }
+
+        if body.hasPrefix("#") {
+            let decimal = String(body.dropFirst())
+            guard let value = UInt32(decimal, radix: 10), let scalar = UnicodeScalar(value) else { return nil }
+            return scalar.value == 160 ? " " : String(scalar)
+        }
+
+        return namedHTMLEntities[body.lowercased()]
+    }
+
+    private static let namedHTMLEntities: [String: String] = [
+        "amp": "&",
+        "apos": "'",
+        "bdquo": "\"",
+        "bull": "*",
+        "copy": "(c)",
+        "euro": "EUR",
+        "gt": ">",
+        "hellip": "...",
+        "laquo": "<<",
+        "ldquo": "\"",
+        "lsquo": "'",
+        "lt": "<",
+        "mdash": "-",
+        "middot": "*",
+        "nbsp": " ",
+        "ndash": "-",
+        "pound": "GBP",
+        "quot": "\"",
+        "raquo": ">>",
+        "rdquo": "\"",
+        "reg": "(r)",
+        "rsquo": "'",
+        "sbquo": "'",
+        "trade": "TM",
+    ]
 }

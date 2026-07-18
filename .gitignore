@@ -37,3 +37,12 @@ email_outreach/
 # Build artifacts
 build/
 .build-device/
+
+# Python virtualenv
+.venv_feeds/
+
+# Generated data (feed corpus)
+feeds_corpus*.parquet
+feeds_corpus.duckdb
+feeds_corpus_merged_parts/
+feeds_progress.json

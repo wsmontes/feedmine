@@ -17,6 +17,11 @@ import Observation
 @Observable
 final class TaxonomyStore {
 
+    struct CoverageGroup: Sendable {
+        let id: String
+        let feedURLs: Set<String>
+    }
+
     // MARK: - Shared singleton
 
     static let shared = TaxonomyStore()
@@ -38,6 +43,7 @@ final class TaxonomyStore {
     /// Built once during build(from:) and used by feedURLs(inSubtreesOf:)
     /// for O(selectedNodes) lookups instead of O(allFeeds × selectedNodes).
     private var nodeToFeedURLs: [String: Set<String>] = [:]
+    @ObservationIgnored private(set) var coverageGroups: [CoverageGroup] = []
 
     var selectedNodeIDs: Set<String> = []
 
@@ -167,6 +173,7 @@ final class TaxonomyStore {
         )
 
         self.root = rootWithChildren
+        rebuildCoverageGroups()
 
         // Build children index for O(1) lookups
         childrenIndex.removeAll()
@@ -345,6 +352,17 @@ final class TaxonomyStore {
         return result
     }
 
+    private func rebuildCoverageGroups() {
+        coverageGroups = flatIndex.values.compactMap { node in
+            guard node.id != TaxonomyNode.rootID,
+                  node.childrenCount == 0,
+                  node.feedCount > 0,
+                  let urls = nodeToFeedURLs[node.id],
+                  !urls.isEmpty else { return nil }
+            return CoverageGroup(id: node.id, feedURLs: urls)
+        }.sorted { $0.id < $1.id }
+    }
+
     /// Search flat index by name. Case-insensitive. Returns up to 50 results.
     func search(_ query: String) -> [TaxonomyNode] {
         guard !query.isEmpty else { return [] }
@@ -460,6 +478,7 @@ final class TaxonomyStore {
                 }
             }
         }
+        rebuildCoverageGroups()
         self.root = cached.root
         return true
     }

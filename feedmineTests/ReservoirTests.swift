@@ -105,8 +105,8 @@ final class ReservoirTests: XCTestCase {
         let result = Reservoir.interleaveOffMain(
             all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
         )
-        // Verify the text-text clash detection fired and the spread reduced
-        // consecutive text-text pairs below 30% of total adjacent pairs.
+        // With two text providers and one podcast provider, strict provider
+        // rotation has a theoretical one-in-three text/text floor.
         var consecutiveTextCount = 0
         for i in 0..<(result.count - 1) {
             let a = result[i], b = result[i + 1]
@@ -115,8 +115,8 @@ final class ReservoirTests: XCTestCase {
             }
         }
         let totalPairs = result.count - 1
-        XCTAssertLessThan(consecutiveTextCount, totalPairs * 30 / 100,
-                          "Too many consecutive text pairs: \(consecutiveTextCount)/\(totalPairs)")
+        XCTAssertLessThanOrEqual(consecutiveTextCount, (totalPairs + 2) / 3,
+                                 "Too many consecutive text pairs: \(consecutiveTextCount)/\(totalPairs)")
     }
 
     func testInterleaveOffMainUsesSourceRegionMap() {
@@ -138,6 +138,88 @@ final class ReservoirTests: XCTestCase {
             let countries = Set(slice.map { regionMap[$0.sourceURL] ?? "unknown" })
             XCTAssertTrue(countries.count >= 2,
                           "4 consecutive from same country at idx \(i): \(countries)")
+        }
+    }
+
+    func testInterleaveOffMainAvoidsABAProviderRhythmWhenPossible() {
+        let all = makeItems(count: 10, sourceURL: "https://a.com/feed")
+            + makeItems(count: 10, sourceURL: "https://b.com/feed")
+            + makeItems(count: 10, sourceURL: "https://c.com/feed")
+            + makeItems(count: 10, sourceURL: "https://d.com/feed")
+
+        let result = Reservoir.interleaveOffMain(
+            all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let prefix = Array(result.prefix(24))
+
+        for index in 2..<prefix.count {
+            XCTAssertNotEqual(
+                prefix[index].sourceURL,
+                prefix[index - 2].sourceURL,
+                "Provider repeated in A/B/A rhythm at idx \(index)"
+            )
+        }
+    }
+
+    func testInterleaveKeepsProviderOffTheNextScreenfulWhenPossible() {
+        let all = (0..<8).flatMap { source in
+            makeItems(count: 8, sourceURL: "https://source\(source).com/feed",
+                      category: "Category \(source % 4)")
+        }
+
+        let result = Reservoir.interleaveOffMain(
+            all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let prefix = Array(result.prefix(40))
+
+        for index in prefix.indices {
+            let recentStart = max(0, index - 6)
+            guard recentStart < index else { continue }
+            let recentSources = Set(prefix[recentStart..<index].map(\.sourceURL))
+            XCTAssertFalse(
+                recentSources.contains(prefix[index].sourceURL),
+                "Provider repeated within the previous six cards at idx \(index)"
+            )
+        }
+    }
+
+    func testInterleaveMakesEveryProviderInInitialRunwayUniqueWhenPossible() {
+        let all = (0..<120).flatMap { source in
+            makeItems(
+                count: 2,
+                sourceURL: "https://first-page-\(source).com/feed",
+                category: "Category \(source % 8)"
+            )
+        }
+
+        let result = Reservoir.interleaveOffMain(
+            all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let initialRunway = Array(result.prefix(Reservoir.initialUniqueSourceTarget))
+
+        XCTAssertEqual(initialRunway.count, Reservoir.initialUniqueSourceTarget)
+        XCTAssertEqual(Set(initialRunway.map(\.sourceURL)).count, Reservoir.initialUniqueSourceTarget)
+    }
+
+    func testInterleaveSpreadsCategoriesWhenEveryItemIsText() {
+        let all = (0..<8).flatMap { source in
+            makeItems(count: 6, sourceURL: "https://text\(source).com/feed",
+                      category: "Category \(source % 4)")
+        }
+
+        let result = Reservoir.interleaveOffMain(
+            all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let prefix = Array(result.prefix(32))
+
+        for index in prefix.indices {
+            let recentStart = max(0, index - 3)
+            guard recentStart < index else { continue }
+            let recentCategories = Set(prefix[recentStart..<index].map(\.category))
+            XCTAssertFalse(
+                recentCategories.contains(prefix[index].category),
+                "Category repeated within the previous three text cards at idx \(index)"
+            )
         }
     }
 
