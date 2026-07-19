@@ -408,9 +408,9 @@ final class Reservoir {
         let regionVariety = Set(items.map { sourceRegionMap[$0.sourceURL] ?? $0.region }).count
         let mediaVariety = Set(items.map(mediaKey)).count
         let sourceWindow = min(6, max(0, sourceVariety - 1))
-        let categoryWindow = min(3, max(0, categoryVariety - 1))
-        let regionWindow = min(2, max(0, regionVariety - 1))
-        let mediaWindow = min(1, max(0, mediaVariety - 1))
+        let categoryWindow = min(10, max(0, categoryVariety - 1))
+        let regionWindow = min(6, max(0, regionVariety - 1))
+        let mediaWindow = min(4, max(0, mediaVariety - 1))
 
         while !pool.isEmpty {
             let searchCount = min(96, pool.count)
@@ -428,9 +428,9 @@ final class Reservoir {
                 let region = sourceRegionMap[candidate.sourceURL] ?? candidate.region
                 var penalty = index
                 if recentSources.contains(candidate.sourceURL) { penalty += 100_000 }
-                if recentCategories.contains(candidate.category) { penalty += 10_000 }
-                if recentRegions.contains(region) { penalty += 2_000 }
-                if recentMedia.contains(mediaKey(candidate)) { penalty += 20_000 }
+                if recentCategories.contains(candidate.category) { penalty += 50_000 }
+                if recentRegions.contains(region) { penalty += 15_000 }
+                if recentMedia.contains(mediaKey(candidate)) { penalty += 30_000 }
                 if penalty < bestPenalty {
                     bestPenalty = penalty
                     bestIndex = index
