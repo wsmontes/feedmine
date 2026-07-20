@@ -1,4 +1,4 @@
-# Feedmine
+<img width="1800" height="520" alt="feedmine-wordmark" src="https://github.com/user-attachments/assets/cd4ad7d7-ceb2-4292-bcbb-70aef3f18d00" />
 
 News & podcast aggregator for iOS. Curates content from 28,000+ RSS feeds across global sources and 190+ countries, with YouTube channel integration.
 
