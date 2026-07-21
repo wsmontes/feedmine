@@ -30,6 +30,7 @@ email_outreach/
 
 # Environment secrets
 .env
+AuthKey_*.p8
 
 # Loop progress artifacts
 .loop_progress.json
