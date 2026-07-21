@@ -18,6 +18,7 @@ struct TaxonomyBrowseView: View {
                         ToolbarItem(placement: .topBarTrailing) {
                             Button("Done") { dismiss() }
                                 .accessibilityIdentifier("topics-done")
+                                .accessibilityValue("\(store.selectedNodeIDs.count)")
                         }
                     }
             }
@@ -168,6 +169,16 @@ private struct TaxonomyLevelView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(node.name)
                         .font(.subheadline)
+                    let breadcrumb = store.ancestors(of: node.id)
+                        .filter { $0.id != TaxonomyNode.rootID && $0.id != node.id }
+                        .map(\.name)
+                        .joined(separator: " › ")
+                    if !breadcrumb.isEmpty {
+                        Text(breadcrumb)
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                    }
                     if let lang = node.language {
                         Text(lang.uppercased())
                             .font(.caption2)
@@ -181,5 +192,7 @@ private struct TaxonomyLevelView: View {
             }
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("taxonomy-node-\(node.id)")
+        .accessibilityValue(store.selectedNodeIDs.contains(node.id) ? "selected" : "not selected")
     }
 }

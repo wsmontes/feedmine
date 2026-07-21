@@ -10,6 +10,12 @@ enum FeedLoadingState {
     case loadingMore
 }
 
+enum DeferredToggleState: Equatable {
+    case none
+    case enabled
+    case disabled
+}
+
 /// Minimal placeholder for migration compatibility.
 /// Replaced by SQLite persistence — kept for stub API compliance.
 struct FeedState: Codable {
@@ -34,6 +40,7 @@ struct FeedState: Codable {
 final class FeedLoader {
     private let store: FeedStore
     private let prefetcher = ImagePrefetcher()
+    private var pendingRegionToggleStates: [String: DeferredToggleState] = [:]
 
     // MARK: - UI State (from store)
 
@@ -48,17 +55,32 @@ final class FeedLoader {
     var emptyFeedCount: Int { store.emptyFeedCount }
     var emptyStateFetchedCount: Int { store.emptyStateFetchedCount }
     var emptyStateFetchTotal: Int { store.emptyStateFetchTotal }
+    var hasPreviouslyLoadedContent: Bool { store.hasPreviouslyLoadedContent }
     var isUrgentFetching: Bool { store.isUrgentFetching }
+    var startupFetchedSourceCount: Int { store.startupFetchedSourceCount }
+    var startupTargetSourceCount: Int { store.startupTargetSourceCount }
+    var startupTotalSourceCount: Int { store.startupTotalSourceCount }
+    var startupRecentSourceNames: [String] { store.startupRecentSourceNames }
+    var startupRunwayReady: Bool { store.startupRunwayReady }
+    var isPreparingInitialRunway: Bool { store.isPreparingInitialRunway }
     var catalogDiagnosticsStatus = FeedEngineCatalogDiagnosticsStatus.idle
     private var catalogDiagnosticsTask: Task<Void, Never>?
-    private var filterCacheWarmupTask: Task<Void, Never>?
+    private var catalogUpdateTask: Task<Void, Never>?
 
     // MARK: - Date Sections
 
     struct DateSection: Identifiable {
-        var id: String { title }
+        let id: String
         let title: String
         let items: [FeedItem]
+        let showsHeader: Bool
+
+        init(id: String? = nil, title: String, items: [FeedItem], showsHeader: Bool = true) {
+            self.id = id ?? title
+            self.title = title
+            self.items = items
+            self.showsHeader = showsHeader
+        }
     }
 
     // MARK: - Layout
@@ -100,10 +122,22 @@ final class FeedLoader {
     var selectedNodeIDs: Set<String> { store.activeNodeIDs }
     var selectedNodeNames: [String] { TaxonomyStore.shared.selectedNodeNames }
     var selectedLanguages: Set<String> { store.activeLanguages }
+    var selectedRegion: String? { store.activeRegion }
     var hasLanguageSelection: Bool { !store.activeLanguages.isEmpty }
     var hasTaxonomySelection: Bool { !selectedNodeIDs.isEmpty }
+    var hasRegionSelection: Bool { selectedRegion != nil }
     var hasActiveFilters: Bool {
-        hasTaxonomySelection || selectedMood != .all || selectedContentType != .all || hasLanguageSelection
+        hasRegionSelection || hasTaxonomySelection || selectedMood != .all || selectedContentType != .all || hasLanguageSelection
+    }
+    var activeFilterCount: Int {
+        var count = 0
+        if hasRegionSelection { count += 1 }
+        count += selectedNodeIDs.count
+        count += selectedLanguages.count
+        if selectedContentType != .all { count += 1 }
+        if selectedMood != .all { count += 1 }
+        if !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { count += 1 }
+        return count
     }
     var availableTaxonomyRoot: TaxonomyNode? { TaxonomyStore.shared.root }
 
@@ -162,7 +196,8 @@ final class FeedLoader {
         let code: String       // ISO 639-1
         let name: String       // localized display name
         let flag: String       // emoji flag
-        let feedCount: Int
+        let feedCount: Int     // enabled sources matching this language
+        let totalFeedCount: Int
     }
 
     @ObservationIgnored private var _cachedAvailableLanguages: [LanguageInfo] = []
@@ -174,6 +209,8 @@ final class FeedLoader {
 
     var searchQuery: String = ""
     var isSearching: Bool { store.isSearching }
+    var isSearchLoading: Bool { store.isSearchLoading }
+    var unifiedSearchResults: UnifiedSearchResults { store.unifiedSearchResults }
 
     // MARK: - Filtered Items (reads from FeedStore as single source)
 
@@ -219,6 +256,15 @@ final class FeedLoader {
         }
         _cachedDateSectionsGen = _cachedGeneration
         _cachedDateSectionsQuery = _cachedSearchQuery
+        // A filtered feed already has an intentional provider/category/media
+        // order. Regrouping it by date would move all fresh aggregator cards
+        // ahead of older independent publishers and undo that diversity.
+        if hasActiveFilters || !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            _cachedSections = items.isEmpty
+                ? []
+                : [DateSection(id: "ordered-results", title: "", items: items, showsHeader: false)]
+            return _cachedSections
+        }
         // Use pre-computed sectionDayOffset when available (new items);
         // fall back to Calendar for older items loaded from SQLite.
         let calendar = Calendar.current; let now = Date()
@@ -258,39 +304,31 @@ final class FeedLoader {
     // MARK: - Countries / Sources
 
     var availableCountries: [Country] { store.registry.availableCountries }
-    var availableCategories: [String] {
-        Set(store.registry.enabledSources.map(\.category)).sorted()
-    }
+    var availableCategories: [String] { store.registry.availableCategories }
     var availableLanguages: [LanguageInfo] {
-        let sourceRevision = store.registry.sourceRevision
-        let enablementRevision = store.registry.enablementRevision
+        let counts = store.registry.languageCountSnapshot()
         let localeIdentifier = Locale.current.identifier
-        if _cachedAvailableLanguagesSourceRevision == sourceRevision,
-           _cachedAvailableLanguagesEnablementRevision == enablementRevision,
+        if _cachedAvailableLanguagesSourceRevision == counts.sourceRevision,
+           _cachedAvailableLanguagesEnablementRevision == counts.enablementRevision,
            _cachedAvailableLanguagesLocaleIdentifier == localeIdentifier {
             return _cachedAvailableLanguages
         }
 
         // Use enabled sources so counts reflect what the user can actually see.
         // Normalize to ISO 639-1 base codes so "pt-BR" and "pt" merge into one entry.
-        var counts: [String: Int] = [:]
-        for source in store.registry.enabledSources {
-            guard let normalized = FeedStore.normalizedLanguageCode(source.language) else { continue }
-            counts[normalized, default: 0] += 1
-        }
-
-        let languages = counts.map { code, count in
+        let languages = counts.enabled.map { code, count in
             LanguageInfo(
                 code: code,
                 name: Locale.current.localizedString(forLanguageCode: code) ?? code,
                 flag: Self.flagEmoji(for: code),
-                feedCount: count
+                feedCount: count,
+                totalFeedCount: counts.total[code] ?? count
             )
         }.sorted { $0.feedCount > $1.feedCount }
 
         _cachedAvailableLanguages = languages
-        _cachedAvailableLanguagesSourceRevision = sourceRevision
-        _cachedAvailableLanguagesEnablementRevision = enablementRevision
+        _cachedAvailableLanguagesSourceRevision = counts.sourceRevision
+        _cachedAvailableLanguagesEnablementRevision = counts.enablementRevision
         _cachedAvailableLanguagesLocaleIdentifier = localeIdentifier
         return languages
     }
@@ -423,9 +461,9 @@ final class FeedLoader {
     var whatsNewLabel: String { "What's New" }
     var whatsNewVisible = false
 
-    /// Refresh What's New — clears pool, re-seeds from DB, triggers booster fetch.
+    /// Refresh What's New once after startup and request a fresh booster batch.
     func loadWhatsNew() async {
-        store.refreshWhatsNew()
+        store.refreshWhatsNew(shouldBoost: true)
     }
 
     /// User scrolled past the carousel — advance to the next batch.
@@ -503,20 +541,46 @@ final class FeedLoader {
         await refreshBookmarkLists()
         await refreshBookmarkState()
         await refreshActiveSearchState()
-        scheduleFilterCacheWarmup()
         #if DEBUG || INSTRUMENTATION
         scheduleCatalogDiagnosticsIfNeeded()
         #endif
+        scheduleCatalogUpdateIfNeeded()
     }
 
-    private func scheduleFilterCacheWarmup() {
-        filterCacheWarmupTask?.cancel()
-        filterCacheWarmupTask = Task { [weak self] in
-            try? await Task.sleep(for: .seconds(2))
-            guard !Task.isCancelled, let self else { return }
-            _ = self.availableCountries
-            _ = self.availableLanguages
-            _ = self.isGlobalFeedsEnabled
+    /// Local startup is never gated on GitHub. Once the local registry is
+    /// usable, check for a newer revision in the background and hot-reload only
+    /// after the complete staged snapshot has passed validation.
+    private func scheduleCatalogUpdateIfNeeded() {
+        guard catalogUpdateTask == nil,
+              ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil,
+              !ProcessInfo.processInfo.arguments.contains(where: { $0.hasPrefix("-UITest") }) else {
+            return
+        }
+
+        // This is deliberately the lowest scheduling class: opening and using
+        // the local catalog must always win over a remote catalog check.
+        // The update service is an independent actor, so its network, staging,
+        // checksum and compilation work never runs on the main actor.
+        catalogUpdateTask = Task(priority: .background) { [weak self] in
+            guard let self else { return }
+            do {
+                let outcome = try await CatalogUpdateService.shared.updateIfAvailable()
+                switch outcome {
+                case .current(let revision):
+                    FeedMetrics.event("CatalogUpdate.current", "revision=\(revision)")
+                case .updated(let from, let to, let changed, let deleted):
+                    FeedMetrics.event(
+                        "CatalogUpdate.activated",
+                        "from=\(from) to=\(to) changed=\(changed) deleted=\(deleted)"
+                    )
+                    await store.reloadActiveCatalogAfterUpdate()
+                }
+            } catch {
+                // The previous local snapshot stays active for every failure:
+                // offline, bad manifest, checksum mismatch, or compile error.
+                Log.feed.error("Catalog update kept local snapshot: \(error.localizedDescription)")
+            }
+            catalogUpdateTask = nil
         }
     }
 
@@ -529,7 +593,7 @@ final class FeedLoader {
         let diagnostics = FeedEngineCatalogDiagnostics()
         catalogDiagnosticsTask = Task(priority: .utility) {
             do {
-                let status = try await diagnostics.openBundledCatalog()
+                let status = try await diagnostics.openActiveCatalog()
                 catalogDiagnosticsStatus = status
             } catch {
                 guard !sources.isEmpty else {
@@ -572,6 +636,24 @@ final class FeedLoader {
                         languages: languages)
     }
 
+    /// Seeds the first reading lens from onboarding in one atomic update.
+    /// Keeping the selection local until the final button avoids launching a
+    /// filter reload (and an urgent network batch) for every tapped interest.
+    func applyOnboardingTopics(_ nodeIDs: Set<String>) {
+        let validNodeIDs = nodeIDs.filter { TaxonomyStore.shared.node(id: $0) != nil }
+        guard !validNodeIDs.isEmpty else { return }
+
+        TaxonomyStore.shared.selectedNodeIDs = Set(validNodeIDs)
+        let languages = resolvedLanguagesForFilter(store.activeLanguages)
+        store.setFilter(
+            region: store.activeRegion,
+            nodeIDs: Set(validNodeIDs),
+            type: store.activeContentType,
+            mood: store.activeMood,
+            languages: languages
+        )
+    }
+
     func toggleLanguage(_ code: String) {
         var langs = store.activeLanguages
         if langs.contains(code) {
@@ -592,6 +674,14 @@ final class FeedLoader {
         let languages = resolvedLanguagesForFilter(store.activeLanguages)
         store.setFilter(region: store.activeRegion,
                         nodeIDs: [],
+                        type: store.activeContentType, mood: store.activeMood,
+                        languages: languages)
+    }
+
+    func clearRegionFilter() {
+        let languages = resolvedLanguagesForFilter(store.activeLanguages)
+        store.setFilter(region: nil,
+                        nodeIDs: store.activeNodeIDs,
                         type: store.activeContentType, mood: store.activeMood,
                         languages: languages)
     }
@@ -633,10 +723,7 @@ final class FeedLoader {
         guard let deviceLang = FeedStore.normalizedLanguageCode(
             Locale.current.language.languageCode?.identifier
         ) else { return [] }
-        let available = FeedStore.normalizedLanguageSet(
-            store.registry.sources.compactMap(\.language)
-        )
-        return available.contains(deviceLang) ? [deviceLang] : []
+        return store.registry.availableLanguageCodes.contains(deviceLang) ? [deviceLang] : []
     }
 
     func clearAllFilters() {
@@ -677,20 +764,50 @@ final class FeedLoader {
     func toggleRegion(_ region: String) {
         store.toggleRegion(region)
     }
+    func setRegionEnabled(_ region: String, enabled: Bool) {
+        store.setRegionEnabled(region, enabled: enabled)
+    }
+    func regionToggleState(for region: String) -> DeferredToggleState {
+        pendingRegionToggleStates[region] ?? .none
+    }
+    func requestRegionEnabled(_ region: String, enabled: Bool) {
+        let requested: DeferredToggleState = enabled ? .enabled : .disabled
+        pendingRegionToggleStates[region] = requested
+        DispatchQueue.main.async { [weak self] in
+            guard let self, self.pendingRegionToggleStates[region] == requested else { return }
+            self.store.setRegionEnabled(region, enabled: enabled)
+            if self.pendingRegionToggleStates[region] == requested {
+                self.pendingRegionToggleStates.removeValue(forKey: region)
+            }
+        }
+    }
 
     func clearToggleMessage() {
         store.lastToggleMessage = nil
     }
+    func beginFilterEditing() { store.beginFilterEditing() }
+    func endFilterEditing() { store.endFilterEditing() }
+    func applyFilterDraft(type: ContentType, mood: MoodFilter, languages: Set<String>) {
+        store.hasUserClearedLanguageFilter = languages.isEmpty
+        store.setFilter(
+            region: store.activeRegion,
+            nodeIDs: store.activeNodeIDs,
+            type: type,
+            mood: mood,
+            languages: languages
+        )
+    }
     func toggleAllCountries() {
         store.toggleAllCountries()
     }
+    func setAllCountriesEnabled(_ enabled: Bool) {
+        store.setAllCountriesEnabled(enabled)
+    }
     func toggleGlobalFeeds() {
-        // Single batch operation: recompute counts + persist once for all
-        // topic regions and the legacy "global" region.
-        let anyOn = isGlobalFeedsEnabled
-        store.registry.setTopicRegionsEnabled(!anyOn)
-        store.resetWhatsNewBaseline()
-        store.scheduleSourceEnablementRefresh()
+        setGlobalFeedsEnabled(!isGlobalFeedsEnabled)
+    }
+    func setGlobalFeedsEnabled(_ enabled: Bool) {
+        store.setTopicRegionsEnabled(enabled)
     }
     func toggleSource(_ sourceURL: String) { store.toggleSource(sourceURL) }
     /// True if the region is not explicitly disabled. Partial (disabled but
@@ -700,6 +817,9 @@ final class FeedLoader {
     func nodeStatus(for key: String) -> NodeStatus { store.registry.status(of: key) }
     func activeCount(for key: String) -> Int { store.registry.activeCount(for: key) }
     func toggleCategory(_ category: String) { store.toggleCategory(category) }
+    func setCategoryEnabled(_ category: String, enabled: Bool) {
+        store.setCategoryEnabled(category, enabled: enabled)
+    }
     /// True if the category is not explicitly disabled.
     func isCategoryEnabled(_ category: String) -> Bool { store.registry.status(of: SourceRegistry.categoryKey(category)) == .on }
     var isAnyCountryEnabled: Bool { store.registry.isAnyCountryEnabled }
@@ -835,6 +955,67 @@ final class FeedLoader {
 
     // MARK: - Source helpers
 
+    func sourceReference(for item: FeedItem) -> SourceReference {
+        store.sourceReference(for: item)
+    }
+
+    func sourceReference(for member: SourceCollectionMember) -> SourceReference {
+        store.sourceReference(for: member)
+    }
+
+    func sourceContentFromCache(_ source: SourceReference) async -> [FeedItem] {
+        await store.sourceContentFromCache(source)
+    }
+
+    func loadSourceContent(_ source: SourceReference) async -> SourceContentResult {
+        await store.loadSourceContent(source)
+    }
+
+    func loadSourceCollections() async throws -> [SourceCollection] {
+        try await store.allSourceCollections()
+    }
+
+    @discardableResult
+    func createSourceCollection(name: String) async throws -> Int64 {
+        try await store.createSourceCollection(name: name)
+    }
+
+    func renameSourceCollection(id: Int64, name: String) async throws {
+        try await store.renameSourceCollection(id: id, name: name)
+    }
+
+    func deleteSourceCollection(id: Int64) async throws {
+        try await store.deleteSourceCollection(id: id)
+    }
+
+    func reorderSourceCollections(ids: [Int64]) async throws {
+        try await store.reorderSourceCollections(ids: ids)
+    }
+
+    func sourceCollectionMembers(collectionID: Int64) async throws -> [SourceCollectionMember] {
+        try await store.sourceCollectionMembers(collectionID: collectionID)
+    }
+
+    func addSource(_ source: SourceReference, toCollectionID id: Int64) async throws {
+        try await store.addSource(source, toCollectionID: id)
+    }
+
+    func removeSource(_ sourceURL: String, fromCollectionID id: Int64) async throws {
+        try await store.removeSource(sourceURL, fromCollectionID: id)
+    }
+
+    func reorderSourceCollectionMembers(collectionID: Int64, sourceURLs: [String]) async throws {
+        try await store.reorderSourceCollectionMembers(collectionID: collectionID, sourceURLs: sourceURLs)
+    }
+
+    func sourceCollectionIDs(containing sourceURL: String) async throws -> Set<Int64> {
+        try await store.sourceCollectionIDs(containing: sourceURL)
+    }
+
+    func loadSourceCollectionContent(collectionID: Int64) async throws -> SourceCollectionContentResult {
+        try await store.loadSourceCollectionContent(collectionID: collectionID)
+    }
+
     // MARK: - Import Pipeline
 
     private let importPipeline = ImportPipeline()
@@ -845,7 +1026,12 @@ final class FeedLoader {
             store.registry.sources + newSources
         )
         persistImportedSources()
-        Task { await TaxonomyStore.shared.build(from: store.registry.sources) }
+        Task {
+            await TaxonomyStore.shared.build(
+                from: store.registry.sources,
+                sharedCountrySourceURLs: store.registry.sharedCountrySourceURLs
+            )
+        }
         // Trigger fetch for new sources + reload feed
         Task { await fetchAndReloadAfterImport(newSources) }
     }
@@ -854,7 +1040,12 @@ final class FeedLoader {
     func replaceAllSources(_ sources: [FeedSource]) {
         store.registry.sources = sources
         persistImportedSources()
-        Task { await TaxonomyStore.shared.build(from: store.registry.sources) }
+        Task {
+            await TaxonomyStore.shared.build(
+                from: store.registry.sources,
+                sharedCountrySourceURLs: store.registry.sharedCountrySourceURLs
+            )
+        }
     }
 
     /// Import feed URLs (paste, share sheet, etc.) with full validation.
@@ -886,7 +1077,10 @@ final class FeedLoader {
                     store.registry.sources + newSources
                 )
                 persistImportedSources()
-                await TaxonomyStore.shared.build(from: store.registry.sources)
+                await TaxonomyStore.shared.build(
+                    from: store.registry.sources,
+                    sharedCountrySourceURLs: store.registry.sharedCountrySourceURLs
+                )
                 await fetchAndReloadAfterImport(newSources)
             }
             return ImportResult(items: results)
@@ -900,7 +1094,10 @@ final class FeedLoader {
                 store.registry.sources + sources
             )
             persistImportedSources()
-            await TaxonomyStore.shared.build(from: store.registry.sources)
+            await TaxonomyStore.shared.build(
+                from: store.registry.sources,
+                sharedCountrySourceURLs: store.registry.sharedCountrySourceURLs
+            )
             await fetchAndReloadAfterImport(sources)
         }
         return result
@@ -917,7 +1114,10 @@ final class FeedLoader {
                 store.registry.sources + sources
             )
             persistImportedSources()
-            await TaxonomyStore.shared.build(from: store.registry.sources)
+            await TaxonomyStore.shared.build(
+                from: store.registry.sources,
+                sharedCountrySourceURLs: store.registry.sharedCountrySourceURLs
+            )
             await fetchAndReloadAfterImport(sources)
         }
         return result
@@ -934,7 +1134,10 @@ final class FeedLoader {
                 store.registry.sources + sources
             )
             persistImportedSources()
-            await TaxonomyStore.shared.build(from: store.registry.sources)
+            await TaxonomyStore.shared.build(
+                from: store.registry.sources,
+                sharedCountrySourceURLs: store.registry.sharedCountrySourceURLs
+            )
             await fetchAndReloadAfterImport(sources)
         }
         return result
@@ -985,6 +1188,7 @@ final class FeedLoader {
             store.registry.sources = OPMLParser.deduplicateSources(
                 store.registry.sources + imported
             )
+            store.registry.prepareFilterCaches()
             Log.import_.info("Restored \(imported.count) imported sources")
         } catch {
             Log.import_.error("Failed to restore imported sources: \(error)")

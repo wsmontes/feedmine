@@ -1,11 +1,11 @@
 {
-  "duplicate_occurrence_count": 17933,
+  "duplicate_occurrence_count": 0,
   "failed_file_count": 0,
-  "file_count": 4534,
+  "file_count": 118,
   "invalid_source_count": 0,
-  "node_count": 8798,
-  "output": "feedmine/Resources/FeedEngine/catalog.sqlite",
-  "placement_count": 57650,
-  "size_bytes": 35864576,
-  "source_count": 39717
+  "node_count": 5676,
+  "output": "build/feed-curation/catalog.sqlite",
+  "placement_count": 34243,
+  "size_bytes": 52051968,
+  "source_count": 34243
 }

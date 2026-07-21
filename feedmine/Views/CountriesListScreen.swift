@@ -2,6 +2,10 @@ import SwiftUI
 
 struct CountriesListScreen: View {
     @Environment(FeedLoader.self) private var loader
+    @State private var isAllCountriesChangePending = false
+    @State private var pendingAllCountriesValue = false
+    @State private var pendingRegionIDs = Set<String>()
+    @State private var enabledPendingRegionIDs = Set<String>()
 
     var body: some View {
         let countries = loader.availableCountries
@@ -12,8 +16,8 @@ struct CountriesListScreen: View {
                         .font(.headline)
                     Spacer()
                     Toggle("", isOn: Binding(
-                        get: { loader.isAnyCountryEnabled },
-                        set: { _ in loader.toggleAllCountries() }
+                        get: { isAllCountriesChangePending ? pendingAllCountriesValue : loader.isAnyCountryEnabled },
+                        set: { setAllCountriesEnabled($0) }
                     ))
                     .labelsHidden()
                     .tint(.green)
@@ -35,8 +39,12 @@ struct CountriesListScreen: View {
                             }
                             Spacer()
                             Toggle("", isOn: Binding(
-                                get: { loader.isRegionEnabled(country.region) },
-                                set: { _ in loader.toggleRegion(country.region) }
+                                get: {
+                                    pendingRegionIDs.contains(country.region)
+                                        ? enabledPendingRegionIDs.contains(country.region)
+                                        : loader.isRegionEnabled(country.region)
+                                },
+                                set: { setRegionEnabled(country.region, enabled: $0) }
                             ))
                             .labelsHidden()
                             .tint(.green)
@@ -49,5 +57,41 @@ struct CountriesListScreen: View {
             }
         }
         .navigationTitle("Countries")
+    }
+
+    private func setAllCountriesEnabled(_ enabled: Bool) {
+        pendingAllCountriesValue = enabled
+        isAllCountriesChangePending = true
+        let feedback = UIImpactFeedbackGenerator(style: .light)
+        feedback.impactOccurred()
+
+        // Give SwiftUI one turn to draw the switch before the store starts
+        // pruning or reloading content.
+        DispatchQueue.main.async {
+            guard isAllCountriesChangePending, pendingAllCountriesValue == enabled else { return }
+            loader.setAllCountriesEnabled(enabled)
+            if pendingAllCountriesValue == enabled {
+                isAllCountriesChangePending = false
+            }
+        }
+    }
+
+    private func setRegionEnabled(_ region: String, enabled: Bool) {
+        pendingRegionIDs.insert(region)
+        if enabled {
+            enabledPendingRegionIDs.insert(region)
+        } else {
+            enabledPendingRegionIDs.remove(region)
+        }
+        let feedback = UIImpactFeedbackGenerator(style: .light)
+        feedback.impactOccurred()
+
+        DispatchQueue.main.async {
+            guard pendingRegionIDs.contains(region), enabledPendingRegionIDs.contains(region) == enabled else { return }
+            loader.setRegionEnabled(region, enabled: enabled)
+            if enabledPendingRegionIDs.contains(region) == enabled {
+                pendingRegionIDs.remove(region)
+            }
+        }
     }
 }

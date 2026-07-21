@@ -1,3 +1,4 @@
+import Foundation
 import XCTest
 
 @MainActor
@@ -7,8 +8,49 @@ final class FeedmineUITests: XCTestCase {
 
     override func setUp() {
         continueAfterFailure = true
-        app.launchArguments = ["-AppleLanguages", "(en)"]
+        app.launchArguments = [
+            "-AppleLanguages", "(en)",
+            "-UITestResetFilters", "-UITestSkipOnboarding",
+        ]
         app.launch()
+    }
+
+    func testOnboardingSeedsARealTaxonomyReadingLens() {
+        app.terminate()
+        app.launchArguments = [
+            "-AppleLanguages", "(en)",
+            "-UITestResetFilters", "-UITestShowOnboarding",
+        ]
+        app.launch()
+
+        let next = app.buttons["onboarding-next"]
+        XCTAssertTrue(next.waitForExistence(timeout: 40), "Onboarding must appear on a clean launch")
+        for _ in 0..<5 {
+            XCTAssertTrue(next.waitForExistence(timeout: 5))
+            next.tap()
+        }
+
+        let astronomy = app.buttons[
+            "onboarding-interest-04_technology_&_science/space_and_astronomy"
+        ]
+        XCTAssertTrue(
+            astronomy.waitForExistence(timeout: 20),
+            "Interest choices must resolve from the live OPML taxonomy"
+        )
+        astronomy.tap()
+        XCTAssertEqual(astronomy.value as? String, "selected")
+
+        let start = app.buttons["onboarding-start-reading"]
+        XCTAssertTrue(start.waitForExistence(timeout: 5))
+        start.tap()
+
+        let filterButton = app.buttons["filter-button"]
+        XCTAssertTrue(filterButton.waitForExistence(timeout: 15))
+        XCTAssertGreaterThan(
+            Int(filterButton.value as? String ?? "") ?? 0,
+            0,
+            "Finishing onboarding must persist the chosen taxonomy lens"
+        )
     }
 
     // MARK: - Acoustics (4 feeds, topic)
@@ -22,23 +64,32 @@ final class FeedmineUITests: XCTestCase {
         )
     }
 
-    // MARK: - Single feed category
+    // MARK: - Duplicate-name taxonomy category
 
-    func testSingleFeedCategoryShowsCard() {
+    func testMythologyCategoryPrefersEditorialTopicOverCountryDuplicates() {
         selectTaxonomyCategory(
-            searchTerm: "Greek & Roman Mythology",
-            expectedKeywords: ["Sententiae Antiquae"],
-            forbiddenSources: ["CNN", "BBC News"],
-            screenshotName: "single-feed-verified"
+            searchTerm: "Mythology & Folklore",
+            expectedKeywords: ["American Folklore Society", "Folklore"],
+            forbiddenSources: ["CNN", "BBC News", "Snopes"],
+            screenshotName: "mythology-editorial-topic-verified"
         )
     }
 
-    // MARK: - Podcast category
-
-    func testPodcastCategoryShowsCards() {
-        // "Humor & Comedy Websites" has 7 feeds and is a distinct category
+    func testFactCheckingCategoryOwnsMisinformationSources() {
         selectTaxonomyCategory(
-            searchTerm: "Humor & Comedy Websites",
+            searchTerm: "Fact-Checking & Media Literacy",
+            expectedKeywords: ["Snopes", "Conspiracy Watch"],
+            forbiddenSources: ["Myths Your Teacher Hated", "Freaky Folklore"],
+            screenshotName: "fact-checking-editorial-topic-verified"
+        )
+    }
+
+    // MARK: - Humor topic category
+
+    func testHumorCategoryShowsCards() {
+        // Comedy and performance sources share one content-derived category.
+        selectTaxonomyCategory(
+            searchTerm: "Comedy & Performance",
             expectedKeywords: ["comedy", "funny", "humor"],
             forbiddenSources: ["CNN", "BBC News", "Daring Fireball"],
             screenshotName: "podcast-verified"
@@ -49,7 +100,7 @@ final class FeedmineUITests: XCTestCase {
 
     func testVideoCategoryShowsCards() {
         selectTaxonomyCategory(
-            searchTerm: "YouTube — Cooking Channels",
+            searchTerm: "Cooking & Recipes",
             expectedKeywords: ["Sorted Food", "cooking", "recipe"],
             forbiddenSources: ["CNN", "BBC News", "MacStories"],
             screenshotName: "video-verified"
@@ -62,7 +113,7 @@ final class FeedmineUITests: XCTestCase {
         selectTaxonomyCategory(
             searchTerm: "Algeria",
             expectedKeywords: ["Algeria", "algerie", "Echorouk"],
-            forbiddenSources: [],
+            forbiddenSources: ["This Day in History"],
             screenshotName: "country-verified"
         )
     }
@@ -71,7 +122,7 @@ final class FeedmineUITests: XCTestCase {
 
     func testManyFeedsCategoryShowsCards() {
         selectTaxonomyCategory(
-            searchTerm: "Photography News & Reviews",
+            searchTerm: "Visual Arts",
             expectedKeywords: ["photography", "photo", "camera"],
             forbiddenSources: ["CNN", "BBC News"],
             screenshotName: "many-feeds-verified"
@@ -114,8 +165,151 @@ final class FeedmineUITests: XCTestCase {
         attachment.name = "clear-filters-verified"
         add(attachment)
 
-        // Note: cards may take time to reappear as progressive fetch runs.
-        // The key assertion is that the app didn't crash and the sheet dismissed.
+        let cards = waitForFeedItemIdentifiers(timeout: 20)
+        XCTAssertFalse(cards.isEmpty, "Clearing filters must restore feed cards")
+    }
+
+    func testContentTypeFilterTapsRespondImmediately() {
+        waitForAppReady()
+        let filterButton = app.buttons["filter-button"]
+        XCTAssertTrue(filterButton.waitForExistence(timeout: 5))
+        filterButton.tap()
+        XCTAssertTrue(app.buttons["filter-done"].waitForExistence(timeout: 3))
+
+        let id = "content-type-videos"
+        let button = app.buttons[id]
+        for _ in 0..<4 where !button.isHittable { app.swipeUp() }
+        XCTAssertTrue(button.waitForExistence(timeout: 2), "Missing \(id) filter")
+        if (button.value as? String) == "selected" {
+            button.tap()
+        }
+        let start = CFAbsoluteTimeGetCurrent()
+        button.tap()
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+        XCTAssertLessThan(elapsed, 1.3, "\(id) filter tap blocked the UI for \(elapsed)s")
+        app.buttons["filter-done"].tap()
+        XCTAssertTrue(filterButton.waitForExistence(timeout: 3))
+    }
+
+    func testUnifiedSearchFindsAndOpensContentAnalyzedSource() {
+        let searchButton = app.buttons["search-button"]
+        XCTAssertTrue(searchButton.waitForExistence(timeout: 45), "Search button must be available")
+        searchButton.tap()
+
+        let field = app.textFields["unified-search-field"]
+        var didOpenSearch = field.waitForExistence(timeout: 15)
+        if !didOpenSearch, searchButton.exists {
+            // The first tap can coincide with the initial taxonomy publication
+            // on slower simulators. Retry the idempotent presentation action
+            // once instead of turning startup load into a false UI failure.
+            searchButton.tap()
+            didOpenSearch = field.waitForExistence(timeout: 20)
+        }
+        XCTAssertTrue(didOpenSearch, "Unified search field must open")
+        guard didOpenSearch else { return }
+        field.tap()
+        field.typeText("astronomy")
+
+        XCTAssertTrue(app.staticTexts["Sources"].waitForExistence(timeout: 12),
+                      "Content-analyzed source tier must be first")
+        let astronomySource = app.staticTexts["Astronomy Magazine"].firstMatch
+        XCTAssertTrue(astronomySource.waitForExistence(timeout: 8),
+                      "Astronomy source should be found from catalog tags/descriptions")
+        astronomySource.tap()
+
+        XCTAssertTrue(app.navigationBars["Astronomy Magazine"].waitForExistence(timeout: 8),
+                      "Tapping a source should open its complete source feed")
+        XCTAssertTrue(app.buttons["Add source to collection"].exists)
+        XCTAssertTrue(
+            app.staticTexts.containing(NSPredicate(format: "label ==[c] %@", "astronomy")).firstMatch.exists,
+            "Source feed should expose its content-derived astronomy tag"
+        )
+        XCTAssertTrue(
+            app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "currently exposed by the feed")).firstMatch.exists,
+            "Source view should explain the honest RSS history boundary"
+        )
+
+        // A source result can be put into a reusable many-to-many playlist
+        // without enabling or moving its catalog/OPML entry.
+        app.buttons["Add source to collection"].tap()
+        let collectionName = "Astronomy reading \(Int(Date().timeIntervalSince1970))"
+        let collectionField = app.textFields["Collection name"]
+        XCTAssertTrue(collectionField.waitForExistence(timeout: 5))
+        collectionField.tap()
+        collectionField.typeText(collectionName)
+        app.buttons["Create Collection"].tap()
+        XCTAssertTrue(app.staticTexts[collectionName].waitForExistence(timeout: 5))
+
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = "unified-search-astronomy-source"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
+    func testRecoveredDormantAstronomySourceIsSearchableButNotAutoEnabled() {
+        let searchButton = app.buttons["search-button"]
+        XCTAssertTrue(searchButton.waitForExistence(timeout: 45), "Search button must be available")
+        searchButton.tap()
+
+        let field = app.textFields["unified-search-field"]
+        XCTAssertTrue(field.waitForExistence(timeout: 20), "Unified search field must open")
+        guard field.exists else { return }
+        field.tap()
+        field.typeText("Turk Astronomi")
+
+        XCTAssertTrue(app.staticTexts["Sources"].waitForExistence(timeout: 12))
+        let recoveredSource = app.staticTexts["Türk Astronomi Derneği (TAD)"].firstMatch
+        XCTAssertTrue(
+            recoveredSource.waitForExistence(timeout: 8),
+            "A recovered source must be discoverable through its analyzed catalog metadata"
+        )
+        recoveredSource.tap()
+
+        XCTAssertTrue(
+            app.navigationBars["Türk Astronomi Derneği (TAD)"].waitForExistence(timeout: 8),
+            "The recovered source result must open its exact source view"
+        )
+        XCTAssertTrue(
+            app.staticTexts.containing(NSPredicate(format: "label ==[c] %@", "astronomy")).firstMatch.exists,
+            "The source must retain its content-derived astronomy classification"
+        )
+        XCTAssertTrue(
+            app.staticTexts.containing(
+                NSPredicate(format: "label CONTAINS[c] %@", "Dormant in the automatic feed")
+            ).firstMatch.exists,
+            "Dormant current-sensitive sources must remain searchable without auto-enabling them"
+        )
+
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = "recovered-dormant-astronomy-source"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
+    func testLongPressCardOpensThatExactSource() {
+        waitForAppReady()
+        let card = app.descendants(matching: .any)
+            .matching(NSPredicate(format: "identifier BEGINSWITH %@", "feed-item-"))
+            .firstMatch
+        XCTAssertTrue(card.waitForExistence(timeout: 30), "A feed card is required for source navigation")
+        guard card.exists else { return }
+
+        card.press(forDuration: 1.2)
+        let viewSource = app.buttons["View Source"]
+        XCTAssertTrue(viewSource.waitForExistence(timeout: 5), "Long press must offer direct source navigation")
+        viewSource.tap()
+
+        XCTAssertTrue(app.buttons["Add source to collection"].waitForExistence(timeout: 8),
+                      "The exact source feed should open from the card menu")
+        XCTAssertTrue(
+            app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "currently exposed by the feed")).firstMatch.exists,
+            "The source screen should be content-first and disclose feed history limits"
+        )
+
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = "long-press-view-source"
+        attachment.lifetime = .keepAlways
+        add(attachment)
     }
 
     // MARK: - Helpers
@@ -134,12 +328,11 @@ final class FeedmineUITests: XCTestCase {
 
         // Wait for cards and verify
         print("Waiting for cards after selecting '\(searchTerm)'...")
-        let cardsExist = app.cells.firstMatch.waitForExistence(timeout: 30)
+        let cardIdentifiers = waitForFeedItemIdentifiers(timeout: 30)
+        let cardsExist = !cardIdentifiers.isEmpty
+        print("Total visible cards: \(cardIdentifiers.count)")
 
-        let totalCells = app.cells.count
-        print("Total visible cells: \(totalCells)")
-
-        let allTexts = app.cells.staticTexts
+        let allTexts = app.staticTexts
 
         // Verify expected keywords
         var foundExpected = expectedKeywords.isEmpty
@@ -152,8 +345,8 @@ final class FeedmineUITests: XCTestCase {
 
         // Collect diagnostics
         var labels: [String] = []
-        for i in 0..<min(totalCells, 5) {
-            labels.append(app.cells.element(boundBy: i).label)
+        for i in 0..<min(cardIdentifiers.count, 5) {
+            labels.append(cardIdentifiers[i])
         }
 
         let screenshot = app.screenshot()
@@ -162,11 +355,11 @@ final class FeedmineUITests: XCTestCase {
         attachment.name = screenshotName
         add(attachment)
 
-        if cardsExist && !allowEmptyCards {
+        if !allowEmptyCards {
+            XCTAssertTrue(cardsExist,
+                          "No cards visible for '\(searchTerm)' after 30 seconds. Cards: \(labels)")
             XCTAssertTrue(foundExpected,
-                          "No \(searchTerm) card found. Cells: \(totalCells), Labels: \(labels)")
-        } else if !cardsExist && !allowEmptyCards {
-            print("No cells visible for '\(searchTerm)'. Labels: \(labels)")
+                          "No \(searchTerm) card found. Cards: \(labels)")
         }
 
         // Verify no leakage
@@ -208,7 +401,7 @@ final class FeedmineUITests: XCTestCase {
         sleep(1)
         let browsePred = NSPredicate(format: "label CONTAINS[c] %@", "Browse Topics")
         var foundBrowse = false
-        for swipe in 0..<8 {
+        for _ in 0..<8 {
             let btn = app.buttons.element(matching: browsePred)
             let text = app.staticTexts.element(matching: browsePred)
             if btn.exists { btn.tap(); foundBrowse = true; break }
@@ -233,15 +426,31 @@ final class FeedmineUITests: XCTestCase {
         sleep(1)
         searchField.typeText(searchTerm)
         sleep(2)
+        searchField.typeText("\n")
+        usleep(300_000)
 
         // Tap search result
-        let resultPred = NSPredicate(format: "label CONTAINS[c] %@", searchTerm)
-        let resultBtn = app.buttons.element(matching: resultPred)
+        let resultPred = NSPredicate(
+            format: "identifier BEGINSWITH %@ AND label CONTAINS[c] %@",
+            "taxonomy-node-", searchTerm
+        )
+        let resultBtn = app.buttons.matching(resultPred).firstMatch
         guard resultBtn.waitForExistence(timeout: 5) else {
             XCTFail("'\(searchTerm)' not found in search results")
             return
         }
-        resultBtn.tap()
+        let searchShot = XCTAttachment(screenshot: app.screenshot())
+        searchShot.name = "topic-search-\(searchTerm)"
+        searchShot.lifetime = .deleteOnSuccess
+        add(searchShot)
+        XCTAssertTrue(resultBtn.isHittable,
+                      "Topic result is not hittable: \(resultBtn.identifier), \(resultBtn.label)")
+        resultBtn.coordinate(withNormalizedOffset: CGVector(dx: 0.2, dy: 0.5)).tap()
+        XCTAssertGreaterThan(
+            Int(app.buttons["topics-done"].value as? String ?? "") ?? 0,
+            0,
+            "Topic selection must update immediately after tapping '\(resultBtn.label)' (\(resultBtn.identifier))"
+        )
         sleep(1)
     }
 
@@ -255,6 +464,10 @@ final class FeedmineUITests: XCTestCase {
         }
         sleep(1)
 
+        let selectedTopicCount = Int(app.buttons["browse-topics"].value as? String ?? "") ?? 0
+        XCTAssertGreaterThan(selectedTopicCount, 0,
+                             "Topic selection must remain active after leaving the topic browser")
+
         let filterDoneBtn = app.buttons["filter-done"]
         if filterDoneBtn.exists { filterDoneBtn.tap() }
         else {
@@ -262,6 +475,10 @@ final class FeedmineUITests: XCTestCase {
             if doneBtn.exists { doneBtn.tap() }
         }
         sleep(2)
+
+        let activeFilterCount = Int(app.buttons["filter-button"].value as? String ?? "") ?? 0
+        XCTAssertGreaterThan(activeFilterCount, 0,
+                             "Topic selection must remain active after dismissing filters")
     }
 
     /// Wait for app to finish initial loading.
@@ -271,5 +488,18 @@ final class FeedmineUITests: XCTestCase {
             return
         }
         sleep(8)
+    }
+
+    private func waitForFeedItemIdentifiers(timeout: TimeInterval) -> [String] {
+        let deadline = Date().addingTimeInterval(timeout)
+        repeat {
+            let identifiers = app.descendants(matching: .any)
+                .matching(NSPredicate(format: "identifier BEGINSWITH %@", "feed-item-"))
+                .allElementsBoundByIndex
+                .map(\.identifier)
+            if !identifiers.isEmpty { return identifiers }
+            usleep(100_000)
+        } while Date() < deadline
+        return []
     }
 }

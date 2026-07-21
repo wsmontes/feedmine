@@ -30,17 +30,13 @@ final class WhatsNewManager {
         _ newItems: [FeedItem],
         visibleIDs: Set<String>,
         readIDs: Set<String>,
-        isItemEnabled: (FeedItem) -> Bool,
-        filterContentType: (FeedItem) -> Bool,
-        contentFilterExcludes: (FeedItem) -> Bool,
+        matchesActiveFilters: (FeedItem) -> Bool,
         markSurfaced: ([FeedItem]) -> Void
     ) {
         let weekAgo = Date().addingTimeInterval(-604800)  // 7 days
         let candidates = newItems.filter { item in
             item.publishedAt > weekAgo
-            && isItemEnabled(item)
-            && filterContentType(item)
-            && !contentFilterExcludes(item)
+            && matchesActiveFilters(item)
             && !visibleIDs.contains(item.id)
             && !readIDs.contains(item.id)
         }
@@ -87,8 +83,13 @@ final class WhatsNewManager {
         prefetchImages: @escaping ([FeedItem]) -> Void,
         recordFetch: @escaping (String, Bool) -> Void
     ) {
-        whatsNewBoosterTask?.cancel()
-        whatsNewBoosterTask = Task {
+        // A cancelled task may already be inside GRDB's transactional write.
+        // Let that short write finish and reuse it for the current filters:
+        // candidate matching is evaluated when the results arrive.
+        guard whatsNewBoosterTask == nil else { return }
+        whatsNewBoosterTask = Task { [weak self] in
+            guard let self else { return }
+            defer { self.whatsNewBoosterTask = nil }
             let sources = enabledSources.shuffled().prefix(30)
             let result = await fetcher.fetchAll(Array(sources), maxConcurrent: 5)
             guard !Task.isCancelled else { return }
@@ -107,9 +108,8 @@ final class WhatsNewManager {
         }
     }
 
-    /// Refresh What's New: clear the pool, re-seed from DB, and trigger
-    /// a booster fetch. Called on any user-triggered update (startup, shake,
-    /// filter change) so the carousel always reflects the current context.
+    /// Refresh What's New: clear the pool and re-seed it from the local DB.
+    /// An optional booster can add fresh network results when the app starts.
     func refreshWhatsNew(
         seedFromDB: @escaping () async -> Void,
         booster: @escaping () -> Void
@@ -125,9 +125,7 @@ final class WhatsNewManager {
     func seedWhatsNewFromDB(
         surfacedIDs: Set<String>,
         readIDs: Set<String>,
-        isItemEnabled: (FeedItem) -> Bool,
-        filterContentType: (FeedItem) -> Bool,
-        contentFilterExcludes: (FeedItem) -> Bool,
+        matchesActiveFilters: (FeedItem) -> Bool,
         markSurfaced: ([FeedItem]) -> Void
     ) async {
         guard whatsNewPool.isEmpty else { return }
@@ -141,9 +139,8 @@ final class WhatsNewManager {
                     .fetchAll(db)
             }
             let items = records.map { $0.toFeedItem() }
-                .filter(isItemEnabled).filter(filterContentType)
+                .filter(matchesActiveFilters)
                 .filter { !surfacedIDs.contains($0.id) && !readIDs.contains($0.id) }
-                .filter { !contentFilterExcludes($0) }
             var seen = Set<String>()
             whatsNewPool = items.filter { seen.insert($0.sourceURL).inserted }
             promoteWhatsNewIfReady(markSurfaced: markSurfaced)

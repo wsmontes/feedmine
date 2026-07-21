@@ -273,7 +273,11 @@ final class CatalogBrowserViewModelTests: XCTestCase {
         // the debounce task and the test task both run on it.
         let deadline = CFAbsoluteTimeGetCurrent() + 5.0
         while CFAbsoluteTimeGetCurrent() < deadline {
-            if viewModel.isSearching { break }
+            if viewModel.isSearching,
+               !viewModel.isLoading,
+               !viewModel.searchResults.isEmpty {
+                break
+            }
             try? await Task.sleep(for: .milliseconds(50))
         }
 

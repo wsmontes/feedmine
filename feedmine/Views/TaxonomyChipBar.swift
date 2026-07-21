@@ -1,122 +1,186 @@
 import SwiftUI
 
-/// Horizontal scrollable chip bar showing selected taxonomy nodes and languages.
-/// Replaces the flat `CategoryFilterBar` with multi-select chip UI.
-/// Max 3 visible chips; overflow shows "+N more".
-struct TaxonomyChipBar: View {
+/// One compact row for every active feed lens: search, source region,
+/// content type, topics, languages and mood. The top bar owns only the
+/// filter button; this view owns the visible active state.
+struct FilterLensBar: View {
     @Environment(FeedLoader.self) private var loader
-    let onEditTap: () -> Void
+    let onDismiss: () -> Void
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                // "All" chip — only visible when filters are active, as quick-reset
-                if loader.hasActiveFilters {
-                    TaxonomyChip(
-                        title: "All",
-                        isSelected: false,
-                        color: .gray
+            HStack(spacing: 6) {
+                if !searchQuery.isEmpty {
+                    FilterLensChip(
+                        title: "Search: \(searchQuery)",
+                        systemImage: "magnifyingglass",
+                        tint: .indigo
                     ) {
-                        loader.clearAllFilters()
+                        loader.searchQuery = ""
+                        loader.searchQueryChanged()
                     }
                 }
 
-                // Selected node chips (max 3)
-                let names = loader.selectedNodeNames
-                ForEach(Array(names.prefix(3)), id: \.self) { name in
-                    TaxonomyChip(
-                        title: name,
-                        isSelected: true,
-                        color: .blue
+                if let region = loader.selectedRegion {
+                    FilterLensChip(
+                        title: regionDisplayName(region),
+                        systemImage: "globe.americas.fill",
+                        tint: .cyan
                     ) {
-                        // Find the node ID for this name and toggle it off
-                        if let nodeID = TaxonomyStore.shared.selectedNodeIDs
-                            .first(where: { TaxonomyStore.shared.node(id: $0)?.name == name }) {
-                            loader.toggleNode(nodeID)
-                        }
+                        loader.clearRegionFilter()
                     }
                 }
 
-                // Language chips
-                ForEach(Array(loader.selectedLanguages).sorted(), id: \.self) { lang in
-                    TaxonomyChip(
-                        title: langDisplay(lang),
-                        isSelected: true,
-                        color: .green
+                if loader.selectedContentType != .all {
+                    FilterLensChip(
+                        title: loader.selectedContentType.rawValue,
+                        systemImage: loader.selectedContentType.icon,
+                        tint: .blue
                     ) {
-                        loader.toggleLanguage(lang)
+                        loader.selectContentType(loader.selectedContentType)
                     }
                 }
 
-                // Overflow indicator
-                let totalChips = names.count + loader.selectedLanguages.count + (loader.hasActiveFilters ? 1 : 0)
-                let visibleChips = min(names.count, 3) + loader.selectedLanguages.count + (loader.hasActiveFilters ? 1 : 0)
-                if totalChips > visibleChips {
-                    Text("+\(totalChips - visibleChips) more")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .padding(.horizontal, 8)
+                ForEach(selectedTopics) { topic in
+                    FilterLensChip(
+                        title: topic.title,
+                        systemImage: "tag.fill",
+                        tint: .purple
+                    ) {
+                        loader.toggleNode(topic.id)
+                    }
                 }
 
-                // Edit button → opens filter sheet
-                Button {
-                    let impact = UIImpactFeedbackGenerator(style: .light)
-                    impact.impactOccurred()
-                    onEditTap()
-                } label: {
-                    Image(systemName: "line.3.horizontal.decrease")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .padding(8)
-                        .background(Circle().fill(.ultraThinMaterial))
+                ForEach(Array(loader.selectedLanguages).sorted(), id: \.self) { code in
+                    FilterLensChip(
+                        title: languageDisplayName(code),
+                        systemImage: "character.bubble.fill",
+                        tint: .green
+                    ) {
+                        loader.toggleLanguage(code)
+                    }
                 }
-                .buttonStyle(.plain)
+
+                if loader.selectedMood != .all {
+                    FilterLensChip(
+                        title: loader.selectedMood.rawValue,
+                        systemImage: loader.selectedMood.icon,
+                        tint: .orange
+                    ) {
+                        loader.selectMood(loader.selectedMood)
+                    }
+                }
             }
             .padding(.horizontal, 12)
+            .padding(.vertical, 7)
         }
-        .padding(.vertical, 8)
         .background(.ultraThinMaterial)
+        .overlay(alignment: .bottom) {
+            Divider().opacity(0.18)
+        }
+        .contentShape(Rectangle())
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 16)
+                .onEnded { value in
+                    let horizontalDismiss = abs(value.translation.width) > 80
+                        && abs(value.translation.width) > abs(value.translation.height) * 1.4
+                    let upwardDismiss = value.translation.height < -22
+                    if horizontalDismiss || upwardDismiss {
+                        let impact = UIImpactFeedbackGenerator(style: .light)
+                        impact.impactOccurred()
+                        onDismiss()
+                    }
+                }
+        )
+        .accessibilityHint("Swipe up or sideways to hide this filter bar")
     }
 
-    private func langDisplay(_ code: String) -> String {
-        let name = Locale.current.localizedString(forLanguageCode: code) ?? code
-        return "\(name) (\(code.uppercased()))"
+    private var searchQuery: String {
+        loader.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var selectedTopics: [FilterLensTopic] {
+        loader.selectedNodeIDs.compactMap { id in
+            guard let node = TaxonomyStore.shared.node(id: id) else { return nil }
+            return FilterLensTopic(id: id, title: node.name)
+        }
+        .sorted { $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending }
+    }
+
+    private func languageDisplayName(_ code: String) -> String {
+        if let language = loader.availableLanguages.first(where: { $0.code == code }) {
+            return "\(language.flag) \(code.uppercased())"
+        }
+        return code.uppercased()
+    }
+
+    private func regionDisplayName(_ region: String) -> String {
+        if region == "global" { return "Global" }
+
+        if region.hasPrefix("countries/") {
+            let path = region.replacingOccurrences(of: "countries/", with: "")
+            let parts = path.split(separator: "/").map(String.init)
+            guard let countrySlug = parts.first else { return "Country" }
+
+            let country = "\(CountryStore.countryFlag(for: countrySlug)) \(CountryStore.countryName(for: countrySlug))"
+            guard parts.count > 1 else { return country }
+
+            let area = parts.dropFirst()
+                .joined(separator: " ")
+                .replacingOccurrences(of: "-", with: " ")
+                .capitalized
+            return "\(country) · \(area)"
+        }
+
+        if region.hasPrefix("topic/") {
+            return region.replacingOccurrences(of: "topic/", with: "")
+                .replacingOccurrences(of: "-", with: " ")
+                .capitalized
+        }
+
+        return region.replacingOccurrences(of: "-", with: " ").capitalized
     }
 }
 
-/// A single selectable chip, reused from the original CategoryPill design.
-struct TaxonomyChip: View {
+private struct FilterLensTopic: Identifiable {
+    let id: String
     let title: String
-    let isSelected: Bool
-    let color: Color
+}
+
+private struct FilterLensChip: View {
+    let title: String
+    let systemImage: String
+    let tint: Color
     let action: () -> Void
 
     var body: some View {
-        Button(action: {
+        Button {
             let impact = UIImpactFeedbackGenerator(style: .light)
             impact.impactOccurred()
             action()
-        }) {
-            HStack(spacing: 4) {
+        } label: {
+            HStack(spacing: 5) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 10, weight: .semibold))
+                    .imageScale(.small)
                 Text(title)
-                    .font(.subheadline)
-                    .fontWeight(isSelected ? .semibold : .regular)
-                    .foregroundStyle(isSelected ? .white : .primary)
-                if isSelected {
-                    Image(systemName: "xmark")
-                        .font(.caption2)
-                        .foregroundStyle(.white.opacity(0.7))
-                }
+                    .font(.caption)
+                    .fontWeight(.medium)
+                    .lineLimit(1)
+                Image(systemName: "xmark")
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundStyle(tint.opacity(0.7))
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 8)
+            .foregroundStyle(tint)
+            .padding(.horizontal, 9)
+            .padding(.vertical, 5)
             .background(
                 Capsule()
-                    .fill(isSelected ? color : color.opacity(0.1))
+                    .fill(tint.opacity(0.12))
             )
-            .scaleEffect(isSelected ? 1.0 : 0.97)
-            .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isSelected)
+            .contentShape(Capsule())
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("Remove \(title)")
     }
 }

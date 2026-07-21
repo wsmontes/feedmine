@@ -5,11 +5,11 @@ import SwiftUI
 struct FeedItemView: View {
     @Environment(FeedLoader.self) private var loader
     let item: FeedItem
-    let index: Int
-    var isFirstAppearance: Bool = true
-    var onOpen: (() -> Void)?
-    var onCopy: (() -> Void)?
-    var onPlaybackFailed: (() -> Void)?
+    var onOpen: (() -> Void)? = nil
+    var onCopy: (() -> Void)? = nil
+    var onPlaybackFailed: (() -> Void)? = nil
+    var onViewSource: (() -> Void)? = nil
+    var onAddSourceToCollection: (() -> Void)? = nil
 
     var body: some View {
         Group {
@@ -18,10 +18,10 @@ struct FeedItemView: View {
                     item: item,
                     isRead: item.isRead,
                     isBookmarked: item.isBookmarked,
-                    appearDelay: Double(index % 8) * 0.04,
                     onBookmark: { loader.toggleBookmark(item.id) },
-                    isInBookmarkBox: loader.selectedBookmarkListID != nil,
-                    isFirstAppearance: isFirstAppearance
+                    onViewSource: onViewSource,
+                    onAddSourceToCollection: onAddSourceToCollection,
+                    isInBookmarkBox: loader.selectedBookmarkListID != nil
                 )
                 .equatable()
                 .padding(.horizontal, 12)
@@ -85,11 +85,16 @@ struct FeedItemView: View {
         .contextMenu {
             BookmarkBoxContextMenu(itemID: item.id)
 
-            Button {
-                loader.searchQuery = item.sourceTitle
-                loader.searchQueryChanged()
-            } label: {
-                Label("Show more from \(item.sourceTitle)", systemImage: "arrow.triangle.branch")
+            if let onViewSource {
+                Button(action: onViewSource) {
+                    Label("View Source", systemImage: "rectangle.stack")
+                }
+            }
+
+            if let onAddSourceToCollection {
+                Button(action: onAddSourceToCollection) {
+                    Label("Add Source to Collection", systemImage: "rectangle.stack.badge.plus")
+                }
             }
 
             Button {
@@ -115,6 +120,7 @@ struct FeedItemView: View {
             }
         }
         .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("feed-item-\(item.language ?? "und")-\(item.id)")
         .accessibilityLabel("\(item.title) from \(item.sourceTitle)")
         .accessibilityAddTraits(item.isRead ? [] : .isHeader)
     }

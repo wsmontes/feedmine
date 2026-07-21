@@ -28,6 +28,9 @@ scripts/feed_discovery/candidates/
 # Email outreach (contains contact emails — keep private)
 email_outreach/
 
+# Environment secrets
+.env
+
 # Loop progress artifacts
 .loop_progress.json
 *.zip
@@ -37,3 +40,14 @@ email_outreach/
 # Build artifacts
 build/
 .build-device/
+
+# Python virtualenv
+.venv_feeds/
+
+# Generated data (feed corpus)
+feeds_corpus*.parquet
+feeds_corpus.duckdb
+feeds_corpus_merged_parts*/
+feeds_progress.json
+feeds_enrich_progress.json
+scripts/feed_discovery/data/results/

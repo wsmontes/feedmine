@@ -32,10 +32,16 @@
 		29B4A9D7828200532F81C908 /* uk.json in Resources */ = {isa = PBXBuildFile; fileRef = CCA3BD334F228377EE226841 /* uk.json */; };
 		2B5AC4E1A664F1CCE40B5A03 /* ShakeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA499573FA22F43B9CCABCB2 /* ShakeHandler.swift */; };
 		2EA55D1122EE30642380948D /* ReservoirTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F2BBD5E8D67FBB69DAE0DA /* ReservoirTests.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* FilterPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E2D3C4B5A6978877665544 /* FilterPerformanceTests.swift */; };
+		1F2D38EDD258461E9CC71103 /* DatabasePerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDAED7B84BE4D8C8A65BA47 /* DatabasePerformanceTests.swift */; };
+		207FA64146134BF2A3E04434 /* ContentCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F838A486AC3240EEADDD2FCB /* ContentCollectionTests.swift */; };
+		51EFEA349A784AF2A2A8B0ED /* ContentDistributionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A4117F353450DB7329B10 /* ContentDistributionTests.swift */; };
+		C5CDC16A09D6473687A4B584 /* ContentVarietyDiagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2313B3E65B417BB719FD68 /* ContentVarietyDiagnostics.swift */; };
 		2FFDEE84C9425743CD6CBA2D /* FeedEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702EDB528B43345BBE982A7 /* FeedEmptyStateView.swift */; };
 		31C095E7266DBFAABA880F0C /* FeedFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCAD69EEAB8FAB8FB974935 /* FeedFetchResult.swift */; };
 		353857A2FD121D82D9343CE2 /* StatsShareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A65D36B6680BED2A9755DE /* StatsShareCard.swift */; };
 		35AA00112233445566778899 /* FeedEngineCatalogDiagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AA10112233445566778899 /* FeedEngineCatalogDiagnostics.swift */; };
+		C4A710000000000000000001 /* CatalogUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A710000000000000000002 /* CatalogUpdateService.swift */; };
 		35AA20112233445566778899 /* FeedEngine in Resources */ = {isa = PBXBuildFile; fileRef = 35AA30112233445566778899 /* FeedEngine */; };
 		36D0FCE0468776378E0F5915 /* zh-Hans.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DA32044B1E11A17524653C0 /* zh-Hans.json */; };
 		3806533632410A61308F31A9 /* nb.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8CD91612E937EE250BC505 /* nb.json */; };
@@ -97,6 +103,7 @@
 		9E7327FFC4AFCF854F99227B /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FAA97A3521853E316A902 /* SearchEngine.swift */; };
 		A237A4BD1D29BF9B5E0B48EA /* pl.json in Resources */ = {isa = PBXBuildFile; fileRef = CABE7DEA6EA4216F6C977ACD /* pl.json */; };
 		A3C03B83222257B17201000A /* FeedmineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3303EACD11CBF948A55F9FCB /* FeedmineUITests.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F3 /* FeedmineFilterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6978877665544 /* FeedmineFilterUITests.swift */; };
 		A6CC23D83A3B257531C5DDCA /* ImportPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF69B4ACE5F64965C7F9779 /* ImportPipeline.swift */; };
 		A903D23975268A60FF3A597C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7ABE3C4DFB0D9F72AFD7F5 /* Foundation.framework */; };
 		ABAD51BB711BF914B168F5B3 /* hr.json in Resources */ = {isa = PBXBuildFile; fileRef = 039DBB7DEDD7E8E101EBA9AC /* hr.json */; };
@@ -198,11 +205,18 @@
 		1E0707897639AD205286DC49 /* zh-Hant.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "zh-Hant.json"; sourceTree = "<group>"; };
 		20C0390FC7E6B67E2A2AF044 /* ShareCardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardImageView.swift; sourceTree = "<group>"; };
 		26AE7140CB709EB68EA0D2ED /* SessionTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTracker.swift; sourceTree = "<group>"; };
+		F1E2D3C4B5A6978877665544 /* FilterPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPerformanceTests.swift; sourceTree = "<group>"; };
+		DBDAED7B84BE4D8C8A65BA47 /* DatabasePerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePerformanceTests.swift; sourceTree = "<group>"; };
+		F838A486AC3240EEADDD2FCB /* ContentCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionTests.swift; sourceTree = "<group>"; };
+		019A4117F353450DB7329B10 /* ContentDistributionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDistributionTests.swift; sourceTree = "<group>"; };
+		AF2313B3E65B417BB719FD68 /* ContentVarietyDiagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVarietyDiagnostics.swift; sourceTree = "<group>"; };
 		29F2BBD5E8D67FBB69DAE0DA /* ReservoirTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservoirTests.swift; sourceTree = "<group>"; };
 		2A323EC02099631F60573F6F /* it.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = it.json; sourceTree = "<group>"; };
 		3303EACD11CBF948A55F9FCB /* FeedmineUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeedmineUITests.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6978877665544 /* FeedmineFilterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedmineFilterUITests.swift; sourceTree = "<group>"; };
 		35537050ED8F38737F96004E /* InputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParser.swift; sourceTree = "<group>"; };
 		35AA10112233445566778899 /* FeedEngineCatalogDiagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEngineCatalogDiagnostics.swift; sourceTree = "<group>"; };
+		C4A710000000000000000002 /* CatalogUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogUpdateService.swift; sourceTree = "<group>"; };
 		35AA30112233445566778899 /* FeedEngine */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FeedEngine; path = feedmine/Resources/FeedEngine; sourceTree = SOURCE_ROOT; };
 		35981C4CB570F24F06B11F0F /* ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ru.json; sourceTree = "<group>"; };
 		3BED6C6B303B501C9F3EE980 /* ExportEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportEngine.swift; sourceTree = "<group>"; };
@@ -444,6 +458,11 @@
 				F4F5F6F7061728394A5B6C7D8 /* CatalogBrowserViewModelTests.swift */,
 				8A6F994DBEA68B4E07E4DF25 /* SourceSchedulerTests.swift */,
 				D4AE3F2D11A4FB68D2A48BEC /* TaxonomyStoreTests.swift */,
+				F1E2D3C4B5A6978877665544 /* FilterPerformanceTests.swift */,
+				DBDAED7B84BE4D8C8A65BA47 /* DatabasePerformanceTests.swift */,
+				F838A486AC3240EEADDD2FCB /* ContentCollectionTests.swift */,
+				019A4117F353450DB7329B10 /* ContentDistributionTests.swift */,
+				AF2313B3E65B417BB719FD68 /* ContentVarietyDiagnostics.swift */,
 			);
 			path = feedmineTests;
 			sourceTree = "<group>";
@@ -459,6 +478,7 @@
 				85BC7361CDC09C1858857316 /* CircadianEngine.swift */,
 				A8B50077DA1D77D2A8954743 /* DesignTokens.swift */,
 				3BED6C6B303B501C9F3EE980 /* ExportEngine.swift */,
+				C4A710000000000000000002 /* CatalogUpdateService.swift */,
 				35AA10112233445566778899 /* FeedEngineCatalogDiagnostics.swift */,
 				1B89B6467E341514F26C040B /* FeedLoader.swift */,
 				C1D2E3F40516273849A5B6C7 /* FeedMetrics.swift */,
@@ -493,6 +513,7 @@
 			children = (
 				F2F325F1491822FB1390168D /* Info.plist */,
 				3303EACD11CBF948A55F9FCB /* FeedmineUITests.swift */,
+				F1A2B3C4D5E6978877665544 /* FeedmineFilterUITests.swift */,
 			);
 			name = feedmineUITests;
 			path = feedmineUITests;
@@ -830,6 +851,11 @@
 				C3D4E5F60718293A4B5C6D7E /* CatalogBrowserViewModelTests.swift in Sources */,
 				B7CF129DF269C233F2DA193D /* SourceSchedulerTests.swift in Sources */,
 				1B62EC9E465AF813C864AB66 /* TaxonomyStoreTests.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* FilterPerformanceTests.swift in Sources */,
+				1F2D38EDD258461E9CC71103 /* DatabasePerformanceTests.swift in Sources */,
+				207FA64146134BF2A3E04434 /* ContentCollectionTests.swift in Sources */,
+				51EFEA349A784AF2A2A8B0ED /* ContentDistributionTests.swift in Sources */,
+				C5CDC16A09D6473687A4B584 /* ContentVarietyDiagnostics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +906,7 @@
 				0B52C790E53D4510975B9FA5 /* Pagination.swift in Sources */,
 				0BCBCF8A14BA4B2981AAC017 /* CatalogProtocols.swift in Sources */,
 				9AAE10612233445566778899 /* CatalogBrowserViewModel.swift in Sources */,
+				C4A710000000000000000001 /* CatalogUpdateService.swift in Sources */,
 				9AAE00312233445566778899 /* OPMLCatalogScanner.swift in Sources */,
 				9AAE00412233445566778899 /* SQLiteCatalogStore.swift in Sources */,
 				4A12A481029D04C487FC6E43 /* FeedItemView.swift in Sources */,
@@ -938,6 +965,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C03B83222257B17201000A /* FeedmineUITests.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F3 /* FeedmineFilterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +989,7 @@
 		2CCEE79A6DE55DE1CB055639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 955573A4YH;
 				INFOPLIST_FILE = feedmineUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.feedmine.uitests;
@@ -1035,6 +1064,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 955573A4YH;
 				INFOPLIST_FILE = feedmineTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1053,6 +1083,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 955573A4YH;
 				INFOPLIST_FILE = feedmineTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1135,6 +1166,7 @@
 		B51D8FB5B8ACFFFA3B0CD45F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 955573A4YH;
 				INFOPLIST_FILE = feedmineUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.feedmine.uitests;

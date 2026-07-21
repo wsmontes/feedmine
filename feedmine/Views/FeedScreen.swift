@@ -18,6 +18,8 @@ struct FeedScreen: View {
     @State private var lastScrollIndex: Int = 0
     @State private var searchText = ""
     @State private var isSearching = false
+    @State private var selectedSource: SourceReference?
+    @State private var sourceToCollect: SourceReference?
     @FocusState private var searchFocused: Bool
     @State private var showSettings = false
     @State private var showSources = false
@@ -30,11 +32,15 @@ struct FeedScreen: View {
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastIcon = "checkmark"
-    @State private var headerCompact = false
+    @State private var headerHeight: CGFloat = 48
+    @State private var filterLensExpanded = true
+    @State private var lastScrollOffset: CGFloat = 0
+    @State private var filterLensCollapseTask: Task<Void, Never>?
     @State private var engine = CircadianEngine.shared
     @AppStorage("showDebugBar") private var showDebugBar = false
     @AppStorage("nightMode") private var nightMode = false
     @AppStorage("lastScrollItemID") private var lastScrollItemID = ""
+    @AppStorage("filterLensDismissedSignature") private var filterLensDismissedSignature = ""
     @State private var scrollTargetID: String? = nil
     /// True once the user has actually scrolled the feed. Gates the one-shot
     /// cold-start position restore so it can never yank a user who already
@@ -63,12 +69,19 @@ struct FeedScreen: View {
     }
 
     var body: some View {
+        screenWithSheets
+    }
+
+    private var screenContent: some View {
         ZStack(alignment: .top) {
             // Full-bleed feed content with circadian page tint
             engine.pageBackground.ignoresSafeArea()
 
-            if loader.loadingState == .initial && loader.items.isEmpty {
-                SkeletonLoadingView()
+            if isSearching && !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                unifiedSearchPanel
+            } else if loader.items.isEmpty
+                && (loader.isPreparingInitialRunway || loader.loadingState == .initial) {
+                InitialFeedLoadingView()
             } else if loader.items.isEmpty && loader.loadingState != .initial {
                 FeedEmptyStateView(mode: emptyMode)
             } else {
@@ -80,13 +93,6 @@ struct FeedScreen: View {
                 compactHeader
                 if isSearching { searchBar.transition(.move(edge: .top).combined(with: .opacity)) }
                 Spacer()
-            }
-
-            // Tap-to-dismiss search
-            if isSearching && searchFocused {
-                Color.clear
-                    .contentShape(Rectangle())
-                    .onTapGesture { searchFocused = false }
             }
 
             // Shake detector
@@ -112,18 +118,12 @@ struct FeedScreen: View {
             toastOverlay
             OnboardingTipsView()
         }
+    }
+
+    private var observedScreen: some View {
+        screenContent
         .task {
-            await loader.start()
-            await loader.refreshBookmarkState()
-            updateBadge()
-            engine.refresh()
-            // Restore scroll position once on cold start — but never if the
-            // user already started scrolling (a delayed restore would yank them).
-            if !didRestoreScroll && !userHasScrolled
-                && !lastScrollItemID.isEmpty && !loader.items.isEmpty {
-                scrollTargetID = lastScrollItemID
-            }
-            didRestoreScroll = true
+            await startScreen()
         }
         .onAppear { recordFirstScreenMetric() }
         .onChange(of: loader.items.count) { _, count in recordFirstUsefulContentMetric(count: count) }
@@ -141,6 +141,9 @@ struct FeedScreen: View {
         .onChange(of: loader.searchQuery) { _, query in
             // Reverse sync: context menu or external change → update UI (#44)
             if searchText != query { searchText = query }
+        }
+        .onChange(of: filterLensSignature) { _, _ in
+            handleFilterLensContentChange()
         }
         .onChange(of: searchFocused) { _, focused in
             if !focused && searchText.isEmpty { isSearching = false }
@@ -172,7 +175,13 @@ struct FeedScreen: View {
                 Task { await loader.refreshIfStale() }
             }
         }
+    }
+
+    private var screenWithSheets: some View {
+        observedScreen
         .sheet(item: $articleItem) { item in ArticleReaderView(item: item) }
+        .sheet(item: $selectedSource) { SourceFeedView(source: $0) }
+        .sheet(item: $sourceToCollect) { AddSourceToCollectionSheet(source: $0) }
         .sheet(isPresented: $showSettings) { SettingsSheetView() }
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
@@ -181,20 +190,53 @@ struct FeedScreen: View {
         .sheet(isPresented: $showCollections) { CollectionManagementView() }
         .sheet(isPresented: $showExport) { ExportView() }
         .sheet(isPresented: $showCatalogExplore) {
-            if let databaseURL = FeedEngineCatalogDiagnostics.bundledDatabaseURL(),
+            if let databaseURL = FeedEngineCatalogDiagnostics.activeDatabaseURL(),
                let repository = try? SQLiteCatalogRepository(databaseURL: databaseURL, readOnly: true) {
                 CatalogExploreView(engine: repository)
             } else {
                 ContentUnavailableView(
                     "Catalog unavailable",
                     systemImage: "exclamationmark.triangle",
-                    description: Text("The bundled catalog could not be opened.")
+                    description: Text("The local catalog could not be opened.")
                 )
             }
         }
         .tint(engine.accent)
         .animation(.easeInOut(duration: 2.0), value: engine.period)
         .overlay { if nightMode { nightOverlay } }
+        .onDisappear {
+            filterLensCollapseTask?.cancel()
+        }
+    }
+
+    private var hasFilterLensContent: Bool {
+        loader.activeFilterCount > 0
+    }
+
+    private var isFilterLensDismissedForCurrentSelection: Bool {
+        hasFilterLensContent
+            && !filterLensSignature.isEmpty
+            && filterLensDismissedSignature == filterLensSignature
+    }
+
+    private var isFilterLensVisible: Bool {
+        !isSearching && hasFilterLensContent && filterLensExpanded && !isFilterLensDismissedForCurrentSelection
+    }
+
+    private var feedTopPadding: CGFloat {
+        max(48, headerHeight) + (isFilterLensVisible ? 20 : 0)
+    }
+
+    private var filterLensSignature: String {
+        guard hasFilterLensContent else { return "" }
+        var parts: [String] = []
+        parts.append(loader.selectedRegion ?? "")
+        parts.append(loader.selectedContentType.rawValue)
+        parts.append(loader.selectedMood.rawValue)
+        parts.append(loader.selectedNodeIDs.sorted().joined(separator: ","))
+        parts.append(loader.selectedLanguages.sorted().joined(separator: ","))
+        parts.append(loader.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines))
+        return parts.joined(separator: "|")
     }
 
     // MARK: - Compact Header
@@ -212,9 +254,6 @@ struct FeedScreen: View {
 
                 Spacer()
 
-                // Active filter chips — inline, tappable to dismiss
-                filterChips
-
                 HStack(spacing: 4) {
                     Button {
                         withAnimation(.easeInOut(duration: 0.3)) { isSearching.toggle() }
@@ -224,6 +263,7 @@ struct FeedScreen: View {
                             .headerButtonStyle(accent: engine.accent)
                             .contentTransition(.symbolEffect(.replace))
                     }
+                    .accessibilityIdentifier("search-button")
                     Button {
                         let impact = UIImpactFeedbackGenerator(style: .light)
                         impact.impactOccurred()
@@ -255,7 +295,7 @@ struct FeedScreen: View {
                             Label("Export", systemImage: "square.and.arrow.up")
                         }
                         Button { showCollections = true } label: {
-                            Label("Collections", systemImage: "folder.fill")
+                            Label("Source Collections", systemImage: "rectangle.stack.fill")
                         }
                         Button { showSources = true } label: {
                             Label("Sources", systemImage: "antenna.radiowaves.left.and.right")
@@ -276,65 +316,22 @@ struct FeedScreen: View {
                 Divider().opacity(0.3)
             }
 
-            // Taxonomy chip bar — only visible when filters are active
-            if loader.hasActiveFilters {
-                TaxonomyChipBar {
-                    showFilters = true
+            if isFilterLensVisible {
+                FilterLensBar {
+                    dismissFilterLensForCurrentSelection()
                 }
-            }
-
-            // Active filter banner — shows what's being filtered and offers clear
-            if loader.hasActiveFilters {
-                filterActiveBanner
                     .transition(.move(edge: .top).combined(with: .opacity))
             }
         }
-    }
-
-    private var filterActiveBanner: some View {
-        HStack(spacing: 6) {
-            Image(systemName: "line.3.horizontal.decrease")
-                .font(.caption2)
-            Text(filterBannerLabel)
-                .font(.caption2)
-                .fontWeight(.medium)
-            Spacer()
-            Button("Clear") {
-                let impact = UIImpactFeedbackGenerator(style: .light)
-                impact.impactOccurred()
-                withAnimation(.easeInOut(duration: 0.25)) {
-                    loader.clearAllFilters()
-                }
-            }
-            .font(.caption2)
-            .fontWeight(.semibold)
-            .foregroundStyle(engine.accent)
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 6)
-        .background(engine.accent.opacity(0.08))
-    }
-
-    private var filterBannerLabel: String {
-        var parts: [String] = []
-        if loader.hasTaxonomySelection {
-            parts.append(contentsOf: loader.selectedNodeNames)
-        }
-        if loader.hasLanguageSelection {
-            parts.append(contentsOf: loader.selectedLanguages.map { lang in
-                Locale.current.localizedString(forLanguageCode: lang) ?? lang
-            })
-        }
-        if loader.selectedMood != .all { parts.append(loader.selectedMood.rawValue) }
-        if loader.selectedContentType != .all { parts.append(loader.selectedContentType.rawValue) }
-        return parts.joined(separator: " · ")
+        .readHeaderHeight($headerHeight)
     }
 
     private var searchBar: some View {
         HStack(spacing: 8) {
             Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-            TextField("Search", text: $searchText)
+            TextField("Search sources, topics, and saved content", text: $searchText)
                 .focused($searchFocused)
+                .accessibilityIdentifier("unified-search-field")
                 .textFieldStyle(.plain)
                 .onSubmit { searchFocused = false }
             if !searchText.isEmpty {
@@ -359,55 +356,122 @@ struct FeedScreen: View {
         .onAppear { searchFocused = true }
     }
 
-    private var filterChips: some View {
-        let mood = loader.selectedMood
-        let type = loader.selectedContentType
-        let hasFilters = loader.hasActiveFilters
+    private var unifiedSearchPanel: some View {
+        let results = loader.unifiedSearchResults
+        return ScrollView {
+            LazyVStack(alignment: .leading, spacing: 12) {
+                if loader.isSearchLoading {
+                    HStack(spacing: 10) {
+                        ProgressView()
+                        Text("Searching sources and your library…")
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.vertical, 18)
+                }
 
-        guard hasFilters else { return AnyView(EmptyView()) }
-
-        return AnyView(
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 4) {
-                    ForEach(loader.selectedNodeNames, id: \.self) { name in
-                        chip(name, action: {})
-                    }
-                    ForEach(Array(loader.selectedLanguages).sorted(), id: \.self) { lang in
-                        chip(Locale.current.localizedString(forLanguageCode: lang) ?? lang,
-                             action: { loader.toggleLanguage(lang) })
-                    }
-                    if mood != .all {
-                        chip(mood.rawValue, action: { loader.selectMood(mood) })
-                    }
-                    if type != .all {
-                        chip(type.rawValue, action: { loader.selectContentType(type) })
+                if !results.sources.isEmpty {
+                    searchSectionHeader("Sources", count: results.sources.count, icon: "antenna.radiowaves.left.and.right")
+                    ForEach(results.sources) { source in
+                        Button { selectedSource = source.sourceReference } label: {
+                            SourceSearchRow(source: source)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("source-result-\(source.id)")
+                        .contextMenu {
+                            Button { selectedSource = source.sourceReference } label: {
+                                Label("View Source", systemImage: "rectangle.stack")
+                            }
+                            Button { sourceToCollect = source.sourceReference } label: {
+                                Label("Add Source to Collection", systemImage: "rectangle.stack.badge.plus")
+                            }
+                        }
                     }
                 }
+
+                if !results.savedItems.isEmpty {
+                    searchSectionHeader("Saved", count: results.savedItems.count, icon: "bookmark.fill")
+                    ForEach(results.savedItems) { item in
+                        searchContentRow(item, saved: true)
+                    }
+                }
+
+                if !results.localItems.isEmpty {
+                    searchSectionHeader("History & local content", count: results.localItems.count, icon: "clock.arrow.circlepath")
+                    ForEach(results.localItems) { item in
+                        searchContentRow(item, saved: false)
+                    }
+                }
+
+                if !loader.isSearchLoading && results.isEmpty {
+                    ContentUnavailableView(
+                        "No matches",
+                        systemImage: "magnifyingglass",
+                        description: Text("Try a topic, source, tag, or words from an article you saw before.")
+                    )
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 50)
+                }
             }
-        )
+            .padding(.horizontal, 14)
+            .padding(.bottom, 90)
+        }
+        .scrollDismissesKeyboard(.interactively)
+        .padding(.top, headerHeight + 52)
+        .accessibilityIdentifier("unified-search-results")
     }
 
-    private func chip(_ label: String, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            HStack(spacing: 2) {
-                Text(label).font(.caption2).fontWeight(.medium)
-                Image(systemName: "xmark").font(.system(size: 9, weight: .bold))
-            }
-            .padding(.horizontal, 8).padding(.vertical, 3)
-            .background(Capsule().fill(CircadianEngine.shared.accent.opacity(0.12)))
-            .foregroundStyle(CircadianEngine.shared.accent)
+    private func searchSectionHeader(_ title: String, count: Int, icon: String) -> some View {
+        HStack(spacing: 7) {
+            Image(systemName: icon)
+            Text(title).fontWeight(.semibold)
+            Spacer()
+            Text("\(count)")
+                .font(.caption.monospacedDigit())
+                .foregroundStyle(.secondary)
         }
+        .font(.subheadline)
+        .foregroundStyle(engine.accent)
+        .padding(.top, 8)
+    }
+
+    private func searchContentRow(_ item: FeedItem, saved: Bool) -> some View {
+        Button { articleItem = item } label: {
+            HStack(alignment: .top, spacing: 11) {
+                Image(systemName: saved ? "bookmark.fill" : (item.isRead ? "clock.fill" : "doc.text"))
+                    .foregroundStyle(saved ? engine.accent : Color.secondary)
+                    .frame(width: 24, height: 24)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(item.title)
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                    Text(item.sourceTitle)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.right")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(12)
+            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12))
+        }
+        .buttonStyle(.plain)
     }
 
     private var filterButton: some View {
-        let activeCount = (loader.hasTaxonomySelection ? loader.selectedNodeIDs.count : 0) + (loader.selectedMood != .all ? 1 : 0) + (loader.selectedContentType != .all ? 1 : 0) + (loader.hasLanguageSelection ? loader.selectedLanguages.count : 0) + (!loader.searchQuery.isEmpty ? 1 : 0)
+        let activeCount = loader.activeFilterCount
         return Button {
+            let impact = UIImpactFeedbackGenerator(style: .light)
+            impact.impactOccurred()
             showFilters = true
         } label: {
             ZStack(alignment: .topTrailing) {
                 Image(systemName: "line.3.horizontal.decrease")
                     .headerButtonStyle(accent: engine.accent)
-                    .accessibilityIdentifier("filter-button")
                 if activeCount > 0 {
                     Text("\(activeCount)")
                         .font(.system(size: 9, weight: .bold))
@@ -418,6 +482,8 @@ struct FeedScreen: View {
                 }
             }
         }
+        .accessibilityIdentifier("filter-button")
+        .accessibilityValue("\(activeCount)")
     }
 
     // MARK: - Feed Scroll
@@ -454,27 +520,24 @@ struct FeedScreen: View {
 
                         ForEach(loader.dateSections) { section in
                             Section {
-                                // Use index-based iteration to avoid allocating
-                                // Array(section.items.enumerated()) on every body eval
-                                ForEach(0..<section.items.count, id: \.self) { idx in
-                                    let item = section.items[idx]
-                                    let isFirst = !impressions.seen.contains(item.id)
-                                    FeedItemView(item: item, index: idx,
-                                        isFirstAppearance: isFirst,
+                                ForEach(section.items) { item in
+                                    FeedItemView(item: item,
                                         onOpen: { articleItem = item },
                                         onCopy: { toastMessage = "Link copied"; toastIcon = "doc.on.doc"; withAnimation { showToast = true } },
                                         onPlaybackFailed: {
                                             toastMessage = "Audio unavailable"
                                             toastIcon = "exclamationmark.triangle"
                                             withAnimation { showToast = true }
-                                        }
+                                        },
+                                        onViewSource: { selectedSource = loader.sourceReference(for: item) },
+                                        onAddSourceToCollection: { sourceToCollect = loader.sourceReference(for: item) }
                                     )
                                     .id(item.id)
                                     .padding(.horizontal, 6)
                                     .contentShape(Rectangle())
                                     .onAppear {
                                         impressions.mark(item.id)
-                                        loader.noteVisibleIndex(idx)
+                                        loader.noteVisibleIndex(for: item)
                                         if impressions.count % 8 == 0 {
                                             let idx = loader.currentVisibleIndex
                                             let goingUp = idx < lastScrollIndex
@@ -488,7 +551,9 @@ struct FeedScreen: View {
                                     }
                                 }
                             } header: {
-                                sectionHeader(section.title)
+                                if section.showsHeader {
+                                    sectionHeader(section.title)
+                                }
                             }
                         }
 
@@ -498,7 +563,7 @@ struct FeedScreen: View {
                             EmptyFilterView(category: loader.selectedNodeNames.joined(separator: ", "))
                         }
                     }
-                    .padding(.top, 48)
+                    .padding(.top, feedTopPadding)
                     .safeAreaInset(edge: .bottom) {
                         Color.clear.frame(height: 60).background(.ultraThinMaterial)
                     }
@@ -507,7 +572,7 @@ struct FeedScreen: View {
                 .onScrollGeometryChange(for: CGFloat.self, of: { geo in
                     geo.contentOffset.y
                 }, action: { _, newOffset in
-                    if newOffset > 40 { userHasScrolled = true }
+                    handleScrollOffset(newOffset)
                     if newOffset < -110 && !isSearching {
                         let impact = UIImpactFeedbackGenerator(style: .light)
                         impact.impactOccurred()
@@ -599,6 +664,96 @@ struct FeedScreen: View {
 
     // MARK: - Helpers
 
+    private func startScreen() async {
+        await loader.start()
+        await loader.refreshBookmarkState()
+        updateBadge()
+        engine.refresh()
+        // Restore scroll position once on cold start, but never if the user
+        // already started reading.
+        if !didRestoreScroll && !userHasScrolled
+            && !lastScrollItemID.isEmpty && !loader.items.isEmpty {
+            scrollTargetID = lastScrollItemID
+        }
+        didRestoreScroll = true
+    }
+
+    private func handleScrollOffset(_ newOffset: CGFloat) {
+        if newOffset > 40 { userHasScrolled = true }
+
+        let delta = newOffset - lastScrollOffset
+        lastScrollOffset = newOffset
+
+        guard hasFilterLensContent, !isSearching, !isFilterLensDismissedForCurrentSelection else { return }
+
+        if delta > 8 && newOffset > 24 {
+            collapseFilterLens()
+        } else if delta < -8 {
+            revealFilterLens()
+        }
+    }
+
+    private func revealFilterLens(scheduleAutoCollapse: Bool = false) {
+        guard hasFilterLensContent, !isFilterLensDismissedForCurrentSelection else { return }
+        filterLensCollapseTask?.cancel()
+
+        if !filterLensExpanded {
+            withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
+                filterLensExpanded = true
+            }
+        }
+
+        if scheduleAutoCollapse {
+            scheduleFilterLensCollapse()
+        }
+    }
+
+    private func handleFilterLensContentChange() {
+        guard hasFilterLensContent else {
+            filterLensCollapseTask?.cancel()
+            filterLensExpanded = true
+            filterLensDismissedSignature = ""
+            return
+        }
+
+        if isFilterLensDismissedForCurrentSelection {
+            filterLensCollapseTask?.cancel()
+            filterLensExpanded = false
+        } else {
+            revealFilterLens(scheduleAutoCollapse: true)
+        }
+    }
+
+    private func dismissFilterLensForCurrentSelection() {
+        guard hasFilterLensContent, !filterLensSignature.isEmpty else { return }
+        filterLensCollapseTask?.cancel()
+        filterLensDismissedSignature = filterLensSignature
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.9)) {
+            filterLensExpanded = false
+        }
+    }
+
+    private func collapseFilterLens() {
+        filterLensCollapseTask?.cancel()
+        guard hasFilterLensContent, filterLensExpanded else { return }
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.9)) {
+            filterLensExpanded = false
+        }
+    }
+
+    private func scheduleFilterLensCollapse() {
+        filterLensCollapseTask?.cancel()
+        filterLensCollapseTask = Task { @MainActor in
+            try? await Task.sleep(for: .seconds(4))
+            guard !Task.isCancelled, hasFilterLensContent, !isSearching else { return }
+            if filterLensExpanded {
+                withAnimation(.spring(response: 0.28, dampingFraction: 0.9)) {
+                    filterLensExpanded = false
+                }
+            }
+        }
+    }
+
     private func updateBadge() {
         let unread = loader.items.count - loader.readItemIDs.count
         Task { @MainActor in UIApplication.shared.applicationIconBadgeNumber = max(0, unread) }
@@ -678,10 +833,35 @@ struct ScrollOffKey: PreferenceKey {
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = nextValue() }
 }
 
+private struct HeaderHeightKey: PreferenceKey {
+    static let defaultValue: CGFloat = 48
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = nextValue() }
+}
+
+private extension View {
+    func readHeaderHeight(_ height: Binding<CGFloat>) -> some View {
+        background {
+            GeometryReader { proxy in
+                Color.clear.preference(key: HeaderHeightKey.self, value: proxy.size.height)
+            }
+        }
+        .onPreferenceChange(HeaderHeightKey.self) { height.wrappedValue = $0 }
+    }
+}
+
 struct CompactGreeting: View {
     @Environment(FeedLoader.self) private var loader
     @State private var engine = CircadianEngine.shared
+    @State private var showReadyPulse = false
     @AppStorage("showDebugBar") private var showDebugBar = false
+
+    private var isShowingStartupProgress: Bool {
+        loader.isPreparingInitialRunway || showReadyPulse
+    }
+
+    private var startupTotal: Int {
+        max(loader.startupTotalSourceCount, loader.sourceCount)
+    }
 
     var body: some View {
         HStack(spacing: 4) {
@@ -690,7 +870,27 @@ struct CompactGreeting: View {
                 .scaledToFit()
                 .frame(width: 16, height: 16)
             Text("Feedmine").font(.caption).fontWeight(.bold)
-            Text("·\(loader.sourceCount) sources").font(.caption2).foregroundStyle(.secondary)
+            if isShowingStartupProgress {
+                HStack(spacing: 3) {
+                    Text("· \(loader.startupFetchedSourceCount)/\(startupTotal)")
+                        .contentTransition(.numericText())
+                    if showReadyPulse {
+                        Image(systemName: "checkmark.circle.fill")
+                            .symbolEffect(.pulse, value: showReadyPulse)
+                    }
+                }
+                .font(.caption2.monospacedDigit())
+                .foregroundStyle(showReadyPulse ? Color.green : Color.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .accessibilityLabel(
+                    "\(loader.startupFetchedSourceCount) de \(startupTotal) fontes verificadas"
+                )
+            } else {
+                Text("·\(loader.sourceCount) sources")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
         }
         // Secret gesture: triple-tap the greeting to toggle debug bar.
         // Not exposed in Settings — intentional, for development use only.
@@ -699,6 +899,17 @@ struct CompactGreeting: View {
             impact.impactOccurred()
             withAnimation(.easeInOut(duration: 0.3)) {
                 showDebugBar.toggle()
+            }
+        }
+        .task(id: loader.startupRunwayReady) {
+            guard loader.startupRunwayReady else { return }
+            withAnimation(.easeInOut(duration: 0.2)) {
+                showReadyPulse = true
+            }
+            try? await Task.sleep(for: .seconds(1.4))
+            guard !Task.isCancelled else { return }
+            withAnimation(.easeOut(duration: 0.35)) {
+                showReadyPulse = false
             }
         }
     }
@@ -718,96 +929,306 @@ struct CompactErrorBanner: View {
     }
 }
 
-// MARK: - Skeleton Loading (with DreamyGradient from WhatsNew)
+private struct SourceSearchRow: View {
+    let source: SourceSearchResult
 
-struct SkeletonLoadingView: View {
-    @State private var messageIndex = 0
-    @State private var engine = CircadianEngine.shared
-    private let messages = ["Brewing coffee...", "Scanning the internet...", "Finding articles...", "Finding the best stories...", "Loading your feed...", "Checking sources...", "Almost there...", "Curating articles...", "Tuning antennas...", "Gathering news..."]
+    private var mediaIcon: String {
+        switch source.mediaKind {
+        case .text: return "doc.text"
+        case .video: return "play.rectangle.fill"
+        case .audio: return "headphones"
+        case .forum: return "bubble.left.and.bubble.right.fill"
+        }
+    }
 
     var body: some View {
-        VStack(spacing: 0) {
-            Text(messages[messageIndex])
-                .font(engine.font(for: .momentCard))
-                .foregroundStyle(engine.accent)
-                .padding(.vertical, 16)
-                .transition(.opacity.combined(with: .move(edge: .top)))
-                .id(messageIndex)
-            ScrollView {
-                VStack(spacing: engine.cardGap) {
-                    ForEach(0..<3, id: \.self) { _ in
-                        SkeletonCardView().padding(.horizontal, 12)
+        HStack(alignment: .top, spacing: 11) {
+            Image(systemName: mediaIcon)
+                .foregroundStyle(source.defaultEnabled ? Color.accentColor : Color.secondary)
+                .frame(width: 26, height: 26)
+            VStack(alignment: .leading, spacing: 5) {
+                HStack(spacing: 7) {
+                    Text(source.title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                    if !source.defaultEnabled {
+                        Text("DORMANT")
+                            .font(.system(size: 9, weight: .bold))
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 2)
+                            .background(Color.secondary.opacity(0.13), in: Capsule())
+                            .foregroundStyle(.secondary)
                     }
-                }.padding(.vertical, 8)
+                }
+                if let description = source.sourceDescription, !description.isEmpty {
+                    Text(description)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                }
+                HStack(spacing: 5) {
+                    if let host = source.displayHost {
+                        Text(host).lineLimit(1)
+                    }
+                    ForEach(source.tags.prefix(3), id: \.self) { tag in
+                        Text(tag)
+                            .lineLimit(1)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 2)
+                            .background(Color.secondary.opacity(0.09), in: Capsule())
+                    }
+                }
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
             }
+            Spacer(minLength: 4)
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .foregroundStyle(.tertiary)
         }
-        .disabled(true)
-        .accessibilityLabel("Loading articles")
-        .task {
-            while !Task.isCancelled {
-                try? await Task.sleep(for: .seconds(2.5))
-                withAnimation(.easeInOut(duration: 0.4)) { messageIndex = (messageIndex + 1) % messages.count }
-            }
-        }
+        .padding(12)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12))
     }
 }
 
-struct SkeletonCardView: View {
-    @State private var engine = CircadianEngine.shared
+private struct SourceSearchDetailView: View {
+    @Environment(FeedLoader.self) private var loader
+    @Environment(\.dismiss) private var dismiss
+    let source: SourceSearchResult
+
+    private var isEnabled: Bool { loader.isSourceEnabled(source.feedURL) }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            // Dreamy gradient placeholder — same system as WhatsNewCarousel
-            SkeletonDreamyGradient()
-                .frame(height: 180)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-            RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(width: 120, height: 16).padding(.horizontal, 16).padding(.top, 12)
-            RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(height: 20).padding(.horizontal, 16).padding(.top, 8)
-            RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(width: 200, height: 20).padding(.horizontal, 16).padding(.top, 4)
-            RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(height: 40).padding(.horizontal, 16).padding(.top, 4)
-            RoundedRectangle(cornerRadius: 4).fill(shimmerGradient).frame(width: 80, height: 12).padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 16)
-        }
-        .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: engine.cardRadius))
-        .shadow(color: .black.opacity(0.04), radius: 8, y: 2)
-        .accessibilityHidden(true)
-    }
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(source.title)
+                            .font(.title2.bold())
+                        if let host = source.displayHost {
+                            Text(host).font(.subheadline).foregroundStyle(.secondary)
+                        }
+                        if let description = source.sourceDescription {
+                            Text(description).font(.body)
+                        }
+                    }
 
-    private var shimmerGradient: LinearGradient {
-        LinearGradient(
-            colors: [engine.accent.opacity(0.15), engine.accent.opacity(0.08), engine.accent.opacity(0.15)],
-            startPoint: .leading,
-            endPoint: .trailing
-        )
-    }
-}
+                    if !source.tags.isEmpty {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Topics").font(.headline)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(source.tags, id: \.self) { tag in
+                                        Text(tag)
+                                            .font(.caption)
+                                            .padding(.horizontal, 9)
+                                            .padding(.vertical, 6)
+                                            .background(Color.secondary.opacity(0.12), in: Capsule())
+                                    }
+                                }
+                            }
+                        }
+                    }
 
-/// A soft, slow dreamy gradient for skeleton cards — same vibe as WhatsNewCarousel
-struct SkeletonDreamyGradient: View {
-    @State private var engine = CircadianEngine.shared
+                    HStack(spacing: 10) {
+                        Label(source.mediaKind.rawValue.capitalized, systemImage: "dot.radiowaves.left.and.right")
+                        if let activity = source.activity {
+                            Label(activity.capitalized, systemImage: "waveform.path.ecg")
+                        }
+                        if let language = source.language {
+                            Label(language, systemImage: "character.book.closed")
+                        }
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
 
-    var body: some View {
-        TimelineView(.animation) { timeline in
-            let t = timeline.date.timeIntervalSinceReferenceDate
-            let phase = CGFloat(t.truncatingRemainder(dividingBy: 8) / 8)
-            GeometryReader { geo in
-                ZStack {
-                    engine.accent.opacity(0.08)
-                    Circle()
-                        .fill(engine.accent.opacity(0.12))
-                        .frame(width: geo.size.width * 0.6)
-                        .blur(radius: 15)
-                        .offset(x: geo.size.width * 0.2 * cos(phase * .pi * 2),
-                                y: geo.size.height * 0.15 * sin(phase * .pi * 1.6))
-                    Circle()
-                        .fill(engine.accent.opacity(0.08))
-                        .frame(width: geo.size.width * 0.45)
-                        .blur(radius: 12)
-                        .offset(x: geo.size.width * -0.1 * sin(phase * .pi * 1.8),
-                                y: geo.size.height * -0.1 * cos(phase * .pi * 2.2))
+                    if !source.defaultEnabled {
+                        Label(
+                            "Kept for discovery, but not refreshed by default because this current-sensitive source is dormant.",
+                            systemImage: "archivebox"
+                        )
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    }
+
+                    Button {
+                        loader.toggleSource(source.feedURL)
+                    } label: {
+                        Label(
+                            isEnabled ? "Disable source" : "Enable source",
+                            systemImage: isEnabled ? "minus.circle" : "plus.circle.fill"
+                        )
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+
+                    HStack {
+                        if let rawSiteURL = source.siteURL, let siteURL = URL(string: rawSiteURL) {
+                            Link(destination: siteURL) {
+                                Label("Website", systemImage: "safari")
+                            }
+                        }
+                        Spacer()
+                        ShareLink(item: source.feedURL) {
+                            Label("Share feed", systemImage: "square.and.arrow.up")
+                        }
+                    }
+                    .buttonStyle(.bordered)
+                }
+                .padding(20)
+            }
+            .navigationTitle("Source")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
                 }
             }
         }
+    }
+}
+
+// MARK: - Initial Feed Loading
+
+struct InitialFeedLoadingView: View {
+    @Environment(FeedLoader.self) private var loader
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var engine = CircadianEngine.shared
+    @State private var displayedSourceName = ""
+    @State private var nextSourceNameIndex = 0
+
+    private var progressFraction: Double {
+        guard loader.startupTargetSourceCount > 0 else { return 0 }
+        return min(
+            1,
+            Double(loader.startupFetchedSourceCount) / Double(loader.startupTargetSourceCount)
+        )
+    }
+
+    private var loadingTitle: String {
+        loader.hasPreviouslyLoadedContent
+            ? String(localized: "Loading your feed...")
+            : String(localized: "Loading articles")
+    }
+
+    var body: some View {
+        GeometryReader { proxy in
+            VStack(spacing: 0) {
+                Spacer(minLength: max(88, proxy.size.height * 0.13))
+
+                StartupSignalView(
+                    accent: engine.accent,
+                    isReady: loader.startupRunwayReady,
+                    reduceMotion: reduceMotion
+                )
+                .frame(width: 152, height: 72)
+
+                Text(loadingTitle)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(.primary)
+                    .padding(.top, 22)
+
+                Text(String(localized: "We are keeping you entertained while the content arrives."))
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: 330)
+                    .padding(.top, 8)
+
+                VStack(spacing: 8) {
+                    GeometryReader { bar in
+                        ZStack(alignment: .leading) {
+                            Capsule()
+                                .fill(Color.secondary.opacity(0.14))
+                            Capsule()
+                                .fill(loader.startupRunwayReady ? Color.green : engine.accent)
+                                .frame(width: max(4, bar.size.width * progressFraction))
+                        }
+                    }
+                    .frame(height: 5)
+
+                    HStack {
+                        Text(verbatim: "\(loader.startupFetchedSourceCount)/\(loader.startupTargetSourceCount)")
+                            .contentTransition(.numericText())
+                        Spacer()
+                        Text(verbatim: "\(Int((progressFraction * 100).rounded()))%")
+                    }
+                    .font(.caption.monospacedDigit())
+                    .foregroundStyle(.secondary)
+                }
+                .frame(maxWidth: 290)
+                .padding(.top, 28)
+
+                VStack(spacing: 7) {
+                    Text(String(localized: "Loading articles"))
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.tertiary)
+
+                    ZStack {
+                        Text(displayedSourceName.isEmpty ? loadingTitle : displayedSourceName)
+                            .id(displayedSourceName)
+                            .transition(.opacity)
+                    }
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(engine.accent)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: 300, minHeight: 42)
+                }
+                .padding(.top, 34)
+
+                Spacer(minLength: 44)
+            }
+            .frame(maxWidth: .infinity, minHeight: proxy.size.height)
+            .padding(.horizontal, 24)
+        }
+        .disabled(true)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(loadingTitle)
+        .accessibilityValue(
+            "\(loader.startupFetchedSourceCount)/\(loader.startupTargetSourceCount)"
+        )
+        .task {
+            while !Task.isCancelled {
+                let names = loader.startupRecentSourceNames
+                if nextSourceNameIndex < names.count {
+                    let backlog = names.count - nextSourceNameIndex
+                    let step = max(1, backlog / 4)
+                    let index = min(names.count - 1, nextSourceNameIndex + step - 1)
+                    withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.35)) {
+                        displayedSourceName = names[index]
+                    }
+                    nextSourceNameIndex = index + 1
+                }
+                try? await Task.sleep(for: .milliseconds(650))
+            }
+        }
+    }
+}
+
+private struct StartupSignalView: View {
+    let accent: Color
+    let isReady: Bool
+    let reduceMotion: Bool
+
+    var body: some View {
+        TimelineView(.animation(paused: reduceMotion)) { timeline in
+            let time = timeline.date.timeIntervalSinceReferenceDate
+            HStack(alignment: .center, spacing: 6) {
+                ForEach(0..<13, id: \.self) { index in
+                    let wave = reduceMotion
+                        ? 0.45
+                        : (sin(time * 4.2 + Double(index) * 0.72) + 1) / 2
+                    Capsule()
+                        .fill((isReady ? Color.green : accent).opacity(0.35 + wave * 0.65))
+                        .frame(width: 5, height: 12 + wave * 42)
+                }
+            }
+            .frame(width: 152, height: 72)
+            .animation(.easeInOut(duration: 0.25), value: isReady)
+        }
+        .accessibilityHidden(true)
     }
 }
 

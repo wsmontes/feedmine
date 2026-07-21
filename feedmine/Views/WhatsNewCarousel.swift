@@ -450,15 +450,18 @@ struct WhatsNewCard: View {
     @State private var imageLoadFailed = false
 
     private var effectiveImageURL: String? {
-        item.bestImageURL ?? item.imageURL
+        item.bestImageURL
     }
 
     @ViewBuilder
     private var cardBackground: some View {
-        if let urlStr = effectiveImageURL, !imageLoadFailed {
+        if item.hasPotentialImage, !imageLoadFailed {
             Color.clear
                 .overlay {
-                    CachedAsyncImage(url: URL(string: urlStr), onResult: { success in
+                    CachedAsyncImage(
+                        url: effectiveImageURL.flatMap(URL.init(string:)),
+                        articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil,
+                        onResult: { success in
                         if !success { imageLoadFailed = true }
                     })
                         .scaledToFill()

@@ -3,6 +3,20 @@ import SwiftUI
 struct FilterSheetView: View {
     @Environment(FeedLoader.self) private var loader
     @Environment(\.dismiss) private var dismiss
+    @State private var draftContentType: FeedLoader.ContentType = .all
+    @State private var draftLanguages: Set<String> = []
+    @State private var draftMood: FeedLoader.MoodFilter = .all
+    @State private var draftIsDirty = false
+    @State private var isGlobalFeedsChangePending = false
+    @State private var pendingGlobalFeedsValue = false
+
+    private var hasDraftFilters: Bool {
+        draftContentType != .all
+            || !draftLanguages.isEmpty
+            || draftMood != .all
+            || loader.hasRegionSelection
+            || loader.hasTaxonomySelection
+    }
 
     var body: some View {
         let countries = loader.availableCountries
@@ -11,12 +25,16 @@ struct FilterSheetView: View {
                 // Clear at top
                 Section {
                     Button(role: .destructive) {
+                        draftContentType = .all
+                        draftLanguages = []
+                        draftMood = .all
+                        draftIsDirty = false
                         loader.clearAllFilters()
                         dismiss()
                     } label: {
                         Label("Clear All Filters", systemImage: "xmark.circle")
                     }
-                    .disabled(!loader.hasActiveFilters && loader.searchQuery.isEmpty)
+                    .disabled(!hasDraftFilters && loader.searchQuery.isEmpty)
                 }
 
                 Section("Feeds") {
@@ -24,8 +42,8 @@ struct FilterSheetView: View {
                         Label("Selected Feeds", systemImage: "antenna.radiowaves.left.and.right")
                         Spacer()
                         Toggle("", isOn: Binding(
-                            get: { loader.isGlobalFeedsEnabled },
-                            set: { _ in loader.toggleGlobalFeeds() }
+                            get: { isGlobalFeedsChangePending ? pendingGlobalFeedsValue : loader.isGlobalFeedsEnabled },
+                            set: { setGlobalFeedsEnabled($0) }
                         ))
                         .labelsHidden()
                         .tint(.green)
@@ -47,13 +65,23 @@ struct FilterSheetView: View {
 
                 Section("Content Type") {
                     ForEach(FeedLoader.ContentType.allCases) { type in
-                        Button { loader.selectContentType(type) } label: {
+                        Button {
+                            draftContentType = draftContentType == type ? .all : type
+                            draftIsDirty = true
+                            UISelectionFeedbackGenerator().selectionChanged()
+                        } label: {
                             HStack {
                                 Label(type.rawValue, systemImage: type.icon)
                                 Spacer()
-                                if loader.selectedContentType == type { Image(systemName: "checkmark").foregroundStyle(.blue) }
+                                if draftContentType == type {
+                                    Image(systemName: "checkmark")
+                                        .foregroundStyle(.blue)
+                                        .accessibilityIdentifier("content-type-\(type.rawValue.lowercased())-selected")
+                                }
                             }
                         }
+                        .accessibilityIdentifier("content-type-\(type.rawValue.lowercased())")
+                        .accessibilityValue(draftContentType == type ? "selected" : "not selected")
                     }
                 }
 
@@ -73,6 +101,7 @@ struct FilterSheetView: View {
                         }
                     }
                     .accessibilityIdentifier("browse-topics")
+                    .accessibilityValue("\(loader.selectedNodeIDs.count)")
                 }
 
                 Section("Language") {
@@ -84,33 +113,51 @@ struct FilterSheetView: View {
                     } else {
                         ForEach(languages) { lang in
                             Button {
-                                loader.toggleLanguage(lang.code)
+                                if draftLanguages.contains(lang.code) {
+                                    draftLanguages.remove(lang.code)
+                                } else {
+                                    draftLanguages.insert(lang.code)
+                                }
+                                draftIsDirty = true
+                                UISelectionFeedbackGenerator().selectionChanged()
                             } label: {
                                 HStack {
                                     Text(lang.flag)
                                     Text(lang.name)
                                         .foregroundStyle(.primary)
                                     Spacer()
-                                    if loader.selectedLanguages.contains(lang.code) {
+                                    if draftLanguages.contains(lang.code) {
                                         Image(systemName: "checkmark")
                                             .foregroundStyle(.blue)
                                     }
-                                    Text("\(lang.feedCount)")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
+                                    VStack(alignment: .trailing, spacing: 1) {
+                                        Text("\(lang.feedCount) on")
+                                        if lang.totalFeedCount > lang.feedCount {
+                                            Text("\(lang.totalFeedCount) total")
+                                        }
+                                    }
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(1)
                                 }
                             }
+                            .accessibilityIdentifier("language-\(lang.code)")
+                            .accessibilityValue(draftLanguages.contains(lang.code) ? "selected" : "not selected")
                         }
                     }
                 }
 
                 Section("Mood") {
                     ForEach(FeedLoader.MoodFilter.allCases) { mood in
-                        Button { loader.selectMood(mood) } label: {
+                        Button {
+                            draftMood = draftMood == mood ? .all : mood
+                            draftIsDirty = true
+                            UISelectionFeedbackGenerator().selectionChanged()
+                        } label: {
                             HStack {
                                 Label(mood.rawValue, systemImage: mood.icon)
                                 Spacer()
-                                if loader.selectedMood == mood { Image(systemName: "checkmark").foregroundStyle(.blue) }
+                                if draftMood == mood { Image(systemName: "checkmark").foregroundStyle(.blue) }
                             }
                         }
                     }
@@ -126,6 +173,37 @@ struct FilterSheetView: View {
             }
         }
         .presentationDetents([.medium, .large])
+        .onAppear {
+            draftContentType = loader.selectedContentType
+            draftLanguages = loader.selectedLanguages
+            draftMood = loader.selectedMood
+            draftIsDirty = false
+            loader.beginFilterEditing()
+        }
+        .onDisappear {
+            if draftIsDirty {
+                loader.applyFilterDraft(
+                    type: draftContentType,
+                    mood: draftMood,
+                    languages: draftLanguages
+                )
+            }
+            loader.endFilterEditing()
+        }
     }
 
+    private func setGlobalFeedsEnabled(_ enabled: Bool) {
+        pendingGlobalFeedsValue = enabled
+        isGlobalFeedsChangePending = true
+        let feedback = UIImpactFeedbackGenerator(style: .light)
+        feedback.impactOccurred()
+
+        DispatchQueue.main.async {
+            guard isGlobalFeedsChangePending, pendingGlobalFeedsValue == enabled else { return }
+            loader.setGlobalFeedsEnabled(enabled)
+            if pendingGlobalFeedsValue == enabled {
+                isGlobalFeedsChangePending = false
+            }
+        }
+    }
 }

@@ -12,17 +12,19 @@ struct SearchBarView: View {
                     .foregroundStyle(.secondary)
                     .font(.subheadline)
 
-                TextField("Search articles...", text: $text)
+                TextField("Search sources, topics, and saved content", text: $text)
                     .font(.subheadline)
                     .focused($isFocused)
                     .onChange(of: text) { _, newValue in
                         loader.searchQuery = newValue
+                        loader.searchQueryChanged()
                     }
 
                 if !text.isEmpty {
                     Button {
                         text = ""
                         loader.searchQuery = ""
+                        loader.searchQueryChanged()
                         isFocused = false
                     } label: {
                         Image(systemName: "xmark.circle.fill")
@@ -41,6 +43,7 @@ struct SearchBarView: View {
                 Button("Cancel") {
                     text = ""
                     loader.searchQuery = ""
+                    loader.searchQueryChanged()
                     isFocused = false
                 }
                 .font(.subheadline)

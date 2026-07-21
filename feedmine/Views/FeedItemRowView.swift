@@ -4,13 +4,15 @@ struct FeedItemRowView: View {
     let item: FeedItem
     let isRead: Bool
     let isBookmarked: Bool
-    @State private var appeared = false
 
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             // Thumbnail
-            if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-                CachedAsyncImage(url: url)
+            if item.hasPotentialImage {
+                CachedAsyncImage(
+                    url: item.bestImageURL.flatMap(URL.init(string:)),
+                    articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil
+                )
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 56, height: 56)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -52,13 +54,7 @@ struct FeedItemRowView: View {
         .padding(.horizontal, 14)
         .padding(.vertical, 8)
         .background(Color(.systemBackground))
-        .opacity(appeared ? (isRead ? 0.7 : 1) : 0)
-        .offset(x: appeared ? 0 : -16)
-        .onAppear {
-            withAnimation(.easeOut(duration: 0.3)) {
-                appeared = true
-            }
-        }
+        .opacity(isRead ? 0.7 : 1)
     }
 
     private static let relativeFormatter: RelativeDateTimeFormatter = {

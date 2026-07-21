@@ -48,8 +48,11 @@ struct TopStoryCard: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             // Background — uses CachedAsyncImage for disk cache + downsampling
-            if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-                CachedAsyncImage(url: url)
+            if item.hasPotentialImage {
+                CachedAsyncImage(
+                    url: item.bestImageURL.flatMap(URL.init(string:)),
+                    articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil
+                )
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 300, height: 220)
                     .clipped()

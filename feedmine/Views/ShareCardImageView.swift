@@ -20,8 +20,11 @@ struct ShareCardImageView: View {
             .padding(.bottom, 12)
 
             // Hero image — uses CachedAsyncImage for disk cache + downsampling
-            if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-                CachedAsyncImage(url: url)
+            if item.hasPotentialImage {
+                CachedAsyncImage(
+                    url: item.bestImageURL.flatMap(URL.init(string:)),
+                    articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil
+                )
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 220)
                     .clipped()

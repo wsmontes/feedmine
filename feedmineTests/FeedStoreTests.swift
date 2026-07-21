@@ -10,6 +10,63 @@ final class FeedStoreTests: XCTestCase {
         try await super.tearDown()
     }
 
+    func testStartupProgressCountsOnlyDistinctSuccessfulSources() throws {
+        let store = try FeedStore(inMemory: true)
+        store.configureStartupProgress(targetSourceCount: 3)
+
+        let failedSource = FeedSource(
+            title: "Unavailable",
+            url: "https://example.com/failed",
+            category: "News",
+            region: "global"
+        )
+        store.recordStartupFetchProgress(
+            FeedFetchResult(source: failedSource, items: [], status: .failed)
+        )
+
+        for index in 0..<3 {
+            let source = FeedSource(
+                title: "Source \(index)",
+                url: "https://example.com/feed-\(index)",
+                category: "News",
+                region: "global"
+            )
+            store.recordStartupFetchProgress(
+                FeedFetchResult(source: source, items: [], status: .success)
+            )
+            if index == 0 {
+                store.recordStartupFetchProgress(
+                    FeedFetchResult(source: source, items: [], status: .success)
+                )
+            }
+        }
+
+        XCTAssertEqual(store.startupFetchedSourceCount, 3)
+        XCTAssertEqual(store.startupRecentSourceNames, ["Source 0", "Source 1", "Source 2"])
+        XCTAssertTrue(store.startupRunwayReady)
+    }
+
+    func testRegistryCacheKeepsFirstEquivalentSourceURL() {
+        let registry = SourceRegistry()
+        registry.sources = [
+            FeedSource(
+                title: "Canonical",
+                url: "https://example.com/feed",
+                category: "News",
+                region: "global"
+            ),
+            FeedSource(
+                title: "Equivalent",
+                url: "http://www.example.com/feed/",
+                category: "News",
+                region: "global"
+            ),
+        ]
+
+        XCTAssertTrue(registry.isSourceEnabled("https://example.com/feed"))
+        XCTAssertTrue(registry.isSourceEnabled("http://www.example.com/feed/"))
+    }
+
     func testV7MigrationAddsLanguageColumn() throws {
         let store = try FeedStore(inMemory: true)
         try store.db.write { db in
@@ -23,6 +80,71 @@ final class FeedStoreTests: XCTestCase {
             let lang: String? = try String.fetchOne(db, sql: "SELECT language FROM feed_item WHERE id = 'test-id'")
             XCTAssertEqual(lang, "en")
         }
+    }
+
+    func testExistingItemWithoutImageIsRepairedOnRefetch() async throws {
+        let store = try FeedStore(inMemory: true)
+        let original = FeedItem(
+            id: "repair-image",
+            sourceTitle: "Feed",
+            sourceURL: "https://example.com/feed",
+            category: "News",
+            title: "Item",
+            excerpt: "Excerpt",
+            url: "https://example.com/item",
+            imageURL: nil,
+            publishedAt: Date(),
+            region: "global"
+        )
+        _ = await store.persistFetchedItems([original])
+
+        let repaired = FeedItem(
+            id: original.id,
+            sourceTitle: original.sourceTitle,
+            sourceURL: original.sourceURL,
+            category: original.category,
+            title: original.title,
+            excerpt: original.excerpt,
+            url: original.url,
+            imageURL: "https://cdn.example.com/image.jpg",
+            publishedAt: original.publishedAt,
+            region: original.region
+        )
+        _ = await store.persistFetchedItems([repaired])
+
+        let storedImage: String? = try await store.db.read { db in
+            try String.fetchOne(
+                db,
+                sql: "SELECT image_url FROM feed_item WHERE id = ?",
+                arguments: [original.id]
+            )
+        }
+        XCTAssertEqual(storedImage, repaired.imageURL)
+    }
+
+    func testFeedItemRecordDecodesPersistedHTMLEntitiesWhenHydrating() {
+        let record = FeedItemRecord(
+            from: FeedItem(
+                id: "entity-item",
+                sourceTitle: "Example &amp; Co",
+                sourceURL: "https://example.com/feed",
+                category: "News",
+                title: "That&#8217;s &quot;news&quot;",
+                excerpt: "&lt;p&gt;A useful &amp; readable summary&#8217;s here.&lt;/p&gt;",
+                url: "https://example.com/1",
+                imageURL: nil,
+                publishedAt: Date(),
+                language: "en"
+            ),
+            region: "global",
+            language: "en"
+        )
+
+        let item = record.toFeedItem()
+
+        XCTAssertEqual(item.sourceTitle, "Example & Co")
+        XCTAssertEqual(item.title, "That\u{2019}s \"news\"")
+        XCTAssertEqual(item.excerpt, "A useful & readable summary\u{2019}s here.")
     }
 
     func testReloadFromSQLiteFiltersByTaxonomySourceURL() async throws {
@@ -174,6 +296,44 @@ final class FeedStoreTests: XCTestCase {
                        "Enriched item (ja) must NOT pass English filter")
         XCTAssertFalse(FeedStore.languageFilterMatches(itemLanguage: dbLanguage, selectedLanguages: englishSelected, deviceLanguage: englishDevice),
                        "DB record (ja) must NOT pass English filter")
+    }
+
+    func testPersistKhmerScriptOverridesIncorrectEnglishSourceMetadata() async throws {
+        let store = try FeedStore(inMemory: true)
+        let source = FeedSource(
+            title: "Kim Sav Phearith Official",
+            url: "https://youtube.com/feeds/videos.xml?channel_id=khmer",
+            category: "Videos",
+            region: "global",
+            mediaKind: .video,
+            language: "en"
+        )
+        store.registry.sources = [source]
+        let item = FeedItem(
+            id: "khmer-video-1",
+            sourceTitle: source.title,
+            sourceURL: source.url,
+            category: source.category,
+            title: "ខ្មោចម្តាយដើម ដោយនំកូនតោ",
+            excerpt: "Horror movie from Karuna Team",
+            url: "https://youtube.com/watch?v=khmer-video-1",
+            imageURL: nil,
+            publishedAt: .now,
+            region: source.region,
+            language: "en"
+        )
+
+        let results = await store.persistFetchedItems([item])
+        let persisted = try XCTUnwrap(results.first)
+        XCTAssertEqual(persisted.language, "km")
+        XCTAssertFalse(
+            FeedStore.languageFilterMatches(
+                itemLanguage: persisted.language,
+                selectedLanguages: ["en"],
+                deviceLanguage: "en"
+            ),
+            "Khmer content must not pass an English-only filter"
+        )
     }
 
     func testPersistPreservesItemLanguageOverDetection() async throws {
@@ -668,6 +828,10 @@ final class FeedStoreTests: XCTestCase {
         XCTAssertEqual(OPMLParser.normalizeURL("http://www.aes.org/rss/"), "https://aes.org/rss")
         // No www, no trailing slash
         XCTAssertEqual(OPMLParser.normalizeURL("https://aes.org/rss"), "https://aes.org/rss")
+        XCTAssertEqual(
+            OPMLParser.normalizeURL("https://www.aes.org/rss/?utm_source=mail#latest"),
+            "https://aes.org/rss"
+        )
     }
 
     /// Acoustics selected, category disabled, no source individually disabled → 4 eligible.
@@ -1143,6 +1307,206 @@ final class FeedStoreTests: XCTestCase {
         XCTAssertEqual(store.reservoirCount, 0)
     }
 
+    func testBalancedCandidatePoolProtectsSmallProvidersFromProlificSource() {
+        func item(_ id: String, source: String) -> FeedItem {
+            FeedItem(id: id, sourceTitle: source, sourceURL: "https://\(source).com/feed",
+                     category: "News", title: id, excerpt: "E",
+                     url: "https://example.com/\(id)", imageURL: nil,
+                     publishedAt: Date(), region: "global")
+        }
+
+        let prolific = (0..<50).map { item("a-\($0)", source: "a") }
+        let small = [item("b-0", source: "b"), item("c-0", source: "c"), item("d-0", source: "d")]
+
+        let selected = FeedStore.balancedCandidatePool(
+            prolific + small, limit: 12, initialPerSource: 2
+        )
+
+        XCTAssertEqual(selected.count, 12)
+        XCTAssertTrue(Set(selected.prefix(5).map(\.sourceURL)).isSuperset(of: small.map(\.sourceURL)))
+    }
+
+    func testBalancedCandidatePoolRoundRobinsOverflowBetweenProviders() {
+        func items(source: String, count: Int) -> [FeedItem] {
+            (0..<count).map { index in
+                FeedItem(id: "\(source)-\(index)", sourceTitle: source,
+                         sourceURL: "https://\(source).com/feed", category: "News",
+                         title: "Item \(index)", excerpt: "E",
+                         url: "https://example.com/\(source)/\(index)", imageURL: nil,
+                         publishedAt: Date(), region: "global")
+            }
+        }
+
+        let selected = FeedStore.balancedCandidatePool(
+            items(source: "a", count: 30)
+                + items(source: "b", count: 6)
+                + items(source: "c", count: 6),
+            limit: 18,
+            initialPerSource: 2
+        )
+        let counts = Dictionary(grouping: selected, by: \.sourceURL).mapValues(\.count)
+
+        XCTAssertEqual(counts["https://a.com/feed"], 6)
+        XCTAssertEqual(counts["https://b.com/feed"], 6)
+        XCTAssertEqual(counts["https://c.com/feed"], 6)
+    }
+
+    func testBalancedCandidatePoolTreatsGoogleNewsQueriesAsOneProvider() {
+        func items(sourceURL: String, prefix: String) -> [FeedItem] {
+            (0..<10).map { index in
+                FeedItem(
+                    id: "\(prefix)-\(index)", sourceTitle: prefix,
+                    sourceURL: sourceURL, category: "News",
+                    title: "Item \(index)", excerpt: "E",
+                    url: "https://example.com/\(prefix)/\(index)", imageURL: nil,
+                    publishedAt: Date(), region: "global"
+                )
+            }
+        }
+
+        let googleNews = (0..<3).flatMap { query in
+            items(
+                sourceURL: "https://news.google.com/rss/search?q=topic-\(query)&hl=zh",
+                prefix: "google-\(query)"
+            )
+        }
+        let direct = (0..<3).flatMap { provider in
+            items(sourceURL: "https://publisher-\(provider).cn/feed", prefix: "direct-\(provider)")
+        }
+
+        let selected = FeedStore.balancedCandidatePool(
+            googleNews + direct, limit: 16, initialPerSource: 2
+        )
+        let counts = Dictionary(grouping: selected, by: Reservoir.providerKey).mapValues(\.count)
+
+        XCTAssertEqual(counts["aggregator:news.google.com"], 4)
+        XCTAssertEqual(Set(selected.map(Reservoir.providerKey)).count, 4)
+        XCTAssertTrue(counts.values.allSatisfy { $0 == 4 })
+    }
+
+    func testBalancedCandidatePoolReservesAudioAndVideoInMixedResults() {
+        func item(_ id: String, source: String, url: String, audioURL: String? = nil) -> FeedItem {
+            FeedItem(
+                id: id,
+                sourceTitle: source,
+                sourceURL: "https://\(source).example/feed",
+                category: "General",
+                title: id,
+                excerpt: "Excerpt",
+                url: url,
+                imageURL: nil,
+                publishedAt: Date(),
+                audioURL: audioURL,
+                region: "global"
+            )
+        }
+
+        let text = (0..<300).map {
+            item("text-\($0)", source: "text-\($0 / 10)", url: "https://example.com/text/\($0)")
+        }
+        let audio = (0..<12).map {
+            item("audio-\($0)", source: "podcast-\($0 / 3)",
+                 url: "https://example.com/audio/\($0)",
+                 audioURL: "https://cdn.example.com/audio/\($0).mp3")
+        }
+        let video = (0..<12).map {
+            item("video-\($0)", source: "video-\($0 / 3)",
+                 url: "https://youtube.com/watch?v=video\($0)")
+        }
+
+        let selected = FeedStore.balancedCandidatePool(text + audio + video, limit: 60)
+
+        XCTAssertEqual(selected.count, 60)
+        XCTAssertTrue(selected.contains(where: \.isPodcast))
+        XCTAssertTrue(selected.contains(where: \.isYouTube))
+    }
+
+    func testBalancedCandidatePoolToleratesRepeatedSourceOrder() {
+        let items = (0..<4).map { index in
+            FeedItem(
+                id: "clockify-\(index)", sourceTitle: "Clockify Blog",
+                sourceURL: "https://clockify.me/blog/feed", category: "News",
+                title: "Item \(index)", excerpt: "E",
+                url: "https://example.com/\(index)", imageURL: nil,
+                publishedAt: Date(), region: "global"
+            )
+        }
+
+        let selected = FeedStore.balancedCandidatePool(
+            items,
+            limit: 4,
+            initialPerSource: 0
+        )
+
+        XCTAssertEqual(selected.map(\.id), items.map(\.id))
+    }
+
+    func testBundledStarterCatalogProvidesLanguageMatchedVariety() async {
+        let sources = await FeedStore.bundledStarterSources(language: "en", limit: 30)
+
+        XCTAssertEqual(sources.count, 30)
+        XCTAssertTrue(sources.allSatisfy { $0.language == "en" })
+        XCTAssertGreaterThanOrEqual(Set(sources.map(\.category)).count, 8)
+    }
+
+    func testColdStartRunwayRequiresBreadthNotJustItemVolume() {
+        func items(sourceCount: Int, itemsPerSource: Int) -> [FeedItem] {
+            (0..<sourceCount).flatMap { source in
+                (0..<itemsPerSource).map { index in
+                    FeedItem(
+                        id: "\(source)-\(index)", sourceTitle: "Source \(source)",
+                        sourceURL: "https://source\(source).example/feed",
+                        category: "Category \(source % 8)", title: "Item \(index)",
+                        excerpt: "Excerpt", url: "https://example.com/\(source)/\(index)",
+                        imageURL: nil, publishedAt: Date(), region: "global", language: "en"
+                    )
+                }
+            }
+        }
+
+        XCTAssertFalse(FeedStore.coldStartRunwayIsUseful(items(sourceCount: 5, itemsPerSource: 20)))
+        XCTAssertFalse(FeedStore.coldStartRunwayIsUseful(items(sourceCount: 99, itemsPerSource: 2)))
+        XCTAssertTrue(FeedStore.coldStartRunwayIsUseful(items(sourceCount: 100, itemsPerSource: 1)))
+        XCTAssertTrue(FeedStore.coldStartRunwayIsUseful(
+            items(sourceCount: 25, itemsPerSource: 1),
+            targetSourceCount: 25
+        ))
+    }
+
+    func testWhatsNewUsesTheSameLanguageFilterAsMainFeed() throws {
+        let store = try FeedStore(inMemory: true)
+        let englishURLs = (0..<10).map { "https://english\($0).example/feed" }
+        let italianURLs = (0..<10).map { "https://italian\($0).example/feed" }
+        store.registry.sources = englishURLs.map {
+            FeedSource(title: "English", url: $0, category: "News", language: "en")
+        } + italianURLs.map {
+            FeedSource(title: "Italian", url: $0, category: "News", language: "it")
+        }
+        store.activeLanguages = ["en"]
+
+        let english = (0..<10).map { index in
+            FeedItem(
+                id: "en-new-\(index)", sourceTitle: "English", sourceURL: englishURLs[index],
+                category: "News", title: "English item \(index)", excerpt: "English",
+                url: "https://english.example/\(index)", imageURL: nil,
+                publishedAt: Date(), region: "global", language: "en"
+            )
+        }
+        let italian = (0..<10).map { index in
+            FeedItem(
+                id: "it-new-\(index)", sourceTitle: "Italian", sourceURL: italianURLs[index],
+                category: "News", title: "Contenuto italiano \(index)", excerpt: "Italiano",
+                url: "https://italian.example/\(index)", imageURL: nil,
+                publishedAt: Date(), region: "global", language: "it"
+            )
+        }
+
+        store.collectWhatsNewCandidates(italian + english)
+
+        XCTAssertEqual(store.whatsNewItems.count, 10)
+        XCTAssertTrue(store.whatsNewItems.allSatisfy { $0.language == "en" })
+    }
+
     // MARK: - HTTP Legacy Alias Compatibility
 
     func testInMemoryFilterMatchesHTTPSourceForHTTPItem() async throws {
@@ -1220,6 +1584,37 @@ final class FeedStoreTests: XCTestCase {
             itemLanguage: nil, selectedLanguages: ["en"], deviceLanguage: "en"))
     }
 
+    func testSetFilterImmediatelyRemovesVisibleItemsOutsideSelectedLanguage() throws {
+        let store = try FeedStore(inMemory: true)
+        let englishURL = "https://en.example/feed"
+        let portugueseURL = "https://pt.example/feed"
+        store.registry.sources = [
+            FeedSource(title: "English", url: englishURL,
+                       category: "News", region: "global", language: "en"),
+            FeedSource(title: "Portuguese", url: portugueseURL,
+                       category: "News", region: "global", language: "pt"),
+        ]
+
+        let englishItem = FeedItem(
+            id: "en-visible", sourceTitle: "English", sourceURL: englishURL,
+            category: "News", title: "English item", excerpt: "English content",
+            url: "https://en.example/1", imageURL: nil, publishedAt: Date(),
+            region: "global", language: "en"
+        )
+        let portugueseItem = FeedItem(
+            id: "pt-visible", sourceTitle: "Portuguese", sourceURL: portugueseURL,
+            category: "News", title: "Item em portugues", excerpt: "Conteudo em portugues",
+            url: "https://pt.example/1", imageURL: nil, publishedAt: Date(),
+            region: "global", language: "pt"
+        )
+
+        store.loadBookmarkFeed(items: [portugueseItem, englishItem])
+        store.setFilter(region: nil, nodeIDs: [], type: .all, mood: .all, languages: ["en"])
+
+        XCTAssertEqual(store.visibleItems.map(\.id), ["en-visible"],
+                       "Selecting English should synchronously remove non-English visible cards")
+    }
+
     func testDetectedLanguageOverridesWrongSourceLanguage() async {
         // When source says "en" but content is clearly Japanese,
         // detection should return "ja" — not blindly trust the source.
@@ -1248,6 +1643,131 @@ final class FeedStoreTests: XCTestCase {
         } else {
             XCTFail("Language must be resolved for this item")
         }
+    }
+
+    func testIncidentalHanDoesNotTurnEnglishArticleChinese() {
+        let language = FeedStore.resolvedLanguage(
+            title: "The Lure of Jinxuan (金萱): Following a Tea Cultivar",
+            excerpt: "This article follows Taiwan's celebrated tea cultivar across places, names, and sensory identities.",
+            explicitLanguage: "zh"
+        )
+
+        XCTAssertEqual(language, "en")
+    }
+
+    func testChineseTextStillResolvesAsChineseWithoutScriptShortcut() {
+        let language = FeedStore.resolvedLanguage(
+            title: "中国茶文化的历史与现代发展",
+            excerpt: "这篇文章介绍中国茶叶的种植方式、传统工艺以及现代市场的发展趋势。"
+        )
+
+        XCTAssertEqual(language, "zh")
+    }
+
+    func testRecoversGoogleNewsPublisherFromStoredArticleTitle() {
+        XCTAssertEqual(
+            FeedStore.googleNewsPublisher(fromArticleTitle: "咖啡的功效与副作用_哑评 - 新浪网"),
+            "新浪网"
+        )
+        XCTAssertNil(FeedStore.googleNewsPublisher(fromArticleTitle: "没有发布者后缀"))
+    }
+
+    func testDetectedLanguageOverridesEnglishSourceForRussianContent() async throws {
+        let store = try FeedStore(inMemory: true)
+        let sourceURL = "https://youtube.com/feeds/videos.xml?channel_id=russian"
+        store.registry.sources = [
+            FeedSource(
+                title: "Russian channel mislabeled in catalogue",
+                url: sourceURL,
+                category: "Video",
+                region: "global",
+                language: "en"
+            )
+        ]
+        let item = FeedItem(
+            id: "ru-video",
+            sourceTitle: "Лунтик",
+            sourceURL: sourceURL,
+            category: "Video",
+            title: "Лунтик Футбольный праздник Сборник мультиков для детей",
+            excerpt: "No description",
+            url: "https://youtube.com/watch?v=russian",
+            imageURL: nil,
+            publishedAt: Date(),
+            region: "global",
+            language: nil
+        )
+
+        let result = await store.persistFetchedItems([item])
+
+        XCTAssertEqual(try XCTUnwrap(result.first).language, "ru")
+        XCTAssertFalse(FeedStore.languageFilterMatches(
+            itemLanguage: result.first?.language,
+            selectedLanguages: ["en"],
+            deviceLanguage: "en"
+        ))
+    }
+
+    func testAzerbaijaniOrthographyOverridesEnglishSource() async throws {
+        let store = try FeedStore(inMemory: true)
+        let sourceURL = "https://modern.az/rss"
+        store.registry.sources = [
+            FeedSource(
+                title: "Modern",
+                url: sourceURL,
+                category: "News",
+                region: "countries/azerbaijan",
+                language: "en"
+            )
+        ]
+        let item = FeedItem(
+            id: "azerbaijani-item",
+            sourceTitle: "Modern",
+            sourceURL: sourceURL,
+            category: "News",
+            title: "Azərbaycan İraqa 1 milyonluq peçenye göndərdi",
+            excerpt: "Modern.az xəbər verir ki, məlumat bu gün açıqlanıb.",
+            url: "https://modern.az/item",
+            imageURL: nil,
+            publishedAt: Date(),
+            region: "countries/azerbaijan",
+            language: nil
+        )
+
+        let result = await store.persistFetchedItems([item])
+
+        XCTAssertEqual(result.first?.language, "az")
+        XCTAssertFalse(FeedStore.languageFilterMatches(
+            itemLanguage: result.first?.language,
+            selectedLanguages: ["en"],
+            deviceLanguage: "en"
+        ))
+    }
+
+    func testBengaliScriptOverridesIncorrectItemLanguage() async throws {
+        let store = try FeedStore(inMemory: true)
+        let item = FeedItem(
+            id: "bengali-item",
+            sourceTitle: "Bangla Quran",
+            sourceURL: "https://example.com/bangla.xml",
+            category: "Podcast",
+            title: "আল কোরআন বাংলা অনুবাদ সহ",
+            excerpt: "Quran recitation with Bangla translation",
+            url: "https://example.com/episode",
+            imageURL: nil,
+            publishedAt: Date(),
+            region: "global",
+            language: "en"
+        )
+
+        let result = await store.persistFetchedItems([item])
+
+        XCTAssertEqual(result.first?.language, "bn")
+        XCTAssertFalse(FeedStore.languageFilterMatches(
+            itemLanguage: result.first?.language,
+            selectedLanguages: ["en"],
+            deviceLanguage: "en"
+        ))
     }
 
     func testSourceWithCorrectLanguageIsPreserved() async {
@@ -1340,6 +1860,52 @@ final class FeedStoreTests: XCTestCase {
                        "SQLite reload must not include unknown-language videos for an active language filter")
     }
 
+    func testTopLevelVideoFilterQueriesCatalogueButRespectsExplicitSourceOptOut() throws {
+        let store = try FeedStore(inMemory: true)
+        let sourceURL = "https://www.youtube.com/feeds/videos.xml?channel_id=country-video"
+        store.registry.sources = [
+            FeedSource(
+                title: "Country Video",
+                url: sourceURL,
+                category: "Video",
+                region: "countries/brazil",
+                mediaKind: .video,
+                language: "en"
+            ),
+        ]
+        store.registry.toggleRegion("countries/brazil")
+        XCTAssertFalse(store.registry.isSourceEnabled(sourceURL))
+
+        store.beginFilterEditing()
+        store.setFilter(
+            region: nil,
+            nodeIDs: [],
+            type: .video,
+            mood: .all,
+            languages: ["en"]
+        )
+        let item = FeedItem(
+            id: "country-video-item",
+            sourceTitle: "Country Video",
+            sourceURL: sourceURL,
+            category: "Video",
+            title: "A useful English video",
+            excerpt: "Fresh content from the wider catalogue.",
+            url: "https://www.youtube.com/watch?v=country-video",
+            imageURL: nil,
+            publishedAt: Date(),
+            region: "countries/brazil",
+            language: "en"
+        )
+
+        XCTAssertEqual(store.applyFilters([item]).map(\.id), [item.id])
+
+        store.registry.toggleRegion("countries/brazil")
+        store.registry.toggleSource(sourceURL)
+        XCTAssertTrue(store.registry.isSourceExplicitlyDisabled(sourceURL))
+        XCTAssertTrue(store.applyFilters([item]).isEmpty)
+    }
+
     // MARK: - Clear All Filters + Content Type Integration
 
     func testClearAllFiltersThenSelectVideoHonorsLanguageFlag() async throws {
@@ -1391,5 +1957,190 @@ final class FeedStoreTests: XCTestCase {
         loader.selectContentType(.video)
         XCTAssertTrue(store.activeLanguages.isEmpty,
                       "Selecting a content type after clearing languages must not reapply device language")
+    }
+
+    func testBulkCountryToggleReportsOffBeforeCountRebuildCompletes() {
+        let registry = SourceRegistry()
+        registry.sources = [
+            FeedSource(title: "Brazil", url: "https://example.com/br", category: "News", region: "countries/brazil"),
+            FeedSource(title: "Canada", url: "https://example.com/ca", category: "News", region: "countries/canada"),
+        ]
+
+        registry.setAllCountriesEnabled(false)
+
+        XCTAssertFalse(registry.isAnyCountryEnabled)
+        XCTAssertEqual(registry.status(of: SourceRegistry.regionKey("countries/brazil")), .off)
+        XCTAssertFalse(registry.isSourceEnabled("https://example.com/br"))
+    }
+
+    func testRegionSetterAppliesTheLatestRequestedState() {
+        let registry = SourceRegistry()
+        let sourceURL = "https://example.com/sao-paulo"
+        registry.sources = [
+            FeedSource(
+                title: "Sao Paulo",
+                url: sourceURL,
+                category: "News",
+                region: "countries/brazil/sao-paulo"
+            ),
+        ]
+
+        registry.setRegionEnabled("countries/brazil", enabled: false)
+        XCTAssertFalse(registry.isSourceEnabled(sourceURL))
+
+        registry.setRegionEnabled("countries/brazil", enabled: true)
+        XCTAssertTrue(registry.isSourceEnabled(sourceURL))
+    }
+
+    func testDormantCurrentSensitiveSourceIsDiscoverableButOptIn() {
+        let registry = SourceRegistry()
+        let source = FeedSource(
+            title: "Dormant Daily News",
+            url: "https://example.com/dormant-news.xml",
+            category: "World News",
+            region: "topic/01_News_&_Current_Affairs",
+            sourceDescription: "An archived daily news source.",
+            tags: ["news", "politics"],
+            nature: "current-sensitive",
+            activity: "dormant",
+            qualityScore: 82,
+            defaultEnabled: false
+        )
+        registry.sources = [source]
+
+        XCTAssertEqual(registry.sources.count, 1, "Dormant source remains discoverable")
+        XCTAssertFalse(registry.isSourceEnabled(source.url), "Dormant news is not fetched by default")
+
+        registry.toggleSource(source.url)
+        XCTAssertTrue(registry.isSourceEnabled(source.url), "Explicit user opt-in overrides the curated default")
+    }
+
+    func testUnifiedSearchPrioritizesSourcesThenSavedThenOldLocalContent() async throws {
+        let store = try FeedStore(inMemory: true)
+        let catalogURL = FileManager.default.temporaryDirectory
+            .appendingPathComponent("feedmine-search-\(UUID().uuidString).sqlite")
+        defer { try? FileManager.default.removeItem(at: catalogURL) }
+
+        let occurrence = CatalogSourceOccurrence(
+            title: "Deep Sky Notes",
+            declaredURL: "https://example.com/deep-sky.xml",
+            mediaKind: .text,
+            language: "en",
+            nodePath: [CatalogInputNode(name: "Technology & Science", kind: .topic)],
+            opmlFile: "04_Technology_&_Science.opml",
+            sortOrder: 0,
+            sourceDescription: "Evergreen observations of the night sky.",
+            tags: ["astronomy", "stargazing"],
+            nature: "evergreen",
+            activity: "dormant",
+            qualityScore: 88,
+            defaultEnabled: true
+        )
+        _ = try await SQLiteCatalogCompiler(
+            input: .occurrences([occurrence]),
+            databaseURL: catalogURL
+        ).compileFull()
+
+        let oldEpoch = Int(Date().addingTimeInterval(-120 * 86_400).timeIntervalSince1970)
+        try await store.db.write { db in
+            for (id, saved) in [("saved-astronomy", true), ("local-astronomy", false)] {
+                let openedAt: Int? = saved ? nil : oldEpoch
+                try db.execute(sql: """
+                    INSERT INTO feed_item
+                        (id, source_url, source_title, region, category, title, excerpt, url,
+                         published_at, fetched_at, is_read, opened_at, language)
+                    VALUES (?, ?, ?, 'global', 'Astronomy', ?, 'night sky observing', ?, ?, ?, ?, ?, 'en')
+                    """, arguments: [
+                        id,
+                        "https://example.com/\(id).xml",
+                        saved ? "Saved Observatory" : "Local Observatory",
+                        saved ? "Saved astronomy guide" : "Old astronomy guide",
+                        "https://example.com/\(id)",
+                        oldEpoch,
+                        oldEpoch,
+                        saved ? 0 : 1,
+                        openedAt,
+                    ])
+            }
+        }
+        try await store.bookmarkStore.toggleBookmark(itemID: "saved-astronomy")
+
+        let engine = SearchEngine(db: store.db, userDB: store.userRepo.db, catalogURL: catalogURL)
+        let results = await engine.unifiedSearch("astronomy")
+
+        XCTAssertEqual(results.sources.first?.title, "Deep Sky Notes")
+        XCTAssertEqual(results.savedItems.map(\.id), ["saved-astronomy"])
+        XCTAssertEqual(results.localItems.map(\.id), ["local-astronomy"])
+        XCTAssertEqual(results.sources.first?.nature, "evergreen")
+    }
+
+    func testSourceCollectionsAreManyToManyReferencesAndNeverMoveCatalogSources() async throws {
+        let store = try FeedStore(inMemory: true)
+        let catalogSource = FeedSource(
+            title: "RuPaul",
+            url: "https://example.com/rupaul/feed/",
+            category: "Entertainment",
+            region: "topic/03_Entertainment",
+            mediaKind: .video,
+            tags: ["drag", "reality television"]
+        )
+        store.registry.sources = [catalogSource]
+        let reference = SourceReference(source: catalogSource)
+
+        let queens = try await store.createSourceCollection(name: "Drag queens")
+        let favorites = try await store.createSourceCollection(name: "Favorite creators")
+        try await store.addSource(reference, toCollectionID: queens)
+        try await store.addSource(reference, toCollectionID: favorites)
+        // Equivalent URL is the same durable source identity, not a duplicate.
+        try await store.addSource(
+            SourceReference(title: "Duplicate label", feedURL: "http://www.example.com/rupaul/feed"),
+            toCollectionID: queens
+        )
+
+        let queenMembers = try await store.sourceCollectionMembers(collectionID: queens)
+        let favoriteMembers = try await store.sourceCollectionMembers(collectionID: favorites)
+        let memberships = try await store.sourceCollectionIDs(containing: catalogSource.url)
+        XCTAssertEqual(queenMembers.count, 1)
+        XCTAssertEqual(favoriteMembers.count, 1)
+        XCTAssertEqual(memberships, Set([queens, favorites]))
+        XCTAssertEqual(store.registry.sources.count, 1)
+        XCTAssertEqual(store.registry.sources.first?.category, "Entertainment")
+        XCTAssertEqual(store.registry.sources.first?.region, "topic/03_Entertainment")
+
+        try await store.deleteSourceCollection(id: queens)
+        XCTAssertEqual(store.registry.sources.count, 1, "Deleting a playlist must not delete its source")
+        let remainingMembers = try await store.sourceCollectionMembers(collectionID: favorites)
+        XCTAssertEqual(remainingMembers.map(\.sourceURL), [reference.id])
+    }
+
+    func testExplicitSourceViewKeepsCompleteLocalHistoryPastAutomaticCap() async throws {
+        let store = try FeedStore(inMemory: true)
+        let sourceURL = "https://example.com/archive.xml"
+        let source = SourceReference(title: "Archive", feedURL: sourceURL)
+        let items = (0..<75).map { index in
+            FeedItem(
+                id: "archive-\(index)",
+                sourceTitle: source.title,
+                sourceURL: sourceURL,
+                category: "History",
+                title: "Archived post \(index)",
+                excerpt: "A retained post from the source archive.",
+                url: "https://example.com/posts/\(index)",
+                imageURL: nil,
+                publishedAt: Date().addingTimeInterval(TimeInterval(-index * 86_400)),
+                region: "global",
+                language: "en"
+            )
+        }
+        let persisted = await store.persistFetchedItems(items)
+        XCTAssertEqual(persisted.count, 75)
+
+        await store.recordExplicitSourceAccess(sourceURL)
+        await store.capSourceItems(sourceURL: sourceURL)
+
+        let retained = await store.sourceContentFromCache(source)
+        XCTAssertEqual(retained.count, 75)
+        XCTAssertEqual(retained.first?.id, "archive-0")
+        XCTAssertEqual(retained.last?.id, "archive-74")
     }
 }

@@ -105,8 +105,8 @@ final class ReservoirTests: XCTestCase {
         let result = Reservoir.interleaveOffMain(
             all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
         )
-        // Verify the text-text clash detection fired and the spread reduced
-        // consecutive text-text pairs below 30% of total adjacent pairs.
+        // With two text providers and one podcast provider, strict provider
+        // rotation has a theoretical one-in-three text/text floor.
         var consecutiveTextCount = 0
         for i in 0..<(result.count - 1) {
             let a = result[i], b = result[i + 1]
@@ -115,8 +115,8 @@ final class ReservoirTests: XCTestCase {
             }
         }
         let totalPairs = result.count - 1
-        XCTAssertLessThan(consecutiveTextCount, totalPairs * 30 / 100,
-                          "Too many consecutive text pairs: \(consecutiveTextCount)/\(totalPairs)")
+        XCTAssertLessThanOrEqual(consecutiveTextCount, (totalPairs + 2) / 3,
+                                 "Too many consecutive text pairs: \(consecutiveTextCount)/\(totalPairs)")
     }
 
     func testInterleaveOffMainUsesSourceRegionMap() {
@@ -141,13 +141,181 @@ final class ReservoirTests: XCTestCase {
         }
     }
 
+    func testInterleaveOffMainAvoidsABAProviderRhythmWhenPossible() {
+        let all = makeItems(count: 10, sourceURL: "https://a.com/feed")
+            + makeItems(count: 10, sourceURL: "https://b.com/feed")
+            + makeItems(count: 10, sourceURL: "https://c.com/feed")
+            + makeItems(count: 10, sourceURL: "https://d.com/feed")
+
+        let result = Reservoir.interleaveOffMain(
+            all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let prefix = Array(result.prefix(24))
+
+        for index in 2..<prefix.count {
+            XCTAssertNotEqual(
+                prefix[index].sourceURL,
+                prefix[index - 2].sourceURL,
+                "Provider repeated in A/B/A rhythm at idx \(index)"
+            )
+        }
+    }
+
+    func testInterleaveKeepsProviderOffTheNextScreenfulWhenPossible() {
+        let all = (0..<8).flatMap { source in
+            makeItems(count: 8, sourceURL: "https://source\(source).com/feed",
+                      category: "Category \(source % 4)")
+        }
+
+        let result = Reservoir.interleaveOffMain(
+            all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let prefix = Array(result.prefix(40))
+
+        for index in prefix.indices {
+            let recentStart = max(0, index - 6)
+            guard recentStart < index else { continue }
+            let recentSources = Set(prefix[recentStart..<index].map(\.sourceURL))
+            XCTAssertFalse(
+                recentSources.contains(prefix[index].sourceURL),
+                "Provider repeated within the previous six cards at idx \(index)"
+            )
+        }
+    }
+
+    func testInterleaveMakesEveryProviderInInitialRunwayUniqueWhenPossible() {
+        let all = (0..<120).flatMap { source in
+            makeItems(
+                count: 2,
+                sourceURL: "https://first-page-\(source).com/feed",
+                category: "Category \(source % 8)"
+            )
+        }
+
+        let result = Reservoir.interleaveOffMain(
+            all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let initialRunway = Array(result.prefix(Reservoir.initialUniqueSourceTarget))
+
+        XCTAssertEqual(initialRunway.count, Reservoir.initialUniqueSourceTarget)
+        XCTAssertEqual(Set(initialRunway.map(\.sourceURL)).count, Reservoir.initialUniqueSourceTarget)
+    }
+
+    func testGoogleNewsQueriesCountAsOneProvider() {
+        let googleNews = (0..<13).flatMap { query in
+            makeItems(
+                count: 8,
+                sourceURL: "https://news.google.com/rss/search?q=topic-\(query)&hl=zh&gl=CN",
+                category: "News"
+            )
+        }
+        let direct = (0..<24).flatMap { source in
+            makeItems(
+                count: 4,
+                sourceURL: "https://publisher-\(source).cn/feed",
+                category: "Category \(source % 6)"
+            )
+        }
+
+        let result = Reservoir.interleaveOffMain(
+            googleNews + direct,
+            readItemIDs: [],
+            surfacedTimestamps: [:],
+            sourceRegionMap: [:]
+        )
+        let firstScreen = Array(result.prefix(Reservoir.pageSize))
+        let googleNewsCount = firstScreen.filter {
+            URL(string: $0.sourceURL)?.host == "news.google.com"
+        }.count
+
+        XCTAssertEqual(googleNewsCount, 1)
+        XCTAssertEqual(Set(firstScreen.map(Reservoir.providerKey)).count, firstScreen.count)
+    }
+
+    func testGoogleNewsDoesNotRunTogetherWithChineseCollectionRatio() {
+        let googleNews = (0..<63).flatMap { query in
+            makeItems(
+                count: 50,
+                sourceURL: "https://news.google.com/rss/search?q=zh-topic-\(query)&hl=zh",
+                category: "Category \(query % 12)",
+                sourceTitle: "Publisher \(query % 20)"
+            )
+        }
+        let directCounts = [50, 44, 15, 15, 15, 15, 15, 15, 25, 2, 2, 1, 1]
+        let direct = directCounts.enumerated().flatMap { provider, count in
+            makeItems(
+                count: count,
+                sourceURL: "https://direct-\(provider).example/feed",
+                category: "Category \(provider % 8)"
+            )
+        }
+
+        let databaseOrder = googleNews + direct
+        let sqlWindow = Array(databaseOrder.prefix(FeedStore.candidateReadLimit))
+        let pool = FeedStore.balancedCandidatePool(sqlWindow)
+        let result = Reservoir.interleaveOffMain(
+            pool, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let firstHundred = Array(result.prefix(100))
+        let keys = firstHundred.map(Reservoir.providerKey)
+        let repeatedProvider = zip(keys, keys.dropFirst()).filter(==)
+
+        XCTAssertTrue(repeatedProvider.isEmpty)
+        XCTAssertFalse(firstHundred.contains { $0.sourceTitle.hasPrefix("Candidate:") })
+    }
+
+    func testYouTubeChannelsRemainDistinctProviders() {
+        let channels = (0..<20).flatMap { channel in
+            makeItems(
+                count: 2,
+                sourceURL: "https://youtube.com/feeds/videos.xml?channel_id=channel-\(channel)",
+                category: "Video"
+            )
+        }
+
+        let result = Reservoir.interleaveOffMain(
+            channels, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let firstScreen = Array(result.prefix(Reservoir.pageSize))
+
+        XCTAssertEqual(Set(firstScreen.map(Reservoir.providerKey)).count, Reservoir.pageSize)
+    }
+
+    func testInterleaveSpreadsCategoriesWhenEveryItemIsText() {
+        let all = (0..<8).flatMap { source in
+            makeItems(count: 6, sourceURL: "https://text\(source).com/feed",
+                      category: "Category \(source % 4)")
+        }
+
+        let result = Reservoir.interleaveOffMain(
+            all, readItemIDs: [], surfacedTimestamps: [:], sourceRegionMap: [:]
+        )
+        let prefix = Array(result.prefix(32))
+
+        for index in prefix.indices {
+            let recentStart = max(0, index - 3)
+            guard recentStart < index else { continue }
+            let recentCategories = Set(prefix[recentStart..<index].map(\.category))
+            XCTAssertFalse(
+                recentCategories.contains(prefix[index].category),
+                "Category repeated within the previous three text cards at idx \(index)"
+            )
+        }
+    }
+
     // MARK: - Helpers
 
-    private func makeItems(count: Int, sourceURL: String, category: String = "Tech", audioURL: String? = nil) -> [FeedItem] {
+    private func makeItems(
+        count: Int,
+        sourceURL: String,
+        category: String = "Tech",
+        audioURL: String? = nil,
+        sourceTitle: String = "Source"
+    ) -> [FeedItem] {
         (0..<count).map { i in
             FeedItem(
                 id: "\(sourceURL)#\(i)",
-                sourceTitle: "Source",
+                sourceTitle: sourceTitle,
                 sourceURL: sourceURL,
                 category: category,
                 title: "Item \(i)",

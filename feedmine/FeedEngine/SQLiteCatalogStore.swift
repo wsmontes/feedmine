@@ -109,7 +109,15 @@ struct SQLiteCatalogCompiler: CatalogCompiler {
                 requestURL: occurrence.requestURL,
                 displayHost: CatalogIdentity.displayHost(for: occurrence.declaredURL),
                 mediaKind: occurrence.mediaKind,
-                language: occurrence.language
+                language: occurrence.language,
+                siteURL: occurrence.siteURL,
+                sourceDescription: occurrence.sourceDescription,
+                tags: occurrence.tags,
+                nature: occurrence.nature,
+                activity: occurrence.activity,
+                latestItemAt: occurrence.latestItemAt,
+                qualityScore: occurrence.qualityScore,
+                defaultEnabled: occurrence.defaultEnabled
             )
 
             var parentID = CatalogNodeID.root
@@ -221,7 +229,7 @@ struct SQLiteCatalogCompiler: CatalogCompiler {
     private static func insertMetadata(db: Database, sourceCount: Int, nodeCount: Int, placementCount: Int) throws {
         let catalogVersion = Int64((Date().timeIntervalSince1970 * 1_000_000).rounded())
         let values: [(String, String)] = [
-            ("schema_version", "1"),
+            ("schema_version", "2"),
             ("catalog_version", "\(catalogVersion)"),
             ("source_count", "\(sourceCount)"),
             ("node_count", "\(nodeCount)"),
@@ -235,8 +243,9 @@ struct SQLiteCatalogCompiler: CatalogCompiler {
     private static func insertSource(_ source: CompiledSource, db: Database) throws {
         try db.execute(sql: """
             INSERT INTO catalog_source
-                (id, key, title, declared_url, request_url, display_host, media_kind, language)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                (id, key, title, declared_url, request_url, display_host, media_kind, language,
+                 site_url, description, tags, nature, activity, latest_item_at, quality_score, default_enabled)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, arguments: [
                 Int64(source.id.rawValue),
                 source.key.rawValue,
@@ -246,6 +255,14 @@ struct SQLiteCatalogCompiler: CatalogCompiler {
                 source.displayHost,
                 source.mediaKind.rawValue,
                 source.language,
+                source.siteURL,
+                source.sourceDescription,
+                source.tags.joined(separator: ","),
+                source.nature,
+                source.activity,
+                source.latestItemAt,
+                source.qualityScore,
+                source.defaultEnabled ? 1 : 0,
             ])
     }
 
@@ -297,11 +314,13 @@ struct SQLiteCatalogCompiler: CatalogCompiler {
         for source in sources {
             try db.execute(sql: """
                 INSERT INTO catalog_source_fts
-                    (rowid, title, display_host, language, media_kind, path)
-                VALUES (?, ?, ?, ?, ?, ?)
+                    (rowid, title, description, tags, display_host, language, media_kind, path)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """, arguments: [
                     Int64(source.id.rawValue),
                     source.title,
+                    source.sourceDescription ?? "",
+                    source.tags.joined(separator: " "),
                     source.displayHost ?? "",
                     source.language ?? "",
                     source.mediaKind.rawValue,
@@ -393,6 +412,14 @@ actor SQLiteCatalogRepository: FeedEngineProtocol, CatalogRepository, CatalogSea
                 requestURL: requestURL,
                 mediaKind: source.mediaKind,
                 language: source.language,
+                siteURL: source.siteURL.flatMap(URL.init(string:)),
+                sourceDescription: source.sourceDescription,
+                tags: source.tags,
+                nature: source.nature,
+                activity: source.activity,
+                latestItemAt: source.latestItemAt,
+                qualityScore: source.qualityScore,
+                defaultEnabled: source.defaultEnabled,
                 placements: placements
             )
         }
@@ -470,10 +497,11 @@ actor SQLiteCatalogRepository: FeedEngineProtocol, CatalogRepository, CatalogSea
             SELECT DISTINCT
                 'source' AS entity_type,
                 s.id AS entity_id,
-                '1:' || lower(COALESCE(p.title_override, s.title)) AS sort_key
+                '1:' || printf('%012d', MIN(p.sort_order)) || ':' || lower(COALESCE(p.title_override, s.title)) AS sort_key
             FROM catalog_placement p
             JOIN catalog_source s ON s.id = p.source_id
             WHERE p.node_id = ?
+            GROUP BY s.id
             """ : ""
 
         return """
@@ -481,7 +509,7 @@ actor SQLiteCatalogRepository: FeedEngineProtocol, CatalogRepository, CatalogSea
                 SELECT
                     'node' AS entity_type,
                     n.id AS entity_id,
-                    '0:' || lower(n.name) AS sort_key
+                    '0:' || lower(n.key) AS sort_key
                 FROM catalog_node n
                 WHERE n.parent_id = ?
                 \(sourceUnion)
@@ -522,7 +550,8 @@ actor SQLiteCatalogRepository: FeedEngineProtocol, CatalogRepository, CatalogSea
             SELECT
                 'source' AS entity_type,
                 s.id AS entity_id,
-                '1:' || lower(s.title) AS sort_key
+                printf('%01d:%03d:%s', CASE WHEN s.default_enabled = 1 THEN 0 ELSE 1 END,
+                       100 - COALESCE(s.quality_score, 0), lower(s.title)) AS sort_key
             FROM catalog_source_fts f
             JOIN catalog_source s ON s.id = f.rowid
             WHERE catalog_source_fts MATCH ?
@@ -619,7 +648,15 @@ private enum SQLiteCatalogSchema {
                 request_url TEXT NOT NULL,
                 display_host TEXT,
                 media_kind TEXT NOT NULL,
-                language TEXT
+                language TEXT,
+                site_url TEXT,
+                description TEXT,
+                tags TEXT,
+                nature TEXT,
+                activity TEXT,
+                latest_item_at TEXT,
+                quality_score INTEGER,
+                default_enabled INTEGER NOT NULL DEFAULT 1
             )
             """)
         try db.execute(sql: "CREATE INDEX idx_catalog_source_title ON catalog_source(title COLLATE NOCASE, id)")
@@ -642,6 +679,8 @@ private enum SQLiteCatalogSchema {
         try db.execute(sql: """
             CREATE VIRTUAL TABLE catalog_source_fts USING fts5(
                 title,
+                description,
+                tags,
                 display_host,
                 language,
                 media_kind,
@@ -660,6 +699,14 @@ private struct CompiledSource {
     let displayHost: String?
     let mediaKind: MediaKind
     let language: String?
+    let siteURL: String?
+    let sourceDescription: String?
+    let tags: [String]
+    let nature: String?
+    let activity: String?
+    let latestItemAt: String?
+    let qualityScore: Int?
+    let defaultEnabled: Bool
 }
 
 private struct CompiledNode {
@@ -727,6 +774,14 @@ private struct CatalogSourceRecord: FetchableRecord {
     let displayHost: String?
     let mediaKind: MediaKind
     let language: String?
+    let siteURL: String?
+    let sourceDescription: String?
+    let tags: [String]
+    let nature: String?
+    let activity: String?
+    let latestItemAt: String?
+    let qualityScore: Int?
+    let defaultEnabled: Bool
 
     init(row: Row) throws {
         let rawID: Int64 = row["id"]
@@ -737,10 +792,25 @@ private struct CatalogSourceRecord: FetchableRecord {
         displayHost = row["display_host"]
         mediaKind = MediaKind(rawValue: row["media_kind"]) ?? .text
         language = row["language"]
+        siteURL = row["site_url"]
+        sourceDescription = row["description"]
+        let rawTags: String? = row["tags"]
+        tags = (rawTags ?? "").split(separator: ",").map(String.init)
+        nature = row["nature"]
+        activity = row["activity"]
+        latestItemAt = row["latest_item_at"]
+        qualityScore = row["quality_score"]
+        let enabled: Int = row["default_enabled"] ?? 1
+        defaultEnabled = enabled != 0
     }
 
     var summary: SourceSummary {
-        SourceSummary(id: id, title: title, displayHost: displayHost, mediaKind: mediaKind, language: language)
+        SourceSummary(
+            id: id, title: title, displayHost: displayHost, mediaKind: mediaKind,
+            language: language, sourceDescription: sourceDescription, tags: tags,
+            nature: nature, activity: activity, qualityScore: qualityScore,
+            defaultEnabled: defaultEnabled
+        )
     }
 }
 

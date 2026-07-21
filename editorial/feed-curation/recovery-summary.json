@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-20T20:00:57.821676+00:00",
+  "initial_ledger": {
+    "identity_count": 67239,
+    "dispositions": {
+      "production": 33785,
+      "processed_empty": 1481,
+      "processed_failed": 4266,
+      "unattempted_editorial": 840,
+      "unattempted_synthetic": 26867
+    }
+  },
+  "recovery_queues": {
+    "queued_identity_count": 6587,
+    "editorial_unattempted": 840,
+    "processed_empty": 1481,
+    "failed_parse_or_html": 3460,
+    "failed_transient": 104,
+    "failed_network": 75,
+    "failed_gone_or_moved": 93,
+    "failed_access_blocked": 67,
+    "failed_unknown": 461,
+    "failed_other": 6
+  },
+  "editorial_unattempted_recovery": {
+    "attempted": 840,
+    "fetch_status_before_policy": {
+      "done": 595,
+      "empty": 15,
+      "failed": 230
+    },
+    "fetch_attempt_count": 1005,
+    "persisted_article_source_relations": 13433,
+    "content_enriched_done_sources": 595,
+    "content_enrichment_failures": 0,
+    "status_after_policy": {
+      "production": 408,
+      "processed_empty": 15,
+      "processed_failed": 230,
+      "excluded_policy": 187
+    }
+  },
+  "recoverable_failure_retry": {
+    "attempted": 640,
+    "fetch_status_before_policy": {
+      "done": 55,
+      "empty": 4,
+      "failed": 581
+    },
+    "fetch_attempt_count": 1187,
+    "persisted_article_source_relations": 590,
+    "content_enriched_done_sources": 55,
+    "content_enrichment_failures": 0,
+    "status_after_policy": {
+      "production": 50,
+      "processed_empty": 4,
+      "processed_failed": 581,
+      "excluded_policy": 5
+    },
+    "source_rows_replaced": 59,
+    "source_ids_remapped": 1
+  },
+  "policy_exclusions": {
+    "count": 192,
+    "generic_google_news_topic_queries": 184,
+    "explicit_editorial_exclusions": 8,
+    "explicit_exclusions_file": "policy-exclusions.csv"
+  },
+  "final_ledger": {
+    "identity_count": 67239,
+    "dispositions": {
+      "production": 34243,
+      "processed_empty": 1500,
+      "processed_failed": 4437,
+      "excluded_policy": 192,
+      "unattempted_synthetic": 26867
+    },
+    "production_net_gain": 458
+  },
+  "production_output": {
+    "opml_file_count": 118,
+    "source_count": 34243,
+    "catalog_node_count": 5676,
+    "duplicate_occurrence_count": 0,
+    "invalid_outline_count": 0,
+    "metadata_missing_count": 0,
+    "default_disabled_count": 3165
+  }
+}

@@ -2,27 +2,21 @@ import SwiftUI
 import UIKit
 
 struct FeedItemCardView: View, Equatable {
-    /// Skips onBookmark (closure, not Equatable) and @State/@AppStorage/
+    /// Skips action closures (not Equatable) and @State/@AppStorage/
     /// @Environment properties (tracked independently by SwiftUI).
     nonisolated static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.item == rhs.item
         && lhs.isRead == rhs.isRead
         && lhs.isBookmarked == rhs.isBookmarked
-        && lhs.appearDelay == rhs.appearDelay
         && lhs.isInBookmarkBox == rhs.isInBookmarkBox
-        && lhs.isFirstAppearance == rhs.isFirstAppearance
     }
     let item: FeedItem
     let isRead: Bool
     let isBookmarked: Bool
-    let appearDelay: Double
-    var onBookmark: (() -> Void)?
+    var onBookmark: (() -> Void)? = nil
+    var onViewSource: (() -> Void)? = nil
+    var onAddSourceToCollection: (() -> Void)? = nil
     var isInBookmarkBox: Bool = false
-    /// When false, skips the entrance animation — the card was already seen
-    /// before (scrolled back into view). Animation plays only for genuinely
-    /// new content.
-    var isFirstAppearance: Bool = true
-    @State private var appeared = false
     @State private var imageLoadFailed = false
     @AppStorage("fontSize") private var fontSize = "medium"
     @State private var engine = CircadianEngine.shared
@@ -35,7 +29,7 @@ struct FeedItemCardView: View, Equatable {
     /// the card, or content below jumps. On failure the slot stays; the image
     /// area just shows the placeholder. (Feed is sacred: layout never shifts
     /// from async image state.)
-    private var hasImage: Bool { (item.bestImageURL ?? item.imageURL) != nil }
+    private var hasImage: Bool { item.hasPotentialImage }
 
     private var titleFont: Font {
         switch fontSize {
@@ -61,30 +55,22 @@ struct FeedItemCardView: View, Equatable {
                 portraitCard
             }
         }
-        .opacity(appeared ? (isRead ? 0.92 : 1) : 0)
-        .offset(y: appeared ? 0 : 16)
-        .onAppear {
-            if isFirstAppearance {
-                withAnimation(.easeOut(duration: 0.4).delay(appearDelay)) {
-                    appeared = true
-                }
-            } else {
-                appeared = true  // already surfaced — skip animation
-            }
-        }
+        .opacity(isRead ? 0.92 : 1)
     }
 
     // MARK: - Portrait Card
 
     private var portraitCard: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Hero image — only when it actually exists
+            // Hero image — native media or a bounded article-page candidate.
             if hasImage {
                 Color.clear
                     .aspectRatio(16/9, contentMode: .fit)
                     .overlay {
-                        if let urlStr = item.bestImageURL ?? item.imageURL, let url = URL(string: urlStr) {
-                            CachedAsyncImage(url: url, onResult: { success in
+                        if imageLoadFailed {
+                            imageFailurePlaceholder
+                        } else {
+                            CachedAsyncImage(url: item.bestImageURL.flatMap(URL.init(string:)), articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil, onResult: { success in
                                 if !success { imageLoadFailed = true }
                             })
                             .scaledToFill()
@@ -165,8 +151,10 @@ struct FeedItemCardView: View, Equatable {
                 Color.clear
                     .frame(width: 90, height: 90)
                     .overlay {
-                        if let urlStr = item.bestImageURL ?? item.imageURL, let url = URL(string: urlStr) {
-                            CachedAsyncImage(url: url, onResult: { success in
+                        if imageLoadFailed {
+                            imageFailurePlaceholder
+                        } else {
+                            CachedAsyncImage(url: item.bestImageURL.flatMap(URL.init(string:)), articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil, onResult: { success in
                                 if !success { imageLoadFailed = true }
                             })
                             .scaledToFill()
@@ -221,6 +209,16 @@ struct FeedItemCardView: View, Equatable {
                 .padding(.leading, 1)
         }
         .contextMenu { cardContextMenu }
+    }
+
+    private var imageFailurePlaceholder: some View {
+        Rectangle()
+            .fill(categoryColor(item.category).opacity(0.14))
+            .overlay {
+                Image(systemName: "newspaper")
+                    .font(.title2)
+                    .foregroundStyle(categoryColor(item.category).opacity(0.55))
+            }
     }
 
     // MARK: - Source Row (portrait only)
@@ -354,6 +352,16 @@ struct FeedItemCardView: View, Equatable {
     @ViewBuilder
     private var cardContextMenu: some View {
         BookmarkBoxContextMenu(itemID: item.id)
+        if let onViewSource {
+            Button(action: onViewSource) {
+                Label("View Source", systemImage: "rectangle.stack")
+            }
+        }
+        if let onAddSourceToCollection {
+            Button(action: onAddSourceToCollection) {
+                Label("Add Source to Collection", systemImage: "rectangle.stack.badge.plus")
+            }
+        }
         Button {
             UIPasteboard.general.url = URL(string: item.url)
             let impact = UIImpactFeedbackGenerator(style: .light)

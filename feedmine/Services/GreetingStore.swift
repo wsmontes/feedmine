@@ -26,6 +26,9 @@ enum GreetingStore {
         greetings(for: period)
     }
 
+    /// Current app language reduced to the base code used by Greetings.json.
+    static var currentLanguageCode: String { currentLanguage() }
+
     // MARK: - Private
 
     private static func greetings(for period: TimeOfDay) -> [String] {

@@ -58,8 +58,8 @@ struct OPMLCatalogScanner: Sendable {
             .dropLast()
             .map(String.init)
 
-        if directoryParts.first == "countries" {
-            var nodes = [CatalogInputNode(name: "Countries", kind: .topic, keyComponent: "countries")]
+        if let first = directoryParts.first, semanticPathName(first) == "countries" {
+            var nodes = [CatalogInputNode(name: "Countries", kind: .topic, keyComponent: CatalogIdentity.slug(first))]
             let countryParts = Array(directoryParts.dropFirst())
             for (index, part) in countryParts.enumerated() {
                 nodes.append(CatalogInputNode(
@@ -117,10 +117,22 @@ struct OPMLCatalogScanner: Sendable {
     }
 
     private static func displayName(fromSlug slug: String) -> String {
-        slug
+        slug.replacingOccurrences(
+            of: #"^\d+[ _-]+"#,
+            with: "",
+            options: .regularExpression
+        )
             .replacingOccurrences(of: "_", with: " ")
             .replacingOccurrences(of: "-", with: " ")
             .capitalized
+    }
+
+    private static func semanticPathName(_ raw: String) -> String {
+        raw.replacingOccurrences(
+            of: #"^\d+[ _-]+"#,
+            with: "",
+            options: .regularExpression
+        ).lowercased()
     }
 
     private static func appendCountryFileNode(
@@ -190,7 +202,8 @@ private final class CatalogOPMLDelegate: NSObject, XMLParserDelegate {
         guard elementName == "outline" else { return }
         let xmlURL = attributeDict["xmlUrl"]?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let name = attributeDict["title"] ?? attributeDict["text"] ?? fallbackCategory
-        let language = attributeDict["language"] ?? outlineStack.last?.language ?? fileLanguage
+        let rawLanguage = attributeDict["language"] ?? outlineStack.last?.language ?? fileLanguage
+        let language = rawLanguage == "und" ? nil : rawLanguage
 
         guard !xmlURL.isEmpty else {
             if !name.isEmpty {
@@ -221,7 +234,13 @@ private final class CatalogOPMLDelegate: NSObject, XMLParserDelegate {
             ? [CatalogInputNode(name: fallbackCategory, kind: .topic)]
             : folderNodes + categoryNodes
         let title = name.isEmpty ? (outlineStack.last?.name ?? fallbackCategory) : name
-        let mediaKind = Self.mediaKind(xmlURL: xmlURL, defaultMediaKind: defaultMediaKind)
+        let mediaKind = attributeDict["feedmineMediaKind"]
+            .flatMap(MediaKind.init(rawValue:))
+            ?? Self.mediaKind(xmlURL: xmlURL, defaultMediaKind: defaultMediaKind)
+        let tags = (attributeDict["category"] ?? "")
+            .split(separator: ",")
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
 
         occurrences.append(CatalogSourceOccurrence(
             title: title,
@@ -233,7 +252,15 @@ private final class CatalogOPMLDelegate: NSObject, XMLParserDelegate {
             sortOrder: fileIndex * 1_000_000 + order,
             titleOverride: title,
             languageOverride: language,
-            mediaKindOverride: mediaKind
+            mediaKindOverride: mediaKind,
+            siteURL: attributeDict["htmlUrl"],
+            sourceDescription: attributeDict["description"],
+            tags: tags,
+            nature: attributeDict["feedmineNature"],
+            activity: attributeDict["feedmineActivity"],
+            latestItemAt: attributeDict["feedmineLatestItemAt"],
+            qualityScore: attributeDict["feedmineQualityScore"].flatMap(Int.init),
+            defaultEnabled: attributeDict["feedmineDefaultEnabled"]?.lowercased() != "false"
         ))
         order += 1
     }

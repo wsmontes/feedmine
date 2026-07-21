@@ -26,6 +26,14 @@ struct CatalogSourceOccurrence: Equatable, Sendable {
     let titleOverride: String?
     let languageOverride: String?
     let mediaKindOverride: MediaKind?
+    let siteURL: String?
+    let sourceDescription: String?
+    let tags: [String]
+    let nature: String?
+    let activity: String?
+    let latestItemAt: String?
+    let qualityScore: Int?
+    let defaultEnabled: Bool
 
     init(
         title: String,
@@ -38,7 +46,15 @@ struct CatalogSourceOccurrence: Equatable, Sendable {
         sortOrder: Int,
         titleOverride: String? = nil,
         languageOverride: String? = nil,
-        mediaKindOverride: MediaKind? = nil
+        mediaKindOverride: MediaKind? = nil,
+        siteURL: String? = nil,
+        sourceDescription: String? = nil,
+        tags: [String] = [],
+        nature: String? = nil,
+        activity: String? = nil,
+        latestItemAt: String? = nil,
+        qualityScore: Int? = nil,
+        defaultEnabled: Bool = true
     ) {
         self.title = title
         self.declaredURL = declaredURL
@@ -51,6 +67,14 @@ struct CatalogSourceOccurrence: Equatable, Sendable {
         self.titleOverride = titleOverride
         self.languageOverride = languageOverride
         self.mediaKindOverride = mediaKindOverride
+        self.siteURL = siteURL
+        self.sourceDescription = sourceDescription
+        self.tags = tags
+        self.nature = nature
+        self.activity = activity
+        self.latestItemAt = latestItemAt
+        self.qualityScore = qualityScore
+        self.defaultEnabled = defaultEnabled
     }
 
     static func legacySource(_ source: FeedSource, sortOrder: Int) -> CatalogSourceOccurrence {
@@ -62,7 +86,13 @@ struct CatalogSourceOccurrence: Equatable, Sendable {
             nodePath: Self.nodePath(region: source.region, category: source.category, language: source.language),
             opmlFile: "legacy://OPMLParser.parseAll",
             sortOrder: sortOrder,
-            languageOverride: source.language
+            languageOverride: source.language,
+            sourceDescription: source.sourceDescription,
+            tags: source.tags,
+            nature: source.nature,
+            activity: source.activity,
+            qualityScore: source.qualityScore,
+            defaultEnabled: source.defaultEnabled
         )
     }
 

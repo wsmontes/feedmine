@@ -29,4 +29,59 @@ final class MomentGreetingTests: XCTestCase {
         XCTAssertFalse(result.contains("{{"), "Should not contain unfilled template slots")
         XCTAssertFalse(result.contains("}}"), "Should not contain unfilled template slots")
     }
+
+    func testNonEnglishMomentUsesLocalizedGreetingOnly() {
+        let originalLanguages = UserDefaults.standard.stringArray(forKey: "AppleLanguages")
+        UserDefaults.standard.set(["pt-BR"], forKey: "AppleLanguages")
+        defer {
+            if let originalLanguages {
+                UserDefaults.standard.set(originalLanguages, forKey: "AppleLanguages")
+            } else {
+                UserDefaults.standard.removeObject(forKey: "AppleLanguages")
+            }
+        }
+
+        AppContext.shared.refresh()
+        let result = MomentGreeting.generate()
+        let expected = Set(GreetingStore.variants(for: AppContext.shared.timeOfDay).map(finishedSentence))
+        XCTAssertTrue(expected.contains(result),
+                      "Non-English moments should use localized greeting variants without English template fragments")
+    }
+
+    func testGreetingRefreshesAcrossLocalMidnight() {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let friday = calendar.date(from: DateComponents(
+            year: 2026,
+            month: 7,
+            day: 17,
+            hour: 23,
+            minute: 59
+        ))!
+        let saturday = calendar.date(from: DateComponents(
+            year: 2026,
+            month: 7,
+            day: 18,
+            hour: 0,
+            minute: 1
+        ))!
+
+        XCTAssertTrue(
+            MomentCard.shouldRefreshGreeting(
+                generatedAt: friday.timeIntervalSinceReferenceDate,
+                generatedDay: MomentCard.greetingDayStamp(for: friday, calendar: calendar),
+                now: saturday,
+                lifetime: 2 * 60 * 60,
+                calendar: calendar
+            )
+        )
+    }
+
+    private func finishedSentence(_ text: String) -> String {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.hasSuffix(".") || trimmed.hasSuffix("?") || trimmed.hasSuffix("!") {
+            return trimmed
+        }
+        return trimmed + "."
+    }
 }

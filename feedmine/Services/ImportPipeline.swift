@@ -198,7 +198,10 @@ actor ImportPipeline {
             }
         }
         let urls = dedupedSources.map(\.url)
-        let titleMap = Dictionary(uniqueKeysWithValues: dedupedSources.map { ($0.url, $0) })
+        let titleMap = Dictionary(
+            dedupedSources.map { ($0.url, $0) },
+            uniquingKeysWith: { first, _ in first }
+        )
         let (result, sources) = await ingest(
             urls: urls,
             category: fileName.capitalized,

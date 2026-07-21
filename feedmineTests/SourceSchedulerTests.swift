@@ -77,6 +77,61 @@ final class SourceSchedulerTests: XCTestCase {
         XCTAssertTrue(hasYouTube, "Should select YouTube when video buffer is empty")
     }
 
+    func testVideoFilterFetchesOnlyVideoSources() {
+        let scheduler = SourceScheduler()
+        let sources: [String: [FeedSource]] = [
+            "global": [
+                FeedSource(title: "YouTube", url: "https://youtube.com/feeds/videos.xml?channel_id=UC123", category: "Tech", region: "global", mediaKind: .video),
+                FeedSource(title: "Video RSS", url: "https://video.example/feed", category: "Tech", region: "global", mediaKind: .video),
+                FeedSource(title: "Blog", url: "https://blog.example/feed", category: "Tech", region: "global"),
+                FeedSource(title: "Podcast", url: "https://podcast.example/feed", category: "Tech", region: "global", mediaKind: .audio),
+            ]
+        ]
+
+        let batch = scheduler.nextBatch(
+            reservoir: [],
+            sourcesByRegion: sources,
+            activeRegion: nil,
+            activeCategory: nil,
+            activeContentType: "video"
+        )
+
+        XCTAssertEqual(Set(batch.map(\.url)), [
+            "https://youtube.com/feeds/videos.xml?channel_id=UC123",
+            "https://video.example/feed",
+        ])
+    }
+
+    func testVideoFilterKeepsFetchingWhenOneProviderFillsBuffer() {
+        let scheduler = SourceScheduler()
+        let existingURL = "https://youtube.com/feeds/videos.xml?channel_id=existing"
+        let newURL = "https://youtube.com/feeds/videos.xml?channel_id=new"
+        let reservoir = (0..<80).map { index in
+            FeedItem(
+                id: "video-\(index)", sourceTitle: "Existing",
+                sourceURL: existingURL, category: "Video",
+                title: "Video \(index)", excerpt: "E",
+                url: "https://youtube.com/watch?v=video\(index)", imageURL: nil,
+                publishedAt: Date(), region: "global"
+            )
+        }
+
+        let batch = scheduler.nextBatch(
+            reservoir: reservoir,
+            sourcesByRegion: [
+                "global": [
+                    FeedSource(title: "Existing", url: existingURL, category: "Video", mediaKind: .video),
+                    FeedSource(title: "New", url: newURL, category: "Video", mediaKind: .video),
+                ]
+            ],
+            activeRegion: nil,
+            activeCategory: nil,
+            activeContentType: "video"
+        )
+
+        XCTAssertTrue(batch.contains { $0.url == newURL })
+    }
+
     func testCooldownApplies() {
         let s = SourceScheduler()
         let source = FeedSource(title: "A", url: "https://a.com/feed", category: "Tech", region: "global")
@@ -118,6 +173,21 @@ final class SourceSchedulerTests: XCTestCase {
         )
 
         XCTAssertEqual(batch.first?.url, priorityURL, "Priority URL must be first in batch")
+    }
+
+    func testDiverseSourcesAvoidsColdStartCategoryClustering() {
+        let scored: [(source: FeedSource, score: Double)] = [
+            FeedSource(title: "Coffee 1", url: "https://coffee1.com/feed", category: "Coffee", region: "global"),
+            FeedSource(title: "Coffee 2", url: "https://coffee2.com/feed", category: "Coffee", region: "global"),
+            FeedSource(title: "Coffee 3", url: "https://coffee3.com/feed", category: "Coffee", region: "global"),
+            FeedSource(title: "Coffee 4", url: "https://coffee4.com/feed", category: "Coffee", region: "global"),
+            FeedSource(title: "Tech", url: "https://tech.com/feed", category: "Tech", region: "global"),
+            FeedSource(title: "Science", url: "https://science.com/feed", category: "Science", region: "global"),
+        ].map { (source: $0, score: 1.0) }
+
+        let selected = SourceScheduler.diverseSources(from: scored, limit: 3)
+
+        XCTAssertEqual(Set(selected.map(\.category)).count, 3)
     }
 
     func testLanguageFilterExcludesNonMatchingSources() {

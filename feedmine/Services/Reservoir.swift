@@ -15,10 +15,12 @@ final class Reservoir {
     static let pageSize = 20
     static let loadMoreThreshold = 5
     static let discardBatchSize = 50
-    static let reservoirLowWatermark = 30
+    static let reservoirLowWatermark = 80
+    static let progressiveFillTarget = 240
     static let safetyZoneRadius = 50
     static let maxReservoirSize = 500
     nonisolated static let surfacedCooldown: TimeInterval = 1800
+    nonisolated static let initialUniqueSourceTarget = 100
 
     private(set) var visibleItems: [FeedItem] = []
     private(set) var reservoir: [FeedItem] = []
@@ -133,9 +135,22 @@ final class Reservoir {
     // MARK: - Remove region (toggle OFF)
 
     func removeRegion(_ region: String) {
+        removeRegions([region])
+    }
+
+    /// Remove several region trees in one pass. Bulk country toggles used to
+    /// call `removeRegion` once per country, repeatedly scanning the entire
+    /// reservoir before the switch could redraw.
+    func removeRegions(_ regions: Set<String>) {
+        guard !regions.isEmpty else { return }
         let isDisabled: (FeedItem) -> Bool = { [self] item in
             let itemRegion = sourceRegionMap[item.sourceURL] ?? "global"
-            return itemRegion == region || itemRegion.hasPrefix(region + "/")
+            var candidate = itemRegion
+            while true {
+                if regions.contains(candidate) { return true }
+                guard let separator = candidate.lastIndex(of: "/") else { return false }
+                candidate = String(candidate[..<separator])
+            }
         }
         visibleItems.removeAll(where: isDisabled)
         reservoir.removeAll(where: isDisabled)
@@ -279,7 +294,38 @@ final class Reservoir {
                 added = true
             }
         }
-        return spreadConsecutiveImpl(result)
+        let fresh = spreadForFreshnessImpl(result, sourceRegionMap: sourceRegionMap)
+        return frontLoadUniqueProvidersImpl(fresh, count: initialUniqueSourceTarget)
+    }
+
+    /// The first screen is the app's promise of breadth. When enough providers
+    /// are available, reserve one slot per provider before any provider gets a
+    /// second card; the remainder keeps the freshness pass order unchanged.
+    private nonisolated static func frontLoadUniqueProvidersImpl(
+        _ items: [FeedItem],
+        count: Int
+    ) -> [FeedItem] {
+        guard count > 1, items.count > 1 else { return items }
+        let target = min(count, Set(items.map(providerKey)).count)
+        guard target > 1 else { return items }
+
+        var selectedIndices = Set<Int>()
+        var selectedProviders = Set<String>()
+        var prefix: [FeedItem] = []
+        prefix.reserveCapacity(target)
+
+        for (index, item) in items.enumerated() {
+            guard selectedProviders.insert(providerKey(item)).inserted else { continue }
+            prefix.append(item)
+            selectedIndices.insert(index)
+            if prefix.count == target { break }
+        }
+
+        guard prefix.count == target else { return items }
+        prefix.append(contentsOf: items.enumerated().compactMap { index, item in
+            selectedIndices.contains(index) ? nil : item
+        })
+        return prefix
     }
 
     private nonisolated static func interleaveByTypeCategoryImpl(_ items: [FeedItem]) -> [FeedItem] {
@@ -356,38 +402,81 @@ final class Reservoir {
         return result
     }
 
-    /// Post-processing pass: scan for back-to-back items that share an
-    /// attribute (source, type, category) and swap with a later item that
-    /// breaks the run. O(n) single pass — maintains a look-ahead pointer.
-    private nonisolated static func spreadConsecutiveImpl(_ items: [FeedItem]) -> [FeedItem] {
+    /// Keep the next screenful fresh. Provider repetition is the strongest
+    /// signal, followed by subject, geography, and media type. Each choice is
+    /// made from a bounded look-ahead window so recency tiers stay broadly in
+    /// place and the pass remains cheap for large fetches.
+    private nonisolated static func spreadForFreshnessImpl(
+        _ items: [FeedItem],
+        sourceRegionMap: [String: String]
+    ) -> [FeedItem] {
         guard items.count > 2 else { return items }
-        var result = items
-        var lookAhead = 2
-        for i in 0..<(result.count - 1) {
-            let a = result[i], b = result[i + 1]
-            let clash = a.sourceURL == b.sourceURL
-                || a.category == b.category
-                || (a.isYouTube && b.isYouTube)
-                || (a.isPodcast && b.isPodcast)
-                || (!a.isYouTube && !a.isPodcast && !b.isYouTube && !b.isPodcast)
-            guard clash else { continue }
-            lookAhead = max(lookAhead, i + 2)
-            while lookAhead < result.count {
-                let c = result[lookAhead]
-                if a.sourceURL != c.sourceURL && b.sourceURL != c.sourceURL
-                    && a.category != c.category
-                    && !(a.isYouTube && c.isYouTube) && !(a.isPodcast && c.isPodcast)
-                    && !(b.isYouTube && c.isYouTube) && !(b.isPodcast && c.isPodcast)
-                    && !(!a.isYouTube && !a.isPodcast && !c.isYouTube && !c.isPodcast)
-                    && !(!b.isYouTube && !b.isPodcast && !c.isYouTube && !c.isPodcast) {
-                    result.swapAt(i + 1, lookAhead)
-                    break
+
+        var pool = items
+        var result: [FeedItem] = []
+        result.reserveCapacity(items.count)
+
+        let providerVariety = Set(items.map(providerKey)).count
+        let categoryVariety = Set(items.map(\.category)).count
+        let regionVariety = Set(items.map { sourceRegionMap[$0.sourceURL] ?? $0.region }).count
+        let mediaVariety = Set(items.map(mediaKey)).count
+        let providerWindow = min(6, max(0, providerVariety - 1))
+        let categoryWindow = min(10, max(0, categoryVariety - 1))
+        let regionWindow = min(6, max(0, regionVariety - 1))
+        let mediaWindow = min(4, max(0, mediaVariety - 1))
+
+        while !pool.isEmpty {
+            let searchCount = min(96, pool.count)
+            let recentProviders = Set(result.suffix(providerWindow).map(providerKey))
+            let recentCategories = Set(result.suffix(categoryWindow).map(\.category))
+            let recentRegions = Set(result.suffix(regionWindow).map {
+                sourceRegionMap[$0.sourceURL] ?? $0.region
+            })
+            let recentMedia = Set(result.suffix(mediaWindow).map(mediaKey))
+
+            var bestIndex = 0
+            var bestPenalty = Int.max
+            for index in 0..<searchCount {
+                let candidate = pool[index]
+                let region = sourceRegionMap[candidate.sourceURL] ?? candidate.region
+                var penalty = index
+                if recentProviders.contains(providerKey(candidate)) { penalty += 100_000 }
+                if recentCategories.contains(candidate.category) { penalty += 50_000 }
+                if recentRegions.contains(region) { penalty += 15_000 }
+                if recentMedia.contains(mediaKey(candidate)) { penalty += 30_000 }
+                if penalty < bestPenalty {
+                    bestPenalty = penalty
+                    bestIndex = index
+                    if penalty == index { break }
                 }
-                lookAhead += 1
             }
-            if lookAhead >= result.count { break }
+
+            result.append(pool.remove(at: bestIndex))
         }
         return result
+    }
+
+    /// A catalogue can contain many generated feeds backed by one aggregator.
+    /// Those URLs are distinct fetch targets, but they are not distinct content
+    /// providers and must not occupy several diversity slots on the same screen.
+    nonisolated static func providerKey(_ item: FeedItem) -> String {
+        guard let host = URLComponents(string: item.sourceURL)?.host?.lowercased() else {
+            return item.sourceURL
+        }
+        if host == "news.google.com" || host.hasSuffix(".news.google.com") {
+            // Separate queries are still one Google News provider. Treating
+            // their generated feed labels as publishers made a long run of
+            // near-identical candidate cards look artificially diverse.
+            return "aggregator:news.google.com"
+        }
+        return item.sourceURL
+    }
+
+    private nonisolated static func mediaKey(_ item: FeedItem) -> String {
+        if item.isPodcast { return "audio" }
+        if item.isYouTube { return "video" }
+        if item.isForum { return "forum" }
+        return "text"
     }
 
     private func dedupReservoir() {
