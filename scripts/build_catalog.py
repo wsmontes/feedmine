@@ -50,6 +50,14 @@ class Occurrence:
     title_override: str | None
     language_override: str | None
     media_kind_override: str | None
+    site_url: str | None
+    description: str | None
+    tags: str | None
+    nature: str | None
+    activity: str | None
+    latest_item_at: str | None
+    quality_score: int | None
+    default_enabled: bool
 
 
 def slug(raw: str) -> str:
@@ -60,7 +68,12 @@ def slug(raw: str) -> str:
 
 
 def display_name(raw: str) -> str:
+    raw = re.sub(r"^\d+[ _-]+", "", raw)
     return raw.replace("_", " ").replace("-", " ").title()
+
+
+def semantic_path_name(raw: str) -> str:
+    return re.sub(r"^\d+[ _-]+", "", raw).lower()
 
 
 def stable_uint32(raw: str, reserved_zero: bool = True) -> int:
@@ -133,8 +146,8 @@ def append_file_node(nodes: list[InputNode], file_name: str, kind: int) -> None:
 def folder_nodes(relative_path: str, file_name: str) -> list[InputNode]:
     parts = Path(relative_path).parts[:-1]
 
-    if parts and parts[0] == "countries":
-        nodes = [InputNode(key="countries", name="Countries", kind=NODE_TOPIC)]
+    if parts and semantic_path_name(parts[0]) == "countries":
+        nodes = [InputNode(key=parts[0], name="Countries", kind=NODE_TOPIC)]
         country_parts = list(parts[1:])
         for index, part in enumerate(country_parts):
             nodes.append(InputNode(
@@ -254,6 +267,14 @@ def iter_outline_occurrences(
             title_override=title,
             language_override=language,
             media_kind_override=media_kind,
+            site_url=(element.attrib.get("htmlUrl") or "").strip() or None,
+            description=(element.attrib.get("description") or "").strip() or None,
+            tags=(element.attrib.get("category") or "").strip() or None,
+            nature=(element.attrib.get("feedmineNature") or "").strip() or None,
+            activity=(element.attrib.get("feedmineActivity") or "").strip() or None,
+            latest_item_at=(element.attrib.get("feedmineLatestItemAt") or "").strip() or None,
+            quality_score=int(element.attrib["feedmineQualityScore"]) if element.attrib.get("feedmineQualityScore", "").isdigit() else None,
+            default_enabled=element.attrib.get("feedmineDefaultEnabled", "true").lower() != "false",
         )
         order[0] += 1
         return
@@ -349,7 +370,15 @@ def create_schema(db: sqlite3.Connection) -> None:
         request_url TEXT NOT NULL,
         display_host TEXT,
         media_kind TEXT NOT NULL,
-        language TEXT
+        language TEXT,
+        site_url TEXT,
+        description TEXT,
+        tags TEXT,
+        nature TEXT,
+        activity TEXT,
+        latest_item_at TEXT,
+        quality_score INTEGER,
+        default_enabled INTEGER NOT NULL DEFAULT 1
     );
     CREATE INDEX idx_catalog_source_title
         ON catalog_source(title COLLATE NOCASE, id);
@@ -371,6 +400,8 @@ def create_schema(db: sqlite3.Connection) -> None:
         ON catalog_placement(source_id);
     CREATE VIRTUAL TABLE catalog_source_fts USING fts5(
         title,
+        description,
+        tags,
         display_host,
         language,
         media_kind,
@@ -412,6 +443,14 @@ def compile_catalog(occurrences: list[Occurrence], output: Path, file_count: int
             "display_host": display_host(occurrence.declared_url),
             "media_kind": occurrence.media_kind,
             "language": occurrence.language,
+            "site_url": occurrence.site_url,
+            "description": occurrence.description,
+            "tags": occurrence.tags,
+            "nature": occurrence.nature,
+            "activity": occurrence.activity,
+            "latest_item_at": occurrence.latest_item_at,
+            "quality_score": occurrence.quality_score,
+            "default_enabled": 1 if occurrence.default_enabled else 0,
         })
 
         parent_id = 0
@@ -468,7 +507,7 @@ def compile_catalog(occurrences: list[Occurrence], output: Path, file_count: int
         create_schema(db)
         with db:
             metadata = {
-                "schema_version": "1",
+                "schema_version": "2",
                 "catalog_version": str(round(time.time() * 1_000_000)),
                 "source_count": str(len(sources)),
                 "node_count": str(len(nodes)),
@@ -481,8 +520,10 @@ def compile_catalog(occurrences: list[Occurrence], output: Path, file_count: int
             db.executemany("INSERT INTO catalog_metadata (key, value) VALUES (?, ?)", metadata.items())
             db.executemany("""
                 INSERT INTO catalog_source
-                    (id, key, title, declared_url, request_url, display_host, media_kind, language)
-                VALUES (:id, :key, :title, :declared_url, :request_url, :display_host, :media_kind, :language)
+                    (id, key, title, declared_url, request_url, display_host, media_kind, language,
+                     site_url, description, tags, nature, activity, latest_item_at, quality_score, default_enabled)
+                VALUES (:id, :key, :title, :declared_url, :request_url, :display_host, :media_kind, :language,
+                        :site_url, :description, :tags, :nature, :activity, :latest_item_at, :quality_score, :default_enabled)
             """, sorted(sources.values(), key=lambda source: int(source["id"])))
             db.executemany("""
                 INSERT INTO catalog_node
@@ -503,13 +544,15 @@ def compile_catalog(occurrences: list[Occurrence], output: Path, file_count: int
             """, placements)
             db.executemany("""
                 INSERT INTO catalog_source_fts
-                    (rowid, title, display_host, language, media_kind, path)
-                VALUES (:rowid, :title, :display_host, :language, :media_kind, :path)
+                    (rowid, title, description, tags, display_host, language, media_kind, path)
+                VALUES (:rowid, :title, :description, :tags, :display_host, :language, :media_kind, :path)
             """, [
                 {
                     "rowid": source["id"],
                     "title": source["title"],
                     "display_host": source["display_host"] or "",
+                    "description": source["description"] or "",
+                    "tags": source["tags"] or "",
                     "language": source["language"] or "",
                     "media_kind": source["media_kind"],
                     "path": " ".join(paths_by_source.get(int(source["id"]), [])),

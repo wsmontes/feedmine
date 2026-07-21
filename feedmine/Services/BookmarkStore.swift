@@ -80,6 +80,7 @@ final class BookmarkStore {
                 """, arguments: [targetListID, itemID, Int(Date().timeIntervalSince1970)])
             }
         }
+        try await synchronizeRetentionPin(itemID: itemID)
     }
 
     func isBookmarked(itemID: String, listID: Int64? = nil) async throws -> Bool {
@@ -136,6 +137,7 @@ final class BookmarkStore {
             guard !isDefault else { return }
             try db.execute(sql: "DELETE FROM bookmark_list WHERE id = ?", arguments: [id])
         }
+        try await synchronizeRetentionPins()
     }
 
     func toggleSearchActive(listID: Int64) async throws {
@@ -157,6 +159,58 @@ final class BookmarkStore {
         Task {
             try await userDB.write { db in
                 try db.execute(sql: "DELETE FROM bookmark_item")
+            }
+            try await contentDB.write { db in
+                try db.execute(sql: "DELETE FROM bookmark_item")
+            }
+        }
+    }
+
+    // MARK: - Retention bridge
+
+    /// `user.sqlite` owns bookmark identity.  The legacy content database still
+    /// consults its local bookmark table while expiring old cache rows, so keep
+    /// a minimal mirror there to guarantee that saved articles remain hydratable.
+    func synchronizeRetentionPins() async throws {
+        let itemIDs = try await userDB.read { db in
+            try String.fetchAll(db, sql: "SELECT DISTINCT item_id FROM bookmark_item")
+        }
+        try await contentDB.write { db in
+            try db.execute(sql: "DELETE FROM bookmark_item")
+            let listID = try Int64.fetchOne(
+                db,
+                sql: "SELECT id FROM bookmark_list WHERE is_default = 1 LIMIT 1"
+            ) ?? 1
+            let now = Int(Date().timeIntervalSince1970)
+            for itemID in itemIDs {
+                try db.execute(sql: """
+                    INSERT OR IGNORE INTO bookmark_item (list_id, item_id, added_at)
+                    SELECT ?, id, ? FROM feed_item WHERE id = ?
+                    """, arguments: [listID, now, itemID])
+            }
+        }
+    }
+
+    private func synchronizeRetentionPin(itemID: String) async throws {
+        let isPinned = try await userDB.read { db in
+            try Int.fetchOne(
+                db,
+                sql: "SELECT COUNT(*) FROM bookmark_item WHERE item_id = ?",
+                arguments: [itemID]
+            ) ?? 0 > 0
+        }
+        try await contentDB.write { db in
+            if isPinned {
+                let listID = try Int64.fetchOne(
+                    db,
+                    sql: "SELECT id FROM bookmark_list WHERE is_default = 1 LIMIT 1"
+                ) ?? 1
+                try db.execute(sql: """
+                    INSERT OR IGNORE INTO bookmark_item (list_id, item_id, added_at)
+                    SELECT ?, id, ? FROM feed_item WHERE id = ?
+                    """, arguments: [listID, Int(Date().timeIntervalSince1970), itemID])
+            } else {
+                try db.execute(sql: "DELETE FROM bookmark_item WHERE item_id = ?", arguments: [itemID])
             }
         }
     }

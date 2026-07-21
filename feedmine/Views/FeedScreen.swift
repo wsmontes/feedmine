@@ -18,6 +18,8 @@ struct FeedScreen: View {
     @State private var lastScrollIndex: Int = 0
     @State private var searchText = ""
     @State private var isSearching = false
+    @State private var selectedSource: SourceReference?
+    @State private var sourceToCollect: SourceReference?
     @FocusState private var searchFocused: Bool
     @State private var showSettings = false
     @State private var showSources = false
@@ -75,7 +77,9 @@ struct FeedScreen: View {
             // Full-bleed feed content with circadian page tint
             engine.pageBackground.ignoresSafeArea()
 
-            if loader.items.isEmpty
+            if isSearching && !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                unifiedSearchPanel
+            } else if loader.items.isEmpty
                 && (loader.isPreparingInitialRunway || loader.loadingState == .initial) {
                 InitialFeedLoadingView()
             } else if loader.items.isEmpty && loader.loadingState != .initial {
@@ -89,13 +93,6 @@ struct FeedScreen: View {
                 compactHeader
                 if isSearching { searchBar.transition(.move(edge: .top).combined(with: .opacity)) }
                 Spacer()
-            }
-
-            // Tap-to-dismiss search
-            if isSearching && searchFocused {
-                Color.clear
-                    .contentShape(Rectangle())
-                    .onTapGesture { searchFocused = false }
             }
 
             // Shake detector
@@ -183,6 +180,8 @@ struct FeedScreen: View {
     private var screenWithSheets: some View {
         observedScreen
         .sheet(item: $articleItem) { item in ArticleReaderView(item: item) }
+        .sheet(item: $selectedSource) { SourceFeedView(source: $0) }
+        .sheet(item: $sourceToCollect) { AddSourceToCollectionSheet(source: $0) }
         .sheet(isPresented: $showSettings) { SettingsSheetView() }
         .sheet(isPresented: $showSources) { SourceManagementView() }
         .sheet(isPresented: $showFilters) { FilterSheetView() }
@@ -191,14 +190,14 @@ struct FeedScreen: View {
         .sheet(isPresented: $showCollections) { CollectionManagementView() }
         .sheet(isPresented: $showExport) { ExportView() }
         .sheet(isPresented: $showCatalogExplore) {
-            if let databaseURL = FeedEngineCatalogDiagnostics.bundledDatabaseURL(),
+            if let databaseURL = FeedEngineCatalogDiagnostics.activeDatabaseURL(),
                let repository = try? SQLiteCatalogRepository(databaseURL: databaseURL, readOnly: true) {
                 CatalogExploreView(engine: repository)
             } else {
                 ContentUnavailableView(
                     "Catalog unavailable",
                     systemImage: "exclamationmark.triangle",
-                    description: Text("The bundled catalog could not be opened.")
+                    description: Text("The local catalog could not be opened.")
                 )
             }
         }
@@ -221,7 +220,7 @@ struct FeedScreen: View {
     }
 
     private var isFilterLensVisible: Bool {
-        hasFilterLensContent && filterLensExpanded && !isFilterLensDismissedForCurrentSelection
+        !isSearching && hasFilterLensContent && filterLensExpanded && !isFilterLensDismissedForCurrentSelection
     }
 
     private var feedTopPadding: CGFloat {
@@ -264,6 +263,7 @@ struct FeedScreen: View {
                             .headerButtonStyle(accent: engine.accent)
                             .contentTransition(.symbolEffect(.replace))
                     }
+                    .accessibilityIdentifier("search-button")
                     Button {
                         let impact = UIImpactFeedbackGenerator(style: .light)
                         impact.impactOccurred()
@@ -295,7 +295,7 @@ struct FeedScreen: View {
                             Label("Export", systemImage: "square.and.arrow.up")
                         }
                         Button { showCollections = true } label: {
-                            Label("Collections", systemImage: "folder.fill")
+                            Label("Source Collections", systemImage: "rectangle.stack.fill")
                         }
                         Button { showSources = true } label: {
                             Label("Sources", systemImage: "antenna.radiowaves.left.and.right")
@@ -329,8 +329,9 @@ struct FeedScreen: View {
     private var searchBar: some View {
         HStack(spacing: 8) {
             Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-            TextField("Search", text: $searchText)
+            TextField("Search sources, topics, and saved content", text: $searchText)
                 .focused($searchFocused)
+                .accessibilityIdentifier("unified-search-field")
                 .textFieldStyle(.plain)
                 .onSubmit { searchFocused = false }
             if !searchText.isEmpty {
@@ -355,6 +356,112 @@ struct FeedScreen: View {
         .onAppear { searchFocused = true }
     }
 
+    private var unifiedSearchPanel: some View {
+        let results = loader.unifiedSearchResults
+        return ScrollView {
+            LazyVStack(alignment: .leading, spacing: 12) {
+                if loader.isSearchLoading {
+                    HStack(spacing: 10) {
+                        ProgressView()
+                        Text("Searching sources and your library…")
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.vertical, 18)
+                }
+
+                if !results.sources.isEmpty {
+                    searchSectionHeader("Sources", count: results.sources.count, icon: "antenna.radiowaves.left.and.right")
+                    ForEach(results.sources) { source in
+                        Button { selectedSource = source.sourceReference } label: {
+                            SourceSearchRow(source: source)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("source-result-\(source.id)")
+                        .contextMenu {
+                            Button { selectedSource = source.sourceReference } label: {
+                                Label("View Source", systemImage: "rectangle.stack")
+                            }
+                            Button { sourceToCollect = source.sourceReference } label: {
+                                Label("Add Source to Collection", systemImage: "rectangle.stack.badge.plus")
+                            }
+                        }
+                    }
+                }
+
+                if !results.savedItems.isEmpty {
+                    searchSectionHeader("Saved", count: results.savedItems.count, icon: "bookmark.fill")
+                    ForEach(results.savedItems) { item in
+                        searchContentRow(item, saved: true)
+                    }
+                }
+
+                if !results.localItems.isEmpty {
+                    searchSectionHeader("History & local content", count: results.localItems.count, icon: "clock.arrow.circlepath")
+                    ForEach(results.localItems) { item in
+                        searchContentRow(item, saved: false)
+                    }
+                }
+
+                if !loader.isSearchLoading && results.isEmpty {
+                    ContentUnavailableView(
+                        "No matches",
+                        systemImage: "magnifyingglass",
+                        description: Text("Try a topic, source, tag, or words from an article you saw before.")
+                    )
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 50)
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.bottom, 90)
+        }
+        .scrollDismissesKeyboard(.interactively)
+        .padding(.top, headerHeight + 52)
+        .accessibilityIdentifier("unified-search-results")
+    }
+
+    private func searchSectionHeader(_ title: String, count: Int, icon: String) -> some View {
+        HStack(spacing: 7) {
+            Image(systemName: icon)
+            Text(title).fontWeight(.semibold)
+            Spacer()
+            Text("\(count)")
+                .font(.caption.monospacedDigit())
+                .foregroundStyle(.secondary)
+        }
+        .font(.subheadline)
+        .foregroundStyle(engine.accent)
+        .padding(.top, 8)
+    }
+
+    private func searchContentRow(_ item: FeedItem, saved: Bool) -> some View {
+        Button { articleItem = item } label: {
+            HStack(alignment: .top, spacing: 11) {
+                Image(systemName: saved ? "bookmark.fill" : (item.isRead ? "clock.fill" : "doc.text"))
+                    .foregroundStyle(saved ? engine.accent : Color.secondary)
+                    .frame(width: 24, height: 24)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(item.title)
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                    Text(item.sourceTitle)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.right")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(12)
+            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12))
+        }
+        .buttonStyle(.plain)
+    }
+
     private var filterButton: some View {
         let activeCount = loader.activeFilterCount
         return Button {
@@ -365,7 +472,6 @@ struct FeedScreen: View {
             ZStack(alignment: .topTrailing) {
                 Image(systemName: "line.3.horizontal.decrease")
                     .headerButtonStyle(accent: engine.accent)
-                    .accessibilityIdentifier("filter-button")
                 if activeCount > 0 {
                     Text("\(activeCount)")
                         .font(.system(size: 9, weight: .bold))
@@ -376,6 +482,8 @@ struct FeedScreen: View {
                 }
             }
         }
+        .accessibilityIdentifier("filter-button")
+        .accessibilityValue("\(activeCount)")
     }
 
     // MARK: - Feed Scroll
@@ -420,7 +528,9 @@ struct FeedScreen: View {
                                             toastMessage = "Audio unavailable"
                                             toastIcon = "exclamationmark.triangle"
                                             withAnimation { showToast = true }
-                                        }
+                                        },
+                                        onViewSource: { selectedSource = loader.sourceReference(for: item) },
+                                        onAddSourceToCollection: { sourceToCollect = loader.sourceReference(for: item) }
                                     )
                                     .id(item.id)
                                     .padding(.horizontal, 6)
@@ -441,7 +551,9 @@ struct FeedScreen: View {
                                     }
                                 }
                             } header: {
-                                sectionHeader(section.title)
+                                if section.showsHeader {
+                                    sectionHeader(section.title)
+                                }
                             }
                         }
 
@@ -817,6 +929,166 @@ struct CompactErrorBanner: View {
     }
 }
 
+private struct SourceSearchRow: View {
+    let source: SourceSearchResult
+
+    private var mediaIcon: String {
+        switch source.mediaKind {
+        case .text: return "doc.text"
+        case .video: return "play.rectangle.fill"
+        case .audio: return "headphones"
+        case .forum: return "bubble.left.and.bubble.right.fill"
+        }
+    }
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 11) {
+            Image(systemName: mediaIcon)
+                .foregroundStyle(source.defaultEnabled ? Color.accentColor : Color.secondary)
+                .frame(width: 26, height: 26)
+            VStack(alignment: .leading, spacing: 5) {
+                HStack(spacing: 7) {
+                    Text(source.title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                    if !source.defaultEnabled {
+                        Text("DORMANT")
+                            .font(.system(size: 9, weight: .bold))
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 2)
+                            .background(Color.secondary.opacity(0.13), in: Capsule())
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                if let description = source.sourceDescription, !description.isEmpty {
+                    Text(description)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                }
+                HStack(spacing: 5) {
+                    if let host = source.displayHost {
+                        Text(host).lineLimit(1)
+                    }
+                    ForEach(source.tags.prefix(3), id: \.self) { tag in
+                        Text(tag)
+                            .lineLimit(1)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 2)
+                            .background(Color.secondary.opacity(0.09), in: Capsule())
+                    }
+                }
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
+            }
+            Spacer(minLength: 4)
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .foregroundStyle(.tertiary)
+        }
+        .padding(12)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12))
+    }
+}
+
+private struct SourceSearchDetailView: View {
+    @Environment(FeedLoader.self) private var loader
+    @Environment(\.dismiss) private var dismiss
+    let source: SourceSearchResult
+
+    private var isEnabled: Bool { loader.isSourceEnabled(source.feedURL) }
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(source.title)
+                            .font(.title2.bold())
+                        if let host = source.displayHost {
+                            Text(host).font(.subheadline).foregroundStyle(.secondary)
+                        }
+                        if let description = source.sourceDescription {
+                            Text(description).font(.body)
+                        }
+                    }
+
+                    if !source.tags.isEmpty {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Topics").font(.headline)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(source.tags, id: \.self) { tag in
+                                        Text(tag)
+                                            .font(.caption)
+                                            .padding(.horizontal, 9)
+                                            .padding(.vertical, 6)
+                                            .background(Color.secondary.opacity(0.12), in: Capsule())
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    HStack(spacing: 10) {
+                        Label(source.mediaKind.rawValue.capitalized, systemImage: "dot.radiowaves.left.and.right")
+                        if let activity = source.activity {
+                            Label(activity.capitalized, systemImage: "waveform.path.ecg")
+                        }
+                        if let language = source.language {
+                            Label(language, systemImage: "character.book.closed")
+                        }
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
+                    if !source.defaultEnabled {
+                        Label(
+                            "Kept for discovery, but not refreshed by default because this current-sensitive source is dormant.",
+                            systemImage: "archivebox"
+                        )
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    }
+
+                    Button {
+                        loader.toggleSource(source.feedURL)
+                    } label: {
+                        Label(
+                            isEnabled ? "Disable source" : "Enable source",
+                            systemImage: isEnabled ? "minus.circle" : "plus.circle.fill"
+                        )
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+
+                    HStack {
+                        if let rawSiteURL = source.siteURL, let siteURL = URL(string: rawSiteURL) {
+                            Link(destination: siteURL) {
+                                Label("Website", systemImage: "safari")
+                            }
+                        }
+                        Spacer()
+                        ShareLink(item: source.feedURL) {
+                            Label("Share feed", systemImage: "square.and.arrow.up")
+                        }
+                    }
+                    .buttonStyle(.bordered)
+                }
+                .padding(20)
+            }
+            .navigationTitle("Source")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+        }
+    }
+}
+
 // MARK: - Initial Feed Loading
 
 struct InitialFeedLoadingView: View {
@@ -834,6 +1106,12 @@ struct InitialFeedLoadingView: View {
         )
     }
 
+    private var loadingTitle: String {
+        loader.hasPreviouslyLoadedContent
+            ? String(localized: "Loading your feed...")
+            : String(localized: "Loading articles")
+    }
+
     var body: some View {
         GeometryReader { proxy in
             VStack(spacing: 0) {
@@ -846,12 +1124,12 @@ struct InitialFeedLoadingView: View {
                 )
                 .frame(width: 152, height: 72)
 
-                Text("Preparando sua primeira seleção")
+                Text(loadingTitle)
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(.primary)
                     .padding(.top, 22)
 
-                Text("Sim, estamos te distraindo enquanto o conteúdo não chega.")
+                Text(String(localized: "We are keeping you entertained while the content arrives."))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -871,10 +1149,10 @@ struct InitialFeedLoadingView: View {
                     .frame(height: 5)
 
                     HStack {
-                        Text("\(loader.startupFetchedSourceCount) fontes prontas")
+                        Text(verbatim: "\(loader.startupFetchedSourceCount)/\(loader.startupTargetSourceCount)")
                             .contentTransition(.numericText())
                         Spacer()
-                        Text("meta: \(loader.startupTargetSourceCount)")
+                        Text(verbatim: "\(Int((progressFraction * 100).rounded()))%")
                     }
                     .font(.caption.monospacedDigit())
                     .foregroundStyle(.secondary)
@@ -883,12 +1161,12 @@ struct InitialFeedLoadingView: View {
                 .padding(.top, 28)
 
                 VStack(spacing: 7) {
-                    Text("Buscando agora")
+                    Text(String(localized: "Loading articles"))
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(.tertiary)
 
                     ZStack {
-                        Text(displayedSourceName.isEmpty ? "Conectando às primeiras fontes" : displayedSourceName)
+                        Text(displayedSourceName.isEmpty ? loadingTitle : displayedSourceName)
                             .id(displayedSourceName)
                             .transition(.opacity)
                     }
@@ -907,9 +1185,9 @@ struct InitialFeedLoadingView: View {
         }
         .disabled(true)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Preparando seu feed")
+        .accessibilityLabel(loadingTitle)
         .accessibilityValue(
-            "\(loader.startupFetchedSourceCount) de \(loader.startupTargetSourceCount) fontes prontas"
+            "\(loader.startupFetchedSourceCount)/\(loader.startupTargetSourceCount)"
         )
         .task {
             while !Task.isCancelled {

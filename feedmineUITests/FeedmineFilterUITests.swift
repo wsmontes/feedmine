@@ -1,3 +1,4 @@
+import Foundation
 import XCTest
 import OSLog
 
@@ -14,7 +15,7 @@ final class FeedmineFilterUITests: XCTestCase {
 
     override func setUp() {
         continueAfterFailure = true
-        app.launchArguments = ["-AppleLanguages", "(en)"]
+        app.launchArguments = ["-AppleLanguages", "(en)", "-UITestResetFilters"]
         app.launch()
     }
 
@@ -91,6 +92,11 @@ final class FeedmineFilterUITests: XCTestCase {
         let avg = timings.map(\.1).reduce(0, +) / Double(max(timings.count, 1))
         let max = timings.map(\.1).max() ?? 0
         log.info("  Summary: avg=\(String(format: "%.2f", avg))ms max=\(String(format: "%.2f", max))ms")
+        attachTimingReport(
+            named: "content-type-tap-timings",
+            rows: timings.map { "\($0.0),\(String(format: "%.2f", $0.1))" },
+            summary: "average_ms=\(String(format: "%.2f", avg)),max_ms=\(String(format: "%.2f", max))"
+        )
 
         XCTAssertLessThan(max, 1500, "Any content type tap must be under 1.5s")
         log.info("  ✅ PASS")
@@ -105,27 +111,41 @@ final class FeedmineFilterUITests: XCTestCase {
         waitForAppReady()
         openFilter()
 
-        // Select Videos
-        tapFilterButton("content-type-videos", log: log)
+        // Select Videos without toggling it back to All when state persisted
+        // from a previous test run.
+        let videoButton = app.buttons["content-type-videos"]
+        XCTAssertTrue(videoButton.waitForExistence(timeout: 3))
+        if (videoButton.value as? String) != "selected" {
+            videoButton.tap()
+        }
+        XCTAssertEqual(videoButton.value as? String, "selected")
         log.info("  Selected: Videos")
 
         // Select English language — scroll down to language section
         swipeToSection("Language", log: log)
-        let enBtn = app.buttons.element(matching: NSPredicate(format: "label CONTAINS 'English'"))
-        if enBtn.exists {
-            enBtn.tap()
+        let enBtn = app.buttons["language-en"]
+        if enBtn.waitForExistence(timeout: 3) {
+            if (enBtn.value as? String) != "selected" {
+                enBtn.tap()
+            }
+            XCTAssertEqual(enBtn.value as? String, "selected")
             log.info("  Selected: English language")
         } else {
-            log.warning("  English language button not found in filter")
+            XCTFail("English language button not found in filter")
         }
 
         // Dismiss
         app.buttons["filter-done"].tap()
-        sleep(5)
 
-        // Verify cards appear
-        let cellCount = app.cells.count
-        log.info("  Visible cells after video+en filter: \(cellCount)")
+        // Assert the actual metadata on visible cards, not merely their
+        // presence. This catches feeds that incorrectly declare English.
+        let identifiers = waitForFeedItemIdentifiers(timeout: 10)
+        XCTAssertFalse(identifiers.isEmpty, "Video + English should surface cards")
+        XCTAssertTrue(
+            identifiers.allSatisfy { $0.hasPrefix("feed-item-en-") },
+            "English-only filter leaked non-English cards: \(identifiers)"
+        )
+        log.info("  Visible English cards after video+en filter: \(identifiers.count)")
 
         // Screenshot for diagnostics
         let shot = app.screenshot()
@@ -318,7 +338,7 @@ final class FeedmineFilterUITests: XCTestCase {
         let typeIDs = ["content-type-all", "content-type-articles",
                        "content-type-videos", "content-type-podcasts"]
 
-        var results: [(String, Double)] = []
+        var results: [(String, Double, Double, Bool)] = []
 
         for typeID in typeIDs {
             openFilter()
@@ -333,12 +353,16 @@ final class FeedmineFilterUITests: XCTestCase {
             btn.tap()
             app.buttons["filter-done"].tap()
             let elapsed = (CFAbsoluteTimeGetCurrent() - start) * 1000
-            results.append((typeID, elapsed))
             log.info("  [combo] \(typeID) select+dismiss: \(String(format: "%.2f", elapsed))ms")
 
-            sleep(2) // let feed update
-            let cellCount = app.cells.count
-            log.info("    → \(cellCount) visible cells")
+            let waitStart = CFAbsoluteTimeGetCurrent()
+            let identifiers = waitForFeedItemIdentifiers(timeout: 8)
+            let contentAppeared = !identifiers.isEmpty
+            let contentWait = (CFAbsoluteTimeGetCurrent() - waitStart) * 1000
+            results.append((typeID, elapsed, contentWait, contentAppeared))
+            log.info("    content available: \(contentAppeared) after \(String(format: "%.2f", contentWait))ms")
+            log.info("    → \(identifiers.count) visible cards")
+            XCTAssertTrue(contentAppeared, "\(typeID) must show cards within 8 seconds")
 
             // Clear for next iteration
             openFilter()
@@ -348,6 +372,13 @@ final class FeedmineFilterUITests: XCTestCase {
 
         let avg = results.map(\.1).reduce(0, +) / Double(max(results.count, 1))
         log.info("  Avg select+dismiss: \(String(format: "%.2f", avg))ms")
+        attachTimingReport(
+            named: "filter-matrix-timings",
+            rows: results.map {
+                "\($0.0),select_and_dismiss_ms=\(String(format: "%.2f", $0.1)),content_wait_ms=\(String(format: "%.2f", $0.2)),content_appeared=\($0.3)"
+            },
+            summary: "average_select_and_dismiss_ms=\(String(format: "%.2f", avg))"
+        )
 
         // Screenshot of final state
         let shot = app.screenshot()
@@ -386,6 +417,30 @@ final class FeedmineFilterUITests: XCTestCase {
         }
         btn.tap()
         usleep(100_000)
+    }
+
+    private func attachTimingReport(named name: String, rows: [String], summary: String) {
+        let report = (["measurement,details"] + rows + [summary]).joined(separator: "\n")
+        let attachment = XCTAttachment(
+            data: Data(report.utf8),
+            uniformTypeIdentifier: "public.plain-text"
+        )
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
+    private func waitForFeedItemIdentifiers(timeout: TimeInterval) -> [String] {
+        let deadline = Date().addingTimeInterval(timeout)
+        repeat {
+            let identifiers = app.descendants(matching: .any)
+                .matching(NSPredicate(format: "identifier BEGINSWITH %@", "feed-item-"))
+                .allElementsBoundByIndex
+                .map(\.identifier)
+            if !identifiers.isEmpty { return identifiers }
+            usleep(100_000)
+        } while Date() < deadline
+        return []
     }
 
     private func swipeToSection(_ name: String, log: Logger) {

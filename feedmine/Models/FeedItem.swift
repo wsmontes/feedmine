@@ -108,6 +108,20 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
         imageURL ?? youTubeThumbnailURL
     }
 
+    /// Direct article pages can often supply Open Graph or responsive artwork
+    /// even when their feeds omit media. Google News aggregator links are
+    /// excluded because they expose Google chrome rather than publisher art.
+    var canResolveArticleImage: Bool {
+        guard !isPodcast,
+              let articleURL = URL(string: url),
+              ["http", "https"].contains(articleURL.scheme?.lowercased() ?? "") else { return false }
+        return articleURL.host?.lowercased() != "news.google.com"
+    }
+
+    var hasPotentialImage: Bool {
+        bestImageURL != nil || canResolveArticleImage
+    }
+
     /// True if this item has an audio enclosure (podcast episode)
     var isPodcast: Bool { audioURL != nil }
 

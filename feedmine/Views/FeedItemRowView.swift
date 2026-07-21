@@ -8,8 +8,11 @@ struct FeedItemRowView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             // Thumbnail
-            if let imageURL = item.imageURL, let url = URL(string: imageURL) {
-                CachedAsyncImage(url: url)
+            if item.hasPotentialImage {
+                CachedAsyncImage(
+                    url: item.bestImageURL.flatMap(URL.init(string:)),
+                    articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil
+                )
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 56, height: 56)
                     .clipShape(RoundedRectangle(cornerRadius: 8))

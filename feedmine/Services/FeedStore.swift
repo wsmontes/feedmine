@@ -16,6 +16,7 @@ final class FeedStore {
     let networkMonitor = NetworkMonitor()
     let userRepo: UserStateStore
     let bookmarkStore: BookmarkStore
+    let sourceCollectionStore: SourceCollectionStore
     let searchEngine: SearchEngine
     let whatsNewManager: WhatsNewManager
 
@@ -35,6 +36,7 @@ final class FeedStore {
     private(set) var totalDiscarded = 0
     var emptyStateFetchedCount: Int = 0
     var emptyStateFetchTotal: Int = 0
+    private(set) var hasPreviouslyLoadedContent = false
     private(set) var startupFetchedSourceCount = 0
     private(set) var startupTargetSourceCount = 100
     private(set) var startupTotalSourceCount = 0
@@ -224,12 +226,37 @@ final class FeedStore {
     private struct LanguageDetectionInput: Sendable {
         let title: String
         let excerpt: String
-        /// Explicit language from the source OPML (xml:lang or category directory).
+        /// Language declared by the item/feed or inherited from the catalogue.
+        /// It is a fallback, not an authority: publishers often ship stale or
+        /// incorrect language metadata.
         let explicitLanguage: String?
-        /// True when `explicitLanguage` came from the item itself (feed XML).
-        /// Item-level language is trusted; source-level (OPML) can be overridden
-        /// when detection contradicts it.
-        let hasItemLanguage: Bool
+    }
+
+    /// Scripts with a dependable one-language answer for Feedmine's supported
+    /// language codes. This also handles short headlines that are too small for
+    /// NLLanguageRecognizer and mixed feeds whose XML incorrectly declares en.
+    nonisolated private static func distinctiveScriptLanguage(in text: String) -> String? {
+        let scalars = text.unicodeScalars
+        func count(in range: ClosedRange<UInt32>) -> Int {
+            scalars.reduce(into: 0) { total, scalar in
+                if range.contains(scalar.value) { total += 1 }
+            }
+        }
+
+        if count(in: 0x0980...0x09FF) >= 2 { return "bn" } // Bengali
+        if count(in: 0x0530...0x058F) >= 2 { return "hy" } // Armenian
+        if count(in: 0x10A0...0x10FF) >= 2 { return "ka" } // Georgian
+        if count(in: 0x0E00...0x0E7F) >= 2 { return "th" } // Thai
+        if count(in: 0x1780...0x17FF) >= 2 { return "km" } // Khmer
+        if count(in: 0xAC00...0xD7AF) >= 2 { return "ko" } // Hangul
+        if count(in: 0x0590...0x05FF) >= 2 { return "he" } // Hebrew
+        if count(in: 0x0370...0x03FF) >= 2 { return "el" } // Greek
+        let kanaCount = count(in: 0x3040...0x30FF)
+        if kanaCount >= 2 { return "ja" }
+        // Han characters are not distinctive to Chinese: Japanese uses them
+        // heavily, and an otherwise English article may quote a Chinese name.
+        // Let NLLanguageRecognizer evaluate the complete text instead.
+        return nil
     }
 
     /// Run language detection for a batch of items off the main actor.
@@ -244,12 +271,16 @@ final class FeedStore {
         let minimumOverrideConfidence = 0.65
         let minimumOverrideMargin = 0.15
         return inputs.map { input in
-            // Item-level language is authoritative — never override it.
-            if input.hasItemLanguage, let lang = input.explicitLanguage {
-                return lang
-            }
             let text = (input.title + " " + input.excerpt)
                 .trimmingCharacters(in: .whitespacesAndNewlines)
+            // NaturalLanguage has no Azerbaijani model and commonly reports
+            // Turkish instead. Schwa is distinctive in Azerbaijani Latin text.
+            if text.rangeOfCharacter(from: CharacterSet(charactersIn: "Əə")) != nil {
+                return "az"
+            }
+            if let scriptLanguage = distinctiveScriptLanguage(in: text) {
+                return scriptLanguage
+            }
             // Run detection when there's enough text. Source-level OPML tags
             // can be wrong for multilingual feeds (e.g. youtube.opml tagged
             // "en" with content in many languages).
@@ -284,6 +315,28 @@ final class FeedStore {
             }
             return nil
         }
+    }
+
+    nonisolated static func resolvedLanguage(
+        title: String,
+        excerpt: String,
+        explicitLanguage: String? = nil
+    ) -> String? {
+        detectLanguages([
+            LanguageDetectionInput(
+                title: title,
+                excerpt: excerpt,
+                explicitLanguage: normalizedLanguageCode(explicitLanguage)
+            )
+        ]).first ?? nil
+    }
+
+    nonisolated static func googleNewsPublisher(fromArticleTitle title: String) -> String? {
+        guard let separator = title.range(of: " - ", options: .backwards) else { return nil }
+        let publisher = title[separator.upperBound...]
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard publisher.count >= 2, publisher.count <= 80 else { return nil }
+        return publisher
     }
 
     /// Apply all active filters to a list of items — single source of truth.
@@ -362,7 +415,9 @@ final class FeedStore {
         }
     }
     var isSearching = false
-    private var searchResults: [FeedItem] = []
+    private(set) var isSearchLoading = false
+    private(set) var unifiedSearchResults = UnifiedSearchResults.empty
+    private var searchGeneration: UInt64 = 0
 
     // MARK: - Read & Seen state
     private(set) var readItemIDs: Set<String> = []
@@ -375,11 +430,13 @@ final class FeedStore {
     private(set) var loadedIDsCount: Int = 0
     private var loadedIDs: Set<String> = []  // Bloom filter for dedup
     private static let lastWhatsNewSeenAtKey = "last_whats_new_seen_at"
+    private static let hasPreviouslyLoadedContentKey = "has_previously_loaded_feed_content"
 
     /// Computed forwarding for What's New items from the manager.
     var whatsNewItems: [FeedItem] { whatsNewManager.whatsNewItems }
 
     private var hasStarted = false             // guards one-time startup work
+    private let usesPersistentStorage: Bool
     nonisolated private static let coldStartMinimumSourceCount = 100
     nonisolated private static let coldStartCatalogSourceCount = 240
     nonisolated private static let coldStartFetchChunkSize = 240
@@ -452,7 +509,10 @@ final class FeedStore {
             await task.value
         }
 
-        guard !pendingReservoirItems.isEmpty else { return }
+        // Keep background collection off the main feed while a filter sheet is
+        // open. The pending items stay in memory and are published as soon as
+        // editing ends, so a local toggle never competes with an interleave.
+        guard !isEditingFilters, !pendingReservoirItems.isEmpty else { return }
         let batch = pendingReservoirItems
 
         // Compute interleave off the main actor — this is the expensive part
@@ -499,6 +559,9 @@ final class FeedStore {
     init(inMemory: Bool = false) throws {
         let endInitMetric = FeedMetrics.beginInterval("FeedStore.init")
         defer { endInitMetric() }
+        self.usesPersistentStorage = !inMemory
+        self.hasPreviouslyLoadedContent = !inMemory
+            && UserDefaults.standard.bool(forKey: Self.hasPreviouslyLoadedContentKey)
         if inMemory {
             self.db = try DatabaseQueue(configuration: Self.dbConfig)
         } else {
@@ -508,7 +571,12 @@ final class FeedStore {
         // user.sqlite — owns bookmark identity, survives catalog rebuilds
         self.userRepo = try UserStateStore(inMemory: inMemory)
         self.bookmarkStore = BookmarkStore(userDB: userRepo.db, contentDB: db)
-        self.searchEngine = SearchEngine(db: db)
+        self.sourceCollectionStore = SourceCollectionStore(db: userRepo.db)
+        self.searchEngine = SearchEngine(
+            db: db,
+            userDB: userRepo.db,
+            catalogURL: CatalogRuntime.activeCatalogURL()
+        )
         self.whatsNewManager = WhatsNewManager(db: db)
         // Migrate legacy bookmark data from feedmine.sqlite → user.sqlite
         // if this is the first launch after the split.
@@ -519,6 +587,7 @@ final class FeedStore {
                     if try self.userRepo.needsLegacyMigration(legacyDB: self.db) {
                         try await self.userRepo.migrateFromLegacy(legacyDB: self.db)
                     }
+                    try await self.bookmarkStore.synchronizeRetentionPins()
                 } catch {
                     Log.db.error("Bookmark migration to user.sqlite failed: \(error)")
                 }
@@ -622,20 +691,16 @@ final class FeedStore {
         Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970)
     }
 
-    /// Read a small, varied starter set from the catalog already bundled with
-    /// the app. This is intentionally not a replacement for SourceRegistry:
+    /// Read a small, varied starter set from the active local catalog. This is
+    /// intentionally not a replacement for SourceRegistry:
     /// it only overlaps first-install network latency with the authoritative
     /// OPML/taxonomy reconstruction.
-    nonisolated static func bundledStarterSources(
+    nonisolated static func activeStarterSources(
         language: String,
         limit: Int = coldStartCatalogSourceCount
     ) async -> [FeedSource] {
         guard limit > 0,
-              let catalogURL = Bundle.main.url(
-                forResource: "catalog",
-                withExtension: "sqlite",
-                subdirectory: "FeedEngine"
-              ) else { return [] }
+              let catalogURL = CatalogRuntime.activeCatalogURL() else { return [] }
 
         let normalizedLanguage = normalizedLanguageCode(language) ?? "en"
         return await Task.detached(priority: .userInitiated) {
@@ -657,8 +722,10 @@ final class FeedStore {
                         JOIN catalog_node n ON n.id = p.node_id
                         WHERE s.language = ?
                           AND s.request_url LIKE 'https://%'
+                          AND s.default_enabled = 1
                           AND n.kind = 3
                           AND n.key NOT LIKE 'countries/%'
+                          AND n.key NOT LIKE '90_countries/%'
                           AND n.key NOT LIKE 'languages/%'
                         GROUP BY s.id, s.title, s.request_url, s.media_kind, s.language
                         ORDER BY RANDOM()
@@ -686,10 +753,20 @@ final class FeedStore {
                 }
                 return SourceScheduler.diverseSources(from: scored, limit: limit)
             } catch {
-                Log.feed.error("Bundled starter catalog failed: \(error.localizedDescription)")
+                Log.feed.error("Active starter catalog failed: \(error.localizedDescription)")
                 return []
             }
         }.value
+    }
+
+    /// Compatibility entry point retained for tests and older callers. The
+    /// returned data now comes from the active local snapshot, which may be the
+    /// bundled bootstrap or a verified managed update.
+    nonisolated static func bundledStarterSources(
+        language: String,
+        limit: Int = coldStartCatalogSourceCount
+    ) async -> [FeedSource] {
+        await activeStarterSources(language: language, limit: limit)
     }
 
     nonisolated static func coldStartRunwayIsUseful(
@@ -700,7 +777,10 @@ final class FeedStore {
         return items.count >= target && Set(items.map(\.sourceURL)).count >= target
     }
 
-    nonisolated private static func bundledCatalogSourceCount() -> Int {
+    nonisolated private static func activeCatalogSourceCount() -> Int {
+        if let count = CatalogRuntime.activeManifest()?.sourceCount {
+            return count
+        }
         guard let url = Bundle.main.url(
             forResource: "catalog-manifest",
             withExtension: "json",
@@ -797,7 +877,7 @@ final class FeedStore {
 
         return Task { [weak self] in
             guard let self else { return }
-            let sources = await Self.bundledStarterSources(language: language)
+            let sources = await Self.activeStarterSources(language: language)
             guard !Task.isCancelled, !sources.isEmpty else { return }
 
             // Keep bootstrap items eligible until the full registry replaces
@@ -856,7 +936,7 @@ final class FeedStore {
         isPreparingInitialRunway = true
         startupFetchedSourceCount = 0
         startupTargetSourceCount = Self.coldStartMinimumSourceCount
-        startupTotalSourceCount = Self.bundledCatalogSourceCount()
+        startupTotalSourceCount = Self.activeCatalogSourceCount()
         startupRecentSourceNames = []
         startupRunwayReady = false
         startupSuccessfulSourceURLs.removeAll(keepingCapacity: true)
@@ -879,9 +959,15 @@ final class FeedStore {
 
         // Build taxonomy tree from loaded sources — try cache first, build if needed
         let endTaxonomyMetric = FeedMetrics.beginInterval("Taxonomy.loadOrBuild")
-        let taxonomyCacheHit = TaxonomyStore.shared.loadFromCache(sources: registry.sources)
+        let taxonomyCacheHit = TaxonomyStore.shared.loadFromCache(
+            sources: registry.sources,
+            sharedCountrySourceURLs: registry.sharedCountrySourceURLs
+        )
         if !taxonomyCacheHit {
-            await TaxonomyStore.shared.build(from: registry.sources)
+            await TaxonomyStore.shared.build(
+                from: registry.sources,
+                sharedCountrySourceURLs: registry.sharedCountrySourceURLs
+            )
         }
         endTaxonomyMetric()
         if taxonomyCacheHit {
@@ -1019,12 +1105,53 @@ final class FeedStore {
         }
     }
 
+    /// Rebind runtime consumers after a verified managed snapshot is activated.
+    /// Feed items, bookmarks, history, collections, and user-imported sources
+    /// live outside the managed catalog and are deliberately preserved.
+    func reloadActiveCatalogAfterUpdate() async {
+        let importedSources = registry.sources.filter { $0.region == "imported" }
+        await registry.loadFromOPML()
+        if !importedSources.isEmpty {
+            registry.sources = OPMLParser.deduplicateSources(
+                registry.sources + importedSources
+            )
+            registry.prepareFilterCaches()
+        }
+
+        reservoir.sourceRegionMap = registry.regionMap
+        await TaxonomyStore.shared.build(
+            from: registry.sources,
+            sharedCountrySourceURLs: registry.sharedCountrySourceURLs
+        )
+        cachedTaxonomyNodeIDs = []
+        cachedTaxonomyFeedURLs = []
+        startupTotalSourceCount = registry.sourceCount
+        searchEngine.replaceCatalog(at: CatalogRuntime.activeCatalogURL())
+
+        setFilter(
+            region: activeRegion,
+            nodeIDs: activeNodeIDs,
+            type: activeContentType,
+            mood: activeMood,
+            languages: activeLanguages
+        )
+        FeedMetrics.event(
+            "CatalogUpdate.reloaded",
+            "sources=\(registry.sourceCount) revision=\(CatalogRuntime.activeManifest()?.revision ?? 0)"
+        )
+    }
+
     // MARK: - UI Pipeline
     /// All visibleItems writes route through this single pipeline.
     /// Category‑A triggers (.flush) cancel everything; scroll/fetch/trim
     /// chain behind the current task so only one actor mutates the UI.
     private enum FeedUIUpdate {
-        case flush(forceFetch: Bool = false, skipRead: Bool = false, generation: Int64 = 0)
+        case flush(
+            forceFetch: Bool = false,
+            skipRead: Bool = false,
+            skipNetworkFetch: Bool = false,
+            generation: Int64 = 0
+        )
         case append         // Move from reservoir → visible (scroll)
         case refresh(generation: Int64 = 0)  // Sync visible from reservoir (after fetch)
         case trim(Int, generation: Int64 = 0)      // Trim buffer with currentVisibleIndex
@@ -1038,9 +1165,21 @@ final class FeedStore {
     /// Increments `visibleItemsGeneration` so FeedLoader caches invalidate reliably.
     private func setVisibleItems(_ items: [FeedItem]) {
         let stamped = items.map { $0.stamped(readItemIDs: readItemIDs, bookmarkItemIDs: bookmarkedItemIDs) }
-        guard stamped != visibleItems else { return }
+        guard stamped != visibleItems else {
+            markPreviouslyLoadedContentIfNeeded(stamped)
+            return
+        }
         visibleItems = stamped
         visibleItemsGeneration &+= 1
+        markPreviouslyLoadedContentIfNeeded(stamped)
+    }
+
+    private func markPreviouslyLoadedContentIfNeeded(_ items: [FeedItem]) {
+        guard !items.isEmpty, !hasPreviouslyLoadedContent else { return }
+        hasPreviouslyLoadedContent = true
+        if usesPersistentStorage {
+            UserDefaults.standard.set(true, forKey: Self.hasPreviouslyLoadedContentKey)
+        }
     }
 
     /// Single writer for `visibleItems`. Every mutation routes through here.
@@ -1051,7 +1190,7 @@ final class FeedStore {
         // Bookmark mode is a fixed snapshot — no screen mutations allowed
         guard !isBookmarkFeed else { return }
         switch update {
-        case .flush(let forceFetch, let skipRead, let generation):
+        case .flush(let forceFetch, let skipRead, let skipNetworkFetch, let generation):
             pipelineTask?.cancel()
             progressiveFetchTask?.cancel()
             trimDebounceTask?.cancel()
@@ -1070,7 +1209,8 @@ final class FeedStore {
                 }
                 let needsFilteredBreadth = self.activeContentType != .all
                     && Set(self.visibleItems.map(\.sourceURL)).count < Self.immediateFilteredSourceTarget
-                if forceFetch || self.visibleItems.count < Reservoir.pageSize || needsFilteredBreadth {
+                if !skipNetworkFetch,
+                   (forceFetch || self.visibleItems.count < Reservoir.pageSize || needsFilteredBreadth) {
                     await self.fetchNextBatch()
                 }
                 // A filtered fetch may add providers after the cached page was
@@ -1081,7 +1221,8 @@ final class FeedStore {
                    (generation == 0 || generation == self.filterGeneration) {
                     await self.reloadFromSQLite(skipRead: skipRead, generation: generation)
                 }
-                if !Task.isCancelled,
+                if self.usesPersistentStorage,
+                   !Task.isCancelled,
                    generation == self.filterGeneration {
                     self.startCoverageMining(generation: generation)
                 }
@@ -1349,9 +1490,14 @@ final class FeedStore {
 
     func endFilterEditing() {
         isEditingFilters = false
-        guard let generation = pendingFilterReloadGeneration else { return }
-        pendingFilterReloadGeneration = nil
-        scheduleFilterReload(generation: generation, delay: .milliseconds(80))
+        if let generation = pendingFilterReloadGeneration {
+            pendingFilterReloadGeneration = nil
+            scheduleFilterReload(generation: generation, delay: .milliseconds(80))
+        } else if !pendingReservoirItems.isEmpty {
+            Task { [weak self] in
+                await self?.flushPendingReservoir()
+            }
+        }
     }
 
     private func scheduleFilterReload(generation: Int64, delay: Duration) {
@@ -1363,19 +1509,32 @@ final class FeedStore {
 
             self.refreshCachedTaxonomyFeedURLsIfNeeded()
             let priorityURLs = self.cachedTaxonomyFeedURLs
-            if !priorityURLs.isEmpty {
+            self.loadingState = .refreshing
+            // Render the matching local cache before dispatching network work.
+            // Besides making a saved feed react immediately, this prevents a
+            // slow source probe from competing with the first filtered frame.
+            self.refreshWhatsNew(shouldBoost: false)
+            let reloadFromCacheBeforeUrgentFetch = !priorityURLs.isEmpty
+            self.applyUpdate(.flush(
+                skipNetworkFetch: reloadFromCacheBeforeUrgentFetch,
+                generation: generation
+            ))
+            let reloadTask = self.pipelineTask
+
+            // In-memory stores are test/preview sandboxes. Their filtered
+            // pipeline must stay local and deterministic instead of leaving
+            // network tasks alive after an XCTest has released the store.
+            if !priorityURLs.isEmpty, self.usesPersistentStorage {
                 self.isUrgentFetching = true
                 self.urgentFetchTask = Task { [weak self] in
+                    await reloadTask?.value
+                    guard !Task.isCancelled else { return }
                     guard let self else { return }
                     await self.fetchUrgentTaxonomyBatch(sourceURLs: priorityURLs, generation: generation)
                     self.isUrgentFetching = false
                     self.startBackgroundRefresh()
                 }
             }
-
-            self.loadingState = .refreshing
-            self.refreshWhatsNew()
-            self.applyUpdate(.flush(generation: generation))
         }
     }
 
@@ -1409,24 +1568,28 @@ final class FeedStore {
     // MARK: - Search
     func search(_ query: String) {
         isSearching = true
+        isSearchLoading = true
+        searchGeneration &+= 1
+        let generation = searchGeneration
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !q.isEmpty else {
-            searchResults = []
-            applyUpdate(.replace([]))
+            unifiedSearchResults = .empty
+            isSearchLoading = false
             return
         }
         Task {
-            let results = await searchEngine.search(query, region: activeRegion, taxonomyNodeIDs: activeNodeIDs)
-            guard isSearching else { return }
-            searchResults = results
-            applyUpdate(.replace(applyFilters(searchResults)))
+            let results = await searchEngine.unifiedSearch(q)
+            guard isSearching, generation == searchGeneration else { return }
+            unifiedSearchResults = results
+            isSearchLoading = false
         }
     }
 
     func clearSearch() {
         isSearching = false
-        searchResults = []
-        applyUpdate(.flush())
+        isSearchLoading = false
+        searchGeneration &+= 1
+        unifiedSearchResults = .empty
     }
 
     // MARK: - Read & Seen
@@ -1548,8 +1711,18 @@ final class FeedStore {
     }
 
     func toggleCategory(_ category: String) {
-        registry.toggleCategory(category)
+        setCategoryEnabled(category, enabled: registry.status(of: SourceRegistry.categoryKey(category)) == .off)
+    }
+
+    func setCategoryEnabled(_ category: String, enabled: Bool) {
+        registry.setCategoryEnabled(category, enabled: enabled)
         // Category toggle is structural — reload feed
+        scheduleSourceEnablementRefresh()
+    }
+
+    func setTopicRegionsEnabled(_ enabled: Bool) {
+        registry.setTopicRegionsEnabled(enabled)
+        resetWhatsNewBaseline()
         scheduleSourceEnablementRefresh()
     }
 
@@ -1559,7 +1732,7 @@ final class FeedStore {
             try? await Task.sleep(for: .milliseconds(300))
             guard !Task.isCancelled, let self else { return }
             self.loadingState = .refreshing
-            self.refreshWhatsNew()
+            self.refreshWhatsNew(shouldBoost: false)
             self.applyUpdate(.flush())
         }
     }
@@ -1614,10 +1787,9 @@ final class FeedStore {
         )
     }
 
-    /// Refresh What's New: clear the pool, re-seed from DB, and trigger
-    /// a booster fetch. Called on any user-triggered update (startup, shake,
-    /// filter change) so the carousel always reflects the current context.
-    func refreshWhatsNew(shouldBoost: Bool = true) {
+    /// Refresh What's New from the local DB. The network booster is reserved
+    /// for startup so filter edits never cancel a write already in progress.
+    func refreshWhatsNew(shouldBoost: Bool = false) {
         whatsNewManager.refreshWhatsNew(
             seedFromDB: { [self] in await seedWhatsNewFromDB() },
             booster: { [self] in
@@ -1665,12 +1837,35 @@ final class FeedStore {
     /// Returns the deduplicated new items for the reservoir / prefetch / search.
     @discardableResult
     func persistFetchedItems(_ items: [FeedItem], regionOverride: String? = nil) async -> [FeedItem] {
+        // Existing IDs are normally skipped, but a newer parser may recover
+        // artwork that an older build missed. Repair only empty image fields so
+        // read state, bookmarks, and other persisted metadata stay untouched.
+        let imageRepairs = items.compactMap { item -> (id: String, imageURL: String)? in
+            guard loadedIDs.contains(item.id),
+                  let imageURL = item.bestImageURL else { return nil }
+            return (item.id, imageURL)
+        }
         var seen = Set<String>()
         let actualNew = items.filter { item in
             guard !loadedIDs.contains(item.id) else { return false }
             return seen.insert(item.id).inserted
         }
-        guard !actualNew.isEmpty else { return [] }
+        guard !actualNew.isEmpty else {
+            guard !imageRepairs.isEmpty else { return [] }
+            do {
+                try await db.write { db in
+                    for repair in imageRepairs {
+                        try db.execute(
+                            sql: "UPDATE feed_item SET image_url = ? WHERE id = ? AND image_url IS NULL",
+                            arguments: [repair.imageURL, repair.id]
+                        )
+                    }
+                }
+            } catch {
+                Log.db.warning("persistFetchedItems: image repair failed: \(error.localizedDescription)")
+            }
+            return []
+        }
 
         // Collect regions + explicit source languages on the main actor
         // (dictionary lookups are O(1) and cheap). Language detection via
@@ -1681,12 +1876,10 @@ final class FeedStore {
             let sourceLang = Self.normalizedLanguageCode(registry.languageFor(sourceURL: item.sourceURL))
             // Item-level language is authoritative; source-level (OPML) can
             // be overridden by detection when content text disagrees.
-            let hasItemLang = itemLang != nil
             return LanguageDetectionInput(
                 title: item.title,
                 excerpt: item.excerpt,
-                explicitLanguage: itemLang ?? sourceLang,
-                hasItemLanguage: hasItemLang
+                explicitLanguage: itemLang ?? sourceLang
             )
         }
         let resolvedLanguages: [String?] = await Task.detached(priority: .utility) {
@@ -1726,6 +1919,12 @@ final class FeedStore {
             // write — do/catch handles that without the 3x per-item SQL
             // overhead of SAVEPOINT/RELEASE/ROLLBACK.
             let succeeded: [FeedItem] = try await db.write { db -> [FeedItem] in
+                for repair in imageRepairs {
+                    try db.execute(
+                        sql: "UPDATE feed_item SET image_url = ? WHERE id = ? AND image_url IS NULL",
+                        arguments: [repair.imageURL, repair.id]
+                    )
+                }
                 var ok: [FeedItem] = []
                 for item in enriched {
                     do {
@@ -2682,9 +2881,48 @@ final class FeedStore {
                 return Array(allItems.prefix(topN))
             }
 
+            if contentType == .all {
+                // A timestamp-only window can be entirely consumed by prolific
+                // article sources. Read bounded media slices independently so
+                // a mixed, language-only feed can still surface its videos and
+                // podcasts while preserving a large pool of recent articles.
+                let illustratedTextItems = try request
+                    .filter(Column("audio_url") == nil)
+                    .filter(!Column("source_url").like("%youtube%"))
+                    .filter(!Column("source_url").like("%reddit%"))
+                    .filter(Column("image_url") != nil)
+                    .order(Column("published_at").desc)
+                    .limit(Self.illustratedTextCandidateReadLimit)
+                    .fetchAll(db)
+                let textItems = try request
+                    .filter(Column("audio_url") == nil)
+                    .filter(!Column("source_url").like("%youtube%"))
+                    .filter(!Column("source_url").like("%reddit%"))
+                    .filter(Column("image_url") == nil)
+                    .order(Column("published_at").desc)
+                    .limit(Self.textCandidateReadLimit - Self.illustratedTextCandidateReadLimit)
+                    .fetchAll(db)
+                let videoItems = try request
+                    .filter(Column("source_url").like("%youtube%"))
+                    .order(Column("published_at").desc)
+                    .limit(Self.mediaCandidateReadLimit)
+                    .fetchAll(db)
+                let audioItems = try request
+                    .filter(Column("audio_url") != nil)
+                    .order(Column("published_at").desc)
+                    .limit(Self.mediaCandidateReadLimit)
+                    .fetchAll(db)
+                let forumItems = try request
+                    .filter(Column("source_url").like("%reddit%"))
+                    .order(Column("published_at").desc)
+                    .limit(Self.forumCandidateReadLimit)
+                    .fetchAll(db)
+                return illustratedTextItems + textItems + videoItems + audioItems + forumItems
+            }
+
             return try request
                 .order(Column("published_at").desc)
-                .limit(1200)
+                .limit(Self.candidateReadLimit)
                 .fetchAll(db)
         }) ?? []
         var feedItems = items.map { $0.toFeedItem() }
@@ -2737,6 +2975,15 @@ final class FeedStore {
     /// consume every slot. The first pass admits only a small number per
     /// provider; a second pass fills unused capacity so narrow filters still
     /// retain all available content.
+    // Persistence caps each feed at 50 rows. Reading 5,000 candidates therefore
+    // reaches at least 100 feeds even when prolific, fresh aggregator queries
+    // occupy the entire leading edge of a language or category selection.
+    nonisolated static let candidateReadLimit = 5_000
+    nonisolated static let textCandidateReadLimit = 4_000
+    nonisolated static let illustratedTextCandidateReadLimit = 300
+    nonisolated static let mediaCandidateReadLimit = 500
+    nonisolated static let forumCandidateReadLimit = 100
+
     nonisolated static func balancedCandidatePool(
         _ items: [FeedItem],
         limit: Int = 500,
@@ -2744,23 +2991,58 @@ final class FeedStore {
     ) -> [FeedItem] {
         guard limit > 0, !items.isEmpty else { return [] }
 
-        var selected: [FeedItem] = []
-        var overflowBySource: [String: [FeedItem]] = [:]
-        var sourceOrder: [String] = []
-        var sourceCounts: [String: Int] = [:]
+        var uniqueItems: [FeedItem] = []
         var seenIDs = Set<String>()
+        for item in items where seenIDs.insert(item.id).inserted {
+            uniqueItems.append(item)
+        }
+
+        var selected: [FeedItem] = []
+        var overflowByProvider: [String: [FeedItem]] = [:]
+        var providerOrder: [String] = []
+        var providerCounts: [String: Int] = [:]
+        var selectedIDs = Set<String>()
         selected.reserveCapacity(min(limit, items.count))
 
-        for item in items where seenIDs.insert(item.id).inserted {
-            if sourceCounts[item.sourceURL] == nil {
-                sourceOrder.append(item.sourceURL)
+        func registerProvider(for item: FeedItem) -> String {
+            let provider = Reservoir.providerKey(item)
+            if providerCounts[provider] == nil {
+                providerOrder.append(provider)
             }
-            if sourceCounts[item.sourceURL, default: 0] < initialPerSource,
+            return provider
+        }
+
+        // Reserve a bounded first pass for each non-text medium. The usual
+        // source round-robin still applies, so one podcast or channel cannot
+        // spend the reservation by itself.
+        let perMediumReservation = max(1, limit / 5)
+        for predicate in [
+            { (item: FeedItem) in item.isPodcast },
+            { (item: FeedItem) in item.isYouTube },
+            { (item: FeedItem) in item.isForum },
+        ] {
+            var admitted = 0
+            for item in uniqueItems where admitted < perMediumReservation {
+                guard predicate(item) else { continue }
+                let provider = registerProvider(for: item)
+                guard providerCounts[provider, default: 0] < initialPerSource,
+                      selected.count < limit else { continue }
+                selected.append(item)
+                selectedIDs.insert(item.id)
+                providerCounts[provider, default: 0] += 1
+                admitted += 1
+            }
+        }
+
+        for item in uniqueItems where !selectedIDs.contains(item.id) {
+            let provider = registerProvider(for: item)
+            if providerCounts[provider, default: 0] < initialPerSource,
                selected.count < limit {
                 selected.append(item)
-                sourceCounts[item.sourceURL, default: 0] += 1
+                selectedIDs.insert(item.id)
+                providerCounts[provider, default: 0] += 1
             } else {
-                overflowBySource[item.sourceURL, default: []].append(item)
+                overflowByProvider[provider, default: []].append(item)
             }
         }
 
@@ -2768,17 +3050,17 @@ final class FeedStore {
         // partially merged data. Build the index incrementally so a repeated
         // provider never turns a recoverable refresh into a duplicate-key trap.
         var overflowIndices: [String: Int] = [:]
-        overflowIndices.reserveCapacity(sourceOrder.count)
-        for sourceURL in sourceOrder {
-            overflowIndices[sourceURL] = 0
+        overflowIndices.reserveCapacity(providerOrder.count)
+        for provider in providerOrder {
+            overflowIndices[provider] = 0
         }
         while selected.count < limit {
             var appended = false
-            for sourceURL in sourceOrder where selected.count < limit {
-                let index = overflowIndices[sourceURL, default: 0]
-                guard let overflow = overflowBySource[sourceURL], index < overflow.count else { continue }
+            for provider in providerOrder where selected.count < limit {
+                let index = overflowIndices[provider, default: 0]
+                guard let overflow = overflowByProvider[provider], index < overflow.count else { continue }
                 selected.append(overflow[index])
-                overflowIndices[sourceURL] = index + 1
+                overflowIndices[provider] = index + 1
                 appended = true
             }
             if !appended { break }
@@ -2817,11 +3099,17 @@ final class FeedStore {
     // MARK: - Region toggle
 
     func toggleRegion(_ region: String) {
-        let wasDisabled = registry.status(of: SourceRegistry.regionKey(region)) == .off
+        setRegionEnabled(
+            region,
+            enabled: registry.status(of: SourceRegistry.regionKey(region)) != .on
+        )
+    }
+
+    func setRegionEnabled(_ region: String, enabled: Bool) {
         // Match exact region + sub-regions (e.g. "countries/brazil/sao-paulo")
         let sourceURLs = registry.sourceURLs(inRegionTree: region)
-        registry.toggleRegion(region)
-        if wasDisabled {
+        registry.setRegionEnabled(region, enabled: enabled)
+        if enabled {
             // Enabling: seed fresh content then reload.
             // Keep current content on screen (optimistic) — don't clear until
             // new content is ready, preventing empty-screen flashes.
@@ -2867,18 +3155,19 @@ final class FeedStore {
     }
 
     func toggleAllCountries() {
-        let wasAnyOn = registry.isAnyCountryEnabled
-        registry.toggleAllCountries()
-        if wasAnyOn {
+        setAllCountriesEnabled(!registry.isAnyCountryEnabled)
+    }
+
+    func setAllCountriesEnabled(_ enabled: Bool) {
+        registry.setAllCountriesEnabled(enabled)
+        if !enabled {
             // Disabling all countries — purge their items from the reservoir
             // and all visible items. Unlike individual toggleRegion, this
             // affects every country at once, so a full flush is appropriate.
-            let countryRegions = registry.sources
+            let countryRegions = Set(registry.sources
                 .filter { $0.isCountryFeed }
-                .map { $0.region }
-            for region in Set(countryRegions) {
-                reservoir.removeRegion(region)
-            }
+                .map(\.region))
+            reservoir.removeRegions(countryRegions)
             applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
         } else {
             // Enabling all countries — flush and reload from SQLite so
@@ -2917,6 +3206,170 @@ final class FeedStore {
         await bookmarkStore.matchPersistentSearches(items, regionResolver: { [self] in registry.regionFor(sourceURL: $0) })
     }
 
+    // MARK: - Source view and personal source collections
+
+    func sourceReference(for item: FeedItem) -> SourceReference {
+        if let source = registry.source(forURL: item.sourceURL) {
+            return SourceReference(source: source)
+        }
+        let kind: MediaKind = item.isYouTube ? .video : (item.isPodcast ? .audio : (item.isForum ? .forum : .text))
+        return SourceReference(
+            title: item.sourceTitle,
+            feedURL: item.sourceURL,
+            category: item.category,
+            region: item.region,
+            mediaKind: kind,
+            language: item.language
+        )
+    }
+
+    func sourceReference(for member: SourceCollectionMember) -> SourceReference {
+        if let source = registry.source(forURL: member.sourceURL) {
+            return SourceReference(source: source)
+        }
+        return SourceReference(
+            title: member.title,
+            feedURL: member.sourceURL,
+            mediaKind: member.mediaKind
+        )
+    }
+
+    /// All locally retained posts for a source, without date, read-state,
+    /// enablement, or normal-feed filters.
+    func sourceContentFromCache(_ source: SourceReference) async -> [FeedItem] {
+        await cachedSourceItems(sourceURLs: [source.feedURL], limit: nil)
+    }
+
+    /// Explicit source intent overrides default dormancy for this request only.
+    /// It does not subscribe/enable the source. The endpoint's complete current
+    /// payload is persisted and merged with any older local history.
+    func loadSourceContent(_ source: SourceReference) async -> SourceContentResult {
+        await recordExplicitSourceAccess(source.feedURL)
+        let resolved = registry.source(forURL: source.feedURL) ?? source.feedSource
+        let fetchResult = await fetcher.fetch(resolved)
+        if !fetchResult.items.isEmpty {
+            _ = await persistFetchedItems(fetchResult.items)
+        }
+        let items = await sourceContentFromCache(source)
+        return SourceContentResult(
+            items: items,
+            fetchStatus: fetchResult.status,
+            fetchedItemCount: fetchResult.items.count
+        )
+    }
+
+    func allSourceCollections() async throws -> [SourceCollection] {
+        try await sourceCollectionStore.allCollections()
+    }
+
+    @discardableResult
+    func createSourceCollection(name: String) async throws -> Int64 {
+        try await sourceCollectionStore.createCollection(name: name)
+    }
+
+    func renameSourceCollection(id: Int64, name: String) async throws {
+        try await sourceCollectionStore.renameCollection(id: id, name: name)
+    }
+
+    func deleteSourceCollection(id: Int64) async throws {
+        try await sourceCollectionStore.deleteCollection(id: id)
+    }
+
+    func reorderSourceCollections(ids: [Int64]) async throws {
+        try await sourceCollectionStore.reorderCollections(ids: ids)
+    }
+
+    func sourceCollectionMembers(collectionID: Int64) async throws -> [SourceCollectionMember] {
+        try await sourceCollectionStore.members(collectionID: collectionID)
+    }
+
+    func addSource(_ source: SourceReference, toCollectionID id: Int64) async throws {
+        try await sourceCollectionStore.add(source, to: id)
+    }
+
+    func removeSource(_ sourceURL: String, fromCollectionID id: Int64) async throws {
+        try await sourceCollectionStore.remove(sourceURL: sourceURL, from: id)
+    }
+
+    func reorderSourceCollectionMembers(collectionID: Int64, sourceURLs: [String]) async throws {
+        try await sourceCollectionStore.reorderMembers(collectionID: collectionID, sourceURLs: sourceURLs)
+    }
+
+    func sourceCollectionIDs(containing sourceURL: String) async throws -> Set<Int64> {
+        try await sourceCollectionStore.collectionIDs(containing: sourceURL)
+    }
+
+    /// A collection is a reusable live filter over source identities. Opening
+    /// it refreshes every member, then merges current endpoint payloads with
+    /// locally retained history. Unlike a single-source inspection it does not
+    /// grant every member extended retention, preventing large playlists from
+    /// silently pinning an unbounded database.
+    func loadSourceCollectionContent(collectionID: Int64) async throws -> SourceCollectionContentResult {
+        let members = try await sourceCollectionStore.members(collectionID: collectionID)
+        let sources = members.map { member in
+            registry.source(forURL: member.sourceURL) ?? sourceReference(for: member).feedSource
+        }
+        guard !sources.isEmpty else {
+            return SourceCollectionContentResult(items: [], sourceCount: 0, failedSourceCount: 0, emptySourceCount: 0)
+        }
+        let batch = await fetcher.fetchAll(sources, maxConcurrent: min(8, sources.count))
+        if !batch.items.isEmpty {
+            _ = await persistFetchedItems(batch.items)
+        }
+        let items = await cachedSourceItems(sourceURLs: members.map(\.sourceURL), limit: 1_000)
+        return SourceCollectionContentResult(
+            items: items,
+            sourceCount: sources.count,
+            failedSourceCount: batch.failedSourceCount,
+            emptySourceCount: batch.emptySourceCount
+        )
+    }
+
+    func recordExplicitSourceAccess(_ sourceURL: String) async {
+        do {
+            try await db.write { db in
+                try db.execute(sql: """
+                    INSERT INTO source_history_access (source_url, last_accessed_at)
+                    VALUES (?, ?)
+                    ON CONFLICT(source_url) DO UPDATE SET
+                        last_accessed_at = excluded.last_accessed_at
+                    """, arguments: [
+                        OPMLParser.normalizeURL(sourceURL),
+                        Int(Date().timeIntervalSince1970),
+                    ])
+            }
+        } catch {
+            Log.db.warning("Could not retain explicit source history: \(error.localizedDescription)")
+        }
+    }
+
+    private func cachedSourceItems(sourceURLs: [String], limit: Int?) async -> [FeedItem] {
+        let normalized = Array(Set(sourceURLs.map(OPMLParser.normalizeURL)))
+        guard !normalized.isEmpty else { return [] }
+        let records: [FeedItemRecord] = (try? await db.read { db in
+            var result: [FeedItemRecord] = []
+            for start in stride(from: 0, to: normalized.count, by: 400) {
+                let chunk = Array(normalized[start..<min(start + 400, normalized.count)])
+                let placeholders = Array(repeating: "?", count: chunk.count).joined(separator: ",")
+                result.append(contentsOf: try FeedItemRecord.fetchAll(db, sql: """
+                    SELECT * FROM feed_item
+                    WHERE source_url IN (\(placeholders))
+                    ORDER BY published_at DESC
+                    """, arguments: StatementArguments(chunk)))
+            }
+            let sorted = result.sorted { $0.publishedAt > $1.publishedAt }
+            if let limit { return Array(sorted.prefix(limit)) }
+            return sorted
+        }) ?? []
+        let bookmarked = userRepo.allBookmarkedItemIDs()
+        return records.map { record in
+            record.toFeedItem().stamped(
+                readItemIDs: record.isRead ? [record.id] : [],
+                bookmarkItemIDs: bookmarked.contains(record.id) ? [record.id] : []
+            )
+        }
+    }
+
     // MARK: - Maintenance
 
     /// Lightweight cleanup on every launch — deletes up to 500 expired items.
@@ -2931,9 +3384,14 @@ final class FeedStore {
                         WHERE fetched_at < ?
                           AND is_read = 0
                           AND id NOT IN (SELECT item_id FROM bookmark_item)
+                          AND NOT EXISTS (
+                              SELECT 1 FROM source_history_access sha
+                              WHERE sha.source_url = feed_item.source_url
+                                AND sha.last_accessed_at >= ?
+                          )
                         LIMIT 500
                     )
-                """, arguments: [cutoff])
+                """, arguments: [cutoff, cutoff])
             }
         } catch {
             Log.db.warning("Expurgo error: \(error.localizedDescription)")
@@ -2950,12 +3408,14 @@ final class FeedStore {
     /// single transaction. Replaces the previous 3×N round-trip approach with
     /// one read + one write, dramatically reducing SQLite churn on startup.
     func capSourceItemsBatch(_ sourceURLs: [String]) async {
-        guard !sourceURLs.isEmpty else { return }
+        let normalizedURLs = Array(Set(sourceURLs.map(OPMLParser.normalizeURL)))
+        guard !normalizedURLs.isEmpty else { return }
         do {
             let removedIDs: [String] = try await db.write { db in
                 // Find all sources that exceed the cap and collect IDs to delete
-                let placeholders = sourceURLs.map { _ in "?" }.joined(separator: ",")
-                let args = StatementArguments(sourceURLs)
+                let placeholders = normalizedURLs.map { _ in "?" }.joined(separator: ",")
+                let retentionCutoff = Int(Date().addingTimeInterval(-2_592_000).timeIntervalSince1970)
+                let args = StatementArguments(normalizedURLs)
 
                 // Identify items to delete: for each overflowing source, keep
                 // the 50 newest by published_at, delete the rest (excluding
@@ -2967,6 +3427,11 @@ final class FeedStore {
                         WHERE fi.source_url IN (\(placeholders))
                           AND bi.item_id IS NULL
                           AND fi.is_read = 0
+                          AND NOT EXISTS (
+                              SELECT 1 FROM source_history_access sha
+                              WHERE sha.source_url = fi.source_url
+                                AND sha.last_accessed_at >= \(retentionCutoff)
+                          )
                           AND fi.id NOT IN (
                               SELECT id FROM feed_item fi2
                               WHERE fi2.source_url = fi.source_url
@@ -3001,7 +3466,17 @@ final class FeedStore {
                     WHERE fetched_at < ?
                       AND is_read = 0
                       AND id NOT IN (SELECT item_id FROM bookmark_item)
-                """, arguments: [Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970)])
+                      AND NOT EXISTS (
+                          SELECT 1 FROM source_history_access sha
+                          WHERE sha.source_url = feed_item.source_url
+                            AND sha.last_accessed_at >= ?
+                      )
+                """, arguments: [
+                    Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970),
+                    Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970),
+                ])
+                try db.execute(sql: "DELETE FROM source_history_access WHERE last_accessed_at < ?",
+                               arguments: [Int(Date().addingTimeInterval(-2592000).timeIntervalSince1970)])
             }
             try await db.vacuum()
             UserDefaults.standard.set(now, forKey: lastKey)
@@ -3111,7 +3586,7 @@ final class FeedStore {
         // will skip read items so only unseen content appears.
         resetWhatsNewBaseline()
         lastRefreshDate = nil
-        refreshWhatsNew()
+        refreshWhatsNew(shouldBoost: false)
         applyUpdate(.flush(forceFetch: true, skipRead: true))
     }
 
@@ -3253,8 +3728,197 @@ final class FeedStore {
             }
             try db.create(index: "idx_item_language", on: "feed_item", columns: ["language"])
         }
+        // Older RSSFetcher builds copied the OPML source language into every
+        // item. That made FeedStore treat inherited metadata as authoritative,
+        // so clearly non-English content could remain tagged "en". Clear the
+        // obvious script mismatches; nil languages are excluded by an active
+        // language filter and will be detected correctly when fetched again.
+        migrator.registerMigration("v8_clear_mislabeled_english_items") { db in
+            let scriptRanges = [
+                "А-Яа-яЁёІіЇїЄєҐґ", // Cyrillic
+                "؀-ۿ",             // Arabic
+                "֐-׿",             // Hebrew
+                "Ͱ-Ͽ",             // Greek
+                "一-龿",            // Han
+                "ぁ-ゟ",             // Hiragana
+                "゠-ヿ",             // Katakana
+                "가-힣",            // Hangul
+                "ऀ-ॿ",             // Devanagari
+                "ก-๿",             // Thai
+                "က-႟",             // Myanmar
+                "԰-֏",             // Armenian
+                "ሀ-፼",             // Ethiopic
+            ]
+            let scriptClauses = scriptRanges.map { range in
+                "(title || ' ' || excerpt) GLOB '*[\(range)]*[\(range)]*'"
+            }.joined(separator: " OR ")
+            try db.execute(sql: """
+                UPDATE feed_item
+                SET language = NULL
+                WHERE language = 'en'
+                  AND (\(scriptClauses))
+            """)
+        }
+        // Remove values that older media extraction treated as images even
+        // though ImageIO cannot render them. A later fetch can repair these
+        // rows through persistFetchedItems without disturbing user state.
+        migrator.registerMigration("v9_clear_invalid_image_urls") { db in
+            try db.execute(sql: """
+                UPDATE feed_item
+                SET image_url = NULL
+                WHERE image_url IS NOT NULL
+                  AND (
+                    lower(image_url) LIKE 'data:image/svg%'
+                    OR lower(image_url) LIKE '%.svg%'
+                    OR lower(image_url) LIKE '%.mp3%'
+                    OR lower(image_url) LIKE '%.m4a%'
+                    OR lower(image_url) LIKE '%youtube.com/embed/%'
+                    OR lower(image_url) LIKE '%/tracker/%'
+                    OR lower(image_url) LIKE '%count.gif%'
+                    OR lower(image_url) LIKE '%track-rss-story%'
+                  )
+            """)
+        }
+        migrator.registerMigration("v10_fix_azerbaijani_language") { db in
+            try db.execute(sql: """
+                UPDATE feed_item
+                SET language = 'az'
+                WHERE language = 'en'
+                  AND (title || ' ' || excerpt) GLOB '*[Əə]*'
+            """)
+        }
+        migrator.registerMigration("v11_fix_distinctive_script_languages") { db in
+            let scripts: [(language: String, ranges: [String])] = [
+                ("bn", ["ঀ-৿"]),
+                ("hy", ["԰-֏"]),
+                ("ka", ["Ⴀ-ჿ"]),
+                ("th", ["ก-๿"]),
+                ("ko", ["가-힣"]),
+                ("he", ["֐-׿"]),
+                ("el", ["Ͱ-Ͽ"]),
+                ("ja", ["ぁ-ゟ", "゠-ヿ"]),
+                ("zh", ["㐀-䶿", "一-鿿"]),
+            ]
+            for script in scripts {
+                let clauses = script.ranges.map { range in
+                    "(title || ' ' || excerpt) GLOB '*[\(range)]*[\(range)]*'"
+                }.joined(separator: " OR ")
+                try db.execute(sql: """
+                    UPDATE feed_item
+                    SET language = ?
+                    WHERE (language IS NULL OR language = 'en')
+                      AND (\(clauses))
+                """, arguments: [script.language])
+            }
+        }
+        // v11 treated any two Han characters as Chinese. Re-evaluate those
+        // rows from the full title and excerpt so English text quoting a name
+        // such as "金萱", and Japanese text using kanji, leave the ZH feed.
+        migrator.registerMigration("v12_reclassify_han_language") { db in
+            let rows = try Row.fetchAll(
+                db,
+                sql: "SELECT id, title, excerpt FROM feed_item WHERE language = 'zh'"
+            )
+            let inputs = rows.map { row in
+                LanguageDetectionInput(
+                    title: row["title"],
+                    excerpt: row["excerpt"],
+                    explicitLanguage: nil
+                )
+            }
+            let resolved = Self.detectLanguages(inputs)
+            for (row, language) in zip(rows, resolved) {
+                guard let language, language != "zh" else { continue }
+                let id: String = row["id"]
+                try db.execute(
+                    sql: "UPDATE feed_item SET language = ? WHERE id = ?",
+                    arguments: [language, id]
+                )
+            }
+        }
+        // Google News search feeds are collection endpoints, not publishers.
+        // Older rows discarded the item-level <source>, but Google also appends
+        // the publisher to article titles, so recover it for display/fairness.
+        migrator.registerMigration("v13_recover_google_news_publishers") { db in
+            let rows = try Row.fetchAll(
+                db,
+                sql: """
+                    SELECT id, title
+                    FROM feed_item
+                    WHERE source_url LIKE '%news.google.com%'
+                      AND source_title LIKE 'Candidate:%'
+                """
+            )
+            for row in rows {
+                let title: String = row["title"]
+                guard let publisher = Self.googleNewsPublisher(fromArticleTitle: title) else { continue }
+                let id: String = row["id"]
+                try db.execute(
+                    sql: "UPDATE feed_item SET source_title = ? WHERE id = ?",
+                    arguments: [publisher, id]
+                )
+            }
+        }
+        migrator.registerMigration("v14_clear_google_news_channel_artwork") { db in
+            try db.execute(sql: """
+                UPDATE feed_item
+                SET image_url = NULL
+                WHERE source_url LIKE '%news.google.com%'
+                  AND image_url = 'https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w256'
+            """)
+        }
+        migrator.registerMigration("v15_remove_candidate_display_names") { db in
+            try db.execute(sql: """
+                UPDATE feed_item
+                SET source_title = 'Google News'
+                WHERE source_url LIKE '%news.google.com%'
+                  AND source_title LIKE 'Candidate:%'
+            """)
+        }
+        // Earlier builds turned escaped CDATA titles into the literal
+        // placeholder "Untitled". Remove only unsaved cache rows; bookmarks
+        // remain intact and the corrected parser will refill fresh cards.
+        migrator.registerMigration("v16_remove_unsaved_placeholder_titles") { db in
+            try db.execute(sql: """
+                DELETE FROM feed_item
+                WHERE lower(trim(title)) = 'untitled'
+                  AND id NOT IN (SELECT item_id FROM bookmark_item)
+            """)
+        }
+        // YouTube channel metadata can claim English even when the item title
+        // is clearly Khmer. Reclassify cached rows so an English-only filter
+        // cannot surface them before the channel is fetched again.
+        migrator.registerMigration("v17_fix_khmer_language") { db in
+            try db.execute(sql: """
+                UPDATE feed_item
+                SET language = 'km'
+                WHERE language = 'en'
+                  AND (title || ' ' || excerpt) GLOB '*[ក-៙]*[ក-៙]*'
+            """)
+        }
+        migrator.registerMigration("v18_source_history_access") { db in
+            try db.create(table: "source_history_access") { t in
+                t.primaryKey("source_url", .text)
+                t.column("last_accessed_at", .integer).notNull()
+            }
+            try db.create(index: "idx_source_history_access_date",
+                          on: "source_history_access", columns: ["last_accessed_at"])
+        }
         try migrator.migrate(db)
     }
+}
+
+struct SourceContentResult: Equatable, Sendable {
+    let items: [FeedItem]
+    let fetchStatus: FeedFetchStatus
+    let fetchedItemCount: Int
+}
+
+struct SourceCollectionContentResult: Equatable, Sendable {
+    let items: [FeedItem]
+    let sourceCount: Int
+    let failedSourceCount: Int
+    let emptySourceCount: Int
 }
 
 // MARK: - Source Health Record

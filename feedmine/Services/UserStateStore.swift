@@ -80,6 +80,32 @@ final class UserStateStore {
             """)
         }
 
+        migrator.registerMigration("v2_source_collections") { db in
+            try db.create(table: "source_collection") { t in
+                t.autoIncrementedPrimaryKey("id")
+                t.column("name", .text).notNull()
+                t.column("sort_order", .integer).notNull().defaults(to: 0)
+                t.column("created_at", .integer).notNull()
+            }
+
+            try db.create(table: "source_collection_member") { t in
+                t.column("collection_id", .integer).notNull()
+                    .references("source_collection", onDelete: .cascade)
+                t.column("source_url", .text).notNull()
+                t.column("title_snapshot", .text).notNull()
+                t.column("media_kind", .text).notNull().defaults(to: MediaKind.text.rawValue)
+                t.column("added_at", .integer).notNull()
+                t.column("sort_order", .integer).notNull().defaults(to: 0)
+                t.primaryKey(["collection_id", "source_url"])
+            }
+            try db.create(index: "idx_source_collection_order",
+                          on: "source_collection", columns: ["sort_order", "created_at"])
+            try db.create(index: "idx_source_collection_member_order",
+                          on: "source_collection_member", columns: ["collection_id", "sort_order"])
+            try db.create(index: "idx_source_collection_member_source",
+                          on: "source_collection_member", columns: ["source_url"])
+        }
+
         try migrator.migrate(db)
     }
 
@@ -141,5 +167,175 @@ final class UserStateStore {
         (try? db.read { db in
             try Set(String.fetchAll(db, sql: "SELECT DISTINCT item_id FROM bookmark_item"))
         }) ?? []
+    }
+}
+
+// MARK: - Personal source collections
+
+struct SourceCollection: Identifiable, Equatable, Sendable {
+    let id: Int64
+    let name: String
+    let sortOrder: Int
+    let createdAt: Date
+    let memberCount: Int
+}
+
+struct SourceCollectionMember: Identifiable, Equatable, Sendable {
+    var id: String { sourceURL }
+    let sourceURL: String
+    let title: String
+    let mediaKind: MediaKind
+    let addedAt: Date
+    let sortOrder: Int
+}
+
+/// Many-to-many personal playlists of sources. Membership never mutates a
+/// FeedSource's OPML category/region and deleting a collection never deletes a
+/// source from the catalog.
+@MainActor
+final class SourceCollectionStore {
+    private let db: DatabaseQueue
+
+    init(db: DatabaseQueue) {
+        self.db = db
+    }
+
+    func allCollections() async throws -> [SourceCollection] {
+        try await db.read { db in
+            try Row.fetchAll(db, sql: """
+                SELECT c.id, c.name, c.sort_order, c.created_at,
+                       COUNT(m.source_url) AS member_count
+                FROM source_collection c
+                LEFT JOIN source_collection_member m ON m.collection_id = c.id
+                GROUP BY c.id
+                ORDER BY c.sort_order, c.created_at, c.id
+                """).map { row in
+                    SourceCollection(
+                        id: row["id"],
+                        name: row["name"],
+                        sortOrder: row["sort_order"],
+                        createdAt: Date(timeIntervalSince1970: TimeInterval(row["created_at"] as Int)),
+                        memberCount: row["member_count"]
+                    )
+                }
+        }
+    }
+
+    @discardableResult
+    func createCollection(name: String) async throws -> Int64 {
+        let cleanName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanName.isEmpty else { throw SourceCollectionError.emptyName }
+        return try await db.write { db in
+            let order = (try Int.fetchOne(db,
+                sql: "SELECT COALESCE(MAX(sort_order), -1) + 1 FROM source_collection")) ?? 0
+            try db.execute(sql: """
+                INSERT INTO source_collection (name, sort_order, created_at)
+                VALUES (?, ?, ?)
+                """, arguments: [cleanName, order, Int(Date().timeIntervalSince1970)])
+            return db.lastInsertedRowID
+        }
+    }
+
+    func renameCollection(id: Int64, name: String) async throws {
+        let cleanName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanName.isEmpty else { throw SourceCollectionError.emptyName }
+        try await db.write { db in
+            try db.execute(sql: "UPDATE source_collection SET name = ? WHERE id = ?",
+                           arguments: [cleanName, id])
+        }
+    }
+
+    func deleteCollection(id: Int64) async throws {
+        try await db.write { db in
+            try db.execute(sql: "DELETE FROM source_collection WHERE id = ?", arguments: [id])
+        }
+    }
+
+    func reorderCollections(ids: [Int64]) async throws {
+        try await db.write { db in
+            for (index, id) in ids.enumerated() {
+                try db.execute(sql: "UPDATE source_collection SET sort_order = ? WHERE id = ?",
+                               arguments: [index, id])
+            }
+        }
+    }
+
+    func members(collectionID: Int64) async throws -> [SourceCollectionMember] {
+        try await db.read { db in
+            try Row.fetchAll(db, sql: """
+                SELECT source_url, title_snapshot, media_kind, added_at, sort_order
+                FROM source_collection_member
+                WHERE collection_id = ?
+                ORDER BY sort_order, added_at, source_url
+                """, arguments: [collectionID]).map { row in
+                    let rawKind: String = row["media_kind"]
+                    return SourceCollectionMember(
+                        sourceURL: row["source_url"],
+                        title: row["title_snapshot"],
+                        mediaKind: MediaKind(rawValue: rawKind) ?? .text,
+                        addedAt: Date(timeIntervalSince1970: TimeInterval(row["added_at"] as Int)),
+                        sortOrder: row["sort_order"]
+                    )
+                }
+        }
+    }
+
+    func add(_ source: SourceReference, to collectionID: Int64) async throws {
+        let normalizedURL = OPMLParser.normalizeURL(source.feedURL)
+        try await db.write { db in
+            let order = (try Int.fetchOne(db, sql: """
+                SELECT COALESCE(MAX(sort_order), -1) + 1
+                FROM source_collection_member WHERE collection_id = ?
+                """, arguments: [collectionID])) ?? 0
+            try db.execute(sql: """
+                INSERT INTO source_collection_member
+                    (collection_id, source_url, title_snapshot, media_kind, added_at, sort_order)
+                VALUES (?, ?, ?, ?, ?, ?)
+                ON CONFLICT(collection_id, source_url) DO UPDATE SET
+                    title_snapshot = excluded.title_snapshot,
+                    media_kind = excluded.media_kind
+                """, arguments: [
+                    collectionID, normalizedURL, source.title, source.mediaKind.rawValue,
+                    Int(Date().timeIntervalSince1970), order,
+                ])
+        }
+    }
+
+    func remove(sourceURL: String, from collectionID: Int64) async throws {
+        try await db.write { db in
+            try db.execute(sql: """
+                DELETE FROM source_collection_member
+                WHERE collection_id = ? AND source_url = ?
+                """, arguments: [collectionID, OPMLParser.normalizeURL(sourceURL)])
+        }
+    }
+
+    func reorderMembers(collectionID: Int64, sourceURLs: [String]) async throws {
+        try await db.write { db in
+            for (index, sourceURL) in sourceURLs.enumerated() {
+                try db.execute(sql: """
+                    UPDATE source_collection_member SET sort_order = ?
+                    WHERE collection_id = ? AND source_url = ?
+                    """, arguments: [index, collectionID, OPMLParser.normalizeURL(sourceURL)])
+            }
+        }
+    }
+
+    func collectionIDs(containing sourceURL: String) async throws -> Set<Int64> {
+        try await db.read { db in
+            try Set(Int64.fetchAll(db, sql: """
+                SELECT collection_id FROM source_collection_member WHERE source_url = ?
+                """, arguments: [OPMLParser.normalizeURL(sourceURL)]))
+        }
+    }
+}
+
+enum SourceCollectionError: LocalizedError {
+    case emptyName
+
+    var errorDescription: String? {
+        switch self {
+        case .emptyName: return "Collection name cannot be empty."
+        }
     }
 }

@@ -135,9 +135,22 @@ final class Reservoir {
     // MARK: - Remove region (toggle OFF)
 
     func removeRegion(_ region: String) {
+        removeRegions([region])
+    }
+
+    /// Remove several region trees in one pass. Bulk country toggles used to
+    /// call `removeRegion` once per country, repeatedly scanning the entire
+    /// reservoir before the switch could redraw.
+    func removeRegions(_ regions: Set<String>) {
+        guard !regions.isEmpty else { return }
         let isDisabled: (FeedItem) -> Bool = { [self] item in
             let itemRegion = sourceRegionMap[item.sourceURL] ?? "global"
-            return itemRegion == region || itemRegion.hasPrefix(region + "/")
+            var candidate = itemRegion
+            while true {
+                if regions.contains(candidate) { return true }
+                guard let separator = candidate.lastIndex(of: "/") else { return false }
+                candidate = String(candidate[..<separator])
+            }
         }
         visibleItems.removeAll(where: isDisabled)
         reservoir.removeAll(where: isDisabled)
@@ -282,27 +295,27 @@ final class Reservoir {
             }
         }
         let fresh = spreadForFreshnessImpl(result, sourceRegionMap: sourceRegionMap)
-        return frontLoadUniqueSourcesImpl(fresh, count: initialUniqueSourceTarget)
+        return frontLoadUniqueProvidersImpl(fresh, count: initialUniqueSourceTarget)
     }
 
     /// The first screen is the app's promise of breadth. When enough providers
     /// are available, reserve one slot per provider before any provider gets a
     /// second card; the remainder keeps the freshness pass order unchanged.
-    private nonisolated static func frontLoadUniqueSourcesImpl(
+    private nonisolated static func frontLoadUniqueProvidersImpl(
         _ items: [FeedItem],
         count: Int
     ) -> [FeedItem] {
         guard count > 1, items.count > 1 else { return items }
-        let target = min(count, Set(items.map(\.sourceURL)).count)
+        let target = min(count, Set(items.map(providerKey)).count)
         guard target > 1 else { return items }
 
         var selectedIndices = Set<Int>()
-        var selectedSources = Set<String>()
+        var selectedProviders = Set<String>()
         var prefix: [FeedItem] = []
         prefix.reserveCapacity(target)
 
         for (index, item) in items.enumerated() {
-            guard selectedSources.insert(item.sourceURL).inserted else { continue }
+            guard selectedProviders.insert(providerKey(item)).inserted else { continue }
             prefix.append(item)
             selectedIndices.insert(index)
             if prefix.count == target { break }
@@ -403,18 +416,18 @@ final class Reservoir {
         var result: [FeedItem] = []
         result.reserveCapacity(items.count)
 
-        let sourceVariety = Set(items.map(\.sourceURL)).count
+        let providerVariety = Set(items.map(providerKey)).count
         let categoryVariety = Set(items.map(\.category)).count
         let regionVariety = Set(items.map { sourceRegionMap[$0.sourceURL] ?? $0.region }).count
         let mediaVariety = Set(items.map(mediaKey)).count
-        let sourceWindow = min(6, max(0, sourceVariety - 1))
+        let providerWindow = min(6, max(0, providerVariety - 1))
         let categoryWindow = min(10, max(0, categoryVariety - 1))
         let regionWindow = min(6, max(0, regionVariety - 1))
         let mediaWindow = min(4, max(0, mediaVariety - 1))
 
         while !pool.isEmpty {
             let searchCount = min(96, pool.count)
-            let recentSources = Set(result.suffix(sourceWindow).map(\.sourceURL))
+            let recentProviders = Set(result.suffix(providerWindow).map(providerKey))
             let recentCategories = Set(result.suffix(categoryWindow).map(\.category))
             let recentRegions = Set(result.suffix(regionWindow).map {
                 sourceRegionMap[$0.sourceURL] ?? $0.region
@@ -427,7 +440,7 @@ final class Reservoir {
                 let candidate = pool[index]
                 let region = sourceRegionMap[candidate.sourceURL] ?? candidate.region
                 var penalty = index
-                if recentSources.contains(candidate.sourceURL) { penalty += 100_000 }
+                if recentProviders.contains(providerKey(candidate)) { penalty += 100_000 }
                 if recentCategories.contains(candidate.category) { penalty += 50_000 }
                 if recentRegions.contains(region) { penalty += 15_000 }
                 if recentMedia.contains(mediaKey(candidate)) { penalty += 30_000 }
@@ -441,6 +454,22 @@ final class Reservoir {
             result.append(pool.remove(at: bestIndex))
         }
         return result
+    }
+
+    /// A catalogue can contain many generated feeds backed by one aggregator.
+    /// Those URLs are distinct fetch targets, but they are not distinct content
+    /// providers and must not occupy several diversity slots on the same screen.
+    nonisolated static func providerKey(_ item: FeedItem) -> String {
+        guard let host = URLComponents(string: item.sourceURL)?.host?.lowercased() else {
+            return item.sourceURL
+        }
+        if host == "news.google.com" || host.hasSuffix(".news.google.com") {
+            // Separate queries are still one Google News provider. Treating
+            // their generated feed labels as publishers made a long run of
+            // near-identical candidate cards look artificially diverse.
+            return "aggregator:news.google.com"
+        }
+        return item.sourceURL
     }
 
     private nonisolated static func mediaKey(_ item: FeedItem) -> String {

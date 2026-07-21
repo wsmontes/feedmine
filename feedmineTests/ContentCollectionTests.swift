@@ -196,18 +196,25 @@ final class ContentCollectionTests: XCTestCase {
         let p1 = await store.persistFetchedItems(batch1)
         log.info("  Batch 1: \(p1.count) persisted")
 
-        // Second batch — 50% duplicates
-        let batch2 = makeItems(count: 500, sourceSpread: 10)
-        let start = CFAbsoluteTimeGetCurrent()
+        // Second batch — exactly 50% duplicates. Reuse persisted identities for
+        // one half; makeItems generates fresh UUIDs for the other half.
+        let batch2 = Array(batch1.prefix(250))
+            + makeItems(count: 250, sourceSpread: 10)
         let p2 = await store.persistFetchedItems(batch2)
-        let ms = (CFAbsoluteTimeGetCurrent() - start) * 1000
-
         let newItems = p2.count
         let dupes = 500 - newItems
-        log.info("  Batch 2: \(newItems) new, \(dupes) duplicates in \(String(format: "%.2f", ms))ms")
-        log.info("  Dedup overhead: \(String(format: "%.2f", ms))ms for 500 items")
+        XCTAssertEqual(newItems, 250, "Only the fresh half should persist")
+        XCTAssertEqual(dupes, 250, "The persisted half should deduplicate")
 
-        XCTAssertLessThan(ms, 1000, "Dedup 500 items under 1s")
+        // The insertion/language-detection path has its own throughput tests.
+        // Re-submit the now-known mixed batch to isolate the loadedIDs fast path.
+        let start = CFAbsoluteTimeGetCurrent()
+        let p3 = await store.persistFetchedItems(batch2)
+        let ms = (CFAbsoluteTimeGetCurrent() - start) * 1000
+        log.info("  Deduplicated 500 known items in \(String(format: "%.2f", ms))ms")
+
+        XCTAssertTrue(p3.isEmpty, "A repeated batch must not persist any item")
+        XCTAssertLessThan(ms, 1000, "Dedup 500 known items under 1s")
         log.info("  ✅ PASS")
     }
 

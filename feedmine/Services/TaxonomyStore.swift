@@ -53,17 +53,33 @@ final class TaxonomyStore {
         FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("taxonomy_cache.json")
     }()
+    private static let cacheSchemaVersion = 3
 
     // MARK: - Tree Building
 
     /// Build the taxonomy tree from all feed sources.
     /// Single pass, O(n). Caches result to disk for warm starts.
-    func build(from sources: [FeedSource]) async {
+    func build(
+        from sources: [FeedSource],
+        sharedCountrySourceURLs: Set<String> = []
+    ) async {
+        let selectedBeforeRebuild = selectedNodeIDs
+        let countryRegionsByURL = sources.reduce(into: [String: Set<String>]()) { result, source in
+            let regionParts = source.region.split(separator: "/", omittingEmptySubsequences: true)
+            guard regionParts.count >= 2, regionParts[0] == "countries" else { return }
+            let countryRegion = "\(regionParts[0])/\(regionParts[1])"
+            result[OPMLParser.normalizeURL(source.url), default: []].insert(countryRegion)
+        }
+        let sharedAcrossCountries = sharedCountrySourceURLs.union(
+            Set(countryRegionsByURL.compactMap { url, regions in
+            regions.count > 1 ? url : nil
+            })
+        )
+
         // Clear stale state from previous builds
         feedToNodeID.removeAll()
         childrenIndex.removeAll()
         sortedChildrenCache.removeAll()
-        selectedNodeIDs.removeAll()
         nodeToFeedURLs.removeAll()
 
         // Intermediate: path segments → children
@@ -75,6 +91,13 @@ final class TaxonomyStore {
         tree[rootNode.id] = (rootNode, [])
 
         for source in sources {
+            // A globally syndicated feed can appear in many country OPMLs.
+            // It must not be presented as local content for any one country.
+            if source.region.hasPrefix("countries/")
+                && sharedAcrossCountries.contains(OPMLParser.normalizeURL(source.url)) {
+                continue
+            }
+
             // Derive path: region + category → node ID segments
             let segments = derivePath(from: source)
             var parentID = TaxonomyNode.rootID
@@ -161,11 +184,14 @@ final class TaxonomyStore {
 
         // Build flat index
         flatIndex = Dictionary(uniqueKeysWithValues: tree.map { ($0.key, $0.value.node) })
+        // A rebuild can finish while a topic is being chosen. Keep only
+        // selections whose stable node IDs remain in the refreshed catalogue.
+        selectedNodeIDs = selectedBeforeRebuild.filter { flatIndex[$0] != nil }
 
-        // Top-level children sorted by name
+        // Numeric folder prefixes are the editorial menu order.
         let topChildren = rootChildren
             .compactMap { flatIndex[$0] }
-            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+            .sorted(by: Self.editorialNodeOrder)
         let rootWithChildren = TaxonomyNode(
             id: rootNode.id, name: rootNode.name, parentId: nil,
             childrenCount: topChildren.count, feedCount: totalFeeds,
@@ -182,7 +208,7 @@ final class TaxonomyStore {
             childrenIndex[parentID, default: []].append(nodeID)
         }
 
-        persistCache(sources: sources)
+        persistCache(sources: sources, sharedCountrySourceURLs: sharedCountrySourceURLs)
     }
 
     // MARK: - Path derivation
@@ -205,7 +231,7 @@ final class TaxonomyStore {
             // parts[0] = "topic", parts[1...] = directory path
             for (idx, part) in parts.enumerated() where idx >= 1 {
                 let kind: NodeKind = idx == 1 ? .topic : .subcategory
-                let displayName = part
+                let displayName = Self.orderedDisplayName(part)
                     .replacingOccurrences(of: "_", with: " ")
                     .capitalized
                 segments.append(PathSegment(
@@ -301,14 +327,30 @@ final class TaxonomyStore {
         guard let childIDs = childrenIndex[nodeID] else { return [] }
         let children = childIDs
             .compactMap { flatIndex[$0] }
-            .sorted { lhs, rhs in
-                // Countries last, then alphabetical
-                if lhs.kind == .country && rhs.kind != .country { return false }
-                if rhs.kind == .country && lhs.kind != .country { return true }
-                return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
-            }
+            .sorted(by: Self.editorialNodeOrder)
         sortedChildrenCache[nodeID] = children
         return children
+    }
+
+    private static func editorialNodeOrder(_ lhs: TaxonomyNode, _ rhs: TaxonomyNode) -> Bool {
+        let lhsOrder = ordinal(in: lhs.id.components(separatedBy: "/").last ?? lhs.id)
+        let rhsOrder = ordinal(in: rhs.id.components(separatedBy: "/").last ?? rhs.id)
+        if lhsOrder != rhsOrder { return lhsOrder < rhsOrder }
+        return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
+    }
+
+    private static func ordinal(in raw: String) -> Int {
+        let prefix = raw.prefix { $0.isNumber }
+        guard !prefix.isEmpty, let value = Int(prefix) else { return Int.max }
+        return value
+    }
+
+    private static func orderedDisplayName(_ raw: String) -> String {
+        raw.replacingOccurrences(
+            of: #"^\d+[ _-]+"#,
+            with: "",
+            options: .regularExpression
+        )
     }
 
     func hasChildren(_ nodeID: String) -> Bool {
@@ -364,13 +406,39 @@ final class TaxonomyStore {
     }
 
     /// Search flat index by name. Case-insensitive. Returns up to 50 results.
+    ///
+    /// Names are not unique: a topic such as "Mythology & Folklore" can also
+    /// exist below many countries. Rank the global editorial taxonomy first so
+    /// choosing the first visible result is deterministic and useful, while
+    /// keeping geographic variants available with their breadcrumb in the UI.
     func search(_ query: String) -> [TaxonomyNode] {
-        guard !query.isEmpty else { return [] }
-        let q = query.lowercased()
-        return flatIndex.values
-            .filter { $0.name.localizedCaseInsensitiveContains(q) }
-            .prefix(50)
-            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !q.isEmpty else { return [] }
+        return Array(flatIndex.values
+            .filter { $0.id != TaxonomyNode.rootID && $0.name.localizedCaseInsensitiveContains(q) }
+            .sorted { lhs, rhs in
+                let lhsRank = Self.searchRank(lhs, query: q)
+                let rhsRank = Self.searchRank(rhs, query: q)
+                if lhsRank != rhsRank { return lhsRank.lexicographicallyPrecedes(rhsRank) }
+
+                let nameOrder = lhs.name.localizedCaseInsensitiveCompare(rhs.name)
+                if nameOrder != .orderedSame { return nameOrder == .orderedAscending }
+                return lhs.id.localizedCaseInsensitiveCompare(rhs.id) == .orderedAscending
+            }
+            .prefix(50))
+    }
+
+    private static func searchRank(_ node: TaxonomyNode, query: String) -> [Int] {
+        let exactMatch = node.name.compare(query, options: [.caseInsensitive, .diacriticInsensitive]) == .orderedSame
+        let topLevelID = node.id.split(separator: "/", maxSplits: 1).first.map(String.init) ?? node.id
+        let scope: Int
+        switch topLevelID {
+        case "countries": scope = 2
+        case "languages": scope = 3
+        case "imported": scope = 4
+        default: scope = 0
+        }
+        return [exactMatch ? 0 : 1, scope, node.level, -node.feedCount]
     }
 
     // MARK: - Selection
@@ -405,10 +473,13 @@ final class TaxonomyStore {
     // MARK: - Fingerprint
 
     /// Stable fingerprint of the source set — all taxonomy-relevant fields,
-    /// normalized, sorted, SHA-256. Changing a source's URL, category, region,
-    /// language, or mediaKind produces a different fingerprint, so the cache
-    /// invalidates on any edit that affects the taxonomy tree.
-    static func sourceFingerprint(for sources: [FeedSource]) -> String {
+    /// normalized, sorted, SHA-256. The pre-deduplication cross-country URL
+    /// signal is included too, so the cache invalidates on any edit that
+    /// affects country membership in the taxonomy tree.
+    static func sourceFingerprint(
+        for sources: [FeedSource],
+        sharedCountrySourceURLs: Set<String> = []
+    ) -> String {
         let records = sources.map { source in
             [
                 OPMLParser.normalizeURL(source.url),
@@ -420,8 +491,9 @@ final class TaxonomyStore {
         }
         .sorted()
         .joined(separator: "\n")
+        let sharedRecords = sharedCountrySourceURLs.sorted().joined(separator: "\n")
 
-        let digest = SHA256.hash(data: Data(records.utf8))
+        let digest = SHA256.hash(data: Data("\(records)\n--shared-country-urls--\n\(sharedRecords)".utf8))
         return digest.compactMap { String(format: "%02x", $0) }.joined()
     }
 
@@ -436,13 +508,20 @@ final class TaxonomyStore {
     /// Validates both sourceCount (fast pre-check) and sourceFingerprint
     /// (guards against equal-count URL swaps). Rejects old caches without
     /// a fingerprint so stale data never survives an upgrade.
-    func loadFromCache(sources: [FeedSource]) -> Bool {
+    func loadFromCache(
+        sources: [FeedSource],
+        sharedCountrySourceURLs: Set<String> = []
+    ) -> Bool {
         let count = sources.count
-        let fingerprint = Self.sourceFingerprint(for: sources)
+        let fingerprint = Self.sourceFingerprint(
+            for: sources,
+            sharedCountrySourceURLs: sharedCountrySourceURLs
+        )
         guard let data = try? Data(contentsOf: cacheURL),
               let cached = try? JSONDecoder().decode(CachedTree.self, from: data) else {
             return false
         }
+        guard cached.schemaVersion == Self.cacheSchemaVersion else { return false }
         // Fast pre-check — count mismatch is a cheap rejection
         guard cached.sourceCount == count else { return false }
         // Reject old caches that predate fingerprint persistence
@@ -483,9 +562,16 @@ final class TaxonomyStore {
         return true
     }
 
-    private func persistCache(sources: [FeedSource]) {
-        let fingerprint = Self.sourceFingerprint(for: sources)
+    private func persistCache(
+        sources: [FeedSource],
+        sharedCountrySourceURLs: Set<String>
+    ) {
+        let fingerprint = Self.sourceFingerprint(
+            for: sources,
+            sharedCountrySourceURLs: sharedCountrySourceURLs
+        )
         let cached = CachedTree(
+            schemaVersion: Self.cacheSchemaVersion,
             root: root,
             flatIndex: flatIndex,
             feedToNodeID: feedToNodeID,
@@ -500,6 +586,7 @@ final class TaxonomyStore {
 // MARK: - Cache DTO
 
 private struct CachedTree: Codable {
+    let schemaVersion: Int
     let root: TaxonomyNode?
     let flatIndex: [String: TaxonomyNode]
     let feedToNodeID: [String: String]

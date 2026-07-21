@@ -9,6 +9,8 @@ struct SourceManagementView: View {
     @State private var testResults: [String: TestResult] = [:]
     @State private var showFileImporter = false
     @State private var importError: String?
+    @State private var pendingCategoryIDs = Set<String>()
+    @State private var enabledPendingCategoryIDs = Set<String>()
 
     struct TestResult {
         let title: String
@@ -51,8 +53,12 @@ struct SourceManagementView: View {
                             Label("\(category) (\(sources.count))", systemImage: categoryIcon(category))
                             Spacer()
                             Toggle("", isOn: Binding(
-                                get: { loader.isCategoryEnabled(category) },
-                                set: { _ in loader.toggleCategory(category) }
+                                get: {
+                                    pendingCategoryIDs.contains(category)
+                                        ? enabledPendingCategoryIDs.contains(category)
+                                        : loader.isCategoryEnabled(category)
+                                },
+                                set: { setCategory(category, enabled: $0) }
                             ))
                             .labelsHidden()
                             .tint(.green)
@@ -202,6 +208,24 @@ struct SourceManagementView: View {
         }
     }
 
+    private func setCategory(_ category: String, enabled: Bool) {
+        pendingCategoryIDs.insert(category)
+        if enabled {
+            enabledPendingCategoryIDs.insert(category)
+        } else {
+            enabledPendingCategoryIDs.remove(category)
+        }
+        let feedback = UIImpactFeedbackGenerator(style: .light)
+        feedback.impactOccurred()
+
+        DispatchQueue.main.async {
+            guard pendingCategoryIDs.contains(category), enabledPendingCategoryIDs.contains(category) == enabled else { return }
+            loader.setCategoryEnabled(category, enabled: enabled)
+            if enabledPendingCategoryIDs.contains(category) == enabled {
+                pendingCategoryIDs.remove(category)
+            }
+        }
+    }
 
     private func testSources() async {
         isTesting = true

@@ -7,6 +7,8 @@ struct FilterSheetView: View {
     @State private var draftLanguages: Set<String> = []
     @State private var draftMood: FeedLoader.MoodFilter = .all
     @State private var draftIsDirty = false
+    @State private var isGlobalFeedsChangePending = false
+    @State private var pendingGlobalFeedsValue = false
 
     private var hasDraftFilters: Bool {
         draftContentType != .all
@@ -40,8 +42,8 @@ struct FilterSheetView: View {
                         Label("Selected Feeds", systemImage: "antenna.radiowaves.left.and.right")
                         Spacer()
                         Toggle("", isOn: Binding(
-                            get: { loader.isGlobalFeedsEnabled },
-                            set: { _ in loader.toggleGlobalFeeds() }
+                            get: { isGlobalFeedsChangePending ? pendingGlobalFeedsValue : loader.isGlobalFeedsEnabled },
+                            set: { setGlobalFeedsEnabled($0) }
                         ))
                         .labelsHidden()
                         .tint(.green)
@@ -66,6 +68,7 @@ struct FilterSheetView: View {
                         Button {
                             draftContentType = draftContentType == type ? .all : type
                             draftIsDirty = true
+                            UISelectionFeedbackGenerator().selectionChanged()
                         } label: {
                             HStack {
                                 Label(type.rawValue, systemImage: type.icon)
@@ -98,6 +101,7 @@ struct FilterSheetView: View {
                         }
                     }
                     .accessibilityIdentifier("browse-topics")
+                    .accessibilityValue("\(loader.selectedNodeIDs.count)")
                 }
 
                 Section("Language") {
@@ -115,6 +119,7 @@ struct FilterSheetView: View {
                                     draftLanguages.insert(lang.code)
                                 }
                                 draftIsDirty = true
+                                UISelectionFeedbackGenerator().selectionChanged()
                             } label: {
                                 HStack {
                                     Text(lang.flag)
@@ -136,6 +141,8 @@ struct FilterSheetView: View {
                                     .lineLimit(1)
                                 }
                             }
+                            .accessibilityIdentifier("language-\(lang.code)")
+                            .accessibilityValue(draftLanguages.contains(lang.code) ? "selected" : "not selected")
                         }
                     }
                 }
@@ -145,6 +152,7 @@ struct FilterSheetView: View {
                         Button {
                             draftMood = draftMood == mood ? .all : mood
                             draftIsDirty = true
+                            UISelectionFeedbackGenerator().selectionChanged()
                         } label: {
                             HStack {
                                 Label(mood.rawValue, systemImage: mood.icon)
@@ -184,4 +192,18 @@ struct FilterSheetView: View {
         }
     }
 
+    private func setGlobalFeedsEnabled(_ enabled: Bool) {
+        pendingGlobalFeedsValue = enabled
+        isGlobalFeedsChangePending = true
+        let feedback = UIImpactFeedbackGenerator(style: .light)
+        feedback.impactOccurred()
+
+        DispatchQueue.main.async {
+            guard isGlobalFeedsChangePending, pendingGlobalFeedsValue == enabled else { return }
+            loader.setGlobalFeedsEnabled(enabled)
+            if pendingGlobalFeedsValue == enabled {
+                isGlobalFeedsChangePending = false
+            }
+        }
+    }
 }

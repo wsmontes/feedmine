@@ -92,6 +92,10 @@ actor FeedEngineCatalogDiagnostics {
         Bundle.main.url(forResource: "catalog", withExtension: "sqlite", subdirectory: "FeedEngine")
     }
 
+    static func activeDatabaseURL() -> URL? {
+        CatalogRuntime.activeCatalogURL()
+    }
+
     static func defaultDatabaseURL() throws -> URL {
         let baseURL = try FileManager.default.url(
             for: .applicationSupportDirectory,
@@ -129,6 +133,38 @@ actor FeedEngineCatalogDiagnostics {
             "sources=\(report.sourceCount) nodes=\(report.nodeCount) placements=\(report.placementCount)"
         )
 
+        return FeedEngineCatalogDiagnosticsStatus(
+            phase: .ready,
+            sourceCount: report.sourceCount,
+            nodeCount: report.nodeCount,
+            placementCount: report.placementCount,
+            duplicateOccurrenceCount: report.duplicateOccurrenceCount,
+            rootNodeCount: rootPage.nodes.count,
+            rootSourceCount: rootPage.sources.count,
+            elapsed: report.elapsed,
+            errorDescription: nil
+        )
+    }
+
+    func openActiveCatalog() async throws -> FeedEngineCatalogDiagnosticsStatus {
+        guard let databaseURL = Self.activeDatabaseURL() else {
+            throw FeedEngineError.invalidCatalog("Active local FeedEngine catalog is missing")
+        }
+
+        let finishInterval = FeedMetrics.beginInterval("CatalogDiagnostics.openActive")
+        defer { finishInterval() }
+        let repository = try SQLiteCatalogRepository(databaseURL: databaseURL, readOnly: true)
+        let report = try await repository.compileReport(
+            mode: .full,
+            changedFileCount: 0,
+            deletedFileCount: 0,
+            elapsed: 0
+        )
+        let rootPage = try await repository.browseCatalog(
+            query: CatalogBrowseQuery(parentID: .root, includeSources: true),
+            cursor: nil,
+            limit: 50
+        )
         return FeedEngineCatalogDiagnosticsStatus(
             phase: .ready,
             sourceCount: report.sourceCount,

@@ -3,7 +3,7 @@ import Foundation
 // MARK: - FeedEngine Catalog Models
 //
 // Lightweight Sendable structs for catalog browsing and search.
-// SourceSummary is ~100 bytes — minimal fields for a browse row.
+// SourceSummary carries enough editorial context for a useful search row.
 // SourceDetails is loaded on demand when the user taps a source.
 
 /// Lightweight summary for catalog listing — one per source in a page.
@@ -16,6 +16,38 @@ struct SourceSummary: Equatable, Identifiable, Sendable {
     let displayHost: String?
     let mediaKind: MediaKind
     let language: String?
+    let sourceDescription: String?
+    let tags: [String]
+    let nature: String?
+    let activity: String?
+    let qualityScore: Int?
+    let defaultEnabled: Bool
+
+    init(
+        id: SourceID,
+        title: String,
+        displayHost: String?,
+        mediaKind: MediaKind,
+        language: String?,
+        sourceDescription: String? = nil,
+        tags: [String] = [],
+        nature: String? = nil,
+        activity: String? = nil,
+        qualityScore: Int? = nil,
+        defaultEnabled: Bool = true
+    ) {
+        self.id = id
+        self.title = title
+        self.displayHost = displayHost
+        self.mediaKind = mediaKind
+        self.language = language
+        self.sourceDescription = sourceDescription
+        self.tags = tags
+        self.nature = nature
+        self.activity = activity
+        self.qualityScore = qualityScore
+        self.defaultEnabled = defaultEnabled
+    }
 }
 
 /// Full metadata for a single source, loaded on demand.
@@ -26,8 +58,50 @@ struct SourceDetails: Equatable, Identifiable, Sendable {
     let requestURL: URL
     let mediaKind: MediaKind
     let language: String?
+    let siteURL: URL?
+    let sourceDescription: String?
+    let tags: [String]
+    let nature: String?
+    let activity: String?
+    let latestItemAt: String?
+    let qualityScore: Int?
+    let defaultEnabled: Bool
     /// Every editorial placement of this source across OPML files.
     let placements: [SourcePlacementSummary]
+
+    init(
+        id: SourceID,
+        title: String,
+        declaredURL: URL,
+        requestURL: URL,
+        mediaKind: MediaKind,
+        language: String?,
+        siteURL: URL? = nil,
+        sourceDescription: String? = nil,
+        tags: [String] = [],
+        nature: String? = nil,
+        activity: String? = nil,
+        latestItemAt: String? = nil,
+        qualityScore: Int? = nil,
+        defaultEnabled: Bool = true,
+        placements: [SourcePlacementSummary]
+    ) {
+        self.id = id
+        self.title = title
+        self.declaredURL = declaredURL
+        self.requestURL = requestURL
+        self.mediaKind = mediaKind
+        self.language = language
+        self.siteURL = siteURL
+        self.sourceDescription = sourceDescription
+        self.tags = tags
+        self.nature = nature
+        self.activity = activity
+        self.latestItemAt = latestItemAt
+        self.qualityScore = qualityScore
+        self.defaultEnabled = defaultEnabled
+        self.placements = placements
+    }
 }
 
 /// Summary of one editorial placement — which OPML file, which node,

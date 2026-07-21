@@ -13,7 +13,7 @@ struct DailyBriefingCard: View {
 
     private var topStory: FeedItem? {
         todayItems.max(by: { a, b in
-            (a.imageURL != nil ? 1 : 0) < (b.imageURL != nil ? 1 : 0)
+            (a.hasPotentialImage ? 1 : 0) < (b.hasPotentialImage ? 1 : 0)
         })
     }
 

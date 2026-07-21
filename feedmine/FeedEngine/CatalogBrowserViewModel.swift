@@ -7,7 +7,7 @@ import Observation
 ///
 /// This is the sole UI entry point for catalog browsing and search. It manages
 /// a navigation stack of taxonomy nodes, paginated browse/source lists, and
-/// full-text search — all backed by the bundled ``catalog.sqlite``.
+/// full-text search — all backed by the active local ``catalog.sqlite``.
 ///
 /// **Browse** operations (``loadRoot()``, ``navigate(to:)``, ``goBack()``,
 /// ``goToRoot()``) are *synchronous-async*: they await the network/Database

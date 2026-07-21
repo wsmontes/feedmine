@@ -3,6 +3,8 @@ import SwiftUI
 struct CountryDetailScreen: View {
     @Environment(FeedLoader.self) private var loader
     let country: Country
+    @State private var pendingRegionIDs = Set<String>()
+    @State private var enabledPendingRegionIDs = Set<String>()
 
     private var feedsByCategory: [(String, [FeedSource])] {
         let grouped = Dictionary(grouping: loader.countryFeeds(for: country.region), by: \.category)
@@ -32,8 +34,12 @@ struct CountryDetailScreen: View {
                                 }
                             }
                             Toggle("", isOn: Binding(
-                                get: { loader.isRegionEnabled(region.path) },
-                                set: { _ in loader.toggleRegion(region.path) }
+                                get: {
+                                    pendingRegionIDs.contains(region.path)
+                                        ? enabledPendingRegionIDs.contains(region.path)
+                                        : loader.isRegionEnabled(region.path)
+                                },
+                                set: { setRegionEnabled(region.path, enabled: $0) }
                             ))
                             .labelsHidden()
                             .tint(.green)
@@ -97,5 +103,24 @@ struct CountryDetailScreen: View {
         if lower.contains("diy") || lower.contains("craft") { return "hammer.fill" }
         if lower.contains("game") || lower.contains("gaming") { return "gamecontroller.fill" }
         return "antenna.radiowaves.left.and.right"
+    }
+
+    private func setRegionEnabled(_ region: String, enabled: Bool) {
+        pendingRegionIDs.insert(region)
+        if enabled {
+            enabledPendingRegionIDs.insert(region)
+        } else {
+            enabledPendingRegionIDs.remove(region)
+        }
+        let feedback = UIImpactFeedbackGenerator(style: .light)
+        feedback.impactOccurred()
+
+        DispatchQueue.main.async {
+            guard pendingRegionIDs.contains(region), enabledPendingRegionIDs.contains(region) == enabled else { return }
+            loader.setRegionEnabled(region, enabled: enabled)
+            if enabledPendingRegionIDs.contains(region) == enabled {
+                pendingRegionIDs.remove(region)
+            }
+        }
     }
 }

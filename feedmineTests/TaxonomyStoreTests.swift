@@ -105,6 +105,37 @@ final class TaxonomyStoreTests: XCTestCase {
         XCTAssertEqual(store.search("Coffee").count, 1)
     }
 
+    func testSearchRanksEditorialTopicBeforeDuplicateCountryCategory() async throws {
+        let sources = [
+            FeedSource(
+                title: "Myths Your Teacher Hated",
+                url: "https://myths.example/feed",
+                category: "Mythology & Folklore",
+                region: "topic/02_Arts_&_Culture",
+                mediaKind: .audio
+            ),
+            FeedSource(
+                title: "Irish Folklore",
+                url: "https://ireland.example/folklore.xml",
+                category: "Mythology & Folklore",
+                region: "countries/ireland",
+                mediaKind: .text
+            ),
+        ]
+        let store = TaxonomyStore()
+        await store.build(from: sources)
+
+        let results = store.search("Mythology & Folklore")
+
+        XCTAssertEqual(results.count, 2)
+        XCTAssertFalse(try XCTUnwrap(results.first).id.hasPrefix("countries/"))
+        XCTAssertTrue(results.last?.id.hasPrefix("countries/") == true)
+        XCTAssertEqual(
+            store.ancestors(of: try XCTUnwrap(results.last?.id)).map(\.name),
+            ["All Feeds", "Countries", "Ireland", "Mythology & Folklore"]
+        )
+    }
+
     // MARK: - Selection
 
     func testSelectAndDeselectNode() {
@@ -121,6 +152,103 @@ final class TaxonomyStoreTests: XCTestCase {
         store.select("b")
         store.clearSelection()
         XCTAssertTrue(store.selectedNodeIDs.isEmpty)
+    }
+
+    func testBuildPreservesValidSelectionDuringRebuild() async throws {
+        let source = FeedSource(
+            title: "Acoustics Today",
+            url: "https://acousticstoday.example/feed",
+            category: "Acoustics",
+            region: "global",
+            mediaKind: .text
+        )
+        let store = TaxonomyStore()
+        await store.build(from: [source])
+        let nodeID = try XCTUnwrap(store.nodeID(for: source.url))
+        store.select(nodeID)
+
+        await store.build(from: [source])
+
+        XCTAssertEqual(store.selectedNodeIDs, [nodeID])
+    }
+
+    func testCountryTaxonomyExcludesSourceSharedAcrossCountries() async {
+        let sharedURL = "https://feeds.example.com/global-history"
+        let algerianSource = FeedSource(
+            title: "Algeria Local News",
+            url: "https://algeria.example.com/rss",
+            category: "News",
+            region: "countries/algeria",
+            mediaKind: .text
+        )
+        let sources = [
+            FeedSource(
+                title: "This Day in History",
+                url: sharedURL,
+                category: "History",
+                region: "countries/algeria",
+                mediaKind: .audio
+            ),
+            FeedSource(
+                title: "This Day in History",
+                url: sharedURL,
+                category: "History",
+                region: "countries/belarus",
+                mediaKind: .audio
+            ),
+            algerianSource,
+        ]
+        let store = TaxonomyStore()
+        await store.build(from: sources)
+
+        let algeriaURLs = store.feedURLs(inSubtreesOf: ["countries/algeria"])
+
+        XCTAssertTrue(algeriaURLs.contains(OPMLParser.normalizeURL(algerianSource.url)))
+        XCTAssertFalse(algeriaURLs.contains(OPMLParser.normalizeURL(sharedURL)))
+    }
+
+    func testCountryTaxonomyHonorsDuplicateSignalAfterSourceDeduplication() async {
+        let sharedURL = "https://feeds.example.com/global-history"
+        let localURL = "https://algeria.example.com/rss"
+        let sources = [
+            FeedSource(
+                title: "This Day in History",
+                url: sharedURL,
+                category: "History",
+                region: "countries/algeria",
+                mediaKind: .audio
+            ),
+            FeedSource(
+                title: "Algeria Local News",
+                url: localURL,
+                category: "News",
+                region: "countries/algeria",
+                mediaKind: .text
+            ),
+        ]
+        let store = TaxonomyStore()
+        await store.build(
+            from: sources,
+            sharedCountrySourceURLs: [OPMLParser.normalizeURL(sharedURL)]
+        )
+
+        let algeriaURLs = store.feedURLs(inSubtreesOf: ["countries/algeria"])
+
+        XCTAssertEqual(algeriaURLs, [OPMLParser.normalizeURL(localURL)])
+    }
+
+    func testCrossCountryDuplicateDetectionUsesRawSourceRegions() {
+        let sharedURL = "https://feeds.example.com/global-history"
+        let duplicateSources = [
+            FeedSource(title: "History", url: sharedURL, category: "History", region: "countries/algeria"),
+            FeedSource(title: "History", url: sharedURL, category: "History", region: "countries/belarus"),
+            FeedSource(title: "Local", url: "https://algeria.example.com/rss", category: "News", region: "countries/algeria"),
+        ]
+
+        XCTAssertEqual(
+            OPMLParser.sharedCountrySourceURLs(in: duplicateSources),
+            [OPMLParser.normalizeURL(sharedURL)]
+        )
     }
 
     // MARK: - Performance / Scalability
@@ -288,6 +416,28 @@ final class TaxonomyStoreTests: XCTestCase {
 
         let loaded = store.loadFromCache(sources: setB)
         XCTAssertFalse(loaded, "Cache must be rejected when region changes even though URL, count, and category are identical")
+    }
+
+    func testCacheFingerprintRejectsChangedCrossCountryDuplicateSignal() async {
+        let sharedURL = "https://feeds.example.com/global-history"
+        let sources = [
+            FeedSource(
+                title: "History",
+                url: sharedURL,
+                category: "History",
+                region: "countries/algeria",
+                mediaKind: .audio
+            ),
+        ]
+        let store = TaxonomyStore()
+        await store.build(from: sources)
+
+        let loaded = store.loadFromCache(
+            sources: sources,
+            sharedCountrySourceURLs: [OPMLParser.normalizeURL(sharedURL)]
+        )
+
+        XCTAssertFalse(loaded, "Cache must be rejected when country ownership changes before source deduplication")
     }
 
     // MARK: - Warm-Cache nodeToFeedURLs Rebuild

@@ -59,6 +59,49 @@ TRACKING_QUERY_KEYS = {
     "utm_campaign", "utm_content", "utm_medium", "utm_source", "utm_term",
 }
 
+DATE_TEXT_FIELDS = (
+    "published", "updated", "created", "issued", "modified", "date",
+    "dc_date", "dcterms_created", "dcterms_modified",
+)
+DATE_STRUCTURED_FIELDS = (
+    "published_parsed", "updated_parsed", "created_parsed", "issued_parsed",
+    "modified_parsed", "date_parsed",
+)
+YMD_DATE_RE = re.compile(
+    r"(?<!\d)(?P<year>19\d{2}|20\d{2})[-_/](?P<month>0?[1-9]|1[0-2])[-_/](?P<day>0?[1-9]|[12]\d|3[01])(?!\d)"
+)
+COMPACT_YMD_DATE_RE = re.compile(
+    r"(?<!\d)(?P<year>19\d{2}|20\d{2})(?P<month>0[1-9]|1[0-2])(?P<day>0[1-9]|[12]\d|3[01])(?!\d)"
+)
+MONTH_NAME_DATE_RE = re.compile(
+    r"\b(?P<month>jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|"
+    r"jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)"
+    r"\.?\s+(?P<day>0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?[,]?\s+"
+    r"(?P<year>19\d{2}|20\d{2})\b",
+    re.I,
+)
+DAY_MONTH_NAME_DATE_RE = re.compile(
+    r"\b(?P<day>0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?\s+"
+    r"(?P<month>jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|"
+    r"jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)"
+    r"\.?\s+(?P<year>19\d{2}|20\d{2})\b",
+    re.I,
+)
+MONTHS = {
+    "jan": 1, "january": 1,
+    "feb": 2, "february": 2,
+    "mar": 3, "march": 3,
+    "apr": 4, "april": 4,
+    "may": 5,
+    "jun": 6, "june": 6,
+    "jul": 7, "july": 7,
+    "aug": 8, "august": 8,
+    "sep": 9, "sept": 9, "september": 9,
+    "oct": 10, "october": 10,
+    "nov": 11, "november": 11,
+    "dec": 12, "december": 12,
+}
+
 
 @dataclass(frozen=True)
 class MembershipRecord:
@@ -221,34 +264,91 @@ def _valid_published(value: datetime) -> bool:
     return datetime(1990, 1, 1, tzinfo=timezone.utc) <= value <= now + timedelta(days=7)
 
 
-def normalize_published(entry) -> tuple[str | None, str | None, bool]:
-    raw = clean_text(entry.get("published") or entry.get("updated"))
-    explicit_years = [int(year) for year in re.findall(r"(?<!\d)(\d{4})(?!\d)", raw or "")]
-    if explicit_years and any(year < 1990 for year in explicit_years):
-        return None, raw, False
-    structured = entry.get("published_parsed") or entry.get("updated_parsed")
-    value: datetime | None = None
-    if structured:
-        try:
-            value = datetime.fromtimestamp(calendar.timegm(structured), tz=timezone.utc)
-        except (OverflowError, TypeError, ValueError):
-            value = None
-    if value is None and raw:
-        try:
-            value = parsedate_to_datetime(raw)
-        except (TypeError, ValueError, OverflowError):
-            try:
-                value = datetime.fromisoformat(raw.replace("Z", "+00:00"))
-            except ValueError:
-                value = None
-    if value is None:
-        return None, raw, False
+def _normalize_datetime(value: datetime) -> datetime:
     if value.tzinfo is None:
         value = value.replace(tzinfo=timezone.utc)
-    value = value.astimezone(timezone.utc)
-    if not _valid_published(value):
-        return None, raw, False
-    return value.isoformat(), raw, True
+    return value.astimezone(timezone.utc)
+
+
+def _datetime_from_structured(value) -> datetime | None:
+    if not value:
+        return None
+    try:
+        return datetime.fromtimestamp(calendar.timegm(value), tz=timezone.utc)
+    except (OverflowError, TypeError, ValueError):
+        return None
+
+
+def _datetime_from_text(raw: str) -> datetime | None:
+    try:
+        return _normalize_datetime(parsedate_to_datetime(raw))
+    except (TypeError, ValueError, OverflowError):
+        pass
+    try:
+        return _normalize_datetime(datetime.fromisoformat(raw.replace("Z", "+00:00")))
+    except ValueError:
+        return None
+
+
+def _date_from_parts(year: str, month: str | int, day: str) -> datetime | None:
+    if isinstance(month, str) and not month.isdigit():
+        month_value = MONTHS.get(month.rstrip(".").lower())
+        if month_value is None:
+            return None
+    else:
+        month_value = int(month)
+    try:
+        return datetime(int(year), month_value, int(day), tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
+
+def _infer_date_from_text(raw: str | None) -> tuple[datetime | None, str | None]:
+    text = clean_text(raw)
+    if not text:
+        return None, None
+    for pattern in (YMD_DATE_RE, COMPACT_YMD_DATE_RE):
+        for match in pattern.finditer(text):
+            value = _date_from_parts(match["year"], match["month"], match["day"])
+            if value and _valid_published(value):
+                return value, match.group(0)
+    for pattern in (MONTH_NAME_DATE_RE, DAY_MONTH_NAME_DATE_RE):
+        for match in pattern.finditer(text):
+            value = _date_from_parts(match["year"], match["month"], match["day"])
+            if value and _valid_published(value):
+                return value, match.group(0)
+    return None, None
+
+
+def normalize_published(entry, *fallback_texts: str | None) -> tuple[str | None, str | None, bool]:
+    raw_values = [clean_text(entry.get(field)) for field in DATE_TEXT_FIELDS]
+    raw_values = [value for value in raw_values if value]
+    first_invalid_raw: str | None = None
+
+    for field in DATE_STRUCTURED_FIELDS:
+        value = _datetime_from_structured(entry.get(field))
+        if value and _valid_published(value):
+            raw = clean_text(entry.get(field.removesuffix("_parsed"))) or field
+            return value.isoformat(), raw, True
+
+    for raw in raw_values:
+        explicit_years = [int(year) for year in re.findall(r"(?<!\d)(\d{4})(?!\d)", raw)]
+        if explicit_years and any(year < 1990 for year in explicit_years):
+            first_invalid_raw = first_invalid_raw or raw
+            continue
+        value = _datetime_from_text(raw)
+        if value and _valid_published(value):
+            return value.isoformat(), raw, True
+
+    for fallback in fallback_texts:
+        value, matched = _infer_date_from_text(fallback)
+        if value and matched:
+            return value.isoformat(), f"inferred:{matched}", True
+
+    if first_invalid_raw:
+        return None, first_invalid_raw, False
+    raw = raw_values[0] if raw_values else None
+    return None, raw, False
 
 
 def _claimed_media_kind(opml_file: str, parent_chain: list[str], child: ET.Element) -> str | None:
@@ -397,7 +497,7 @@ def extract_articles(feed_data, source_id: str, max_articles: int = MAX_ARTICLES
         title = clean_html(entry.get("title"))
         raw_url = clean_text(entry.get("link"))
         item_url = canonical_url(raw_url or "", strip_tracking=True)
-        published_at, published_raw, published_valid = normalize_published(entry)
+        published_at, published_raw, published_valid = normalize_published(entry, item_url, raw_url, title)
         content_text, summary = _entry_content(entry)
         if not any((title, item_url, content_text, summary)):
             continue

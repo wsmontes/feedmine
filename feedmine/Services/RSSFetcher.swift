@@ -435,13 +435,24 @@ actor RSSFetcher {
 
     // MARK: - Private
 
+    func extractItems(fromFeedData data: Data, source: FeedSource) -> [FeedItem] {
+        guard case .success(let feed) = FeedParser(data: data).parse() else { return [] }
+        return extractItems(from: feed, source: source)
+    }
+
     private func extractItems(from feed: Feed, source: FeedSource) -> [FeedItem] {
         // Channel-level image fallback for podcasts (many RSS feeds have
         // artwork at the channel level but not per-episode).
         let feedImage: String? = {
+            // Aggregator channel artwork identifies the transport, not the
+            // article. Reusing the Google News logo on every card makes many
+            // publishers look like one repeated feed.
+            if URL(string: source.url)?.host?.lowercased() == "news.google.com" {
+                return nil
+            }
             switch feed {
             case .atom(let a): return a.logo ?? a.icon
-            case .rss(let r):  return r.image?.url
+            case .rss(let r):  return r.iTunes?.iTunesImage?.attributes?.href ?? r.image?.url
             case .json(let j): return j.icon ?? j.favicon
             }
         }()
@@ -452,12 +463,22 @@ actor RSSFetcher {
                 return (atomFeed.entries ?? []).compactMap { entry in
                     let rawContent = entry.content?.value ?? entry.summary?.value ?? ""
                     let audio = extractAtomAudio(from: entry, source: source)
+                    let entryLink = entry.links?.first(where: { link in
+                        let rel = link.attributes?.rel?.lowercased()
+                        let type = link.attributes?.type?.lowercased() ?? ""
+                        return (rel == nil || rel == "alternate")
+                            && !type.contains("atom")
+                            && !type.contains("rss")
+                    })?.attributes?.href
+                        ?? entry.links?.first(where: {
+                            $0.attributes?.rel?.lowercased() != "enclosure"
+                        })?.attributes?.href
                     let img = bestMediaImageURL(from: entry.media)
                         ?? extractFirstImageFromHTML(rawContent)
                         ?? feedImage
                     return makeItem(
                         guid: entry.id,
-                        link: entry.links?.first?.attributes?.href ?? entry.id,
+                        link: entryLink ?? entry.id,
                         title: entry.title,
                         publishedAt: entry.published ?? entry.updated,
                         source: source,
@@ -478,6 +499,7 @@ actor RSSFetcher {
                         title: item.title,
                         publishedAt: item.pubDate,
                         source: source,
+                        itemSourceTitle: item.source?.value,
                         rawDescription: item.description,
                         rawContent: item.content?.contentEncoded,
                         imageURL: img,
@@ -489,8 +511,8 @@ actor RSSFetcher {
                 return (jsonFeed.items ?? []).compactMap { jsonItem in
                     let audio = extractJSONAudio(from: jsonItem, source: source)
                     // Check attachments for image types (e.g., "image/jpeg")
-                    let attachmentImage = jsonItem.attachments?.first { att in
-                        att.mimeType?.hasPrefix("image/") == true
+                    let attachmentImage = jsonItem.attachments?.first { attachment in
+                        Self.isSupportedRasterMIMEType(attachment.mimeType)
                     }?.url
                     let img = jsonItem.image ?? jsonItem.bannerImage ?? attachmentImage ?? feedImage
                     return makeItem(
@@ -518,6 +540,7 @@ actor RSSFetcher {
         title: String?,
         publishedAt: Date?,
         source: FeedSource,
+        itemSourceTitle: String? = nil,
         rawDescription: String?,
         rawContent: String?,
         imageURL: String?,
@@ -531,11 +554,19 @@ actor RSSFetcher {
         // enclosure URL, because tapping them starts playback instead.
         guard let resolvedLink else { return nil }
 
+        // A visible card without a real headline is worse than skipping an
+        // incomplete feed item. Some malformed feeds encode CDATA as text;
+        // sanitizedHTMLText unwraps that form before this check.
+        let sanitizedTitle = Self.sanitizedHTMLText(title ?? "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !sanitizedTitle.isEmpty else { return nil }
+        let truncatedTitle = String(sanitizedTitle.prefix(200))
+
         let id = FeedItem.generateID(
             sourceURL: source.url,
             guid: guid,
             link: link,
-            title: title,
+            title: sanitizedTitle,
             publishedAt: publishedAt
         )
 
@@ -548,17 +579,29 @@ actor RSSFetcher {
         let resolvedImageURL = resolveImageURL(imageURL, baseURL: link ?? source.url)
 
         // Sanitize: truncate long titles, strip HTML, cap source names
-        let sanitizedTitle = Self.sanitizedHTMLText(title ?? "Untitled")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
-        let truncatedTitle = String(sanitizedTitle.prefix(200))
-        let sanitizedSource = String(source.title.prefix(50))
+        let isGoogleNews = URL(string: source.url)?.host?.lowercased() == "news.google.com"
+        let preferredSourceTitle: String? = if isGoogleNews {
+            if let publisher = itemSourceTitle?.trimmingCharacters(in: .whitespacesAndNewlines),
+               !publisher.isEmpty {
+                publisher
+            } else {
+                "Google News"
+            }
+        } else {
+            nil
+        }
+        let sanitizedSource = String(
+            Self.sanitizedHTMLText(
+                preferredSourceTitle?.isEmpty == false ? preferredSourceTitle! : source.title
+            ).prefix(80)
+        )
 
         return FeedItem(
             id: id,
             sourceTitle: sanitizedSource,
             sourceURL: source.url,
             category: source.category,
-            title: truncatedTitle.isEmpty ? "Untitled" : truncatedTitle,
+            title: truncatedTitle,
             excerpt: excerpt,
             url: resolvedLink,
             imageURL: resolvedImageURL,
@@ -566,7 +609,9 @@ actor RSSFetcher {
             audioURL: audioURL,
             duration: duration,
             region: source.region,
-            language: source.language
+            // The source language is catalogue metadata, not an item-level
+            // declaration. FeedStore combines it with content detection.
+            language: nil
         )
     }
 
@@ -575,15 +620,24 @@ actor RSSFetcher {
     private func bestMediaImageURL(from media: MediaNamespace?) -> String? {
         guard let media else { return nil }
 
-        // 1. media:content — pick largest by width
-        if let contents = media.mediaContents, !contents.isEmpty {
-            let best = contents.max { a, b in
+        // media:content may represent audio, video, documents, or browser
+        // players. Only direct raster images are valid card artwork.
+        let imageContents = (media.mediaContents ?? []).filter { content in
+            guard let attributes = content.attributes else { return false }
+            if attributes.medium?.lowercased() == "image" {
+                return !Self.isUnsupportedImageURL(attributes.url)
+            }
+            if Self.isSupportedRasterMIMEType(attributes.type) {
+                return !Self.isUnsupportedImageURL(attributes.url)
+            }
+            guard attributes.medium == nil, attributes.type == nil else { return false }
+            return Self.hasRasterImageExtension(attributes.url)
+        }
+        if !imageContents.isEmpty {
+            let best = imageContents.max { a, b in
                 let aW = a.attributes?.width.flatMap(Int.init) ?? 0
                 let bW = b.attributes?.width.flatMap(Int.init) ?? 0
-                if aW != bW { return aW < bW }
-                let aImg = a.attributes?.type?.hasPrefix("image/") == true
-                let bImg = b.attributes?.type?.hasPrefix("image/") == true
-                return !aImg && bImg
+                return aW < bW
             }
             if let url = best?.attributes?.url { return url }
         }
@@ -606,10 +660,13 @@ actor RSSFetcher {
         // 1. media:content / media:thumbnail (Media RSS namespace)
         if let url = bestMediaImageURL(from: item.media) { return url }
 
-        // 3. enclosure with image type
+        // 2. Episode artwork used by most podcast publishers.
+        if let url = item.iTunes?.iTunesImage?.attributes?.href { return url }
+
+        // 3. enclosure with a supported raster image type
         if let enclosure = item.enclosure,
            let type = enclosure.attributes?.type,
-           type.hasPrefix("image/"),
+           Self.isSupportedRasterMIMEType(type),
            let url = enclosure.attributes?.url {
             return url
         }
@@ -624,28 +681,79 @@ actor RSSFetcher {
 
     /// Resolve a possibly-relative image URL against the article's base URL.
     private func resolveImageURL(_ imageURL: String?, baseURL: String?) -> String? {
-        guard let raw = imageURL?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
+        guard let original = imageURL?.trimmingCharacters(in: .whitespacesAndNewlines), !original.isEmpty else { return nil }
+        let raw = original
+            .replacingOccurrences(of: "&amp;", with: "&")
+            .replacingOccurrences(of: "&#038;", with: "&")
+            .replacingOccurrences(of: "&#38;", with: "&")
         // Reject tracking pixels and spacer GIFs at the source so they never
         // enter the database or pollute the What's New carousel.
         let lower = raw.lowercased()
         if lower.contains("tracking") && lower.contains("pixel") { return nil }
+        if lower.contains("/tracker/") || lower.contains("count.gif") || lower.contains("track-rss-story") { return nil }
         if lower.contains("spacer") && (lower.hasSuffix(".gif") || lower.hasSuffix(".png")) { return nil }
         if lower.hasSuffix("1x1.gif") || lower.hasSuffix("1x1.png") { return nil }
+        if Self.isUnsupportedImageURL(raw) { return nil }
+        if lower.hasPrefix("http://") || lower.hasPrefix("https://") {
+            let tail = lower.dropFirst(8)
+            let nestedSchemes = ["http://", "https://"].compactMap { tail.range(of: $0) }
+            if let firstNested = nestedSchemes.min(by: { $0.lowerBound < $1.lowerBound }) {
+                let prefix = tail[..<firstNested.lowerBound]
+                // URL proxies commonly use /https://... or ?url=https://...
+                // A bare image.jpghttps://... sequence is malformed.
+                if prefix.last != "/" && prefix.last != "=" { return nil }
+            }
+        }
         // Already absolute — upgrade HTTP to HTTPS so images don't fail
         // under ATS (NSAllowsArbitraryLoadsForMedia only covers AV media).
-        if raw.hasPrefix("http://") { return raw.replacingOccurrences(of: "http://", with: "https://") }
-        if raw.hasPrefix("https://") { return raw }
-        // Data URIs — pass through as-is (CachedAsyncImage handles)
-        if raw.hasPrefix("data:") { return raw }
+        if raw.hasPrefix("http://") {
+            let upgraded = "https://" + raw.dropFirst("http://".count)
+            return Self.validHTTPImageURL(String(upgraded))
+        }
+        if raw.hasPrefix("https://") { return Self.validHTTPImageURL(raw) }
+        // Data URIs are accepted only for raster formats supported by ImageIO.
+        if lower.hasPrefix("data:image/") { return raw }
+        if lower.hasPrefix("data:") { return nil }
         // Protocol-relative URL
-        if raw.hasPrefix("//") { return "https:\(raw)" }
+        if raw.hasPrefix("//") { return Self.validHTTPImageURL("https:\(raw)") }
         // Relative URL — resolve against base
         guard let base = baseURL, let baseURL = URL(string: base) else { return nil }
         guard let resolved = URL(string: raw, relativeTo: baseURL) else { return nil }
-        return resolved.absoluteString
+        return Self.validHTTPImageURL(resolved.absoluteString)
     }
 
-    /// Extract first <img src> from an HTML string.
+    private static func isSupportedRasterMIMEType(_ value: String?) -> Bool {
+        guard let type = value?.lowercased(), type.hasPrefix("image/") else { return false }
+        return !type.contains("svg")
+    }
+
+    private static func hasRasterImageExtension(_ value: String?) -> Bool {
+        guard let value, let components = URLComponents(string: value) else { return false }
+        let extensions = Set(["jpg", "jpeg", "jfif", "png", "gif", "webp", "avif", "heic", "heif", "bmp", "tif", "tiff"])
+        return extensions.contains((components.path as NSString).pathExtension.lowercased())
+    }
+
+    private static func isUnsupportedImageURL(_ value: String?) -> Bool {
+        guard let value else { return true }
+        let lower = value.lowercased()
+        if lower.hasPrefix("data:image/svg") { return true }
+        if lower.contains("youtube.com/embed/") { return true }
+        guard let components = URLComponents(string: value) else { return true }
+        let ext = (components.path as NSString).pathExtension.lowercased()
+        return ["svg", "mp3", "m4a", "aac", "wav", "ogg", "opus", "mp4", "mov", "webm"].contains(ext)
+    }
+
+    private static func validHTTPImageURL(_ value: String) -> String? {
+        guard let url = URL(string: value),
+              ["http", "https"].contains(url.scheme?.lowercased() ?? ""),
+              url.host != nil,
+              !isUnsupportedImageURL(value) else { return nil }
+        return url.absoluteString
+    }
+
+    /// Extract the first plausible content image from an HTML fragment. Feed
+    /// bodies often begin with a favicon, avatar, sharing button, or tracking
+    /// image; when an img has srcset, use its largest declared variant.
     private func extractFirstImageFromHTML(_ html: String) -> String? {
         // Quick pre-check — skip if no img tag present
         guard html.contains("<img") || html.contains("&lt;img") else { return nil }
@@ -656,13 +764,79 @@ actor RSSFetcher {
             .replacingOccurrences(of: "&amp;", with: "&")
             .replacingOccurrences(of: "&quot;", with: "\"")
         for candidate in [decoded, html] {
-            guard let match = Self.imgSrcRegex.firstMatch(in: candidate, range: NSRange(candidate.startIndex..., in: candidate)),
-                  let range = Range(match.range(at: 1), in: candidate) else {
-                continue
+            let fullRange = NSRange(candidate.startIndex..., in: candidate)
+            for match in Self.imgTagRegex.matches(in: candidate, range: fullRange) {
+                guard let tagRange = Range(match.range, in: candidate) else { continue }
+                let tag = String(candidate[tagRange])
+                let attributes = Self.imageAttributeRegex.matches(
+                    in: tag,
+                    range: NSRange(tag.startIndex..., in: tag)
+                ).compactMap { attribute -> (name: String, value: String)? in
+                    guard let nameRange = Range(attribute.range(at: 1), in: tag),
+                          let valueRange = Range(attribute.range(at: 2), in: tag) else { return nil }
+                    return (String(tag[nameRange]).lowercased(), String(tag[valueRange]))
+                }
+
+                let valueForFirstAttribute: ([String]) -> String? = { names in
+                    names.lazy.compactMap { name in
+                        attributes.first(where: { $0.name == name })?.value
+                    }.first
+                }
+                let srcset = valueForFirstAttribute(["data-lazy-srcset", "data-srcset", "srcset"])
+                let src = valueForFirstAttribute([
+                    "data-lazy-src", "data-original", "data-orig-file", "data-src", "src",
+                ])
+                let imageURL = Self.preferredSrcsetCandidate(srcset) ?? src
+                guard let imageURL, !Self.isLikelyDecorativeImageURL(imageURL) else { continue }
+                return Self.upgradedKnownThumbnailURL(imageURL)
             }
-            return String(candidate[range])
         }
         return nil
+    }
+
+    private static func preferredSrcsetCandidate(_ srcset: String?) -> String? {
+        guard let srcset else { return nil }
+        let candidates = srcset.split(separator: ",")
+            .compactMap { entry -> (url: String, value: Double, unit: Character)? in
+                let parts = entry.split(whereSeparator: \Character.isWhitespace)
+                guard let first = parts.first else { return nil }
+                let descriptor = parts.dropFirst().last.map(String.init) ?? ""
+                guard let unit = descriptor.last,
+                      unit == "w" || unit == "x",
+                      let number = Double(descriptor.dropLast()) else { return nil }
+                return (String(first), number, unit)
+            }
+        let widthCandidates = candidates.filter { $0.unit == "w" }.sorted { $0.value < $1.value }
+        if let sufficient = widthCandidates.first(where: { $0.value >= 960 }) { return sufficient.url }
+        if let largest = widthCandidates.last { return largest.url }
+        let densityCandidates = candidates.filter { $0.unit == "x" }.sorted { $0.value < $1.value }
+        if let retina = densityCandidates.first(where: { $0.value >= 2 }) { return retina.url }
+        return densityCandidates.last?.url
+    }
+
+    private static func isLikelyDecorativeImageURL(_ value: String) -> Bool {
+        let lower = value.lowercased()
+        let markers = [
+            "favicon", "gravatar.com/avatar", "/emoji/", "s.w.org/images/core/emoji",
+            "addtoany.com/buttons", "share_save", "icon_facebook", "tracking",
+            "spacer", "pixel.gif", "count.gif",
+        ]
+        if markers.contains(where: lower.contains) { return true }
+        return lower.range(of: #"(?:^|[-_/])(16|18|24|32)x(?:11|12|16|18|24|29|30|31|32)(?:[-_.?/]|$)"#,
+                           options: .regularExpression) != nil
+    }
+
+    private static func upgradedKnownThumbnailURL(_ value: String) -> String {
+        guard let url = URL(string: value),
+              let host = url.host?.lowercased(),
+              host.contains("blogger.googleusercontent.com") || host.hasSuffix(".blogspot.com") else {
+            return value
+        }
+        return value.replacingOccurrences(
+            of: #"/s(?:72|144)(?:-c)?/"#,
+            with: "/s1200/",
+            options: .regularExpression
+        )
     }
 
     /// Extract excerpt from available fields in priority order.
@@ -680,7 +854,11 @@ actor RSSFetcher {
         return capped
     }
 
-    private static let imgSrcRegex = try! NSRegularExpression(pattern: #"<img[^>]+src=["']([^"']+)["']"#, options: .caseInsensitive)
+    private static let imgTagRegex = try! NSRegularExpression(pattern: #"<img\b[^>]*>"#, options: .caseInsensitive)
+    private static let imageAttributeRegex = try! NSRegularExpression(
+        pattern: #"\s(data-lazy-srcset|data-srcset|srcset|data-lazy-src|data-original|data-orig-file|data-src|src)\s*=\s*["']([^"']+)["']"#,
+        options: .caseInsensitive
+    )
 
     /// Convert feed HTML/XML fragments into display text without pulling in
     /// NSAttributedString's HTML parser for every item.
@@ -698,10 +876,22 @@ enum FeedTextSanitizer {
     /// Convert feed HTML/XML fragments into display text without pulling in
     /// NSAttributedString's HTML parser for every item.
     static func sanitizedHTMLText(_ html: String) -> String {
-        let decodedMarkup = decodeHTMLEntities(in: html)
+        let decodedMarkup = unwrapCDATA(in: decodeHTMLEntities(in: html))
         let range = NSRange(decodedMarkup.startIndex..., in: decodedMarkup)
         let stripped = htmlTagRegex.stringByReplacingMatches(in: decodedMarkup, range: range, withTemplate: " ")
         return decodeHTMLEntities(in: stripped)
+    }
+
+    /// A few publishers write an escaped CDATA wrapper inside an XML element
+    /// (`&lt;![CDATA[headline]]&gt;`). Once entities are decoded it looks like a
+    /// tag, so the normal HTML stripper would erase the headline entirely.
+    private static func unwrapCDATA(in input: String) -> String {
+        var text = input
+        while let start = text.range(of: "<![CDATA["),
+              let end = text.range(of: "]]>", range: start.upperBound..<text.endIndex) {
+            text.replaceSubrange(start.lowerBound..<end.upperBound, with: text[start.upperBound..<end.lowerBound])
+        }
+        return text
     }
 
     private static func decodeHTMLEntities(in text: String) -> String {

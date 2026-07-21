@@ -18,6 +18,7 @@ from scripts.fetch_all_feeds_v2 import (
     extract_articles,
     flush_parquet_batch,
     init_db,
+    normalize_published,
     parse_opml,
     register_catalog,
     stable_id,
@@ -101,6 +102,43 @@ class ArticleExtractionTests(unittest.TestCase):
         self.assertIsNone(article["published_at"])
         self.assertFalse(article["published_valid"])
         self.assertIn("0024", article["published_raw"])
+
+    def test_uses_created_date_when_primary_dates_are_missing(self):
+        entry = feedparser.FeedParserDict({
+            "created": "Thu, 16 Jul 2026 12:00:00 GMT",
+        })
+
+        published_at, published_raw, published_valid = normalize_published(entry)
+
+        self.assertTrue(published_valid)
+        self.assertEqual(published_raw, "Thu, 16 Jul 2026 12:00:00 GMT")
+        self.assertTrue(published_at.startswith("2026-07-16T12:00:00"))
+
+    def test_infers_date_from_canonical_url_when_feed_omits_dates(self):
+        feed = feedparser.FeedParserDict()
+        feed.entries = [feedparser.FeedParserDict({
+            "title": "Architecture dispatch",
+            "link": "https://example.com/2026/07/11/story?utm_source=x",
+        })]
+
+        article = extract_articles(feed, "source-1")[0]
+
+        self.assertTrue(article["published_valid"])
+        self.assertEqual(article["published_raw"], "inferred:2026/07/11")
+        self.assertTrue(article["published_at"].startswith("2026-07-11T00:00:00"))
+
+    def test_infers_month_name_date_from_title_when_feed_omits_dates(self):
+        feed = feedparser.FeedParserDict()
+        feed.entries = [feedparser.FeedParserDict({
+            "title": "Book Riot's Deals of the Day for July 16, 2026",
+            "link": "https://example.com/deals",
+        })]
+
+        article = extract_articles(feed, "source-1")[0]
+
+        self.assertTrue(article["published_valid"])
+        self.assertEqual(article["published_raw"], "inferred:July 16, 2026")
+        self.assertTrue(article["published_at"].startswith("2026-07-16T00:00:00"))
 
 
 class PersistenceTests(unittest.TestCase):

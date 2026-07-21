@@ -27,6 +27,8 @@ GLOBAL_PROFILE = CountryProfile(
         "spotify": SourceConfig(priority=9, params={}),
         # 40M+ RSS feeds indexed -- OAuth required
         "feedly": SourceConfig(priority=10, params={}),
+        # Google News RSS feeds by country (free, no auth)
+        "google_news": SourceConfig(priority=10, params={}),
         # Wikipedia award-winning YouTube channels (static data, no API calls)
         "youtube_awards": SourceConfig(priority=11, params={}),
         # Kaggle top YouTube channels by country (CSV dataset, no API calls)
@@ -35,11 +37,7 @@ GLOBAL_PROFILE = CountryProfile(
         "youtube_socialblade": SourceConfig(priority=13, params={}),
         # Wikipedia top 100 most-subscribed (Diamond Play Button, 50M+ subs)
         "youtube_diamond": SourceConfig(priority=14, params={}),
-        # Google News RSS feeds by country (free, no auth)
-        "google_news": SourceConfig(priority=10, params={}),
         # Reddit RSS feeds per country/subreddit (free, no auth)
         "reddit": SourceConfig(priority=15, params={}),
-        # iTunes Top Podcasts charts by country (free, no auth)
-        "itunes_charts": SourceConfig(priority=2, params={}),
     },
 )

@@ -58,13 +58,19 @@ actor ImagePrefetcher {
 
     private func download(_ url: URL) async {
         defer { inFlightURLs.remove(url) }
-        do {
-            let (data, _) = try await session.data(from: url)
-            guard UIImage(data: data) != nil else { return }
-            // setImage(data:) downsamples before memory cache; JPEG goes to disk
-            await ImageCache.shared.setImage(data: data, for: url)
-        } catch {
-            // Silent fail — will retry on next appearance
+        for candidate in ImageURLCandidates.candidates(for: url) {
+            do {
+                let (data, response) = try await session.data(from: candidate)
+                if let http = response as? HTTPURLResponse,
+                   !(200...299).contains(http.statusCode) { continue }
+                guard UIImage(data: data) != nil else { continue }
+                // Cache fallback bytes under the requested URL so the view's
+                // normal memory/disk lookup finds them.
+                await ImageCache.shared.setImage(data: data, for: url)
+                return
+            } catch {
+                continue
+            }
         }
     }
 }

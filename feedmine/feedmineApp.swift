@@ -10,8 +10,30 @@ struct FeedmineApp: App {
     @State private var contentFilters = ContentFilterStore.shared
 
     init() {
+        if ProcessInfo.processInfo.arguments.contains("-UITestResetFilters") {
+            resetFiltersForUITestLaunch()
+        }
+        if ProcessInfo.processInfo.arguments.contains("-UITestShowOnboarding") {
+            UserDefaults.standard.set(false, forKey: Keys.hasSeenOnboarding)
+        } else if ProcessInfo.processInfo.arguments.contains("-UITestSkipOnboarding") {
+            UserDefaults.standard.set(true, forKey: Keys.hasSeenOnboarding)
+        }
         FeedMetrics.event("Process.started")
         FeedMetrics.memory("processStarted")
+    }
+
+    /// UI cases must not inherit a taxonomy or language intersection from a
+    /// previous case. This launch argument is only supplied by the UI target.
+    private func resetFiltersForUITestLaunch() {
+        Settings.filterRegion = nil
+        Settings.filterTaxonomyNodes = []
+        Settings.filterContentType = FeedLoader.ContentType.all.rawValue
+        Settings.filterLanguages = []
+        Settings.filterMood = FeedLoader.MoodFilter.all.rawValue
+        Settings.filterSetAt = 0
+        Settings.hasInitializedLanguageDefault = true
+        TaxonomyStore.shared.clearSelection()
+        UserDefaults.standard.synchronize()
     }
 
     var body: some Scene {

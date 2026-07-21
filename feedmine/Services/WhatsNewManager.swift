@@ -83,8 +83,13 @@ final class WhatsNewManager {
         prefetchImages: @escaping ([FeedItem]) -> Void,
         recordFetch: @escaping (String, Bool) -> Void
     ) {
-        whatsNewBoosterTask?.cancel()
-        whatsNewBoosterTask = Task {
+        // A cancelled task may already be inside GRDB's transactional write.
+        // Let that short write finish and reuse it for the current filters:
+        // candidate matching is evaluated when the results arrive.
+        guard whatsNewBoosterTask == nil else { return }
+        whatsNewBoosterTask = Task { [weak self] in
+            guard let self else { return }
+            defer { self.whatsNewBoosterTask = nil }
             let sources = enabledSources.shuffled().prefix(30)
             let result = await fetcher.fetchAll(Array(sources), maxConcurrent: 5)
             guard !Task.isCancelled else { return }
@@ -103,9 +108,8 @@ final class WhatsNewManager {
         }
     }
 
-    /// Refresh What's New: clear the pool, re-seed from DB, and trigger
-    /// a booster fetch. Called on any user-triggered update (startup, shake,
-    /// filter change) so the carousel always reflects the current context.
+    /// Refresh What's New: clear the pool and re-seed it from the local DB.
+    /// An optional booster can add fresh network results when the app starts.
     func refreshWhatsNew(
         seedFromDB: @escaping () async -> Void,
         booster: @escaping () -> Void

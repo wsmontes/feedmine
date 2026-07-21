@@ -11,7 +11,7 @@ DERIVED_DATA   := .build-device
 SIM_DERIVED    := .build-dd
 APP_PATH       := $(DERIVED_DATA)/Build/Products/Debug-iphoneos/feedmine.app
 
-.PHONY: all build install launch \
+.PHONY: all build install launch audit-images \
         test-device test-device-only test-ui \
         test-sim test-sim-only test-ui-sim \
         device-info sim-info clean clean-all
@@ -26,6 +26,11 @@ device-info:
 sim-info:
 	@echo "📱 Simulators:"
 	@xcrun simctl list devices | grep "$(SIM_NAME)"
+
+# ── Content Diagnostics ──────────────────────────────────
+audit-images:
+	@test -n "$(IMAGE_AUDIT_DB)" || (echo "Set IMAGE_AUDIT_DB to a copied app SQLite database" && exit 1)
+	.venv_feeds/bin/python scripts/diagnose_image_failures.py "$(IMAGE_AUDIT_DB)"
 
 # ── Full Cycle ───────────────────────────────────────────
 all: build install launch

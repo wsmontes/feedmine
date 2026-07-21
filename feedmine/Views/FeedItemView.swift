@@ -5,9 +5,11 @@ import SwiftUI
 struct FeedItemView: View {
     @Environment(FeedLoader.self) private var loader
     let item: FeedItem
-    var onOpen: (() -> Void)?
-    var onCopy: (() -> Void)?
-    var onPlaybackFailed: (() -> Void)?
+    var onOpen: (() -> Void)? = nil
+    var onCopy: (() -> Void)? = nil
+    var onPlaybackFailed: (() -> Void)? = nil
+    var onViewSource: (() -> Void)? = nil
+    var onAddSourceToCollection: (() -> Void)? = nil
 
     var body: some View {
         Group {
@@ -17,6 +19,8 @@ struct FeedItemView: View {
                     isRead: item.isRead,
                     isBookmarked: item.isBookmarked,
                     onBookmark: { loader.toggleBookmark(item.id) },
+                    onViewSource: onViewSource,
+                    onAddSourceToCollection: onAddSourceToCollection,
                     isInBookmarkBox: loader.selectedBookmarkListID != nil
                 )
                 .equatable()
@@ -81,11 +85,16 @@ struct FeedItemView: View {
         .contextMenu {
             BookmarkBoxContextMenu(itemID: item.id)
 
-            Button {
-                loader.searchQuery = item.sourceTitle
-                loader.searchQueryChanged()
-            } label: {
-                Label("Show more from \(item.sourceTitle)", systemImage: "arrow.triangle.branch")
+            if let onViewSource {
+                Button(action: onViewSource) {
+                    Label("View Source", systemImage: "rectangle.stack")
+                }
+            }
+
+            if let onAddSourceToCollection {
+                Button(action: onAddSourceToCollection) {
+                    Label("Add Source to Collection", systemImage: "rectangle.stack.badge.plus")
+                }
             }
 
             Button {
@@ -111,6 +120,7 @@ struct FeedItemView: View {
             }
         }
         .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("feed-item-\(item.language ?? "und")-\(item.id)")
         .accessibilityLabel("\(item.title) from \(item.sourceTitle)")
         .accessibilityAddTraits(item.isRead ? [] : .isHeader)
     }

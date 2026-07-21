@@ -6,30 +6,28 @@ struct OPMLParser {
     /// Bump when the parse LOGIC or FeedSource shape changes (region derivation,
     /// mediaKind classification, dedup/normalize) so caches produced by the old
     /// logic are ignored even within the same app build.
-    private static let cacheFormatVersion = 6  // +file stat in fingerprint (OPML reorg in ae17b903)
+    private static let cacheFormatVersion = 8  // curated source metadata + default enablement
 
     /// Codable envelope persisted to Caches/.
     private struct CachedParse: Codable {
         let fingerprint: String
         let sources: [FeedSource]
+        let sharedCountrySourceURLs: [String]
         let fileCount: Int
         let failedFileCount: Int
         let invalidSourceCount: Int
         let duplicateSourceCount: Int
     }
 
-    /// Cache key combining app version with file-system metadata so that
-    /// reorganizing, adding, or removing OPML files automatically invalidates
-    /// the cache. The file count and the newest mtime among bundled OPML files
-    /// serve as a fast approximate fingerprint — no per-file hash walk.
-    private static func cacheFingerprint() -> String {
+    /// Cache key combining app version with the active local catalog revision.
+    /// Managed updates are activated as complete snapshots, so the manifest
+    /// revision is a constant-time and exact invalidation key.
+    private static func cacheFingerprint(feedsURL: URL?) -> String {
         let info = Bundle.main.infoDictionary
         let build = info?["CFBundleVersion"] as? String ?? "0"
         let short = info?["CFBundleShortVersionString"] as? String ?? "0"
-        // Bundled resources are immutable for an installed build. One stat on
-        // the executable plus one on the Feeds root invalidates development
-        // installs without walking thousands of OPML files on every launch.
-        let feedsURL = Bundle.main.resourceURL?.appendingPathComponent("Feeds")
+        // Bundled resources are immutable for an installed build. The mtime
+        // remains useful for development builds that do not carry a manifest.
         let executableMtime = Bundle.main.executableURL.flatMap {
             try? $0.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate
         } ?? nil
@@ -40,7 +38,8 @@ struct OPMLParser {
             executableMtime?.timeIntervalSince1970 ?? 0,
             feedsMtime?.timeIntervalSince1970 ?? 0
         )
-        return "\(cacheFormatVersion)-\(short)-\(build)-mt\(Int64(stamp * 1000))"
+        let revision = CatalogRuntime.activeManifest()?.revision ?? 0
+        return "\(cacheFormatVersion)-\(short)-\(build)-r\(revision)-mt\(Int64(stamp * 1000))"
     }
 
     private static var cacheURL: URL? {
@@ -55,6 +54,7 @@ struct OPMLParser {
               cached.fingerprint == fingerprint else { return nil }
         return OPMLParseResult(
             sources: cached.sources,
+            sharedCountrySourceURLs: Set(cached.sharedCountrySourceURLs),
             fileCount: cached.fileCount,
             failedFileCount: cached.failedFileCount,
             invalidSourceCount: cached.invalidSourceCount,
@@ -67,6 +67,7 @@ struct OPMLParser {
         let payload = CachedParse(
             fingerprint: fingerprint,
             sources: result.sources,
+            sharedCountrySourceURLs: result.sharedCountrySourceURLs.sorted(),
             fileCount: result.fileCount,
             failedFileCount: result.failedFileCount,
             invalidSourceCount: result.invalidSourceCount,
@@ -84,11 +85,13 @@ struct OPMLParser {
         }
     }
 
-    /// Scan the app bundle for all .opml files and parse them into FeedSource entries.
+    /// Scan the active local snapshot for all .opml files. The app bundle is
+    /// the bootstrap/fallback snapshot; GitHub is never read by this parser.
     static func parseAll() async -> OPMLParseResult {
+        let feedsURL = CatalogRuntime.activeFeedsURL()
         // Cache fast path after a constant-time bundle fingerprint.
         let endFingerprintMetric = FeedMetrics.beginInterval("OPML.fingerprint")
-        let fingerprint = cacheFingerprint()
+        let fingerprint = cacheFingerprint(feedsURL: feedsURL)
         endFingerprintMetric()
 
         let endCacheReadMetric = FeedMetrics.beginInterval("OPML.cacheRead")
@@ -105,7 +108,7 @@ struct OPMLParser {
         let endFullParseMetric = FeedMetrics.beginInterval("OPML.fullParse")
         defer { endFullParseMetric() }
         var opmlFiles: [URL] = []
-        if let feedsURL = Bundle.main.resourceURL?.appendingPathComponent("Feeds"),
+        if let feedsURL,
            let enumerator = FileManager.default.enumerator(at: feedsURL, includingPropertiesForKeys: nil) {
             while let fileURL = enumerator.nextObject() as? URL {
                 if fileURL.pathExtension == "opml" {
@@ -122,7 +125,14 @@ struct OPMLParser {
         opmlFiles.sort { $0.path < $1.path }
 
         guard !opmlFiles.isEmpty else {
-            return OPMLParseResult(sources: [], fileCount: 0, failedFileCount: 0, invalidSourceCount: 0, duplicateSourceCount: 0)
+            return OPMLParseResult(
+                sources: [],
+                sharedCountrySourceURLs: [],
+                fileCount: 0,
+                failedFileCount: 0,
+                invalidSourceCount: 0,
+                duplicateSourceCount: 0
+            )
         }
 
         // Parse concurrently but BOUNDED to ~core count in flight. Each parseFile
@@ -172,11 +182,13 @@ struct OPMLParser {
             if entry.failed { failedFileCount += 1 }
         }
 
+        let sharedCountrySourceURLs = sharedCountrySourceURLs(in: allSources)
         let deduped = deduplicateSources(allSources)
         let duplicateSourceCount = allSources.count - deduped.count
 
         let result = OPMLParseResult(
             sources: deduped,
+            sharedCountrySourceURLs: sharedCountrySourceURLs,
             fileCount: opmlFiles.count,
             failedFileCount: failedFileCount,
             invalidSourceCount: invalidSourceCount,
@@ -226,7 +238,7 @@ struct OPMLParser {
     private static func region(for fileURL: URL, fileName: String) -> String {
         let components = fileURL.pathComponents
         // Check for countries/ first (existing behavior preserved)
-        if let countriesIdx = components.lastIndex(of: "countries"),
+        if let countriesIdx = components.lastIndex(where: { orderedPathName($0) == "countries" }),
            countriesIdx + 1 < components.count {
             let countryDir = components[countriesIdx + 1]
             if fileName == countryDir {
@@ -253,6 +265,16 @@ struct OPMLParser {
             }
         }
         return "global"
+    }
+
+    /// Numeric path prefixes express editorial menu order and are not part of
+    /// the semantic folder name (`90_countries` is the Countries branch).
+    private static func orderedPathName(_ raw: String) -> String {
+        raw.replacingOccurrences(
+            of: #"^\d+[ _-]+"#,
+            with: "",
+            options: .regularExpression
+        )
     }
 
     /// Extract <language> from the OPML <head> section by scanning the raw XML.
@@ -296,6 +318,19 @@ struct OPMLParser {
         }
 
         return result
+    }
+
+    /// Finds feeds repeated in separate country catalogs before URL
+    /// deduplication discards their original locations.
+    static func sharedCountrySourceURLs(in sources: [FeedSource]) -> Set<String> {
+        let countriesByURL = sources.reduce(into: [String: Set<String>]()) { result, source in
+            let parts = source.region.split(separator: "/", omittingEmptySubsequences: true)
+            guard parts.count >= 2, parts[0] == "countries" else { return }
+            result[normalizeURL(source.url), default: []].insert("\(parts[0])/\(parts[1])")
+        }
+        return Set(countriesByURL.compactMap { url, countries in
+            countries.count > 1 ? url : nil
+        })
     }
 
     /// Derive the media kind from an OPML filename, so the scheduler can
@@ -362,25 +397,26 @@ struct OPMLParser {
         let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
         guard var components = URLComponents(string: trimmed) else { return trimmed }
 
-        // Normalize scheme to https (http→https equivalence)
+        // This identity contract is mirrored by canonical_url() in the OPML
+        // curation pipeline. Keep both sides aligned so one physical OPML row
+        // always maps to one runtime source.
         components.scheme = "https"
-        // Strip www. prefix
-        if let host = components.host?.lowercased(), host.hasPrefix("www.") {
-            components.host = String(host.dropFirst(4))
+        if let host = components.host?.lowercased() {
+            components.host = host.hasPrefix("www.") ? String(host.dropFirst(4)) : host
         }
-
-        var urlString = components.string ?? trimmed
-        if urlString.hasSuffix("/") {
-            urlString.removeLast()
+        components.fragment = nil
+        if let queryItems = components.queryItems {
+            let trackingParams = Set([
+                "utm_source", "utm_medium", "utm_campaign", "utm_term",
+                "utm_content", "ref", "source", "fbclid", "gclid",
+            ])
+            let retained = queryItems.filter { !trackingParams.contains($0.name.lowercased()) }
+            components.queryItems = retained.isEmpty ? nil : retained
         }
-        // Remove common tracking/analytics query params
-        if var url = URL(string: urlString),
-           var comps = URLComponents(url: url, resolvingAgainstBaseURL: false) {
-            let trackingParams = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "ref", "source", "fbclid", "gclid"]
-            comps.queryItems = comps.queryItems?.filter { !trackingParams.contains($0.name) }
-            if let cleaned = comps.string { urlString = cleaned }
+        if components.path.hasSuffix("/") {
+            components.path.removeLast()
         }
-        return urlString
+        return components.string ?? trimmed
     }
 }
 
@@ -450,7 +486,15 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
             if xmlUrl.contains("reddit.com/r/") { return .forum }
             return mediaKind
         }()
-        let resolvedLanguage = language ?? languageStack.last ?? fileLanguage
+        let rawLanguage = language ?? languageStack.last ?? fileLanguage
+        let resolvedLanguage = rawLanguage == "und" ? nil : rawLanguage
+        let tags = (attributeDict["category"] ?? "")
+            .split(separator: ",")
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        let defaultEnabled = attributeDict["feedmineDefaultEnabled"]?.lowercased() != "false"
+        let qualityScore = attributeDict["feedmineQualityScore"].flatMap(Int.init)
+        let explicitMediaKind = attributeDict["feedmineMediaKind"].flatMap(MediaKind.init(rawValue:))
 
         sources.append(
             FeedSource(
@@ -458,8 +502,14 @@ private final class OPMLDelegate: NSObject, XMLParserDelegate {
                 url: xmlUrl,
                 category: category,
                 region: region,
-                mediaKind: resolvedKind,
-                language: resolvedLanguage
+                mediaKind: explicitMediaKind ?? resolvedKind,
+                language: resolvedLanguage,
+                sourceDescription: attributeDict["description"],
+                tags: tags,
+                nature: attributeDict["feedmineNature"],
+                activity: attributeDict["feedmineActivity"],
+                qualityScore: qualityScore,
+                defaultEnabled: defaultEnabled
             )
         )
     }

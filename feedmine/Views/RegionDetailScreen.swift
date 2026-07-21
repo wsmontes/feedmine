@@ -20,8 +20,8 @@ struct RegionDetailScreen: View {
                     Label("\(region.name) feeds", systemImage: "mappin.and.ellipse")
                     Spacer()
                     Toggle("", isOn: Binding(
-                        get: { loader.isRegionEnabled(region.path) },
-                        set: { _ in loader.toggleRegion(region.path) }
+                        get: { regionToggleValue },
+                        set: { setRegionEnabled($0) }
                     ))
                     .labelsHidden()
                     .tint(.green)
@@ -80,5 +80,19 @@ struct RegionDetailScreen: View {
         if lower.contains("diy") || lower.contains("craft") { return "hammer.fill" }
         if lower.contains("game") || lower.contains("gaming") { return "gamecontroller.fill" }
         return "antenna.radiowaves.left.and.right"
+    }
+
+    private func setRegionEnabled(_ enabled: Bool) {
+        let feedback = UIImpactFeedbackGenerator(style: .light)
+        feedback.impactOccurred()
+        loader.requestRegionEnabled(region.path, enabled: enabled)
+    }
+
+    private var regionToggleValue: Bool {
+        switch loader.regionToggleState(for: region.path) {
+        case .none: loader.isRegionEnabled(region.path)
+        case .enabled: true
+        case .disabled: false
+        }
     }
 }

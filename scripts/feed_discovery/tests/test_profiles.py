@@ -136,7 +136,7 @@ def test_global_profile_country_is_wildcard():
 
 
 def test_global_profile_has_sources():
-    assert len(GLOBAL_PROFILE.sources) == 15
+    assert len(GLOBAL_PROFILE.sources) == 17
 
 
 def test_global_profile_sources_ordered_by_priority():
@@ -149,7 +149,7 @@ def test_global_profile_source_names():
     expected = {
         "podcast_index", "itunes_charts", "deezer", "youtube_api", "youtube_trending",
         "ddg_text", "itunes", "youtube_top_subscribed",
-        "listen_notes", "spotify", "feedly", "youtube_awards",
+        "listen_notes", "spotify", "feedly", "google_news", "reddit", "youtube_awards",
         "youtube_kaggle", "youtube_socialblade", "youtube_diamond",
     }
     assert set(GLOBAL_PROFILE.sources.keys()) == expected
