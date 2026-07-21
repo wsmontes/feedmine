@@ -510,14 +510,6 @@ struct FeedScreen: View {
                             .padding(.horizontal, 16)
                             .padding(.top, 8)
                         }
-                        // What's New carousel — hidden in bookmark mode
-                        if loader.selectedBookmarkListID == nil
-                            && !loader.hasActiveFilters
-                            && loader.searchQuery.isEmpty {
-                            WhatsNewCarousel(onOpen: { articleItem = $0 })
-                                .padding(.top, 8)
-                        }
-
                         ForEach(loader.dateSections) { section in
                             Section {
                                 ForEach(section.items) { item in
@@ -783,7 +775,6 @@ struct FeedScreen: View {
         }
         if phase == .background {
             SessionTracker.shared.onBackground()
-            loader.flushWhatsNewQueue()
             AudioPlayerManager.shared.savePosition()
             let allItems = loader.dateSections.flatMap(\.items)
             let idx = min(lastScrollIndex, allItems.count - 1)

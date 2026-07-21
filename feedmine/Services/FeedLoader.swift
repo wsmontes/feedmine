@@ -466,15 +466,6 @@ final class FeedLoader {
         store.refreshWhatsNew(shouldBoost: true)
     }
 
-    /// User scrolled past the carousel — advance to the next batch.
-    func advanceWhatsNewCarousel() {
-        store.advanceWhatsNew()
-    }
-
-    func flushWhatsNewQueue() {
-        store.advanceWhatsNew()
-    }
-
     /// Mark a What's New item as read and remove it from the carousel immediately.
     func markWhatsNewAsRead(_ id: String) {
         store.markAsRead(id)
