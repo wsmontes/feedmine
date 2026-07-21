@@ -4,6 +4,21 @@ News, podcast, video, and forum feed reader for iOS. The bundled catalog
 contains 34,243 normalized content-analyzed sources with descriptions, tags,
 language, format, activity, and freshness-aware defaults.
 
+## Open source and stewardship
+
+FeedMine is open-source software, released under the [MIT License](LICENSE).
+The application is maintained by [Wawasoft](https://wawasoft.net), and its
+source code is available for anyone to inspect, use, modify, and contribute to.
+
+The curated OPML update catalog lives in the public
+[FeedMine catalog repository](https://github.com/wawasoft/feedmine-repo).
+Wawasoft maintains that catalog, while the publishers and creators linked by
+each feed retain all rights to their own content.
+
+To propose code changes, see [Contributing](CONTRIBUTING.md). To propose a
+catalog addition or correction, open an issue or pull request in the catalog
+repository.
+
 ## Build
 
 ```bash
@@ -87,4 +102,5 @@ The command writes JSON, CSV, and Markdown reports to `build/image-audit/`.
 
 ## License
 
-Proprietary — all rights reserved.
+FeedMine is released under the [MIT License](LICENSE). Third-party publisher
+content fetched through the app is not covered by this license.
