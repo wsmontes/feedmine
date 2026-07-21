@@ -34,7 +34,6 @@ targets:
       path: feedmine/Info.plist
       properties:
         UILaunchScreen: {}
-        NSLocationWhenInUseUsageDescription: "Your location is used to show local weather in the daily briefing."
         NSAppTransportSecurity:
           NSAllowsArbitraryLoadsForMedia: true
         UIBackgroundModes:
@@ -50,6 +49,7 @@ targets:
             LSItemContentTypes:
               - public.xml
               - org.opml.opml
+        LSSupportsOpeningDocumentsInPlace: true
         CFBundleLocalizations:
           - ar
           - ca
