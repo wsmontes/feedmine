@@ -173,6 +173,10 @@ struct FilterSheetView: View {
             }
         }
         .presentationDetents([.medium, .large])
+        // Keep the filter controls legible over visual content and in store
+        // screenshots; the default material sheet can otherwise show the feed
+        // through the form on newer iOS releases.
+        .presentationBackground(Color(uiColor: .systemBackground))
         .onAppear {
             draftContentType = loader.selectedContentType
             draftLanguages = loader.selectedLanguages
