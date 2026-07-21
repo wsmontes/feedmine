@@ -12,7 +12,6 @@
 		075D42E88E07E28B3A8F9315 /* WhatsNewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656049DA7B48FE058D002F5B /* WhatsNewManager.swift */; };
 		0858C92C6A4B7A9016F5C303 /* FeedItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F611B28256E9442168C776 /* FeedItemCardView.swift */; };
 		093F14BDCDBBFF87909840DE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7211F172980C9D80444C575E /* AppSettings.swift */; };
-		0C75158C0CA2E4F1CDC50ABF /* WhatsNewCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692AB2B91FC3121ED17356B7 /* WhatsNewCarousel.swift */; };
 		0D172F74FC571B2B1C682C66 /* DebugStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30391A30EB01CF526317DA2 /* DebugStatusBar.swift */; };
 		0D7D2F35B303B7FA834EE8B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1685743420892F86C34AC8 /* ContentView.swift */; };
 		11D1CE76F9C9C6FB02903C60 /* CircadianEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC7361CDC09C1858857316 /* CircadianEngine.swift */; };
@@ -55,7 +54,6 @@
 		46F6D462F039918D58E1C05C /* ShareCardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0390FC7E6B67E2A2AF044 /* ShareCardImageView.swift */; };
 		47E097F4F315F6609206F2BC /* TaxonomyChipBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF6025F68FC73D0A0796DE /* TaxonomyChipBar.swift */; };
 		4A12A481029D04C487FC6E43 /* FeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABBCA0F4F9C3C20E2480EBA /* FeedItemView.swift */; };
-		4AD0077109486D6E038784D5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08ABDEC67E17B5A4BF8916C /* WeatherService.swift */; };
 		4C736306F806E49007ABCA88 /* en-AU.json in Resources */ = {isa = PBXBuildFile; fileRef = 668223ACC0C9074DB53626EC /* en-AU.json */; };
 		4CD909EF83386E47A5C9A693 /* de.json in Resources */ = {isa = PBXBuildFile; fileRef = E8C04F9C642B7F230A6A62A6 /* de.json */; };
 		4CEB2E678E27BE6121B1B11C /* MoodFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB92C73A85838EB4BC12DCB /* MoodFilterBar.swift */; };
@@ -65,6 +63,7 @@
 		59760DDDE9B8B7D47CDC7358 /* Greetings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C0204860913C3A17AA9C5A7 /* Greetings.json */; };
 		5B06A2DECD95C632E0641646 /* fr.json in Resources */ = {isa = PBXBuildFile; fileRef = D3CBE7E698A0BA8BDAC8AE52 /* fr.json */; };
 		6170CDE69FD93E263E3D200C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05278E701F7B9808BEE3B943 /* Assets.xcassets */; };
+		A9F00000A9F00000A9F00001 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A9F00000A9F00000A9F00002 /* PrivacyInfo.xcprivacy */; };
 		628A5DA70890D7FEB09279DF /* zh-Hant.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E0707897639AD205286DC49 /* zh-Hant.json */; };
 		64D9DED796CD65C6711C3734 /* ReadingStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB758C8AA6530C1936D9579C /* ReadingStatsView.swift */; };
 		6563514A121C1129840A71C8 /* el.json in Resources */ = {isa = PBXBuildFile; fileRef = 61F253E76E15CAD67F058583 /* el.json */; };
@@ -190,6 +189,7 @@
 		039DBB7DEDD7E8E101EBA9AC /* hr.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hr.json; sourceTree = "<group>"; };
 		041966E00C3974A5347DEE4A /* SourceScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceScheduler.swift; sourceTree = "<group>"; };
 		05278E701F7B9808BEE3B943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9F00000A9F00000A9F00002 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		09C1A4ED2839105AD4FE61BC /* fr-CA.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "fr-CA.json"; sourceTree = "<group>"; };
 		0C154C823E5BF5A7ECB27A4E /* BookmarkBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkBoxesView.swift; sourceTree = "<group>"; };
 		0CB4233F029C53681617CA22 /* DailyBriefingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBriefingCard.swift; sourceTree = "<group>"; };
@@ -252,7 +252,6 @@
 		662878B2304ADFBED0071F51 /* vi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vi.json; sourceTree = "<group>"; };
 		668223ACC0C9074DB53626EC /* en-AU.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "en-AU.json"; sourceTree = "<group>"; };
 		66AAEEDBB109C8C6CAC336D6 /* RSSFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFetcher.swift; sourceTree = "<group>"; };
-		692AB2B91FC3121ED17356B7 /* WhatsNewCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewCarousel.swift; sourceTree = "<group>"; };
 		699695CC102526CA59DD5315 /* FeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreen.swift; sourceTree = "<group>"; };
 		69EF6025F68FC73D0A0796DE /* TaxonomyChipBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomyChipBar.swift; sourceTree = "<group>"; };
 		6C96B65DE9D905F00106BE67 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
@@ -302,7 +301,6 @@
 		BCA74960C61CC910D60AE2AF /* BookmarkBoxPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkBoxPickerView.swift; sourceTree = "<group>"; };
 		BF1685743420892F86C34AC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF8CD91612E937EE250BC505 /* nb.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nb.json; sourceTree = "<group>"; };
-		C08ABDEC67E17B5A4BF8916C /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		C15E7A90D2773F4370B149BA /* FeedSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSource.swift; sourceTree = "<group>"; };
 		C4508D18CCBCD92F55640B16 /* AddFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedView.swift; sourceTree = "<group>"; };
 		C534C45AB248D0B885533C04 /* SettingsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheetView.swift; sourceTree = "<group>"; };
@@ -420,7 +418,6 @@
 				69EF6025F68FC73D0A0796DE /* TaxonomyChipBar.swift */,
 				44D745713BD34704CA15C6B7 /* ToastView.swift */,
 				E9CF24FCD0B6C944B1C956F0 /* TopStoriesCarousel.swift */,
-				692AB2B91FC3121ED17356B7 /* WhatsNewCarousel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -502,7 +499,6 @@
 				041966E00C3974A5347DEE4A /* SourceScheduler.swift */,
 				4DAEEFD2AA76F4638DC510B3 /* TaxonomyStore.swift */,
 				F93EF436D7609A0D1C6C40E5 /* URLResolver.swift */,
-				C08ABDEC67E17B5A4BF8916C /* WeatherService.swift */,
 				656049DA7B48FE058D002F5B /* WhatsNewManager.swift */,
 			);
 			path = Services;
@@ -613,6 +609,7 @@
 				4F27D4A089C0A2A81E64B2BC /* feedmineApp.swift */,
 				1C0204860913C3A17AA9C5A7 /* Greetings.json */,
 				9E8D4BC74BB01746A998D0A0 /* Info.plist */,
+				A9F00000A9F00000A9F00002 /* PrivacyInfo.xcprivacy */,
 				B9167966EC8BB04664D05F65 /* Models */,
 				CB51B4180BE95087ECD62C86 /* Resources */,
 				A265C2B5D9700AC12D20ADF6 /* Services */,
@@ -780,6 +777,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6170CDE69FD93E263E3D200C /* Assets.xcassets in Resources */,
+				A9F00000A9F00000A9F00001 /* PrivacyInfo.xcprivacy in Resources */,
 				CF36595BD78C6471862CCDFA /* Feeds in Resources */,
 				35AA20112233445566778899 /* FeedEngine in Resources */,
 				59760DDDE9B8B7D47CDC7358 /* Greetings.json in Resources */,
@@ -953,8 +951,6 @@
 				CF94A6D42BA66022491AFBB1 /* ToastView.swift in Sources */,
 				86DAF1611712C2105F19AB68 /* TopStoriesCarousel.swift in Sources */,
 				F2F127924C21F7E3689EDEC3 /* URLResolver.swift in Sources */,
-				4AD0077109486D6E038784D5 /* WeatherService.swift in Sources */,
-				0C75158C0CA2E4F1CDC50ABF /* WhatsNewCarousel.swift in Sources */,
 				075D42E88E07E28B3A8F9315 /* WhatsNewManager.swift in Sources */,
 				EB498E6F3FBB5C54A7BA0212 /* feedmineApp.swift in Sources */,
 			);

@@ -29,7 +29,7 @@ struct OnboardingTipsView: View {
     private let tips: [(icon: String, title: String, subtitle: String, color: Color)] = [
         (
             "globe.americas.fill",
-            "Stories from 190 countries",
+            "Stories from around the world",
             "Not just your corner of the world. Tap Sources to explore by country and region.",
             .teal
         ),
