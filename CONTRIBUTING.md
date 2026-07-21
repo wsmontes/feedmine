@@ -13,7 +13,7 @@ welcome through issues and pull requests.
 ## Catalog
 
 The OPML catalog is maintained separately at
-[wawasoft/feedmine-repo](https://github.com/wawasoft/feedmine-repo). Use that
+[wawasoft/feed-repository](https://github.com/wawasoft/feed-repository). Use that
 repository to propose source additions, corrections, removals, or category
 changes. FeedMine downloads only feed metadata and published feed URLs; the
 underlying articles, audio, and video remain the property of their publishers.

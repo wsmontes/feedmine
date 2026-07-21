@@ -11,7 +11,7 @@ The application is maintained by [Wawasoft](https://wawasoft.net), and its
 source code is available for anyone to inspect, use, modify, and contribute to.
 
 The curated OPML update catalog lives in the public
-[FeedMine catalog repository](https://github.com/wawasoft/feedmine-repo).
+[FeedMine catalog repository](https://github.com/wawasoft/feed-repository).
 Wawasoft maintains that catalog, while the publishers and creators linked by
 each feed retain all rights to their own content.
 

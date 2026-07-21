@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-16  
 **Last updated:** 2026-07-17  
-**Repository:** `wsmontes/feedmine`  
+**Repository:** `wawasoft/feedmine`
 **Reviewed branch:** `main`  
 **Reviewed commit:** `58ab9229`  
 **Status:** Stage 1 — verified diagnosis, measurement, and architectural boundary  

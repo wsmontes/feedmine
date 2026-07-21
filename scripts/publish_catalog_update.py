@@ -154,7 +154,7 @@ def parse_args() -> argparse.Namespace:
         default=Path("feedmine/Resources/FeedEngine/catalog-manifest.json"),
         help="compiled catalog metadata used to assert source count",
     )
-    parser.add_argument("--destination", type=Path, required=True, help="feedmine-repo checkout")
+    parser.add_argument("--destination", type=Path, required=True, help="feed-repository checkout")
     parser.add_argument("--revision", type=int, help="explicit monotonically increasing revision")
     parser.add_argument("--generated-at", help="fixed ISO-8601 timestamp (primarily for tests)")
     parser.add_argument(

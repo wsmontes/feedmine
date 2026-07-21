@@ -226,7 +226,7 @@ actor CatalogUpdateService {
     static let shared = CatalogUpdateService()
 
     private static let defaultRemoteRoot = URL(
-        string: "https://raw.githubusercontent.com/wawasoft/feedmine-repo/main/"
+        string: "https://raw.githubusercontent.com/wawasoft/feed-repository/main/"
     )!
 
     private let paths: CatalogRuntimePaths
