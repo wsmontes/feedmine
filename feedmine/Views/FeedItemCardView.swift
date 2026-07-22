@@ -241,13 +241,41 @@ struct FeedItemCardView: View, Equatable {
     }
 
     private var podcastPlaceholder: some View {
-        Rectangle()
-            .fill(Color.purple.opacity(0.12))
-            .overlay {
-                Image(systemName: "waveform")
-                    .font(.system(size: 32))
-                    .foregroundStyle(Color.purple.opacity(0.45))
+        ZStack {
+            // Background gradient
+            LinearGradient(
+                colors: [Color.purple.opacity(0.25), Color.indigo.opacity(0.10)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+
+            // Concentric rings suggesting audio playback
+            ForEach(0..<3) { i in
+                Circle()
+                    .strokeBorder(Color.purple.opacity(0.12), lineWidth: 1)
+                    .scaleEffect(0.4 + CGFloat(i) * 0.2)
             }
+
+            // Center play button
+            Circle()
+                .fill(Color.purple.opacity(0.18))
+                .frame(width: 52, height: 52)
+                .overlay {
+                    Image(systemName: "play.fill")
+                        .font(.system(size: 22, weight: .medium))
+                        .foregroundStyle(Color.purple.opacity(0.6))
+                        .offset(x: 1)
+                }
+
+            // Waveform at bottom
+            VStack {
+                Spacer()
+                Image(systemName: "waveform")
+                    .font(.system(size: 56, weight: .ultraLight))
+                    .foregroundStyle(Color.purple.opacity(0.20))
+                    .offset(y: 12)
+            }
+        }
     }
 
     // MARK: - Source Row (portrait only)

@@ -13,11 +13,12 @@ struct FeedItemRowView: View {
                 Group {
                     if item.isPodcast && !item.hasPotentialImage {
                         RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.purple.opacity(0.12))
+                            .fill(Color.purple.opacity(0.15))
                             .overlay {
-                                Image(systemName: "waveform")
-                                    .font(.caption)
-                                    .foregroundStyle(Color.purple.opacity(0.45))
+                                Image(systemName: "play.fill")
+                                    .font(.system(size: 16, weight: .medium))
+                                    .foregroundStyle(Color.purple.opacity(0.5))
+                                    .offset(x: 1)
                             }
                     } else {
                         CachedAsyncImage(
