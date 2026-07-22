@@ -9,7 +9,7 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
     let title: String
     let excerpt: String
     let url: String
-    let imageURL: String?
+    var imageURL: String?
     let publishedAt: Date
     let audioURL: String?
     let duration: TimeInterval?
@@ -126,17 +126,6 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
 
     var hasPotentialImage: Bool {
         bestImageURL != nil || canResolveArticleImage
-    }
-
-    /// Returns a copy with imageURL set to "", the sentinel for
-    /// "article resolution confirmed no image available".
-    func withImageResolutionFailed() -> FeedItem {
-        FeedItem(id: id, sourceTitle: sourceTitle, sourceURL: sourceURL,
-                 category: category, title: title, excerpt: excerpt, url: url,
-                 imageURL: "", publishedAt: publishedAt, audioURL: audioURL,
-                 duration: duration, region: region, language: language,
-                 isRead: isRead, isBookmarked: isBookmarked,
-                 sectionDayOffset: sectionDayOffset)
     }
 
     /// True if this item has an audio enclosure (podcast episode)
