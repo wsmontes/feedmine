@@ -833,7 +833,7 @@ actor RSSFetcher {
             return value
         }
         return value.replacingOccurrences(
-            of: #"/s(?:72|144)(?:-c)?/"#,
+            of: #"/s(?:72|144|320)(?:-w\d+-h\d+)?(?:-[a-z]+)?/"#,
             with: "/s1200/",
             options: .regularExpression
         )
