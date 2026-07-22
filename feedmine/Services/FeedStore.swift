@@ -180,9 +180,13 @@ final class FeedStore {
         guard let articleURL = URL(string: item.url) else { return }
         let found = await prefetcher.prefetchArticleImage(for: articleURL)
         if !found {
-            try? await db.write { db in
-                try db.execute(sql: "UPDATE feed_item SET image_url = '' WHERE id = ?",
-                               arguments: [item.id])
+            do {
+                try await db.write { db in
+                    try db.execute(sql: "UPDATE feed_item SET image_url = '' WHERE id = ?",
+                                   arguments: [item.id])
+                }
+            } catch {
+                Log.feed.error("Failed to write image sentinel for \(item.id): \(error)")
             }
         }
     }
