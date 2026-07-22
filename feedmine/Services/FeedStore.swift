@@ -139,11 +139,25 @@ final class FeedStore {
     }
 
     /// Prefetch images for items if enabled (default: true).
+    /// Also resolves article-page artwork for items with no feed image URL,
+    /// so CachedAsyncImage finds cached data before the card renders.
     private func prefetchImagesIfEnabled(for items: [FeedItem]) {
         guard Settings.prefetchImages else { return }
         let urls = items.compactMap { $0.bestImageURL ?? $0.imageURL }
-        guard !urls.isEmpty else { return }
-        Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
+        let needsArticleResolution = items.filter {
+            $0.bestImageURL == nil && $0.canResolveArticleImage
+        }
+        if !urls.isEmpty {
+            Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
+        }
+        if !needsArticleResolution.isEmpty {
+            let articleURLs = needsArticleResolution.compactMap { URL(string: $0.url) }
+            Task {
+                for url in articleURLs {
+                    await prefetcher.prefetchArticleImage(for: url)
+                }
+            }
+        }
     }
 
     /// Aggressive prefetch: visible items first (user sees now), then deep
@@ -2095,6 +2109,10 @@ final class FeedStore {
             logNonEnglishItems(actualNew)
         }
 
+        // Prefetch images before items enter the reservoir so downloads
+        // race ahead of LazyVStack card rendering (50-200ms head start).
+        prefetchImagesIfEnabled(for: actualNew)
+
         // Append to the reservoir via the batched off-main interleave path.
         throttledReservoirAppend(actualNew)
         // A cold feed or a nearly depleted runway cannot wait for the normal
@@ -2106,7 +2124,6 @@ final class FeedStore {
         if needsInitialRunway {
             Log.feed.info("starterIngest published: visible=\(self.visibleItems.count) reservoir=\(self.reservoir.reservoirCount) elapsed=\(Date().timeIntervalSince(ingestStartedAt), format: .fixed(precision: 3))s")
         }
-        prefetchImagesIfEnabled(for: actualNew)
 
         // Database retention is maintenance, not a prerequisite for showing
         // content. Run it after publication so it never extends first paint.
