@@ -114,9 +114,9 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
     /// even when their feeds omit media or serve only thumbnails/logos.
     /// Always attempt resolution — ImageUpgradePolicy.needsUpgrade avoids
     /// wasted fetches when the feed image is already high quality.
+    /// Podcasts are included so episode pages with artwork get resolved.
     var canResolveArticleImage: Bool {
-        guard !isPodcast,
-              let articleURL = URL(string: url),
+        guard let articleURL = URL(string: url),
               ["http", "https"].contains(articleURL.scheme?.lowercased() ?? ""),
               articleURL.host?.lowercased() != "news.google.com" else { return false }
         return true
