@@ -76,7 +76,9 @@ actor ImagePrefetcher {
 
     /// Resolve article-page artwork (Open Graph / Twitter / srcset) and cache
     /// it under the article URL so CachedAsyncImage finds it on first render.
-    func prefetchArticleImage(for articleURL: URL) async {
+    /// Returns true if an image was found and cached, false if none available.
+    @discardableResult
+    func prefetchArticleImage(for articleURL: URL) async -> Bool {
         let candidates = await ArticleImageResolver.shared.imageURLs(
             for: articleURL,
             replacing: nil
@@ -84,7 +86,8 @@ actor ImagePrefetcher {
         guard let best = await ImageUpgradePolicy.firstDisplayable(
             from: candidates,
             session: session
-        ) else { return }
+        ) else { return false }
         await ImageCache.shared.setImage(data: best.data, for: articleURL)
+        return true
     }
 }

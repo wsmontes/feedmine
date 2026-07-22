@@ -139,25 +139,43 @@ final class FeedStore {
     }
 
     /// Prefetch images for items if enabled (default: true).
-    /// Also resolves article-page artwork for items with no feed image URL,
-    /// so CachedAsyncImage finds cached data before the card renders.
     private func prefetchImagesIfEnabled(for items: [FeedItem]) {
         guard Settings.prefetchImages else { return }
         let urls = items.compactMap { $0.bestImageURL ?? $0.imageURL }
-        let needsArticleResolution = items.filter {
+        guard !urls.isEmpty else { return }
+        Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
+    }
+
+    /// Resolve article-page artwork before items enter the reservoir.
+    /// On success the image is cached; on failure the item is marked with
+    /// imageURL = "" so hasPotentialImage returns false and no slot is reserved.
+    /// Items are returned with updated imageURL sentinels where needed.
+    private func resolveArticleImagesBeforeReservoir(_ items: [FeedItem]) async -> [FeedItem] {
+        let needsResolution = items.filter {
             $0.bestImageURL == nil && $0.canResolveArticleImage
         }
-        if !urls.isEmpty {
-            Task { await prefetcher.prefetch(urls: urls, priorityURLs: urls) }
-        }
-        if !needsArticleResolution.isEmpty {
-            let articleURLs = needsArticleResolution.compactMap { URL(string: $0.url) }
-            Task {
-                for url in articleURLs {
-                    await prefetcher.prefetchArticleImage(for: url)
+        guard !needsResolution.isEmpty else { return items }
+
+        var resolved = items
+        for (index, item) in needsResolution.enumerated() {
+            guard let articleURL = URL(string: item.url) else { continue }
+            // Time-box: don't stall pipeline for slow pages
+            let found = await prefetcher.prefetchArticleImage(for: articleURL)
+            if !found {
+                // Write sentinel to SQLite so future reads know there's no image
+                try? await db.write { db in
+                    try db.execute(sql: "UPDATE feed_item SET image_url = '' WHERE id = ?",
+                                   arguments: [item.id])
+                }
+                // Update in-memory item so reservoir/visible get the definitive state
+                if let idx = resolved.firstIndex(where: { $0.id == item.id }) {
+                    resolved[idx] = item.withImageResolutionFailed()
                 }
             }
+            // Yield every 3 items to avoid blocking the cooperative thread pool
+            if index % 3 == 2 { await Task.yield() }
         }
+        return resolved
     }
 
     /// Aggressive prefetch: visible items first (user sees now), then deep
@@ -2109,12 +2127,16 @@ final class FeedStore {
             logNonEnglishItems(actualNew)
         }
 
-        // Prefetch images before items enter the reservoir so downloads
-        // race ahead of LazyVStack card rendering (50-200ms head start).
-        prefetchImagesIfEnabled(for: actualNew)
+        // Resolve article images synchronously BEFORE items enter the reservoir.
+        // Items enter with definitive image state: either cached artwork or
+        // confirmed no-image (imageURL sentinel). No placeholder uncertainty.
+        let itemsWithResolvedImages = await resolveArticleImagesBeforeReservoir(actualNew)
+
+        // Prefetch feed-supplied images so downloads race ahead of card rendering.
+        prefetchImagesIfEnabled(for: itemsWithResolvedImages)
 
         // Append to the reservoir via the batched off-main interleave path.
-        throttledReservoirAppend(actualNew)
+        throttledReservoirAppend(itemsWithResolvedImages)
         // A cold feed or a nearly depleted runway cannot wait for the normal
         // three-second coalescing interval. Commit this batch now so the first
         // page appears immediately and fast scrolling always has content ahead.

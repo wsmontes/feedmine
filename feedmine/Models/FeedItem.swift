@@ -104,22 +104,39 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
     /// Best available image URL — RSS image takes priority over YouTube thumbnail.
     /// RSS media:content images are typically full-resolution article images (1200×800+),
     /// while YouTube thumbnails top out at 640×480 (sddefault). YouTube is the fallback.
+    /// Returns nil when imageURL is an empty sentinel ("": article resolution tried, no image).
     var bestImageURL: String? {
-        imageURL ?? youTubeThumbnailURL
+        if let img = imageURL, !img.isEmpty { return img }
+        return youTubeThumbnailURL
     }
 
     /// Direct article pages can often supply Open Graph or responsive artwork
     /// even when their feeds omit media. Google News aggregator links are
     /// excluded because they expose Google chrome rather than publisher art.
+    /// Returns false when imageURL is the empty-string sentinel (resolution
+    /// was attempted and confirmed no article image exists).
     var canResolveArticleImage: Bool {
         guard !isPodcast,
               let articleURL = URL(string: url),
-              ["http", "https"].contains(articleURL.scheme?.lowercased() ?? "") else { return false }
-        return articleURL.host?.lowercased() != "news.google.com"
+              ["http", "https"].contains(articleURL.scheme?.lowercased() ?? ""),
+              articleURL.host?.lowercased() != "news.google.com" else { return false }
+        // nil = not attempted yet; non-nil empty = attempted, confirmed no image
+        return imageURL == nil
     }
 
     var hasPotentialImage: Bool {
         bestImageURL != nil || canResolveArticleImage
+    }
+
+    /// Returns a copy with imageURL set to "", the sentinel for
+    /// "article resolution confirmed no image available".
+    func withImageResolutionFailed() -> FeedItem {
+        FeedItem(id: id, sourceTitle: sourceTitle, sourceURL: sourceURL,
+                 category: category, title: title, excerpt: excerpt, url: url,
+                 imageURL: "", publishedAt: publishedAt, audioURL: audioURL,
+                 duration: duration, region: region, language: language,
+                 isRead: isRead, isBookmarked: isBookmarked,
+                 sectionDayOffset: sectionDayOffset)
     }
 
     /// True if this item has an audio enclosure (podcast episode)
