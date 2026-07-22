@@ -111,17 +111,15 @@ struct FeedItem: Identifiable, Sendable, Codable, Equatable {
     }
 
     /// Direct article pages can often supply Open Graph or responsive artwork
-    /// even when their feeds omit media. Google News aggregator links are
-    /// excluded because they expose Google chrome rather than publisher art.
-    /// Returns false when imageURL is the empty-string sentinel (resolution
-    /// was attempted and confirmed no article image exists).
+    /// even when their feeds omit media or serve only thumbnails/logos.
+    /// Always attempt resolution — ImageUpgradePolicy.needsUpgrade avoids
+    /// wasted fetches when the feed image is already high quality.
     var canResolveArticleImage: Bool {
         guard !isPodcast,
               let articleURL = URL(string: url),
               ["http", "https"].contains(articleURL.scheme?.lowercased() ?? ""),
               articleURL.host?.lowercased() != "news.google.com" else { return false }
-        // nil = not attempted yet; non-nil empty = attempted, confirmed no image
-        return imageURL == nil
+        return true
     }
 
     var hasPotentialImage: Bool {
