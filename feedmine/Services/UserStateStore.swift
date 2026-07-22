@@ -311,7 +311,7 @@ final class SourceCollectionStore {
                         collectionID, OPMLParser.normalizeURL(source.feedURL), source.title,
                         source.mediaKind.rawValue, Int(Date().timeIntervalSince1970), order,
                     ])
-                order += 1
+                if db.changesCount > 0 { order += 1 }
             }
         }
     }

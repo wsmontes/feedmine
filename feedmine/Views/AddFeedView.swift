@@ -14,6 +14,7 @@ struct AddFeedView: View {
     @State private var result: ImportResult?
     @State private var filedSourceCount = 0
     @State private var errorMessage: String?
+    @State private var isCollectionsLoading = false
     @State private var resolvedCount = 0
     @State private var totalToResolve = 0
     @State private var importTask: Task<Void, Never>?
@@ -85,7 +86,14 @@ struct AddFeedView: View {
                 } header: {
                     Text("Personal Collection")
                 } footer: {
-                    Text("Personal collections are the folders shown under Source Collections. Catalog categories are kept separate.")
+                    if isCollectionsLoading {
+                        HStack(spacing: 4) {
+                            ProgressView().scaleEffect(0.7)
+                            Text("Loading collections…").font(.caption)
+                        }
+                    } else {
+                        Text("Personal collections are the folders shown under Source Collections. Catalog categories are kept separate.")
+                    }
                 }
 
                 // MARK: - Clipboard
@@ -173,7 +181,7 @@ struct AddFeedView: View {
                                 .fontWeight(.semibold)
                         }
                     }
-                    .disabled(input.isEmpty || isResolving)
+                    .disabled(input.isEmpty || isResolving || isCollectionsLoading)
                 }
             }
             .alert("New Collection", isPresented: $showNewCollection) {
@@ -369,6 +377,8 @@ struct AddFeedView: View {
     // MARK: - Helpers
 
     private func reloadCollections() async {
+        isCollectionsLoading = true
+        defer { isCollectionsLoading = false }
         do {
             collections = try await loader.loadSourceCollections()
             if let selectedCollectionID,
@@ -376,13 +386,19 @@ struct AddFeedView: View {
                 self.selectedCollectionID = nil
             }
         } catch {
+            collections = []
+            selectedCollectionID = nil
             errorMessage = error.localizedDescription
         }
     }
 
     private func createCollection() async {
         let name = newCollectionName.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !name.isEmpty else { return }
+        guard !name.isEmpty else {
+            newCollectionName = ""
+            errorMessage = "Collection name cannot be empty."
+            return
+        }
         do {
             let id = try await loader.createSourceCollection(name: name)
             newCollectionName = ""

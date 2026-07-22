@@ -3290,11 +3290,15 @@ final class FeedStore {
     @discardableResult
     func addSourceURLs(_ sourceURLs: [String], toCollectionID id: Int64) async throws -> Int {
         var seen = Set<String>()
-        let references = sourceURLs.compactMap { sourceURL -> SourceReference? in
+        var references: [SourceReference] = []
+        for sourceURL in sourceURLs {
             let normalized = OPMLParser.normalizeURL(sourceURL)
-            guard seen.insert(normalized).inserted,
-                  let source = registry.source(forURL: normalized) else { return nil }
-            return SourceReference(source: source)
+            guard seen.insert(normalized).inserted else { continue }
+            guard let source = registry.source(forURL: normalized) else {
+                Log.import_.info("Skipping URL not found in registry: \(sourceURL)")
+                continue
+            }
+            references.append(SourceReference(source: source))
         }
         try await sourceCollectionStore.add(references, to: id)
         return references.count
