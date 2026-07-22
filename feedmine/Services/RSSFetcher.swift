@@ -839,9 +839,14 @@ actor RSSFetcher {
     private static func isLikelyFaviconOrLogo(_ url: String) -> Bool {
         let lower = url.lowercased()
         if lower.contains("favicon") || lower.contains("cropped") { return true }
-        // Match patterns like -32x32, -16x16, -150x150 etc. in filenames
-        if lower.range(of: #"[-.]\d{2,4}x\d{2,4}"#, options: .regularExpression) != nil {
-            return true
+        // Match tiny favicon dimensions (-32x32, -150x150) but not large
+        // artwork (-1400x1400, -3000x3000). Threshold: ≤150px on either side.
+        if let range = lower.range(of: #"[-.](\d{2,4})x(\d{2,4})"#, options: .regularExpression) {
+            let match = String(lower[range]).dropFirst()  // strip leading - or .
+            let parts = match.split(separator: "x").compactMap { Int($0) }
+            if let w = parts.first, let h = parts.last, w <= 150 && h <= 150 {
+                return true
+            }
         }
         // Site logos used as channel images (not article artwork)
         if lower.contains("/logo") || lower.contains("-logo") || lower.contains("_logo") {
