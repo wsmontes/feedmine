@@ -634,7 +634,7 @@ struct CachedAsyncImage: View {
             } else if !didAttempt {
                 Rectangle()
                     .fill(.quaternary)
-                    .task { await load() }
+                    .task(id: retryCount) { await load() }
             } else {
                 Rectangle()
                     .fill(Color(.systemGray6))

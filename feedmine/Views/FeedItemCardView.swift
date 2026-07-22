@@ -64,31 +64,36 @@ struct FeedItemCardView: View, Equatable {
         VStack(alignment: .leading, spacing: 0) {
             // Hero image — native media or a bounded article-page candidate.
             if hasImage {
-                Color.clear
-                    .aspectRatio(16/9, contentMode: .fit)
-                    .overlay {
-                        if imageLoadFailed {
-                            imageFailurePlaceholder
-                        } else {
-                            CachedAsyncImage(url: item.bestImageURL.flatMap(URL.init(string:)), articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil, onResult: { success in
-                                if !success { imageLoadFailed = true }
-                            })
-                            .scaledToFill()
-                            .overlay(isRead ? Color.black.opacity(0.15) : nil)
+                if imageLoadFailed && item.bestImageURL == nil {
+                    // No image URL + resolver confirmed none → skip slot.
+                    // Still need overlays (bookmark/media) positioned correctly.
+                    Color.clear
+                        .frame(height: 0)
+                        .overlay(alignment: .topTrailing) { cardOverlays }
+                        .overlay { mediaOverlay }
+                } else {
+                    Color.clear
+                        .aspectRatio(16/9, contentMode: .fit)
+                        .overlay {
+                            if imageLoadFailed {
+                                imageFailurePlaceholder
+                            } else {
+                                CachedAsyncImage(url: item.bestImageURL.flatMap(URL.init(string:)), articleURL: item.canResolveArticleImage ? URL(string: item.url) : nil, onResult: { success in
+                                    if !success { imageLoadFailed = true }
+                                })
+                                .scaledToFill()
+                                .overlay(isRead ? Color.black.opacity(0.15) : nil)
+                            }
                         }
-                    }
-                    .clipped()
-                    .overlay(alignment: .topTrailing) {
-                        cardOverlays
-                    }
-                    .overlay {
-                        mediaOverlay
-                    }
-                    .transition(.opacity.combined(with: .scale(scale: 0.97)))
+                        .clipped()
+                        .overlay(alignment: .topTrailing) { cardOverlays }
+                        .overlay { mediaOverlay }
+                        .transition(.opacity.combined(with: .scale(scale: 0.97)))
+                }
                 // Source row after image
                 sourceRow
                     .padding(.horizontal, 12)
-                    .padding(.top, 12)
+                    .padding(.top, imageLoadFailed && item.bestImageURL == nil ? 14 : 12)
             } else {
                 // No image — source row directly at top with extra top padding
                 sourceRow
@@ -147,7 +152,7 @@ struct FeedItemCardView: View, Equatable {
     private var landscapeCard: some View {
         HStack(spacing: 12) {
             // Thumb — honest: only show when image exists
-            if hasImage {
+            if hasImage && !(imageLoadFailed && item.bestImageURL == nil) {
                 Color.clear
                     .frame(width: 90, height: 90)
                     .overlay {
