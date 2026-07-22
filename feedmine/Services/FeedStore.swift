@@ -178,6 +178,8 @@ final class FeedStore {
 
     private func resolveOneArticleImage(_ item: FeedItem) async {
         guard let articleURL = URL(string: item.url) else { return }
+        // Skip if the article image is already cached from a previous session.
+        guard !ImageCache.hasCachedImageData(for: articleURL) else { return }
         let found = await prefetcher.prefetchArticleImage(for: articleURL)
         if !found {
             do {
