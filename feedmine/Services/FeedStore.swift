@@ -4072,7 +4072,9 @@ struct FeedItemRecord: Codable, PersistableRecord, FetchableRecord {
         self.title = item.title
         self.excerpt = item.excerpt
         self.url = item.url
-        self.imageURL = item.bestImageURL  // YouTube thumbnail or RSS image
+        // Preserve sentinel ("" = confirmed no image) while falling back to
+        // YouTube thumbnail for items that genuinely have no image URL yet.
+        self.imageURL = item.imageURL ?? item.bestImageURL
         self.audioURL = item.audioURL
         self.duration = item.duration
         self.publishedAt = Int(item.publishedAt.timeIntervalSince1970)
