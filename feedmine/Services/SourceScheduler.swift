@@ -19,7 +19,8 @@ final class SourceScheduler {
         activeContentType: String? = nil,  // "video", "audio", or nil for all
         prioritySourceURLs: Set<String> = [],
         activeLanguages: Set<String> = [],
-        minimumBatchSize: Int = 10
+        minimumBatchSize: Int = 10,
+        presetMultipliers: [String: Double] = [:]  // URL → scoring multiplier
     ) -> [FeedSource] {
         // 1. Determine scope
         let regions = activeRegion.map { [$0] } ?? Array(sourcesByRegion.keys)
@@ -182,6 +183,7 @@ final class SourceScheduler {
                         : (sourceLang != nil ? 3.0 : 0.8)
 
                     let score = regionDeficit * catDeficit * timeFactor * contentTypeBoost * languageBoost
+                        * (presetMultipliers[source.url] ?? 1.0)
                     let finalScore = max(score, 0.01) * Double.random(in: 0.98...1.02)
                     if finalScore > 0 { scored.append((source, finalScore)) }
                 }

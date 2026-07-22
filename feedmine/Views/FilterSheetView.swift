@@ -6,9 +6,9 @@ struct FilterSheetView: View {
     @State private var draftContentType: FeedLoader.ContentType = .all
     @State private var draftLanguages: Set<String> = []
     @State private var draftMood: FeedLoader.MoodFilter = .all
+    @State private var draftPreset: PresetSelector = .everything
     @State private var draftIsDirty = false
-    @State private var isGlobalFeedsChangePending = false
-    @State private var pendingGlobalFeedsValue = false
+    @State private var availableCollections: [SourceCollection] = []
 
     private var hasDraftFilters: Bool {
         draftContentType != .all
@@ -38,15 +38,34 @@ struct FilterSheetView: View {
                 }
 
                 Section("Feeds") {
-                    HStack {
-                        Label("Selected Feeds", systemImage: "antenna.radiowaves.left.and.right")
-                        Spacer()
-                        Toggle("", isOn: Binding(
-                            get: { isGlobalFeedsChangePending ? pendingGlobalFeedsValue : loader.isGlobalFeedsEnabled },
-                            set: { setGlobalFeedsEnabled($0) }
-                        ))
-                        .labelsHidden()
-                        .tint(.green)
+                    Picker(selection: $draftPreset) {
+                        Label("Everything", systemImage: "circle.grid.3x3.fill")
+                            .tag(PresetSelector.everything)
+
+                        Section("Editorial") {
+                            ForEach(FeedPreset.allCases.filter { $0 != .everything }) { preset in
+                                Label(preset.rawValue, systemImage: preset.icon)
+                                    .tag(PresetSelector.editorial(preset))
+                            }
+                        }
+
+                        if !availableCollections.isEmpty {
+                            Section("Collections") {
+                                ForEach(availableCollections) { collection in
+                                    Label(collection.name, systemImage: "folder.fill")
+                                        .tag(PresetSelector.collection(
+                                            collectionID: collection.id,
+                                            collectionName: collection.name
+                                        ))
+                                }
+                            }
+                        }
+                    } label: {
+                        Label("Preset", systemImage: "sparkles")
+                    }
+                    .pickerStyle(.menu)
+                    .onChange(of: draftPreset) { _, _ in
+                        draftIsDirty = true
                     }
 
                     NavigationLink {
@@ -181,11 +200,18 @@ struct FilterSheetView: View {
             draftContentType = loader.selectedContentType
             draftLanguages = loader.selectedLanguages
             draftMood = loader.selectedMood
+            draftPreset = loader.activePreset
             draftIsDirty = false
             loader.beginFilterEditing()
+            Task {
+                if let collections = try? await loader.loadSourceCollections() {
+                    availableCollections = collections
+                }
+            }
         }
         .onDisappear {
             if draftIsDirty {
+                loader.setActivePreset(draftPreset)
                 loader.applyFilterDraft(
                     type: draftContentType,
                     mood: draftMood,
@@ -196,18 +222,4 @@ struct FilterSheetView: View {
         }
     }
 
-    private func setGlobalFeedsEnabled(_ enabled: Bool) {
-        pendingGlobalFeedsValue = enabled
-        isGlobalFeedsChangePending = true
-        let feedback = UIImpactFeedbackGenerator(style: .light)
-        feedback.impactOccurred()
-
-        DispatchQueue.main.async {
-            guard isGlobalFeedsChangePending, pendingGlobalFeedsValue == enabled else { return }
-            loader.setGlobalFeedsEnabled(enabled)
-            if pendingGlobalFeedsValue == enabled {
-                isGlobalFeedsChangePending = false
-            }
-        }
-    }
 }

@@ -36,6 +36,9 @@ enum Keys {
     static let daysWithAppTotal = "daysWithAppTotal"
     static let lastOpenDate = "lastOpenDate"
 
+    // Feed preset
+    static let activePreset = "activePreset"
+
     // Source registry
     static let toggleDisabled = "toggleDisabled"
     static let toggleEnabledOverrides = "toggleEnabledOverrides"
@@ -125,6 +128,21 @@ enum Settings {
     static var lastOpenDate: TimeInterval {
         get { d.double(forKey: Keys.lastOpenDate) }
         set { d.set(newValue, forKey: Keys.lastOpenDate) }
+    }
+
+    // MARK: Feed Preset
+    static var activePreset: PresetSelector {
+        get {
+            guard let data = d.data(forKey: Keys.activePreset),
+                  let preset = try? JSONDecoder().decode(PresetSelector.self, from: data)
+            else { return .everything }
+            return preset
+        }
+        set {
+            if let data = try? JSONEncoder().encode(newValue) {
+                d.set(data, forKey: Keys.activePreset)
+            }
+        }
     }
 
     // MARK: Sources

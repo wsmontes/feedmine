@@ -39,16 +39,22 @@ final class Reservoir {
     /// URL → region lookup, provided by SourceRegistry
     var sourceRegionMap: [String: String] = [:]
 
+    /// Preset scoring multipliers for the current preset. Set by FeedStore before
+    /// seeding and updated when the preset changes. Used by interleave methods
+    /// to bias slot weights toward higher-scored sources.
+    var presetMultipliers: [String: Double] = [:]
+
     // MARK: - Seed (cold/warm start)
 
     /// Seeds the reservoir with pre-filtered items. Runs the expensive interleave
     /// computation off the main actor; only the final array assignment is MainActor.
-    func seed(items: [FeedItem]) async {
+    func seed(items: [FeedItem], presetMultipliers pm: [String: Double] = [:]) async {
+        self.presetMultipliers = pm
         let rid = readItemIDs
         let st = surfacedTimestamps
         let srm = sourceRegionMap
         let interleaved = await Task.detached(priority: .userInitiated) {
-            Reservoir.interleaveOffMain(items, readItemIDs: rid, surfacedTimestamps: st, sourceRegionMap: srm)
+            Reservoir.interleaveOffMain(items, readItemIDs: rid, surfacedTimestamps: st, sourceRegionMap: srm, presetMultipliers: pm)
         }.value
         let w = min(Self.pageSize, interleaved.count)
         visibleItems = Array(interleaved.prefix(w))
@@ -68,7 +74,7 @@ final class Reservoir {
         // reordered items the user was about to scroll into, so content shifted
         // under them right before a tap. dedupReservoir is order-preserving
         // (keeps the first occurrence), so the existing front stays put.
-        reservoir.append(contentsOf: interleave(trulyNew))
+        reservoir.append(contentsOf: interleave(trulyNew, presetMultipliers: presetMultipliers))
         dedupReservoir()
         capReservoir()
     }
@@ -188,7 +194,7 @@ final class Reservoir {
         guard !visibleItems.isEmpty || !reservoir.isEmpty else { return }
         reservoir.append(contentsOf: visibleItems)
         visibleItems.removeAll()
-        reservoir = interleave(reservoir)
+        reservoir = interleave(reservoir, presetMultipliers: presetMultipliers)
         capReservoir()
         let w = min(Self.pageSize, reservoir.count)
         visibleItems = Array(reservoir.prefix(w))
@@ -198,7 +204,7 @@ final class Reservoir {
 
     // MARK: - Interleave
 
-    private func interleave(_ items: [FeedItem]) -> [FeedItem] {
+    private func interleave(_ items: [FeedItem], presetMultipliers: [String: Double] = [:]) -> [FeedItem] {
         // Instance path: full diversity with country spreading on MainActor.
         // Pass sourceRegionMap so slots are spread by country.
         return Self.interleaveImpl(
@@ -206,7 +212,8 @@ final class Reservoir {
             readItemIDs: readItemIDs,
             surfacedTimestamps: surfacedTimestamps,
             sourceRegionMap: sourceRegionMap,
-            useCountrySpreading: true
+            useCountrySpreading: true,
+            presetMultipliers: presetMultipliers
         )
     }
 
@@ -216,7 +223,8 @@ final class Reservoir {
         _ items: [FeedItem],
         readItemIDs: Set<String>,
         surfacedTimestamps: [String: Date],
-        sourceRegionMap: [String: String]
+        sourceRegionMap: [String: String],
+        presetMultipliers: [String: Double] = [:]
     ) -> [FeedItem] {
         // Off-main path: full diversity with country spreading.
         // sourceRegionMap is now actually used (was accepted but ignored).
@@ -225,7 +233,8 @@ final class Reservoir {
             readItemIDs: readItemIDs,
             surfacedTimestamps: surfacedTimestamps,
             sourceRegionMap: sourceRegionMap,
-            useCountrySpreading: true
+            useCountrySpreading: true,
+            presetMultipliers: presetMultipliers
         )
     }
 
@@ -236,7 +245,8 @@ final class Reservoir {
         readItemIDs: Set<String>,
         surfacedTimestamps: [String: Date],
         sourceRegionMap: [String: String],
-        useCountrySpreading: Bool
+        useCountrySpreading: Bool,
+        presetMultipliers: [String: Double] = [:]
     ) -> [FeedItem] {
         guard items.count > 1 else { return items }
         var bySource: [String: [FeedItem]] = [:]
@@ -267,9 +277,15 @@ final class Reservoir {
             let surfaced = interleaveByTypeCategoryImpl(bucket.filter { surfacedIDs.contains($0.id) }.shuffled())
             bySource[key] = recent + stale + surfaced
         }
-        // Weighted slots
+        // Weighted slots — boost by preset multiplier so higher-scored
+        // sources get more slots in the round-robin, appearing earlier.
         let minCount = max(1, bySource.values.map(\.count).min() ?? 1)
-        let weights: [String: Int] = bySource.mapValues { min(5, max(1, $0.count / minCount)) }
+        let weights: [String: Int] = bySource.mapValues { items in
+            let baseWeight = min(5, max(1, items.count / minCount))
+            let mult = presetMultipliers[items.first?.sourceURL ?? ""] ?? 1.0
+            let adjusted = Int(Double(baseWeight) * mult)
+            return min(10, max(1, adjusted))
+        }
         var slots: [String] = []
         for (sourceURL, srcItems) in bySource where !srcItems.isEmpty {
             let w = weights[sourceURL] ?? 1
@@ -294,7 +310,7 @@ final class Reservoir {
                 added = true
             }
         }
-        let fresh = spreadForFreshnessImpl(result, sourceRegionMap: sourceRegionMap)
+        let fresh = spreadForFreshnessImpl(result, sourceRegionMap: sourceRegionMap, presetMultipliers: presetMultipliers)
         return frontLoadUniqueProvidersImpl(fresh, count: initialUniqueSourceTarget)
     }
 
@@ -408,7 +424,8 @@ final class Reservoir {
     /// place and the pass remains cheap for large fetches.
     private nonisolated static func spreadForFreshnessImpl(
         _ items: [FeedItem],
-        sourceRegionMap: [String: String]
+        sourceRegionMap: [String: String],
+        presetMultipliers: [String: Double] = [:]
     ) -> [FeedItem] {
         guard items.count > 2 else { return items }
 
@@ -440,7 +457,10 @@ final class Reservoir {
                 let candidate = pool[index]
                 let region = sourceRegionMap[candidate.sourceURL] ?? candidate.region
                 var penalty = index
-                if recentProviders.contains(providerKey(candidate)) { penalty += 100_000 }
+                if recentProviders.contains(providerKey(candidate)) {
+                    let sourceMult = presetMultipliers[candidate.sourceURL] ?? 1.0
+                    penalty += Int(100_000.0 / max(1.0, sourceMult))
+                }
                 if recentCategories.contains(candidate.category) { penalty += 50_000 }
                 if recentRegions.contains(region) { penalty += 15_000 }
                 if recentMedia.contains(mediaKey(candidate)) { penalty += 30_000 }

@@ -797,6 +797,20 @@ final class FeedLoader {
     func setAllCountriesEnabled(_ enabled: Bool) {
         store.setAllCountriesEnabled(enabled)
     }
+    // MARK: - Feed Presets
+
+    /// The active feed preset. Drives scoring multipliers across the fetch pipeline.
+    var activePreset: PresetSelector {
+        get { store.activePreset }
+    }
+
+    /// Change the active preset and trigger a feed reload with new scoring.
+    func setActivePreset(_ preset: PresetSelector) {
+        store.setPreset(preset)
+    }
+
+    // MARK: - Legacy Global Feeds (kept for backward compat)
+
     func toggleGlobalFeeds() {
         setGlobalFeedsEnabled(!isGlobalFeedsEnabled)
     }

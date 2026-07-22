@@ -76,6 +76,35 @@ final class FeedStore {
     /// next launch the device-language default is applied again.
     var hasUserClearedLanguageFilter = false
 
+    // MARK: - Preset state
+
+    /// The active feed preset. Drives scoring multipliers across the entire
+    /// fetch pipeline (scheduler, reservoir, coverage mining, cold start).
+    private(set) var activePreset: PresetSelector = Settings.activePreset
+
+    /// Precomputed dictionary of source URL → scoring multiplier for the
+    /// current activePreset. Rebuilt when the preset changes. Missing keys
+    /// default to 1.0. Passed to scheduler, reservoir, and fetch methods.
+    /// Only used for editorial presets; nil/empty for collection presets.
+    private(set) var presetMultipliers: [String: Double] = [:]
+
+    /// When the active preset is a `.collection`, this contains the **normalized**
+    /// source URLs of all collection members. The fetch pipeline uses it as an
+    /// **exclusive allowlist** — only these sources are fetched and displayed.
+    /// `nil` for editorial presets (permissive scoring), non-nil for
+    /// collection presets (exclusive filtering).
+    /// URLs are normalized to match FeedItem.sourceURL in SQLite (which is
+    /// stored normalized via `withNormalizedSourceURL`).
+    private(set) var presetSourceFilter: Set<String>?
+
+    /// Raw source URLs of collection members. Used by `rebuildPresetMultipliers`
+    /// to build `presetSourceFilter`. Kept separately for cache invalidation.
+    private var activeCollectionMemberURLs: Set<String> = []
+
+    /// Handle for the in-flight rebuildPresetMultipliers task. Cancelled before
+    /// starting a new rebuild to prevent stale writes from the previous preset.
+    private var presetRebuildTask: Task<Void, Never>?
+
     /// Cached set of feed URLs that match the current taxonomy selection.
     /// Invalidated when activeNodeIDs changes. Makes applyFilters O(items) instead
     /// of O(items x selectedNodes).
@@ -399,6 +428,7 @@ final class FeedStore {
         let contentFilters = ContentFilterStore.shared.isEnabled
             ? ContentFilterStore.shared.activeFilters : []
         let deviceLanguage = Self.normalizedLanguageCode(Locale.current.language.languageCode?.identifier)
+        let sourceFilter = presetSourceFilter  // nil for editorial, Set<String> for collection
         return items.filter { item in
             isItemEnabled(item)
             && (region == nil || item.region == region || item.region.hasPrefix(region! + "/"))
@@ -407,6 +437,7 @@ final class FeedStore {
             && contentType(item)
             && (mood == .all || mood.matches(item.title))
             && !contentFilterExcludes(item, filters: contentFilters)
+            && (sourceFilter == nil || sourceFilter!.contains(OPMLParser.normalizeURL(item.sourceURL)))
         }
     }
 
@@ -859,9 +890,14 @@ final class FeedStore {
     /// handful of prolific feeds produce many items. Distinct sources are the
     /// release criterion; item count is only the secondary buffer criterion.
     private func fetchColdStartRunway(from sources: [FeedSource]) async -> FeedFetchBatch {
+        // Sort by preset multiplier so high-quality sources are fetched first
+        let multipliers = presetMultipliers
+        let sorted = sources.sorted { lhs, rhs in
+            (multipliers[lhs.url] ?? 1.0) > (multipliers[rhs.url] ?? 1.0)
+        }
         let targetSourceCount = max(
             1,
-            min(Self.coldStartMinimumSourceCount, Set(sources.map(\.url)).count)
+            min(Self.coldStartMinimumSourceCount, Set(sorted.map(\.url)).count)
         )
         configureStartupProgress(targetSourceCount: targetSourceCount)
         var items: [FeedItem] = []
@@ -870,9 +906,9 @@ final class FeedStore {
         var emptySourceCount = 0
         var statuses: [String: FeedFetchStatus] = [:]
 
-        for start in stride(from: 0, to: sources.count, by: Self.coldStartFetchChunkSize) {
-            let end = min(start + Self.coldStartFetchChunkSize, sources.count)
-            let chunk = Array(sources[start..<end])
+        for start in stride(from: 0, to: sorted.count, by: Self.coldStartFetchChunkSize) {
+            let end = min(start + Self.coldStartFetchChunkSize, sorted.count)
+            let chunk = Array(sorted[start..<end])
             let usefulSourceCount = Set(items.map(\.sourceURL)).count
             let remainingSources = max(1, targetSourceCount - usefulSourceCount)
             let remainingItems = max(1, targetSourceCount - items.count)
@@ -1036,6 +1072,17 @@ final class FeedStore {
         // correctly filtered content, not a flash of unfiltered items.
         restoreFilters()
 
+        // Restore the active preset and rebuild scoring multipliers.
+        // Must happen after registry is populated but before first fetch.
+        activePreset = Settings.activePreset
+        if case .collection = activePreset {
+            // Collection presets: MUST await the rebuild to populate
+            // presetSourceFilter before reloadFromSQLite applies filters.
+            await rebuildPresetMultipliers()
+        } else {
+            Task { await rebuildPresetMultipliers() }
+        }
+
         // Set language default on first launch — only applies when no
         // persisted language filter was restored above.
         if !Settings.hasInitializedLanguageDefault {
@@ -1102,6 +1149,15 @@ final class FeedStore {
         // through the starter/progressive pipeline, so a second 30-source
         // booster would only compete with first paint for bandwidth.
         refreshWhatsNew(shouldBoost: false)
+
+        // Collection presets: eagerly load all member sources (same pipeline
+        // as "Open Collection Feed"), then skip the progressive/background flow.
+        if presetSourceFilter != nil,
+           case .collection(let cid, _) = activePreset {
+            await loadCollectionPresetFeed(collectionID: cid)
+            startBackgroundRefresh()
+            return
+        }
 
         progressiveFetchTask = Task {
             await self.firstLaunchBootstrapTask?.value
@@ -1741,7 +1797,7 @@ final class FeedStore {
                     // Prepend to visible feed
                     var combined = actualNew
                     combined.append(contentsOf: reservoir.visibleItems)
-                    await reservoir.seed(items: combined)
+                    await reservoir.seed(items: combined, presetMultipliers: presetMultipliers)
                     applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
                     reservoirCount = reservoir.reservoirCount
                 }
@@ -1766,6 +1822,113 @@ final class FeedStore {
         registry.setCategoryEnabled(category, enabled: enabled)
         // Category toggle is structural — reload feed
         scheduleSourceEnablementRefresh()
+    }
+
+    // MARK: - Preset management
+
+    /// Change the active feed preset. Rebuilds the scoring multiplier dictionary
+    /// and triggers a feed reload so the new ordering takes effect.
+    /// For collection presets, eagerly fetches all member content (same as
+    /// "Open Collection Feed") and seeds the main feed with results.
+    func setPreset(_ preset: PresetSelector) {
+        guard preset != activePreset else { return }
+        activePreset = preset
+        Settings.activePreset = preset
+        resetWhatsNewBaseline()
+        presetRebuildTask?.cancel()
+        presetRebuildTask = Task { [weak self] in
+            guard let self else { return }
+            await self.rebuildPresetMultipliers(for: preset)
+            guard !Task.isCancelled, self.activePreset == preset else { return }
+
+            if case .collection(let collectionID, _) = preset {
+                // Collection preset: eagerly load all members (same as
+                // "Open Collection Feed") and seed directly into the main feed.
+                await self.loadCollectionPresetFeed(collectionID: collectionID)
+            } else {
+                self.scheduleSourceEnablementRefresh()
+            }
+        }
+    }
+
+    /// Eagerly fetch and display content for a collection preset.
+    /// Mirrors `loadSourceCollectionContent` but feeds results into the main
+    /// feed reservoir instead of returning them for a separate overlay.
+    private func loadCollectionPresetFeed(collectionID: Int64) async {
+        loadingState = .refreshing
+        defer {
+            loadingState = .idle
+            isPreparingInitialRunway = false
+        }
+        do {
+            let result = try await loadSourceCollectionContent(collectionID: collectionID)
+            guard !Task.isCancelled, case .collection(let currentID, _) = activePreset,
+                  currentID == collectionID else { return }
+            if !result.items.isEmpty {
+                // Items come exclusively from collection members — apply standard
+                // filters (language, content type, mood, content filters) but
+                // skip the presetSourceFilter since loadSourceCollectionContent
+                // already guarantees these are collection-member items.
+                let savedFilter = presetSourceFilter
+                presetSourceFilter = nil
+                await reservoir.seed(items: result.items, presetMultipliers: presetMultipliers)
+                applyUpdate(.replace(applyFilters(reservoir.visibleItems)))
+                reservoirCount = reservoir.reservoirCount
+                presetSourceFilter = savedFilter
+            }
+        } catch {
+            Log.feed.error("collection preset load failed: \(error)")
+        }
+    }
+
+    /// Rebuild the `presetMultipliers` dictionary from the current preset
+    /// and enabled sources. Called on preset change and source registry reload.
+    /// - Parameter expectedPreset: The preset this rebuild was dispatched for.
+    ///   If `activePreset` no longer matches, the result is discarded to prevent
+    ///   a stale write from a cancelled/overwritten task.
+    func rebuildPresetMultipliers(for expectedPreset: PresetSelector? = nil) async {
+        let targetPreset = expectedPreset ?? activePreset
+        switch targetPreset {
+        case .collection(let collectionID, _):
+            // Resolve collection member URLs — this is an EXCLUSIVE allowlist,
+            // not a scoring boost. Only these sources are fetched and shown.
+            let members = (try? await sourceCollectionStore.members(collectionID: collectionID)) ?? []
+            if Task.isCancelled || activePreset != targetPreset { return }
+
+            // If the collection was deleted, fall back to Everything.
+            if members.isEmpty {
+                let allCollections = (try? await sourceCollectionStore.allCollections()) ?? []
+                if !allCollections.contains(where: { $0.id == collectionID }) {
+                    activePreset = .everything
+                    Settings.activePreset = .everything
+                    activeCollectionMemberURLs = []
+                    presetMultipliers = [:]
+                    presetSourceFilter = nil
+                    return
+                }
+            }
+
+            // Build the normalized URL allowlist from both member records and
+            // matching registry sources. Normalized because all comparisons
+            // (applyFilters, source pool, coverage) normalize at lookup time.
+            let normalizedMembers = Set(members.map { OPMLParser.normalizeURL($0.sourceURL) })
+            let registryMatches = registry.enabledSources
+                .filter { normalizedMembers.contains(OPMLParser.normalizeURL($0.url)) }
+                .map { OPMLParser.normalizeURL($0.url) }
+            presetSourceFilter = normalizedMembers.union(registryMatches)
+            activeCollectionMemberURLs = []  // unused for collections; kept for compatibility
+            // Collections use exclusive filtering, not scoring — no multipliers needed
+            presetMultipliers = [:]
+        default:
+            if Task.isCancelled { return }
+            activeCollectionMemberURLs = []
+            presetSourceFilter = nil
+            presetMultipliers = PresetScorer.buildMultipliers(
+                preset: targetPreset,
+                sources: registry.enabledSources,
+                collectionMemberURLs: []
+            )
+        }
     }
 
     func setTopicRegionsEnabled(_ enabled: Bool) {
@@ -2019,7 +2182,7 @@ final class FeedStore {
             && activeContentType != .all
             && visibleSourceCount < Self.immediateFilteredSourceTarget
         refreshCachedTaxonomyFeedURLsIfNeeded()
-        let sourcePool: [FeedSource]
+        var sourcePool: [FeedSource]
         if activeContentType == .all {
             sourcePool = registry.enabledSources
         } else {
@@ -2031,6 +2194,10 @@ final class FeedStore {
                 region: nil,
                 taxonomyURLs: nil
             )
+        }
+        // Collection presets: exclusive allowlist — only fetch member sources
+        if let filter = presetSourceFilter {
+            sourcePool = sourcePool.filter { filter.contains(OPMLParser.normalizeURL($0.url)) }
         }
         let sourcesByRegion = await Task.detached(priority: .userInitiated) {
             Dictionary(grouping: sourcePool, by: \.region)
@@ -2049,7 +2216,8 @@ final class FeedStore {
             activeLanguages: activeLanguages,
             minimumBatchSize: needsInitialRunway
                 ? Self.coldStartCatalogSourceCount
-                : (needsFilteredRunway ? 120 : 24)
+                : (needsFilteredRunway ? 120 : 24),
+            presetMultipliers: presetMultipliers
         )
         guard !batch.isEmpty else { return }
         let coldStartTargetSourceCount = min(
@@ -2318,6 +2486,8 @@ final class FeedStore {
     /// a filter has 100 providers that have actually produced persisted items.
     /// A successful HTTP response with zero usable items does not count.
     private func startCoverageMining(generation: Int64) {
+        // Collection presets don't need catalog coverage — only member sources
+        guard presetSourceFilter == nil else { return }
         coverageMiningTask?.cancel()
         let preferredType = activeContentType
         let languages = activeLanguages
@@ -2411,7 +2581,7 @@ final class FeedStore {
                 }
             }.value
         }
-        return await Task.detached(priority: .utility) {
+        let matches = await Task.detached(priority: .utility) {
             sourceSnapshot.filter { source in
                 Self.coverageSourceMatches(
                     source,
@@ -2421,6 +2591,11 @@ final class FeedStore {
                 )
             }
         }.value
+        // Collection presets: exclusive allowlist — only mine member sources
+        if let filter = presetSourceFilter {
+            return matches.filter { filter.contains(OPMLParser.normalizeURL($0.url)) }
+        }
+        return matches
     }
 
     nonisolated private static func coverageSourceMatches(
@@ -2477,14 +2652,21 @@ final class FeedStore {
         let candidates = plan.candidates
         guard !candidates.isEmpty else { return false }
 
+        // Sort coverage candidates by preset multiplier so quality sources
+        // are mined into the database before lower-priority ones.
+        let mults = presetMultipliers
+        let orderedCandidates = candidates.sorted { lhs, rhs in
+            (mults[lhs.url] ?? 1.0) > (mults[rhs.url] ?? 1.0)
+        }
+
         Log.feed.info(
-            "coverage \(label): mining \(plan.representedCount)/\(plan.target), candidates=\(candidates.count)"
+            "coverage \(label): mining \(plan.representedCount)/\(plan.target), candidates=\(orderedCandidates.count)"
         )
         let result = await fetcher.fetchStarter(
-            candidates,
-            maxConcurrent: min(36, candidates.count),
-            minimumSuccessfulSources: min(plan.deficit, candidates.count),
-            minimumItemCount: min(plan.deficit, candidates.count),
+            orderedCandidates,
+            maxConcurrent: min(36, orderedCandidates.count),
+            minimumSuccessfulSources: min(plan.deficit, orderedCandidates.count),
+            minimumItemCount: min(plan.deficit, orderedCandidates.count),
             deadline: deadline
         )
         guard !Task.isCancelled else { return true }
@@ -2493,7 +2675,7 @@ final class FeedStore {
             Dictionary(grouping: result.items, by: \.sourceURL).mapValues(\.count)
         }.value
         var healthEntries: [(url: String, itemCount: Int?)] = []
-        for source in candidates {
+        for source in orderedCandidates {
             guard let status = result.sourceStatuses[source.url] else { continue }
             scheduler.recordFetch(sourceURL: source.url, success: status != .failed)
             healthEntries.append((source.url, sourceItemCounts[source.url]))
@@ -2673,14 +2855,23 @@ final class FeedStore {
         let activeLangs = activeLanguages
         let activeType = activeContentType
         let recentCutoff = Date().addingTimeInterval(-300)
-        let candidates = registry.enabledSources.filter { source in
+        let sourceFilter = presetSourceFilter
+        var candidates = registry.enabledSources.filter { source in
             sourceMatches(source, languages: activeLangs)
                 && sourceMatches(source, contentType: activeType)
                 && (scheduler.lastFetchedAt[source.url] ?? .distantPast) < recentCutoff
         }
+        // Collection presets: exclusive allowlist
+        if let filter = sourceFilter {
+            candidates = candidates.filter { filter.contains(OPMLParser.normalizeURL($0.url)) }
+        }
         let budget = min(candidates.count, 200)  // per-session cap
+        let multipliers = presetMultipliers
         let scored = candidates.map { source in
-            (source: source, score: Double.random(in: 0.95...1.05))
+            // Apply ±2% jitter to break ties when sources share the same
+            // preset multiplier (especially common with "Everything" preset).
+            let base = multipliers[source.url] ?? 1.0
+            return (source: source, score: base * Double.random(in: 0.98...1.02))
         }
         return SourceScheduler.diverseSources(from: scored, limit: budget)
     }
@@ -2714,6 +2905,8 @@ final class FeedStore {
     /// few minutes to keep the database and What's New fed with fresh content.
     /// Complements progressiveFetch (bulk initial fill) with continuous renewal.
     private func startBackgroundRefresh() {
+        // Collection presets use eager loading — skip the slow-drip refresh
+        guard presetSourceFilter == nil else { return }
         backgroundRefreshTask?.cancel()
         backgroundRefreshTask = Task(priority: .background) { [weak self] in
             guard let self else { return }
@@ -3003,7 +3196,7 @@ final class FeedStore {
         let filteredItems = applyFilters(feedItems)
         let balancedItems = Self.balancedCandidatePool(filteredItems)
         Log.feed.info("[TaxonomyTrace] reloadFromSQLite gen=\(generation) loaded=\(feedItems.count) filtered=\(filteredItems.count) balanced=\(balancedItems.count) taxonomyURLs=\(taxonomyURLs?.count ?? 0)")
-        await reservoir.seed(items: balancedItems)
+        await reservoir.seed(items: balancedItems, presetMultipliers: presetMultipliers)
         // markSurfaced runs on reservoir.visibleItems AFTER seed, so only
         // items that actually appear on screen are recorded as surfaced.
         markSurfaced(reservoir.visibleItems)
