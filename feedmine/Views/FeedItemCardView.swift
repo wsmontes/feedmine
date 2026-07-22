@@ -81,12 +81,18 @@ struct FeedItemCardView: View, Equatable {
                         }
                     }
                     .clipped()
-                    .onTapGesture { onImageTap?() }
                     .overlay(alignment: .topTrailing) {
                         cardOverlays
                     }
                     .overlay {
                         mediaOverlay
+                    }
+                    .overlay {
+                        if onImageTap != nil {
+                            Color.clear
+                                .contentShape(Rectangle())
+                                .highPriorityGesture(TapGesture().onEnded { onImageTap?() })
+                        }
                     }
                     .transition(.opacity.combined(with: .scale(scale: 0.97)))
                 // Source row after image
@@ -167,7 +173,13 @@ struct FeedItemCardView: View, Equatable {
                         }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .onTapGesture { onImageTap?() }
+                    .overlay {
+                        if onImageTap != nil {
+                            Color.clear
+                                .contentShape(Rectangle())
+                                .highPriorityGesture(TapGesture().onEnded { onImageTap?() })
+                        }
+                    }
             }
 
             // Content

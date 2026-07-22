@@ -30,7 +30,13 @@ struct FeedItemRowView: View {
                 .frame(width: 56, height: 56)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .overlay(isRead ? Color.black.opacity(0.15) : nil)
-                .onTapGesture { onImageTap?() }
+                .overlay {
+                    if onImageTap != nil {
+                        Color.clear
+                            .contentShape(Rectangle())
+                            .highPriorityGesture(TapGesture().onEnded { onImageTap?() })
+                    }
+                }
             }
 
             // Content
