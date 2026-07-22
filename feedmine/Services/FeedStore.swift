@@ -1073,6 +1073,7 @@ final class FeedStore {
             FeedMetrics.event("FirstVisibleItems", "count=\(visibleItems.count)")
             FeedMetrics.memory("afterFirstVisible")
             loadingState = .idle
+            resolveArticleImagesInBackground(visibleItems)
             prefetchVisibleAndNext()
         }
 
