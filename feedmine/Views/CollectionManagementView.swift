@@ -395,6 +395,10 @@ struct SourceFeedView: View {
         .sheet(item: $articleItem) { ArticleReaderView(item: $0) }
         .sheet(item: $sourceToCollect) { AddSourceToCollectionSheet(source: $0) }
         .accessibilityIdentifier("source-feed-\(source.id)")
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            MiniPlayerBar()
+                .background(.ultraThinMaterial)
+        }
     }
 
     private var sourceHeader: some View {
@@ -552,6 +556,10 @@ private struct SourceCollectionFeedView: View {
         .sheet(item: $articleItem) { ArticleReaderView(item: $0) }
         .sheet(item: $selectedSource) { SourceFeedView(source: $0) }
         .sheet(item: $sourceToCollect) { AddSourceToCollectionSheet(source: $0) }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            MiniPlayerBar()
+                .background(.ultraThinMaterial)
+        }
     }
 
     private func load() async {

@@ -33,6 +33,10 @@ struct ArticleReaderView: View {
                     }
                 }
         }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            MiniPlayerBar()
+                .background(.ultraThinMaterial)
+        }
     }
 }
 
