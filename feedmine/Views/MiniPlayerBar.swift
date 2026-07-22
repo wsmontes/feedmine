@@ -104,13 +104,14 @@ struct FullPlayerView: View {
     @State private var player = AudioPlayerManager.shared
     @State private var artworkFailed = false
     @Environment(\.dismiss) private var dismiss
+    @Environment(FeedLoader.self) private var loader
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 32) {
                 Spacer()
 
-                // Artwork
+                // Artwork — long press for context menu
                 if !artworkFailed,
                    let item = player.currentItem,
                    let url = item.bestImageURL ?? item.imageURL,
@@ -122,6 +123,7 @@ struct FullPlayerView: View {
                         .frame(width: 280, height: 280)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .shadow(radius: 20)
+                        .contextMenu { playerContextMenu }
                 } else {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color(.systemGray5))
@@ -131,6 +133,7 @@ struct FullPlayerView: View {
                                 .font(.system(size: 60))
                                 .foregroundStyle(.secondary)
                         )
+                        .contextMenu { playerContextMenu }
                 }
 
                 // Title + source
@@ -202,6 +205,18 @@ struct FullPlayerView: View {
                     }
                 }
 
+                // More actions
+                if let item = player.currentItem {
+                    Menu {
+                        playerContextMenu
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .font(.title3)
+                            .foregroundStyle(.secondary)
+                            .frame(width: 32, height: 32)
+                    }
+                }
+
                 Spacer()
 
                 // Podcast badge
@@ -229,6 +244,34 @@ struct FullPlayerView: View {
         .presentationDetents([.large])
         .onChange(of: player.currentItem?.id) { _, _ in
             artworkFailed = false
+        }
+    }
+
+    @ViewBuilder
+    private var playerContextMenu: some View {
+        if let item = player.currentItem {
+            BookmarkBoxContextMenu(itemID: item.id)
+
+            let ref = loader.sourceReference(for: item)
+            Button {
+            } label: {
+                Label("View Source", systemImage: "rectangle.stack")
+            }
+
+            Button {
+            } label: {
+                Label("Add Source to Collection", systemImage: "rectangle.stack.badge.plus")
+            }
+
+            Button {
+                UIPasteboard.general.url = URL(string: item.url)
+            } label: {
+                Label("Copy Link", systemImage: "doc.on.doc")
+            }
+
+            ShareLink(item: URL(string: item.url) ?? URL(string: "https://feedmine.app")!) {
+                Label("Share Link", systemImage: "link")
+            }
         }
     }
 }
