@@ -450,11 +450,18 @@ actor RSSFetcher {
             if URL(string: source.url)?.host?.lowercased() == "news.google.com" {
                 return nil
             }
-            switch feed {
-            case .atom(let a): return a.logo ?? a.icon
-            case .rss(let r):  return r.iTunes?.iTunesImage?.attributes?.href ?? r.image?.url
-            case .json(let j): return j.icon ?? j.favicon
-            }
+            let image: String? = {
+                switch feed {
+                case .atom(let a): return a.logo ?? a.icon
+                case .rss(let r):  return r.iTunes?.iTunesImage?.attributes?.href ?? r.image?.url
+                case .json(let j): return j.icon ?? j.favicon
+                }
+            }()
+            // Skip obvious favicons and tiny site logos — they block article
+            // image resolution. A missing image triggers ArticleImageResolver
+            // which finds the actual article artwork.
+            if let image, Self.isLikelyFaviconOrLogo(image) { return nil }
+            return image
         }()
 
         let entries: [FeedItem] = {
@@ -824,6 +831,19 @@ actor RSSFetcher {
         if markers.contains(where: lower.contains) { return true }
         return lower.range(of: #"(?:^|[-_/])(16|18|24|32)x(?:11|12|16|18|24|29|30|31|32)(?:[-_.?/]|$)"#,
                            options: .regularExpression) != nil
+    }
+
+    /// Rejects channel-level images that are obviously favicons or tiny logos.
+    /// Using these as article images blocks ArticleImageResolver from finding
+    /// the actual article artwork.
+    private static func isLikelyFaviconOrLogo(_ url: String) -> Bool {
+        let lower = url.lowercased()
+        if lower.contains("favicon") || lower.contains("cropped") { return true }
+        // Match patterns like -32x32, -16x16, -150x150 etc. in filenames
+        if lower.range(of: #"[-.]\d{2,4}x\d{2,4}"#, options: .regularExpression) != nil {
+            return true
+        }
+        return false
     }
 
     private static func upgradedKnownThumbnailURL(_ value: String) -> String {
