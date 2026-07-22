@@ -2935,7 +2935,7 @@ final class FeedStore {
                     .filter(Column("audio_url") == nil)
                     .filter(!Column("source_url").like("%youtube%"))
                     .filter(!Column("source_url").like("%reddit%"))
-                    .filter(Column("image_url") != nil)
+                    .filter(Column("image_url") != nil && Column("image_url") != "")
                     .order(Column("published_at").desc)
                     .limit(Self.illustratedTextCandidateReadLimit)
                     .fetchAll(db)
