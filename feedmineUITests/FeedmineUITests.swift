@@ -246,6 +246,43 @@ final class FeedmineUITests: XCTestCase {
         add(attachment)
     }
 
+    func testAddFeedListsCollectionsCreatedInSourceCollections() {
+        let moreMenu = app.buttons["more-menu"]
+        XCTAssertTrue(moreMenu.waitForExistence(timeout: 45), "More menu must be available")
+        moreMenu.tap()
+        app.buttons["Source Collections"].tap()
+
+        XCTAssertTrue(app.navigationBars["Source Collections"].waitForExistence(timeout: 8))
+        app.buttons["Create source collection"].tap()
+        let collectionName = "URL imports \(Int(Date().timeIntervalSince1970))"
+        let nameField = app.textFields["Name"]
+        XCTAssertTrue(nameField.waitForExistence(timeout: 5))
+        nameField.tap()
+        nameField.typeText(collectionName)
+        app.buttons["Create"].tap()
+        XCTAssertTrue(app.staticTexts[collectionName].waitForExistence(timeout: 5))
+        app.buttons["Done"].tap()
+
+        XCTAssertTrue(moreMenu.waitForExistence(timeout: 5))
+        moreMenu.tap()
+        app.buttons["Add Feed"].tap()
+
+        let picker = app.buttons["add-feed-collection-picker"]
+        XCTAssertTrue(picker.waitForExistence(timeout: 8))
+        picker.tap()
+        let collectionOption = app.buttons[collectionName]
+        XCTAssertTrue(
+            collectionOption.waitForExistence(timeout: 5),
+            "A real source collection must be offered by Add Feed"
+        )
+        collectionOption.tap()
+        XCTAssertTrue(
+            (picker.value as? String)?.contains(collectionName) == true
+                || picker.label.contains(collectionName),
+            "The personal collection must be selected as the URL destination"
+        )
+    }
+
     func testRecoveredDormantAstronomySourceIsSearchableButNotAutoEnabled() {
         let searchButton = app.buttons["search-button"]
         XCTAssertTrue(searchButton.waitForExistence(timeout: 45), "Search button must be available")

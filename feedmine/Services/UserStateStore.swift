@@ -106,6 +106,13 @@ final class UserStateStore {
                           on: "source_collection_member", columns: ["source_url"])
         }
 
+        migrator.registerMigration("v3_user_metadata") { db in
+            try db.create(table: "user_metadata") { t in
+                t.primaryKey("key", .text)
+                t.column("value", .text).notNull()
+            }
+        }
+
         try migrator.migrate(db)
     }
 
@@ -194,6 +201,7 @@ struct SourceCollectionMember: Identifiable, Equatable, Sendable {
 /// source from the catalog.
 @MainActor
 final class SourceCollectionStore {
+    private static let importedCategoryMigrationKey = "imported_categories_to_collections_v1"
     private let db: DatabaseQueue
 
     init(db: DatabaseQueue) {
@@ -281,23 +289,98 @@ final class SourceCollectionStore {
     }
 
     func add(_ source: SourceReference, to collectionID: Int64) async throws {
-        let normalizedURL = OPMLParser.normalizeURL(source.feedURL)
+        try await add([source], to: collectionID)
+    }
+
+    func add(_ sources: [SourceReference], to collectionID: Int64) async throws {
+        guard !sources.isEmpty else { return }
         try await db.write { db in
-            let order = (try Int.fetchOne(db, sql: """
+            var order = (try Int.fetchOne(db, sql: """
                 SELECT COALESCE(MAX(sort_order), -1) + 1
                 FROM source_collection_member WHERE collection_id = ?
                 """, arguments: [collectionID])) ?? 0
+            for source in sources {
+                try db.execute(sql: """
+                    INSERT INTO source_collection_member
+                        (collection_id, source_url, title_snapshot, media_kind, added_at, sort_order)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                    ON CONFLICT(collection_id, source_url) DO UPDATE SET
+                        title_snapshot = excluded.title_snapshot,
+                        media_kind = excluded.media_kind
+                    """, arguments: [
+                        collectionID, OPMLParser.normalizeURL(source.feedURL), source.title,
+                        source.mediaKind.rawValue, Int(Date().timeIntervalSince1970), order,
+                    ])
+                order += 1
+            }
+        }
+    }
+
+    /// Repairs destinations created by the old Add Feed screen. That screen
+    /// stored its picker value in FeedSource.category instead of creating a
+    /// personal collection, leaving imported sources filed under invisible
+    /// pseudo-collections. Run once after imported_sources.json is restored.
+    func migrateImportedCategoriesToCollections(_ importedSources: [FeedSource]) async throws -> Int {
+        let migrationKey = Self.importedCategoryMigrationKey
+        return try await db.write { db in
+            let completed = try String.fetchOne(
+                db,
+                sql: "SELECT value FROM user_metadata WHERE key = ?",
+                arguments: [migrationKey]
+            ) == "1"
+            guard !completed else { return 0 }
+
+            let grouped = Dictionary(grouping: importedSources) { source in
+                let name = source.category.trimmingCharacters(in: .whitespacesAndNewlines)
+                return name.isEmpty ? "Imported" : name
+            }
+            var migratedCount = 0
+
+            for name in grouped.keys.sorted() {
+                let collectionID: Int64
+                if let existingID = try Int64.fetchOne(
+                    db,
+                    sql: "SELECT id FROM source_collection WHERE name = ? COLLATE NOCASE ORDER BY id LIMIT 1",
+                    arguments: [name]
+                ) {
+                    collectionID = existingID
+                } else {
+                    let collectionOrder = (try Int.fetchOne(
+                        db,
+                        sql: "SELECT COALESCE(MAX(sort_order), -1) + 1 FROM source_collection"
+                    )) ?? 0
+                    try db.execute(sql: """
+                        INSERT INTO source_collection (name, sort_order, created_at)
+                        VALUES (?, ?, ?)
+                        """, arguments: [name, collectionOrder, Int(Date().timeIntervalSince1970)])
+                    collectionID = db.lastInsertedRowID
+                }
+
+                var memberOrder = (try Int.fetchOne(db, sql: """
+                    SELECT COALESCE(MAX(sort_order), -1) + 1
+                    FROM source_collection_member WHERE collection_id = ?
+                    """, arguments: [collectionID])) ?? 0
+                for source in grouped[name] ?? [] {
+                    try db.execute(sql: """
+                        INSERT OR IGNORE INTO source_collection_member
+                            (collection_id, source_url, title_snapshot, media_kind, added_at, sort_order)
+                        VALUES (?, ?, ?, ?, ?, ?)
+                        """, arguments: [
+                            collectionID, OPMLParser.normalizeURL(source.url), source.title,
+                            source.mediaKind.rawValue, Int(Date().timeIntervalSince1970), memberOrder,
+                        ])
+                    if db.changesCount > 0 {
+                        migratedCount += 1
+                        memberOrder += 1
+                    }
+                }
+            }
+
             try db.execute(sql: """
-                INSERT INTO source_collection_member
-                    (collection_id, source_url, title_snapshot, media_kind, added_at, sort_order)
-                VALUES (?, ?, ?, ?, ?, ?)
-                ON CONFLICT(collection_id, source_url) DO UPDATE SET
-                    title_snapshot = excluded.title_snapshot,
-                    media_kind = excluded.media_kind
-                """, arguments: [
-                    collectionID, normalizedURL, source.title, source.mediaKind.rawValue,
-                    Int(Date().timeIntervalSince1970), order,
-                ])
+                INSERT INTO user_metadata (key, value) VALUES (?, '1')
+                ON CONFLICT(key) DO UPDATE SET value = excluded.value
+                """, arguments: [migrationKey])
+            return migratedCount
         }
     }
 

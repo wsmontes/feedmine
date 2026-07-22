@@ -307,6 +307,7 @@ struct FeedScreen: View {
                         Image(systemName: "ellipsis.circle")
                             .headerButtonStyle(accent: engine.accent)
                     }
+                    .accessibilityIdentifier("more-menu")
                 }
             }
             .padding(.horizontal, 12)

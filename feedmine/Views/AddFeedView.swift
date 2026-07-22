@@ -6,22 +6,23 @@ struct AddFeedView: View {
     @State private var engine = CircadianEngine.shared
     @State private var input = ""
     @State private var parsedURLs: [ClassifiedURL] = []
-    @State private var selectedCollection = "Imported"
+    @State private var collections: [SourceCollection] = []
+    @State private var selectedCollectionID: Int64?
     @State private var newCollectionName = ""
     @State private var showNewCollection = false
     @State private var isResolving = false
     @State private var result: ImportResult?
+    @State private var filedSourceCount = 0
+    @State private var errorMessage: String?
     @State private var resolvedCount = 0
     @State private var totalToResolve = 0
     @State private var importTask: Task<Void, Never>?
     @State private var parseDebounceTask: Task<Void, Never>?
     @FocusState private var inputFocused: Bool
 
-    /// Available collections = existing categories + "Imported" default
-    private var collections: [String] {
-        var cats = Set(loader.sources.map(\.category))
-        cats.insert("Imported")
-        return cats.sorted()
+    private var selectedCollectionName: String? {
+        guard let selectedCollectionID else { return nil }
+        return collections.first { $0.id == selectedCollectionID }?.name
     }
 
     var body: some View {
@@ -64,13 +65,15 @@ struct AddFeedView: View {
                     Text("Paste any link — websites, YouTube channels, GitHub repos, podcasts, or direct feed URLs. We'll find the feeds automatically.")
                 }
 
-                // MARK: - Collection Picker
+                // MARK: - Personal Collection Picker
                 Section {
-                    Picker("Add to", selection: $selectedCollection) {
-                        ForEach(collections, id: \.self) { collection in
-                            Text(collection).tag(collection)
+                    Picker("Add to", selection: $selectedCollectionID) {
+                        Text("No Collection").tag(nil as Int64?)
+                        ForEach(collections) { collection in
+                            Text(collection.name).tag(collection.id as Int64?)
                         }
                     }
+                    .accessibilityIdentifier("add-feed-collection-picker")
 
                     Button {
                         showNewCollection = true
@@ -78,10 +81,11 @@ struct AddFeedView: View {
                         Label("New Collection…", systemImage: "folder.badge.plus")
                             .foregroundStyle(engine.accent)
                     }
+                    .accessibilityIdentifier("add-feed-new-collection")
                 } header: {
-                    Text("Collection")
+                    Text("Personal Collection")
                 } footer: {
-                    Text("Feeds are grouped by collection. You can move them later.")
+                    Text("Personal collections are the folders shown under Source Collections. Catalog categories are kept separate.")
                 }
 
                 // MARK: - Clipboard
@@ -124,14 +128,18 @@ struct AddFeedView: View {
 
                 if let result {
                     Section("Result") {
-                        HStack {
+                        if result.importedCount > 0 {
                             Label("\(result.importedCount) imported", systemImage: "checkmark.circle.fill")
                                 .foregroundStyle(.green)
-                            Spacer()
                         }
                         if result.duplicateCount > 0 {
-                            Label("\(result.duplicateCount) duplicates skipped", systemImage: "arrow.triangle.2.circlepath")
+                            Label("\(result.duplicateCount) already in Sources", systemImage: "arrow.triangle.2.circlepath")
                                 .foregroundStyle(.secondary)
+                                .font(.caption)
+                        }
+                        if filedSourceCount > 0, let selectedCollectionName {
+                            Label("\(filedSourceCount) saved to \(selectedCollectionName)", systemImage: "folder.fill")
+                                .foregroundStyle(engine.accent)
                                 .font(.caption)
                         }
                         if result.unreachableCount > 0 {
@@ -171,10 +179,7 @@ struct AddFeedView: View {
             .alert("New Collection", isPresented: $showNewCollection) {
                 TextField("Collection name", text: $newCollectionName)
                 Button("Create") {
-                    let name = newCollectionName.trimmingCharacters(in: .whitespaces)
-                    guard !name.isEmpty else { return }
-                    selectedCollection = name
-                    newCollectionName = ""
+                    Task { await createCollection() }
                 }
                 Button("Cancel", role: .cancel) {}
             }
@@ -192,9 +197,14 @@ struct AddFeedView: View {
                 }
             } message: {
                 let types = feedTypeSummary()
-                Text("Found \(resolvedFeeds.count) feeds\(types.isEmpty ? "" : ": \(types)"). Add all to \"\(selectedCollection)\"?")
+                if let selectedCollectionName {
+                    Text("Found \(resolvedFeeds.count) feeds\(types.isEmpty ? "" : ": \(types)"). Save them to \"\(selectedCollectionName)\"?")
+                } else {
+                    Text("Found \(resolvedFeeds.count) feeds\(types.isEmpty ? "" : ": \(types)"). Import them without adding them to a personal collection?")
+                }
             }
             .onAppear { inputFocused = true }
+            .task { await reloadCollections() }
             .onDisappear {
                 importTask?.cancel()
                 parseDebounceTask?.cancel()
@@ -211,6 +221,14 @@ struct AddFeedView: View {
                     guard !Task.isCancelled else { return }
                     parsedURLs = InputParser.parse(captured)
                 }
+            }
+            .alert("Could not update collection", isPresented: Binding(
+                get: { errorMessage != nil },
+                set: { if !$0 { errorMessage = nil } }
+            )) {
+                Button("OK", role: .cancel) { errorMessage = nil }
+            } message: {
+                Text(errorMessage ?? "Unknown error")
             }
         }
         .presentationDetents([.medium, .large])
@@ -237,6 +255,7 @@ struct AddFeedView: View {
         isResolving = true
         defer { isResolving = false }
         result = nil
+        filedSourceCount = 0
         resolvedFeeds = []
 
         // 1. Parse input
@@ -285,7 +304,7 @@ struct AddFeedView: View {
         // Import resolved feeds
         let importResult = await loader.importFeeds(
             urls: feedURLs,
-            category: selectedCollection,
+            category: "Imported",
             skipValidation: true
         )
         guard !Task.isCancelled else { return }
@@ -306,13 +325,36 @@ struct AddFeedView: View {
         let allItems = importResult.items + opmlItems
         result = ImportResult(items: allItems)
 
+        if let selectedCollectionID {
+            let sourceURLs = allItems.compactMap { item -> String? in
+                switch item.status {
+                case .imported, .duplicate: return item.url
+                case .invalid, .unreachable: return nil
+                }
+            }
+            do {
+                filedSourceCount = try await loader.addSourceURLs(
+                    sourceURLs,
+                    toCollectionID: selectedCollectionID
+                )
+                await reloadCollections()
+            } catch {
+                errorMessage = "The feeds were imported, but could not be saved to the collection: \(error.localizedDescription)"
+            }
+        }
+
         input = ""
         resolvedFeeds = []
         pendingOPMLs = []
 
         // Post toast notification for FeedScreen
-        if let r = result, r.importedCount > 0 {
-            var message = "\(r.importedCount) feed\(r.importedCount == 1 ? "" : "s") added to \(selectedCollection)"
+        if let r = result, r.importedCount > 0 || filedSourceCount > 0 {
+            var message: String
+            if filedSourceCount > 0, let selectedCollectionName {
+                message = "\(filedSourceCount) feed\(filedSourceCount == 1 ? "" : "s") saved to \(selectedCollectionName)"
+            } else {
+                message = "\(r.importedCount) feed\(r.importedCount == 1 ? "" : "s") imported"
+            }
             if opmlErrors > 0 {
                 message += ", \(opmlErrors) OPML\(opmlErrors == 1 ? "" : "s") failed"
             }
@@ -325,6 +367,31 @@ struct AddFeedView: View {
     }
 
     // MARK: - Helpers
+
+    private func reloadCollections() async {
+        do {
+            collections = try await loader.loadSourceCollections()
+            if let selectedCollectionID,
+               !collections.contains(where: { $0.id == selectedCollectionID }) {
+                self.selectedCollectionID = nil
+            }
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func createCollection() async {
+        let name = newCollectionName.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !name.isEmpty else { return }
+        do {
+            let id = try await loader.createSourceCollection(name: name)
+            newCollectionName = ""
+            await reloadCollections()
+            selectedCollectionID = id
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
 
     private func feedTypeSummary() -> String {
         let video = resolvedFeeds.filter { $0.mediaKind == .video }.count
@@ -361,4 +428,3 @@ struct AddFeedView: View {
 extension Notification.Name {
     static let feedImportCompleted = Notification.Name("feedImportCompleted")
 }
-

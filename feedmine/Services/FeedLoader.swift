@@ -527,7 +527,20 @@ final class FeedLoader {
 
     func start() async {
         await store.start()
-        restoreImportedSources()
+        if restoreImportedSources() {
+            await TaxonomyStore.shared.build(
+                from: store.registry.sources,
+                sharedCountrySourceURLs: store.registry.sharedCountrySourceURLs
+            )
+        }
+        do {
+            let migratedCount = try await store.migrateImportedSourceCollections()
+            if migratedCount > 0 {
+                Log.import_.info("Recovered \(migratedCount) imported sources into personal collections")
+            }
+        } catch {
+            Log.import_.error("Failed to recover imported source collections: \(error)")
+        }
         await loadWhatsNew()
         await refreshBookmarkLists()
         await refreshBookmarkState()
@@ -991,6 +1004,11 @@ final class FeedLoader {
         try await store.addSource(source, toCollectionID: id)
     }
 
+    @discardableResult
+    func addSourceURLs(_ sourceURLs: [String], toCollectionID id: Int64) async throws -> Int {
+        try await store.addSourceURLs(sourceURLs, toCollectionID: id)
+    }
+
     func removeSource(_ sourceURL: String, fromCollectionID id: Int64) async throws {
         try await store.removeSource(sourceURL, fromCollectionID: id)
     }
@@ -1168,21 +1186,25 @@ final class FeedLoader {
 
     /// Restore previously imported sources from disk on app launch.
     /// Merges them into the registry without duplicating bundled sources.
-    private func restoreImportedSources() {
+    @discardableResult
+    private func restoreImportedSources() -> Bool {
         let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("imported_sources.json")
-        guard FileManager.default.fileExists(atPath: fileURL.path) else { return }
+        guard FileManager.default.fileExists(atPath: fileURL.path) else { return false }
         do {
             let data = try Data(contentsOf: fileURL)
             let imported = try JSONDecoder().decode([FeedSource].self, from: data)
-            guard !imported.isEmpty else { return }
+            guard !imported.isEmpty else { return false }
+            let sourceCountBeforeRestore = store.registry.sources.count
             store.registry.sources = OPMLParser.deduplicateSources(
                 store.registry.sources + imported
             )
             store.registry.prepareFilterCaches()
             Log.import_.info("Restored \(imported.count) imported sources")
+            return store.registry.sources.count > sourceCountBeforeRestore
         } catch {
             Log.import_.error("Failed to restore imported sources: \(error)")
+            return false
         }
     }
 

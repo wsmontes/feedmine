@@ -3287,6 +3287,25 @@ final class FeedStore {
         try await sourceCollectionStore.add(source, to: id)
     }
 
+    @discardableResult
+    func addSourceURLs(_ sourceURLs: [String], toCollectionID id: Int64) async throws -> Int {
+        var seen = Set<String>()
+        let references = sourceURLs.compactMap { sourceURL -> SourceReference? in
+            let normalized = OPMLParser.normalizeURL(sourceURL)
+            guard seen.insert(normalized).inserted,
+                  let source = registry.source(forURL: normalized) else { return nil }
+            return SourceReference(source: source)
+        }
+        try await sourceCollectionStore.add(references, to: id)
+        return references.count
+    }
+
+    @discardableResult
+    func migrateImportedSourceCollections() async throws -> Int {
+        let importedSources = registry.sources.filter { $0.region == "imported" }
+        return try await sourceCollectionStore.migrateImportedCategoriesToCollections(importedSources)
+    }
+
     func removeSource(_ sourceURL: String, fromCollectionID id: Int64) async throws {
         try await sourceCollectionStore.remove(sourceURL: sourceURL, from: id)
     }

@@ -2113,6 +2113,78 @@ final class FeedStoreTests: XCTestCase {
         XCTAssertEqual(remainingMembers.map(\.sourceURL), [reference.id])
     }
 
+    func testSourceURLsCanBeFiledInBulkWithoutChangingCatalogClassification() async throws {
+        let store = try FeedStore(inMemory: true)
+        let catalogSource = FeedSource(
+            title: "Catalog Source",
+            url: "https://example.com/catalog.xml",
+            category: "Technology",
+            region: "topic/technology"
+        )
+        let importedSource = FeedSource(
+            title: "Personal Source",
+            url: "https://example.com/personal.xml",
+            category: "Imported",
+            region: "imported"
+        )
+        store.registry.sources = [catalogSource, importedSource]
+        let collectionID = try await store.createSourceCollection(name: "Weekend")
+
+        let filedCount = try await store.addSourceURLs([
+            catalogSource.url,
+            "http://www.example.com/catalog.xml/",
+            importedSource.url,
+            "https://example.com/not-in-registry.xml",
+        ], toCollectionID: collectionID)
+
+        let members = try await store.sourceCollectionMembers(collectionID: collectionID)
+        XCTAssertEqual(filedCount, 2)
+        XCTAssertEqual(Set(members.map(\.sourceURL)), Set([
+            OPMLParser.normalizeURL(catalogSource.url),
+            OPMLParser.normalizeURL(importedSource.url),
+        ]))
+        XCTAssertEqual(store.registry.sources.first?.category, "Technology")
+        XCTAssertEqual(store.registry.sources.first?.region, "topic/technology")
+    }
+
+    func testLegacyImportedCategoriesBecomeVisibleCollectionsOnlyOnce() async throws {
+        let store = try FeedStore(inMemory: true)
+        store.registry.sources = [
+            FeedSource(
+                title: "Unfiled Import",
+                url: "https://example.com/imported.xml",
+                category: "Imported",
+                region: "imported"
+            ),
+            FeedSource(
+                title: "Reading Import",
+                url: "https://example.com/reading.xml",
+                category: "Reading",
+                region: "imported"
+            ),
+            FeedSource(
+                title: "Bundled Reading",
+                url: "https://example.com/bundled.xml",
+                category: "Reading",
+                region: "global"
+            ),
+        ]
+
+        let migratedCount = try await store.migrateImportedSourceCollections()
+        let collections = try await store.allSourceCollections()
+
+        XCTAssertEqual(migratedCount, 2)
+        XCTAssertEqual(Set(collections.map(\.name)), Set(["Imported", "Reading"]))
+        XCTAssertEqual(collections.reduce(0) { $0 + $1.memberCount }, 2)
+
+        let readingID = try XCTUnwrap(collections.first { $0.name == "Reading" }?.id)
+        try await store.deleteSourceCollection(id: readingID)
+        let repeatedMigrationCount = try await store.migrateImportedSourceCollections()
+        let collectionsAfterDeletion = try await store.allSourceCollections()
+        XCTAssertEqual(repeatedMigrationCount, 0)
+        XCTAssertFalse(collectionsAfterDeletion.contains { $0.name == "Reading" })
+    }
+
     func testExplicitSourceViewKeepsCompleteLocalHistoryPastAutomaticCap() async throws {
         let store = try FeedStore(inMemory: true)
         let sourceURL = "https://example.com/archive.xml"
